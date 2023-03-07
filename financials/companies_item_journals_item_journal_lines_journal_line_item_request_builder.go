@@ -48,7 +48,7 @@ type CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderPatchRequ
 }
 // Account provides operations to manage the account property of the microsoft.graph.journalLine entity.
 func (m *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) Account()(*CompaniesItemJournalsItemJournalLinesItemAccountRequestBuilder) {
-    return NewCompaniesItemJournalsItemJournalLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemJournalsItemJournalLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal instantiates a new JournalLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder instantiates a new JournalLineItemRequestBuilder and sets the default values.
@@ -158,7 +158,10 @@ func (m *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // WindowsPhone81CertificateProfileBaseCollectionResponse 
 type WindowsPhone81CertificateProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81CertificateProfileBaseable
 }
 // NewWindowsPhone81CertificateProfileBaseCollectionResponse instantiates a new WindowsPhone81CertificateProfileBaseCollectionResponse and sets the default values.
 func NewWindowsPhone81CertificateProfileBaseCollectionResponse()(*WindowsPhone81CertificateProfileBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81CertificateProfileBaseCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81CertificateProfileBaseCollectionResponse) GetValue()([]WindowsPhone81CertificateProfileBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81CertificateProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81CertificateProfileBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81CertificateProfileBaseCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81CertificateProfileBaseCollectionResponse) SetValue(value []WindowsPhone81CertificateProfileBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81CertificateProfileBaseCollectionResponseable 
+type WindowsPhone81CertificateProfileBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81CertificateProfileBaseable)
+    SetValue(value []WindowsPhone81CertificateProfileBaseable)()
 }

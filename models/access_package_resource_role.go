@@ -7,16 +7,6 @@ import (
 // AccessPackageResourceRole 
 type AccessPackageResourceRole struct {
     Entity
-    // The accessPackageResource property
-    accessPackageResource AccessPackageResourceable
-    // A description for the resource role.
-    description *string
-    // The display name of the resource role such as the role defined by the application.
-    displayName *string
-    // The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
-    originId *string
-    // The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-    originSystem *string
 }
 // NewAccessPackageResourceRole instantiates a new accessPackageResourceRole and sets the default values.
 func NewAccessPackageResourceRole()(*AccessPackageResourceRole) {
@@ -31,15 +21,36 @@ func CreateAccessPackageResourceRoleFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRole) GetAccessPackageResource()(AccessPackageResourceable) {
-    return m.accessPackageResource
+    val, err := m.GetBackingStore().Get("accessPackageResource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageResourceable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. A description for the resource role.
 func (m *AccessPackageResourceRole) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the resource role such as the role defined by the application.
 func (m *AccessPackageResourceRole) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,11 +109,25 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOriginId gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
 func (m *AccessPackageResourceRole) GetOriginId()(*string) {
-    return m.originId
+    val, err := m.GetBackingStore().Get("originId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
-    return m.originSystem
+    val, err := m.GetBackingStore().Get("originSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,21 +169,51 @@ func (m *AccessPackageResourceRole) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRole) SetAccessPackageResource(value AccessPackageResourceable)() {
-    m.accessPackageResource = value
+    err := m.GetBackingStore().Set("accessPackageResource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. A description for the resource role.
 func (m *AccessPackageResourceRole) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the resource role such as the role defined by the application.
 func (m *AccessPackageResourceRole) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOriginId sets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
 func (m *AccessPackageResourceRole) SetOriginId(value *string)() {
-    m.originId = value
+    err := m.GetBackingStore().Set("originId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResourceRole) SetOriginSystem(value *string)() {
-    m.originSystem = value
+    err := m.GetBackingStore().Set("originSystem", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageResourceRoleable 
+type AccessPackageResourceRoleable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessPackageResource()(AccessPackageResourceable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetOriginId()(*string)
+    GetOriginSystem()(*string)
+    SetAccessPackageResource(value AccessPackageResourceable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetOriginId(value *string)()
+    SetOriginSystem(value *string)()
 }

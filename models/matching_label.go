@@ -2,40 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MatchingLabel 
 type MatchingLabel struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The applicationMode property
-    applicationMode *ApplicationMode
-    // The description property
-    description *string
-    // The displayName property
-    displayName *string
-    // The id property
-    id *string
-    // The isEndpointProtectionEnabled property
-    isEndpointProtectionEnabled *bool
-    // The labelActions property
-    labelActions []LabelActionBaseable
-    // The name property
-    name *string
-    // The OdataType property
-    odataType *string
-    // The policyTip property
-    policyTip *string
-    // The priority property
-    priority *int32
-    // The toolTip property
-    toolTip *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMatchingLabel instantiates a new matchingLabel and sets the default values.
 func NewMatchingLabel()(*MatchingLabel) {
     m := &MatchingLabel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,19 +24,52 @@ func CreateMatchingLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingLabel) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
 func (m *MatchingLabel) GetApplicationMode()(*ApplicationMode) {
-    return m.applicationMode
+    val, err := m.GetBackingStore().Get("applicationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationMode)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MatchingLabel) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDescription gets the description property value. The description property
 func (m *MatchingLabel) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *MatchingLabel) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -179,35 +192,91 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetId gets the id property value. The id property
 func (m *MatchingLabel) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
 func (m *MatchingLabel) GetIsEndpointProtectionEnabled()(*bool) {
-    return m.isEndpointProtectionEnabled
+    val, err := m.GetBackingStore().Get("isEndpointProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLabelActions gets the labelActions property value. The labelActions property
 func (m *MatchingLabel) GetLabelActions()([]LabelActionBaseable) {
-    return m.labelActions
+    val, err := m.GetBackingStore().Get("labelActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LabelActionBaseable)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *MatchingLabel) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MatchingLabel) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
 func (m *MatchingLabel) GetPolicyTip()(*string) {
-    return m.policyTip
+    val, err := m.GetBackingStore().Get("policyTip")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. The priority property
 func (m *MatchingLabel) GetPriority()(*int32) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetToolTip gets the toolTip property value. The toolTip property
 func (m *MatchingLabel) GetToolTip()(*string) {
-    return m.toolTip
+    val, err := m.GetBackingStore().Get("toolTip")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MatchingLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -292,49 +361,119 @@ func (m *MatchingLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingLabel) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property
 func (m *MatchingLabel) SetApplicationMode(value *ApplicationMode)() {
-    m.applicationMode = value
+    err := m.GetBackingStore().Set("applicationMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MatchingLabel) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDescription sets the description property value. The description property
 func (m *MatchingLabel) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *MatchingLabel) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetId sets the id property value. The id property
 func (m *MatchingLabel) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEndpointProtectionEnabled sets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
 func (m *MatchingLabel) SetIsEndpointProtectionEnabled(value *bool)() {
-    m.isEndpointProtectionEnabled = value
+    err := m.GetBackingStore().Set("isEndpointProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLabelActions sets the labelActions property value. The labelActions property
 func (m *MatchingLabel) SetLabelActions(value []LabelActionBaseable)() {
-    m.labelActions = value
+    err := m.GetBackingStore().Set("labelActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *MatchingLabel) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MatchingLabel) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyTip sets the policyTip property value. The policyTip property
 func (m *MatchingLabel) SetPolicyTip(value *string)() {
-    m.policyTip = value
+    err := m.GetBackingStore().Set("policyTip", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. The priority property
 func (m *MatchingLabel) SetPriority(value *int32)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetToolTip sets the toolTip property value. The toolTip property
 func (m *MatchingLabel) SetToolTip(value *string)() {
-    m.toolTip = value
+    err := m.GetBackingStore().Set("toolTip", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MatchingLabelable 
+type MatchingLabelable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationMode()(*ApplicationMode)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetId()(*string)
+    GetIsEndpointProtectionEnabled()(*bool)
+    GetLabelActions()([]LabelActionBaseable)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetPolicyTip()(*string)
+    GetPriority()(*int32)
+    GetToolTip()(*string)
+    SetApplicationMode(value *ApplicationMode)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetId(value *string)()
+    SetIsEndpointProtectionEnabled(value *bool)()
+    SetLabelActions(value []LabelActionBaseable)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetPolicyTip(value *string)()
+    SetPriority(value *int32)()
+    SetToolTip(value *string)()
 }

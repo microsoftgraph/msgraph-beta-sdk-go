@@ -7,466 +7,14 @@ import (
 // Windows10EndpointProtectionConfiguration 
 type Windows10EndpointProtectionConfiguration struct {
     DeviceConfiguration
-    // Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.
-    applicationGuardAllowCameraMicrophoneRedirection *bool
-    // Allow users to download files from Edge in the application guard container and save them on the host file system
-    applicationGuardAllowFileSaveOnHost *bool
-    // Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
-    applicationGuardAllowPersistence *bool
-    // Allow printing to Local Printers from Container
-    applicationGuardAllowPrintToLocalPrinters *bool
-    // Allow printing to Network Printers from Container
-    applicationGuardAllowPrintToNetworkPrinters *bool
-    // Allow printing to PDF from Container
-    applicationGuardAllowPrintToPDF *bool
-    // Allow printing to XPS from Container
-    applicationGuardAllowPrintToXPS *bool
-    // Allow application guard to use virtual GPU
-    applicationGuardAllowVirtualGPU *bool
-    // Possible values for applicationGuardBlockClipboardSharingType
-    applicationGuardBlockClipboardSharing *ApplicationGuardBlockClipboardSharingType
-    // Possible values for applicationGuardBlockFileTransfer
-    applicationGuardBlockFileTransfer *ApplicationGuardBlockFileTransferType
-    // Block enterprise sites to load non-enterprise content, such as third party plug-ins
-    applicationGuardBlockNonEnterpriseContent *bool
-    // Allows certain device level Root Certificates to be shared with the Microsoft Defender Application Guard container.
-    applicationGuardCertificateThumbprints []string
-    // Enable Windows Defender Application Guard
-    applicationGuardEnabled *bool
-    // Possible values for ApplicationGuardEnabledOptions
-    applicationGuardEnabledOptions *ApplicationGuardEnabledOptions
-    // Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
-    applicationGuardForceAuditing *bool
-    // Possible values of AppLocker Application Control Types
-    appLockerApplicationControl *AppLockerApplicationControlType
-    // Allows the admin to allow standard users to enable encrpytion during Azure AD Join.
-    bitLockerAllowStandardUserEncryption *bool
-    // Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
-    bitLockerDisableWarningForOtherDiskEncryption *bool
-    // Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
-    bitLockerEnableStorageCardEncryptionOnMobile *bool
-    // Allows the admin to require encryption to be turned on using BitLocker.
-    bitLockerEncryptDevice *bool
-    // BitLocker Fixed Drive Policy.
-    bitLockerFixedDrivePolicy BitLockerFixedDrivePolicyable
-    // BitLocker recovery password rotation type
-    bitLockerRecoveryPasswordRotation *BitLockerRecoveryPasswordRotationType
-    // BitLocker Removable Drive Policy.
-    bitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicyable
-    // BitLocker System Drive Policy.
-    bitLockerSystemDrivePolicy BitLockerSystemDrivePolicyable
-    // List of folder paths to be added to the list of protected folders
-    defenderAdditionalGuardedFolders []string
-    // Possible values of Defender PUA Protection
-    defenderAdobeReaderLaunchChildProcess *DefenderProtectionType
-    // Possible values of Defender PUA Protection
-    defenderAdvancedRansomewareProtectionType *DefenderProtectionType
-    // Allows or disallows Windows Defender Behavior Monitoring functionality.
-    defenderAllowBehaviorMonitoring *bool
-    // To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
-    defenderAllowCloudProtection *bool
-    // Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
-    defenderAllowEndUserAccess *bool
-    // Allows or disallows Windows Defender Intrusion Prevention functionality.
-    defenderAllowIntrusionPreventionSystem *bool
-    // Allows or disallows Windows Defender On Access Protection functionality.
-    defenderAllowOnAccessProtection *bool
-    // Allows or disallows Windows Defender Realtime Monitoring functionality.
-    defenderAllowRealTimeMonitoring *bool
-    // Allows or disallows scanning of archives.
-    defenderAllowScanArchiveFiles *bool
-    // Allows or disallows Windows Defender IOAVP Protection functionality.
-    defenderAllowScanDownloads *bool
-    // Allows or disallows a scanning of network files.
-    defenderAllowScanNetworkFiles *bool
-    // Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
-    defenderAllowScanRemovableDrivesDuringFullScan *bool
-    // Allows or disallows Windows Defender Script Scanning functionality.
-    defenderAllowScanScriptsLoadedInInternetExplorer *bool
-    // List of exe files and folders to be excluded from attack surface reduction rules
-    defenderAttackSurfaceReductionExcludedPaths []string
-    // Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
-    defenderBlockEndUserAccess *bool
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderBlockPersistenceThroughWmiType *DefenderAttackSurfaceType
-    // This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
-    defenderCheckForSignaturesBeforeRunningScan *bool
-    // Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
-    defenderCloudBlockLevel *DefenderCloudBlockLevelType
-    // Added in Windows 10, version 1709. This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe. Value type is integer, range is 0 - 50. This feature depends on three other MAPS settings the must all be enabled- 'Configure the 'Block at First Sight' feature; 'Join Microsoft MAPS'; 'Send file samples when further analysis is required'. Valid values 0 to 50
-    defenderCloudExtendedTimeoutInSeconds *int32
-    // Time period (in days) that quarantine items will be stored on the system. Valid values 0 to 90
-    defenderDaysBeforeDeletingQuarantinedMalware *int32
-    // Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.
-    defenderDetectedMalwareActions DefenderDetectedMalwareActionsable
-    // Allows or disallows Windows Defender Behavior Monitoring functionality.
-    defenderDisableBehaviorMonitoring *bool
-    // This policy setting allows you to configure catch-up scans for scheduled full scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
-    defenderDisableCatchupFullScan *bool
-    // This policy setting allows you to configure catch-up scans for scheduled quick scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
-    defenderDisableCatchupQuickScan *bool
-    // To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
-    defenderDisableCloudProtection *bool
-    // Allows or disallows Windows Defender Intrusion Prevention functionality.
-    defenderDisableIntrusionPreventionSystem *bool
-    // Allows or disallows Windows Defender On Access Protection functionality.
-    defenderDisableOnAccessProtection *bool
-    // Allows or disallows Windows Defender Realtime Monitoring functionality.
-    defenderDisableRealTimeMonitoring *bool
-    // Allows or disallows scanning of archives.
-    defenderDisableScanArchiveFiles *bool
-    // Allows or disallows Windows Defender IOAVP Protection functionality.
-    defenderDisableScanDownloads *bool
-    // Allows or disallows a scanning of network files.
-    defenderDisableScanNetworkFiles *bool
-    // Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
-    defenderDisableScanRemovableDrivesDuringFullScan *bool
-    // Allows or disallows Windows Defender Script Scanning functionality.
-    defenderDisableScanScriptsLoadedInInternetExplorer *bool
-    // Possible values of Defender PUA Protection
-    defenderEmailContentExecution *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderEmailContentExecutionType *DefenderAttackSurfaceType
-    // This policy setting allows you to enable or disable low CPU priority for scheduled scans.
-    defenderEnableLowCpuPriority *bool
-    // Allows or disallows scanning of email.
-    defenderEnableScanIncomingMail *bool
-    // Allows or disallows a full scan of mapped network drives.
-    defenderEnableScanMappedNetworkDrivesDuringFullScan *bool
-    // Xml content containing information regarding exploit protection details.
-    defenderExploitProtectionXml []byte
-    // Name of the file from which DefenderExploitProtectionXml was obtained.
-    defenderExploitProtectionXmlFileName *string
-    // File extensions to exclude from scans and real time protection.
-    defenderFileExtensionsToExclude []string
-    // Files and folder to exclude from scans and real time protection.
-    defenderFilesAndFoldersToExclude []string
-    // List of paths to exe that are allowed to access protected folders
-    defenderGuardedFoldersAllowedAppPaths []string
-    // Possible values of Folder Protection
-    defenderGuardMyFoldersType *FolderProtectionType
-    // Possible values of Defender PUA Protection
-    defenderNetworkProtectionType *DefenderProtectionType
-    // Possible values of Defender PUA Protection
-    defenderOfficeAppsExecutableContentCreationOrLaunch *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderOfficeAppsExecutableContentCreationOrLaunchType *DefenderAttackSurfaceType
-    // Possible values of Defender PUA Protection
-    defenderOfficeAppsLaunchChildProcess *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderOfficeAppsLaunchChildProcessType *DefenderAttackSurfaceType
-    // Possible values of Defender PUA Protection
-    defenderOfficeAppsOtherProcessInjection *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderOfficeAppsOtherProcessInjectionType *DefenderAttackSurfaceType
-    // Possible values of Defender PUA Protection
-    defenderOfficeCommunicationAppsLaunchChildProcess *DefenderProtectionType
-    // Possible values of Defender PUA Protection
-    defenderOfficeMacroCodeAllowWin32Imports *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderOfficeMacroCodeAllowWin32ImportsType *DefenderAttackSurfaceType
-    // Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
-    defenderPotentiallyUnwantedAppAction *DefenderProtectionType
-    // Possible values of Defender PUA Protection
-    defenderPreventCredentialStealingType *DefenderProtectionType
-    // Possible values of Defender PUA Protection
-    defenderProcessCreation *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderProcessCreationType *DefenderAttackSurfaceType
-    // Processes to exclude from scans and real time protection.
-    defenderProcessesToExclude []string
-    // Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
-    defenderScanDirection *DefenderRealtimeScanDirection
-    // Represents the average CPU load factor for the Windows Defender scan (in percent). The default value is 50. Valid values 0 to 100
-    defenderScanMaxCpuPercentage *int32
-    // Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
-    defenderScanType *DefenderScanType
-    // Selects the time of day that the Windows Defender quick scan should run. For example, a value of 0=12:00AM, a value of 60=1:00AM, a value of 120=2:00, and so on, up to a value of 1380=11:00PM. The default value is 120
-    defenderScheduledQuickScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
-    defenderScheduledScanDay *WeeklySchedule
-    // Selects the time of day that the Windows Defender scan should run.
-    defenderScheduledScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Possible values of Defender PUA Protection
-    defenderScriptDownloadedPayloadExecution *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderScriptDownloadedPayloadExecutionType *DefenderAttackSurfaceType
-    // Possible values of Defender PUA Protection
-    defenderScriptObfuscatedMacroCode *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderScriptObfuscatedMacroCodeType *DefenderAttackSurfaceType
-    // Indicates whether or not to block user from overriding Exploit Protection settings.
-    defenderSecurityCenterBlockExploitProtectionOverride *bool
-    // Used to disable the display of the account protection area.
-    defenderSecurityCenterDisableAccountUI *bool
-    // Used to disable the display of the app and browser protection area.
-    defenderSecurityCenterDisableAppBrowserUI *bool
-    // Used to disable the display of the Clear TPM button.
-    defenderSecurityCenterDisableClearTpmUI *bool
-    // Used to disable the display of the family options area.
-    defenderSecurityCenterDisableFamilyUI *bool
-    // Used to disable the display of the hardware protection area.
-    defenderSecurityCenterDisableHardwareUI *bool
-    // Used to disable the display of the device performance and health area.
-    defenderSecurityCenterDisableHealthUI *bool
-    // Used to disable the display of the firewall and network protection area.
-    defenderSecurityCenterDisableNetworkUI *bool
-    // Used to disable the display of the notification area control. The user needs to either sign out and sign in or reboot the computer for this setting to take effect.
-    defenderSecurityCenterDisableNotificationAreaUI *bool
-    // Used to disable the display of the ransomware protection area.
-    defenderSecurityCenterDisableRansomwareUI *bool
-    // Used to disable the display of the secure boot area under Device security.
-    defenderSecurityCenterDisableSecureBootUI *bool
-    // Used to disable the display of the security process troubleshooting under Device security.
-    defenderSecurityCenterDisableTroubleshootingUI *bool
-    // Used to disable the display of the virus and threat protection area.
-    defenderSecurityCenterDisableVirusUI *bool
-    // Used to disable the display of update TPM Firmware when a vulnerable firmware is detected.
-    defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI *bool
-    // The email address that is displayed to users.
-    defenderSecurityCenterHelpEmail *string
-    // The phone number or Skype ID that is displayed to users.
-    defenderSecurityCenterHelpPhone *string
-    // The help portal URL this is displayed to users.
-    defenderSecurityCenterHelpURL *string
-    // Possible values for defenderSecurityCenterITContactDisplay
-    defenderSecurityCenterITContactDisplay *DefenderSecurityCenterITContactDisplayType
-    // Possible values for defenderSecurityCenterNotificationsFromApp
-    defenderSecurityCenterNotificationsFromApp *DefenderSecurityCenterNotificationsFromAppType
-    // The company name that is displayed to the users.
-    defenderSecurityCenterOrganizationDisplayName *string
-    // Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24
-    defenderSignatureUpdateIntervalInHours *int32
-    // Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-    defenderSubmitSamplesConsentType *DefenderSubmitSamplesConsentType
-    // Possible values of Defender PUA Protection
-    defenderUntrustedExecutable *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderUntrustedExecutableType *DefenderAttackSurfaceType
-    // Possible values of Defender PUA Protection
-    defenderUntrustedUSBProcess *DefenderProtectionType
-    // Possible values of Defender Attack Surface Reduction Rules
-    defenderUntrustedUSBProcessType *DefenderAttackSurfaceType
-    // This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
-    deviceGuardEnableSecureBootWithDMA *bool
-    // Turns On Virtualization Based Security(VBS).
-    deviceGuardEnableVirtualizationBasedSecurity *bool
-    // Possible values of a property
-    deviceGuardLaunchSystemGuard *Enablement
-    // Possible values of Credential Guard settings.
-    deviceGuardLocalSystemAuthorityCredentialGuardSettings *DeviceGuardLocalSystemAuthorityCredentialGuardType
-    // Possible values of Secure Boot with DMA
-    deviceGuardSecureBootWithDMA *SecureBootWithDMAType
-    // Possible values of the DmaGuardDeviceEnumerationPolicy.
-    dmaGuardDeviceEnumerationPolicy *DmaGuardDeviceEnumerationPolicyType
-    // Blocks stateful FTP connections to the device
-    firewallBlockStatefulFTP *bool
-    // Possible values for firewallCertificateRevocationListCheckMethod
-    firewallCertificateRevocationListCheckMethod *FirewallCertificateRevocationListCheckMethodType
-    // Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
-    firewallIdleTimeoutForSecurityAssociationInSeconds *int32
-    // Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
-    firewallIPSecExemptionsAllowDHCP *bool
-    // Configures IPSec exemptions to allow ICMP
-    firewallIPSecExemptionsAllowICMP *bool
-    // Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
-    firewallIPSecExemptionsAllowNeighborDiscovery *bool
-    // Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
-    firewallIPSecExemptionsAllowRouterDiscovery *bool
-    // Configures IPSec exemptions to no exemptions
-    firewallIPSecExemptionsNone *bool
-    // If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
-    firewallMergeKeyingModuleSettings *bool
-    // Possible values for firewallPacketQueueingMethod
-    firewallPacketQueueingMethod *FirewallPacketQueueingMethodType
-    // Possible values for firewallPreSharedKeyEncodingMethod
-    firewallPreSharedKeyEncodingMethod *FirewallPreSharedKeyEncodingMethodType
-    // Configures the firewall profile settings for domain networks
-    firewallProfileDomain WindowsFirewallNetworkProfileable
-    // Configures the firewall profile settings for private networks
-    firewallProfilePrivate WindowsFirewallNetworkProfileable
-    // Configures the firewall profile settings for public networks
-    firewallProfilePublic WindowsFirewallNetworkProfileable
-    // Configures the firewall rule settings. This collection can contain a maximum of 150 elements.
-    firewallRules []WindowsFirewallRuleable
-    // Possible values for LanManagerAuthenticationLevel
-    lanManagerAuthenticationLevel *LanManagerAuthenticationLevel
-    // If enabled,the SMB client will allow insecure guest logons. If not configured, the SMB client will reject insecure guest logons.
-    lanManagerWorkstationDisableInsecureGuestLogons *bool
-    // Define a different account name to be associated with the security identifier (SID) for the account 'Administrator'.
-    localSecurityOptionsAdministratorAccountName *string
-    // Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
-    localSecurityOptionsAdministratorElevationPromptBehavior *LocalSecurityOptionsAdministratorElevationPromptBehaviorType
-    // This security setting determines whether to allows anonymous users to perform certain activities, such as enumerating the names of domain accounts and network shares.
-    localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares *bool
-    // Block PKU2U authentication requests to this device to use online identities.
-    localSecurityOptionsAllowPKU2UAuthenticationRequests *bool
-    // Edit the default Security Descriptor Definition Language string to allow or deny users and groups to make remote calls to the SAM.
-    localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager *string
-    // UI helper boolean for LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager entity
-    localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool *bool
-    // This security setting determines whether a computer can be shut down without having to log on to Windows.
-    localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn *bool
-    // Allow UIAccess apps to prompt for elevation without using the secure desktop.
-    localSecurityOptionsAllowUIAccessApplicationElevation *bool
-    // Allow UIAccess apps to prompt for elevation without using the secure desktop.Default is enabled
-    localSecurityOptionsAllowUIAccessApplicationsForSecureLocations *bool
-    // Prevent a portable computer from being undocked without having to log in.
-    localSecurityOptionsAllowUndockWithoutHavingToLogon *bool
-    // Prevent users from adding new Microsoft accounts to this computer.
-    localSecurityOptionsBlockMicrosoftAccounts *bool
-    // Enable Local accounts that are not password protected to log on from locations other than the physical device.Default is enabled
-    localSecurityOptionsBlockRemoteLogonWithBlankPassword *bool
-    // Enabling this settings allows only interactively logged on user to access CD-ROM media.
-    localSecurityOptionsBlockRemoteOpticalDriveAccess *bool
-    // Restrict installing printer drivers as part of connecting to a shared printer to admins only.
-    localSecurityOptionsBlockUsersInstallingPrinterDrivers *bool
-    // This security setting determines whether the virtual memory pagefile is cleared when the system is shut down.
-    localSecurityOptionsClearVirtualMemoryPageFile *bool
-    // This security setting determines whether packet signing is required by the SMB client component.
-    localSecurityOptionsClientDigitallySignCommunicationsAlways *bool
-    // If this security setting is enabled, the Server Message Block (SMB) redirector is allowed to send plaintext passwords to non-Microsoft SMB servers that do not support password encryption during authentication.
-    localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers *bool
-    // App installations requiring elevated privileges will prompt for admin credentials.Default is enabled
-    localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation *bool
-    // Determines whether the Local Administrator account is enabled or disabled.
-    localSecurityOptionsDisableAdministratorAccount *bool
-    // This security setting determines whether the SMB client attempts to negotiate SMB packet signing.
-    localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees *bool
-    // Determines if the Guest account is enabled or disabled.
-    localSecurityOptionsDisableGuestAccount *bool
-    // This security setting determines whether packet signing is required by the SMB server component.
-    localSecurityOptionsDisableServerDigitallySignCommunicationsAlways *bool
-    // This security setting determines whether the SMB server will negotiate SMB packet signing with clients that request it.
-    localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees *bool
-    // This security setting determines what additional permissions will be granted for anonymous connections to the computer.
-    localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts *bool
-    // Require CTRL+ALT+DEL to be pressed before a user can log on.
-    localSecurityOptionsDoNotRequireCtrlAltDel *bool
-    // This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It’s not stored by default.
-    localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange *bool
-    // Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
-    localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser *LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType
-    // Define a different account name to be associated with the security identifier (SID) for the account 'Guest'.
-    localSecurityOptionsGuestAccountName *string
-    // Do not display the username of the last person who signed in on this device.
-    localSecurityOptionsHideLastSignedInUser *bool
-    // Do not display the username of the person signing in to this device after credentials are entered and before the device’s desktop is shown.
-    localSecurityOptionsHideUsernameAtSignIn *bool
-    // Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
-    localSecurityOptionsInformationDisplayedOnLockScreen *LocalSecurityOptionsInformationDisplayedOnLockScreenType
-    // Possible values for LocalSecurityOptionsInformationShownOnLockScreenType
-    localSecurityOptionsInformationShownOnLockScreen *LocalSecurityOptionsInformationShownOnLockScreenType
-    // Set message text for users attempting to log in.
-    localSecurityOptionsLogOnMessageText *string
-    // Set message title for users attempting to log in.
-    localSecurityOptionsLogOnMessageTitle *string
-    // Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
-    localSecurityOptionsMachineInactivityLimit *int32
-    // Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
-    localSecurityOptionsMachineInactivityLimitInMinutes *int32
-    // Possible values for LocalSecurityOptionsMinimumSessionSecurity
-    localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients *LocalSecurityOptionsMinimumSessionSecurity
-    // Possible values for LocalSecurityOptionsMinimumSessionSecurity
-    localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers *LocalSecurityOptionsMinimumSessionSecurity
-    // Enforce PKI certification path validation for a given executable file before it is permitted to run.
-    localSecurityOptionsOnlyElevateSignedExecutables *bool
-    // By default, this security setting restricts anonymous access to shares and pipes to the settings for named pipes that can be accessed anonymously and Shares that can be accessed anonymously
-    localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares *bool
-    // Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
-    localSecurityOptionsSmartCardRemovalBehavior *LocalSecurityOptionsSmartCardRemovalBehaviorType
-    // Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
-    localSecurityOptionsStandardUserElevationPromptBehavior *LocalSecurityOptionsStandardUserElevationPromptBehaviorType
-    // Enable all elevation requests to go to the interactive user's desktop rather than the secure desktop. Prompt behavior policy settings for admins and standard users are used.
-    localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation *bool
-    // Defines whether the built-in admin account uses Admin Approval Mode or runs all apps with full admin privileges.Default is enabled
-    localSecurityOptionsUseAdminApprovalMode *bool
-    // Define whether Admin Approval Mode and all UAC policy settings are enabled, default is enabled
-    localSecurityOptionsUseAdminApprovalModeForAdministrators *bool
-    // Virtualize file and registry write failures to per user locations
-    localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations *bool
-    // Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
-    smartScreenBlockOverrideForFiles *bool
-    // Allows IT Admins to configure SmartScreen for Windows.
-    smartScreenEnableInShell *bool
-    // This user right is used by Credential Manager during Backup/Restore. Users' saved credentials might be compromised if this privilege is given to other entities. Only states NotConfigured and Allowed are supported
-    userRightsAccessCredentialManagerAsTrustedCaller DeviceManagementUserRightsSettingable
-    // This user right allows a process to impersonate any user without authentication. The process can therefore gain access to the same local resources as that user. Only states NotConfigured and Allowed are supported
-    userRightsActAsPartOfTheOperatingSystem DeviceManagementUserRightsSettingable
-    // This user right determines which users and groups are allowed to connect to the computer over the network. State Allowed is supported.
-    userRightsAllowAccessFromNetwork DeviceManagementUserRightsSettingable
-    // This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when backing up files and directories. Only states NotConfigured and Allowed are supported
-    userRightsBackupData DeviceManagementUserRightsSettingable
-    // This user right determines which users and groups are block from connecting to the computer over the network. State Block is supported.
-    userRightsBlockAccessFromNetwork DeviceManagementUserRightsSettingable
-    // This user right determines which users and groups can change the time and date on the internal clock of the computer. Only states NotConfigured and Allowed are supported
-    userRightsChangeSystemTime DeviceManagementUserRightsSettingable
-    // This security setting determines whether users can create global objects that are available to all sessions. Users who can create global objects could affect processes that run under other users' sessions, which could lead to application failure or data corruption. Only states NotConfigured and Allowed are supported
-    userRightsCreateGlobalObjects DeviceManagementUserRightsSettingable
-    // This user right determines which users and groups can call an internal API to create and change the size of a page file. Only states NotConfigured and Allowed are supported
-    userRightsCreatePageFile DeviceManagementUserRightsSettingable
-    // This user right determines which accounts can be used by processes to create a directory object using the object manager. Only states NotConfigured and Allowed are supported
-    userRightsCreatePermanentSharedObjects DeviceManagementUserRightsSettingable
-    // This user right determines if the user can create a symbolic link from the computer to which they are logged on. Only states NotConfigured and Allowed are supported
-    userRightsCreateSymbolicLinks DeviceManagementUserRightsSettingable
-    // This user right determines which users/groups can be used by processes to create a token that can then be used to get access to any local resources when the process uses an internal API to create an access token. Only states NotConfigured and Allowed are supported
-    userRightsCreateToken DeviceManagementUserRightsSettingable
-    // This user right determines which users can attach a debugger to any process or to the kernel. Only states NotConfigured and Allowed are supported
-    userRightsDebugPrograms DeviceManagementUserRightsSettingable
-    // This user right determines which users can set the Trusted for Delegation setting on a user or computer object. Only states NotConfigured and Allowed are supported.
-    userRightsDelegation DeviceManagementUserRightsSettingable
-    // This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported
-    userRightsDenyLocalLogOn DeviceManagementUserRightsSettingable
-    // This user right determines which accounts can be used by a process to add entries to the security log. The security log is used to trace unauthorized system access.  Only states NotConfigured and Allowed are supported.
-    userRightsGenerateSecurityAudits DeviceManagementUserRightsSettingable
-    // Assigning this user right to a user allows programs running on behalf of that user to impersonate a client. Requiring this user right for this kind of impersonation prevents an unauthorized user from convincing a client to connect to a service that they have created and then impersonating that client, which can elevate the unauthorized user's permissions to administrative or system levels. Only states NotConfigured and Allowed are supported.
-    userRightsImpersonateClient DeviceManagementUserRightsSettingable
-    // This user right determines which accounts can use a process with Write Property access to another process to increase the execution priority assigned to the other process. Only states NotConfigured and Allowed are supported.
-    userRightsIncreaseSchedulingPriority DeviceManagementUserRightsSettingable
-    // This user right determines which users can dynamically load and unload device drivers or other code in to kernel mode. Only states NotConfigured and Allowed are supported.
-    userRightsLoadUnloadDrivers DeviceManagementUserRightsSettingable
-    // This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported
-    userRightsLocalLogOn DeviceManagementUserRightsSettingable
-    // This user right determines which accounts can use a process to keep data in physical memory, which prevents the system from paging the data to virtual memory on disk. Only states NotConfigured and Allowed are supported.
-    userRightsLockMemory DeviceManagementUserRightsSettingable
-    // This user right determines which users can specify object access auditing options for individual resources, such as files, Active Directory objects, and registry keys. Only states NotConfigured and Allowed are supported.
-    userRightsManageAuditingAndSecurityLogs DeviceManagementUserRightsSettingable
-    // This user right determines which users and groups can run maintenance tasks on a volume, such as remote defragmentation. Only states NotConfigured and Allowed are supported.
-    userRightsManageVolumes DeviceManagementUserRightsSettingable
-    // This user right determines who can modify firmware environment values. Only states NotConfigured and Allowed are supported.
-    userRightsModifyFirmwareEnvironment DeviceManagementUserRightsSettingable
-    // This user right determines which user accounts can modify the integrity label of objects, such as files, registry keys, or processes owned by other users. Only states NotConfigured and Allowed are supported.
-    userRightsModifyObjectLabels DeviceManagementUserRightsSettingable
-    // This user right determines which users can use performance monitoring tools to monitor the performance of system processes. Only states NotConfigured and Allowed are supported.
-    userRightsProfileSingleProcess DeviceManagementUserRightsSettingable
-    // This user right determines which users and groups are prohibited from logging on as a Remote Desktop Services client. Only states NotConfigured and Blocked are supported
-    userRightsRemoteDesktopServicesLogOn DeviceManagementUserRightsSettingable
-    // This user right determines which users are allowed to shut down a computer from a remote location on the network. Misuse of this user right can result in a denial of service. Only states NotConfigured and Allowed are supported.
-    userRightsRemoteShutdown DeviceManagementUserRightsSettingable
-    // This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when restoring backed up files and directories, and determines which users can set any valid security principal as the owner of an object. Only states NotConfigured and Allowed are supported.
-    userRightsRestoreData DeviceManagementUserRightsSettingable
-    // This user right determines which users can take ownership of any securable object in the system, including Active Directory objects, files and folders, printers, registry keys, processes, and threads. Only states NotConfigured and Allowed are supported.
-    userRightsTakeOwnership DeviceManagementUserRightsSettingable
-    // Defender TamperProtection setting options
-    windowsDefenderTamperProtection *WindowsDefenderTamperProtectionOptions
-    // Possible values of xbox service start type
-    xboxServicesAccessoryManagementServiceStartupMode *ServiceStartType
-    // This setting determines whether xbox game save is enabled (1) or disabled (0).
-    xboxServicesEnableXboxGameSaveTask *bool
-    // Possible values of xbox service start type
-    xboxServicesLiveAuthManagerServiceStartupMode *ServiceStartType
-    // Possible values of xbox service start type
-    xboxServicesLiveGameSaveServiceStartupMode *ServiceStartType
-    // Possible values of xbox service start type
-    xboxServicesLiveNetworkingServiceStartupMode *ServiceStartType
 }
 // NewWindows10EndpointProtectionConfiguration instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
 func NewWindows10EndpointProtectionConfiguration()(*Windows10EndpointProtectionConfiguration) {
     m := &Windows10EndpointProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10EndpointProtectionConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10EndpointProtectionConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10EndpointProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -475,507 +23,1389 @@ func CreateWindows10EndpointProtectionConfigurationFromDiscriminatorValue(parseN
 }
 // GetApplicationGuardAllowCameraMicrophoneRedirection gets the applicationGuardAllowCameraMicrophoneRedirection property value. Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowCameraMicrophoneRedirection()(*bool) {
-    return m.applicationGuardAllowCameraMicrophoneRedirection
+    val, err := m.GetBackingStore().Get("applicationGuardAllowCameraMicrophoneRedirection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowFileSaveOnHost gets the applicationGuardAllowFileSaveOnHost property value. Allow users to download files from Edge in the application guard container and save them on the host file system
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowFileSaveOnHost()(*bool) {
-    return m.applicationGuardAllowFileSaveOnHost
+    val, err := m.GetBackingStore().Get("applicationGuardAllowFileSaveOnHost")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowPersistence gets the applicationGuardAllowPersistence property value. Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPersistence()(*bool) {
-    return m.applicationGuardAllowPersistence
+    val, err := m.GetBackingStore().Get("applicationGuardAllowPersistence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowPrintToLocalPrinters gets the applicationGuardAllowPrintToLocalPrinters property value. Allow printing to Local Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToLocalPrinters()(*bool) {
-    return m.applicationGuardAllowPrintToLocalPrinters
+    val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToLocalPrinters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowPrintToNetworkPrinters gets the applicationGuardAllowPrintToNetworkPrinters property value. Allow printing to Network Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToNetworkPrinters()(*bool) {
-    return m.applicationGuardAllowPrintToNetworkPrinters
+    val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToNetworkPrinters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowPrintToPDF gets the applicationGuardAllowPrintToPDF property value. Allow printing to PDF from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToPDF()(*bool) {
-    return m.applicationGuardAllowPrintToPDF
+    val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToPDF")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowPrintToXPS gets the applicationGuardAllowPrintToXPS property value. Allow printing to XPS from Container
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToXPS()(*bool) {
-    return m.applicationGuardAllowPrintToXPS
+    val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToXPS")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardAllowVirtualGPU gets the applicationGuardAllowVirtualGPU property value. Allow application guard to use virtual GPU
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowVirtualGPU()(*bool) {
-    return m.applicationGuardAllowVirtualGPU
+    val, err := m.GetBackingStore().Get("applicationGuardAllowVirtualGPU")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipboardSharing()(*ApplicationGuardBlockClipboardSharingType) {
-    return m.applicationGuardBlockClipboardSharing
+    val, err := m.GetBackingStore().Get("applicationGuardBlockClipboardSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationGuardBlockClipboardSharingType)
+    }
+    return nil
 }
 // GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockFileTransfer()(*ApplicationGuardBlockFileTransferType) {
-    return m.applicationGuardBlockFileTransfer
+    val, err := m.GetBackingStore().Get("applicationGuardBlockFileTransfer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationGuardBlockFileTransferType)
+    }
+    return nil
 }
 // GetApplicationGuardBlockNonEnterpriseContent gets the applicationGuardBlockNonEnterpriseContent property value. Block enterprise sites to load non-enterprise content, such as third party plug-ins
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockNonEnterpriseContent()(*bool) {
-    return m.applicationGuardBlockNonEnterpriseContent
+    val, err := m.GetBackingStore().Get("applicationGuardBlockNonEnterpriseContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardCertificateThumbprints gets the applicationGuardCertificateThumbprints property value. Allows certain device level Root Certificates to be shared with the Microsoft Defender Application Guard container.
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardCertificateThumbprints()([]string) {
-    return m.applicationGuardCertificateThumbprints
+    val, err := m.GetBackingStore().Get("applicationGuardCertificateThumbprints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetApplicationGuardEnabled gets the applicationGuardEnabled property value. Enable Windows Defender Application Guard
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabled()(*bool) {
-    return m.applicationGuardEnabled
+    val, err := m.GetBackingStore().Get("applicationGuardEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplicationGuardEnabledOptions gets the applicationGuardEnabledOptions property value. Possible values for ApplicationGuardEnabledOptions
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabledOptions()(*ApplicationGuardEnabledOptions) {
-    return m.applicationGuardEnabledOptions
+    val, err := m.GetBackingStore().Get("applicationGuardEnabledOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationGuardEnabledOptions)
+    }
+    return nil
 }
 // GetApplicationGuardForceAuditing gets the applicationGuardForceAuditing property value. Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardForceAuditing()(*bool) {
-    return m.applicationGuardForceAuditing
+    val, err := m.GetBackingStore().Get("applicationGuardForceAuditing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) GetAppLockerApplicationControl()(*AppLockerApplicationControlType) {
-    return m.appLockerApplicationControl
+    val, err := m.GetBackingStore().Get("appLockerApplicationControl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppLockerApplicationControlType)
+    }
+    return nil
 }
 // GetBitLockerAllowStandardUserEncryption gets the bitLockerAllowStandardUserEncryption property value. Allows the admin to allow standard users to enable encrpytion during Azure AD Join.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerAllowStandardUserEncryption()(*bool) {
-    return m.bitLockerAllowStandardUserEncryption
+    val, err := m.GetBackingStore().Get("bitLockerAllowStandardUserEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBitLockerDisableWarningForOtherDiskEncryption gets the bitLockerDisableWarningForOtherDiskEncryption property value. Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerDisableWarningForOtherDiskEncryption()(*bool) {
-    return m.bitLockerDisableWarningForOtherDiskEncryption
+    val, err := m.GetBackingStore().Get("bitLockerDisableWarningForOtherDiskEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBitLockerEnableStorageCardEncryptionOnMobile gets the bitLockerEnableStorageCardEncryptionOnMobile property value. Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEnableStorageCardEncryptionOnMobile()(*bool) {
-    return m.bitLockerEnableStorageCardEncryptionOnMobile
+    val, err := m.GetBackingStore().Get("bitLockerEnableStorageCardEncryptionOnMobile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBitLockerEncryptDevice gets the bitLockerEncryptDevice property value. Allows the admin to require encryption to be turned on using BitLocker.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEncryptDevice()(*bool) {
-    return m.bitLockerEncryptDevice
+    val, err := m.GetBackingStore().Get("bitLockerEncryptDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBitLockerFixedDrivePolicy gets the bitLockerFixedDrivePolicy property value. BitLocker Fixed Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerFixedDrivePolicy()(BitLockerFixedDrivePolicyable) {
-    return m.bitLockerFixedDrivePolicy
+    val, err := m.GetBackingStore().Get("bitLockerFixedDrivePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BitLockerFixedDrivePolicyable)
+    }
+    return nil
 }
 // GetBitLockerRecoveryPasswordRotation gets the bitLockerRecoveryPasswordRotation property value. BitLocker recovery password rotation type
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerRecoveryPasswordRotation()(*BitLockerRecoveryPasswordRotationType) {
-    return m.bitLockerRecoveryPasswordRotation
+    val, err := m.GetBackingStore().Get("bitLockerRecoveryPasswordRotation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BitLockerRecoveryPasswordRotationType)
+    }
+    return nil
 }
 // GetBitLockerRemovableDrivePolicy gets the bitLockerRemovableDrivePolicy property value. BitLocker Removable Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerRemovableDrivePolicy()(BitLockerRemovableDrivePolicyable) {
-    return m.bitLockerRemovableDrivePolicy
+    val, err := m.GetBackingStore().Get("bitLockerRemovableDrivePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BitLockerRemovableDrivePolicyable)
+    }
+    return nil
 }
 // GetBitLockerSystemDrivePolicy gets the bitLockerSystemDrivePolicy property value. BitLocker System Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerSystemDrivePolicy()(BitLockerSystemDrivePolicyable) {
-    return m.bitLockerSystemDrivePolicy
+    val, err := m.GetBackingStore().Get("bitLockerSystemDrivePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BitLockerSystemDrivePolicyable)
+    }
+    return nil
 }
 // GetDefenderAdditionalGuardedFolders gets the defenderAdditionalGuardedFolders property value. List of folder paths to be added to the list of protected folders
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdditionalGuardedFolders()([]string) {
-    return m.defenderAdditionalGuardedFolders
+    val, err := m.GetBackingStore().Get("defenderAdditionalGuardedFolders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderAdobeReaderLaunchChildProcess gets the defenderAdobeReaderLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdobeReaderLaunchChildProcess()(*DefenderProtectionType) {
-    return m.defenderAdobeReaderLaunchChildProcess
+    val, err := m.GetBackingStore().Get("defenderAdobeReaderLaunchChildProcess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderAdvancedRansomewareProtectionType gets the defenderAdvancedRansomewareProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdvancedRansomewareProtectionType()(*DefenderProtectionType) {
-    return m.defenderAdvancedRansomewareProtectionType
+    val, err := m.GetBackingStore().Get("defenderAdvancedRansomewareProtectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderAllowBehaviorMonitoring gets the defenderAllowBehaviorMonitoring property value. Allows or disallows Windows Defender Behavior Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowBehaviorMonitoring()(*bool) {
-    return m.defenderAllowBehaviorMonitoring
+    val, err := m.GetBackingStore().Get("defenderAllowBehaviorMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowCloudProtection gets the defenderAllowCloudProtection property value. To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowCloudProtection()(*bool) {
-    return m.defenderAllowCloudProtection
+    val, err := m.GetBackingStore().Get("defenderAllowCloudProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowEndUserAccess gets the defenderAllowEndUserAccess property value. Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowEndUserAccess()(*bool) {
-    return m.defenderAllowEndUserAccess
+    val, err := m.GetBackingStore().Get("defenderAllowEndUserAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowIntrusionPreventionSystem gets the defenderAllowIntrusionPreventionSystem property value. Allows or disallows Windows Defender Intrusion Prevention functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowIntrusionPreventionSystem()(*bool) {
-    return m.defenderAllowIntrusionPreventionSystem
+    val, err := m.GetBackingStore().Get("defenderAllowIntrusionPreventionSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowOnAccessProtection gets the defenderAllowOnAccessProtection property value. Allows or disallows Windows Defender On Access Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowOnAccessProtection()(*bool) {
-    return m.defenderAllowOnAccessProtection
+    val, err := m.GetBackingStore().Get("defenderAllowOnAccessProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowRealTimeMonitoring gets the defenderAllowRealTimeMonitoring property value. Allows or disallows Windows Defender Realtime Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowRealTimeMonitoring()(*bool) {
-    return m.defenderAllowRealTimeMonitoring
+    val, err := m.GetBackingStore().Get("defenderAllowRealTimeMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowScanArchiveFiles gets the defenderAllowScanArchiveFiles property value. Allows or disallows scanning of archives.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowScanArchiveFiles()(*bool) {
-    return m.defenderAllowScanArchiveFiles
+    val, err := m.GetBackingStore().Get("defenderAllowScanArchiveFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowScanDownloads gets the defenderAllowScanDownloads property value. Allows or disallows Windows Defender IOAVP Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowScanDownloads()(*bool) {
-    return m.defenderAllowScanDownloads
+    val, err := m.GetBackingStore().Get("defenderAllowScanDownloads")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowScanNetworkFiles gets the defenderAllowScanNetworkFiles property value. Allows or disallows a scanning of network files.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowScanNetworkFiles()(*bool) {
-    return m.defenderAllowScanNetworkFiles
+    val, err := m.GetBackingStore().Get("defenderAllowScanNetworkFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowScanRemovableDrivesDuringFullScan gets the defenderAllowScanRemovableDrivesDuringFullScan property value. Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowScanRemovableDrivesDuringFullScan()(*bool) {
-    return m.defenderAllowScanRemovableDrivesDuringFullScan
+    val, err := m.GetBackingStore().Get("defenderAllowScanRemovableDrivesDuringFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAllowScanScriptsLoadedInInternetExplorer gets the defenderAllowScanScriptsLoadedInInternetExplorer property value. Allows or disallows Windows Defender Script Scanning functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAllowScanScriptsLoadedInInternetExplorer()(*bool) {
-    return m.defenderAllowScanScriptsLoadedInInternetExplorer
+    val, err := m.GetBackingStore().Get("defenderAllowScanScriptsLoadedInInternetExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderAttackSurfaceReductionExcludedPaths gets the defenderAttackSurfaceReductionExcludedPaths property value. List of exe files and folders to be excluded from attack surface reduction rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAttackSurfaceReductionExcludedPaths()([]string) {
-    return m.defenderAttackSurfaceReductionExcludedPaths
+    val, err := m.GetBackingStore().Get("defenderAttackSurfaceReductionExcludedPaths")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderBlockEndUserAccess gets the defenderBlockEndUserAccess property value. Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderBlockEndUserAccess()(*bool) {
-    return m.defenderBlockEndUserAccess
+    val, err := m.GetBackingStore().Get("defenderBlockEndUserAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderBlockPersistenceThroughWmiType gets the defenderBlockPersistenceThroughWmiType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderBlockPersistenceThroughWmiType()(*DefenderAttackSurfaceType) {
-    return m.defenderBlockPersistenceThroughWmiType
+    val, err := m.GetBackingStore().Get("defenderBlockPersistenceThroughWmiType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderCheckForSignaturesBeforeRunningScan gets the defenderCheckForSignaturesBeforeRunningScan property value. This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderCheckForSignaturesBeforeRunningScan()(*bool) {
-    return m.defenderCheckForSignaturesBeforeRunningScan
+    val, err := m.GetBackingStore().Get("defenderCheckForSignaturesBeforeRunningScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType) {
-    return m.defenderCloudBlockLevel
+    val, err := m.GetBackingStore().Get("defenderCloudBlockLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderCloudBlockLevelType)
+    }
+    return nil
 }
 // GetDefenderCloudExtendedTimeoutInSeconds gets the defenderCloudExtendedTimeoutInSeconds property value. Added in Windows 10, version 1709. This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe. Value type is integer, range is 0 - 50. This feature depends on three other MAPS settings the must all be enabled- 'Configure the 'Block at First Sight' feature; 'Join Microsoft MAPS'; 'Send file samples when further analysis is required'. Valid values 0 to 50
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderCloudExtendedTimeoutInSeconds()(*int32) {
-    return m.defenderCloudExtendedTimeoutInSeconds
+    val, err := m.GetBackingStore().Get("defenderCloudExtendedTimeoutInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderDaysBeforeDeletingQuarantinedMalware gets the defenderDaysBeforeDeletingQuarantinedMalware property value. Time period (in days) that quarantine items will be stored on the system. Valid values 0 to 90
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDaysBeforeDeletingQuarantinedMalware()(*int32) {
-    return m.defenderDaysBeforeDeletingQuarantinedMalware
+    val, err := m.GetBackingStore().Get("defenderDaysBeforeDeletingQuarantinedMalware")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderDetectedMalwareActions gets the defenderDetectedMalwareActions property value. Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDetectedMalwareActions()(DefenderDetectedMalwareActionsable) {
-    return m.defenderDetectedMalwareActions
+    val, err := m.GetBackingStore().Get("defenderDetectedMalwareActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DefenderDetectedMalwareActionsable)
+    }
+    return nil
 }
 // GetDefenderDisableBehaviorMonitoring gets the defenderDisableBehaviorMonitoring property value. Allows or disallows Windows Defender Behavior Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableBehaviorMonitoring()(*bool) {
-    return m.defenderDisableBehaviorMonitoring
+    val, err := m.GetBackingStore().Get("defenderDisableBehaviorMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableCatchupFullScan gets the defenderDisableCatchupFullScan property value. This policy setting allows you to configure catch-up scans for scheduled full scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableCatchupFullScan()(*bool) {
-    return m.defenderDisableCatchupFullScan
+    val, err := m.GetBackingStore().Get("defenderDisableCatchupFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableCatchupQuickScan gets the defenderDisableCatchupQuickScan property value. This policy setting allows you to configure catch-up scans for scheduled quick scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableCatchupQuickScan()(*bool) {
-    return m.defenderDisableCatchupQuickScan
+    val, err := m.GetBackingStore().Get("defenderDisableCatchupQuickScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableCloudProtection gets the defenderDisableCloudProtection property value. To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableCloudProtection()(*bool) {
-    return m.defenderDisableCloudProtection
+    val, err := m.GetBackingStore().Get("defenderDisableCloudProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableIntrusionPreventionSystem gets the defenderDisableIntrusionPreventionSystem property value. Allows or disallows Windows Defender Intrusion Prevention functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableIntrusionPreventionSystem()(*bool) {
-    return m.defenderDisableIntrusionPreventionSystem
+    val, err := m.GetBackingStore().Get("defenderDisableIntrusionPreventionSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableOnAccessProtection gets the defenderDisableOnAccessProtection property value. Allows or disallows Windows Defender On Access Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableOnAccessProtection()(*bool) {
-    return m.defenderDisableOnAccessProtection
+    val, err := m.GetBackingStore().Get("defenderDisableOnAccessProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableRealTimeMonitoring gets the defenderDisableRealTimeMonitoring property value. Allows or disallows Windows Defender Realtime Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableRealTimeMonitoring()(*bool) {
-    return m.defenderDisableRealTimeMonitoring
+    val, err := m.GetBackingStore().Get("defenderDisableRealTimeMonitoring")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableScanArchiveFiles gets the defenderDisableScanArchiveFiles property value. Allows or disallows scanning of archives.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableScanArchiveFiles()(*bool) {
-    return m.defenderDisableScanArchiveFiles
+    val, err := m.GetBackingStore().Get("defenderDisableScanArchiveFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableScanDownloads gets the defenderDisableScanDownloads property value. Allows or disallows Windows Defender IOAVP Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableScanDownloads()(*bool) {
-    return m.defenderDisableScanDownloads
+    val, err := m.GetBackingStore().Get("defenderDisableScanDownloads")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableScanNetworkFiles gets the defenderDisableScanNetworkFiles property value. Allows or disallows a scanning of network files.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableScanNetworkFiles()(*bool) {
-    return m.defenderDisableScanNetworkFiles
+    val, err := m.GetBackingStore().Get("defenderDisableScanNetworkFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableScanRemovableDrivesDuringFullScan gets the defenderDisableScanRemovableDrivesDuringFullScan property value. Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableScanRemovableDrivesDuringFullScan()(*bool) {
-    return m.defenderDisableScanRemovableDrivesDuringFullScan
+    val, err := m.GetBackingStore().Get("defenderDisableScanRemovableDrivesDuringFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderDisableScanScriptsLoadedInInternetExplorer gets the defenderDisableScanScriptsLoadedInInternetExplorer property value. Allows or disallows Windows Defender Script Scanning functionality.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableScanScriptsLoadedInInternetExplorer()(*bool) {
-    return m.defenderDisableScanScriptsLoadedInInternetExplorer
+    val, err := m.GetBackingStore().Get("defenderDisableScanScriptsLoadedInInternetExplorer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderEmailContentExecution gets the defenderEmailContentExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEmailContentExecution()(*DefenderProtectionType) {
-    return m.defenderEmailContentExecution
+    val, err := m.GetBackingStore().Get("defenderEmailContentExecution")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderEmailContentExecutionType gets the defenderEmailContentExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEmailContentExecutionType()(*DefenderAttackSurfaceType) {
-    return m.defenderEmailContentExecutionType
+    val, err := m.GetBackingStore().Get("defenderEmailContentExecutionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderEnableLowCpuPriority gets the defenderEnableLowCpuPriority property value. This policy setting allows you to enable or disable low CPU priority for scheduled scans.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEnableLowCpuPriority()(*bool) {
-    return m.defenderEnableLowCpuPriority
+    val, err := m.GetBackingStore().Get("defenderEnableLowCpuPriority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderEnableScanIncomingMail gets the defenderEnableScanIncomingMail property value. Allows or disallows scanning of email.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEnableScanIncomingMail()(*bool) {
-    return m.defenderEnableScanIncomingMail
+    val, err := m.GetBackingStore().Get("defenderEnableScanIncomingMail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderEnableScanMappedNetworkDrivesDuringFullScan gets the defenderEnableScanMappedNetworkDrivesDuringFullScan property value. Allows or disallows a full scan of mapped network drives.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEnableScanMappedNetworkDrivesDuringFullScan()(*bool) {
-    return m.defenderEnableScanMappedNetworkDrivesDuringFullScan
+    val, err := m.GetBackingStore().Get("defenderEnableScanMappedNetworkDrivesDuringFullScan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderExploitProtectionXml gets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionXml()([]byte) {
-    return m.defenderExploitProtectionXml
+    val, err := m.GetBackingStore().Get("defenderExploitProtectionXml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetDefenderExploitProtectionXmlFileName gets the defenderExploitProtectionXmlFileName property value. Name of the file from which DefenderExploitProtectionXml was obtained.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionXmlFileName()(*string) {
-    return m.defenderExploitProtectionXmlFileName
+    val, err := m.GetBackingStore().Get("defenderExploitProtectionXmlFileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefenderFileExtensionsToExclude gets the defenderFileExtensionsToExclude property value. File extensions to exclude from scans and real time protection.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderFileExtensionsToExclude()([]string) {
-    return m.defenderFileExtensionsToExclude
+    val, err := m.GetBackingStore().Get("defenderFileExtensionsToExclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderFilesAndFoldersToExclude gets the defenderFilesAndFoldersToExclude property value. Files and folder to exclude from scans and real time protection.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderFilesAndFoldersToExclude()([]string) {
-    return m.defenderFilesAndFoldersToExclude
+    val, err := m.GetBackingStore().Get("defenderFilesAndFoldersToExclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderGuardedFoldersAllowedAppPaths gets the defenderGuardedFoldersAllowedAppPaths property value. List of paths to exe that are allowed to access protected folders
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardedFoldersAllowedAppPaths()([]string) {
-    return m.defenderGuardedFoldersAllowedAppPaths
+    val, err := m.GetBackingStore().Get("defenderGuardedFoldersAllowedAppPaths")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderGuardMyFoldersType gets the defenderGuardMyFoldersType property value. Possible values of Folder Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardMyFoldersType()(*FolderProtectionType) {
-    return m.defenderGuardMyFoldersType
+    val, err := m.GetBackingStore().Get("defenderGuardMyFoldersType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FolderProtectionType)
+    }
+    return nil
 }
 // GetDefenderNetworkProtectionType gets the defenderNetworkProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderNetworkProtectionType()(*DefenderProtectionType) {
-    return m.defenderNetworkProtectionType
+    val, err := m.GetBackingStore().Get("defenderNetworkProtectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderOfficeAppsExecutableContentCreationOrLaunch gets the defenderOfficeAppsExecutableContentCreationOrLaunch property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsExecutableContentCreationOrLaunch()(*DefenderProtectionType) {
-    return m.defenderOfficeAppsExecutableContentCreationOrLaunch
+    val, err := m.GetBackingStore().Get("defenderOfficeAppsExecutableContentCreationOrLaunch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderOfficeAppsExecutableContentCreationOrLaunchType gets the defenderOfficeAppsExecutableContentCreationOrLaunchType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsExecutableContentCreationOrLaunchType()(*DefenderAttackSurfaceType) {
-    return m.defenderOfficeAppsExecutableContentCreationOrLaunchType
+    val, err := m.GetBackingStore().Get("defenderOfficeAppsExecutableContentCreationOrLaunchType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderOfficeAppsLaunchChildProcess gets the defenderOfficeAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsLaunchChildProcess()(*DefenderProtectionType) {
-    return m.defenderOfficeAppsLaunchChildProcess
+    val, err := m.GetBackingStore().Get("defenderOfficeAppsLaunchChildProcess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderOfficeAppsLaunchChildProcessType gets the defenderOfficeAppsLaunchChildProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsLaunchChildProcessType()(*DefenderAttackSurfaceType) {
-    return m.defenderOfficeAppsLaunchChildProcessType
+    val, err := m.GetBackingStore().Get("defenderOfficeAppsLaunchChildProcessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderOfficeAppsOtherProcessInjection gets the defenderOfficeAppsOtherProcessInjection property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsOtherProcessInjection()(*DefenderProtectionType) {
-    return m.defenderOfficeAppsOtherProcessInjection
+    val, err := m.GetBackingStore().Get("defenderOfficeAppsOtherProcessInjection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderOfficeAppsOtherProcessInjectionType gets the defenderOfficeAppsOtherProcessInjectionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsOtherProcessInjectionType()(*DefenderAttackSurfaceType) {
-    return m.defenderOfficeAppsOtherProcessInjectionType
+    val, err := m.GetBackingStore().Get("defenderOfficeAppsOtherProcessInjectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderOfficeCommunicationAppsLaunchChildProcess gets the defenderOfficeCommunicationAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeCommunicationAppsLaunchChildProcess()(*DefenderProtectionType) {
-    return m.defenderOfficeCommunicationAppsLaunchChildProcess
+    val, err := m.GetBackingStore().Get("defenderOfficeCommunicationAppsLaunchChildProcess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderOfficeMacroCodeAllowWin32Imports gets the defenderOfficeMacroCodeAllowWin32Imports property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAllowWin32Imports()(*DefenderProtectionType) {
-    return m.defenderOfficeMacroCodeAllowWin32Imports
+    val, err := m.GetBackingStore().Get("defenderOfficeMacroCodeAllowWin32Imports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderOfficeMacroCodeAllowWin32ImportsType gets the defenderOfficeMacroCodeAllowWin32ImportsType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAllowWin32ImportsType()(*DefenderAttackSurfaceType) {
-    return m.defenderOfficeMacroCodeAllowWin32ImportsType
+    val, err := m.GetBackingStore().Get("defenderOfficeMacroCodeAllowWin32ImportsType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*DefenderProtectionType) {
-    return m.defenderPotentiallyUnwantedAppAction
+    val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderPreventCredentialStealingType gets the defenderPreventCredentialStealingType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderPreventCredentialStealingType()(*DefenderProtectionType) {
-    return m.defenderPreventCredentialStealingType
+    val, err := m.GetBackingStore().Get("defenderPreventCredentialStealingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderProcessCreation gets the defenderProcessCreation property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessCreation()(*DefenderProtectionType) {
-    return m.defenderProcessCreation
+    val, err := m.GetBackingStore().Get("defenderProcessCreation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderProcessCreationType gets the defenderProcessCreationType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessCreationType()(*DefenderAttackSurfaceType) {
-    return m.defenderProcessCreationType
+    val, err := m.GetBackingStore().Get("defenderProcessCreationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderProcessesToExclude gets the defenderProcessesToExclude property value. Processes to exclude from scans and real time protection.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessesToExclude()([]string) {
-    return m.defenderProcessesToExclude
+    val, err := m.GetBackingStore().Get("defenderProcessesToExclude")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefenderScanDirection gets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanDirection()(*DefenderRealtimeScanDirection) {
-    return m.defenderScanDirection
+    val, err := m.GetBackingStore().Get("defenderScanDirection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderRealtimeScanDirection)
+    }
+    return nil
 }
 // GetDefenderScanMaxCpuPercentage gets the defenderScanMaxCpuPercentage property value. Represents the average CPU load factor for the Windows Defender scan (in percent). The default value is 50. Valid values 0 to 100
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanMaxCpuPercentage()(*int32) {
-    return m.defenderScanMaxCpuPercentage
+    val, err := m.GetBackingStore().Get("defenderScanMaxCpuPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderScanType gets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanType()(*DefenderScanType) {
-    return m.defenderScanType
+    val, err := m.GetBackingStore().Get("defenderScanType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderScanType)
+    }
+    return nil
 }
 // GetDefenderScheduledQuickScanTime gets the defenderScheduledQuickScanTime property value. Selects the time of day that the Windows Defender quick scan should run. For example, a value of 0=12:00AM, a value of 60=1:00AM, a value of 120=2:00, and so on, up to a value of 1380=11:00PM. The default value is 120
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledQuickScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.defenderScheduledQuickScanTime
+    val, err := m.GetBackingStore().Get("defenderScheduledQuickScanTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetDefenderScheduledScanDay gets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledScanDay()(*WeeklySchedule) {
-    return m.defenderScheduledScanDay
+    val, err := m.GetBackingStore().Get("defenderScheduledScanDay")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WeeklySchedule)
+    }
+    return nil
 }
 // GetDefenderScheduledScanTime gets the defenderScheduledScanTime property value. Selects the time of day that the Windows Defender scan should run.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.defenderScheduledScanTime
+    val, err := m.GetBackingStore().Get("defenderScheduledScanTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetDefenderScriptDownloadedPayloadExecution gets the defenderScriptDownloadedPayloadExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptDownloadedPayloadExecution()(*DefenderProtectionType) {
-    return m.defenderScriptDownloadedPayloadExecution
+    val, err := m.GetBackingStore().Get("defenderScriptDownloadedPayloadExecution")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderScriptDownloadedPayloadExecutionType gets the defenderScriptDownloadedPayloadExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptDownloadedPayloadExecutionType()(*DefenderAttackSurfaceType) {
-    return m.defenderScriptDownloadedPayloadExecutionType
+    val, err := m.GetBackingStore().Get("defenderScriptDownloadedPayloadExecutionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderScriptObfuscatedMacroCode gets the defenderScriptObfuscatedMacroCode property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptObfuscatedMacroCode()(*DefenderProtectionType) {
-    return m.defenderScriptObfuscatedMacroCode
+    val, err := m.GetBackingStore().Get("defenderScriptObfuscatedMacroCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderScriptObfuscatedMacroCodeType gets the defenderScriptObfuscatedMacroCodeType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptObfuscatedMacroCodeType()(*DefenderAttackSurfaceType) {
-    return m.defenderScriptObfuscatedMacroCodeType
+    val, err := m.GetBackingStore().Get("defenderScriptObfuscatedMacroCodeType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterBlockExploitProtectionOverride gets the defenderSecurityCenterBlockExploitProtectionOverride property value. Indicates whether or not to block user from overriding Exploit Protection settings.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterBlockExploitProtectionOverride()(*bool) {
-    return m.defenderSecurityCenterBlockExploitProtectionOverride
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterBlockExploitProtectionOverride")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableAccountUI gets the defenderSecurityCenterDisableAccountUI property value. Used to disable the display of the account protection area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableAccountUI()(*bool) {
-    return m.defenderSecurityCenterDisableAccountUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableAccountUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableAppBrowserUI gets the defenderSecurityCenterDisableAppBrowserUI property value. Used to disable the display of the app and browser protection area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableAppBrowserUI()(*bool) {
-    return m.defenderSecurityCenterDisableAppBrowserUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableAppBrowserUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableClearTpmUI gets the defenderSecurityCenterDisableClearTpmUI property value. Used to disable the display of the Clear TPM button.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableClearTpmUI()(*bool) {
-    return m.defenderSecurityCenterDisableClearTpmUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableClearTpmUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableFamilyUI gets the defenderSecurityCenterDisableFamilyUI property value. Used to disable the display of the family options area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableFamilyUI()(*bool) {
-    return m.defenderSecurityCenterDisableFamilyUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableFamilyUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableHardwareUI gets the defenderSecurityCenterDisableHardwareUI property value. Used to disable the display of the hardware protection area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableHardwareUI()(*bool) {
-    return m.defenderSecurityCenterDisableHardwareUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableHardwareUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableHealthUI gets the defenderSecurityCenterDisableHealthUI property value. Used to disable the display of the device performance and health area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableHealthUI()(*bool) {
-    return m.defenderSecurityCenterDisableHealthUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableHealthUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableNetworkUI gets the defenderSecurityCenterDisableNetworkUI property value. Used to disable the display of the firewall and network protection area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableNetworkUI()(*bool) {
-    return m.defenderSecurityCenterDisableNetworkUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableNetworkUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableNotificationAreaUI gets the defenderSecurityCenterDisableNotificationAreaUI property value. Used to disable the display of the notification area control. The user needs to either sign out and sign in or reboot the computer for this setting to take effect.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableNotificationAreaUI()(*bool) {
-    return m.defenderSecurityCenterDisableNotificationAreaUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableNotificationAreaUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableRansomwareUI gets the defenderSecurityCenterDisableRansomwareUI property value. Used to disable the display of the ransomware protection area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableRansomwareUI()(*bool) {
-    return m.defenderSecurityCenterDisableRansomwareUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableRansomwareUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableSecureBootUI gets the defenderSecurityCenterDisableSecureBootUI property value. Used to disable the display of the secure boot area under Device security.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableSecureBootUI()(*bool) {
-    return m.defenderSecurityCenterDisableSecureBootUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableSecureBootUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableTroubleshootingUI gets the defenderSecurityCenterDisableTroubleshootingUI property value. Used to disable the display of the security process troubleshooting under Device security.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableTroubleshootingUI()(*bool) {
-    return m.defenderSecurityCenterDisableTroubleshootingUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableTroubleshootingUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableVirusUI gets the defenderSecurityCenterDisableVirusUI property value. Used to disable the display of the virus and threat protection area.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableVirusUI()(*bool) {
-    return m.defenderSecurityCenterDisableVirusUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableVirusUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI gets the defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI property value. Used to disable the display of update TPM Firmware when a vulnerable firmware is detected.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI()(*bool) {
-    return m.defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterHelpEmail gets the defenderSecurityCenterHelpEmail property value. The email address that is displayed to users.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterHelpEmail()(*string) {
-    return m.defenderSecurityCenterHelpEmail
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterHelpEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterHelpPhone gets the defenderSecurityCenterHelpPhone property value. The phone number or Skype ID that is displayed to users.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterHelpPhone()(*string) {
-    return m.defenderSecurityCenterHelpPhone
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterHelpPhone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterHelpURL gets the defenderSecurityCenterHelpURL property value. The help portal URL this is displayed to users.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterHelpURL()(*string) {
-    return m.defenderSecurityCenterHelpURL
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterHelpURL")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterITContactDisplay gets the defenderSecurityCenterITContactDisplay property value. Possible values for defenderSecurityCenterITContactDisplay
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterITContactDisplay()(*DefenderSecurityCenterITContactDisplayType) {
-    return m.defenderSecurityCenterITContactDisplay
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterITContactDisplay")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderSecurityCenterITContactDisplayType)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterNotificationsFromApp gets the defenderSecurityCenterNotificationsFromApp property value. Possible values for defenderSecurityCenterNotificationsFromApp
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterNotificationsFromApp()(*DefenderSecurityCenterNotificationsFromAppType) {
-    return m.defenderSecurityCenterNotificationsFromApp
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterNotificationsFromApp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderSecurityCenterNotificationsFromAppType)
+    }
+    return nil
 }
 // GetDefenderSecurityCenterOrganizationDisplayName gets the defenderSecurityCenterOrganizationDisplayName property value. The company name that is displayed to the users.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterOrganizationDisplayName()(*string) {
-    return m.defenderSecurityCenterOrganizationDisplayName
+    val, err := m.GetBackingStore().Get("defenderSecurityCenterOrganizationDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefenderSignatureUpdateIntervalInHours gets the defenderSignatureUpdateIntervalInHours property value. Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSignatureUpdateIntervalInHours()(*int32) {
-    return m.defenderSignatureUpdateIntervalInHours
+    val, err := m.GetBackingStore().Get("defenderSignatureUpdateIntervalInHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType) {
-    return m.defenderSubmitSamplesConsentType
+    val, err := m.GetBackingStore().Get("defenderSubmitSamplesConsentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderSubmitSamplesConsentType)
+    }
+    return nil
 }
 // GetDefenderUntrustedExecutable gets the defenderUntrustedExecutable property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedExecutable()(*DefenderProtectionType) {
-    return m.defenderUntrustedExecutable
+    val, err := m.GetBackingStore().Get("defenderUntrustedExecutable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderUntrustedExecutableType gets the defenderUntrustedExecutableType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedExecutableType()(*DefenderAttackSurfaceType) {
-    return m.defenderUntrustedExecutableType
+    val, err := m.GetBackingStore().Get("defenderUntrustedExecutableType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDefenderUntrustedUSBProcess gets the defenderUntrustedUSBProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedUSBProcess()(*DefenderProtectionType) {
-    return m.defenderUntrustedUSBProcess
+    val, err := m.GetBackingStore().Get("defenderUntrustedUSBProcess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderProtectionType)
+    }
+    return nil
 }
 // GetDefenderUntrustedUSBProcessType gets the defenderUntrustedUSBProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedUSBProcessType()(*DefenderAttackSurfaceType) {
-    return m.defenderUntrustedUSBProcessType
+    val, err := m.GetBackingStore().Get("defenderUntrustedUSBProcessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAttackSurfaceType)
+    }
+    return nil
 }
 // GetDeviceGuardEnableSecureBootWithDMA gets the deviceGuardEnableSecureBootWithDMA property value. This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardEnableSecureBootWithDMA()(*bool) {
-    return m.deviceGuardEnableSecureBootWithDMA
+    val, err := m.GetBackingStore().Get("deviceGuardEnableSecureBootWithDMA")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDeviceGuardEnableVirtualizationBasedSecurity gets the deviceGuardEnableVirtualizationBasedSecurity property value. Turns On Virtualization Based Security(VBS).
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardEnableVirtualizationBasedSecurity()(*bool) {
-    return m.deviceGuardEnableVirtualizationBasedSecurity
+    val, err := m.GetBackingStore().Get("deviceGuardEnableVirtualizationBasedSecurity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDeviceGuardLaunchSystemGuard gets the deviceGuardLaunchSystemGuard property value. Possible values of a property
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardLaunchSystemGuard()(*Enablement) {
-    return m.deviceGuardLaunchSystemGuard
+    val, err := m.GetBackingStore().Get("deviceGuardLaunchSystemGuard")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Enablement)
+    }
+    return nil
 }
 // GetDeviceGuardLocalSystemAuthorityCredentialGuardSettings gets the deviceGuardLocalSystemAuthorityCredentialGuardSettings property value. Possible values of Credential Guard settings.
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardLocalSystemAuthorityCredentialGuardSettings()(*DeviceGuardLocalSystemAuthorityCredentialGuardType) {
-    return m.deviceGuardLocalSystemAuthorityCredentialGuardSettings
+    val, err := m.GetBackingStore().Get("deviceGuardLocalSystemAuthorityCredentialGuardSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceGuardLocalSystemAuthorityCredentialGuardType)
+    }
+    return nil
 }
 // GetDeviceGuardSecureBootWithDMA gets the deviceGuardSecureBootWithDMA property value. Possible values of Secure Boot with DMA
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardSecureBootWithDMA()(*SecureBootWithDMAType) {
-    return m.deviceGuardSecureBootWithDMA
+    val, err := m.GetBackingStore().Get("deviceGuardSecureBootWithDMA")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SecureBootWithDMAType)
+    }
+    return nil
 }
 // GetDmaGuardDeviceEnumerationPolicy gets the dmaGuardDeviceEnumerationPolicy property value. Possible values of the DmaGuardDeviceEnumerationPolicy.
 func (m *Windows10EndpointProtectionConfiguration) GetDmaGuardDeviceEnumerationPolicy()(*DmaGuardDeviceEnumerationPolicyType) {
-    return m.dmaGuardDeviceEnumerationPolicy
+    val, err := m.GetBackingStore().Get("dmaGuardDeviceEnumerationPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DmaGuardDeviceEnumerationPolicyType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -3276,403 +3706,1103 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
 }
 // GetFirewallBlockStatefulFTP gets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallBlockStatefulFTP()(*bool) {
-    return m.firewallBlockStatefulFTP
+    val, err := m.GetBackingStore().Get("firewallBlockStatefulFTP")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallCertificateRevocationListCheckMethod()(*FirewallCertificateRevocationListCheckMethodType) {
-    return m.firewallCertificateRevocationListCheckMethod
+    val, err := m.GetBackingStore().Get("firewallCertificateRevocationListCheckMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FirewallCertificateRevocationListCheckMethodType)
+    }
+    return nil
 }
 // GetFirewallIdleTimeoutForSecurityAssociationInSeconds gets the firewallIdleTimeoutForSecurityAssociationInSeconds property value. Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIdleTimeoutForSecurityAssociationInSeconds()(*int32) {
-    return m.firewallIdleTimeoutForSecurityAssociationInSeconds
+    val, err := m.GetBackingStore().Get("firewallIdleTimeoutForSecurityAssociationInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFirewallIPSecExemptionsAllowDHCP gets the firewallIPSecExemptionsAllowDHCP property value. Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowDHCP()(*bool) {
-    return m.firewallIPSecExemptionsAllowDHCP
+    val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowDHCP")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallIPSecExemptionsAllowICMP gets the firewallIPSecExemptionsAllowICMP property value. Configures IPSec exemptions to allow ICMP
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowICMP()(*bool) {
-    return m.firewallIPSecExemptionsAllowICMP
+    val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowICMP")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallIPSecExemptionsAllowNeighborDiscovery gets the firewallIPSecExemptionsAllowNeighborDiscovery property value. Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowNeighborDiscovery()(*bool) {
-    return m.firewallIPSecExemptionsAllowNeighborDiscovery
+    val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowNeighborDiscovery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallIPSecExemptionsAllowRouterDiscovery gets the firewallIPSecExemptionsAllowRouterDiscovery property value. Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowRouterDiscovery()(*bool) {
-    return m.firewallIPSecExemptionsAllowRouterDiscovery
+    val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowRouterDiscovery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallIPSecExemptionsNone gets the firewallIPSecExemptionsNone property value. Configures IPSec exemptions to no exemptions
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsNone()(*bool) {
-    return m.firewallIPSecExemptionsNone
+    val, err := m.GetBackingStore().Get("firewallIPSecExemptionsNone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallMergeKeyingModuleSettings gets the firewallMergeKeyingModuleSettings property value. If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallMergeKeyingModuleSettings()(*bool) {
-    return m.firewallMergeKeyingModuleSettings
+    val, err := m.GetBackingStore().Get("firewallMergeKeyingModuleSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMethod()(*FirewallPacketQueueingMethodType) {
-    return m.firewallPacketQueueingMethod
+    val, err := m.GetBackingStore().Get("firewallPacketQueueingMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FirewallPacketQueueingMethodType)
+    }
+    return nil
 }
 // GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPreSharedKeyEncodingMethod()(*FirewallPreSharedKeyEncodingMethodType) {
-    return m.firewallPreSharedKeyEncodingMethod
+    val, err := m.GetBackingStore().Get("firewallPreSharedKeyEncodingMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FirewallPreSharedKeyEncodingMethodType)
+    }
+    return nil
 }
 // GetFirewallProfileDomain gets the firewallProfileDomain property value. Configures the firewall profile settings for domain networks
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfileDomain()(WindowsFirewallNetworkProfileable) {
-    return m.firewallProfileDomain
+    val, err := m.GetBackingStore().Get("firewallProfileDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsFirewallNetworkProfileable)
+    }
+    return nil
 }
 // GetFirewallProfilePrivate gets the firewallProfilePrivate property value. Configures the firewall profile settings for private networks
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePrivate()(WindowsFirewallNetworkProfileable) {
-    return m.firewallProfilePrivate
+    val, err := m.GetBackingStore().Get("firewallProfilePrivate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsFirewallNetworkProfileable)
+    }
+    return nil
 }
 // GetFirewallProfilePublic gets the firewallProfilePublic property value. Configures the firewall profile settings for public networks
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePublic()(WindowsFirewallNetworkProfileable) {
-    return m.firewallProfilePublic
+    val, err := m.GetBackingStore().Get("firewallProfilePublic")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsFirewallNetworkProfileable)
+    }
+    return nil
 }
 // GetFirewallRules gets the firewallRules property value. Configures the firewall rule settings. This collection can contain a maximum of 150 elements.
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallRules()([]WindowsFirewallRuleable) {
-    return m.firewallRules
+    val, err := m.GetBackingStore().Get("firewallRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsFirewallRuleable)
+    }
+    return nil
 }
 // GetLanManagerAuthenticationLevel gets the lanManagerAuthenticationLevel property value. Possible values for LanManagerAuthenticationLevel
 func (m *Windows10EndpointProtectionConfiguration) GetLanManagerAuthenticationLevel()(*LanManagerAuthenticationLevel) {
-    return m.lanManagerAuthenticationLevel
+    val, err := m.GetBackingStore().Get("lanManagerAuthenticationLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LanManagerAuthenticationLevel)
+    }
+    return nil
 }
 // GetLanManagerWorkstationDisableInsecureGuestLogons gets the lanManagerWorkstationDisableInsecureGuestLogons property value. If enabled,the SMB client will allow insecure guest logons. If not configured, the SMB client will reject insecure guest logons.
 func (m *Windows10EndpointProtectionConfiguration) GetLanManagerWorkstationDisableInsecureGuestLogons()(*bool) {
-    return m.lanManagerWorkstationDisableInsecureGuestLogons
+    val, err := m.GetBackingStore().Get("lanManagerWorkstationDisableInsecureGuestLogons")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAdministratorAccountName gets the localSecurityOptionsAdministratorAccountName property value. Define a different account name to be associated with the security identifier (SID) for the account 'Administrator'.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAdministratorAccountName()(*string) {
-    return m.localSecurityOptionsAdministratorAccountName
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAdministratorAccountName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAdministratorElevationPromptBehavior gets the localSecurityOptionsAdministratorElevationPromptBehavior property value. Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAdministratorElevationPromptBehavior()(*LocalSecurityOptionsAdministratorElevationPromptBehaviorType) {
-    return m.localSecurityOptionsAdministratorElevationPromptBehavior
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAdministratorElevationPromptBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsAdministratorElevationPromptBehaviorType)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares gets the localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares property value. This security setting determines whether to allows anonymous users to perform certain activities, such as enumerating the names of domain accounts and network shares.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares()(*bool) {
-    return m.localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowPKU2UAuthenticationRequests gets the localSecurityOptionsAllowPKU2UAuthenticationRequests property value. Block PKU2U authentication requests to this device to use online identities.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowPKU2UAuthenticationRequests()(*bool) {
-    return m.localSecurityOptionsAllowPKU2UAuthenticationRequests
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowPKU2UAuthenticationRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager gets the localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager property value. Edit the default Security Descriptor Definition Language string to allow or deny users and groups to make remote calls to the SAM.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager()(*string) {
-    return m.localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool gets the localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool property value. UI helper boolean for LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager entity
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool()(*bool) {
-    return m.localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn gets the localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn property value. This security setting determines whether a computer can be shut down without having to log on to Windows.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn()(*bool) {
-    return m.localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowUIAccessApplicationElevation gets the localSecurityOptionsAllowUIAccessApplicationElevation property value. Allow UIAccess apps to prompt for elevation without using the secure desktop.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowUIAccessApplicationElevation()(*bool) {
-    return m.localSecurityOptionsAllowUIAccessApplicationElevation
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowUIAccessApplicationElevation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations gets the localSecurityOptionsAllowUIAccessApplicationsForSecureLocations property value. Allow UIAccess apps to prompt for elevation without using the secure desktop.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations()(*bool) {
-    return m.localSecurityOptionsAllowUIAccessApplicationsForSecureLocations
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowUIAccessApplicationsForSecureLocations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsAllowUndockWithoutHavingToLogon gets the localSecurityOptionsAllowUndockWithoutHavingToLogon property value. Prevent a portable computer from being undocked without having to log in.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAllowUndockWithoutHavingToLogon()(*bool) {
-    return m.localSecurityOptionsAllowUndockWithoutHavingToLogon
+    val, err := m.GetBackingStore().Get("localSecurityOptionsAllowUndockWithoutHavingToLogon")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsBlockMicrosoftAccounts gets the localSecurityOptionsBlockMicrosoftAccounts property value. Prevent users from adding new Microsoft accounts to this computer.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsBlockMicrosoftAccounts()(*bool) {
-    return m.localSecurityOptionsBlockMicrosoftAccounts
+    val, err := m.GetBackingStore().Get("localSecurityOptionsBlockMicrosoftAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsBlockRemoteLogonWithBlankPassword gets the localSecurityOptionsBlockRemoteLogonWithBlankPassword property value. Enable Local accounts that are not password protected to log on from locations other than the physical device.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsBlockRemoteLogonWithBlankPassword()(*bool) {
-    return m.localSecurityOptionsBlockRemoteLogonWithBlankPassword
+    val, err := m.GetBackingStore().Get("localSecurityOptionsBlockRemoteLogonWithBlankPassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsBlockRemoteOpticalDriveAccess gets the localSecurityOptionsBlockRemoteOpticalDriveAccess property value. Enabling this settings allows only interactively logged on user to access CD-ROM media.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsBlockRemoteOpticalDriveAccess()(*bool) {
-    return m.localSecurityOptionsBlockRemoteOpticalDriveAccess
+    val, err := m.GetBackingStore().Get("localSecurityOptionsBlockRemoteOpticalDriveAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsBlockUsersInstallingPrinterDrivers gets the localSecurityOptionsBlockUsersInstallingPrinterDrivers property value. Restrict installing printer drivers as part of connecting to a shared printer to admins only.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsBlockUsersInstallingPrinterDrivers()(*bool) {
-    return m.localSecurityOptionsBlockUsersInstallingPrinterDrivers
+    val, err := m.GetBackingStore().Get("localSecurityOptionsBlockUsersInstallingPrinterDrivers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsClearVirtualMemoryPageFile gets the localSecurityOptionsClearVirtualMemoryPageFile property value. This security setting determines whether the virtual memory pagefile is cleared when the system is shut down.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsClearVirtualMemoryPageFile()(*bool) {
-    return m.localSecurityOptionsClearVirtualMemoryPageFile
+    val, err := m.GetBackingStore().Get("localSecurityOptionsClearVirtualMemoryPageFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsClientDigitallySignCommunicationsAlways gets the localSecurityOptionsClientDigitallySignCommunicationsAlways property value. This security setting determines whether packet signing is required by the SMB client component.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsClientDigitallySignCommunicationsAlways()(*bool) {
-    return m.localSecurityOptionsClientDigitallySignCommunicationsAlways
+    val, err := m.GetBackingStore().Get("localSecurityOptionsClientDigitallySignCommunicationsAlways")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers gets the localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers property value. If this security setting is enabled, the Server Message Block (SMB) redirector is allowed to send plaintext passwords to non-Microsoft SMB servers that do not support password encryption during authentication.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers()(*bool) {
-    return m.localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers
+    val, err := m.GetBackingStore().Get("localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation gets the localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation property value. App installations requiring elevated privileges will prompt for admin credentials.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation()(*bool) {
-    return m.localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDisableAdministratorAccount gets the localSecurityOptionsDisableAdministratorAccount property value. Determines whether the Local Administrator account is enabled or disabled.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDisableAdministratorAccount()(*bool) {
-    return m.localSecurityOptionsDisableAdministratorAccount
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDisableAdministratorAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees gets the localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees property value. This security setting determines whether the SMB client attempts to negotiate SMB packet signing.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees()(*bool) {
-    return m.localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDisableGuestAccount gets the localSecurityOptionsDisableGuestAccount property value. Determines if the Guest account is enabled or disabled.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDisableGuestAccount()(*bool) {
-    return m.localSecurityOptionsDisableGuestAccount
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDisableGuestAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways gets the localSecurityOptionsDisableServerDigitallySignCommunicationsAlways property value. This security setting determines whether packet signing is required by the SMB server component.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways()(*bool) {
-    return m.localSecurityOptionsDisableServerDigitallySignCommunicationsAlways
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDisableServerDigitallySignCommunicationsAlways")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees gets the localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees property value. This security setting determines whether the SMB server will negotiate SMB packet signing with clients that request it.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees()(*bool) {
-    return m.localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts gets the localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts property value. This security setting determines what additional permissions will be granted for anonymous connections to the computer.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts()(*bool) {
-    return m.localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDoNotRequireCtrlAltDel gets the localSecurityOptionsDoNotRequireCtrlAltDel property value. Require CTRL+ALT+DEL to be pressed before a user can log on.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDoNotRequireCtrlAltDel()(*bool) {
-    return m.localSecurityOptionsDoNotRequireCtrlAltDel
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDoNotRequireCtrlAltDel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange gets the localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange property value. This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It’s not stored by default.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange()(*bool) {
-    return m.localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange
+    val, err := m.GetBackingStore().Get("localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser gets the localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser property value. Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser()(*LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType) {
-    return m.localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
+    val, err := m.GetBackingStore().Get("localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsGuestAccountName gets the localSecurityOptionsGuestAccountName property value. Define a different account name to be associated with the security identifier (SID) for the account 'Guest'.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsGuestAccountName()(*string) {
-    return m.localSecurityOptionsGuestAccountName
+    val, err := m.GetBackingStore().Get("localSecurityOptionsGuestAccountName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsHideLastSignedInUser gets the localSecurityOptionsHideLastSignedInUser property value. Do not display the username of the last person who signed in on this device.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsHideLastSignedInUser()(*bool) {
-    return m.localSecurityOptionsHideLastSignedInUser
+    val, err := m.GetBackingStore().Get("localSecurityOptionsHideLastSignedInUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsHideUsernameAtSignIn gets the localSecurityOptionsHideUsernameAtSignIn property value. Do not display the username of the person signing in to this device after credentials are entered and before the device’s desktop is shown.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsHideUsernameAtSignIn()(*bool) {
-    return m.localSecurityOptionsHideUsernameAtSignIn
+    val, err := m.GetBackingStore().Get("localSecurityOptionsHideUsernameAtSignIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsInformationDisplayedOnLockScreen gets the localSecurityOptionsInformationDisplayedOnLockScreen property value. Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsInformationDisplayedOnLockScreen()(*LocalSecurityOptionsInformationDisplayedOnLockScreenType) {
-    return m.localSecurityOptionsInformationDisplayedOnLockScreen
+    val, err := m.GetBackingStore().Get("localSecurityOptionsInformationDisplayedOnLockScreen")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsInformationDisplayedOnLockScreenType)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsInformationShownOnLockScreen gets the localSecurityOptionsInformationShownOnLockScreen property value. Possible values for LocalSecurityOptionsInformationShownOnLockScreenType
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsInformationShownOnLockScreen()(*LocalSecurityOptionsInformationShownOnLockScreenType) {
-    return m.localSecurityOptionsInformationShownOnLockScreen
+    val, err := m.GetBackingStore().Get("localSecurityOptionsInformationShownOnLockScreen")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsInformationShownOnLockScreenType)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsLogOnMessageText gets the localSecurityOptionsLogOnMessageText property value. Set message text for users attempting to log in.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsLogOnMessageText()(*string) {
-    return m.localSecurityOptionsLogOnMessageText
+    val, err := m.GetBackingStore().Get("localSecurityOptionsLogOnMessageText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsLogOnMessageTitle gets the localSecurityOptionsLogOnMessageTitle property value. Set message title for users attempting to log in.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsLogOnMessageTitle()(*string) {
-    return m.localSecurityOptionsLogOnMessageTitle
+    val, err := m.GetBackingStore().Get("localSecurityOptionsLogOnMessageTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsMachineInactivityLimit gets the localSecurityOptionsMachineInactivityLimit property value. Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMachineInactivityLimit()(*int32) {
-    return m.localSecurityOptionsMachineInactivityLimit
+    val, err := m.GetBackingStore().Get("localSecurityOptionsMachineInactivityLimit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsMachineInactivityLimitInMinutes gets the localSecurityOptionsMachineInactivityLimitInMinutes property value. Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMachineInactivityLimitInMinutes()(*int32) {
-    return m.localSecurityOptionsMachineInactivityLimitInMinutes
+    val, err := m.GetBackingStore().Get("localSecurityOptionsMachineInactivityLimitInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients gets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients()(*LocalSecurityOptionsMinimumSessionSecurity) {
-    return m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients
+    val, err := m.GetBackingStore().Get("localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsMinimumSessionSecurity)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers gets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers()(*LocalSecurityOptionsMinimumSessionSecurity) {
-    return m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers
+    val, err := m.GetBackingStore().Get("localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsMinimumSessionSecurity)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsOnlyElevateSignedExecutables gets the localSecurityOptionsOnlyElevateSignedExecutables property value. Enforce PKI certification path validation for a given executable file before it is permitted to run.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsOnlyElevateSignedExecutables()(*bool) {
-    return m.localSecurityOptionsOnlyElevateSignedExecutables
+    val, err := m.GetBackingStore().Get("localSecurityOptionsOnlyElevateSignedExecutables")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares gets the localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares property value. By default, this security setting restricts anonymous access to shares and pipes to the settings for named pipes that can be accessed anonymously and Shares that can be accessed anonymously
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares()(*bool) {
-    return m.localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares
+    val, err := m.GetBackingStore().Get("localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsSmartCardRemovalBehavior gets the localSecurityOptionsSmartCardRemovalBehavior property value. Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsSmartCardRemovalBehavior()(*LocalSecurityOptionsSmartCardRemovalBehaviorType) {
-    return m.localSecurityOptionsSmartCardRemovalBehavior
+    val, err := m.GetBackingStore().Get("localSecurityOptionsSmartCardRemovalBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsSmartCardRemovalBehaviorType)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsStandardUserElevationPromptBehavior gets the localSecurityOptionsStandardUserElevationPromptBehavior property value. Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsStandardUserElevationPromptBehavior()(*LocalSecurityOptionsStandardUserElevationPromptBehaviorType) {
-    return m.localSecurityOptionsStandardUserElevationPromptBehavior
+    val, err := m.GetBackingStore().Get("localSecurityOptionsStandardUserElevationPromptBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LocalSecurityOptionsStandardUserElevationPromptBehaviorType)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation gets the localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation property value. Enable all elevation requests to go to the interactive user's desktop rather than the secure desktop. Prompt behavior policy settings for admins and standard users are used.
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation()(*bool) {
-    return m.localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation
+    val, err := m.GetBackingStore().Get("localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsUseAdminApprovalMode gets the localSecurityOptionsUseAdminApprovalMode property value. Defines whether the built-in admin account uses Admin Approval Mode or runs all apps with full admin privileges.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsUseAdminApprovalMode()(*bool) {
-    return m.localSecurityOptionsUseAdminApprovalMode
+    val, err := m.GetBackingStore().Get("localSecurityOptionsUseAdminApprovalMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsUseAdminApprovalModeForAdministrators gets the localSecurityOptionsUseAdminApprovalModeForAdministrators property value. Define whether Admin Approval Mode and all UAC policy settings are enabled, default is enabled
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsUseAdminApprovalModeForAdministrators()(*bool) {
-    return m.localSecurityOptionsUseAdminApprovalModeForAdministrators
+    val, err := m.GetBackingStore().Get("localSecurityOptionsUseAdminApprovalModeForAdministrators")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations gets the localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations property value. Virtualize file and registry write failures to per user locations
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations()(*bool) {
-    return m.localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations
+    val, err := m.GetBackingStore().Get("localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmartScreenBlockOverrideForFiles gets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
 func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenBlockOverrideForFiles()(*bool) {
-    return m.smartScreenBlockOverrideForFiles
+    val, err := m.GetBackingStore().Get("smartScreenBlockOverrideForFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSmartScreenEnableInShell gets the smartScreenEnableInShell property value. Allows IT Admins to configure SmartScreen for Windows.
 func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenEnableInShell()(*bool) {
-    return m.smartScreenEnableInShell
+    val, err := m.GetBackingStore().Get("smartScreenEnableInShell")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserRightsAccessCredentialManagerAsTrustedCaller gets the userRightsAccessCredentialManagerAsTrustedCaller property value. This user right is used by Credential Manager during Backup/Restore. Users' saved credentials might be compromised if this privilege is given to other entities. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsAccessCredentialManagerAsTrustedCaller()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsAccessCredentialManagerAsTrustedCaller
+    val, err := m.GetBackingStore().Get("userRightsAccessCredentialManagerAsTrustedCaller")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsActAsPartOfTheOperatingSystem gets the userRightsActAsPartOfTheOperatingSystem property value. This user right allows a process to impersonate any user without authentication. The process can therefore gain access to the same local resources as that user. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsActAsPartOfTheOperatingSystem()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsActAsPartOfTheOperatingSystem
+    val, err := m.GetBackingStore().Get("userRightsActAsPartOfTheOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsAllowAccessFromNetwork gets the userRightsAllowAccessFromNetwork property value. This user right determines which users and groups are allowed to connect to the computer over the network. State Allowed is supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsAllowAccessFromNetwork()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsAllowAccessFromNetwork
+    val, err := m.GetBackingStore().Get("userRightsAllowAccessFromNetwork")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsBackupData gets the userRightsBackupData property value. This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when backing up files and directories. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsBackupData()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsBackupData
+    val, err := m.GetBackingStore().Get("userRightsBackupData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsBlockAccessFromNetwork gets the userRightsBlockAccessFromNetwork property value. This user right determines which users and groups are block from connecting to the computer over the network. State Block is supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsBlockAccessFromNetwork()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsBlockAccessFromNetwork
+    val, err := m.GetBackingStore().Get("userRightsBlockAccessFromNetwork")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsChangeSystemTime gets the userRightsChangeSystemTime property value. This user right determines which users and groups can change the time and date on the internal clock of the computer. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsChangeSystemTime()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsChangeSystemTime
+    val, err := m.GetBackingStore().Get("userRightsChangeSystemTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsCreateGlobalObjects gets the userRightsCreateGlobalObjects property value. This security setting determines whether users can create global objects that are available to all sessions. Users who can create global objects could affect processes that run under other users' sessions, which could lead to application failure or data corruption. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsCreateGlobalObjects()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsCreateGlobalObjects
+    val, err := m.GetBackingStore().Get("userRightsCreateGlobalObjects")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsCreatePageFile gets the userRightsCreatePageFile property value. This user right determines which users and groups can call an internal API to create and change the size of a page file. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsCreatePageFile()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsCreatePageFile
+    val, err := m.GetBackingStore().Get("userRightsCreatePageFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsCreatePermanentSharedObjects gets the userRightsCreatePermanentSharedObjects property value. This user right determines which accounts can be used by processes to create a directory object using the object manager. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsCreatePermanentSharedObjects()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsCreatePermanentSharedObjects
+    val, err := m.GetBackingStore().Get("userRightsCreatePermanentSharedObjects")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsCreateSymbolicLinks gets the userRightsCreateSymbolicLinks property value. This user right determines if the user can create a symbolic link from the computer to which they are logged on. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsCreateSymbolicLinks()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsCreateSymbolicLinks
+    val, err := m.GetBackingStore().Get("userRightsCreateSymbolicLinks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsCreateToken gets the userRightsCreateToken property value. This user right determines which users/groups can be used by processes to create a token that can then be used to get access to any local resources when the process uses an internal API to create an access token. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsCreateToken()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsCreateToken
+    val, err := m.GetBackingStore().Get("userRightsCreateToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsDebugPrograms gets the userRightsDebugPrograms property value. This user right determines which users can attach a debugger to any process or to the kernel. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsDebugPrograms()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsDebugPrograms
+    val, err := m.GetBackingStore().Get("userRightsDebugPrograms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsDelegation gets the userRightsDelegation property value. This user right determines which users can set the Trusted for Delegation setting on a user or computer object. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsDelegation()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsDelegation
+    val, err := m.GetBackingStore().Get("userRightsDelegation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsDenyLocalLogOn gets the userRightsDenyLocalLogOn property value. This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsDenyLocalLogOn()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsDenyLocalLogOn
+    val, err := m.GetBackingStore().Get("userRightsDenyLocalLogOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsGenerateSecurityAudits gets the userRightsGenerateSecurityAudits property value. This user right determines which accounts can be used by a process to add entries to the security log. The security log is used to trace unauthorized system access.  Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsGenerateSecurityAudits()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsGenerateSecurityAudits
+    val, err := m.GetBackingStore().Get("userRightsGenerateSecurityAudits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsImpersonateClient gets the userRightsImpersonateClient property value. Assigning this user right to a user allows programs running on behalf of that user to impersonate a client. Requiring this user right for this kind of impersonation prevents an unauthorized user from convincing a client to connect to a service that they have created and then impersonating that client, which can elevate the unauthorized user's permissions to administrative or system levels. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsImpersonateClient()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsImpersonateClient
+    val, err := m.GetBackingStore().Get("userRightsImpersonateClient")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsIncreaseSchedulingPriority gets the userRightsIncreaseSchedulingPriority property value. This user right determines which accounts can use a process with Write Property access to another process to increase the execution priority assigned to the other process. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsIncreaseSchedulingPriority()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsIncreaseSchedulingPriority
+    val, err := m.GetBackingStore().Get("userRightsIncreaseSchedulingPriority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsLoadUnloadDrivers gets the userRightsLoadUnloadDrivers property value. This user right determines which users can dynamically load and unload device drivers or other code in to kernel mode. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsLoadUnloadDrivers()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsLoadUnloadDrivers
+    val, err := m.GetBackingStore().Get("userRightsLoadUnloadDrivers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsLocalLogOn gets the userRightsLocalLogOn property value. This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsLocalLogOn()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsLocalLogOn
+    val, err := m.GetBackingStore().Get("userRightsLocalLogOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsLockMemory gets the userRightsLockMemory property value. This user right determines which accounts can use a process to keep data in physical memory, which prevents the system from paging the data to virtual memory on disk. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsLockMemory()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsLockMemory
+    val, err := m.GetBackingStore().Get("userRightsLockMemory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsManageAuditingAndSecurityLogs gets the userRightsManageAuditingAndSecurityLogs property value. This user right determines which users can specify object access auditing options for individual resources, such as files, Active Directory objects, and registry keys. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsManageAuditingAndSecurityLogs()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsManageAuditingAndSecurityLogs
+    val, err := m.GetBackingStore().Get("userRightsManageAuditingAndSecurityLogs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsManageVolumes gets the userRightsManageVolumes property value. This user right determines which users and groups can run maintenance tasks on a volume, such as remote defragmentation. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsManageVolumes()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsManageVolumes
+    val, err := m.GetBackingStore().Get("userRightsManageVolumes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsModifyFirmwareEnvironment gets the userRightsModifyFirmwareEnvironment property value. This user right determines who can modify firmware environment values. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsModifyFirmwareEnvironment()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsModifyFirmwareEnvironment
+    val, err := m.GetBackingStore().Get("userRightsModifyFirmwareEnvironment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsModifyObjectLabels gets the userRightsModifyObjectLabels property value. This user right determines which user accounts can modify the integrity label of objects, such as files, registry keys, or processes owned by other users. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsModifyObjectLabels()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsModifyObjectLabels
+    val, err := m.GetBackingStore().Get("userRightsModifyObjectLabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsProfileSingleProcess gets the userRightsProfileSingleProcess property value. This user right determines which users can use performance monitoring tools to monitor the performance of system processes. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsProfileSingleProcess()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsProfileSingleProcess
+    val, err := m.GetBackingStore().Get("userRightsProfileSingleProcess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsRemoteDesktopServicesLogOn gets the userRightsRemoteDesktopServicesLogOn property value. This user right determines which users and groups are prohibited from logging on as a Remote Desktop Services client. Only states NotConfigured and Blocked are supported
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsRemoteDesktopServicesLogOn()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsRemoteDesktopServicesLogOn
+    val, err := m.GetBackingStore().Get("userRightsRemoteDesktopServicesLogOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsRemoteShutdown gets the userRightsRemoteShutdown property value. This user right determines which users are allowed to shut down a computer from a remote location on the network. Misuse of this user right can result in a denial of service. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsRemoteShutdown()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsRemoteShutdown
+    val, err := m.GetBackingStore().Get("userRightsRemoteShutdown")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsRestoreData gets the userRightsRestoreData property value. This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when restoring backed up files and directories, and determines which users can set any valid security principal as the owner of an object. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsRestoreData()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsRestoreData
+    val, err := m.GetBackingStore().Get("userRightsRestoreData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetUserRightsTakeOwnership gets the userRightsTakeOwnership property value. This user right determines which users can take ownership of any securable object in the system, including Active Directory objects, files and folders, printers, registry keys, processes, and threads. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) GetUserRightsTakeOwnership()(DeviceManagementUserRightsSettingable) {
-    return m.userRightsTakeOwnership
+    val, err := m.GetBackingStore().Get("userRightsTakeOwnership")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementUserRightsSettingable)
+    }
+    return nil
 }
 // GetWindowsDefenderTamperProtection gets the windowsDefenderTamperProtection property value. Defender TamperProtection setting options
 func (m *Windows10EndpointProtectionConfiguration) GetWindowsDefenderTamperProtection()(*WindowsDefenderTamperProtectionOptions) {
-    return m.windowsDefenderTamperProtection
+    val, err := m.GetBackingStore().Get("windowsDefenderTamperProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsDefenderTamperProtectionOptions)
+    }
+    return nil
 }
 // GetXboxServicesAccessoryManagementServiceStartupMode gets the xboxServicesAccessoryManagementServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesAccessoryManagementServiceStartupMode()(*ServiceStartType) {
-    return m.xboxServicesAccessoryManagementServiceStartupMode
+    val, err := m.GetBackingStore().Get("xboxServicesAccessoryManagementServiceStartupMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceStartType)
+    }
+    return nil
 }
 // GetXboxServicesEnableXboxGameSaveTask gets the xboxServicesEnableXboxGameSaveTask property value. This setting determines whether xbox game save is enabled (1) or disabled (0).
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesEnableXboxGameSaveTask()(*bool) {
-    return m.xboxServicesEnableXboxGameSaveTask
+    val, err := m.GetBackingStore().Get("xboxServicesEnableXboxGameSaveTask")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetXboxServicesLiveAuthManagerServiceStartupMode gets the xboxServicesLiveAuthManagerServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveAuthManagerServiceStartupMode()(*ServiceStartType) {
-    return m.xboxServicesLiveAuthManagerServiceStartupMode
+    val, err := m.GetBackingStore().Get("xboxServicesLiveAuthManagerServiceStartupMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceStartType)
+    }
+    return nil
 }
 // GetXboxServicesLiveGameSaveServiceStartupMode gets the xboxServicesLiveGameSaveServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveGameSaveServiceStartupMode()(*ServiceStartType) {
-    return m.xboxServicesLiveGameSaveServiceStartupMode
+    val, err := m.GetBackingStore().Get("xboxServicesLiveGameSaveServiceStartupMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceStartType)
+    }
+    return nil
 }
 // GetXboxServicesLiveNetworkingServiceStartupMode gets the xboxServicesLiveNetworkingServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveNetworkingServiceStartupMode()(*ServiceStartType) {
-    return m.xboxServicesLiveNetworkingServiceStartupMode
+    val, err := m.GetBackingStore().Get("xboxServicesLiveNetworkingServiceStartupMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceStartType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -5105,905 +6235,2040 @@ func (m *Windows10EndpointProtectionConfiguration) Serialize(writer i878a80d2330
 }
 // SetApplicationGuardAllowCameraMicrophoneRedirection sets the applicationGuardAllowCameraMicrophoneRedirection property value. Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowCameraMicrophoneRedirection(value *bool)() {
-    m.applicationGuardAllowCameraMicrophoneRedirection = value
+    err := m.GetBackingStore().Set("applicationGuardAllowCameraMicrophoneRedirection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowFileSaveOnHost sets the applicationGuardAllowFileSaveOnHost property value. Allow users to download files from Edge in the application guard container and save them on the host file system
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowFileSaveOnHost(value *bool)() {
-    m.applicationGuardAllowFileSaveOnHost = value
+    err := m.GetBackingStore().Set("applicationGuardAllowFileSaveOnHost", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowPersistence sets the applicationGuardAllowPersistence property value. Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPersistence(value *bool)() {
-    m.applicationGuardAllowPersistence = value
+    err := m.GetBackingStore().Set("applicationGuardAllowPersistence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowPrintToLocalPrinters sets the applicationGuardAllowPrintToLocalPrinters property value. Allow printing to Local Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToLocalPrinters(value *bool)() {
-    m.applicationGuardAllowPrintToLocalPrinters = value
+    err := m.GetBackingStore().Set("applicationGuardAllowPrintToLocalPrinters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowPrintToNetworkPrinters sets the applicationGuardAllowPrintToNetworkPrinters property value. Allow printing to Network Printers from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToNetworkPrinters(value *bool)() {
-    m.applicationGuardAllowPrintToNetworkPrinters = value
+    err := m.GetBackingStore().Set("applicationGuardAllowPrintToNetworkPrinters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowPrintToPDF sets the applicationGuardAllowPrintToPDF property value. Allow printing to PDF from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToPDF(value *bool)() {
-    m.applicationGuardAllowPrintToPDF = value
+    err := m.GetBackingStore().Set("applicationGuardAllowPrintToPDF", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowPrintToXPS sets the applicationGuardAllowPrintToXPS property value. Allow printing to XPS from Container
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowPrintToXPS(value *bool)() {
-    m.applicationGuardAllowPrintToXPS = value
+    err := m.GetBackingStore().Set("applicationGuardAllowPrintToXPS", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardAllowVirtualGPU sets the applicationGuardAllowVirtualGPU property value. Allow application guard to use virtual GPU
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowVirtualGPU(value *bool)() {
-    m.applicationGuardAllowVirtualGPU = value
+    err := m.GetBackingStore().Set("applicationGuardAllowVirtualGPU", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardBlockClipboardSharing sets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockClipboardSharing(value *ApplicationGuardBlockClipboardSharingType)() {
-    m.applicationGuardBlockClipboardSharing = value
+    err := m.GetBackingStore().Set("applicationGuardBlockClipboardSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardBlockFileTransfer sets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockFileTransfer(value *ApplicationGuardBlockFileTransferType)() {
-    m.applicationGuardBlockFileTransfer = value
+    err := m.GetBackingStore().Set("applicationGuardBlockFileTransfer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardBlockNonEnterpriseContent sets the applicationGuardBlockNonEnterpriseContent property value. Block enterprise sites to load non-enterprise content, such as third party plug-ins
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockNonEnterpriseContent(value *bool)() {
-    m.applicationGuardBlockNonEnterpriseContent = value
+    err := m.GetBackingStore().Set("applicationGuardBlockNonEnterpriseContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardCertificateThumbprints sets the applicationGuardCertificateThumbprints property value. Allows certain device level Root Certificates to be shared with the Microsoft Defender Application Guard container.
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardCertificateThumbprints(value []string)() {
-    m.applicationGuardCertificateThumbprints = value
+    err := m.GetBackingStore().Set("applicationGuardCertificateThumbprints", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardEnabled sets the applicationGuardEnabled property value. Enable Windows Defender Application Guard
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardEnabled(value *bool)() {
-    m.applicationGuardEnabled = value
+    err := m.GetBackingStore().Set("applicationGuardEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardEnabledOptions sets the applicationGuardEnabledOptions property value. Possible values for ApplicationGuardEnabledOptions
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardEnabledOptions(value *ApplicationGuardEnabledOptions)() {
-    m.applicationGuardEnabledOptions = value
+    err := m.GetBackingStore().Set("applicationGuardEnabledOptions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationGuardForceAuditing sets the applicationGuardForceAuditing property value. Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardForceAuditing(value *bool)() {
-    m.applicationGuardForceAuditing = value
+    err := m.GetBackingStore().Set("applicationGuardForceAuditing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppLockerApplicationControl sets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) SetAppLockerApplicationControl(value *AppLockerApplicationControlType)() {
-    m.appLockerApplicationControl = value
+    err := m.GetBackingStore().Set("appLockerApplicationControl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerAllowStandardUserEncryption sets the bitLockerAllowStandardUserEncryption property value. Allows the admin to allow standard users to enable encrpytion during Azure AD Join.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerAllowStandardUserEncryption(value *bool)() {
-    m.bitLockerAllowStandardUserEncryption = value
+    err := m.GetBackingStore().Set("bitLockerAllowStandardUserEncryption", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerDisableWarningForOtherDiskEncryption sets the bitLockerDisableWarningForOtherDiskEncryption property value. Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerDisableWarningForOtherDiskEncryption(value *bool)() {
-    m.bitLockerDisableWarningForOtherDiskEncryption = value
+    err := m.GetBackingStore().Set("bitLockerDisableWarningForOtherDiskEncryption", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerEnableStorageCardEncryptionOnMobile sets the bitLockerEnableStorageCardEncryptionOnMobile property value. Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerEnableStorageCardEncryptionOnMobile(value *bool)() {
-    m.bitLockerEnableStorageCardEncryptionOnMobile = value
+    err := m.GetBackingStore().Set("bitLockerEnableStorageCardEncryptionOnMobile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerEncryptDevice sets the bitLockerEncryptDevice property value. Allows the admin to require encryption to be turned on using BitLocker.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerEncryptDevice(value *bool)() {
-    m.bitLockerEncryptDevice = value
+    err := m.GetBackingStore().Set("bitLockerEncryptDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerFixedDrivePolicy sets the bitLockerFixedDrivePolicy property value. BitLocker Fixed Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerFixedDrivePolicy(value BitLockerFixedDrivePolicyable)() {
-    m.bitLockerFixedDrivePolicy = value
+    err := m.GetBackingStore().Set("bitLockerFixedDrivePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerRecoveryPasswordRotation sets the bitLockerRecoveryPasswordRotation property value. BitLocker recovery password rotation type
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerRecoveryPasswordRotation(value *BitLockerRecoveryPasswordRotationType)() {
-    m.bitLockerRecoveryPasswordRotation = value
+    err := m.GetBackingStore().Set("bitLockerRecoveryPasswordRotation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerRemovableDrivePolicy sets the bitLockerRemovableDrivePolicy property value. BitLocker Removable Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerRemovableDrivePolicy(value BitLockerRemovableDrivePolicyable)() {
-    m.bitLockerRemovableDrivePolicy = value
+    err := m.GetBackingStore().Set("bitLockerRemovableDrivePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBitLockerSystemDrivePolicy sets the bitLockerSystemDrivePolicy property value. BitLocker System Drive Policy.
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerSystemDrivePolicy(value BitLockerSystemDrivePolicyable)() {
-    m.bitLockerSystemDrivePolicy = value
+    err := m.GetBackingStore().Set("bitLockerSystemDrivePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAdditionalGuardedFolders sets the defenderAdditionalGuardedFolders property value. List of folder paths to be added to the list of protected folders
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdditionalGuardedFolders(value []string)() {
-    m.defenderAdditionalGuardedFolders = value
+    err := m.GetBackingStore().Set("defenderAdditionalGuardedFolders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAdobeReaderLaunchChildProcess sets the defenderAdobeReaderLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdobeReaderLaunchChildProcess(value *DefenderProtectionType)() {
-    m.defenderAdobeReaderLaunchChildProcess = value
+    err := m.GetBackingStore().Set("defenderAdobeReaderLaunchChildProcess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAdvancedRansomewareProtectionType sets the defenderAdvancedRansomewareProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdvancedRansomewareProtectionType(value *DefenderProtectionType)() {
-    m.defenderAdvancedRansomewareProtectionType = value
+    err := m.GetBackingStore().Set("defenderAdvancedRansomewareProtectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowBehaviorMonitoring sets the defenderAllowBehaviorMonitoring property value. Allows or disallows Windows Defender Behavior Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowBehaviorMonitoring(value *bool)() {
-    m.defenderAllowBehaviorMonitoring = value
+    err := m.GetBackingStore().Set("defenderAllowBehaviorMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowCloudProtection sets the defenderAllowCloudProtection property value. To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowCloudProtection(value *bool)() {
-    m.defenderAllowCloudProtection = value
+    err := m.GetBackingStore().Set("defenderAllowCloudProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowEndUserAccess sets the defenderAllowEndUserAccess property value. Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowEndUserAccess(value *bool)() {
-    m.defenderAllowEndUserAccess = value
+    err := m.GetBackingStore().Set("defenderAllowEndUserAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowIntrusionPreventionSystem sets the defenderAllowIntrusionPreventionSystem property value. Allows or disallows Windows Defender Intrusion Prevention functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowIntrusionPreventionSystem(value *bool)() {
-    m.defenderAllowIntrusionPreventionSystem = value
+    err := m.GetBackingStore().Set("defenderAllowIntrusionPreventionSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowOnAccessProtection sets the defenderAllowOnAccessProtection property value. Allows or disallows Windows Defender On Access Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowOnAccessProtection(value *bool)() {
-    m.defenderAllowOnAccessProtection = value
+    err := m.GetBackingStore().Set("defenderAllowOnAccessProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowRealTimeMonitoring sets the defenderAllowRealTimeMonitoring property value. Allows or disallows Windows Defender Realtime Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowRealTimeMonitoring(value *bool)() {
-    m.defenderAllowRealTimeMonitoring = value
+    err := m.GetBackingStore().Set("defenderAllowRealTimeMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowScanArchiveFiles sets the defenderAllowScanArchiveFiles property value. Allows or disallows scanning of archives.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowScanArchiveFiles(value *bool)() {
-    m.defenderAllowScanArchiveFiles = value
+    err := m.GetBackingStore().Set("defenderAllowScanArchiveFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowScanDownloads sets the defenderAllowScanDownloads property value. Allows or disallows Windows Defender IOAVP Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowScanDownloads(value *bool)() {
-    m.defenderAllowScanDownloads = value
+    err := m.GetBackingStore().Set("defenderAllowScanDownloads", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowScanNetworkFiles sets the defenderAllowScanNetworkFiles property value. Allows or disallows a scanning of network files.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowScanNetworkFiles(value *bool)() {
-    m.defenderAllowScanNetworkFiles = value
+    err := m.GetBackingStore().Set("defenderAllowScanNetworkFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowScanRemovableDrivesDuringFullScan sets the defenderAllowScanRemovableDrivesDuringFullScan property value. Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowScanRemovableDrivesDuringFullScan(value *bool)() {
-    m.defenderAllowScanRemovableDrivesDuringFullScan = value
+    err := m.GetBackingStore().Set("defenderAllowScanRemovableDrivesDuringFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAllowScanScriptsLoadedInInternetExplorer sets the defenderAllowScanScriptsLoadedInInternetExplorer property value. Allows or disallows Windows Defender Script Scanning functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAllowScanScriptsLoadedInInternetExplorer(value *bool)() {
-    m.defenderAllowScanScriptsLoadedInInternetExplorer = value
+    err := m.GetBackingStore().Set("defenderAllowScanScriptsLoadedInInternetExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAttackSurfaceReductionExcludedPaths sets the defenderAttackSurfaceReductionExcludedPaths property value. List of exe files and folders to be excluded from attack surface reduction rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAttackSurfaceReductionExcludedPaths(value []string)() {
-    m.defenderAttackSurfaceReductionExcludedPaths = value
+    err := m.GetBackingStore().Set("defenderAttackSurfaceReductionExcludedPaths", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderBlockEndUserAccess sets the defenderBlockEndUserAccess property value. Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderBlockEndUserAccess(value *bool)() {
-    m.defenderBlockEndUserAccess = value
+    err := m.GetBackingStore().Set("defenderBlockEndUserAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderBlockPersistenceThroughWmiType sets the defenderBlockPersistenceThroughWmiType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderBlockPersistenceThroughWmiType(value *DefenderAttackSurfaceType)() {
-    m.defenderBlockPersistenceThroughWmiType = value
+    err := m.GetBackingStore().Set("defenderBlockPersistenceThroughWmiType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderCheckForSignaturesBeforeRunningScan sets the defenderCheckForSignaturesBeforeRunningScan property value. This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderCheckForSignaturesBeforeRunningScan(value *bool)() {
-    m.defenderCheckForSignaturesBeforeRunningScan = value
+    err := m.GetBackingStore().Set("defenderCheckForSignaturesBeforeRunningScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)() {
-    m.defenderCloudBlockLevel = value
+    err := m.GetBackingStore().Set("defenderCloudBlockLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderCloudExtendedTimeoutInSeconds sets the defenderCloudExtendedTimeoutInSeconds property value. Added in Windows 10, version 1709. This feature allows Windows Defender Antivirus to block a suspicious file for up to 60 seconds, and scan it in the cloud to make sure it's safe. Value type is integer, range is 0 - 50. This feature depends on three other MAPS settings the must all be enabled- 'Configure the 'Block at First Sight' feature; 'Join Microsoft MAPS'; 'Send file samples when further analysis is required'. Valid values 0 to 50
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderCloudExtendedTimeoutInSeconds(value *int32)() {
-    m.defenderCloudExtendedTimeoutInSeconds = value
+    err := m.GetBackingStore().Set("defenderCloudExtendedTimeoutInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDaysBeforeDeletingQuarantinedMalware sets the defenderDaysBeforeDeletingQuarantinedMalware property value. Time period (in days) that quarantine items will be stored on the system. Valid values 0 to 90
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDaysBeforeDeletingQuarantinedMalware(value *int32)() {
-    m.defenderDaysBeforeDeletingQuarantinedMalware = value
+    err := m.GetBackingStore().Set("defenderDaysBeforeDeletingQuarantinedMalware", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDetectedMalwareActions sets the defenderDetectedMalwareActions property value. Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDetectedMalwareActions(value DefenderDetectedMalwareActionsable)() {
-    m.defenderDetectedMalwareActions = value
+    err := m.GetBackingStore().Set("defenderDetectedMalwareActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableBehaviorMonitoring sets the defenderDisableBehaviorMonitoring property value. Allows or disallows Windows Defender Behavior Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableBehaviorMonitoring(value *bool)() {
-    m.defenderDisableBehaviorMonitoring = value
+    err := m.GetBackingStore().Set("defenderDisableBehaviorMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableCatchupFullScan sets the defenderDisableCatchupFullScan property value. This policy setting allows you to configure catch-up scans for scheduled full scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableCatchupFullScan(value *bool)() {
-    m.defenderDisableCatchupFullScan = value
+    err := m.GetBackingStore().Set("defenderDisableCatchupFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableCatchupQuickScan sets the defenderDisableCatchupQuickScan property value. This policy setting allows you to configure catch-up scans for scheduled quick scans. A catch-up scan is a scan that is initiated because a regularly scheduled scan was missed. Usually these scheduled scans are missed because the computer was turned off at the scheduled time.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableCatchupQuickScan(value *bool)() {
-    m.defenderDisableCatchupQuickScan = value
+    err := m.GetBackingStore().Set("defenderDisableCatchupQuickScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableCloudProtection sets the defenderDisableCloudProtection property value. To best protect your PC, Windows Defender will send information to Microsoft about any problems it finds. Microsoft will analyze that information, learn more about problems affecting you and other customers, and offer improved solutions.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableCloudProtection(value *bool)() {
-    m.defenderDisableCloudProtection = value
+    err := m.GetBackingStore().Set("defenderDisableCloudProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableIntrusionPreventionSystem sets the defenderDisableIntrusionPreventionSystem property value. Allows or disallows Windows Defender Intrusion Prevention functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableIntrusionPreventionSystem(value *bool)() {
-    m.defenderDisableIntrusionPreventionSystem = value
+    err := m.GetBackingStore().Set("defenderDisableIntrusionPreventionSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableOnAccessProtection sets the defenderDisableOnAccessProtection property value. Allows or disallows Windows Defender On Access Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableOnAccessProtection(value *bool)() {
-    m.defenderDisableOnAccessProtection = value
+    err := m.GetBackingStore().Set("defenderDisableOnAccessProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableRealTimeMonitoring sets the defenderDisableRealTimeMonitoring property value. Allows or disallows Windows Defender Realtime Monitoring functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableRealTimeMonitoring(value *bool)() {
-    m.defenderDisableRealTimeMonitoring = value
+    err := m.GetBackingStore().Set("defenderDisableRealTimeMonitoring", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableScanArchiveFiles sets the defenderDisableScanArchiveFiles property value. Allows or disallows scanning of archives.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableScanArchiveFiles(value *bool)() {
-    m.defenderDisableScanArchiveFiles = value
+    err := m.GetBackingStore().Set("defenderDisableScanArchiveFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableScanDownloads sets the defenderDisableScanDownloads property value. Allows or disallows Windows Defender IOAVP Protection functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableScanDownloads(value *bool)() {
-    m.defenderDisableScanDownloads = value
+    err := m.GetBackingStore().Set("defenderDisableScanDownloads", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableScanNetworkFiles sets the defenderDisableScanNetworkFiles property value. Allows or disallows a scanning of network files.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableScanNetworkFiles(value *bool)() {
-    m.defenderDisableScanNetworkFiles = value
+    err := m.GetBackingStore().Set("defenderDisableScanNetworkFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableScanRemovableDrivesDuringFullScan sets the defenderDisableScanRemovableDrivesDuringFullScan property value. Allows or disallows a full scan of removable drives. During a quick scan, removable drives may still be scanned.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableScanRemovableDrivesDuringFullScan(value *bool)() {
-    m.defenderDisableScanRemovableDrivesDuringFullScan = value
+    err := m.GetBackingStore().Set("defenderDisableScanRemovableDrivesDuringFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderDisableScanScriptsLoadedInInternetExplorer sets the defenderDisableScanScriptsLoadedInInternetExplorer property value. Allows or disallows Windows Defender Script Scanning functionality.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableScanScriptsLoadedInInternetExplorer(value *bool)() {
-    m.defenderDisableScanScriptsLoadedInInternetExplorer = value
+    err := m.GetBackingStore().Set("defenderDisableScanScriptsLoadedInInternetExplorer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderEmailContentExecution sets the defenderEmailContentExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEmailContentExecution(value *DefenderProtectionType)() {
-    m.defenderEmailContentExecution = value
+    err := m.GetBackingStore().Set("defenderEmailContentExecution", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderEmailContentExecutionType sets the defenderEmailContentExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEmailContentExecutionType(value *DefenderAttackSurfaceType)() {
-    m.defenderEmailContentExecutionType = value
+    err := m.GetBackingStore().Set("defenderEmailContentExecutionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderEnableLowCpuPriority sets the defenderEnableLowCpuPriority property value. This policy setting allows you to enable or disable low CPU priority for scheduled scans.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEnableLowCpuPriority(value *bool)() {
-    m.defenderEnableLowCpuPriority = value
+    err := m.GetBackingStore().Set("defenderEnableLowCpuPriority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderEnableScanIncomingMail sets the defenderEnableScanIncomingMail property value. Allows or disallows scanning of email.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEnableScanIncomingMail(value *bool)() {
-    m.defenderEnableScanIncomingMail = value
+    err := m.GetBackingStore().Set("defenderEnableScanIncomingMail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderEnableScanMappedNetworkDrivesDuringFullScan sets the defenderEnableScanMappedNetworkDrivesDuringFullScan property value. Allows or disallows a full scan of mapped network drives.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEnableScanMappedNetworkDrivesDuringFullScan(value *bool)() {
-    m.defenderEnableScanMappedNetworkDrivesDuringFullScan = value
+    err := m.GetBackingStore().Set("defenderEnableScanMappedNetworkDrivesDuringFullScan", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderExploitProtectionXml sets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderExploitProtectionXml(value []byte)() {
-    m.defenderExploitProtectionXml = value
+    err := m.GetBackingStore().Set("defenderExploitProtectionXml", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderExploitProtectionXmlFileName sets the defenderExploitProtectionXmlFileName property value. Name of the file from which DefenderExploitProtectionXml was obtained.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderExploitProtectionXmlFileName(value *string)() {
-    m.defenderExploitProtectionXmlFileName = value
+    err := m.GetBackingStore().Set("defenderExploitProtectionXmlFileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderFileExtensionsToExclude sets the defenderFileExtensionsToExclude property value. File extensions to exclude from scans and real time protection.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderFileExtensionsToExclude(value []string)() {
-    m.defenderFileExtensionsToExclude = value
+    err := m.GetBackingStore().Set("defenderFileExtensionsToExclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderFilesAndFoldersToExclude sets the defenderFilesAndFoldersToExclude property value. Files and folder to exclude from scans and real time protection.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderFilesAndFoldersToExclude(value []string)() {
-    m.defenderFilesAndFoldersToExclude = value
+    err := m.GetBackingStore().Set("defenderFilesAndFoldersToExclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderGuardedFoldersAllowedAppPaths sets the defenderGuardedFoldersAllowedAppPaths property value. List of paths to exe that are allowed to access protected folders
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderGuardedFoldersAllowedAppPaths(value []string)() {
-    m.defenderGuardedFoldersAllowedAppPaths = value
+    err := m.GetBackingStore().Set("defenderGuardedFoldersAllowedAppPaths", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderGuardMyFoldersType sets the defenderGuardMyFoldersType property value. Possible values of Folder Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderGuardMyFoldersType(value *FolderProtectionType)() {
-    m.defenderGuardMyFoldersType = value
+    err := m.GetBackingStore().Set("defenderGuardMyFoldersType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderNetworkProtectionType sets the defenderNetworkProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderNetworkProtectionType(value *DefenderProtectionType)() {
-    m.defenderNetworkProtectionType = value
+    err := m.GetBackingStore().Set("defenderNetworkProtectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeAppsExecutableContentCreationOrLaunch sets the defenderOfficeAppsExecutableContentCreationOrLaunch property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsExecutableContentCreationOrLaunch(value *DefenderProtectionType)() {
-    m.defenderOfficeAppsExecutableContentCreationOrLaunch = value
+    err := m.GetBackingStore().Set("defenderOfficeAppsExecutableContentCreationOrLaunch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeAppsExecutableContentCreationOrLaunchType sets the defenderOfficeAppsExecutableContentCreationOrLaunchType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsExecutableContentCreationOrLaunchType(value *DefenderAttackSurfaceType)() {
-    m.defenderOfficeAppsExecutableContentCreationOrLaunchType = value
+    err := m.GetBackingStore().Set("defenderOfficeAppsExecutableContentCreationOrLaunchType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeAppsLaunchChildProcess sets the defenderOfficeAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsLaunchChildProcess(value *DefenderProtectionType)() {
-    m.defenderOfficeAppsLaunchChildProcess = value
+    err := m.GetBackingStore().Set("defenderOfficeAppsLaunchChildProcess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeAppsLaunchChildProcessType sets the defenderOfficeAppsLaunchChildProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsLaunchChildProcessType(value *DefenderAttackSurfaceType)() {
-    m.defenderOfficeAppsLaunchChildProcessType = value
+    err := m.GetBackingStore().Set("defenderOfficeAppsLaunchChildProcessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeAppsOtherProcessInjection sets the defenderOfficeAppsOtherProcessInjection property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsOtherProcessInjection(value *DefenderProtectionType)() {
-    m.defenderOfficeAppsOtherProcessInjection = value
+    err := m.GetBackingStore().Set("defenderOfficeAppsOtherProcessInjection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeAppsOtherProcessInjectionType sets the defenderOfficeAppsOtherProcessInjectionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsOtherProcessInjectionType(value *DefenderAttackSurfaceType)() {
-    m.defenderOfficeAppsOtherProcessInjectionType = value
+    err := m.GetBackingStore().Set("defenderOfficeAppsOtherProcessInjectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeCommunicationAppsLaunchChildProcess sets the defenderOfficeCommunicationAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeCommunicationAppsLaunchChildProcess(value *DefenderProtectionType)() {
-    m.defenderOfficeCommunicationAppsLaunchChildProcess = value
+    err := m.GetBackingStore().Set("defenderOfficeCommunicationAppsLaunchChildProcess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeMacroCodeAllowWin32Imports sets the defenderOfficeMacroCodeAllowWin32Imports property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeMacroCodeAllowWin32Imports(value *DefenderProtectionType)() {
-    m.defenderOfficeMacroCodeAllowWin32Imports = value
+    err := m.GetBackingStore().Set("defenderOfficeMacroCodeAllowWin32Imports", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderOfficeMacroCodeAllowWin32ImportsType sets the defenderOfficeMacroCodeAllowWin32ImportsType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeMacroCodeAllowWin32ImportsType(value *DefenderAttackSurfaceType)() {
-    m.defenderOfficeMacroCodeAllowWin32ImportsType = value
+    err := m.GetBackingStore().Set("defenderOfficeMacroCodeAllowWin32ImportsType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *DefenderProtectionType)() {
-    m.defenderPotentiallyUnwantedAppAction = value
+    err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppAction", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderPreventCredentialStealingType sets the defenderPreventCredentialStealingType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderPreventCredentialStealingType(value *DefenderProtectionType)() {
-    m.defenderPreventCredentialStealingType = value
+    err := m.GetBackingStore().Set("defenderPreventCredentialStealingType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderProcessCreation sets the defenderProcessCreation property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessCreation(value *DefenderProtectionType)() {
-    m.defenderProcessCreation = value
+    err := m.GetBackingStore().Set("defenderProcessCreation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderProcessCreationType sets the defenderProcessCreationType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessCreationType(value *DefenderAttackSurfaceType)() {
-    m.defenderProcessCreationType = value
+    err := m.GetBackingStore().Set("defenderProcessCreationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderProcessesToExclude sets the defenderProcessesToExclude property value. Processes to exclude from scans and real time protection.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessesToExclude(value []string)() {
-    m.defenderProcessesToExclude = value
+    err := m.GetBackingStore().Set("defenderProcessesToExclude", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanDirection sets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanDirection(value *DefenderRealtimeScanDirection)() {
-    m.defenderScanDirection = value
+    err := m.GetBackingStore().Set("defenderScanDirection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanMaxCpuPercentage sets the defenderScanMaxCpuPercentage property value. Represents the average CPU load factor for the Windows Defender scan (in percent). The default value is 50. Valid values 0 to 100
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanMaxCpuPercentage(value *int32)() {
-    m.defenderScanMaxCpuPercentage = value
+    err := m.GetBackingStore().Set("defenderScanMaxCpuPercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScanType sets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanType(value *DefenderScanType)() {
-    m.defenderScanType = value
+    err := m.GetBackingStore().Set("defenderScanType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScheduledQuickScanTime sets the defenderScheduledQuickScanTime property value. Selects the time of day that the Windows Defender quick scan should run. For example, a value of 0=12:00AM, a value of 60=1:00AM, a value of 120=2:00, and so on, up to a value of 1380=11:00PM. The default value is 120
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledQuickScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.defenderScheduledQuickScanTime = value
+    err := m.GetBackingStore().Set("defenderScheduledQuickScanTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScheduledScanDay sets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledScanDay(value *WeeklySchedule)() {
-    m.defenderScheduledScanDay = value
+    err := m.GetBackingStore().Set("defenderScheduledScanDay", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScheduledScanTime sets the defenderScheduledScanTime property value. Selects the time of day that the Windows Defender scan should run.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.defenderScheduledScanTime = value
+    err := m.GetBackingStore().Set("defenderScheduledScanTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScriptDownloadedPayloadExecution sets the defenderScriptDownloadedPayloadExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptDownloadedPayloadExecution(value *DefenderProtectionType)() {
-    m.defenderScriptDownloadedPayloadExecution = value
+    err := m.GetBackingStore().Set("defenderScriptDownloadedPayloadExecution", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScriptDownloadedPayloadExecutionType sets the defenderScriptDownloadedPayloadExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptDownloadedPayloadExecutionType(value *DefenderAttackSurfaceType)() {
-    m.defenderScriptDownloadedPayloadExecutionType = value
+    err := m.GetBackingStore().Set("defenderScriptDownloadedPayloadExecutionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScriptObfuscatedMacroCode sets the defenderScriptObfuscatedMacroCode property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptObfuscatedMacroCode(value *DefenderProtectionType)() {
-    m.defenderScriptObfuscatedMacroCode = value
+    err := m.GetBackingStore().Set("defenderScriptObfuscatedMacroCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderScriptObfuscatedMacroCodeType sets the defenderScriptObfuscatedMacroCodeType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptObfuscatedMacroCodeType(value *DefenderAttackSurfaceType)() {
-    m.defenderScriptObfuscatedMacroCodeType = value
+    err := m.GetBackingStore().Set("defenderScriptObfuscatedMacroCodeType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterBlockExploitProtectionOverride sets the defenderSecurityCenterBlockExploitProtectionOverride property value. Indicates whether or not to block user from overriding Exploit Protection settings.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterBlockExploitProtectionOverride(value *bool)() {
-    m.defenderSecurityCenterBlockExploitProtectionOverride = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterBlockExploitProtectionOverride", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableAccountUI sets the defenderSecurityCenterDisableAccountUI property value. Used to disable the display of the account protection area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableAccountUI(value *bool)() {
-    m.defenderSecurityCenterDisableAccountUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableAccountUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableAppBrowserUI sets the defenderSecurityCenterDisableAppBrowserUI property value. Used to disable the display of the app and browser protection area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableAppBrowserUI(value *bool)() {
-    m.defenderSecurityCenterDisableAppBrowserUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableAppBrowserUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableClearTpmUI sets the defenderSecurityCenterDisableClearTpmUI property value. Used to disable the display of the Clear TPM button.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableClearTpmUI(value *bool)() {
-    m.defenderSecurityCenterDisableClearTpmUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableClearTpmUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableFamilyUI sets the defenderSecurityCenterDisableFamilyUI property value. Used to disable the display of the family options area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableFamilyUI(value *bool)() {
-    m.defenderSecurityCenterDisableFamilyUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableFamilyUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableHardwareUI sets the defenderSecurityCenterDisableHardwareUI property value. Used to disable the display of the hardware protection area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableHardwareUI(value *bool)() {
-    m.defenderSecurityCenterDisableHardwareUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableHardwareUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableHealthUI sets the defenderSecurityCenterDisableHealthUI property value. Used to disable the display of the device performance and health area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableHealthUI(value *bool)() {
-    m.defenderSecurityCenterDisableHealthUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableHealthUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableNetworkUI sets the defenderSecurityCenterDisableNetworkUI property value. Used to disable the display of the firewall and network protection area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableNetworkUI(value *bool)() {
-    m.defenderSecurityCenterDisableNetworkUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableNetworkUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableNotificationAreaUI sets the defenderSecurityCenterDisableNotificationAreaUI property value. Used to disable the display of the notification area control. The user needs to either sign out and sign in or reboot the computer for this setting to take effect.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableNotificationAreaUI(value *bool)() {
-    m.defenderSecurityCenterDisableNotificationAreaUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableNotificationAreaUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableRansomwareUI sets the defenderSecurityCenterDisableRansomwareUI property value. Used to disable the display of the ransomware protection area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableRansomwareUI(value *bool)() {
-    m.defenderSecurityCenterDisableRansomwareUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableRansomwareUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableSecureBootUI sets the defenderSecurityCenterDisableSecureBootUI property value. Used to disable the display of the secure boot area under Device security.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableSecureBootUI(value *bool)() {
-    m.defenderSecurityCenterDisableSecureBootUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableSecureBootUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableTroubleshootingUI sets the defenderSecurityCenterDisableTroubleshootingUI property value. Used to disable the display of the security process troubleshooting under Device security.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableTroubleshootingUI(value *bool)() {
-    m.defenderSecurityCenterDisableTroubleshootingUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableTroubleshootingUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableVirusUI sets the defenderSecurityCenterDisableVirusUI property value. Used to disable the display of the virus and threat protection area.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableVirusUI(value *bool)() {
-    m.defenderSecurityCenterDisableVirusUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableVirusUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI sets the defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI property value. Used to disable the display of update TPM Firmware when a vulnerable firmware is detected.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI(value *bool)() {
-    m.defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterHelpEmail sets the defenderSecurityCenterHelpEmail property value. The email address that is displayed to users.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterHelpEmail(value *string)() {
-    m.defenderSecurityCenterHelpEmail = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterHelpEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterHelpPhone sets the defenderSecurityCenterHelpPhone property value. The phone number or Skype ID that is displayed to users.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterHelpPhone(value *string)() {
-    m.defenderSecurityCenterHelpPhone = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterHelpPhone", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterHelpURL sets the defenderSecurityCenterHelpURL property value. The help portal URL this is displayed to users.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterHelpURL(value *string)() {
-    m.defenderSecurityCenterHelpURL = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterHelpURL", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterITContactDisplay sets the defenderSecurityCenterITContactDisplay property value. Possible values for defenderSecurityCenterITContactDisplay
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterITContactDisplay(value *DefenderSecurityCenterITContactDisplayType)() {
-    m.defenderSecurityCenterITContactDisplay = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterITContactDisplay", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterNotificationsFromApp sets the defenderSecurityCenterNotificationsFromApp property value. Possible values for defenderSecurityCenterNotificationsFromApp
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterNotificationsFromApp(value *DefenderSecurityCenterNotificationsFromAppType)() {
-    m.defenderSecurityCenterNotificationsFromApp = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterNotificationsFromApp", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSecurityCenterOrganizationDisplayName sets the defenderSecurityCenterOrganizationDisplayName property value. The company name that is displayed to the users.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterOrganizationDisplayName(value *string)() {
-    m.defenderSecurityCenterOrganizationDisplayName = value
+    err := m.GetBackingStore().Set("defenderSecurityCenterOrganizationDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSignatureUpdateIntervalInHours sets the defenderSignatureUpdateIntervalInHours property value. Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSignatureUpdateIntervalInHours(value *int32)() {
-    m.defenderSignatureUpdateIntervalInHours = value
+    err := m.GetBackingStore().Set("defenderSignatureUpdateIntervalInHours", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)() {
-    m.defenderSubmitSamplesConsentType = value
+    err := m.GetBackingStore().Set("defenderSubmitSamplesConsentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderUntrustedExecutable sets the defenderUntrustedExecutable property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedExecutable(value *DefenderProtectionType)() {
-    m.defenderUntrustedExecutable = value
+    err := m.GetBackingStore().Set("defenderUntrustedExecutable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderUntrustedExecutableType sets the defenderUntrustedExecutableType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedExecutableType(value *DefenderAttackSurfaceType)() {
-    m.defenderUntrustedExecutableType = value
+    err := m.GetBackingStore().Set("defenderUntrustedExecutableType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderUntrustedUSBProcess sets the defenderUntrustedUSBProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedUSBProcess(value *DefenderProtectionType)() {
-    m.defenderUntrustedUSBProcess = value
+    err := m.GetBackingStore().Set("defenderUntrustedUSBProcess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderUntrustedUSBProcessType sets the defenderUntrustedUSBProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedUSBProcessType(value *DefenderAttackSurfaceType)() {
-    m.defenderUntrustedUSBProcessType = value
+    err := m.GetBackingStore().Set("defenderUntrustedUSBProcessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceGuardEnableSecureBootWithDMA sets the deviceGuardEnableSecureBootWithDMA property value. This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardEnableSecureBootWithDMA(value *bool)() {
-    m.deviceGuardEnableSecureBootWithDMA = value
+    err := m.GetBackingStore().Set("deviceGuardEnableSecureBootWithDMA", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceGuardEnableVirtualizationBasedSecurity sets the deviceGuardEnableVirtualizationBasedSecurity property value. Turns On Virtualization Based Security(VBS).
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardEnableVirtualizationBasedSecurity(value *bool)() {
-    m.deviceGuardEnableVirtualizationBasedSecurity = value
+    err := m.GetBackingStore().Set("deviceGuardEnableVirtualizationBasedSecurity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceGuardLaunchSystemGuard sets the deviceGuardLaunchSystemGuard property value. Possible values of a property
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardLaunchSystemGuard(value *Enablement)() {
-    m.deviceGuardLaunchSystemGuard = value
+    err := m.GetBackingStore().Set("deviceGuardLaunchSystemGuard", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceGuardLocalSystemAuthorityCredentialGuardSettings sets the deviceGuardLocalSystemAuthorityCredentialGuardSettings property value. Possible values of Credential Guard settings.
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardLocalSystemAuthorityCredentialGuardSettings(value *DeviceGuardLocalSystemAuthorityCredentialGuardType)() {
-    m.deviceGuardLocalSystemAuthorityCredentialGuardSettings = value
+    err := m.GetBackingStore().Set("deviceGuardLocalSystemAuthorityCredentialGuardSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceGuardSecureBootWithDMA sets the deviceGuardSecureBootWithDMA property value. Possible values of Secure Boot with DMA
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardSecureBootWithDMA(value *SecureBootWithDMAType)() {
-    m.deviceGuardSecureBootWithDMA = value
+    err := m.GetBackingStore().Set("deviceGuardSecureBootWithDMA", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDmaGuardDeviceEnumerationPolicy sets the dmaGuardDeviceEnumerationPolicy property value. Possible values of the DmaGuardDeviceEnumerationPolicy.
 func (m *Windows10EndpointProtectionConfiguration) SetDmaGuardDeviceEnumerationPolicy(value *DmaGuardDeviceEnumerationPolicyType)() {
-    m.dmaGuardDeviceEnumerationPolicy = value
+    err := m.GetBackingStore().Set("dmaGuardDeviceEnumerationPolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallBlockStatefulFTP sets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallBlockStatefulFTP(value *bool)() {
-    m.firewallBlockStatefulFTP = value
+    err := m.GetBackingStore().Set("firewallBlockStatefulFTP", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallCertificateRevocationListCheckMethod sets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallCertificateRevocationListCheckMethod(value *FirewallCertificateRevocationListCheckMethodType)() {
-    m.firewallCertificateRevocationListCheckMethod = value
+    err := m.GetBackingStore().Set("firewallCertificateRevocationListCheckMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallIdleTimeoutForSecurityAssociationInSeconds sets the firewallIdleTimeoutForSecurityAssociationInSeconds property value. Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIdleTimeoutForSecurityAssociationInSeconds(value *int32)() {
-    m.firewallIdleTimeoutForSecurityAssociationInSeconds = value
+    err := m.GetBackingStore().Set("firewallIdleTimeoutForSecurityAssociationInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallIPSecExemptionsAllowDHCP sets the firewallIPSecExemptionsAllowDHCP property value. Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowDHCP(value *bool)() {
-    m.firewallIPSecExemptionsAllowDHCP = value
+    err := m.GetBackingStore().Set("firewallIPSecExemptionsAllowDHCP", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallIPSecExemptionsAllowICMP sets the firewallIPSecExemptionsAllowICMP property value. Configures IPSec exemptions to allow ICMP
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowICMP(value *bool)() {
-    m.firewallIPSecExemptionsAllowICMP = value
+    err := m.GetBackingStore().Set("firewallIPSecExemptionsAllowICMP", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallIPSecExemptionsAllowNeighborDiscovery sets the firewallIPSecExemptionsAllowNeighborDiscovery property value. Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowNeighborDiscovery(value *bool)() {
-    m.firewallIPSecExemptionsAllowNeighborDiscovery = value
+    err := m.GetBackingStore().Set("firewallIPSecExemptionsAllowNeighborDiscovery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallIPSecExemptionsAllowRouterDiscovery sets the firewallIPSecExemptionsAllowRouterDiscovery property value. Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsAllowRouterDiscovery(value *bool)() {
-    m.firewallIPSecExemptionsAllowRouterDiscovery = value
+    err := m.GetBackingStore().Set("firewallIPSecExemptionsAllowRouterDiscovery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallIPSecExemptionsNone sets the firewallIPSecExemptionsNone property value. Configures IPSec exemptions to no exemptions
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallIPSecExemptionsNone(value *bool)() {
-    m.firewallIPSecExemptionsNone = value
+    err := m.GetBackingStore().Set("firewallIPSecExemptionsNone", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallMergeKeyingModuleSettings sets the firewallMergeKeyingModuleSettings property value. If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallMergeKeyingModuleSettings(value *bool)() {
-    m.firewallMergeKeyingModuleSettings = value
+    err := m.GetBackingStore().Set("firewallMergeKeyingModuleSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallPacketQueueingMethod sets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPacketQueueingMethod(value *FirewallPacketQueueingMethodType)() {
-    m.firewallPacketQueueingMethod = value
+    err := m.GetBackingStore().Set("firewallPacketQueueingMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallPreSharedKeyEncodingMethod sets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPreSharedKeyEncodingMethod(value *FirewallPreSharedKeyEncodingMethodType)() {
-    m.firewallPreSharedKeyEncodingMethod = value
+    err := m.GetBackingStore().Set("firewallPreSharedKeyEncodingMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallProfileDomain sets the firewallProfileDomain property value. Configures the firewall profile settings for domain networks
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallProfileDomain(value WindowsFirewallNetworkProfileable)() {
-    m.firewallProfileDomain = value
+    err := m.GetBackingStore().Set("firewallProfileDomain", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallProfilePrivate sets the firewallProfilePrivate property value. Configures the firewall profile settings for private networks
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallProfilePrivate(value WindowsFirewallNetworkProfileable)() {
-    m.firewallProfilePrivate = value
+    err := m.GetBackingStore().Set("firewallProfilePrivate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallProfilePublic sets the firewallProfilePublic property value. Configures the firewall profile settings for public networks
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallProfilePublic(value WindowsFirewallNetworkProfileable)() {
-    m.firewallProfilePublic = value
+    err := m.GetBackingStore().Set("firewallProfilePublic", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirewallRules sets the firewallRules property value. Configures the firewall rule settings. This collection can contain a maximum of 150 elements.
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallRules(value []WindowsFirewallRuleable)() {
-    m.firewallRules = value
+    err := m.GetBackingStore().Set("firewallRules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLanManagerAuthenticationLevel sets the lanManagerAuthenticationLevel property value. Possible values for LanManagerAuthenticationLevel
 func (m *Windows10EndpointProtectionConfiguration) SetLanManagerAuthenticationLevel(value *LanManagerAuthenticationLevel)() {
-    m.lanManagerAuthenticationLevel = value
+    err := m.GetBackingStore().Set("lanManagerAuthenticationLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLanManagerWorkstationDisableInsecureGuestLogons sets the lanManagerWorkstationDisableInsecureGuestLogons property value. If enabled,the SMB client will allow insecure guest logons. If not configured, the SMB client will reject insecure guest logons.
 func (m *Windows10EndpointProtectionConfiguration) SetLanManagerWorkstationDisableInsecureGuestLogons(value *bool)() {
-    m.lanManagerWorkstationDisableInsecureGuestLogons = value
+    err := m.GetBackingStore().Set("lanManagerWorkstationDisableInsecureGuestLogons", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAdministratorAccountName sets the localSecurityOptionsAdministratorAccountName property value. Define a different account name to be associated with the security identifier (SID) for the account 'Administrator'.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAdministratorAccountName(value *string)() {
-    m.localSecurityOptionsAdministratorAccountName = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAdministratorAccountName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAdministratorElevationPromptBehavior sets the localSecurityOptionsAdministratorElevationPromptBehavior property value. Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAdministratorElevationPromptBehavior(value *LocalSecurityOptionsAdministratorElevationPromptBehaviorType)() {
-    m.localSecurityOptionsAdministratorElevationPromptBehavior = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAdministratorElevationPromptBehavior", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares sets the localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares property value. This security setting determines whether to allows anonymous users to perform certain activities, such as enumerating the names of domain accounts and network shares.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares(value *bool)() {
-    m.localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowPKU2UAuthenticationRequests sets the localSecurityOptionsAllowPKU2UAuthenticationRequests property value. Block PKU2U authentication requests to this device to use online identities.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowPKU2UAuthenticationRequests(value *bool)() {
-    m.localSecurityOptionsAllowPKU2UAuthenticationRequests = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowPKU2UAuthenticationRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager sets the localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager property value. Edit the default Security Descriptor Definition Language string to allow or deny users and groups to make remote calls to the SAM.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager(value *string)() {
-    m.localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool sets the localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool property value. UI helper boolean for LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager entity
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool(value *bool)() {
-    m.localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn sets the localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn property value. This security setting determines whether a computer can be shut down without having to log on to Windows.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn(value *bool)() {
-    m.localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowUIAccessApplicationElevation sets the localSecurityOptionsAllowUIAccessApplicationElevation property value. Allow UIAccess apps to prompt for elevation without using the secure desktop.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowUIAccessApplicationElevation(value *bool)() {
-    m.localSecurityOptionsAllowUIAccessApplicationElevation = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowUIAccessApplicationElevation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations sets the localSecurityOptionsAllowUIAccessApplicationsForSecureLocations property value. Allow UIAccess apps to prompt for elevation without using the secure desktop.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations(value *bool)() {
-    m.localSecurityOptionsAllowUIAccessApplicationsForSecureLocations = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowUIAccessApplicationsForSecureLocations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsAllowUndockWithoutHavingToLogon sets the localSecurityOptionsAllowUndockWithoutHavingToLogon property value. Prevent a portable computer from being undocked without having to log in.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAllowUndockWithoutHavingToLogon(value *bool)() {
-    m.localSecurityOptionsAllowUndockWithoutHavingToLogon = value
+    err := m.GetBackingStore().Set("localSecurityOptionsAllowUndockWithoutHavingToLogon", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsBlockMicrosoftAccounts sets the localSecurityOptionsBlockMicrosoftAccounts property value. Prevent users from adding new Microsoft accounts to this computer.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsBlockMicrosoftAccounts(value *bool)() {
-    m.localSecurityOptionsBlockMicrosoftAccounts = value
+    err := m.GetBackingStore().Set("localSecurityOptionsBlockMicrosoftAccounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsBlockRemoteLogonWithBlankPassword sets the localSecurityOptionsBlockRemoteLogonWithBlankPassword property value. Enable Local accounts that are not password protected to log on from locations other than the physical device.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsBlockRemoteLogonWithBlankPassword(value *bool)() {
-    m.localSecurityOptionsBlockRemoteLogonWithBlankPassword = value
+    err := m.GetBackingStore().Set("localSecurityOptionsBlockRemoteLogonWithBlankPassword", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsBlockRemoteOpticalDriveAccess sets the localSecurityOptionsBlockRemoteOpticalDriveAccess property value. Enabling this settings allows only interactively logged on user to access CD-ROM media.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsBlockRemoteOpticalDriveAccess(value *bool)() {
-    m.localSecurityOptionsBlockRemoteOpticalDriveAccess = value
+    err := m.GetBackingStore().Set("localSecurityOptionsBlockRemoteOpticalDriveAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsBlockUsersInstallingPrinterDrivers sets the localSecurityOptionsBlockUsersInstallingPrinterDrivers property value. Restrict installing printer drivers as part of connecting to a shared printer to admins only.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsBlockUsersInstallingPrinterDrivers(value *bool)() {
-    m.localSecurityOptionsBlockUsersInstallingPrinterDrivers = value
+    err := m.GetBackingStore().Set("localSecurityOptionsBlockUsersInstallingPrinterDrivers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsClearVirtualMemoryPageFile sets the localSecurityOptionsClearVirtualMemoryPageFile property value. This security setting determines whether the virtual memory pagefile is cleared when the system is shut down.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsClearVirtualMemoryPageFile(value *bool)() {
-    m.localSecurityOptionsClearVirtualMemoryPageFile = value
+    err := m.GetBackingStore().Set("localSecurityOptionsClearVirtualMemoryPageFile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsClientDigitallySignCommunicationsAlways sets the localSecurityOptionsClientDigitallySignCommunicationsAlways property value. This security setting determines whether packet signing is required by the SMB client component.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsClientDigitallySignCommunicationsAlways(value *bool)() {
-    m.localSecurityOptionsClientDigitallySignCommunicationsAlways = value
+    err := m.GetBackingStore().Set("localSecurityOptionsClientDigitallySignCommunicationsAlways", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers sets the localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers property value. If this security setting is enabled, the Server Message Block (SMB) redirector is allowed to send plaintext passwords to non-Microsoft SMB servers that do not support password encryption during authentication.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers(value *bool)() {
-    m.localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers = value
+    err := m.GetBackingStore().Set("localSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation sets the localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation property value. App installations requiring elevated privileges will prompt for admin credentials.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation(value *bool)() {
-    m.localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDetectApplicationInstallationsAndPromptForElevation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDisableAdministratorAccount sets the localSecurityOptionsDisableAdministratorAccount property value. Determines whether the Local Administrator account is enabled or disabled.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDisableAdministratorAccount(value *bool)() {
-    m.localSecurityOptionsDisableAdministratorAccount = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDisableAdministratorAccount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees sets the localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees property value. This security setting determines whether the SMB client attempts to negotiate SMB packet signing.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees(value *bool)() {
-    m.localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDisableGuestAccount sets the localSecurityOptionsDisableGuestAccount property value. Determines if the Guest account is enabled or disabled.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDisableGuestAccount(value *bool)() {
-    m.localSecurityOptionsDisableGuestAccount = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDisableGuestAccount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways sets the localSecurityOptionsDisableServerDigitallySignCommunicationsAlways property value. This security setting determines whether packet signing is required by the SMB server component.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways(value *bool)() {
-    m.localSecurityOptionsDisableServerDigitallySignCommunicationsAlways = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDisableServerDigitallySignCommunicationsAlways", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees sets the localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees property value. This security setting determines whether the SMB server will negotiate SMB packet signing with clients that request it.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees(value *bool)() {
-    m.localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts sets the localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts property value. This security setting determines what additional permissions will be granted for anonymous connections to the computer.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts(value *bool)() {
-    m.localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDoNotRequireCtrlAltDel sets the localSecurityOptionsDoNotRequireCtrlAltDel property value. Require CTRL+ALT+DEL to be pressed before a user can log on.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDoNotRequireCtrlAltDel(value *bool)() {
-    m.localSecurityOptionsDoNotRequireCtrlAltDel = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDoNotRequireCtrlAltDel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange sets the localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange property value. This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It’s not stored by default.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange(value *bool)() {
-    m.localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange = value
+    err := m.GetBackingStore().Set("localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser sets the localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser property value. Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser(value *LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType)() {
-    m.localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser = value
+    err := m.GetBackingStore().Set("localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsGuestAccountName sets the localSecurityOptionsGuestAccountName property value. Define a different account name to be associated with the security identifier (SID) for the account 'Guest'.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsGuestAccountName(value *string)() {
-    m.localSecurityOptionsGuestAccountName = value
+    err := m.GetBackingStore().Set("localSecurityOptionsGuestAccountName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsHideLastSignedInUser sets the localSecurityOptionsHideLastSignedInUser property value. Do not display the username of the last person who signed in on this device.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsHideLastSignedInUser(value *bool)() {
-    m.localSecurityOptionsHideLastSignedInUser = value
+    err := m.GetBackingStore().Set("localSecurityOptionsHideLastSignedInUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsHideUsernameAtSignIn sets the localSecurityOptionsHideUsernameAtSignIn property value. Do not display the username of the person signing in to this device after credentials are entered and before the device’s desktop is shown.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsHideUsernameAtSignIn(value *bool)() {
-    m.localSecurityOptionsHideUsernameAtSignIn = value
+    err := m.GetBackingStore().Set("localSecurityOptionsHideUsernameAtSignIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsInformationDisplayedOnLockScreen sets the localSecurityOptionsInformationDisplayedOnLockScreen property value. Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsInformationDisplayedOnLockScreen(value *LocalSecurityOptionsInformationDisplayedOnLockScreenType)() {
-    m.localSecurityOptionsInformationDisplayedOnLockScreen = value
+    err := m.GetBackingStore().Set("localSecurityOptionsInformationDisplayedOnLockScreen", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsInformationShownOnLockScreen sets the localSecurityOptionsInformationShownOnLockScreen property value. Possible values for LocalSecurityOptionsInformationShownOnLockScreenType
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsInformationShownOnLockScreen(value *LocalSecurityOptionsInformationShownOnLockScreenType)() {
-    m.localSecurityOptionsInformationShownOnLockScreen = value
+    err := m.GetBackingStore().Set("localSecurityOptionsInformationShownOnLockScreen", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsLogOnMessageText sets the localSecurityOptionsLogOnMessageText property value. Set message text for users attempting to log in.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsLogOnMessageText(value *string)() {
-    m.localSecurityOptionsLogOnMessageText = value
+    err := m.GetBackingStore().Set("localSecurityOptionsLogOnMessageText", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsLogOnMessageTitle sets the localSecurityOptionsLogOnMessageTitle property value. Set message title for users attempting to log in.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsLogOnMessageTitle(value *string)() {
-    m.localSecurityOptionsLogOnMessageTitle = value
+    err := m.GetBackingStore().Set("localSecurityOptionsLogOnMessageTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsMachineInactivityLimit sets the localSecurityOptionsMachineInactivityLimit property value. Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMachineInactivityLimit(value *int32)() {
-    m.localSecurityOptionsMachineInactivityLimit = value
+    err := m.GetBackingStore().Set("localSecurityOptionsMachineInactivityLimit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsMachineInactivityLimitInMinutes sets the localSecurityOptionsMachineInactivityLimitInMinutes property value. Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMachineInactivityLimitInMinutes(value *int32)() {
-    m.localSecurityOptionsMachineInactivityLimitInMinutes = value
+    err := m.GetBackingStore().Set("localSecurityOptionsMachineInactivityLimitInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients sets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients(value *LocalSecurityOptionsMinimumSessionSecurity)() {
-    m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients = value
+    err := m.GetBackingStore().Set("localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers sets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers(value *LocalSecurityOptionsMinimumSessionSecurity)() {
-    m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers = value
+    err := m.GetBackingStore().Set("localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsOnlyElevateSignedExecutables sets the localSecurityOptionsOnlyElevateSignedExecutables property value. Enforce PKI certification path validation for a given executable file before it is permitted to run.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsOnlyElevateSignedExecutables(value *bool)() {
-    m.localSecurityOptionsOnlyElevateSignedExecutables = value
+    err := m.GetBackingStore().Set("localSecurityOptionsOnlyElevateSignedExecutables", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares sets the localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares property value. By default, this security setting restricts anonymous access to shares and pipes to the settings for named pipes that can be accessed anonymously and Shares that can be accessed anonymously
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares(value *bool)() {
-    m.localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares = value
+    err := m.GetBackingStore().Set("localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsSmartCardRemovalBehavior sets the localSecurityOptionsSmartCardRemovalBehavior property value. Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsSmartCardRemovalBehavior(value *LocalSecurityOptionsSmartCardRemovalBehaviorType)() {
-    m.localSecurityOptionsSmartCardRemovalBehavior = value
+    err := m.GetBackingStore().Set("localSecurityOptionsSmartCardRemovalBehavior", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsStandardUserElevationPromptBehavior sets the localSecurityOptionsStandardUserElevationPromptBehavior property value. Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsStandardUserElevationPromptBehavior(value *LocalSecurityOptionsStandardUserElevationPromptBehaviorType)() {
-    m.localSecurityOptionsStandardUserElevationPromptBehavior = value
+    err := m.GetBackingStore().Set("localSecurityOptionsStandardUserElevationPromptBehavior", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation sets the localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation property value. Enable all elevation requests to go to the interactive user's desktop rather than the secure desktop. Prompt behavior policy settings for admins and standard users are used.
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation(value *bool)() {
-    m.localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation = value
+    err := m.GetBackingStore().Set("localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsUseAdminApprovalMode sets the localSecurityOptionsUseAdminApprovalMode property value. Defines whether the built-in admin account uses Admin Approval Mode or runs all apps with full admin privileges.Default is enabled
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsUseAdminApprovalMode(value *bool)() {
-    m.localSecurityOptionsUseAdminApprovalMode = value
+    err := m.GetBackingStore().Set("localSecurityOptionsUseAdminApprovalMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsUseAdminApprovalModeForAdministrators sets the localSecurityOptionsUseAdminApprovalModeForAdministrators property value. Define whether Admin Approval Mode and all UAC policy settings are enabled, default is enabled
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsUseAdminApprovalModeForAdministrators(value *bool)() {
-    m.localSecurityOptionsUseAdminApprovalModeForAdministrators = value
+    err := m.GetBackingStore().Set("localSecurityOptionsUseAdminApprovalModeForAdministrators", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations sets the localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations property value. Virtualize file and registry write failures to per user locations
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(value *bool)() {
-    m.localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations = value
+    err := m.GetBackingStore().Set("localSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmartScreenBlockOverrideForFiles sets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
 func (m *Windows10EndpointProtectionConfiguration) SetSmartScreenBlockOverrideForFiles(value *bool)() {
-    m.smartScreenBlockOverrideForFiles = value
+    err := m.GetBackingStore().Set("smartScreenBlockOverrideForFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSmartScreenEnableInShell sets the smartScreenEnableInShell property value. Allows IT Admins to configure SmartScreen for Windows.
 func (m *Windows10EndpointProtectionConfiguration) SetSmartScreenEnableInShell(value *bool)() {
-    m.smartScreenEnableInShell = value
+    err := m.GetBackingStore().Set("smartScreenEnableInShell", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsAccessCredentialManagerAsTrustedCaller sets the userRightsAccessCredentialManagerAsTrustedCaller property value. This user right is used by Credential Manager during Backup/Restore. Users' saved credentials might be compromised if this privilege is given to other entities. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsAccessCredentialManagerAsTrustedCaller(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsAccessCredentialManagerAsTrustedCaller = value
+    err := m.GetBackingStore().Set("userRightsAccessCredentialManagerAsTrustedCaller", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsActAsPartOfTheOperatingSystem sets the userRightsActAsPartOfTheOperatingSystem property value. This user right allows a process to impersonate any user without authentication. The process can therefore gain access to the same local resources as that user. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsActAsPartOfTheOperatingSystem(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsActAsPartOfTheOperatingSystem = value
+    err := m.GetBackingStore().Set("userRightsActAsPartOfTheOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsAllowAccessFromNetwork sets the userRightsAllowAccessFromNetwork property value. This user right determines which users and groups are allowed to connect to the computer over the network. State Allowed is supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsAllowAccessFromNetwork(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsAllowAccessFromNetwork = value
+    err := m.GetBackingStore().Set("userRightsAllowAccessFromNetwork", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsBackupData sets the userRightsBackupData property value. This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when backing up files and directories. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsBackupData(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsBackupData = value
+    err := m.GetBackingStore().Set("userRightsBackupData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsBlockAccessFromNetwork sets the userRightsBlockAccessFromNetwork property value. This user right determines which users and groups are block from connecting to the computer over the network. State Block is supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsBlockAccessFromNetwork(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsBlockAccessFromNetwork = value
+    err := m.GetBackingStore().Set("userRightsBlockAccessFromNetwork", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsChangeSystemTime sets the userRightsChangeSystemTime property value. This user right determines which users and groups can change the time and date on the internal clock of the computer. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsChangeSystemTime(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsChangeSystemTime = value
+    err := m.GetBackingStore().Set("userRightsChangeSystemTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsCreateGlobalObjects sets the userRightsCreateGlobalObjects property value. This security setting determines whether users can create global objects that are available to all sessions. Users who can create global objects could affect processes that run under other users' sessions, which could lead to application failure or data corruption. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsCreateGlobalObjects(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsCreateGlobalObjects = value
+    err := m.GetBackingStore().Set("userRightsCreateGlobalObjects", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsCreatePageFile sets the userRightsCreatePageFile property value. This user right determines which users and groups can call an internal API to create and change the size of a page file. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsCreatePageFile(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsCreatePageFile = value
+    err := m.GetBackingStore().Set("userRightsCreatePageFile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsCreatePermanentSharedObjects sets the userRightsCreatePermanentSharedObjects property value. This user right determines which accounts can be used by processes to create a directory object using the object manager. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsCreatePermanentSharedObjects(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsCreatePermanentSharedObjects = value
+    err := m.GetBackingStore().Set("userRightsCreatePermanentSharedObjects", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsCreateSymbolicLinks sets the userRightsCreateSymbolicLinks property value. This user right determines if the user can create a symbolic link from the computer to which they are logged on. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsCreateSymbolicLinks(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsCreateSymbolicLinks = value
+    err := m.GetBackingStore().Set("userRightsCreateSymbolicLinks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsCreateToken sets the userRightsCreateToken property value. This user right determines which users/groups can be used by processes to create a token that can then be used to get access to any local resources when the process uses an internal API to create an access token. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsCreateToken(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsCreateToken = value
+    err := m.GetBackingStore().Set("userRightsCreateToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsDebugPrograms sets the userRightsDebugPrograms property value. This user right determines which users can attach a debugger to any process or to the kernel. Only states NotConfigured and Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsDebugPrograms(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsDebugPrograms = value
+    err := m.GetBackingStore().Set("userRightsDebugPrograms", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsDelegation sets the userRightsDelegation property value. This user right determines which users can set the Trusted for Delegation setting on a user or computer object. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsDelegation(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsDelegation = value
+    err := m.GetBackingStore().Set("userRightsDelegation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsDenyLocalLogOn sets the userRightsDenyLocalLogOn property value. This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsDenyLocalLogOn(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsDenyLocalLogOn = value
+    err := m.GetBackingStore().Set("userRightsDenyLocalLogOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsGenerateSecurityAudits sets the userRightsGenerateSecurityAudits property value. This user right determines which accounts can be used by a process to add entries to the security log. The security log is used to trace unauthorized system access.  Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsGenerateSecurityAudits(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsGenerateSecurityAudits = value
+    err := m.GetBackingStore().Set("userRightsGenerateSecurityAudits", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsImpersonateClient sets the userRightsImpersonateClient property value. Assigning this user right to a user allows programs running on behalf of that user to impersonate a client. Requiring this user right for this kind of impersonation prevents an unauthorized user from convincing a client to connect to a service that they have created and then impersonating that client, which can elevate the unauthorized user's permissions to administrative or system levels. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsImpersonateClient(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsImpersonateClient = value
+    err := m.GetBackingStore().Set("userRightsImpersonateClient", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsIncreaseSchedulingPriority sets the userRightsIncreaseSchedulingPriority property value. This user right determines which accounts can use a process with Write Property access to another process to increase the execution priority assigned to the other process. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsIncreaseSchedulingPriority(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsIncreaseSchedulingPriority = value
+    err := m.GetBackingStore().Set("userRightsIncreaseSchedulingPriority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsLoadUnloadDrivers sets the userRightsLoadUnloadDrivers property value. This user right determines which users can dynamically load and unload device drivers or other code in to kernel mode. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsLoadUnloadDrivers(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsLoadUnloadDrivers = value
+    err := m.GetBackingStore().Set("userRightsLoadUnloadDrivers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsLocalLogOn sets the userRightsLocalLogOn property value. This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsLocalLogOn(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsLocalLogOn = value
+    err := m.GetBackingStore().Set("userRightsLocalLogOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsLockMemory sets the userRightsLockMemory property value. This user right determines which accounts can use a process to keep data in physical memory, which prevents the system from paging the data to virtual memory on disk. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsLockMemory(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsLockMemory = value
+    err := m.GetBackingStore().Set("userRightsLockMemory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsManageAuditingAndSecurityLogs sets the userRightsManageAuditingAndSecurityLogs property value. This user right determines which users can specify object access auditing options for individual resources, such as files, Active Directory objects, and registry keys. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsManageAuditingAndSecurityLogs(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsManageAuditingAndSecurityLogs = value
+    err := m.GetBackingStore().Set("userRightsManageAuditingAndSecurityLogs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsManageVolumes sets the userRightsManageVolumes property value. This user right determines which users and groups can run maintenance tasks on a volume, such as remote defragmentation. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsManageVolumes(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsManageVolumes = value
+    err := m.GetBackingStore().Set("userRightsManageVolumes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsModifyFirmwareEnvironment sets the userRightsModifyFirmwareEnvironment property value. This user right determines who can modify firmware environment values. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsModifyFirmwareEnvironment(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsModifyFirmwareEnvironment = value
+    err := m.GetBackingStore().Set("userRightsModifyFirmwareEnvironment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsModifyObjectLabels sets the userRightsModifyObjectLabels property value. This user right determines which user accounts can modify the integrity label of objects, such as files, registry keys, or processes owned by other users. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsModifyObjectLabels(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsModifyObjectLabels = value
+    err := m.GetBackingStore().Set("userRightsModifyObjectLabels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsProfileSingleProcess sets the userRightsProfileSingleProcess property value. This user right determines which users can use performance monitoring tools to monitor the performance of system processes. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsProfileSingleProcess(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsProfileSingleProcess = value
+    err := m.GetBackingStore().Set("userRightsProfileSingleProcess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsRemoteDesktopServicesLogOn sets the userRightsRemoteDesktopServicesLogOn property value. This user right determines which users and groups are prohibited from logging on as a Remote Desktop Services client. Only states NotConfigured and Blocked are supported
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsRemoteDesktopServicesLogOn(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsRemoteDesktopServicesLogOn = value
+    err := m.GetBackingStore().Set("userRightsRemoteDesktopServicesLogOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsRemoteShutdown sets the userRightsRemoteShutdown property value. This user right determines which users are allowed to shut down a computer from a remote location on the network. Misuse of this user right can result in a denial of service. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsRemoteShutdown(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsRemoteShutdown = value
+    err := m.GetBackingStore().Set("userRightsRemoteShutdown", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsRestoreData sets the userRightsRestoreData property value. This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when restoring backed up files and directories, and determines which users can set any valid security principal as the owner of an object. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsRestoreData(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsRestoreData = value
+    err := m.GetBackingStore().Set("userRightsRestoreData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserRightsTakeOwnership sets the userRightsTakeOwnership property value. This user right determines which users can take ownership of any securable object in the system, including Active Directory objects, files and folders, printers, registry keys, processes, and threads. Only states NotConfigured and Allowed are supported.
 func (m *Windows10EndpointProtectionConfiguration) SetUserRightsTakeOwnership(value DeviceManagementUserRightsSettingable)() {
-    m.userRightsTakeOwnership = value
+    err := m.GetBackingStore().Set("userRightsTakeOwnership", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsDefenderTamperProtection sets the windowsDefenderTamperProtection property value. Defender TamperProtection setting options
 func (m *Windows10EndpointProtectionConfiguration) SetWindowsDefenderTamperProtection(value *WindowsDefenderTamperProtectionOptions)() {
-    m.windowsDefenderTamperProtection = value
+    err := m.GetBackingStore().Set("windowsDefenderTamperProtection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetXboxServicesAccessoryManagementServiceStartupMode sets the xboxServicesAccessoryManagementServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesAccessoryManagementServiceStartupMode(value *ServiceStartType)() {
-    m.xboxServicesAccessoryManagementServiceStartupMode = value
+    err := m.GetBackingStore().Set("xboxServicesAccessoryManagementServiceStartupMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetXboxServicesEnableXboxGameSaveTask sets the xboxServicesEnableXboxGameSaveTask property value. This setting determines whether xbox game save is enabled (1) or disabled (0).
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesEnableXboxGameSaveTask(value *bool)() {
-    m.xboxServicesEnableXboxGameSaveTask = value
+    err := m.GetBackingStore().Set("xboxServicesEnableXboxGameSaveTask", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetXboxServicesLiveAuthManagerServiceStartupMode sets the xboxServicesLiveAuthManagerServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesLiveAuthManagerServiceStartupMode(value *ServiceStartType)() {
-    m.xboxServicesLiveAuthManagerServiceStartupMode = value
+    err := m.GetBackingStore().Set("xboxServicesLiveAuthManagerServiceStartupMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetXboxServicesLiveGameSaveServiceStartupMode sets the xboxServicesLiveGameSaveServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesLiveGameSaveServiceStartupMode(value *ServiceStartType)() {
-    m.xboxServicesLiveGameSaveServiceStartupMode = value
+    err := m.GetBackingStore().Set("xboxServicesLiveGameSaveServiceStartupMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetXboxServicesLiveNetworkingServiceStartupMode sets the xboxServicesLiveNetworkingServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesLiveNetworkingServiceStartupMode(value *ServiceStartType)() {
-    m.xboxServicesLiveNetworkingServiceStartupMode = value
+    err := m.GetBackingStore().Set("xboxServicesLiveNetworkingServiceStartupMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EndpointProtectionConfigurationable 
+type Windows10EndpointProtectionConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationGuardAllowCameraMicrophoneRedirection()(*bool)
+    GetApplicationGuardAllowFileSaveOnHost()(*bool)
+    GetApplicationGuardAllowPersistence()(*bool)
+    GetApplicationGuardAllowPrintToLocalPrinters()(*bool)
+    GetApplicationGuardAllowPrintToNetworkPrinters()(*bool)
+    GetApplicationGuardAllowPrintToPDF()(*bool)
+    GetApplicationGuardAllowPrintToXPS()(*bool)
+    GetApplicationGuardAllowVirtualGPU()(*bool)
+    GetApplicationGuardBlockClipboardSharing()(*ApplicationGuardBlockClipboardSharingType)
+    GetApplicationGuardBlockFileTransfer()(*ApplicationGuardBlockFileTransferType)
+    GetApplicationGuardBlockNonEnterpriseContent()(*bool)
+    GetApplicationGuardCertificateThumbprints()([]string)
+    GetApplicationGuardEnabled()(*bool)
+    GetApplicationGuardEnabledOptions()(*ApplicationGuardEnabledOptions)
+    GetApplicationGuardForceAuditing()(*bool)
+    GetAppLockerApplicationControl()(*AppLockerApplicationControlType)
+    GetBitLockerAllowStandardUserEncryption()(*bool)
+    GetBitLockerDisableWarningForOtherDiskEncryption()(*bool)
+    GetBitLockerEnableStorageCardEncryptionOnMobile()(*bool)
+    GetBitLockerEncryptDevice()(*bool)
+    GetBitLockerFixedDrivePolicy()(BitLockerFixedDrivePolicyable)
+    GetBitLockerRecoveryPasswordRotation()(*BitLockerRecoveryPasswordRotationType)
+    GetBitLockerRemovableDrivePolicy()(BitLockerRemovableDrivePolicyable)
+    GetBitLockerSystemDrivePolicy()(BitLockerSystemDrivePolicyable)
+    GetDefenderAdditionalGuardedFolders()([]string)
+    GetDefenderAdobeReaderLaunchChildProcess()(*DefenderProtectionType)
+    GetDefenderAdvancedRansomewareProtectionType()(*DefenderProtectionType)
+    GetDefenderAllowBehaviorMonitoring()(*bool)
+    GetDefenderAllowCloudProtection()(*bool)
+    GetDefenderAllowEndUserAccess()(*bool)
+    GetDefenderAllowIntrusionPreventionSystem()(*bool)
+    GetDefenderAllowOnAccessProtection()(*bool)
+    GetDefenderAllowRealTimeMonitoring()(*bool)
+    GetDefenderAllowScanArchiveFiles()(*bool)
+    GetDefenderAllowScanDownloads()(*bool)
+    GetDefenderAllowScanNetworkFiles()(*bool)
+    GetDefenderAllowScanRemovableDrivesDuringFullScan()(*bool)
+    GetDefenderAllowScanScriptsLoadedInInternetExplorer()(*bool)
+    GetDefenderAttackSurfaceReductionExcludedPaths()([]string)
+    GetDefenderBlockEndUserAccess()(*bool)
+    GetDefenderBlockPersistenceThroughWmiType()(*DefenderAttackSurfaceType)
+    GetDefenderCheckForSignaturesBeforeRunningScan()(*bool)
+    GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType)
+    GetDefenderCloudExtendedTimeoutInSeconds()(*int32)
+    GetDefenderDaysBeforeDeletingQuarantinedMalware()(*int32)
+    GetDefenderDetectedMalwareActions()(DefenderDetectedMalwareActionsable)
+    GetDefenderDisableBehaviorMonitoring()(*bool)
+    GetDefenderDisableCatchupFullScan()(*bool)
+    GetDefenderDisableCatchupQuickScan()(*bool)
+    GetDefenderDisableCloudProtection()(*bool)
+    GetDefenderDisableIntrusionPreventionSystem()(*bool)
+    GetDefenderDisableOnAccessProtection()(*bool)
+    GetDefenderDisableRealTimeMonitoring()(*bool)
+    GetDefenderDisableScanArchiveFiles()(*bool)
+    GetDefenderDisableScanDownloads()(*bool)
+    GetDefenderDisableScanNetworkFiles()(*bool)
+    GetDefenderDisableScanRemovableDrivesDuringFullScan()(*bool)
+    GetDefenderDisableScanScriptsLoadedInInternetExplorer()(*bool)
+    GetDefenderEmailContentExecution()(*DefenderProtectionType)
+    GetDefenderEmailContentExecutionType()(*DefenderAttackSurfaceType)
+    GetDefenderEnableLowCpuPriority()(*bool)
+    GetDefenderEnableScanIncomingMail()(*bool)
+    GetDefenderEnableScanMappedNetworkDrivesDuringFullScan()(*bool)
+    GetDefenderExploitProtectionXml()([]byte)
+    GetDefenderExploitProtectionXmlFileName()(*string)
+    GetDefenderFileExtensionsToExclude()([]string)
+    GetDefenderFilesAndFoldersToExclude()([]string)
+    GetDefenderGuardedFoldersAllowedAppPaths()([]string)
+    GetDefenderGuardMyFoldersType()(*FolderProtectionType)
+    GetDefenderNetworkProtectionType()(*DefenderProtectionType)
+    GetDefenderOfficeAppsExecutableContentCreationOrLaunch()(*DefenderProtectionType)
+    GetDefenderOfficeAppsExecutableContentCreationOrLaunchType()(*DefenderAttackSurfaceType)
+    GetDefenderOfficeAppsLaunchChildProcess()(*DefenderProtectionType)
+    GetDefenderOfficeAppsLaunchChildProcessType()(*DefenderAttackSurfaceType)
+    GetDefenderOfficeAppsOtherProcessInjection()(*DefenderProtectionType)
+    GetDefenderOfficeAppsOtherProcessInjectionType()(*DefenderAttackSurfaceType)
+    GetDefenderOfficeCommunicationAppsLaunchChildProcess()(*DefenderProtectionType)
+    GetDefenderOfficeMacroCodeAllowWin32Imports()(*DefenderProtectionType)
+    GetDefenderOfficeMacroCodeAllowWin32ImportsType()(*DefenderAttackSurfaceType)
+    GetDefenderPotentiallyUnwantedAppAction()(*DefenderProtectionType)
+    GetDefenderPreventCredentialStealingType()(*DefenderProtectionType)
+    GetDefenderProcessCreation()(*DefenderProtectionType)
+    GetDefenderProcessCreationType()(*DefenderAttackSurfaceType)
+    GetDefenderProcessesToExclude()([]string)
+    GetDefenderScanDirection()(*DefenderRealtimeScanDirection)
+    GetDefenderScanMaxCpuPercentage()(*int32)
+    GetDefenderScanType()(*DefenderScanType)
+    GetDefenderScheduledQuickScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetDefenderScheduledScanDay()(*WeeklySchedule)
+    GetDefenderScheduledScanTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetDefenderScriptDownloadedPayloadExecution()(*DefenderProtectionType)
+    GetDefenderScriptDownloadedPayloadExecutionType()(*DefenderAttackSurfaceType)
+    GetDefenderScriptObfuscatedMacroCode()(*DefenderProtectionType)
+    GetDefenderScriptObfuscatedMacroCodeType()(*DefenderAttackSurfaceType)
+    GetDefenderSecurityCenterBlockExploitProtectionOverride()(*bool)
+    GetDefenderSecurityCenterDisableAccountUI()(*bool)
+    GetDefenderSecurityCenterDisableAppBrowserUI()(*bool)
+    GetDefenderSecurityCenterDisableClearTpmUI()(*bool)
+    GetDefenderSecurityCenterDisableFamilyUI()(*bool)
+    GetDefenderSecurityCenterDisableHardwareUI()(*bool)
+    GetDefenderSecurityCenterDisableHealthUI()(*bool)
+    GetDefenderSecurityCenterDisableNetworkUI()(*bool)
+    GetDefenderSecurityCenterDisableNotificationAreaUI()(*bool)
+    GetDefenderSecurityCenterDisableRansomwareUI()(*bool)
+    GetDefenderSecurityCenterDisableSecureBootUI()(*bool)
+    GetDefenderSecurityCenterDisableTroubleshootingUI()(*bool)
+    GetDefenderSecurityCenterDisableVirusUI()(*bool)
+    GetDefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI()(*bool)
+    GetDefenderSecurityCenterHelpEmail()(*string)
+    GetDefenderSecurityCenterHelpPhone()(*string)
+    GetDefenderSecurityCenterHelpURL()(*string)
+    GetDefenderSecurityCenterITContactDisplay()(*DefenderSecurityCenterITContactDisplayType)
+    GetDefenderSecurityCenterNotificationsFromApp()(*DefenderSecurityCenterNotificationsFromAppType)
+    GetDefenderSecurityCenterOrganizationDisplayName()(*string)
+    GetDefenderSignatureUpdateIntervalInHours()(*int32)
+    GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType)
+    GetDefenderUntrustedExecutable()(*DefenderProtectionType)
+    GetDefenderUntrustedExecutableType()(*DefenderAttackSurfaceType)
+    GetDefenderUntrustedUSBProcess()(*DefenderProtectionType)
+    GetDefenderUntrustedUSBProcessType()(*DefenderAttackSurfaceType)
+    GetDeviceGuardEnableSecureBootWithDMA()(*bool)
+    GetDeviceGuardEnableVirtualizationBasedSecurity()(*bool)
+    GetDeviceGuardLaunchSystemGuard()(*Enablement)
+    GetDeviceGuardLocalSystemAuthorityCredentialGuardSettings()(*DeviceGuardLocalSystemAuthorityCredentialGuardType)
+    GetDeviceGuardSecureBootWithDMA()(*SecureBootWithDMAType)
+    GetDmaGuardDeviceEnumerationPolicy()(*DmaGuardDeviceEnumerationPolicyType)
+    GetFirewallBlockStatefulFTP()(*bool)
+    GetFirewallCertificateRevocationListCheckMethod()(*FirewallCertificateRevocationListCheckMethodType)
+    GetFirewallIdleTimeoutForSecurityAssociationInSeconds()(*int32)
+    GetFirewallIPSecExemptionsAllowDHCP()(*bool)
+    GetFirewallIPSecExemptionsAllowICMP()(*bool)
+    GetFirewallIPSecExemptionsAllowNeighborDiscovery()(*bool)
+    GetFirewallIPSecExemptionsAllowRouterDiscovery()(*bool)
+    GetFirewallIPSecExemptionsNone()(*bool)
+    GetFirewallMergeKeyingModuleSettings()(*bool)
+    GetFirewallPacketQueueingMethod()(*FirewallPacketQueueingMethodType)
+    GetFirewallPreSharedKeyEncodingMethod()(*FirewallPreSharedKeyEncodingMethodType)
+    GetFirewallProfileDomain()(WindowsFirewallNetworkProfileable)
+    GetFirewallProfilePrivate()(WindowsFirewallNetworkProfileable)
+    GetFirewallProfilePublic()(WindowsFirewallNetworkProfileable)
+    GetFirewallRules()([]WindowsFirewallRuleable)
+    GetLanManagerAuthenticationLevel()(*LanManagerAuthenticationLevel)
+    GetLanManagerWorkstationDisableInsecureGuestLogons()(*bool)
+    GetLocalSecurityOptionsAdministratorAccountName()(*string)
+    GetLocalSecurityOptionsAdministratorElevationPromptBehavior()(*LocalSecurityOptionsAdministratorElevationPromptBehaviorType)
+    GetLocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares()(*bool)
+    GetLocalSecurityOptionsAllowPKU2UAuthenticationRequests()(*bool)
+    GetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager()(*string)
+    GetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool()(*bool)
+    GetLocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn()(*bool)
+    GetLocalSecurityOptionsAllowUIAccessApplicationElevation()(*bool)
+    GetLocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations()(*bool)
+    GetLocalSecurityOptionsAllowUndockWithoutHavingToLogon()(*bool)
+    GetLocalSecurityOptionsBlockMicrosoftAccounts()(*bool)
+    GetLocalSecurityOptionsBlockRemoteLogonWithBlankPassword()(*bool)
+    GetLocalSecurityOptionsBlockRemoteOpticalDriveAccess()(*bool)
+    GetLocalSecurityOptionsBlockUsersInstallingPrinterDrivers()(*bool)
+    GetLocalSecurityOptionsClearVirtualMemoryPageFile()(*bool)
+    GetLocalSecurityOptionsClientDigitallySignCommunicationsAlways()(*bool)
+    GetLocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers()(*bool)
+    GetLocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation()(*bool)
+    GetLocalSecurityOptionsDisableAdministratorAccount()(*bool)
+    GetLocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees()(*bool)
+    GetLocalSecurityOptionsDisableGuestAccount()(*bool)
+    GetLocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways()(*bool)
+    GetLocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees()(*bool)
+    GetLocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts()(*bool)
+    GetLocalSecurityOptionsDoNotRequireCtrlAltDel()(*bool)
+    GetLocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange()(*bool)
+    GetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser()(*LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType)
+    GetLocalSecurityOptionsGuestAccountName()(*string)
+    GetLocalSecurityOptionsHideLastSignedInUser()(*bool)
+    GetLocalSecurityOptionsHideUsernameAtSignIn()(*bool)
+    GetLocalSecurityOptionsInformationDisplayedOnLockScreen()(*LocalSecurityOptionsInformationDisplayedOnLockScreenType)
+    GetLocalSecurityOptionsInformationShownOnLockScreen()(*LocalSecurityOptionsInformationShownOnLockScreenType)
+    GetLocalSecurityOptionsLogOnMessageText()(*string)
+    GetLocalSecurityOptionsLogOnMessageTitle()(*string)
+    GetLocalSecurityOptionsMachineInactivityLimit()(*int32)
+    GetLocalSecurityOptionsMachineInactivityLimitInMinutes()(*int32)
+    GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients()(*LocalSecurityOptionsMinimumSessionSecurity)
+    GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers()(*LocalSecurityOptionsMinimumSessionSecurity)
+    GetLocalSecurityOptionsOnlyElevateSignedExecutables()(*bool)
+    GetLocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares()(*bool)
+    GetLocalSecurityOptionsSmartCardRemovalBehavior()(*LocalSecurityOptionsSmartCardRemovalBehaviorType)
+    GetLocalSecurityOptionsStandardUserElevationPromptBehavior()(*LocalSecurityOptionsStandardUserElevationPromptBehaviorType)
+    GetLocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation()(*bool)
+    GetLocalSecurityOptionsUseAdminApprovalMode()(*bool)
+    GetLocalSecurityOptionsUseAdminApprovalModeForAdministrators()(*bool)
+    GetLocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations()(*bool)
+    GetSmartScreenBlockOverrideForFiles()(*bool)
+    GetSmartScreenEnableInShell()(*bool)
+    GetUserRightsAccessCredentialManagerAsTrustedCaller()(DeviceManagementUserRightsSettingable)
+    GetUserRightsActAsPartOfTheOperatingSystem()(DeviceManagementUserRightsSettingable)
+    GetUserRightsAllowAccessFromNetwork()(DeviceManagementUserRightsSettingable)
+    GetUserRightsBackupData()(DeviceManagementUserRightsSettingable)
+    GetUserRightsBlockAccessFromNetwork()(DeviceManagementUserRightsSettingable)
+    GetUserRightsChangeSystemTime()(DeviceManagementUserRightsSettingable)
+    GetUserRightsCreateGlobalObjects()(DeviceManagementUserRightsSettingable)
+    GetUserRightsCreatePageFile()(DeviceManagementUserRightsSettingable)
+    GetUserRightsCreatePermanentSharedObjects()(DeviceManagementUserRightsSettingable)
+    GetUserRightsCreateSymbolicLinks()(DeviceManagementUserRightsSettingable)
+    GetUserRightsCreateToken()(DeviceManagementUserRightsSettingable)
+    GetUserRightsDebugPrograms()(DeviceManagementUserRightsSettingable)
+    GetUserRightsDelegation()(DeviceManagementUserRightsSettingable)
+    GetUserRightsDenyLocalLogOn()(DeviceManagementUserRightsSettingable)
+    GetUserRightsGenerateSecurityAudits()(DeviceManagementUserRightsSettingable)
+    GetUserRightsImpersonateClient()(DeviceManagementUserRightsSettingable)
+    GetUserRightsIncreaseSchedulingPriority()(DeviceManagementUserRightsSettingable)
+    GetUserRightsLoadUnloadDrivers()(DeviceManagementUserRightsSettingable)
+    GetUserRightsLocalLogOn()(DeviceManagementUserRightsSettingable)
+    GetUserRightsLockMemory()(DeviceManagementUserRightsSettingable)
+    GetUserRightsManageAuditingAndSecurityLogs()(DeviceManagementUserRightsSettingable)
+    GetUserRightsManageVolumes()(DeviceManagementUserRightsSettingable)
+    GetUserRightsModifyFirmwareEnvironment()(DeviceManagementUserRightsSettingable)
+    GetUserRightsModifyObjectLabels()(DeviceManagementUserRightsSettingable)
+    GetUserRightsProfileSingleProcess()(DeviceManagementUserRightsSettingable)
+    GetUserRightsRemoteDesktopServicesLogOn()(DeviceManagementUserRightsSettingable)
+    GetUserRightsRemoteShutdown()(DeviceManagementUserRightsSettingable)
+    GetUserRightsRestoreData()(DeviceManagementUserRightsSettingable)
+    GetUserRightsTakeOwnership()(DeviceManagementUserRightsSettingable)
+    GetWindowsDefenderTamperProtection()(*WindowsDefenderTamperProtectionOptions)
+    GetXboxServicesAccessoryManagementServiceStartupMode()(*ServiceStartType)
+    GetXboxServicesEnableXboxGameSaveTask()(*bool)
+    GetXboxServicesLiveAuthManagerServiceStartupMode()(*ServiceStartType)
+    GetXboxServicesLiveGameSaveServiceStartupMode()(*ServiceStartType)
+    GetXboxServicesLiveNetworkingServiceStartupMode()(*ServiceStartType)
+    SetApplicationGuardAllowCameraMicrophoneRedirection(value *bool)()
+    SetApplicationGuardAllowFileSaveOnHost(value *bool)()
+    SetApplicationGuardAllowPersistence(value *bool)()
+    SetApplicationGuardAllowPrintToLocalPrinters(value *bool)()
+    SetApplicationGuardAllowPrintToNetworkPrinters(value *bool)()
+    SetApplicationGuardAllowPrintToPDF(value *bool)()
+    SetApplicationGuardAllowPrintToXPS(value *bool)()
+    SetApplicationGuardAllowVirtualGPU(value *bool)()
+    SetApplicationGuardBlockClipboardSharing(value *ApplicationGuardBlockClipboardSharingType)()
+    SetApplicationGuardBlockFileTransfer(value *ApplicationGuardBlockFileTransferType)()
+    SetApplicationGuardBlockNonEnterpriseContent(value *bool)()
+    SetApplicationGuardCertificateThumbprints(value []string)()
+    SetApplicationGuardEnabled(value *bool)()
+    SetApplicationGuardEnabledOptions(value *ApplicationGuardEnabledOptions)()
+    SetApplicationGuardForceAuditing(value *bool)()
+    SetAppLockerApplicationControl(value *AppLockerApplicationControlType)()
+    SetBitLockerAllowStandardUserEncryption(value *bool)()
+    SetBitLockerDisableWarningForOtherDiskEncryption(value *bool)()
+    SetBitLockerEnableStorageCardEncryptionOnMobile(value *bool)()
+    SetBitLockerEncryptDevice(value *bool)()
+    SetBitLockerFixedDrivePolicy(value BitLockerFixedDrivePolicyable)()
+    SetBitLockerRecoveryPasswordRotation(value *BitLockerRecoveryPasswordRotationType)()
+    SetBitLockerRemovableDrivePolicy(value BitLockerRemovableDrivePolicyable)()
+    SetBitLockerSystemDrivePolicy(value BitLockerSystemDrivePolicyable)()
+    SetDefenderAdditionalGuardedFolders(value []string)()
+    SetDefenderAdobeReaderLaunchChildProcess(value *DefenderProtectionType)()
+    SetDefenderAdvancedRansomewareProtectionType(value *DefenderProtectionType)()
+    SetDefenderAllowBehaviorMonitoring(value *bool)()
+    SetDefenderAllowCloudProtection(value *bool)()
+    SetDefenderAllowEndUserAccess(value *bool)()
+    SetDefenderAllowIntrusionPreventionSystem(value *bool)()
+    SetDefenderAllowOnAccessProtection(value *bool)()
+    SetDefenderAllowRealTimeMonitoring(value *bool)()
+    SetDefenderAllowScanArchiveFiles(value *bool)()
+    SetDefenderAllowScanDownloads(value *bool)()
+    SetDefenderAllowScanNetworkFiles(value *bool)()
+    SetDefenderAllowScanRemovableDrivesDuringFullScan(value *bool)()
+    SetDefenderAllowScanScriptsLoadedInInternetExplorer(value *bool)()
+    SetDefenderAttackSurfaceReductionExcludedPaths(value []string)()
+    SetDefenderBlockEndUserAccess(value *bool)()
+    SetDefenderBlockPersistenceThroughWmiType(value *DefenderAttackSurfaceType)()
+    SetDefenderCheckForSignaturesBeforeRunningScan(value *bool)()
+    SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)()
+    SetDefenderCloudExtendedTimeoutInSeconds(value *int32)()
+    SetDefenderDaysBeforeDeletingQuarantinedMalware(value *int32)()
+    SetDefenderDetectedMalwareActions(value DefenderDetectedMalwareActionsable)()
+    SetDefenderDisableBehaviorMonitoring(value *bool)()
+    SetDefenderDisableCatchupFullScan(value *bool)()
+    SetDefenderDisableCatchupQuickScan(value *bool)()
+    SetDefenderDisableCloudProtection(value *bool)()
+    SetDefenderDisableIntrusionPreventionSystem(value *bool)()
+    SetDefenderDisableOnAccessProtection(value *bool)()
+    SetDefenderDisableRealTimeMonitoring(value *bool)()
+    SetDefenderDisableScanArchiveFiles(value *bool)()
+    SetDefenderDisableScanDownloads(value *bool)()
+    SetDefenderDisableScanNetworkFiles(value *bool)()
+    SetDefenderDisableScanRemovableDrivesDuringFullScan(value *bool)()
+    SetDefenderDisableScanScriptsLoadedInInternetExplorer(value *bool)()
+    SetDefenderEmailContentExecution(value *DefenderProtectionType)()
+    SetDefenderEmailContentExecutionType(value *DefenderAttackSurfaceType)()
+    SetDefenderEnableLowCpuPriority(value *bool)()
+    SetDefenderEnableScanIncomingMail(value *bool)()
+    SetDefenderEnableScanMappedNetworkDrivesDuringFullScan(value *bool)()
+    SetDefenderExploitProtectionXml(value []byte)()
+    SetDefenderExploitProtectionXmlFileName(value *string)()
+    SetDefenderFileExtensionsToExclude(value []string)()
+    SetDefenderFilesAndFoldersToExclude(value []string)()
+    SetDefenderGuardedFoldersAllowedAppPaths(value []string)()
+    SetDefenderGuardMyFoldersType(value *FolderProtectionType)()
+    SetDefenderNetworkProtectionType(value *DefenderProtectionType)()
+    SetDefenderOfficeAppsExecutableContentCreationOrLaunch(value *DefenderProtectionType)()
+    SetDefenderOfficeAppsExecutableContentCreationOrLaunchType(value *DefenderAttackSurfaceType)()
+    SetDefenderOfficeAppsLaunchChildProcess(value *DefenderProtectionType)()
+    SetDefenderOfficeAppsLaunchChildProcessType(value *DefenderAttackSurfaceType)()
+    SetDefenderOfficeAppsOtherProcessInjection(value *DefenderProtectionType)()
+    SetDefenderOfficeAppsOtherProcessInjectionType(value *DefenderAttackSurfaceType)()
+    SetDefenderOfficeCommunicationAppsLaunchChildProcess(value *DefenderProtectionType)()
+    SetDefenderOfficeMacroCodeAllowWin32Imports(value *DefenderProtectionType)()
+    SetDefenderOfficeMacroCodeAllowWin32ImportsType(value *DefenderAttackSurfaceType)()
+    SetDefenderPotentiallyUnwantedAppAction(value *DefenderProtectionType)()
+    SetDefenderPreventCredentialStealingType(value *DefenderProtectionType)()
+    SetDefenderProcessCreation(value *DefenderProtectionType)()
+    SetDefenderProcessCreationType(value *DefenderAttackSurfaceType)()
+    SetDefenderProcessesToExclude(value []string)()
+    SetDefenderScanDirection(value *DefenderRealtimeScanDirection)()
+    SetDefenderScanMaxCpuPercentage(value *int32)()
+    SetDefenderScanType(value *DefenderScanType)()
+    SetDefenderScheduledQuickScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetDefenderScheduledScanDay(value *WeeklySchedule)()
+    SetDefenderScheduledScanTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetDefenderScriptDownloadedPayloadExecution(value *DefenderProtectionType)()
+    SetDefenderScriptDownloadedPayloadExecutionType(value *DefenderAttackSurfaceType)()
+    SetDefenderScriptObfuscatedMacroCode(value *DefenderProtectionType)()
+    SetDefenderScriptObfuscatedMacroCodeType(value *DefenderAttackSurfaceType)()
+    SetDefenderSecurityCenterBlockExploitProtectionOverride(value *bool)()
+    SetDefenderSecurityCenterDisableAccountUI(value *bool)()
+    SetDefenderSecurityCenterDisableAppBrowserUI(value *bool)()
+    SetDefenderSecurityCenterDisableClearTpmUI(value *bool)()
+    SetDefenderSecurityCenterDisableFamilyUI(value *bool)()
+    SetDefenderSecurityCenterDisableHardwareUI(value *bool)()
+    SetDefenderSecurityCenterDisableHealthUI(value *bool)()
+    SetDefenderSecurityCenterDisableNetworkUI(value *bool)()
+    SetDefenderSecurityCenterDisableNotificationAreaUI(value *bool)()
+    SetDefenderSecurityCenterDisableRansomwareUI(value *bool)()
+    SetDefenderSecurityCenterDisableSecureBootUI(value *bool)()
+    SetDefenderSecurityCenterDisableTroubleshootingUI(value *bool)()
+    SetDefenderSecurityCenterDisableVirusUI(value *bool)()
+    SetDefenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI(value *bool)()
+    SetDefenderSecurityCenterHelpEmail(value *string)()
+    SetDefenderSecurityCenterHelpPhone(value *string)()
+    SetDefenderSecurityCenterHelpURL(value *string)()
+    SetDefenderSecurityCenterITContactDisplay(value *DefenderSecurityCenterITContactDisplayType)()
+    SetDefenderSecurityCenterNotificationsFromApp(value *DefenderSecurityCenterNotificationsFromAppType)()
+    SetDefenderSecurityCenterOrganizationDisplayName(value *string)()
+    SetDefenderSignatureUpdateIntervalInHours(value *int32)()
+    SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)()
+    SetDefenderUntrustedExecutable(value *DefenderProtectionType)()
+    SetDefenderUntrustedExecutableType(value *DefenderAttackSurfaceType)()
+    SetDefenderUntrustedUSBProcess(value *DefenderProtectionType)()
+    SetDefenderUntrustedUSBProcessType(value *DefenderAttackSurfaceType)()
+    SetDeviceGuardEnableSecureBootWithDMA(value *bool)()
+    SetDeviceGuardEnableVirtualizationBasedSecurity(value *bool)()
+    SetDeviceGuardLaunchSystemGuard(value *Enablement)()
+    SetDeviceGuardLocalSystemAuthorityCredentialGuardSettings(value *DeviceGuardLocalSystemAuthorityCredentialGuardType)()
+    SetDeviceGuardSecureBootWithDMA(value *SecureBootWithDMAType)()
+    SetDmaGuardDeviceEnumerationPolicy(value *DmaGuardDeviceEnumerationPolicyType)()
+    SetFirewallBlockStatefulFTP(value *bool)()
+    SetFirewallCertificateRevocationListCheckMethod(value *FirewallCertificateRevocationListCheckMethodType)()
+    SetFirewallIdleTimeoutForSecurityAssociationInSeconds(value *int32)()
+    SetFirewallIPSecExemptionsAllowDHCP(value *bool)()
+    SetFirewallIPSecExemptionsAllowICMP(value *bool)()
+    SetFirewallIPSecExemptionsAllowNeighborDiscovery(value *bool)()
+    SetFirewallIPSecExemptionsAllowRouterDiscovery(value *bool)()
+    SetFirewallIPSecExemptionsNone(value *bool)()
+    SetFirewallMergeKeyingModuleSettings(value *bool)()
+    SetFirewallPacketQueueingMethod(value *FirewallPacketQueueingMethodType)()
+    SetFirewallPreSharedKeyEncodingMethod(value *FirewallPreSharedKeyEncodingMethodType)()
+    SetFirewallProfileDomain(value WindowsFirewallNetworkProfileable)()
+    SetFirewallProfilePrivate(value WindowsFirewallNetworkProfileable)()
+    SetFirewallProfilePublic(value WindowsFirewallNetworkProfileable)()
+    SetFirewallRules(value []WindowsFirewallRuleable)()
+    SetLanManagerAuthenticationLevel(value *LanManagerAuthenticationLevel)()
+    SetLanManagerWorkstationDisableInsecureGuestLogons(value *bool)()
+    SetLocalSecurityOptionsAdministratorAccountName(value *string)()
+    SetLocalSecurityOptionsAdministratorElevationPromptBehavior(value *LocalSecurityOptionsAdministratorElevationPromptBehaviorType)()
+    SetLocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares(value *bool)()
+    SetLocalSecurityOptionsAllowPKU2UAuthenticationRequests(value *bool)()
+    SetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager(value *string)()
+    SetLocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool(value *bool)()
+    SetLocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn(value *bool)()
+    SetLocalSecurityOptionsAllowUIAccessApplicationElevation(value *bool)()
+    SetLocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations(value *bool)()
+    SetLocalSecurityOptionsAllowUndockWithoutHavingToLogon(value *bool)()
+    SetLocalSecurityOptionsBlockMicrosoftAccounts(value *bool)()
+    SetLocalSecurityOptionsBlockRemoteLogonWithBlankPassword(value *bool)()
+    SetLocalSecurityOptionsBlockRemoteOpticalDriveAccess(value *bool)()
+    SetLocalSecurityOptionsBlockUsersInstallingPrinterDrivers(value *bool)()
+    SetLocalSecurityOptionsClearVirtualMemoryPageFile(value *bool)()
+    SetLocalSecurityOptionsClientDigitallySignCommunicationsAlways(value *bool)()
+    SetLocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers(value *bool)()
+    SetLocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation(value *bool)()
+    SetLocalSecurityOptionsDisableAdministratorAccount(value *bool)()
+    SetLocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees(value *bool)()
+    SetLocalSecurityOptionsDisableGuestAccount(value *bool)()
+    SetLocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways(value *bool)()
+    SetLocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees(value *bool)()
+    SetLocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts(value *bool)()
+    SetLocalSecurityOptionsDoNotRequireCtrlAltDel(value *bool)()
+    SetLocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange(value *bool)()
+    SetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser(value *LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType)()
+    SetLocalSecurityOptionsGuestAccountName(value *string)()
+    SetLocalSecurityOptionsHideLastSignedInUser(value *bool)()
+    SetLocalSecurityOptionsHideUsernameAtSignIn(value *bool)()
+    SetLocalSecurityOptionsInformationDisplayedOnLockScreen(value *LocalSecurityOptionsInformationDisplayedOnLockScreenType)()
+    SetLocalSecurityOptionsInformationShownOnLockScreen(value *LocalSecurityOptionsInformationShownOnLockScreenType)()
+    SetLocalSecurityOptionsLogOnMessageText(value *string)()
+    SetLocalSecurityOptionsLogOnMessageTitle(value *string)()
+    SetLocalSecurityOptionsMachineInactivityLimit(value *int32)()
+    SetLocalSecurityOptionsMachineInactivityLimitInMinutes(value *int32)()
+    SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients(value *LocalSecurityOptionsMinimumSessionSecurity)()
+    SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers(value *LocalSecurityOptionsMinimumSessionSecurity)()
+    SetLocalSecurityOptionsOnlyElevateSignedExecutables(value *bool)()
+    SetLocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares(value *bool)()
+    SetLocalSecurityOptionsSmartCardRemovalBehavior(value *LocalSecurityOptionsSmartCardRemovalBehaviorType)()
+    SetLocalSecurityOptionsStandardUserElevationPromptBehavior(value *LocalSecurityOptionsStandardUserElevationPromptBehaviorType)()
+    SetLocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation(value *bool)()
+    SetLocalSecurityOptionsUseAdminApprovalMode(value *bool)()
+    SetLocalSecurityOptionsUseAdminApprovalModeForAdministrators(value *bool)()
+    SetLocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations(value *bool)()
+    SetSmartScreenBlockOverrideForFiles(value *bool)()
+    SetSmartScreenEnableInShell(value *bool)()
+    SetUserRightsAccessCredentialManagerAsTrustedCaller(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsActAsPartOfTheOperatingSystem(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsAllowAccessFromNetwork(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsBackupData(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsBlockAccessFromNetwork(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsChangeSystemTime(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsCreateGlobalObjects(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsCreatePageFile(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsCreatePermanentSharedObjects(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsCreateSymbolicLinks(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsCreateToken(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsDebugPrograms(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsDelegation(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsDenyLocalLogOn(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsGenerateSecurityAudits(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsImpersonateClient(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsIncreaseSchedulingPriority(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsLoadUnloadDrivers(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsLocalLogOn(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsLockMemory(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsManageAuditingAndSecurityLogs(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsManageVolumes(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsModifyFirmwareEnvironment(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsModifyObjectLabels(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsProfileSingleProcess(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsRemoteDesktopServicesLogOn(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsRemoteShutdown(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsRestoreData(value DeviceManagementUserRightsSettingable)()
+    SetUserRightsTakeOwnership(value DeviceManagementUserRightsSettingable)()
+    SetWindowsDefenderTamperProtection(value *WindowsDefenderTamperProtectionOptions)()
+    SetXboxServicesAccessoryManagementServiceStartupMode(value *ServiceStartType)()
+    SetXboxServicesEnableXboxGameSaveTask(value *bool)()
+    SetXboxServicesLiveAuthManagerServiceStartupMode(value *ServiceStartType)()
+    SetXboxServicesLiveGameSaveServiceStartupMode(value *ServiceStartType)()
+    SetXboxServicesLiveNetworkingServiceStartupMode(value *ServiceStartType)()
 }

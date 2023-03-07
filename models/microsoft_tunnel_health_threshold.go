@@ -7,14 +7,6 @@ import (
 // MicrosoftTunnelHealthThreshold entity that represents the health thresholds of a health metric
 type MicrosoftTunnelHealthThreshold struct {
     Entity
-    // The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
-    defaultHealthyThreshold *int64
-    // The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
-    defaultUnhealthyThreshold *int64
-    // The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
-    healthyThreshold *int64
-    // The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
-    unhealthyThreshold *int64
 }
 // NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
 func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
@@ -29,11 +21,25 @@ func CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue(parseNode i878a8
 }
 // GetDefaultHealthyThreshold gets the defaultHealthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
-    return m.defaultHealthyThreshold
+    val, err := m.GetBackingStore().Get("defaultHealthyThreshold")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetDefaultUnhealthyThreshold gets the defaultUnhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) {
-    return m.defaultUnhealthyThreshold
+    val, err := m.GetBackingStore().Get("defaultUnhealthyThreshold")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,11 +88,25 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
 }
 // GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
-    return m.healthyThreshold
+    val, err := m.GetBackingStore().Get("healthyThreshold")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
-    return m.unhealthyThreshold
+    val, err := m.GetBackingStore().Get("unhealthyThreshold")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i878a80d2330e89d268963
 }
 // SetDefaultHealthyThreshold sets the defaultHealthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultHealthyThreshold(value *int64)() {
-    m.defaultHealthyThreshold = value
+    err := m.GetBackingStore().Set("defaultHealthyThreshold", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultUnhealthyThreshold sets the defaultUnhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultUnhealthyThreshold(value *int64)() {
-    m.defaultUnhealthyThreshold = value
+    err := m.GetBackingStore().Set("defaultUnhealthyThreshold", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthyThreshold sets the healthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) SetHealthyThreshold(value *int64)() {
-    m.healthyThreshold = value
+    err := m.GetBackingStore().Set("healthyThreshold", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnhealthyThreshold sets the unhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) SetUnhealthyThreshold(value *int64)() {
-    m.unhealthyThreshold = value
+    err := m.GetBackingStore().Set("unhealthyThreshold", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftTunnelHealthThresholdable 
+type MicrosoftTunnelHealthThresholdable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultHealthyThreshold()(*int64)
+    GetDefaultUnhealthyThreshold()(*int64)
+    GetHealthyThreshold()(*int64)
+    GetUnhealthyThreshold()(*int64)
+    SetDefaultHealthyThreshold(value *int64)()
+    SetDefaultUnhealthyThreshold(value *int64)()
+    SetHealthyThreshold(value *int64)()
+    SetUnhealthyThreshold(value *int64)()
 }

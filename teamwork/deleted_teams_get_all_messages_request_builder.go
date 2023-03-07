@@ -45,13 +45,13 @@ type DeletedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration struct {
 func NewDeletedTeamsGetAllMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsGetAllMessagesRequestBuilder) {
     m := &DeletedTeamsGetAllMessagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/microsoft.graph.getAllMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams/getAllMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsGetAllMessagesRequestBuilder instantiates a new GetAllMessagesRequestBuilder and sets the default values.

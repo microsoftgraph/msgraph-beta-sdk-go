@@ -7,10 +7,6 @@ import (
 // AuthenticationMethodModeDetail 
 type AuthenticationMethodModeDetail struct {
     Entity
-    // The authenticationMethod property
-    authenticationMethod *BaseAuthenticationMethod
-    // The display name of this mode
-    displayName *string
 }
 // NewAuthenticationMethodModeDetail instantiates a new AuthenticationMethodModeDetail and sets the default values.
 func NewAuthenticationMethodModeDetail()(*AuthenticationMethodModeDetail) {
@@ -25,11 +21,25 @@ func CreateAuthenticationMethodModeDetailFromDiscriminatorValue(parseNode i878a8
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. The authenticationMethod property
 func (m *AuthenticationMethodModeDetail) GetAuthenticationMethod()(*BaseAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BaseAuthenticationMethod)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of this mode
 func (m *AuthenticationMethodModeDetail) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodModeDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,9 +89,24 @@ func (m *AuthenticationMethodModeDetail) Serialize(writer i878a80d2330e89d268963
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. The authenticationMethod property
 func (m *AuthenticationMethodModeDetail) SetAuthenticationMethod(value *BaseAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of this mode
 func (m *AuthenticationMethodModeDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationMethodModeDetailable 
+type AuthenticationMethodModeDetailable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*BaseAuthenticationMethod)
+    GetDisplayName()(*string)
+    SetAuthenticationMethod(value *BaseAuthenticationMethod)()
+    SetDisplayName(value *string)()
 }

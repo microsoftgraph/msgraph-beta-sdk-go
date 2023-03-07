@@ -7,18 +7,14 @@ import (
 // EnrollmentRestrictionsConfigurationPolicySetItem 
 type EnrollmentRestrictionsConfigurationPolicySetItem struct {
     PolicySetItem
-    // Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
-    limit *int32
-    // Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
-    priority *int32
 }
 // NewEnrollmentRestrictionsConfigurationPolicySetItem instantiates a new EnrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
 func NewEnrollmentRestrictionsConfigurationPolicySetItem()(*EnrollmentRestrictionsConfigurationPolicySetItem) {
     m := &EnrollmentRestrictionsConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEnrollmentRestrictionsConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetFieldDeserializers
 }
 // GetLimit gets the limit property value. Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetLimit()(*int32) {
-    return m.limit
+    val, err := m.GetBackingStore().Get("limit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetPriority()(*int32) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) Serialize(writer i878
 }
 // SetLimit sets the limit property value. Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) SetLimit(value *int32)() {
-    m.limit = value
+    err := m.GetBackingStore().Set("limit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) SetPriority(value *int32)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EnrollmentRestrictionsConfigurationPolicySetItemable 
+type EnrollmentRestrictionsConfigurationPolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
+    GetLimit()(*int32)
+    GetPriority()(*int32)
+    SetLimit(value *int32)()
+    SetPriority(value *int32)()
 }

@@ -7,16 +7,14 @@ import (
 // DeviceHealthScriptStringParameter 
 type DeviceHealthScriptStringParameter struct {
     DeviceHealthScriptParameter
-    // The default value of string param
-    defaultValue *string
 }
 // NewDeviceHealthScriptStringParameter instantiates a new DeviceHealthScriptStringParameter and sets the default values.
 func NewDeviceHealthScriptStringParameter()(*DeviceHealthScriptStringParameter) {
     m := &DeviceHealthScriptStringParameter{
         DeviceHealthScriptParameter: *NewDeviceHealthScriptParameter(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptStringParameter";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptStringParameter"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptStringParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateDeviceHealthScriptStringParameterFromDiscriminatorValue(parseNode i87
 }
 // GetDefaultValue gets the defaultValue property value. The default value of string param
 func (m *DeviceHealthScriptStringParameter) GetDefaultValue()(*string) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptStringParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *DeviceHealthScriptStringParameter) Serialize(writer i878a80d2330e89d268
 }
 // SetDefaultValue sets the defaultValue property value. The default value of string param
 func (m *DeviceHealthScriptStringParameter) SetDefaultValue(value *string)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptStringParameterable 
+type DeviceHealthScriptStringParameterable interface {
+    DeviceHealthScriptParameterable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultValue()(*string)
+    SetDefaultValue(value *string)()
 }

@@ -2,24 +2,20 @@ package informationprotection
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // VerifySignaturePostRequestBody 
 type VerifySignaturePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The digest property
-    digest []byte
-    // The signature property
-    signature []byte
-    // The signingKeyId property
-    signingKeyId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewVerifySignaturePostRequestBody instantiates a new VerifySignaturePostRequestBody and sets the default values.
 func NewVerifySignaturePostRequestBody()(*VerifySignaturePostRequestBody) {
     m := &VerifySignaturePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVerifySignaturePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,11 +24,30 @@ func CreateVerifySignaturePostRequestBodyFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifySignaturePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *VerifySignaturePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDigest gets the digest property value. The digest property
 func (m *VerifySignaturePostRequestBody) GetDigest()([]byte) {
-    return m.digest
+    val, err := m.GetBackingStore().Get("digest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VerifySignaturePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,11 +86,25 @@ func (m *VerifySignaturePostRequestBody) GetFieldDeserializers()(map[string]func
 }
 // GetSignature gets the signature property value. The signature property
 func (m *VerifySignaturePostRequestBody) GetSignature()([]byte) {
-    return m.signature
+    val, err := m.GetBackingStore().Get("signature")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetSigningKeyId gets the signingKeyId property value. The signingKeyId property
 func (m *VerifySignaturePostRequestBody) GetSigningKeyId()(*string) {
-    return m.signingKeyId
+    val, err := m.GetBackingStore().Get("signingKeyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VerifySignaturePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *VerifySignaturePostRequestBody) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifySignaturePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *VerifySignaturePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDigest sets the digest property value. The digest property
 func (m *VerifySignaturePostRequestBody) SetDigest(value []byte)() {
-    m.digest = value
+    err := m.GetBackingStore().Set("digest", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignature sets the signature property value. The signature property
 func (m *VerifySignaturePostRequestBody) SetSignature(value []byte)() {
-    m.signature = value
+    err := m.GetBackingStore().Set("signature", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSigningKeyId sets the signingKeyId property value. The signingKeyId property
 func (m *VerifySignaturePostRequestBody) SetSigningKeyId(value *string)() {
-    m.signingKeyId = value
+    err := m.GetBackingStore().Set("signingKeyId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VerifySignaturePostRequestBodyable 
+type VerifySignaturePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDigest()([]byte)
+    GetSignature()([]byte)
+    GetSigningKeyId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDigest(value []byte)()
+    SetSignature(value []byte)()
+    SetSigningKeyId(value *string)()
 }

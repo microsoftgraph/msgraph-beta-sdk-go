@@ -2,46 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ManagedDeviceMobileAppConfigurationSettingState managed Device Mobile App Configuration Setting State for a given device.
 type ManagedDeviceMobileAppConfigurationSettingState struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Current value of setting on device
-    currentValue *string
-    // Error code for the setting
-    errorCode *int64
-    // Error description
-    errorDescription *string
-    // Name of setting instance that is being reported.
-    instanceDisplayName *string
-    // The OdataType property
-    odataType *string
-    // The setting that is being reported
-    setting *string
-    // SettingInstanceId
-    settingInstanceId *string
-    // Localized/user friendly setting name that is being reported
-    settingName *string
-    // Contributing policies
-    sources []SettingSourceable
-    // The state property
-    state *ComplianceStatus
-    // UserEmail
-    userEmail *string
-    // UserId
-    userId *string
-    // UserName
-    userName *string
-    // UserPrincipalName.
-    userPrincipalName *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewManagedDeviceMobileAppConfigurationSettingState instantiates a new managedDeviceMobileAppConfigurationSettingState and sets the default values.
 func NewManagedDeviceMobileAppConfigurationSettingState()(*ManagedDeviceMobileAppConfigurationSettingState) {
     m := &ManagedDeviceMobileAppConfigurationSettingState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,19 +24,52 @@ func CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ManagedDeviceMobileAppConfigurationSettingState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCurrentValue gets the currentValue property value. Current value of setting on device
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetCurrentValue()(*string) {
-    return m.currentValue
+    val, err := m.GetBackingStore().Get("currentValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetErrorCode gets the errorCode property value. Error code for the setting
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetErrorCode()(*int64) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetErrorDescription gets the errorDescription property value. Error description
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetErrorDescription()(*string) {
-    return m.errorDescription
+    val, err := m.GetBackingStore().Get("errorDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -215,47 +222,124 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) GetFieldDeserializers(
 }
 // GetInstanceDisplayName gets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetInstanceDisplayName()(*string) {
-    return m.instanceDisplayName
+    val, err := m.GetBackingStore().Get("instanceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSetting gets the setting property value. The setting that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSetting()(*string) {
-    return m.setting
+    val, err := m.GetBackingStore().Get("setting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettingInstanceId gets the settingInstanceId property value. SettingInstanceId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSettingInstanceId()(*string) {
-    return m.settingInstanceId
+    val, err := m.GetBackingStore().Get("settingInstanceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettingName gets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSettingName()(*string) {
-    return m.settingName
+    val, err := m.GetBackingStore().Get("settingName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSources gets the sources property value. Contributing policies
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSources()([]SettingSourceable) {
-    return m.sources
+    val, err := m.GetBackingStore().Get("sources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SettingSourceable)
+    }
+    return nil
 }
 // GetState gets the state property value. The state property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetState()(*ComplianceStatus) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ComplianceStatus)
+    }
+    return nil
 }
 // GetUserEmail gets the userEmail property value. UserEmail
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserEmail()(*string) {
-    return m.userEmail
+    val, err := m.GetBackingStore().Get("userEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. UserId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserName gets the userName property value. UserName
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserName()(*string) {
-    return m.userName
+    val, err := m.GetBackingStore().Get("userName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -358,61 +442,146 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i878a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ManagedDeviceMobileAppConfigurationSettingState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetCurrentValue(value *string)() {
-    m.currentValue = value
+    err := m.GetBackingStore().Set("currentValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCode sets the errorCode property value. Error code for the setting
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetErrorCode(value *int64)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDescription sets the errorDescription property value. Error description
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetErrorDescription(value *string)() {
-    m.errorDescription = value
+    err := m.GetBackingStore().Set("errorDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstanceDisplayName sets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetInstanceDisplayName(value *string)() {
-    m.instanceDisplayName = value
+    err := m.GetBackingStore().Set("instanceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSetting sets the setting property value. The setting that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSetting(value *string)() {
-    m.setting = value
+    err := m.GetBackingStore().Set("setting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingInstanceId sets the settingInstanceId property value. SettingInstanceId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSettingInstanceId(value *string)() {
-    m.settingInstanceId = value
+    err := m.GetBackingStore().Set("settingInstanceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingName sets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSettingName(value *string)() {
-    m.settingName = value
+    err := m.GetBackingStore().Set("settingName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSources sets the sources property value. Contributing policies
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSources(value []SettingSourceable)() {
-    m.sources = value
+    err := m.GetBackingStore().Set("sources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetState(value *ComplianceStatus)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserEmail sets the userEmail property value. UserEmail
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserEmail(value *string)() {
-    m.userEmail = value
+    err := m.GetBackingStore().Set("userEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. UserId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserName sets the userName property value. UserName
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserName(value *string)() {
-    m.userName = value
+    err := m.GetBackingStore().Set("userName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceMobileAppConfigurationSettingStateable 
+type ManagedDeviceMobileAppConfigurationSettingStateable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCurrentValue()(*string)
+    GetErrorCode()(*int64)
+    GetErrorDescription()(*string)
+    GetInstanceDisplayName()(*string)
+    GetOdataType()(*string)
+    GetSetting()(*string)
+    GetSettingInstanceId()(*string)
+    GetSettingName()(*string)
+    GetSources()([]SettingSourceable)
+    GetState()(*ComplianceStatus)
+    GetUserEmail()(*string)
+    GetUserId()(*string)
+    GetUserName()(*string)
+    GetUserPrincipalName()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCurrentValue(value *string)()
+    SetErrorCode(value *int64)()
+    SetErrorDescription(value *string)()
+    SetInstanceDisplayName(value *string)()
+    SetOdataType(value *string)()
+    SetSetting(value *string)()
+    SetSettingInstanceId(value *string)()
+    SetSettingName(value *string)()
+    SetSources(value []SettingSourceable)()
+    SetState(value *ComplianceStatus)()
+    SetUserEmail(value *string)()
+    SetUserId(value *string)()
+    SetUserName(value *string)()
+    SetUserPrincipalName(value *string)()
 }

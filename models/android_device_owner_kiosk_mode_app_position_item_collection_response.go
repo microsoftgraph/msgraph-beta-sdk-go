@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse 
 type AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerKioskModeAppPositionItemable
 }
 // NewAndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse instantiates a new AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse()(*AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse) GetFieldD
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse) GetValue()([]AndroidDeviceOwnerKioskModeAppPositionItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerKioskModeAppPositionItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse) Serialize
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponse) SetValue(value []AndroidDeviceOwnerKioskModeAppPositionItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponseable 
+type AndroidDeviceOwnerKioskModeAppPositionItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerKioskModeAppPositionItemable)
+    SetValue(value []AndroidDeviceOwnerKioskModeAppPositionItemable)()
 }

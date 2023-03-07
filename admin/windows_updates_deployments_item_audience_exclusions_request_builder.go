@@ -60,8 +60,8 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder instantiates a new ExclusionsRequestBuilder and sets the default values.
@@ -72,15 +72,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Count()(*WindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssets provides operations to call the enrollAssets method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) EnrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnrollAssetsById provides operations to call the enrollAssetsById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) EnrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the updatableAsset resources that are excluded from a deploymentAudience.
 // [Find more info here]
@@ -146,18 +138,29 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// UnenrollAssets provides operations to call the unenrollAssets method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) UnenrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// WindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) WindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesEnrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// UnenrollAssetsById provides operations to call the unenrollAssetsById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) UnenrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// WindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) WindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) WindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesUnenrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// WindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) WindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

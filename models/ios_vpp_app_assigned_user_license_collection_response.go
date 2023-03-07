@@ -7,8 +7,6 @@ import (
 // IosVppAppAssignedUserLicenseCollectionResponse 
 type IosVppAppAssignedUserLicenseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosVppAppAssignedUserLicenseable
 }
 // NewIosVppAppAssignedUserLicenseCollectionResponse instantiates a new IosVppAppAssignedUserLicenseCollectionResponse and sets the default values.
 func NewIosVppAppAssignedUserLicenseCollectionResponse()(*IosVppAppAssignedUserLicenseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosVppAppAssignedUserLicenseCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *IosVppAppAssignedUserLicenseCollectionResponse) GetValue()([]IosVppAppAssignedUserLicenseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosVppAppAssignedUserLicenseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppAppAssignedUserLicenseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosVppAppAssignedUserLicenseCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *IosVppAppAssignedUserLicenseCollectionResponse) SetValue(value []IosVppAppAssignedUserLicenseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppAppAssignedUserLicenseCollectionResponseable 
+type IosVppAppAssignedUserLicenseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosVppAppAssignedUserLicenseable)
+    SetValue(value []IosVppAppAssignedUserLicenseable)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationReferredSettingInformationCollectionResponse 
 type DeviceManagementConfigurationReferredSettingInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationReferredSettingInformationable
 }
 // NewDeviceManagementConfigurationReferredSettingInformationCollectionResponse instantiates a new DeviceManagementConfigurationReferredSettingInformationCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationReferredSettingInformationCollectionResponse()(*DeviceManagementConfigurationReferredSettingInformationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationReferredSettingInformationCollectionRespon
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationReferredSettingInformationCollectionResponse) GetValue()([]DeviceManagementConfigurationReferredSettingInformationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationReferredSettingInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationReferredSettingInformationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationReferredSettingInformationCollectionRespon
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationReferredSettingInformationCollectionResponse) SetValue(value []DeviceManagementConfigurationReferredSettingInformationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationReferredSettingInformationCollectionResponseable 
+type DeviceManagementConfigurationReferredSettingInformationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationReferredSettingInformationable)
+    SetValue(value []DeviceManagementConfigurationReferredSettingInformationable)()
 }

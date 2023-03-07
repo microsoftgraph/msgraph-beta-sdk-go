@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse 
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsBatteryHealthDeviceAppImpactable
 }
 // NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse instantiates a new UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse()(*UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse) 
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse) GetValue()([]UserExperienceAnalyticsBatteryHealthDeviceAppImpactable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsBatteryHealthDeviceAppImpactable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse) 
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponse) SetValue(value []UserExperienceAnalyticsBatteryHealthDeviceAppImpactable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponseable 
+type UserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsBatteryHealthDeviceAppImpactable)
+    SetValue(value []UserExperienceAnalyticsBatteryHealthDeviceAppImpactable)()
 }

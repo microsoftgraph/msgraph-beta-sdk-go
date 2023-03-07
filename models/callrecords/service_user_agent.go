@@ -7,16 +7,14 @@ import (
 // ServiceUserAgent 
 type ServiceUserAgent struct {
     UserAgent
-    // The role property
-    role *ServiceRole
 }
 // NewServiceUserAgent instantiates a new ServiceUserAgent and sets the default values.
 func NewServiceUserAgent()(*ServiceUserAgent) {
     m := &ServiceUserAgent{
         UserAgent: *NewUserAgent(),
     }
-    odataTypeValue := "#microsoft.graph.callRecords.serviceUserAgent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.callRecords.serviceUserAgent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServiceUserAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *ServiceUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetRole gets the role property value. The role property
 func (m *ServiceUserAgent) GetRole()(*ServiceRole) {
-    return m.role
+    val, err := m.GetBackingStore().Get("role")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceRole)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServiceUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *ServiceUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetRole sets the role property value. The role property
 func (m *ServiceUserAgent) SetRole(value *ServiceRole)() {
-    m.role = value
+    err := m.GetBackingStore().Set("role", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServiceUserAgentable 
+type ServiceUserAgentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UserAgentable
+    GetRole()(*ServiceRole)
+    SetRole(value *ServiceRole)()
 }

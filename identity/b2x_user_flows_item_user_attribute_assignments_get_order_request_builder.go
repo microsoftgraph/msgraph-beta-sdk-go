@@ -27,13 +27,13 @@ type B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderGetRequestCon
 func NewB2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
     m := &B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments/microsoft.graph.getOrder()";
+    m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments/getOrder()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder instantiates a new GetOrderRequestBuilder and sets the default values.

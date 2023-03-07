@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationCategoryCollectionResponse 
 type DeviceManagementConfigurationCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationCategoryable
 }
 // NewDeviceManagementConfigurationCategoryCollectionResponse instantiates a new DeviceManagementConfigurationCategoryCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationCategoryCollectionResponse()(*DeviceManagementConfigurationCategoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationCategoryCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationCategoryCollectionResponse) GetValue()([]DeviceManagementConfigurationCategoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationCategoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationCategoryCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationCategoryCollectionResponse) SetValue(value []DeviceManagementConfigurationCategoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationCategoryCollectionResponseable 
+type DeviceManagementConfigurationCategoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationCategoryable)
+    SetValue(value []DeviceManagementConfigurationCategoryable)()
 }

@@ -7,8 +7,6 @@ import (
 // EmbeddedSIMActivationCodePoolAssignment the embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.
 type EmbeddedSIMActivationCodePoolAssignment struct {
     Entity
-    // Base type for assignment targets.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewEmbeddedSIMActivationCodePoolAssignment instantiates a new embeddedSIMActivationCodePoolAssignment and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignment()(*EmbeddedSIMActivationCodePoolAssignment) {
@@ -38,7 +36,14 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) GetFieldDeserializers()(map[st
 }
 // GetTarget gets the target property value. Base type for assignment targets.
 func (m *EmbeddedSIMActivationCodePoolAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCodePoolAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) Serialize(writer i878a80d2330e
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *EmbeddedSIMActivationCodePoolAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmbeddedSIMActivationCodePoolAssignmentable 
+type EmbeddedSIMActivationCodePoolAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

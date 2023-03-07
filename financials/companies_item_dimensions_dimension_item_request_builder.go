@@ -41,8 +41,8 @@ func NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemDimensionsDimensionItemRequestBuilder instantiates a new DimensionItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewCompaniesItemDimensionsDimensionItemRequestBuilder(rawUrl string, reques
 }
 // DimensionValues provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionsItemDimensionValuesRequestBuilder) {
-    return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DimensionValuesById provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValuesById(id string)(*CompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilder) {
@@ -64,7 +64,7 @@ func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValuesById
     if id != "" {
         urlTplParams["dimensionValue%2Did"] = id
     }
-    return NewCompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get dimensions from financials
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Dimensionable, error) {

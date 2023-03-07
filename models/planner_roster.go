@@ -7,10 +7,6 @@ import (
 // PlannerRoster 
 type PlannerRoster struct {
     Entity
-    // Retrieves the members of the plannerRoster.
-    members []PlannerRosterMemberable
-    // Retrieves the plans contained by the plannerRoster.
-    plans []PlannerPlanable
 }
 // NewPlannerRoster instantiates a new plannerRoster and sets the default values.
 func NewPlannerRoster()(*PlannerRoster) {
@@ -58,11 +54,25 @@ func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMembers gets the members property value. Retrieves the members of the plannerRoster.
 func (m *PlannerRoster) GetMembers()([]PlannerRosterMemberable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerRosterMemberable)
+    }
+    return nil
 }
 // GetPlans gets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) GetPlans()([]PlannerPlanable) {
-    return m.plans
+    val, err := m.GetBackingStore().Get("plans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetMembers sets the members property value. Retrieves the members of the plannerRoster.
 func (m *PlannerRoster) SetMembers(value []PlannerRosterMemberable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlans sets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) SetPlans(value []PlannerPlanable)() {
-    m.plans = value
+    err := m.GetBackingStore().Set("plans", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerRosterable 
+type PlannerRosterable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMembers()([]PlannerRosterMemberable)
+    GetPlans()([]PlannerPlanable)
+    SetMembers(value []PlannerRosterMemberable)()
+    SetPlans(value []PlannerPlanable)()
 }

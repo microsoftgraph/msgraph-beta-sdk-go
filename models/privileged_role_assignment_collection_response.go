@@ -7,8 +7,6 @@ import (
 // PrivilegedRoleAssignmentCollectionResponse 
 type PrivilegedRoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedRoleAssignmentable
 }
 // NewPrivilegedRoleAssignmentCollectionResponse instantiates a new PrivilegedRoleAssignmentCollectionResponse and sets the default values.
 func NewPrivilegedRoleAssignmentCollectionResponse()(*PrivilegedRoleAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedRoleAssignmentCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedRoleAssignmentCollectionResponse) GetValue()([]PrivilegedRoleAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedRoleAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedRoleAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedRoleAssignmentCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedRoleAssignmentCollectionResponse) SetValue(value []PrivilegedRoleAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedRoleAssignmentCollectionResponseable 
+type PrivilegedRoleAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedRoleAssignmentable)
+    SetValue(value []PrivilegedRoleAssignmentable)()
 }

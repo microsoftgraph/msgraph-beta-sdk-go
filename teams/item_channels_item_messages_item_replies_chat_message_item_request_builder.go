@@ -55,8 +55,8 @@ func NewItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder instantiates a new ChatMessageItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Get(c
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) HostedContents()(*ItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Hoste
     if id != "" {
         urlTplParams["chatMessageHostedContent%2Did"] = id
     }
-    return NewItemChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property replies in teams
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
@@ -136,11 +136,11 @@ func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Patch
 }
 // SetReaction provides operations to call the setReaction method.
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) SetReaction()(*ItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) SoftDelete()(*ItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property replies for teams
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -177,7 +177,10 @@ func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -186,9 +189,9 @@ func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) ToPat
 }
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UnsetReaction provides operations to call the unsetReaction method.
 func (m *ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) UnsetReaction()(*ItemChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

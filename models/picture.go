@@ -7,14 +7,6 @@ import (
 // Picture 
 type Picture struct {
     Entity
-    // The content property
-    content []byte
-    // The contentType property
-    contentType *string
-    // The height property
-    height *int32
-    // The width property
-    width *int32
 }
 // NewPicture instantiates a new picture and sets the default values.
 func NewPicture()(*Picture) {
@@ -29,11 +21,25 @@ func CreatePictureFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetContent gets the content property value. The content property
 func (m *Picture) GetContent()([]byte) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetContentType gets the contentType property value. The contentType property
 func (m *Picture) GetContentType()(*string) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Picture) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,11 +88,25 @@ func (m *Picture) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetHeight gets the height property value. The height property
 func (m *Picture) GetHeight()(*int32) {
-    return m.height
+    val, err := m.GetBackingStore().Get("height")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWidth gets the width property value. The width property
 func (m *Picture) GetWidth()(*int32) {
-    return m.width
+    val, err := m.GetBackingStore().Get("width")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Picture) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *Picture) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetContent sets the content property value. The content property
 func (m *Picture) SetContent(value []byte)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentType sets the contentType property value. The contentType property
 func (m *Picture) SetContentType(value *string)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHeight sets the height property value. The height property
 func (m *Picture) SetHeight(value *int32)() {
-    m.height = value
+    err := m.GetBackingStore().Set("height", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWidth sets the width property value. The width property
 func (m *Picture) SetWidth(value *int32)() {
-    m.width = value
+    err := m.GetBackingStore().Set("width", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Pictureable 
+type Pictureable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContent()([]byte)
+    GetContentType()(*string)
+    GetHeight()(*int32)
+    GetWidth()(*int32)
+    SetContent(value []byte)()
+    SetContentType(value *string)()
+    SetHeight(value *int32)()
+    SetWidth(value *int32)()
 }

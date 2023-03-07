@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse 
 type DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationPolicyPolicySetItemable
 }
 // NewDeviceManagementConfigurationPolicyPolicySetItemCollectionResponse instantiates a new DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationPolicyPolicySetItemCollectionResponse()(*DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse) GetValue()([]DeviceManagementConfigurationPolicyPolicySetItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationPolicyPolicySetItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationPolicyPolicySetItemCollectionResponse) SetValue(value []DeviceManagementConfigurationPolicyPolicySetItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationPolicyPolicySetItemCollectionResponseable 
+type DeviceManagementConfigurationPolicyPolicySetItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationPolicyPolicySetItemable)
+    SetValue(value []DeviceManagementConfigurationPolicyPolicySetItemable)()
 }

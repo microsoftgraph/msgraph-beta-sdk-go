@@ -53,8 +53,8 @@ func NewItemTransitiveReportsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTransitiveReportsRequestBuilder instantiates a new TransitiveReportsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTransitiveReportsRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTransitiveReportsRequestBuilder) Count()(*ItemTransitiveReportsCountRequestBuilder) {
-    return NewItemTransitiveReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTransitiveReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the transitive reports for a user. Read-only.
 func (m *ItemTransitiveReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {

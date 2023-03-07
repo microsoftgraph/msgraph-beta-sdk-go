@@ -3,24 +3,20 @@ package teamtemplatedefinition
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody 
 type ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The atApprovedLocation property
-    atApprovedLocation *bool
-    // The notes property
-    notes ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable
-    // The onBehalfOfUserId property
-    onBehalfOfUserId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody instantiates a new ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody and sets the default values.
 func NewItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody()(*ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) {
     m := &ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemTeamDefinitionScheduleTimeCardsClockInPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +25,30 @@ func CreateItemTeamDefinitionScheduleTimeCardsClockInPostRequestBodyFromDiscrimi
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. The atApprovedLocation property
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetAtApprovedLocation()(*bool) {
-    return m.atApprovedLocation
+    val, err := m.GetBackingStore().Get("atApprovedLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,11 +87,25 @@ func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetFieldDese
 }
 // GetNotes gets the notes property value. The notes property
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetNotes()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable) {
-    return m.notes
+    val, err := m.GetBackingStore().Get("notes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)
+    }
+    return nil
 }
 // GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetOnBehalfOfUserId()(*string) {
-    return m.onBehalfOfUserId
+    val, err := m.GetBackingStore().Get("onBehalfOfUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,17 +137,47 @@ func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) Serialize(wr
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. The atApprovedLocation property
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetAtApprovedLocation(value *bool)() {
-    m.atApprovedLocation = value
+    err := m.GetBackingStore().Set("atApprovedLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetNotes sets the notes property value. The notes property
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetNotes(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)() {
-    m.notes = value
+    err := m.GetBackingStore().Set("notes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetOnBehalfOfUserId(value *string)() {
-    m.onBehalfOfUserId = value
+    err := m.GetBackingStore().Set("onBehalfOfUserId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBodyable 
+type ItemTeamDefinitionScheduleTimeCardsClockInPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAtApprovedLocation()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetNotes()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)
+    GetOnBehalfOfUserId()(*string)
+    SetAtApprovedLocation(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetNotes(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)()
+    SetOnBehalfOfUserId(value *string)()
 }

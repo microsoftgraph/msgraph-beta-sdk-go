@@ -7,18 +7,14 @@ import (
 // AndroidDeviceComplianceLocalActionLockDeviceWithPasscode 
 type AndroidDeviceComplianceLocalActionLockDeviceWithPasscode struct {
     AndroidDeviceComplianceLocalActionBase
-    // Passcode to reset to Android device. This property is read-only.
-    passcode *string
-    // Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
-    passcodeSignInFailureCountBeforeWipe *int32
 }
 // NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode instantiates a new AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
 func NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode()(*AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) {
     m := &AndroidDeviceComplianceLocalActionLockDeviceWithPasscode{
         AndroidDeviceComplianceLocalActionBase: *NewAndroidDeviceComplianceLocalActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceComplianceLocalActionLockDeviceWithPasscodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetFieldDeser
 }
 // GetPasscode gets the passcode property value. Passcode to reset to Android device. This property is read-only.
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscode()(*string) {
-    return m.passcode
+    val, err := m.GetBackingStore().Get("passcode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasscodeSignInFailureCountBeforeWipe gets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscodeSignInFailureCountBeforeWipe()(*int32) {
-    return m.passcodeSignInFailureCountBeforeWipe
+    val, err := m.GetBackingStore().Get("passcodeSignInFailureCountBeforeWipe")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -74,9 +84,24 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) Serialize(wri
 }
 // SetPasscode sets the passcode property value. Passcode to reset to Android device. This property is read-only.
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) SetPasscode(value *string)() {
-    m.passcode = value
+    err := m.GetBackingStore().Set("passcode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasscodeSignInFailureCountBeforeWipe sets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) SetPasscodeSignInFailureCountBeforeWipe(value *int32)() {
-    m.passcodeSignInFailureCountBeforeWipe = value
+    err := m.GetBackingStore().Set("passcodeSignInFailureCountBeforeWipe", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceComplianceLocalActionLockDeviceWithPasscodeable 
+type AndroidDeviceComplianceLocalActionLockDeviceWithPasscodeable interface {
+    AndroidDeviceComplianceLocalActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPasscode()(*string)
+    GetPasscodeSignInFailureCountBeforeWipe()(*int32)
+    SetPasscode(value *string)()
+    SetPasscodeSignInFailureCountBeforeWipe(value *int32)()
 }

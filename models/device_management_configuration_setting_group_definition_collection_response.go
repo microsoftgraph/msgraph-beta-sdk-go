@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse 
 type DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationSettingGroupDefinitionable
 }
 // NewDeviceManagementConfigurationSettingGroupDefinitionCollectionResponse instantiates a new DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupDefinitionCollectionResponse()(*DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse) 
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse) GetValue()([]DeviceManagementConfigurationSettingGroupDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingGroupDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse) 
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingGroupDefinitionCollectionResponse) SetValue(value []DeviceManagementConfigurationSettingGroupDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingGroupDefinitionCollectionResponseable 
+type DeviceManagementConfigurationSettingGroupDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationSettingGroupDefinitionable)
+    SetValue(value []DeviceManagementConfigurationSettingGroupDefinitionable)()
 }

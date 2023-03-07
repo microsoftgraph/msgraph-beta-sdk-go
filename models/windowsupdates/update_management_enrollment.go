@@ -7,16 +7,14 @@ import (
 // UpdateManagementEnrollment 
 type UpdateManagementEnrollment struct {
     UpdatableAssetEnrollment
-    // The updateCategory property
-    updateCategory *UpdateCategory
 }
 // NewUpdateManagementEnrollment instantiates a new UpdateManagementEnrollment and sets the default values.
 func NewUpdateManagementEnrollment()(*UpdateManagementEnrollment) {
     m := &UpdateManagementEnrollment{
         UpdatableAssetEnrollment: *NewUpdatableAssetEnrollment(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.updateManagementEnrollment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.updateManagementEnrollment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUpdateManagementEnrollmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *UpdateManagementEnrollment) GetFieldDeserializers()(map[string]func(i87
 }
 // GetUpdateCategory gets the updateCategory property value. The updateCategory property
 func (m *UpdateManagementEnrollment) GetUpdateCategory()(*UpdateCategory) {
-    return m.updateCategory
+    val, err := m.GetBackingStore().Get("updateCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UpdateCategory)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UpdateManagementEnrollment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *UpdateManagementEnrollment) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetUpdateCategory sets the updateCategory property value. The updateCategory property
 func (m *UpdateManagementEnrollment) SetUpdateCategory(value *UpdateCategory)() {
-    m.updateCategory = value
+    err := m.GetBackingStore().Set("updateCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UpdateManagementEnrollmentable 
+type UpdateManagementEnrollmentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UpdatableAssetEnrollmentable
+    GetUpdateCategory()(*UpdateCategory)
+    SetUpdateCategory(value *UpdateCategory)()
 }

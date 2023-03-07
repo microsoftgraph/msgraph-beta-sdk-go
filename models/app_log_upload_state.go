@@ -6,16 +6,18 @@ import (
 type AppLogUploadState int
 
 const (
-    // Request is waiting to be processed or under processing
+    // Default. Indicates that request is waiting to be processed or under processing.
     PENDING_APPLOGUPLOADSTATE AppLogUploadState = iota
-    // Request is completed with file uploaded to Azure blob for download.
+    // Indicates that request is completed with file uploaded to Azure blob for download.
     COMPLETED_APPLOGUPLOADSTATE
-    // Request finished processing and in error state.
+    // Indicates that request is completed with file uploaded to Azure blob for download.
     FAILED_APPLOGUPLOADSTATE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_APPLOGUPLOADSTATE
 )
 
 func (i AppLogUploadState) String() string {
-    return []string{"pending", "completed", "failed"}[i]
+    return []string{"pending", "completed", "failed", "unknownFutureValue"}[i]
 }
 func ParseAppLogUploadState(v string) (any, error) {
     result := PENDING_APPLOGUPLOADSTATE
@@ -26,6 +28,8 @@ func ParseAppLogUploadState(v string) (any, error) {
             result = COMPLETED_APPLOGUPLOADSTATE
         case "failed":
             result = FAILED_APPLOGUPLOADSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_APPLOGUPLOADSTATE
         default:
             return 0, errors.New("Unknown AppLogUploadState value: " + v)
     }

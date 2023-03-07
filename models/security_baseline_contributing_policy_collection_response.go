@@ -7,8 +7,6 @@ import (
 // SecurityBaselineContributingPolicyCollectionResponse 
 type SecurityBaselineContributingPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SecurityBaselineContributingPolicyable
 }
 // NewSecurityBaselineContributingPolicyCollectionResponse instantiates a new SecurityBaselineContributingPolicyCollectionResponse and sets the default values.
 func NewSecurityBaselineContributingPolicyCollectionResponse()(*SecurityBaselineContributingPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SecurityBaselineContributingPolicyCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *SecurityBaselineContributingPolicyCollectionResponse) GetValue()([]SecurityBaselineContributingPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityBaselineContributingPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineContributingPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SecurityBaselineContributingPolicyCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *SecurityBaselineContributingPolicyCollectionResponse) SetValue(value []SecurityBaselineContributingPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityBaselineContributingPolicyCollectionResponseable 
+type SecurityBaselineContributingPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SecurityBaselineContributingPolicyable)
+    SetValue(value []SecurityBaselineContributingPolicyable)()
 }

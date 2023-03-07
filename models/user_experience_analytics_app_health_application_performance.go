@@ -7,26 +7,6 @@ import (
 // UserExperienceAnalyticsAppHealthApplicationPerformance the user experience analytics application performance entity contains app performance details.
 type UserExperienceAnalyticsAppHealthApplicationPerformance struct {
     Entity
-    // The number of devices where the app has been active. Valid values -2147483648 to 2147483647
-    activeDeviceCount *int32
-    // The number of crashes for the app. Valid values -2147483648 to 2147483647
-    appCrashCount *int32
-    // The friendly name of the application.
-    appDisplayName *string
-    // The number of hangs for the app. Valid values -2147483648 to 2147483647
-    appHangCount *int32
-    // The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    appHealthScore *float64
-    // The overall health status of the app.
-    appHealthStatus *string
-    // The name of the application.
-    appName *string
-    // The publisher of the application.
-    appPublisher *string
-    // The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
-    appUsageDuration *int32
-    // The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
-    meanTimeToFailureInMinutes *int32
 }
 // NewUserExperienceAnalyticsAppHealthApplicationPerformance instantiates a new userExperienceAnalyticsAppHealthApplicationPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthApplicationPerformance()(*UserExperienceAnalyticsAppHealthApplicationPerformance) {
@@ -41,39 +21,102 @@ func CreateUserExperienceAnalyticsAppHealthApplicationPerformanceFromDiscriminat
 }
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of devices where the app has been active. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetActiveDeviceCount()(*int32) {
-    return m.activeDeviceCount
+    val, err := m.GetBackingStore().Get("activeDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppCrashCount()(*int32) {
-    return m.appCrashCount
+    val, err := m.GetBackingStore().Get("appCrashCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppDisplayName()(*string) {
-    return m.appDisplayName
+    val, err := m.GetBackingStore().Get("appDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppHangCount gets the appHangCount property value. The number of hangs for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppHangCount()(*int32) {
-    return m.appHangCount
+    val, err := m.GetBackingStore().Get("appHangCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAppHealthScore gets the appHealthScore property value. The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppHealthScore()(*float64) {
-    return m.appHealthScore
+    val, err := m.GetBackingStore().Get("appHealthScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetAppHealthStatus gets the appHealthStatus property value. The overall health status of the app.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppHealthStatus()(*string) {
-    return m.appHealthStatus
+    val, err := m.GetBackingStore().Get("appHealthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppName gets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppName()(*string) {
-    return m.appName
+    val, err := m.GetBackingStore().Get("appName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppPublisher gets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppPublisher()(*string) {
-    return m.appPublisher
+    val, err := m.GetBackingStore().Get("appPublisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppUsageDuration gets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppUsageDuration()(*int32) {
-    return m.appUsageDuration
+    val, err := m.GetBackingStore().Get("appUsageDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -182,7 +225,14 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetFieldDeseria
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    return m.meanTimeToFailureInMinutes
+    val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -254,41 +304,96 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) Serialize(write
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of devices where the app has been active. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetActiveDeviceCount(value *int32)() {
-    m.activeDeviceCount = value
+    err := m.GetBackingStore().Set("activeDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppCrashCount(value *int32)() {
-    m.appCrashCount = value
+    err := m.GetBackingStore().Set("appCrashCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    err := m.GetBackingStore().Set("appDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppHangCount sets the appHangCount property value. The number of hangs for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppHangCount(value *int32)() {
-    m.appHangCount = value
+    err := m.GetBackingStore().Set("appHangCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppHealthScore sets the appHealthScore property value. The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppHealthScore(value *float64)() {
-    m.appHealthScore = value
+    err := m.GetBackingStore().Set("appHealthScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppHealthStatus sets the appHealthStatus property value. The overall health status of the app.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppHealthStatus(value *string)() {
-    m.appHealthStatus = value
+    err := m.GetBackingStore().Set("appHealthStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppName(value *string)() {
-    m.appName = value
+    err := m.GetBackingStore().Set("appName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    err := m.GetBackingStore().Set("appPublisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppUsageDuration sets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppUsageDuration(value *int32)() {
-    m.appUsageDuration = value
+    err := m.GetBackingStore().Set("appUsageDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    err := m.GetBackingStore().Set("meanTimeToFailureInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAppHealthApplicationPerformanceable 
+type UserExperienceAnalyticsAppHealthApplicationPerformanceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveDeviceCount()(*int32)
+    GetAppCrashCount()(*int32)
+    GetAppDisplayName()(*string)
+    GetAppHangCount()(*int32)
+    GetAppHealthScore()(*float64)
+    GetAppHealthStatus()(*string)
+    GetAppName()(*string)
+    GetAppPublisher()(*string)
+    GetAppUsageDuration()(*int32)
+    GetMeanTimeToFailureInMinutes()(*int32)
+    SetActiveDeviceCount(value *int32)()
+    SetAppCrashCount(value *int32)()
+    SetAppDisplayName(value *string)()
+    SetAppHangCount(value *int32)()
+    SetAppHealthScore(value *float64)()
+    SetAppHealthStatus(value *string)()
+    SetAppName(value *string)()
+    SetAppPublisher(value *string)()
+    SetAppUsageDuration(value *int32)()
+    SetMeanTimeToFailureInMinutes(value *int32)()
 }

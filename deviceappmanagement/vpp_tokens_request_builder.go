@@ -60,8 +60,8 @@ func NewVppTokensRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVppTokensRequestBuilder instantiates a new VppTokensRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVppTokensRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Count provides operations to count the resources in the collection.
 func (m *VppTokensRequestBuilder) Count()(*VppTokensCountRequestBuilder) {
-    return NewVppTokensCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVppTokensCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list of Vpp tokens for this organization.
 func (m *VppTokensRequestBuilder) Get(ctx context.Context, requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable, error) {
@@ -95,7 +95,7 @@ func (m *VppTokensRequestBuilder) Get(ctx context.Context, requestConfiguration 
 }
 // GetLicensesForAppWithBundleId provides operations to call the getLicensesForApp method.
 func (m *VppTokensRequestBuilder) GetLicensesForAppWithBundleId(bundleId *string)(*VppTokensGetLicensesForAppWithBundleIdRequestBuilder) {
-    return NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, bundleId);
+    return NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, bundleId)
 }
 // Post create new navigation property to vppTokens for deviceAppManagement
 func (m *VppTokensRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, requestConfiguration *VppTokensRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
@@ -118,7 +118,7 @@ func (m *VppTokensRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
 }
 // SyncLicenseCounts provides operations to call the syncLicenseCounts method.
 func (m *VppTokensRequestBuilder) SyncLicenseCounts()(*VppTokensSyncLicenseCountsRequestBuilder) {
-    return NewVppTokensSyncLicenseCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVppTokensSyncLicenseCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list of Vpp tokens for this organization.
 func (m *VppTokensRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -143,7 +143,10 @@ func (m *VppTokensRequestBuilder) ToPostRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

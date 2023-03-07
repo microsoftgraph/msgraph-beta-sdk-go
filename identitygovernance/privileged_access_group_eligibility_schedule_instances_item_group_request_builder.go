@@ -41,8 +41,8 @@ func NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.

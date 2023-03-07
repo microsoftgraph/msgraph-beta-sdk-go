@@ -7,8 +7,6 @@ import (
 // AppleExpeditedCheckinConfigurationBaseCollectionResponse 
 type AppleExpeditedCheckinConfigurationBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppleExpeditedCheckinConfigurationBaseable
 }
 // NewAppleExpeditedCheckinConfigurationBaseCollectionResponse instantiates a new AppleExpeditedCheckinConfigurationBaseCollectionResponse and sets the default values.
 func NewAppleExpeditedCheckinConfigurationBaseCollectionResponse()(*AppleExpeditedCheckinConfigurationBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppleExpeditedCheckinConfigurationBaseCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *AppleExpeditedCheckinConfigurationBaseCollectionResponse) GetValue()([]AppleExpeditedCheckinConfigurationBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppleExpeditedCheckinConfigurationBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleExpeditedCheckinConfigurationBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppleExpeditedCheckinConfigurationBaseCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *AppleExpeditedCheckinConfigurationBaseCollectionResponse) SetValue(value []AppleExpeditedCheckinConfigurationBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleExpeditedCheckinConfigurationBaseCollectionResponseable 
+type AppleExpeditedCheckinConfigurationBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppleExpeditedCheckinConfigurationBaseable)
+    SetValue(value []AppleExpeditedCheckinConfigurationBaseable)()
 }

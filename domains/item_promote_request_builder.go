@@ -26,13 +26,13 @@ type ItemPromoteRequestBuilderPostRequestConfiguration struct {
 func NewItemPromoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPromoteRequestBuilder) {
     m := &ItemPromoteRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/microsoft.graph.promote";
+    m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/promote";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPromoteRequestBuilder instantiates a new PromoteRequestBuilder and sets the default values.

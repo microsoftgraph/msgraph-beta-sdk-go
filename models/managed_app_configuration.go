@@ -7,16 +7,14 @@ import (
 // ManagedAppConfiguration 
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
-    // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-    customSettings []KeyValuePairable
 }
 // NewManagedAppConfiguration instantiates a new ManagedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     m := &ManagedAppConfiguration{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.managedAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +41,14 @@ func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
-    return m.customSettings
+    val, err := m.GetBackingStore().Get("customSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +67,32 @@ func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceManagementConfigurationSettingable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceManagementConfigurationSettingable)
+            }
+            m.SetSettings(res)
+        }
+        return nil
+    }
     return res
+}
+// GetSettings gets the settings property value. List of settings contained in this App Configuration policy
+func (m *ManagedAppConfiguration) GetSettings()([]DeviceManagementConfigurationSettingable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +110,38 @@ func (m *ManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettings()))
+        for i, v := range m.GetSettings() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("settings", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePairable)() {
-    m.customSettings = value
+    err := m.GetBackingStore().Set("customSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSettings sets the settings property value. List of settings contained in this App Configuration policy
+func (m *ManagedAppConfiguration) SetSettings(value []DeviceManagementConfigurationSettingable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAppConfigurationable 
+type ManagedAppConfigurationable interface {
+    ManagedAppPolicyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustomSettings()([]KeyValuePairable)
+    GetSettings()([]DeviceManagementConfigurationSettingable)
+    SetCustomSettings(value []KeyValuePairable)()
+    SetSettings(value []DeviceManagementConfigurationSettingable)()
 }

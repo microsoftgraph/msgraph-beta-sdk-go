@@ -7,8 +7,6 @@ import (
 // FocusActivityStatisticsCollectionResponse 
 type FocusActivityStatisticsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []FocusActivityStatisticsable
 }
 // NewFocusActivityStatisticsCollectionResponse instantiates a new FocusActivityStatisticsCollectionResponse and sets the default values.
 func NewFocusActivityStatisticsCollectionResponse()(*FocusActivityStatisticsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *FocusActivityStatisticsCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *FocusActivityStatisticsCollectionResponse) GetValue()([]FocusActivityStatisticsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FocusActivityStatisticsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FocusActivityStatisticsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *FocusActivityStatisticsCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *FocusActivityStatisticsCollectionResponse) SetValue(value []FocusActivityStatisticsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FocusActivityStatisticsCollectionResponseable 
+type FocusActivityStatisticsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]FocusActivityStatisticsable)
+    SetValue(value []FocusActivityStatisticsable)()
 }

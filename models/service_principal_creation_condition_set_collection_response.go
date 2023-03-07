@@ -7,8 +7,6 @@ import (
 // ServicePrincipalCreationConditionSetCollectionResponse 
 type ServicePrincipalCreationConditionSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ServicePrincipalCreationConditionSetable
 }
 // NewServicePrincipalCreationConditionSetCollectionResponse instantiates a new ServicePrincipalCreationConditionSetCollectionResponse and sets the default values.
 func NewServicePrincipalCreationConditionSetCollectionResponse()(*ServicePrincipalCreationConditionSetCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ServicePrincipalCreationConditionSetCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *ServicePrincipalCreationConditionSetCollectionResponse) GetValue()([]ServicePrincipalCreationConditionSetable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServicePrincipalCreationConditionSetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipalCreationConditionSetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ServicePrincipalCreationConditionSetCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *ServicePrincipalCreationConditionSetCollectionResponse) SetValue(value []ServicePrincipalCreationConditionSetable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServicePrincipalCreationConditionSetCollectionResponseable 
+type ServicePrincipalCreationConditionSetCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ServicePrincipalCreationConditionSetable)
+    SetValue(value []ServicePrincipalCreationConditionSetable)()
 }

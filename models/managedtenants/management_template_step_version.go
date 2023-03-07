@@ -9,28 +9,6 @@ import (
 // ManagementTemplateStepVersion 
 type ManagementTemplateStepVersion struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The acceptedFor property
-    acceptedFor ManagementTemplateStepable
-    // The contentMarkdown property
-    contentMarkdown *string
-    // The createdByUserId property
-    createdByUserId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The deployments property
-    deployments []ManagementTemplateStepDeploymentable
-    // The lastActionByUserId property
-    lastActionByUserId *string
-    // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name property
-    name *string
-    // The templateStep property
-    templateStep ManagementTemplateStepable
-    // The version property
-    version *int32
-    // The versionInformation property
-    versionInformation *string
 }
 // NewManagementTemplateStepVersion instantiates a new managementTemplateStepVersion and sets the default values.
 func NewManagementTemplateStepVersion()(*ManagementTemplateStepVersion) {
@@ -45,23 +23,58 @@ func CreateManagementTemplateStepVersionFromDiscriminatorValue(parseNode i878a80
 }
 // GetAcceptedFor gets the acceptedFor property value. The acceptedFor property
 func (m *ManagementTemplateStepVersion) GetAcceptedFor()(ManagementTemplateStepable) {
-    return m.acceptedFor
+    val, err := m.GetBackingStore().Get("acceptedFor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagementTemplateStepable)
+    }
+    return nil
 }
 // GetContentMarkdown gets the contentMarkdown property value. The contentMarkdown property
 func (m *ManagementTemplateStepVersion) GetContentMarkdown()(*string) {
-    return m.contentMarkdown
+    val, err := m.GetBackingStore().Get("contentMarkdown")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStepVersion) GetCreatedByUserId()(*string) {
-    return m.createdByUserId
+    val, err := m.GetBackingStore().Get("createdByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStepVersion) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeployments gets the deployments property value. The deployments property
 func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateStepDeploymentable) {
-    return m.deployments
+    val, err := m.GetBackingStore().Get("deployments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateStepDeploymentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -184,27 +197,69 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStepVersion) GetLastActionByUserId()(*string) {
-    return m.lastActionByUserId
+    val, err := m.GetBackingStore().Get("lastActionByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *ManagementTemplateStepVersion) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTemplateStep gets the templateStep property value. The templateStep property
 func (m *ManagementTemplateStepVersion) GetTemplateStep()(ManagementTemplateStepable) {
-    return m.templateStep
+    val, err := m.GetBackingStore().Get("templateStep")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagementTemplateStepable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. The version property
 func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetVersionInformation gets the versionInformation property value. The versionInformation property
 func (m *ManagementTemplateStepVersion) GetVersionInformation()(*string) {
-    return m.versionInformation
+    val, err := m.GetBackingStore().Get("versionInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateStepVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -286,45 +341,105 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAcceptedFor sets the acceptedFor property value. The acceptedFor property
 func (m *ManagementTemplateStepVersion) SetAcceptedFor(value ManagementTemplateStepable)() {
-    m.acceptedFor = value
+    err := m.GetBackingStore().Set("acceptedFor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentMarkdown sets the contentMarkdown property value. The contentMarkdown property
 func (m *ManagementTemplateStepVersion) SetContentMarkdown(value *string)() {
-    m.contentMarkdown = value
+    err := m.GetBackingStore().Set("contentMarkdown", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStepVersion) SetCreatedByUserId(value *string)() {
-    m.createdByUserId = value
+    err := m.GetBackingStore().Set("createdByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStepVersion) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeployments sets the deployments property value. The deployments property
 func (m *ManagementTemplateStepVersion) SetDeployments(value []ManagementTemplateStepDeploymentable)() {
-    m.deployments = value
+    err := m.GetBackingStore().Set("deployments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStepVersion) SetLastActionByUserId(value *string)() {
-    m.lastActionByUserId = value
+    err := m.GetBackingStore().Set("lastActionByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStepVersion) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *ManagementTemplateStepVersion) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateStep sets the templateStep property value. The templateStep property
 func (m *ManagementTemplateStepVersion) SetTemplateStep(value ManagementTemplateStepable)() {
-    m.templateStep = value
+    err := m.GetBackingStore().Set("templateStep", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version property
 func (m *ManagementTemplateStepVersion) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionInformation sets the versionInformation property value. The versionInformation property
 func (m *ManagementTemplateStepVersion) SetVersionInformation(value *string)() {
-    m.versionInformation = value
+    err := m.GetBackingStore().Set("versionInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementTemplateStepVersionable 
+type ManagementTemplateStepVersionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAcceptedFor()(ManagementTemplateStepable)
+    GetContentMarkdown()(*string)
+    GetCreatedByUserId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeployments()([]ManagementTemplateStepDeploymentable)
+    GetLastActionByUserId()(*string)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetName()(*string)
+    GetTemplateStep()(ManagementTemplateStepable)
+    GetVersion()(*int32)
+    GetVersionInformation()(*string)
+    SetAcceptedFor(value ManagementTemplateStepable)()
+    SetContentMarkdown(value *string)()
+    SetCreatedByUserId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeployments(value []ManagementTemplateStepDeploymentable)()
+    SetLastActionByUserId(value *string)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetName(value *string)()
+    SetTemplateStep(value ManagementTemplateStepable)()
+    SetVersion(value *int32)()
+    SetVersionInformation(value *string)()
 }

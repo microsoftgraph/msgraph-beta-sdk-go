@@ -8,24 +8,8 @@ import (
 // MessageTrace 
 type MessageTrace struct {
     Entity
-    // The destinationIPAddress property
-    destinationIPAddress *string
-    // The messageId property
-    messageId *string
-    // The receivedDateTime property
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The recipients property
-    recipients []MessageRecipientable
-    // The senderEmail property
-    senderEmail *string
-    // The size property
-    size *int32
-    // The sourceIPAddress property
-    sourceIPAddress *string
-    // The subject property
-    subject *string
 }
-// NewMessageTrace instantiates a new MessageTrace and sets the default values.
+// NewMessageTrace instantiates a new messageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),
@@ -38,7 +22,14 @@ func CreateMessageTraceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDestinationIPAddress gets the destinationIPAddress property value. The destinationIPAddress property
 func (m *MessageTrace) GetDestinationIPAddress()(*string) {
-    return m.destinationIPAddress
+    val, err := m.GetBackingStore().Get("destinationIPAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,31 +122,80 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetMessageId gets the messageId property value. The messageId property
 func (m *MessageTrace) GetMessageId()(*string) {
-    return m.messageId
+    val, err := m.GetBackingStore().Get("messageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReceivedDateTime gets the receivedDateTime property value. The receivedDateTime property
 func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.receivedDateTime
+    val, err := m.GetBackingStore().Get("receivedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRecipients gets the recipients property value. The recipients property
 func (m *MessageTrace) GetRecipients()([]MessageRecipientable) {
-    return m.recipients
+    val, err := m.GetBackingStore().Get("recipients")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MessageRecipientable)
+    }
+    return nil
 }
 // GetSenderEmail gets the senderEmail property value. The senderEmail property
 func (m *MessageTrace) GetSenderEmail()(*string) {
-    return m.senderEmail
+    val, err := m.GetBackingStore().Get("senderEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSize gets the size property value. The size property
 func (m *MessageTrace) GetSize()(*int32) {
-    return m.size
+    val, err := m.GetBackingStore().Get("size")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSourceIPAddress gets the sourceIPAddress property value. The sourceIPAddress property
 func (m *MessageTrace) GetSourceIPAddress()(*string) {
-    return m.sourceIPAddress
+    val, err := m.GetBackingStore().Get("sourceIPAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. The subject property
 func (m *MessageTrace) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MessageTrace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,33 +259,78 @@ func (m *MessageTrace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDestinationIPAddress sets the destinationIPAddress property value. The destinationIPAddress property
 func (m *MessageTrace) SetDestinationIPAddress(value *string)() {
-    m.destinationIPAddress = value
+    err := m.GetBackingStore().Set("destinationIPAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessageId sets the messageId property value. The messageId property
 func (m *MessageTrace) SetMessageId(value *string)() {
-    m.messageId = value
+    err := m.GetBackingStore().Set("messageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReceivedDateTime sets the receivedDateTime property value. The receivedDateTime property
 func (m *MessageTrace) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTime = value
+    err := m.GetBackingStore().Set("receivedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecipients sets the recipients property value. The recipients property
 func (m *MessageTrace) SetRecipients(value []MessageRecipientable)() {
-    m.recipients = value
+    err := m.GetBackingStore().Set("recipients", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSenderEmail sets the senderEmail property value. The senderEmail property
 func (m *MessageTrace) SetSenderEmail(value *string)() {
-    m.senderEmail = value
+    err := m.GetBackingStore().Set("senderEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSize sets the size property value. The size property
 func (m *MessageTrace) SetSize(value *int32)() {
-    m.size = value
+    err := m.GetBackingStore().Set("size", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceIPAddress sets the sourceIPAddress property value. The sourceIPAddress property
 func (m *MessageTrace) SetSourceIPAddress(value *string)() {
-    m.sourceIPAddress = value
+    err := m.GetBackingStore().Set("sourceIPAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. The subject property
 func (m *MessageTrace) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MessageTraceable 
+type MessageTraceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDestinationIPAddress()(*string)
+    GetMessageId()(*string)
+    GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRecipients()([]MessageRecipientable)
+    GetSenderEmail()(*string)
+    GetSize()(*int32)
+    GetSourceIPAddress()(*string)
+    GetSubject()(*string)
+    SetDestinationIPAddress(value *string)()
+    SetMessageId(value *string)()
+    SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRecipients(value []MessageRecipientable)()
+    SetSenderEmail(value *string)()
+    SetSize(value *int32)()
+    SetSourceIPAddress(value *string)()
+    SetSubject(value *string)()
 }

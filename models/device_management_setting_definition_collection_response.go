@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingDefinitionCollectionResponse 
 type DeviceManagementSettingDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementSettingDefinitionable
 }
 // NewDeviceManagementSettingDefinitionCollectionResponse instantiates a new DeviceManagementSettingDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementSettingDefinitionCollectionResponse()(*DeviceManagementSettingDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementSettingDefinitionCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementSettingDefinitionCollectionResponse) GetValue()([]DeviceManagementSettingDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementSettingDefinitionCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementSettingDefinitionCollectionResponse) SetValue(value []DeviceManagementSettingDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingDefinitionCollectionResponseable 
+type DeviceManagementSettingDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementSettingDefinitionable)
+    SetValue(value []DeviceManagementSettingDefinitionable)()
 }

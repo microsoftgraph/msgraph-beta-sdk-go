@@ -41,8 +41,8 @@ func NewItemInformationProtectionBitlockerRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInformationProtectionBitlockerRequestBuilder instantiates a new BitlockerRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func (m *ItemInformationProtectionBitlockerRequestBuilder) Get(ctx context.Conte
 }
 // RecoveryKeys provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *ItemInformationProtectionBitlockerRequestBuilder) RecoveryKeys()(*ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) {
-    return NewItemInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RecoveryKeysById provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *ItemInformationProtectionBitlockerRequestBuilder) RecoveryKeysById(id string)(*ItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
@@ -83,7 +83,7 @@ func (m *ItemInformationProtectionBitlockerRequestBuilder) RecoveryKeysById(id s
     if id != "" {
         urlTplParams["bitlockerRecoveryKey%2Did"] = id
     }
-    return NewItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get bitlocker from users
 func (m *ItemInformationProtectionBitlockerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionBitlockerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

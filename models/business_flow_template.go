@@ -7,8 +7,6 @@ import (
 // BusinessFlowTemplate 
 type BusinessFlowTemplate struct {
     Entity
-    // The name of the business flow template
-    displayName *string
 }
 // NewBusinessFlowTemplate instantiates a new businessFlowTemplate and sets the default values.
 func NewBusinessFlowTemplate()(*BusinessFlowTemplate) {
@@ -23,7 +21,14 @@ func CreateBusinessFlowTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDisplayName gets the displayName property value. The name of the business flow template
 func (m *BusinessFlowTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BusinessFlowTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,5 +61,15 @@ func (m *BusinessFlowTemplate) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDisplayName sets the displayName property value. The name of the business flow template
 func (m *BusinessFlowTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BusinessFlowTemplateable 
+type BusinessFlowTemplateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    SetDisplayName(value *string)()
 }

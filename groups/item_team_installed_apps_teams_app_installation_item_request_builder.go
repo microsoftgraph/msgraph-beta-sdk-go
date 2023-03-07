@@ -55,8 +55,8 @@ func NewItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder instantiates a new TeamsAppInstallationItemRequestBuilder and sets the default values.
@@ -121,11 +121,11 @@ func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) Patch(ctx 
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsApp()(*ItemTeamInstalledAppsItemTeamsAppRequestBuilder) {
-    return NewItemTeamInstalledAppsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamInstalledAppsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeamsAppDefinition provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemTeamInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
-    return NewItemTeamInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property installedApps for groups
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -171,5 +174,5 @@ func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPatchReq
 }
 // Upgrade provides operations to call the upgrade method.
 func (m *ItemTeamInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemTeamInstalledAppsItemUpgradeRequestBuilder) {
-    return NewItemTeamInstalledAppsItemUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamInstalledAppsItemUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

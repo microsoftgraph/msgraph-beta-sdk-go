@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UserExperienceAnalyticsCloudManagementDevicesSummary the user experience work from anywhere Cloud management devices summary.
 type UserExperienceAnalyticsCloudManagementDevicesSummary struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Total number of  co-managed devices.
-    coManagedDeviceCount *int32
-    // The count of intune devices that are not autopilot registerd.
-    intuneDeviceCount *int32
-    // The OdataType property
-    odataType *string
-    // Total count of tenant attach devices.
-    tenantAttachDeviceCount *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewUserExperienceAnalyticsCloudManagementDevicesSummary instantiates a new userExperienceAnalyticsCloudManagementDevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsCloudManagementDevicesSummary()(*UserExperienceAnalyticsCloudManagementDevicesSummary) {
     m := &UserExperienceAnalyticsCloudManagementDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminator
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCoManagedDeviceCount gets the coManagedDeviceCount property value. Total number of  co-managed devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetCoManagedDeviceCount()(*int32) {
-    return m.coManagedDeviceCount
+    val, err := m.GetBackingStore().Get("coManagedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeseriali
 }
 // GetIntuneDeviceCount gets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetIntuneDeviceCount()(*int32) {
-    return m.intuneDeviceCount
+    val, err := m.GetBackingStore().Get("intuneDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantAttachDeviceCount gets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetTenantAttachDeviceCount()(*int32) {
-    return m.tenantAttachDeviceCount
+    val, err := m.GetBackingStore().Get("tenantAttachDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer 
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCoManagedDeviceCount sets the coManagedDeviceCount property value. Total number of  co-managed devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetCoManagedDeviceCount(value *int32)() {
-    m.coManagedDeviceCount = value
+    err := m.GetBackingStore().Set("coManagedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIntuneDeviceCount sets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetIntuneDeviceCount(value *int32)() {
-    m.intuneDeviceCount = value
+    err := m.GetBackingStore().Set("intuneDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantAttachDeviceCount sets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetTenantAttachDeviceCount(value *int32)() {
-    m.tenantAttachDeviceCount = value
+    err := m.GetBackingStore().Set("tenantAttachDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsCloudManagementDevicesSummaryable 
+type UserExperienceAnalyticsCloudManagementDevicesSummaryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCoManagedDeviceCount()(*int32)
+    GetIntuneDeviceCount()(*int32)
+    GetOdataType()(*string)
+    GetTenantAttachDeviceCount()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCoManagedDeviceCount(value *int32)()
+    SetIntuneDeviceCount(value *int32)()
+    SetOdataType(value *string)()
+    SetTenantAttachDeviceCount(value *int32)()
 }

@@ -13,8 +13,8 @@ func NewProtectAdhocAction()(*ProtectAdhocAction) {
     m := &ProtectAdhocAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.protectAdhocAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.protectAdhocAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectAdhocActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *ProtectAdhocAction) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     return nil
+}
+// ProtectAdhocActionable 
+type ProtectAdhocActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

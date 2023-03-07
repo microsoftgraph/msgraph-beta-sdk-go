@@ -7,8 +7,6 @@ import (
 // PlannerPlanConfigurationBucketDefinitionCollectionResponse 
 type PlannerPlanConfigurationBucketDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerPlanConfigurationBucketDefinitionable
 }
 // NewPlannerPlanConfigurationBucketDefinitionCollectionResponse instantiates a new PlannerPlanConfigurationBucketDefinitionCollectionResponse and sets the default values.
 func NewPlannerPlanConfigurationBucketDefinitionCollectionResponse()(*PlannerPlanConfigurationBucketDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerPlanConfigurationBucketDefinitionCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerPlanConfigurationBucketDefinitionCollectionResponse) GetValue()([]PlannerPlanConfigurationBucketDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanConfigurationBucketDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanConfigurationBucketDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerPlanConfigurationBucketDefinitionCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerPlanConfigurationBucketDefinitionCollectionResponse) SetValue(value []PlannerPlanConfigurationBucketDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanConfigurationBucketDefinitionCollectionResponseable 
+type PlannerPlanConfigurationBucketDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerPlanConfigurationBucketDefinitionable)
+    SetValue(value []PlannerPlanConfigurationBucketDefinitionable)()
 }

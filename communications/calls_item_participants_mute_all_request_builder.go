@@ -27,13 +27,13 @@ type CallsItemParticipantsMuteAllRequestBuilderPostRequestConfiguration struct {
 func NewCallsItemParticipantsMuteAllRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsMuteAllRequestBuilder) {
     m := &CallsItemParticipantsMuteAllRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants/microsoft.graph.muteAll";
+    m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants/muteAll";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallsItemParticipantsMuteAllRequestBuilder instantiates a new MuteAllRequestBuilder and sets the default values.
@@ -71,7 +71,10 @@ func (m *CallsItemParticipantsMuteAllRequestBuilder) ToPostRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

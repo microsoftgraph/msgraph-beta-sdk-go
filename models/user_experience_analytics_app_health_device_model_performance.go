@@ -7,20 +7,6 @@ import (
 // UserExperienceAnalyticsAppHealthDeviceModelPerformance the user experience analytics device model performance entity contains device model performance details.
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
-    // The number of active devices for the model. Valid values -2147483648 to 2147483647
-    activeDeviceCount *int32
-    // The manufacturer name of the device.
-    deviceManufacturer *string
-    // The model name of the device.
-    deviceModel *string
-    // The healthStatus property
-    healthStatus *UserExperienceAnalyticsHealthState
-    // The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
-    meanTimeToFailureInMinutes *int32
-    // The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    modelAppHealthScore *float64
-    // The overall app health status of the device model.
-    modelAppHealthStatus *string
 }
 // NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new userExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformance) {
@@ -35,15 +21,36 @@ func CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminat
 }
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetActiveDeviceCount()(*int32) {
-    return m.activeDeviceCount
+    val, err := m.GetBackingStore().Get("activeDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceManufacturer()(*string) {
-    return m.deviceManufacturer
+    val, err := m.GetBackingStore().Get("deviceManufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceModel gets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceModel()(*string) {
-    return m.deviceModel
+    val, err := m.GetBackingStore().Get("deviceModel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +129,47 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    return m.healthStatus
+    val, err := m.GetBackingStore().Get("healthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsHealthState)
+    }
+    return nil
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    return m.meanTimeToFailureInMinutes
+    val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetModelAppHealthScore gets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthScore()(*float64) {
-    return m.modelAppHealthScore
+    val, err := m.GetBackingStore().Get("modelAppHealthScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetModelAppHealthStatus gets the modelAppHealthStatus property value. The overall app health status of the device model.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthStatus()(*string) {
-    return m.modelAppHealthStatus
+    val, err := m.GetBackingStore().Get("modelAppHealthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -189,29 +224,69 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetActiveDeviceCount(value *int32)() {
-    m.activeDeviceCount = value
+    err := m.GetBackingStore().Set("activeDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceManufacturer(value *string)() {
-    m.deviceManufacturer = value
+    err := m.GetBackingStore().Set("deviceManufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    err := m.GetBackingStore().Set("deviceModel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    m.healthStatus = value
+    err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    err := m.GetBackingStore().Set("meanTimeToFailureInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModelAppHealthScore sets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthScore(value *float64)() {
-    m.modelAppHealthScore = value
+    err := m.GetBackingStore().Set("modelAppHealthScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModelAppHealthStatus sets the modelAppHealthStatus property value. The overall app health status of the device model.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthStatus(value *string)() {
-    m.modelAppHealthStatus = value
+    err := m.GetBackingStore().Set("modelAppHealthStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceable 
+type UserExperienceAnalyticsAppHealthDeviceModelPerformanceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveDeviceCount()(*int32)
+    GetDeviceManufacturer()(*string)
+    GetDeviceModel()(*string)
+    GetHealthStatus()(*UserExperienceAnalyticsHealthState)
+    GetMeanTimeToFailureInMinutes()(*int32)
+    GetModelAppHealthScore()(*float64)
+    GetModelAppHealthStatus()(*string)
+    SetActiveDeviceCount(value *int32)()
+    SetDeviceManufacturer(value *string)()
+    SetDeviceModel(value *string)()
+    SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
+    SetMeanTimeToFailureInMinutes(value *int32)()
+    SetModelAppHealthScore(value *float64)()
+    SetModelAppHealthStatus(value *string)()
 }

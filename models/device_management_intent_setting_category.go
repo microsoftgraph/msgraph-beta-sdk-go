@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentSettingCategory 
 type DeviceManagementIntentSettingCategory struct {
     DeviceManagementSettingCategory
-    // The settings this category contains
-    settings []DeviceManagementSettingInstanceable
 }
 // NewDeviceManagementIntentSettingCategory instantiates a new DeviceManagementIntentSettingCategory and sets the default values.
 func NewDeviceManagementIntentSettingCategory()(*DeviceManagementIntentSettingCategory) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementIntentSettingCategory) GetFieldDeserializers()(map[stri
 }
 // GetSettings gets the settings property value. The settings this category contains
 func (m *DeviceManagementIntentSettingCategory) GetSettings()([]DeviceManagementSettingInstanceable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentSettingCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementIntentSettingCategory) Serialize(writer i878a80d2330e89
 }
 // SetSettings sets the settings property value. The settings this category contains
 func (m *DeviceManagementIntentSettingCategory) SetSettings(value []DeviceManagementSettingInstanceable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntentSettingCategoryable 
+type DeviceManagementIntentSettingCategoryable interface {
+    DeviceManagementSettingCategoryable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSettings()([]DeviceManagementSettingInstanceable)
+    SetSettings(value []DeviceManagementSettingInstanceable)()
 }

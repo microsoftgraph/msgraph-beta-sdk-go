@@ -7,8 +7,6 @@ import (
 // MobileAppSupersedenceCollectionResponse 
 type MobileAppSupersedenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppSupersedenceable
 }
 // NewMobileAppSupersedenceCollectionResponse instantiates a new MobileAppSupersedenceCollectionResponse and sets the default values.
 func NewMobileAppSupersedenceCollectionResponse()(*MobileAppSupersedenceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppSupersedenceCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppSupersedenceCollectionResponse) GetValue()([]MobileAppSupersedenceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppSupersedenceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppSupersedenceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppSupersedenceCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppSupersedenceCollectionResponse) SetValue(value []MobileAppSupersedenceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppSupersedenceCollectionResponseable 
+type MobileAppSupersedenceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppSupersedenceable)
+    SetValue(value []MobileAppSupersedenceable)()
 }

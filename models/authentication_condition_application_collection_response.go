@@ -7,8 +7,6 @@ import (
 // AuthenticationConditionApplicationCollectionResponse 
 type AuthenticationConditionApplicationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuthenticationConditionApplicationable
 }
 // NewAuthenticationConditionApplicationCollectionResponse instantiates a new AuthenticationConditionApplicationCollectionResponse and sets the default values.
 func NewAuthenticationConditionApplicationCollectionResponse()(*AuthenticationConditionApplicationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuthenticationConditionApplicationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *AuthenticationConditionApplicationCollectionResponse) GetValue()([]AuthenticationConditionApplicationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationConditionApplicationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationConditionApplicationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationConditionApplicationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *AuthenticationConditionApplicationCollectionResponse) SetValue(value []AuthenticationConditionApplicationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationConditionApplicationCollectionResponseable 
+type AuthenticationConditionApplicationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuthenticationConditionApplicationable)
+    SetValue(value []AuthenticationConditionApplicationable)()
 }

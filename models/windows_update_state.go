@@ -8,24 +8,6 @@ import (
 // WindowsUpdateState 
 type WindowsUpdateState struct {
     Entity
-    // Device display name.
-    deviceDisplayName *string
-    // The id of the device.
-    deviceId *string
-    // The current feature update version of the device.
-    featureUpdateVersion *string
-    // The date time that the Windows Update Agent did a successful scan.
-    lastScanDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Last date time that the device sync with with Microsoft Intune.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The Quality Update Version of the device.
-    qualityUpdateVersion *string
-    // Windows update for business configuration device states
-    status *WindowsUpdateStatus
-    // The id of the user.
-    userId *string
-    // User principal name.
-    userPrincipalName *string
 }
 // NewWindowsUpdateState instantiates a new windowsUpdateState and sets the default values.
 func NewWindowsUpdateState()(*WindowsUpdateState) {
@@ -40,15 +22,36 @@ func CreateWindowsUpdateStateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Device display name.
 func (m *WindowsUpdateState) GetDeviceDisplayName()(*string) {
-    return m.deviceDisplayName
+    val, err := m.GetBackingStore().Get("deviceDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
 func (m *WindowsUpdateState) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFeatureUpdateVersion gets the featureUpdateVersion property value. The current feature update version of the device.
 func (m *WindowsUpdateState) GetFeatureUpdateVersion()(*string) {
-    return m.featureUpdateVersion
+    val, err := m.GetBackingStore().Get("featureUpdateVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -147,27 +150,69 @@ func (m *WindowsUpdateState) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastScanDateTime gets the lastScanDateTime property value. The date time that the Windows Update Agent did a successful scan.
 func (m *WindowsUpdateState) GetLastScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastScanDateTime
+    val, err := m.GetBackingStore().Get("lastScanDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last date time that the device sync with with Microsoft Intune.
 func (m *WindowsUpdateState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSyncDateTime
+    val, err := m.GetBackingStore().Get("lastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetQualityUpdateVersion gets the qualityUpdateVersion property value. The Quality Update Version of the device.
 func (m *WindowsUpdateState) GetQualityUpdateVersion()(*string) {
-    return m.qualityUpdateVersion
+    val, err := m.GetBackingStore().Get("qualityUpdateVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Windows update for business configuration device states
 func (m *WindowsUpdateState) GetStatus()(*WindowsUpdateStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsUpdateStatus)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The id of the user.
 func (m *WindowsUpdateState) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name.
 func (m *WindowsUpdateState) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -234,37 +279,87 @@ func (m *WindowsUpdateState) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device display name.
 func (m *WindowsUpdateState) SetDeviceDisplayName(value *string)() {
-    m.deviceDisplayName = value
+    err := m.GetBackingStore().Set("deviceDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *WindowsUpdateState) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFeatureUpdateVersion sets the featureUpdateVersion property value. The current feature update version of the device.
 func (m *WindowsUpdateState) SetFeatureUpdateVersion(value *string)() {
-    m.featureUpdateVersion = value
+    err := m.GetBackingStore().Set("featureUpdateVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastScanDateTime sets the lastScanDateTime property value. The date time that the Windows Update Agent did a successful scan.
 func (m *WindowsUpdateState) SetLastScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastScanDateTime = value
+    err := m.GetBackingStore().Set("lastScanDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last date time that the device sync with with Microsoft Intune.
 func (m *WindowsUpdateState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    err := m.GetBackingStore().Set("lastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQualityUpdateVersion sets the qualityUpdateVersion property value. The Quality Update Version of the device.
 func (m *WindowsUpdateState) SetQualityUpdateVersion(value *string)() {
-    m.qualityUpdateVersion = value
+    err := m.GetBackingStore().Set("qualityUpdateVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Windows update for business configuration device states
 func (m *WindowsUpdateState) SetStatus(value *WindowsUpdateStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The id of the user.
 func (m *WindowsUpdateState) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name.
 func (m *WindowsUpdateState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsUpdateStateable 
+type WindowsUpdateStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceDisplayName()(*string)
+    GetDeviceId()(*string)
+    GetFeatureUpdateVersion()(*string)
+    GetLastScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetQualityUpdateVersion()(*string)
+    GetStatus()(*WindowsUpdateStatus)
+    GetUserId()(*string)
+    GetUserPrincipalName()(*string)
+    SetDeviceDisplayName(value *string)()
+    SetDeviceId(value *string)()
+    SetFeatureUpdateVersion(value *string)()
+    SetLastScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetQualityUpdateVersion(value *string)()
+    SetStatus(value *WindowsUpdateStatus)()
+    SetUserId(value *string)()
+    SetUserPrincipalName(value *string)()
 }

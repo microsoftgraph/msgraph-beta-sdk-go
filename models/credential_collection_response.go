@@ -7,8 +7,6 @@ import (
 // CredentialCollectionResponse 
 type CredentialCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Credentialable
 }
 // NewCredentialCollectionResponse instantiates a new CredentialCollectionResponse and sets the default values.
 func NewCredentialCollectionResponse()(*CredentialCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CredentialCollectionResponse) GetFieldDeserializers()(map[string]func(i
 }
 // GetValue gets the value property value. The value property
 func (m *CredentialCollectionResponse) GetValue()([]Credentialable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Credentialable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CredentialCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CredentialCollectionResponse) Serialize(writer i878a80d2330e89d26896388
 }
 // SetValue sets the value property value. The value property
 func (m *CredentialCollectionResponse) SetValue(value []Credentialable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CredentialCollectionResponseable 
+type CredentialCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Credentialable)
+    SetValue(value []Credentialable)()
 }

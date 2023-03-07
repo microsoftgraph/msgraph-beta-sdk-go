@@ -48,11 +48,11 @@ type ItemListsListItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Activities provides operations to manage the activities property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Activities()(*ItemListsItemActivitiesRequestBuilder) {
-    return NewItemListsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Columns()(*ItemListsItemColumnsRequestBuilder) {
-    return NewItemListsItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ColumnsById provides operations to manage the columns property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
@@ -63,7 +63,7 @@ func (m *ItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemListsItemC
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemListsListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsListItemRequestBuilder) {
@@ -74,8 +74,8 @@ func NewItemListsListItemRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsListItemRequestBuilder instantiates a new ListItemRequestBuilder and sets the default values.
@@ -86,7 +86,7 @@ func NewItemListsListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) ContentTypes()(*ItemListsItemContentTypesRequestBuilder) {
-    return NewItemListsItemContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ContentTypesById provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) ContentTypesById(id string)(*ItemListsItemContentTypesContentTypeItemRequestBuilder) {
@@ -97,7 +97,7 @@ func (m *ItemListsListItemRequestBuilder) ContentTypesById(id string)(*ItemLists
     if id != "" {
         urlTplParams["contentType%2Did"] = id
     }
-    return NewItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -117,7 +117,7 @@ func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestCon
 }
 // Drive provides operations to manage the drive property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Drive()(*ItemListsItemDriveRequestBuilder) {
-    return NewItemListsItemDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of lists under this site.
 func (m *ItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
@@ -140,7 +140,7 @@ func (m *ItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfig
 }
 // Items provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Items()(*ItemListsItemItemsRequestBuilder) {
-    return NewItemListsItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) ItemsById(id string)(*ItemListsItemItemsListItemItemRequestBuilder) {
@@ -151,11 +151,11 @@ func (m *ItemListsListItemRequestBuilder) ItemsById(id string)(*ItemListsItemIte
     if id != "" {
         urlTplParams["listItem%2Did"] = id
     }
-    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Operations()(*ItemListsItemOperationsRequestBuilder) {
-    return NewItemListsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) OperationsById(id string)(*ItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
@@ -166,7 +166,7 @@ func (m *ItemListsListItemRequestBuilder) OperationsById(id string)(*ItemListsIt
     if id != "" {
         urlTplParams["richLongRunningOperation%2Did"] = id
     }
-    return NewItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property lists in sites
 func (m *ItemListsListItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, requestConfiguration *ItemListsListItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
@@ -189,7 +189,7 @@ func (m *ItemListsListItemRequestBuilder) Patch(ctx context.Context, body ie233e
 }
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Subscriptions()(*ItemListsItemSubscriptionsRequestBuilder) {
-    return NewItemListsItemSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) SubscriptionsById(id string)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
@@ -200,7 +200,7 @@ func (m *ItemListsListItemRequestBuilder) SubscriptionsById(id string)(*ItemList
     if id != "" {
         urlTplParams["subscription%2Did"] = id
     }
-    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -237,7 +237,10 @@ func (m *ItemListsListItemRequestBuilder) ToPatchRequestInformation(ctx context.
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

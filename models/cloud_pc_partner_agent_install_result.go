@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CloudPcPartnerAgentInstallResult 
 type CloudPcPartnerAgentInstallResult struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
-    installStatus *CloudPcPartnerAgentInstallStatus
-    // Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
-    isThirdPartyPartner *bool
-    // The OdataType property
-    odataType *string
-    // Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
-    partnerAgentName *CloudPcPartnerAgentName
-    // Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
-    retriable *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCloudPcPartnerAgentInstallResult instantiates a new cloudPcPartnerAgentInstallResult and sets the default values.
 func NewCloudPcPartnerAgentInstallResult()(*CloudPcPartnerAgentInstallResult) {
     m := &CloudPcPartnerAgentInstallResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcPartnerAgentInstallResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +24,19 @@ func CreateCloudPcPartnerAgentInstallResultFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcPartnerAgentInstallResult) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CloudPcPartnerAgentInstallResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,23 +95,58 @@ func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]fu
 }
 // GetInstallStatus gets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) GetInstallStatus()(*CloudPcPartnerAgentInstallStatus) {
-    return m.installStatus
+    val, err := m.GetBackingStore().Get("installStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcPartnerAgentInstallStatus)
+    }
+    return nil
 }
 // GetIsThirdPartyPartner gets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) GetIsThirdPartyPartner()(*bool) {
-    return m.isThirdPartyPartner
+    val, err := m.GetBackingStore().Get("isThirdPartyPartner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcPartnerAgentInstallResult) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPartnerAgentName gets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) GetPartnerAgentName()(*CloudPcPartnerAgentName) {
-    return m.partnerAgentName
+    val, err := m.GetBackingStore().Get("partnerAgentName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcPartnerAgentName)
+    }
+    return nil
 }
 // GetRetriable gets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) GetRetriable()(*bool) {
-    return m.retriable
+    val, err := m.GetBackingStore().Get("retriable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcPartnerAgentInstallResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,25 +192,65 @@ func (m *CloudPcPartnerAgentInstallResult) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcPartnerAgentInstallResult) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CloudPcPartnerAgentInstallResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetInstallStatus sets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) SetInstallStatus(value *CloudPcPartnerAgentInstallStatus)() {
-    m.installStatus = value
+    err := m.GetBackingStore().Set("installStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsThirdPartyPartner sets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) SetIsThirdPartyPartner(value *bool)() {
-    m.isThirdPartyPartner = value
+    err := m.GetBackingStore().Set("isThirdPartyPartner", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcPartnerAgentInstallResult) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPartnerAgentName sets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) SetPartnerAgentName(value *CloudPcPartnerAgentName)() {
-    m.partnerAgentName = value
+    err := m.GetBackingStore().Set("partnerAgentName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRetriable sets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) SetRetriable(value *bool)() {
-    m.retriable = value
+    err := m.GetBackingStore().Set("retriable", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcPartnerAgentInstallResultable 
+type CloudPcPartnerAgentInstallResultable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetInstallStatus()(*CloudPcPartnerAgentInstallStatus)
+    GetIsThirdPartyPartner()(*bool)
+    GetOdataType()(*string)
+    GetPartnerAgentName()(*CloudPcPartnerAgentName)
+    GetRetriable()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetInstallStatus(value *CloudPcPartnerAgentInstallStatus)()
+    SetIsThirdPartyPartner(value *bool)()
+    SetOdataType(value *string)()
+    SetPartnerAgentName(value *CloudPcPartnerAgentName)()
+    SetRetriable(value *bool)()
 }

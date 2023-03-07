@@ -7,16 +7,14 @@ import (
 // RemoveWatermarkAction 
 type RemoveWatermarkAction struct {
     InformationProtectionAction
-    // The name of the UI element of footer to be removed.
-    uiElementNames []string
 }
 // NewRemoveWatermarkAction instantiates a new RemoveWatermarkAction and sets the default values.
 func NewRemoveWatermarkAction()(*RemoveWatermarkAction) {
     m := &RemoveWatermarkAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.removeWatermarkAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.removeWatermarkAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRemoveWatermarkActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *RemoveWatermarkAction) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetUiElementNames gets the uiElementNames property value. The name of the UI element of footer to be removed.
 func (m *RemoveWatermarkAction) GetUiElementNames()([]string) {
-    return m.uiElementNames
+    val, err := m.GetBackingStore().Get("uiElementNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoveWatermarkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,5 +67,15 @@ func (m *RemoveWatermarkAction) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetUiElementNames sets the uiElementNames property value. The name of the UI element of footer to be removed.
 func (m *RemoveWatermarkAction) SetUiElementNames(value []string)() {
-    m.uiElementNames = value
+    err := m.GetBackingStore().Set("uiElementNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoveWatermarkActionable 
+type RemoveWatermarkActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUiElementNames()([]string)
+    SetUiElementNames(value []string)()
 }

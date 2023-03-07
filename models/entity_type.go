@@ -18,10 +18,12 @@ const (
     ACRONYM_ENTITYTYPE
     BOOKMARK_ENTITYTYPE
     CHATMESSAGE_ENTITYTYPE
+    PERSON_ENTITYTYPE
+    QNA_ENTITYTYPE
 )
 
 func (i EntityType) String() string {
-    return []string{"event", "message", "driveItem", "externalItem", "site", "list", "listItem", "drive", "unknownFutureValue", "acronym", "bookmark", "chatMessage"}[i]
+    return []string{"event", "message", "driveItem", "externalItem", "site", "list", "listItem", "drive", "unknownFutureValue", "acronym", "bookmark", "chatMessage", "person", "qna"}[i]
 }
 func ParseEntityType(v string) (any, error) {
     result := EVENT_ENTITYTYPE
@@ -50,6 +52,10 @@ func ParseEntityType(v string) (any, error) {
             result = BOOKMARK_ENTITYTYPE
         case "chatMessage":
             result = CHATMESSAGE_ENTITYTYPE
+        case "person":
+            result = PERSON_ENTITYTYPE
+        case "qna":
+            result = QNA_ENTITYTYPE
         default:
             return 0, errors.New("Unknown EntityType value: " + v)
     }

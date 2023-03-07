@@ -13,8 +13,8 @@ func NewPersonExtension()(*PersonExtension) {
     m := &PersonExtension{
         Extension: *NewExtension(),
     }
-    odataTypeValue := "#microsoft.graph.personExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.personExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePersonExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *PersonExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     return nil
+}
+// PersonExtensionable 
+type PersonExtensionable interface {
+    Extensionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

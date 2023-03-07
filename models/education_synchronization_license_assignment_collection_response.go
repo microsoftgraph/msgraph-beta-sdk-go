@@ -7,8 +7,6 @@ import (
 // EducationSynchronizationLicenseAssignmentCollectionResponse 
 type EducationSynchronizationLicenseAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationSynchronizationLicenseAssignmentable
 }
 // NewEducationSynchronizationLicenseAssignmentCollectionResponse instantiates a new EducationSynchronizationLicenseAssignmentCollectionResponse and sets the default values.
 func NewEducationSynchronizationLicenseAssignmentCollectionResponse()(*EducationSynchronizationLicenseAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationSynchronizationLicenseAssignmentCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *EducationSynchronizationLicenseAssignmentCollectionResponse) GetValue()([]EducationSynchronizationLicenseAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationSynchronizationLicenseAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationLicenseAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationSynchronizationLicenseAssignmentCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *EducationSynchronizationLicenseAssignmentCollectionResponse) SetValue(value []EducationSynchronizationLicenseAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationSynchronizationLicenseAssignmentCollectionResponseable 
+type EducationSynchronizationLicenseAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationSynchronizationLicenseAssignmentable)
+    SetValue(value []EducationSynchronizationLicenseAssignmentable)()
 }

@@ -7,8 +7,6 @@ import (
 // MacOsVppAppCollectionResponse 
 type MacOsVppAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOsVppAppable
 }
 // NewMacOsVppAppCollectionResponse instantiates a new MacOsVppAppCollectionResponse and sets the default values.
 func NewMacOsVppAppCollectionResponse()(*MacOsVppAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOsVppAppCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *MacOsVppAppCollectionResponse) GetValue()([]MacOsVppAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOsVppAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOsVppAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOsVppAppCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *MacOsVppAppCollectionResponse) SetValue(value []MacOsVppAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOsVppAppCollectionResponseable 
+type MacOsVppAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOsVppAppable)
+    SetValue(value []MacOsVppAppable)()
 }

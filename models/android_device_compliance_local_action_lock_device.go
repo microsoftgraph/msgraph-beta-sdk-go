@@ -13,8 +13,8 @@ func NewAndroidDeviceComplianceLocalActionLockDevice()(*AndroidDeviceComplianceL
     m := &AndroidDeviceComplianceLocalActionLockDevice{
         AndroidDeviceComplianceLocalActionBase: *NewAndroidDeviceComplianceLocalActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceComplianceLocalActionLockDevice";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceComplianceLocalActionLockDevice"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceComplianceLocalActionLockDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *AndroidDeviceComplianceLocalActionLockDevice) Serialize(writer i878a80d
         return err
     }
     return nil
+}
+// AndroidDeviceComplianceLocalActionLockDeviceable 
+type AndroidDeviceComplianceLocalActionLockDeviceable interface {
+    AndroidDeviceComplianceLocalActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

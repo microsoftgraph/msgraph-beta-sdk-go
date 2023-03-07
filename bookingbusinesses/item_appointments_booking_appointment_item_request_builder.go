@@ -48,7 +48,7 @@ type ItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfigurati
 }
 // Cancel provides operations to call the cancel method.
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Cancel()(*ItemAppointmentsItemCancelRequestBuilder) {
-    return NewItemAppointmentsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppointmentsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal instantiates a new BookingAppointmentItemRequestBuilder and sets the default values.
 func NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppointmentsBookingAppointmentItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppointmentsBookingAppointmentItemRequestBuilder instantiates a new BookingAppointmentItemRequestBuilder and sets the default values.
@@ -158,7 +158,10 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

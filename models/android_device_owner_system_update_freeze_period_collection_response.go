@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse 
 type AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerSystemUpdateFreezePeriodable
 }
 // NewAndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse instantiates a new AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse()(*AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse) GetFieldD
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse) GetValue()([]AndroidDeviceOwnerSystemUpdateFreezePeriodable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerSystemUpdateFreezePeriodable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse) Serialize
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponse) SetValue(value []AndroidDeviceOwnerSystemUpdateFreezePeriodable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponseable 
+type AndroidDeviceOwnerSystemUpdateFreezePeriodCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerSystemUpdateFreezePeriodable)
+    SetValue(value []AndroidDeviceOwnerSystemUpdateFreezePeriodable)()
 }

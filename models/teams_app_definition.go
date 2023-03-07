@@ -8,32 +8,6 @@ import (
 // TeamsAppDefinition 
 type TeamsAppDefinition struct {
     Entity
-    // A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
-    allowedInstallationScopes *TeamsAppInstallationScopes
-    // The WebApplicationInfo.Id from the Teams app manifest.
-    azureADAppId *string
-    // The details of the bot specified in the Teams app manifest.
-    bot TeamworkBotable
-    // The color version of the Teams app's icon.
-    colorIcon TeamsAppIconable
-    // The createdBy property
-    createdBy IdentitySetable
-    // The description property
-    description *string
-    // The name of the app provided by the app developer.
-    displayName *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The outline version of the Teams app's icon.
-    outlineIcon TeamsAppIconable
-    // The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-    publishingState *TeamsAppPublishingState
-    // The shortdescription property
-    shortdescription *string
-    // The ID from the Teams app manifest.
-    teamsAppId *string
-    // The version number of the application.
-    version *string
 }
 // NewTeamsAppDefinition instantiates a new teamsAppDefinition and sets the default values.
 func NewTeamsAppDefinition()(*TeamsAppDefinition) {
@@ -48,31 +22,80 @@ func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAllowedInstallationScopes gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
 func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallationScopes) {
-    return m.allowedInstallationScopes
+    val, err := m.GetBackingStore().Get("allowedInstallationScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamsAppInstallationScopes)
+    }
+    return nil
 }
 // GetAzureADAppId gets the azureADAppId property value. The WebApplicationInfo.Id from the Teams app manifest.
 func (m *TeamsAppDefinition) GetAzureADAppId()(*string) {
-    return m.azureADAppId
+    val, err := m.GetBackingStore().Get("azureADAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetBot gets the bot property value. The details of the bot specified in the Teams app manifest.
 func (m *TeamsAppDefinition) GetBot()(TeamworkBotable) {
-    return m.bot
+    val, err := m.GetBackingStore().Get("bot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkBotable)
+    }
+    return nil
 }
 // GetColorIcon gets the colorIcon property value. The color version of the Teams app's icon.
 func (m *TeamsAppDefinition) GetColorIcon()(TeamsAppIconable) {
-    return m.colorIcon
+    val, err := m.GetBackingStore().Get("colorIcon")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsAppIconable)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *TeamsAppDefinition) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *TeamsAppDefinition) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the app provided by the app developer.
 func (m *TeamsAppDefinition) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -211,27 +234,69 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOutlineIcon gets the outlineIcon property value. The outline version of the Teams app's icon.
 func (m *TeamsAppDefinition) GetOutlineIcon()(TeamsAppIconable) {
-    return m.outlineIcon
+    val, err := m.GetBackingStore().Get("outlineIcon")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsAppIconable)
+    }
+    return nil
 }
 // GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
 func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
-    return m.publishingState
+    val, err := m.GetBackingStore().Get("publishingState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamsAppPublishingState)
+    }
+    return nil
 }
 // GetShortdescription gets the shortdescription property value. The shortdescription property
 func (m *TeamsAppDefinition) GetShortdescription()(*string) {
-    return m.shortdescription
+    val, err := m.GetBackingStore().Get("shortdescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamsAppId gets the teamsAppId property value. The ID from the Teams app manifest.
 func (m *TeamsAppDefinition) GetTeamsAppId()(*string) {
-    return m.teamsAppId
+    val, err := m.GetBackingStore().Get("teamsAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersion gets the version property value. The version number of the application.
 func (m *TeamsAppDefinition) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -323,53 +388,123 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAllowedInstallationScopes sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
 func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)() {
-    m.allowedInstallationScopes = value
+    err := m.GetBackingStore().Set("allowedInstallationScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureADAppId sets the azureADAppId property value. The WebApplicationInfo.Id from the Teams app manifest.
 func (m *TeamsAppDefinition) SetAzureADAppId(value *string)() {
-    m.azureADAppId = value
+    err := m.GetBackingStore().Set("azureADAppId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBot sets the bot property value. The details of the bot specified in the Teams app manifest.
 func (m *TeamsAppDefinition) SetBot(value TeamworkBotable)() {
-    m.bot = value
+    err := m.GetBackingStore().Set("bot", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColorIcon sets the colorIcon property value. The color version of the Teams app's icon.
 func (m *TeamsAppDefinition) SetColorIcon(value TeamsAppIconable)() {
-    m.colorIcon = value
+    err := m.GetBackingStore().Set("colorIcon", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *TeamsAppDefinition) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *TeamsAppDefinition) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the app provided by the app developer.
 func (m *TeamsAppDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *TeamsAppDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOutlineIcon sets the outlineIcon property value. The outline version of the Teams app's icon.
 func (m *TeamsAppDefinition) SetOutlineIcon(value TeamsAppIconable)() {
-    m.outlineIcon = value
+    err := m.GetBackingStore().Set("outlineIcon", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
 func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppPublishingState)() {
-    m.publishingState = value
+    err := m.GetBackingStore().Set("publishingState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShortdescription sets the shortdescription property value. The shortdescription property
 func (m *TeamsAppDefinition) SetShortdescription(value *string)() {
-    m.shortdescription = value
+    err := m.GetBackingStore().Set("shortdescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsAppId sets the teamsAppId property value. The ID from the Teams app manifest.
 func (m *TeamsAppDefinition) SetTeamsAppId(value *string)() {
-    m.teamsAppId = value
+    err := m.GetBackingStore().Set("teamsAppId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version number of the application.
 func (m *TeamsAppDefinition) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsAppDefinitionable 
+type TeamsAppDefinitionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedInstallationScopes()(*TeamsAppInstallationScopes)
+    GetAzureADAppId()(*string)
+    GetBot()(TeamworkBotable)
+    GetColorIcon()(TeamsAppIconable)
+    GetCreatedBy()(IdentitySetable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOutlineIcon()(TeamsAppIconable)
+    GetPublishingState()(*TeamsAppPublishingState)
+    GetShortdescription()(*string)
+    GetTeamsAppId()(*string)
+    GetVersion()(*string)
+    SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)()
+    SetAzureADAppId(value *string)()
+    SetBot(value TeamworkBotable)()
+    SetColorIcon(value TeamsAppIconable)()
+    SetCreatedBy(value IdentitySetable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOutlineIcon(value TeamsAppIconable)()
+    SetPublishingState(value *TeamsAppPublishingState)()
+    SetShortdescription(value *string)()
+    SetTeamsAppId(value *string)()
+    SetVersion(value *string)()
 }

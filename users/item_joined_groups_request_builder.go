@@ -49,8 +49,8 @@ func NewItemJoinedGroupsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedGroupsRequestBuilder instantiates a new JoinedGroupsRequestBuilder and sets the default values.
@@ -61,11 +61,11 @@ func NewItemJoinedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Delta provides operations to call the delta method.
 func (m *ItemJoinedGroupsRequestBuilder) Delta()(*ItemJoinedGroupsDeltaRequestBuilder) {
-    return NewItemJoinedGroupsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedGroupsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EvaluateDynamicMembership provides operations to call the evaluateDynamicMembership method.
 func (m *ItemJoinedGroupsRequestBuilder) EvaluateDynamicMembership()(*ItemJoinedGroupsEvaluateDynamicMembershipRequestBuilder) {
-    return NewItemJoinedGroupsEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedGroupsEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get joinedGroups from users
 func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
@@ -88,11 +88,11 @@ func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfigu
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *ItemJoinedGroupsRequestBuilder) GetByIds()(*ItemJoinedGroupsGetByIdsRequestBuilder) {
-    return NewItemJoinedGroupsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedGroupsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *ItemJoinedGroupsRequestBuilder) GetUserOwnedObjects()(*ItemJoinedGroupsGetUserOwnedObjectsRequestBuilder) {
-    return NewItemJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get joinedGroups from users
 func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -112,5 +112,5 @@ func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Con
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemJoinedGroupsRequestBuilder) ValidateProperties()(*ItemJoinedGroupsValidatePropertiesRequestBuilder) {
-    return NewItemJoinedGroupsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedGroupsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -7,20 +7,16 @@ import (
 // ItemEmail 
 type ItemEmail struct {
     ItemFacet
-    // The email address itself.
-    address *string
-    // The name or label a user has associated with a particular email address.
-    displayName *string
     // The type property
-    type_escaped *EmailType
+    TypeEscaped *EmailType
 }
 // NewItemEmail instantiates a new ItemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemEmail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemEmail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +25,25 @@ func CreateItemEmailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAddress gets the address property value. The email address itself.
 func (m *ItemEmail) GetAddress()(*string) {
-    return m.address
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name or label a user has associated with a particular email address.
 func (m *ItemEmail) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +82,14 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetType gets the type property value. The type property
 func (m *ItemEmail) GetType()(*EmailType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EmailType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +120,33 @@ func (m *ItemEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAddress sets the address property value. The email address itself.
 func (m *ItemEmail) SetAddress(value *string)() {
-    m.address = value
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name or label a user has associated with a particular email address.
 func (m *ItemEmail) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *ItemEmail) SetType(value *EmailType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemEmailable 
+type ItemEmailable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddress()(*string)
+    GetDisplayName()(*string)
+    GetType()(*EmailType)
+    SetAddress(value *string)()
+    SetDisplayName(value *string)()
+    SetType(value *EmailType)()
 }

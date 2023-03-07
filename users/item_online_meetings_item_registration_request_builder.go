@@ -23,7 +23,7 @@ type ItemOnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// ItemOnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters get the externalMeetingRegistration details associated with an onlineMeeting.
 type ItemOnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewItemOnlineMeetingsItemRegistrationRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnlineMeetingsItemRegistrationRequestBuilder instantiates a new RegistrationRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewItemOnlineMeetingsItemRegistrationRequestBuilder(rawUrl string, requestA
 }
 // CustomQuestions provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestions()(*ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
-    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomQuestionsById provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(id string)(*ItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
@@ -78,12 +78,12 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(i
     if id != "" {
         urlTplParams["meetingRegistrationQuestion%2Did"] = id
     }
-    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Delete disable and delete the externalMeetingRegistration of an onlineMeeting.
+// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,10 +99,10 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// Get get the externalMeetingRegistration details associated with an onlineMeeting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) Patch(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable), nil
 }
-// ToDeleteRequestInformation disable and delete the externalMeetingRegistration of an onlineMeeting.
+// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,7 +155,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// ToGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting.
 func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -178,7 +178,10 @@ func (m *ItemOnlineMeetingsItemRegistrationRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

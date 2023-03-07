@@ -7,28 +7,14 @@ import (
 // AndroidWorkProfileEasEmailProfileBase 
 type AndroidWorkProfileEasEmailProfileBase struct {
     DeviceConfiguration
-    // Exchange Active Sync authentication method.
-    authenticationMethod *EasAuthenticationMethod
-    // Possible values for email sync duration.
-    durationOfEmailToSync *EmailSyncDuration
-    // Possible values for username source or email source.
-    emailAddressSource *UserEmailSource
-    // Exchange location (URL) that the mail app connects to.
-    hostName *string
-    // Identity certificate.
-    identityCertificate AndroidWorkProfileCertificateProfileBaseable
-    // Indicates whether or not to use SSL.
-    requireSsl *bool
-    // Android username source.
-    usernameSource *AndroidUsernameSource
 }
 // NewAndroidWorkProfileEasEmailProfileBase instantiates a new AndroidWorkProfileEasEmailProfileBase and sets the default values.
 func NewAndroidWorkProfileEasEmailProfileBase()(*AndroidWorkProfileEasEmailProfileBase) {
     m := &AndroidWorkProfileEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidWorkProfileEasEmailProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidWorkProfileEasEmailProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidWorkProfileEasEmailProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,15 +43,36 @@ func CreateAndroidWorkProfileEasEmailProfileBaseFromDiscriminatorValue(parseNode
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetAuthenticationMethod()(*EasAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EasAuthenticationMethod)
+    }
+    return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetDurationOfEmailToSync()(*EmailSyncDuration) {
-    return m.durationOfEmailToSync
+    val, err := m.GetBackingStore().Get("durationOfEmailToSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EmailSyncDuration)
+    }
+    return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetEmailAddressSource()(*UserEmailSource) {
-    return m.emailAddressSource
+    val, err := m.GetBackingStore().Get("emailAddressSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserEmailSource)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileEasEmailProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -144,19 +151,47 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetFieldDeserializers()(map[stri
 }
 // GetHostName gets the hostName property value. Exchange location (URL) that the mail app connects to.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetHostName()(*string) {
-    return m.hostName
+    val, err := m.GetBackingStore().Get("hostName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetIdentityCertificate()(AndroidWorkProfileCertificateProfileBaseable) {
-    return m.identityCertificate
+    val, err := m.GetBackingStore().Get("identityCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidWorkProfileCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetRequireSsl()(*bool) {
-    return m.requireSsl
+    val, err := m.GetBackingStore().Get("requireSsl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUsernameSource gets the usernameSource property value. Android username source.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetUsernameSource()(*AndroidUsernameSource) {
-    return m.usernameSource
+    val, err := m.GetBackingStore().Get("usernameSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidUsernameSource)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileEasEmailProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -214,29 +249,69 @@ func (m *AndroidWorkProfileEasEmailProfileBase) Serialize(writer i878a80d2330e89
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
-    m.durationOfEmailToSync = value
+    err := m.GetBackingStore().Set("durationOfEmailToSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetEmailAddressSource(value *UserEmailSource)() {
-    m.emailAddressSource = value
+    err := m.GetBackingStore().Set("emailAddressSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHostName sets the hostName property value. Exchange location (URL) that the mail app connects to.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetHostName(value *string)() {
-    m.hostName = value
+    err := m.GetBackingStore().Set("hostName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetIdentityCertificate(value AndroidWorkProfileCertificateProfileBaseable)() {
-    m.identityCertificate = value
+    err := m.GetBackingStore().Set("identityCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireSsl sets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetRequireSsl(value *bool)() {
-    m.requireSsl = value
+    err := m.GetBackingStore().Set("requireSsl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUsernameSource sets the usernameSource property value. Android username source.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetUsernameSource(value *AndroidUsernameSource)() {
-    m.usernameSource = value
+    err := m.GetBackingStore().Set("usernameSource", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileEasEmailProfileBaseable 
+type AndroidWorkProfileEasEmailProfileBaseable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*EasAuthenticationMethod)
+    GetDurationOfEmailToSync()(*EmailSyncDuration)
+    GetEmailAddressSource()(*UserEmailSource)
+    GetHostName()(*string)
+    GetIdentityCertificate()(AndroidWorkProfileCertificateProfileBaseable)
+    GetRequireSsl()(*bool)
+    GetUsernameSource()(*AndroidUsernameSource)
+    SetAuthenticationMethod(value *EasAuthenticationMethod)()
+    SetDurationOfEmailToSync(value *EmailSyncDuration)()
+    SetEmailAddressSource(value *UserEmailSource)()
+    SetHostName(value *string)()
+    SetIdentityCertificate(value AndroidWorkProfileCertificateProfileBaseable)()
+    SetRequireSsl(value *bool)()
+    SetUsernameSource(value *AndroidUsernameSource)()
 }

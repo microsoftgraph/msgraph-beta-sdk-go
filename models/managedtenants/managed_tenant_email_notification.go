@@ -9,22 +9,6 @@ import (
 // ManagedTenantEmailNotification 
 type ManagedTenantEmailNotification struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alert property
-    alert ManagedTenantAlertable
-    // The createdByUserId property
-    createdByUserId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The emailAddresses property
-    emailAddresses []Emailable
-    // The emailBody property
-    emailBody *string
-    // The lastActionByUserId property
-    lastActionByUserId *string
-    // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The subject property
-    subject *string
 }
 // NewManagedTenantEmailNotification instantiates a new managedTenantEmailNotification and sets the default values.
 func NewManagedTenantEmailNotification()(*ManagedTenantEmailNotification) {
@@ -39,23 +23,58 @@ func CreateManagedTenantEmailNotificationFromDiscriminatorValue(parseNode i878a8
 }
 // GetAlert gets the alert property value. The alert property
 func (m *ManagedTenantEmailNotification) GetAlert()(ManagedTenantAlertable) {
-    return m.alert
+    val, err := m.GetBackingStore().Get("alert")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedTenantAlertable)
+    }
+    return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantEmailNotification) GetCreatedByUserId()(*string) {
-    return m.createdByUserId
+    val, err := m.GetBackingStore().Get("createdByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantEmailNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetEmailAddresses gets the emailAddresses property value. The emailAddresses property
 func (m *ManagedTenantEmailNotification) GetEmailAddresses()([]Emailable) {
-    return m.emailAddresses
+    val, err := m.GetBackingStore().Get("emailAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Emailable)
+    }
+    return nil
 }
 // GetEmailBody gets the emailBody property value. The emailBody property
 func (m *ManagedTenantEmailNotification) GetEmailBody()(*string) {
-    return m.emailBody
+    val, err := m.GetBackingStore().Get("emailBody")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedTenantEmailNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,15 +167,36 @@ func (m *ManagedTenantEmailNotification) GetFieldDeserializers()(map[string]func
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantEmailNotification) GetLastActionByUserId()(*string) {
-    return m.lastActionByUserId
+    val, err := m.GetBackingStore().Get("lastActionByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantEmailNotification) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. The subject property
 func (m *ManagedTenantEmailNotification) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedTenantEmailNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -220,33 +260,78 @@ func (m *ManagedTenantEmailNotification) Serialize(writer i878a80d2330e89d268963
 }
 // SetAlert sets the alert property value. The alert property
 func (m *ManagedTenantEmailNotification) SetAlert(value ManagedTenantAlertable)() {
-    m.alert = value
+    err := m.GetBackingStore().Set("alert", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantEmailNotification) SetCreatedByUserId(value *string)() {
-    m.createdByUserId = value
+    err := m.GetBackingStore().Set("createdByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantEmailNotification) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailAddresses sets the emailAddresses property value. The emailAddresses property
 func (m *ManagedTenantEmailNotification) SetEmailAddresses(value []Emailable)() {
-    m.emailAddresses = value
+    err := m.GetBackingStore().Set("emailAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailBody sets the emailBody property value. The emailBody property
 func (m *ManagedTenantEmailNotification) SetEmailBody(value *string)() {
-    m.emailBody = value
+    err := m.GetBackingStore().Set("emailBody", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantEmailNotification) SetLastActionByUserId(value *string)() {
-    m.lastActionByUserId = value
+    err := m.GetBackingStore().Set("lastActionByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantEmailNotification) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. The subject property
 func (m *ManagedTenantEmailNotification) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedTenantEmailNotificationable 
+type ManagedTenantEmailNotificationable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlert()(ManagedTenantAlertable)
+    GetCreatedByUserId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetEmailAddresses()([]Emailable)
+    GetEmailBody()(*string)
+    GetLastActionByUserId()(*string)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSubject()(*string)
+    SetAlert(value ManagedTenantAlertable)()
+    SetCreatedByUserId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetEmailAddresses(value []Emailable)()
+    SetEmailBody(value *string)()
+    SetLastActionByUserId(value *string)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSubject(value *string)()
 }

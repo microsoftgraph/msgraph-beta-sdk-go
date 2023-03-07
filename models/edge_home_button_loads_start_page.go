@@ -13,8 +13,8 @@ func NewEdgeHomeButtonLoadsStartPage()(*EdgeHomeButtonLoadsStartPage) {
     m := &EdgeHomeButtonLoadsStartPage{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.edgeHomeButtonLoadsStartPage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.edgeHomeButtonLoadsStartPage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEdgeHomeButtonLoadsStartPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *EdgeHomeButtonLoadsStartPage) Serialize(writer i878a80d2330e89d26896388
         return err
     }
     return nil
+}
+// EdgeHomeButtonLoadsStartPageable 
+type EdgeHomeButtonLoadsStartPageable interface {
+    EdgeHomeButtonConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

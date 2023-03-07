@@ -8,10 +8,8 @@ import (
 // Sharepoint 
 type Sharepoint struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // Represents the tenant-level settings for SharePoint and OneDrive.
-    settings Settingsable
 }
-// NewSharepoint instantiates a new sharepoint and sets the default values.
+// NewSharepoint instantiates a new Sharepoint and sets the default values.
 func NewSharepoint()(*Sharepoint) {
     m := &Sharepoint{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -39,7 +37,14 @@ func (m *Sharepoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetSettings gets the settings property value. Represents the tenant-level settings for SharePoint and OneDrive.
 func (m *Sharepoint) GetSettings()(Settingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Settingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Sharepoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -57,5 +62,15 @@ func (m *Sharepoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetSettings sets the settings property value. Represents the tenant-level settings for SharePoint and OneDrive.
 func (m *Sharepoint) SetSettings(value Settingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Sharepointable 
+type Sharepointable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSettings()(Settingsable)
+    SetSettings(value Settingsable)()
 }

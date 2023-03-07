@@ -7,8 +7,6 @@ import (
 // DeviceManagementScriptDeviceStateCollectionResponse 
 type DeviceManagementScriptDeviceStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementScriptDeviceStateable
 }
 // NewDeviceManagementScriptDeviceStateCollectionResponse instantiates a new DeviceManagementScriptDeviceStateCollectionResponse and sets the default values.
 func NewDeviceManagementScriptDeviceStateCollectionResponse()(*DeviceManagementScriptDeviceStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementScriptDeviceStateCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementScriptDeviceStateCollectionResponse) GetValue()([]DeviceManagementScriptDeviceStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementScriptDeviceStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptDeviceStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementScriptDeviceStateCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementScriptDeviceStateCollectionResponse) SetValue(value []DeviceManagementScriptDeviceStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptDeviceStateCollectionResponseable 
+type DeviceManagementScriptDeviceStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementScriptDeviceStateable)
+    SetValue(value []DeviceManagementScriptDeviceStateable)()
 }

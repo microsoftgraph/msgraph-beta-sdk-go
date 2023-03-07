@@ -7,8 +7,6 @@ import (
 // CloudPcServicePlanCollectionResponse 
 type CloudPcServicePlanCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CloudPcServicePlanable
 }
 // NewCloudPcServicePlanCollectionResponse instantiates a new CloudPcServicePlanCollectionResponse and sets the default values.
 func NewCloudPcServicePlanCollectionResponse()(*CloudPcServicePlanCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CloudPcServicePlanCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *CloudPcServicePlanCollectionResponse) GetValue()([]CloudPcServicePlanable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcServicePlanable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcServicePlanCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CloudPcServicePlanCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *CloudPcServicePlanCollectionResponse) SetValue(value []CloudPcServicePlanable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcServicePlanCollectionResponseable 
+type CloudPcServicePlanCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CloudPcServicePlanable)
+    SetValue(value []CloudPcServicePlanable)()
 }

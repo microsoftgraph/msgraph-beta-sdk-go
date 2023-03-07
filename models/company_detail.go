@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CompanyDetail 
 type CompanyDetail struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Address of the company.
-    address PhysicalAddressable
-    // Department Name within a company.
-    department *string
-    // Company name.
-    displayName *string
-    // The OdataType property
-    odataType *string
-    // Office Location of the person referred to.
-    officeLocation *string
-    // Pronunciation guide for the company name.
-    pronunciation *string
-    // Link to the company home page.
-    webUrl *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCompanyDetail instantiates a new companyDetail and sets the default values.
 func NewCompanyDetail()(*CompanyDetail) {
     m := &CompanyDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,52 @@ func CreateCompanyDetailFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyDetail) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAddress gets the address property value. Address of the company.
 func (m *CompanyDetail) GetAddress()(PhysicalAddressable) {
-    return m.address
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PhysicalAddressable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CompanyDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDepartment gets the department property value. Department Name within a company.
 func (m *CompanyDetail) GetDepartment()(*string) {
-    return m.department
+    val, err := m.GetBackingStore().Get("department")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Company name.
 func (m *CompanyDetail) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,19 +148,47 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CompanyDetail) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOfficeLocation gets the officeLocation property value. Office Location of the person referred to.
 func (m *CompanyDetail) GetOfficeLocation()(*string) {
-    return m.officeLocation
+    val, err := m.GetBackingStore().Get("officeLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPronunciation gets the pronunciation property value. Pronunciation guide for the company name.
 func (m *CompanyDetail) GetPronunciation()(*string) {
-    return m.pronunciation
+    val, err := m.GetBackingStore().Get("pronunciation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. Link to the company home page.
 func (m *CompanyDetail) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,33 +244,83 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyDetail) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddress sets the address property value. Address of the company.
 func (m *CompanyDetail) SetAddress(value PhysicalAddressable)() {
-    m.address = value
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CompanyDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDepartment sets the department property value. Department Name within a company.
 func (m *CompanyDetail) SetDepartment(value *string)() {
-    m.department = value
+    err := m.GetBackingStore().Set("department", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Company name.
 func (m *CompanyDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CompanyDetail) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOfficeLocation sets the officeLocation property value. Office Location of the person referred to.
 func (m *CompanyDetail) SetOfficeLocation(value *string)() {
-    m.officeLocation = value
+    err := m.GetBackingStore().Set("officeLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPronunciation sets the pronunciation property value. Pronunciation guide for the company name.
 func (m *CompanyDetail) SetPronunciation(value *string)() {
-    m.pronunciation = value
+    err := m.GetBackingStore().Set("pronunciation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. Link to the company home page.
 func (m *CompanyDetail) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CompanyDetailable 
+type CompanyDetailable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddress()(PhysicalAddressable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDepartment()(*string)
+    GetDisplayName()(*string)
+    GetOdataType()(*string)
+    GetOfficeLocation()(*string)
+    GetPronunciation()(*string)
+    GetWebUrl()(*string)
+    SetAddress(value PhysicalAddressable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDepartment(value *string)()
+    SetDisplayName(value *string)()
+    SetOdataType(value *string)()
+    SetOfficeLocation(value *string)()
+    SetPronunciation(value *string)()
+    SetWebUrl(value *string)()
 }

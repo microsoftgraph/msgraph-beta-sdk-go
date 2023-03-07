@@ -8,20 +8,6 @@ import (
 // PlannerPlanConfiguration 
 type PlannerPlanConfiguration struct {
     Entity
-    // List the buckets that should be created in the plan.
-    buckets []PlannerPlanConfigurationBucketDefinitionable
-    // The identity of the creator of the plan configuration.
-    createdBy IdentitySetable
-    // The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The language code for the default language to be used for the names of the objects created for the plan.
-    defaultLanguage *string
-    // The identity of the user who last modified the plan configuration.
-    lastModifiedBy IdentitySetable
-    // The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Localized names for the plan configuration.
-    localizations []PlannerPlanConfigurationLocalizationable
 }
 // NewPlannerPlanConfiguration instantiates a new plannerPlanConfiguration and sets the default values.
 func NewPlannerPlanConfiguration()(*PlannerPlanConfiguration) {
@@ -36,19 +22,47 @@ func CreatePlannerPlanConfigurationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetBuckets gets the buckets property value. List the buckets that should be created in the plan.
 func (m *PlannerPlanConfiguration) GetBuckets()([]PlannerPlanConfigurationBucketDefinitionable) {
-    return m.buckets
+    val, err := m.GetBackingStore().Get("buckets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanConfigurationBucketDefinitionable)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. The identity of the creator of the plan configuration.
 func (m *PlannerPlanConfiguration) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDefaultLanguage gets the defaultLanguage property value. The language code for the default language to be used for the names of the objects created for the plan.
 func (m *PlannerPlanConfiguration) GetDefaultLanguage()(*string) {
-    return m.defaultLanguage
+    val, err := m.GetBackingStore().Get("defaultLanguage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlanConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -135,15 +149,36 @@ func (m *PlannerPlanConfiguration) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user who last modified the plan configuration.
 func (m *PlannerPlanConfiguration) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLocalizations gets the localizations property value. Localized names for the plan configuration.
 func (m *PlannerPlanConfiguration) GetLocalizations()([]PlannerPlanConfigurationLocalizationable) {
-    return m.localizations
+    val, err := m.GetBackingStore().Get("localizations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanConfigurationLocalizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -205,29 +240,69 @@ func (m *PlannerPlanConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetBuckets sets the buckets property value. List the buckets that should be created in the plan.
 func (m *PlannerPlanConfiguration) SetBuckets(value []PlannerPlanConfigurationBucketDefinitionable)() {
-    m.buckets = value
+    err := m.GetBackingStore().Set("buckets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. The identity of the creator of the plan configuration.
 func (m *PlannerPlanConfiguration) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultLanguage sets the defaultLanguage property value. The language code for the default language to be used for the names of the objects created for the plan.
 func (m *PlannerPlanConfiguration) SetDefaultLanguage(value *string)() {
-    m.defaultLanguage = value
+    err := m.GetBackingStore().Set("defaultLanguage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity of the user who last modified the plan configuration.
 func (m *PlannerPlanConfiguration) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerPlanConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalizations sets the localizations property value. Localized names for the plan configuration.
 func (m *PlannerPlanConfiguration) SetLocalizations(value []PlannerPlanConfigurationLocalizationable)() {
-    m.localizations = value
+    err := m.GetBackingStore().Set("localizations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanConfigurationable 
+type PlannerPlanConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBuckets()([]PlannerPlanConfigurationBucketDefinitionable)
+    GetCreatedBy()(IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDefaultLanguage()(*string)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLocalizations()([]PlannerPlanConfigurationLocalizationable)
+    SetBuckets(value []PlannerPlanConfigurationBucketDefinitionable)()
+    SetCreatedBy(value IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDefaultLanguage(value *string)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLocalizations(value []PlannerPlanConfigurationLocalizationable)()
 }

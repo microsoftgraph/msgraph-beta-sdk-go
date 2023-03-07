@@ -8,16 +8,20 @@ type DeviceLogCollectionTemplateType int
 const (
     // Predefined template for what will be collected
     PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE DeviceLogCollectionTemplateType = iota
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICELOGCOLLECTIONTEMPLATETYPE
 )
 
 func (i DeviceLogCollectionTemplateType) String() string {
-    return []string{"predefined"}[i]
+    return []string{"predefined", "unknownFutureValue"}[i]
 }
 func ParseDeviceLogCollectionTemplateType(v string) (any, error) {
     result := PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
     switch v {
         case "predefined":
             result = PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICELOGCOLLECTIONTEMPLATETYPE
         default:
             return 0, errors.New("Unknown DeviceLogCollectionTemplateType value: " + v)
     }

@@ -7,8 +7,6 @@ import (
 // PlannerTaskDetailsCollectionResponse 
 type PlannerTaskDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerTaskDetailsable
 }
 // NewPlannerTaskDetailsCollectionResponse instantiates a new PlannerTaskDetailsCollectionResponse and sets the default values.
 func NewPlannerTaskDetailsCollectionResponse()(*PlannerTaskDetailsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerTaskDetailsCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerTaskDetailsCollectionResponse) GetValue()([]PlannerTaskDetailsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerTaskDetailsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerTaskDetailsCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerTaskDetailsCollectionResponse) SetValue(value []PlannerTaskDetailsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerTaskDetailsCollectionResponseable 
+type PlannerTaskDetailsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerTaskDetailsable)
+    SetValue(value []PlannerTaskDetailsable)()
 }

@@ -48,8 +48,8 @@ func NewLifecycleWorkflowsDeletedItemsRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsDeletedItemsRequestBuilder instantiates a new DeletedItemsRequestBuilder and sets the default values.
@@ -123,7 +123,7 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToGetRequestInformation(c
 }
 // Workflows provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) Workflows()(*LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) {
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WorkflowsById provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) WorkflowsById(id string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
@@ -134,5 +134,5 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) WorkflowsById(id string)(
     if id != "" {
         urlTplParams["workflow%2Did"] = id
     }
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

@@ -41,7 +41,7 @@ type AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderGe
 func NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, platform *string)(*AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder) {
     m := &AssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform='{platform}'){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/getPlatformSupportedProperties(platform='{platform}'){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -49,8 +49,8 @@ func NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilde
     if platform != nil {
         urlTplParams["platform"] = *platform
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAssignmentFiltersGetPlatformSupportedPropertiesWithPlatformRequestBuilder instantiates a new GetPlatformSupportedPropertiesWithPlatformRequestBuilder and sets the default values.

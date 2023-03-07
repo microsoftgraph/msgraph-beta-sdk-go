@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsScoreHistoryCollectionResponse 
 type UserExperienceAnalyticsScoreHistoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsScoreHistoryable
 }
 // NewUserExperienceAnalyticsScoreHistoryCollectionResponse instantiates a new UserExperienceAnalyticsScoreHistoryCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsScoreHistoryCollectionResponse()(*UserExperienceAnalyticsScoreHistoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsScoreHistoryCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsScoreHistoryCollectionResponse) GetValue()([]UserExperienceAnalyticsScoreHistoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsScoreHistoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsScoreHistoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsScoreHistoryCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsScoreHistoryCollectionResponse) SetValue(value []UserExperienceAnalyticsScoreHistoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsScoreHistoryCollectionResponseable 
+type UserExperienceAnalyticsScoreHistoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsScoreHistoryable)
+    SetValue(value []UserExperienceAnalyticsScoreHistoryable)()
 }

@@ -26,7 +26,7 @@ type GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration
 func NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetM365AppPlatformUserCountsWithPeriodRequestBuilder) {
     m := &GetM365AppPlatformUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getM365AppPlatformUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getM365AppPlatformUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(pathParamet
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetM365AppPlatformUserCountsWithPeriodRequestBuilder instantiates a new GetM365AppPlatformUserCountsWithPeriodRequestBuilder and sets the default values.

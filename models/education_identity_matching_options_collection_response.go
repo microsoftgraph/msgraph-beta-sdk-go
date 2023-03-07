@@ -7,8 +7,6 @@ import (
 // EducationIdentityMatchingOptionsCollectionResponse 
 type EducationIdentityMatchingOptionsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationIdentityMatchingOptionsable
 }
 // NewEducationIdentityMatchingOptionsCollectionResponse instantiates a new EducationIdentityMatchingOptionsCollectionResponse and sets the default values.
 func NewEducationIdentityMatchingOptionsCollectionResponse()(*EducationIdentityMatchingOptionsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationIdentityMatchingOptionsCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *EducationIdentityMatchingOptionsCollectionResponse) GetValue()([]EducationIdentityMatchingOptionsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationIdentityMatchingOptionsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityMatchingOptionsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationIdentityMatchingOptionsCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *EducationIdentityMatchingOptionsCollectionResponse) SetValue(value []EducationIdentityMatchingOptionsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationIdentityMatchingOptionsCollectionResponseable 
+type EducationIdentityMatchingOptionsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationIdentityMatchingOptionsable)
+    SetValue(value []EducationIdentityMatchingOptionsable)()
 }

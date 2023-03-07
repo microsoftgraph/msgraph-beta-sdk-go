@@ -7,8 +7,6 @@ import (
 // Fido2CombinationConfigurationCollectionResponse 
 type Fido2CombinationConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Fido2CombinationConfigurationable
 }
 // NewFido2CombinationConfigurationCollectionResponse instantiates a new Fido2CombinationConfigurationCollectionResponse and sets the default values.
 func NewFido2CombinationConfigurationCollectionResponse()(*Fido2CombinationConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Fido2CombinationConfigurationCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *Fido2CombinationConfigurationCollectionResponse) GetValue()([]Fido2CombinationConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Fido2CombinationConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Fido2CombinationConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Fido2CombinationConfigurationCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *Fido2CombinationConfigurationCollectionResponse) SetValue(value []Fido2CombinationConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Fido2CombinationConfigurationCollectionResponseable 
+type Fido2CombinationConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Fido2CombinationConfigurationable)
+    SetValue(value []Fido2CombinationConfigurationable)()
 }

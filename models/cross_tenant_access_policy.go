@@ -7,20 +7,16 @@ import (
 // CrossTenantAccessPolicy 
 type CrossTenantAccessPolicy struct {
     TenantRelationshipAccessPolicyBase
-    // Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
-    allowedCloudEndpoints []string
     // Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-    default_escaped CrossTenantAccessPolicyConfigurationDefaultable
-    // Defines partner-specific configurations for external Azure Active Directory organizations.
-    partners []CrossTenantAccessPolicyConfigurationPartnerable
+    DefaultEscaped CrossTenantAccessPolicyConfigurationDefaultable
 }
 // NewCrossTenantAccessPolicy instantiates a new CrossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
     m := &CrossTenantAccessPolicy{
         TenantRelationshipAccessPolicyBase: *NewTenantRelationshipAccessPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCrossTenantAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +25,25 @@ func CreateCrossTenantAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAllowedCloudEndpoints gets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
 func (m *CrossTenantAccessPolicy) GetAllowedCloudEndpoints()([]string) {
-    return m.allowedCloudEndpoints
+    val, err := m.GetBackingStore().Get("allowedCloudEndpoints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDefault gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable) {
-    return m.default_escaped
+    val, err := m.GetBackingStore().Get("defaultEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantAccessPolicyConfigurationDefaultable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,7 +90,14 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetPartners gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable) {
-    return m.partners
+    val, err := m.GetBackingStore().Get("partners")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CrossTenantAccessPolicyConfigurationPartnerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,13 +131,33 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAllowedCloudEndpoints sets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
 func (m *CrossTenantAccessPolicy) SetAllowedCloudEndpoints(value []string)() {
-    m.allowedCloudEndpoints = value
+    err := m.GetBackingStore().Set("allowedCloudEndpoints", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefault sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)() {
-    m.default_escaped = value
+    err := m.GetBackingStore().Set("defaultEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPartners sets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)() {
-    m.partners = value
+    err := m.GetBackingStore().Set("partners", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CrossTenantAccessPolicyable 
+type CrossTenantAccessPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TenantRelationshipAccessPolicyBaseable
+    GetAllowedCloudEndpoints()([]string)
+    GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable)
+    GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable)
+    SetAllowedCloudEndpoints(value []string)()
+    SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)()
+    SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)()
 }

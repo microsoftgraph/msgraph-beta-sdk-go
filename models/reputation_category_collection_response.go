@@ -7,8 +7,6 @@ import (
 // ReputationCategoryCollectionResponse 
 type ReputationCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ReputationCategoryable
 }
 // NewReputationCategoryCollectionResponse instantiates a new ReputationCategoryCollectionResponse and sets the default values.
 func NewReputationCategoryCollectionResponse()(*ReputationCategoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ReputationCategoryCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ReputationCategoryCollectionResponse) GetValue()([]ReputationCategoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ReputationCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ReputationCategoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ReputationCategoryCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ReputationCategoryCollectionResponse) SetValue(value []ReputationCategoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ReputationCategoryCollectionResponseable 
+type ReputationCategoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ReputationCategoryable)
+    SetValue(value []ReputationCategoryable)()
 }

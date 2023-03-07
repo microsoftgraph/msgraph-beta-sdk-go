@@ -7,30 +7,6 @@ import (
 // Directory 
 type Directory struct {
     Entity
-    // Conceptual container for user and group directory objects.
-    administrativeUnits []AdministrativeUnitable
-    // Group of related custom security attribute definitions.
-    attributeSets []AttributeSetable
-    // Schema of a custom security attributes (key-value pairs).
-    customSecurityAttributeDefinitions []CustomSecurityAttributeDefinitionable
-    // The deletedItems property
-    deletedItems []DirectoryObjectable
-    // The featureRolloutPolicies property
-    featureRolloutPolicies []FeatureRolloutPolicyable
-    // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-    federationConfigurations []IdentityProviderBaseable
-    // The impactedResources property
-    impactedResources []ImpactedResourceable
-    // The inboundSharedUserProfiles property
-    inboundSharedUserProfiles []InboundSharedUserProfileable
-    // A container for on-premises directory synchronization functionalities that are available for the organization.
-    onPremisesSynchronization []OnPremisesDirectorySynchronizationable
-    // The outboundSharedUserProfiles property
-    outboundSharedUserProfiles []OutboundSharedUserProfileable
-    // The recommendations property
-    recommendations []Recommendationable
-    // The sharedEmailDomains property
-    sharedEmailDomains []SharedEmailDomainable
 }
 // NewDirectory instantiates a new Directory and sets the default values.
 func NewDirectory()(*Directory) {
@@ -45,27 +21,69 @@ func CreateDirectoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
-    return m.administrativeUnits
+    val, err := m.GetBackingStore().Get("administrativeUnits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdministrativeUnitable)
+    }
+    return nil
 }
 // GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) GetAttributeSets()([]AttributeSetable) {
-    return m.attributeSets
+    val, err := m.GetBackingStore().Get("attributeSets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeSetable)
+    }
+    return nil
 }
 // GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
-    return m.customSecurityAttributeDefinitions
+    val, err := m.GetBackingStore().Get("customSecurityAttributeDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSecurityAttributeDefinitionable)
+    }
+    return nil
 }
 // GetDeletedItems gets the deletedItems property value. The deletedItems property
 func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
-    return m.deletedItems
+    val, err := m.GetBackingStore().Get("deletedItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
-    return m.featureRolloutPolicies
+    val, err := m.GetBackingStore().Get("featureRolloutPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FeatureRolloutPolicyable)
+    }
+    return nil
 }
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
-    return m.federationConfigurations
+    val, err := m.GetBackingStore().Get("federationConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityProviderBaseable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -242,27 +260,69 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
 func (m *Directory) GetImpactedResources()([]ImpactedResourceable) {
-    return m.impactedResources
+    val, err := m.GetBackingStore().Get("impactedResources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ImpactedResourceable)
+    }
+    return nil
 }
 // GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
-    return m.inboundSharedUserProfiles
+    val, err := m.GetBackingStore().Get("inboundSharedUserProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InboundSharedUserProfileable)
+    }
+    return nil
 }
 // GetOnPremisesSynchronization gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
 func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable) {
-    return m.onPremisesSynchronization
+    val, err := m.GetBackingStore().Get("onPremisesSynchronization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesDirectorySynchronizationable)
+    }
+    return nil
 }
 // GetOutboundSharedUserProfiles gets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
 func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable) {
-    return m.outboundSharedUserProfiles
+    val, err := m.GetBackingStore().Get("outboundSharedUserProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutboundSharedUserProfileable)
+    }
+    return nil
 }
-// GetRecommendations gets the recommendations property value. The recommendations property
+// GetRecommendations gets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) GetRecommendations()([]Recommendationable) {
-    return m.recommendations
+    val, err := m.GetBackingStore().Get("recommendations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Recommendationable)
+    }
+    return nil
 }
 // GetSharedEmailDomains gets the sharedEmailDomains property value. The sharedEmailDomains property
 func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
-    return m.sharedEmailDomains
+    val, err := m.GetBackingStore().Get("sharedEmailDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharedEmailDomainable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -394,49 +454,114 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
-    m.administrativeUnits = value
+    err := m.GetBackingStore().Set("administrativeUnits", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributeSets sets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
-    m.attributeSets = value
+    err := m.GetBackingStore().Set("attributeSets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)() {
-    m.customSecurityAttributeDefinitions = value
+    err := m.GetBackingStore().Set("customSecurityAttributeDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeletedItems sets the deletedItems property value. The deletedItems property
 func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
-    m.deletedItems = value
+    err := m.GetBackingStore().Set("deletedItems", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
-    m.featureRolloutPolicies = value
+    err := m.GetBackingStore().Set("featureRolloutPolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable)() {
-    m.federationConfigurations = value
+    err := m.GetBackingStore().Set("federationConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImpactedResources sets the impactedResources property value. The impactedResources property
 func (m *Directory) SetImpactedResources(value []ImpactedResourceable)() {
-    m.impactedResources = value
+    err := m.GetBackingStore().Set("impactedResources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
-    m.inboundSharedUserProfiles = value
+    err := m.GetBackingStore().Set("inboundSharedUserProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnPremisesSynchronization sets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
 func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)() {
-    m.onPremisesSynchronization = value
+    err := m.GetBackingStore().Set("onPremisesSynchronization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOutboundSharedUserProfiles sets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
 func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)() {
-    m.outboundSharedUserProfiles = value
+    err := m.GetBackingStore().Set("outboundSharedUserProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetRecommendations sets the recommendations property value. The recommendations property
+// SetRecommendations sets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) SetRecommendations(value []Recommendationable)() {
-    m.recommendations = value
+    err := m.GetBackingStore().Set("recommendations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharedEmailDomains sets the sharedEmailDomains property value. The sharedEmailDomains property
 func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
-    m.sharedEmailDomains = value
+    err := m.GetBackingStore().Set("sharedEmailDomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Directoryable 
+type Directoryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdministrativeUnits()([]AdministrativeUnitable)
+    GetAttributeSets()([]AttributeSetable)
+    GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
+    GetDeletedItems()([]DirectoryObjectable)
+    GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
+    GetFederationConfigurations()([]IdentityProviderBaseable)
+    GetImpactedResources()([]ImpactedResourceable)
+    GetInboundSharedUserProfiles()([]InboundSharedUserProfileable)
+    GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
+    GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable)
+    GetRecommendations()([]Recommendationable)
+    GetSharedEmailDomains()([]SharedEmailDomainable)
+    SetAdministrativeUnits(value []AdministrativeUnitable)()
+    SetAttributeSets(value []AttributeSetable)()
+    SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
+    SetDeletedItems(value []DirectoryObjectable)()
+    SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
+    SetFederationConfigurations(value []IdentityProviderBaseable)()
+    SetImpactedResources(value []ImpactedResourceable)()
+    SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)()
+    SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
+    SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)()
+    SetRecommendations(value []Recommendationable)()
+    SetSharedEmailDomains(value []SharedEmailDomainable)()
 }

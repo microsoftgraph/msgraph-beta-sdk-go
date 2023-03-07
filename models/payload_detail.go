@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PayloadDetail 
 type PayloadDetail struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Payload coachmark details.
-    coachmarks []PayloadCoachmarkable
-    // Payload content details.
-    content *string
-    // The OdataType property
-    odataType *string
-    // The phishing URL used to target a user.
-    phishingUrl *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPayloadDetail instantiates a new payloadDetail and sets the default values.
 func NewPayloadDetail()(*PayloadDetail) {
     m := &PayloadDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePayloadDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,15 +42,41 @@ func CreatePayloadDetailFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PayloadDetail) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PayloadDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCoachmarks gets the coachmarks property value. Payload coachmark details.
 func (m *PayloadDetail) GetCoachmarks()([]PayloadCoachmarkable) {
-    return m.coachmarks
+    val, err := m.GetBackingStore().Get("coachmarks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PayloadCoachmarkable)
+    }
+    return nil
 }
 // GetContent gets the content property value. Payload content details.
 func (m *PayloadDetail) GetContent()(*string) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +129,25 @@ func (m *PayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PayloadDetail) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhishingUrl gets the phishingUrl property value. The phishing URL used to target a user.
 func (m *PayloadDetail) GetPhishingUrl()(*string) {
-    return m.phishingUrl
+    val, err := m.GetBackingStore().Get("phishingUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -155,21 +189,56 @@ func (m *PayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PayloadDetail) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PayloadDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCoachmarks sets the coachmarks property value. Payload coachmark details.
 func (m *PayloadDetail) SetCoachmarks(value []PayloadCoachmarkable)() {
-    m.coachmarks = value
+    err := m.GetBackingStore().Set("coachmarks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContent sets the content property value. Payload content details.
 func (m *PayloadDetail) SetContent(value *string)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PayloadDetail) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhishingUrl sets the phishingUrl property value. The phishing URL used to target a user.
 func (m *PayloadDetail) SetPhishingUrl(value *string)() {
-    m.phishingUrl = value
+    err := m.GetBackingStore().Set("phishingUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PayloadDetailable 
+type PayloadDetailable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCoachmarks()([]PayloadCoachmarkable)
+    GetContent()(*string)
+    GetOdataType()(*string)
+    GetPhishingUrl()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCoachmarks(value []PayloadCoachmarkable)()
+    SetContent(value *string)()
+    SetOdataType(value *string)()
+    SetPhishingUrl(value *string)()
 }

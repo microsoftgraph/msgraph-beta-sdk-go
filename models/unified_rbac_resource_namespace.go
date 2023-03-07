@@ -7,10 +7,6 @@ import (
 // UnifiedRbacResourceNamespace 
 type UnifiedRbacResourceNamespace struct {
     Entity
-    // Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    name *string
-    // Operations that an authorized principal are allowed to perform.
-    resourceActions []UnifiedRbacResourceActionable
 }
 // NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
 func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
@@ -54,11 +50,25 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
 }
 // GetName gets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
 func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceActions gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
 func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceActionable) {
-    return m.resourceActions
+    val, err := m.GetBackingStore().Get("resourceActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRbacResourceActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRbacResourceNamespace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i878a80d2330e89d26896388
 }
 // SetName sets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
 func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceActions sets the resourceActions property value. Operations that an authorized principal are allowed to perform.
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceActionable)() {
-    m.resourceActions = value
+    err := m.GetBackingStore().Set("resourceActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRbacResourceNamespaceable 
+type UnifiedRbacResourceNamespaceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetName()(*string)
+    GetResourceActions()([]UnifiedRbacResourceActionable)
+    SetName(value *string)()
+    SetResourceActions(value []UnifiedRbacResourceActionable)()
 }

@@ -7,12 +7,6 @@ import (
 // DeviceManagementConfigurationSettingGroupDefinition 
 type DeviceManagementConfigurationSettingGroupDefinition struct {
     DeviceManagementConfigurationSettingDefinition
-    // Dependent child settings to this group of settings
-    childIds []string
-    // List of child settings that depend on this setting
-    dependedOnBy []DeviceManagementConfigurationSettingDependedOnByable
-    // List of Dependencies for the setting group
-    dependentOn []DeviceManagementConfigurationDependentOnable
 }
 // NewDeviceManagementConfigurationSettingGroupDefinition instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementConfigurationSettingGroupDefinition) {
@@ -45,15 +39,36 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
 }
 // GetChildIds gets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]string) {
-    return m.childIds
+    val, err := m.GetBackingStore().Get("childIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDependedOnBy gets the dependedOnBy property value. List of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
-    return m.dependedOnBy
+    val, err := m.GetBackingStore().Get("dependedOnBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingDependedOnByable)
+    }
+    return nil
 }
 // GetDependentOn gets the dependentOn property value. List of Dependencies for the setting group
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
-    return m.dependentOn
+    val, err := m.GetBackingStore().Get("dependentOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationDependentOnable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,13 +153,33 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
 }
 // SetChildIds sets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetChildIds(value []string)() {
-    m.childIds = value
+    err := m.GetBackingStore().Set("childIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependedOnBy sets the dependedOnBy property value. List of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
-    m.dependedOnBy = value
+    err := m.GetBackingStore().Set("dependedOnBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependentOn sets the dependentOn property value. List of Dependencies for the setting group
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
-    m.dependentOn = value
+    err := m.GetBackingStore().Set("dependentOn", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingGroupDefinitionable 
+type DeviceManagementConfigurationSettingGroupDefinitionable interface {
+    DeviceManagementConfigurationSettingDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChildIds()([]string)
+    GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable)
+    GetDependentOn()([]DeviceManagementConfigurationDependentOnable)
+    SetChildIds(value []string)()
+    SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)()
+    SetDependentOn(value []DeviceManagementConfigurationDependentOnable)()
 }

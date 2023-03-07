@@ -53,8 +53,8 @@ func NewItemConnectorsItemMemberOfRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorsItemMemberOfRequestBuilder instantiates a new MemberOfRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemConnectorsItemMemberOfRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Count()(*ItemConnectorsItemMemberOfCountRequestBuilder) {
-    return NewItemConnectorsItemMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorsItemMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the connectorGroup that the connector is a member of. Read-only.
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupCollectionResponseable, error) {
@@ -88,7 +88,7 @@ func (m *ItemConnectorsItemMemberOfRequestBuilder) Get(ctx context.Context, requ
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Ref()(*ItemConnectorsItemMemberOfRefRequestBuilder) {
-    return NewItemConnectorsItemMemberOfRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorsItemMemberOfRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the connectorGroup that the connector is a member of. Read-only.
 func (m *ItemConnectorsItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

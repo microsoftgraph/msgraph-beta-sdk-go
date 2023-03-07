@@ -53,8 +53,8 @@ func NewItemCalendarViewRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarViewRequestBuilder instantiates a new CalendarViewRequestBuilder and sets the default values.
@@ -65,11 +65,11 @@ func NewItemCalendarViewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarViewRequestBuilder) Count()(*ItemCalendarViewCountRequestBuilder) {
-    return NewItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemCalendarViewRequestBuilder) Delta()(*ItemCalendarViewDeltaRequestBuilder) {
-    return NewItemCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the calendar view for the calendar. Read-only. Nullable.
 // [Find more info here]

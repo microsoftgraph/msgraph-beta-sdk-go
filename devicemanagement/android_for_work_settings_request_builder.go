@@ -48,7 +48,7 @@ type AndroidForWorkSettingsRequestBuilderPatchRequestConfiguration struct {
 }
 // CompleteSignup provides operations to call the completeSignup method.
 func (m *AndroidForWorkSettingsRequestBuilder) CompleteSignup()(*AndroidForWorkSettingsCompleteSignupRequestBuilder) {
-    return NewAndroidForWorkSettingsCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkSettingsCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewAndroidForWorkSettingsRequestBuilderInternal instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
 func NewAndroidForWorkSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkSettingsRequestBuilder) {
@@ -59,8 +59,8 @@ func NewAndroidForWorkSettingsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidForWorkSettingsRequestBuilder instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
@@ -125,11 +125,11 @@ func (m *AndroidForWorkSettingsRequestBuilder) Patch(ctx context.Context, body i
 }
 // RequestSignupUrl provides operations to call the requestSignupUrl method.
 func (m *AndroidForWorkSettingsRequestBuilder) RequestSignupUrl()(*AndroidForWorkSettingsRequestSignupUrlRequestBuilder) {
-    return NewAndroidForWorkSettingsRequestSignupUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkSettingsRequestSignupUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SyncApps provides operations to call the syncApps method.
 func (m *AndroidForWorkSettingsRequestBuilder) SyncApps()(*AndroidForWorkSettingsSyncAppsRequestBuilder) {
-    return NewAndroidForWorkSettingsSyncAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkSettingsSyncAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property androidForWorkSettings for deviceManagement
 func (m *AndroidForWorkSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AndroidForWorkSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -166,7 +166,10 @@ func (m *AndroidForWorkSettingsRequestBuilder) ToPatchRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -175,5 +178,5 @@ func (m *AndroidForWorkSettingsRequestBuilder) ToPatchRequestInformation(ctx con
 }
 // Unbind provides operations to call the unbind method.
 func (m *AndroidForWorkSettingsRequestBuilder) Unbind()(*AndroidForWorkSettingsUnbindRequestBuilder) {
-    return NewAndroidForWorkSettingsUnbindRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkSettingsUnbindRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

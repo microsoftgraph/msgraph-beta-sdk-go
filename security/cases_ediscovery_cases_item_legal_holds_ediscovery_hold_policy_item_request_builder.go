@@ -55,8 +55,8 @@ func NewCasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder instantiates a new EdiscoveryHoldPolicyItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
 }
 // SiteSources provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) SiteSources()(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) SiteSourcesById(id string)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
     if id != "" {
         urlTplParams["siteSource%2Did"] = id
     }
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property legalHolds for security
 func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -178,7 +181,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
 }
 // UserSources provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) UserSources()(*CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserSourcesById provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) UserSourcesById(id string)(*CasesEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilder) {
@@ -189,5 +192,5 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
     if id != "" {
         urlTplParams["userSource%2Did"] = id
     }
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

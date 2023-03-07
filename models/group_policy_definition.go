@@ -9,40 +9,6 @@ import (
 // GroupPolicyDefinition 
 type GroupPolicyDefinition struct {
     Entity
-    // The group policy category associated with the definition.
-    category GroupPolicyCategoryable
-    // The localized full category path for the policy.
-    categoryPath *string
-    // Group Policy Definition Class Type.
-    classType *GroupPolicyDefinitionClassType
-    // The group policy file associated with the definition.
-    definitionFile GroupPolicyDefinitionFileable
-    // The localized policy name.
-    displayName *string
-    // The localized explanation or help text associated with the policy. The default value is empty.
-    explainText *string
-    // The category id of the parent category
-    groupPolicyCategoryId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // Signifies whether or not there are related definitions to this definition
-    hasRelatedDefinitions *bool
-    // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Minimum required CSP version for device configuration in this definition
-    minDeviceCspVersion *string
-    // Minimum required CSP version for user configuration in this definition
-    minUserCspVersion *string
-    // Definition of the next version of this definition
-    nextVersionDefinition GroupPolicyDefinitionable
-    // Type of Group Policy File or Definition.
-    policyType *GroupPolicyType
-    // The group policy presentations associated with the definition.
-    presentations []GroupPolicyPresentationable
-    // Definition of the previous version of this definition
-    previousVersionDefinition GroupPolicyDefinitionable
-    // Localized string used to specify what operating system or application version is affected by the policy.
-    supportedOn *string
-    // Setting definition version
-    version *string
 }
 // NewGroupPolicyDefinition instantiates a new groupPolicyDefinition and sets the default values.
 func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {
@@ -57,27 +23,69 @@ func CreateGroupPolicyDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetCategory gets the category property value. The group policy category associated with the definition.
 func (m *GroupPolicyDefinition) GetCategory()(GroupPolicyCategoryable) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyCategoryable)
+    }
+    return nil
 }
 // GetCategoryPath gets the categoryPath property value. The localized full category path for the policy.
 func (m *GroupPolicyDefinition) GetCategoryPath()(*string) {
-    return m.categoryPath
+    val, err := m.GetBackingStore().Get("categoryPath")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetClassType gets the classType property value. Group Policy Definition Class Type.
 func (m *GroupPolicyDefinition) GetClassType()(*GroupPolicyDefinitionClassType) {
-    return m.classType
+    val, err := m.GetBackingStore().Get("classType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyDefinitionClassType)
+    }
+    return nil
 }
 // GetDefinitionFile gets the definitionFile property value. The group policy file associated with the definition.
 func (m *GroupPolicyDefinition) GetDefinitionFile()(GroupPolicyDefinitionFileable) {
-    return m.definitionFile
+    val, err := m.GetBackingStore().Get("definitionFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyDefinitionFileable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The localized policy name.
 func (m *GroupPolicyDefinition) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExplainText gets the explainText property value. The localized explanation or help text associated with the policy. The default value is empty.
 func (m *GroupPolicyDefinition) GetExplainText()(*string) {
-    return m.explainText
+    val, err := m.GetBackingStore().Get("explainText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -260,47 +268,124 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetGroupPolicyCategoryId gets the groupPolicyCategoryId property value. The category id of the parent category
 func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.groupPolicyCategoryId
+    val, err := m.GetBackingStore().Get("groupPolicyCategoryId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetHasRelatedDefinitions gets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
 func (m *GroupPolicyDefinition) GetHasRelatedDefinitions()(*bool) {
-    return m.hasRelatedDefinitions
+    val, err := m.GetBackingStore().Get("hasRelatedDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetMinDeviceCspVersion gets the minDeviceCspVersion property value. Minimum required CSP version for device configuration in this definition
 func (m *GroupPolicyDefinition) GetMinDeviceCspVersion()(*string) {
-    return m.minDeviceCspVersion
+    val, err := m.GetBackingStore().Get("minDeviceCspVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinUserCspVersion gets the minUserCspVersion property value. Minimum required CSP version for user configuration in this definition
 func (m *GroupPolicyDefinition) GetMinUserCspVersion()(*string) {
-    return m.minUserCspVersion
+    val, err := m.GetBackingStore().Get("minUserCspVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNextVersionDefinition gets the nextVersionDefinition property value. Definition of the next version of this definition
 func (m *GroupPolicyDefinition) GetNextVersionDefinition()(GroupPolicyDefinitionable) {
-    return m.nextVersionDefinition
+    val, err := m.GetBackingStore().Get("nextVersionDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyDefinitionable)
+    }
+    return nil
 }
 // GetPolicyType gets the policyType property value. Type of Group Policy File or Definition.
 func (m *GroupPolicyDefinition) GetPolicyType()(*GroupPolicyType) {
-    return m.policyType
+    val, err := m.GetBackingStore().Get("policyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyType)
+    }
+    return nil
 }
 // GetPresentations gets the presentations property value. The group policy presentations associated with the definition.
 func (m *GroupPolicyDefinition) GetPresentations()([]GroupPolicyPresentationable) {
-    return m.presentations
+    val, err := m.GetBackingStore().Get("presentations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationable)
+    }
+    return nil
 }
 // GetPreviousVersionDefinition gets the previousVersionDefinition property value. Definition of the previous version of this definition
 func (m *GroupPolicyDefinition) GetPreviousVersionDefinition()(GroupPolicyDefinitionable) {
-    return m.previousVersionDefinition
+    val, err := m.GetBackingStore().Get("previousVersionDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupPolicyDefinitionable)
+    }
+    return nil
 }
 // GetSupportedOn gets the supportedOn property value. Localized string used to specify what operating system or application version is affected by the policy.
 func (m *GroupPolicyDefinition) GetSupportedOn()(*string) {
-    return m.supportedOn
+    val, err := m.GetBackingStore().Get("supportedOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Setting definition version
 func (m *GroupPolicyDefinition) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -420,69 +505,159 @@ func (m *GroupPolicyDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetCategory sets the category property value. The group policy category associated with the definition.
 func (m *GroupPolicyDefinition) SetCategory(value GroupPolicyCategoryable)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategoryPath sets the categoryPath property value. The localized full category path for the policy.
 func (m *GroupPolicyDefinition) SetCategoryPath(value *string)() {
-    m.categoryPath = value
+    err := m.GetBackingStore().Set("categoryPath", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassType sets the classType property value. Group Policy Definition Class Type.
 func (m *GroupPolicyDefinition) SetClassType(value *GroupPolicyDefinitionClassType)() {
-    m.classType = value
+    err := m.GetBackingStore().Set("classType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinitionFile sets the definitionFile property value. The group policy file associated with the definition.
 func (m *GroupPolicyDefinition) SetDefinitionFile(value GroupPolicyDefinitionFileable)() {
-    m.definitionFile = value
+    err := m.GetBackingStore().Set("definitionFile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The localized policy name.
 func (m *GroupPolicyDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExplainText sets the explainText property value. The localized explanation or help text associated with the policy. The default value is empty.
 func (m *GroupPolicyDefinition) SetExplainText(value *string)() {
-    m.explainText = value
+    err := m.GetBackingStore().Set("explainText", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupPolicyCategoryId sets the groupPolicyCategoryId property value. The category id of the parent category
 func (m *GroupPolicyDefinition) SetGroupPolicyCategoryId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.groupPolicyCategoryId = value
+    err := m.GetBackingStore().Set("groupPolicyCategoryId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasRelatedDefinitions sets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
 func (m *GroupPolicyDefinition) SetHasRelatedDefinitions(value *bool)() {
-    m.hasRelatedDefinitions = value
+    err := m.GetBackingStore().Set("hasRelatedDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinDeviceCspVersion sets the minDeviceCspVersion property value. Minimum required CSP version for device configuration in this definition
 func (m *GroupPolicyDefinition) SetMinDeviceCspVersion(value *string)() {
-    m.minDeviceCspVersion = value
+    err := m.GetBackingStore().Set("minDeviceCspVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinUserCspVersion sets the minUserCspVersion property value. Minimum required CSP version for user configuration in this definition
 func (m *GroupPolicyDefinition) SetMinUserCspVersion(value *string)() {
-    m.minUserCspVersion = value
+    err := m.GetBackingStore().Set("minUserCspVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNextVersionDefinition sets the nextVersionDefinition property value. Definition of the next version of this definition
 func (m *GroupPolicyDefinition) SetNextVersionDefinition(value GroupPolicyDefinitionable)() {
-    m.nextVersionDefinition = value
+    err := m.GetBackingStore().Set("nextVersionDefinition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyType sets the policyType property value. Type of Group Policy File or Definition.
 func (m *GroupPolicyDefinition) SetPolicyType(value *GroupPolicyType)() {
-    m.policyType = value
+    err := m.GetBackingStore().Set("policyType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPresentations sets the presentations property value. The group policy presentations associated with the definition.
 func (m *GroupPolicyDefinition) SetPresentations(value []GroupPolicyPresentationable)() {
-    m.presentations = value
+    err := m.GetBackingStore().Set("presentations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreviousVersionDefinition sets the previousVersionDefinition property value. Definition of the previous version of this definition
 func (m *GroupPolicyDefinition) SetPreviousVersionDefinition(value GroupPolicyDefinitionable)() {
-    m.previousVersionDefinition = value
+    err := m.GetBackingStore().Set("previousVersionDefinition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportedOn sets the supportedOn property value. Localized string used to specify what operating system or application version is affected by the policy.
 func (m *GroupPolicyDefinition) SetSupportedOn(value *string)() {
-    m.supportedOn = value
+    err := m.GetBackingStore().Set("supportedOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Setting definition version
 func (m *GroupPolicyDefinition) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyDefinitionable 
+type GroupPolicyDefinitionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(GroupPolicyCategoryable)
+    GetCategoryPath()(*string)
+    GetClassType()(*GroupPolicyDefinitionClassType)
+    GetDefinitionFile()(GroupPolicyDefinitionFileable)
+    GetDisplayName()(*string)
+    GetExplainText()(*string)
+    GetGroupPolicyCategoryId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetHasRelatedDefinitions()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMinDeviceCspVersion()(*string)
+    GetMinUserCspVersion()(*string)
+    GetNextVersionDefinition()(GroupPolicyDefinitionable)
+    GetPolicyType()(*GroupPolicyType)
+    GetPresentations()([]GroupPolicyPresentationable)
+    GetPreviousVersionDefinition()(GroupPolicyDefinitionable)
+    GetSupportedOn()(*string)
+    GetVersion()(*string)
+    SetCategory(value GroupPolicyCategoryable)()
+    SetCategoryPath(value *string)()
+    SetClassType(value *GroupPolicyDefinitionClassType)()
+    SetDefinitionFile(value GroupPolicyDefinitionFileable)()
+    SetDisplayName(value *string)()
+    SetExplainText(value *string)()
+    SetGroupPolicyCategoryId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetHasRelatedDefinitions(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMinDeviceCspVersion(value *string)()
+    SetMinUserCspVersion(value *string)()
+    SetNextVersionDefinition(value GroupPolicyDefinitionable)()
+    SetPolicyType(value *GroupPolicyType)()
+    SetPresentations(value []GroupPolicyPresentationable)()
+    SetPreviousVersionDefinition(value GroupPolicyDefinitionable)()
+    SetSupportedOn(value *string)()
+    SetVersion(value *string)()
 }

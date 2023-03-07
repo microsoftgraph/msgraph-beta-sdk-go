@@ -7,20 +7,14 @@ import (
 // GroupPolicyPresentationTextBox 
 type GroupPolicyPresentationTextBox struct {
     GroupPolicyUploadedPresentation
-    // Localized default string displayed in the text box. The default value is empty.
-    defaultValue *string
-    // An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
-    maxLength *int64
-    // Requirement to enter a value in the text box. Default value is false.
-    required *bool
 }
 // NewGroupPolicyPresentationTextBox instantiates a new GroupPolicyPresentationTextBox and sets the default values.
 func NewGroupPolicyPresentationTextBox()(*GroupPolicyPresentationTextBox) {
     m := &GroupPolicyPresentationTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationTextBox";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationTextBox"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPolicyPresentationTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateGroupPolicyPresentationTextBoxFromDiscriminatorValue(parseNode i878a8
 }
 // GetDefaultValue gets the defaultValue property value. Localized default string displayed in the text box. The default value is empty.
 func (m *GroupPolicyPresentationTextBox) GetDefaultValue()(*string) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +69,25 @@ func (m *GroupPolicyPresentationTextBox) GetFieldDeserializers()(map[string]func
 }
 // GetMaxLength gets the maxLength property value. An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
 func (m *GroupPolicyPresentationTextBox) GetMaxLength()(*int64) {
-    return m.maxLength
+    val, err := m.GetBackingStore().Get("maxLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetRequired gets the required property value. Requirement to enter a value in the text box. Default value is false.
 func (m *GroupPolicyPresentationTextBox) GetRequired()(*bool) {
-    return m.required
+    val, err := m.GetBackingStore().Get("required")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationTextBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *GroupPolicyPresentationTextBox) Serialize(writer i878a80d2330e89d268963
 }
 // SetDefaultValue sets the defaultValue property value. Localized default string displayed in the text box. The default value is empty.
 func (m *GroupPolicyPresentationTextBox) SetDefaultValue(value *string)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaxLength sets the maxLength property value. An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
 func (m *GroupPolicyPresentationTextBox) SetMaxLength(value *int64)() {
-    m.maxLength = value
+    err := m.GetBackingStore().Set("maxLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequired sets the required property value. Requirement to enter a value in the text box. Default value is false.
 func (m *GroupPolicyPresentationTextBox) SetRequired(value *bool)() {
-    m.required = value
+    err := m.GetBackingStore().Set("required", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationTextBoxable 
+type GroupPolicyPresentationTextBoxable interface {
+    GroupPolicyUploadedPresentationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultValue()(*string)
+    GetMaxLength()(*int64)
+    GetRequired()(*bool)
+    SetDefaultValue(value *string)()
+    SetMaxLength(value *int64)()
+    SetRequired(value *bool)()
 }

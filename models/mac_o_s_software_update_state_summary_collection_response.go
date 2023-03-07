@@ -7,8 +7,6 @@ import (
 // MacOSSoftwareUpdateStateSummaryCollectionResponse 
 type MacOSSoftwareUpdateStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSSoftwareUpdateStateSummaryable
 }
 // NewMacOSSoftwareUpdateStateSummaryCollectionResponse instantiates a new MacOSSoftwareUpdateStateSummaryCollectionResponse and sets the default values.
 func NewMacOSSoftwareUpdateStateSummaryCollectionResponse()(*MacOSSoftwareUpdateStateSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSSoftwareUpdateStateSummaryCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSSoftwareUpdateStateSummaryCollectionResponse) GetValue()([]MacOSSoftwareUpdateStateSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSSoftwareUpdateStateSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSSoftwareUpdateStateSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSSoftwareUpdateStateSummaryCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSSoftwareUpdateStateSummaryCollectionResponse) SetValue(value []MacOSSoftwareUpdateStateSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSSoftwareUpdateStateSummaryCollectionResponseable 
+type MacOSSoftwareUpdateStateSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSSoftwareUpdateStateSummaryable)
+    SetValue(value []MacOSSoftwareUpdateStateSummaryable)()
 }

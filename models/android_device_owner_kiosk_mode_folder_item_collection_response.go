@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerKioskModeFolderItemCollectionResponse 
 type AndroidDeviceOwnerKioskModeFolderItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerKioskModeFolderItemable
 }
 // NewAndroidDeviceOwnerKioskModeFolderItemCollectionResponse instantiates a new AndroidDeviceOwnerKioskModeFolderItemCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerKioskModeFolderItemCollectionResponse()(*AndroidDeviceOwnerKioskModeFolderItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerKioskModeFolderItemCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerKioskModeFolderItemCollectionResponse) GetValue()([]AndroidDeviceOwnerKioskModeFolderItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerKioskModeFolderItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeFolderItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerKioskModeFolderItemCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerKioskModeFolderItemCollectionResponse) SetValue(value []AndroidDeviceOwnerKioskModeFolderItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerKioskModeFolderItemCollectionResponseable 
+type AndroidDeviceOwnerKioskModeFolderItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerKioskModeFolderItemable)
+    SetValue(value []AndroidDeviceOwnerKioskModeFolderItemable)()
 }

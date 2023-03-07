@@ -7,16 +7,14 @@ import (
 // EducationPowerPointResource 
 type EducationPowerPointResource struct {
     EducationResource
-    // Location of the file on disk.
-    fileUrl *string
 }
 // NewEducationPowerPointResource instantiates a new EducationPowerPointResource and sets the default values.
 func NewEducationPowerPointResource()(*EducationPowerPointResource) {
     m := &EducationPowerPointResource{
         EducationResource: *NewEducationResource(),
     }
-    odataTypeValue := "#microsoft.graph.educationPowerPointResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationPowerPointResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationPowerPointResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *EducationPowerPointResource) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFileUrl gets the fileUrl property value. Location of the file on disk.
 func (m *EducationPowerPointResource) GetFileUrl()(*string) {
-    return m.fileUrl
+    val, err := m.GetBackingStore().Get("fileUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationPowerPointResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *EducationPowerPointResource) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetFileUrl sets the fileUrl property value. Location of the file on disk.
 func (m *EducationPowerPointResource) SetFileUrl(value *string)() {
-    m.fileUrl = value
+    err := m.GetBackingStore().Set("fileUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationPowerPointResourceable 
+type EducationPowerPointResourceable interface {
+    EducationResourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileUrl()(*string)
+    SetFileUrl(value *string)()
 }

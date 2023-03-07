@@ -7,8 +7,6 @@ import (
 // ConfigManagerCollectionCollectionResponse 
 type ConfigManagerCollectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ConfigManagerCollectionable
 }
 // NewConfigManagerCollectionCollectionResponse instantiates a new ConfigManagerCollectionCollectionResponse and sets the default values.
 func NewConfigManagerCollectionCollectionResponse()(*ConfigManagerCollectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ConfigManagerCollectionCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *ConfigManagerCollectionCollectionResponse) GetValue()([]ConfigManagerCollectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConfigManagerCollectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConfigManagerCollectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ConfigManagerCollectionCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *ConfigManagerCollectionCollectionResponse) SetValue(value []ConfigManagerCollectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConfigManagerCollectionCollectionResponseable 
+type ConfigManagerCollectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ConfigManagerCollectionable)
+    SetValue(value []ConfigManagerCollectionable)()
 }

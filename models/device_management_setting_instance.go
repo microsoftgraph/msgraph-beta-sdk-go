@@ -7,10 +7,6 @@ import (
 // DeviceManagementSettingInstance base type for a setting instance
 type DeviceManagementSettingInstance struct {
     Entity
-    // The ID of the setting definition for this instance
-    definitionId *string
-    // JSON representation of the value
-    valueJson *string
 }
 // NewDeviceManagementSettingInstance instantiates a new deviceManagementSettingInstance and sets the default values.
 func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
@@ -53,7 +49,14 @@ func CreateDeviceManagementSettingInstanceFromDiscriminatorValue(parseNode i878a
 }
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
-    return m.definitionId
+    val, err := m.GetBackingStore().Get("definitionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,7 +85,14 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
 }
 // GetValueJson gets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
-    return m.valueJson
+    val, err := m.GetBackingStore().Get("valueJson")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,9 +116,24 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896
 }
 // SetDefinitionId sets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) SetDefinitionId(value *string)() {
-    m.definitionId = value
+    err := m.GetBackingStore().Set("definitionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueJson sets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) SetValueJson(value *string)() {
-    m.valueJson = value
+    err := m.GetBackingStore().Set("valueJson", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingInstanceable 
+type DeviceManagementSettingInstanceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefinitionId()(*string)
+    GetValueJson()(*string)
+    SetDefinitionId(value *string)()
+    SetValueJson(value *string)()
 }

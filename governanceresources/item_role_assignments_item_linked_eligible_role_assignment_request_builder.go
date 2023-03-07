@@ -41,8 +41,8 @@ func NewItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilder instantiates a new LinkedEligibleRoleAssignmentRequestBuilder and sets the default values.

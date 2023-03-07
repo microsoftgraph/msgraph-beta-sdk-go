@@ -7,8 +7,6 @@ import (
 // OfficeClientConfigurationCollectionResponse 
 type OfficeClientConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OfficeClientConfigurationable
 }
 // NewOfficeClientConfigurationCollectionResponse instantiates a new OfficeClientConfigurationCollectionResponse and sets the default values.
 func NewOfficeClientConfigurationCollectionResponse()(*OfficeClientConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OfficeClientConfigurationCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *OfficeClientConfigurationCollectionResponse) GetValue()([]OfficeClientConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OfficeClientConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OfficeClientConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OfficeClientConfigurationCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *OfficeClientConfigurationCollectionResponse) SetValue(value []OfficeClientConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OfficeClientConfigurationCollectionResponseable 
+type OfficeClientConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OfficeClientConfigurationable)
+    SetValue(value []OfficeClientConfigurationable)()
 }

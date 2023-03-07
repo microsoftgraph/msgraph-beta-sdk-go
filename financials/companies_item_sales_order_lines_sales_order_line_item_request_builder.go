@@ -41,7 +41,7 @@ type CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderPatchRequestCon
 }
 // Account provides operations to manage the account property of the microsoft.graph.salesOrderLine entity.
 func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Account()(*CompaniesItemSalesOrderLinesItemAccountRequestBuilder) {
-    return NewCompaniesItemSalesOrderLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesOrderLinesItemAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal instantiates a new SalesOrderLineItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
@@ -52,8 +52,8 @@ func NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder instantiates a new SalesOrderLineItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Get(ctx c
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesOrderLine entity.
 func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Item()(*CompaniesItemSalesOrderLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesOrderLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesOrderLinesItemItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property salesOrderLines in financials
 func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, requestConfiguration *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, error) {
@@ -127,7 +127,10 @@ func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

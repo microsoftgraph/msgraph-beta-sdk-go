@@ -26,13 +26,13 @@ type AndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilderPostReque
 func NewAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder) {
     m := &AndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.syncApps";
+    m.urlTemplate = "{+baseurl}/deviceManagement/androidManagedStoreAccountEnterpriseSettings/syncApps";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder instantiates a new SyncAppsRequestBuilder and sets the default values.

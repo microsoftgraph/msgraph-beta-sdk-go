@@ -7,8 +7,6 @@ import (
 // DeviceManagementTemplateSettingCategory 
 type DeviceManagementTemplateSettingCategory struct {
     DeviceManagementSettingCategory
-    // The settings this category contains
-    recommendedSettings []DeviceManagementSettingInstanceable
 }
 // NewDeviceManagementTemplateSettingCategory instantiates a new DeviceManagementTemplateSettingCategory and sets the default values.
 func NewDeviceManagementTemplateSettingCategory()(*DeviceManagementTemplateSettingCategory) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementTemplateSettingCategory) GetFieldDeserializers()(map[st
 }
 // GetRecommendedSettings gets the recommendedSettings property value. The settings this category contains
 func (m *DeviceManagementTemplateSettingCategory) GetRecommendedSettings()([]DeviceManagementSettingInstanceable) {
-    return m.recommendedSettings
+    val, err := m.GetBackingStore().Get("recommendedSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTemplateSettingCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementTemplateSettingCategory) Serialize(writer i878a80d2330e
 }
 // SetRecommendedSettings sets the recommendedSettings property value. The settings this category contains
 func (m *DeviceManagementTemplateSettingCategory) SetRecommendedSettings(value []DeviceManagementSettingInstanceable)() {
-    m.recommendedSettings = value
+    err := m.GetBackingStore().Set("recommendedSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementTemplateSettingCategoryable 
+type DeviceManagementTemplateSettingCategoryable interface {
+    DeviceManagementSettingCategoryable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRecommendedSettings()([]DeviceManagementSettingInstanceable)
+    SetRecommendedSettings(value []DeviceManagementSettingInstanceable)()
 }

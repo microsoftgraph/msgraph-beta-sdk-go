@@ -7,8 +7,6 @@ import (
 // PersonAnnualEventCollectionResponse 
 type PersonAnnualEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PersonAnnualEventable
 }
 // NewPersonAnnualEventCollectionResponse instantiates a new PersonAnnualEventCollectionResponse and sets the default values.
 func NewPersonAnnualEventCollectionResponse()(*PersonAnnualEventCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PersonAnnualEventCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *PersonAnnualEventCollectionResponse) GetValue()([]PersonAnnualEventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonAnnualEventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PersonAnnualEventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PersonAnnualEventCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *PersonAnnualEventCollectionResponse) SetValue(value []PersonAnnualEventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PersonAnnualEventCollectionResponseable 
+type PersonAnnualEventCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PersonAnnualEventable)
+    SetValue(value []PersonAnnualEventable)()
 }

@@ -7,8 +7,6 @@ import (
 // WorkPositionCollectionResponse 
 type WorkPositionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WorkPositionable
 }
 // NewWorkPositionCollectionResponse instantiates a new WorkPositionCollectionResponse and sets the default values.
 func NewWorkPositionCollectionResponse()(*WorkPositionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WorkPositionCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *WorkPositionCollectionResponse) GetValue()([]WorkPositionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkPositionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkPositionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WorkPositionCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *WorkPositionCollectionResponse) SetValue(value []WorkPositionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkPositionCollectionResponseable 
+type WorkPositionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WorkPositionable)
+    SetValue(value []WorkPositionable)()
 }

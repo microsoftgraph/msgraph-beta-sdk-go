@@ -7,8 +7,6 @@ import (
 // CloudPcCrossCloudGovernmentOrganizationMapping 
 type CloudPcCrossCloudGovernmentOrganizationMapping struct {
     Entity
-    // The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
-    organizationIdsInUSGovCloud []string
 }
 // NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new CloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
 func NewCloudPcCrossCloudGovernmentOrganizationMapping()(*CloudPcCrossCloudGovernmentOrganizationMapping) {
@@ -42,7 +40,14 @@ func (m *CloudPcCrossCloudGovernmentOrganizationMapping) GetFieldDeserializers()
 }
 // GetOrganizationIdsInUSGovCloud gets the organizationIdsInUSGovCloud property value. The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
 func (m *CloudPcCrossCloudGovernmentOrganizationMapping) GetOrganizationIdsInUSGovCloud()([]string) {
-    return m.organizationIdsInUSGovCloud
+    val, err := m.GetBackingStore().Get("organizationIdsInUSGovCloud")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcCrossCloudGovernmentOrganizationMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *CloudPcCrossCloudGovernmentOrganizationMapping) Serialize(writer i878a8
 }
 // SetOrganizationIdsInUSGovCloud sets the organizationIdsInUSGovCloud property value. The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
 func (m *CloudPcCrossCloudGovernmentOrganizationMapping) SetOrganizationIdsInUSGovCloud(value []string)() {
-    m.organizationIdsInUSGovCloud = value
+    err := m.GetBackingStore().Set("organizationIdsInUSGovCloud", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcCrossCloudGovernmentOrganizationMappingable 
+type CloudPcCrossCloudGovernmentOrganizationMappingable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOrganizationIdsInUSGovCloud()([]string)
+    SetOrganizationIdsInUSGovCloud(value []string)()
 }

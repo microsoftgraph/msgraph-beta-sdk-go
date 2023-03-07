@@ -7,8 +7,6 @@ import (
 // AllowedDataLocationCollectionResponse 
 type AllowedDataLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AllowedDataLocationable
 }
 // NewAllowedDataLocationCollectionResponse instantiates a new AllowedDataLocationCollectionResponse and sets the default values.
 func NewAllowedDataLocationCollectionResponse()(*AllowedDataLocationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AllowedDataLocationCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *AllowedDataLocationCollectionResponse) GetValue()([]AllowedDataLocationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AllowedDataLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AllowedDataLocationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AllowedDataLocationCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *AllowedDataLocationCollectionResponse) SetValue(value []AllowedDataLocationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AllowedDataLocationCollectionResponseable 
+type AllowedDataLocationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AllowedDataLocationable)
+    SetValue(value []AllowedDataLocationable)()
 }

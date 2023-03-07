@@ -7,8 +7,6 @@ import (
 // AuthenticationRequirementPolicyCollectionResponse 
 type AuthenticationRequirementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuthenticationRequirementPolicyable
 }
 // NewAuthenticationRequirementPolicyCollectionResponse instantiates a new AuthenticationRequirementPolicyCollectionResponse and sets the default values.
 func NewAuthenticationRequirementPolicyCollectionResponse()(*AuthenticationRequirementPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuthenticationRequirementPolicyCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *AuthenticationRequirementPolicyCollectionResponse) GetValue()([]AuthenticationRequirementPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationRequirementPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationRequirementPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationRequirementPolicyCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *AuthenticationRequirementPolicyCollectionResponse) SetValue(value []AuthenticationRequirementPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationRequirementPolicyCollectionResponseable 
+type AuthenticationRequirementPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuthenticationRequirementPolicyable)
+    SetValue(value []AuthenticationRequirementPolicyable)()
 }

@@ -53,8 +53,8 @@ func NewItemRegisteredOwnersRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRegisteredOwnersRequestBuilder instantiates a new RegisteredOwnersRequestBuilder and sets the default values.
@@ -65,11 +65,7 @@ func NewItemRegisteredOwnersRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRegisteredOwnersRequestBuilder) Count()(*ItemRegisteredOwnersCountRequestBuilder) {
-    return NewItemRegisteredOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemRegisteredOwnersRequestBuilder) Endpoint()(*ItemRegisteredOwnersEndpointRequestBuilder) {
-    return NewItemRegisteredOwnersEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRegisteredOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -93,13 +89,21 @@ func (m *ItemRegisteredOwnersRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemRegisteredOwnersRequestBuilder) GraphEndpoint()(*ItemRegisteredOwnersGraphEndpointRequestBuilder) {
+    return NewItemRegisteredOwnersGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemRegisteredOwnersRequestBuilder) GraphServicePrincipal()(*ItemRegisteredOwnersGraphServicePrincipalRequestBuilder) {
+    return NewItemRegisteredOwnersGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *ItemRegisteredOwnersRequestBuilder) GraphUser()(*ItemRegisteredOwnersGraphUserRequestBuilder) {
+    return NewItemRegisteredOwnersGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Ref provides operations to manage the collection of device entities.
 func (m *ItemRegisteredOwnersRequestBuilder) Ref()(*ItemRegisteredOwnersRefRequestBuilder) {
-    return NewItemRegisteredOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemRegisteredOwnersRequestBuilder) ServicePrincipal()(*ItemRegisteredOwnersServicePrincipalRequestBuilder) {
-    return NewItemRegisteredOwnersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRegisteredOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -116,8 +120,4 @@ func (m *ItemRegisteredOwnersRequestBuilder) ToGetRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemRegisteredOwnersRequestBuilder) User()(*ItemRegisteredOwnersUserRequestBuilder) {
-    return NewItemRegisteredOwnersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

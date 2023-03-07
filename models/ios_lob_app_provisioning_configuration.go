@@ -8,32 +8,6 @@ import (
 // IosLobAppProvisioningConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
 type IosLobAppProvisioningConfiguration struct {
     Entity
-    // The associated group assignments for IosLobAppProvisioningConfiguration.
-    assignments []IosLobAppProvisioningConfigurationAssignmentable
-    // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Admin provided description of the Device Configuration.
-    description *string
-    // The list of device installation states for this mobile app configuration.
-    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatusable
-    // Admin provided name of the device configuration.
-    displayName *string
-    // Optional profile expiration date and time.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The associated group assignments.
-    groupAssignments []MobileAppProvisioningConfigGroupAssignmentable
-    // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Payload. (UTF8 encoded byte array)
-    payload []byte
-    // Payload file name (.mobileprovision
-    payloadFileName *string
-    // List of Scope Tags for this iOS LOB app provisioning configuration entity.
-    roleScopeTagIds []string
-    // The list of user installation states for this mobile app configuration.
-    userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable
-    // Version of the device configuration.
-    version *int32
 }
 // NewIosLobAppProvisioningConfiguration instantiates a new iosLobAppProvisioningConfiguration and sets the default values.
 func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration) {
@@ -48,27 +22,69 @@ func CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAssignments gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisioningConfigurationAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosLobAppProvisioningConfigurationAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *IosLobAppProvisioningConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *IosLobAppProvisioningConfiguration) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The list of device installation states for this mobile app configuration.
 func (m *IosLobAppProvisioningConfiguration) GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatusable) {
-    return m.deviceStatuses
+    val, err := m.GetBackingStore().Get("deviceStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceMobileAppConfigurationDeviceStatusable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *IosLobAppProvisioningConfiguration) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Optional profile expiration date and time.
 func (m *IosLobAppProvisioningConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.expirationDateTime
+    val, err := m.GetBackingStore().Get("expirationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -227,31 +243,80 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetGroupAssignments gets the groupAssignments property value. The associated group assignments.
 func (m *IosLobAppProvisioningConfiguration) GetGroupAssignments()([]MobileAppProvisioningConfigGroupAssignmentable) {
-    return m.groupAssignments
+    val, err := m.GetBackingStore().Get("groupAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppProvisioningConfigGroupAssignmentable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *IosLobAppProvisioningConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosLobAppProvisioningConfiguration) GetPayload()([]byte) {
-    return m.payload
+    val, err := m.GetBackingStore().Get("payload")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileprovision
 func (m *IosLobAppProvisioningConfiguration) GetPayloadFileName()(*string) {
-    return m.payloadFileName
+    val, err := m.GetBackingStore().Get("payloadFileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this iOS LOB app provisioning configuration entity.
 func (m *IosLobAppProvisioningConfiguration) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetUserStatuses gets the userStatuses property value. The list of user installation states for this mobile app configuration.
 func (m *IosLobAppProvisioningConfiguration) GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
-    return m.userStatuses
+    val, err := m.GetBackingStore().Get("userStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceMobileAppConfigurationUserStatusable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
 func (m *IosLobAppProvisioningConfiguration) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -357,53 +422,123 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAssignments sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfiguration) SetAssignments(value []IosLobAppProvisioningConfigurationAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *IosLobAppProvisioningConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *IosLobAppProvisioningConfiguration) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The list of device installation states for this mobile app configuration.
 func (m *IosLobAppProvisioningConfiguration) SetDeviceStatuses(value []ManagedDeviceMobileAppConfigurationDeviceStatusable)() {
-    m.deviceStatuses = value
+    err := m.GetBackingStore().Set("deviceStatuses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *IosLobAppProvisioningConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Optional profile expiration date and time.
 func (m *IosLobAppProvisioningConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    err := m.GetBackingStore().Set("expirationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupAssignments sets the groupAssignments property value. The associated group assignments.
 func (m *IosLobAppProvisioningConfiguration) SetGroupAssignments(value []MobileAppProvisioningConfigGroupAssignmentable)() {
-    m.groupAssignments = value
+    err := m.GetBackingStore().Set("groupAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *IosLobAppProvisioningConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosLobAppProvisioningConfiguration) SetPayload(value []byte)() {
-    m.payload = value
+    err := m.GetBackingStore().Set("payload", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPayloadFileName sets the payloadFileName property value. Payload file name (.mobileprovision
 func (m *IosLobAppProvisioningConfiguration) SetPayloadFileName(value *string)() {
-    m.payloadFileName = value
+    err := m.GetBackingStore().Set("payloadFileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this iOS LOB app provisioning configuration entity.
 func (m *IosLobAppProvisioningConfiguration) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserStatuses sets the userStatuses property value. The list of user installation states for this mobile app configuration.
 func (m *IosLobAppProvisioningConfiguration) SetUserStatuses(value []ManagedDeviceMobileAppConfigurationUserStatusable)() {
-    m.userStatuses = value
+    err := m.GetBackingStore().Set("userStatuses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *IosLobAppProvisioningConfiguration) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosLobAppProvisioningConfigurationable 
+type IosLobAppProvisioningConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]IosLobAppProvisioningConfigurationAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatusable)
+    GetDisplayName()(*string)
+    GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetGroupAssignments()([]MobileAppProvisioningConfigGroupAssignmentable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPayload()([]byte)
+    GetPayloadFileName()(*string)
+    GetRoleScopeTagIds()([]string)
+    GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatusable)
+    GetVersion()(*int32)
+    SetAssignments(value []IosLobAppProvisioningConfigurationAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDeviceStatuses(value []ManagedDeviceMobileAppConfigurationDeviceStatusable)()
+    SetDisplayName(value *string)()
+    SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetGroupAssignments(value []MobileAppProvisioningConfigGroupAssignmentable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPayload(value []byte)()
+    SetPayloadFileName(value *string)()
+    SetRoleScopeTagIds(value []string)()
+    SetUserStatuses(value []ManagedDeviceMobileAppConfigurationUserStatusable)()
+    SetVersion(value *int32)()
 }

@@ -7,8 +7,6 @@ import (
 // MicrosoftTunnelConfigurationCollectionResponse 
 type MicrosoftTunnelConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MicrosoftTunnelConfigurationable
 }
 // NewMicrosoftTunnelConfigurationCollectionResponse instantiates a new MicrosoftTunnelConfigurationCollectionResponse and sets the default values.
 func NewMicrosoftTunnelConfigurationCollectionResponse()(*MicrosoftTunnelConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MicrosoftTunnelConfigurationCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftTunnelConfigurationCollectionResponse) GetValue()([]MicrosoftTunnelConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftTunnelConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MicrosoftTunnelConfigurationCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftTunnelConfigurationCollectionResponse) SetValue(value []MicrosoftTunnelConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftTunnelConfigurationCollectionResponseable 
+type MicrosoftTunnelConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MicrosoftTunnelConfigurationable)
+    SetValue(value []MicrosoftTunnelConfigurationable)()
 }

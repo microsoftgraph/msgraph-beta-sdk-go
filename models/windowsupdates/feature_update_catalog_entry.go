@@ -7,16 +7,14 @@ import (
 // FeatureUpdateCatalogEntry 
 type FeatureUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
-    // The version of the feature update. Read-only.
-    version *string
 }
 // NewFeatureUpdateCatalogEntry instantiates a new FeatureUpdateCatalogEntry and sets the default values.
 func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
     m := &FeatureUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFeatureUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *FeatureUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878
 }
 // GetVersion gets the version property value. The version of the feature update. Read-only.
 func (m *FeatureUpdateCatalogEntry) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FeatureUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *FeatureUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetVersion sets the version property value. The version of the feature update. Read-only.
 func (m *FeatureUpdateCatalogEntry) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FeatureUpdateCatalogEntryable 
+type FeatureUpdateCatalogEntryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SoftwareUpdateCatalogEntryable
+    GetVersion()(*string)
+    SetVersion(value *string)()
 }

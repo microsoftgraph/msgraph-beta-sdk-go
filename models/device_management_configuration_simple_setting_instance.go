@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationSimpleSettingInstance 
 type DeviceManagementConfigurationSimpleSettingInstance struct {
     DeviceManagementConfigurationSettingInstance
-    // The simpleSettingValue property
-    simpleSettingValue DeviceManagementConfigurationSimpleSettingValueable
 }
 // NewDeviceManagementConfigurationSimpleSettingInstance instantiates a new DeviceManagementConfigurationSimpleSettingInstance and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingInstance()(*DeviceManagementConfigurationSimpleSettingInstance) {
     m := &DeviceManagementConfigurationSimpleSettingInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementConfigurationSimpleSettingInstance) GetFieldDeserialize
 }
 // GetSimpleSettingValue gets the simpleSettingValue property value. The simpleSettingValue property
 func (m *DeviceManagementConfigurationSimpleSettingInstance) GetSimpleSettingValue()(DeviceManagementConfigurationSimpleSettingValueable) {
-    return m.simpleSettingValue
+    val, err := m.GetBackingStore().Get("simpleSettingValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationSimpleSettingValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationSimpleSettingInstance) Serialize(writer i8
 }
 // SetSimpleSettingValue sets the simpleSettingValue property value. The simpleSettingValue property
 func (m *DeviceManagementConfigurationSimpleSettingInstance) SetSimpleSettingValue(value DeviceManagementConfigurationSimpleSettingValueable)() {
-    m.simpleSettingValue = value
+    err := m.GetBackingStore().Set("simpleSettingValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSimpleSettingInstanceable 
+type DeviceManagementConfigurationSimpleSettingInstanceable interface {
+    DeviceManagementConfigurationSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSimpleSettingValue()(DeviceManagementConfigurationSimpleSettingValueable)
+    SetSimpleSettingValue(value DeviceManagementConfigurationSimpleSettingValueable)()
 }

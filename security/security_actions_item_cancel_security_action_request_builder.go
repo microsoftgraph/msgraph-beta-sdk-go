@@ -26,13 +26,13 @@ type SecurityActionsItemCancelSecurityActionRequestBuilderPostRequestConfigurati
 func NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityActionsItemCancelSecurityActionRequestBuilder) {
     m := &SecurityActionsItemCancelSecurityActionRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/securityActions/{securityAction%2Did}/microsoft.graph.cancelSecurityAction";
+    m.urlTemplate = "{+baseurl}/security/securityActions/{securityAction%2Did}/cancelSecurityAction";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSecurityActionsItemCancelSecurityActionRequestBuilder instantiates a new CancelSecurityActionRequestBuilder and sets the default values.

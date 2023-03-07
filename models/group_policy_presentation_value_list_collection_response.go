@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueListCollectionResponse 
 type GroupPolicyPresentationValueListCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationValueListable
 }
 // NewGroupPolicyPresentationValueListCollectionResponse instantiates a new GroupPolicyPresentationValueListCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationValueListCollectionResponse()(*GroupPolicyPresentationValueListCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueListCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationValueListCollectionResponse) GetValue()([]GroupPolicyPresentationValueListable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationValueListable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueListCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationValueListCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationValueListCollectionResponse) SetValue(value []GroupPolicyPresentationValueListable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueListCollectionResponseable 
+type GroupPolicyPresentationValueListCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationValueListable)
+    SetValue(value []GroupPolicyPresentationValueListable)()
 }

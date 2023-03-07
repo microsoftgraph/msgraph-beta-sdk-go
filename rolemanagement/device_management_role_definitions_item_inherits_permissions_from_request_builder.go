@@ -60,8 +60,8 @@ func NewDeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder instantiates a new InheritsPermissionsFromRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) Count()(*DeviceManagementRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) {
-    return NewDeviceManagementRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *DeviceManagementRoleDefinitionsItemInheritsPermissionsFromRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

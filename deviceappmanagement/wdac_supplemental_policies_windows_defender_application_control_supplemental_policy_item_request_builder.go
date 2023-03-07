@@ -48,11 +48,11 @@ type WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicy
 }
 // Assign provides operations to call the assign method.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) Assign()(*WdacSupplementalPoliciesItemAssignRequestBuilder) {
-    return NewWdacSupplementalPoliciesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWdacSupplementalPoliciesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) Assignments()(*WdacSupplementalPoliciesItemAssignmentsRequestBuilder) {
-    return NewWdacSupplementalPoliciesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWdacSupplementalPoliciesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) AssignmentsById(id string)(*WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilder) {
@@ -63,7 +63,7 @@ func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPo
     if id != "" {
         urlTplParams["windowsDefenderApplicationControlSupplementalPolicyAssignment%2Did"] = id
     }
-    return NewWdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal instantiates a new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder and sets the default values.
 func NewWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) {
@@ -74,8 +74,8 @@ func NewWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPol
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder instantiates a new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder and sets the default values.
@@ -102,11 +102,11 @@ func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPo
 }
 // DeploySummary provides operations to manage the deploySummary property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) DeploySummary()(*WdacSupplementalPoliciesItemDeploySummaryRequestBuilder) {
-    return NewWdacSupplementalPoliciesItemDeploySummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWdacSupplementalPoliciesItemDeploySummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) DeviceStatuses()(*WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) {
-    return NewWdacSupplementalPoliciesItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWdacSupplementalPoliciesItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) DeviceStatusesById(id string)(*WdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) {
@@ -117,7 +117,7 @@ func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPo
     if id != "" {
         urlTplParams["windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus%2Did"] = id
     }
-    return NewWdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the collection of Windows Defender Application Control Supplemental Policies.
 func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, error) {
@@ -192,7 +192,10 @@ func (m *WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

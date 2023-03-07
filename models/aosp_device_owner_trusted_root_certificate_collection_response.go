@@ -7,8 +7,6 @@ import (
 // AospDeviceOwnerTrustedRootCertificateCollectionResponse 
 type AospDeviceOwnerTrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AospDeviceOwnerTrustedRootCertificateable
 }
 // NewAospDeviceOwnerTrustedRootCertificateCollectionResponse instantiates a new AospDeviceOwnerTrustedRootCertificateCollectionResponse and sets the default values.
 func NewAospDeviceOwnerTrustedRootCertificateCollectionResponse()(*AospDeviceOwnerTrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AospDeviceOwnerTrustedRootCertificateCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *AospDeviceOwnerTrustedRootCertificateCollectionResponse) GetValue()([]AospDeviceOwnerTrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AospDeviceOwnerTrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerTrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AospDeviceOwnerTrustedRootCertificateCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *AospDeviceOwnerTrustedRootCertificateCollectionResponse) SetValue(value []AospDeviceOwnerTrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AospDeviceOwnerTrustedRootCertificateCollectionResponseable 
+type AospDeviceOwnerTrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AospDeviceOwnerTrustedRootCertificateable)
+    SetValue(value []AospDeviceOwnerTrustedRootCertificateable)()
 }

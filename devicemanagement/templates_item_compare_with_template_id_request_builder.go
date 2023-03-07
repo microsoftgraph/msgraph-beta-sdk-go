@@ -41,7 +41,7 @@ type TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration str
 func NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, templateId *string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
     m := &TemplatesItemCompareWithTemplateIdRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/microsoft.graph.compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -49,8 +49,8 @@ func NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(pathParameters 
     if templateId != nil {
         urlTplParams["templateId"] = *templateId
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTemplatesItemCompareWithTemplateIdRequestBuilder instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.

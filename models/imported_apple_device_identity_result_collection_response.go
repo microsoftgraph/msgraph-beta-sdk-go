@@ -7,8 +7,6 @@ import (
 // ImportedAppleDeviceIdentityResultCollectionResponse 
 type ImportedAppleDeviceIdentityResultCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ImportedAppleDeviceIdentityResultable
 }
 // NewImportedAppleDeviceIdentityResultCollectionResponse instantiates a new ImportedAppleDeviceIdentityResultCollectionResponse and sets the default values.
 func NewImportedAppleDeviceIdentityResultCollectionResponse()(*ImportedAppleDeviceIdentityResultCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ImportedAppleDeviceIdentityResultCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *ImportedAppleDeviceIdentityResultCollectionResponse) GetValue()([]ImportedAppleDeviceIdentityResultable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ImportedAppleDeviceIdentityResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImportedAppleDeviceIdentityResultCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ImportedAppleDeviceIdentityResultCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *ImportedAppleDeviceIdentityResultCollectionResponse) SetValue(value []ImportedAppleDeviceIdentityResultable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImportedAppleDeviceIdentityResultCollectionResponseable 
+type ImportedAppleDeviceIdentityResultCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ImportedAppleDeviceIdentityResultable)
+    SetValue(value []ImportedAppleDeviceIdentityResultable)()
 }

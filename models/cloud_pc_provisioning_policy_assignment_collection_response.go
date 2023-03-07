@@ -7,8 +7,6 @@ import (
 // CloudPcProvisioningPolicyAssignmentCollectionResponse 
 type CloudPcProvisioningPolicyAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CloudPcProvisioningPolicyAssignmentable
 }
 // NewCloudPcProvisioningPolicyAssignmentCollectionResponse instantiates a new CloudPcProvisioningPolicyAssignmentCollectionResponse and sets the default values.
 func NewCloudPcProvisioningPolicyAssignmentCollectionResponse()(*CloudPcProvisioningPolicyAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CloudPcProvisioningPolicyAssignmentCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *CloudPcProvisioningPolicyAssignmentCollectionResponse) GetValue()([]CloudPcProvisioningPolicyAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcProvisioningPolicyAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcProvisioningPolicyAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CloudPcProvisioningPolicyAssignmentCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *CloudPcProvisioningPolicyAssignmentCollectionResponse) SetValue(value []CloudPcProvisioningPolicyAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcProvisioningPolicyAssignmentCollectionResponseable 
+type CloudPcProvisioningPolicyAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CloudPcProvisioningPolicyAssignmentable)
+    SetValue(value []CloudPcProvisioningPolicyAssignmentable)()
 }

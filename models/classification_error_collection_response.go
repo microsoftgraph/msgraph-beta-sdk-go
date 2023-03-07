@@ -7,8 +7,6 @@ import (
 // ClassificationErrorCollectionResponse 
 type ClassificationErrorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ClassificationErrorable
 }
 // NewClassificationErrorCollectionResponse instantiates a new ClassificationErrorCollectionResponse and sets the default values.
 func NewClassificationErrorCollectionResponse()(*ClassificationErrorCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ClassificationErrorCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *ClassificationErrorCollectionResponse) GetValue()([]ClassificationErrorable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ClassificationErrorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ClassificationErrorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ClassificationErrorCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *ClassificationErrorCollectionResponse) SetValue(value []ClassificationErrorable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ClassificationErrorCollectionResponseable 
+type ClassificationErrorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ClassificationErrorable)
+    SetValue(value []ClassificationErrorable)()
 }

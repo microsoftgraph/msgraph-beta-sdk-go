@@ -7,8 +7,6 @@ import (
 // PayloadCollectionResponse 
 type PayloadCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Payloadable
 }
 // NewPayloadCollectionResponse instantiates a new PayloadCollectionResponse and sets the default values.
 func NewPayloadCollectionResponse()(*PayloadCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PayloadCollectionResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value property
 func (m *PayloadCollectionResponse) GetValue()([]Payloadable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Payloadable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PayloadCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PayloadCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value property
 func (m *PayloadCollectionResponse) SetValue(value []Payloadable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PayloadCollectionResponseable 
+type PayloadCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Payloadable)
+    SetValue(value []Payloadable)()
 }

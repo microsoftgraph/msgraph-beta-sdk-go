@@ -8,26 +8,6 @@ import (
 // PlannerPlan 
 type PlannerPlan struct {
     PlannerDelta
-    // Collection of buckets in the plan. Read-only. Nullable.
-    buckets []PlannerBucketable
-    // Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
-    container PlannerPlanContainerable
-    // Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
-    contexts PlannerPlanContextCollectionable
-    // Read-only. The user who created the plan.
-    createdBy IdentitySetable
-    // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Contains information about the origin of the plan.
-    creationSource PlannerPlanCreationable
-    // Additional details about the plan. Read-only. Nullable.
-    details PlannerPlanDetailsable
-    // The owner property
-    owner *string
-    // Collection of tasks in the plan. Read-only. Nullable.
-    tasks []PlannerTaskable
-    // Required. Title of the plan.
-    title *string
 }
 // NewPlannerPlan instantiates a new plannerPlan and sets the default values.
 func NewPlannerPlan()(*PlannerPlan) {
@@ -42,31 +22,80 @@ func CreatePlannerPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetBuckets gets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
-    return m.buckets
+    val, err := m.GetBackingStore().Get("buckets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerBucketable)
+    }
+    return nil
 }
 // GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
 func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
-    return m.container
+    val, err := m.GetBackingStore().Get("container")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerPlanContainerable)
+    }
+    return nil
 }
 // GetContexts gets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
 func (m *PlannerPlan) GetContexts()(PlannerPlanContextCollectionable) {
-    return m.contexts
+    val, err := m.GetBackingStore().Get("contexts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerPlanContextCollectionable)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. Read-only. The user who created the plan.
 func (m *PlannerPlan) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreationSource gets the creationSource property value. Contains information about the origin of the plan.
 func (m *PlannerPlan) GetCreationSource()(PlannerPlanCreationable) {
-    return m.creationSource
+    val, err := m.GetBackingStore().Get("creationSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerPlanCreationable)
+    }
+    return nil
 }
 // GetDetails gets the details property value. Additional details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
-    return m.details
+    val, err := m.GetBackingStore().Get("details")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerPlanDetailsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,6 +184,20 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["sharedWithContainers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerSharedWithContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerSharedWithContainerable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerSharedWithContainerable)
+            }
+            m.SetSharedWithContainers(res)
+        }
+        return nil
+    }
     res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
         if err != nil {
@@ -183,15 +226,47 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOwner gets the owner property value. The owner property
 func (m *PlannerPlan) GetOwner()(*string) {
-    return m.owner
+    val, err := m.GetBackingStore().Get("owner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSharedWithContainers gets the sharedWithContainers property value. The sharedWithContainers property
+func (m *PlannerPlan) GetSharedWithContainers()([]PlannerSharedWithContainerable) {
+    val, err := m.GetBackingStore().Get("sharedWithContainers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerSharedWithContainerable)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetTasks()([]PlannerTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskable)
+    }
+    return nil
 }
 // GetTitle gets the title property value. Required. Title of the plan.
 func (m *PlannerPlan) GetTitle()(*string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -251,6 +326,16 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetSharedWithContainers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedWithContainers()))
+        for i, v := range m.GetSharedWithContainers() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("sharedWithContainers", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
@@ -271,41 +356,105 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetBuckets sets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
-    m.buckets = value
+    err := m.GetBackingStore().Set("buckets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
 func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
-    m.container = value
+    err := m.GetBackingStore().Set("container", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContexts sets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
 func (m *PlannerPlan) SetContexts(value PlannerPlanContextCollectionable)() {
-    m.contexts = value
+    err := m.GetBackingStore().Set("contexts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. Read-only. The user who created the plan.
 func (m *PlannerPlan) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreationSource sets the creationSource property value. Contains information about the origin of the plan.
 func (m *PlannerPlan) SetCreationSource(value PlannerPlanCreationable)() {
-    m.creationSource = value
+    err := m.GetBackingStore().Set("creationSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetails sets the details property value. Additional details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
-    m.details = value
+    err := m.GetBackingStore().Set("details", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwner sets the owner property value. The owner property
 func (m *PlannerPlan) SetOwner(value *string)() {
-    m.owner = value
+    err := m.GetBackingStore().Set("owner", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSharedWithContainers sets the sharedWithContainers property value. The sharedWithContainers property
+func (m *PlannerPlan) SetSharedWithContainers(value []PlannerSharedWithContainerable)() {
+    err := m.GetBackingStore().Set("sharedWithContainers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetTasks(value []PlannerTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. Required. Title of the plan.
 func (m *PlannerPlan) SetTitle(value *string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanable 
+type PlannerPlanable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PlannerDeltaable
+    GetBuckets()([]PlannerBucketable)
+    GetContainer()(PlannerPlanContainerable)
+    GetContexts()(PlannerPlanContextCollectionable)
+    GetCreatedBy()(IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCreationSource()(PlannerPlanCreationable)
+    GetDetails()(PlannerPlanDetailsable)
+    GetOwner()(*string)
+    GetSharedWithContainers()([]PlannerSharedWithContainerable)
+    GetTasks()([]PlannerTaskable)
+    GetTitle()(*string)
+    SetBuckets(value []PlannerBucketable)()
+    SetContainer(value PlannerPlanContainerable)()
+    SetContexts(value PlannerPlanContextCollectionable)()
+    SetCreatedBy(value IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCreationSource(value PlannerPlanCreationable)()
+    SetDetails(value PlannerPlanDetailsable)()
+    SetOwner(value *string)()
+    SetSharedWithContainers(value []PlannerSharedWithContainerable)()
+    SetTasks(value []PlannerTaskable)()
+    SetTitle(value *string)()
 }

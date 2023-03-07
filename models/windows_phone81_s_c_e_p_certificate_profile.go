@@ -7,30 +7,14 @@ import (
 // WindowsPhone81SCEPCertificateProfile 
 type WindowsPhone81SCEPCertificateProfile struct {
     WindowsPhone81CertificateProfileBase
-    // Hash Algorithm Options.
-    hashAlgorithm *HashAlgorithms
-    // Key Size Options.
-    keySize *KeySize
-    // Key Usage Options.
-    keyUsage *KeyUsages
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
-    // Trusted Root Certificate.
-    rootCertificate WindowsPhone81TrustedRootCertificateable
-    // SCEP Server Url(s).
-    scepServerUrls []string
-    // Custom String that defines the AAD Attribute.
-    subjectAlternativeNameFormatString *string
-    // Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
-    subjectNameFormatString *string
 }
 // NewWindowsPhone81SCEPCertificateProfile instantiates a new WindowsPhone81SCEPCertificateProfile and sets the default values.
 func NewWindowsPhone81SCEPCertificateProfile()(*WindowsPhone81SCEPCertificateProfile) {
     m := &WindowsPhone81SCEPCertificateProfile{
         WindowsPhone81CertificateProfileBase: *NewWindowsPhone81CertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81SCEPCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81SCEPCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81SCEPCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -132,35 +116,91 @@ func (m *WindowsPhone81SCEPCertificateProfile) GetFieldDeserializers()(map[strin
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *WindowsPhone81SCEPCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
-    return m.hashAlgorithm
+    val, err := m.GetBackingStore().Get("hashAlgorithm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*HashAlgorithms)
+    }
+    return nil
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *WindowsPhone81SCEPCertificateProfile) GetKeySize()(*KeySize) {
-    return m.keySize
+    val, err := m.GetBackingStore().Get("keySize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*KeySize)
+    }
+    return nil
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *WindowsPhone81SCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    return m.keyUsage
+    val, err := m.GetBackingStore().Get("keyUsage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*KeyUsages)
+    }
+    return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *WindowsPhone81SCEPCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *WindowsPhone81SCEPCertificateProfile) GetRootCertificate()(WindowsPhone81TrustedRootCertificateable) {
-    return m.rootCertificate
+    val, err := m.GetBackingStore().Get("rootCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsPhone81TrustedRootCertificateable)
+    }
+    return nil
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
 func (m *WindowsPhone81SCEPCertificateProfile) GetScepServerUrls()([]string) {
-    return m.scepServerUrls
+    val, err := m.GetBackingStore().Get("scepServerUrls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *WindowsPhone81SCEPCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    return m.subjectAlternativeNameFormatString
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *WindowsPhone81SCEPCertificateProfile) GetSubjectNameFormatString()(*string) {
-    return m.subjectNameFormatString
+    val, err := m.GetBackingStore().Get("subjectNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,33 +267,78 @@ func (m *WindowsPhone81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *WindowsPhone81SCEPCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
-    m.hashAlgorithm = value
+    err := m.GetBackingStore().Set("hashAlgorithm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *WindowsPhone81SCEPCertificateProfile) SetKeySize(value *KeySize)() {
-    m.keySize = value
+    err := m.GetBackingStore().Set("keySize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *WindowsPhone81SCEPCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    m.keyUsage = value
+    err := m.GetBackingStore().Set("keyUsage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *WindowsPhone81SCEPCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *WindowsPhone81SCEPCertificateProfile) SetRootCertificate(value WindowsPhone81TrustedRootCertificateable)() {
-    m.rootCertificate = value
+    err := m.GetBackingStore().Set("rootCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s).
 func (m *WindowsPhone81SCEPCertificateProfile) SetScepServerUrls(value []string)() {
-    m.scepServerUrls = value
+    err := m.GetBackingStore().Set("scepServerUrls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *WindowsPhone81SCEPCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    m.subjectAlternativeNameFormatString = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *WindowsPhone81SCEPCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    m.subjectNameFormatString = value
+    err := m.GetBackingStore().Set("subjectNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81SCEPCertificateProfileable 
+type WindowsPhone81SCEPCertificateProfileable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsPhone81CertificateProfileBaseable
+    GetHashAlgorithm()(*HashAlgorithms)
+    GetKeySize()(*KeySize)
+    GetKeyUsage()(*KeyUsages)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetRootCertificate()(WindowsPhone81TrustedRootCertificateable)
+    GetScepServerUrls()([]string)
+    GetSubjectAlternativeNameFormatString()(*string)
+    GetSubjectNameFormatString()(*string)
+    SetHashAlgorithm(value *HashAlgorithms)()
+    SetKeySize(value *KeySize)()
+    SetKeyUsage(value *KeyUsages)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetRootCertificate(value WindowsPhone81TrustedRootCertificateable)()
+    SetScepServerUrls(value []string)()
+    SetSubjectAlternativeNameFormatString(value *string)()
+    SetSubjectNameFormatString(value *string)()
 }

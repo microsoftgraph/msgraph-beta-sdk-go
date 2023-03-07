@@ -7,8 +7,6 @@ import (
 // MobileAppDependencyCollectionResponse 
 type MobileAppDependencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppDependencyable
 }
 // NewMobileAppDependencyCollectionResponse instantiates a new MobileAppDependencyCollectionResponse and sets the default values.
 func NewMobileAppDependencyCollectionResponse()(*MobileAppDependencyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppDependencyCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppDependencyCollectionResponse) GetValue()([]MobileAppDependencyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppDependencyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppDependencyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppDependencyCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppDependencyCollectionResponse) SetValue(value []MobileAppDependencyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppDependencyCollectionResponseable 
+type MobileAppDependencyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppDependencyable)
+    SetValue(value []MobileAppDependencyable)()
 }

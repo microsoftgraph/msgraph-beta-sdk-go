@@ -7,16 +7,14 @@ import (
 // OfficeConfigurationGroupAssignmentTarget 
 type OfficeConfigurationGroupAssignmentTarget struct {
     OfficeConfigurationAssignmentTarget
-    // The Id of the AAD group we are targeting the device configuration to.
-    groupId *string
 }
 // NewOfficeConfigurationGroupAssignmentTarget instantiates a new OfficeConfigurationGroupAssignmentTarget and sets the default values.
 func NewOfficeConfigurationGroupAssignmentTarget()(*OfficeConfigurationGroupAssignmentTarget) {
     m := &OfficeConfigurationGroupAssignmentTarget{
         OfficeConfigurationAssignmentTarget: *NewOfficeConfigurationAssignmentTarget(),
     }
-    odataTypeValue := "#microsoft.graph.officeConfigurationGroupAssignmentTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.officeConfigurationGroupAssignmentTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOfficeConfigurationGroupAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *OfficeConfigurationGroupAssignmentTarget) GetFieldDeserializers()(map[s
 }
 // GetGroupId gets the groupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *OfficeConfigurationGroupAssignmentTarget) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OfficeConfigurationGroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *OfficeConfigurationGroupAssignmentTarget) Serialize(writer i878a80d2330
 }
 // SetGroupId sets the groupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *OfficeConfigurationGroupAssignmentTarget) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OfficeConfigurationGroupAssignmentTargetable 
+type OfficeConfigurationGroupAssignmentTargetable interface {
+    OfficeConfigurationAssignmentTargetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupId()(*string)
+    SetGroupId(value *string)()
 }

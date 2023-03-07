@@ -7,18 +7,14 @@ import (
 // AzureADDevice 
 type AzureADDevice struct {
     UpdatableAsset
-    // Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
-    enrollments []UpdatableAssetEnrollmentable
-    // Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
-    errors []UpdatableAssetErrorable
 }
 // NewAzureADDevice instantiates a new AzureADDevice and sets the default values.
 func NewAzureADDevice()(*AzureADDevice) {
     m := &AzureADDevice{
         UpdatableAsset: *NewUpdatableAsset(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDevice";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDevice"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureADDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,11 +23,25 @@ func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetEnrollments gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
-    return m.enrollments
+    val, err := m.GetBackingStore().Get("enrollments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UpdatableAssetEnrollmentable)
+    }
+    return nil
 }
 // GetErrors gets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
 func (m *AzureADDevice) GetErrors()([]UpdatableAssetErrorable) {
-    return m.errors
+    val, err := m.GetBackingStore().Get("errors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UpdatableAssetErrorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureADDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,9 +106,24 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetEnrollments sets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) SetEnrollments(value []UpdatableAssetEnrollmentable)() {
-    m.enrollments = value
+    err := m.GetBackingStore().Set("enrollments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrors sets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
 func (m *AzureADDevice) SetErrors(value []UpdatableAssetErrorable)() {
-    m.errors = value
+    err := m.GetBackingStore().Set("errors", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureADDeviceable 
+type AzureADDeviceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UpdatableAssetable
+    GetEnrollments()([]UpdatableAssetEnrollmentable)
+    GetErrors()([]UpdatableAssetErrorable)
+    SetEnrollments(value []UpdatableAssetEnrollmentable)()
+    SetErrors(value []UpdatableAssetErrorable)()
 }

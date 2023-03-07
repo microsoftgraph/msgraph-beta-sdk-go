@@ -53,8 +53,8 @@ func NewLifecycleWorkflowsTaskDefinitionsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsTaskDefinitionsRequestBuilder instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewLifecycleWorkflowsTaskDefinitionsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) Count()(*LifecycleWorkflowsTaskDefinitionsCountRequestBuilder) {
-    return NewLifecycleWorkflowsTaskDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsTaskDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the taskDefinition objects and their properties.
 // [Find more info here]

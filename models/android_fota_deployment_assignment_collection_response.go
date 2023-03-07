@@ -7,8 +7,6 @@ import (
 // AndroidFotaDeploymentAssignmentCollectionResponse 
 type AndroidFotaDeploymentAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidFotaDeploymentAssignmentable
 }
 // NewAndroidFotaDeploymentAssignmentCollectionResponse instantiates a new AndroidFotaDeploymentAssignmentCollectionResponse and sets the default values.
 func NewAndroidFotaDeploymentAssignmentCollectionResponse()(*AndroidFotaDeploymentAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidFotaDeploymentAssignmentCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidFotaDeploymentAssignmentCollectionResponse) GetValue()([]AndroidFotaDeploymentAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidFotaDeploymentAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidFotaDeploymentAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidFotaDeploymentAssignmentCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidFotaDeploymentAssignmentCollectionResponse) SetValue(value []AndroidFotaDeploymentAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidFotaDeploymentAssignmentCollectionResponseable 
+type AndroidFotaDeploymentAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidFotaDeploymentAssignmentable)
+    SetValue(value []AndroidFotaDeploymentAssignmentable)()
 }

@@ -7,12 +7,8 @@ import (
 // UnifiedRbacResourceScope 
 type UnifiedRbacResourceScope struct {
     Entity
-    // The displayName property
-    displayName *string
-    // The scope property
-    scope *string
     // The type property
-    type_escaped *string
+    TypeEscaped *string
 }
 // NewUnifiedRbacResourceScope instantiates a new unifiedRbacResourceScope and sets the default values.
 func NewUnifiedRbacResourceScope()(*UnifiedRbacResourceScope) {
@@ -27,7 +23,14 @@ func CreateUnifiedRbacResourceScopeFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *UnifiedRbacResourceScope) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,11 +69,25 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetScope gets the scope property value. The scope property
 func (m *UnifiedRbacResourceScope) GetScope()(*string) {
-    return m.scope
+    val, err := m.GetBackingStore().Get("scope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *UnifiedRbacResourceScope) GetType()(*string) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRbacResourceScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +117,33 @@ func (m *UnifiedRbacResourceScope) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *UnifiedRbacResourceScope) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScope sets the scope property value. The scope property
 func (m *UnifiedRbacResourceScope) SetScope(value *string)() {
-    m.scope = value
+    err := m.GetBackingStore().Set("scope", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *UnifiedRbacResourceScope) SetType(value *string)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRbacResourceScopeable 
+type UnifiedRbacResourceScopeable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetScope()(*string)
+    GetType()(*string)
+    SetDisplayName(value *string)()
+    SetScope(value *string)()
+    SetType(value *string)()
 }

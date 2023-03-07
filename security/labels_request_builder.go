@@ -55,8 +55,8 @@ func NewLabelsRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *LabelsRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802b
 }
 // RetentionLabels provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
 func (m *LabelsRequestBuilder) RetentionLabels()(*LabelsRetentionLabelsRequestBuilder) {
-    return NewLabelsRetentionLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLabelsRetentionLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RetentionLabelsById provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
 func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*LabelsRetentionLa
     if id != "" {
         urlTplParams["retentionLabel%2Did"] = id
     }
-    return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property labels for security
 func (m *LabelsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *LabelsRequestBuilder) ToPatchRequestInformation(ctx context.Context, bo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

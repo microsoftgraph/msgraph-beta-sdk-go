@@ -60,8 +60,8 @@ func NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder instantiates a new UnsupportedGroupPolicyExtensionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBu
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) Count()(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsCountRequestBuilder) {
-    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a list of unsupported group policy extensions inside the Group Policy Object.
 func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

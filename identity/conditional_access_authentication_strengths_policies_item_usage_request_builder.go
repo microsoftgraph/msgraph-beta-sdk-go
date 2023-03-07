@@ -27,13 +27,13 @@ type ConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilderGetR
 func NewConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilder) {
     m := &ConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy%2Did}/microsoft.graph.usage()";
+    m.urlTemplate = "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy%2Did}/usage()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessAuthenticationStrengthsPoliciesItemUsageRequestBuilder instantiates a new UsageRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // LearningProviderCollectionResponse 
 type LearningProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []LearningProviderable
 }
 // NewLearningProviderCollectionResponse instantiates a new LearningProviderCollectionResponse and sets the default values.
 func NewLearningProviderCollectionResponse()(*LearningProviderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *LearningProviderCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *LearningProviderCollectionResponse) GetValue()([]LearningProviderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LearningProviderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LearningProviderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *LearningProviderCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *LearningProviderCollectionResponse) SetValue(value []LearningProviderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LearningProviderCollectionResponseable 
+type LearningProviderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]LearningProviderable)
+    SetValue(value []LearningProviderable)()
 }

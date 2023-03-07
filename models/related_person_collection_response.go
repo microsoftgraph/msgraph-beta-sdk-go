@@ -7,8 +7,6 @@ import (
 // RelatedPersonCollectionResponse 
 type RelatedPersonCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RelatedPersonable
 }
 // NewRelatedPersonCollectionResponse instantiates a new RelatedPersonCollectionResponse and sets the default values.
 func NewRelatedPersonCollectionResponse()(*RelatedPersonCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RelatedPersonCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *RelatedPersonCollectionResponse) GetValue()([]RelatedPersonable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RelatedPersonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RelatedPersonCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RelatedPersonCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *RelatedPersonCollectionResponse) SetValue(value []RelatedPersonable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RelatedPersonCollectionResponseable 
+type RelatedPersonCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RelatedPersonable)
+    SetValue(value []RelatedPersonable)()
 }

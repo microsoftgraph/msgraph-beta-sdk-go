@@ -7,8 +7,6 @@ import (
 // MicrosoftTunnelServerCollectionResponse 
 type MicrosoftTunnelServerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MicrosoftTunnelServerable
 }
 // NewMicrosoftTunnelServerCollectionResponse instantiates a new MicrosoftTunnelServerCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerCollectionResponse()(*MicrosoftTunnelServerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MicrosoftTunnelServerCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftTunnelServerCollectionResponse) GetValue()([]MicrosoftTunnelServerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftTunnelServerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelServerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MicrosoftTunnelServerCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftTunnelServerCollectionResponse) SetValue(value []MicrosoftTunnelServerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftTunnelServerCollectionResponseable 
+type MicrosoftTunnelServerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MicrosoftTunnelServerable)
+    SetValue(value []MicrosoftTunnelServerable)()
 }

@@ -60,8 +60,8 @@ func NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder instantiates a new InternalSponsorsRequestBuilder and sets the default values.
@@ -72,7 +72,11 @@ func NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBu
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) Count()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsCountRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) Delta()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsDeltaRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 // [Find more info here]
@@ -98,11 +102,11 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestB
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) GetByIds()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsGetByIdsRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) GetUserOwnedObjects()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsGetUserOwnedObjectsRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to internalSponsors for identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -125,7 +129,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestB
 }
 // Ref provides operations to manage the collection of identityGovernance entities.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) Ref()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -150,7 +154,10 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -159,5 +166,5 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestB
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRequestBuilder) ValidateProperties()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsValidatePropertiesRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

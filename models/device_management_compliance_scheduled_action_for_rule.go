@@ -7,10 +7,6 @@ import (
 // DeviceManagementComplianceScheduledActionForRule scheduled Action for Rule
 type DeviceManagementComplianceScheduledActionForRule struct {
     Entity
-    // Name of the rule which this scheduled action applies to.
-    ruleName *string
-    // The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-    scheduledActionConfigurations []DeviceManagementComplianceActionItemable
 }
 // NewDeviceManagementComplianceScheduledActionForRule instantiates a new deviceManagementComplianceScheduledActionForRule and sets the default values.
 func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComplianceScheduledActionForRule) {
@@ -54,11 +50,25 @@ func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers
 }
 // GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to.
 func (m *DeviceManagementComplianceScheduledActionForRule) GetRuleName()(*string) {
-    return m.ruleName
+    val, err := m.GetBackingStore().Get("ruleName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceManagementComplianceActionItemable) {
-    return m.scheduledActionConfigurations
+    val, err := m.GetBackingStore().Get("scheduledActionConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementComplianceActionItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i878
 }
 // SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to.
 func (m *DeviceManagementComplianceScheduledActionForRule) SetRuleName(value *string)() {
-    m.ruleName = value
+    err := m.GetBackingStore().Set("ruleName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceManagementComplianceActionItemable)() {
-    m.scheduledActionConfigurations = value
+    err := m.GetBackingStore().Set("scheduledActionConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplianceScheduledActionForRuleable 
+type DeviceManagementComplianceScheduledActionForRuleable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRuleName()(*string)
+    GetScheduledActionConfigurations()([]DeviceManagementComplianceActionItemable)
+    SetRuleName(value *string)()
+    SetScheduledActionConfigurations(value []DeviceManagementComplianceActionItemable)()
 }

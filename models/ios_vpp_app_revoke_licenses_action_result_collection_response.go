@@ -7,8 +7,6 @@ import (
 // IosVppAppRevokeLicensesActionResultCollectionResponse 
 type IosVppAppRevokeLicensesActionResultCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosVppAppRevokeLicensesActionResultable
 }
 // NewIosVppAppRevokeLicensesActionResultCollectionResponse instantiates a new IosVppAppRevokeLicensesActionResultCollectionResponse and sets the default values.
 func NewIosVppAppRevokeLicensesActionResultCollectionResponse()(*IosVppAppRevokeLicensesActionResultCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosVppAppRevokeLicensesActionResultCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *IosVppAppRevokeLicensesActionResultCollectionResponse) GetValue()([]IosVppAppRevokeLicensesActionResultable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosVppAppRevokeLicensesActionResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppAppRevokeLicensesActionResultCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosVppAppRevokeLicensesActionResultCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *IosVppAppRevokeLicensesActionResultCollectionResponse) SetValue(value []IosVppAppRevokeLicensesActionResultable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppAppRevokeLicensesActionResultCollectionResponseable 
+type IosVppAppRevokeLicensesActionResultCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosVppAppRevokeLicensesActionResultable)
+    SetValue(value []IosVppAppRevokeLicensesActionResultable)()
 }

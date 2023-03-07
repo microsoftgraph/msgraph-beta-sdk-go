@@ -7,20 +7,6 @@ import (
 // InformationProtectionLabel 
 type InformationProtectionLabel struct {
     Entity
-    // The color that the UI should display for the label, if configured.
-    color *string
-    // The admin-defined description for the label.
-    description *string
-    // Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
-    isActive *bool
-    // The plaintext name of the label.
-    name *string
-    // The parent label associated with a child label. Null if label has no parent.
-    parent ParentLabelDetailsable
-    // The sensitivity value of the label, where lower is less sensitive.
-    sensitivity *int32
-    // The tooltip that should be displayed for the label in a UI.
-    tooltip *string
 }
 // NewInformationProtectionLabel instantiates a new informationProtectionLabel and sets the default values.
 func NewInformationProtectionLabel()(*InformationProtectionLabel) {
@@ -35,11 +21,25 @@ func CreateInformationProtectionLabelFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetColor gets the color property value. The color that the UI should display for the label, if configured.
 func (m *InformationProtectionLabel) GetColor()(*string) {
-    return m.color
+    val, err := m.GetBackingStore().Get("color")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The admin-defined description for the label.
 func (m *InformationProtectionLabel) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,23 +118,58 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
 func (m *InformationProtectionLabel) GetIsActive()(*bool) {
-    return m.isActive
+    val, err := m.GetBackingStore().Get("isActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetName gets the name property value. The plaintext name of the label.
 func (m *InformationProtectionLabel) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParent gets the parent property value. The parent label associated with a child label. Null if label has no parent.
 func (m *InformationProtectionLabel) GetParent()(ParentLabelDetailsable) {
-    return m.parent
+    val, err := m.GetBackingStore().Get("parent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ParentLabelDetailsable)
+    }
+    return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *InformationProtectionLabel) GetSensitivity()(*int32) {
-    return m.sensitivity
+    val, err := m.GetBackingStore().Get("sensitivity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a UI.
 func (m *InformationProtectionLabel) GetTooltip()(*string) {
-    return m.tooltip
+    val, err := m.GetBackingStore().Get("tooltip")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InformationProtectionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -188,29 +223,69 @@ func (m *InformationProtectionLabel) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetColor sets the color property value. The color that the UI should display for the label, if configured.
 func (m *InformationProtectionLabel) SetColor(value *string)() {
-    m.color = value
+    err := m.GetBackingStore().Set("color", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The admin-defined description for the label.
 func (m *InformationProtectionLabel) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsActive sets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
 func (m *InformationProtectionLabel) SetIsActive(value *bool)() {
-    m.isActive = value
+    err := m.GetBackingStore().Set("isActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The plaintext name of the label.
 func (m *InformationProtectionLabel) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParent sets the parent property value. The parent label associated with a child label. Null if label has no parent.
 func (m *InformationProtectionLabel) SetParent(value ParentLabelDetailsable)() {
-    m.parent = value
+    err := m.GetBackingStore().Set("parent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *InformationProtectionLabel) SetSensitivity(value *int32)() {
-    m.sensitivity = value
+    err := m.GetBackingStore().Set("sensitivity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTooltip sets the tooltip property value. The tooltip that should be displayed for the label in a UI.
 func (m *InformationProtectionLabel) SetTooltip(value *string)() {
-    m.tooltip = value
+    err := m.GetBackingStore().Set("tooltip", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InformationProtectionLabelable 
+type InformationProtectionLabelable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetColor()(*string)
+    GetDescription()(*string)
+    GetIsActive()(*bool)
+    GetName()(*string)
+    GetParent()(ParentLabelDetailsable)
+    GetSensitivity()(*int32)
+    GetTooltip()(*string)
+    SetColor(value *string)()
+    SetDescription(value *string)()
+    SetIsActive(value *bool)()
+    SetName(value *string)()
+    SetParent(value ParentLabelDetailsable)()
+    SetSensitivity(value *int32)()
+    SetTooltip(value *string)()
 }

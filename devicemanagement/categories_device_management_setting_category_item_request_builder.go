@@ -55,8 +55,8 @@ func NewCategoriesDeviceManagementSettingCategoryItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCategoriesDeviceManagementSettingCategoryItemRequestBuilder instantiates a new DeviceManagementSettingCategoryItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) Patch(ctx 
 }
 // SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
 func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitions()(*CategoriesItemSettingDefinitionsRequestBuilder) {
-    return NewCategoriesItemSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCategoriesItemSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
 func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitionsById(id string)(*CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDef
     if id != "" {
         urlTplParams["deviceManagementSettingDefinition%2Did"] = id
     }
-    return NewCategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CategoriesDeviceManagementSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

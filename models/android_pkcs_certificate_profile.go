@@ -7,24 +7,14 @@ import (
 // AndroidPkcsCertificateProfile 
 type AndroidPkcsCertificateProfile struct {
     AndroidCertificateProfileBase
-    // PKCS Certificate Template Name
-    certificateTemplateName *string
-    // PKCS Certification Authority
-    certificationAuthority *string
-    // PKCS Certification Authority Name
-    certificationAuthorityName *string
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
-    // Custom String that defines the AAD Attribute.
-    subjectAlternativeNameFormatString *string
 }
 // NewAndroidPkcsCertificateProfile instantiates a new AndroidPkcsCertificateProfile and sets the default values.
 func NewAndroidPkcsCertificateProfile()(*AndroidPkcsCertificateProfile) {
     m := &AndroidPkcsCertificateProfile{
         AndroidCertificateProfileBase: *NewAndroidCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidPkcsCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidPkcsCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidPkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,15 +23,36 @@ func CreateAndroidPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *AndroidPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
-    return m.certificateTemplateName
+    val, err := m.GetBackingStore().Get("certificateTemplateName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
 func (m *AndroidPkcsCertificateProfile) GetCertificationAuthority()(*string) {
-    return m.certificationAuthority
+    val, err := m.GetBackingStore().Get("certificationAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *AndroidPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
-    return m.certificationAuthorityName
+    val, err := m.GetBackingStore().Get("certificationAuthorityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,11 +115,25 @@ func (m *AndroidPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    return m.subjectAlternativeNameFormatString
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,21 +179,51 @@ func (m *AndroidPkcsCertificateProfile) Serialize(writer i878a80d2330e89d2689638
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *AndroidPkcsCertificateProfile) SetCertificateTemplateName(value *string)() {
-    m.certificateTemplateName = value
+    err := m.GetBackingStore().Set("certificateTemplateName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS Certification Authority
 func (m *AndroidPkcsCertificateProfile) SetCertificationAuthority(value *string)() {
-    m.certificationAuthority = value
+    err := m.GetBackingStore().Set("certificationAuthority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *AndroidPkcsCertificateProfile) SetCertificationAuthorityName(value *string)() {
-    m.certificationAuthorityName = value
+    err := m.GetBackingStore().Set("certificationAuthorityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidPkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidPkcsCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    m.subjectAlternativeNameFormatString = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidPkcsCertificateProfileable 
+type AndroidPkcsCertificateProfileable interface {
+    AndroidCertificateProfileBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateTemplateName()(*string)
+    GetCertificationAuthority()(*string)
+    GetCertificationAuthorityName()(*string)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetSubjectAlternativeNameFormatString()(*string)
+    SetCertificateTemplateName(value *string)()
+    SetCertificationAuthority(value *string)()
+    SetCertificationAuthorityName(value *string)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetSubjectAlternativeNameFormatString(value *string)()
 }

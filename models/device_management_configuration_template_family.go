@@ -32,10 +32,12 @@ const (
     BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for device configuration scripts
+    DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -66,6 +68,8 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
             result = BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "deviceConfigurationScripts":
+            result = DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationTemplateFamily value: " + v)
     }

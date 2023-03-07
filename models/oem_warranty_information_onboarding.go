@@ -7,12 +7,6 @@ import (
 // OemWarrantyInformationOnboarding warranty status entity for a given OEM
 type OemWarrantyInformationOnboarding struct {
     Entity
-    // Specifies whether warranty API is available. This property is read-only.
-    available *bool
-    // Specifies whether warranty query is enabled for given OEM. This property is read-only.
-    enabled *bool
-    // OEM name. This property is read-only.
-    oemName *string
 }
 // NewOemWarrantyInformationOnboarding instantiates a new oemWarrantyInformationOnboarding and sets the default values.
 func NewOemWarrantyInformationOnboarding()(*OemWarrantyInformationOnboarding) {
@@ -27,11 +21,25 @@ func CreateOemWarrantyInformationOnboardingFromDiscriminatorValue(parseNode i878
 }
 // GetAvailable gets the available property value. Specifies whether warranty API is available. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) GetAvailable()(*bool) {
-    return m.available
+    val, err := m.GetBackingStore().Get("available")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnabled gets the enabled property value. Specifies whether warranty query is enabled for given OEM. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) GetEnabled()(*bool) {
-    return m.enabled
+    val, err := m.GetBackingStore().Get("enabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]fu
 }
 // GetOemName gets the oemName property value. OEM name. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) GetOemName()(*string) {
-    return m.oemName
+    val, err := m.GetBackingStore().Get("oemName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OemWarrantyInformationOnboarding) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -82,13 +97,33 @@ func (m *OemWarrantyInformationOnboarding) Serialize(writer i878a80d2330e89d2689
 }
 // SetAvailable sets the available property value. Specifies whether warranty API is available. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) SetAvailable(value *bool)() {
-    m.available = value
+    err := m.GetBackingStore().Set("available", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnabled sets the enabled property value. Specifies whether warranty query is enabled for given OEM. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) SetEnabled(value *bool)() {
-    m.enabled = value
+    err := m.GetBackingStore().Set("enabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOemName sets the oemName property value. OEM name. This property is read-only.
 func (m *OemWarrantyInformationOnboarding) SetOemName(value *string)() {
-    m.oemName = value
+    err := m.GetBackingStore().Set("oemName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OemWarrantyInformationOnboardingable 
+type OemWarrantyInformationOnboardingable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAvailable()(*bool)
+    GetEnabled()(*bool)
+    GetOemName()(*string)
+    SetAvailable(value *bool)()
+    SetEnabled(value *bool)()
+    SetOemName(value *string)()
 }

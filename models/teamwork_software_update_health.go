@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TeamworkSoftwareUpdateHealth 
 type TeamworkSoftwareUpdateHealth struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The software update available for the admin agent.
-    adminAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
-    // The software update available for the company portal.
-    companyPortalSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
-    // The software update available for the firmware.
-    firmwareSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
-    // The OdataType property
-    odataType *string
-    // The software update available for the operating system.
-    operatingSystemSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
-    // The software update available for the partner agent.
-    partnerAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
-    // The software update available for the Teams client.
-    teamsClientSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTeamworkSoftwareUpdateHealth instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
 func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     m := &TeamworkSoftwareUpdateHealth{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,15 +24,41 @@ func CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
 func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    return m.adminAgentSoftwareUpdateStatus
+    val, err := m.GetBackingStore().Get("adminAgentSoftwareUpdateStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkSoftwareUpdateStatusable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TeamworkSoftwareUpdateHealth) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCompanyPortalSoftwareUpdateStatus gets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
 func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    return m.companyPortalSoftwareUpdateStatus
+    val, err := m.GetBackingStore().Get("companyPortalSoftwareUpdateStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkSoftwareUpdateStatusable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,23 +137,58 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
 }
 // GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
 func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    return m.firmwareSoftwareUpdateStatus
+    val, err := m.GetBackingStore().Get("firmwareSoftwareUpdateStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkSoftwareUpdateStatusable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkSoftwareUpdateHealth) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
 func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    return m.operatingSystemSoftwareUpdateStatus
+    val, err := m.GetBackingStore().Get("operatingSystemSoftwareUpdateStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkSoftwareUpdateStatusable)
+    }
+    return nil
 }
 // GetPartnerAgentSoftwareUpdateStatus gets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
 func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    return m.partnerAgentSoftwareUpdateStatus
+    val, err := m.GetBackingStore().Get("partnerAgentSoftwareUpdateStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkSoftwareUpdateStatusable)
+    }
+    return nil
 }
 // GetTeamsClientSoftwareUpdateStatus gets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
 func (m *TeamworkSoftwareUpdateHealth) GetTeamsClientSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    return m.teamsClientSoftwareUpdateStatus
+    val, err := m.GetBackingStore().Get("teamsClientSoftwareUpdateStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkSoftwareUpdateStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkSoftwareUpdateHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,33 +244,83 @@ func (m *TeamworkSoftwareUpdateHealth) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateHealth) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdminAgentSoftwareUpdateStatus sets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
 func (m *TeamworkSoftwareUpdateHealth) SetAdminAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    m.adminAgentSoftwareUpdateStatus = value
+    err := m.GetBackingStore().Set("adminAgentSoftwareUpdateStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TeamworkSoftwareUpdateHealth) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCompanyPortalSoftwareUpdateStatus sets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
 func (m *TeamworkSoftwareUpdateHealth) SetCompanyPortalSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    m.companyPortalSoftwareUpdateStatus = value
+    err := m.GetBackingStore().Set("companyPortalSoftwareUpdateStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirmwareSoftwareUpdateStatus sets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
 func (m *TeamworkSoftwareUpdateHealth) SetFirmwareSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    m.firmwareSoftwareUpdateStatus = value
+    err := m.GetBackingStore().Set("firmwareSoftwareUpdateStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkSoftwareUpdateHealth) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperatingSystemSoftwareUpdateStatus sets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
 func (m *TeamworkSoftwareUpdateHealth) SetOperatingSystemSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    m.operatingSystemSoftwareUpdateStatus = value
+    err := m.GetBackingStore().Set("operatingSystemSoftwareUpdateStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPartnerAgentSoftwareUpdateStatus sets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
 func (m *TeamworkSoftwareUpdateHealth) SetPartnerAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    m.partnerAgentSoftwareUpdateStatus = value
+    err := m.GetBackingStore().Set("partnerAgentSoftwareUpdateStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamsClientSoftwareUpdateStatus sets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
 func (m *TeamworkSoftwareUpdateHealth) SetTeamsClientSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    m.teamsClientSoftwareUpdateStatus = value
+    err := m.GetBackingStore().Set("teamsClientSoftwareUpdateStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkSoftwareUpdateHealthable 
+type TeamworkSoftwareUpdateHealthable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdminAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCompanyPortalSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable)
+    GetFirmwareSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable)
+    GetOdataType()(*string)
+    GetOperatingSystemSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable)
+    GetPartnerAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable)
+    GetTeamsClientSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable)
+    SetAdminAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCompanyPortalSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)()
+    SetFirmwareSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)()
+    SetOdataType(value *string)()
+    SetOperatingSystemSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)()
+    SetPartnerAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)()
+    SetTeamsClientSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)()
 }

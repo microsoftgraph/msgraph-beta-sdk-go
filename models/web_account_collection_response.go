@@ -7,8 +7,6 @@ import (
 // WebAccountCollectionResponse 
 type WebAccountCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WebAccountable
 }
 // NewWebAccountCollectionResponse instantiates a new WebAccountCollectionResponse and sets the default values.
 func NewWebAccountCollectionResponse()(*WebAccountCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WebAccountCollectionResponse) GetFieldDeserializers()(map[string]func(i
 }
 // GetValue gets the value property value. The value property
 func (m *WebAccountCollectionResponse) GetValue()([]WebAccountable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WebAccountable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WebAccountCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WebAccountCollectionResponse) Serialize(writer i878a80d2330e89d26896388
 }
 // SetValue sets the value property value. The value property
 func (m *WebAccountCollectionResponse) SetValue(value []WebAccountable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WebAccountCollectionResponseable 
+type WebAccountCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WebAccountable)
+    SetValue(value []WebAccountable)()
 }

@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueDecimalCollectionResponse 
 type GroupPolicyPresentationValueDecimalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationValueDecimalable
 }
 // NewGroupPolicyPresentationValueDecimalCollectionResponse instantiates a new GroupPolicyPresentationValueDecimalCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationValueDecimalCollectionResponse()(*GroupPolicyPresentationValueDecimalCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueDecimalCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationValueDecimalCollectionResponse) GetValue()([]GroupPolicyPresentationValueDecimalable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationValueDecimalable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueDecimalCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationValueDecimalCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationValueDecimalCollectionResponse) SetValue(value []GroupPolicyPresentationValueDecimalable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueDecimalCollectionResponseable 
+type GroupPolicyPresentationValueDecimalCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationValueDecimalable)
+    SetValue(value []GroupPolicyPresentationValueDecimalable)()
 }

@@ -7,18 +7,14 @@ import (
 // ChatMessageMentionedIdentitySet 
 type ChatMessageMentionedIdentitySet struct {
     IdentitySet
-    // If present, represents a conversation (for example, team or channel) @mentioned in a message.
-    conversation TeamworkConversationIdentityable
-    // If present, represents a tag @mentioned in a team message.
-    tag TeamworkTagIdentityable
 }
 // NewChatMessageMentionedIdentitySet instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
 func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
     m := &ChatMessageMentionedIdentitySet{
         IdentitySet: *NewIdentitySet(),
     }
-    odataTypeValue := "#microsoft.graph.chatMessageMentionedIdentitySet";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.chatMessageMentionedIdentitySet"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateChatMessageMentionedIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateChatMessageMentionedIdentitySetFromDiscriminatorValue(parseNode i878a
 }
 // GetConversation gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
-    return m.conversation
+    val, err := m.GetBackingStore().Get("conversation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkConversationIdentityable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
 }
 // GetTag gets the tag property value. If present, represents a tag @mentioned in a team message.
 func (m *ChatMessageMentionedIdentitySet) GetTag()(TeamworkTagIdentityable) {
-    return m.tag
+    val, err := m.GetBackingStore().Get("tag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkTagIdentityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896
 }
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
-    m.conversation = value
+    err := m.GetBackingStore().Set("conversation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTag sets the tag property value. If present, represents a tag @mentioned in a team message.
 func (m *ChatMessageMentionedIdentitySet) SetTag(value TeamworkTagIdentityable)() {
-    m.tag = value
+    err := m.GetBackingStore().Set("tag", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChatMessageMentionedIdentitySetable 
+type ChatMessageMentionedIdentitySetable interface {
+    IdentitySetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConversation()(TeamworkConversationIdentityable)
+    GetTag()(TeamworkTagIdentityable)
+    SetConversation(value TeamworkConversationIdentityable)()
+    SetTag(value TeamworkTagIdentityable)()
 }

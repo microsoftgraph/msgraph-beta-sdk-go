@@ -7,16 +7,14 @@ import (
 // RetentionDurationInDays 
 type RetentionDurationInDays struct {
     RetentionDuration
-    // Specifies the time period in days for which an item with the applied retention label will be retained for.
-    days *int32
 }
 // NewRetentionDurationInDays instantiates a new RetentionDurationInDays and sets the default values.
 func NewRetentionDurationInDays()(*RetentionDurationInDays) {
     m := &RetentionDurationInDays{
         RetentionDuration: *NewRetentionDuration(),
     }
-    odataTypeValue := "#microsoft.graph.security.retentionDurationInDays";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.retentionDurationInDays"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRetentionDurationInDaysFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateRetentionDurationInDaysFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDays gets the days property value. Specifies the time period in days for which an item with the applied retention label will be retained for.
 func (m *RetentionDurationInDays) GetDays()(*int32) {
-    return m.days
+    val, err := m.GetBackingStore().Get("days")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetentionDurationInDays) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *RetentionDurationInDays) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDays sets the days property value. Specifies the time period in days for which an item with the applied retention label will be retained for.
 func (m *RetentionDurationInDays) SetDays(value *int32)() {
-    m.days = value
+    err := m.GetBackingStore().Set("days", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RetentionDurationInDaysable 
+type RetentionDurationInDaysable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    RetentionDurationable
+    GetDays()(*int32)
+    SetDays(value *int32)()
 }

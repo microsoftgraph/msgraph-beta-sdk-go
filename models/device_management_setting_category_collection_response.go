@@ -7,8 +7,6 @@ import (
 // DeviceManagementSettingCategoryCollectionResponse 
 type DeviceManagementSettingCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementSettingCategoryable
 }
 // NewDeviceManagementSettingCategoryCollectionResponse instantiates a new DeviceManagementSettingCategoryCollectionResponse and sets the default values.
 func NewDeviceManagementSettingCategoryCollectionResponse()(*DeviceManagementSettingCategoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementSettingCategoryCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementSettingCategoryCollectionResponse) GetValue()([]DeviceManagementSettingCategoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingCategoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementSettingCategoryCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementSettingCategoryCollectionResponse) SetValue(value []DeviceManagementSettingCategoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingCategoryCollectionResponseable 
+type DeviceManagementSettingCategoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementSettingCategoryable)
+    SetValue(value []DeviceManagementSettingCategoryable)()
 }

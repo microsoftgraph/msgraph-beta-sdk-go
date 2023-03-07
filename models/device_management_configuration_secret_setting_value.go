@@ -7,18 +7,14 @@ import (
 // DeviceManagementConfigurationSecretSettingValue 
 type DeviceManagementConfigurationSecretSettingValue struct {
     DeviceManagementConfigurationSimpleSettingValue
-    // Value of the secret setting.
-    value *string
-    // type tracking the encryption state of a secret setting value
-    valueState *DeviceManagementConfigurationSecretSettingValueState
 }
 // NewDeviceManagementConfigurationSecretSettingValue instantiates a new DeviceManagementConfigurationSecretSettingValue and sets the default values.
 func NewDeviceManagementConfigurationSecretSettingValue()(*DeviceManagementConfigurationSecretSettingValue) {
     m := &DeviceManagementConfigurationSecretSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSecretSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSecretSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSecretSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *DeviceManagementConfigurationSecretSettingValue) GetFieldDeserializers(
 }
 // GetValue gets the value property value. Value of the secret setting.
 func (m *DeviceManagementConfigurationSecretSettingValue) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValueState gets the valueState property value. type tracking the encryption state of a secret setting value
 func (m *DeviceManagementConfigurationSecretSettingValue) GetValueState()(*DeviceManagementConfigurationSecretSettingValueState) {
-    return m.valueState
+    val, err := m.GetBackingStore().Get("valueState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationSecretSettingValueState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSecretSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,9 +91,24 @@ func (m *DeviceManagementConfigurationSecretSettingValue) Serialize(writer i878a
 }
 // SetValue sets the value property value. Value of the secret setting.
 func (m *DeviceManagementConfigurationSecretSettingValue) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueState sets the valueState property value. type tracking the encryption state of a secret setting value
 func (m *DeviceManagementConfigurationSecretSettingValue) SetValueState(value *DeviceManagementConfigurationSecretSettingValueState)() {
-    m.valueState = value
+    err := m.GetBackingStore().Set("valueState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSecretSettingValueable 
+type DeviceManagementConfigurationSecretSettingValueable interface {
+    DeviceManagementConfigurationSimpleSettingValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*string)
+    GetValueState()(*DeviceManagementConfigurationSecretSettingValueState)
+    SetValue(value *string)()
+    SetValueState(value *DeviceManagementConfigurationSecretSettingValueState)()
 }

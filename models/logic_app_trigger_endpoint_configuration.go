@@ -7,20 +7,14 @@ import (
 // LogicAppTriggerEndpointConfiguration 
 type LogicAppTriggerEndpointConfiguration struct {
     CustomExtensionEndpointConfiguration
-    // The name of the logic app.
-    logicAppWorkflowName *string
-    // The Azure resource group name for the logic app.
-    resourceGroupName *string
-    // Identifier of the Azure subscription for the logic app.
-    subscriptionId *string
 }
 // NewLogicAppTriggerEndpointConfiguration instantiates a new LogicAppTriggerEndpointConfiguration and sets the default values.
 func NewLogicAppTriggerEndpointConfiguration()(*LogicAppTriggerEndpointConfiguration) {
     m := &LogicAppTriggerEndpointConfiguration{
         CustomExtensionEndpointConfiguration: *NewCustomExtensionEndpointConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.logicAppTriggerEndpointConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.logicAppTriggerEndpointConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateLogicAppTriggerEndpointConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,15 +58,36 @@ func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[strin
 }
 // GetLogicAppWorkflowName gets the logicAppWorkflowName property value. The name of the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetLogicAppWorkflowName()(*string) {
-    return m.logicAppWorkflowName
+    val, err := m.GetBackingStore().Get("logicAppWorkflowName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceGroupName gets the resourceGroupName property value. The Azure resource group name for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetResourceGroupName()(*string) {
-    return m.resourceGroupName
+    val, err := m.GetBackingStore().Get("resourceGroupName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubscriptionId gets the subscriptionId property value. Identifier of the Azure subscription for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetSubscriptionId()(*string) {
-    return m.subscriptionId
+    val, err := m.GetBackingStore().Get("subscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d
 }
 // SetLogicAppWorkflowName sets the logicAppWorkflowName property value. The name of the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetLogicAppWorkflowName(value *string)() {
-    m.logicAppWorkflowName = value
+    err := m.GetBackingStore().Set("logicAppWorkflowName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceGroupName sets the resourceGroupName property value. The Azure resource group name for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetResourceGroupName(value *string)() {
-    m.resourceGroupName = value
+    err := m.GetBackingStore().Set("resourceGroupName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubscriptionId sets the subscriptionId property value. Identifier of the Azure subscription for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetSubscriptionId(value *string)() {
-    m.subscriptionId = value
+    err := m.GetBackingStore().Set("subscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LogicAppTriggerEndpointConfigurationable 
+type LogicAppTriggerEndpointConfigurationable interface {
+    CustomExtensionEndpointConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLogicAppWorkflowName()(*string)
+    GetResourceGroupName()(*string)
+    GetSubscriptionId()(*string)
+    SetLogicAppWorkflowName(value *string)()
+    SetResourceGroupName(value *string)()
+    SetSubscriptionId(value *string)()
 }

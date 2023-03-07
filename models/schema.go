@@ -7,10 +7,6 @@ import (
 // Schema 
 type Schema struct {
     Entity
-    // The baseType property
-    baseType *string
-    // The properties property
-    properties []Propertyable
 }
 // NewSchema instantiates a new schema and sets the default values.
 func NewSchema()(*Schema) {
@@ -25,7 +21,14 @@ func CreateSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetBaseType gets the baseType property value. The baseType property
 func (m *Schema) GetBaseType()(*string) {
-    return m.baseType
+    val, err := m.GetBackingStore().Get("baseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Schema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,7 +61,14 @@ func (m *Schema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetProperties gets the properties property value. The properties property
 func (m *Schema) GetProperties()([]Propertyable) {
-    return m.properties
+    val, err := m.GetBackingStore().Get("properties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Propertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Schema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *Schema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetBaseType sets the baseType property value. The baseType property
 func (m *Schema) SetBaseType(value *string)() {
-    m.baseType = value
+    err := m.GetBackingStore().Set("baseType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperties sets the properties property value. The properties property
 func (m *Schema) SetProperties(value []Propertyable)() {
-    m.properties = value
+    err := m.GetBackingStore().Set("properties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Schemaable 
+type Schemaable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBaseType()(*string)
+    GetProperties()([]Propertyable)
+    SetBaseType(value *string)()
+    SetProperties(value []Propertyable)()
 }

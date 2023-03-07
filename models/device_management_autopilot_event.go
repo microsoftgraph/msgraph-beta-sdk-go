@@ -8,60 +8,6 @@ import (
 // DeviceManagementAutopilotEvent represents an Autopilot flow event.
 type DeviceManagementAutopilotEvent struct {
     Entity
-    // Time spent in user ESP.
-    accountSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The accountSetupStatus property
-    accountSetupStatus *WindowsAutopilotDeploymentState
-    // Autopilot deployment duration including enrollment.
-    deploymentDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Deployment end time.
-    deploymentEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Deployment start time.
-    deploymentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The deploymentState property
-    deploymentState *WindowsAutopilotDeploymentState
-    // Total deployment duration from enrollment to Desktop screen.
-    deploymentTotalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Device id associated with the object
-    deviceId *string
-    // Time spent in device enrollment.
-    devicePreparationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Device registration date.
-    deviceRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Device serial number.
-    deviceSerialNumber *string
-    // Time spent in device ESP.
-    deviceSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The deviceSetupStatus property
-    deviceSetupStatus *WindowsAutopilotDeploymentState
-    // Enrollment failure details.
-    enrollmentFailureDetails *string
-    // Device enrollment start date.
-    enrollmentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The enrollmentState property
-    enrollmentState *EnrollmentState
-    // The enrollmentType property
-    enrollmentType *WindowsAutopilotEnrollmentType
-    // Time when the event occurred .
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Managed device name.
-    managedDeviceName *string
-    // Device operating system version.
-    osVersion *string
-    // Policy and application status details for this device.
-    policyStatusDetails []DeviceManagementAutopilotPolicyStatusDetailable
-    // Count of applications targeted.
-    targetedAppCount *int32
-    // Count of policies targeted.
-    targetedPolicyCount *int32
-    // User principal name used to enroll the device.
-    userPrincipalName *string
-    // Enrollment Status Page profile name
-    windows10EnrollmentCompletionPageConfigurationDisplayName *string
-    // Enrollment Status Page profile ID
-    windows10EnrollmentCompletionPageConfigurationId *string
-    // Autopilot profile name.
-    windowsAutopilotDeploymentProfileDisplayName *string
 }
 // NewDeviceManagementAutopilotEvent instantiates a new deviceManagementAutopilotEvent and sets the default values.
 func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
@@ -76,75 +22,201 @@ func CreateDeviceManagementAutopilotEventFromDiscriminatorValue(parseNode i878a8
 }
 // GetAccountSetupDuration gets the accountSetupDuration property value. Time spent in user ESP.
 func (m *DeviceManagementAutopilotEvent) GetAccountSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.accountSetupDuration
+    val, err := m.GetBackingStore().Get("accountSetupDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
-// GetAccountSetupStatus gets the accountSetupStatus property value. The accountSetupStatus property
+// GetAccountSetupStatus gets the accountSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) GetAccountSetupStatus()(*WindowsAutopilotDeploymentState) {
-    return m.accountSetupStatus
+    val, err := m.GetBackingStore().Get("accountSetupStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsAutopilotDeploymentState)
+    }
+    return nil
 }
 // GetDeploymentDuration gets the deploymentDuration property value. Autopilot deployment duration including enrollment.
 func (m *DeviceManagementAutopilotEvent) GetDeploymentDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.deploymentDuration
+    val, err := m.GetBackingStore().Get("deploymentDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetDeploymentEndDateTime gets the deploymentEndDateTime property value. Deployment end time.
 func (m *DeviceManagementAutopilotEvent) GetDeploymentEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.deploymentEndDateTime
+    val, err := m.GetBackingStore().Get("deploymentEndDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeploymentStartDateTime gets the deploymentStartDateTime property value. Deployment start time.
 func (m *DeviceManagementAutopilotEvent) GetDeploymentStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.deploymentStartDateTime
+    val, err := m.GetBackingStore().Get("deploymentStartDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
-// GetDeploymentState gets the deploymentState property value. The deploymentState property
+// GetDeploymentState gets the deploymentState property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) GetDeploymentState()(*WindowsAutopilotDeploymentState) {
-    return m.deploymentState
+    val, err := m.GetBackingStore().Get("deploymentState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsAutopilotDeploymentState)
+    }
+    return nil
 }
 // GetDeploymentTotalDuration gets the deploymentTotalDuration property value. Total deployment duration from enrollment to Desktop screen.
 func (m *DeviceManagementAutopilotEvent) GetDeploymentTotalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.deploymentTotalDuration
+    val, err := m.GetBackingStore().Get("deploymentTotalDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetDeviceId gets the deviceId property value. Device id associated with the object
 func (m *DeviceManagementAutopilotEvent) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDevicePreparationDuration gets the devicePreparationDuration property value. Time spent in device enrollment.
 func (m *DeviceManagementAutopilotEvent) GetDevicePreparationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.devicePreparationDuration
+    val, err := m.GetBackingStore().Get("devicePreparationDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetDeviceRegisteredDateTime gets the deviceRegisteredDateTime property value. Device registration date.
 func (m *DeviceManagementAutopilotEvent) GetDeviceRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.deviceRegisteredDateTime
+    val, err := m.GetBackingStore().Get("deviceRegisteredDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceSerialNumber gets the deviceSerialNumber property value. Device serial number.
 func (m *DeviceManagementAutopilotEvent) GetDeviceSerialNumber()(*string) {
-    return m.deviceSerialNumber
+    val, err := m.GetBackingStore().Get("deviceSerialNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceSetupDuration gets the deviceSetupDuration property value. Time spent in device ESP.
 func (m *DeviceManagementAutopilotEvent) GetDeviceSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.deviceSetupDuration
+    val, err := m.GetBackingStore().Get("deviceSetupDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
-// GetDeviceSetupStatus gets the deviceSetupStatus property value. The deviceSetupStatus property
+// GetDeviceSetupStatus gets the deviceSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) GetDeviceSetupStatus()(*WindowsAutopilotDeploymentState) {
-    return m.deviceSetupStatus
+    val, err := m.GetBackingStore().Get("deviceSetupStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsAutopilotDeploymentState)
+    }
+    return nil
 }
 // GetEnrollmentFailureDetails gets the enrollmentFailureDetails property value. Enrollment failure details.
 func (m *DeviceManagementAutopilotEvent) GetEnrollmentFailureDetails()(*string) {
-    return m.enrollmentFailureDetails
+    val, err := m.GetBackingStore().Get("enrollmentFailureDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnrollmentStartDateTime gets the enrollmentStartDateTime property value. Device enrollment start date.
 func (m *DeviceManagementAutopilotEvent) GetEnrollmentStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.enrollmentStartDateTime
+    val, err := m.GetBackingStore().Get("enrollmentStartDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
 func (m *DeviceManagementAutopilotEvent) GetEnrollmentState()(*EnrollmentState) {
-    return m.enrollmentState
+    val, err := m.GetBackingStore().Get("enrollmentState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EnrollmentState)
+    }
+    return nil
 }
 // GetEnrollmentType gets the enrollmentType property value. The enrollmentType property
 func (m *DeviceManagementAutopilotEvent) GetEnrollmentType()(*WindowsAutopilotEnrollmentType) {
-    return m.enrollmentType
+    val, err := m.GetBackingStore().Get("enrollmentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsAutopilotEnrollmentType)
+    }
+    return nil
 }
 // GetEventDateTime gets the eventDateTime property value. Time when the event occurred .
 func (m *DeviceManagementAutopilotEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.eventDateTime
+    val, err := m.GetBackingStore().Get("eventDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -427,39 +499,102 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
 }
 // GetManagedDeviceName gets the managedDeviceName property value. Managed device name.
 func (m *DeviceManagementAutopilotEvent) GetManagedDeviceName()(*string) {
-    return m.managedDeviceName
+    val, err := m.GetBackingStore().Get("managedDeviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. Device operating system version.
 func (m *DeviceManagementAutopilotEvent) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyStatusDetails gets the policyStatusDetails property value. Policy and application status details for this device.
 func (m *DeviceManagementAutopilotEvent) GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetailable) {
-    return m.policyStatusDetails
+    val, err := m.GetBackingStore().Get("policyStatusDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementAutopilotPolicyStatusDetailable)
+    }
+    return nil
 }
 // GetTargetedAppCount gets the targetedAppCount property value. Count of applications targeted.
 func (m *DeviceManagementAutopilotEvent) GetTargetedAppCount()(*int32) {
-    return m.targetedAppCount
+    val, err := m.GetBackingStore().Get("targetedAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTargetedPolicyCount gets the targetedPolicyCount property value. Count of policies targeted.
 func (m *DeviceManagementAutopilotEvent) GetTargetedPolicyCount()(*int32) {
-    return m.targetedPolicyCount
+    val, err := m.GetBackingStore().Get("targetedPolicyCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name used to enroll the device.
 func (m *DeviceManagementAutopilotEvent) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWindows10EnrollmentCompletionPageConfigurationDisplayName gets the windows10EnrollmentCompletionPageConfigurationDisplayName property value. Enrollment Status Page profile name
 func (m *DeviceManagementAutopilotEvent) GetWindows10EnrollmentCompletionPageConfigurationDisplayName()(*string) {
-    return m.windows10EnrollmentCompletionPageConfigurationDisplayName
+    val, err := m.GetBackingStore().Get("windows10EnrollmentCompletionPageConfigurationDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWindows10EnrollmentCompletionPageConfigurationId gets the windows10EnrollmentCompletionPageConfigurationId property value. Enrollment Status Page profile ID
 func (m *DeviceManagementAutopilotEvent) GetWindows10EnrollmentCompletionPageConfigurationId()(*string) {
-    return m.windows10EnrollmentCompletionPageConfigurationId
+    val, err := m.GetBackingStore().Get("windows10EnrollmentCompletionPageConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWindowsAutopilotDeploymentProfileDisplayName gets the windowsAutopilotDeploymentProfileDisplayName property value. Autopilot profile name.
 func (m *DeviceManagementAutopilotEvent) GetWindowsAutopilotDeploymentProfileDisplayName()(*string) {
-    return m.windowsAutopilotDeploymentProfileDisplayName
+    val, err := m.GetBackingStore().Get("windowsAutopilotDeploymentProfileDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -642,109 +777,249 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d268963
 }
 // SetAccountSetupDuration sets the accountSetupDuration property value. Time spent in user ESP.
 func (m *DeviceManagementAutopilotEvent) SetAccountSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.accountSetupDuration = value
+    err := m.GetBackingStore().Set("accountSetupDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetAccountSetupStatus sets the accountSetupStatus property value. The accountSetupStatus property
+// SetAccountSetupStatus sets the accountSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) SetAccountSetupStatus(value *WindowsAutopilotDeploymentState)() {
-    m.accountSetupStatus = value
+    err := m.GetBackingStore().Set("accountSetupStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentDuration sets the deploymentDuration property value. Autopilot deployment duration including enrollment.
 func (m *DeviceManagementAutopilotEvent) SetDeploymentDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.deploymentDuration = value
+    err := m.GetBackingStore().Set("deploymentDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentEndDateTime sets the deploymentEndDateTime property value. Deployment end time.
 func (m *DeviceManagementAutopilotEvent) SetDeploymentEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deploymentEndDateTime = value
+    err := m.GetBackingStore().Set("deploymentEndDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentStartDateTime sets the deploymentStartDateTime property value. Deployment start time.
 func (m *DeviceManagementAutopilotEvent) SetDeploymentStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deploymentStartDateTime = value
+    err := m.GetBackingStore().Set("deploymentStartDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetDeploymentState sets the deploymentState property value. The deploymentState property
+// SetDeploymentState sets the deploymentState property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) SetDeploymentState(value *WindowsAutopilotDeploymentState)() {
-    m.deploymentState = value
+    err := m.GetBackingStore().Set("deploymentState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentTotalDuration sets the deploymentTotalDuration property value. Total deployment duration from enrollment to Desktop screen.
 func (m *DeviceManagementAutopilotEvent) SetDeploymentTotalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.deploymentTotalDuration = value
+    err := m.GetBackingStore().Set("deploymentTotalDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceId sets the deviceId property value. Device id associated with the object
 func (m *DeviceManagementAutopilotEvent) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDevicePreparationDuration sets the devicePreparationDuration property value. Time spent in device enrollment.
 func (m *DeviceManagementAutopilotEvent) SetDevicePreparationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.devicePreparationDuration = value
+    err := m.GetBackingStore().Set("devicePreparationDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceRegisteredDateTime sets the deviceRegisteredDateTime property value. Device registration date.
 func (m *DeviceManagementAutopilotEvent) SetDeviceRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deviceRegisteredDateTime = value
+    err := m.GetBackingStore().Set("deviceRegisteredDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceSerialNumber sets the deviceSerialNumber property value. Device serial number.
 func (m *DeviceManagementAutopilotEvent) SetDeviceSerialNumber(value *string)() {
-    m.deviceSerialNumber = value
+    err := m.GetBackingStore().Set("deviceSerialNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceSetupDuration sets the deviceSetupDuration property value. Time spent in device ESP.
 func (m *DeviceManagementAutopilotEvent) SetDeviceSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.deviceSetupDuration = value
+    err := m.GetBackingStore().Set("deviceSetupDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetDeviceSetupStatus sets the deviceSetupStatus property value. The deviceSetupStatus property
+// SetDeviceSetupStatus sets the deviceSetupStatus property value. Deployment states for Autopilot devices
 func (m *DeviceManagementAutopilotEvent) SetDeviceSetupStatus(value *WindowsAutopilotDeploymentState)() {
-    m.deviceSetupStatus = value
+    err := m.GetBackingStore().Set("deviceSetupStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentFailureDetails sets the enrollmentFailureDetails property value. Enrollment failure details.
 func (m *DeviceManagementAutopilotEvent) SetEnrollmentFailureDetails(value *string)() {
-    m.enrollmentFailureDetails = value
+    err := m.GetBackingStore().Set("enrollmentFailureDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentStartDateTime sets the enrollmentStartDateTime property value. Device enrollment start date.
 func (m *DeviceManagementAutopilotEvent) SetEnrollmentStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.enrollmentStartDateTime = value
+    err := m.GetBackingStore().Set("enrollmentStartDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
 func (m *DeviceManagementAutopilotEvent) SetEnrollmentState(value *EnrollmentState)() {
-    m.enrollmentState = value
+    err := m.GetBackingStore().Set("enrollmentState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentType sets the enrollmentType property value. The enrollmentType property
 func (m *DeviceManagementAutopilotEvent) SetEnrollmentType(value *WindowsAutopilotEnrollmentType)() {
-    m.enrollmentType = value
+    err := m.GetBackingStore().Set("enrollmentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEventDateTime sets the eventDateTime property value. Time when the event occurred .
 func (m *DeviceManagementAutopilotEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.eventDateTime = value
+    err := m.GetBackingStore().Set("eventDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceName sets the managedDeviceName property value. Managed device name.
 func (m *DeviceManagementAutopilotEvent) SetManagedDeviceName(value *string)() {
-    m.managedDeviceName = value
+    err := m.GetBackingStore().Set("managedDeviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. Device operating system version.
 func (m *DeviceManagementAutopilotEvent) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyStatusDetails sets the policyStatusDetails property value. Policy and application status details for this device.
 func (m *DeviceManagementAutopilotEvent) SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetailable)() {
-    m.policyStatusDetails = value
+    err := m.GetBackingStore().Set("policyStatusDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetedAppCount sets the targetedAppCount property value. Count of applications targeted.
 func (m *DeviceManagementAutopilotEvent) SetTargetedAppCount(value *int32)() {
-    m.targetedAppCount = value
+    err := m.GetBackingStore().Set("targetedAppCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetedPolicyCount sets the targetedPolicyCount property value. Count of policies targeted.
 func (m *DeviceManagementAutopilotEvent) SetTargetedPolicyCount(value *int32)() {
-    m.targetedPolicyCount = value
+    err := m.GetBackingStore().Set("targetedPolicyCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name used to enroll the device.
 func (m *DeviceManagementAutopilotEvent) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindows10EnrollmentCompletionPageConfigurationDisplayName sets the windows10EnrollmentCompletionPageConfigurationDisplayName property value. Enrollment Status Page profile name
 func (m *DeviceManagementAutopilotEvent) SetWindows10EnrollmentCompletionPageConfigurationDisplayName(value *string)() {
-    m.windows10EnrollmentCompletionPageConfigurationDisplayName = value
+    err := m.GetBackingStore().Set("windows10EnrollmentCompletionPageConfigurationDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindows10EnrollmentCompletionPageConfigurationId sets the windows10EnrollmentCompletionPageConfigurationId property value. Enrollment Status Page profile ID
 func (m *DeviceManagementAutopilotEvent) SetWindows10EnrollmentCompletionPageConfigurationId(value *string)() {
-    m.windows10EnrollmentCompletionPageConfigurationId = value
+    err := m.GetBackingStore().Set("windows10EnrollmentCompletionPageConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsAutopilotDeploymentProfileDisplayName sets the windowsAutopilotDeploymentProfileDisplayName property value. Autopilot profile name.
 func (m *DeviceManagementAutopilotEvent) SetWindowsAutopilotDeploymentProfileDisplayName(value *string)() {
-    m.windowsAutopilotDeploymentProfileDisplayName = value
+    err := m.GetBackingStore().Set("windowsAutopilotDeploymentProfileDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementAutopilotEventable 
+type DeviceManagementAutopilotEventable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccountSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetAccountSetupStatus()(*WindowsAutopilotDeploymentState)
+    GetDeploymentDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetDeploymentEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeploymentStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeploymentState()(*WindowsAutopilotDeploymentState)
+    GetDeploymentTotalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetDeviceId()(*string)
+    GetDevicePreparationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetDeviceRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceSerialNumber()(*string)
+    GetDeviceSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetDeviceSetupStatus()(*WindowsAutopilotDeploymentState)
+    GetEnrollmentFailureDetails()(*string)
+    GetEnrollmentStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetEnrollmentState()(*EnrollmentState)
+    GetEnrollmentType()(*WindowsAutopilotEnrollmentType)
+    GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedDeviceName()(*string)
+    GetOsVersion()(*string)
+    GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetailable)
+    GetTargetedAppCount()(*int32)
+    GetTargetedPolicyCount()(*int32)
+    GetUserPrincipalName()(*string)
+    GetWindows10EnrollmentCompletionPageConfigurationDisplayName()(*string)
+    GetWindows10EnrollmentCompletionPageConfigurationId()(*string)
+    GetWindowsAutopilotDeploymentProfileDisplayName()(*string)
+    SetAccountSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetAccountSetupStatus(value *WindowsAutopilotDeploymentState)()
+    SetDeploymentDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetDeploymentEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeploymentStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeploymentState(value *WindowsAutopilotDeploymentState)()
+    SetDeploymentTotalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetDeviceId(value *string)()
+    SetDevicePreparationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetDeviceRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceSerialNumber(value *string)()
+    SetDeviceSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetDeviceSetupStatus(value *WindowsAutopilotDeploymentState)()
+    SetEnrollmentFailureDetails(value *string)()
+    SetEnrollmentStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetEnrollmentState(value *EnrollmentState)()
+    SetEnrollmentType(value *WindowsAutopilotEnrollmentType)()
+    SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedDeviceName(value *string)()
+    SetOsVersion(value *string)()
+    SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetailable)()
+    SetTargetedAppCount(value *int32)()
+    SetTargetedPolicyCount(value *int32)()
+    SetUserPrincipalName(value *string)()
+    SetWindows10EnrollmentCompletionPageConfigurationDisplayName(value *string)()
+    SetWindows10EnrollmentCompletionPageConfigurationId(value *string)()
+    SetWindowsAutopilotDeploymentProfileDisplayName(value *string)()
 }

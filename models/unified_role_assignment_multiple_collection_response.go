@@ -7,8 +7,6 @@ import (
 // UnifiedRoleAssignmentMultipleCollectionResponse 
 type UnifiedRoleAssignmentMultipleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleAssignmentMultipleable
 }
 // NewUnifiedRoleAssignmentMultipleCollectionResponse instantiates a new UnifiedRoleAssignmentMultipleCollectionResponse and sets the default values.
 func NewUnifiedRoleAssignmentMultipleCollectionResponse()(*UnifiedRoleAssignmentMultipleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleAssignmentMultipleCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleAssignmentMultipleCollectionResponse) GetValue()([]UnifiedRoleAssignmentMultipleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentMultipleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentMultipleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleAssignmentMultipleCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleAssignmentMultipleCollectionResponse) SetValue(value []UnifiedRoleAssignmentMultipleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleAssignmentMultipleCollectionResponseable 
+type UnifiedRoleAssignmentMultipleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleAssignmentMultipleable)
+    SetValue(value []UnifiedRoleAssignmentMultipleable)()
 }

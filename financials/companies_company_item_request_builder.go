@@ -34,7 +34,7 @@ type CompaniesCompanyItemRequestBuilderGetRequestConfiguration struct {
 }
 // Accounts provides operations to manage the accounts property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Accounts()(*CompaniesItemAccountsRequestBuilder) {
-    return NewCompaniesItemAccountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemAccountsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AccountsById provides operations to manage the accounts property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) AccountsById(id string)(*CompaniesItemAccountsAccountItemRequestBuilder) {
@@ -45,11 +45,11 @@ func (m *CompaniesCompanyItemRequestBuilder) AccountsById(id string)(*CompaniesI
     if id != "" {
         urlTplParams["account%2Did"] = id
     }
-    return NewCompaniesItemAccountsAccountItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemAccountsAccountItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AgedAccountsPayable provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsPayable()(*CompaniesItemAgedAccountsPayableRequestBuilder) {
-    return NewCompaniesItemAgedAccountsPayableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemAgedAccountsPayableRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgedAccountsPayableById provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsPayableById(id string)(*CompaniesItemAgedAccountsPayableAgedAccountsPayableItemRequestBuilder) {
@@ -60,11 +60,11 @@ func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsPayableById(id string)(
     if id != "" {
         urlTplParams["agedAccountsPayable%2Did"] = id
     }
-    return NewCompaniesItemAgedAccountsPayableAgedAccountsPayableItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemAgedAccountsPayableAgedAccountsPayableItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AgedAccountsReceivable provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsReceivable()(*CompaniesItemAgedAccountsReceivableRequestBuilder) {
-    return NewCompaniesItemAgedAccountsReceivableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemAgedAccountsReceivableRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgedAccountsReceivableById provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsReceivableById(id string)(*CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder) {
@@ -75,11 +75,11 @@ func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsReceivableById(id strin
     if id != "" {
         urlTplParams["agedAccountsReceivable%2Did"] = id
     }
-    return NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CompanyInformation provides operations to manage the companyInformation property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CompanyInformation()(*CompaniesItemCompanyInformationRequestBuilder) {
-    return NewCompaniesItemCompanyInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCompanyInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CompanyInformationById provides operations to manage the companyInformation property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CompanyInformationById(id string)(*CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) {
@@ -90,7 +90,7 @@ func (m *CompaniesCompanyItemRequestBuilder) CompanyInformationById(id string)(*
     if id != "" {
         urlTplParams["companyInformation%2Did"] = id
     }
-    return NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewCompaniesCompanyItemRequestBuilderInternal instantiates a new CompanyItemRequestBuilder and sets the default values.
 func NewCompaniesCompanyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesCompanyItemRequestBuilder) {
@@ -101,8 +101,8 @@ func NewCompaniesCompanyItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesCompanyItemRequestBuilder instantiates a new CompanyItemRequestBuilder and sets the default values.
@@ -113,7 +113,7 @@ func NewCompaniesCompanyItemRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // CountriesRegions provides operations to manage the countriesRegions property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CountriesRegions()(*CompaniesItemCountriesRegionsRequestBuilder) {
-    return NewCompaniesItemCountriesRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCountriesRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CountriesRegionsById provides operations to manage the countriesRegions property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CountriesRegionsById(id string)(*CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) {
@@ -124,11 +124,11 @@ func (m *CompaniesCompanyItemRequestBuilder) CountriesRegionsById(id string)(*Co
     if id != "" {
         urlTplParams["countryRegion%2Did"] = id
     }
-    return NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Currencies provides operations to manage the currencies property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Currencies()(*CompaniesItemCurrenciesRequestBuilder) {
-    return NewCompaniesItemCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CurrenciesById provides operations to manage the currencies property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CurrenciesById(id string)(*CompaniesItemCurrenciesCurrencyItemRequestBuilder) {
@@ -139,11 +139,11 @@ func (m *CompaniesCompanyItemRequestBuilder) CurrenciesById(id string)(*Companie
     if id != "" {
         urlTplParams["currency%2Did"] = id
     }
-    return NewCompaniesItemCurrenciesCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCurrenciesCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CustomerPaymentJournals provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentJournals()(*CompaniesItemCustomerPaymentJournalsRequestBuilder) {
-    return NewCompaniesItemCustomerPaymentJournalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentJournalsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomerPaymentJournalsById provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentJournalsById(id string)(*CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) {
@@ -154,11 +154,11 @@ func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentJournalsById(id stri
     if id != "" {
         urlTplParams["customerPaymentJournal%2Did"] = id
     }
-    return NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CustomerPayments provides operations to manage the customerPayments property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CustomerPayments()(*CompaniesItemCustomerPaymentsRequestBuilder) {
-    return NewCompaniesItemCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomerPaymentsById provides operations to manage the customerPayments property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentsById(id string)(*CompaniesItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
@@ -169,11 +169,11 @@ func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentsById(id string)(*Co
     if id != "" {
         urlTplParams["customerPayment%2Did"] = id
     }
-    return NewCompaniesItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Customers provides operations to manage the customers property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Customers()(*CompaniesItemCustomersRequestBuilder) {
-    return NewCompaniesItemCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CustomersById provides operations to manage the customers property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) CustomersById(id string)(*CompaniesItemCustomersCustomerItemRequestBuilder) {
@@ -184,11 +184,11 @@ func (m *CompaniesCompanyItemRequestBuilder) CustomersById(id string)(*Companies
     if id != "" {
         urlTplParams["customer%2Did"] = id
     }
-    return NewCompaniesItemCustomersCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemCustomersCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Dimensions provides operations to manage the dimensions property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Dimensions()(*CompaniesItemDimensionsRequestBuilder) {
-    return NewCompaniesItemDimensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemDimensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DimensionsById provides operations to manage the dimensions property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) DimensionsById(id string)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
@@ -199,11 +199,11 @@ func (m *CompaniesCompanyItemRequestBuilder) DimensionsById(id string)(*Companie
     if id != "" {
         urlTplParams["dimension%2Did"] = id
     }
-    return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DimensionValues provides operations to manage the dimensionValues property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionValuesRequestBuilder) {
-    return NewCompaniesItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DimensionValuesById provides operations to manage the dimensionValues property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) DimensionValuesById(id string)(*CompaniesItemDimensionValuesDimensionValueItemRequestBuilder) {
@@ -214,11 +214,11 @@ func (m *CompaniesCompanyItemRequestBuilder) DimensionValuesById(id string)(*Com
     if id != "" {
         urlTplParams["dimensionValue%2Did"] = id
     }
-    return NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Employees provides operations to manage the employees property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Employees()(*CompaniesItemEmployeesRequestBuilder) {
-    return NewCompaniesItemEmployeesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemEmployeesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EmployeesById provides operations to manage the employees property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) EmployeesById(id string)(*CompaniesItemEmployeesEmployeeItemRequestBuilder) {
@@ -229,11 +229,11 @@ func (m *CompaniesCompanyItemRequestBuilder) EmployeesById(id string)(*Companies
     if id != "" {
         urlTplParams["employee%2Did"] = id
     }
-    return NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // GeneralLedgerEntries provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) GeneralLedgerEntries()(*CompaniesItemGeneralLedgerEntriesRequestBuilder) {
-    return NewCompaniesItemGeneralLedgerEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemGeneralLedgerEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GeneralLedgerEntriesById provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) GeneralLedgerEntriesById(id string)(*CompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilder) {
@@ -244,7 +244,7 @@ func (m *CompaniesCompanyItemRequestBuilder) GeneralLedgerEntriesById(id string)
     if id != "" {
         urlTplParams["generalLedgerEntry%2Did"] = id
     }
-    return NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemGeneralLedgerEntriesGeneralLedgerEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get companies from financials
 func (m *CompaniesCompanyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesCompanyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable, error) {
@@ -267,7 +267,7 @@ func (m *CompaniesCompanyItemRequestBuilder) Get(ctx context.Context, requestCon
 }
 // ItemCategories provides operations to manage the itemCategories property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) ItemCategories()(*CompaniesItemItemCategoriesRequestBuilder) {
-    return NewCompaniesItemItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ItemCategoriesById provides operations to manage the itemCategories property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) ItemCategoriesById(id string)(*CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) {
@@ -278,11 +278,11 @@ func (m *CompaniesCompanyItemRequestBuilder) ItemCategoriesById(id string)(*Comp
     if id != "" {
         urlTplParams["itemCategory%2Did"] = id
     }
-    return NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Items provides operations to manage the items property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Items()(*CompaniesItemItemsRequestBuilder) {
-    return NewCompaniesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) ItemsById(id string)(*CompaniesItemItemsItemItemRequestBuilder) {
@@ -293,11 +293,11 @@ func (m *CompaniesCompanyItemRequestBuilder) ItemsById(id string)(*CompaniesItem
     if id != "" {
         urlTplParams["item%2Did"] = id
     }
-    return NewCompaniesItemItemsItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemItemsItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // JournalLines provides operations to manage the journalLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) JournalLines()(*CompaniesItemJournalLinesRequestBuilder) {
-    return NewCompaniesItemJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // JournalLinesById provides operations to manage the journalLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) JournalLinesById(id string)(*CompaniesItemJournalLinesJournalLineItemRequestBuilder) {
@@ -308,11 +308,11 @@ func (m *CompaniesCompanyItemRequestBuilder) JournalLinesById(id string)(*Compan
     if id != "" {
         urlTplParams["journalLine%2Did"] = id
     }
-    return NewCompaniesItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Journals provides operations to manage the journals property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Journals()(*CompaniesItemJournalsRequestBuilder) {
-    return NewCompaniesItemJournalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemJournalsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // JournalsById provides operations to manage the journals property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) JournalsById(id string)(*CompaniesItemJournalsJournalItemRequestBuilder) {
@@ -323,11 +323,11 @@ func (m *CompaniesCompanyItemRequestBuilder) JournalsById(id string)(*CompaniesI
     if id != "" {
         urlTplParams["journal%2Did"] = id
     }
-    return NewCompaniesItemJournalsJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemJournalsJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // PaymentMethods provides operations to manage the paymentMethods property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PaymentMethods()(*CompaniesItemPaymentMethodsRequestBuilder) {
-    return NewCompaniesItemPaymentMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPaymentMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PaymentMethodsById provides operations to manage the paymentMethods property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PaymentMethodsById(id string)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
@@ -338,11 +338,11 @@ func (m *CompaniesCompanyItemRequestBuilder) PaymentMethodsById(id string)(*Comp
     if id != "" {
         urlTplParams["paymentMethod%2Did"] = id
     }
-    return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // PaymentTerms provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PaymentTerms()(*CompaniesItemPaymentTermsRequestBuilder) {
-    return NewCompaniesItemPaymentTermsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPaymentTermsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PaymentTermsById provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PaymentTermsById(id string)(*CompaniesItemPaymentTermsPaymentTermItemRequestBuilder) {
@@ -353,11 +353,11 @@ func (m *CompaniesCompanyItemRequestBuilder) PaymentTermsById(id string)(*Compan
     if id != "" {
         urlTplParams["paymentTerm%2Did"] = id
     }
-    return NewCompaniesItemPaymentTermsPaymentTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemPaymentTermsPaymentTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Picture()(*CompaniesItemPictureRequestBuilder) {
-    return NewCompaniesItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PictureById(id string)(*CompaniesItemPicturePictureItemRequestBuilder) {
@@ -368,11 +368,11 @@ func (m *CompaniesCompanyItemRequestBuilder) PictureById(id string)(*CompaniesIt
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // PurchaseInvoiceLines provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoiceLines()(*CompaniesItemPurchaseInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PurchaseInvoiceLinesById provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoiceLinesById(id string)(*CompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
@@ -383,11 +383,11 @@ func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoiceLinesById(id string)
     if id != "" {
         urlTplParams["purchaseInvoiceLine%2Did"] = id
     }
-    return NewCompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // PurchaseInvoices provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoices()(*CompaniesItemPurchaseInvoicesRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PurchaseInvoicesById provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoicesById(id string)(*CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) {
@@ -398,11 +398,11 @@ func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoicesById(id string)(*Co
     if id != "" {
         urlTplParams["purchaseInvoice%2Did"] = id
     }
-    return NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesCreditMemoLines provides operations to manage the salesCreditMemoLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemoLines()(*CompaniesItemSalesCreditMemoLinesRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemoLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemoLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesCreditMemoLinesById provides operations to manage the salesCreditMemoLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemoLinesById(id string)(*CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
@@ -413,11 +413,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemoLinesById(id string)
     if id != "" {
         urlTplParams["salesCreditMemoLine%2Did"] = id
     }
-    return NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesCreditMemos provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemos()(*CompaniesItemSalesCreditMemosRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemosRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesCreditMemosById provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemosById(id string)(*CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) {
@@ -428,11 +428,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemosById(id string)(*Co
     if id != "" {
         urlTplParams["salesCreditMemo%2Did"] = id
     }
-    return NewCompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesInvoiceLines provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesInvoiceLines()(*CompaniesItemSalesInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesInvoiceLinesById provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesInvoiceLinesById(id string)(*CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
@@ -443,11 +443,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesInvoiceLinesById(id string)(*C
     if id != "" {
         urlTplParams["salesInvoiceLine%2Did"] = id
     }
-    return NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesInvoices provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesInvoices()(*CompaniesItemSalesInvoicesRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesInvoicesById provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesInvoicesById(id string)(*CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) {
@@ -458,11 +458,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesInvoicesById(id string)(*Compa
     if id != "" {
         urlTplParams["salesInvoice%2Did"] = id
     }
-    return NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesOrderLines provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesOrderLines()(*CompaniesItemSalesOrderLinesRequestBuilder) {
-    return NewCompaniesItemSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesOrderLinesById provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesOrderLinesById(id string)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
@@ -473,11 +473,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesOrderLinesById(id string)(*Com
     if id != "" {
         urlTplParams["salesOrderLine%2Did"] = id
     }
-    return NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesOrders provides operations to manage the salesOrders property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesOrders()(*CompaniesItemSalesOrdersRequestBuilder) {
-    return NewCompaniesItemSalesOrdersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesOrdersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesOrdersById provides operations to manage the salesOrders property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesOrdersById(id string)(*CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) {
@@ -488,11 +488,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesOrdersById(id string)(*Compani
     if id != "" {
         urlTplParams["salesOrder%2Did"] = id
     }
-    return NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesQuoteLines provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesQuoteLines()(*CompaniesItemSalesQuoteLinesRequestBuilder) {
-    return NewCompaniesItemSalesQuoteLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuoteLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesQuoteLinesById provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesQuoteLinesById(id string)(*CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
@@ -503,11 +503,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesQuoteLinesById(id string)(*Com
     if id != "" {
         urlTplParams["salesQuoteLine%2Did"] = id
     }
-    return NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SalesQuotes provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesQuotes()(*CompaniesItemSalesQuotesRequestBuilder) {
-    return NewCompaniesItemSalesQuotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesQuotesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SalesQuotesById provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) SalesQuotesById(id string)(*CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) {
@@ -518,11 +518,11 @@ func (m *CompaniesCompanyItemRequestBuilder) SalesQuotesById(id string)(*Compani
     if id != "" {
         urlTplParams["salesQuote%2Did"] = id
     }
-    return NewCompaniesItemSalesQuotesSalesQuoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesQuotesSalesQuoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ShipmentMethods provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) ShipmentMethods()(*CompaniesItemShipmentMethodsRequestBuilder) {
-    return NewCompaniesItemShipmentMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemShipmentMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ShipmentMethodsById provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) ShipmentMethodsById(id string)(*CompaniesItemShipmentMethodsShipmentMethodItemRequestBuilder) {
@@ -533,11 +533,11 @@ func (m *CompaniesCompanyItemRequestBuilder) ShipmentMethodsById(id string)(*Com
     if id != "" {
         urlTplParams["shipmentMethod%2Did"] = id
     }
-    return NewCompaniesItemShipmentMethodsShipmentMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemShipmentMethodsShipmentMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TaxAreas provides operations to manage the taxAreas property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) TaxAreas()(*CompaniesItemTaxAreasRequestBuilder) {
-    return NewCompaniesItemTaxAreasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemTaxAreasRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaxAreasById provides operations to manage the taxAreas property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) TaxAreasById(id string)(*CompaniesItemTaxAreasTaxAreaItemRequestBuilder) {
@@ -548,11 +548,11 @@ func (m *CompaniesCompanyItemRequestBuilder) TaxAreasById(id string)(*CompaniesI
     if id != "" {
         urlTplParams["taxArea%2Did"] = id
     }
-    return NewCompaniesItemTaxAreasTaxAreaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemTaxAreasTaxAreaItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TaxGroups provides operations to manage the taxGroups property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) TaxGroups()(*CompaniesItemTaxGroupsRequestBuilder) {
-    return NewCompaniesItemTaxGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemTaxGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TaxGroupsById provides operations to manage the taxGroups property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) TaxGroupsById(id string)(*CompaniesItemTaxGroupsTaxGroupItemRequestBuilder) {
@@ -563,7 +563,7 @@ func (m *CompaniesCompanyItemRequestBuilder) TaxGroupsById(id string)(*Companies
     if id != "" {
         urlTplParams["taxGroup%2Did"] = id
     }
-    return NewCompaniesItemTaxGroupsTaxGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemTaxGroupsTaxGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get companies from financials
 func (m *CompaniesCompanyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesCompanyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -583,7 +583,7 @@ func (m *CompaniesCompanyItemRequestBuilder) ToGetRequestInformation(ctx context
 }
 // UnitsOfMeasure provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) UnitsOfMeasure()(*CompaniesItemUnitsOfMeasureRequestBuilder) {
-    return NewCompaniesItemUnitsOfMeasureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemUnitsOfMeasureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UnitsOfMeasureById provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) UnitsOfMeasureById(id string)(*CompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilder) {
@@ -594,11 +594,11 @@ func (m *CompaniesCompanyItemRequestBuilder) UnitsOfMeasureById(id string)(*Comp
     if id != "" {
         urlTplParams["unitOfMeasure%2Did"] = id
     }
-    return NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemUnitsOfMeasureUnitOfMeasureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Vendors provides operations to manage the vendors property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) Vendors()(*CompaniesItemVendorsRequestBuilder) {
-    return NewCompaniesItemVendorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemVendorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // VendorsById provides operations to manage the vendors property of the microsoft.graph.company entity.
 func (m *CompaniesCompanyItemRequestBuilder) VendorsById(id string)(*CompaniesItemVendorsVendorItemRequestBuilder) {
@@ -609,5 +609,5 @@ func (m *CompaniesCompanyItemRequestBuilder) VendorsById(id string)(*CompaniesIt
     if id != "" {
         urlTplParams["vendor%2Did"] = id
     }
-    return NewCompaniesItemVendorsVendorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemVendorsVendorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

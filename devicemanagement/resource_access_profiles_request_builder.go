@@ -60,8 +60,8 @@ func NewResourceAccessProfilesRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewResourceAccessProfilesRequestBuilder instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewResourceAccessProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *ResourceAccessProfilesRequestBuilder) Count()(*ResourceAccessProfilesCountRequestBuilder) {
-    return NewResourceAccessProfilesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewResourceAccessProfilesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of resource access settings associated with account.
 func (m *ResourceAccessProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceAccessProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseCollectionResponseable, error) {
@@ -114,7 +114,7 @@ func (m *ResourceAccessProfilesRequestBuilder) Post(ctx context.Context, body ie
 }
 // QueryByPlatformType provides operations to call the queryByPlatformType method.
 func (m *ResourceAccessProfilesRequestBuilder) QueryByPlatformType()(*ResourceAccessProfilesQueryByPlatformTypeRequestBuilder) {
-    return NewResourceAccessProfilesQueryByPlatformTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewResourceAccessProfilesQueryByPlatformTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation collection of resource access settings associated with account.
 func (m *ResourceAccessProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ResourceAccessProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +139,10 @@ func (m *ResourceAccessProfilesRequestBuilder) ToPostRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

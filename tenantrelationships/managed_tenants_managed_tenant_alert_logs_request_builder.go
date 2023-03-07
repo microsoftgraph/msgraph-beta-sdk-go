@@ -60,8 +60,8 @@ func NewManagedTenantsManagedTenantAlertLogsRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertLogsRequestBuilder instantiates a new ManagedTenantAlertLogsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedTenantsManagedTenantAlertLogsRequestBuilder(rawUrl string, reques
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagedTenantAlertLogsRequestBuilder) Count()(*ManagedTenantsManagedTenantAlertLogsCountRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertLogsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertLogsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get managedTenantAlertLogs from tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertLogsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertLogsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertLogCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ManagedTenantsManagedTenantAlertLogsRequestBuilder) ToPostRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -55,8 +55,8 @@ func NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemReque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder instantiates a new AndroidForWorkEnrollmentProfileItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemReque
 }
 // CreateToken provides operations to call the createToken method.
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) CreateToken()(*AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder) {
-    return NewAndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property androidForWorkEnrollmentProfiles for deviceManagement
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -125,7 +125,7 @@ func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequ
 }
 // RevokeToken provides operations to call the revokeToken method.
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) RevokeToken()(*AndroidForWorkEnrollmentProfilesItemRevokeTokenRequestBuilder) {
-    return NewAndroidForWorkEnrollmentProfilesItemRevokeTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidForWorkEnrollmentProfilesItemRevokeTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property androidForWorkEnrollmentProfiles for deviceManagement
 func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

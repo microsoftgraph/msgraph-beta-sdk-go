@@ -41,7 +41,7 @@ type VppTokensGetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration
 func NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bundleId *string)(*VppTokensGetLicensesForAppWithBundleIdRequestBuilder) {
     m := &VppTokensGetLicensesForAppWithBundleIdRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/microsoft.graph.getLicensesForApp(bundleId='{bundleId}'){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/getLicensesForApp(bundleId='{bundleId}'){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -49,8 +49,8 @@ func NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(pathParamet
     if bundleId != nil {
         urlTplParams["bundleId"] = *bundleId
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVppTokensGetLicensesForAppWithBundleIdRequestBuilder instantiates a new GetLicensesForAppWithBundleIdRequestBuilder and sets the default values.

@@ -27,13 +27,13 @@ type ItemSelfDeactivateRequestBuilderPostRequestConfiguration struct {
 func NewItemSelfDeactivateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSelfDeactivateRequestBuilder) {
     m := &ItemSelfDeactivateRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/microsoft.graph.selfDeactivate";
+    m.urlTemplate = "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/selfDeactivate";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSelfDeactivateRequestBuilder instantiates a new SelfDeactivateRequestBuilder and sets the default values.

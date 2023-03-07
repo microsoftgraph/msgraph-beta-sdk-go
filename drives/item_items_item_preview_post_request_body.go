@@ -2,28 +2,20 @@ package drives
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemPreviewPostRequestBody 
 type ItemItemsItemPreviewPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The allowEdit property
-    allowEdit *bool
-    // The chromeless property
-    chromeless *bool
-    // The page property
-    page *string
-    // The viewer property
-    viewer *string
-    // The zoom property
-    zoom *float64
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemPreviewPostRequestBody instantiates a new ItemItemsItemPreviewPostRequestBody and sets the default values.
 func NewItemItemsItemPreviewPostRequestBody()(*ItemItemsItemPreviewPostRequestBody) {
     m := &ItemItemsItemPreviewPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemItemsItemPreviewPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,15 +24,41 @@ func CreateItemItemsItemPreviewPostRequestBodyFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemPreviewPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowEdit gets the allowEdit property value. The allowEdit property
 func (m *ItemItemsItemPreviewPostRequestBody) GetAllowEdit()(*bool) {
-    return m.allowEdit
+    val, err := m.GetBackingStore().Get("allowEdit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemPreviewPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetChromeless gets the chromeless property value. The chromeless property
 func (m *ItemItemsItemPreviewPostRequestBody) GetChromeless()(*bool) {
-    return m.chromeless
+    val, err := m.GetBackingStore().Get("chromeless")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemPreviewPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,15 +117,36 @@ func (m *ItemItemsItemPreviewPostRequestBody) GetFieldDeserializers()(map[string
 }
 // GetPage gets the page property value. The page property
 func (m *ItemItemsItemPreviewPostRequestBody) GetPage()(*string) {
-    return m.page
+    val, err := m.GetBackingStore().Get("page")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetViewer gets the viewer property value. The viewer property
 func (m *ItemItemsItemPreviewPostRequestBody) GetViewer()(*string) {
-    return m.viewer
+    val, err := m.GetBackingStore().Get("viewer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetZoom gets the zoom property value. The zoom property
 func (m *ItemItemsItemPreviewPostRequestBody) GetZoom()(*float64) {
-    return m.zoom
+    val, err := m.GetBackingStore().Get("zoom")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemPreviewPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *ItemItemsItemPreviewPostRequestBody) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemPreviewPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowEdit sets the allowEdit property value. The allowEdit property
 func (m *ItemItemsItemPreviewPostRequestBody) SetAllowEdit(value *bool)() {
-    m.allowEdit = value
+    err := m.GetBackingStore().Set("allowEdit", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemPreviewPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetChromeless sets the chromeless property value. The chromeless property
 func (m *ItemItemsItemPreviewPostRequestBody) SetChromeless(value *bool)() {
-    m.chromeless = value
+    err := m.GetBackingStore().Set("chromeless", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPage sets the page property value. The page property
 func (m *ItemItemsItemPreviewPostRequestBody) SetPage(value *string)() {
-    m.page = value
+    err := m.GetBackingStore().Set("page", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetViewer sets the viewer property value. The viewer property
 func (m *ItemItemsItemPreviewPostRequestBody) SetViewer(value *string)() {
-    m.viewer = value
+    err := m.GetBackingStore().Set("viewer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetZoom sets the zoom property value. The zoom property
 func (m *ItemItemsItemPreviewPostRequestBody) SetZoom(value *float64)() {
-    m.zoom = value
+    err := m.GetBackingStore().Set("zoom", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemPreviewPostRequestBodyable 
+type ItemItemsItemPreviewPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowEdit()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetChromeless()(*bool)
+    GetPage()(*string)
+    GetViewer()(*string)
+    GetZoom()(*float64)
+    SetAllowEdit(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetChromeless(value *bool)()
+    SetPage(value *string)()
+    SetViewer(value *string)()
+    SetZoom(value *float64)()
 }

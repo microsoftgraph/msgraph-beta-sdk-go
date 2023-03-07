@@ -7,12 +7,6 @@ import (
 // VppTokenRevokeLicensesActionResult 
 type VppTokenRevokeLicensesActionResult struct {
     VppTokenActionResult
-    // Possible types of reasons for an Apple Volume Purchase Program token action failure.
-    actionFailureReason *VppTokenActionFailureReason
-    // A count of the number of licenses that failed to revoke.
-    failedLicensesCount *int32
-    // A count of the number of licenses that were attempted to revoke.
-    totalLicensesCount *int32
 }
 // NewVppTokenRevokeLicensesActionResult instantiates a new VppTokenRevokeLicensesActionResult and sets the default values.
 func NewVppTokenRevokeLicensesActionResult()(*VppTokenRevokeLicensesActionResult) {
@@ -27,11 +21,25 @@ func CreateVppTokenRevokeLicensesActionResultFromDiscriminatorValue(parseNode i8
 }
 // GetActionFailureReason gets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *VppTokenRevokeLicensesActionResult) GetActionFailureReason()(*VppTokenActionFailureReason) {
-    return m.actionFailureReason
+    val, err := m.GetBackingStore().Get("actionFailureReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VppTokenActionFailureReason)
+    }
+    return nil
 }
 // GetFailedLicensesCount gets the failedLicensesCount property value. A count of the number of licenses that failed to revoke.
 func (m *VppTokenRevokeLicensesActionResult) GetFailedLicensesCount()(*int32) {
-    return m.failedLicensesCount
+    val, err := m.GetBackingStore().Get("failedLicensesCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.
 func (m *VppTokenRevokeLicensesActionResult) GetTotalLicensesCount()(*int32) {
-    return m.totalLicensesCount
+    val, err := m.GetBackingStore().Get("totalLicensesCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VppTokenRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *VppTokenRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d26
 }
 // SetActionFailureReason sets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *VppTokenRevokeLicensesActionResult) SetActionFailureReason(value *VppTokenActionFailureReason)() {
-    m.actionFailureReason = value
+    err := m.GetBackingStore().Set("actionFailureReason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedLicensesCount sets the failedLicensesCount property value. A count of the number of licenses that failed to revoke.
 func (m *VppTokenRevokeLicensesActionResult) SetFailedLicensesCount(value *int32)() {
-    m.failedLicensesCount = value
+    err := m.GetBackingStore().Set("failedLicensesCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalLicensesCount sets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.
 func (m *VppTokenRevokeLicensesActionResult) SetTotalLicensesCount(value *int32)() {
-    m.totalLicensesCount = value
+    err := m.GetBackingStore().Set("totalLicensesCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VppTokenRevokeLicensesActionResultable 
+type VppTokenRevokeLicensesActionResultable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    VppTokenActionResultable
+    GetActionFailureReason()(*VppTokenActionFailureReason)
+    GetFailedLicensesCount()(*int32)
+    GetTotalLicensesCount()(*int32)
+    SetActionFailureReason(value *VppTokenActionFailureReason)()
+    SetFailedLicensesCount(value *int32)()
+    SetTotalLicensesCount(value *int32)()
 }

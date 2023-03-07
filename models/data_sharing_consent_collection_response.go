@@ -7,8 +7,6 @@ import (
 // DataSharingConsentCollectionResponse 
 type DataSharingConsentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DataSharingConsentable
 }
 // NewDataSharingConsentCollectionResponse instantiates a new DataSharingConsentCollectionResponse and sets the default values.
 func NewDataSharingConsentCollectionResponse()(*DataSharingConsentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DataSharingConsentCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *DataSharingConsentCollectionResponse) GetValue()([]DataSharingConsentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DataSharingConsentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DataSharingConsentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DataSharingConsentCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *DataSharingConsentCollectionResponse) SetValue(value []DataSharingConsentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DataSharingConsentCollectionResponseable 
+type DataSharingConsentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DataSharingConsentable)
+    SetValue(value []DataSharingConsentable)()
 }

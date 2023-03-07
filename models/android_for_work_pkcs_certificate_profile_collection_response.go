@@ -7,8 +7,6 @@ import (
 // AndroidForWorkPkcsCertificateProfileCollectionResponse 
 type AndroidForWorkPkcsCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkPkcsCertificateProfileable
 }
 // NewAndroidForWorkPkcsCertificateProfileCollectionResponse instantiates a new AndroidForWorkPkcsCertificateProfileCollectionResponse and sets the default values.
 func NewAndroidForWorkPkcsCertificateProfileCollectionResponse()(*AndroidForWorkPkcsCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkPkcsCertificateProfileCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkPkcsCertificateProfileCollectionResponse) GetValue()([]AndroidForWorkPkcsCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkPkcsCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkPkcsCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkPkcsCertificateProfileCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkPkcsCertificateProfileCollectionResponse) SetValue(value []AndroidForWorkPkcsCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkPkcsCertificateProfileCollectionResponseable 
+type AndroidForWorkPkcsCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkPkcsCertificateProfileable)
+    SetValue(value []AndroidForWorkPkcsCertificateProfileable)()
 }

@@ -8,18 +8,6 @@ import (
 // Account 
 type Account struct {
     Entity
-    // The blocked property
-    blocked *bool
-    // The category property
-    category *string
-    // The displayName property
-    displayName *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number property
-    number *string
-    // The subCategory property
-    subCategory *string
 }
 // NewAccount instantiates a new account and sets the default values.
 func NewAccount()(*Account) {
@@ -34,15 +22,36 @@ func CreateAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Account) GetBlocked()(*bool) {
-    return m.blocked
+    val, err := m.GetBackingStore().Get("blocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCategory gets the category property value. The category property
 func (m *Account) GetCategory()(*string) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Account) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,15 +120,36 @@ func (m *Account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Account) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNumber gets the number property value. The number property
 func (m *Account) GetNumber()(*string) {
-    return m.number
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubCategory gets the subCategory property value. The subCategory property
 func (m *Account) GetSubCategory()(*string) {
-    return m.subCategory
+    val, err := m.GetBackingStore().Get("subCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Account) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +197,60 @@ func (m *Account) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Account) SetBlocked(value *bool)() {
-    m.blocked = value
+    err := m.GetBackingStore().Set("blocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategory sets the category property value. The category property
 func (m *Account) SetCategory(value *string)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Account) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Account) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. The number property
 func (m *Account) SetNumber(value *string)() {
-    m.number = value
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubCategory sets the subCategory property value. The subCategory property
 func (m *Account) SetSubCategory(value *string)() {
-    m.subCategory = value
+    err := m.GetBackingStore().Set("subCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Accountable 
+type Accountable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBlocked()(*bool)
+    GetCategory()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNumber()(*string)
+    GetSubCategory()(*string)
+    SetBlocked(value *bool)()
+    SetCategory(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNumber(value *string)()
+    SetSubCategory(value *string)()
 }

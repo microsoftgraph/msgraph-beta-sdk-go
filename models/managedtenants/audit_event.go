@@ -9,32 +9,6 @@ import (
 // AuditEvent 
 type AuditEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // A string which uniquely represents the operation that occurred. Required. Read-only.
-    activity *string
-    // The time when the activity ocurred. Required. Read-only.
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The identifier of the activity request that made the audit event. Required. Read-only.
-    activityId *string
-    // A category which represents a logical grouping of activities. Required. Read-only.
-    category *string
-    // The HTTP verb that was used when making the API request. Required. Read-only.
-    httpVerb *string
-    // The identifier of the app that was used to make the request. Required. Read-only.
-    initiatedByAppId *string
-    // The UPN of the user who initiated the activity. Required. Read-only.
-    initiatedByUpn *string
-    // The identifier of the user who initiated the activity. Required. Read-only.
-    initiatedByUserId *string
-    // The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
-    ipAddress *string
-    // The raw HTTP request body. Some sensitive information may be removed.
-    requestBody *string
-    // The raw HTTP request URL. Required. Read-only.
-    requestUrl *string
-    // The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
-    tenantIds *string
-    // The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
-    tenantNames *string
 }
 // NewAuditEvent instantiates a new auditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
@@ -49,19 +23,47 @@ func CreateAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetActivity gets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
 func (m *AuditEvent) GetActivity()(*string) {
-    return m.activity
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetActivityDateTime gets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
 func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.activityDateTime
+    val, err := m.GetBackingStore().Get("activityDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetActivityId gets the activityId property value. The identifier of the activity request that made the audit event. Required. Read-only.
 func (m *AuditEvent) GetActivityId()(*string) {
-    return m.activityId
+    val, err := m.GetBackingStore().Get("activityId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCategory gets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
 func (m *AuditEvent) GetCategory()(*string) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -200,39 +202,102 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetHttpVerb gets the httpVerb property value. The HTTP verb that was used when making the API request. Required. Read-only.
 func (m *AuditEvent) GetHttpVerb()(*string) {
-    return m.httpVerb
+    val, err := m.GetBackingStore().Get("httpVerb")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetInitiatedByAppId gets the initiatedByAppId property value. The identifier of the app that was used to make the request. Required. Read-only.
 func (m *AuditEvent) GetInitiatedByAppId()(*string) {
-    return m.initiatedByAppId
+    val, err := m.GetBackingStore().Get("initiatedByAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetInitiatedByUpn gets the initiatedByUpn property value. The UPN of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) GetInitiatedByUpn()(*string) {
-    return m.initiatedByUpn
+    val, err := m.GetBackingStore().Get("initiatedByUpn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetInitiatedByUserId gets the initiatedByUserId property value. The identifier of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) GetInitiatedByUserId()(*string) {
-    return m.initiatedByUserId
+    val, err := m.GetBackingStore().Get("initiatedByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIpAddress gets the ipAddress property value. The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
 func (m *AuditEvent) GetIpAddress()(*string) {
-    return m.ipAddress
+    val, err := m.GetBackingStore().Get("ipAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequestBody gets the requestBody property value. The raw HTTP request body. Some sensitive information may be removed.
 func (m *AuditEvent) GetRequestBody()(*string) {
-    return m.requestBody
+    val, err := m.GetBackingStore().Get("requestBody")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequestUrl gets the requestUrl property value. The raw HTTP request URL. Required. Read-only.
 func (m *AuditEvent) GetRequestUrl()(*string) {
-    return m.requestUrl
+    val, err := m.GetBackingStore().Get("requestUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantIds gets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantIds()(*string) {
-    return m.tenantIds
+    val, err := m.GetBackingStore().Get("tenantIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantNames gets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantNames()(*string) {
-    return m.tenantNames
+    val, err := m.GetBackingStore().Get("tenantNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -322,53 +387,123 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetActivity sets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
 func (m *AuditEvent) SetActivity(value *string)() {
-    m.activity = value
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivityDateTime sets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
 func (m *AuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    err := m.GetBackingStore().Set("activityDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivityId sets the activityId property value. The identifier of the activity request that made the audit event. Required. Read-only.
 func (m *AuditEvent) SetActivityId(value *string)() {
-    m.activityId = value
+    err := m.GetBackingStore().Set("activityId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategory sets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
 func (m *AuditEvent) SetCategory(value *string)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHttpVerb sets the httpVerb property value. The HTTP verb that was used when making the API request. Required. Read-only.
 func (m *AuditEvent) SetHttpVerb(value *string)() {
-    m.httpVerb = value
+    err := m.GetBackingStore().Set("httpVerb", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiatedByAppId sets the initiatedByAppId property value. The identifier of the app that was used to make the request. Required. Read-only.
 func (m *AuditEvent) SetInitiatedByAppId(value *string)() {
-    m.initiatedByAppId = value
+    err := m.GetBackingStore().Set("initiatedByAppId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiatedByUpn sets the initiatedByUpn property value. The UPN of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) SetInitiatedByUpn(value *string)() {
-    m.initiatedByUpn = value
+    err := m.GetBackingStore().Set("initiatedByUpn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiatedByUserId sets the initiatedByUserId property value. The identifier of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) SetInitiatedByUserId(value *string)() {
-    m.initiatedByUserId = value
+    err := m.GetBackingStore().Set("initiatedByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpAddress sets the ipAddress property value. The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
 func (m *AuditEvent) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    err := m.GetBackingStore().Set("ipAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestBody sets the requestBody property value. The raw HTTP request body. Some sensitive information may be removed.
 func (m *AuditEvent) SetRequestBody(value *string)() {
-    m.requestBody = value
+    err := m.GetBackingStore().Set("requestBody", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestUrl sets the requestUrl property value. The raw HTTP request URL. Required. Read-only.
 func (m *AuditEvent) SetRequestUrl(value *string)() {
-    m.requestUrl = value
+    err := m.GetBackingStore().Set("requestUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantIds sets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantIds(value *string)() {
-    m.tenantIds = value
+    err := m.GetBackingStore().Set("tenantIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantNames sets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantNames(value *string)() {
-    m.tenantNames = value
+    err := m.GetBackingStore().Set("tenantNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuditEventable 
+type AuditEventable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivity()(*string)
+    GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetActivityId()(*string)
+    GetCategory()(*string)
+    GetHttpVerb()(*string)
+    GetInitiatedByAppId()(*string)
+    GetInitiatedByUpn()(*string)
+    GetInitiatedByUserId()(*string)
+    GetIpAddress()(*string)
+    GetRequestBody()(*string)
+    GetRequestUrl()(*string)
+    GetTenantIds()(*string)
+    GetTenantNames()(*string)
+    SetActivity(value *string)()
+    SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetActivityId(value *string)()
+    SetCategory(value *string)()
+    SetHttpVerb(value *string)()
+    SetInitiatedByAppId(value *string)()
+    SetInitiatedByUpn(value *string)()
+    SetInitiatedByUserId(value *string)()
+    SetIpAddress(value *string)()
+    SetRequestBody(value *string)()
+    SetRequestUrl(value *string)()
+    SetTenantIds(value *string)()
+    SetTenantNames(value *string)()
 }

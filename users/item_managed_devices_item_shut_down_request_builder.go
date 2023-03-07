@@ -26,13 +26,13 @@ type ItemManagedDevicesItemShutDownRequestBuilderPostRequestConfiguration struct
 func NewItemManagedDevicesItemShutDownRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesItemShutDownRequestBuilder) {
     m := &ItemManagedDevicesItemShutDownRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/microsoft.graph.shutDown";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/shutDown";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedDevicesItemShutDownRequestBuilder instantiates a new ShutDownRequestBuilder and sets the default values.

@@ -8,48 +8,6 @@ import (
 // WindowsProtectionState 
 type WindowsProtectionState struct {
     Entity
-    // Current anti malware version
-    antiMalwareVersion *string
-    // Device malware list
-    detectedMalwareState []WindowsDeviceMalwareStateable
-    // Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
-    deviceState *WindowsDeviceHealthState
-    // Current endpoint protection engine's version
-    engineVersion *string
-    // Full scan overdue or not?
-    fullScanOverdue *bool
-    // Full scan required or not?
-    fullScanRequired *bool
-    // Indicates whether the device is a virtual machine.
-    isVirtualMachine *bool
-    // Last quick scan datetime
-    lastFullScanDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Last full scan signature version
-    lastFullScanSignatureVersion *string
-    // Last quick scan datetime
-    lastQuickScanDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Last quick scan signature version
-    lastQuickScanSignatureVersion *string
-    // Last device health status reported time
-    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Anti malware is enabled or not
-    malwareProtectionEnabled *bool
-    // Network inspection system enabled or not?
-    networkInspectionSystemEnabled *bool
-    // Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
-    productStatus *WindowsDefenderProductStatus
-    // Quick scan overdue or not?
-    quickScanOverdue *bool
-    // Real time protection is enabled or not?
-    realTimeProtectionEnabled *bool
-    // Reboot required or not?
-    rebootRequired *bool
-    // Signature out of date or not?
-    signatureUpdateOverdue *bool
-    // Current malware definitions version
-    signatureVersion *string
-    // Indicates whether the Windows Defender tamper protection feature is enabled.
-    tamperProtectionEnabled *bool
 }
 // NewWindowsProtectionState instantiates a new windowsProtectionState and sets the default values.
 func NewWindowsProtectionState()(*WindowsProtectionState) {
@@ -64,19 +22,47 @@ func CreateWindowsProtectionStateFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAntiMalwareVersion gets the antiMalwareVersion property value. Current anti malware version
 func (m *WindowsProtectionState) GetAntiMalwareVersion()(*string) {
-    return m.antiMalwareVersion
+    val, err := m.GetBackingStore().Get("antiMalwareVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDetectedMalwareState gets the detectedMalwareState property value. Device malware list
 func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwareStateable) {
-    return m.detectedMalwareState
+    val, err := m.GetBackingStore().Get("detectedMalwareState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsDeviceMalwareStateable)
+    }
+    return nil
 }
 // GetDeviceState gets the deviceState property value. Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
 func (m *WindowsProtectionState) GetDeviceState()(*WindowsDeviceHealthState) {
-    return m.deviceState
+    val, err := m.GetBackingStore().Get("deviceState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsDeviceHealthState)
+    }
+    return nil
 }
 // GetEngineVersion gets the engineVersion property value. Current endpoint protection engine's version
 func (m *WindowsProtectionState) GetEngineVersion()(*string) {
-    return m.engineVersion
+    val, err := m.GetBackingStore().Get("engineVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -299,71 +285,190 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFullScanOverdue gets the fullScanOverdue property value. Full scan overdue or not?
 func (m *WindowsProtectionState) GetFullScanOverdue()(*bool) {
-    return m.fullScanOverdue
+    val, err := m.GetBackingStore().Get("fullScanOverdue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFullScanRequired gets the fullScanRequired property value. Full scan required or not?
 func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
-    return m.fullScanRequired
+    val, err := m.GetBackingStore().Get("fullScanRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsVirtualMachine gets the isVirtualMachine property value. Indicates whether the device is a virtual machine.
 func (m *WindowsProtectionState) GetIsVirtualMachine()(*bool) {
-    return m.isVirtualMachine
+    val, err := m.GetBackingStore().Get("isVirtualMachine")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastFullScanDateTime gets the lastFullScanDateTime property value. Last quick scan datetime
 func (m *WindowsProtectionState) GetLastFullScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastFullScanDateTime
+    val, err := m.GetBackingStore().Get("lastFullScanDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLastFullScanSignatureVersion gets the lastFullScanSignatureVersion property value. Last full scan signature version
 func (m *WindowsProtectionState) GetLastFullScanSignatureVersion()(*string) {
-    return m.lastFullScanSignatureVersion
+    val, err := m.GetBackingStore().Get("lastFullScanSignatureVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastQuickScanDateTime gets the lastQuickScanDateTime property value. Last quick scan datetime
 func (m *WindowsProtectionState) GetLastQuickScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastQuickScanDateTime
+    val, err := m.GetBackingStore().Get("lastQuickScanDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLastQuickScanSignatureVersion gets the lastQuickScanSignatureVersion property value. Last quick scan signature version
 func (m *WindowsProtectionState) GetLastQuickScanSignatureVersion()(*string) {
-    return m.lastQuickScanSignatureVersion
+    val, err := m.GetBackingStore().Get("lastQuickScanSignatureVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last device health status reported time
 func (m *WindowsProtectionState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastReportedDateTime
+    val, err := m.GetBackingStore().Get("lastReportedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetMalwareProtectionEnabled gets the malwareProtectionEnabled property value. Anti malware is enabled or not
 func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
-    return m.malwareProtectionEnabled
+    val, err := m.GetBackingStore().Get("malwareProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNetworkInspectionSystemEnabled gets the networkInspectionSystemEnabled property value. Network inspection system enabled or not?
 func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
-    return m.networkInspectionSystemEnabled
+    val, err := m.GetBackingStore().Get("networkInspectionSystemEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetProductStatus gets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
 func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatus) {
-    return m.productStatus
+    val, err := m.GetBackingStore().Get("productStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsDefenderProductStatus)
+    }
+    return nil
 }
 // GetQuickScanOverdue gets the quickScanOverdue property value. Quick scan overdue or not?
 func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
-    return m.quickScanOverdue
+    val, err := m.GetBackingStore().Get("quickScanOverdue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRealTimeProtectionEnabled gets the realTimeProtectionEnabled property value. Real time protection is enabled or not?
 func (m *WindowsProtectionState) GetRealTimeProtectionEnabled()(*bool) {
-    return m.realTimeProtectionEnabled
+    val, err := m.GetBackingStore().Get("realTimeProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRebootRequired gets the rebootRequired property value. Reboot required or not?
 func (m *WindowsProtectionState) GetRebootRequired()(*bool) {
-    return m.rebootRequired
+    val, err := m.GetBackingStore().Get("rebootRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSignatureUpdateOverdue gets the signatureUpdateOverdue property value. Signature out of date or not?
 func (m *WindowsProtectionState) GetSignatureUpdateOverdue()(*bool) {
-    return m.signatureUpdateOverdue
+    val, err := m.GetBackingStore().Get("signatureUpdateOverdue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSignatureVersion gets the signatureVersion property value. Current malware definitions version
 func (m *WindowsProtectionState) GetSignatureVersion()(*string) {
-    return m.signatureVersion
+    val, err := m.GetBackingStore().Get("signatureVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTamperProtectionEnabled gets the tamperProtectionEnabled property value. Indicates whether the Windows Defender tamper protection feature is enabled.
 func (m *WindowsProtectionState) GetTamperProtectionEnabled()(*bool) {
-    return m.tamperProtectionEnabled
+    val, err := m.GetBackingStore().Get("tamperProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -507,85 +612,195 @@ func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAntiMalwareVersion sets the antiMalwareVersion property value. Current anti malware version
 func (m *WindowsProtectionState) SetAntiMalwareVersion(value *string)() {
-    m.antiMalwareVersion = value
+    err := m.GetBackingStore().Set("antiMalwareVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectedMalwareState sets the detectedMalwareState property value. Device malware list
 func (m *WindowsProtectionState) SetDetectedMalwareState(value []WindowsDeviceMalwareStateable)() {
-    m.detectedMalwareState = value
+    err := m.GetBackingStore().Set("detectedMalwareState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceState sets the deviceState property value. Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
 func (m *WindowsProtectionState) SetDeviceState(value *WindowsDeviceHealthState)() {
-    m.deviceState = value
+    err := m.GetBackingStore().Set("deviceState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEngineVersion sets the engineVersion property value. Current endpoint protection engine's version
 func (m *WindowsProtectionState) SetEngineVersion(value *string)() {
-    m.engineVersion = value
+    err := m.GetBackingStore().Set("engineVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFullScanOverdue sets the fullScanOverdue property value. Full scan overdue or not?
 func (m *WindowsProtectionState) SetFullScanOverdue(value *bool)() {
-    m.fullScanOverdue = value
+    err := m.GetBackingStore().Set("fullScanOverdue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFullScanRequired sets the fullScanRequired property value. Full scan required or not?
 func (m *WindowsProtectionState) SetFullScanRequired(value *bool)() {
-    m.fullScanRequired = value
+    err := m.GetBackingStore().Set("fullScanRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsVirtualMachine sets the isVirtualMachine property value. Indicates whether the device is a virtual machine.
 func (m *WindowsProtectionState) SetIsVirtualMachine(value *bool)() {
-    m.isVirtualMachine = value
+    err := m.GetBackingStore().Set("isVirtualMachine", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastFullScanDateTime sets the lastFullScanDateTime property value. Last quick scan datetime
 func (m *WindowsProtectionState) SetLastFullScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastFullScanDateTime = value
+    err := m.GetBackingStore().Set("lastFullScanDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastFullScanSignatureVersion sets the lastFullScanSignatureVersion property value. Last full scan signature version
 func (m *WindowsProtectionState) SetLastFullScanSignatureVersion(value *string)() {
-    m.lastFullScanSignatureVersion = value
+    err := m.GetBackingStore().Set("lastFullScanSignatureVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastQuickScanDateTime sets the lastQuickScanDateTime property value. Last quick scan datetime
 func (m *WindowsProtectionState) SetLastQuickScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastQuickScanDateTime = value
+    err := m.GetBackingStore().Set("lastQuickScanDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastQuickScanSignatureVersion sets the lastQuickScanSignatureVersion property value. Last quick scan signature version
 func (m *WindowsProtectionState) SetLastQuickScanSignatureVersion(value *string)() {
-    m.lastQuickScanSignatureVersion = value
+    err := m.GetBackingStore().Set("lastQuickScanSignatureVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last device health status reported time
 func (m *WindowsProtectionState) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    err := m.GetBackingStore().Set("lastReportedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMalwareProtectionEnabled sets the malwareProtectionEnabled property value. Anti malware is enabled or not
 func (m *WindowsProtectionState) SetMalwareProtectionEnabled(value *bool)() {
-    m.malwareProtectionEnabled = value
+    err := m.GetBackingStore().Set("malwareProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetworkInspectionSystemEnabled sets the networkInspectionSystemEnabled property value. Network inspection system enabled or not?
 func (m *WindowsProtectionState) SetNetworkInspectionSystemEnabled(value *bool)() {
-    m.networkInspectionSystemEnabled = value
+    err := m.GetBackingStore().Set("networkInspectionSystemEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductStatus sets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
 func (m *WindowsProtectionState) SetProductStatus(value *WindowsDefenderProductStatus)() {
-    m.productStatus = value
+    err := m.GetBackingStore().Set("productStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuickScanOverdue sets the quickScanOverdue property value. Quick scan overdue or not?
 func (m *WindowsProtectionState) SetQuickScanOverdue(value *bool)() {
-    m.quickScanOverdue = value
+    err := m.GetBackingStore().Set("quickScanOverdue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealTimeProtectionEnabled sets the realTimeProtectionEnabled property value. Real time protection is enabled or not?
 func (m *WindowsProtectionState) SetRealTimeProtectionEnabled(value *bool)() {
-    m.realTimeProtectionEnabled = value
+    err := m.GetBackingStore().Set("realTimeProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRebootRequired sets the rebootRequired property value. Reboot required or not?
 func (m *WindowsProtectionState) SetRebootRequired(value *bool)() {
-    m.rebootRequired = value
+    err := m.GetBackingStore().Set("rebootRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignatureUpdateOverdue sets the signatureUpdateOverdue property value. Signature out of date or not?
 func (m *WindowsProtectionState) SetSignatureUpdateOverdue(value *bool)() {
-    m.signatureUpdateOverdue = value
+    err := m.GetBackingStore().Set("signatureUpdateOverdue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignatureVersion sets the signatureVersion property value. Current malware definitions version
 func (m *WindowsProtectionState) SetSignatureVersion(value *string)() {
-    m.signatureVersion = value
+    err := m.GetBackingStore().Set("signatureVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTamperProtectionEnabled sets the tamperProtectionEnabled property value. Indicates whether the Windows Defender tamper protection feature is enabled.
 func (m *WindowsProtectionState) SetTamperProtectionEnabled(value *bool)() {
-    m.tamperProtectionEnabled = value
+    err := m.GetBackingStore().Set("tamperProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsProtectionStateable 
+type WindowsProtectionStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAntiMalwareVersion()(*string)
+    GetDetectedMalwareState()([]WindowsDeviceMalwareStateable)
+    GetDeviceState()(*WindowsDeviceHealthState)
+    GetEngineVersion()(*string)
+    GetFullScanOverdue()(*bool)
+    GetFullScanRequired()(*bool)
+    GetIsVirtualMachine()(*bool)
+    GetLastFullScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastFullScanSignatureVersion()(*string)
+    GetLastQuickScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastQuickScanSignatureVersion()(*string)
+    GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMalwareProtectionEnabled()(*bool)
+    GetNetworkInspectionSystemEnabled()(*bool)
+    GetProductStatus()(*WindowsDefenderProductStatus)
+    GetQuickScanOverdue()(*bool)
+    GetRealTimeProtectionEnabled()(*bool)
+    GetRebootRequired()(*bool)
+    GetSignatureUpdateOverdue()(*bool)
+    GetSignatureVersion()(*string)
+    GetTamperProtectionEnabled()(*bool)
+    SetAntiMalwareVersion(value *string)()
+    SetDetectedMalwareState(value []WindowsDeviceMalwareStateable)()
+    SetDeviceState(value *WindowsDeviceHealthState)()
+    SetEngineVersion(value *string)()
+    SetFullScanOverdue(value *bool)()
+    SetFullScanRequired(value *bool)()
+    SetIsVirtualMachine(value *bool)()
+    SetLastFullScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastFullScanSignatureVersion(value *string)()
+    SetLastQuickScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastQuickScanSignatureVersion(value *string)()
+    SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMalwareProtectionEnabled(value *bool)()
+    SetNetworkInspectionSystemEnabled(value *bool)()
+    SetProductStatus(value *WindowsDefenderProductStatus)()
+    SetQuickScanOverdue(value *bool)()
+    SetRealTimeProtectionEnabled(value *bool)()
+    SetRebootRequired(value *bool)()
+    SetSignatureUpdateOverdue(value *bool)()
+    SetSignatureVersion(value *string)()
+    SetTamperProtectionEnabled(value *bool)()
 }

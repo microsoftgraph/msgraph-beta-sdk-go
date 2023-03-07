@@ -7,12 +7,6 @@ import (
 // WindowsAutopilotDeploymentProfileAssignment an assignment of a Windows Autopilot deployment profile to an AAD group.
 type WindowsAutopilotDeploymentProfileAssignment struct {
     Entity
-    // Represents source of assignment.
-    source *DeviceAndAppManagementAssignmentSource
-    // Identifier for resource used for deployment to a group
-    sourceId *string
-    // The assignment target for the Windows Autopilot deployment profile.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewWindowsAutopilotDeploymentProfileAssignment instantiates a new windowsAutopilotDeploymentProfileAssignment and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignment()(*WindowsAutopilotDeploymentProfileAssignment) {
@@ -62,15 +56,36 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetFieldDeserializers()(ma
 }
 // GetSource gets the source property value. Represents source of assignment.
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
-    return m.source
+    val, err := m.GetBackingStore().Get("source")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceAndAppManagementAssignmentSource)
+    }
+    return nil
 }
 // GetSourceId gets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSourceId()(*string) {
-    return m.sourceId
+    val, err := m.GetBackingStore().Get("sourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The assignment target for the Windows Autopilot deployment profile.
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeploymentProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) Serialize(writer i878a80d2
 }
 // SetSource sets the source property value. Represents source of assignment.
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    m.source = value
+    err := m.GetBackingStore().Set("source", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceId sets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    err := m.GetBackingStore().Set("sourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The assignment target for the Windows Autopilot deployment profile.
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAutopilotDeploymentProfileAssignmentable 
+type WindowsAutopilotDeploymentProfileAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSource()(*DeviceAndAppManagementAssignmentSource)
+    GetSourceId()(*string)
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetSource(value *DeviceAndAppManagementAssignmentSource)()
+    SetSourceId(value *string)()
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

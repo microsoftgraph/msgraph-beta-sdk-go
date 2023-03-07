@@ -7,12 +7,6 @@ import (
 // MobileAppIntentAndState mobileApp Intent and Install State for a given device.
 type MobileAppIntentAndState struct {
     Entity
-    // Device identifier created or collected by Intune.
-    managedDeviceIdentifier *string
-    // The list of payload intents and states for the tenant.
-    mobileAppList []MobileAppIntentAndStateDetailable
-    // Identifier for the user that tried to enroll the device.
-    userId *string
 }
 // NewMobileAppIntentAndState instantiates a new mobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
@@ -66,15 +60,36 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
-    return m.managedDeviceIdentifier
+    val, err := m.GetBackingStore().Get("managedDeviceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMobileAppList gets the mobileAppList property value. The list of payload intents and states for the tenant.
 func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDetailable) {
-    return m.mobileAppList
+    val, err := m.GetBackingStore().Get("mobileAppList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppIntentAndStateDetailable)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +123,33 @@ func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) SetManagedDeviceIdentifier(value *string)() {
-    m.managedDeviceIdentifier = value
+    err := m.GetBackingStore().Set("managedDeviceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMobileAppList sets the mobileAppList property value. The list of payload intents and states for the tenant.
 func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndStateDetailable)() {
-    m.mobileAppList = value
+    err := m.GetBackingStore().Set("mobileAppList", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppIntentAndStateable 
+type MobileAppIntentAndStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetManagedDeviceIdentifier()(*string)
+    GetMobileAppList()([]MobileAppIntentAndStateDetailable)
+    GetUserId()(*string)
+    SetManagedDeviceIdentifier(value *string)()
+    SetMobileAppList(value []MobileAppIntentAndStateDetailable)()
+    SetUserId(value *string)()
 }

@@ -7,22 +7,6 @@ import (
 // PlannerUser 
 type PlannerUser struct {
     PlannerDelta
-    // The all property
-    all []PlannerDeltaable
-    // A collection that contains the references to the plans that the user has marked as favorites.
-    favoritePlanReferences PlannerFavoritePlanReferenceCollectionable
-    // Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-    favoritePlans []PlannerPlanable
-    // The plans property
-    plans []PlannerPlanable
-    // A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
-    recentPlanReferences PlannerRecentPlanReferenceCollectionable
-    // Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-    recentPlans []PlannerPlanable
-    // Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
-    rosterPlans []PlannerPlanable
-    // Read-only. Nullable. Returns the plannerTasks assigned to the user.
-    tasks []PlannerTaskable
 }
 // NewPlannerUser instantiates a new PlannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {
@@ -37,15 +21,36 @@ func CreatePlannerUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAll gets the all property value. The all property
 func (m *PlannerUser) GetAll()([]PlannerDeltaable) {
-    return m.all
+    val, err := m.GetBackingStore().Get("all")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerDeltaable)
+    }
+    return nil
 }
 // GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable) {
-    return m.favoritePlanReferences
+    val, err := m.GetBackingStore().Get("favoritePlanReferences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFavoritePlanReferenceCollectionable)
+    }
+    return nil
 }
 // GetFavoritePlans gets the favoritePlans property value. Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *PlannerUser) GetFavoritePlans()([]PlannerPlanable) {
-    return m.favoritePlans
+    val, err := m.GetBackingStore().Get("favoritePlans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -158,23 +163,58 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetPlans gets the plans property value. The plans property
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
-    return m.plans
+    val, err := m.GetBackingStore().Get("plans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // GetRecentPlanReferences gets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable) {
-    return m.recentPlanReferences
+    val, err := m.GetBackingStore().Get("recentPlanReferences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerRecentPlanReferenceCollectionable)
+    }
+    return nil
 }
 // GetRecentPlans gets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *PlannerUser) GetRecentPlans()([]PlannerPlanable) {
-    return m.recentPlans
+    val, err := m.GetBackingStore().Get("recentPlans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // GetRosterPlans gets the rosterPlans property value. Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *PlannerUser) GetRosterPlans()([]PlannerPlanable) {
-    return m.rosterPlans
+    val, err := m.GetBackingStore().Get("rosterPlans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetTasks()([]PlannerTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -258,33 +298,78 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAll sets the all property value. The all property
 func (m *PlannerUser) SetAll(value []PlannerDeltaable)() {
-    m.all = value
+    err := m.GetBackingStore().Set("all", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)() {
-    m.favoritePlanReferences = value
+    err := m.GetBackingStore().Set("favoritePlanReferences", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFavoritePlans sets the favoritePlans property value. Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *PlannerUser) SetFavoritePlans(value []PlannerPlanable)() {
-    m.favoritePlans = value
+    err := m.GetBackingStore().Set("favoritePlans", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlans sets the plans property value. The plans property
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
-    m.plans = value
+    err := m.GetBackingStore().Set("plans", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecentPlanReferences sets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)() {
-    m.recentPlanReferences = value
+    err := m.GetBackingStore().Set("recentPlanReferences", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecentPlans sets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlans(value []PlannerPlanable)() {
-    m.recentPlans = value
+    err := m.GetBackingStore().Set("recentPlans", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRosterPlans sets the rosterPlans property value. Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *PlannerUser) SetRosterPlans(value []PlannerPlanable)() {
-    m.rosterPlans = value
+    err := m.GetBackingStore().Set("rosterPlans", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetTasks(value []PlannerTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerUserable 
+type PlannerUserable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PlannerDeltaable
+    GetAll()([]PlannerDeltaable)
+    GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable)
+    GetFavoritePlans()([]PlannerPlanable)
+    GetPlans()([]PlannerPlanable)
+    GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable)
+    GetRecentPlans()([]PlannerPlanable)
+    GetRosterPlans()([]PlannerPlanable)
+    GetTasks()([]PlannerTaskable)
+    SetAll(value []PlannerDeltaable)()
+    SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)()
+    SetFavoritePlans(value []PlannerPlanable)()
+    SetPlans(value []PlannerPlanable)()
+    SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)()
+    SetRecentPlans(value []PlannerPlanable)()
+    SetRosterPlans(value []PlannerPlanable)()
+    SetTasks(value []PlannerTaskable)()
 }

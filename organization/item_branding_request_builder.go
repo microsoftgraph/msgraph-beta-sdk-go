@@ -48,11 +48,11 @@ type ItemBrandingRequestBuilderPatchRequestConfiguration struct {
 }
 // BackgroundImage provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) BackgroundImage()(*ItemBrandingBackgroundImageRequestBuilder) {
-    return NewItemBrandingBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BannerLogo provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) BannerLogo()(*ItemBrandingBannerLogoRequestBuilder) {
-    return NewItemBrandingBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemBrandingRequestBuilderInternal instantiates a new BrandingRequestBuilder and sets the default values.
 func NewItemBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingRequestBuilder) {
@@ -63,8 +63,8 @@ func NewItemBrandingRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemBrandingRequestBuilder instantiates a new BrandingRequestBuilder and sets the default values.
@@ -75,7 +75,7 @@ func NewItemBrandingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // CustomCSS provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) CustomCSS()(*ItemBrandingCustomCSSRequestBuilder) {
-    return NewItemBrandingCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 // [Find more info here]
@@ -98,7 +98,7 @@ func (m *ItemBrandingRequestBuilder) Delete(ctx context.Context, requestConfigur
 }
 // Favicon provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) Favicon()(*ItemBrandingFaviconRequestBuilder) {
-    return NewItemBrandingFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`. If no default organizational branding object exists, this method returns a `404 Not Found` error. If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**. To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.
 // [Find more info here]
@@ -124,11 +124,11 @@ func (m *ItemBrandingRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // HeaderLogo provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) HeaderLogo()(*ItemBrandingHeaderLogoRequestBuilder) {
-    return NewItemBrandingHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *ItemBrandingRequestBuilder) Localizations()(*ItemBrandingLocalizationsRequestBuilder) {
-    return NewItemBrandingLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *ItemBrandingRequestBuilder) LocalizationsById(id string)(*ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
@@ -139,7 +139,7 @@ func (m *ItemBrandingRequestBuilder) LocalizationsById(id string)(*ItemBrandingL
     if id != "" {
         urlTplParams["organizationalBrandingLocalization%2Did"] = id
     }
-    return NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the properties of the default branding object specified by the organizationalBranding resource.
 // [Find more info here]
@@ -165,11 +165,11 @@ func (m *ItemBrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e
 }
 // SquareLogo provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) SquareLogo()(*ItemBrandingSquareLogoRequestBuilder) {
-    return NewItemBrandingSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SquareLogoDark provides operations to manage the media for the organization entity.
 func (m *ItemBrandingRequestBuilder) SquareLogoDark()(*ItemBrandingSquareLogoDarkRequestBuilder) {
-    return NewItemBrandingSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 func (m *ItemBrandingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -206,7 +206,10 @@ func (m *ItemBrandingRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // CompanyInformationCollectionResponse 
 type CompanyInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CompanyInformationable
 }
 // NewCompanyInformationCollectionResponse instantiates a new CompanyInformationCollectionResponse and sets the default values.
 func NewCompanyInformationCollectionResponse()(*CompanyInformationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CompanyInformationCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *CompanyInformationCollectionResponse) GetValue()([]CompanyInformationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CompanyInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CompanyInformationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CompanyInformationCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *CompanyInformationCollectionResponse) SetValue(value []CompanyInformationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CompanyInformationCollectionResponseable 
+type CompanyInformationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CompanyInformationable)
+    SetValue(value []CompanyInformationable)()
 }

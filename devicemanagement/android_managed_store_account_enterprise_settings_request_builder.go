@@ -46,13 +46,17 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderPatchRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddApps provides operations to call the addApps method.
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) AddApps()(*AndroidManagedStoreAccountEnterpriseSettingsAddAppsRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsAddAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // ApproveApps provides operations to call the approveApps method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ApproveApps()(*AndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CompleteSignup provides operations to call the completeSignup method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CompleteSignup()(*AndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal instantiates a new AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
@@ -63,8 +67,8 @@ func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder instantiates a new AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder and sets the default values.
@@ -75,7 +79,7 @@ func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder(rawUrl string
 }
 // CreateGooglePlayWebToken provides operations to call the createGooglePlayWebToken method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateGooglePlayWebToken()(*AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property androidManagedStoreAccountEnterpriseSettings for deviceManagement
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -133,15 +137,15 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Patch(ctx c
 }
 // RequestSignupUrl provides operations to call the requestSignupUrl method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) RequestSignupUrl()(*AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetAndroidDeviceOwnerFullyManagedEnrollmentState provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) SetAndroidDeviceOwnerFullyManagedEnrollmentState()(*AndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SyncApps provides operations to call the syncApps method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) SyncApps()(*AndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property androidManagedStoreAccountEnterpriseSettings for deviceManagement
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -178,7 +182,10 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -187,5 +194,5 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ToPatchRequ
 }
 // Unbind provides operations to call the unbind method.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Unbind()(*AndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilder) {
-    return NewAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedStoreAccountEnterpriseSettingsUnbindRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

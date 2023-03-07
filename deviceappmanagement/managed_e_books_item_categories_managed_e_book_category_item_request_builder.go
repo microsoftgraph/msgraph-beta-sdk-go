@@ -41,8 +41,8 @@ func NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder instantiates a new ManagedEBookCategoryItemRequestBuilder and sets the default values.

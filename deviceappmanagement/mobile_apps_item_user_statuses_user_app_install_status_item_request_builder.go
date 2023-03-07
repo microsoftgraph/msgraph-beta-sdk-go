@@ -48,7 +48,7 @@ type MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderPatchReques
 }
 // App provides operations to manage the app property of the microsoft.graph.userAppInstallStatus entity.
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) App()(*MobileAppsItemUserStatusesItemAppRequestBuilder) {
-    return NewMobileAppsItemUserStatusesItemAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemUserStatusesItemAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewMobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderInternal instantiates a new UserAppInstallStatusItemRequestBuilder and sets the default values.
 func NewMobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewMobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder instantiates a new UserAppInstallStatusItemRequestBuilder and sets the default values.
@@ -87,7 +87,7 @@ func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Delet
 }
 // DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) DeviceStatuses()(*MobileAppsItemUserStatusesItemDeviceStatusesRequestBuilder) {
-    return NewMobileAppsItemUserStatusesItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemUserStatusesItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*MobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
@@ -98,7 +98,7 @@ func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Devic
     if id != "" {
         urlTplParams["mobileAppInstallStatus%2Did"] = id
     }
-    return NewMobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the list of installation states for this mobile app.
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {
@@ -173,7 +173,10 @@ func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

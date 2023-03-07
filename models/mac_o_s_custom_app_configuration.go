@@ -7,20 +7,14 @@ import (
 // MacOSCustomAppConfiguration 
 type MacOSCustomAppConfiguration struct {
     DeviceConfiguration
-    // Bundle id for targeting.
-    bundleId *string
-    // Configuration xml. (UTF8 encoded byte array)
-    configurationXml []byte
-    // Configuration file name (.plist
-    fileName *string
 }
 // NewMacOSCustomAppConfiguration instantiates a new MacOSCustomAppConfiguration and sets the default values.
 func NewMacOSCustomAppConfiguration()(*MacOSCustomAppConfiguration) {
     m := &MacOSCustomAppConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSCustomAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSCustomAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSCustomAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateMacOSCustomAppConfigurationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetBundleId gets the bundleId property value. Bundle id for targeting.
 func (m *MacOSCustomAppConfiguration) GetBundleId()(*string) {
-    return m.bundleId
+    val, err := m.GetBackingStore().Get("bundleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConfigurationXml gets the configurationXml property value. Configuration xml. (UTF8 encoded byte array)
 func (m *MacOSCustomAppConfiguration) GetConfigurationXml()([]byte) {
-    return m.configurationXml
+    val, err := m.GetBackingStore().Get("configurationXml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSCustomAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *MacOSCustomAppConfiguration) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFileName gets the fileName property value. Configuration file name (.plist
 func (m *MacOSCustomAppConfiguration) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSCustomAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *MacOSCustomAppConfiguration) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetBundleId sets the bundleId property value. Bundle id for targeting.
 func (m *MacOSCustomAppConfiguration) SetBundleId(value *string)() {
-    m.bundleId = value
+    err := m.GetBackingStore().Set("bundleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigurationXml sets the configurationXml property value. Configuration xml. (UTF8 encoded byte array)
 func (m *MacOSCustomAppConfiguration) SetConfigurationXml(value []byte)() {
-    m.configurationXml = value
+    err := m.GetBackingStore().Set("configurationXml", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileName sets the fileName property value. Configuration file name (.plist
 func (m *MacOSCustomAppConfiguration) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSCustomAppConfigurationable 
+type MacOSCustomAppConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBundleId()(*string)
+    GetConfigurationXml()([]byte)
+    GetFileName()(*string)
+    SetBundleId(value *string)()
+    SetConfigurationXml(value []byte)()
+    SetFileName(value *string)()
 }

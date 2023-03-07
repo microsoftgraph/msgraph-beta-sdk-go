@@ -7,18 +7,14 @@ import (
 // IosImportedPFXCertificateProfile 
 type IosImportedPFXCertificateProfile struct {
     IosCertificateProfile
-    // PFX Import Options.
-    intendedPurpose *IntendedPurpose
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
 }
 // NewIosImportedPFXCertificateProfile instantiates a new IosImportedPFXCertificateProfile and sets the default values.
 func NewIosImportedPFXCertificateProfile()(*IosImportedPFXCertificateProfile) {
     m := &IosImportedPFXCertificateProfile{
         IosCertificateProfile: *NewIosCertificateProfile(),
     }
-    odataTypeValue := "#microsoft.graph.iosImportedPFXCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosImportedPFXCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,11 +52,25 @@ func (m *IosImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]fu
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *IosImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
-    return m.intendedPurpose
+    val, err := m.GetBackingStore().Get("intendedPurpose")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IntendedPurpose)
+    }
+    return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *IosImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,9 +99,24 @@ func (m *IosImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d2689
 }
 // SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *IosImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
-    m.intendedPurpose = value
+    err := m.GetBackingStore().Set("intendedPurpose", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *IosImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosImportedPFXCertificateProfileable 
+type IosImportedPFXCertificateProfileable interface {
+    IosCertificateProfileable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIntendedPurpose()(*IntendedPurpose)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    SetIntendedPurpose(value *IntendedPurpose)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
 }

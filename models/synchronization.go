@@ -7,12 +7,6 @@ import (
 // Synchronization 
 type Synchronization struct {
     Entity
-    // Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-    jobs []SynchronizationJobable
-    // Represents a collection of credentials to access provisioned cloud applications.
-    secrets []SynchronizationSecretKeyStringValuePairable
-    // Pre-configured synchronization settings for a particular application.
-    templates []SynchronizationTemplateable
 }
 // NewSynchronization instantiates a new synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {
@@ -74,15 +68,36 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
-    return m.jobs
+    val, err := m.GetBackingStore().Get("jobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SynchronizationJobable)
+    }
+    return nil
 }
 // GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
-    return m.secrets
+    val, err := m.GetBackingStore().Get("secrets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SynchronizationSecretKeyStringValuePairable)
+    }
+    return nil
 }
 // GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
-    return m.templates
+    val, err := m.GetBackingStore().Get("templates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SynchronizationTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,13 +139,33 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetJobs sets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) SetJobs(value []SynchronizationJobable)() {
-    m.jobs = value
+    err := m.GetBackingStore().Set("jobs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePairable)() {
-    m.secrets = value
+    err := m.GetBackingStore().Set("secrets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
-    m.templates = value
+    err := m.GetBackingStore().Set("templates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Synchronizationable 
+type Synchronizationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetJobs()([]SynchronizationJobable)
+    GetSecrets()([]SynchronizationSecretKeyStringValuePairable)
+    GetTemplates()([]SynchronizationTemplateable)
+    SetJobs(value []SynchronizationJobable)()
+    SetSecrets(value []SynchronizationSecretKeyStringValuePairable)()
+    SetTemplates(value []SynchronizationTemplateable)()
 }

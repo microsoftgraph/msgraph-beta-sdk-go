@@ -49,8 +49,8 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder instantiates a new InstancesRequestBuilder and sets the default values.
@@ -61,11 +61,11 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuild
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesCountRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Delta()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns theoccurrences and exceptions of the event in the specified time range.
 // [Find more info here]

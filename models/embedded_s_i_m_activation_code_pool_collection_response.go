@@ -7,8 +7,6 @@ import (
 // EmbeddedSIMActivationCodePoolCollectionResponse 
 type EmbeddedSIMActivationCodePoolCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EmbeddedSIMActivationCodePoolable
 }
 // NewEmbeddedSIMActivationCodePoolCollectionResponse instantiates a new EmbeddedSIMActivationCodePoolCollectionResponse and sets the default values.
 func NewEmbeddedSIMActivationCodePoolCollectionResponse()(*EmbeddedSIMActivationCodePoolCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EmbeddedSIMActivationCodePoolCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *EmbeddedSIMActivationCodePoolCollectionResponse) GetValue()([]EmbeddedSIMActivationCodePoolable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmbeddedSIMActivationCodePoolable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCodePoolCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EmbeddedSIMActivationCodePoolCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *EmbeddedSIMActivationCodePoolCollectionResponse) SetValue(value []EmbeddedSIMActivationCodePoolable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmbeddedSIMActivationCodePoolCollectionResponseable 
+type EmbeddedSIMActivationCodePoolCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EmbeddedSIMActivationCodePoolable)
+    SetValue(value []EmbeddedSIMActivationCodePoolable)()
 }

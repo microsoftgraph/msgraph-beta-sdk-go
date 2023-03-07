@@ -9,44 +9,6 @@ import (
 // ManagedTenantAlert 
 type ManagedTenantAlert struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alertData property
-    alertData AlertDataable
-    // The alertDataReferenceStrings property
-    alertDataReferenceStrings []AlertDataReferenceStringable
-    // The alertLogs property
-    alertLogs []ManagedTenantAlertLogable
-    // The alertRule property
-    alertRule ManagedTenantAlertRuleable
-    // The alertRuleDisplayName property
-    alertRuleDisplayName *string
-    // The apiNotifications property
-    apiNotifications []ManagedTenantApiNotificationable
-    // The assignedToUserId property
-    assignedToUserId *string
-    // The correlationCount property
-    correlationCount *int32
-    // The correlationId property
-    correlationId *string
-    // The createdByUserId property
-    createdByUserId *string
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The emailNotifications property
-    emailNotifications []ManagedTenantEmailNotificationable
-    // The lastActionByUserId property
-    lastActionByUserId *string
-    // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The message property
-    message *string
-    // The severity property
-    severity *AlertSeverity
-    // The status property
-    status *AlertStatus
-    // The tenantId property
-    tenantId *string
-    // The title property
-    title *string
 }
 // NewManagedTenantAlert instantiates a new managedTenantAlert and sets the default values.
 func NewManagedTenantAlert()(*ManagedTenantAlert) {
@@ -61,51 +23,135 @@ func CreateManagedTenantAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAlertData gets the alertData property value. The alertData property
 func (m *ManagedTenantAlert) GetAlertData()(AlertDataable) {
-    return m.alertData
+    val, err := m.GetBackingStore().Get("alertData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AlertDataable)
+    }
+    return nil
 }
 // GetAlertDataReferenceStrings gets the alertDataReferenceStrings property value. The alertDataReferenceStrings property
 func (m *ManagedTenantAlert) GetAlertDataReferenceStrings()([]AlertDataReferenceStringable) {
-    return m.alertDataReferenceStrings
+    val, err := m.GetBackingStore().Get("alertDataReferenceStrings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertDataReferenceStringable)
+    }
+    return nil
 }
 // GetAlertLogs gets the alertLogs property value. The alertLogs property
 func (m *ManagedTenantAlert) GetAlertLogs()([]ManagedTenantAlertLogable) {
-    return m.alertLogs
+    val, err := m.GetBackingStore().Get("alertLogs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantAlertLogable)
+    }
+    return nil
 }
 // GetAlertRule gets the alertRule property value. The alertRule property
 func (m *ManagedTenantAlert) GetAlertRule()(ManagedTenantAlertRuleable) {
-    return m.alertRule
+    val, err := m.GetBackingStore().Get("alertRule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedTenantAlertRuleable)
+    }
+    return nil
 }
 // GetAlertRuleDisplayName gets the alertRuleDisplayName property value. The alertRuleDisplayName property
 func (m *ManagedTenantAlert) GetAlertRuleDisplayName()(*string) {
-    return m.alertRuleDisplayName
+    val, err := m.GetBackingStore().Get("alertRuleDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetApiNotifications gets the apiNotifications property value. The apiNotifications property
 func (m *ManagedTenantAlert) GetApiNotifications()([]ManagedTenantApiNotificationable) {
-    return m.apiNotifications
+    val, err := m.GetBackingStore().Get("apiNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantApiNotificationable)
+    }
+    return nil
 }
 // GetAssignedToUserId gets the assignedToUserId property value. The assignedToUserId property
 func (m *ManagedTenantAlert) GetAssignedToUserId()(*string) {
-    return m.assignedToUserId
+    val, err := m.GetBackingStore().Get("assignedToUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCorrelationCount gets the correlationCount property value. The correlationCount property
 func (m *ManagedTenantAlert) GetCorrelationCount()(*int32) {
-    return m.correlationCount
+    val, err := m.GetBackingStore().Get("correlationCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetCorrelationId gets the correlationId property value. The correlationId property
 func (m *ManagedTenantAlert) GetCorrelationId()(*string) {
-    return m.correlationId
+    val, err := m.GetBackingStore().Get("correlationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantAlert) GetCreatedByUserId()(*string) {
-    return m.createdByUserId
+    val, err := m.GetBackingStore().Get("createdByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantAlert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetEmailNotifications gets the emailNotifications property value. The emailNotifications property
 func (m *ManagedTenantAlert) GetEmailNotifications()([]ManagedTenantEmailNotificationable) {
-    return m.emailNotifications
+    val, err := m.GetBackingStore().Get("emailNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantEmailNotificationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -320,31 +366,80 @@ func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantAlert) GetLastActionByUserId()(*string) {
-    return m.lastActionByUserId
+    val, err := m.GetBackingStore().Get("lastActionByUserId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantAlert) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastActionDateTime
+    val, err := m.GetBackingStore().Get("lastActionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetMessage gets the message property value. The message property
 func (m *ManagedTenantAlert) GetMessage()(*string) {
-    return m.message
+    val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSeverity gets the severity property value. The severity property
 func (m *ManagedTenantAlert) GetSeverity()(*AlertSeverity) {
-    return m.severity
+    val, err := m.GetBackingStore().Get("severity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AlertSeverity)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *ManagedTenantAlert) GetStatus()(*AlertStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AlertStatus)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *ManagedTenantAlert) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTitle gets the title property value. The title property
 func (m *ManagedTenantAlert) GetTitle()(*string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedTenantAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -488,77 +583,177 @@ func (m *ManagedTenantAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAlertData sets the alertData property value. The alertData property
 func (m *ManagedTenantAlert) SetAlertData(value AlertDataable)() {
-    m.alertData = value
+    err := m.GetBackingStore().Set("alertData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlertDataReferenceStrings sets the alertDataReferenceStrings property value. The alertDataReferenceStrings property
 func (m *ManagedTenantAlert) SetAlertDataReferenceStrings(value []AlertDataReferenceStringable)() {
-    m.alertDataReferenceStrings = value
+    err := m.GetBackingStore().Set("alertDataReferenceStrings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlertLogs sets the alertLogs property value. The alertLogs property
 func (m *ManagedTenantAlert) SetAlertLogs(value []ManagedTenantAlertLogable)() {
-    m.alertLogs = value
+    err := m.GetBackingStore().Set("alertLogs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlertRule sets the alertRule property value. The alertRule property
 func (m *ManagedTenantAlert) SetAlertRule(value ManagedTenantAlertRuleable)() {
-    m.alertRule = value
+    err := m.GetBackingStore().Set("alertRule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlertRuleDisplayName sets the alertRuleDisplayName property value. The alertRuleDisplayName property
 func (m *ManagedTenantAlert) SetAlertRuleDisplayName(value *string)() {
-    m.alertRuleDisplayName = value
+    err := m.GetBackingStore().Set("alertRuleDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApiNotifications sets the apiNotifications property value. The apiNotifications property
 func (m *ManagedTenantAlert) SetApiNotifications(value []ManagedTenantApiNotificationable)() {
-    m.apiNotifications = value
+    err := m.GetBackingStore().Set("apiNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignedToUserId sets the assignedToUserId property value. The assignedToUserId property
 func (m *ManagedTenantAlert) SetAssignedToUserId(value *string)() {
-    m.assignedToUserId = value
+    err := m.GetBackingStore().Set("assignedToUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCorrelationCount sets the correlationCount property value. The correlationCount property
 func (m *ManagedTenantAlert) SetCorrelationCount(value *int32)() {
-    m.correlationCount = value
+    err := m.GetBackingStore().Set("correlationCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCorrelationId sets the correlationId property value. The correlationId property
 func (m *ManagedTenantAlert) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    err := m.GetBackingStore().Set("correlationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagedTenantAlert) SetCreatedByUserId(value *string)() {
-    m.createdByUserId = value
+    err := m.GetBackingStore().Set("createdByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagedTenantAlert) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmailNotifications sets the emailNotifications property value. The emailNotifications property
 func (m *ManagedTenantAlert) SetEmailNotifications(value []ManagedTenantEmailNotificationable)() {
-    m.emailNotifications = value
+    err := m.GetBackingStore().Set("emailNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagedTenantAlert) SetLastActionByUserId(value *string)() {
-    m.lastActionByUserId = value
+    err := m.GetBackingStore().Set("lastActionByUserId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagedTenantAlert) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    err := m.GetBackingStore().Set("lastActionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessage sets the message property value. The message property
 func (m *ManagedTenantAlert) SetMessage(value *string)() {
-    m.message = value
+    err := m.GetBackingStore().Set("message", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSeverity sets the severity property value. The severity property
 func (m *ManagedTenantAlert) SetSeverity(value *AlertSeverity)() {
-    m.severity = value
+    err := m.GetBackingStore().Set("severity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *ManagedTenantAlert) SetStatus(value *AlertStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *ManagedTenantAlert) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. The title property
 func (m *ManagedTenantAlert) SetTitle(value *string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedTenantAlertable 
+type ManagedTenantAlertable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlertData()(AlertDataable)
+    GetAlertDataReferenceStrings()([]AlertDataReferenceStringable)
+    GetAlertLogs()([]ManagedTenantAlertLogable)
+    GetAlertRule()(ManagedTenantAlertRuleable)
+    GetAlertRuleDisplayName()(*string)
+    GetApiNotifications()([]ManagedTenantApiNotificationable)
+    GetAssignedToUserId()(*string)
+    GetCorrelationCount()(*int32)
+    GetCorrelationId()(*string)
+    GetCreatedByUserId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetEmailNotifications()([]ManagedTenantEmailNotificationable)
+    GetLastActionByUserId()(*string)
+    GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMessage()(*string)
+    GetSeverity()(*AlertSeverity)
+    GetStatus()(*AlertStatus)
+    GetTenantId()(*string)
+    GetTitle()(*string)
+    SetAlertData(value AlertDataable)()
+    SetAlertDataReferenceStrings(value []AlertDataReferenceStringable)()
+    SetAlertLogs(value []ManagedTenantAlertLogable)()
+    SetAlertRule(value ManagedTenantAlertRuleable)()
+    SetAlertRuleDisplayName(value *string)()
+    SetApiNotifications(value []ManagedTenantApiNotificationable)()
+    SetAssignedToUserId(value *string)()
+    SetCorrelationCount(value *int32)()
+    SetCorrelationId(value *string)()
+    SetCreatedByUserId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetEmailNotifications(value []ManagedTenantEmailNotificationable)()
+    SetLastActionByUserId(value *string)()
+    SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMessage(value *string)()
+    SetSeverity(value *AlertSeverity)()
+    SetStatus(value *AlertStatus)()
+    SetTenantId(value *string)()
+    SetTitle(value *string)()
 }

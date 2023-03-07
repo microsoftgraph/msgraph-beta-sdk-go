@@ -7,30 +7,14 @@ import (
 // WindowsPhone81AppX 
 type WindowsPhone81AppX struct {
     MobileLobApp
-    // Contains properties for Windows architecture.
-    applicableArchitectures *WindowsArchitecture
-    // The Identity Name.
-    identityName *string
-    // The Identity Publisher Hash.
-    identityPublisherHash *string
-    // The Identity Resource Identifier.
-    identityResourceIdentifier *string
-    // The identity version.
-    identityVersion *string
-    // The minimum operating system required for a Windows mobile app.
-    minimumSupportedOperatingSystem WindowsMinimumOperatingSystemable
-    // The Phone Product Identifier.
-    phoneProductIdentifier *string
-    // The Phone Publisher Id.
-    phonePublisherId *string
 }
 // NewWindowsPhone81AppX instantiates a new WindowsPhone81AppX and sets the default values.
 func NewWindowsPhone81AppX()(*WindowsPhone81AppX) {
     m := &WindowsPhone81AppX{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsPhone81AppX";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81AppX"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsPhone81AppXFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +41,14 @@ func CreateWindowsPhone81AppXFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsPhone81AppX) GetApplicableArchitectures()(*WindowsArchitecture) {
-    return m.applicableArchitectures
+    val, err := m.GetBackingStore().Get("applicableArchitectures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsArchitecture)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81AppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -146,31 +137,80 @@ func (m *WindowsPhone81AppX) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
 func (m *WindowsPhone81AppX) GetIdentityName()(*string) {
-    return m.identityName
+    val, err := m.GetBackingStore().Get("identityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityPublisherHash gets the identityPublisherHash property value. The Identity Publisher Hash.
 func (m *WindowsPhone81AppX) GetIdentityPublisherHash()(*string) {
-    return m.identityPublisherHash
+    val, err := m.GetBackingStore().Get("identityPublisherHash")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsPhone81AppX) GetIdentityResourceIdentifier()(*string) {
-    return m.identityResourceIdentifier
+    val, err := m.GetBackingStore().Get("identityResourceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version.
 func (m *WindowsPhone81AppX) GetIdentityVersion()(*string) {
-    return m.identityVersion
+    val, err := m.GetBackingStore().Get("identityVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
 func (m *WindowsPhone81AppX) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
-    return m.minimumSupportedOperatingSystem
+    val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsMinimumOperatingSystemable)
+    }
+    return nil
 }
 // GetPhoneProductIdentifier gets the phoneProductIdentifier property value. The Phone Product Identifier.
 func (m *WindowsPhone81AppX) GetPhoneProductIdentifier()(*string) {
-    return m.phoneProductIdentifier
+    val, err := m.GetBackingStore().Get("phoneProductIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhonePublisherId gets the phonePublisherId property value. The Phone Publisher Id.
 func (m *WindowsPhone81AppX) GetPhonePublisherId()(*string) {
-    return m.phonePublisherId
+    val, err := m.GetBackingStore().Get("phonePublisherId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81AppX) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -231,33 +271,78 @@ func (m *WindowsPhone81AppX) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsPhone81AppX) SetApplicableArchitectures(value *WindowsArchitecture)() {
-    m.applicableArchitectures = value
+    err := m.GetBackingStore().Set("applicableArchitectures", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityName sets the identityName property value. The Identity Name.
 func (m *WindowsPhone81AppX) SetIdentityName(value *string)() {
-    m.identityName = value
+    err := m.GetBackingStore().Set("identityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityPublisherHash sets the identityPublisherHash property value. The Identity Publisher Hash.
 func (m *WindowsPhone81AppX) SetIdentityPublisherHash(value *string)() {
-    m.identityPublisherHash = value
+    err := m.GetBackingStore().Set("identityPublisherHash", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsPhone81AppX) SetIdentityResourceIdentifier(value *string)() {
-    m.identityResourceIdentifier = value
+    err := m.GetBackingStore().Set("identityResourceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityVersion sets the identityVersion property value. The identity version.
 func (m *WindowsPhone81AppX) SetIdentityVersion(value *string)() {
-    m.identityVersion = value
+    err := m.GetBackingStore().Set("identityVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
 func (m *WindowsPhone81AppX) SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)() {
-    m.minimumSupportedOperatingSystem = value
+    err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneProductIdentifier sets the phoneProductIdentifier property value. The Phone Product Identifier.
 func (m *WindowsPhone81AppX) SetPhoneProductIdentifier(value *string)() {
-    m.phoneProductIdentifier = value
+    err := m.GetBackingStore().Set("phoneProductIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhonePublisherId sets the phonePublisherId property value. The Phone Publisher Id.
 func (m *WindowsPhone81AppX) SetPhonePublisherId(value *string)() {
-    m.phonePublisherId = value
+    err := m.GetBackingStore().Set("phonePublisherId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81AppXable 
+type WindowsPhone81AppXable interface {
+    MobileLobAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicableArchitectures()(*WindowsArchitecture)
+    GetIdentityName()(*string)
+    GetIdentityPublisherHash()(*string)
+    GetIdentityResourceIdentifier()(*string)
+    GetIdentityVersion()(*string)
+    GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable)
+    GetPhoneProductIdentifier()(*string)
+    GetPhonePublisherId()(*string)
+    SetApplicableArchitectures(value *WindowsArchitecture)()
+    SetIdentityName(value *string)()
+    SetIdentityPublisherHash(value *string)()
+    SetIdentityResourceIdentifier(value *string)()
+    SetIdentityVersion(value *string)()
+    SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)()
+    SetPhoneProductIdentifier(value *string)()
+    SetPhonePublisherId(value *string)()
 }

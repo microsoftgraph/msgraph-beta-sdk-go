@@ -7,30 +7,14 @@ import (
 // ProjectParticipation 
 type ProjectParticipation struct {
     ItemFacet
-    // Contains categories a user has associated with the project (for example, digital transformation, oil rig).
-    categories []string
-    // Contains detailed information about the client the project was for.
-    client CompanyDetailable
-    // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-    collaborationTags []string
-    // Lists people that also worked on the project.
-    colleagues []RelatedPersonable
-    // Contains detail about the user's role on the project.
-    detail PositionDetailable
-    // Contains a friendly name for the project.
-    displayName *string
-    // The Person or people who sponsored the project.
-    sponsors []RelatedPersonable
-    // The thumbnailUrl property
-    thumbnailUrl *string
 }
 // NewProjectParticipation instantiates a new ProjectParticipation and sets the default values.
 func NewProjectParticipation()(*ProjectParticipation) {
     m := &ProjectParticipation{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.projectParticipation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.projectParticipation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProjectParticipationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,27 +23,69 @@ func CreateProjectParticipationFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 func (m *ProjectParticipation) GetCategories()([]string) {
-    return m.categories
+    val, err := m.GetBackingStore().Get("categories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetClient gets the client property value. Contains detailed information about the client the project was for.
 func (m *ProjectParticipation) GetClient()(CompanyDetailable) {
-    return m.client
+    val, err := m.GetBackingStore().Get("client")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CompanyDetailable)
+    }
+    return nil
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *ProjectParticipation) GetCollaborationTags()([]string) {
-    return m.collaborationTags
+    val, err := m.GetBackingStore().Get("collaborationTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetColleagues gets the colleagues property value. Lists people that also worked on the project.
 func (m *ProjectParticipation) GetColleagues()([]RelatedPersonable) {
-    return m.colleagues
+    val, err := m.GetBackingStore().Get("colleagues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RelatedPersonable)
+    }
+    return nil
 }
 // GetDetail gets the detail property value. Contains detail about the user's role on the project.
 func (m *ProjectParticipation) GetDetail()(PositionDetailable) {
-    return m.detail
+    val, err := m.GetBackingStore().Get("detail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PositionDetailable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the project.
 func (m *ProjectParticipation) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,11 +190,25 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetSponsors gets the sponsors property value. The Person or people who sponsored the project.
 func (m *ProjectParticipation) GetSponsors()([]RelatedPersonable) {
-    return m.sponsors
+    val, err := m.GetBackingStore().Get("sponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RelatedPersonable)
+    }
+    return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *ProjectParticipation) GetThumbnailUrl()(*string) {
-    return m.thumbnailUrl
+    val, err := m.GetBackingStore().Get("thumbnailUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProjectParticipation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -236,33 +276,78 @@ func (m *ProjectParticipation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 func (m *ProjectParticipation) SetCategories(value []string)() {
-    m.categories = value
+    err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClient sets the client property value. Contains detailed information about the client the project was for.
 func (m *ProjectParticipation) SetClient(value CompanyDetailable)() {
-    m.client = value
+    err := m.GetBackingStore().Set("client", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *ProjectParticipation) SetCollaborationTags(value []string)() {
-    m.collaborationTags = value
+    err := m.GetBackingStore().Set("collaborationTags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColleagues sets the colleagues property value. Lists people that also worked on the project.
 func (m *ProjectParticipation) SetColleagues(value []RelatedPersonable)() {
-    m.colleagues = value
+    err := m.GetBackingStore().Set("colleagues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetail sets the detail property value. Contains detail about the user's role on the project.
 func (m *ProjectParticipation) SetDetail(value PositionDetailable)() {
-    m.detail = value
+    err := m.GetBackingStore().Set("detail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the project.
 func (m *ProjectParticipation) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSponsors sets the sponsors property value. The Person or people who sponsored the project.
 func (m *ProjectParticipation) SetSponsors(value []RelatedPersonable)() {
-    m.sponsors = value
+    err := m.GetBackingStore().Set("sponsors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *ProjectParticipation) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    err := m.GetBackingStore().Set("thumbnailUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProjectParticipationable 
+type ProjectParticipationable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategories()([]string)
+    GetClient()(CompanyDetailable)
+    GetCollaborationTags()([]string)
+    GetColleagues()([]RelatedPersonable)
+    GetDetail()(PositionDetailable)
+    GetDisplayName()(*string)
+    GetSponsors()([]RelatedPersonable)
+    GetThumbnailUrl()(*string)
+    SetCategories(value []string)()
+    SetClient(value CompanyDetailable)()
+    SetCollaborationTags(value []string)()
+    SetColleagues(value []RelatedPersonable)()
+    SetDetail(value PositionDetailable)()
+    SetDisplayName(value *string)()
+    SetSponsors(value []RelatedPersonable)()
+    SetThumbnailUrl(value *string)()
 }

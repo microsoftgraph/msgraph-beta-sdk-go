@@ -7,32 +7,14 @@ import (
 // AndroidManagedStoreApp 
 type AndroidManagedStoreApp struct {
     MobileApp
-    // The Identity Name.
-    appIdentifier *string
-    // The Play for Work Store app URL.
-    appStoreUrl *string
-    // The tracks that are visible to this enterprise.
-    appTracks []AndroidManagedStoreAppTrackable
-    // Indicates whether the app is only available to a given enterprise's users.
-    isPrivate *bool
-    // Indicates whether the app is a preinstalled system app.
-    isSystemApp *bool
-    // The package identifier.
-    packageId *string
-    // Whether this app supports OEMConfig policy.
-    supportsOemConfig *bool
-    // The total number of VPP licenses.
-    totalLicenseCount *int32
-    // The number of VPP licenses in use.
-    usedLicenseCount *int32
 }
 // NewAndroidManagedStoreApp instantiates a new AndroidManagedStoreApp and sets the default values.
 func NewAndroidManagedStoreApp()(*AndroidManagedStoreApp) {
     m := &AndroidManagedStoreApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedStoreApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedStoreApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,15 +41,36 @@ func CreateAndroidManagedStoreAppFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAppIdentifier gets the appIdentifier property value. The Identity Name.
 func (m *AndroidManagedStoreApp) GetAppIdentifier()(*string) {
-    return m.appIdentifier
+    val, err := m.GetBackingStore().Get("appIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Play for Work Store app URL.
 func (m *AndroidManagedStoreApp) GetAppStoreUrl()(*string) {
-    return m.appStoreUrl
+    val, err := m.GetBackingStore().Get("appStoreUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppTracks gets the appTracks property value. The tracks that are visible to this enterprise.
 func (m *AndroidManagedStoreApp) GetAppTracks()([]AndroidManagedStoreAppTrackable) {
-    return m.appTracks
+    val, err := m.GetBackingStore().Get("appTracks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidManagedStoreAppTrackable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,27 +173,69 @@ func (m *AndroidManagedStoreApp) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsPrivate gets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users.
 func (m *AndroidManagedStoreApp) GetIsPrivate()(*bool) {
-    return m.isPrivate
+    val, err := m.GetBackingStore().Get("isPrivate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsSystemApp gets the isSystemApp property value. Indicates whether the app is a preinstalled system app.
 func (m *AndroidManagedStoreApp) GetIsSystemApp()(*bool) {
-    return m.isSystemApp
+    val, err := m.GetBackingStore().Get("isSystemApp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *AndroidManagedStoreApp) GetPackageId()(*string) {
-    return m.packageId
+    val, err := m.GetBackingStore().Get("packageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSupportsOemConfig gets the supportsOemConfig property value. Whether this app supports OEMConfig policy.
 func (m *AndroidManagedStoreApp) GetSupportsOemConfig()(*bool) {
-    return m.supportsOemConfig
+    val, err := m.GetBackingStore().Get("supportsOemConfig")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *AndroidManagedStoreApp) GetTotalLicenseCount()(*int32) {
-    return m.totalLicenseCount
+    val, err := m.GetBackingStore().Get("totalLicenseCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *AndroidManagedStoreApp) GetUsedLicenseCount()(*int32) {
-    return m.usedLicenseCount
+    val, err := m.GetBackingStore().Get("usedLicenseCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -260,37 +305,87 @@ func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAppIdentifier sets the appIdentifier property value. The Identity Name.
 func (m *AndroidManagedStoreApp) SetAppIdentifier(value *string)() {
-    m.appIdentifier = value
+    err := m.GetBackingStore().Set("appIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Play for Work Store app URL.
 func (m *AndroidManagedStoreApp) SetAppStoreUrl(value *string)() {
-    m.appStoreUrl = value
+    err := m.GetBackingStore().Set("appStoreUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppTracks sets the appTracks property value. The tracks that are visible to this enterprise.
 func (m *AndroidManagedStoreApp) SetAppTracks(value []AndroidManagedStoreAppTrackable)() {
-    m.appTracks = value
+    err := m.GetBackingStore().Set("appTracks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPrivate sets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users.
 func (m *AndroidManagedStoreApp) SetIsPrivate(value *bool)() {
-    m.isPrivate = value
+    err := m.GetBackingStore().Set("isPrivate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsSystemApp sets the isSystemApp property value. Indicates whether the app is a preinstalled system app.
 func (m *AndroidManagedStoreApp) SetIsSystemApp(value *bool)() {
-    m.isSystemApp = value
+    err := m.GetBackingStore().Set("isSystemApp", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *AndroidManagedStoreApp) SetPackageId(value *string)() {
-    m.packageId = value
+    err := m.GetBackingStore().Set("packageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportsOemConfig sets the supportsOemConfig property value. Whether this app supports OEMConfig policy.
 func (m *AndroidManagedStoreApp) SetSupportsOemConfig(value *bool)() {
-    m.supportsOemConfig = value
+    err := m.GetBackingStore().Set("supportsOemConfig", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *AndroidManagedStoreApp) SetTotalLicenseCount(value *int32)() {
-    m.totalLicenseCount = value
+    err := m.GetBackingStore().Set("totalLicenseCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *AndroidManagedStoreApp) SetUsedLicenseCount(value *int32)() {
-    m.usedLicenseCount = value
+    err := m.GetBackingStore().Set("usedLicenseCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidManagedStoreAppable 
+type AndroidManagedStoreAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppIdentifier()(*string)
+    GetAppStoreUrl()(*string)
+    GetAppTracks()([]AndroidManagedStoreAppTrackable)
+    GetIsPrivate()(*bool)
+    GetIsSystemApp()(*bool)
+    GetPackageId()(*string)
+    GetSupportsOemConfig()(*bool)
+    GetTotalLicenseCount()(*int32)
+    GetUsedLicenseCount()(*int32)
+    SetAppIdentifier(value *string)()
+    SetAppStoreUrl(value *string)()
+    SetAppTracks(value []AndroidManagedStoreAppTrackable)()
+    SetIsPrivate(value *bool)()
+    SetIsSystemApp(value *bool)()
+    SetPackageId(value *string)()
+    SetSupportsOemConfig(value *bool)()
+    SetTotalLicenseCount(value *int32)()
+    SetUsedLicenseCount(value *int32)()
 }

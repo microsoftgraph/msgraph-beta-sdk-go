@@ -7,22 +7,14 @@ import (
 // PlannerPlanPropertyRule 
 type PlannerPlanPropertyRule struct {
     PlannerPropertyRule
-    // The buckets property
-    buckets []string
-    // The categoryDescriptions property
-    categoryDescriptions PlannerFieldRulesable
-    // The tasks property
-    tasks []string
-    // The title property
-    title PlannerFieldRulesable
 }
 // NewPlannerPlanPropertyRule instantiates a new PlannerPlanPropertyRule and sets the default values.
 func NewPlannerPlanPropertyRule()(*PlannerPlanPropertyRule) {
     m := &PlannerPlanPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),
     }
-    odataTypeValue := "#microsoft.graph.plannerPlanPropertyRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerPlanPropertyRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerPlanPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,11 +23,25 @@ func CreatePlannerPlanPropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetBuckets gets the buckets property value. The buckets property
 func (m *PlannerPlanPropertyRule) GetBuckets()([]string) {
-    return m.buckets
+    val, err := m.GetBackingStore().Get("buckets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetCategoryDescriptions gets the categoryDescriptions property value. The categoryDescriptions property
 func (m *PlannerPlanPropertyRule) GetCategoryDescriptions()(PlannerFieldRulesable) {
-    return m.categoryDescriptions
+    val, err := m.GetBackingStore().Get("categoryDescriptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlanPropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,11 +98,25 @@ func (m *PlannerPlanPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetTasks gets the tasks property value. The tasks property
 func (m *PlannerPlanPropertyRule) GetTasks()([]string) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetTitle gets the title property value. The title property
 func (m *PlannerPlanPropertyRule) GetTitle()(PlannerFieldRulesable) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -132,17 +152,42 @@ func (m *PlannerPlanPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetBuckets sets the buckets property value. The buckets property
 func (m *PlannerPlanPropertyRule) SetBuckets(value []string)() {
-    m.buckets = value
+    err := m.GetBackingStore().Set("buckets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategoryDescriptions sets the categoryDescriptions property value. The categoryDescriptions property
 func (m *PlannerPlanPropertyRule) SetCategoryDescriptions(value PlannerFieldRulesable)() {
-    m.categoryDescriptions = value
+    err := m.GetBackingStore().Set("categoryDescriptions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. The tasks property
 func (m *PlannerPlanPropertyRule) SetTasks(value []string)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. The title property
 func (m *PlannerPlanPropertyRule) SetTitle(value PlannerFieldRulesable)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanPropertyRuleable 
+type PlannerPlanPropertyRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PlannerPropertyRuleable
+    GetBuckets()([]string)
+    GetCategoryDescriptions()(PlannerFieldRulesable)
+    GetTasks()([]string)
+    GetTitle()(PlannerFieldRulesable)
+    SetBuckets(value []string)()
+    SetCategoryDescriptions(value PlannerFieldRulesable)()
+    SetTasks(value []string)()
+    SetTitle(value PlannerFieldRulesable)()
 }

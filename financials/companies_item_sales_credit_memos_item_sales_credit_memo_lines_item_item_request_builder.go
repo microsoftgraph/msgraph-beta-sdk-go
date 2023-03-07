@@ -55,8 +55,8 @@ func NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilder instantiates a new ItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBui
 }
 // ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilder) ItemCategory()(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemItemCategoryRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property item in financials
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
@@ -125,7 +125,7 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBui
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilder) Picture()(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilder) PictureById(id string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPicturePictureItemRequestBuilder) {
@@ -136,7 +136,7 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBui
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property item for financials
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // GroupPolicyUploadedDefinitionFileCollectionResponse 
 type GroupPolicyUploadedDefinitionFileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyUploadedDefinitionFileable
 }
 // NewGroupPolicyUploadedDefinitionFileCollectionResponse instantiates a new GroupPolicyUploadedDefinitionFileCollectionResponse and sets the default values.
 func NewGroupPolicyUploadedDefinitionFileCollectionResponse()(*GroupPolicyUploadedDefinitionFileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyUploadedDefinitionFileCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyUploadedDefinitionFileCollectionResponse) GetValue()([]GroupPolicyUploadedDefinitionFileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyUploadedDefinitionFileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyUploadedDefinitionFileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyUploadedDefinitionFileCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyUploadedDefinitionFileCollectionResponse) SetValue(value []GroupPolicyUploadedDefinitionFileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyUploadedDefinitionFileCollectionResponseable 
+type GroupPolicyUploadedDefinitionFileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyUploadedDefinitionFileable)
+    SetValue(value []GroupPolicyUploadedDefinitionFileable)()
 }

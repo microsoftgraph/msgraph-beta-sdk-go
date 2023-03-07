@@ -7,8 +7,6 @@ import (
 // IntuneBrandingProfileAssignmentCollectionResponse 
 type IntuneBrandingProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IntuneBrandingProfileAssignmentable
 }
 // NewIntuneBrandingProfileAssignmentCollectionResponse instantiates a new IntuneBrandingProfileAssignmentCollectionResponse and sets the default values.
 func NewIntuneBrandingProfileAssignmentCollectionResponse()(*IntuneBrandingProfileAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IntuneBrandingProfileAssignmentCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *IntuneBrandingProfileAssignmentCollectionResponse) GetValue()([]IntuneBrandingProfileAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IntuneBrandingProfileAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IntuneBrandingProfileAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IntuneBrandingProfileAssignmentCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *IntuneBrandingProfileAssignmentCollectionResponse) SetValue(value []IntuneBrandingProfileAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IntuneBrandingProfileAssignmentCollectionResponseable 
+type IntuneBrandingProfileAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IntuneBrandingProfileAssignmentable)
+    SetValue(value []IntuneBrandingProfileAssignmentable)()
 }

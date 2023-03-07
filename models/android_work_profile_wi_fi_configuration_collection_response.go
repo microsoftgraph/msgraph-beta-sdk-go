@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileWiFiConfigurationCollectionResponse 
 type AndroidWorkProfileWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWorkProfileWiFiConfigurationable
 }
 // NewAndroidWorkProfileWiFiConfigurationCollectionResponse instantiates a new AndroidWorkProfileWiFiConfigurationCollectionResponse and sets the default values.
 func NewAndroidWorkProfileWiFiConfigurationCollectionResponse()(*AndroidWorkProfileWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWorkProfileWiFiConfigurationCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWorkProfileWiFiConfigurationCollectionResponse) GetValue()([]AndroidWorkProfileWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWorkProfileWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWorkProfileWiFiConfigurationCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWorkProfileWiFiConfigurationCollectionResponse) SetValue(value []AndroidWorkProfileWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileWiFiConfigurationCollectionResponseable 
+type AndroidWorkProfileWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWorkProfileWiFiConfigurationable)
+    SetValue(value []AndroidWorkProfileWiFiConfigurationable)()
 }

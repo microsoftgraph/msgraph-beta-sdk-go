@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileTrustedRootCertificateCollectionResponse 
 type AndroidWorkProfileTrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWorkProfileTrustedRootCertificateable
 }
 // NewAndroidWorkProfileTrustedRootCertificateCollectionResponse instantiates a new AndroidWorkProfileTrustedRootCertificateCollectionResponse and sets the default values.
 func NewAndroidWorkProfileTrustedRootCertificateCollectionResponse()(*AndroidWorkProfileTrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWorkProfileTrustedRootCertificateCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWorkProfileTrustedRootCertificateCollectionResponse) GetValue()([]AndroidWorkProfileTrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWorkProfileTrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileTrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWorkProfileTrustedRootCertificateCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWorkProfileTrustedRootCertificateCollectionResponse) SetValue(value []AndroidWorkProfileTrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileTrustedRootCertificateCollectionResponseable 
+type AndroidWorkProfileTrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWorkProfileTrustedRootCertificateable)
+    SetValue(value []AndroidWorkProfileTrustedRootCertificateable)()
 }

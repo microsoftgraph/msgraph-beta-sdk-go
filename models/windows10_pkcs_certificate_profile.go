@@ -7,32 +7,14 @@ import (
 // Windows10PkcsCertificateProfile 
 type Windows10PkcsCertificateProfile struct {
     Windows10CertificateProfileBase
-    // Target store certificate. Possible values are: user, machine.
-    certificateStore *CertificateStore
-    // PKCS Certificate Template Name
-    certificateTemplateName *string
-    // PKCS Certification Authority
-    certificationAuthority *string
-    // PKCS Certification Authority Name
-    certificationAuthorityName *string
-    // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
-    customSubjectAlternativeNames []CustomSubjectAlternativeNameable
-    // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
-    extendedKeyUsages []ExtendedKeyUsageable
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
-    // Custom String that defines the AAD Attribute.
-    subjectAlternativeNameFormatString *string
-    // Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
-    subjectNameFormatString *string
 }
 // NewWindows10PkcsCertificateProfile instantiates a new Windows10PkcsCertificateProfile and sets the default values.
 func NewWindows10PkcsCertificateProfile()(*Windows10PkcsCertificateProfile) {
     m := &Windows10PkcsCertificateProfile{
         Windows10CertificateProfileBase: *NewWindows10CertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10PkcsCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10PkcsCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10PkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,27 +23,69 @@ func CreateWindows10PkcsCertificateProfileFromDiscriminatorValue(parseNode i878a
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *Windows10PkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    return m.certificateStore
+    val, err := m.GetBackingStore().Get("certificateStore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateStore)
+    }
+    return nil
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *Windows10PkcsCertificateProfile) GetCertificateTemplateName()(*string) {
-    return m.certificateTemplateName
+    val, err := m.GetBackingStore().Get("certificateTemplateName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
 func (m *Windows10PkcsCertificateProfile) GetCertificationAuthority()(*string) {
-    return m.certificationAuthority
+    val, err := m.GetBackingStore().Get("certificationAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *Windows10PkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
-    return m.certificationAuthorityName
+    val, err := m.GetBackingStore().Get("certificationAuthorityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    return m.customSubjectAlternativeNames
+    val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSubjectAlternativeNameable)
+    }
+    return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    return m.extendedKeyUsages
+    val, err := m.GetBackingStore().Get("extendedKeyUsages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExtendedKeyUsageable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10PkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -172,15 +196,36 @@ func (m *Windows10PkcsCertificateProfile) GetFieldDeserializers()(map[string]fun
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows10PkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *Windows10PkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    return m.subjectAlternativeNameFormatString
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows10PkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
-    return m.subjectNameFormatString
+    val, err := m.GetBackingStore().Get("subjectNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10PkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -259,37 +304,87 @@ func (m *Windows10PkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *Windows10PkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    m.certificateStore = value
+    err := m.GetBackingStore().Set("certificateStore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *Windows10PkcsCertificateProfile) SetCertificateTemplateName(value *string)() {
-    m.certificateTemplateName = value
+    err := m.GetBackingStore().Set("certificateTemplateName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS Certification Authority
 func (m *Windows10PkcsCertificateProfile) SetCertificationAuthority(value *string)() {
-    m.certificationAuthority = value
+    err := m.GetBackingStore().Set("certificationAuthority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *Windows10PkcsCertificateProfile) SetCertificationAuthorityName(value *string)() {
-    m.certificationAuthorityName = value
+    err := m.GetBackingStore().Set("certificationAuthorityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    m.customSubjectAlternativeNames = value
+    err := m.GetBackingStore().Set("customSubjectAlternativeNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    m.extendedKeyUsages = value
+    err := m.GetBackingStore().Set("extendedKeyUsages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows10PkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *Windows10PkcsCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    m.subjectAlternativeNameFormatString = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows10PkcsCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    m.subjectNameFormatString = value
+    err := m.GetBackingStore().Set("subjectNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10PkcsCertificateProfileable 
+type Windows10PkcsCertificateProfileable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Windows10CertificateProfileBaseable
+    GetCertificateStore()(*CertificateStore)
+    GetCertificateTemplateName()(*string)
+    GetCertificationAuthority()(*string)
+    GetCertificationAuthorityName()(*string)
+    GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
+    GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetSubjectAlternativeNameFormatString()(*string)
+    GetSubjectNameFormatString()(*string)
+    SetCertificateStore(value *CertificateStore)()
+    SetCertificateTemplateName(value *string)()
+    SetCertificationAuthority(value *string)()
+    SetCertificationAuthorityName(value *string)()
+    SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
+    SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetSubjectAlternativeNameFormatString(value *string)()
+    SetSubjectNameFormatString(value *string)()
 }

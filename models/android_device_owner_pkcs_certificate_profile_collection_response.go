@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse 
 type AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidDeviceOwnerPkcsCertificateProfileable
 }
 // NewAndroidDeviceOwnerPkcsCertificateProfileCollectionResponse instantiates a new AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse and sets the default values.
 func NewAndroidDeviceOwnerPkcsCertificateProfileCollectionResponse()(*AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse) GetValue()([]AndroidDeviceOwnerPkcsCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerPkcsCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidDeviceOwnerPkcsCertificateProfileCollectionResponse) SetValue(value []AndroidDeviceOwnerPkcsCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerPkcsCertificateProfileCollectionResponseable 
+type AndroidDeviceOwnerPkcsCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidDeviceOwnerPkcsCertificateProfileable)
+    SetValue(value []AndroidDeviceOwnerPkcsCertificateProfileable)()
 }

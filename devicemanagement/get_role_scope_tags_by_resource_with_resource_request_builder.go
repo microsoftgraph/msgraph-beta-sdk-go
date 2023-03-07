@@ -45,7 +45,7 @@ type GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration
 func NewGetRoleScopeTagsByResourceWithResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, resource *string)(*GetRoleScopeTagsByResourceWithResourceRequestBuilder) {
     m := &GetRoleScopeTagsByResourceWithResourceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByResource(resource='{resource}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/getRoleScopeTagsByResource(resource='{resource}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -53,8 +53,8 @@ func NewGetRoleScopeTagsByResourceWithResourceRequestBuilderInternal(pathParamet
     if resource != nil {
         urlTplParams["resource"] = *resource
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetRoleScopeTagsByResourceWithResourceRequestBuilder instantiates a new GetRoleScopeTagsByResourceWithResourceRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // DepIOSEnrollmentProfileCollectionResponse 
 type DepIOSEnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DepIOSEnrollmentProfileable
 }
 // NewDepIOSEnrollmentProfileCollectionResponse instantiates a new DepIOSEnrollmentProfileCollectionResponse and sets the default values.
 func NewDepIOSEnrollmentProfileCollectionResponse()(*DepIOSEnrollmentProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DepIOSEnrollmentProfileCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *DepIOSEnrollmentProfileCollectionResponse) GetValue()([]DepIOSEnrollmentProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DepIOSEnrollmentProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DepIOSEnrollmentProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DepIOSEnrollmentProfileCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *DepIOSEnrollmentProfileCollectionResponse) SetValue(value []DepIOSEnrollmentProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DepIOSEnrollmentProfileCollectionResponseable 
+type DepIOSEnrollmentProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DepIOSEnrollmentProfileable)
+    SetValue(value []DepIOSEnrollmentProfileable)()
 }

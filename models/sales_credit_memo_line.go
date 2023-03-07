@@ -8,54 +8,6 @@ import (
 // SalesCreditMemoLine 
 type SalesCreditMemoLine struct {
     Entity
-    // The account property
-    account Accountable
-    // The accountId property
-    accountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The amountExcludingTax property
-    amountExcludingTax *float64
-    // The amountIncludingTax property
-    amountIncludingTax *float64
-    // The description property
-    description *string
-    // The discountAmount property
-    discountAmount *float64
-    // The discountAppliedBeforeTax property
-    discountAppliedBeforeTax *bool
-    // The discountPercent property
-    discountPercent *float64
-    // The documentId property
-    documentId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The invoiceDiscountAllocation property
-    invoiceDiscountAllocation *float64
-    // The item property
-    item Itemable
-    // The itemId property
-    itemId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The lineType property
-    lineType *string
-    // The netAmount property
-    netAmount *float64
-    // The netAmountIncludingTax property
-    netAmountIncludingTax *float64
-    // The netTaxAmount property
-    netTaxAmount *float64
-    // The quantity property
-    quantity *float64
-    // The sequence property
-    sequence *int32
-    // The shipmentDate property
-    shipmentDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The taxCode property
-    taxCode *string
-    // The taxPercent property
-    taxPercent *float64
-    // The totalTaxAmount property
-    totalTaxAmount *float64
-    // The unitOfMeasureId property
-    unitOfMeasureId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The unitPrice property
-    unitPrice *float64
 }
 // NewSalesCreditMemoLine instantiates a new salesCreditMemoLine and sets the default values.
 func NewSalesCreditMemoLine()(*SalesCreditMemoLine) {
@@ -70,39 +22,102 @@ func CreateSalesCreditMemoLineFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAccount gets the account property value. The account property
 func (m *SalesCreditMemoLine) GetAccount()(Accountable) {
-    return m.account
+    val, err := m.GetBackingStore().Get("account")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Accountable)
+    }
+    return nil
 }
 // GetAccountId gets the accountId property value. The accountId property
 func (m *SalesCreditMemoLine) GetAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.accountId
+    val, err := m.GetBackingStore().Get("accountId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetAmountExcludingTax gets the amountExcludingTax property value. The amountExcludingTax property
 func (m *SalesCreditMemoLine) GetAmountExcludingTax()(*float64) {
-    return m.amountExcludingTax
+    val, err := m.GetBackingStore().Get("amountExcludingTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetAmountIncludingTax gets the amountIncludingTax property value. The amountIncludingTax property
 func (m *SalesCreditMemoLine) GetAmountIncludingTax()(*float64) {
-    return m.amountIncludingTax
+    val, err := m.GetBackingStore().Get("amountIncludingTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *SalesCreditMemoLine) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
 func (m *SalesCreditMemoLine) GetDiscountAmount()(*float64) {
-    return m.discountAmount
+    val, err := m.GetBackingStore().Get("discountAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesCreditMemoLine) GetDiscountAppliedBeforeTax()(*bool) {
-    return m.discountAppliedBeforeTax
+    val, err := m.GetBackingStore().Get("discountAppliedBeforeTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDiscountPercent gets the discountPercent property value. The discountPercent property
 func (m *SalesCreditMemoLine) GetDiscountPercent()(*float64) {
-    return m.discountPercent
+    val, err := m.GetBackingStore().Get("discountPercent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetDocumentId gets the documentId property value. The documentId property
 func (m *SalesCreditMemoLine) GetDocumentId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.documentId
+    val, err := m.GetBackingStore().Get("documentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SalesCreditMemoLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -351,63 +366,168 @@ func (m *SalesCreditMemoLine) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetInvoiceDiscountAllocation gets the invoiceDiscountAllocation property value. The invoiceDiscountAllocation property
 func (m *SalesCreditMemoLine) GetInvoiceDiscountAllocation()(*float64) {
-    return m.invoiceDiscountAllocation
+    val, err := m.GetBackingStore().Get("invoiceDiscountAllocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetItem gets the item property value. The item property
 func (m *SalesCreditMemoLine) GetItem()(Itemable) {
-    return m.item
+    val, err := m.GetBackingStore().Get("item")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Itemable)
+    }
+    return nil
 }
 // GetItemId gets the itemId property value. The itemId property
 func (m *SalesCreditMemoLine) GetItemId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.itemId
+    val, err := m.GetBackingStore().Get("itemId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetLineType gets the lineType property value. The lineType property
 func (m *SalesCreditMemoLine) GetLineType()(*string) {
-    return m.lineType
+    val, err := m.GetBackingStore().Get("lineType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNetAmount gets the netAmount property value. The netAmount property
 func (m *SalesCreditMemoLine) GetNetAmount()(*float64) {
-    return m.netAmount
+    val, err := m.GetBackingStore().Get("netAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetNetAmountIncludingTax gets the netAmountIncludingTax property value. The netAmountIncludingTax property
 func (m *SalesCreditMemoLine) GetNetAmountIncludingTax()(*float64) {
-    return m.netAmountIncludingTax
+    val, err := m.GetBackingStore().Get("netAmountIncludingTax")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetNetTaxAmount gets the netTaxAmount property value. The netTaxAmount property
 func (m *SalesCreditMemoLine) GetNetTaxAmount()(*float64) {
-    return m.netTaxAmount
+    val, err := m.GetBackingStore().Get("netTaxAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetQuantity gets the quantity property value. The quantity property
 func (m *SalesCreditMemoLine) GetQuantity()(*float64) {
-    return m.quantity
+    val, err := m.GetBackingStore().Get("quantity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetSequence gets the sequence property value. The sequence property
 func (m *SalesCreditMemoLine) GetSequence()(*int32) {
-    return m.sequence
+    val, err := m.GetBackingStore().Get("sequence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetShipmentDate gets the shipmentDate property value. The shipmentDate property
 func (m *SalesCreditMemoLine) GetShipmentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.shipmentDate
+    val, err := m.GetBackingStore().Get("shipmentDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetTaxCode gets the taxCode property value. The taxCode property
 func (m *SalesCreditMemoLine) GetTaxCode()(*string) {
-    return m.taxCode
+    val, err := m.GetBackingStore().Get("taxCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTaxPercent gets the taxPercent property value. The taxPercent property
 func (m *SalesCreditMemoLine) GetTaxPercent()(*float64) {
-    return m.taxPercent
+    val, err := m.GetBackingStore().Get("taxPercent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesCreditMemoLine) GetTotalTaxAmount()(*float64) {
-    return m.totalTaxAmount
+    val, err := m.GetBackingStore().Get("totalTaxAmount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetUnitOfMeasureId gets the unitOfMeasureId property value. The unitOfMeasureId property
 func (m *SalesCreditMemoLine) GetUnitOfMeasureId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.unitOfMeasureId
+    val, err := m.GetBackingStore().Get("unitOfMeasureId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetUnitPrice gets the unitPrice property value. The unitPrice property
 func (m *SalesCreditMemoLine) GetUnitPrice()(*float64) {
-    return m.unitPrice
+    val, err := m.GetBackingStore().Get("unitPrice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SalesCreditMemoLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -563,97 +683,222 @@ func (m *SalesCreditMemoLine) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAccount sets the account property value. The account property
 func (m *SalesCreditMemoLine) SetAccount(value Accountable)() {
-    m.account = value
+    err := m.GetBackingStore().Set("account", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccountId sets the accountId property value. The accountId property
 func (m *SalesCreditMemoLine) SetAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.accountId = value
+    err := m.GetBackingStore().Set("accountId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. The amountExcludingTax property
 func (m *SalesCreditMemoLine) SetAmountExcludingTax(value *float64)() {
-    m.amountExcludingTax = value
+    err := m.GetBackingStore().Set("amountExcludingTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAmountIncludingTax sets the amountIncludingTax property value. The amountIncludingTax property
 func (m *SalesCreditMemoLine) SetAmountIncludingTax(value *float64)() {
-    m.amountIncludingTax = value
+    err := m.GetBackingStore().Set("amountIncludingTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *SalesCreditMemoLine) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiscountAmount sets the discountAmount property value. The discountAmount property
 func (m *SalesCreditMemoLine) SetDiscountAmount(value *float64)() {
-    m.discountAmount = value
+    err := m.GetBackingStore().Set("discountAmount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesCreditMemoLine) SetDiscountAppliedBeforeTax(value *bool)() {
-    m.discountAppliedBeforeTax = value
+    err := m.GetBackingStore().Set("discountAppliedBeforeTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiscountPercent sets the discountPercent property value. The discountPercent property
 func (m *SalesCreditMemoLine) SetDiscountPercent(value *float64)() {
-    m.discountPercent = value
+    err := m.GetBackingStore().Set("discountPercent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDocumentId sets the documentId property value. The documentId property
 func (m *SalesCreditMemoLine) SetDocumentId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.documentId = value
+    err := m.GetBackingStore().Set("documentId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInvoiceDiscountAllocation sets the invoiceDiscountAllocation property value. The invoiceDiscountAllocation property
 func (m *SalesCreditMemoLine) SetInvoiceDiscountAllocation(value *float64)() {
-    m.invoiceDiscountAllocation = value
+    err := m.GetBackingStore().Set("invoiceDiscountAllocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItem sets the item property value. The item property
 func (m *SalesCreditMemoLine) SetItem(value Itemable)() {
-    m.item = value
+    err := m.GetBackingStore().Set("item", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItemId sets the itemId property value. The itemId property
 func (m *SalesCreditMemoLine) SetItemId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.itemId = value
+    err := m.GetBackingStore().Set("itemId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLineType sets the lineType property value. The lineType property
 func (m *SalesCreditMemoLine) SetLineType(value *string)() {
-    m.lineType = value
+    err := m.GetBackingStore().Set("lineType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetAmount sets the netAmount property value. The netAmount property
 func (m *SalesCreditMemoLine) SetNetAmount(value *float64)() {
-    m.netAmount = value
+    err := m.GetBackingStore().Set("netAmount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetAmountIncludingTax sets the netAmountIncludingTax property value. The netAmountIncludingTax property
 func (m *SalesCreditMemoLine) SetNetAmountIncludingTax(value *float64)() {
-    m.netAmountIncludingTax = value
+    err := m.GetBackingStore().Set("netAmountIncludingTax", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNetTaxAmount sets the netTaxAmount property value. The netTaxAmount property
 func (m *SalesCreditMemoLine) SetNetTaxAmount(value *float64)() {
-    m.netTaxAmount = value
+    err := m.GetBackingStore().Set("netTaxAmount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuantity sets the quantity property value. The quantity property
 func (m *SalesCreditMemoLine) SetQuantity(value *float64)() {
-    m.quantity = value
+    err := m.GetBackingStore().Set("quantity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSequence sets the sequence property value. The sequence property
 func (m *SalesCreditMemoLine) SetSequence(value *int32)() {
-    m.sequence = value
+    err := m.GetBackingStore().Set("sequence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipmentDate sets the shipmentDate property value. The shipmentDate property
 func (m *SalesCreditMemoLine) SetShipmentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.shipmentDate = value
+    err := m.GetBackingStore().Set("shipmentDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxCode sets the taxCode property value. The taxCode property
 func (m *SalesCreditMemoLine) SetTaxCode(value *string)() {
-    m.taxCode = value
+    err := m.GetBackingStore().Set("taxCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxPercent sets the taxPercent property value. The taxPercent property
 func (m *SalesCreditMemoLine) SetTaxPercent(value *float64)() {
-    m.taxPercent = value
+    err := m.GetBackingStore().Set("taxPercent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesCreditMemoLine) SetTotalTaxAmount(value *float64)() {
-    m.totalTaxAmount = value
+    err := m.GetBackingStore().Set("totalTaxAmount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnitOfMeasureId sets the unitOfMeasureId property value. The unitOfMeasureId property
 func (m *SalesCreditMemoLine) SetUnitOfMeasureId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.unitOfMeasureId = value
+    err := m.GetBackingStore().Set("unitOfMeasureId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnitPrice sets the unitPrice property value. The unitPrice property
 func (m *SalesCreditMemoLine) SetUnitPrice(value *float64)() {
-    m.unitPrice = value
+    err := m.GetBackingStore().Set("unitPrice", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SalesCreditMemoLineable 
+type SalesCreditMemoLineable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccount()(Accountable)
+    GetAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetAmountExcludingTax()(*float64)
+    GetAmountIncludingTax()(*float64)
+    GetDescription()(*string)
+    GetDiscountAmount()(*float64)
+    GetDiscountAppliedBeforeTax()(*bool)
+    GetDiscountPercent()(*float64)
+    GetDocumentId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetInvoiceDiscountAllocation()(*float64)
+    GetItem()(Itemable)
+    GetItemId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetLineType()(*string)
+    GetNetAmount()(*float64)
+    GetNetAmountIncludingTax()(*float64)
+    GetNetTaxAmount()(*float64)
+    GetQuantity()(*float64)
+    GetSequence()(*int32)
+    GetShipmentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetTaxCode()(*string)
+    GetTaxPercent()(*float64)
+    GetTotalTaxAmount()(*float64)
+    GetUnitOfMeasureId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetUnitPrice()(*float64)
+    SetAccount(value Accountable)()
+    SetAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetAmountExcludingTax(value *float64)()
+    SetAmountIncludingTax(value *float64)()
+    SetDescription(value *string)()
+    SetDiscountAmount(value *float64)()
+    SetDiscountAppliedBeforeTax(value *bool)()
+    SetDiscountPercent(value *float64)()
+    SetDocumentId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetInvoiceDiscountAllocation(value *float64)()
+    SetItem(value Itemable)()
+    SetItemId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetLineType(value *string)()
+    SetNetAmount(value *float64)()
+    SetNetAmountIncludingTax(value *float64)()
+    SetNetTaxAmount(value *float64)()
+    SetQuantity(value *float64)()
+    SetSequence(value *int32)()
+    SetShipmentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetTaxCode(value *string)()
+    SetTaxPercent(value *float64)()
+    SetTotalTaxAmount(value *float64)()
+    SetUnitOfMeasureId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetUnitPrice(value *float64)()
 }

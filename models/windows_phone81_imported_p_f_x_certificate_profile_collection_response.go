@@ -7,8 +7,6 @@ import (
 // WindowsPhone81ImportedPFXCertificateProfileCollectionResponse 
 type WindowsPhone81ImportedPFXCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81ImportedPFXCertificateProfileable
 }
 // NewWindowsPhone81ImportedPFXCertificateProfileCollectionResponse instantiates a new WindowsPhone81ImportedPFXCertificateProfileCollectionResponse and sets the default values.
 func NewWindowsPhone81ImportedPFXCertificateProfileCollectionResponse()(*WindowsPhone81ImportedPFXCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81ImportedPFXCertificateProfileCollectionResponse) GetField
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81ImportedPFXCertificateProfileCollectionResponse) GetValue()([]WindowsPhone81ImportedPFXCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81ImportedPFXCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81ImportedPFXCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81ImportedPFXCertificateProfileCollectionResponse) Serializ
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81ImportedPFXCertificateProfileCollectionResponse) SetValue(value []WindowsPhone81ImportedPFXCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81ImportedPFXCertificateProfileCollectionResponseable 
+type WindowsPhone81ImportedPFXCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81ImportedPFXCertificateProfileable)
+    SetValue(value []WindowsPhone81ImportedPFXCertificateProfileable)()
 }

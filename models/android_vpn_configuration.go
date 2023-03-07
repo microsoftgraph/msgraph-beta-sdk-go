@@ -7,34 +7,14 @@ import (
 // AndroidVpnConfiguration 
 type AndroidVpnConfiguration struct {
     DeviceConfiguration
-    // VPN Authentication Method.
-    authenticationMethod *VpnAuthenticationMethod
-    // Connection name displayed to the user.
-    connectionName *string
-    // Android VPN connection type.
-    connectionType *AndroidVpnConnectionType
-    // Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
-    customData []KeyValueable
-    // Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
-    customKeyValueData []KeyValuePairable
-    // Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
-    fingerprint *string
-    // Identity certificate for client authentication when authentication method is certificate.
-    identityCertificate AndroidCertificateProfileBaseable
-    // Realm when connection type is set to Pulse Secure.
-    realm *string
-    // Role when connection type is set to Pulse Secure.
-    role *string
-    // List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
-    servers []VpnServerable
 }
 // NewAndroidVpnConfiguration instantiates a new AndroidVpnConfiguration and sets the default values.
 func NewAndroidVpnConfiguration()(*AndroidVpnConfiguration) {
     m := &AndroidVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidVpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidVpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,23 +23,58 @@ func CreateAndroidVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnAuthenticationMethod)
+    }
+    return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *AndroidVpnConfiguration) GetConnectionName()(*string) {
-    return m.connectionName
+    val, err := m.GetBackingStore().Get("connectionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConnectionType gets the connectionType property value. Android VPN connection type.
 func (m *AndroidVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
-    return m.connectionType
+    val, err := m.GetBackingStore().Get("connectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidVpnConnectionType)
+    }
+    return nil
 }
 // GetCustomData gets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidVpnConfiguration) GetCustomData()([]KeyValueable) {
-    return m.customData
+    val, err := m.GetBackingStore().Get("customData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
-    return m.customKeyValueData
+    val, err := m.GetBackingStore().Get("customKeyValueData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,23 +195,58 @@ func (m *AndroidVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetFingerprint gets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
 func (m *AndroidVpnConfiguration) GetFingerprint()(*string) {
-    return m.fingerprint
+    val, err := m.GetBackingStore().Get("fingerprint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidVpnConfiguration) GetIdentityCertificate()(AndroidCertificateProfileBaseable) {
-    return m.identityCertificate
+    val, err := m.GetBackingStore().Get("identityCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AndroidVpnConfiguration) GetRealm()(*string) {
-    return m.realm
+    val, err := m.GetBackingStore().Get("realm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AndroidVpnConfiguration) GetRole()(*string) {
-    return m.role
+    val, err := m.GetBackingStore().Get("role")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *AndroidVpnConfiguration) GetServers()([]VpnServerable) {
-    return m.servers
+    val, err := m.GetBackingStore().Get("servers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VpnServerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -282,41 +332,96 @@ func (m *AndroidVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *AndroidVpnConfiguration) SetConnectionName(value *string)() {
-    m.connectionName = value
+    err := m.GetBackingStore().Set("connectionName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionType sets the connectionType property value. Android VPN connection type.
 func (m *AndroidVpnConfiguration) SetConnectionType(value *AndroidVpnConnectionType)() {
-    m.connectionType = value
+    err := m.GetBackingStore().Set("connectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomData sets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidVpnConfiguration) SetCustomData(value []KeyValueable)() {
-    m.customData = value
+    err := m.GetBackingStore().Set("customData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomKeyValueData sets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidVpnConfiguration) SetCustomKeyValueData(value []KeyValuePairable)() {
-    m.customKeyValueData = value
+    err := m.GetBackingStore().Set("customKeyValueData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFingerprint sets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
 func (m *AndroidVpnConfiguration) SetFingerprint(value *string)() {
-    m.fingerprint = value
+    err := m.GetBackingStore().Set("fingerprint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidVpnConfiguration) SetIdentityCertificate(value AndroidCertificateProfileBaseable)() {
-    m.identityCertificate = value
+    err := m.GetBackingStore().Set("identityCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealm sets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AndroidVpnConfiguration) SetRealm(value *string)() {
-    m.realm = value
+    err := m.GetBackingStore().Set("realm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AndroidVpnConfiguration) SetRole(value *string)() {
-    m.role = value
+    err := m.GetBackingStore().Set("role", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServers sets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *AndroidVpnConfiguration) SetServers(value []VpnServerable)() {
-    m.servers = value
+    err := m.GetBackingStore().Set("servers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidVpnConfigurationable 
+type AndroidVpnConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMethod()(*VpnAuthenticationMethod)
+    GetConnectionName()(*string)
+    GetConnectionType()(*AndroidVpnConnectionType)
+    GetCustomData()([]KeyValueable)
+    GetCustomKeyValueData()([]KeyValuePairable)
+    GetFingerprint()(*string)
+    GetIdentityCertificate()(AndroidCertificateProfileBaseable)
+    GetRealm()(*string)
+    GetRole()(*string)
+    GetServers()([]VpnServerable)
+    SetAuthenticationMethod(value *VpnAuthenticationMethod)()
+    SetConnectionName(value *string)()
+    SetConnectionType(value *AndroidVpnConnectionType)()
+    SetCustomData(value []KeyValueable)()
+    SetCustomKeyValueData(value []KeyValuePairable)()
+    SetFingerprint(value *string)()
+    SetIdentityCertificate(value AndroidCertificateProfileBaseable)()
+    SetRealm(value *string)()
+    SetRole(value *string)()
+    SetServers(value []VpnServerable)()
 }

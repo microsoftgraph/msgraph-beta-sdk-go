@@ -7,16 +7,14 @@ import (
 // CallActivityStatistics 
 type CallActivityStatistics struct {
     ActivityStatistics
-    // Time spent on calls outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
-    afterHours *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewCallActivityStatistics instantiates a new CallActivityStatistics and sets the default values.
 func NewCallActivityStatistics()(*CallActivityStatistics) {
     m := &CallActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
     }
-    odataTypeValue := "#microsoft.graph.callActivityStatistics";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.callActivityStatistics"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCallActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateCallActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAfterHours gets the afterHours property value. Time spent on calls outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *CallActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.afterHours
+    val, err := m.GetBackingStore().Get("afterHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *CallActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAfterHours sets the afterHours property value. Time spent on calls outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *CallActivityStatistics) SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.afterHours = value
+    err := m.GetBackingStore().Set("afterHours", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallActivityStatisticsable 
+type CallActivityStatisticsable interface {
+    ActivityStatisticsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
 }

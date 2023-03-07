@@ -13,8 +13,8 @@ func NewGroupPeerOutlierRecommendationInsightSettings()(*GroupPeerOutlierRecomme
     m := &GroupPeerOutlierRecommendationInsightSettings{
         AccessReviewRecommendationInsightSetting: *NewAccessReviewRecommendationInsightSetting(),
     }
-    odataTypeValue := "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPeerOutlierRecommendationInsightSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *GroupPeerOutlierRecommendationInsightSettings) Serialize(writer i878a80
         return err
     }
     return nil
+}
+// GroupPeerOutlierRecommendationInsightSettingsable 
+type GroupPeerOutlierRecommendationInsightSettingsable interface {
+    AccessReviewRecommendationInsightSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

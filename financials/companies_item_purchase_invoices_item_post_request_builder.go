@@ -26,13 +26,13 @@ type CompaniesItemPurchaseInvoicesItemPostRequestBuilderPostRequestConfiguration
 func NewCompaniesItemPurchaseInvoicesItemPostRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPostRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemPostRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/microsoft.graph.post";
+    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/post";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesItemPostRequestBuilder instantiates a new PostRequestBuilder and sets the default values.

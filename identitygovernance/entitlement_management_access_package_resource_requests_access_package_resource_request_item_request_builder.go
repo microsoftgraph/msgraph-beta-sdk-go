@@ -48,7 +48,7 @@ type EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequ
 }
 // AccessPackageResource provides operations to manage the accessPackageResource property of the microsoft.graph.accessPackageResourceRequest entity.
 func (m *EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) AccessPackageResource()(*EntitlementManagementAccessPackageResourceRequestsItemAccessPackageResourceRequestBuilder) {
-    return NewEntitlementManagementAccessPackageResourceRequestsItemAccessPackageResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageResourceRequestsItemAccessPackageResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilderInternal instantiates a new AccessPackageResourceRequestItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewEntitlementManagementAccessPackageResourceRequestsAccessPackageResourceR
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder instantiates a new AccessPackageResourceRequestItemRequestBuilder and sets the default values.
@@ -125,7 +125,7 @@ func (m *EntitlementManagementAccessPackageResourceRequestsAccessPackageResource
 }
 // Requestor provides operations to manage the requestor property of the microsoft.graph.accessPackageResourceRequest entity.
 func (m *EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) Requestor()(*EntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilder) {
-    return NewEntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageResourceRequestsItemRequestorRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property accessPackageResourceRequests for identityGovernance
 func (m *EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *EntitlementManagementAccessPackageResourceRequestsAccessPackageResource
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

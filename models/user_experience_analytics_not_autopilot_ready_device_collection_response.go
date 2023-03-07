@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse 
 type UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsNotAutopilotReadyDeviceable
 }
 // NewUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse instantiates a new UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse()(*UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse) GetFi
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse) GetValue()([]UserExperienceAnalyticsNotAutopilotReadyDeviceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsNotAutopilotReadyDeviceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse) Seria
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse) SetValue(value []UserExperienceAnalyticsNotAutopilotReadyDeviceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable 
+type UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsNotAutopilotReadyDeviceable)
+    SetValue(value []UserExperienceAnalyticsNotAutopilotReadyDeviceable)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntentDeviceStateCollectionResponse 
 type DeviceManagementIntentDeviceStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementIntentDeviceStateable
 }
 // NewDeviceManagementIntentDeviceStateCollectionResponse instantiates a new DeviceManagementIntentDeviceStateCollectionResponse and sets the default values.
 func NewDeviceManagementIntentDeviceStateCollectionResponse()(*DeviceManagementIntentDeviceStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementIntentDeviceStateCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementIntentDeviceStateCollectionResponse) GetValue()([]DeviceManagementIntentDeviceStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementIntentDeviceStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementIntentDeviceStateCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementIntentDeviceStateCollectionResponse) SetValue(value []DeviceManagementIntentDeviceStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntentDeviceStateCollectionResponseable 
+type DeviceManagementIntentDeviceStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementIntentDeviceStateable)
+    SetValue(value []DeviceManagementIntentDeviceStateable)()
 }

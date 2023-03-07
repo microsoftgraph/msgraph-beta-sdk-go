@@ -2,24 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceManagementSettingDependency dependency information for a setting
 type DeviceManagementSettingDependency struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Collection of constraints for the dependency setting value
-    constraints []DeviceManagementConstraintable
-    // The setting definition ID of the setting depended on
-    definitionId *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeviceManagementSettingDependency instantiates a new deviceManagementSettingDependency and sets the default values.
 func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) {
     m := &DeviceManagementSettingDependency{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementSettingDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,15 +24,41 @@ func CreateDeviceManagementSettingDependencyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DeviceManagementSettingDependency) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetConstraints gets the constraints property value. Collection of constraints for the dependency setting value
 func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementConstraintable) {
-    return m.constraints
+    val, err := m.GetBackingStore().Get("constraints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConstraintable)
+    }
+    return nil
 }
 // GetDefinitionId gets the definitionId property value. The setting definition ID of the setting depended on
 func (m *DeviceManagementSettingDependency) GetDefinitionId()(*string) {
-    return m.definitionId
+    val, err := m.GetBackingStore().Get("definitionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,7 +101,14 @@ func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]f
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettingDependency) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingDependency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,17 +144,47 @@ func (m *DeviceManagementSettingDependency) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingDependency) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DeviceManagementSettingDependency) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the dependency setting value
 func (m *DeviceManagementSettingDependency) SetConstraints(value []DeviceManagementConstraintable)() {
-    m.constraints = value
+    err := m.GetBackingStore().Set("constraints", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinitionId sets the definitionId property value. The setting definition ID of the setting depended on
 func (m *DeviceManagementSettingDependency) SetDefinitionId(value *string)() {
-    m.definitionId = value
+    err := m.GetBackingStore().Set("definitionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettingDependency) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingDependencyable 
+type DeviceManagementSettingDependencyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConstraints()([]DeviceManagementConstraintable)
+    GetDefinitionId()(*string)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConstraints(value []DeviceManagementConstraintable)()
+    SetDefinitionId(value *string)()
+    SetOdataType(value *string)()
 }

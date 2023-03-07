@@ -7,24 +7,14 @@ import (
 // StatusDetails 
 type StatusDetails struct {
     StatusBase
-    // Additional details in case of error.
-    additionalDetails *string
-    // Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
-    errorCategory *ProvisioningStatusErrorCategory
-    // Unique error code if any occurred. Learn more
-    errorCode *string
-    // Summarizes the status and describes why the status happened.
-    reason *string
-    // Provides the resolution for the corresponding error.
-    recommendedAction *string
 }
 // NewStatusDetails instantiates a new StatusDetails and sets the default values.
 func NewStatusDetails()(*StatusDetails) {
     m := &StatusDetails{
         StatusBase: *NewStatusBase(),
     }
-    odataTypeValue := "#microsoft.graph.statusDetails";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.statusDetails"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,15 +23,36 @@ func CreateStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional details in case of error.
 func (m *StatusDetails) GetAdditionalDetails()(*string) {
-    return m.additionalDetails
+    val, err := m.GetBackingStore().Get("additionalDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetErrorCategory gets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
 func (m *StatusDetails) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
-    return m.errorCategory
+    val, err := m.GetBackingStore().Get("errorCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ProvisioningStatusErrorCategory)
+    }
+    return nil
 }
 // GetErrorCode gets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *StatusDetails) GetErrorCode()(*string) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +111,25 @@ func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetReason gets the reason property value. Summarizes the status and describes why the status happened.
 func (m *StatusDetails) GetReason()(*string) {
-    return m.reason
+    val, err := m.GetBackingStore().Get("reason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *StatusDetails) GetRecommendedAction()(*string) {
-    return m.recommendedAction
+    val, err := m.GetBackingStore().Get("recommendedAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -147,21 +172,51 @@ func (m *StatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
 func (m *StatusDetails) SetAdditionalDetails(value *string)() {
-    m.additionalDetails = value
+    err := m.GetBackingStore().Set("additionalDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCategory sets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
 func (m *StatusDetails) SetErrorCategory(value *ProvisioningStatusErrorCategory)() {
-    m.errorCategory = value
+    err := m.GetBackingStore().Set("errorCategory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCode sets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *StatusDetails) SetErrorCode(value *string)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReason sets the reason property value. Summarizes the status and describes why the status happened.
 func (m *StatusDetails) SetReason(value *string)() {
-    m.reason = value
+    err := m.GetBackingStore().Set("reason", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecommendedAction sets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *StatusDetails) SetRecommendedAction(value *string)() {
-    m.recommendedAction = value
+    err := m.GetBackingStore().Set("recommendedAction", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StatusDetailsable 
+type StatusDetailsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    StatusBaseable
+    GetAdditionalDetails()(*string)
+    GetErrorCategory()(*ProvisioningStatusErrorCategory)
+    GetErrorCode()(*string)
+    GetReason()(*string)
+    GetRecommendedAction()(*string)
+    SetAdditionalDetails(value *string)()
+    SetErrorCategory(value *ProvisioningStatusErrorCategory)()
+    SetErrorCode(value *string)()
+    SetReason(value *string)()
+    SetRecommendedAction(value *string)()
 }

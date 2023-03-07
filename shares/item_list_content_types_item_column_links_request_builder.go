@@ -60,8 +60,8 @@ func NewItemListContentTypesItemColumnLinksRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListContentTypesItemColumnLinksRequestBuilder instantiates a new ColumnLinksRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemListContentTypesItemColumnLinksRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListContentTypesItemColumnLinksRequestBuilder) Count()(*ItemListContentTypesItemColumnLinksCountRequestBuilder) {
-    return NewItemListContentTypesItemColumnLinksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListContentTypesItemColumnLinksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of columns that are required by this content type
 func (m *ItemListContentTypesItemColumnLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnLinksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnLinkCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemListContentTypesItemColumnLinksRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

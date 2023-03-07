@@ -7,28 +7,6 @@ import (
 // RbacApplication 
 type RbacApplication struct {
     Entity
-    // The resourceNamespaces property
-    resourceNamespaces []UnifiedRbacResourceNamespaceable
-    // The roleAssignmentApprovals property
-    roleAssignmentApprovals []Approvalable
-    // The roleAssignments property
-    roleAssignments []UnifiedRoleAssignmentable
-    // The roleAssignmentScheduleInstances property
-    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable
-    // The roleAssignmentScheduleRequests property
-    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable
-    // The roleAssignmentSchedules property
-    roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable
-    // The roleDefinitions property
-    roleDefinitions []UnifiedRoleDefinitionable
-    // The roleEligibilityScheduleInstances property
-    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable
-    // The roleEligibilityScheduleRequests property
-    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable
-    // The roleEligibilitySchedules property
-    roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable
-    // The transitiveRoleAssignments property
-    transitiveRoleAssignments []UnifiedRoleAssignmentable
 }
 // NewRbacApplication instantiates a new RbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
@@ -202,47 +180,124 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
-    return m.resourceNamespaces
+    val, err := m.GetBackingStore().Get("resourceNamespaces")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRbacResourceNamespaceable)
+    }
+    return nil
 }
 // GetRoleAssignmentApprovals gets the roleAssignmentApprovals property value. The roleAssignmentApprovals property
 func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approvalable) {
-    return m.roleAssignmentApprovals
+    val, err := m.GetBackingStore().Get("roleAssignmentApprovals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Approvalable)
+    }
+    return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The roleAssignments property
 func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
-    return m.roleAssignments
+    val, err := m.GetBackingStore().Get("roleAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentable)
+    }
+    return nil
 }
 // GetRoleAssignmentScheduleInstances gets the roleAssignmentScheduleInstances property value. The roleAssignmentScheduleInstances property
 func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstanceable) {
-    return m.roleAssignmentScheduleInstances
+    val, err := m.GetBackingStore().Get("roleAssignmentScheduleInstances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentScheduleInstanceable)
+    }
+    return nil
 }
 // GetRoleAssignmentScheduleRequests gets the roleAssignmentScheduleRequests property value. The roleAssignmentScheduleRequests property
 func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequestable) {
-    return m.roleAssignmentScheduleRequests
+    val, err := m.GetBackingStore().Get("roleAssignmentScheduleRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentScheduleRequestable)
+    }
+    return nil
 }
 // GetRoleAssignmentSchedules gets the roleAssignmentSchedules property value. The roleAssignmentSchedules property
 func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentScheduleable) {
-    return m.roleAssignmentSchedules
+    val, err := m.GetBackingStore().Get("roleAssignmentSchedules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentScheduleable)
+    }
+    return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
 func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
-    return m.roleDefinitions
+    val, err := m.GetBackingStore().Get("roleDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleDefinitionable)
+    }
+    return nil
 }
 // GetRoleEligibilityScheduleInstances gets the roleEligibilityScheduleInstances property value. The roleEligibilityScheduleInstances property
 func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstanceable) {
-    return m.roleEligibilityScheduleInstances
+    val, err := m.GetBackingStore().Get("roleEligibilityScheduleInstances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleEligibilityScheduleInstanceable)
+    }
+    return nil
 }
 // GetRoleEligibilityScheduleRequests gets the roleEligibilityScheduleRequests property value. The roleEligibilityScheduleRequests property
 func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequestable) {
-    return m.roleEligibilityScheduleRequests
+    val, err := m.GetBackingStore().Get("roleEligibilityScheduleRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleEligibilityScheduleRequestable)
+    }
+    return nil
 }
 // GetRoleEligibilitySchedules gets the roleEligibilitySchedules property value. The roleEligibilitySchedules property
 func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibilityScheduleable) {
-    return m.roleEligibilitySchedules
+    val, err := m.GetBackingStore().Get("roleEligibilitySchedules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleEligibilityScheduleable)
+    }
+    return nil
 }
 // GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. The transitiveRoleAssignments property
 func (m *RbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable) {
-    return m.transitiveRoleAssignments
+    val, err := m.GetBackingStore().Get("transitiveRoleAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -364,45 +419,105 @@ func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
-    m.resourceNamespaces = value
+    err := m.GetBackingStore().Set("resourceNamespaces", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignmentApprovals sets the roleAssignmentApprovals property value. The roleAssignmentApprovals property
 func (m *RbacApplication) SetRoleAssignmentApprovals(value []Approvalable)() {
-    m.roleAssignmentApprovals = value
+    err := m.GetBackingStore().Set("roleAssignmentApprovals", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. The roleAssignments property
 func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignmentable)() {
-    m.roleAssignments = value
+    err := m.GetBackingStore().Set("roleAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignmentScheduleInstances sets the roleAssignmentScheduleInstances property value. The roleAssignmentScheduleInstances property
 func (m *RbacApplication) SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstanceable)() {
-    m.roleAssignmentScheduleInstances = value
+    err := m.GetBackingStore().Set("roleAssignmentScheduleInstances", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignmentScheduleRequests sets the roleAssignmentScheduleRequests property value. The roleAssignmentScheduleRequests property
 func (m *RbacApplication) SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequestable)() {
-    m.roleAssignmentScheduleRequests = value
+    err := m.GetBackingStore().Set("roleAssignmentScheduleRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleAssignmentSchedules sets the roleAssignmentSchedules property value. The roleAssignmentSchedules property
 func (m *RbacApplication) SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentScheduleable)() {
-    m.roleAssignmentSchedules = value
+    err := m.GetBackingStore().Set("roleAssignmentSchedules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The roleDefinitions property
 func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinitionable)() {
-    m.roleDefinitions = value
+    err := m.GetBackingStore().Set("roleDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleEligibilityScheduleInstances sets the roleEligibilityScheduleInstances property value. The roleEligibilityScheduleInstances property
 func (m *RbacApplication) SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstanceable)() {
-    m.roleEligibilityScheduleInstances = value
+    err := m.GetBackingStore().Set("roleEligibilityScheduleInstances", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleEligibilityScheduleRequests sets the roleEligibilityScheduleRequests property value. The roleEligibilityScheduleRequests property
 func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequestable)() {
-    m.roleEligibilityScheduleRequests = value
+    err := m.GetBackingStore().Set("roleEligibilityScheduleRequests", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleEligibilitySchedules sets the roleEligibilitySchedules property value. The roleEligibilitySchedules property
 func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilityScheduleable)() {
-    m.roleEligibilitySchedules = value
+    err := m.GetBackingStore().Set("roleEligibilitySchedules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTransitiveRoleAssignments sets the transitiveRoleAssignments property value. The transitiveRoleAssignments property
 func (m *RbacApplication) SetTransitiveRoleAssignments(value []UnifiedRoleAssignmentable)() {
-    m.transitiveRoleAssignments = value
+    err := m.GetBackingStore().Set("transitiveRoleAssignments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RbacApplicationable 
+type RbacApplicationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable)
+    GetRoleAssignmentApprovals()([]Approvalable)
+    GetRoleAssignments()([]UnifiedRoleAssignmentable)
+    GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstanceable)
+    GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequestable)
+    GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentScheduleable)
+    GetRoleDefinitions()([]UnifiedRoleDefinitionable)
+    GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstanceable)
+    GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequestable)
+    GetRoleEligibilitySchedules()([]UnifiedRoleEligibilityScheduleable)
+    GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable)
+    SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)()
+    SetRoleAssignmentApprovals(value []Approvalable)()
+    SetRoleAssignments(value []UnifiedRoleAssignmentable)()
+    SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstanceable)()
+    SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequestable)()
+    SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentScheduleable)()
+    SetRoleDefinitions(value []UnifiedRoleDefinitionable)()
+    SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstanceable)()
+    SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequestable)()
+    SetRoleEligibilitySchedules(value []UnifiedRoleEligibilityScheduleable)()
+    SetTransitiveRoleAssignments(value []UnifiedRoleAssignmentable)()
 }

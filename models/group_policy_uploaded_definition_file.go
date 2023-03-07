@@ -8,26 +8,14 @@ import (
 // GroupPolicyUploadedDefinitionFile 
 type GroupPolicyUploadedDefinitionFile struct {
     GroupPolicyDefinitionFile
-    // The contents of the uploaded ADMX file.
-    content []byte
-    // The default language of the uploaded ADMX file.
-    defaultLanguageCode *string
-    // The list of operations on the uploaded ADMX file.
-    groupPolicyOperations []GroupPolicyOperationable
-    // The list of ADML files associated with the uploaded ADMX file.
-    groupPolicyUploadedLanguageFiles []GroupPolicyUploadedLanguageFileable
-    // Type of Group Policy uploaded definition file status.
-    status *GroupPolicyUploadedDefinitionFileStatus
-    // The uploaded time of the uploaded ADMX file.
-    uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewGroupPolicyUploadedDefinitionFile instantiates a new GroupPolicyUploadedDefinitionFile and sets the default values.
 func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) {
     m := &GroupPolicyUploadedDefinitionFile{
         GroupPolicyDefinitionFile: *NewGroupPolicyDefinitionFile(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyUploadedDefinitionFile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyUploadedDefinitionFile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,11 +24,25 @@ func CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue(parseNode i87
 }
 // GetContent gets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetContent()([]byte) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetDefaultLanguageCode gets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
-    return m.defaultLanguageCode
+    val, err := m.GetBackingStore().Get("defaultLanguageCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,19 +119,47 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
 }
 // GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyOperations()([]GroupPolicyOperationable) {
-    return m.groupPolicyOperations
+    val, err := m.GetBackingStore().Get("groupPolicyOperations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyOperationable)
+    }
+    return nil
 }
 // GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles()([]GroupPolicyUploadedLanguageFileable) {
-    return m.groupPolicyUploadedLanguageFiles
+    val, err := m.GetBackingStore().Get("groupPolicyUploadedLanguageFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyUploadedLanguageFileable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Type of Group Policy uploaded definition file status.
 func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefinitionFileStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GroupPolicyUploadedDefinitionFileStatus)
+    }
+    return nil
 }
 // GetUploadDateTime gets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.uploadDateTime
+    val, err := m.GetBackingStore().Get("uploadDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,25 +216,60 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d268
 }
 // SetContent sets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetContent(value []byte)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultLanguageCode sets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetDefaultLanguageCode(value *string)() {
-    m.defaultLanguageCode = value
+    err := m.GetBackingStore().Set("defaultLanguageCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupPolicyOperations sets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyOperations(value []GroupPolicyOperationable)() {
-    m.groupPolicyOperations = value
+    err := m.GetBackingStore().Set("groupPolicyOperations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyUploadedLanguageFiles(value []GroupPolicyUploadedLanguageFileable)() {
-    m.groupPolicyUploadedLanguageFiles = value
+    err := m.GetBackingStore().Set("groupPolicyUploadedLanguageFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Type of Group Policy uploaded definition file status.
 func (m *GroupPolicyUploadedDefinitionFile) SetStatus(value *GroupPolicyUploadedDefinitionFileStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUploadDateTime sets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.uploadDateTime = value
+    err := m.GetBackingStore().Set("uploadDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyUploadedDefinitionFileable 
+type GroupPolicyUploadedDefinitionFileable interface {
+    GroupPolicyDefinitionFileable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContent()([]byte)
+    GetDefaultLanguageCode()(*string)
+    GetGroupPolicyOperations()([]GroupPolicyOperationable)
+    GetGroupPolicyUploadedLanguageFiles()([]GroupPolicyUploadedLanguageFileable)
+    GetStatus()(*GroupPolicyUploadedDefinitionFileStatus)
+    GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetContent(value []byte)()
+    SetDefaultLanguageCode(value *string)()
+    SetGroupPolicyOperations(value []GroupPolicyOperationable)()
+    SetGroupPolicyUploadedLanguageFiles(value []GroupPolicyUploadedLanguageFileable)()
+    SetStatus(value *GroupPolicyUploadedDefinitionFileStatus)()
+    SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

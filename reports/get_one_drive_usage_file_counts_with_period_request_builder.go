@@ -26,7 +26,7 @@ type GetOneDriveUsageFileCountsWithPeriodRequestBuilderGetRequestConfiguration s
 func NewGetOneDriveUsageFileCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetOneDriveUsageFileCountsWithPeriodRequestBuilder) {
     m := &GetOneDriveUsageFileCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getOneDriveUsageFileCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getOneDriveUsageFileCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetOneDriveUsageFileCountsWithPeriodRequestBuilderInternal(pathParameter
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetOneDriveUsageFileCountsWithPeriodRequestBuilder instantiates a new GetOneDriveUsageFileCountsWithPeriodRequestBuilder and sets the default values.

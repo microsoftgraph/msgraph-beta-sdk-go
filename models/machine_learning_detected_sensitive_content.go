@@ -7,10 +7,6 @@ import (
 // MachineLearningDetectedSensitiveContent 
 type MachineLearningDetectedSensitiveContent struct {
     DetectedSensitiveContent
-    // The matchTolerance property
-    matchTolerance *MlClassificationMatchTolerance
-    // The modelVersion property
-    modelVersion *string
 }
 // NewMachineLearningDetectedSensitiveContent instantiates a new MachineLearningDetectedSensitiveContent and sets the default values.
 func NewMachineLearningDetectedSensitiveContent()(*MachineLearningDetectedSensitiveContent) {
@@ -50,11 +46,25 @@ func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[st
 }
 // GetMatchTolerance gets the matchTolerance property value. The matchTolerance property
 func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MlClassificationMatchTolerance) {
-    return m.matchTolerance
+    val, err := m.GetBackingStore().Get("matchTolerance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MlClassificationMatchTolerance)
+    }
+    return nil
 }
 // GetModelVersion gets the modelVersion property value. The modelVersion property
 func (m *MachineLearningDetectedSensitiveContent) GetModelVersion()(*string) {
-    return m.modelVersion
+    val, err := m.GetBackingStore().Get("modelVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MachineLearningDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,9 +89,24 @@ func (m *MachineLearningDetectedSensitiveContent) Serialize(writer i878a80d2330e
 }
 // SetMatchTolerance sets the matchTolerance property value. The matchTolerance property
 func (m *MachineLearningDetectedSensitiveContent) SetMatchTolerance(value *MlClassificationMatchTolerance)() {
-    m.matchTolerance = value
+    err := m.GetBackingStore().Set("matchTolerance", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModelVersion sets the modelVersion property value. The modelVersion property
 func (m *MachineLearningDetectedSensitiveContent) SetModelVersion(value *string)() {
-    m.modelVersion = value
+    err := m.GetBackingStore().Set("modelVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MachineLearningDetectedSensitiveContentable 
+type MachineLearningDetectedSensitiveContentable interface {
+    DetectedSensitiveContentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMatchTolerance()(*MlClassificationMatchTolerance)
+    GetModelVersion()(*string)
+    SetMatchTolerance(value *MlClassificationMatchTolerance)()
+    SetModelVersion(value *string)()
 }

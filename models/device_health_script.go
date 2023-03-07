@@ -8,44 +8,6 @@ import (
 // DeviceHealthScript intune will provide customer the ability to run their Powershell Health scripts (remediation + detection) on the enrolled windows 10 Azure Active Directory joined devices.
 type DeviceHealthScript struct {
     Entity
-    // The list of group assignments for the device health script
-    assignments []DeviceHealthScriptAssignmentable
-    // The timestamp of when the device health script was created. This property is read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Description of the device health script
-    description *string
-    // The entire content of the detection powershell script
-    detectionScriptContent []byte
-    // List of ComplexType DetectionScriptParameters objects.
-    detectionScriptParameters []DeviceHealthScriptParameterable
-    // List of run states for the device health script across all devices
-    deviceRunStates []DeviceHealthScriptDeviceStateable
-    // Name of the device health script
-    displayName *string
-    // Indicate whether the script signature needs be checked
-    enforceSignatureCheck *bool
-    // Highest available version for a Microsoft Proprietary script
-    highestAvailableVersion *string
-    // Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
-    isGlobalScript *bool
-    // The timestamp of when the device health script was modified. This property is read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Name of the device health script publisher
-    publisher *string
-    // The entire content of the remediation powershell script
-    remediationScriptContent []byte
-    // List of ComplexType RemediationScriptParameters objects.
-    remediationScriptParameters []DeviceHealthScriptParameterable
-    // List of Scope Tag IDs for the device health script
-    roleScopeTagIds []string
-    // Indicate whether PowerShell script(s) should run as 32-bit
-    runAs32Bit *bool
-    // Indicates the type of execution context the app runs in.
-    runAsAccount *RunAsAccountType
-    // High level run summary for device health script.
-    runSummary DeviceHealthScriptRunSummaryable
-    // Version of the device health script
-    version *string
 }
 // NewDeviceHealthScript instantiates a new deviceHealthScript and sets the default values.
 func NewDeviceHealthScript()(*DeviceHealthScript) {
@@ -60,35 +22,91 @@ func CreateDeviceHealthScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device health script
 func (m *DeviceHealthScript) GetAssignments()([]DeviceHealthScriptAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceHealthScriptAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp of when the device health script was created. This property is read-only.
 func (m *DeviceHealthScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the device health script
 func (m *DeviceHealthScript) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDetectionScriptContent gets the detectionScriptContent property value. The entire content of the detection powershell script
 func (m *DeviceHealthScript) GetDetectionScriptContent()([]byte) {
-    return m.detectionScriptContent
+    val, err := m.GetBackingStore().Get("detectionScriptContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetDetectionScriptParameters gets the detectionScriptParameters property value. List of ComplexType DetectionScriptParameters objects.
 func (m *DeviceHealthScript) GetDetectionScriptParameters()([]DeviceHealthScriptParameterable) {
-    return m.detectionScriptParameters
+    val, err := m.GetBackingStore().Get("detectionScriptParameters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceHealthScriptParameterable)
+    }
+    return nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for the device health script across all devices
 func (m *DeviceHealthScript) GetDeviceRunStates()([]DeviceHealthScriptDeviceStateable) {
-    return m.deviceRunStates
+    val, err := m.GetBackingStore().Get("deviceRunStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceHealthScriptDeviceStateable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of the device health script
 func (m *DeviceHealthScript) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
 func (m *DeviceHealthScript) GetEnforceSignatureCheck()(*bool) {
-    return m.enforceSignatureCheck
+    val, err := m.GetBackingStore().Get("enforceSignatureCheck")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -307,47 +325,124 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetHighestAvailableVersion gets the highestAvailableVersion property value. Highest available version for a Microsoft Proprietary script
 func (m *DeviceHealthScript) GetHighestAvailableVersion()(*string) {
-    return m.highestAvailableVersion
+    val, err := m.GetBackingStore().Get("highestAvailableVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsGlobalScript gets the isGlobalScript property value. Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
 func (m *DeviceHealthScript) GetIsGlobalScript()(*bool) {
-    return m.isGlobalScript
+    val, err := m.GetBackingStore().Get("isGlobalScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp of when the device health script was modified. This property is read-only.
 func (m *DeviceHealthScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. Name of the device health script publisher
 func (m *DeviceHealthScript) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRemediationScriptContent gets the remediationScriptContent property value. The entire content of the remediation powershell script
 func (m *DeviceHealthScript) GetRemediationScriptContent()([]byte) {
-    return m.remediationScriptContent
+    val, err := m.GetBackingStore().Get("remediationScriptContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetRemediationScriptParameters gets the remediationScriptParameters property value. List of ComplexType RemediationScriptParameters objects.
 func (m *DeviceHealthScript) GetRemediationScriptParameters()([]DeviceHealthScriptParameterable) {
-    return m.remediationScriptParameters
+    val, err := m.GetBackingStore().Get("remediationScriptParameters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceHealthScriptParameterable)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the device health script
 func (m *DeviceHealthScript) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetRunAs32Bit gets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
 func (m *DeviceHealthScript) GetRunAs32Bit()(*bool) {
-    return m.runAs32Bit
+    val, err := m.GetBackingStore().Get("runAs32Bit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceHealthScript) GetRunAsAccount()(*RunAsAccountType) {
-    return m.runAsAccount
+    val, err := m.GetBackingStore().Get("runAsAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RunAsAccountType)
+    }
+    return nil
 }
 // GetRunSummary gets the runSummary property value. High level run summary for device health script.
 func (m *DeviceHealthScript) GetRunSummary()(DeviceHealthScriptRunSummaryable) {
-    return m.runSummary
+    val, err := m.GetBackingStore().Get("runSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceHealthScriptRunSummaryable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Version of the device health script
 func (m *DeviceHealthScript) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -478,77 +573,177 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device health script
 func (m *DeviceHealthScript) SetAssignments(value []DeviceHealthScriptAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The timestamp of when the device health script was created. This property is read-only.
 func (m *DeviceHealthScript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the device health script
 func (m *DeviceHealthScript) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionScriptContent sets the detectionScriptContent property value. The entire content of the detection powershell script
 func (m *DeviceHealthScript) SetDetectionScriptContent(value []byte)() {
-    m.detectionScriptContent = value
+    err := m.GetBackingStore().Set("detectionScriptContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionScriptParameters sets the detectionScriptParameters property value. List of ComplexType DetectionScriptParameters objects.
 func (m *DeviceHealthScript) SetDetectionScriptParameters(value []DeviceHealthScriptParameterable)() {
-    m.detectionScriptParameters = value
+    err := m.GetBackingStore().Set("detectionScriptParameters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for the device health script across all devices
 func (m *DeviceHealthScript) SetDeviceRunStates(value []DeviceHealthScriptDeviceStateable)() {
-    m.deviceRunStates = value
+    err := m.GetBackingStore().Set("deviceRunStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the device health script
 func (m *DeviceHealthScript) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
 func (m *DeviceHealthScript) SetEnforceSignatureCheck(value *bool)() {
-    m.enforceSignatureCheck = value
+    err := m.GetBackingStore().Set("enforceSignatureCheck", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHighestAvailableVersion sets the highestAvailableVersion property value. Highest available version for a Microsoft Proprietary script
 func (m *DeviceHealthScript) SetHighestAvailableVersion(value *string)() {
-    m.highestAvailableVersion = value
+    err := m.GetBackingStore().Set("highestAvailableVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsGlobalScript sets the isGlobalScript property value. Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
 func (m *DeviceHealthScript) SetIsGlobalScript(value *bool)() {
-    m.isGlobalScript = value
+    err := m.GetBackingStore().Set("isGlobalScript", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The timestamp of when the device health script was modified. This property is read-only.
 func (m *DeviceHealthScript) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. Name of the device health script publisher
 func (m *DeviceHealthScript) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediationScriptContent sets the remediationScriptContent property value. The entire content of the remediation powershell script
 func (m *DeviceHealthScript) SetRemediationScriptContent(value []byte)() {
-    m.remediationScriptContent = value
+    err := m.GetBackingStore().Set("remediationScriptContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediationScriptParameters sets the remediationScriptParameters property value. List of ComplexType RemediationScriptParameters objects.
 func (m *DeviceHealthScript) SetRemediationScriptParameters(value []DeviceHealthScriptParameterable)() {
-    m.remediationScriptParameters = value
+    err := m.GetBackingStore().Set("remediationScriptParameters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for the device health script
 func (m *DeviceHealthScript) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunAs32Bit sets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
 func (m *DeviceHealthScript) SetRunAs32Bit(value *bool)() {
-    m.runAs32Bit = value
+    err := m.GetBackingStore().Set("runAs32Bit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceHealthScript) SetRunAsAccount(value *RunAsAccountType)() {
-    m.runAsAccount = value
+    err := m.GetBackingStore().Set("runAsAccount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunSummary sets the runSummary property value. High level run summary for device health script.
 func (m *DeviceHealthScript) SetRunSummary(value DeviceHealthScriptRunSummaryable)() {
-    m.runSummary = value
+    err := m.GetBackingStore().Set("runSummary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Version of the device health script
 func (m *DeviceHealthScript) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptable 
+type DeviceHealthScriptable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]DeviceHealthScriptAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDetectionScriptContent()([]byte)
+    GetDetectionScriptParameters()([]DeviceHealthScriptParameterable)
+    GetDeviceRunStates()([]DeviceHealthScriptDeviceStateable)
+    GetDisplayName()(*string)
+    GetEnforceSignatureCheck()(*bool)
+    GetHighestAvailableVersion()(*string)
+    GetIsGlobalScript()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPublisher()(*string)
+    GetRemediationScriptContent()([]byte)
+    GetRemediationScriptParameters()([]DeviceHealthScriptParameterable)
+    GetRoleScopeTagIds()([]string)
+    GetRunAs32Bit()(*bool)
+    GetRunAsAccount()(*RunAsAccountType)
+    GetRunSummary()(DeviceHealthScriptRunSummaryable)
+    GetVersion()(*string)
+    SetAssignments(value []DeviceHealthScriptAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDetectionScriptContent(value []byte)()
+    SetDetectionScriptParameters(value []DeviceHealthScriptParameterable)()
+    SetDeviceRunStates(value []DeviceHealthScriptDeviceStateable)()
+    SetDisplayName(value *string)()
+    SetEnforceSignatureCheck(value *bool)()
+    SetHighestAvailableVersion(value *string)()
+    SetIsGlobalScript(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPublisher(value *string)()
+    SetRemediationScriptContent(value []byte)()
+    SetRemediationScriptParameters(value []DeviceHealthScriptParameterable)()
+    SetRoleScopeTagIds(value []string)()
+    SetRunAs32Bit(value *bool)()
+    SetRunAsAccount(value *RunAsAccountType)()
+    SetRunSummary(value DeviceHealthScriptRunSummaryable)()
+    SetVersion(value *string)()
 }

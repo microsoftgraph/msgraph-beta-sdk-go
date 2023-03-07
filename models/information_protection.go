@@ -7,18 +7,6 @@ import (
 // InformationProtection 
 type InformationProtection struct {
     Entity
-    // The bitlocker property
-    bitlocker Bitlockerable
-    // The dataLossPreventionPolicies property
-    dataLossPreventionPolicies []DataLossPreventionPolicyable
-    // The policy property
-    policy InformationProtectionPolicyable
-    // The sensitivityLabels property
-    sensitivityLabels []SensitivityLabelable
-    // The sensitivityPolicySettings property
-    sensitivityPolicySettings SensitivityPolicySettingsable
-    // The threatAssessmentRequests property
-    threatAssessmentRequests []ThreatAssessmentRequestable
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
@@ -33,11 +21,25 @@ func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetBitlocker gets the bitlocker property value. The bitlocker property
 func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
-    return m.bitlocker
+    val, err := m.GetBackingStore().Get("bitlocker")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Bitlockerable)
+    }
+    return nil
 }
 // GetDataLossPreventionPolicies gets the dataLossPreventionPolicies property value. The dataLossPreventionPolicies property
 func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreventionPolicyable) {
-    return m.dataLossPreventionPolicies
+    val, err := m.GetBackingStore().Get("dataLossPreventionPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DataLossPreventionPolicyable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,19 +120,47 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetPolicy gets the policy property value. The policy property
 func (m *InformationProtection) GetPolicy()(InformationProtectionPolicyable) {
-    return m.policy
+    val, err := m.GetBackingStore().Get("policy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InformationProtectionPolicyable)
+    }
+    return nil
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
-    return m.sensitivityLabels
+    val, err := m.GetBackingStore().Get("sensitivityLabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitivityLabelable)
+    }
+    return nil
 }
 // GetSensitivityPolicySettings gets the sensitivityPolicySettings property value. The sensitivityPolicySettings property
 func (m *InformationProtection) GetSensitivityPolicySettings()(SensitivityPolicySettingsable) {
-    return m.sensitivityPolicySettings
+    val, err := m.GetBackingStore().Get("sensitivityPolicySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SensitivityPolicySettingsable)
+    }
+    return nil
 }
 // GetThreatAssessmentRequests gets the threatAssessmentRequests property value. The threatAssessmentRequests property
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequestable) {
-    return m.threatAssessmentRequests
+    val, err := m.GetBackingStore().Get("threatAssessmentRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ThreatAssessmentRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -190,25 +220,60 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetBitlocker sets the bitlocker property value. The bitlocker property
 func (m *InformationProtection) SetBitlocker(value Bitlockerable)() {
-    m.bitlocker = value
+    err := m.GetBackingStore().Set("bitlocker", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDataLossPreventionPolicies sets the dataLossPreventionPolicies property value. The dataLossPreventionPolicies property
 func (m *InformationProtection) SetDataLossPreventionPolicies(value []DataLossPreventionPolicyable)() {
-    m.dataLossPreventionPolicies = value
+    err := m.GetBackingStore().Set("dataLossPreventionPolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicy sets the policy property value. The policy property
 func (m *InformationProtection) SetPolicy(value InformationProtectionPolicyable)() {
-    m.policy = value
+    err := m.GetBackingStore().Set("policy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabelable)() {
-    m.sensitivityLabels = value
+    err := m.GetBackingStore().Set("sensitivityLabels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityPolicySettings sets the sensitivityPolicySettings property value. The sensitivityPolicySettings property
 func (m *InformationProtection) SetSensitivityPolicySettings(value SensitivityPolicySettingsable)() {
-    m.sensitivityPolicySettings = value
+    err := m.GetBackingStore().Set("sensitivityPolicySettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThreatAssessmentRequests sets the threatAssessmentRequests property value. The threatAssessmentRequests property
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequestable)() {
-    m.threatAssessmentRequests = value
+    err := m.GetBackingStore().Set("threatAssessmentRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InformationProtectionable 
+type InformationProtectionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBitlocker()(Bitlockerable)
+    GetDataLossPreventionPolicies()([]DataLossPreventionPolicyable)
+    GetPolicy()(InformationProtectionPolicyable)
+    GetSensitivityLabels()([]SensitivityLabelable)
+    GetSensitivityPolicySettings()(SensitivityPolicySettingsable)
+    GetThreatAssessmentRequests()([]ThreatAssessmentRequestable)
+    SetBitlocker(value Bitlockerable)()
+    SetDataLossPreventionPolicies(value []DataLossPreventionPolicyable)()
+    SetPolicy(value InformationProtectionPolicyable)()
+    SetSensitivityLabels(value []SensitivityLabelable)()
+    SetSensitivityPolicySettings(value SensitivityPolicySettingsable)()
+    SetThreatAssessmentRequests(value []ThreatAssessmentRequestable)()
 }

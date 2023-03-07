@@ -7,36 +7,14 @@ import (
 // AndroidDeviceOwnerScepCertificateProfile 
 type AndroidDeviceOwnerScepCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
-    // Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-    certificateAccessType *AndroidDeviceOwnerCertificateAccessType
-    // Target store certificate. Possible values are: user, machine.
-    certificateStore *CertificateStore
-    // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
-    customSubjectAlternativeNames []CustomSubjectAlternativeNameable
-    // Hash Algorithm Options.
-    hashAlgorithm *HashAlgorithms
-    // Key Size Options.
-    keySize *KeySize
-    // Key Usage Options.
-    keyUsage *KeyUsages
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
-    // SCEP Server Url(s)
-    scepServerUrls []string
-    // Certificate access information. This collection can contain a maximum of 50 elements.
-    silentCertificateAccessDetails []AndroidDeviceOwnerSilentCertificateAccessable
-    // Custom String that defines the AAD Attribute.
-    subjectAlternativeNameFormatString *string
-    // Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
-    subjectNameFormatString *string
 }
 // NewAndroidDeviceOwnerScepCertificateProfile instantiates a new AndroidDeviceOwnerScepCertificateProfile and sets the default values.
 func NewAndroidDeviceOwnerScepCertificateProfile()(*AndroidDeviceOwnerScepCertificateProfile) {
     m := &AndroidDeviceOwnerScepCertificateProfile{
         AndroidDeviceOwnerCertificateProfileBase: *NewAndroidDeviceOwnerCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerScepCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerScepCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,15 +23,36 @@ func CreateAndroidDeviceOwnerScepCertificateProfileFromDiscriminatorValue(parseN
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
-    return m.certificateAccessType
+    val, err := m.GetBackingStore().Get("certificateAccessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidDeviceOwnerCertificateAccessType)
+    }
+    return nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    return m.certificateStore
+    val, err := m.GetBackingStore().Get("certificateStore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateStore)
+    }
+    return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    return m.customSubjectAlternativeNames
+    val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSubjectAlternativeNameable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,35 +187,91 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) GetFieldDeserializers()(map[s
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
-    return m.hashAlgorithm
+    val, err := m.GetBackingStore().Get("hashAlgorithm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*HashAlgorithms)
+    }
+    return nil
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetKeySize()(*KeySize) {
-    return m.keySize
+    val, err := m.GetBackingStore().Get("keySize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*KeySize)
+    }
+    return nil
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    return m.keyUsage
+    val, err := m.GetBackingStore().Get("keyUsage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*KeyUsages)
+    }
+    return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s)
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetScepServerUrls()([]string) {
-    return m.scepServerUrls
+    val, err := m.GetBackingStore().Get("scepServerUrls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
-    return m.silentCertificateAccessDetails
+    val, err := m.GetBackingStore().Get("silentCertificateAccessDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerSilentCertificateAccessable)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    return m.subjectAlternativeNameFormatString
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetSubjectNameFormatString()(*string) {
-    return m.subjectNameFormatString
+    val, err := m.GetBackingStore().Get("subjectNameFormatString")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -311,45 +366,105 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
-    m.certificateAccessType = value
+    err := m.GetBackingStore().Set("certificateAccessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    m.certificateStore = value
+    err := m.GetBackingStore().Set("certificateStore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    m.customSubjectAlternativeNames = value
+    err := m.GetBackingStore().Set("customSubjectAlternativeNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
-    m.hashAlgorithm = value
+    err := m.GetBackingStore().Set("hashAlgorithm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetKeySize(value *KeySize)() {
-    m.keySize = value
+    err := m.GetBackingStore().Set("keySize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    m.keyUsage = value
+    err := m.GetBackingStore().Set("keyUsage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s)
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetScepServerUrls(value []string)() {
-    m.scepServerUrls = value
+    err := m.GetBackingStore().Set("scepServerUrls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSilentCertificateAccessDetails sets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
-    m.silentCertificateAccessDetails = value
+    err := m.GetBackingStore().Set("silentCertificateAccessDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    m.subjectAlternativeNameFormatString = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    m.subjectNameFormatString = value
+    err := m.GetBackingStore().Set("subjectNameFormatString", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerScepCertificateProfileable 
+type AndroidDeviceOwnerScepCertificateProfileable interface {
+    AndroidDeviceOwnerCertificateProfileBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType)
+    GetCertificateStore()(*CertificateStore)
+    GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
+    GetHashAlgorithm()(*HashAlgorithms)
+    GetKeySize()(*KeySize)
+    GetKeyUsage()(*KeyUsages)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetScepServerUrls()([]string)
+    GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable)
+    GetSubjectAlternativeNameFormatString()(*string)
+    GetSubjectNameFormatString()(*string)
+    SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)()
+    SetCertificateStore(value *CertificateStore)()
+    SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
+    SetHashAlgorithm(value *HashAlgorithms)()
+    SetKeySize(value *KeySize)()
+    SetKeyUsage(value *KeyUsages)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetScepServerUrls(value []string)()
+    SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)()
+    SetSubjectAlternativeNameFormatString(value *string)()
+    SetSubjectNameFormatString(value *string)()
 }

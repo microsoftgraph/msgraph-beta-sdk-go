@@ -16,7 +16,7 @@ type ItemTemplateDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemTemplateDefinitionRequestBuilderGetQueryParameters get templateDefinition from teams
+// ItemTemplateDefinitionRequestBuilderGetQueryParameters generic representation of a team template definition for a team with a specific structure and configuration.
 type ItemTemplateDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -41,8 +41,8 @@ func NewItemTemplateDefinitionRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTemplateDefinitionRequestBuilder instantiates a new TemplateDefinitionRequestBuilder and sets the default values.
@@ -51,7 +51,7 @@ func NewItemTemplateDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemTemplateDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get templateDefinition from teams
+// Get generic representation of a team template definition for a team with a specific structure and configuration.
 func (m *ItemTemplateDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTemplateDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +70,7 @@ func (m *ItemTemplateDefinitionRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
 }
-// ToGetRequestInformation get templateDefinition from teams
+// ToGetRequestInformation generic representation of a team template definition for a team with a specific structure and configuration.
 func (m *ItemTemplateDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTemplateDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

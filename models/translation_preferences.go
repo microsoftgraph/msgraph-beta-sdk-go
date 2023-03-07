@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // TranslationPreferences 
 type TranslationPreferences struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Translation override behavior for languages, if any.Returned by default.
-    languageOverrides []TranslationLanguageOverrideable
-    // The OdataType property
-    odataType *string
-    // The user's preferred translation behavior.Returned by default. Not nullable.
-    translationBehavior *TranslationBehavior
-    // The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
-    untranslatedLanguages []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewTranslationPreferences instantiates a new translationPreferences and sets the default values.
 func NewTranslationPreferences()(*TranslationPreferences) {
     m := &TranslationPreferences{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTranslationPreferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +24,19 @@ func CreateTranslationPreferencesFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslationPreferences) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *TranslationPreferences) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,19 +93,47 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLanguageOverrides gets the languageOverrides property value. Translation override behavior for languages, if any.Returned by default.
 func (m *TranslationPreferences) GetLanguageOverrides()([]TranslationLanguageOverrideable) {
-    return m.languageOverrides
+    val, err := m.GetBackingStore().Get("languageOverrides")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TranslationLanguageOverrideable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TranslationPreferences) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTranslationBehavior gets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.
 func (m *TranslationPreferences) GetTranslationBehavior()(*TranslationBehavior) {
-    return m.translationBehavior
+    val, err := m.GetBackingStore().Get("translationBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TranslationBehavior)
+    }
+    return nil
 }
 // GetUntranslatedLanguages gets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
 func (m *TranslationPreferences) GetUntranslatedLanguages()([]string) {
-    return m.untranslatedLanguages
+    val, err := m.GetBackingStore().Get("untranslatedLanguages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TranslationPreferences) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,21 +176,56 @@ func (m *TranslationPreferences) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslationPreferences) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *TranslationPreferences) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetLanguageOverrides sets the languageOverrides property value. Translation override behavior for languages, if any.Returned by default.
 func (m *TranslationPreferences) SetLanguageOverrides(value []TranslationLanguageOverrideable)() {
-    m.languageOverrides = value
+    err := m.GetBackingStore().Set("languageOverrides", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TranslationPreferences) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTranslationBehavior sets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.
 func (m *TranslationPreferences) SetTranslationBehavior(value *TranslationBehavior)() {
-    m.translationBehavior = value
+    err := m.GetBackingStore().Set("translationBehavior", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUntranslatedLanguages sets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
 func (m *TranslationPreferences) SetUntranslatedLanguages(value []string)() {
-    m.untranslatedLanguages = value
+    err := m.GetBackingStore().Set("untranslatedLanguages", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TranslationPreferencesable 
+type TranslationPreferencesable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetLanguageOverrides()([]TranslationLanguageOverrideable)
+    GetOdataType()(*string)
+    GetTranslationBehavior()(*TranslationBehavior)
+    GetUntranslatedLanguages()([]string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetLanguageOverrides(value []TranslationLanguageOverrideable)()
+    SetOdataType(value *string)()
+    SetTranslationBehavior(value *TranslationBehavior)()
+    SetUntranslatedLanguages(value []string)()
 }

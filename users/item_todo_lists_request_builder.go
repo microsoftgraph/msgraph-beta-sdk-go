@@ -60,8 +60,8 @@ func NewItemTodoListsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTodoListsRequestBuilder instantiates a new ListsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewItemTodoListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTodoListsRequestBuilder) Count()(*ItemTodoListsCountRequestBuilder) {
-    return NewItemTodoListsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTodoListsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemTodoListsRequestBuilder) Delta()(*ItemTodoListsDeltaRequestBuilder) {
-    return NewItemTodoListsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTodoListsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the todoTaskList objects and their properties.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemTodoListsRequestBuilder) ToPostRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

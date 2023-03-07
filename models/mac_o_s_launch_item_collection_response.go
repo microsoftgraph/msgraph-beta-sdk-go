@@ -7,8 +7,6 @@ import (
 // MacOSLaunchItemCollectionResponse 
 type MacOSLaunchItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSLaunchItemable
 }
 // NewMacOSLaunchItemCollectionResponse instantiates a new MacOSLaunchItemCollectionResponse and sets the default values.
 func NewMacOSLaunchItemCollectionResponse()(*MacOSLaunchItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSLaunchItemCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSLaunchItemCollectionResponse) GetValue()([]MacOSLaunchItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSLaunchItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSLaunchItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSLaunchItemCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSLaunchItemCollectionResponse) SetValue(value []MacOSLaunchItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSLaunchItemCollectionResponseable 
+type MacOSLaunchItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSLaunchItemable)
+    SetValue(value []MacOSLaunchItemable)()
 }

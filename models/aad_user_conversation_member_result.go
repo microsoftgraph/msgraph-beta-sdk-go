@@ -7,16 +7,14 @@ import (
 // AadUserConversationMemberResult 
 type AadUserConversationMemberResult struct {
     ActionResultPart
-    // The user object ID of the Azure AD user that was being added as part of the bulk operation.
-    userId *string
 }
 // NewAadUserConversationMemberResult instantiates a new AadUserConversationMemberResult and sets the default values.
 func NewAadUserConversationMemberResult()(*AadUserConversationMemberResult) {
     m := &AadUserConversationMemberResult{
         ActionResultPart: *NewActionResultPart(),
     }
-    odataTypeValue := "#microsoft.graph.aadUserConversationMemberResult";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.aadUserConversationMemberResult"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAadUserConversationMemberResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]fun
 }
 // GetUserId gets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
 func (m *AadUserConversationMemberResult) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896
 }
 // SetUserId sets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
 func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AadUserConversationMemberResultable 
+type AadUserConversationMemberResultable interface {
+    ActionResultPartable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserId()(*string)
+    SetUserId(value *string)()
 }

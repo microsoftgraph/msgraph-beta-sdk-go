@@ -7,8 +7,6 @@ import (
 // ProjectParticipationCollectionResponse 
 type ProjectParticipationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ProjectParticipationable
 }
 // NewProjectParticipationCollectionResponse instantiates a new ProjectParticipationCollectionResponse and sets the default values.
 func NewProjectParticipationCollectionResponse()(*ProjectParticipationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ProjectParticipationCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *ProjectParticipationCollectionResponse) GetValue()([]ProjectParticipationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProjectParticipationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProjectParticipationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ProjectParticipationCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *ProjectParticipationCollectionResponse) SetValue(value []ProjectParticipationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProjectParticipationCollectionResponseable 
+type ProjectParticipationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ProjectParticipationable)
+    SetValue(value []ProjectParticipationable)()
 }

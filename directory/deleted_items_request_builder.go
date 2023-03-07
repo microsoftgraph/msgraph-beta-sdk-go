@@ -51,10 +51,6 @@ type DeletedItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Application casts the previous resource to application.
-func (m *DeletedItemsRequestBuilder) Application()(*DeletedItemsApplicationRequestBuilder) {
-    return NewDeletedItemsApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewDeletedItemsRequestBuilderInternal instantiates a new DeletedItemsRequestBuilder and sets the default values.
 func NewDeletedItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsRequestBuilder) {
     m := &DeletedItemsRequestBuilder{
@@ -64,8 +60,8 @@ func NewDeletedItemsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedItemsRequestBuilder instantiates a new DeletedItemsRequestBuilder and sets the default values.
@@ -76,7 +72,11 @@ func NewDeletedItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeletedItemsRequestBuilder) Count()(*DeletedItemsCountRequestBuilder) {
-    return NewDeletedItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Delta provides operations to call the delta method.
+func (m *DeletedItemsRequestBuilder) Delta()(*DeletedItemsDeltaRequestBuilder) {
+    return NewDeletedItemsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get deletedItems from directory
 func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
@@ -99,15 +99,23 @@ func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *DeletedItemsRequestBuilder) GetByIds()(*DeletedItemsGetByIdsRequestBuilder) {
-    return NewDeletedItemsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *DeletedItemsRequestBuilder) GetUserOwnedObjects()(*DeletedItemsGetUserOwnedObjectsRequestBuilder) {
-    return NewDeletedItemsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Group casts the previous resource to group.
-func (m *DeletedItemsRequestBuilder) Group()(*DeletedItemsGroupRequestBuilder) {
-    return NewDeletedItemsGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphApplication casts the previous resource to application.
+func (m *DeletedItemsRequestBuilder) GraphApplication()(*DeletedItemsGraphApplicationRequestBuilder) {
+    return NewDeletedItemsGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphGroup casts the previous resource to group.
+func (m *DeletedItemsRequestBuilder) GraphGroup()(*DeletedItemsGraphGroupRequestBuilder) {
+    return NewDeletedItemsGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *DeletedItemsRequestBuilder) GraphUser()(*DeletedItemsGraphUserRequestBuilder) {
+    return NewDeletedItemsGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deletedItems for directory
 func (m *DeletedItemsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DeletedItemsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -151,18 +159,17 @@ func (m *DeletedItemsRequestBuilder) ToPostRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// User casts the previous resource to user.
-func (m *DeletedItemsRequestBuilder) User()(*DeletedItemsUserRequestBuilder) {
-    return NewDeletedItemsUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *DeletedItemsRequestBuilder) ValidateProperties()(*DeletedItemsValidatePropertiesRequestBuilder) {
-    return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -41,8 +41,8 @@ func NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderIn
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // AssignmentFilterTypeAndEvaluationResultCollectionResponse 
 type AssignmentFilterTypeAndEvaluationResultCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AssignmentFilterTypeAndEvaluationResultable
 }
 // NewAssignmentFilterTypeAndEvaluationResultCollectionResponse instantiates a new AssignmentFilterTypeAndEvaluationResultCollectionResponse and sets the default values.
 func NewAssignmentFilterTypeAndEvaluationResultCollectionResponse()(*AssignmentFilterTypeAndEvaluationResultCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AssignmentFilterTypeAndEvaluationResultCollectionResponse) GetFieldDese
 }
 // GetValue gets the value property value. The value property
 func (m *AssignmentFilterTypeAndEvaluationResultCollectionResponse) GetValue()([]AssignmentFilterTypeAndEvaluationResultable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AssignmentFilterTypeAndEvaluationResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterTypeAndEvaluationResultCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AssignmentFilterTypeAndEvaluationResultCollectionResponse) Serialize(wr
 }
 // SetValue sets the value property value. The value property
 func (m *AssignmentFilterTypeAndEvaluationResultCollectionResponse) SetValue(value []AssignmentFilterTypeAndEvaluationResultable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AssignmentFilterTypeAndEvaluationResultCollectionResponseable 
+type AssignmentFilterTypeAndEvaluationResultCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AssignmentFilterTypeAndEvaluationResultable)
+    SetValue(value []AssignmentFilterTypeAndEvaluationResultable)()
 }

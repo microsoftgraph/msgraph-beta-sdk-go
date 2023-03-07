@@ -7,12 +7,6 @@ import (
 // MobileAppTroubleshootingAppTargetHistory 
 type MobileAppTroubleshootingAppTargetHistory struct {
     MobileAppTroubleshootingHistoryItem
-    // Error code for the failure, empty if no failure.
-    errorCode *string
-    // Indicates the type of execution status of the device management script.
-    runState *RunState
-    // AAD security group id to which it was targeted.
-    securityGroupId *string
 }
 // NewMobileAppTroubleshootingAppTargetHistory instantiates a new MobileAppTroubleshootingAppTargetHistory and sets the default values.
 func NewMobileAppTroubleshootingAppTargetHistory()(*MobileAppTroubleshootingAppTargetHistory) {
@@ -27,7 +21,14 @@ func CreateMobileAppTroubleshootingAppTargetHistoryFromDiscriminatorValue(parseN
 }
 // GetErrorCode gets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppTargetHistory) GetErrorCode()(*string) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingAppTargetHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,11 +67,25 @@ func (m *MobileAppTroubleshootingAppTargetHistory) GetFieldDeserializers()(map[s
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppTargetHistory) GetRunState()(*RunState) {
-    return m.runState
+    val, err := m.GetBackingStore().Get("runState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RunState)
+    }
+    return nil
 }
 // GetSecurityGroupId gets the securityGroupId property value. AAD security group id to which it was targeted.
 func (m *MobileAppTroubleshootingAppTargetHistory) GetSecurityGroupId()(*string) {
-    return m.securityGroupId
+    val, err := m.GetBackingStore().Get("securityGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingAppTargetHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *MobileAppTroubleshootingAppTargetHistory) Serialize(writer i878a80d2330
 }
 // SetErrorCode sets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppTargetHistory) SetErrorCode(value *string)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppTargetHistory) SetRunState(value *RunState)() {
-    m.runState = value
+    err := m.GetBackingStore().Set("runState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurityGroupId sets the securityGroupId property value. AAD security group id to which it was targeted.
 func (m *MobileAppTroubleshootingAppTargetHistory) SetSecurityGroupId(value *string)() {
-    m.securityGroupId = value
+    err := m.GetBackingStore().Set("securityGroupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppTroubleshootingAppTargetHistoryable 
+type MobileAppTroubleshootingAppTargetHistoryable interface {
+    MobileAppTroubleshootingHistoryItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetErrorCode()(*string)
+    GetRunState()(*RunState)
+    GetSecurityGroupId()(*string)
+    SetErrorCode(value *string)()
+    SetRunState(value *RunState)()
+    SetSecurityGroupId(value *string)()
 }

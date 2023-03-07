@@ -55,8 +55,8 @@ func NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder instantiates a new DeviceManagementIntentSettingCategoryItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) Settings()(*IntentsItemCategoriesItemSettingsRequestBuilder) {
-    return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) SettingsById(id string)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

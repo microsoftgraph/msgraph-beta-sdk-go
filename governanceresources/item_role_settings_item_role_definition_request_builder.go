@@ -55,8 +55,8 @@ func NewItemRoleSettingsItemRoleDefinitionRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRoleSettingsItemRoleDefinitionRequestBuilder instantiates a new RoleDefinitionRequestBuilder and sets the default values.
@@ -121,11 +121,11 @@ func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) Patch(ctx context.Con
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) Resource()(*ItemRoleSettingsItemRoleDefinitionResourceRequestBuilder) {
-    return NewItemRoleSettingsItemRoleDefinitionResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleSettingsItemRoleDefinitionResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleSetting provides operations to manage the roleSetting property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) RoleSetting()(*ItemRoleSettingsItemRoleDefinitionRoleSettingRequestBuilder) {
-    return NewItemRoleSettingsItemRoleDefinitionRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleSettingsItemRoleDefinitionRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleDefinition for governanceResources
 func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRoleSettingsItemRoleDefinitionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

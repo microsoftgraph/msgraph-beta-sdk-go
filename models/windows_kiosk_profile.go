@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WindowsKioskProfile 
 type WindowsKioskProfile struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The app base class used to identify the application info for the kiosk configuration
-    appConfiguration WindowsKioskAppConfigurationable
-    // The OdataType property
-    odataType *string
-    // Key of the entity.
-    profileId *string
-    // This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
-    profileName *string
-    // The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
-    userAccountsConfiguration []WindowsKioskUserable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWindowsKioskProfile instantiates a new windowsKioskProfile and sets the default values.
 func NewWindowsKioskProfile()(*WindowsKioskProfile) {
     m := &WindowsKioskProfile{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsKioskProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateWindowsKioskProfileFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskProfile) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAppConfiguration gets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration
 func (m *WindowsKioskProfile) GetAppConfiguration()(WindowsKioskAppConfigurationable) {
-    return m.appConfiguration
+    val, err := m.GetBackingStore().Get("appConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsKioskAppConfigurationable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WindowsKioskProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,19 +110,47 @@ func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsKioskProfile) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProfileId gets the profileId property value. Key of the entity.
 func (m *WindowsKioskProfile) GetProfileId()(*string) {
-    return m.profileId
+    val, err := m.GetBackingStore().Get("profileId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProfileName gets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsKioskProfile) GetProfileName()(*string) {
-    return m.profileName
+    val, err := m.GetBackingStore().Get("profileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserAccountsConfiguration gets the userAccountsConfiguration property value. The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
 func (m *WindowsKioskProfile) GetUserAccountsConfiguration()([]WindowsKioskUserable) {
-    return m.userAccountsConfiguration
+    val, err := m.GetBackingStore().Get("userAccountsConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsKioskUserable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,25 +198,65 @@ func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskProfile) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppConfiguration sets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration
 func (m *WindowsKioskProfile) SetAppConfiguration(value WindowsKioskAppConfigurationable)() {
-    m.appConfiguration = value
+    err := m.GetBackingStore().Set("appConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WindowsKioskProfile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsKioskProfile) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileId sets the profileId property value. Key of the entity.
 func (m *WindowsKioskProfile) SetProfileId(value *string)() {
-    m.profileId = value
+    err := m.GetBackingStore().Set("profileId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileName sets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsKioskProfile) SetProfileName(value *string)() {
-    m.profileName = value
+    err := m.GetBackingStore().Set("profileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAccountsConfiguration sets the userAccountsConfiguration property value. The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
 func (m *WindowsKioskProfile) SetUserAccountsConfiguration(value []WindowsKioskUserable)() {
-    m.userAccountsConfiguration = value
+    err := m.GetBackingStore().Set("userAccountsConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskProfileable 
+type WindowsKioskProfileable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppConfiguration()(WindowsKioskAppConfigurationable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetProfileId()(*string)
+    GetProfileName()(*string)
+    GetUserAccountsConfiguration()([]WindowsKioskUserable)
+    SetAppConfiguration(value WindowsKioskAppConfigurationable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetProfileId(value *string)()
+    SetProfileName(value *string)()
+    SetUserAccountsConfiguration(value []WindowsKioskUserable)()
 }

@@ -26,13 +26,13 @@ type ItemCloudPCsItemRebootRequestBuilderPostRequestConfiguration struct {
 func NewItemCloudPCsItemRebootRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPCsItemRebootRequestBuilder) {
     m := &ItemCloudPCsItemRebootRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/microsoft.graph.reboot";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/reboot";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCloudPCsItemRebootRequestBuilder instantiates a new RebootRequestBuilder and sets the default values.

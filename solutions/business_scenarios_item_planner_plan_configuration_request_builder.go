@@ -55,8 +55,8 @@ func NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilder instantiates a new PlanConfigurationRequestBuilder and sets the default values.
@@ -105,7 +105,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx co
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizations()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
-    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) LocalizationsById(id string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
@@ -116,7 +116,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizati
     if id != "" {
         urlTplParams["plannerPlanConfigurationLocalization%2Did"] = id
     }
-    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the properties of a plannerPlanConfiguration object for a businessScenario.
 // [Find more info here]
@@ -175,7 +175,10 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

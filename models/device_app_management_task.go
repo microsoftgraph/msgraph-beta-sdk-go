@@ -8,26 +8,6 @@ import (
 // DeviceAppManagementTask a device app management task.
 type DeviceAppManagementTask struct {
     Entity
-    // The name or email of the admin this task is assigned to.
-    assignedTo *string
-    // Device app management task category.
-    category *DeviceAppManagementTaskCategory
-    // The created date.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The email address of the creator.
-    creator *string
-    // Notes from the creator.
-    creatorNotes *string
-    // The description.
-    description *string
-    // The name.
-    displayName *string
-    // The due date.
-    dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Device app management task priority.
-    priority *DeviceAppManagementTaskPriority
-    // Device app management task status.
-    status *DeviceAppManagementTaskStatus
 }
 // NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
@@ -64,35 +44,91 @@ func CreateDeviceAppManagementTaskFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAssignedTo gets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
-    return m.assignedTo
+    val, err := m.GetBackingStore().Get("assignedTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCategory gets the category property value. Device app management task category.
 func (m *DeviceAppManagementTask) GetCategory()(*DeviceAppManagementTaskCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceAppManagementTaskCategory)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The created date.
 func (m *DeviceAppManagementTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreator gets the creator property value. The email address of the creator.
 func (m *DeviceAppManagementTask) GetCreator()(*string) {
-    return m.creator
+    val, err := m.GetBackingStore().Get("creator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatorNotes gets the creatorNotes property value. Notes from the creator.
 func (m *DeviceAppManagementTask) GetCreatorNotes()(*string) {
-    return m.creatorNotes
+    val, err := m.GetBackingStore().Get("creatorNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description.
 func (m *DeviceAppManagementTask) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name.
 func (m *DeviceAppManagementTask) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDueDateTime gets the dueDateTime property value. The due date.
 func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.dueDateTime
+    val, err := m.GetBackingStore().Get("dueDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -201,11 +237,25 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetPriority gets the priority property value. Device app management task priority.
 func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceAppManagementTaskPriority)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Device app management task status.
 func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceAppManagementTaskStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceAppManagementTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -280,41 +330,96 @@ func (m *DeviceAppManagementTask) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAssignedTo sets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) SetAssignedTo(value *string)() {
-    m.assignedTo = value
+    err := m.GetBackingStore().Set("assignedTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategory sets the category property value. Device app management task category.
 func (m *DeviceAppManagementTask) SetCategory(value *DeviceAppManagementTaskCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The created date.
 func (m *DeviceAppManagementTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreator sets the creator property value. The email address of the creator.
 func (m *DeviceAppManagementTask) SetCreator(value *string)() {
-    m.creator = value
+    err := m.GetBackingStore().Set("creator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatorNotes sets the creatorNotes property value. Notes from the creator.
 func (m *DeviceAppManagementTask) SetCreatorNotes(value *string)() {
-    m.creatorNotes = value
+    err := m.GetBackingStore().Set("creatorNotes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description.
 func (m *DeviceAppManagementTask) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name.
 func (m *DeviceAppManagementTask) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDueDateTime sets the dueDateTime property value. The due date.
 func (m *DeviceAppManagementTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.dueDateTime = value
+    err := m.GetBackingStore().Set("dueDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. Device app management task priority.
 func (m *DeviceAppManagementTask) SetPriority(value *DeviceAppManagementTaskPriority)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Device app management task status.
 func (m *DeviceAppManagementTask) SetStatus(value *DeviceAppManagementTaskStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceAppManagementTaskable 
+type DeviceAppManagementTaskable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedTo()(*string)
+    GetCategory()(*DeviceAppManagementTaskCategory)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCreator()(*string)
+    GetCreatorNotes()(*string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPriority()(*DeviceAppManagementTaskPriority)
+    GetStatus()(*DeviceAppManagementTaskStatus)
+    SetAssignedTo(value *string)()
+    SetCategory(value *DeviceAppManagementTaskCategory)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCreator(value *string)()
+    SetCreatorNotes(value *string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPriority(value *DeviceAppManagementTaskPriority)()
+    SetStatus(value *DeviceAppManagementTaskStatus)()
 }

@@ -55,8 +55,8 @@ func NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder instantiates a new CustomAuthenticationExtensionItemRequestBuilder and sets the default values.
@@ -154,7 +154,10 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,5 +166,5 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
 }
 // ValidateAuthenticationConfiguration provides operations to call the validateAuthenticationConfiguration method.
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ValidateAuthenticationConfiguration()(*CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) {
-    return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

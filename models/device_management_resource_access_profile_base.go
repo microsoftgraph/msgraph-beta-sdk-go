@@ -8,20 +8,6 @@ import (
 // DeviceManagementResourceAccessProfileBase base Profile Type for Resource Access
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
-    // The list of assignments for the device configuration profile.
-    assignments []DeviceManagementResourceAccessProfileAssignmentable
-    // DateTime profile was created
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Profile description
-    description *string
-    // Profile display name
-    displayName *string
-    // DateTime profile was last modified
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Scope Tags
-    roleScopeTagIds []string
-    // Version of the profile
-    version *int32
 }
 // NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {
@@ -62,19 +48,47 @@ func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parse
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceManagementResourceAccessProfileAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementResourceAccessProfileAssignmentable)
+    }
+    return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. DateTime profile was created
 func (m *DeviceManagementResourceAccessProfileBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.creationDateTime
+    val, err := m.GetBackingStore().Get("creationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Profile description
 func (m *DeviceManagementResourceAccessProfileBase) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Profile display name
 func (m *DeviceManagementResourceAccessProfileBase) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,15 +175,36 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime profile was last modified
 func (m *DeviceManagementResourceAccessProfileBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope Tags
 func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Version of the profile
 func (m *DeviceManagementResourceAccessProfileBase) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,29 +262,69 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i878a80d233
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) SetAssignments(value []DeviceManagementResourceAccessProfileAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreationDateTime sets the creationDateTime property value. DateTime profile was created
 func (m *DeviceManagementResourceAccessProfileBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    err := m.GetBackingStore().Set("creationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Profile description
 func (m *DeviceManagementResourceAccessProfileBase) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Profile display name
 func (m *DeviceManagementResourceAccessProfileBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime profile was last modified
 func (m *DeviceManagementResourceAccessProfileBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. Scope Tags
 func (m *DeviceManagementResourceAccessProfileBase) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Version of the profile
 func (m *DeviceManagementResourceAccessProfileBase) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementResourceAccessProfileBaseable 
+type DeviceManagementResourceAccessProfileBaseable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]DeviceManagementResourceAccessProfileAssignmentable)
+    GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRoleScopeTagIds()([]string)
+    GetVersion()(*int32)
+    SetAssignments(value []DeviceManagementResourceAccessProfileAssignmentable)()
+    SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRoleScopeTagIds(value []string)()
+    SetVersion(value *int32)()
 }

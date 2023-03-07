@@ -7,8 +7,6 @@ import (
 // DeviceManagementExchangeAccessRuleCollectionResponse 
 type DeviceManagementExchangeAccessRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementExchangeAccessRuleable
 }
 // NewDeviceManagementExchangeAccessRuleCollectionResponse instantiates a new DeviceManagementExchangeAccessRuleCollectionResponse and sets the default values.
 func NewDeviceManagementExchangeAccessRuleCollectionResponse()(*DeviceManagementExchangeAccessRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementExchangeAccessRuleCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementExchangeAccessRuleCollectionResponse) GetValue()([]DeviceManagementExchangeAccessRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementExchangeAccessRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeAccessRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementExchangeAccessRuleCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementExchangeAccessRuleCollectionResponse) SetValue(value []DeviceManagementExchangeAccessRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementExchangeAccessRuleCollectionResponseable 
+type DeviceManagementExchangeAccessRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementExchangeAccessRuleable)
+    SetValue(value []DeviceManagementExchangeAccessRuleable)()
 }

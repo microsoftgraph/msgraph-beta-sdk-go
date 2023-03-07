@@ -7,8 +7,6 @@ import (
 // Win32LobAppDetectionCollectionResponse 
 type Win32LobAppDetectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Win32LobAppDetectionable
 }
 // NewWin32LobAppDetectionCollectionResponse instantiates a new Win32LobAppDetectionCollectionResponse and sets the default values.
 func NewWin32LobAppDetectionCollectionResponse()(*Win32LobAppDetectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Win32LobAppDetectionCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *Win32LobAppDetectionCollectionResponse) GetValue()([]Win32LobAppDetectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Win32LobAppDetectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppDetectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Win32LobAppDetectionCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *Win32LobAppDetectionCollectionResponse) SetValue(value []Win32LobAppDetectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Win32LobAppDetectionCollectionResponseable 
+type Win32LobAppDetectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Win32LobAppDetectionable)
+    SetValue(value []Win32LobAppDetectionable)()
 }

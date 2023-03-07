@@ -2,46 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceManagementSettings 
 type DeviceManagementSettings struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The property to determine if Android device administrator enrollment is enabled for this account.
-    androidDeviceAdministratorEnrollmentEnabled *bool
-    // Provider type for Derived Credentials.
-    derivedCredentialProvider *DerivedCredentialProviderType
-    // The Derived Credential Provider self-service URI.
-    derivedCredentialUrl *string
-    // The number of days a device is allowed to go without checking in to remain compliant.
-    deviceComplianceCheckinThresholdDays *int32
-    // When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
-    deviceInactivityBeforeRetirementInDay *int32
-    // Determines whether the autopilot diagnostic feature is enabled or not.
-    enableAutopilotDiagnostics *bool
-    // Determines whether the device group membership report feature is enabled or not.
-    enableDeviceGroupMembershipReport *bool
-    // Determines whether the enhanced troubleshooting UX is enabled or not.
-    enableEnhancedTroubleshootingExperience *bool
-    // Determines whether the log collection feature should be available for use.
-    enableLogCollection *bool
-    // Is feature enabled or not for enhanced jailbreak detection.
-    enhancedJailBreak *bool
-    // The property to determine whether to ignore unsupported compliance settings on certian models of devices.
-    ignoreDevicesForUnsupportedSettingsEnabled *bool
-    // Is feature enabled or not for scheduled action for rule.
-    isScheduledActionEnabled *bool
-    // The OdataType property
-    odataType *string
-    // Device should be noncompliant when there is no compliance policy targeted when this is true
-    secureByDefault *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeviceManagementSettings instantiates a new deviceManagementSettings and sets the default values.
 func NewDeviceManagementSettings()(*DeviceManagementSettings) {
     m := &DeviceManagementSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,47 +24,129 @@ func CreateDeviceManagementSettingsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAndroidDeviceAdministratorEnrollmentEnabled gets the androidDeviceAdministratorEnrollmentEnabled property value. The property to determine if Android device administrator enrollment is enabled for this account.
 func (m *DeviceManagementSettings) GetAndroidDeviceAdministratorEnrollmentEnabled()(*bool) {
-    return m.androidDeviceAdministratorEnrollmentEnabled
+    val, err := m.GetBackingStore().Get("androidDeviceAdministratorEnrollmentEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DeviceManagementSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDerivedCredentialProvider gets the derivedCredentialProvider property value. Provider type for Derived Credentials.
 func (m *DeviceManagementSettings) GetDerivedCredentialProvider()(*DerivedCredentialProviderType) {
-    return m.derivedCredentialProvider
+    val, err := m.GetBackingStore().Get("derivedCredentialProvider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DerivedCredentialProviderType)
+    }
+    return nil
 }
 // GetDerivedCredentialUrl gets the derivedCredentialUrl property value. The Derived Credential Provider self-service URI.
 func (m *DeviceManagementSettings) GetDerivedCredentialUrl()(*string) {
-    return m.derivedCredentialUrl
+    val, err := m.GetBackingStore().Get("derivedCredentialUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceComplianceCheckinThresholdDays gets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) GetDeviceComplianceCheckinThresholdDays()(*int32) {
-    return m.deviceComplianceCheckinThresholdDays
+    val, err := m.GetBackingStore().Get("deviceComplianceCheckinThresholdDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDeviceInactivityBeforeRetirementInDay gets the deviceInactivityBeforeRetirementInDay property value. When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
 func (m *DeviceManagementSettings) GetDeviceInactivityBeforeRetirementInDay()(*int32) {
-    return m.deviceInactivityBeforeRetirementInDay
+    val, err := m.GetBackingStore().Get("deviceInactivityBeforeRetirementInDay")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEnableAutopilotDiagnostics gets the enableAutopilotDiagnostics property value. Determines whether the autopilot diagnostic feature is enabled or not.
 func (m *DeviceManagementSettings) GetEnableAutopilotDiagnostics()(*bool) {
-    return m.enableAutopilotDiagnostics
+    val, err := m.GetBackingStore().Get("enableAutopilotDiagnostics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableDeviceGroupMembershipReport gets the enableDeviceGroupMembershipReport property value. Determines whether the device group membership report feature is enabled or not.
 func (m *DeviceManagementSettings) GetEnableDeviceGroupMembershipReport()(*bool) {
-    return m.enableDeviceGroupMembershipReport
+    val, err := m.GetBackingStore().Get("enableDeviceGroupMembershipReport")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableEnhancedTroubleshootingExperience gets the enableEnhancedTroubleshootingExperience property value. Determines whether the enhanced troubleshooting UX is enabled or not.
 func (m *DeviceManagementSettings) GetEnableEnhancedTroubleshootingExperience()(*bool) {
-    return m.enableEnhancedTroubleshootingExperience
+    val, err := m.GetBackingStore().Get("enableEnhancedTroubleshootingExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableLogCollection gets the enableLogCollection property value. Determines whether the log collection feature should be available for use.
 func (m *DeviceManagementSettings) GetEnableLogCollection()(*bool) {
-    return m.enableLogCollection
+    val, err := m.GetBackingStore().Get("enableLogCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnhancedJailBreak gets the enhancedJailBreak property value. Is feature enabled or not for enhanced jailbreak detection.
 func (m *DeviceManagementSettings) GetEnhancedJailBreak()(*bool) {
-    return m.enhancedJailBreak
+    val, err := m.GetBackingStore().Get("enhancedJailBreak")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -239,19 +295,47 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIgnoreDevicesForUnsupportedSettingsEnabled gets the ignoreDevicesForUnsupportedSettingsEnabled property value. The property to determine whether to ignore unsupported compliance settings on certian models of devices.
 func (m *DeviceManagementSettings) GetIgnoreDevicesForUnsupportedSettingsEnabled()(*bool) {
-    return m.ignoreDevicesForUnsupportedSettingsEnabled
+    val, err := m.GetBackingStore().Get("ignoreDevicesForUnsupportedSettingsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
-    return m.isScheduledActionEnabled
+    val, err := m.GetBackingStore().Get("isScheduledActionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
-    return m.secureByDefault
+    val, err := m.GetBackingStore().Get("secureByDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -350,61 +434,146 @@ func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAndroidDeviceAdministratorEnrollmentEnabled sets the androidDeviceAdministratorEnrollmentEnabled property value. The property to determine if Android device administrator enrollment is enabled for this account.
 func (m *DeviceManagementSettings) SetAndroidDeviceAdministratorEnrollmentEnabled(value *bool)() {
-    m.androidDeviceAdministratorEnrollmentEnabled = value
+    err := m.GetBackingStore().Set("androidDeviceAdministratorEnrollmentEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DeviceManagementSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDerivedCredentialProvider sets the derivedCredentialProvider property value. Provider type for Derived Credentials.
 func (m *DeviceManagementSettings) SetDerivedCredentialProvider(value *DerivedCredentialProviderType)() {
-    m.derivedCredentialProvider = value
+    err := m.GetBackingStore().Set("derivedCredentialProvider", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDerivedCredentialUrl sets the derivedCredentialUrl property value. The Derived Credential Provider self-service URI.
 func (m *DeviceManagementSettings) SetDerivedCredentialUrl(value *string)() {
-    m.derivedCredentialUrl = value
+    err := m.GetBackingStore().Set("derivedCredentialUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceComplianceCheckinThresholdDays sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value *int32)() {
-    m.deviceComplianceCheckinThresholdDays = value
+    err := m.GetBackingStore().Set("deviceComplianceCheckinThresholdDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceInactivityBeforeRetirementInDay sets the deviceInactivityBeforeRetirementInDay property value. When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
 func (m *DeviceManagementSettings) SetDeviceInactivityBeforeRetirementInDay(value *int32)() {
-    m.deviceInactivityBeforeRetirementInDay = value
+    err := m.GetBackingStore().Set("deviceInactivityBeforeRetirementInDay", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableAutopilotDiagnostics sets the enableAutopilotDiagnostics property value. Determines whether the autopilot diagnostic feature is enabled or not.
 func (m *DeviceManagementSettings) SetEnableAutopilotDiagnostics(value *bool)() {
-    m.enableAutopilotDiagnostics = value
+    err := m.GetBackingStore().Set("enableAutopilotDiagnostics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableDeviceGroupMembershipReport sets the enableDeviceGroupMembershipReport property value. Determines whether the device group membership report feature is enabled or not.
 func (m *DeviceManagementSettings) SetEnableDeviceGroupMembershipReport(value *bool)() {
-    m.enableDeviceGroupMembershipReport = value
+    err := m.GetBackingStore().Set("enableDeviceGroupMembershipReport", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableEnhancedTroubleshootingExperience sets the enableEnhancedTroubleshootingExperience property value. Determines whether the enhanced troubleshooting UX is enabled or not.
 func (m *DeviceManagementSettings) SetEnableEnhancedTroubleshootingExperience(value *bool)() {
-    m.enableEnhancedTroubleshootingExperience = value
+    err := m.GetBackingStore().Set("enableEnhancedTroubleshootingExperience", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableLogCollection sets the enableLogCollection property value. Determines whether the log collection feature should be available for use.
 func (m *DeviceManagementSettings) SetEnableLogCollection(value *bool)() {
-    m.enableLogCollection = value
+    err := m.GetBackingStore().Set("enableLogCollection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnhancedJailBreak sets the enhancedJailBreak property value. Is feature enabled or not for enhanced jailbreak detection.
 func (m *DeviceManagementSettings) SetEnhancedJailBreak(value *bool)() {
-    m.enhancedJailBreak = value
+    err := m.GetBackingStore().Set("enhancedJailBreak", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIgnoreDevicesForUnsupportedSettingsEnabled sets the ignoreDevicesForUnsupportedSettingsEnabled property value. The property to determine whether to ignore unsupported compliance settings on certian models of devices.
 func (m *DeviceManagementSettings) SetIgnoreDevicesForUnsupportedSettingsEnabled(value *bool)() {
-    m.ignoreDevicesForUnsupportedSettingsEnabled = value
+    err := m.GetBackingStore().Set("ignoreDevicesForUnsupportedSettingsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsScheduledActionEnabled sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
-    m.isScheduledActionEnabled = value
+    err := m.GetBackingStore().Set("isScheduledActionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecureByDefault sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) SetSecureByDefault(value *bool)() {
-    m.secureByDefault = value
+    err := m.GetBackingStore().Set("secureByDefault", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingsable 
+type DeviceManagementSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAndroidDeviceAdministratorEnrollmentEnabled()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDerivedCredentialProvider()(*DerivedCredentialProviderType)
+    GetDerivedCredentialUrl()(*string)
+    GetDeviceComplianceCheckinThresholdDays()(*int32)
+    GetDeviceInactivityBeforeRetirementInDay()(*int32)
+    GetEnableAutopilotDiagnostics()(*bool)
+    GetEnableDeviceGroupMembershipReport()(*bool)
+    GetEnableEnhancedTroubleshootingExperience()(*bool)
+    GetEnableLogCollection()(*bool)
+    GetEnhancedJailBreak()(*bool)
+    GetIgnoreDevicesForUnsupportedSettingsEnabled()(*bool)
+    GetIsScheduledActionEnabled()(*bool)
+    GetOdataType()(*string)
+    GetSecureByDefault()(*bool)
+    SetAndroidDeviceAdministratorEnrollmentEnabled(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDerivedCredentialProvider(value *DerivedCredentialProviderType)()
+    SetDerivedCredentialUrl(value *string)()
+    SetDeviceComplianceCheckinThresholdDays(value *int32)()
+    SetDeviceInactivityBeforeRetirementInDay(value *int32)()
+    SetEnableAutopilotDiagnostics(value *bool)()
+    SetEnableDeviceGroupMembershipReport(value *bool)()
+    SetEnableEnhancedTroubleshootingExperience(value *bool)()
+    SetEnableLogCollection(value *bool)()
+    SetEnhancedJailBreak(value *bool)()
+    SetIgnoreDevicesForUnsupportedSettingsEnabled(value *bool)()
+    SetIsScheduledActionEnabled(value *bool)()
+    SetOdataType(value *string)()
+    SetSecureByDefault(value *bool)()
 }

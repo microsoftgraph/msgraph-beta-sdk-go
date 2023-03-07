@@ -8,12 +8,6 @@ import (
 // ManagementIntent 
 type ManagementIntent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The display name for the management intent. Optional. Read-only.
-    displayName *string
-    // A flag indicating whether the management intent is global. Required. Read-only.
-    isGlobal *bool
-    // The collection of management templates associated with the management intent. Optional. Read-only.
-    managementTemplates []ManagementTemplateDetailedInfoable
 }
 // NewManagementIntent instantiates a new managementIntent and sets the default values.
 func NewManagementIntent()(*ManagementIntent) {
@@ -28,7 +22,14 @@ func CreateManagementIntentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisplayName gets the displayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntent) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,11 +72,25 @@ func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsGlobal gets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
 func (m *ManagementIntent) GetIsGlobal()(*bool) {
-    return m.isGlobal
+    val, err := m.GetBackingStore().Get("isGlobal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
 func (m *ManagementIntent) GetManagementTemplates()([]ManagementTemplateDetailedInfoable) {
-    return m.managementTemplates
+    val, err := m.GetBackingStore().Get("managementTemplates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateDetailedInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +124,33 @@ func (m *ManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisplayName sets the displayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntent) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsGlobal sets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
 func (m *ManagementIntent) SetIsGlobal(value *bool)() {
-    m.isGlobal = value
+    err := m.GetBackingStore().Set("isGlobal", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplates sets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
 func (m *ManagementIntent) SetManagementTemplates(value []ManagementTemplateDetailedInfoable)() {
-    m.managementTemplates = value
+    err := m.GetBackingStore().Set("managementTemplates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementIntentable 
+type ManagementIntentable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetIsGlobal()(*bool)
+    GetManagementTemplates()([]ManagementTemplateDetailedInfoable)
+    SetDisplayName(value *string)()
+    SetIsGlobal(value *bool)()
+    SetManagementTemplates(value []ManagementTemplateDetailedInfoable)()
 }

@@ -7,8 +7,6 @@ import (
 // Windows10NetworkBoundaryConfigurationCollectionResponse 
 type Windows10NetworkBoundaryConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10NetworkBoundaryConfigurationable
 }
 // NewWindows10NetworkBoundaryConfigurationCollectionResponse instantiates a new Windows10NetworkBoundaryConfigurationCollectionResponse and sets the default values.
 func NewWindows10NetworkBoundaryConfigurationCollectionResponse()(*Windows10NetworkBoundaryConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10NetworkBoundaryConfigurationCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10NetworkBoundaryConfigurationCollectionResponse) GetValue()([]Windows10NetworkBoundaryConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10NetworkBoundaryConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10NetworkBoundaryConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10NetworkBoundaryConfigurationCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10NetworkBoundaryConfigurationCollectionResponse) SetValue(value []Windows10NetworkBoundaryConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10NetworkBoundaryConfigurationCollectionResponseable 
+type Windows10NetworkBoundaryConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10NetworkBoundaryConfigurationable)
+    SetValue(value []Windows10NetworkBoundaryConfigurationable)()
 }

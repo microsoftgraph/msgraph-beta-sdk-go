@@ -7,8 +7,6 @@ import (
 // GenericErrorCollectionResponse 
 type GenericErrorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GenericErrorable
 }
 // NewGenericErrorCollectionResponse instantiates a new GenericErrorCollectionResponse and sets the default values.
 func NewGenericErrorCollectionResponse()(*GenericErrorCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GenericErrorCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *GenericErrorCollectionResponse) GetValue()([]GenericErrorable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GenericErrorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GenericErrorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GenericErrorCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *GenericErrorCollectionResponse) SetValue(value []GenericErrorable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GenericErrorCollectionResponseable 
+type GenericErrorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GenericErrorable)
+    SetValue(value []GenericErrorable)()
 }

@@ -7,8 +7,6 @@ import (
 // IPv4RangeCollectionResponse 
 type IPv4RangeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IPv4Rangeable
 }
 // NewIPv4RangeCollectionResponse instantiates a new IPv4RangeCollectionResponse and sets the default values.
 func NewIPv4RangeCollectionResponse()(*IPv4RangeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IPv4RangeCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *IPv4RangeCollectionResponse) GetValue()([]IPv4Rangeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IPv4Rangeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IPv4RangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IPv4RangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *IPv4RangeCollectionResponse) SetValue(value []IPv4Rangeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IPv4RangeCollectionResponseable 
+type IPv4RangeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IPv4Rangeable)
+    SetValue(value []IPv4Rangeable)()
 }

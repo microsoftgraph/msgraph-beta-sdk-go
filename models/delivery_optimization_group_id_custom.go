@@ -7,16 +7,14 @@ import (
 // DeliveryOptimizationGroupIdCustom 
 type DeliveryOptimizationGroupIdCustom struct {
     DeliveryOptimizationGroupIdSource
-    // Specifies an arbitrary group ID that the device belongs to
-    groupIdCustom *string
 }
 // NewDeliveryOptimizationGroupIdCustom instantiates a new DeliveryOptimizationGroupIdCustom and sets the default values.
 func NewDeliveryOptimizationGroupIdCustom()(*DeliveryOptimizationGroupIdCustom) {
     m := &DeliveryOptimizationGroupIdCustom{
         DeliveryOptimizationGroupIdSource: *NewDeliveryOptimizationGroupIdSource(),
     }
-    odataTypeValue := "#microsoft.graph.deliveryOptimizationGroupIdCustom";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationGroupIdCustom"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeliveryOptimizationGroupIdCustomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeliveryOptimizationGroupIdCustom) GetFieldDeserializers()(map[string]f
 }
 // GetGroupIdCustom gets the groupIdCustom property value. Specifies an arbitrary group ID that the device belongs to
 func (m *DeliveryOptimizationGroupIdCustom) GetGroupIdCustom()(*string) {
-    return m.groupIdCustom
+    val, err := m.GetBackingStore().Get("groupIdCustom")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationGroupIdCustom) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeliveryOptimizationGroupIdCustom) Serialize(writer i878a80d2330e89d268
 }
 // SetGroupIdCustom sets the groupIdCustom property value. Specifies an arbitrary group ID that the device belongs to
 func (m *DeliveryOptimizationGroupIdCustom) SetGroupIdCustom(value *string)() {
-    m.groupIdCustom = value
+    err := m.GetBackingStore().Set("groupIdCustom", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeliveryOptimizationGroupIdCustomable 
+type DeliveryOptimizationGroupIdCustomable interface {
+    DeliveryOptimizationGroupIdSourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupIdCustom()(*string)
+    SetGroupIdCustom(value *string)()
 }

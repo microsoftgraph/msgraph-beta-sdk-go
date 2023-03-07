@@ -7,54 +7,14 @@ import (
 // DepEnrollmentBaseProfile 
 type DepEnrollmentBaseProfile struct {
     EnrollmentProfile
-    // Indicates if Apple id setup pane is disabled
-    appleIdDisabled *bool
-    // Indicates if Apple pay setup pane is disabled
-    applePayDisabled *bool
-    // URL for setup assistant login
-    configurationWebUrl *bool
-    // Sets a literal or name pattern.
-    deviceNameTemplate *string
-    // Indicates if diagnostics setup pane is disabled
-    diagnosticsDisabled *bool
-    // Indicates if displaytone setup screen is disabled
-    displayToneSetupDisabled *bool
-    // enabledSkipKeys contains all the enabled skip keys as strings
-    enabledSkipKeys []string
-    // Indicates if this is the default profile
-    isDefault *bool
-    // Indicates if the profile is mandatory
-    isMandatory *bool
-    // Indicates if Location service setup pane is disabled
-    locationDisabled *bool
-    // Indicates if privacy screen is disabled
-    privacyPaneDisabled *bool
-    // Indicates if the profile removal option is disabled
-    profileRemovalDisabled *bool
-    // Indicates if Restore setup pane is blocked
-    restoreBlocked *bool
-    // Indicates if screen timeout setup is disabled
-    screenTimeScreenDisabled *bool
-    // Indicates if siri setup pane is disabled
-    siriDisabled *bool
-    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
-    supervisedModeEnabled *bool
-    // Support department information
-    supportDepartment *string
-    // Support phone number
-    supportPhoneNumber *string
-    // Indicates if 'Terms and Conditions' setup pane is disabled
-    termsAndConditionsDisabled *bool
-    // Indicates if touch id setup pane is disabled
-    touchIdDisabled *bool
 }
 // NewDepEnrollmentBaseProfile instantiates a new DepEnrollmentBaseProfile and sets the default values.
 func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     m := &DepEnrollmentBaseProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
     }
-    odataTypeValue := "#microsoft.graph.depEnrollmentBaseProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.depEnrollmentBaseProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDepEnrollmentBaseProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -83,31 +43,80 @@ func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAppleIdDisabled gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetAppleIdDisabled()(*bool) {
-    return m.appleIdDisabled
+    val, err := m.GetBackingStore().Get("appleIdDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetApplePayDisabled gets the applePayDisabled property value. Indicates if Apple pay setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetApplePayDisabled()(*bool) {
-    return m.applePayDisabled
+    val, err := m.GetBackingStore().Get("applePayDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConfigurationWebUrl gets the configurationWebUrl property value. URL for setup assistant login
 func (m *DepEnrollmentBaseProfile) GetConfigurationWebUrl()(*bool) {
-    return m.configurationWebUrl
+    val, err := m.GetBackingStore().Get("configurationWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDeviceNameTemplate gets the deviceNameTemplate property value. Sets a literal or name pattern.
 func (m *DepEnrollmentBaseProfile) GetDeviceNameTemplate()(*string) {
-    return m.deviceNameTemplate
+    val, err := m.GetBackingStore().Get("deviceNameTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDiagnosticsDisabled gets the diagnosticsDisabled property value. Indicates if diagnostics setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetDiagnosticsDisabled()(*bool) {
-    return m.diagnosticsDisabled
+    val, err := m.GetBackingStore().Get("diagnosticsDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisplayToneSetupDisabled gets the displayToneSetupDisabled property value. Indicates if displaytone setup screen is disabled
 func (m *DepEnrollmentBaseProfile) GetDisplayToneSetupDisabled()(*bool) {
-    return m.displayToneSetupDisabled
+    val, err := m.GetBackingStore().Get("displayToneSetupDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnabledSkipKeys gets the enabledSkipKeys property value. enabledSkipKeys contains all the enabled skip keys as strings
 func (m *DepEnrollmentBaseProfile) GetEnabledSkipKeys()([]string) {
-    return m.enabledSkipKeys
+    val, err := m.GetBackingStore().Get("enabledSkipKeys")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -320,55 +329,146 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsDefault gets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentBaseProfile) GetIsDefault()(*bool) {
-    return m.isDefault
+    val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsMandatory gets the isMandatory property value. Indicates if the profile is mandatory
 func (m *DepEnrollmentBaseProfile) GetIsMandatory()(*bool) {
-    return m.isMandatory
+    val, err := m.GetBackingStore().Get("isMandatory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocationDisabled gets the locationDisabled property value. Indicates if Location service setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetLocationDisabled()(*bool) {
-    return m.locationDisabled
+    val, err := m.GetBackingStore().Get("locationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrivacyPaneDisabled gets the privacyPaneDisabled property value. Indicates if privacy screen is disabled
 func (m *DepEnrollmentBaseProfile) GetPrivacyPaneDisabled()(*bool) {
-    return m.privacyPaneDisabled
+    val, err := m.GetBackingStore().Get("privacyPaneDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetProfileRemovalDisabled gets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
 func (m *DepEnrollmentBaseProfile) GetProfileRemovalDisabled()(*bool) {
-    return m.profileRemovalDisabled
+    val, err := m.GetBackingStore().Get("profileRemovalDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRestoreBlocked gets the restoreBlocked property value. Indicates if Restore setup pane is blocked
 func (m *DepEnrollmentBaseProfile) GetRestoreBlocked()(*bool) {
-    return m.restoreBlocked
+    val, err := m.GetBackingStore().Get("restoreBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetScreenTimeScreenDisabled gets the screenTimeScreenDisabled property value. Indicates if screen timeout setup is disabled
 func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
-    return m.screenTimeScreenDisabled
+    val, err := m.GetBackingStore().Get("screenTimeScreenDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSiriDisabled gets the siriDisabled property value. Indicates if siri setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
-    return m.siriDisabled
+    val, err := m.GetBackingStore().Get("siriDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.
 func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
-    return m.supervisedModeEnabled
+    val, err := m.GetBackingStore().Get("supervisedModeEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSupportDepartment gets the supportDepartment property value. Support department information
 func (m *DepEnrollmentBaseProfile) GetSupportDepartment()(*string) {
-    return m.supportDepartment
+    val, err := m.GetBackingStore().Get("supportDepartment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSupportPhoneNumber gets the supportPhoneNumber property value. Support phone number
 func (m *DepEnrollmentBaseProfile) GetSupportPhoneNumber()(*string) {
-    return m.supportPhoneNumber
+    val, err := m.GetBackingStore().Get("supportPhoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsAndConditionsDisabled gets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetTermsAndConditionsDisabled()(*bool) {
-    return m.termsAndConditionsDisabled
+    val, err := m.GetBackingStore().Get("termsAndConditionsDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTouchIdDisabled gets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
-    return m.touchIdDisabled
+    val, err := m.GetBackingStore().Get("touchIdDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -500,81 +600,186 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAppleIdDisabled sets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetAppleIdDisabled(value *bool)() {
-    m.appleIdDisabled = value
+    err := m.GetBackingStore().Set("appleIdDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplePayDisabled sets the applePayDisabled property value. Indicates if Apple pay setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetApplePayDisabled(value *bool)() {
-    m.applePayDisabled = value
+    err := m.GetBackingStore().Set("applePayDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigurationWebUrl sets the configurationWebUrl property value. URL for setup assistant login
 func (m *DepEnrollmentBaseProfile) SetConfigurationWebUrl(value *bool)() {
-    m.configurationWebUrl = value
+    err := m.GetBackingStore().Set("configurationWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceNameTemplate sets the deviceNameTemplate property value. Sets a literal or name pattern.
 func (m *DepEnrollmentBaseProfile) SetDeviceNameTemplate(value *string)() {
-    m.deviceNameTemplate = value
+    err := m.GetBackingStore().Set("deviceNameTemplate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDiagnosticsDisabled sets the diagnosticsDisabled property value. Indicates if diagnostics setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetDiagnosticsDisabled(value *bool)() {
-    m.diagnosticsDisabled = value
+    err := m.GetBackingStore().Set("diagnosticsDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayToneSetupDisabled sets the displayToneSetupDisabled property value. Indicates if displaytone setup screen is disabled
 func (m *DepEnrollmentBaseProfile) SetDisplayToneSetupDisabled(value *bool)() {
-    m.displayToneSetupDisabled = value
+    err := m.GetBackingStore().Set("displayToneSetupDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnabledSkipKeys sets the enabledSkipKeys property value. enabledSkipKeys contains all the enabled skip keys as strings
 func (m *DepEnrollmentBaseProfile) SetEnabledSkipKeys(value []string)() {
-    m.enabledSkipKeys = value
+    err := m.GetBackingStore().Set("enabledSkipKeys", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentBaseProfile) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMandatory sets the isMandatory property value. Indicates if the profile is mandatory
 func (m *DepEnrollmentBaseProfile) SetIsMandatory(value *bool)() {
-    m.isMandatory = value
+    err := m.GetBackingStore().Set("isMandatory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocationDisabled sets the locationDisabled property value. Indicates if Location service setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetLocationDisabled(value *bool)() {
-    m.locationDisabled = value
+    err := m.GetBackingStore().Set("locationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyPaneDisabled sets the privacyPaneDisabled property value. Indicates if privacy screen is disabled
 func (m *DepEnrollmentBaseProfile) SetPrivacyPaneDisabled(value *bool)() {
-    m.privacyPaneDisabled = value
+    err := m.GetBackingStore().Set("privacyPaneDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfileRemovalDisabled sets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
 func (m *DepEnrollmentBaseProfile) SetProfileRemovalDisabled(value *bool)() {
-    m.profileRemovalDisabled = value
+    err := m.GetBackingStore().Set("profileRemovalDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestoreBlocked sets the restoreBlocked property value. Indicates if Restore setup pane is blocked
 func (m *DepEnrollmentBaseProfile) SetRestoreBlocked(value *bool)() {
-    m.restoreBlocked = value
+    err := m.GetBackingStore().Set("restoreBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScreenTimeScreenDisabled sets the screenTimeScreenDisabled property value. Indicates if screen timeout setup is disabled
 func (m *DepEnrollmentBaseProfile) SetScreenTimeScreenDisabled(value *bool)() {
-    m.screenTimeScreenDisabled = value
+    err := m.GetBackingStore().Set("screenTimeScreenDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiriDisabled sets the siriDisabled property value. Indicates if siri setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetSiriDisabled(value *bool)() {
-    m.siriDisabled = value
+    err := m.GetBackingStore().Set("siriDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.
 func (m *DepEnrollmentBaseProfile) SetSupervisedModeEnabled(value *bool)() {
-    m.supervisedModeEnabled = value
+    err := m.GetBackingStore().Set("supervisedModeEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportDepartment sets the supportDepartment property value. Support department information
 func (m *DepEnrollmentBaseProfile) SetSupportDepartment(value *string)() {
-    m.supportDepartment = value
+    err := m.GetBackingStore().Set("supportDepartment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportPhoneNumber sets the supportPhoneNumber property value. Support phone number
 func (m *DepEnrollmentBaseProfile) SetSupportPhoneNumber(value *string)() {
-    m.supportPhoneNumber = value
+    err := m.GetBackingStore().Set("supportPhoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsAndConditionsDisabled sets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetTermsAndConditionsDisabled(value *bool)() {
-    m.termsAndConditionsDisabled = value
+    err := m.GetBackingStore().Set("termsAndConditionsDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTouchIdDisabled sets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetTouchIdDisabled(value *bool)() {
-    m.touchIdDisabled = value
+    err := m.GetBackingStore().Set("touchIdDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DepEnrollmentBaseProfileable 
+type DepEnrollmentBaseProfileable interface {
+    EnrollmentProfileable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleIdDisabled()(*bool)
+    GetApplePayDisabled()(*bool)
+    GetConfigurationWebUrl()(*bool)
+    GetDeviceNameTemplate()(*string)
+    GetDiagnosticsDisabled()(*bool)
+    GetDisplayToneSetupDisabled()(*bool)
+    GetEnabledSkipKeys()([]string)
+    GetIsDefault()(*bool)
+    GetIsMandatory()(*bool)
+    GetLocationDisabled()(*bool)
+    GetPrivacyPaneDisabled()(*bool)
+    GetProfileRemovalDisabled()(*bool)
+    GetRestoreBlocked()(*bool)
+    GetScreenTimeScreenDisabled()(*bool)
+    GetSiriDisabled()(*bool)
+    GetSupervisedModeEnabled()(*bool)
+    GetSupportDepartment()(*string)
+    GetSupportPhoneNumber()(*string)
+    GetTermsAndConditionsDisabled()(*bool)
+    GetTouchIdDisabled()(*bool)
+    SetAppleIdDisabled(value *bool)()
+    SetApplePayDisabled(value *bool)()
+    SetConfigurationWebUrl(value *bool)()
+    SetDeviceNameTemplate(value *string)()
+    SetDiagnosticsDisabled(value *bool)()
+    SetDisplayToneSetupDisabled(value *bool)()
+    SetEnabledSkipKeys(value []string)()
+    SetIsDefault(value *bool)()
+    SetIsMandatory(value *bool)()
+    SetLocationDisabled(value *bool)()
+    SetPrivacyPaneDisabled(value *bool)()
+    SetProfileRemovalDisabled(value *bool)()
+    SetRestoreBlocked(value *bool)()
+    SetScreenTimeScreenDisabled(value *bool)()
+    SetSiriDisabled(value *bool)()
+    SetSupervisedModeEnabled(value *bool)()
+    SetSupportDepartment(value *string)()
+    SetSupportPhoneNumber(value *string)()
+    SetTermsAndConditionsDisabled(value *bool)()
+    SetTouchIdDisabled(value *bool)()
 }

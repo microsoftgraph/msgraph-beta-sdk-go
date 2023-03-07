@@ -7,28 +7,14 @@ import (
 // SecurityConfigurationTask 
 type SecurityConfigurationTask struct {
     DeviceAppManagementTask
-    // The endpoint security configuration applicable platform.
-    applicablePlatform *EndpointSecurityConfigurationApplicablePlatform
-    // The endpoint security policy type.
-    endpointSecurityPolicy *EndpointSecurityConfigurationType
-    // The endpoint security policy profile type.
-    endpointSecurityPolicyProfile *EndpointSecurityConfigurationProfileType
-    // Information about the mitigation.
-    insights *string
-    // The intended settings and their values.
-    intendedSettings []KeyValuePairable
-    // The number of vulnerable devices. Valid values 0 to 65536
-    managedDeviceCount *int32
-    // The vulnerable managed devices.
-    managedDevices []VulnerableManagedDeviceable
 }
 // NewSecurityConfigurationTask instantiates a new SecurityConfigurationTask and sets the default values.
 func NewSecurityConfigurationTask()(*SecurityConfigurationTask) {
     m := &SecurityConfigurationTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),
     }
-    odataTypeValue := "#microsoft.graph.securityConfigurationTask";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.securityConfigurationTask"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSecurityConfigurationTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +23,36 @@ func CreateSecurityConfigurationTaskFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetApplicablePlatform gets the applicablePlatform property value. The endpoint security configuration applicable platform.
 func (m *SecurityConfigurationTask) GetApplicablePlatform()(*EndpointSecurityConfigurationApplicablePlatform) {
-    return m.applicablePlatform
+    val, err := m.GetBackingStore().Get("applicablePlatform")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EndpointSecurityConfigurationApplicablePlatform)
+    }
+    return nil
 }
 // GetEndpointSecurityPolicy gets the endpointSecurityPolicy property value. The endpoint security policy type.
 func (m *SecurityConfigurationTask) GetEndpointSecurityPolicy()(*EndpointSecurityConfigurationType) {
-    return m.endpointSecurityPolicy
+    val, err := m.GetBackingStore().Get("endpointSecurityPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EndpointSecurityConfigurationType)
+    }
+    return nil
 }
 // GetEndpointSecurityPolicyProfile gets the endpointSecurityPolicyProfile property value. The endpoint security policy profile type.
 func (m *SecurityConfigurationTask) GetEndpointSecurityPolicyProfile()(*EndpointSecurityConfigurationProfileType) {
-    return m.endpointSecurityPolicyProfile
+    val, err := m.GetBackingStore().Get("endpointSecurityPolicyProfile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EndpointSecurityConfigurationProfileType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -132,19 +139,47 @@ func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878
 }
 // GetInsights gets the insights property value. Information about the mitigation.
 func (m *SecurityConfigurationTask) GetInsights()(*string) {
-    return m.insights
+    val, err := m.GetBackingStore().Get("insights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIntendedSettings gets the intendedSettings property value. The intended settings and their values.
 func (m *SecurityConfigurationTask) GetIntendedSettings()([]KeyValuePairable) {
-    return m.intendedSettings
+    val, err := m.GetBackingStore().Get("intendedSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetManagedDeviceCount gets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
 func (m *SecurityConfigurationTask) GetManagedDeviceCount()(*int32) {
-    return m.managedDeviceCount
+    val, err := m.GetBackingStore().Get("managedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetManagedDevices gets the managedDevices property value. The vulnerable managed devices.
 func (m *SecurityConfigurationTask) GetManagedDevices()([]VulnerableManagedDeviceable) {
-    return m.managedDevices
+    val, err := m.GetBackingStore().Get("managedDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VulnerableManagedDeviceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -209,29 +244,69 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetApplicablePlatform sets the applicablePlatform property value. The endpoint security configuration applicable platform.
 func (m *SecurityConfigurationTask) SetApplicablePlatform(value *EndpointSecurityConfigurationApplicablePlatform)() {
-    m.applicablePlatform = value
+    err := m.GetBackingStore().Set("applicablePlatform", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEndpointSecurityPolicy sets the endpointSecurityPolicy property value. The endpoint security policy type.
 func (m *SecurityConfigurationTask) SetEndpointSecurityPolicy(value *EndpointSecurityConfigurationType)() {
-    m.endpointSecurityPolicy = value
+    err := m.GetBackingStore().Set("endpointSecurityPolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEndpointSecurityPolicyProfile sets the endpointSecurityPolicyProfile property value. The endpoint security policy profile type.
 func (m *SecurityConfigurationTask) SetEndpointSecurityPolicyProfile(value *EndpointSecurityConfigurationProfileType)() {
-    m.endpointSecurityPolicyProfile = value
+    err := m.GetBackingStore().Set("endpointSecurityPolicyProfile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInsights sets the insights property value. Information about the mitigation.
 func (m *SecurityConfigurationTask) SetInsights(value *string)() {
-    m.insights = value
+    err := m.GetBackingStore().Set("insights", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIntendedSettings sets the intendedSettings property value. The intended settings and their values.
 func (m *SecurityConfigurationTask) SetIntendedSettings(value []KeyValuePairable)() {
-    m.intendedSettings = value
+    err := m.GetBackingStore().Set("intendedSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCount sets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
 func (m *SecurityConfigurationTask) SetManagedDeviceCount(value *int32)() {
-    m.managedDeviceCount = value
+    err := m.GetBackingStore().Set("managedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDevices sets the managedDevices property value. The vulnerable managed devices.
 func (m *SecurityConfigurationTask) SetManagedDevices(value []VulnerableManagedDeviceable)() {
-    m.managedDevices = value
+    err := m.GetBackingStore().Set("managedDevices", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityConfigurationTaskable 
+type SecurityConfigurationTaskable interface {
+    DeviceAppManagementTaskable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicablePlatform()(*EndpointSecurityConfigurationApplicablePlatform)
+    GetEndpointSecurityPolicy()(*EndpointSecurityConfigurationType)
+    GetEndpointSecurityPolicyProfile()(*EndpointSecurityConfigurationProfileType)
+    GetInsights()(*string)
+    GetIntendedSettings()([]KeyValuePairable)
+    GetManagedDeviceCount()(*int32)
+    GetManagedDevices()([]VulnerableManagedDeviceable)
+    SetApplicablePlatform(value *EndpointSecurityConfigurationApplicablePlatform)()
+    SetEndpointSecurityPolicy(value *EndpointSecurityConfigurationType)()
+    SetEndpointSecurityPolicyProfile(value *EndpointSecurityConfigurationProfileType)()
+    SetInsights(value *string)()
+    SetIntendedSettings(value []KeyValuePairable)()
+    SetManagedDeviceCount(value *int32)()
+    SetManagedDevices(value []VulnerableManagedDeviceable)()
 }

@@ -7,18 +7,14 @@ import (
 // ProtectSite 
 type ProtectSite struct {
     LabelActionBase
-    // The accessType property
-    accessType *SiteAccessType
-    // The conditionalAccessProtectionLevelId property
-    conditionalAccessProtectionLevelId *string
 }
 // NewProtectSite instantiates a new ProtectSite and sets the default values.
 func NewProtectSite()(*ProtectSite) {
     m := &ProtectSite{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.protectSite";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.protectSite"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProtectSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,11 +23,25 @@ func CreateProtectSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAccessType gets the accessType property value. The accessType property
 func (m *ProtectSite) GetAccessType()(*SiteAccessType) {
-    return m.accessType
+    val, err := m.GetBackingStore().Get("accessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SiteAccessType)
+    }
+    return nil
 }
 // GetConditionalAccessProtectionLevelId gets the conditionalAccessProtectionLevelId property value. The conditionalAccessProtectionLevelId property
 func (m *ProtectSite) GetConditionalAccessProtectionLevelId()(*string) {
-    return m.conditionalAccessProtectionLevelId
+    val, err := m.GetBackingStore().Get("conditionalAccessProtectionLevelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,9 +91,24 @@ func (m *ProtectSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAccessType sets the accessType property value. The accessType property
 func (m *ProtectSite) SetAccessType(value *SiteAccessType)() {
-    m.accessType = value
+    err := m.GetBackingStore().Set("accessType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConditionalAccessProtectionLevelId sets the conditionalAccessProtectionLevelId property value. The conditionalAccessProtectionLevelId property
 func (m *ProtectSite) SetConditionalAccessProtectionLevelId(value *string)() {
-    m.conditionalAccessProtectionLevelId = value
+    err := m.GetBackingStore().Set("conditionalAccessProtectionLevelId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProtectSiteable 
+type ProtectSiteable interface {
+    LabelActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessType()(*SiteAccessType)
+    GetConditionalAccessProtectionLevelId()(*string)
+    SetAccessType(value *SiteAccessType)()
+    SetConditionalAccessProtectionLevelId(value *string)()
 }

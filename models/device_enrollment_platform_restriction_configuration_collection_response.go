@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse 
 type DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceEnrollmentPlatformRestrictionConfigurationable
 }
 // NewDeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse instantiates a new DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse()(*DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse) GetValue()([]DeviceEnrollmentPlatformRestrictionConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceEnrollmentPlatformRestrictionConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponse) SetValue(value []DeviceEnrollmentPlatformRestrictionConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponseable 
+type DeviceEnrollmentPlatformRestrictionConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceEnrollmentPlatformRestrictionConfigurationable)
+    SetValue(value []DeviceEnrollmentPlatformRestrictionConfigurationable)()
 }

@@ -7,10 +7,6 @@ import (
 // FileClassificationRequest 
 type FileClassificationRequest struct {
     Entity
-    // The file property
-    file []byte
-    // The sensitiveTypeIds property
-    sensitiveTypeIds []string
 }
 // NewFileClassificationRequest instantiates a new FileClassificationRequest and sets the default values.
 func NewFileClassificationRequest()(*FileClassificationRequest) {
@@ -54,11 +50,25 @@ func (m *FileClassificationRequest) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFile gets the file property value. The file property
 func (m *FileClassificationRequest) GetFile()([]byte) {
-    return m.file
+    val, err := m.GetBackingStore().Get("file")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *FileClassificationRequest) GetSensitiveTypeIds()([]string) {
-    return m.sensitiveTypeIds
+    val, err := m.GetBackingStore().Get("sensitiveTypeIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FileClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -82,9 +92,24 @@ func (m *FileClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetFile sets the file property value. The file property
 func (m *FileClassificationRequest) SetFile(value []byte)() {
-    m.file = value
+    err := m.GetBackingStore().Set("file", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *FileClassificationRequest) SetSensitiveTypeIds(value []string)() {
-    m.sensitiveTypeIds = value
+    err := m.GetBackingStore().Set("sensitiveTypeIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FileClassificationRequestable 
+type FileClassificationRequestable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFile()([]byte)
+    GetSensitiveTypeIds()([]string)
+    SetFile(value []byte)()
+    SetSensitiveTypeIds(value []string)()
 }

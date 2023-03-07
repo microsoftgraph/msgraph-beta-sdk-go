@@ -7,8 +7,6 @@ import (
 // AndroidWiFiConfigurationCollectionResponse 
 type AndroidWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWiFiConfigurationable
 }
 // NewAndroidWiFiConfigurationCollectionResponse instantiates a new AndroidWiFiConfigurationCollectionResponse and sets the default values.
 func NewAndroidWiFiConfigurationCollectionResponse()(*AndroidWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWiFiConfigurationCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWiFiConfigurationCollectionResponse) GetValue()([]AndroidWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWiFiConfigurationCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWiFiConfigurationCollectionResponse) SetValue(value []AndroidWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWiFiConfigurationCollectionResponseable 
+type AndroidWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWiFiConfigurationable)
+    SetValue(value []AndroidWiFiConfigurationable)()
 }

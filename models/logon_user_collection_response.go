@@ -7,8 +7,6 @@ import (
 // LogonUserCollectionResponse 
 type LogonUserCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []LogonUserable
 }
 // NewLogonUserCollectionResponse instantiates a new LogonUserCollectionResponse and sets the default values.
 func NewLogonUserCollectionResponse()(*LogonUserCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *LogonUserCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *LogonUserCollectionResponse) GetValue()([]LogonUserable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LogonUserable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *LogonUserCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *LogonUserCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *LogonUserCollectionResponse) SetValue(value []LogonUserable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// LogonUserCollectionResponseable 
+type LogonUserCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]LogonUserable)
+    SetValue(value []LogonUserable)()
 }

@@ -22,8 +22,8 @@ func NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder(rawUrl string
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) Ref()(*ItemConnectorsItemMemberOfItemRefRequestBuilder) {
-    return NewItemConnectorsItemMemberOfItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorsItemMemberOfItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

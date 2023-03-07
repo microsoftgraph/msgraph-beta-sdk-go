@@ -7,16 +7,14 @@ import (
 // FileUrlThreatSubmission 
 type FileUrlThreatSubmission struct {
     FileThreatSubmission
-    // It specifies the URL of the file which needs to be submitted.
-    fileUrl *string
 }
 // NewFileUrlThreatSubmission instantiates a new FileUrlThreatSubmission and sets the default values.
 func NewFileUrlThreatSubmission()(*FileUrlThreatSubmission) {
     m := &FileUrlThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.fileUrlThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.fileUrlThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *FileUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetFileUrl gets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
 func (m *FileUrlThreatSubmission) GetFileUrl()(*string) {
-    return m.fileUrl
+    val, err := m.GetBackingStore().Get("fileUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FileUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *FileUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetFileUrl sets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
 func (m *FileUrlThreatSubmission) SetFileUrl(value *string)() {
-    m.fileUrl = value
+    err := m.GetBackingStore().Set("fileUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FileUrlThreatSubmissionable 
+type FileUrlThreatSubmissionable interface {
+    FileThreatSubmissionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileUrl()(*string)
+    SetFileUrl(value *string)()
 }

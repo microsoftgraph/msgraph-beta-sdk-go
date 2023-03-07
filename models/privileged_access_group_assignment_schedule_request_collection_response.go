@@ -7,8 +7,6 @@ import (
 // PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse 
 type PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedAccessGroupAssignmentScheduleRequestable
 }
 // NewPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse instantiates a new PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse()(*PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse) GetFi
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse) GetValue()([]PrivilegedAccessGroupAssignmentScheduleRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedAccessGroupAssignmentScheduleRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse) Seria
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse) SetValue(value []PrivilegedAccessGroupAssignmentScheduleRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponseable 
+type PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedAccessGroupAssignmentScheduleRequestable)
+    SetValue(value []PrivilegedAccessGroupAssignmentScheduleRequestable)()
 }

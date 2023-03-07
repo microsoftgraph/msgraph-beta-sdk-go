@@ -26,13 +26,13 @@ type ItemTeamDefinitionCompleteMigrationRequestBuilderPostRequestConfiguration s
 func NewItemTeamDefinitionCompleteMigrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionCompleteMigrationRequestBuilder) {
     m := &ItemTeamDefinitionCompleteMigrationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/microsoft.graph.completeMigration";
+    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/completeMigration";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionCompleteMigrationRequestBuilder instantiates a new CompleteMigrationRequestBuilder and sets the default values.

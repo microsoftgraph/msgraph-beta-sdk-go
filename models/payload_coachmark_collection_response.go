@@ -7,8 +7,6 @@ import (
 // PayloadCoachmarkCollectionResponse 
 type PayloadCoachmarkCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PayloadCoachmarkable
 }
 // NewPayloadCoachmarkCollectionResponse instantiates a new PayloadCoachmarkCollectionResponse and sets the default values.
 func NewPayloadCoachmarkCollectionResponse()(*PayloadCoachmarkCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PayloadCoachmarkCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *PayloadCoachmarkCollectionResponse) GetValue()([]PayloadCoachmarkable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PayloadCoachmarkable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PayloadCoachmarkCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PayloadCoachmarkCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *PayloadCoachmarkCollectionResponse) SetValue(value []PayloadCoachmarkable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PayloadCoachmarkCollectionResponseable 
+type PayloadCoachmarkCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PayloadCoachmarkable)
+    SetValue(value []PayloadCoachmarkable)()
 }

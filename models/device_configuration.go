@@ -8,40 +8,6 @@ import (
 // DeviceConfiguration device Configuration.
 type DeviceConfiguration struct {
     Entity
-    // The list of assignments for the device configuration profile.
-    assignments []DeviceConfigurationAssignmentable
-    // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Admin provided description of the Device Configuration.
-    description *string
-    // The device mode applicability rule for this Policy.
-    deviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceModeable
-    // The OS edition applicability for this Policy.
-    deviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEditionable
-    // The OS version applicability rule for this Policy.
-    deviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersionable
-    // Device Configuration Setting State Device Summary
-    deviceSettingStateSummaries []SettingStateDeviceSummaryable
-    // Device configuration installation status by device.
-    deviceStatuses []DeviceConfigurationDeviceStatusable
-    // Device Configuration devices status overview
-    deviceStatusOverview DeviceConfigurationDeviceOverviewable
-    // Admin provided name of the device configuration.
-    displayName *string
-    // The list of group assignments for the device configuration profile.
-    groupAssignments []DeviceConfigurationGroupAssignmentable
-    // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string
-    // Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
-    supportsScopeTags *bool
-    // Device configuration installation status by user.
-    userStatuses []DeviceConfigurationUserStatusable
-    // Device Configuration users status overview
-    userStatusOverview DeviceConfigurationUserOverviewable
-    // Version of the device configuration.
-    version *int32
 }
 // NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {
@@ -346,43 +312,113 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceConfigurationAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceConfiguration) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceManagementApplicabilityRuleDeviceMode gets the deviceManagementApplicabilityRuleDeviceMode property value. The device mode applicability rule for this Policy.
 func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleDeviceMode()(DeviceManagementApplicabilityRuleDeviceModeable) {
-    return m.deviceManagementApplicabilityRuleDeviceMode
+    val, err := m.GetBackingStore().Get("deviceManagementApplicabilityRuleDeviceMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementApplicabilityRuleDeviceModeable)
+    }
+    return nil
 }
 // GetDeviceManagementApplicabilityRuleOsEdition gets the deviceManagementApplicabilityRuleOsEdition property value. The OS edition applicability for this Policy.
 func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsEdition()(DeviceManagementApplicabilityRuleOsEditionable) {
-    return m.deviceManagementApplicabilityRuleOsEdition
+    val, err := m.GetBackingStore().Get("deviceManagementApplicabilityRuleOsEdition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementApplicabilityRuleOsEditionable)
+    }
+    return nil
 }
 // GetDeviceManagementApplicabilityRuleOsVersion gets the deviceManagementApplicabilityRuleOsVersion property value. The OS version applicability rule for this Policy.
 func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsVersion()(DeviceManagementApplicabilityRuleOsVersionable) {
-    return m.deviceManagementApplicabilityRuleOsVersion
+    val, err := m.GetBackingStore().Get("deviceManagementApplicabilityRuleOsVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementApplicabilityRuleOsVersionable)
+    }
+    return nil
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
 func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
-    return m.deviceSettingStateSummaries
+    val, err := m.GetBackingStore().Get("deviceSettingStateSummaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SettingStateDeviceSummaryable)
+    }
+    return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
 func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable) {
-    return m.deviceStatuses
+    val, err := m.GetBackingStore().Get("deviceStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceConfigurationDeviceStatusable)
+    }
+    return nil
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
 func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable) {
-    return m.deviceStatusOverview
+    val, err := m.GetBackingStore().Get("deviceStatusOverview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceConfigurationDeviceOverviewable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceConfiguration) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -585,31 +621,80 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device configuration profile.
 func (m *DeviceConfiguration) GetGroupAssignments()([]DeviceConfigurationGroupAssignmentable) {
-    return m.groupAssignments
+    val, err := m.GetBackingStore().Get("groupAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceConfigurationGroupAssignmentable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceConfiguration) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSupportsScopeTags gets the supportsScopeTags property value. Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
 func (m *DeviceConfiguration) GetSupportsScopeTags()(*bool) {
-    return m.supportsScopeTags
+    val, err := m.GetBackingStore().Get("supportsScopeTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
 func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusable) {
-    return m.userStatuses
+    val, err := m.GetBackingStore().Get("userStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceConfigurationUserStatusable)
+    }
+    return nil
 }
 // GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
 func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOverviewable) {
-    return m.userStatusOverview
+    val, err := m.GetBackingStore().Get("userStatusOverview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceConfigurationUserOverviewable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
 func (m *DeviceConfiguration) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -737,69 +822,159 @@ func (m *DeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceConfiguration) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManagementApplicabilityRuleDeviceMode sets the deviceManagementApplicabilityRuleDeviceMode property value. The device mode applicability rule for this Policy.
 func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleDeviceMode(value DeviceManagementApplicabilityRuleDeviceModeable)() {
-    m.deviceManagementApplicabilityRuleDeviceMode = value
+    err := m.GetBackingStore().Set("deviceManagementApplicabilityRuleDeviceMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManagementApplicabilityRuleOsEdition sets the deviceManagementApplicabilityRuleOsEdition property value. The OS edition applicability for this Policy.
 func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleOsEdition(value DeviceManagementApplicabilityRuleOsEditionable)() {
-    m.deviceManagementApplicabilityRuleOsEdition = value
+    err := m.GetBackingStore().Set("deviceManagementApplicabilityRuleOsEdition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManagementApplicabilityRuleOsVersion sets the deviceManagementApplicabilityRuleOsVersion property value. The OS version applicability rule for this Policy.
 func (m *DeviceConfiguration) SetDeviceManagementApplicabilityRuleOsVersion(value DeviceManagementApplicabilityRuleOsVersionable)() {
-    m.deviceManagementApplicabilityRuleOsVersion = value
+    err := m.GetBackingStore().Set("deviceManagementApplicabilityRuleOsVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
 func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)() {
-    m.deviceSettingStateSummaries = value
+    err := m.GetBackingStore().Set("deviceSettingStateSummaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. Device configuration installation status by device.
 func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatusable)() {
-    m.deviceStatuses = value
+    err := m.GetBackingStore().Set("deviceStatuses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceStatusOverview sets the deviceStatusOverview property value. Device Configuration devices status overview
 func (m *DeviceConfiguration) SetDeviceStatusOverview(value DeviceConfigurationDeviceOverviewable)() {
-    m.deviceStatusOverview = value
+    err := m.GetBackingStore().Set("deviceStatusOverview", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupAssignments sets the groupAssignments property value. The list of group assignments for the device configuration profile.
 func (m *DeviceConfiguration) SetGroupAssignments(value []DeviceConfigurationGroupAssignmentable)() {
-    m.groupAssignments = value
+    err := m.GetBackingStore().Set("groupAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceConfiguration) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportsScopeTags sets the supportsScopeTags property value. Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
 func (m *DeviceConfiguration) SetSupportsScopeTags(value *bool)() {
-    m.supportsScopeTags = value
+    err := m.GetBackingStore().Set("supportsScopeTags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserStatuses sets the userStatuses property value. Device configuration installation status by user.
 func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatusable)() {
-    m.userStatuses = value
+    err := m.GetBackingStore().Set("userStatuses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserStatusOverview sets the userStatusOverview property value. Device Configuration users status overview
 func (m *DeviceConfiguration) SetUserStatusOverview(value DeviceConfigurationUserOverviewable)() {
-    m.userStatusOverview = value
+    err := m.GetBackingStore().Set("userStatusOverview", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *DeviceConfiguration) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceConfigurationable 
+type DeviceConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]DeviceConfigurationAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDeviceManagementApplicabilityRuleDeviceMode()(DeviceManagementApplicabilityRuleDeviceModeable)
+    GetDeviceManagementApplicabilityRuleOsEdition()(DeviceManagementApplicabilityRuleOsEditionable)
+    GetDeviceManagementApplicabilityRuleOsVersion()(DeviceManagementApplicabilityRuleOsVersionable)
+    GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable)
+    GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable)
+    GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable)
+    GetDisplayName()(*string)
+    GetGroupAssignments()([]DeviceConfigurationGroupAssignmentable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRoleScopeTagIds()([]string)
+    GetSupportsScopeTags()(*bool)
+    GetUserStatuses()([]DeviceConfigurationUserStatusable)
+    GetUserStatusOverview()(DeviceConfigurationUserOverviewable)
+    GetVersion()(*int32)
+    SetAssignments(value []DeviceConfigurationAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDeviceManagementApplicabilityRuleDeviceMode(value DeviceManagementApplicabilityRuleDeviceModeable)()
+    SetDeviceManagementApplicabilityRuleOsEdition(value DeviceManagementApplicabilityRuleOsEditionable)()
+    SetDeviceManagementApplicabilityRuleOsVersion(value DeviceManagementApplicabilityRuleOsVersionable)()
+    SetDeviceSettingStateSummaries(value []SettingStateDeviceSummaryable)()
+    SetDeviceStatuses(value []DeviceConfigurationDeviceStatusable)()
+    SetDeviceStatusOverview(value DeviceConfigurationDeviceOverviewable)()
+    SetDisplayName(value *string)()
+    SetGroupAssignments(value []DeviceConfigurationGroupAssignmentable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRoleScopeTagIds(value []string)()
+    SetSupportsScopeTags(value *bool)()
+    SetUserStatuses(value []DeviceConfigurationUserStatusable)()
+    SetUserStatusOverview(value DeviceConfigurationUserOverviewable)()
+    SetVersion(value *int32)()
 }

@@ -60,8 +60,8 @@ func NewMonitoringAlertRecordsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMonitoringAlertRecordsRequestBuilder instantiates a new AlertRecordsRequestBuilder and sets the default values.
@@ -72,7 +72,11 @@ func NewMonitoringAlertRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *MonitoringAlertRecordsRequestBuilder) Count()(*MonitoringAlertRecordsCountRequestBuilder) {
-    return NewMonitoringAlertRecordsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMonitoringAlertRecordsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// DeviceManagementGetPortalNotifications provides operations to call the getPortalNotifications method.
+func (m *MonitoringAlertRecordsRequestBuilder) DeviceManagementGetPortalNotifications()(*MonitoringAlertRecordsDeviceManagementGetPortalNotificationsRequestBuilder) {
+    return NewMonitoringAlertRecordsDeviceManagementGetPortalNotificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the alertRecord objects and their properties.
 // [Find more info here]
@@ -95,10 +99,6 @@ func (m *MonitoringAlertRecordsRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable), nil
-}
-// GetPortalNotifications provides operations to call the getPortalNotifications method.
-func (m *MonitoringAlertRecordsRequestBuilder) GetPortalNotifications()(*MonitoringAlertRecordsGetPortalNotificationsRequestBuilder) {
-    return NewMonitoringAlertRecordsGetPortalNotificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create new navigation property to alertRecords for deviceManagement
 func (m *MonitoringAlertRecordsRequestBuilder) Post(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, requestConfiguration *MonitoringAlertRecordsRequestBuilderPostRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {
@@ -142,7 +142,10 @@ func (m *MonitoringAlertRecordsRequestBuilder) ToPostRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,16 +7,6 @@ import (
 // ItemActivityOLD 
 type ItemActivityOLD struct {
     Entity
-    // The action property
-    action ItemActionSetable
-    // The actor property
-    actor IdentitySetable
-    // The driveItem property
-    driveItem DriveItemable
-    // The listItem property
-    listItem ListItemable
-    // The times property
-    times ItemActivityTimeSetable
 }
 // NewItemActivityOLD instantiates a new itemActivityOLD and sets the default values.
 func NewItemActivityOLD()(*ItemActivityOLD) {
@@ -31,15 +21,36 @@ func CreateItemActivityOLDFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAction gets the action property value. The action property
 func (m *ItemActivityOLD) GetAction()(ItemActionSetable) {
-    return m.action
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemActionSetable)
+    }
+    return nil
 }
 // GetActor gets the actor property value. The actor property
 func (m *ItemActivityOLD) GetActor()(IdentitySetable) {
-    return m.actor
+    val, err := m.GetBackingStore().Get("actor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetDriveItem gets the driveItem property value. The driveItem property
 func (m *ItemActivityOLD) GetDriveItem()(DriveItemable) {
-    return m.driveItem
+    val, err := m.GetBackingStore().Get("driveItem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DriveItemable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,11 +109,25 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetListItem gets the listItem property value. The listItem property
 func (m *ItemActivityOLD) GetListItem()(ListItemable) {
-    return m.listItem
+    val, err := m.GetBackingStore().Get("listItem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ListItemable)
+    }
+    return nil
 }
 // GetTimes gets the times property value. The times property
 func (m *ItemActivityOLD) GetTimes()(ItemActivityTimeSetable) {
-    return m.times
+    val, err := m.GetBackingStore().Get("times")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemActivityTimeSetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemActivityOLD) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,21 +169,51 @@ func (m *ItemActivityOLD) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAction sets the action property value. The action property
 func (m *ItemActivityOLD) SetAction(value ItemActionSetable)() {
-    m.action = value
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActor sets the actor property value. The actor property
 func (m *ItemActivityOLD) SetActor(value IdentitySetable)() {
-    m.actor = value
+    err := m.GetBackingStore().Set("actor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDriveItem sets the driveItem property value. The driveItem property
 func (m *ItemActivityOLD) SetDriveItem(value DriveItemable)() {
-    m.driveItem = value
+    err := m.GetBackingStore().Set("driveItem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetListItem sets the listItem property value. The listItem property
 func (m *ItemActivityOLD) SetListItem(value ListItemable)() {
-    m.listItem = value
+    err := m.GetBackingStore().Set("listItem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTimes sets the times property value. The times property
 func (m *ItemActivityOLD) SetTimes(value ItemActivityTimeSetable)() {
-    m.times = value
+    err := m.GetBackingStore().Set("times", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemActivityOLDable 
+type ItemActivityOLDable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(ItemActionSetable)
+    GetActor()(IdentitySetable)
+    GetDriveItem()(DriveItemable)
+    GetListItem()(ListItemable)
+    GetTimes()(ItemActivityTimeSetable)
+    SetAction(value ItemActionSetable)()
+    SetActor(value IdentitySetable)()
+    SetDriveItem(value DriveItemable)()
+    SetListItem(value ListItemable)()
+    SetTimes(value ItemActivityTimeSetable)()
 }

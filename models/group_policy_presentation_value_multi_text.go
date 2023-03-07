@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueMultiText 
 type GroupPolicyPresentationValueMultiText struct {
     GroupPolicyPresentationValue
-    // A collection of non-empty strings for the associated presentation.
-    values []string
 }
 // NewGroupPolicyPresentationValueMultiText instantiates a new GroupPolicyPresentationValueMultiText and sets the default values.
 func NewGroupPolicyPresentationValueMultiText()(*GroupPolicyPresentationValueMultiText) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueMultiText) GetFieldDeserializers()(map[stri
 }
 // GetValues gets the values property value. A collection of non-empty strings for the associated presentation.
 func (m *GroupPolicyPresentationValueMultiText) GetValues()([]string) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueMultiText) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *GroupPolicyPresentationValueMultiText) Serialize(writer i878a80d2330e89
 }
 // SetValues sets the values property value. A collection of non-empty strings for the associated presentation.
 func (m *GroupPolicyPresentationValueMultiText) SetValues(value []string)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueMultiTextable 
+type GroupPolicyPresentationValueMultiTextable interface {
+    GroupPolicyPresentationValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValues()([]string)
+    SetValues(value []string)()
 }

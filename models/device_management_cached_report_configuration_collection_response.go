@@ -7,8 +7,6 @@ import (
 // DeviceManagementCachedReportConfigurationCollectionResponse 
 type DeviceManagementCachedReportConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementCachedReportConfigurationable
 }
 // NewDeviceManagementCachedReportConfigurationCollectionResponse instantiates a new DeviceManagementCachedReportConfigurationCollectionResponse and sets the default values.
 func NewDeviceManagementCachedReportConfigurationCollectionResponse()(*DeviceManagementCachedReportConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementCachedReportConfigurationCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementCachedReportConfigurationCollectionResponse) GetValue()([]DeviceManagementCachedReportConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementCachedReportConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementCachedReportConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementCachedReportConfigurationCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementCachedReportConfigurationCollectionResponse) SetValue(value []DeviceManagementCachedReportConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementCachedReportConfigurationCollectionResponseable 
+type DeviceManagementCachedReportConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementCachedReportConfigurationable)
+    SetValue(value []DeviceManagementCachedReportConfigurationable)()
 }

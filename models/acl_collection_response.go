@@ -7,8 +7,6 @@ import (
 // AclCollectionResponse 
 type AclCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Aclable
 }
 // NewAclCollectionResponse instantiates a new AclCollectionResponse and sets the default values.
 func NewAclCollectionResponse()(*AclCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AclCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetValue gets the value property value. The value property
 func (m *AclCollectionResponse) GetValue()([]Aclable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Aclable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AclCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AclCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetValue sets the value property value. The value property
 func (m *AclCollectionResponse) SetValue(value []Aclable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AclCollectionResponseable 
+type AclCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Aclable)
+    SetValue(value []Aclable)()
 }

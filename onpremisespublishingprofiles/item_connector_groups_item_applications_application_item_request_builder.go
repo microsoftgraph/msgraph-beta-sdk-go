@@ -41,8 +41,8 @@ func NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder instantiates a new ApplicationItemRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Get(c
 }
 // Logo provides operations to manage the media for the onPremisesPublishingProfile entity.
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Logo()(*ItemConnectorGroupsItemApplicationsItemLogoRequestBuilder) {
-    return NewItemConnectorGroupsItemApplicationsItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConnectorGroupsItemApplicationsItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get applications from onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

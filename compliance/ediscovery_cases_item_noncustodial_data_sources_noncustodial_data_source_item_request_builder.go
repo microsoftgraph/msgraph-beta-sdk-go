@@ -46,10 +46,6 @@ type EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) ApplyHold()(*EdiscoveryCasesItemNoncustodialDataSourcesItemApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderInternal instantiates a new NoncustodialDataSourceItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) {
     m := &EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder instantiates a new NoncustodialDataSourceItemRequestBuilder and sets the default values.
@@ -71,7 +67,7 @@ func NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequ
 }
 // DataSource provides operations to manage the dataSource property of the microsoft.graph.ediscovery.noncustodialDataSource entity.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) DataSource()(*EdiscoveryCasesItemNoncustodialDataSourcesItemDataSourceRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemDataSourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemDataSourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property noncustodialDataSources for compliance
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -88,6 +84,22 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
         return err
     }
     return nil
+}
+// EdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) EdiscoveryApplyHold()(*EdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryRelease provides operations to call the release method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) EdiscoveryRelease()(*EdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryReleaseRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EdiscoveryUpdateIndex provides operations to call the updateIndex method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) EdiscoveryUpdateIndex()(*EdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryUpdateIndexRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemEdiscoveryUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, error) {
@@ -127,14 +139,6 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable), nil
 }
-// Release provides operations to call the release method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) Release()(*EdiscoveryCasesItemNoncustodialDataSourcesItemReleaseRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) RemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesItemRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // ToDeleteRequestInformation delete navigation property noncustodialDataSources for compliance
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -170,14 +174,13 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UpdateIndex provides operations to call the updateIndex method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) UpdateIndex()(*EdiscoveryCasesItemNoncustodialDataSourcesItemUpdateIndexRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesItemUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -7,8 +7,6 @@ import (
 // CustomerCollectionResponse 
 type CustomerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Customerable
 }
 // NewCustomerCollectionResponse instantiates a new CustomerCollectionResponse and sets the default values.
 func NewCustomerCollectionResponse()(*CustomerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CustomerCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *CustomerCollectionResponse) GetValue()([]Customerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Customerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CustomerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CustomerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *CustomerCollectionResponse) SetValue(value []Customerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CustomerCollectionResponseable 
+type CustomerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Customerable)
+    SetValue(value []Customerable)()
 }

@@ -7,8 +7,6 @@ import (
 // PrivilegedApprovalCollectionResponse 
 type PrivilegedApprovalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrivilegedApprovalable
 }
 // NewPrivilegedApprovalCollectionResponse instantiates a new PrivilegedApprovalCollectionResponse and sets the default values.
 func NewPrivilegedApprovalCollectionResponse()(*PrivilegedApprovalCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrivilegedApprovalCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *PrivilegedApprovalCollectionResponse) GetValue()([]PrivilegedApprovalable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedApprovalable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedApprovalCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrivilegedApprovalCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *PrivilegedApprovalCollectionResponse) SetValue(value []PrivilegedApprovalable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedApprovalCollectionResponseable 
+type PrivilegedApprovalCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrivilegedApprovalable)
+    SetValue(value []PrivilegedApprovalable)()
 }

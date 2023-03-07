@@ -7,8 +7,6 @@ import (
 // MobileAppProvisioningConfigGroupAssignment contains the properties used to assign an App provisioning configuration to a group.
 type MobileAppProvisioningConfigGroupAssignment struct {
     Entity
-    // The ID of the AAD group in which the app provisioning configuration is being targeted.
-    targetGroupId *string
 }
 // NewMobileAppProvisioningConfigGroupAssignment instantiates a new mobileAppProvisioningConfigGroupAssignment and sets the default values.
 func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfigGroupAssignment) {
@@ -38,7 +36,14 @@ func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map
 }
 // GetTargetGroupId gets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) GetTargetGroupId()(*string) {
-    return m.targetGroupId
+    val, err := m.GetBackingStore().Get("targetGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppProvisioningConfigGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *MobileAppProvisioningConfigGroupAssignment) Serialize(writer i878a80d23
 }
 // SetTargetGroupId sets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    err := m.GetBackingStore().Set("targetGroupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppProvisioningConfigGroupAssignmentable 
+type MobileAppProvisioningConfigGroupAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTargetGroupId()(*string)
+    SetTargetGroupId(value *string)()
 }

@@ -55,8 +55,8 @@ func NewWindowsAutopilotSettingsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsAutopilotSettingsRequestBuilder instantiates a new WindowsAutopilotSettingsRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) Patch(ctx context.Context, body
 }
 // Sync provides operations to call the sync method.
 func (m *WindowsAutopilotSettingsRequestBuilder) Sync()(*WindowsAutopilotSettingsSyncRequestBuilder) {
-    return NewWindowsAutopilotSettingsSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWindowsAutopilotSettingsSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property windowsAutopilotSettings for deviceManagement
 func (m *WindowsAutopilotSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsAutopilotSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *WindowsAutopilotSettingsRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

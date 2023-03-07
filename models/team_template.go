@@ -7,10 +7,8 @@ import (
 // TeamTemplate 
 type TeamTemplate struct {
     Entity
-    // The definitions property
-    definitions []TeamTemplateDefinitionable
 }
-// NewTeamTemplate instantiates a new TeamTemplate and sets the default values.
+// NewTeamTemplate instantiates a new teamTemplate and sets the default values.
 func NewTeamTemplate()(*TeamTemplate) {
     m := &TeamTemplate{
         Entity: *NewEntity(),
@@ -23,7 +21,14 @@ func CreateTeamTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDefinitions gets the definitions property value. The definitions property
 func (m *TeamTemplate) GetDefinitions()([]TeamTemplateDefinitionable) {
-    return m.definitions
+    val, err := m.GetBackingStore().Get("definitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamTemplateDefinitionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,5 +69,15 @@ func (m *TeamTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDefinitions sets the definitions property value. The definitions property
 func (m *TeamTemplate) SetDefinitions(value []TeamTemplateDefinitionable)() {
-    m.definitions = value
+    err := m.GetBackingStore().Set("definitions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamTemplateable 
+type TeamTemplateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefinitions()([]TeamTemplateDefinitionable)
+    SetDefinitions(value []TeamTemplateDefinitionable)()
 }

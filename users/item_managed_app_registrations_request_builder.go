@@ -53,8 +53,8 @@ func NewItemManagedAppRegistrationsRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedAppRegistrationsRequestBuilder instantiates a new ManagedAppRegistrationsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter 
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemManagedAppRegistrationsRequestBuilder) Count()(*ItemManagedAppRegistrationsCountRequestBuilder) {
-    return NewItemManagedAppRegistrationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedAppRegistrationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get zero or more managed app registrations that belong to the user.
 func (m *ItemManagedAppRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {

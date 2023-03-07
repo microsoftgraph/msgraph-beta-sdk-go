@@ -7,8 +7,6 @@ import (
 // DeviceManagementScriptAssignment contains properties used to assign a device management script to a group.
 type DeviceManagementScriptAssignment struct {
     Entity
-    // The Id of the Azure Active Directory group we are targeting the script to.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceManagementScriptAssignment instantiates a new deviceManagementScriptAssignment and sets the default values.
 func NewDeviceManagementScriptAssignment()(*DeviceManagementScriptAssignment) {
@@ -38,7 +36,14 @@ func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]fu
 }
 // GetTarget gets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
 func (m *DeviceManagementScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *DeviceManagementScriptAssignment) Serialize(writer i878a80d2330e89d2689
 }
 // SetTarget sets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
 func (m *DeviceManagementScriptAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptAssignmentable 
+type DeviceManagementScriptAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

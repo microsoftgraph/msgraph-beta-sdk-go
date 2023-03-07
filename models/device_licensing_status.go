@@ -19,9 +19,9 @@ const (
     // This status is set when the Microsoft device identity verification fails.
     DEVICEIDENTITYVERIFICATIONFAILED_DEVICELICENSINGSTATUS
     // This status is set when the Microsoft account identity is being verified.
-    VERIFYINGMIROSOFTACCOUNTIDENTITY_DEVICELICENSINGSTATUS
+    VERIFYINGMICROSOFTACCOUNTIDENTITY_DEVICELICENSINGSTATUS
     // This status is set when the Microsoft account identity verification fails.
-    MIROSOFTACCOUNTVERIFICATIONFAILED_DEVICELICENSINGSTATUS
+    MICROSOFTACCOUNTVERIFICATIONFAILED_DEVICELICENSINGSTATUS
     // This status is set when the device license is being acquired.
     ACQUIRINGDEVICELICENSE_DEVICELICENSINGSTATUS
     // This status is set when the device license is being refreshed.
@@ -41,7 +41,7 @@ const (
 )
 
 func (i DeviceLicensingStatus) String() string {
-    return []string{"unknown", "licenseRefreshStarted", "licenseRefreshPending", "deviceIsNotAzureActiveDirectoryJoined", "verifyingMicrosoftDeviceIdentity", "deviceIdentityVerificationFailed", "verifyingMirosoftAccountIdentity", "mirosoftAccountVerificationFailed", "acquiringDeviceLicense", "refreshingDeviceLicense", "deviceLicenseRefreshSucceed", "deviceLicenseRefreshFailed", "removingDeviceLicense", "deviceLicenseRemoveSucceed", "deviceLicenseRemoveFailed", "unknownFutureValue"}[i]
+    return []string{"unknown", "licenseRefreshStarted", "licenseRefreshPending", "deviceIsNotAzureActiveDirectoryJoined", "verifyingMicrosoftDeviceIdentity", "deviceIdentityVerificationFailed", "verifyingMicrosoftAccountIdentity", "microsoftAccountVerificationFailed", "acquiringDeviceLicense", "refreshingDeviceLicense", "deviceLicenseRefreshSucceed", "deviceLicenseRefreshFailed", "removingDeviceLicense", "deviceLicenseRemoveSucceed", "deviceLicenseRemoveFailed", "unknownFutureValue"}[i]
 }
 func ParseDeviceLicensingStatus(v string) (any, error) {
     result := UNKNOWN_DEVICELICENSINGSTATUS
@@ -58,10 +58,10 @@ func ParseDeviceLicensingStatus(v string) (any, error) {
             result = VERIFYINGMICROSOFTDEVICEIDENTITY_DEVICELICENSINGSTATUS
         case "deviceIdentityVerificationFailed":
             result = DEVICEIDENTITYVERIFICATIONFAILED_DEVICELICENSINGSTATUS
-        case "verifyingMirosoftAccountIdentity":
-            result = VERIFYINGMIROSOFTACCOUNTIDENTITY_DEVICELICENSINGSTATUS
-        case "mirosoftAccountVerificationFailed":
-            result = MIROSOFTACCOUNTVERIFICATIONFAILED_DEVICELICENSINGSTATUS
+        case "verifyingMicrosoftAccountIdentity":
+            result = VERIFYINGMICROSOFTACCOUNTIDENTITY_DEVICELICENSINGSTATUS
+        case "microsoftAccountVerificationFailed":
+            result = MICROSOFTACCOUNTVERIFICATIONFAILED_DEVICELICENSINGSTATUS
         case "acquiringDeviceLicense":
             result = ACQUIRINGDEVICELICENSE_DEVICELICENSINGSTATUS
         case "refreshingDeviceLicense":

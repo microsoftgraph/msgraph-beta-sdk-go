@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationDropdownListCollectionResponse 
 type GroupPolicyPresentationDropdownListCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationDropdownListable
 }
 // NewGroupPolicyPresentationDropdownListCollectionResponse instantiates a new GroupPolicyPresentationDropdownListCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationDropdownListCollectionResponse()(*GroupPolicyPresentationDropdownListCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationDropdownListCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationDropdownListCollectionResponse) GetValue()([]GroupPolicyPresentationDropdownListable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationDropdownListable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationDropdownListCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationDropdownListCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationDropdownListCollectionResponse) SetValue(value []GroupPolicyPresentationDropdownListable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationDropdownListCollectionResponseable 
+type GroupPolicyPresentationDropdownListCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationDropdownListable)
+    SetValue(value []GroupPolicyPresentationDropdownListable)()
 }

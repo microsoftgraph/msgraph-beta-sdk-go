@@ -5,31 +5,9 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceScope 
+// UserExperienceAnalyticsDeviceScope the user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.
 type UserExperienceAnalyticsDeviceScope struct {
     Entity
-    // Indicates the creation date and time for the custom device scope.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name of the user experience analytics device Scope configuration.
-    deviceScopeName *string
-    // Indicates whether a device scope is enabled or disabled. When TRUE, the device scope is enabled. When FALSE, the device scope is disabled. Default value is FALSE.
-    enabled *bool
-    // Indicates whether the device scope configuration is built-in or custom. When TRUE, the device scope configuration is built-in. When FALSE, the device scope configuration is custom. Default value is FALSE.
-    isBuiltIn *bool
-    // Indicates the last updated date and time for the custom device scope.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
-    operator *DeviceScopeOperator
-    // The unique identifier of the person (admin) who created the device scope configuration.
-    ownerId *string
-    // Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
-    parameter *DeviceScopeParameter
-    // Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
-    status *DeviceScopeStatus
-    // The device scope configuration query clause value.
-    value *string
-    // The unique identifier for a user device scope tag Id used for the creation of device scope configuration.
-    valueObjectId *string
 }
 // NewUserExperienceAnalyticsDeviceScope instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
 func NewUserExperienceAnalyticsDeviceScope()(*UserExperienceAnalyticsDeviceScope) {
@@ -44,15 +22,36 @@ func CreateUserExperienceAnalyticsDeviceScopeFromDiscriminatorValue(parseNode i8
 }
 // GetCreatedDateTime gets the createdDateTime property value. Indicates the creation date and time for the custom device scope.
 func (m *UserExperienceAnalyticsDeviceScope) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceScopeName gets the deviceScopeName property value. The name of the user experience analytics device Scope configuration.
 func (m *UserExperienceAnalyticsDeviceScope) GetDeviceScopeName()(*string) {
-    return m.deviceScopeName
+    val, err := m.GetBackingStore().Get("deviceScopeName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnabled gets the enabled property value. Indicates whether a device scope is enabled or disabled. When TRUE, the device scope is enabled. When FALSE, the device scope is disabled. Default value is FALSE.
 func (m *UserExperienceAnalyticsDeviceScope) GetEnabled()(*bool) {
-    return m.enabled
+    val, err := m.GetBackingStore().Get("enabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -171,35 +170,91 @@ func (m *UserExperienceAnalyticsDeviceScope) GetFieldDeserializers()(map[string]
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Indicates whether the device scope configuration is built-in or custom. When TRUE, the device scope configuration is built-in. When FALSE, the device scope configuration is custom. Default value is FALSE.
 func (m *UserExperienceAnalyticsDeviceScope) GetIsBuiltIn()(*bool) {
-    return m.isBuiltIn
+    val, err := m.GetBackingStore().Get("isBuiltIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Indicates the last updated date and time for the custom device scope.
 func (m *UserExperienceAnalyticsDeviceScope) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOperator gets the operator property value. Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
 func (m *UserExperienceAnalyticsDeviceScope) GetOperator()(*DeviceScopeOperator) {
-    return m.operator
+    val, err := m.GetBackingStore().Get("operator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceScopeOperator)
+    }
+    return nil
 }
 // GetOwnerId gets the ownerId property value. The unique identifier of the person (admin) who created the device scope configuration.
 func (m *UserExperienceAnalyticsDeviceScope) GetOwnerId()(*string) {
-    return m.ownerId
+    val, err := m.GetBackingStore().Get("ownerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParameter gets the parameter property value. Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
 func (m *UserExperienceAnalyticsDeviceScope) GetParameter()(*DeviceScopeParameter) {
-    return m.parameter
+    val, err := m.GetBackingStore().Get("parameter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceScopeParameter)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
 func (m *UserExperienceAnalyticsDeviceScope) GetStatus()(*DeviceScopeStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceScopeStatus)
+    }
+    return nil
 }
 // GetValue gets the value property value. The device scope configuration query clause value.
 func (m *UserExperienceAnalyticsDeviceScope) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValueObjectId gets the valueObjectId property value. The unique identifier for a user device scope tag Id used for the creation of device scope configuration.
 func (m *UserExperienceAnalyticsDeviceScope) GetValueObjectId()(*string) {
-    return m.valueObjectId
+    val, err := m.GetBackingStore().Get("valueObjectId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -280,45 +335,105 @@ func (m *UserExperienceAnalyticsDeviceScope) Serialize(writer i878a80d2330e89d26
 }
 // SetCreatedDateTime sets the createdDateTime property value. Indicates the creation date and time for the custom device scope.
 func (m *UserExperienceAnalyticsDeviceScope) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceScopeName sets the deviceScopeName property value. The name of the user experience analytics device Scope configuration.
 func (m *UserExperienceAnalyticsDeviceScope) SetDeviceScopeName(value *string)() {
-    m.deviceScopeName = value
+    err := m.GetBackingStore().Set("deviceScopeName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnabled sets the enabled property value. Indicates whether a device scope is enabled or disabled. When TRUE, the device scope is enabled. When FALSE, the device scope is disabled. Default value is FALSE.
 func (m *UserExperienceAnalyticsDeviceScope) SetEnabled(value *bool)() {
-    m.enabled = value
+    err := m.GetBackingStore().Set("enabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Indicates whether the device scope configuration is built-in or custom. When TRUE, the device scope configuration is built-in. When FALSE, the device scope configuration is custom. Default value is FALSE.
 func (m *UserExperienceAnalyticsDeviceScope) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    err := m.GetBackingStore().Set("isBuiltIn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Indicates the last updated date and time for the custom device scope.
 func (m *UserExperienceAnalyticsDeviceScope) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperator sets the operator property value. Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
 func (m *UserExperienceAnalyticsDeviceScope) SetOperator(value *DeviceScopeOperator)() {
-    m.operator = value
+    err := m.GetBackingStore().Set("operator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwnerId sets the ownerId property value. The unique identifier of the person (admin) who created the device scope configuration.
 func (m *UserExperienceAnalyticsDeviceScope) SetOwnerId(value *string)() {
-    m.ownerId = value
+    err := m.GetBackingStore().Set("ownerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParameter sets the parameter property value. Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
 func (m *UserExperienceAnalyticsDeviceScope) SetParameter(value *DeviceScopeParameter)() {
-    m.parameter = value
+    err := m.GetBackingStore().Set("parameter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
 func (m *UserExperienceAnalyticsDeviceScope) SetStatus(value *DeviceScopeStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. The device scope configuration query clause value.
 func (m *UserExperienceAnalyticsDeviceScope) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueObjectId sets the valueObjectId property value. The unique identifier for a user device scope tag Id used for the creation of device scope configuration.
 func (m *UserExperienceAnalyticsDeviceScope) SetValueObjectId(value *string)() {
-    m.valueObjectId = value
+    err := m.GetBackingStore().Set("valueObjectId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsDeviceScopeable 
+type UserExperienceAnalyticsDeviceScopeable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceScopeName()(*string)
+    GetEnabled()(*bool)
+    GetIsBuiltIn()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOperator()(*DeviceScopeOperator)
+    GetOwnerId()(*string)
+    GetParameter()(*DeviceScopeParameter)
+    GetStatus()(*DeviceScopeStatus)
+    GetValue()(*string)
+    GetValueObjectId()(*string)
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceScopeName(value *string)()
+    SetEnabled(value *bool)()
+    SetIsBuiltIn(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOperator(value *DeviceScopeOperator)()
+    SetOwnerId(value *string)()
+    SetParameter(value *DeviceScopeParameter)()
+    SetStatus(value *DeviceScopeStatus)()
+    SetValue(value *string)()
+    SetValueObjectId(value *string)()
 }

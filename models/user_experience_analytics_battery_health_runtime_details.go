@@ -8,16 +8,6 @@ import (
 // UserExperienceAnalyticsBatteryHealthRuntimeDetails 
 type UserExperienceAnalyticsBatteryHealthRuntimeDetails struct {
     Entity
-    // Number of active devices within the tenant. Valid values -2147483648 to 2147483647
-    activeDevices *int32
-    // Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
-    batteryRuntimeFair *int32
-    // Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
-    batteryRuntimeGood *int32
-    // Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
-    batteryRuntimePoor *int32
-    // Recorded date time of this runtime details instance.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUserExperienceAnalyticsBatteryHealthRuntimeDetails instantiates a new userExperienceAnalyticsBatteryHealthRuntimeDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthRuntimeDetails()(*UserExperienceAnalyticsBatteryHealthRuntimeDetails) {
@@ -32,19 +22,47 @@ func CreateUserExperienceAnalyticsBatteryHealthRuntimeDetailsFromDiscriminatorVa
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetActiveDevices()(*int32) {
-    return m.activeDevices
+    val, err := m.GetBackingStore().Get("activeDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetBatteryRuntimeFair gets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimeFair()(*int32) {
-    return m.batteryRuntimeFair
+    val, err := m.GetBackingStore().Get("batteryRuntimeFair")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetBatteryRuntimeGood gets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimeGood()(*int32) {
-    return m.batteryRuntimeGood
+    val, err := m.GetBackingStore().Get("batteryRuntimeGood")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetBatteryRuntimePoor gets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetBatteryRuntimePoor()(*int32) {
-    return m.batteryRuntimePoor
+    val, err := m.GetBackingStore().Get("batteryRuntimePoor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,7 +121,14 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetFieldDeserialize
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this runtime details instance.
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastRefreshedDateTime
+    val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -145,21 +170,51 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) Serialize(writer i8
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetActiveDevices(value *int32)() {
-    m.activeDevices = value
+    err := m.GetBackingStore().Set("activeDevices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBatteryRuntimeFair sets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimeFair(value *int32)() {
-    m.batteryRuntimeFair = value
+    err := m.GetBackingStore().Set("batteryRuntimeFair", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBatteryRuntimeGood sets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimeGood(value *int32)() {
-    m.batteryRuntimeGood = value
+    err := m.GetBackingStore().Set("batteryRuntimeGood", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBatteryRuntimePoor sets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimePoor(value *int32)() {
-    m.batteryRuntimePoor = value
+    err := m.GetBackingStore().Set("batteryRuntimePoor", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Recorded date time of this runtime details instance.
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    err := m.GetBackingStore().Set("lastRefreshedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsBatteryHealthRuntimeDetailsable 
+type UserExperienceAnalyticsBatteryHealthRuntimeDetailsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveDevices()(*int32)
+    GetBatteryRuntimeFair()(*int32)
+    GetBatteryRuntimeGood()(*int32)
+    GetBatteryRuntimePoor()(*int32)
+    GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetActiveDevices(value *int32)()
+    SetBatteryRuntimeFair(value *int32)()
+    SetBatteryRuntimeGood(value *int32)()
+    SetBatteryRuntimePoor(value *int32)()
+    SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

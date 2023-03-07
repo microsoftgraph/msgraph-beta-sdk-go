@@ -3,26 +3,20 @@ package serviceprincipals
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemSynchronizationJobsValidateCredentialsPostRequestBody 
 type ItemSynchronizationJobsValidateCredentialsPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The applicationIdentifier property
-    applicationIdentifier *string
-    // The credentials property
-    credentials []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable
-    // The templateId property
-    templateId *string
-    // The useSavedCredentials property
-    useSavedCredentials *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemSynchronizationJobsValidateCredentialsPostRequestBody instantiates a new ItemSynchronizationJobsValidateCredentialsPostRequestBody and sets the default values.
 func NewItemSynchronizationJobsValidateCredentialsPostRequestBody()(*ItemSynchronizationJobsValidateCredentialsPostRequestBody) {
     m := &ItemSynchronizationJobsValidateCredentialsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemSynchronizationJobsValidateCredentialsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,15 +25,41 @@ func CreateItemSynchronizationJobsValidateCredentialsPostRequestBodyFromDiscrimi
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApplicationIdentifier gets the applicationIdentifier property value. The applicationIdentifier property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetApplicationIdentifier()(*string) {
-    return m.applicationIdentifier
+    val, err := m.GetBackingStore().Get("applicationIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCredentials gets the credentials property value. The credentials property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetCredentials()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable) {
-    return m.credentials
+    val, err := m.GetBackingStore().Get("credentials")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,11 +112,25 @@ func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetFieldDese
 }
 // GetTemplateId gets the templateId property value. The templateId property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetTemplateId()(*string) {
-    return m.templateId
+    val, err := m.GetBackingStore().Get("templateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUseSavedCredentials gets the useSavedCredentials property value. The useSavedCredentials property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetUseSavedCredentials()(*bool) {
-    return m.useSavedCredentials
+    val, err := m.GetBackingStore().Get("useSavedCredentials")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -138,21 +172,56 @@ func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) Serialize(wr
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. The applicationIdentifier property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetApplicationIdentifier(value *string)() {
-    m.applicationIdentifier = value
+    err := m.GetBackingStore().Set("applicationIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCredentials sets the credentials property value. The credentials property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetCredentials(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)() {
-    m.credentials = value
+    err := m.GetBackingStore().Set("credentials", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateId sets the templateId property value. The templateId property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetTemplateId(value *string)() {
-    m.templateId = value
+    err := m.GetBackingStore().Set("templateId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUseSavedCredentials sets the useSavedCredentials property value. The useSavedCredentials property
 func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetUseSavedCredentials(value *bool)() {
-    m.useSavedCredentials = value
+    err := m.GetBackingStore().Set("useSavedCredentials", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemSynchronizationJobsValidateCredentialsPostRequestBodyable 
+type ItemSynchronizationJobsValidateCredentialsPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationIdentifier()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCredentials()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)
+    GetTemplateId()(*string)
+    GetUseSavedCredentials()(*bool)
+    SetApplicationIdentifier(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCredentials(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)()
+    SetTemplateId(value *string)()
+    SetUseSavedCredentials(value *bool)()
 }

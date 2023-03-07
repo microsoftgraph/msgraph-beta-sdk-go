@@ -7,12 +7,6 @@ import (
 // AndroidManagedStoreAppConfigurationSchema schema describing an Android application's custom configurations.
 type AndroidManagedStoreAppConfigurationSchema struct {
     Entity
-    // UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
-    exampleJson []byte
-    // Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
-    nestedSchemaItems []AndroidManagedStoreAppConfigurationSchemaItemable
-    // Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
-    schemaItems []AndroidManagedStoreAppConfigurationSchemaItemable
 }
 // NewAndroidManagedStoreAppConfigurationSchema instantiates a new androidManagedStoreAppConfigurationSchema and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchema()(*AndroidManagedStoreAppConfigurationSchema) {
@@ -27,7 +21,14 @@ func CreateAndroidManagedStoreAppConfigurationSchemaFromDiscriminatorValue(parse
 }
 // GetExampleJson gets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidManagedStoreAppConfigurationSchema) GetExampleJson()([]byte) {
-    return m.exampleJson
+    val, err := m.GetBackingStore().Get("exampleJson")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,11 +75,25 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
 }
 // GetNestedSchemaItems gets the nestedSchemaItems property value. Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) GetNestedSchemaItems()([]AndroidManagedStoreAppConfigurationSchemaItemable) {
-    return m.nestedSchemaItems
+    val, err := m.GetBackingStore().Get("nestedSchemaItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    }
+    return nil
 }
 // GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) GetSchemaItems()([]AndroidManagedStoreAppConfigurationSchemaItemable) {
-    return m.schemaItems
+    val, err := m.GetBackingStore().Get("schemaItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,13 +131,33 @@ func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i878a80d233
 }
 // SetExampleJson sets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidManagedStoreAppConfigurationSchema) SetExampleJson(value []byte)() {
-    m.exampleJson = value
+    err := m.GetBackingStore().Set("exampleJson", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNestedSchemaItems sets the nestedSchemaItems property value. Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) SetNestedSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)() {
-    m.nestedSchemaItems = value
+    err := m.GetBackingStore().Set("nestedSchemaItems", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) SetSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)() {
-    m.schemaItems = value
+    err := m.GetBackingStore().Set("schemaItems", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidManagedStoreAppConfigurationSchemaable 
+type AndroidManagedStoreAppConfigurationSchemaable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExampleJson()([]byte)
+    GetNestedSchemaItems()([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    GetSchemaItems()([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    SetExampleJson(value []byte)()
+    SetNestedSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)()
+    SetSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)()
 }

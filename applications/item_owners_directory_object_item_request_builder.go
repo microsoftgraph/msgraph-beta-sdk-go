@@ -22,8 +22,8 @@ func NewItemOwnersDirectoryObjectItemRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOwnersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -32,19 +32,19 @@ func NewItemOwnersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) Endpoint()(*ItemOwnersItemEndpointRequestBuilder) {
-    return NewItemOwnersItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnersItemGraphEndpointRequestBuilder) {
+    return NewItemOwnersItemGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemOwnersItemGraphServicePrincipalRequestBuilder) {
+    return NewItemOwnersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemOwnersItemGraphUserRequestBuilder) {
+    return NewItemOwnersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemOwnersDirectoryObjectItemRequestBuilder) Ref()(*ItemOwnersItemRefRequestBuilder) {
-    return NewItemOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) ServicePrincipal()(*ItemOwnersItemServicePrincipalRequestBuilder) {
-    return NewItemOwnersItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// User casts the previous resource to user.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) User()(*ItemOwnersItemUserRequestBuilder) {
-    return NewItemOwnersItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

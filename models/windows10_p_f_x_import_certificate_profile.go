@@ -7,16 +7,14 @@ import (
 // Windows10PFXImportCertificateProfile 
 type Windows10PFXImportCertificateProfile struct {
     DeviceConfiguration
-    // Key Storage Provider (KSP) Import Options.
-    keyStorageProvider *KeyStorageProviderOption
 }
 // NewWindows10PFXImportCertificateProfile instantiates a new Windows10PFXImportCertificateProfile and sets the default values.
 func NewWindows10PFXImportCertificateProfile()(*Windows10PFXImportCertificateProfile) {
     m := &Windows10PFXImportCertificateProfile{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10PFXImportCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10PFXImportCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10PFXImportCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *Windows10PFXImportCertificateProfile) GetFieldDeserializers()(map[strin
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10PFXImportCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
-    return m.keyStorageProvider
+    val, err := m.GetBackingStore().Get("keyStorageProvider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*KeyStorageProviderOption)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10PFXImportCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *Windows10PFXImportCertificateProfile) Serialize(writer i878a80d2330e89d
 }
 // SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10PFXImportCertificateProfile) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
-    m.keyStorageProvider = value
+    err := m.GetBackingStore().Set("keyStorageProvider", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10PFXImportCertificateProfileable 
+type Windows10PFXImportCertificateProfileable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetKeyStorageProvider()(*KeyStorageProviderOption)
+    SetKeyStorageProvider(value *KeyStorageProviderOption)()
 }

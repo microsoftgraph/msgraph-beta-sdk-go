@@ -7,8 +7,6 @@ import (
 // WindowsDriverUpdateProfileAssignment this entity contains the properties used to assign a windows driver update profile to a group.
 type WindowsDriverUpdateProfileAssignment struct {
     Entity
-    // Base type for assignment targets.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewWindowsDriverUpdateProfileAssignment instantiates a new windowsDriverUpdateProfileAssignment and sets the default values.
 func NewWindowsDriverUpdateProfileAssignment()(*WindowsDriverUpdateProfileAssignment) {
@@ -38,7 +36,14 @@ func (m *WindowsDriverUpdateProfileAssignment) GetFieldDeserializers()(map[strin
 }
 // GetTarget gets the target property value. Base type for assignment targets.
 func (m *WindowsDriverUpdateProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDriverUpdateProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *WindowsDriverUpdateProfileAssignment) Serialize(writer i878a80d2330e89d
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *WindowsDriverUpdateProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDriverUpdateProfileAssignmentable 
+type WindowsDriverUpdateProfileAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

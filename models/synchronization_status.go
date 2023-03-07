@@ -3,44 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SynchronizationStatus 
 type SynchronizationStatus struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The code property
-    code *SynchronizationStatusCode
-    // Number of consecutive times this job failed.
-    countSuccessiveCompleteFailures *int64
-    // true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
-    escrowsPruned *bool
-    // Details of the last execution of the job.
-    lastExecution SynchronizationTaskExecutionable
-    // Details of the last execution of this job, which didn't have any errors.
-    lastSuccessfulExecution SynchronizationTaskExecutionable
-    // Details of the last execution of the job, which exported objects into the target directory.
-    lastSuccessfulExecutionWithExports SynchronizationTaskExecutionable
-    // The OdataType property
-    odataType *string
-    // Details of the progress of a job toward completion.
-    progress []SynchronizationProgressable
-    // If job is in quarantine, quarantine details.
-    quarantine SynchronizationQuarantineable
-    // The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    steadyStateFirstAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    steadyStateLastAchievedTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Count of synchronized objects, listed by object type.
-    synchronizedEntryCountByType []StringKeyLongValuePairable
-    // In the event of an error, the URL with the troubleshooting steps for the issue.
-    troubleshootingUrl *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSynchronizationStatus instantiates a new synchronizationStatus and sets the default values.
 func NewSynchronizationStatus()(*SynchronizationStatus) {
     m := &SynchronizationStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSynchronizationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,19 +25,52 @@ func CreateSynchronizationStatusFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationStatus) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SynchronizationStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCode gets the code property value. The code property
 func (m *SynchronizationStatus) GetCode()(*SynchronizationStatusCode) {
-    return m.code
+    val, err := m.GetBackingStore().Get("code")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SynchronizationStatusCode)
+    }
+    return nil
 }
 // GetCountSuccessiveCompleteFailures gets the countSuccessiveCompleteFailures property value. Number of consecutive times this job failed.
 func (m *SynchronizationStatus) GetCountSuccessiveCompleteFailures()(*int64) {
-    return m.countSuccessiveCompleteFailures
+    val, err := m.GetBackingStore().Get("countSuccessiveCompleteFailures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetEscrowsPruned gets the escrowsPruned property value. true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
 func (m *SynchronizationStatus) GetEscrowsPruned()(*bool) {
-    return m.escrowsPruned
+    val, err := m.GetBackingStore().Get("escrowsPruned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -208,43 +217,113 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLastExecution gets the lastExecution property value. Details of the last execution of the job.
 func (m *SynchronizationStatus) GetLastExecution()(SynchronizationTaskExecutionable) {
-    return m.lastExecution
+    val, err := m.GetBackingStore().Get("lastExecution")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationTaskExecutionable)
+    }
+    return nil
 }
 // GetLastSuccessfulExecution gets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
 func (m *SynchronizationStatus) GetLastSuccessfulExecution()(SynchronizationTaskExecutionable) {
-    return m.lastSuccessfulExecution
+    val, err := m.GetBackingStore().Get("lastSuccessfulExecution")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationTaskExecutionable)
+    }
+    return nil
 }
 // GetLastSuccessfulExecutionWithExports gets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
 func (m *SynchronizationStatus) GetLastSuccessfulExecutionWithExports()(SynchronizationTaskExecutionable) {
-    return m.lastSuccessfulExecutionWithExports
+    val, err := m.GetBackingStore().Get("lastSuccessfulExecutionWithExports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationTaskExecutionable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationStatus) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProgress gets the progress property value. Details of the progress of a job toward completion.
 func (m *SynchronizationStatus) GetProgress()([]SynchronizationProgressable) {
-    return m.progress
+    val, err := m.GetBackingStore().Get("progress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SynchronizationProgressable)
+    }
+    return nil
 }
 // GetQuarantine gets the quarantine property value. If job is in quarantine, quarantine details.
 func (m *SynchronizationStatus) GetQuarantine()(SynchronizationQuarantineable) {
-    return m.quarantine
+    val, err := m.GetBackingStore().Get("quarantine")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationQuarantineable)
+    }
+    return nil
 }
 // GetSteadyStateFirstAchievedTime gets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationStatus) GetSteadyStateFirstAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.steadyStateFirstAchievedTime
+    val, err := m.GetBackingStore().Get("steadyStateFirstAchievedTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSteadyStateLastAchievedTime gets the steadyStateLastAchievedTime property value. The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationStatus) GetSteadyStateLastAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.steadyStateLastAchievedTime
+    val, err := m.GetBackingStore().Get("steadyStateLastAchievedTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSynchronizedEntryCountByType gets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
 func (m *SynchronizationStatus) GetSynchronizedEntryCountByType()([]StringKeyLongValuePairable) {
-    return m.synchronizedEntryCountByType
+    val, err := m.GetBackingStore().Get("synchronizedEntryCountByType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]StringKeyLongValuePairable)
+    }
+    return nil
 }
 // GetTroubleshootingUrl gets the troubleshootingUrl property value. In the event of an error, the URL with the troubleshooting steps for the issue.
 func (m *SynchronizationStatus) GetTroubleshootingUrl()(*string) {
-    return m.troubleshootingUrl
+    val, err := m.GetBackingStore().Get("troubleshootingUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SynchronizationStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -345,57 +424,137 @@ func (m *SynchronizationStatus) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationStatus) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SynchronizationStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCode sets the code property value. The code property
 func (m *SynchronizationStatus) SetCode(value *SynchronizationStatusCode)() {
-    m.code = value
+    err := m.GetBackingStore().Set("code", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountSuccessiveCompleteFailures sets the countSuccessiveCompleteFailures property value. Number of consecutive times this job failed.
 func (m *SynchronizationStatus) SetCountSuccessiveCompleteFailures(value *int64)() {
-    m.countSuccessiveCompleteFailures = value
+    err := m.GetBackingStore().Set("countSuccessiveCompleteFailures", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEscrowsPruned sets the escrowsPruned property value. true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
 func (m *SynchronizationStatus) SetEscrowsPruned(value *bool)() {
-    m.escrowsPruned = value
+    err := m.GetBackingStore().Set("escrowsPruned", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastExecution sets the lastExecution property value. Details of the last execution of the job.
 func (m *SynchronizationStatus) SetLastExecution(value SynchronizationTaskExecutionable)() {
-    m.lastExecution = value
+    err := m.GetBackingStore().Set("lastExecution", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSuccessfulExecution sets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
 func (m *SynchronizationStatus) SetLastSuccessfulExecution(value SynchronizationTaskExecutionable)() {
-    m.lastSuccessfulExecution = value
+    err := m.GetBackingStore().Set("lastSuccessfulExecution", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSuccessfulExecutionWithExports sets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
 func (m *SynchronizationStatus) SetLastSuccessfulExecutionWithExports(value SynchronizationTaskExecutionable)() {
-    m.lastSuccessfulExecutionWithExports = value
+    err := m.GetBackingStore().Set("lastSuccessfulExecutionWithExports", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationStatus) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProgress sets the progress property value. Details of the progress of a job toward completion.
 func (m *SynchronizationStatus) SetProgress(value []SynchronizationProgressable)() {
-    m.progress = value
+    err := m.GetBackingStore().Set("progress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuarantine sets the quarantine property value. If job is in quarantine, quarantine details.
 func (m *SynchronizationStatus) SetQuarantine(value SynchronizationQuarantineable)() {
-    m.quarantine = value
+    err := m.GetBackingStore().Set("quarantine", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSteadyStateFirstAchievedTime sets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationStatus) SetSteadyStateFirstAchievedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.steadyStateFirstAchievedTime = value
+    err := m.GetBackingStore().Set("steadyStateFirstAchievedTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSteadyStateLastAchievedTime sets the steadyStateLastAchievedTime property value. The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationStatus) SetSteadyStateLastAchievedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.steadyStateLastAchievedTime = value
+    err := m.GetBackingStore().Set("steadyStateLastAchievedTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSynchronizedEntryCountByType sets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
 func (m *SynchronizationStatus) SetSynchronizedEntryCountByType(value []StringKeyLongValuePairable)() {
-    m.synchronizedEntryCountByType = value
+    err := m.GetBackingStore().Set("synchronizedEntryCountByType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTroubleshootingUrl sets the troubleshootingUrl property value. In the event of an error, the URL with the troubleshooting steps for the issue.
 func (m *SynchronizationStatus) SetTroubleshootingUrl(value *string)() {
-    m.troubleshootingUrl = value
+    err := m.GetBackingStore().Set("troubleshootingUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SynchronizationStatusable 
+type SynchronizationStatusable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCode()(*SynchronizationStatusCode)
+    GetCountSuccessiveCompleteFailures()(*int64)
+    GetEscrowsPruned()(*bool)
+    GetLastExecution()(SynchronizationTaskExecutionable)
+    GetLastSuccessfulExecution()(SynchronizationTaskExecutionable)
+    GetLastSuccessfulExecutionWithExports()(SynchronizationTaskExecutionable)
+    GetOdataType()(*string)
+    GetProgress()([]SynchronizationProgressable)
+    GetQuarantine()(SynchronizationQuarantineable)
+    GetSteadyStateFirstAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSteadyStateLastAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSynchronizedEntryCountByType()([]StringKeyLongValuePairable)
+    GetTroubleshootingUrl()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCode(value *SynchronizationStatusCode)()
+    SetCountSuccessiveCompleteFailures(value *int64)()
+    SetEscrowsPruned(value *bool)()
+    SetLastExecution(value SynchronizationTaskExecutionable)()
+    SetLastSuccessfulExecution(value SynchronizationTaskExecutionable)()
+    SetLastSuccessfulExecutionWithExports(value SynchronizationTaskExecutionable)()
+    SetOdataType(value *string)()
+    SetProgress(value []SynchronizationProgressable)()
+    SetQuarantine(value SynchronizationQuarantineable)()
+    SetSteadyStateFirstAchievedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSteadyStateLastAchievedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSynchronizedEntryCountByType(value []StringKeyLongValuePairable)()
+    SetTroubleshootingUrl(value *string)()
 }

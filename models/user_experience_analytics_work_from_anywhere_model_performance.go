@@ -7,24 +7,6 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereModelPerformance the user experience analytics work from anywhere model performance.
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     Entity
-    // The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    cloudIdentityScore *float64
-    // The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    cloudManagementScore *float64
-    // The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    cloudProvisioningScore *float64
-    // The healthStatus property
-    healthStatus *UserExperienceAnalyticsHealthState
-    // The user experience work from anywhere's manufacturer name of the devices.
-    manufacturer *string
-    // The user experience work from anywhere's model name of the devices.
-    model *string
-    // The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
-    modelDeviceCount *int32
-    // The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    windowsScore *float64
-    // The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    workFromAnywhereScore *float64
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienceAnalyticsWorkFromAnywhereModelPerformance) {
@@ -39,15 +21,36 @@ func CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformanceFromDiscrimina
 }
 // GetCloudIdentityScore gets the cloudIdentityScore property value. The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudIdentityScore()(*float64) {
-    return m.cloudIdentityScore
+    val, err := m.GetBackingStore().Get("cloudIdentityScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetCloudManagementScore gets the cloudManagementScore property value. The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudManagementScore()(*float64) {
-    return m.cloudManagementScore
+    val, err := m.GetBackingStore().Get("cloudManagementScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetCloudProvisioningScore gets the cloudProvisioningScore property value. The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudProvisioningScore()(*float64) {
-    return m.cloudProvisioningScore
+    val, err := m.GetBackingStore().Get("cloudProvisioningScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -146,27 +149,69 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    return m.healthStatus
+    val, err := m.GetBackingStore().Get("healthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsHealthState)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. The user experience work from anywhere's manufacturer name of the devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetManufacturer()(*string) {
-    return m.manufacturer
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModel gets the model property value. The user experience work from anywhere's model name of the devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModel()(*string) {
-    return m.model
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModelDeviceCount gets the modelDeviceCount property value. The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModelDeviceCount()(*int32) {
-    return m.modelDeviceCount
+    val, err := m.GetBackingStore().Get("modelDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWindowsScore gets the windowsScore property value. The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWindowsScore()(*float64) {
-    return m.windowsScore
+    val, err := m.GetBackingStore().Get("windowsScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWorkFromAnywhereScore()(*float64) {
-    return m.workFromAnywhereScore
+    val, err := m.GetBackingStore().Get("workFromAnywhereScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,37 +278,87 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) Serialize(writ
 }
 // SetCloudIdentityScore sets the cloudIdentityScore property value. The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudIdentityScore(value *float64)() {
-    m.cloudIdentityScore = value
+    err := m.GetBackingStore().Set("cloudIdentityScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudManagementScore sets the cloudManagementScore property value. The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudManagementScore(value *float64)() {
-    m.cloudManagementScore = value
+    err := m.GetBackingStore().Set("cloudManagementScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudProvisioningScore sets the cloudProvisioningScore property value. The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudProvisioningScore(value *float64)() {
-    m.cloudProvisioningScore = value
+    err := m.GetBackingStore().Set("cloudProvisioningScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    m.healthStatus = value
+    err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManufacturer sets the manufacturer property value. The user experience work from anywhere's manufacturer name of the devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModel sets the model property value. The user experience work from anywhere's model name of the devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetModel(value *string)() {
-    m.model = value
+    err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModelDeviceCount sets the modelDeviceCount property value. The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetModelDeviceCount(value *int32)() {
-    m.modelDeviceCount = value
+    err := m.GetBackingStore().Set("modelDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsScore sets the windowsScore property value. The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetWindowsScore(value *float64)() {
-    m.windowsScore = value
+    err := m.GetBackingStore().Set("windowsScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetWorkFromAnywhereScore(value *float64)() {
-    m.workFromAnywhereScore = value
+    err := m.GetBackingStore().Set("workFromAnywhereScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable 
+type UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCloudIdentityScore()(*float64)
+    GetCloudManagementScore()(*float64)
+    GetCloudProvisioningScore()(*float64)
+    GetHealthStatus()(*UserExperienceAnalyticsHealthState)
+    GetManufacturer()(*string)
+    GetModel()(*string)
+    GetModelDeviceCount()(*int32)
+    GetWindowsScore()(*float64)
+    GetWorkFromAnywhereScore()(*float64)
+    SetCloudIdentityScore(value *float64)()
+    SetCloudManagementScore(value *float64)()
+    SetCloudProvisioningScore(value *float64)()
+    SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
+    SetManufacturer(value *string)()
+    SetModel(value *string)()
+    SetModelDeviceCount(value *int32)()
+    SetWindowsScore(value *float64)()
+    SetWorkFromAnywhereScore(value *float64)()
 }

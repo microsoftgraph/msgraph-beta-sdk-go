@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CustomExtensionHandlerInstance 
 type CustomExtensionHandlerInstance struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Identifier of the customAccessPackageWorkflowExtension triggered at this instance.
-    customExtensionId *string
-    // The unique run ID for the logic app.
-    externalCorrelationId *string
-    // The OdataType property
-    odataType *string
-    // Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-    stage *AccessPackageCustomExtensionStage
-    // Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
-    status *AccessPackageCustomExtensionHandlerStatus
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCustomExtensionHandlerInstance instantiates a new customExtensionHandlerInstance and sets the default values.
 func NewCustomExtensionHandlerInstance()(*CustomExtensionHandlerInstance) {
     m := &CustomExtensionHandlerInstance{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomExtensionHandlerInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,15 +24,41 @@ func CreateCustomExtensionHandlerInstanceFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomExtensionHandlerInstance) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CustomExtensionHandlerInstance) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCustomExtensionId gets the customExtensionId property value. Identifier of the customAccessPackageWorkflowExtension triggered at this instance.
 func (m *CustomExtensionHandlerInstance) GetCustomExtensionId()(*string) {
-    return m.customExtensionId
+    val, err := m.GetBackingStore().Get("customExtensionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalCorrelationId gets the externalCorrelationId property value. The unique run ID for the logic app.
 func (m *CustomExtensionHandlerInstance) GetExternalCorrelationId()(*string) {
-    return m.externalCorrelationId
+    val, err := m.GetBackingStore().Get("externalCorrelationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomExtensionHandlerInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,15 +117,36 @@ func (m *CustomExtensionHandlerInstance) GetFieldDeserializers()(map[string]func
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CustomExtensionHandlerInstance) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStage gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensionStage) {
-    return m.stage
+    val, err := m.GetBackingStore().Get("stage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessPackageCustomExtensionStage)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) GetStatus()(*AccessPackageCustomExtensionHandlerStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AccessPackageCustomExtensionHandlerStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CustomExtensionHandlerInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,25 +192,65 @@ func (m *CustomExtensionHandlerInstance) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomExtensionHandlerInstance) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CustomExtensionHandlerInstance) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCustomExtensionId sets the customExtensionId property value. Identifier of the customAccessPackageWorkflowExtension triggered at this instance.
 func (m *CustomExtensionHandlerInstance) SetCustomExtensionId(value *string)() {
-    m.customExtensionId = value
+    err := m.GetBackingStore().Set("customExtensionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalCorrelationId sets the externalCorrelationId property value. The unique run ID for the logic app.
 func (m *CustomExtensionHandlerInstance) SetExternalCorrelationId(value *string)() {
-    m.externalCorrelationId = value
+    err := m.GetBackingStore().Set("externalCorrelationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CustomExtensionHandlerInstance) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStage sets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) SetStage(value *AccessPackageCustomExtensionStage)() {
-    m.stage = value
+    err := m.GetBackingStore().Set("stage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) SetStatus(value *AccessPackageCustomExtensionHandlerStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CustomExtensionHandlerInstanceable 
+type CustomExtensionHandlerInstanceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCustomExtensionId()(*string)
+    GetExternalCorrelationId()(*string)
+    GetOdataType()(*string)
+    GetStage()(*AccessPackageCustomExtensionStage)
+    GetStatus()(*AccessPackageCustomExtensionHandlerStatus)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCustomExtensionId(value *string)()
+    SetExternalCorrelationId(value *string)()
+    SetOdataType(value *string)()
+    SetStage(value *AccessPackageCustomExtensionStage)()
+    SetStatus(value *AccessPackageCustomExtensionHandlerStatus)()
 }

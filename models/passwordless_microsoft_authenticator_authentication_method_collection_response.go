@@ -7,8 +7,6 @@ import (
 // PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse 
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable
 }
 // NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionRespons
 }
 // GetValue gets the value property value. The value property
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse) GetValue()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionRespons
 }
 // SetValue sets the value property value. The value property
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse) SetValue(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable 
+type PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)
+    SetValue(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)()
 }

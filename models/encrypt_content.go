@@ -7,16 +7,14 @@ import (
 // EncryptContent 
 type EncryptContent struct {
     LabelActionBase
-    // The encryptWith property
-    encryptWith *EncryptWith
 }
 // NewEncryptContent instantiates a new EncryptContent and sets the default values.
 func NewEncryptContent()(*EncryptContent) {
     m := &EncryptContent{
         LabelActionBase: *NewLabelActionBase(),
     }
-    odataTypeValue := "#microsoft.graph.encryptContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.encryptContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEncryptContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +43,14 @@ func CreateEncryptContentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetEncryptWith gets the encryptWith property value. The encryptWith property
 func (m *EncryptContent) GetEncryptWith()(*EncryptWith) {
-    return m.encryptWith
+    val, err := m.GetBackingStore().Get("encryptWith")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EncryptWith)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,5 +84,15 @@ func (m *EncryptContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetEncryptWith sets the encryptWith property value. The encryptWith property
 func (m *EncryptContent) SetEncryptWith(value *EncryptWith)() {
-    m.encryptWith = value
+    err := m.GetBackingStore().Set("encryptWith", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EncryptContentable 
+type EncryptContentable interface {
+    LabelActionBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEncryptWith()(*EncryptWith)
+    SetEncryptWith(value *EncryptWith)()
 }

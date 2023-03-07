@@ -2,34 +2,20 @@ package managedtenants
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WorkloadAction 
 type WorkloadAction struct {
-    // The unique identifier for the workload action. Required. Read-only.
-    actionId *string
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
-    category *WorkloadActionCategory
-    // The description for the workload action. Optional. Read-only.
-    description *string
-    // The display name for the workload action. Optional. Read-only.
-    displayName *string
-    // The licenses property
-    licenses []string
-    // The OdataType property
-    odataType *string
-    // The service associated with workload action. Optional. Read-only.
-    service *string
-    // The collection of settings associated with the workload action. Optional. Read-only.
-    settings []Settingable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWorkloadAction instantiates a new workloadAction and sets the default values.
 func NewWorkloadAction()(*WorkloadAction) {
     m := &WorkloadAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkloadActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,23 +24,63 @@ func CreateWorkloadActionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetActionId gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadAction) GetActionId()(*string) {
-    return m.actionId
+    val, err := m.GetBackingStore().Get("actionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadAction) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WorkloadAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCategory gets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
 func (m *WorkloadAction) GetCategory()(*WorkloadActionCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WorkloadActionCategory)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description for the workload action. Optional. Read-only.
 func (m *WorkloadAction) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the workload action. Optional. Read-only.
 func (m *WorkloadAction) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,19 +177,47 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetLicenses gets the licenses property value. The licenses property
 func (m *WorkloadAction) GetLicenses()([]string) {
-    return m.licenses
+    val, err := m.GetBackingStore().Get("licenses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WorkloadAction) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetService gets the service property value. The service associated with workload action. Optional. Read-only.
 func (m *WorkloadAction) GetService()(*string) {
-    return m.service
+    val, err := m.GetBackingStore().Get("service")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
 func (m *WorkloadAction) GetSettings()([]Settingable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Settingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkloadAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,37 +284,92 @@ func (m *WorkloadAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetActionId sets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadAction) SetActionId(value *string)() {
-    m.actionId = value
+    err := m.GetBackingStore().Set("actionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadAction) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WorkloadAction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCategory sets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
 func (m *WorkloadAction) SetCategory(value *WorkloadActionCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description for the workload action. Optional. Read-only.
 func (m *WorkloadAction) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the workload action. Optional. Read-only.
 func (m *WorkloadAction) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLicenses sets the licenses property value. The licenses property
 func (m *WorkloadAction) SetLicenses(value []string)() {
-    m.licenses = value
+    err := m.GetBackingStore().Set("licenses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WorkloadAction) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetService sets the service property value. The service associated with workload action. Optional. Read-only.
 func (m *WorkloadAction) SetService(value *string)() {
-    m.service = value
+    err := m.GetBackingStore().Set("service", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
 func (m *WorkloadAction) SetSettings(value []Settingable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkloadActionable 
+type WorkloadActionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionId()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCategory()(*WorkloadActionCategory)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetLicenses()([]string)
+    GetOdataType()(*string)
+    GetService()(*string)
+    GetSettings()([]Settingable)
+    SetActionId(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCategory(value *WorkloadActionCategory)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetLicenses(value []string)()
+    SetOdataType(value *string)()
+    SetService(value *string)()
+    SetSettings(value []Settingable)()
 }

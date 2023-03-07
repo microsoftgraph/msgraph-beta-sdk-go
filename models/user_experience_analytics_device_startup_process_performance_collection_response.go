@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse 
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsDeviceStartupProcessPerformanceable
 }
 // NewUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse()(*UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRespons
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse) GetValue()([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionRespons
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse) SetValue(value []UserExperienceAnalyticsDeviceStartupProcessPerformanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponseable 
+type UserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable)
+    SetValue(value []UserExperienceAnalyticsDeviceStartupProcessPerformanceable)()
 }

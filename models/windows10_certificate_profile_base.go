@@ -13,8 +13,8 @@ func NewWindows10CertificateProfileBase()(*Windows10CertificateProfileBase) {
     m := &Windows10CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10CertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10CertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,4 +51,9 @@ func (m *Windows10CertificateProfileBase) Serialize(writer i878a80d2330e89d26896
         return err
     }
     return nil
+}
+// Windows10CertificateProfileBaseable 
+type Windows10CertificateProfileBaseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsCertificateProfileBaseable
 }

@@ -60,8 +60,8 @@ func NewAndroidManagedAppProtectionsRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidManagedAppProtectionsRequestBuilder instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAndroidManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *AndroidManagedAppProtectionsRequestBuilder) Count()(*AndroidManagedAppProtectionsCountRequestBuilder) {
-    return NewAndroidManagedAppProtectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedAppProtectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get android managed app policies.
 func (m *AndroidManagedAppProtectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *AndroidManagedAppProtectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedAppProtectionCollectionResponseable, error) {
@@ -95,7 +95,7 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) Get(ctx context.Context, re
 }
 // HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *AndroidManagedAppProtectionsRequestBuilder) HasPayloadLinks()(*AndroidManagedAppProtectionsHasPayloadLinksRequestBuilder) {
-    return NewAndroidManagedAppProtectionsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAndroidManagedAppProtectionsHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to androidManagedAppProtections for deviceAppManagement
 func (m *AndroidManagedAppProtectionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedAppProtectionable, requestConfiguration *AndroidManagedAppProtectionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedAppProtectionable, error) {
@@ -139,7 +139,10 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) ToPostRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

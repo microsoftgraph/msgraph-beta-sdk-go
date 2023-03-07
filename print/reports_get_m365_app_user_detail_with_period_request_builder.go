@@ -26,7 +26,7 @@ type ReportsGetM365AppUserDetailWithPeriodRequestBuilderGetRequestConfiguration 
 func NewReportsGetM365AppUserDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetM365AppUserDetailWithPeriodRequestBuilder) {
     m := &ReportsGetM365AppUserDetailWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getM365AppUserDetail(period='{period}')";
+    m.urlTemplate = "{+baseurl}/print/reports/getM365AppUserDetail(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewReportsGetM365AppUserDetailWithPeriodRequestBuilderInternal(pathParamete
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetM365AppUserDetailWithPeriodRequestBuilder instantiates a new GetM365AppUserDetailWithPeriodRequestBuilder and sets the default values.

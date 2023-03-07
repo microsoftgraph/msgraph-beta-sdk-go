@@ -48,7 +48,7 @@ type ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilderPatchRequestConf
 }
 // AttendanceRecords provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
 func (m *ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) AttendanceRecords()(*ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder) {
-    return NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AttendanceRecordsById provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
 func (m *ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) AttendanceRecordsById(id string)(*ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) Attendance
     if id != "" {
         urlTplParams["attendanceRecord%2Did"] = id
     }
-    return NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilderInternal instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) {
@@ -70,8 +70,8 @@ func NewItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
@@ -172,7 +172,10 @@ func (m *ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

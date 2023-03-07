@@ -7,16 +7,14 @@ import (
 // UpdatableAssetGroup 
 type UpdatableAssetGroup struct {
     UpdatableAsset
-    // Members of the group. Read-only.
-    members []UpdatableAssetable
 }
 // NewUpdatableAssetGroup instantiates a new UpdatableAssetGroup and sets the default values.
 func NewUpdatableAssetGroup()(*UpdatableAssetGroup) {
     m := &UpdatableAssetGroup{
         UpdatableAsset: *NewUpdatableAsset(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.updatableAssetGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.updatableAssetGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUpdatableAssetGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *UpdatableAssetGroup) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetMembers gets the members property value. Members of the group. Read-only.
 func (m *UpdatableAssetGroup) GetMembers()([]UpdatableAssetable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UpdatableAssetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UpdatableAssetGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *UpdatableAssetGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetMembers sets the members property value. Members of the group. Read-only.
 func (m *UpdatableAssetGroup) SetMembers(value []UpdatableAssetable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UpdatableAssetGroupable 
+type UpdatableAssetGroupable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UpdatableAssetable
+    GetMembers()([]UpdatableAssetable)
+    SetMembers(value []UpdatableAssetable)()
 }

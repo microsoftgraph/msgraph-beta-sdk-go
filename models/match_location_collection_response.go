@@ -7,8 +7,6 @@ import (
 // MatchLocationCollectionResponse 
 type MatchLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MatchLocationable
 }
 // NewMatchLocationCollectionResponse instantiates a new MatchLocationCollectionResponse and sets the default values.
 func NewMatchLocationCollectionResponse()(*MatchLocationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MatchLocationCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *MatchLocationCollectionResponse) GetValue()([]MatchLocationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MatchLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MatchLocationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MatchLocationCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *MatchLocationCollectionResponse) SetValue(value []MatchLocationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MatchLocationCollectionResponseable 
+type MatchLocationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MatchLocationable)
+    SetValue(value []MatchLocationable)()
 }

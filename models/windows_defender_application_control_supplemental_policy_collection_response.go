@@ -7,8 +7,6 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse 
 type WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsDefenderApplicationControlSupplementalPolicyable
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyCollectionResponse instantiates a new WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyCollectionResponse()(*WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) 
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) GetValue()([]WindowsDefenderApplicationControlSupplementalPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsDefenderApplicationControlSupplementalPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) 
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse) SetValue(value []WindowsDefenderApplicationControlSupplementalPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDefenderApplicationControlSupplementalPolicyCollectionResponseable 
+type WindowsDefenderApplicationControlSupplementalPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsDefenderApplicationControlSupplementalPolicyable)
+    SetValue(value []WindowsDefenderApplicationControlSupplementalPolicyable)()
 }

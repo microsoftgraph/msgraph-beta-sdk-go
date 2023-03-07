@@ -7,10 +7,6 @@ import (
 // DeviceManagementConfigurationSettingTemplate setting Template
 type DeviceManagementConfigurationSettingTemplate struct {
     Entity
-    // List of related Setting Definitions
-    settingDefinitions []DeviceManagementConfigurationSettingDefinitionable
-    // Setting Instance Template
-    settingInstanceTemplate DeviceManagementConfigurationSettingInstanceTemplateable
 }
 // NewDeviceManagementConfigurationSettingTemplate instantiates a new deviceManagementConfigurationSettingTemplate and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplate()(*DeviceManagementConfigurationSettingTemplate) {
@@ -54,11 +50,25 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(m
 }
 // GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable) {
-    return m.settingDefinitions
+    val, err := m.GetBackingStore().Get("settingDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingDefinitionable)
+    }
+    return nil
 }
 // GetSettingInstanceTemplate gets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) GetSettingInstanceTemplate()(DeviceManagementConfigurationSettingInstanceTemplateable) {
-    return m.settingInstanceTemplate
+    val, err := m.GetBackingStore().Get("settingInstanceTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationSettingInstanceTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i878a80d
 }
 // SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinitionable)() {
-    m.settingDefinitions = value
+    err := m.GetBackingStore().Set("settingDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettingInstanceTemplate sets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingInstanceTemplate(value DeviceManagementConfigurationSettingInstanceTemplateable)() {
-    m.settingInstanceTemplate = value
+    err := m.GetBackingStore().Set("settingInstanceTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingTemplateable 
+type DeviceManagementConfigurationSettingTemplateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable)
+    GetSettingInstanceTemplate()(DeviceManagementConfigurationSettingInstanceTemplateable)
+    SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinitionable)()
+    SetSettingInstanceTemplate(value DeviceManagementConfigurationSettingInstanceTemplateable)()
 }

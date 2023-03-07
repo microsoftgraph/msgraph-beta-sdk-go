@@ -55,8 +55,8 @@ func NewDeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScript
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder instantiates a new DeviceManagementScriptUserStateItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScrip
 }
 // DeviceRunStates provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStates()(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) {
-    return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScrip
     if id != "" {
         urlTplParams["deviceManagementScriptDeviceState%2Did"] = id
     }
-    return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get list of run states for this script across all users.
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, error) {
@@ -169,7 +169,10 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesDeviceManagementScrip
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,16 +7,14 @@ import (
 // DeviceManagementCollectionSettingInstance 
 type DeviceManagementCollectionSettingInstance struct {
     DeviceManagementSettingInstance
-    // The collection of values
-    value []DeviceManagementSettingInstanceable
 }
 // NewDeviceManagementCollectionSettingInstance instantiates a new DeviceManagementCollectionSettingInstance and sets the default values.
 func NewDeviceManagementCollectionSettingInstance()(*DeviceManagementCollectionSettingInstance) {
     m := &DeviceManagementCollectionSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementCollectionSettingInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementCollectionSettingInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementCollectionSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *DeviceManagementCollectionSettingInstance) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The collection of values
 func (m *DeviceManagementCollectionSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementCollectionSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *DeviceManagementCollectionSettingInstance) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The collection of values
 func (m *DeviceManagementCollectionSettingInstance) SetValue(value []DeviceManagementSettingInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementCollectionSettingInstanceable 
+type DeviceManagementCollectionSettingInstanceable interface {
+    DeviceManagementSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementSettingInstanceable)
+    SetValue(value []DeviceManagementSettingInstanceable)()
 }
