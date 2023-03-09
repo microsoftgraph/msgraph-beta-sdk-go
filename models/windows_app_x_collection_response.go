@@ -7,8 +7,6 @@ import (
 // WindowsAppXCollectionResponse 
 type WindowsAppXCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsAppXable
 }
 // NewWindowsAppXCollectionResponse instantiates a new WindowsAppXCollectionResponse and sets the default values.
 func NewWindowsAppXCollectionResponse()(*WindowsAppXCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsAppXCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsAppXCollectionResponse) GetValue()([]WindowsAppXable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsAppXable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAppXCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsAppXCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsAppXCollectionResponse) SetValue(value []WindowsAppXable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAppXCollectionResponseable 
+type WindowsAppXCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsAppXable)
+    SetValue(value []WindowsAppXable)()
 }

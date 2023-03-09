@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationSimpleSettingInstanceTemplate 
 type DeviceManagementConfigurationSimpleSettingInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
-    // Simple Setting Value Template
-    simpleSettingValueTemplate DeviceManagementConfigurationSimpleSettingValueTemplateable
 }
 // NewDeviceManagementConfigurationSimpleSettingInstanceTemplate instantiates a new DeviceManagementConfigurationSimpleSettingInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingInstanceTemplate()(*DeviceManagementConfigurationSimpleSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationSimpleSettingInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstanceTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstanceTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) GetFieldDes
 }
 // GetSimpleSettingValueTemplate gets the simpleSettingValueTemplate property value. Simple Setting Value Template
 func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) GetSimpleSettingValueTemplate()(DeviceManagementConfigurationSimpleSettingValueTemplateable) {
-    return m.simpleSettingValueTemplate
+    val, err := m.GetBackingStore().Get("simpleSettingValueTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationSimpleSettingValueTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) Serialize(w
 }
 // SetSimpleSettingValueTemplate sets the simpleSettingValueTemplate property value. Simple Setting Value Template
 func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) SetSimpleSettingValueTemplate(value DeviceManagementConfigurationSimpleSettingValueTemplateable)() {
-    m.simpleSettingValueTemplate = value
+    err := m.GetBackingStore().Set("simpleSettingValueTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSimpleSettingInstanceTemplateable 
+type DeviceManagementConfigurationSimpleSettingInstanceTemplateable interface {
+    DeviceManagementConfigurationSettingInstanceTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSimpleSettingValueTemplate()(DeviceManagementConfigurationSimpleSettingValueTemplateable)
+    SetSimpleSettingValueTemplate(value DeviceManagementConfigurationSimpleSettingValueTemplateable)()
 }

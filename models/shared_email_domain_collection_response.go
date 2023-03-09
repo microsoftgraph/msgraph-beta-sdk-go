@@ -7,8 +7,6 @@ import (
 // SharedEmailDomainCollectionResponse 
 type SharedEmailDomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SharedEmailDomainable
 }
 // NewSharedEmailDomainCollectionResponse instantiates a new SharedEmailDomainCollectionResponse and sets the default values.
 func NewSharedEmailDomainCollectionResponse()(*SharedEmailDomainCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SharedEmailDomainCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *SharedEmailDomainCollectionResponse) GetValue()([]SharedEmailDomainable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharedEmailDomainable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharedEmailDomainCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SharedEmailDomainCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *SharedEmailDomainCollectionResponse) SetValue(value []SharedEmailDomainable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharedEmailDomainCollectionResponseable 
+type SharedEmailDomainCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SharedEmailDomainable)
+    SetValue(value []SharedEmailDomainable)()
 }

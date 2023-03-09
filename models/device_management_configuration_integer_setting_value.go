@@ -7,16 +7,14 @@ import (
 // DeviceManagementConfigurationIntegerSettingValue 
 type DeviceManagementConfigurationIntegerSettingValue struct {
     DeviceManagementConfigurationSimpleSettingValue
-    // Value of the integer setting.
-    value *int32
 }
 // NewDeviceManagementConfigurationIntegerSettingValue instantiates a new DeviceManagementConfigurationIntegerSettingValue and sets the default values.
 func NewDeviceManagementConfigurationIntegerSettingValue()(*DeviceManagementConfigurationIntegerSettingValue) {
     m := &DeviceManagementConfigurationIntegerSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationIntegerSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *DeviceManagementConfigurationIntegerSettingValue) GetFieldDeserializers
 }
 // GetValue gets the value property value. Value of the integer setting.
 func (m *DeviceManagementConfigurationIntegerSettingValue) GetValue()(*int32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationIntegerSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceManagementConfigurationIntegerSettingValue) Serialize(writer i878
 }
 // SetValue sets the value property value. Value of the integer setting.
 func (m *DeviceManagementConfigurationIntegerSettingValue) SetValue(value *int32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationIntegerSettingValueable 
+type DeviceManagementConfigurationIntegerSettingValueable interface {
+    DeviceManagementConfigurationSimpleSettingValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*int32)
+    SetValue(value *int32)()
 }

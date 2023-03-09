@@ -58,8 +58,8 @@ func NewItemTeamDefinitionScheduleSchedulingGroupsRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionScheduleSchedulingGroupsRequestBuilder instantiates a new SchedulingGroupsRequestBuilder and sets the default values.
@@ -70,7 +70,7 @@ func NewItemTeamDefinitionScheduleSchedulingGroupsRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamDefinitionScheduleSchedulingGroupsRequestBuilder) Count()(*ItemTeamDefinitionScheduleSchedulingGroupsCountRequestBuilder) {
-    return NewItemTeamDefinitionScheduleSchedulingGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamDefinitionScheduleSchedulingGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of schedulingGroups in this schedule.
 // [Find more info here]
@@ -139,7 +139,10 @@ func (m *ItemTeamDefinitionScheduleSchedulingGroupsRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

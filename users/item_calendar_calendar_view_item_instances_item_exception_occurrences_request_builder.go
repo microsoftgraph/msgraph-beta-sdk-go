@@ -51,8 +51,8 @@ func NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
@@ -63,11 +63,11 @@ func NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuil
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) Count()(*ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesCountRequestBuilder) {
-    return NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) Delta()(*ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesDeltaRequestBuilder) {
-    return NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get exceptionOccurrences from users
 func (m *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewItemInstancesItemExceptionOccurrencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {

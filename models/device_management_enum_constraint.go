@@ -7,16 +7,14 @@ import (
 // DeviceManagementEnumConstraint 
 type DeviceManagementEnumConstraint struct {
     DeviceManagementConstraint
-    // List of valid values for this string
-    values []DeviceManagementEnumValueable
 }
 // NewDeviceManagementEnumConstraint instantiates a new DeviceManagementEnumConstraint and sets the default values.
 func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {
     m := &DeviceManagementEnumConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementEnumConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementEnumConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementEnumConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *DeviceManagementEnumConstraint) GetFieldDeserializers()(map[string]func
 }
 // GetValues gets the values property value. List of valid values for this string
 func (m *DeviceManagementEnumConstraint) GetValues()([]DeviceManagementEnumValueable) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementEnumValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementEnumConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *DeviceManagementEnumConstraint) Serialize(writer i878a80d2330e89d268963
 }
 // SetValues sets the values property value. List of valid values for this string
 func (m *DeviceManagementEnumConstraint) SetValues(value []DeviceManagementEnumValueable)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementEnumConstraintable 
+type DeviceManagementEnumConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValues()([]DeviceManagementEnumValueable)
+    SetValues(value []DeviceManagementEnumValueable)()
 }

@@ -7,8 +7,6 @@ import (
 // AllowedValue 
 type AllowedValue struct {
     Entity
-    // Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
-    isActive *bool
 }
 // NewAllowedValue instantiates a new allowedValue and sets the default values.
 func NewAllowedValue()(*AllowedValue) {
@@ -38,7 +36,14 @@ func (m *AllowedValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsActive gets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) GetIsActive()(*bool) {
-    return m.isActive
+    val, err := m.GetBackingStore().Get("isActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AllowedValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *AllowedValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetIsActive sets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) SetIsActive(value *bool)() {
-    m.isActive = value
+    err := m.GetBackingStore().Set("isActive", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AllowedValueable 
+type AllowedValueable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsActive()(*bool)
+    SetIsActive(value *bool)()
 }

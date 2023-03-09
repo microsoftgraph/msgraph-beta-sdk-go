@@ -7,8 +7,6 @@ import (
 // TeamworkDeviceOperationCollectionResponse 
 type TeamworkDeviceOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeamworkDeviceOperationable
 }
 // NewTeamworkDeviceOperationCollectionResponse instantiates a new TeamworkDeviceOperationCollectionResponse and sets the default values.
 func NewTeamworkDeviceOperationCollectionResponse()(*TeamworkDeviceOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeamworkDeviceOperationCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *TeamworkDeviceOperationCollectionResponse) GetValue()([]TeamworkDeviceOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkDeviceOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeamworkDeviceOperationCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *TeamworkDeviceOperationCollectionResponse) SetValue(value []TeamworkDeviceOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkDeviceOperationCollectionResponseable 
+type TeamworkDeviceOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeamworkDeviceOperationable)
+    SetValue(value []TeamworkDeviceOperationable)()
 }

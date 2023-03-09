@@ -7,8 +7,6 @@ import (
 // TargetedManagedAppConfigurationPolicySetItemCollectionResponse 
 type TargetedManagedAppConfigurationPolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TargetedManagedAppConfigurationPolicySetItemable
 }
 // NewTargetedManagedAppConfigurationPolicySetItemCollectionResponse instantiates a new TargetedManagedAppConfigurationPolicySetItemCollectionResponse and sets the default values.
 func NewTargetedManagedAppConfigurationPolicySetItemCollectionResponse()(*TargetedManagedAppConfigurationPolicySetItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TargetedManagedAppConfigurationPolicySetItemCollectionResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *TargetedManagedAppConfigurationPolicySetItemCollectionResponse) GetValue()([]TargetedManagedAppConfigurationPolicySetItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TargetedManagedAppConfigurationPolicySetItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppConfigurationPolicySetItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TargetedManagedAppConfigurationPolicySetItemCollectionResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *TargetedManagedAppConfigurationPolicySetItemCollectionResponse) SetValue(value []TargetedManagedAppConfigurationPolicySetItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TargetedManagedAppConfigurationPolicySetItemCollectionResponseable 
+type TargetedManagedAppConfigurationPolicySetItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TargetedManagedAppConfigurationPolicySetItemable)
+    SetValue(value []TargetedManagedAppConfigurationPolicySetItemable)()
 }

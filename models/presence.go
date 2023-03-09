@@ -7,14 +7,6 @@ import (
 // Presence 
 type Presence struct {
     Entity
-    // The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
-    activity *string
-    // The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
-    availability *string
-    // The out of office settings for a user.
-    outOfOfficeSettings OutOfOfficeSettingsable
-    // The presence status message of a user.
-    statusMessage PresenceStatusMessageable
 }
 // NewPresence instantiates a new presence and sets the default values.
 func NewPresence()(*Presence) {
@@ -29,11 +21,25 @@ func CreatePresenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
 func (m *Presence) GetActivity()(*string) {
-    return m.activity
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
 func (m *Presence) GetAvailability()(*string) {
-    return m.availability
+    val, err := m.GetBackingStore().Get("availability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,11 +88,25 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The out of office settings for a user.
 func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
-    return m.outOfOfficeSettings
+    val, err := m.GetBackingStore().Get("outOfOfficeSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OutOfOfficeSettingsable)
+    }
+    return nil
 }
 // GetStatusMessage gets the statusMessage property value. The presence status message of a user.
 func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
-    return m.statusMessage
+    val, err := m.GetBackingStore().Get("statusMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PresenceStatusMessageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
 func (m *Presence) SetActivity(value *string)() {
-    m.activity = value
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
 func (m *Presence) SetAvailability(value *string)() {
-    m.availability = value
+    err := m.GetBackingStore().Set("availability", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOutOfOfficeSettings sets the outOfOfficeSettings property value. The out of office settings for a user.
 func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
-    m.outOfOfficeSettings = value
+    err := m.GetBackingStore().Set("outOfOfficeSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatusMessage sets the statusMessage property value. The presence status message of a user.
 func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
-    m.statusMessage = value
+    err := m.GetBackingStore().Set("statusMessage", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Presenceable 
+type Presenceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivity()(*string)
+    GetAvailability()(*string)
+    GetOutOfOfficeSettings()(OutOfOfficeSettingsable)
+    GetStatusMessage()(PresenceStatusMessageable)
+    SetActivity(value *string)()
+    SetAvailability(value *string)()
+    SetOutOfOfficeSettings(value OutOfOfficeSettingsable)()
+    SetStatusMessage(value PresenceStatusMessageable)()
 }

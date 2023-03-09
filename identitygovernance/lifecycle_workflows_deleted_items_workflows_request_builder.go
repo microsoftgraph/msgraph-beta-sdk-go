@@ -53,8 +53,8 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder instantiates a new WorkflowsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder(rawUrl string, req
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Count()(*LifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilder) {
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the deleted workflow objects and their properties.
 // [Find more info here]

@@ -55,8 +55,8 @@ func NewPrivilegedRoleAssignmentItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedRoleAssignmentItemRequestBuilder instantiates a new PrivilegedRoleAssignmentItemRequestBuilder and sets the default values.
@@ -108,13 +108,13 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, re
 }
 // MakeEligible provides operations to call the makeEligible method.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakeEligible()(*ItemMakeEligibleRequestBuilder) {
-    return NewItemMakeEligibleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMakeEligibleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MakePermanent provides operations to call the makePermanent method.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakePermanent()(*ItemMakePermanentRequestBuilder) {
-    return NewItemMakePermanentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMakePermanentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Patch update entity in privilegedRoleAssignments by key (id)
+// Patch update entity in privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, 
 }
 // RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedRoleAssignment entity.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) RoleInfo()(*ItemRoleInfoRequestBuilder) {
-    return NewItemRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete privilegedRoleAssignment.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -165,14 +165,17 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in privilegedRoleAssignments by key (id)
+// ToPatchRequestInformation update entity in privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // MacOSWiredNetworkConfigurationCollectionResponse 
 type MacOSWiredNetworkConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSWiredNetworkConfigurationable
 }
 // NewMacOSWiredNetworkConfigurationCollectionResponse instantiates a new MacOSWiredNetworkConfigurationCollectionResponse and sets the default values.
 func NewMacOSWiredNetworkConfigurationCollectionResponse()(*MacOSWiredNetworkConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSWiredNetworkConfigurationCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSWiredNetworkConfigurationCollectionResponse) GetValue()([]MacOSWiredNetworkConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSWiredNetworkConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSWiredNetworkConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSWiredNetworkConfigurationCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSWiredNetworkConfigurationCollectionResponse) SetValue(value []MacOSWiredNetworkConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSWiredNetworkConfigurationCollectionResponseable 
+type MacOSWiredNetworkConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSWiredNetworkConfigurationable)
+    SetValue(value []MacOSWiredNetworkConfigurationable)()
 }

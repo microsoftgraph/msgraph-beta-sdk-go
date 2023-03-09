@@ -2,36 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ObjectMapping 
 type ObjectMapping struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
-    attributeMappings []AttributeMappingable
-    // When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
-    enabled *bool
-    // The flowTypes property
-    flowTypes *ObjectFlowTypes
-    // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntryable
-    // Human-friendly name of the object mapping.
-    name *string
-    // The OdataType property
-    odataType *string
-    // Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
-    scope Filterable
-    // Name of the object in the source directory. Must match the object name from the source directory definition.
-    sourceObjectName *string
-    // Name of the object in target directory. Must match the object name from the target directory definition.
-    targetObjectName *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewObjectMapping instantiates a new objectMapping and sets the default values.
 func NewObjectMapping()(*ObjectMapping) {
     m := &ObjectMapping{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateObjectMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,15 +24,41 @@ func CreateObjectMappingFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectMapping) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAttributeMappings gets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
 func (m *ObjectMapping) GetAttributeMappings()([]AttributeMappingable) {
-    return m.attributeMappings
+    val, err := m.GetBackingStore().Get("attributeMappings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeMappingable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ObjectMapping) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEnabled gets the enabled property value. When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
 func (m *ObjectMapping) GetEnabled()(*bool) {
-    return m.enabled
+    val, err := m.GetBackingStore().Get("enabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,31 +165,80 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetFlowTypes gets the flowTypes property value. The flowTypes property
 func (m *ObjectMapping) GetFlowTypes()(*ObjectFlowTypes) {
-    return m.flowTypes
+    val, err := m.GetBackingStore().Get("flowTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ObjectFlowTypes)
+    }
+    return nil
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *ObjectMapping) GetMetadata()([]MetadataEntryable) {
-    return m.metadata
+    val, err := m.GetBackingStore().Get("metadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MetadataEntryable)
+    }
+    return nil
 }
 // GetName gets the name property value. Human-friendly name of the object mapping.
 func (m *ObjectMapping) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ObjectMapping) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScope gets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
 func (m *ObjectMapping) GetScope()(Filterable) {
-    return m.scope
+    val, err := m.GetBackingStore().Get("scope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Filterable)
+    }
+    return nil
 }
 // GetSourceObjectName gets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.
 func (m *ObjectMapping) GetSourceObjectName()(*string) {
-    return m.sourceObjectName
+    val, err := m.GetBackingStore().Get("sourceObjectName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetObjectName gets the targetObjectName property value. Name of the object in target directory. Must match the object name from the target directory definition.
 func (m *ObjectMapping) GetTargetObjectName()(*string) {
-    return m.targetObjectName
+    val, err := m.GetBackingStore().Get("targetObjectName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ObjectMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -256,41 +315,101 @@ func (m *ObjectMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectMapping) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributeMappings sets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
 func (m *ObjectMapping) SetAttributeMappings(value []AttributeMappingable)() {
-    m.attributeMappings = value
+    err := m.GetBackingStore().Set("attributeMappings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ObjectMapping) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEnabled sets the enabled property value. When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
 func (m *ObjectMapping) SetEnabled(value *bool)() {
-    m.enabled = value
+    err := m.GetBackingStore().Set("enabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFlowTypes sets the flowTypes property value. The flowTypes property
 func (m *ObjectMapping) SetFlowTypes(value *ObjectFlowTypes)() {
-    m.flowTypes = value
+    err := m.GetBackingStore().Set("flowTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *ObjectMapping) SetMetadata(value []MetadataEntryable)() {
-    m.metadata = value
+    err := m.GetBackingStore().Set("metadata", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Human-friendly name of the object mapping.
 func (m *ObjectMapping) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ObjectMapping) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScope sets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
 func (m *ObjectMapping) SetScope(value Filterable)() {
-    m.scope = value
+    err := m.GetBackingStore().Set("scope", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceObjectName sets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.
 func (m *ObjectMapping) SetSourceObjectName(value *string)() {
-    m.sourceObjectName = value
+    err := m.GetBackingStore().Set("sourceObjectName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetObjectName sets the targetObjectName property value. Name of the object in target directory. Must match the object name from the target directory definition.
 func (m *ObjectMapping) SetTargetObjectName(value *string)() {
-    m.targetObjectName = value
+    err := m.GetBackingStore().Set("targetObjectName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ObjectMappingable 
+type ObjectMappingable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttributeMappings()([]AttributeMappingable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEnabled()(*bool)
+    GetFlowTypes()(*ObjectFlowTypes)
+    GetMetadata()([]MetadataEntryable)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetScope()(Filterable)
+    GetSourceObjectName()(*string)
+    GetTargetObjectName()(*string)
+    SetAttributeMappings(value []AttributeMappingable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEnabled(value *bool)()
+    SetFlowTypes(value *ObjectFlowTypes)()
+    SetMetadata(value []MetadataEntryable)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetScope(value Filterable)()
+    SetSourceObjectName(value *string)()
+    SetTargetObjectName(value *string)()
 }

@@ -26,7 +26,7 @@ type GetEmailActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration s
 func NewGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetEmailActivityUserCountsWithPeriodRequestBuilder) {
     m := &GetEmailActivityUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getEmailActivityUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/getEmailActivityUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(pathParameter
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetEmailActivityUserCountsWithPeriodRequestBuilder instantiates a new GetEmailActivityUserCountsWithPeriodRequestBuilder and sets the default values.

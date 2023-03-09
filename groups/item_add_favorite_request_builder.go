@@ -26,13 +26,13 @@ type ItemAddFavoriteRequestBuilderPostRequestConfiguration struct {
 func NewItemAddFavoriteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAddFavoriteRequestBuilder) {
     m := &ItemAddFavoriteRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/microsoft.graph.addFavorite";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/addFavorite";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAddFavoriteRequestBuilder instantiates a new AddFavoriteRequestBuilder and sets the default values.

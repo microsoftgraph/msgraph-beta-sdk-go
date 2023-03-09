@@ -7,8 +7,6 @@ import (
 // PlannerUserCollectionResponse 
 type PlannerUserCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerUserable
 }
 // NewPlannerUserCollectionResponse instantiates a new PlannerUserCollectionResponse and sets the default values.
 func NewPlannerUserCollectionResponse()(*PlannerUserCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerUserCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerUserCollectionResponse) GetValue()([]PlannerUserable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerUserable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerUserCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerUserCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerUserCollectionResponse) SetValue(value []PlannerUserable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerUserCollectionResponseable 
+type PlannerUserCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerUserable)
+    SetValue(value []PlannerUserable)()
 }

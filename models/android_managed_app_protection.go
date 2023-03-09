@@ -7,96 +7,14 @@ import (
 // AndroidManagedAppProtection 
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
-    // Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
-    allowedAndroidDeviceManufacturers *string
-    // List of device models allowed, as a string, for the managed app to work.
-    allowedAndroidDeviceModels []string
-    // An admin initiated action to be applied on a managed app.
-    appActionIfAndroidDeviceManufacturerNotAllowed *ManagedAppRemediationAction
-    // An admin initiated action to be applied on a managed app.
-    appActionIfAndroidDeviceModelNotAllowed *ManagedAppRemediationAction
-    // An admin initiated action to be applied on a managed app.
-    appActionIfAndroidSafetyNetAppsVerificationFailed *ManagedAppRemediationAction
-    // An admin initiated action to be applied on a managed app.
-    appActionIfAndroidSafetyNetDeviceAttestationFailed *ManagedAppRemediationAction
-    // An admin initiated action to be applied on a managed app.
-    appActionIfDeviceLockNotSet *ManagedAppRemediationAction
-    // If the device does not have a passcode of high complexity or higher, trigger the stored action.
-    appActionIfDevicePasscodeComplexityLessThanHigh *ManagedAppRemediationAction
-    // If the device does not have a passcode of low complexity or higher, trigger the stored action.
-    appActionIfDevicePasscodeComplexityLessThanLow *ManagedAppRemediationAction
-    // If the device does not have a passcode of medium complexity or higher, trigger the stored action.
-    appActionIfDevicePasscodeComplexityLessThanMedium *ManagedAppRemediationAction
-    // If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-    approvedKeyboards []KeyValuePairable
-    // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable
-    // Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
-    biometricAuthenticationBlocked *bool
-    // Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
-    blockAfterCompanyPortalUpdateDeferralInDays *int32
-    // Whether the app should connect to the configured VPN on launch.
-    connectToVpnOnLaunch *bool
-    // Friendly name of the preferred custom browser to open weblink on Android.
-    customBrowserDisplayName *string
-    // Unique identifier of a custom browser to open weblink on Android.
-    customBrowserPackageId *string
-    // Friendly name of a custom dialer app to click-to-open a phone number on Android.
-    customDialerAppDisplayName *string
-    // PackageId of a custom dialer app to click-to-open a phone number on Android.
-    customDialerAppPackageId *string
-    // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32
-    // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable
-    // Defines if any kind of lock must be required on android device
-    deviceLockRequired *bool
-    // When this setting is enabled, app level encryption is disabled if device level encryption is enabled
-    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool
-    // Indicates whether application data for managed apps should be encrypted
-    encryptAppData *bool
-    // App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-    exemptedAppPackages []KeyValuePairable
-    // If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.
-    fingerprintAndBiometricEnabled *bool
-    // Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
-    keyboardsRestricted *bool
-    // Minimum version of the Company portal that must be installed on the device or app access will be blocked
-    minimumRequiredCompanyPortalVersion *string
-    // Define the oldest required Android security patch level a user can have to gain secure access to the app.
-    minimumRequiredPatchVersion *string
-    // Minimum version of the Company portal that must be installed on the device or the user will receive a warning
-    minimumWarningCompanyPortalVersion *string
-    // Define the oldest recommended Android security patch level a user can have for secure access to the app.
-    minimumWarningPatchVersion *string
-    // Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
-    minimumWipeCompanyPortalVersion *string
-    // Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
-    minimumWipePatchVersion *string
-    // Require user to apply Class 3 Biometrics on their Android device.
-    requireClass3Biometrics *bool
-    // An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
-    requiredAndroidSafetyNetAppsVerificationType *AndroidManagedAppSafetyNetAppsVerificationType
-    // An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
-    requiredAndroidSafetyNetDeviceAttestationType *AndroidManagedAppSafetyNetDeviceAttestationType
-    // An admin enforced Android SafetyNet evaluation type requirement on a managed app.
-    requiredAndroidSafetyNetEvaluationType *AndroidManagedAppSafetyNetEvaluationType
-    // A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
-    requirePinAfterBiometricChange *bool
-    // Indicates whether a managed user can take screen captures of managed apps
-    screenCaptureBlocked *bool
-    // Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
-    warnAfterCompanyPortalUpdateDeferralInDays *int32
-    // Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
-    wipeAfterCompanyPortalUpdateDeferralInDays *int32
 }
 // NewAndroidManagedAppProtection instantiates a new AndroidManagedAppProtection and sets the default values.
 func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
     m := &AndroidManagedAppProtection{
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedAppProtection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedAppProtection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -105,103 +23,278 @@ func CreateAndroidManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAllowedAndroidDeviceManufacturers gets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
 func (m *AndroidManagedAppProtection) GetAllowedAndroidDeviceManufacturers()(*string) {
-    return m.allowedAndroidDeviceManufacturers
+    val, err := m.GetBackingStore().Get("allowedAndroidDeviceManufacturers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAllowedAndroidDeviceModels gets the allowedAndroidDeviceModels property value. List of device models allowed, as a string, for the managed app to work.
 func (m *AndroidManagedAppProtection) GetAllowedAndroidDeviceModels()([]string) {
-    return m.allowedAndroidDeviceModels
+    val, err := m.GetBackingStore().Get("allowedAndroidDeviceModels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetAppActionIfAndroidDeviceManufacturerNotAllowed gets the appActionIfAndroidDeviceManufacturerNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction) {
-    return m.appActionIfAndroidDeviceManufacturerNotAllowed
+    val, err := m.GetBackingStore().Get("appActionIfAndroidDeviceManufacturerNotAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfAndroidDeviceModelNotAllowed gets the appActionIfAndroidDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
-    return m.appActionIfAndroidDeviceModelNotAllowed
+    val, err := m.GetBackingStore().Get("appActionIfAndroidDeviceModelNotAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfAndroidSafetyNetAppsVerificationFailed gets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction) {
-    return m.appActionIfAndroidSafetyNetAppsVerificationFailed
+    val, err := m.GetBackingStore().Get("appActionIfAndroidSafetyNetAppsVerificationFailed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfAndroidSafetyNetDeviceAttestationFailed gets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()(*ManagedAppRemediationAction) {
-    return m.appActionIfAndroidSafetyNetDeviceAttestationFailed
+    val, err := m.GetBackingStore().Get("appActionIfAndroidSafetyNetDeviceAttestationFailed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfDeviceLockNotSet gets the appActionIfDeviceLockNotSet property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction) {
-    return m.appActionIfDeviceLockNotSet
+    val, err := m.GetBackingStore().Get("appActionIfDeviceLockNotSet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
 func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction) {
-    return m.appActionIfDevicePasscodeComplexityLessThanHigh
+    val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanHigh")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
 func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction) {
-    return m.appActionIfDevicePasscodeComplexityLessThanLow
+    val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanLow")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
 func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction) {
-    return m.appActionIfDevicePasscodeComplexityLessThanMedium
+    val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanMedium")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
 }
 // GetApprovedKeyboards gets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
 func (m *AndroidManagedAppProtection) GetApprovedKeyboards()([]KeyValuePairable) {
-    return m.approvedKeyboards
+    val, err := m.GetBackingStore().Get("approvedKeyboards")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileAppable) {
-    return m.apps
+    val, err := m.GetBackingStore().Get("apps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedMobileAppable)
+    }
+    return nil
 }
 // GetBiometricAuthenticationBlocked gets the biometricAuthenticationBlocked property value. Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
 func (m *AndroidManagedAppProtection) GetBiometricAuthenticationBlocked()(*bool) {
-    return m.biometricAuthenticationBlocked
+    val, err := m.GetBackingStore().Get("biometricAuthenticationBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockAfterCompanyPortalUpdateDeferralInDays gets the blockAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
 func (m *AndroidManagedAppProtection) GetBlockAfterCompanyPortalUpdateDeferralInDays()(*int32) {
-    return m.blockAfterCompanyPortalUpdateDeferralInDays
+    val, err := m.GetBackingStore().Get("blockAfterCompanyPortalUpdateDeferralInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConnectToVpnOnLaunch gets the connectToVpnOnLaunch property value. Whether the app should connect to the configured VPN on launch.
 func (m *AndroidManagedAppProtection) GetConnectToVpnOnLaunch()(*bool) {
-    return m.connectToVpnOnLaunch
+    val, err := m.GetBackingStore().Get("connectToVpnOnLaunch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
-    return m.customBrowserDisplayName
+    val, err := m.GetBackingStore().Get("customBrowserDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
-    return m.customBrowserPackageId
+    val, err := m.GetBackingStore().Get("customBrowserPackageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomDialerAppDisplayName gets the customDialerAppDisplayName property value. Friendly name of a custom dialer app to click-to-open a phone number on Android.
 func (m *AndroidManagedAppProtection) GetCustomDialerAppDisplayName()(*string) {
-    return m.customDialerAppDisplayName
+    val, err := m.GetBackingStore().Get("customDialerAppDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomDialerAppPackageId gets the customDialerAppPackageId property value. PackageId of a custom dialer app to click-to-open a phone number on Android.
 func (m *AndroidManagedAppProtection) GetCustomDialerAppPackageId()(*string) {
-    return m.customDialerAppPackageId
+    val, err := m.GetBackingStore().Get("customDialerAppPackageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *AndroidManagedAppProtection) GetDeployedAppCount()(*int32) {
-    return m.deployedAppCount
+    val, err := m.GetBackingStore().Get("deployedAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *AndroidManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
-    return m.deploymentSummary
+    val, err := m.GetBackingStore().Get("deploymentSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedAppPolicyDeploymentSummaryable)
+    }
+    return nil
 }
 // GetDeviceLockRequired gets the deviceLockRequired property value. Defines if any kind of lock must be required on android device
 func (m *AndroidManagedAppProtection) GetDeviceLockRequired()(*bool) {
-    return m.deviceLockRequired
+    val, err := m.GetBackingStore().Get("deviceLockRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisableAppEncryptionIfDeviceEncryptionIsEnabled gets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
 func (m *AndroidManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool) {
-    return m.disableAppEncryptionIfDeviceEncryptionIsEnabled
+    val, err := m.GetBackingStore().Get("disableAppEncryptionIfDeviceEncryptionIsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEncryptAppData gets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
 func (m *AndroidManagedAppProtection) GetEncryptAppData()(*bool) {
-    return m.encryptAppData
+    val, err := m.GetBackingStore().Get("encryptAppData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetExemptedAppPackages gets the exemptedAppPackages property value. App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
 func (m *AndroidManagedAppProtection) GetExemptedAppPackages()([]KeyValuePairable) {
-    return m.exemptedAppPackages
+    val, err := m.GetBackingStore().Get("exemptedAppPackages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -636,67 +729,179 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFingerprintAndBiometricEnabled gets the fingerprintAndBiometricEnabled property value. If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.
 func (m *AndroidManagedAppProtection) GetFingerprintAndBiometricEnabled()(*bool) {
-    return m.fingerprintAndBiometricEnabled
+    val, err := m.GetBackingStore().Get("fingerprintAndBiometricEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKeyboardsRestricted gets the keyboardsRestricted property value. Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
 func (m *AndroidManagedAppProtection) GetKeyboardsRestricted()(*bool) {
-    return m.keyboardsRestricted
+    val, err := m.GetBackingStore().Get("keyboardsRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMinimumRequiredCompanyPortalVersion gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *AndroidManagedAppProtection) GetMinimumRequiredCompanyPortalVersion()(*string) {
-    return m.minimumRequiredCompanyPortalVersion
+    val, err := m.GetBackingStore().Get("minimumRequiredCompanyPortalVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
 func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
-    return m.minimumRequiredPatchVersion
+    val, err := m.GetBackingStore().Get("minimumRequiredPatchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumWarningCompanyPortalVersion gets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
 func (m *AndroidManagedAppProtection) GetMinimumWarningCompanyPortalVersion()(*string) {
-    return m.minimumWarningCompanyPortalVersion
+    val, err := m.GetBackingStore().Get("minimumWarningCompanyPortalVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
 func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
-    return m.minimumWarningPatchVersion
+    val, err := m.GetBackingStore().Get("minimumWarningPatchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumWipeCompanyPortalVersion gets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
 func (m *AndroidManagedAppProtection) GetMinimumWipeCompanyPortalVersion()(*string) {
-    return m.minimumWipeCompanyPortalVersion
+    val, err := m.GetBackingStore().Get("minimumWipeCompanyPortalVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumWipePatchVersion gets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
 func (m *AndroidManagedAppProtection) GetMinimumWipePatchVersion()(*string) {
-    return m.minimumWipePatchVersion
+    val, err := m.GetBackingStore().Get("minimumWipePatchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequireClass3Biometrics gets the requireClass3Biometrics property value. Require user to apply Class 3 Biometrics on their Android device.
 func (m *AndroidManagedAppProtection) GetRequireClass3Biometrics()(*bool) {
-    return m.requireClass3Biometrics
+    val, err := m.GetBackingStore().Get("requireClass3Biometrics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType) {
-    return m.requiredAndroidSafetyNetAppsVerificationType
+    val, err := m.GetBackingStore().Get("requiredAndroidSafetyNetAppsVerificationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidManagedAppSafetyNetAppsVerificationType)
+    }
+    return nil
 }
 // GetRequiredAndroidSafetyNetDeviceAttestationType gets the requiredAndroidSafetyNetDeviceAttestationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestationType()(*AndroidManagedAppSafetyNetDeviceAttestationType) {
-    return m.requiredAndroidSafetyNetDeviceAttestationType
+    val, err := m.GetBackingStore().Get("requiredAndroidSafetyNetDeviceAttestationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidManagedAppSafetyNetDeviceAttestationType)
+    }
+    return nil
 }
 // GetRequiredAndroidSafetyNetEvaluationType gets the requiredAndroidSafetyNetEvaluationType property value. An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType()(*AndroidManagedAppSafetyNetEvaluationType) {
-    return m.requiredAndroidSafetyNetEvaluationType
+    val, err := m.GetBackingStore().Get("requiredAndroidSafetyNetEvaluationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidManagedAppSafetyNetEvaluationType)
+    }
+    return nil
 }
 // GetRequirePinAfterBiometricChange gets the requirePinAfterBiometricChange property value. A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
 func (m *AndroidManagedAppProtection) GetRequirePinAfterBiometricChange()(*bool) {
-    return m.requirePinAfterBiometricChange
+    val, err := m.GetBackingStore().Get("requirePinAfterBiometricChange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
 func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
-    return m.screenCaptureBlocked
+    val, err := m.GetBackingStore().Get("screenCaptureBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWarnAfterCompanyPortalUpdateDeferralInDays gets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
 func (m *AndroidManagedAppProtection) GetWarnAfterCompanyPortalUpdateDeferralInDays()(*int32) {
-    return m.warnAfterCompanyPortalUpdateDeferralInDays
+    val, err := m.GetBackingStore().Get("warnAfterCompanyPortalUpdateDeferralInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWipeAfterCompanyPortalUpdateDeferralInDays gets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 func (m *AndroidManagedAppProtection) GetWipeAfterCompanyPortalUpdateDeferralInDays()(*int32) {
-    return m.wipeAfterCompanyPortalUpdateDeferralInDays
+    val, err := m.GetBackingStore().Get("wipeAfterCompanyPortalUpdateDeferralInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -977,165 +1182,375 @@ func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAllowedAndroidDeviceManufacturers sets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
 func (m *AndroidManagedAppProtection) SetAllowedAndroidDeviceManufacturers(value *string)() {
-    m.allowedAndroidDeviceManufacturers = value
+    err := m.GetBackingStore().Set("allowedAndroidDeviceManufacturers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowedAndroidDeviceModels sets the allowedAndroidDeviceModels property value. List of device models allowed, as a string, for the managed app to work.
 func (m *AndroidManagedAppProtection) SetAllowedAndroidDeviceModels(value []string)() {
-    m.allowedAndroidDeviceModels = value
+    err := m.GetBackingStore().Set("allowedAndroidDeviceModels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfAndroidDeviceManufacturerNotAllowed sets the appActionIfAndroidDeviceManufacturerNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidDeviceManufacturerNotAllowed(value *ManagedAppRemediationAction)() {
-    m.appActionIfAndroidDeviceManufacturerNotAllowed = value
+    err := m.GetBackingStore().Set("appActionIfAndroidDeviceManufacturerNotAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfAndroidDeviceModelNotAllowed sets the appActionIfAndroidDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
-    m.appActionIfAndroidDeviceModelNotAllowed = value
+    err := m.GetBackingStore().Set("appActionIfAndroidDeviceModelNotAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfAndroidSafetyNetAppsVerificationFailed sets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)() {
-    m.appActionIfAndroidSafetyNetAppsVerificationFailed = value
+    err := m.GetBackingStore().Set("appActionIfAndroidSafetyNetAppsVerificationFailed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfAndroidSafetyNetDeviceAttestationFailed sets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(value *ManagedAppRemediationAction)() {
-    m.appActionIfAndroidSafetyNetDeviceAttestationFailed = value
+    err := m.GetBackingStore().Set("appActionIfAndroidSafetyNetDeviceAttestationFailed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfDeviceLockNotSet sets the appActionIfDeviceLockNotSet property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)() {
-    m.appActionIfDeviceLockNotSet = value
+    err := m.GetBackingStore().Set("appActionIfDeviceLockNotSet", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
 func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)() {
-    m.appActionIfDevicePasscodeComplexityLessThanHigh = value
+    err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanHigh", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
 func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)() {
-    m.appActionIfDevicePasscodeComplexityLessThanLow = value
+    err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanLow", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
 func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)() {
-    m.appActionIfDevicePasscodeComplexityLessThanMedium = value
+    err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanMedium", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApprovedKeyboards sets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
 func (m *AndroidManagedAppProtection) SetApprovedKeyboards(value []KeyValuePairable)() {
-    m.approvedKeyboards = value
+    err := m.GetBackingStore().Set("approvedKeyboards", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
-    m.apps = value
+    err := m.GetBackingStore().Set("apps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBiometricAuthenticationBlocked sets the biometricAuthenticationBlocked property value. Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
 func (m *AndroidManagedAppProtection) SetBiometricAuthenticationBlocked(value *bool)() {
-    m.biometricAuthenticationBlocked = value
+    err := m.GetBackingStore().Set("biometricAuthenticationBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockAfterCompanyPortalUpdateDeferralInDays sets the blockAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
 func (m *AndroidManagedAppProtection) SetBlockAfterCompanyPortalUpdateDeferralInDays(value *int32)() {
-    m.blockAfterCompanyPortalUpdateDeferralInDays = value
+    err := m.GetBackingStore().Set("blockAfterCompanyPortalUpdateDeferralInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectToVpnOnLaunch sets the connectToVpnOnLaunch property value. Whether the app should connect to the configured VPN on launch.
 func (m *AndroidManagedAppProtection) SetConnectToVpnOnLaunch(value *bool)() {
-    m.connectToVpnOnLaunch = value
+    err := m.GetBackingStore().Set("connectToVpnOnLaunch", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
-    m.customBrowserDisplayName = value
+    err := m.GetBackingStore().Set("customBrowserDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
-    m.customBrowserPackageId = value
+    err := m.GetBackingStore().Set("customBrowserPackageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomDialerAppDisplayName sets the customDialerAppDisplayName property value. Friendly name of a custom dialer app to click-to-open a phone number on Android.
 func (m *AndroidManagedAppProtection) SetCustomDialerAppDisplayName(value *string)() {
-    m.customDialerAppDisplayName = value
+    err := m.GetBackingStore().Set("customDialerAppDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomDialerAppPackageId sets the customDialerAppPackageId property value. PackageId of a custom dialer app to click-to-open a phone number on Android.
 func (m *AndroidManagedAppProtection) SetCustomDialerAppPackageId(value *string)() {
-    m.customDialerAppPackageId = value
+    err := m.GetBackingStore().Set("customDialerAppPackageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *AndroidManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    m.deployedAppCount = value
+    err := m.GetBackingStore().Set("deployedAppCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *AndroidManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
-    m.deploymentSummary = value
+    err := m.GetBackingStore().Set("deploymentSummary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceLockRequired sets the deviceLockRequired property value. Defines if any kind of lock must be required on android device
 func (m *AndroidManagedAppProtection) SetDeviceLockRequired(value *bool)() {
-    m.deviceLockRequired = value
+    err := m.GetBackingStore().Set("deviceLockRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisableAppEncryptionIfDeviceEncryptionIsEnabled sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
 func (m *AndroidManagedAppProtection) SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(value *bool)() {
-    m.disableAppEncryptionIfDeviceEncryptionIsEnabled = value
+    err := m.GetBackingStore().Set("disableAppEncryptionIfDeviceEncryptionIsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEncryptAppData sets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
 func (m *AndroidManagedAppProtection) SetEncryptAppData(value *bool)() {
-    m.encryptAppData = value
+    err := m.GetBackingStore().Set("encryptAppData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExemptedAppPackages sets the exemptedAppPackages property value. App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
 func (m *AndroidManagedAppProtection) SetExemptedAppPackages(value []KeyValuePairable)() {
-    m.exemptedAppPackages = value
+    err := m.GetBackingStore().Set("exemptedAppPackages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFingerprintAndBiometricEnabled sets the fingerprintAndBiometricEnabled property value. If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.
 func (m *AndroidManagedAppProtection) SetFingerprintAndBiometricEnabled(value *bool)() {
-    m.fingerprintAndBiometricEnabled = value
+    err := m.GetBackingStore().Set("fingerprintAndBiometricEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeyboardsRestricted sets the keyboardsRestricted property value. Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
 func (m *AndroidManagedAppProtection) SetKeyboardsRestricted(value *bool)() {
-    m.keyboardsRestricted = value
+    err := m.GetBackingStore().Set("keyboardsRestricted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumRequiredCompanyPortalVersion sets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *AndroidManagedAppProtection) SetMinimumRequiredCompanyPortalVersion(value *string)() {
-    m.minimumRequiredCompanyPortalVersion = value
+    err := m.GetBackingStore().Set("minimumRequiredCompanyPortalVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumRequiredPatchVersion sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
 func (m *AndroidManagedAppProtection) SetMinimumRequiredPatchVersion(value *string)() {
-    m.minimumRequiredPatchVersion = value
+    err := m.GetBackingStore().Set("minimumRequiredPatchVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumWarningCompanyPortalVersion sets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
 func (m *AndroidManagedAppProtection) SetMinimumWarningCompanyPortalVersion(value *string)() {
-    m.minimumWarningCompanyPortalVersion = value
+    err := m.GetBackingStore().Set("minimumWarningCompanyPortalVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumWarningPatchVersion sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
 func (m *AndroidManagedAppProtection) SetMinimumWarningPatchVersion(value *string)() {
-    m.minimumWarningPatchVersion = value
+    err := m.GetBackingStore().Set("minimumWarningPatchVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumWipeCompanyPortalVersion sets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
 func (m *AndroidManagedAppProtection) SetMinimumWipeCompanyPortalVersion(value *string)() {
-    m.minimumWipeCompanyPortalVersion = value
+    err := m.GetBackingStore().Set("minimumWipeCompanyPortalVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumWipePatchVersion sets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
 func (m *AndroidManagedAppProtection) SetMinimumWipePatchVersion(value *string)() {
-    m.minimumWipePatchVersion = value
+    err := m.GetBackingStore().Set("minimumWipePatchVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireClass3Biometrics sets the requireClass3Biometrics property value. Require user to apply Class 3 Biometrics on their Android device.
 func (m *AndroidManagedAppProtection) SetRequireClass3Biometrics(value *bool)() {
-    m.requireClass3Biometrics = value
+    err := m.GetBackingStore().Set("requireClass3Biometrics", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiredAndroidSafetyNetAppsVerificationType sets the requiredAndroidSafetyNetAppsVerificationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) SetRequiredAndroidSafetyNetAppsVerificationType(value *AndroidManagedAppSafetyNetAppsVerificationType)() {
-    m.requiredAndroidSafetyNetAppsVerificationType = value
+    err := m.GetBackingStore().Set("requiredAndroidSafetyNetAppsVerificationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiredAndroidSafetyNetDeviceAttestationType sets the requiredAndroidSafetyNetDeviceAttestationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) SetRequiredAndroidSafetyNetDeviceAttestationType(value *AndroidManagedAppSafetyNetDeviceAttestationType)() {
-    m.requiredAndroidSafetyNetDeviceAttestationType = value
+    err := m.GetBackingStore().Set("requiredAndroidSafetyNetDeviceAttestationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiredAndroidSafetyNetEvaluationType sets the requiredAndroidSafetyNetEvaluationType property value. An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 func (m *AndroidManagedAppProtection) SetRequiredAndroidSafetyNetEvaluationType(value *AndroidManagedAppSafetyNetEvaluationType)() {
-    m.requiredAndroidSafetyNetEvaluationType = value
+    err := m.GetBackingStore().Set("requiredAndroidSafetyNetEvaluationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequirePinAfterBiometricChange sets the requirePinAfterBiometricChange property value. A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
 func (m *AndroidManagedAppProtection) SetRequirePinAfterBiometricChange(value *bool)() {
-    m.requirePinAfterBiometricChange = value
+    err := m.GetBackingStore().Set("requirePinAfterBiometricChange", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
 func (m *AndroidManagedAppProtection) SetScreenCaptureBlocked(value *bool)() {
-    m.screenCaptureBlocked = value
+    err := m.GetBackingStore().Set("screenCaptureBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWarnAfterCompanyPortalUpdateDeferralInDays sets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
 func (m *AndroidManagedAppProtection) SetWarnAfterCompanyPortalUpdateDeferralInDays(value *int32)() {
-    m.warnAfterCompanyPortalUpdateDeferralInDays = value
+    err := m.GetBackingStore().Set("warnAfterCompanyPortalUpdateDeferralInDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWipeAfterCompanyPortalUpdateDeferralInDays sets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 func (m *AndroidManagedAppProtection) SetWipeAfterCompanyPortalUpdateDeferralInDays(value *int32)() {
-    m.wipeAfterCompanyPortalUpdateDeferralInDays = value
+    err := m.GetBackingStore().Set("wipeAfterCompanyPortalUpdateDeferralInDays", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidManagedAppProtectionable 
+type AndroidManagedAppProtectionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TargetedManagedAppProtectionable
+    GetAllowedAndroidDeviceManufacturers()(*string)
+    GetAllowedAndroidDeviceModels()([]string)
+    GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction)
+    GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction)
+    GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction)
+    GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()(*ManagedAppRemediationAction)
+    GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction)
+    GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction)
+    GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction)
+    GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction)
+    GetApprovedKeyboards()([]KeyValuePairable)
+    GetApps()([]ManagedMobileAppable)
+    GetBiometricAuthenticationBlocked()(*bool)
+    GetBlockAfterCompanyPortalUpdateDeferralInDays()(*int32)
+    GetConnectToVpnOnLaunch()(*bool)
+    GetCustomBrowserDisplayName()(*string)
+    GetCustomBrowserPackageId()(*string)
+    GetCustomDialerAppDisplayName()(*string)
+    GetCustomDialerAppPackageId()(*string)
+    GetDeployedAppCount()(*int32)
+    GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable)
+    GetDeviceLockRequired()(*bool)
+    GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool)
+    GetEncryptAppData()(*bool)
+    GetExemptedAppPackages()([]KeyValuePairable)
+    GetFingerprintAndBiometricEnabled()(*bool)
+    GetKeyboardsRestricted()(*bool)
+    GetMinimumRequiredCompanyPortalVersion()(*string)
+    GetMinimumRequiredPatchVersion()(*string)
+    GetMinimumWarningCompanyPortalVersion()(*string)
+    GetMinimumWarningPatchVersion()(*string)
+    GetMinimumWipeCompanyPortalVersion()(*string)
+    GetMinimumWipePatchVersion()(*string)
+    GetRequireClass3Biometrics()(*bool)
+    GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType)
+    GetRequiredAndroidSafetyNetDeviceAttestationType()(*AndroidManagedAppSafetyNetDeviceAttestationType)
+    GetRequiredAndroidSafetyNetEvaluationType()(*AndroidManagedAppSafetyNetEvaluationType)
+    GetRequirePinAfterBiometricChange()(*bool)
+    GetScreenCaptureBlocked()(*bool)
+    GetWarnAfterCompanyPortalUpdateDeferralInDays()(*int32)
+    GetWipeAfterCompanyPortalUpdateDeferralInDays()(*int32)
+    SetAllowedAndroidDeviceManufacturers(value *string)()
+    SetAllowedAndroidDeviceModels(value []string)()
+    SetAppActionIfAndroidDeviceManufacturerNotAllowed(value *ManagedAppRemediationAction)()
+    SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)()
+    SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)()
+    SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(value *ManagedAppRemediationAction)()
+    SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)()
+    SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)()
+    SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)()
+    SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)()
+    SetApprovedKeyboards(value []KeyValuePairable)()
+    SetApps(value []ManagedMobileAppable)()
+    SetBiometricAuthenticationBlocked(value *bool)()
+    SetBlockAfterCompanyPortalUpdateDeferralInDays(value *int32)()
+    SetConnectToVpnOnLaunch(value *bool)()
+    SetCustomBrowserDisplayName(value *string)()
+    SetCustomBrowserPackageId(value *string)()
+    SetCustomDialerAppDisplayName(value *string)()
+    SetCustomDialerAppPackageId(value *string)()
+    SetDeployedAppCount(value *int32)()
+    SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)()
+    SetDeviceLockRequired(value *bool)()
+    SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(value *bool)()
+    SetEncryptAppData(value *bool)()
+    SetExemptedAppPackages(value []KeyValuePairable)()
+    SetFingerprintAndBiometricEnabled(value *bool)()
+    SetKeyboardsRestricted(value *bool)()
+    SetMinimumRequiredCompanyPortalVersion(value *string)()
+    SetMinimumRequiredPatchVersion(value *string)()
+    SetMinimumWarningCompanyPortalVersion(value *string)()
+    SetMinimumWarningPatchVersion(value *string)()
+    SetMinimumWipeCompanyPortalVersion(value *string)()
+    SetMinimumWipePatchVersion(value *string)()
+    SetRequireClass3Biometrics(value *bool)()
+    SetRequiredAndroidSafetyNetAppsVerificationType(value *AndroidManagedAppSafetyNetAppsVerificationType)()
+    SetRequiredAndroidSafetyNetDeviceAttestationType(value *AndroidManagedAppSafetyNetDeviceAttestationType)()
+    SetRequiredAndroidSafetyNetEvaluationType(value *AndroidManagedAppSafetyNetEvaluationType)()
+    SetRequirePinAfterBiometricChange(value *bool)()
+    SetScreenCaptureBlocked(value *bool)()
+    SetWarnAfterCompanyPortalUpdateDeferralInDays(value *int32)()
+    SetWipeAfterCompanyPortalUpdateDeferralInDays(value *int32)()
 }

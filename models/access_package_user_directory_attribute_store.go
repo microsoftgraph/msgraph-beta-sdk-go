@@ -13,8 +13,8 @@ func NewAccessPackageUserDirectoryAttributeStore()(*AccessPackageUserDirectoryAt
     m := &AccessPackageUserDirectoryAttributeStore{
         AccessPackageResourceAttributeDestination: *NewAccessPackageResourceAttributeDestination(),
     }
-    odataTypeValue := "#microsoft.graph.accessPackageUserDirectoryAttributeStore";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.accessPackageUserDirectoryAttributeStore"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAccessPackageUserDirectoryAttributeStoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *AccessPackageUserDirectoryAttributeStore) Serialize(writer i878a80d2330
         return err
     }
     return nil
+}
+// AccessPackageUserDirectoryAttributeStoreable 
+type AccessPackageUserDirectoryAttributeStoreable interface {
+    AccessPackageResourceAttributeDestinationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -41,7 +41,7 @@ type ItemFindRoomsWithRoomListRequestBuilderGetRequestConfiguration struct {
 func NewItemFindRoomsWithRoomListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, roomList *string)(*ItemFindRoomsWithRoomListRequestBuilder) {
     m := &ItemFindRoomsWithRoomListRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -49,8 +49,8 @@ func NewItemFindRoomsWithRoomListRequestBuilderInternal(pathParameters map[strin
     if roomList != nil {
         urlTplParams["RoomList"] = *roomList
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFindRoomsWithRoomListRequestBuilder instantiates a new FindRoomsWithRoomListRequestBuilder and sets the default values.

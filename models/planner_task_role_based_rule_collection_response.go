@@ -7,8 +7,6 @@ import (
 // PlannerTaskRoleBasedRuleCollectionResponse 
 type PlannerTaskRoleBasedRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerTaskRoleBasedRuleable
 }
 // NewPlannerTaskRoleBasedRuleCollectionResponse instantiates a new PlannerTaskRoleBasedRuleCollectionResponse and sets the default values.
 func NewPlannerTaskRoleBasedRuleCollectionResponse()(*PlannerTaskRoleBasedRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerTaskRoleBasedRuleCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerTaskRoleBasedRuleCollectionResponse) GetValue()([]PlannerTaskRoleBasedRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskRoleBasedRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerTaskRoleBasedRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerTaskRoleBasedRuleCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerTaskRoleBasedRuleCollectionResponse) SetValue(value []PlannerTaskRoleBasedRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerTaskRoleBasedRuleCollectionResponseable 
+type PlannerTaskRoleBasedRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerTaskRoleBasedRuleable)
+    SetValue(value []PlannerTaskRoleBasedRuleable)()
 }

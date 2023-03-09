@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationChoiceSettingValueCollectionResponse 
 type DeviceManagementConfigurationChoiceSettingValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationChoiceSettingValueable
 }
 // NewDeviceManagementConfigurationChoiceSettingValueCollectionResponse instantiates a new DeviceManagementConfigurationChoiceSettingValueCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValueCollectionResponse()(*DeviceManagementConfigurationChoiceSettingValueCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationChoiceSettingValueCollectionResponse) GetF
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationChoiceSettingValueCollectionResponse) GetValue()([]DeviceManagementConfigurationChoiceSettingValueable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationChoiceSettingValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingValueCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationChoiceSettingValueCollectionResponse) Seri
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationChoiceSettingValueCollectionResponse) SetValue(value []DeviceManagementConfigurationChoiceSettingValueable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationChoiceSettingValueCollectionResponseable 
+type DeviceManagementConfigurationChoiceSettingValueCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationChoiceSettingValueable)
+    SetValue(value []DeviceManagementConfigurationChoiceSettingValueable)()
 }

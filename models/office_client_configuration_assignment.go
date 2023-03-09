@@ -7,8 +7,6 @@ import (
 // OfficeClientConfigurationAssignment 
 type OfficeClientConfigurationAssignment struct {
     Entity
-    // The target assignment defined by the admin.
-    target OfficeConfigurationAssignmentTargetable
 }
 // NewOfficeClientConfigurationAssignment instantiates a new officeClientConfigurationAssignment and sets the default values.
 func NewOfficeClientConfigurationAssignment()(*OfficeClientConfigurationAssignment) {
@@ -38,7 +36,14 @@ func (m *OfficeClientConfigurationAssignment) GetFieldDeserializers()(map[string
 }
 // GetTarget gets the target property value. The target assignment defined by the admin.
 func (m *OfficeClientConfigurationAssignment) GetTarget()(OfficeConfigurationAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OfficeConfigurationAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OfficeClientConfigurationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *OfficeClientConfigurationAssignment) Serialize(writer i878a80d2330e89d2
 }
 // SetTarget sets the target property value. The target assignment defined by the admin.
 func (m *OfficeClientConfigurationAssignment) SetTarget(value OfficeConfigurationAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OfficeClientConfigurationAssignmentable 
+type OfficeClientConfigurationAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(OfficeConfigurationAssignmentTargetable)
+    SetTarget(value OfficeConfigurationAssignmentTargetable)()
 }

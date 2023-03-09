@@ -7,8 +7,6 @@ import (
 // AzureADWindowsAutopilotDeploymentProfileCollectionResponse 
 type AzureADWindowsAutopilotDeploymentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AzureADWindowsAutopilotDeploymentProfileable
 }
 // NewAzureADWindowsAutopilotDeploymentProfileCollectionResponse instantiates a new AzureADWindowsAutopilotDeploymentProfileCollectionResponse and sets the default values.
 func NewAzureADWindowsAutopilotDeploymentProfileCollectionResponse()(*AzureADWindowsAutopilotDeploymentProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AzureADWindowsAutopilotDeploymentProfileCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *AzureADWindowsAutopilotDeploymentProfileCollectionResponse) GetValue()([]AzureADWindowsAutopilotDeploymentProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AzureADWindowsAutopilotDeploymentProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AzureADWindowsAutopilotDeploymentProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AzureADWindowsAutopilotDeploymentProfileCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *AzureADWindowsAutopilotDeploymentProfileCollectionResponse) SetValue(value []AzureADWindowsAutopilotDeploymentProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureADWindowsAutopilotDeploymentProfileCollectionResponseable 
+type AzureADWindowsAutopilotDeploymentProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AzureADWindowsAutopilotDeploymentProfileable)
+    SetValue(value []AzureADWindowsAutopilotDeploymentProfileable)()
 }

@@ -7,8 +7,6 @@ import (
 // ExactMatchSessionCollectionResponse 
 type ExactMatchSessionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ExactMatchSessionable
 }
 // NewExactMatchSessionCollectionResponse instantiates a new ExactMatchSessionCollectionResponse and sets the default values.
 func NewExactMatchSessionCollectionResponse()(*ExactMatchSessionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ExactMatchSessionCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *ExactMatchSessionCollectionResponse) GetValue()([]ExactMatchSessionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExactMatchSessionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExactMatchSessionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ExactMatchSessionCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *ExactMatchSessionCollectionResponse) SetValue(value []ExactMatchSessionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExactMatchSessionCollectionResponseable 
+type ExactMatchSessionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ExactMatchSessionable)
+    SetValue(value []ExactMatchSessionable)()
 }

@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AssignmentFilterSupportedProperty represents the information about the property which is supported in crafting the rule of AssignmentFilter.
 type AssignmentFilterSupportedProperty struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The data type of the property.
-    dataType *string
-    // Indicates whether the property is a collection type or not.
-    isCollection *bool
-    // Name of the property.
-    name *string
-    // The OdataType property
-    odataType *string
-    // Regex string to do validation on the property value.
-    propertyRegexConstraint *string
-    // List of all supported operators on this property.
-    supportedOperators []AssignmentFilterOperator
-    // List of all supported values for this propery, empty if everything is supported.
-    supportedValues []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAssignmentFilterSupportedProperty instantiates a new assignmentFilterSupportedProperty and sets the default values.
 func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) {
     m := &AssignmentFilterSupportedProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,11 +24,30 @@ func CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterSupportedProperty) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AssignmentFilterSupportedProperty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDataType gets the dataType property value. The data type of the property.
 func (m *AssignmentFilterSupportedProperty) GetDataType()(*string) {
-    return m.dataType
+    val, err := m.GetBackingStore().Get("dataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,27 +134,69 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
 }
 // GetIsCollection gets the isCollection property value. Indicates whether the property is a collection type or not.
 func (m *AssignmentFilterSupportedProperty) GetIsCollection()(*bool) {
-    return m.isCollection
+    val, err := m.GetBackingStore().Get("isCollection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetName gets the name property value. Name of the property.
 func (m *AssignmentFilterSupportedProperty) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignmentFilterSupportedProperty) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPropertyRegexConstraint gets the propertyRegexConstraint property value. Regex string to do validation on the property value.
 func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string) {
-    return m.propertyRegexConstraint
+    val, err := m.GetBackingStore().Get("propertyRegexConstraint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSupportedOperators gets the supportedOperators property value. List of all supported operators on this property.
 func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]AssignmentFilterOperator) {
-    return m.supportedOperators
+    val, err := m.GetBackingStore().Get("supportedOperators")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AssignmentFilterOperator)
+    }
+    return nil
 }
-// GetSupportedValues gets the supportedValues property value. List of all supported values for this propery, empty if everything is supported.
+// GetSupportedValues gets the supportedValues property value. List of all supported values for this property, empty if everything is supported.
 func (m *AssignmentFilterSupportedProperty) GetSupportedValues()([]string) {
-    return m.supportedValues
+    val, err := m.GetBackingStore().Get("supportedValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,33 +252,83 @@ func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterSupportedProperty) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AssignmentFilterSupportedProperty) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDataType sets the dataType property value. The data type of the property.
 func (m *AssignmentFilterSupportedProperty) SetDataType(value *string)() {
-    m.dataType = value
+    err := m.GetBackingStore().Set("dataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsCollection sets the isCollection property value. Indicates whether the property is a collection type or not.
 func (m *AssignmentFilterSupportedProperty) SetIsCollection(value *bool)() {
-    m.isCollection = value
+    err := m.GetBackingStore().Set("isCollection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Name of the property.
 func (m *AssignmentFilterSupportedProperty) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignmentFilterSupportedProperty) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPropertyRegexConstraint sets the propertyRegexConstraint property value. Regex string to do validation on the property value.
 func (m *AssignmentFilterSupportedProperty) SetPropertyRegexConstraint(value *string)() {
-    m.propertyRegexConstraint = value
+    err := m.GetBackingStore().Set("propertyRegexConstraint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportedOperators sets the supportedOperators property value. List of all supported operators on this property.
 func (m *AssignmentFilterSupportedProperty) SetSupportedOperators(value []AssignmentFilterOperator)() {
-    m.supportedOperators = value
+    err := m.GetBackingStore().Set("supportedOperators", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetSupportedValues sets the supportedValues property value. List of all supported values for this propery, empty if everything is supported.
+// SetSupportedValues sets the supportedValues property value. List of all supported values for this property, empty if everything is supported.
 func (m *AssignmentFilterSupportedProperty) SetSupportedValues(value []string)() {
-    m.supportedValues = value
+    err := m.GetBackingStore().Set("supportedValues", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AssignmentFilterSupportedPropertyable 
+type AssignmentFilterSupportedPropertyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDataType()(*string)
+    GetIsCollection()(*bool)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetPropertyRegexConstraint()(*string)
+    GetSupportedOperators()([]AssignmentFilterOperator)
+    GetSupportedValues()([]string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDataType(value *string)()
+    SetIsCollection(value *bool)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetPropertyRegexConstraint(value *string)()
+    SetSupportedOperators(value []AssignmentFilterOperator)()
+    SetSupportedValues(value []string)()
 }

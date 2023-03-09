@@ -13,8 +13,8 @@ func NewDeviceManagementConfigurationSettingGroupCollectionInstance()(*DeviceMan
     m := &DeviceManagementConfigurationSettingGroupCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionInstance";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionInstance"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationSettingGroupCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) Serialize(
         return err
     }
     return nil
+}
+// DeviceManagementConfigurationSettingGroupCollectionInstanceable 
+type DeviceManagementConfigurationSettingGroupCollectionInstanceable interface {
+    DeviceManagementConfigurationSettingInstanceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

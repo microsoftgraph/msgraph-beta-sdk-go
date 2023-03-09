@@ -7,16 +7,14 @@ import (
 // AzureADDeviceRegistrationError 
 type AzureADDeviceRegistrationError struct {
     UpdatableAssetError
-    // The reason property
-    reason *AzureADDeviceRegistrationErrorReason
 }
 // NewAzureADDeviceRegistrationError instantiates a new AzureADDeviceRegistrationError and sets the default values.
 func NewAzureADDeviceRegistrationError()(*AzureADDeviceRegistrationError) {
     m := &AzureADDeviceRegistrationError{
         UpdatableAssetError: *NewUpdatableAssetError(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAzureADDeviceRegistrationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *AzureADDeviceRegistrationError) GetFieldDeserializers()(map[string]func
 }
 // GetReason gets the reason property value. The reason property
 func (m *AzureADDeviceRegistrationError) GetReason()(*AzureADDeviceRegistrationErrorReason) {
-    return m.reason
+    val, err := m.GetBackingStore().Get("reason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AzureADDeviceRegistrationErrorReason)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AzureADDeviceRegistrationError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *AzureADDeviceRegistrationError) Serialize(writer i878a80d2330e89d268963
 }
 // SetReason sets the reason property value. The reason property
 func (m *AzureADDeviceRegistrationError) SetReason(value *AzureADDeviceRegistrationErrorReason)() {
-    m.reason = value
+    err := m.GetBackingStore().Set("reason", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureADDeviceRegistrationErrorable 
+type AzureADDeviceRegistrationErrorable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UpdatableAssetErrorable
+    GetReason()(*AzureADDeviceRegistrationErrorReason)
+    SetReason(value *AzureADDeviceRegistrationErrorReason)()
 }

@@ -7,26 +7,14 @@ import (
 // DeviceManagementConfigurationStringSettingValueDefinition 
 type DeviceManagementConfigurationStringSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
-    // Supported file types for this setting.
-    fileTypes []string
-    // The format property
-    format *DeviceManagementConfigurationStringFormat
-    // Regular expression or any xml or json schema that the input string should match
-    inputValidationSchema *string
-    // Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
-    isSecret *bool
-    // Maximum length of string
-    maximumLength *int64
-    // Minimum length of string
-    minimumLength *int64
 }
 // NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManagementConfigurationStringSettingValueDefinition) {
     m := &DeviceManagementConfigurationStringSettingValueDefinition{
         DeviceManagementConfigurationSettingValueDefinition: *NewDeviceManagementConfigurationSettingValueDefinition(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -104,27 +92,69 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFieldDese
 }
 // GetFileTypes gets the fileTypes property value. Supported file types for this setting.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes()([]string) {
-    return m.fileTypes
+    val, err := m.GetBackingStore().Get("fileTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFormat gets the format property value. The format property
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringFormat) {
-    return m.format
+    val, err := m.GetBackingStore().Get("format")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationStringFormat)
+    }
+    return nil
 }
 // GetInputValidationSchema gets the inputValidationSchema property value. Regular expression or any xml or json schema that the input string should match
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetInputValidationSchema()(*string) {
-    return m.inputValidationSchema
+    val, err := m.GetBackingStore().Get("inputValidationSchema")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsSecret gets the isSecret property value. Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret()(*bool) {
-    return m.isSecret
+    val, err := m.GetBackingStore().Get("isSecret")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string
+// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
-    return m.maximumLength
+    val, err := m.GetBackingStore().Get("maximumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string
+// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
-    return m.minimumLength
+    val, err := m.GetBackingStore().Get("minimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,25 +203,60 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) Serialize(wr
 }
 // SetFileTypes sets the fileTypes property value. Supported file types for this setting.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFileTypes(value []string)() {
-    m.fileTypes = value
+    err := m.GetBackingStore().Set("fileTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFormat sets the format property value. The format property
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringFormat)() {
-    m.format = value
+    err := m.GetBackingStore().Set("format", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInputValidationSchema sets the inputValidationSchema property value. Regular expression or any xml or json schema that the input string should match
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetInputValidationSchema(value *string)() {
-    m.inputValidationSchema = value
+    err := m.GetBackingStore().Set("inputValidationSchema", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsSecret sets the isSecret property value. Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(value *bool)() {
-    m.isSecret = value
+    err := m.GetBackingStore().Set("isSecret", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string
+// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
-    m.maximumLength = value
+    err := m.GetBackingStore().Set("maximumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string
+// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
-    m.minimumLength = value
+    err := m.GetBackingStore().Set("minimumLength", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationStringSettingValueDefinitionable 
+type DeviceManagementConfigurationStringSettingValueDefinitionable interface {
+    DeviceManagementConfigurationSettingValueDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileTypes()([]string)
+    GetFormat()(*DeviceManagementConfigurationStringFormat)
+    GetInputValidationSchema()(*string)
+    GetIsSecret()(*bool)
+    GetMaximumLength()(*int64)
+    GetMinimumLength()(*int64)
+    SetFileTypes(value []string)()
+    SetFormat(value *DeviceManagementConfigurationStringFormat)()
+    SetInputValidationSchema(value *string)()
+    SetIsSecret(value *bool)()
+    SetMaximumLength(value *int64)()
+    SetMinimumLength(value *int64)()
 }

@@ -7,8 +7,6 @@ import (
 // DomainSecurityProfileCollectionResponse 
 type DomainSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DomainSecurityProfileable
 }
 // NewDomainSecurityProfileCollectionResponse instantiates a new DomainSecurityProfileCollectionResponse and sets the default values.
 func NewDomainSecurityProfileCollectionResponse()(*DomainSecurityProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DomainSecurityProfileCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *DomainSecurityProfileCollectionResponse) GetValue()([]DomainSecurityProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DomainSecurityProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DomainSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DomainSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *DomainSecurityProfileCollectionResponse) SetValue(value []DomainSecurityProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DomainSecurityProfileCollectionResponseable 
+type DomainSecurityProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DomainSecurityProfileable)
+    SetValue(value []DomainSecurityProfileable)()
 }

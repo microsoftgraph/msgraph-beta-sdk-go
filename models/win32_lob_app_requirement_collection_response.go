@@ -7,8 +7,6 @@ import (
 // Win32LobAppRequirementCollectionResponse 
 type Win32LobAppRequirementCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Win32LobAppRequirementable
 }
 // NewWin32LobAppRequirementCollectionResponse instantiates a new Win32LobAppRequirementCollectionResponse and sets the default values.
 func NewWin32LobAppRequirementCollectionResponse()(*Win32LobAppRequirementCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Win32LobAppRequirementCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *Win32LobAppRequirementCollectionResponse) GetValue()([]Win32LobAppRequirementable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Win32LobAppRequirementable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppRequirementCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Win32LobAppRequirementCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *Win32LobAppRequirementCollectionResponse) SetValue(value []Win32LobAppRequirementable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Win32LobAppRequirementCollectionResponseable 
+type Win32LobAppRequirementCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Win32LobAppRequirementable)
+    SetValue(value []Win32LobAppRequirementable)()
 }

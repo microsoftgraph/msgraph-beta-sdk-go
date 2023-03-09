@@ -7,8 +7,6 @@ import (
 // UnsupportedGroupPolicyExtensionCollectionResponse 
 type UnsupportedGroupPolicyExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnsupportedGroupPolicyExtensionable
 }
 // NewUnsupportedGroupPolicyExtensionCollectionResponse instantiates a new UnsupportedGroupPolicyExtensionCollectionResponse and sets the default values.
 func NewUnsupportedGroupPolicyExtensionCollectionResponse()(*UnsupportedGroupPolicyExtensionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnsupportedGroupPolicyExtensionCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *UnsupportedGroupPolicyExtensionCollectionResponse) GetValue()([]UnsupportedGroupPolicyExtensionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnsupportedGroupPolicyExtensionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnsupportedGroupPolicyExtensionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnsupportedGroupPolicyExtensionCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *UnsupportedGroupPolicyExtensionCollectionResponse) SetValue(value []UnsupportedGroupPolicyExtensionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnsupportedGroupPolicyExtensionCollectionResponseable 
+type UnsupportedGroupPolicyExtensionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnsupportedGroupPolicyExtensionable)
+    SetValue(value []UnsupportedGroupPolicyExtensionable)()
 }

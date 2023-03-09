@@ -7,8 +7,6 @@ import (
 // GroupPolicyConfigurationAssignmentCollectionResponse 
 type GroupPolicyConfigurationAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyConfigurationAssignmentable
 }
 // NewGroupPolicyConfigurationAssignmentCollectionResponse instantiates a new GroupPolicyConfigurationAssignmentCollectionResponse and sets the default values.
 func NewGroupPolicyConfigurationAssignmentCollectionResponse()(*GroupPolicyConfigurationAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyConfigurationAssignmentCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyConfigurationAssignmentCollectionResponse) GetValue()([]GroupPolicyConfigurationAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyConfigurationAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyConfigurationAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyConfigurationAssignmentCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyConfigurationAssignmentCollectionResponse) SetValue(value []GroupPolicyConfigurationAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyConfigurationAssignmentCollectionResponseable 
+type GroupPolicyConfigurationAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyConfigurationAssignmentable)
+    SetValue(value []GroupPolicyConfigurationAssignmentable)()
 }

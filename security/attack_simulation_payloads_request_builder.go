@@ -60,8 +60,8 @@ func NewAttackSimulationPayloadsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAttackSimulationPayloadsRequestBuilder instantiates a new PayloadsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAttackSimulationPayloadsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *AttackSimulationPayloadsRequestBuilder) Count()(*AttackSimulationPayloadsCountRequestBuilder) {
-    return NewAttackSimulationPayloadsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAttackSimulationPayloadsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *AttackSimulationPayloadsRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

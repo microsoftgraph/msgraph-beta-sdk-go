@@ -7,28 +7,14 @@ import (
 // MacOSExtensionsConfiguration 
 type MacOSExtensionsConfiguration struct {
     DeviceConfiguration
-    // All kernel extensions validly signed by the team identifiers in this list will be allowed to load.
-    kernelExtensionAllowedTeamIdentifiers []string
-    // If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.
-    kernelExtensionOverridesAllowed *bool
-    // A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.
-    kernelExtensionsAllowed []MacOSKernelExtensionable
-    // Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
-    systemExtensionsAllowed []MacOSSystemExtensionable
-    // Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.
-    systemExtensionsAllowedTeamIdentifiers []string
-    // Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.
-    systemExtensionsAllowedTypes []MacOSSystemExtensionTypeMappingable
-    // Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.
-    systemExtensionsBlockOverride *bool
 }
 // NewMacOSExtensionsConfiguration instantiates a new MacOSExtensionsConfiguration and sets the default values.
 func NewMacOSExtensionsConfiguration()(*MacOSExtensionsConfiguration) {
     m := &MacOSExtensionsConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSExtensionsConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSExtensionsConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSExtensionsConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -132,31 +118,80 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
 }
 // GetKernelExtensionAllowedTeamIdentifiers gets the kernelExtensionAllowedTeamIdentifiers property value. All kernel extensions validly signed by the team identifiers in this list will be allowed to load.
 func (m *MacOSExtensionsConfiguration) GetKernelExtensionAllowedTeamIdentifiers()([]string) {
-    return m.kernelExtensionAllowedTeamIdentifiers
+    val, err := m.GetBackingStore().Get("kernelExtensionAllowedTeamIdentifiers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetKernelExtensionOverridesAllowed gets the kernelExtensionOverridesAllowed property value. If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.
 func (m *MacOSExtensionsConfiguration) GetKernelExtensionOverridesAllowed()(*bool) {
-    return m.kernelExtensionOverridesAllowed
+    val, err := m.GetBackingStore().Get("kernelExtensionOverridesAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKernelExtensionsAllowed gets the kernelExtensionsAllowed property value. A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) GetKernelExtensionsAllowed()([]MacOSKernelExtensionable) {
-    return m.kernelExtensionsAllowed
+    val, err := m.GetBackingStore().Get("kernelExtensionsAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSKernelExtensionable)
+    }
+    return nil
 }
 // GetSystemExtensionsAllowed gets the systemExtensionsAllowed property value. Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) GetSystemExtensionsAllowed()([]MacOSSystemExtensionable) {
-    return m.systemExtensionsAllowed
+    val, err := m.GetBackingStore().Get("systemExtensionsAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSSystemExtensionable)
+    }
+    return nil
 }
 // GetSystemExtensionsAllowedTeamIdentifiers gets the systemExtensionsAllowedTeamIdentifiers property value. Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.
 func (m *MacOSExtensionsConfiguration) GetSystemExtensionsAllowedTeamIdentifiers()([]string) {
-    return m.systemExtensionsAllowedTeamIdentifiers
+    val, err := m.GetBackingStore().Get("systemExtensionsAllowedTeamIdentifiers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSystemExtensionsAllowedTypes gets the systemExtensionsAllowedTypes property value. Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) GetSystemExtensionsAllowedTypes()([]MacOSSystemExtensionTypeMappingable) {
-    return m.systemExtensionsAllowedTypes
+    val, err := m.GetBackingStore().Get("systemExtensionsAllowedTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSSystemExtensionTypeMappingable)
+    }
+    return nil
 }
 // GetSystemExtensionsBlockOverride gets the systemExtensionsBlockOverride property value. Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.
 func (m *MacOSExtensionsConfiguration) GetSystemExtensionsBlockOverride()(*bool) {
-    return m.systemExtensionsBlockOverride
+    val, err := m.GetBackingStore().Get("systemExtensionsBlockOverride")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -222,29 +257,69 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
 }
 // SetKernelExtensionAllowedTeamIdentifiers sets the kernelExtensionAllowedTeamIdentifiers property value. All kernel extensions validly signed by the team identifiers in this list will be allowed to load.
 func (m *MacOSExtensionsConfiguration) SetKernelExtensionAllowedTeamIdentifiers(value []string)() {
-    m.kernelExtensionAllowedTeamIdentifiers = value
+    err := m.GetBackingStore().Set("kernelExtensionAllowedTeamIdentifiers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKernelExtensionOverridesAllowed sets the kernelExtensionOverridesAllowed property value. If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.
 func (m *MacOSExtensionsConfiguration) SetKernelExtensionOverridesAllowed(value *bool)() {
-    m.kernelExtensionOverridesAllowed = value
+    err := m.GetBackingStore().Set("kernelExtensionOverridesAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKernelExtensionsAllowed sets the kernelExtensionsAllowed property value. A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) SetKernelExtensionsAllowed(value []MacOSKernelExtensionable)() {
-    m.kernelExtensionsAllowed = value
+    err := m.GetBackingStore().Set("kernelExtensionsAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemExtensionsAllowed sets the systemExtensionsAllowed property value. Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) SetSystemExtensionsAllowed(value []MacOSSystemExtensionable)() {
-    m.systemExtensionsAllowed = value
+    err := m.GetBackingStore().Set("systemExtensionsAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemExtensionsAllowedTeamIdentifiers sets the systemExtensionsAllowedTeamIdentifiers property value. Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.
 func (m *MacOSExtensionsConfiguration) SetSystemExtensionsAllowedTeamIdentifiers(value []string)() {
-    m.systemExtensionsAllowedTeamIdentifiers = value
+    err := m.GetBackingStore().Set("systemExtensionsAllowedTeamIdentifiers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemExtensionsAllowedTypes sets the systemExtensionsAllowedTypes property value. Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) SetSystemExtensionsAllowedTypes(value []MacOSSystemExtensionTypeMappingable)() {
-    m.systemExtensionsAllowedTypes = value
+    err := m.GetBackingStore().Set("systemExtensionsAllowedTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemExtensionsBlockOverride sets the systemExtensionsBlockOverride property value. Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.
 func (m *MacOSExtensionsConfiguration) SetSystemExtensionsBlockOverride(value *bool)() {
-    m.systemExtensionsBlockOverride = value
+    err := m.GetBackingStore().Set("systemExtensionsBlockOverride", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSExtensionsConfigurationable 
+type MacOSExtensionsConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetKernelExtensionAllowedTeamIdentifiers()([]string)
+    GetKernelExtensionOverridesAllowed()(*bool)
+    GetKernelExtensionsAllowed()([]MacOSKernelExtensionable)
+    GetSystemExtensionsAllowed()([]MacOSSystemExtensionable)
+    GetSystemExtensionsAllowedTeamIdentifiers()([]string)
+    GetSystemExtensionsAllowedTypes()([]MacOSSystemExtensionTypeMappingable)
+    GetSystemExtensionsBlockOverride()(*bool)
+    SetKernelExtensionAllowedTeamIdentifiers(value []string)()
+    SetKernelExtensionOverridesAllowed(value *bool)()
+    SetKernelExtensionsAllowed(value []MacOSKernelExtensionable)()
+    SetSystemExtensionsAllowed(value []MacOSSystemExtensionable)()
+    SetSystemExtensionsAllowedTeamIdentifiers(value []string)()
+    SetSystemExtensionsAllowedTypes(value []MacOSSystemExtensionTypeMappingable)()
+    SetSystemExtensionsBlockOverride(value *bool)()
 }

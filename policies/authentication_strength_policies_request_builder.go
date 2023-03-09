@@ -60,8 +60,8 @@ func NewAuthenticationStrengthPoliciesRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationStrengthPoliciesRequestBuilder instantiates a new AuthenticationStrengthPoliciesRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewAuthenticationStrengthPoliciesRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuthenticationStrengthPoliciesRequestBuilder) Count()(*AuthenticationStrengthPoliciesCountRequestBuilder) {
-    return NewAuthenticationStrengthPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationStrengthPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FindByMethodModeWithAuthenticationMethodModes provides operations to call the findByMethodMode method.
 func (m *AuthenticationStrengthPoliciesRequestBuilder) FindByMethodModeWithAuthenticationMethodModes(authenticationMethodModes *string)(*AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) {
-    return NewAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter, authenticationMethodModes);
+    return NewAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter, authenticationMethodModes)
 }
 // Get get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) ToPostRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

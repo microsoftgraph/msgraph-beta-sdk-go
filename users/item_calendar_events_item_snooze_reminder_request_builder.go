@@ -26,13 +26,13 @@ type ItemCalendarEventsItemSnoozeReminderRequestBuilderPostRequestConfiguration 
 func NewItemCalendarEventsItemSnoozeReminderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemSnoozeReminderRequestBuilder) {
     m := &ItemCalendarEventsItemSnoozeReminderRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/microsoft.graph.snoozeReminder";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/snoozeReminder";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarEventsItemSnoozeReminderRequestBuilder instantiates a new SnoozeReminderRequestBuilder and sets the default values.
@@ -66,7 +66,10 @@ func (m *ItemCalendarEventsItemSnoozeReminderRequestBuilder) ToPostRequestInform
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // ProgramControlCollectionResponse 
 type ProgramControlCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ProgramControlable
 }
 // NewProgramControlCollectionResponse instantiates a new ProgramControlCollectionResponse and sets the default values.
 func NewProgramControlCollectionResponse()(*ProgramControlCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ProgramControlCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *ProgramControlCollectionResponse) GetValue()([]ProgramControlable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProgramControlable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProgramControlCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ProgramControlCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *ProgramControlCollectionResponse) SetValue(value []ProgramControlable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProgramControlCollectionResponseable 
+type ProgramControlCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ProgramControlable)
+    SetValue(value []ProgramControlable)()
 }

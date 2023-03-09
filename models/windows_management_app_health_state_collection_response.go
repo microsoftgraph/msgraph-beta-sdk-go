@@ -7,8 +7,6 @@ import (
 // WindowsManagementAppHealthStateCollectionResponse 
 type WindowsManagementAppHealthStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsManagementAppHealthStateable
 }
 // NewWindowsManagementAppHealthStateCollectionResponse instantiates a new WindowsManagementAppHealthStateCollectionResponse and sets the default values.
 func NewWindowsManagementAppHealthStateCollectionResponse()(*WindowsManagementAppHealthStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsManagementAppHealthStateCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsManagementAppHealthStateCollectionResponse) GetValue()([]WindowsManagementAppHealthStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsManagementAppHealthStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsManagementAppHealthStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsManagementAppHealthStateCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsManagementAppHealthStateCollectionResponse) SetValue(value []WindowsManagementAppHealthStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsManagementAppHealthStateCollectionResponseable 
+type WindowsManagementAppHealthStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsManagementAppHealthStateable)
+    SetValue(value []WindowsManagementAppHealthStateable)()
 }

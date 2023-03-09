@@ -6,7 +6,7 @@ import (
 type AndroidProfileApplicability int
 
 const (
-    DEFAULT_ESCAPED_ANDROIDPROFILEAPPLICABILITY AndroidProfileApplicability = iota
+    DEFAULTESCAPED_ANDROIDPROFILEAPPLICABILITY AndroidProfileApplicability = iota
     ANDROIDWORKPROFILE_ANDROIDPROFILEAPPLICABILITY
     ANDROIDDEVICEOWNER_ANDROIDPROFILEAPPLICABILITY
 )
@@ -15,10 +15,10 @@ func (i AndroidProfileApplicability) String() string {
     return []string{"default", "androidWorkProfile", "androidDeviceOwner"}[i]
 }
 func ParseAndroidProfileApplicability(v string) (any, error) {
-    result := DEFAULT_ESCAPED_ANDROIDPROFILEAPPLICABILITY
+    result := DEFAULTESCAPED_ANDROIDPROFILEAPPLICABILITY
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_ANDROIDPROFILEAPPLICABILITY
+            result = DEFAULTESCAPED_ANDROIDPROFILEAPPLICABILITY
         case "androidWorkProfile":
             result = ANDROIDWORKPROFILE_ANDROIDPROFILEAPPLICABILITY
         case "androidDeviceOwner":

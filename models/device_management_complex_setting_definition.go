@@ -7,8 +7,6 @@ import (
 // DeviceManagementComplexSettingDefinition 
 type DeviceManagementComplexSettingDefinition struct {
     DeviceManagementSettingDefinition
-    // The definitions of each property of the complex setting
-    propertyDefinitionIds []string
 }
 // NewDeviceManagementComplexSettingDefinition instantiates a new DeviceManagementComplexSettingDefinition and sets the default values.
 func NewDeviceManagementComplexSettingDefinition()(*DeviceManagementComplexSettingDefinition) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementComplexSettingDefinition) GetFieldDeserializers()(map[s
 }
 // GetPropertyDefinitionIds gets the propertyDefinitionIds property value. The definitions of each property of the complex setting
 func (m *DeviceManagementComplexSettingDefinition) GetPropertyDefinitionIds()([]string) {
-    return m.propertyDefinitionIds
+    val, err := m.GetBackingStore().Get("propertyDefinitionIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplexSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *DeviceManagementComplexSettingDefinition) Serialize(writer i878a80d2330
 }
 // SetPropertyDefinitionIds sets the propertyDefinitionIds property value. The definitions of each property of the complex setting
 func (m *DeviceManagementComplexSettingDefinition) SetPropertyDefinitionIds(value []string)() {
-    m.propertyDefinitionIds = value
+    err := m.GetBackingStore().Set("propertyDefinitionIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementComplexSettingDefinitionable 
+type DeviceManagementComplexSettingDefinitionable interface {
+    DeviceManagementSettingDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPropertyDefinitionIds()([]string)
+    SetPropertyDefinitionIds(value []string)()
 }

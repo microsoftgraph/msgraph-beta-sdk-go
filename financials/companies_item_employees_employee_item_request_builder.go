@@ -55,8 +55,8 @@ func NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemEmployeesEmployeeItemRequestBuilder instantiates a new EmployeeItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Patch(ctx context.Con
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.employee entity.
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Picture()(*CompaniesItemEmployeesItemPictureRequestBuilder) {
-    return NewCompaniesItemEmployeesItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemEmployeesItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.employee entity.
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) PictureById(id string)(*CompaniesItemEmployeesItemPicturePictureItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) PictureById(id string
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property employees for financials
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemEmployeesEmployeeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

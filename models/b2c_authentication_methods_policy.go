@@ -7,12 +7,6 @@ import (
 // B2cAuthenticationMethodsPolicy 
 type B2cAuthenticationMethodsPolicy struct {
     Entity
-    // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
-    isEmailPasswordAuthenticationEnabled *bool
-    // The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
-    isPhoneOneTimePasswordAuthenticationEnabled *bool
-    // The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
-    isUserNameAuthenticationEnabled *bool
 }
 // NewB2cAuthenticationMethodsPolicy instantiates a new B2cAuthenticationMethodsPolicy and sets the default values.
 func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
@@ -62,15 +56,36 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
 }
 // GetIsEmailPasswordAuthenticationEnabled gets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) GetIsEmailPasswordAuthenticationEnabled()(*bool) {
-    return m.isEmailPasswordAuthenticationEnabled
+    val, err := m.GetBackingStore().Get("isEmailPasswordAuthenticationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsPhoneOneTimePasswordAuthenticationEnabled gets the isPhoneOneTimePasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) GetIsPhoneOneTimePasswordAuthenticationEnabled()(*bool) {
-    return m.isPhoneOneTimePasswordAuthenticationEnabled
+    val, err := m.GetBackingStore().Get("isPhoneOneTimePasswordAuthenticationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsUserNameAuthenticationEnabled gets the isUserNameAuthenticationEnabled property value. The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) GetIsUserNameAuthenticationEnabled()(*bool) {
-    return m.isUserNameAuthenticationEnabled
+    val, err := m.GetBackingStore().Get("isUserNameAuthenticationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +115,33 @@ func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d268963
 }
 // SetIsEmailPasswordAuthenticationEnabled sets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsEmailPasswordAuthenticationEnabled(value *bool)() {
-    m.isEmailPasswordAuthenticationEnabled = value
+    err := m.GetBackingStore().Set("isEmailPasswordAuthenticationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPhoneOneTimePasswordAuthenticationEnabled sets the isPhoneOneTimePasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsPhoneOneTimePasswordAuthenticationEnabled(value *bool)() {
-    m.isPhoneOneTimePasswordAuthenticationEnabled = value
+    err := m.GetBackingStore().Set("isPhoneOneTimePasswordAuthenticationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsUserNameAuthenticationEnabled sets the isUserNameAuthenticationEnabled property value. The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsUserNameAuthenticationEnabled(value *bool)() {
-    m.isUserNameAuthenticationEnabled = value
+    err := m.GetBackingStore().Set("isUserNameAuthenticationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// B2cAuthenticationMethodsPolicyable 
+type B2cAuthenticationMethodsPolicyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsEmailPasswordAuthenticationEnabled()(*bool)
+    GetIsPhoneOneTimePasswordAuthenticationEnabled()(*bool)
+    GetIsUserNameAuthenticationEnabled()(*bool)
+    SetIsEmailPasswordAuthenticationEnabled(value *bool)()
+    SetIsPhoneOneTimePasswordAuthenticationEnabled(value *bool)()
+    SetIsUserNameAuthenticationEnabled(value *bool)()
 }

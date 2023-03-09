@@ -7,8 +7,6 @@ import (
 // RoleScopeTagAutoAssignmentCollectionResponse 
 type RoleScopeTagAutoAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RoleScopeTagAutoAssignmentable
 }
 // NewRoleScopeTagAutoAssignmentCollectionResponse instantiates a new RoleScopeTagAutoAssignmentCollectionResponse and sets the default values.
 func NewRoleScopeTagAutoAssignmentCollectionResponse()(*RoleScopeTagAutoAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RoleScopeTagAutoAssignmentCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *RoleScopeTagAutoAssignmentCollectionResponse) GetValue()([]RoleScopeTagAutoAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RoleScopeTagAutoAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RoleScopeTagAutoAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RoleScopeTagAutoAssignmentCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *RoleScopeTagAutoAssignmentCollectionResponse) SetValue(value []RoleScopeTagAutoAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RoleScopeTagAutoAssignmentCollectionResponseable 
+type RoleScopeTagAutoAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RoleScopeTagAutoAssignmentable)
+    SetValue(value []RoleScopeTagAutoAssignmentable)()
 }

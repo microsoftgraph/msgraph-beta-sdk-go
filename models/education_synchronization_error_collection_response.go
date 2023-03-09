@@ -7,8 +7,6 @@ import (
 // EducationSynchronizationErrorCollectionResponse 
 type EducationSynchronizationErrorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationSynchronizationErrorable
 }
 // NewEducationSynchronizationErrorCollectionResponse instantiates a new EducationSynchronizationErrorCollectionResponse and sets the default values.
 func NewEducationSynchronizationErrorCollectionResponse()(*EducationSynchronizationErrorCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationSynchronizationErrorCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *EducationSynchronizationErrorCollectionResponse) GetValue()([]EducationSynchronizationErrorable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationSynchronizationErrorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationErrorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationSynchronizationErrorCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *EducationSynchronizationErrorCollectionResponse) SetValue(value []EducationSynchronizationErrorable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationSynchronizationErrorCollectionResponseable 
+type EducationSynchronizationErrorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationSynchronizationErrorable)
+    SetValue(value []EducationSynchronizationErrorable)()
 }

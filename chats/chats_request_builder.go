@@ -53,7 +53,7 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
 }
 // AllMessages provides operations to call the allMessages method.
 func (m *ChatsRequestBuilder) AllMessages()(*AllMessagesRequestBuilder) {
-    return NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsRequestBuilder) {
@@ -64,8 +64,8 @@ func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatsRequestBuilder instantiates a new ChatsRequestBuilder and sets the default values.
@@ -76,7 +76,7 @@ func NewChatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Count provides operations to count the resources in the collection.
 func (m *ChatsRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cha
 }
 // GetAllMessages provides operations to call the getAllMessages method.
 func (m *ChatsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
-    return NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new chat object.
 // [Find more info here]
@@ -149,7 +149,10 @@ func (m *ChatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

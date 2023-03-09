@@ -7,20 +7,14 @@ import (
 // AppManagementPolicy 
 type AppManagementPolicy struct {
     PolicyBase
-    // The appliesTo property
-    appliesTo []DirectoryObjectable
-    // The isEnabled property
-    isEnabled *bool
-    // The restrictions property
-    restrictions AppManagementConfigurationable
 }
 // NewAppManagementPolicy instantiates a new AppManagementPolicy and sets the default values.
 func NewAppManagementPolicy()(*AppManagementPolicy) {
     m := &AppManagementPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.appManagementPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appManagementPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
-    return m.appliesTo
+    val, err := m.GetBackingStore().Get("appliesTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,11 +73,25 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIsEnabled gets the isEnabled property value. The isEnabled property
 func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRestrictions gets the restrictions property value. The restrictions property
 func (m *AppManagementPolicy) GetRestrictions()(AppManagementConfigurationable) {
-    return m.restrictions
+    val, err := m.GetBackingStore().Get("restrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AppManagementConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -110,13 +125,33 @@ func (m *AppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *AppManagementPolicy) SetAppliesTo(value []DirectoryObjectable)() {
-    m.appliesTo = value
+    err := m.GetBackingStore().Set("appliesTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEnabled sets the isEnabled property value. The isEnabled property
 func (m *AppManagementPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestrictions sets the restrictions property value. The restrictions property
 func (m *AppManagementPolicy) SetRestrictions(value AppManagementConfigurationable)() {
-    m.restrictions = value
+    err := m.GetBackingStore().Set("restrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppManagementPolicyable 
+type AppManagementPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetAppliesTo()([]DirectoryObjectable)
+    GetIsEnabled()(*bool)
+    GetRestrictions()(AppManagementConfigurationable)
+    SetAppliesTo(value []DirectoryObjectable)()
+    SetIsEnabled(value *bool)()
+    SetRestrictions(value AppManagementConfigurationable)()
 }

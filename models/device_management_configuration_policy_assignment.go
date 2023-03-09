@@ -7,12 +7,6 @@ import (
 // DeviceManagementConfigurationPolicyAssignment the DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
 type DeviceManagementConfigurationPolicyAssignment struct {
     Entity
-    // Represents source of assignment.
-    source *DeviceAndAppManagementAssignmentSource
-    // The identifier of the source of the assignment.
-    sourceId *string
-    // The assignment target for the DeviceManagementConfigurationPolicy.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceManagementConfigurationPolicyAssignment instantiates a new deviceManagementConfigurationPolicyAssignment and sets the default values.
 func NewDeviceManagementConfigurationPolicyAssignment()(*DeviceManagementConfigurationPolicyAssignment) {
@@ -62,15 +56,36 @@ func (m *DeviceManagementConfigurationPolicyAssignment) GetFieldDeserializers()(
 }
 // GetSource gets the source property value. Represents source of assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
-    return m.source
+    val, err := m.GetBackingStore().Get("source")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceAndAppManagementAssignmentSource)
+    }
+    return nil
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) GetSourceId()(*string) {
-    return m.sourceId
+    val, err := m.GetBackingStore().Get("sourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The assignment target for the DeviceManagementConfigurationPolicy.
 func (m *DeviceManagementConfigurationPolicyAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *DeviceManagementConfigurationPolicyAssignment) Serialize(writer i878a80
 }
 // SetSource sets the source property value. Represents source of assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    m.source = value
+    err := m.GetBackingStore().Set("source", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    err := m.GetBackingStore().Set("sourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The assignment target for the DeviceManagementConfigurationPolicy.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationPolicyAssignmentable 
+type DeviceManagementConfigurationPolicyAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSource()(*DeviceAndAppManagementAssignmentSource)
+    GetSourceId()(*string)
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetSource(value *DeviceAndAppManagementAssignmentSource)()
+    SetSourceId(value *string)()
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

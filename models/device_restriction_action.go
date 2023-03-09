@@ -7,12 +7,6 @@ import (
 // DeviceRestrictionAction 
 type DeviceRestrictionAction struct {
     DlpActionInfo
-    // The message property
-    message *string
-    // The restrictionAction property
-    restrictionAction *RestrictionAction
-    // The triggers property
-    triggers []RestrictionTrigger
 }
 // NewDeviceRestrictionAction instantiates a new DeviceRestrictionAction and sets the default values.
 func NewDeviceRestrictionAction()(*DeviceRestrictionAction) {
@@ -66,15 +60,36 @@ func (m *DeviceRestrictionAction) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMessage gets the message property value. The message property
 func (m *DeviceRestrictionAction) GetMessage()(*string) {
-    return m.message
+    val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRestrictionAction gets the restrictionAction property value. The restrictionAction property
 func (m *DeviceRestrictionAction) GetRestrictionAction()(*RestrictionAction) {
-    return m.restrictionAction
+    val, err := m.GetBackingStore().Get("restrictionAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RestrictionAction)
+    }
+    return nil
 }
 // GetTriggers gets the triggers property value. The triggers property
 func (m *DeviceRestrictionAction) GetTriggers()([]RestrictionTrigger) {
-    return m.triggers
+    val, err := m.GetBackingStore().Get("triggers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RestrictionTrigger)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceRestrictionAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,13 +120,33 @@ func (m *DeviceRestrictionAction) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetMessage sets the message property value. The message property
 func (m *DeviceRestrictionAction) SetMessage(value *string)() {
-    m.message = value
+    err := m.GetBackingStore().Set("message", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRestrictionAction sets the restrictionAction property value. The restrictionAction property
 func (m *DeviceRestrictionAction) SetRestrictionAction(value *RestrictionAction)() {
-    m.restrictionAction = value
+    err := m.GetBackingStore().Set("restrictionAction", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTriggers sets the triggers property value. The triggers property
 func (m *DeviceRestrictionAction) SetTriggers(value []RestrictionTrigger)() {
-    m.triggers = value
+    err := m.GetBackingStore().Set("triggers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceRestrictionActionable 
+type DeviceRestrictionActionable interface {
+    DlpActionInfoable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMessage()(*string)
+    GetRestrictionAction()(*RestrictionAction)
+    GetTriggers()([]RestrictionTrigger)
+    SetMessage(value *string)()
+    SetRestrictionAction(value *RestrictionAction)()
+    SetTriggers(value []RestrictionTrigger)()
 }

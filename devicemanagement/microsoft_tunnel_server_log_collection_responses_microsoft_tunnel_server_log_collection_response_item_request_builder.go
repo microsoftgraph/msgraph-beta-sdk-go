@@ -55,8 +55,8 @@ func NewMicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogColle
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder instantiates a new MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewMicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogColle
 }
 // CreateDownloadUrl provides operations to call the createDownloadUrl method.
 func (m *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreateDownloadUrl()(*MicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestBuilder) {
-    return NewMicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property microsoftTunnelServerLogCollectionResponses for deviceManagement
 func (m *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -87,7 +87,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogColl
 }
 // GenerateDownloadUrl provides operations to call the generateDownloadUrl method.
 func (m *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) GenerateDownloadUrl()(*MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilder) {
-    return NewMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerLogCollectionResponseable, error) {
@@ -162,7 +162,10 @@ func (m *MicrosoftTunnelServerLogCollectionResponsesMicrosoftTunnelServerLogColl
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

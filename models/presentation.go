@@ -7,8 +7,6 @@ import (
 // Presentation 
 type Presentation struct {
     Entity
-    // The comments property
-    comments []DocumentCommentable
 }
 // NewPresentation instantiates a new Presentation and sets the default values.
 func NewPresentation()(*Presentation) {
@@ -23,7 +21,14 @@ func CreatePresentationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetComments gets the comments property value. The comments property
 func (m *Presentation) GetComments()([]DocumentCommentable) {
-    return m.comments
+    val, err := m.GetBackingStore().Get("comments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentCommentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Presentation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,5 +69,15 @@ func (m *Presentation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetComments sets the comments property value. The comments property
 func (m *Presentation) SetComments(value []DocumentCommentable)() {
-    m.comments = value
+    err := m.GetBackingStore().Set("comments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Presentationable 
+type Presentationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetComments()([]DocumentCommentable)
+    SetComments(value []DocumentCommentable)()
 }

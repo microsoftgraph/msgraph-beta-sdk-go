@@ -8,18 +8,6 @@ import (
 // ManagementAction 
 type ManagementAction struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The category property
-    category *ManagementCategory
-    // The description for the management action. Optional. Read-only.
-    description *string
-    // The display name for the management action. Optional. Read-only.
-    displayName *string
-    // The reference for the management template used to generate the management action. Required. Read-only.
-    referenceTemplateId *string
-    // The referenceTemplateVersion property
-    referenceTemplateVersion *int32
-    // The collection of workload actions associated with the management action. Required. Read-only.
-    workloadActions []WorkloadActionable
 }
 // NewManagementAction instantiates a new managementAction and sets the default values.
 func NewManagementAction()(*ManagementAction) {
@@ -34,15 +22,36 @@ func CreateManagementActionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetCategory gets the category property value. The category property
 func (m *ManagementAction) GetCategory()(*ManagementCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementCategory)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description for the management action. Optional. Read-only.
 func (m *ManagementAction) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the management action. Optional. Read-only.
 func (m *ManagementAction) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,15 +124,36 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetReferenceTemplateId gets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
 func (m *ManagementAction) GetReferenceTemplateId()(*string) {
-    return m.referenceTemplateId
+    val, err := m.GetBackingStore().Get("referenceTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReferenceTemplateVersion gets the referenceTemplateVersion property value. The referenceTemplateVersion property
 func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
-    return m.referenceTemplateVersion
+    val, err := m.GetBackingStore().Get("referenceTemplateVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
 func (m *ManagementAction) GetWorkloadActions()([]WorkloadActionable) {
-    return m.workloadActions
+    val, err := m.GetBackingStore().Get("workloadActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkloadActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,25 +206,60 @@ func (m *ManagementAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetCategory sets the category property value. The category property
 func (m *ManagementAction) SetCategory(value *ManagementCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description for the management action. Optional. Read-only.
 func (m *ManagementAction) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the management action. Optional. Read-only.
 func (m *ManagementAction) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReferenceTemplateId sets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
 func (m *ManagementAction) SetReferenceTemplateId(value *string)() {
-    m.referenceTemplateId = value
+    err := m.GetBackingStore().Set("referenceTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReferenceTemplateVersion sets the referenceTemplateVersion property value. The referenceTemplateVersion property
 func (m *ManagementAction) SetReferenceTemplateVersion(value *int32)() {
-    m.referenceTemplateVersion = value
+    err := m.GetBackingStore().Set("referenceTemplateVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
 func (m *ManagementAction) SetWorkloadActions(value []WorkloadActionable)() {
-    m.workloadActions = value
+    err := m.GetBackingStore().Set("workloadActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementActionable 
+type ManagementActionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(*ManagementCategory)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetReferenceTemplateId()(*string)
+    GetReferenceTemplateVersion()(*int32)
+    GetWorkloadActions()([]WorkloadActionable)
+    SetCategory(value *ManagementCategory)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetReferenceTemplateId(value *string)()
+    SetReferenceTemplateVersion(value *int32)()
+    SetWorkloadActions(value []WorkloadActionable)()
 }

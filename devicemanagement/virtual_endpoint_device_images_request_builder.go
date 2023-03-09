@@ -60,8 +60,8 @@ func NewVirtualEndpointDeviceImagesRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointDeviceImagesRequestBuilder instantiates a new DeviceImagesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVirtualEndpointDeviceImagesRequestBuilder(rawUrl string, requestAdapter 
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointDeviceImagesRequestBuilder) Count()(*VirtualEndpointDeviceImagesCountRequestBuilder) {
-    return NewVirtualEndpointDeviceImagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointDeviceImagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
 // [Find more info here]
@@ -98,7 +98,7 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) Get(ctx context.Context, req
 }
 // GetSourceImages provides operations to call the getSourceImages method.
 func (m *VirtualEndpointDeviceImagesRequestBuilder) GetSourceImages()(*VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) {
-    return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *VirtualEndpointDeviceImagesRequestBuilder) ToPostRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsDeviceScoresCollectionResponse 
 type UserExperienceAnalyticsDeviceScoresCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserExperienceAnalyticsDeviceScoresable
 }
 // NewUserExperienceAnalyticsDeviceScoresCollectionResponse instantiates a new UserExperienceAnalyticsDeviceScoresCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsDeviceScoresCollectionResponse()(*UserExperienceAnalyticsDeviceScoresCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserExperienceAnalyticsDeviceScoresCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *UserExperienceAnalyticsDeviceScoresCollectionResponse) GetValue()([]UserExperienceAnalyticsDeviceScoresable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsDeviceScoresable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceScoresCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserExperienceAnalyticsDeviceScoresCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *UserExperienceAnalyticsDeviceScoresCollectionResponse) SetValue(value []UserExperienceAnalyticsDeviceScoresable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsDeviceScoresCollectionResponseable 
+type UserExperienceAnalyticsDeviceScoresCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserExperienceAnalyticsDeviceScoresable)
+    SetValue(value []UserExperienceAnalyticsDeviceScoresable)()
 }

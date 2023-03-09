@@ -7,8 +7,6 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusColl
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) GetValue()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusColl
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) SetValue(value []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponseable 
+type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)
+    SetValue(value []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)()
 }

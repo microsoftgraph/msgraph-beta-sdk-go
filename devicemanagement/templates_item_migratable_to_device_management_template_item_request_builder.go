@@ -48,7 +48,7 @@ type TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderPatchReq
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Categories()(*TemplatesItemMigratableToItemCategoriesRequestBuilder) {
-    return NewTemplatesItemMigratableToItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplatesItemMigratableToItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Ca
     if id != "" {
         urlTplParams["deviceManagementTemplateSettingCategory%2Did"] = id
     }
-    return NewTemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // CompareWithTemplateId provides operations to call the compare method.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*TemplatesItemMigratableToItemCompareWithTemplateIdRequestBuilder) {
-    return NewTemplatesItemMigratableToItemCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId);
+    return NewTemplatesItemMigratableToItemCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId)
 }
 // NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderInternal instantiates a new DeviceManagementTemplateItemRequestBuilder and sets the default values.
 func NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) {
@@ -74,8 +74,8 @@ func NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder instantiates a new DeviceManagementTemplateItemRequestBuilder and sets the default values.
@@ -86,7 +86,7 @@ func NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder(rawU
 }
 // CreateInstance provides operations to call the createInstance method.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) CreateInstance()(*TemplatesItemMigratableToItemCreateInstanceRequestBuilder) {
-    return NewTemplatesItemMigratableToItemCreateInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplatesItemMigratableToItemCreateInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property migratableTo for deviceManagement
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,7 +144,7 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Pa
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Settings()(*TemplatesItemMigratableToItemSettingsRequestBuilder) {
-    return NewTemplatesItemMigratableToItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplatesItemMigratableToItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*TemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
@@ -155,7 +155,7 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Se
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewTemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property migratableTo for deviceManagement
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,7 +192,10 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

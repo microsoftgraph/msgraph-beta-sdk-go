@@ -9,30 +9,6 @@ import (
 // JournalLine 
 type JournalLine struct {
     Entity
-    // The account property
-    account Accountable
-    // The accountId property
-    accountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The accountNumber property
-    accountNumber *string
-    // The amount property
-    amount *float64
-    // The comment property
-    comment *string
-    // The description property
-    description *string
-    // The documentNumber property
-    documentNumber *string
-    // The externalDocumentNumber property
-    externalDocumentNumber *string
-    // The journalDisplayName property
-    journalDisplayName *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The lineNumber property
-    lineNumber *int32
-    // The postingDate property
-    postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewJournalLine instantiates a new journalLine and sets the default values.
 func NewJournalLine()(*JournalLine) {
@@ -47,35 +23,91 @@ func CreateJournalLineFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAccount gets the account property value. The account property
 func (m *JournalLine) GetAccount()(Accountable) {
-    return m.account
+    val, err := m.GetBackingStore().Get("account")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Accountable)
+    }
+    return nil
 }
 // GetAccountId gets the accountId property value. The accountId property
 func (m *JournalLine) GetAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.accountId
+    val, err := m.GetBackingStore().Get("accountId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetAccountNumber gets the accountNumber property value. The accountNumber property
 func (m *JournalLine) GetAccountNumber()(*string) {
-    return m.accountNumber
+    val, err := m.GetBackingStore().Get("accountNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAmount gets the amount property value. The amount property
 func (m *JournalLine) GetAmount()(*float64) {
-    return m.amount
+    val, err := m.GetBackingStore().Get("amount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetComment gets the comment property value. The comment property
 func (m *JournalLine) GetComment()(*string) {
-    return m.comment
+    val, err := m.GetBackingStore().Get("comment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *JournalLine) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDocumentNumber gets the documentNumber property value. The documentNumber property
 func (m *JournalLine) GetDocumentNumber()(*string) {
-    return m.documentNumber
+    val, err := m.GetBackingStore().Get("documentNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *JournalLine) GetExternalDocumentNumber()(*string) {
-    return m.externalDocumentNumber
+    val, err := m.GetBackingStore().Get("externalDocumentNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *JournalLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -204,19 +236,47 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetJournalDisplayName gets the journalDisplayName property value. The journalDisplayName property
 func (m *JournalLine) GetJournalDisplayName()(*string) {
-    return m.journalDisplayName
+    val, err := m.GetBackingStore().Get("journalDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *JournalLine) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLineNumber gets the lineNumber property value. The lineNumber property
 func (m *JournalLine) GetLineNumber()(*int32) {
-    return m.lineNumber
+    val, err := m.GetBackingStore().Get("lineNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPostingDate gets the postingDate property value. The postingDate property
 func (m *JournalLine) GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.postingDate
+    val, err := m.GetBackingStore().Get("postingDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *JournalLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -300,49 +360,114 @@ func (m *JournalLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAccount sets the account property value. The account property
 func (m *JournalLine) SetAccount(value Accountable)() {
-    m.account = value
+    err := m.GetBackingStore().Set("account", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccountId sets the accountId property value. The accountId property
 func (m *JournalLine) SetAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.accountId = value
+    err := m.GetBackingStore().Set("accountId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccountNumber sets the accountNumber property value. The accountNumber property
 func (m *JournalLine) SetAccountNumber(value *string)() {
-    m.accountNumber = value
+    err := m.GetBackingStore().Set("accountNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAmount sets the amount property value. The amount property
 func (m *JournalLine) SetAmount(value *float64)() {
-    m.amount = value
+    err := m.GetBackingStore().Set("amount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetComment sets the comment property value. The comment property
 func (m *JournalLine) SetComment(value *string)() {
-    m.comment = value
+    err := m.GetBackingStore().Set("comment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *JournalLine) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDocumentNumber sets the documentNumber property value. The documentNumber property
 func (m *JournalLine) SetDocumentNumber(value *string)() {
-    m.documentNumber = value
+    err := m.GetBackingStore().Set("documentNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalDocumentNumber sets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *JournalLine) SetExternalDocumentNumber(value *string)() {
-    m.externalDocumentNumber = value
+    err := m.GetBackingStore().Set("externalDocumentNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJournalDisplayName sets the journalDisplayName property value. The journalDisplayName property
 func (m *JournalLine) SetJournalDisplayName(value *string)() {
-    m.journalDisplayName = value
+    err := m.GetBackingStore().Set("journalDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *JournalLine) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLineNumber sets the lineNumber property value. The lineNumber property
 func (m *JournalLine) SetLineNumber(value *int32)() {
-    m.lineNumber = value
+    err := m.GetBackingStore().Set("lineNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPostingDate sets the postingDate property value. The postingDate property
 func (m *JournalLine) SetPostingDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.postingDate = value
+    err := m.GetBackingStore().Set("postingDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// JournalLineable 
+type JournalLineable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccount()(Accountable)
+    GetAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetAccountNumber()(*string)
+    GetAmount()(*float64)
+    GetComment()(*string)
+    GetDescription()(*string)
+    GetDocumentNumber()(*string)
+    GetExternalDocumentNumber()(*string)
+    GetJournalDisplayName()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLineNumber()(*int32)
+    GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    SetAccount(value Accountable)()
+    SetAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetAccountNumber(value *string)()
+    SetAmount(value *float64)()
+    SetComment(value *string)()
+    SetDescription(value *string)()
+    SetDocumentNumber(value *string)()
+    SetExternalDocumentNumber(value *string)()
+    SetJournalDisplayName(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLineNumber(value *int32)()
+    SetPostingDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
 }

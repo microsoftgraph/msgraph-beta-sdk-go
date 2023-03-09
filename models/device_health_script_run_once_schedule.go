@@ -7,16 +7,14 @@ import (
 // DeviceHealthScriptRunOnceSchedule 
 type DeviceHealthScriptRunOnceSchedule struct {
     DeviceHealthScriptTimeSchedule
-    // The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
-    date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewDeviceHealthScriptRunOnceSchedule instantiates a new DeviceHealthScriptRunOnceSchedule and sets the default values.
 func NewDeviceHealthScriptRunOnceSchedule()(*DeviceHealthScriptRunOnceSchedule) {
     m := &DeviceHealthScriptRunOnceSchedule{
         DeviceHealthScriptTimeSchedule: *NewDeviceHealthScriptTimeSchedule(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptRunOnceSchedule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptRunOnceSchedule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceHealthScriptRunOnceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateDeviceHealthScriptRunOnceScheduleFromDiscriminatorValue(parseNode i87
 }
 // GetDate gets the date property value. The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptRunOnceSchedule) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.date
+    val, err := m.GetBackingStore().Get("date")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptRunOnceSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *DeviceHealthScriptRunOnceSchedule) Serialize(writer i878a80d2330e89d268
 }
 // SetDate sets the date property value. The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptRunOnceSchedule) SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.date = value
+    err := m.GetBackingStore().Set("date", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceHealthScriptRunOnceScheduleable 
+type DeviceHealthScriptRunOnceScheduleable interface {
+    DeviceHealthScriptTimeScheduleable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
 }

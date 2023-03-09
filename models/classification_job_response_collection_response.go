@@ -7,8 +7,6 @@ import (
 // ClassificationJobResponseCollectionResponse 
 type ClassificationJobResponseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ClassificationJobResponseable
 }
 // NewClassificationJobResponseCollectionResponse instantiates a new ClassificationJobResponseCollectionResponse and sets the default values.
 func NewClassificationJobResponseCollectionResponse()(*ClassificationJobResponseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ClassificationJobResponseCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *ClassificationJobResponseCollectionResponse) GetValue()([]ClassificationJobResponseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ClassificationJobResponseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ClassificationJobResponseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ClassificationJobResponseCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *ClassificationJobResponseCollectionResponse) SetValue(value []ClassificationJobResponseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ClassificationJobResponseCollectionResponseable 
+type ClassificationJobResponseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ClassificationJobResponseable)
+    SetValue(value []ClassificationJobResponseable)()
 }

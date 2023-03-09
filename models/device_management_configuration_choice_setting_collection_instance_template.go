@@ -7,18 +7,14 @@ import (
 // DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate 
 type DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
-    // Linked policy may append values which are not present in the template.
-    allowUnmanagedValues *bool
-    // Choice Setting Collection Value Template
-    choiceSettingCollectionValueTemplate []DeviceManagementConfigurationChoiceSettingValueTemplateable
 }
 // NewDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate instantiates a new DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstanceTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstanceTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,11 +23,25 @@ func CreateDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateF
 }
 // GetAllowUnmanagedValues gets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetAllowUnmanagedValues()(*bool) {
-    return m.allowUnmanagedValues
+    val, err := m.GetBackingStore().Get("allowUnmanagedValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetChoiceSettingCollectionValueTemplate gets the choiceSettingCollectionValueTemplate property value. Choice Setting Collection Value Template
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetChoiceSettingCollectionValueTemplate()([]DeviceManagementConfigurationChoiceSettingValueTemplateable) {
-    return m.choiceSettingCollectionValueTemplate
+    val, err := m.GetBackingStore().Get("choiceSettingCollectionValueTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationChoiceSettingValueTemplateable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,9 +98,24 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) S
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) SetAllowUnmanagedValues(value *bool)() {
-    m.allowUnmanagedValues = value
+    err := m.GetBackingStore().Set("allowUnmanagedValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChoiceSettingCollectionValueTemplate sets the choiceSettingCollectionValueTemplate property value. Choice Setting Collection Value Template
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) SetChoiceSettingCollectionValueTemplate(value []DeviceManagementConfigurationChoiceSettingValueTemplateable)() {
-    m.choiceSettingCollectionValueTemplate = value
+    err := m.GetBackingStore().Set("choiceSettingCollectionValueTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateable 
+type DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateable interface {
+    DeviceManagementConfigurationSettingInstanceTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowUnmanagedValues()(*bool)
+    GetChoiceSettingCollectionValueTemplate()([]DeviceManagementConfigurationChoiceSettingValueTemplateable)
+    SetAllowUnmanagedValues(value *bool)()
+    SetChoiceSettingCollectionValueTemplate(value []DeviceManagementConfigurationChoiceSettingValueTemplateable)()
 }

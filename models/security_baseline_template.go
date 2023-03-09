@@ -7,20 +7,14 @@ import (
 // SecurityBaselineTemplate 
 type SecurityBaselineTemplate struct {
     DeviceManagementTemplate
-    // The security baseline per category device state summary
-    categoryDeviceStateSummaries []SecurityBaselineCategoryStateSummaryable
-    // The security baseline device states
-    deviceStates []SecurityBaselineDeviceStateable
-    // The security baseline device state summary
-    deviceStateSummary SecurityBaselineStateSummaryable
 }
 // NewSecurityBaselineTemplate instantiates a new SecurityBaselineTemplate and sets the default values.
 func NewSecurityBaselineTemplate()(*SecurityBaselineTemplate) {
     m := &SecurityBaselineTemplate{
         DeviceManagementTemplate: *NewDeviceManagementTemplate(),
     }
-    odataTypeValue := "#microsoft.graph.securityBaselineTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.securityBaselineTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSecurityBaselineTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,15 +23,36 @@ func CreateSecurityBaselineTemplateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCategoryDeviceStateSummaries gets the categoryDeviceStateSummaries property value. The security baseline per category device state summary
 func (m *SecurityBaselineTemplate) GetCategoryDeviceStateSummaries()([]SecurityBaselineCategoryStateSummaryable) {
-    return m.categoryDeviceStateSummaries
+    val, err := m.GetBackingStore().Get("categoryDeviceStateSummaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityBaselineCategoryStateSummaryable)
+    }
+    return nil
 }
 // GetDeviceStates gets the deviceStates property value. The security baseline device states
 func (m *SecurityBaselineTemplate) GetDeviceStates()([]SecurityBaselineDeviceStateable) {
-    return m.deviceStates
+    val, err := m.GetBackingStore().Get("deviceStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityBaselineDeviceStateable)
+    }
+    return nil
 }
 // GetDeviceStateSummary gets the deviceStateSummary property value. The security baseline device state summary
 func (m *SecurityBaselineTemplate) GetDeviceStateSummary()(SecurityBaselineStateSummaryable) {
-    return m.deviceStateSummary
+    val, err := m.GetBackingStore().Get("deviceStateSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityBaselineStateSummaryable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,13 +133,33 @@ func (m *SecurityBaselineTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCategoryDeviceStateSummaries sets the categoryDeviceStateSummaries property value. The security baseline per category device state summary
 func (m *SecurityBaselineTemplate) SetCategoryDeviceStateSummaries(value []SecurityBaselineCategoryStateSummaryable)() {
-    m.categoryDeviceStateSummaries = value
+    err := m.GetBackingStore().Set("categoryDeviceStateSummaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceStates sets the deviceStates property value. The security baseline device states
 func (m *SecurityBaselineTemplate) SetDeviceStates(value []SecurityBaselineDeviceStateable)() {
-    m.deviceStates = value
+    err := m.GetBackingStore().Set("deviceStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceStateSummary sets the deviceStateSummary property value. The security baseline device state summary
 func (m *SecurityBaselineTemplate) SetDeviceStateSummary(value SecurityBaselineStateSummaryable)() {
-    m.deviceStateSummary = value
+    err := m.GetBackingStore().Set("deviceStateSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityBaselineTemplateable 
+type SecurityBaselineTemplateable interface {
+    DeviceManagementTemplateable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategoryDeviceStateSummaries()([]SecurityBaselineCategoryStateSummaryable)
+    GetDeviceStates()([]SecurityBaselineDeviceStateable)
+    GetDeviceStateSummary()(SecurityBaselineStateSummaryable)
+    SetCategoryDeviceStateSummaries(value []SecurityBaselineCategoryStateSummaryable)()
+    SetDeviceStates(value []SecurityBaselineDeviceStateable)()
+    SetDeviceStateSummary(value SecurityBaselineStateSummaryable)()
 }

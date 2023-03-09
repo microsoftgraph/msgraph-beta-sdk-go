@@ -60,8 +60,8 @@ func NewDeletedTeamsRequestBuilderInternal(pathParameters map[string]string, req
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedTeamsRequestBuilder instantiates a new DeletedTeamsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeletedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeletedTeamsRequestBuilder) Count()(*DeletedTeamsCountRequestBuilder) {
-    return NewDeletedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the deletedTeam objects and their properties.
 // [Find more info here]
@@ -98,7 +98,7 @@ func (m *DeletedTeamsRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // GetAllMessages provides operations to call the getAllMessages method.
 func (m *DeletedTeamsRequestBuilder) GetAllMessages()(*DeletedTeamsGetAllMessagesRequestBuilder) {
-    return NewDeletedTeamsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeletedTeamsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deletedTeams for teamwork
 func (m *DeletedTeamsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, requestConfiguration *DeletedTeamsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, error) {
@@ -142,7 +142,10 @@ func (m *DeletedTeamsRequestBuilder) ToPostRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

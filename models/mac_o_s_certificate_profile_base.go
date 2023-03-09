@@ -7,24 +7,14 @@ import (
 // MacOSCertificateProfileBase 
 type MacOSCertificateProfileBase struct {
     DeviceConfiguration
-    // Certificate Validity Period Options.
-    certificateValidityPeriodScale *CertificateValidityPeriodScale
-    // Value for the Certificate Validity Period.
-    certificateValidityPeriodValue *int32
-    // Certificate renewal threshold percentage.
-    renewalThresholdPercentage *int32
-    // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-    subjectAlternativeNameType *SubjectAlternativeNameType
-    // Subject Name Format Options for Apple devices.
-    subjectNameFormat *AppleSubjectNameFormat
 }
 // NewMacOSCertificateProfileBase instantiates a new macOSCertificateProfileBase and sets the default values.
 func NewMacOSCertificateProfileBase()(*MacOSCertificateProfileBase) {
     m := &MacOSCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSCertificateProfileBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSCertificateProfileBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,11 +45,25 @@ func CreateMacOSCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *MacOSCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    return m.certificateValidityPeriodScale
+    val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CertificateValidityPeriodScale)
+    }
+    return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *MacOSCertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
-    return m.certificateValidityPeriodValue
+    val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,15 +122,36 @@ func (m *MacOSCertificateProfileBase) GetFieldDeserializers()(map[string]func(i8
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *MacOSCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
-    return m.renewalThresholdPercentage
+    val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *MacOSCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
-    return m.subjectAlternativeNameType
+    val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectAlternativeNameType)
+    }
+    return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options for Apple devices.
 func (m *MacOSCertificateProfileBase) GetSubjectNameFormat()(*AppleSubjectNameFormat) {
-    return m.subjectNameFormat
+    val, err := m.GetBackingStore().Get("subjectNameFormat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleSubjectNameFormat)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,21 +196,51 @@ func (m *MacOSCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *MacOSCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    m.certificateValidityPeriodScale = value
+    err := m.GetBackingStore().Set("certificateValidityPeriodScale", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *MacOSCertificateProfileBase) SetCertificateValidityPeriodValue(value *int32)() {
-    m.certificateValidityPeriodValue = value
+    err := m.GetBackingStore().Set("certificateValidityPeriodValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *MacOSCertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
-    m.renewalThresholdPercentage = value
+    err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *MacOSCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
-    m.subjectAlternativeNameType = value
+    err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options for Apple devices.
 func (m *MacOSCertificateProfileBase) SetSubjectNameFormat(value *AppleSubjectNameFormat)() {
-    m.subjectNameFormat = value
+    err := m.GetBackingStore().Set("subjectNameFormat", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSCertificateProfileBaseable 
+type MacOSCertificateProfileBaseable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale)
+    GetCertificateValidityPeriodValue()(*int32)
+    GetRenewalThresholdPercentage()(*int32)
+    GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
+    GetSubjectNameFormat()(*AppleSubjectNameFormat)
+    SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
+    SetCertificateValidityPeriodValue(value *int32)()
+    SetRenewalThresholdPercentage(value *int32)()
+    SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
+    SetSubjectNameFormat(value *AppleSubjectNameFormat)()
 }

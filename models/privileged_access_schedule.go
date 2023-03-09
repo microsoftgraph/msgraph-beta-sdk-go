@@ -8,16 +8,6 @@ import (
 // PrivilegedAccessSchedule 
 type PrivilegedAccessSchedule struct {
     Entity
-    // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The createdUsing property
-    createdUsing *string
-    // The modifiedDateTime property
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The scheduleInfo property
-    scheduleInfo RequestScheduleable
-    // The status property
-    status *string
 }
 // NewPrivilegedAccessSchedule instantiates a new privilegedAccessSchedule and sets the default values.
 func NewPrivilegedAccessSchedule()(*PrivilegedAccessSchedule) {
@@ -52,11 +42,25 @@ func CreatePrivilegedAccessScheduleFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *PrivilegedAccessSchedule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreatedUsing gets the createdUsing property value. The createdUsing property
 func (m *PrivilegedAccessSchedule) GetCreatedUsing()(*string) {
-    return m.createdUsing
+    val, err := m.GetBackingStore().Get("createdUsing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccessSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,15 +119,36 @@ func (m *PrivilegedAccessSchedule) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The modifiedDateTime property
 func (m *PrivilegedAccessSchedule) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.modifiedDateTime
+    val, err := m.GetBackingStore().Get("modifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetScheduleInfo gets the scheduleInfo property value. The scheduleInfo property
 func (m *PrivilegedAccessSchedule) GetScheduleInfo()(RequestScheduleable) {
-    return m.scheduleInfo
+    val, err := m.GetBackingStore().Get("scheduleInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RequestScheduleable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *PrivilegedAccessSchedule) GetStatus()(*string) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -165,21 +190,51 @@ func (m *PrivilegedAccessSchedule) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *PrivilegedAccessSchedule) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedUsing sets the createdUsing property value. The createdUsing property
 func (m *PrivilegedAccessSchedule) SetCreatedUsing(value *string)() {
-    m.createdUsing = value
+    err := m.GetBackingStore().Set("createdUsing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The modifiedDateTime property
 func (m *PrivilegedAccessSchedule) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    err := m.GetBackingStore().Set("modifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduleInfo sets the scheduleInfo property value. The scheduleInfo property
 func (m *PrivilegedAccessSchedule) SetScheduleInfo(value RequestScheduleable)() {
-    m.scheduleInfo = value
+    err := m.GetBackingStore().Set("scheduleInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *PrivilegedAccessSchedule) SetStatus(value *string)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedAccessScheduleable 
+type PrivilegedAccessScheduleable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCreatedUsing()(*string)
+    GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetScheduleInfo()(RequestScheduleable)
+    GetStatus()(*string)
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCreatedUsing(value *string)()
+    SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetScheduleInfo(value RequestScheduleable)()
+    SetStatus(value *string)()
 }

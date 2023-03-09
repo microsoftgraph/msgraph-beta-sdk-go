@@ -7,18 +7,14 @@ import (
 // MobileAppPolicySetItem 
 type MobileAppPolicySetItem struct {
     PolicySetItem
-    // Possible values for the install intent chosen by the admin.
-    intent *InstallIntent
-    // Settings of the MobileAppPolicySetItem.
-    settings MobileAppAssignmentSettingsable
 }
 // NewMobileAppPolicySetItem instantiates a new MobileAppPolicySetItem and sets the default values.
 func NewMobileAppPolicySetItem()(*MobileAppPolicySetItem) {
     m := &MobileAppPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.mobileAppPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mobileAppPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMobileAppPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *MobileAppPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppPolicySetItem) GetIntent()(*InstallIntent) {
-    return m.intent
+    val, err := m.GetBackingStore().Get("intent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InstallIntent)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. Settings of the MobileAppPolicySetItem.
 func (m *MobileAppPolicySetItem) GetSettings()(MobileAppAssignmentSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileAppAssignmentSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,9 +91,24 @@ func (m *MobileAppPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetIntent sets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppPolicySetItem) SetIntent(value *InstallIntent)() {
-    m.intent = value
+    err := m.GetBackingStore().Set("intent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. Settings of the MobileAppPolicySetItem.
 func (m *MobileAppPolicySetItem) SetSettings(value MobileAppAssignmentSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppPolicySetItemable 
+type MobileAppPolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
+    GetIntent()(*InstallIntent)
+    GetSettings()(MobileAppAssignmentSettingsable)
+    SetIntent(value *InstallIntent)()
+    SetSettings(value MobileAppAssignmentSettingsable)()
 }

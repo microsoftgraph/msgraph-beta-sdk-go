@@ -8,20 +8,6 @@ import (
 // EmbeddedSIMActivationCodePool a pool represents a group of embedded SIM activation codes.
 type EmbeddedSIMActivationCodePool struct {
     Entity
-    // The total count of activation codes which belong to this pool.
-    activationCodeCount *int32
-    // The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
-    activationCodes []EmbeddedSIMActivationCodeable
-    // Navigational property to a list of targets to which this pool is assigned.
-    assignments []EmbeddedSIMActivationCodePoolAssignmentable
-    // The time the embedded SIM activation code pool was created. Generated service side.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Navigational property to a list of device states for this pool.
-    deviceStates []EmbeddedSIMDeviceStateable
-    // The admin defined name of the embedded SIM activation code pool.
-    displayName *string
-    // The time the embedded SIM activation code pool was last modified. Updated service side.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewEmbeddedSIMActivationCodePool instantiates a new embeddedSIMActivationCodePool and sets the default values.
 func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {
@@ -36,27 +22,69 @@ func CreateEmbeddedSIMActivationCodePoolFromDiscriminatorValue(parseNode i878a80
 }
 // GetActivationCodeCount gets the activationCodeCount property value. The total count of activation codes which belong to this pool.
 func (m *EmbeddedSIMActivationCodePool) GetActivationCodeCount()(*int32) {
-    return m.activationCodeCount
+    val, err := m.GetBackingStore().Get("activationCodeCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetActivationCodes gets the activationCodes property value. The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
 func (m *EmbeddedSIMActivationCodePool) GetActivationCodes()([]EmbeddedSIMActivationCodeable) {
-    return m.activationCodes
+    val, err := m.GetBackingStore().Get("activationCodes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmbeddedSIMActivationCodeable)
+    }
+    return nil
 }
 // GetAssignments gets the assignments property value. Navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePool) GetAssignments()([]EmbeddedSIMActivationCodePoolAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmbeddedSIMActivationCodePoolAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The time the embedded SIM activation code pool was created. Generated service side.
 func (m *EmbeddedSIMActivationCodePool) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceStates gets the deviceStates property value. Navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMActivationCodePool) GetDeviceStates()([]EmbeddedSIMDeviceStateable) {
-    return m.deviceStates
+    val, err := m.GetBackingStore().Get("deviceStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmbeddedSIMDeviceStateable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The admin defined name of the embedded SIM activation code pool.
 func (m *EmbeddedSIMActivationCodePool) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -147,7 +175,14 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The time the embedded SIM activation code pool was last modified. Updated service side.
 func (m *EmbeddedSIMActivationCodePool) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.modifiedDateTime
+    val, err := m.GetBackingStore().Get("modifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmbeddedSIMActivationCodePool) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -213,29 +248,69 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i878a80d2330e89d2689638
 }
 // SetActivationCodeCount sets the activationCodeCount property value. The total count of activation codes which belong to this pool.
 func (m *EmbeddedSIMActivationCodePool) SetActivationCodeCount(value *int32)() {
-    m.activationCodeCount = value
+    err := m.GetBackingStore().Set("activationCodeCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivationCodes sets the activationCodes property value. The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
 func (m *EmbeddedSIMActivationCodePool) SetActivationCodes(value []EmbeddedSIMActivationCodeable)() {
-    m.activationCodes = value
+    err := m.GetBackingStore().Set("activationCodes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignments sets the assignments property value. Navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePool) SetAssignments(value []EmbeddedSIMActivationCodePoolAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The time the embedded SIM activation code pool was created. Generated service side.
 func (m *EmbeddedSIMActivationCodePool) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceStates sets the deviceStates property value. Navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMActivationCodePool) SetDeviceStates(value []EmbeddedSIMDeviceStateable)() {
-    m.deviceStates = value
+    err := m.GetBackingStore().Set("deviceStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The admin defined name of the embedded SIM activation code pool.
 func (m *EmbeddedSIMActivationCodePool) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The time the embedded SIM activation code pool was last modified. Updated service side.
 func (m *EmbeddedSIMActivationCodePool) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    err := m.GetBackingStore().Set("modifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmbeddedSIMActivationCodePoolable 
+type EmbeddedSIMActivationCodePoolable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivationCodeCount()(*int32)
+    GetActivationCodes()([]EmbeddedSIMActivationCodeable)
+    GetAssignments()([]EmbeddedSIMActivationCodePoolAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceStates()([]EmbeddedSIMDeviceStateable)
+    GetDisplayName()(*string)
+    GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetActivationCodeCount(value *int32)()
+    SetActivationCodes(value []EmbeddedSIMActivationCodeable)()
+    SetAssignments(value []EmbeddedSIMActivationCodePoolAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceStates(value []EmbeddedSIMDeviceStateable)()
+    SetDisplayName(value *string)()
+    SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

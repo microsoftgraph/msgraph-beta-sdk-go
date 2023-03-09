@@ -7,16 +7,14 @@ import (
 // EducationIdentityCreationConfiguration 
 type EducationIdentityCreationConfiguration struct {
     EducationIdentitySynchronizationConfiguration
-    // The userDomains property
-    userDomains []EducationIdentityDomainable
 }
 // NewEducationIdentityCreationConfiguration instantiates a new EducationIdentityCreationConfiguration and sets the default values.
 func NewEducationIdentityCreationConfiguration()(*EducationIdentityCreationConfiguration) {
     m := &EducationIdentityCreationConfiguration{
         EducationIdentitySynchronizationConfiguration: *NewEducationIdentitySynchronizationConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.educationIdentityCreationConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationIdentityCreationConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationIdentityCreationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +42,14 @@ func (m *EducationIdentityCreationConfiguration) GetFieldDeserializers()(map[str
 }
 // GetUserDomains gets the userDomains property value. The userDomains property
 func (m *EducationIdentityCreationConfiguration) GetUserDomains()([]EducationIdentityDomainable) {
-    return m.userDomains
+    val, err := m.GetBackingStore().Get("userDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationIdentityDomainable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityCreationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *EducationIdentityCreationConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetUserDomains sets the userDomains property value. The userDomains property
 func (m *EducationIdentityCreationConfiguration) SetUserDomains(value []EducationIdentityDomainable)() {
-    m.userDomains = value
+    err := m.GetBackingStore().Set("userDomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationIdentityCreationConfigurationable 
+type EducationIdentityCreationConfigurationable interface {
+    EducationIdentitySynchronizationConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserDomains()([]EducationIdentityDomainable)
+    SetUserDomains(value []EducationIdentityDomainable)()
 }

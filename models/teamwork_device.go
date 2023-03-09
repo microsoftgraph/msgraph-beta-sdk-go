@@ -8,36 +8,6 @@ import (
 // TeamworkDevice 
 type TeamworkDevice struct {
     Entity
-    // The activity properties that change based on the device usage.
-    activity TeamworkDeviceActivityable
-    // The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
-    activityState *TeamworkDeviceActivityState
-    // The company asset tag assigned by the admin on the device.
-    companyAssetTag *string
-    // The configuration properties of the device.
-    configuration TeamworkDeviceConfigurationable
-    // Identity of the user who enrolled the device to the tenant.
-    createdBy IdentitySetable
-    // The UTC date and time when the device was enrolled to the tenant.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The signed-in user on the device.
-    currentUser TeamworkUserIdentityable
-    // The deviceType property
-    deviceType *TeamworkDeviceType
-    // The hardwareDetail property
-    hardwareDetail TeamworkHardwareDetailable
-    // The health properties of the device.
-    health TeamworkDeviceHealthable
-    // The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.
-    healthStatus *TeamworkDeviceHealthStatus
-    // Identity of the user who last modified the device details.
-    lastModifiedBy IdentitySetable
-    // The UTC date and time when the device detail was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The notes added by the admin to the device.
-    notes *string
-    // The async operations on the device.
-    operations []TeamworkDeviceOperationable
 }
 // NewTeamworkDevice instantiates a new teamworkDevice and sets the default values.
 func NewTeamworkDevice()(*TeamworkDevice) {
@@ -52,35 +22,91 @@ func CreateTeamworkDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetActivity gets the activity property value. The activity properties that change based on the device usage.
 func (m *TeamworkDevice) GetActivity()(TeamworkDeviceActivityable) {
-    return m.activity
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkDeviceActivityable)
+    }
+    return nil
 }
 // GetActivityState gets the activityState property value. The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
 func (m *TeamworkDevice) GetActivityState()(*TeamworkDeviceActivityState) {
-    return m.activityState
+    val, err := m.GetBackingStore().Get("activityState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamworkDeviceActivityState)
+    }
+    return nil
 }
 // GetCompanyAssetTag gets the companyAssetTag property value. The company asset tag assigned by the admin on the device.
 func (m *TeamworkDevice) GetCompanyAssetTag()(*string) {
-    return m.companyAssetTag
+    val, err := m.GetBackingStore().Get("companyAssetTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConfiguration gets the configuration property value. The configuration properties of the device.
 func (m *TeamworkDevice) GetConfiguration()(TeamworkDeviceConfigurationable) {
-    return m.configuration
+    val, err := m.GetBackingStore().Get("configuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkDeviceConfigurationable)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who enrolled the device to the tenant.
 func (m *TeamworkDevice) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device was enrolled to the tenant.
 func (m *TeamworkDevice) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCurrentUser gets the currentUser property value. The signed-in user on the device.
 func (m *TeamworkDevice) GetCurrentUser()(TeamworkUserIdentityable) {
-    return m.currentUser
+    val, err := m.GetBackingStore().Get("currentUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkUserIdentityable)
+    }
+    return nil
 }
 // GetDeviceType gets the deviceType property value. The deviceType property
 func (m *TeamworkDevice) GetDeviceType()(*TeamworkDeviceType) {
-    return m.deviceType
+    val, err := m.GetBackingStore().Get("deviceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamworkDeviceType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -243,31 +269,80 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetHardwareDetail gets the hardwareDetail property value. The hardwareDetail property
 func (m *TeamworkDevice) GetHardwareDetail()(TeamworkHardwareDetailable) {
-    return m.hardwareDetail
+    val, err := m.GetBackingStore().Get("hardwareDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkHardwareDetailable)
+    }
+    return nil
 }
 // GetHealth gets the health property value. The health properties of the device.
 func (m *TeamworkDevice) GetHealth()(TeamworkDeviceHealthable) {
-    return m.health
+    val, err := m.GetBackingStore().Get("health")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkDeviceHealthable)
+    }
+    return nil
 }
 // GetHealthStatus gets the healthStatus property value. The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.
 func (m *TeamworkDevice) GetHealthStatus()(*TeamworkDeviceHealthStatus) {
-    return m.healthStatus
+    val, err := m.GetBackingStore().Get("healthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamworkDeviceHealthStatus)
+    }
+    return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device details.
 func (m *TeamworkDevice) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device detail was last modified.
 func (m *TeamworkDevice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNotes gets the notes property value. The notes added by the admin to the device.
 func (m *TeamworkDevice) GetNotes()(*string) {
-    return m.notes
+    val, err := m.GetBackingStore().Get("notes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. The async operations on the device.
 func (m *TeamworkDevice) GetOperations()([]TeamworkDeviceOperationable) {
-    return m.operations
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkDeviceOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -376,61 +451,141 @@ func (m *TeamworkDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetActivity sets the activity property value. The activity properties that change based on the device usage.
 func (m *TeamworkDevice) SetActivity(value TeamworkDeviceActivityable)() {
-    m.activity = value
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivityState sets the activityState property value. The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
 func (m *TeamworkDevice) SetActivityState(value *TeamworkDeviceActivityState)() {
-    m.activityState = value
+    err := m.GetBackingStore().Set("activityState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompanyAssetTag sets the companyAssetTag property value. The company asset tag assigned by the admin on the device.
 func (m *TeamworkDevice) SetCompanyAssetTag(value *string)() {
-    m.companyAssetTag = value
+    err := m.GetBackingStore().Set("companyAssetTag", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfiguration sets the configuration property value. The configuration properties of the device.
 func (m *TeamworkDevice) SetConfiguration(value TeamworkDeviceConfigurationable)() {
-    m.configuration = value
+    err := m.GetBackingStore().Set("configuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who enrolled the device to the tenant.
 func (m *TeamworkDevice) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device was enrolled to the tenant.
 func (m *TeamworkDevice) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrentUser sets the currentUser property value. The signed-in user on the device.
 func (m *TeamworkDevice) SetCurrentUser(value TeamworkUserIdentityable)() {
-    m.currentUser = value
+    err := m.GetBackingStore().Set("currentUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceType sets the deviceType property value. The deviceType property
 func (m *TeamworkDevice) SetDeviceType(value *TeamworkDeviceType)() {
-    m.deviceType = value
+    err := m.GetBackingStore().Set("deviceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHardwareDetail sets the hardwareDetail property value. The hardwareDetail property
 func (m *TeamworkDevice) SetHardwareDetail(value TeamworkHardwareDetailable)() {
-    m.hardwareDetail = value
+    err := m.GetBackingStore().Set("hardwareDetail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealth sets the health property value. The health properties of the device.
 func (m *TeamworkDevice) SetHealth(value TeamworkDeviceHealthable)() {
-    m.health = value
+    err := m.GetBackingStore().Set("health", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.
 func (m *TeamworkDevice) SetHealthStatus(value *TeamworkDeviceHealthStatus)() {
-    m.healthStatus = value
+    err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the device details.
 func (m *TeamworkDevice) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The UTC date and time when the device detail was last modified.
 func (m *TeamworkDevice) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotes sets the notes property value. The notes added by the admin to the device.
 func (m *TeamworkDevice) SetNotes(value *string)() {
-    m.notes = value
+    err := m.GetBackingStore().Set("notes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. The async operations on the device.
 func (m *TeamworkDevice) SetOperations(value []TeamworkDeviceOperationable)() {
-    m.operations = value
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkDeviceable 
+type TeamworkDeviceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivity()(TeamworkDeviceActivityable)
+    GetActivityState()(*TeamworkDeviceActivityState)
+    GetCompanyAssetTag()(*string)
+    GetConfiguration()(TeamworkDeviceConfigurationable)
+    GetCreatedBy()(IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCurrentUser()(TeamworkUserIdentityable)
+    GetDeviceType()(*TeamworkDeviceType)
+    GetHardwareDetail()(TeamworkHardwareDetailable)
+    GetHealth()(TeamworkDeviceHealthable)
+    GetHealthStatus()(*TeamworkDeviceHealthStatus)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNotes()(*string)
+    GetOperations()([]TeamworkDeviceOperationable)
+    SetActivity(value TeamworkDeviceActivityable)()
+    SetActivityState(value *TeamworkDeviceActivityState)()
+    SetCompanyAssetTag(value *string)()
+    SetConfiguration(value TeamworkDeviceConfigurationable)()
+    SetCreatedBy(value IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCurrentUser(value TeamworkUserIdentityable)()
+    SetDeviceType(value *TeamworkDeviceType)()
+    SetHardwareDetail(value TeamworkHardwareDetailable)()
+    SetHealth(value TeamworkDeviceHealthable)()
+    SetHealthStatus(value *TeamworkDeviceHealthStatus)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNotes(value *string)()
+    SetOperations(value []TeamworkDeviceOperationable)()
 }

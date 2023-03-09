@@ -7,24 +7,6 @@ import (
 // DataClassificationService 
 type DataClassificationService struct {
     Entity
-    // The classifyFileJobs property
-    classifyFileJobs []JobResponseBaseable
-    // The classifyTextJobs property
-    classifyTextJobs []JobResponseBaseable
-    // The evaluateDlpPoliciesJobs property
-    evaluateDlpPoliciesJobs []JobResponseBaseable
-    // The evaluateLabelJobs property
-    evaluateLabelJobs []JobResponseBaseable
-    // The exactMatchDataStores property
-    exactMatchDataStores []ExactMatchDataStoreable
-    // The exactMatchUploadAgents property
-    exactMatchUploadAgents []ExactMatchUploadAgentable
-    // The jobs property
-    jobs []JobResponseBaseable
-    // The sensitiveTypes property
-    sensitiveTypes []SensitiveTypeable
-    // The sensitivityLabels property
-    sensitivityLabels []SensitivityLabelable
 }
 // NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
@@ -39,27 +21,69 @@ func CreateDataClassificationServiceFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetClassifyFileJobs gets the classifyFileJobs property value. The classifyFileJobs property
 func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBaseable) {
-    return m.classifyFileJobs
+    val, err := m.GetBackingStore().Get("classifyFileJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JobResponseBaseable)
+    }
+    return nil
 }
 // GetClassifyTextJobs gets the classifyTextJobs property value. The classifyTextJobs property
 func (m *DataClassificationService) GetClassifyTextJobs()([]JobResponseBaseable) {
-    return m.classifyTextJobs
+    val, err := m.GetBackingStore().Get("classifyTextJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JobResponseBaseable)
+    }
+    return nil
 }
 // GetEvaluateDlpPoliciesJobs gets the evaluateDlpPoliciesJobs property value. The evaluateDlpPoliciesJobs property
 func (m *DataClassificationService) GetEvaluateDlpPoliciesJobs()([]JobResponseBaseable) {
-    return m.evaluateDlpPoliciesJobs
+    val, err := m.GetBackingStore().Get("evaluateDlpPoliciesJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JobResponseBaseable)
+    }
+    return nil
 }
 // GetEvaluateLabelJobs gets the evaluateLabelJobs property value. The evaluateLabelJobs property
 func (m *DataClassificationService) GetEvaluateLabelJobs()([]JobResponseBaseable) {
-    return m.evaluateLabelJobs
+    val, err := m.GetBackingStore().Get("evaluateLabelJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JobResponseBaseable)
+    }
+    return nil
 }
 // GetExactMatchDataStores gets the exactMatchDataStores property value. The exactMatchDataStores property
 func (m *DataClassificationService) GetExactMatchDataStores()([]ExactMatchDataStoreable) {
-    return m.exactMatchDataStores
+    val, err := m.GetBackingStore().Get("exactMatchDataStores")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExactMatchDataStoreable)
+    }
+    return nil
 }
 // GetExactMatchUploadAgents gets the exactMatchUploadAgents property value. The exactMatchUploadAgents property
 func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUploadAgentable) {
-    return m.exactMatchUploadAgents
+    val, err := m.GetBackingStore().Get("exactMatchUploadAgents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExactMatchUploadAgentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -194,15 +218,36 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878
 }
 // GetJobs gets the jobs property value. The jobs property
 func (m *DataClassificationService) GetJobs()([]JobResponseBaseable) {
-    return m.jobs
+    val, err := m.GetBackingStore().Get("jobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]JobResponseBaseable)
+    }
+    return nil
 }
 // GetSensitiveTypes gets the sensitiveTypes property value. The sensitiveTypes property
 func (m *DataClassificationService) GetSensitiveTypes()([]SensitiveTypeable) {
-    return m.sensitiveTypes
+    val, err := m.GetBackingStore().Get("sensitiveTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitiveTypeable)
+    }
+    return nil
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
 func (m *DataClassificationService) GetSensitivityLabels()([]SensitivityLabelable) {
-    return m.sensitivityLabels
+    val, err := m.GetBackingStore().Get("sensitivityLabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitivityLabelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -304,37 +349,87 @@ func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetClassifyFileJobs sets the classifyFileJobs property value. The classifyFileJobs property
 func (m *DataClassificationService) SetClassifyFileJobs(value []JobResponseBaseable)() {
-    m.classifyFileJobs = value
+    err := m.GetBackingStore().Set("classifyFileJobs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassifyTextJobs sets the classifyTextJobs property value. The classifyTextJobs property
 func (m *DataClassificationService) SetClassifyTextJobs(value []JobResponseBaseable)() {
-    m.classifyTextJobs = value
+    err := m.GetBackingStore().Set("classifyTextJobs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEvaluateDlpPoliciesJobs sets the evaluateDlpPoliciesJobs property value. The evaluateDlpPoliciesJobs property
 func (m *DataClassificationService) SetEvaluateDlpPoliciesJobs(value []JobResponseBaseable)() {
-    m.evaluateDlpPoliciesJobs = value
+    err := m.GetBackingStore().Set("evaluateDlpPoliciesJobs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEvaluateLabelJobs sets the evaluateLabelJobs property value. The evaluateLabelJobs property
 func (m *DataClassificationService) SetEvaluateLabelJobs(value []JobResponseBaseable)() {
-    m.evaluateLabelJobs = value
+    err := m.GetBackingStore().Set("evaluateLabelJobs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExactMatchDataStores sets the exactMatchDataStores property value. The exactMatchDataStores property
 func (m *DataClassificationService) SetExactMatchDataStores(value []ExactMatchDataStoreable)() {
-    m.exactMatchDataStores = value
+    err := m.GetBackingStore().Set("exactMatchDataStores", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExactMatchUploadAgents sets the exactMatchUploadAgents property value. The exactMatchUploadAgents property
 func (m *DataClassificationService) SetExactMatchUploadAgents(value []ExactMatchUploadAgentable)() {
-    m.exactMatchUploadAgents = value
+    err := m.GetBackingStore().Set("exactMatchUploadAgents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJobs sets the jobs property value. The jobs property
 func (m *DataClassificationService) SetJobs(value []JobResponseBaseable)() {
-    m.jobs = value
+    err := m.GetBackingStore().Set("jobs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitiveTypes sets the sensitiveTypes property value. The sensitiveTypes property
 func (m *DataClassificationService) SetSensitiveTypes(value []SensitiveTypeable)() {
-    m.sensitiveTypes = value
+    err := m.GetBackingStore().Set("sensitiveTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
 func (m *DataClassificationService) SetSensitivityLabels(value []SensitivityLabelable)() {
-    m.sensitivityLabels = value
+    err := m.GetBackingStore().Set("sensitivityLabels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DataClassificationServiceable 
+type DataClassificationServiceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetClassifyFileJobs()([]JobResponseBaseable)
+    GetClassifyTextJobs()([]JobResponseBaseable)
+    GetEvaluateDlpPoliciesJobs()([]JobResponseBaseable)
+    GetEvaluateLabelJobs()([]JobResponseBaseable)
+    GetExactMatchDataStores()([]ExactMatchDataStoreable)
+    GetExactMatchUploadAgents()([]ExactMatchUploadAgentable)
+    GetJobs()([]JobResponseBaseable)
+    GetSensitiveTypes()([]SensitiveTypeable)
+    GetSensitivityLabels()([]SensitivityLabelable)
+    SetClassifyFileJobs(value []JobResponseBaseable)()
+    SetClassifyTextJobs(value []JobResponseBaseable)()
+    SetEvaluateDlpPoliciesJobs(value []JobResponseBaseable)()
+    SetEvaluateLabelJobs(value []JobResponseBaseable)()
+    SetExactMatchDataStores(value []ExactMatchDataStoreable)()
+    SetExactMatchUploadAgents(value []ExactMatchUploadAgentable)()
+    SetJobs(value []JobResponseBaseable)()
+    SetSensitiveTypes(value []SensitiveTypeable)()
+    SetSensitivityLabels(value []SensitivityLabelable)()
 }

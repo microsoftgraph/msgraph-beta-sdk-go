@@ -3,42 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UnmanagedDevice unmanaged device discovered in the network.
 type UnmanagedDevice struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Device name.
-    deviceName *string
-    // Domain.
-    domain *string
-    // IP address.
-    ipAddress *string
-    // Last logged on user.
-    lastLoggedOnUser *string
-    // Last seen date and time.
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Location.
-    location *string
-    // MAC address.
-    macAddress *string
-    // Manufacturer.
-    manufacturer *string
-    // Model.
-    model *string
-    // The OdataType property
-    odataType *string
-    // Operating system.
-    os *string
-    // Operating system version.
-    osVersion *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewUnmanagedDevice instantiates a new unmanagedDevice and sets the default values.
 func NewUnmanagedDevice()(*UnmanagedDevice) {
     m := &UnmanagedDevice{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUnmanagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,15 +25,41 @@ func CreateUnmanagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnmanagedDevice) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *UnmanagedDevice) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDeviceName gets the deviceName property value. Device name.
 func (m *UnmanagedDevice) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDomain gets the domain property value. Domain.
 func (m *UnmanagedDevice) GetDomain()(*string) {
-    return m.domain
+    val, err := m.GetBackingStore().Get("domain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -184,43 +188,113 @@ func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIpAddress gets the ipAddress property value. IP address.
 func (m *UnmanagedDevice) GetIpAddress()(*string) {
-    return m.ipAddress
+    val, err := m.GetBackingStore().Get("ipAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastLoggedOnUser gets the lastLoggedOnUser property value. Last logged on user.
 func (m *UnmanagedDevice) GetLastLoggedOnUser()(*string) {
-    return m.lastLoggedOnUser
+    val, err := m.GetBackingStore().Get("lastLoggedOnUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. Last seen date and time.
 func (m *UnmanagedDevice) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSeenDateTime
+    val, err := m.GetBackingStore().Get("lastSeenDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLocation gets the location property value. Location.
 func (m *UnmanagedDevice) GetLocation()(*string) {
-    return m.location
+    val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMacAddress gets the macAddress property value. MAC address.
 func (m *UnmanagedDevice) GetMacAddress()(*string) {
-    return m.macAddress
+    val, err := m.GetBackingStore().Get("macAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer.
 func (m *UnmanagedDevice) GetManufacturer()(*string) {
-    return m.manufacturer
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModel gets the model property value. Model.
 func (m *UnmanagedDevice) GetModel()(*string) {
-    return m.model
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnmanagedDevice) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOs gets the os property value. Operating system.
 func (m *UnmanagedDevice) GetOs()(*string) {
-    return m.os
+    val, err := m.GetBackingStore().Get("os")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. Operating system version.
 func (m *UnmanagedDevice) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnmanagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -306,53 +380,128 @@ func (m *UnmanagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnmanagedDevice) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *UnmanagedDevice) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *UnmanagedDevice) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomain sets the domain property value. Domain.
 func (m *UnmanagedDevice) SetDomain(value *string)() {
-    m.domain = value
+    err := m.GetBackingStore().Set("domain", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpAddress sets the ipAddress property value. IP address.
 func (m *UnmanagedDevice) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    err := m.GetBackingStore().Set("ipAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastLoggedOnUser sets the lastLoggedOnUser property value. Last logged on user.
 func (m *UnmanagedDevice) SetLastLoggedOnUser(value *string)() {
-    m.lastLoggedOnUser = value
+    err := m.GetBackingStore().Set("lastLoggedOnUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. Last seen date and time.
 func (m *UnmanagedDevice) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    err := m.GetBackingStore().Set("lastSeenDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. Location.
 func (m *UnmanagedDevice) SetLocation(value *string)() {
-    m.location = value
+    err := m.GetBackingStore().Set("location", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMacAddress sets the macAddress property value. MAC address.
 func (m *UnmanagedDevice) SetMacAddress(value *string)() {
-    m.macAddress = value
+    err := m.GetBackingStore().Set("macAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer.
 func (m *UnmanagedDevice) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModel sets the model property value. Model.
 func (m *UnmanagedDevice) SetModel(value *string)() {
-    m.model = value
+    err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnmanagedDevice) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOs sets the os property value. Operating system.
 func (m *UnmanagedDevice) SetOs(value *string)() {
-    m.os = value
+    err := m.GetBackingStore().Set("os", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. Operating system version.
 func (m *UnmanagedDevice) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnmanagedDeviceable 
+type UnmanagedDeviceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDeviceName()(*string)
+    GetDomain()(*string)
+    GetIpAddress()(*string)
+    GetLastLoggedOnUser()(*string)
+    GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLocation()(*string)
+    GetMacAddress()(*string)
+    GetManufacturer()(*string)
+    GetModel()(*string)
+    GetOdataType()(*string)
+    GetOs()(*string)
+    GetOsVersion()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDeviceName(value *string)()
+    SetDomain(value *string)()
+    SetIpAddress(value *string)()
+    SetLastLoggedOnUser(value *string)()
+    SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLocation(value *string)()
+    SetMacAddress(value *string)()
+    SetManufacturer(value *string)()
+    SetModel(value *string)()
+    SetOdataType(value *string)()
+    SetOs(value *string)()
+    SetOsVersion(value *string)()
 }

@@ -7,26 +7,14 @@ import (
 // ItemPublication 
 type ItemPublication struct {
     ItemFacet
-    // Description of the publication.
-    description *string
-    // Title of the publication.
-    displayName *string
-    // The date that the publication was published.
-    publishedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // Publication or publisher for the publication.
-    publisher *string
-    // URL referencing a thumbnail of the publication.
-    thumbnailUrl *string
-    // URL referencing the publication.
-    webUrl *string
 }
 // NewItemPublication instantiates a new ItemPublication and sets the default values.
 func NewItemPublication()(*ItemPublication) {
     m := &ItemPublication{
         ItemFacet: *NewItemFacet(),
     }
-    odataTypeValue := "#microsoft.graph.itemPublication";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.itemPublication"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateItemPublicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,11 +23,25 @@ func CreateItemPublicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDescription gets the description property value. Description of the publication.
 func (m *ItemPublication) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Title of the publication.
 func (m *ItemPublication) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPublication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,19 +110,47 @@ func (m *ItemPublication) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetPublishedDate gets the publishedDate property value. The date that the publication was published.
 func (m *ItemPublication) GetPublishedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.publishedDate
+    val, err := m.GetBackingStore().Get("publishedDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. Publication or publisher for the publication.
 func (m *ItemPublication) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
 func (m *ItemPublication) GetThumbnailUrl()(*string) {
-    return m.thumbnailUrl
+    val, err := m.GetBackingStore().Get("thumbnailUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the publication.
 func (m *ItemPublication) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemPublication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,25 +198,60 @@ func (m *ItemPublication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDescription sets the description property value. Description of the publication.
 func (m *ItemPublication) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Title of the publication.
 func (m *ItemPublication) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedDate sets the publishedDate property value. The date that the publication was published.
 func (m *ItemPublication) SetPublishedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.publishedDate = value
+    err := m.GetBackingStore().Set("publishedDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. Publication or publisher for the publication.
 func (m *ItemPublication) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
 func (m *ItemPublication) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    err := m.GetBackingStore().Set("thumbnailUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. URL referencing the publication.
 func (m *ItemPublication) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemPublicationable 
+type ItemPublicationable interface {
+    ItemFacetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetPublishedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetPublisher()(*string)
+    GetThumbnailUrl()(*string)
+    GetWebUrl()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetPublishedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetPublisher(value *string)()
+    SetThumbnailUrl(value *string)()
+    SetWebUrl(value *string)()
 }

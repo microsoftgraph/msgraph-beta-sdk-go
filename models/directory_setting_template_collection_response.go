@@ -7,8 +7,6 @@ import (
 // DirectorySettingTemplateCollectionResponse 
 type DirectorySettingTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DirectorySettingTemplateable
 }
 // NewDirectorySettingTemplateCollectionResponse instantiates a new DirectorySettingTemplateCollectionResponse and sets the default values.
 func NewDirectorySettingTemplateCollectionResponse()(*DirectorySettingTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DirectorySettingTemplateCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *DirectorySettingTemplateCollectionResponse) GetValue()([]DirectorySettingTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectorySettingTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectorySettingTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DirectorySettingTemplateCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *DirectorySettingTemplateCollectionResponse) SetValue(value []DirectorySettingTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectorySettingTemplateCollectionResponseable 
+type DirectorySettingTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DirectorySettingTemplateable)
+    SetValue(value []DirectorySettingTemplateable)()
 }

@@ -7,8 +7,6 @@ import (
 // IpSecurityProfileCollectionResponse 
 type IpSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IpSecurityProfileable
 }
 // NewIpSecurityProfileCollectionResponse instantiates a new IpSecurityProfileCollectionResponse and sets the default values.
 func NewIpSecurityProfileCollectionResponse()(*IpSecurityProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IpSecurityProfileCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *IpSecurityProfileCollectionResponse) GetValue()([]IpSecurityProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpSecurityProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IpSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IpSecurityProfileCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *IpSecurityProfileCollectionResponse) SetValue(value []IpSecurityProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IpSecurityProfileCollectionResponseable 
+type IpSecurityProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IpSecurityProfileable)
+    SetValue(value []IpSecurityProfileable)()
 }

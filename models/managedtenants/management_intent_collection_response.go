@@ -8,8 +8,6 @@ import (
 // ManagementIntentCollectionResponse 
 type ManagementIntentCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagementIntentable
 }
 // NewManagementIntentCollectionResponse instantiates a new ManagementIntentCollectionResponse and sets the default values.
 func NewManagementIntentCollectionResponse()(*ManagementIntentCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *ManagementIntentCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *ManagementIntentCollectionResponse) GetValue()([]ManagementIntentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementIntentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementIntentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ManagementIntentCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *ManagementIntentCollectionResponse) SetValue(value []ManagementIntentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementIntentCollectionResponseable 
+type ManagementIntentCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagementIntentable)
+    SetValue(value []ManagementIntentable)()
 }

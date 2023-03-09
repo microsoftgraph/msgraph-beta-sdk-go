@@ -7,8 +7,6 @@ import (
 // ContactMergeSuggestions 
 type ContactMergeSuggestions struct {
     Entity
-    // true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
-    isEnabled *bool
 }
 // NewContactMergeSuggestions instantiates a new contactMergeSuggestions and sets the default values.
 func NewContactMergeSuggestions()(*ContactMergeSuggestions) {
@@ -38,7 +36,14 @@ func (m *ContactMergeSuggestions) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIsEnabled gets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 func (m *ContactMergeSuggestions) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ContactMergeSuggestions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *ContactMergeSuggestions) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetIsEnabled sets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 func (m *ContactMergeSuggestions) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ContactMergeSuggestionsable 
+type ContactMergeSuggestionsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsEnabled()(*bool)
+    SetIsEnabled(value *bool)()
 }

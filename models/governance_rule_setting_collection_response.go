@@ -7,8 +7,6 @@ import (
 // GovernanceRuleSettingCollectionResponse 
 type GovernanceRuleSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GovernanceRuleSettingable
 }
 // NewGovernanceRuleSettingCollectionResponse instantiates a new GovernanceRuleSettingCollectionResponse and sets the default values.
 func NewGovernanceRuleSettingCollectionResponse()(*GovernanceRuleSettingCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GovernanceRuleSettingCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *GovernanceRuleSettingCollectionResponse) GetValue()([]GovernanceRuleSettingable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRuleSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GovernanceRuleSettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GovernanceRuleSettingCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *GovernanceRuleSettingCollectionResponse) SetValue(value []GovernanceRuleSettingable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GovernanceRuleSettingCollectionResponseable 
+type GovernanceRuleSettingCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GovernanceRuleSettingable)
+    SetValue(value []GovernanceRuleSettingable)()
 }

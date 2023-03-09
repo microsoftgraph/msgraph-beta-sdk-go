@@ -7,12 +7,6 @@ import (
 // ExternalItem 
 type ExternalItem struct {
     Entity
-    // The acl property
-    acl []Aclable
-    // The content property
-    content ExternalItemContentable
-    // The properties property
-    properties Propertiesable
 }
 // NewExternalItem instantiates a new externalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {
@@ -27,11 +21,25 @@ func CreateExternalItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAcl gets the acl property value. The acl property
 func (m *ExternalItem) GetAcl()([]Aclable) {
-    return m.acl
+    val, err := m.GetBackingStore().Get("acl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Aclable)
+    }
+    return nil
 }
 // GetContent gets the content property value. The content property
 func (m *ExternalItem) GetContent()(ExternalItemContentable) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalItemContentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,7 +82,14 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetProperties gets the properties property value. The properties property
 func (m *ExternalItem) GetProperties()(Propertiesable) {
-    return m.properties
+    val, err := m.GetBackingStore().Get("properties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Propertiesable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +123,33 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAcl sets the acl property value. The acl property
 func (m *ExternalItem) SetAcl(value []Aclable)() {
-    m.acl = value
+    err := m.GetBackingStore().Set("acl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContent sets the content property value. The content property
 func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperties sets the properties property value. The properties property
 func (m *ExternalItem) SetProperties(value Propertiesable)() {
-    m.properties = value
+    err := m.GetBackingStore().Set("properties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalItemable 
+type ExternalItemable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAcl()([]Aclable)
+    GetContent()(ExternalItemContentable)
+    GetProperties()(Propertiesable)
+    SetAcl(value []Aclable)()
+    SetContent(value ExternalItemContentable)()
+    SetProperties(value Propertiesable)()
 }

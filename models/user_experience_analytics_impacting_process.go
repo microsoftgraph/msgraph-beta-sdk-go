@@ -7,18 +7,6 @@ import (
 // UserExperienceAnalyticsImpactingProcess the user experience analytics top impacting process entity.
 type UserExperienceAnalyticsImpactingProcess struct {
     Entity
-    // The category of impacting process.
-    category *string
-    // The description of process.
-    description *string
-    // The unique identifier of the impacted device.
-    deviceId *string
-    // The impact value of the process. Valid values 0 to 1.79769313486232E+308
-    impactValue *float64
-    // The process name.
-    processName *string
-    // The publisher of the process.
-    publisher *string
 }
 // NewUserExperienceAnalyticsImpactingProcess instantiates a new userExperienceAnalyticsImpactingProcess and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpactingProcess) {
@@ -33,15 +21,36 @@ func CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue(parseNo
 }
 // GetCategory gets the category property value. The category of impacting process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetCategory()(*string) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the impacted device.
 func (m *UserExperienceAnalyticsImpactingProcess) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,15 +119,36 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
 }
 // GetImpactValue gets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsImpactingProcess) GetImpactValue()(*float64) {
-    return m.impactValue
+    val, err := m.GetBackingStore().Get("impactValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetProcessName gets the processName property value. The process name.
 func (m *UserExperienceAnalyticsImpactingProcess) GetProcessName()(*string) {
-    return m.processName
+    val, err := m.GetBackingStore().Get("processName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. The publisher of the process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsImpactingProcess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +196,60 @@ func (m *UserExperienceAnalyticsImpactingProcess) Serialize(writer i878a80d2330e
 }
 // SetCategory sets the category property value. The category of impacting process.
 func (m *UserExperienceAnalyticsImpactingProcess) SetCategory(value *string)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of process.
 func (m *UserExperienceAnalyticsImpactingProcess) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the impacted device.
 func (m *UserExperienceAnalyticsImpactingProcess) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImpactValue sets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsImpactingProcess) SetImpactValue(value *float64)() {
-    m.impactValue = value
+    err := m.GetBackingStore().Set("impactValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessName sets the processName property value. The process name.
 func (m *UserExperienceAnalyticsImpactingProcess) SetProcessName(value *string)() {
-    m.processName = value
+    err := m.GetBackingStore().Set("processName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. The publisher of the process.
 func (m *UserExperienceAnalyticsImpactingProcess) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsImpactingProcessable 
+type UserExperienceAnalyticsImpactingProcessable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(*string)
+    GetDescription()(*string)
+    GetDeviceId()(*string)
+    GetImpactValue()(*float64)
+    GetProcessName()(*string)
+    GetPublisher()(*string)
+    SetCategory(value *string)()
+    SetDescription(value *string)()
+    SetDeviceId(value *string)()
+    SetImpactValue(value *float64)()
+    SetProcessName(value *string)()
+    SetPublisher(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // MetaDataKeyStringPairCollectionResponse 
 type MetaDataKeyStringPairCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MetaDataKeyStringPairable
 }
 // NewMetaDataKeyStringPairCollectionResponse instantiates a new MetaDataKeyStringPairCollectionResponse and sets the default values.
 func NewMetaDataKeyStringPairCollectionResponse()(*MetaDataKeyStringPairCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MetaDataKeyStringPairCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *MetaDataKeyStringPairCollectionResponse) GetValue()([]MetaDataKeyStringPairable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MetaDataKeyStringPairable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MetaDataKeyStringPairCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MetaDataKeyStringPairCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *MetaDataKeyStringPairCollectionResponse) SetValue(value []MetaDataKeyStringPairable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MetaDataKeyStringPairCollectionResponseable 
+type MetaDataKeyStringPairCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MetaDataKeyStringPairable)
+    SetValue(value []MetaDataKeyStringPairable)()
 }

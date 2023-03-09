@@ -7,8 +7,6 @@ import (
 // EvaluateLabelJobResponseCollectionResponse 
 type EvaluateLabelJobResponseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EvaluateLabelJobResponseable
 }
 // NewEvaluateLabelJobResponseCollectionResponse instantiates a new EvaluateLabelJobResponseCollectionResponse and sets the default values.
 func NewEvaluateLabelJobResponseCollectionResponse()(*EvaluateLabelJobResponseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EvaluateLabelJobResponseCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *EvaluateLabelJobResponseCollectionResponse) GetValue()([]EvaluateLabelJobResponseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EvaluateLabelJobResponseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EvaluateLabelJobResponseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EvaluateLabelJobResponseCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *EvaluateLabelJobResponseCollectionResponse) SetValue(value []EvaluateLabelJobResponseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EvaluateLabelJobResponseCollectionResponseable 
+type EvaluateLabelJobResponseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EvaluateLabelJobResponseable)
+    SetValue(value []EvaluateLabelJobResponseable)()
 }

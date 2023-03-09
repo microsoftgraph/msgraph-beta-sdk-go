@@ -7,8 +7,6 @@ import (
 // ApprovalWorkflowProviderCollectionResponse 
 type ApprovalWorkflowProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ApprovalWorkflowProviderable
 }
 // NewApprovalWorkflowProviderCollectionResponse instantiates a new ApprovalWorkflowProviderCollectionResponse and sets the default values.
 func NewApprovalWorkflowProviderCollectionResponse()(*ApprovalWorkflowProviderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ApprovalWorkflowProviderCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *ApprovalWorkflowProviderCollectionResponse) GetValue()([]ApprovalWorkflowProviderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ApprovalWorkflowProviderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ApprovalWorkflowProviderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ApprovalWorkflowProviderCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *ApprovalWorkflowProviderCollectionResponse) SetValue(value []ApprovalWorkflowProviderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ApprovalWorkflowProviderCollectionResponseable 
+type ApprovalWorkflowProviderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ApprovalWorkflowProviderable)
+    SetValue(value []ApprovalWorkflowProviderable)()
 }

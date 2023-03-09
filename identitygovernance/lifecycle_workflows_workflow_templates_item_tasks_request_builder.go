@@ -53,8 +53,8 @@ func NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder(rawUrl string
 }
 // Count provides operations to count the resources in the collection.
 func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) Count()(*LifecycleWorkflowsWorkflowTemplatesItemTasksCountRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskCollectionResponseable, error) {

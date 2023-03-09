@@ -7,8 +7,6 @@ import (
 // PersonCertificationCollectionResponse 
 type PersonCertificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PersonCertificationable
 }
 // NewPersonCertificationCollectionResponse instantiates a new PersonCertificationCollectionResponse and sets the default values.
 func NewPersonCertificationCollectionResponse()(*PersonCertificationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PersonCertificationCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *PersonCertificationCollectionResponse) GetValue()([]PersonCertificationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PersonCertificationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PersonCertificationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PersonCertificationCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *PersonCertificationCollectionResponse) SetValue(value []PersonCertificationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PersonCertificationCollectionResponseable 
+type PersonCertificationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PersonCertificationable)
+    SetValue(value []PersonCertificationable)()
 }

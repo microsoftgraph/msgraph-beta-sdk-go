@@ -7,22 +7,14 @@ import (
 // EmailPayloadDetail 
 type EmailPayloadDetail struct {
     PayloadDetail
-    // Email address of the user.
-    fromEmail *string
-    // Display name of the user.
-    fromName *string
-    // Indicates whether the sender is not from the user's organization.
-    isExternalSender *bool
-    // The subject of the email address sent to the user.
-    subject *string
 }
 // NewEmailPayloadDetail instantiates a new EmailPayloadDetail and sets the default values.
 func NewEmailPayloadDetail()(*EmailPayloadDetail) {
     m := &EmailPayloadDetail{
         PayloadDetail: *NewPayloadDetail(),
     }
-    odataTypeValue := "#microsoft.graph.emailPayloadDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.emailPayloadDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailPayloadDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,19 +68,47 @@ func (m *EmailPayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFromEmail gets the fromEmail property value. Email address of the user.
 func (m *EmailPayloadDetail) GetFromEmail()(*string) {
-    return m.fromEmail
+    val, err := m.GetBackingStore().Get("fromEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFromName gets the fromName property value. Display name of the user.
 func (m *EmailPayloadDetail) GetFromName()(*string) {
-    return m.fromName
+    val, err := m.GetBackingStore().Get("fromName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsExternalSender gets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
 func (m *EmailPayloadDetail) GetIsExternalSender()(*bool) {
-    return m.isExternalSender
+    val, err := m.GetBackingStore().Get("isExternalSender")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmailPayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *EmailPayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetFromEmail sets the fromEmail property value. Email address of the user.
 func (m *EmailPayloadDetail) SetFromEmail(value *string)() {
-    m.fromEmail = value
+    err := m.GetBackingStore().Set("fromEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFromName sets the fromName property value. Display name of the user.
 func (m *EmailPayloadDetail) SetFromName(value *string)() {
-    m.fromName = value
+    err := m.GetBackingStore().Set("fromName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsExternalSender sets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
 func (m *EmailPayloadDetail) SetIsExternalSender(value *bool)() {
-    m.isExternalSender = value
+    err := m.GetBackingStore().Set("isExternalSender", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmailPayloadDetailable 
+type EmailPayloadDetailable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PayloadDetailable
+    GetFromEmail()(*string)
+    GetFromName()(*string)
+    GetIsExternalSender()(*bool)
+    GetSubject()(*string)
+    SetFromEmail(value *string)()
+    SetFromName(value *string)()
+    SetIsExternalSender(value *bool)()
+    SetSubject(value *string)()
 }

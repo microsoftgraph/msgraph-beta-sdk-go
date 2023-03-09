@@ -55,8 +55,8 @@ func NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder instantiates a new UserExperienceAnalyticsCategoryItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemReq
 }
 // MetricValues provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) MetricValues()(*UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) {
-    return NewUserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MetricValuesById provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) MetricValuesById(id string)(*UserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemReq
     if id != "" {
         urlTplParams["userExperienceAnalyticsMetric%2Did"] = id
     }
-    return NewUserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property userExperienceAnalyticsCategories in deviceManagement
 func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, requestConfiguration *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
@@ -169,7 +169,10 @@ func (m *UserExperienceAnalyticsCategoriesUserExperienceAnalyticsCategoryItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

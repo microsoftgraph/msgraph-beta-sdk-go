@@ -45,13 +45,13 @@ type ItemActivitiesRecentRequestBuilderGetRequestConfiguration struct {
 func NewItemActivitiesRecentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesRecentRequestBuilder) {
     m := &ItemActivitiesRecentRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/activities/microsoft.graph.recent(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/activities/recent(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemActivitiesRecentRequestBuilder instantiates a new RecentRequestBuilder and sets the default values.

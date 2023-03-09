@@ -48,7 +48,7 @@ type EdiscoveryCasesItemTagsTagItemRequestBuilderPatchRequestConfiguration struc
 }
 // ChildTags provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTags()(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChildTagsById provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTagsById(id string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTagsById(id string)(
     if id != "" {
         urlTplParams["tag%2Did1"] = id
     }
-    return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal instantiates a new TagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsTagItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemTagsTagItemRequestBuilder instantiates a new TagItemRequestBuilder and sets the default values.
@@ -117,7 +117,7 @@ func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Get(ctx context.Context, 
 }
 // Parent provides operations to manage the parent property of the microsoft.graph.ediscovery.tag entity.
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Parent()(*EdiscoveryCasesItemTagsItemParentRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property tags in compliance
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, requestConfiguration *EdiscoveryCasesItemTagsTagItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
@@ -173,7 +173,10 @@ func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

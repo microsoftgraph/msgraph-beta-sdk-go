@@ -7,8 +7,6 @@ import (
 // PolicySetAssignmentCollectionResponse 
 type PolicySetAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PolicySetAssignmentable
 }
 // NewPolicySetAssignmentCollectionResponse instantiates a new PolicySetAssignmentCollectionResponse and sets the default values.
 func NewPolicySetAssignmentCollectionResponse()(*PolicySetAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PolicySetAssignmentCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *PolicySetAssignmentCollectionResponse) GetValue()([]PolicySetAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PolicySetAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PolicySetAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PolicySetAssignmentCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *PolicySetAssignmentCollectionResponse) SetValue(value []PolicySetAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PolicySetAssignmentCollectionResponseable 
+type PolicySetAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PolicySetAssignmentable)
+    SetValue(value []PolicySetAssignmentable)()
 }

@@ -9,52 +9,8 @@ import (
 // Customer 
 type Customer struct {
     Entity
-    // The address property
-    address PostalAddressTypeable
-    // The blocked property
-    blocked *string
-    // The currency property
-    currency Currencyable
-    // The currencyCode property
-    currencyCode *string
-    // The currencyId property
-    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The displayName property
-    displayName *string
-    // The email property
-    email *string
-    // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number property
-    number *string
-    // The paymentMethod property
-    paymentMethod PaymentMethodable
-    // The paymentMethodId property
-    paymentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The paymentTerm property
-    paymentTerm PaymentTermable
-    // The paymentTermsId property
-    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The phoneNumber property
-    phoneNumber *string
-    // The picture property
-    picture []Pictureable
-    // The shipmentMethod property
-    shipmentMethod ShipmentMethodable
-    // The shipmentMethodId property
-    shipmentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The taxAreaDisplayName property
-    taxAreaDisplayName *string
-    // The taxAreaId property
-    taxAreaId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The taxLiable property
-    taxLiable *bool
-    // The taxRegistrationNumber property
-    taxRegistrationNumber *string
     // The type property
-    type_escaped *string
-    // The website property
-    website *string
+    TypeEscaped *string
 }
 // NewCustomer instantiates a new customer and sets the default values.
 func NewCustomer()(*Customer) {
@@ -69,31 +25,80 @@ func CreateCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAddress gets the address property value. The address property
 func (m *Customer) GetAddress()(PostalAddressTypeable) {
-    return m.address
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PostalAddressTypeable)
+    }
+    return nil
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Customer) GetBlocked()(*string) {
-    return m.blocked
+    val, err := m.GetBackingStore().Get("blocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrency gets the currency property value. The currency property
 func (m *Customer) GetCurrency()(Currencyable) {
-    return m.currency
+    val, err := m.GetBackingStore().Get("currency")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Currencyable)
+    }
+    return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *Customer) GetCurrencyCode()(*string) {
-    return m.currencyCode
+    val, err := m.GetBackingStore().Get("currencyCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
 func (m *Customer) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.currencyId
+    val, err := m.GetBackingStore().Get("currencyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Customer) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEmail gets the email property value. The email property
 func (m *Customer) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -336,67 +341,179 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Customer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetNumber gets the number property value. The number property
 func (m *Customer) GetNumber()(*string) {
-    return m.number
+    val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPaymentMethod gets the paymentMethod property value. The paymentMethod property
 func (m *Customer) GetPaymentMethod()(PaymentMethodable) {
-    return m.paymentMethod
+    val, err := m.GetBackingStore().Get("paymentMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PaymentMethodable)
+    }
+    return nil
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
 func (m *Customer) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.paymentMethodId
+    val, err := m.GetBackingStore().Get("paymentMethodId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
 func (m *Customer) GetPaymentTerm()(PaymentTermable) {
-    return m.paymentTerm
+    val, err := m.GetBackingStore().Get("paymentTerm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PaymentTermable)
+    }
+    return nil
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
 func (m *Customer) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.paymentTermsId
+    val, err := m.GetBackingStore().Get("paymentTermsId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *Customer) GetPhoneNumber()(*string) {
-    return m.phoneNumber
+    val, err := m.GetBackingStore().Get("phoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Customer) GetPicture()([]Pictureable) {
-    return m.picture
+    val, err := m.GetBackingStore().Get("picture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Pictureable)
+    }
+    return nil
 }
 // GetShipmentMethod gets the shipmentMethod property value. The shipmentMethod property
 func (m *Customer) GetShipmentMethod()(ShipmentMethodable) {
-    return m.shipmentMethod
+    val, err := m.GetBackingStore().Get("shipmentMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShipmentMethodable)
+    }
+    return nil
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
 func (m *Customer) GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.shipmentMethodId
+    val, err := m.GetBackingStore().Get("shipmentMethodId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetTaxAreaDisplayName gets the taxAreaDisplayName property value. The taxAreaDisplayName property
 func (m *Customer) GetTaxAreaDisplayName()(*string) {
-    return m.taxAreaDisplayName
+    val, err := m.GetBackingStore().Get("taxAreaDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTaxAreaId gets the taxAreaId property value. The taxAreaId property
 func (m *Customer) GetTaxAreaId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.taxAreaId
+    val, err := m.GetBackingStore().Get("taxAreaId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
 func (m *Customer) GetTaxLiable()(*bool) {
-    return m.taxLiable
+    val, err := m.GetBackingStore().Get("taxLiable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTaxRegistrationNumber gets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *Customer) GetTaxRegistrationNumber()(*string) {
-    return m.taxRegistrationNumber
+    val, err := m.GetBackingStore().Get("taxRegistrationNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *Customer) GetType()(*string) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebsite gets the website property value. The website property
 func (m *Customer) GetWebsite()(*string) {
-    return m.website
+    val, err := m.GetBackingStore().Get("website")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -550,93 +667,213 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAddress sets the address property value. The address property
 func (m *Customer) SetAddress(value PostalAddressTypeable)() {
-    m.address = value
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Customer) SetBlocked(value *string)() {
-    m.blocked = value
+    err := m.GetBackingStore().Set("blocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrency sets the currency property value. The currency property
 func (m *Customer) SetCurrency(value Currencyable)() {
-    m.currency = value
+    err := m.GetBackingStore().Set("currency", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *Customer) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    err := m.GetBackingStore().Set("currencyCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
 func (m *Customer) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.currencyId = value
+    err := m.GetBackingStore().Set("currencyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Customer) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEmail sets the email property value. The email property
 func (m *Customer) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Customer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumber sets the number property value. The number property
 func (m *Customer) SetNumber(value *string)() {
-    m.number = value
+    err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentMethod sets the paymentMethod property value. The paymentMethod property
 func (m *Customer) SetPaymentMethod(value PaymentMethodable)() {
-    m.paymentMethod = value
+    err := m.GetBackingStore().Set("paymentMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
 func (m *Customer) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.paymentMethodId = value
+    err := m.GetBackingStore().Set("paymentMethodId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
 func (m *Customer) SetPaymentTerm(value PaymentTermable)() {
-    m.paymentTerm = value
+    err := m.GetBackingStore().Set("paymentTerm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
 func (m *Customer) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.paymentTermsId = value
+    err := m.GetBackingStore().Set("paymentTermsId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *Customer) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    err := m.GetBackingStore().Set("phoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Customer) SetPicture(value []Pictureable)() {
-    m.picture = value
+    err := m.GetBackingStore().Set("picture", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipmentMethod sets the shipmentMethod property value. The shipmentMethod property
 func (m *Customer) SetShipmentMethod(value ShipmentMethodable)() {
-    m.shipmentMethod = value
+    err := m.GetBackingStore().Set("shipmentMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
 func (m *Customer) SetShipmentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.shipmentMethodId = value
+    err := m.GetBackingStore().Set("shipmentMethodId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxAreaDisplayName sets the taxAreaDisplayName property value. The taxAreaDisplayName property
 func (m *Customer) SetTaxAreaDisplayName(value *string)() {
-    m.taxAreaDisplayName = value
+    err := m.GetBackingStore().Set("taxAreaDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxAreaId sets the taxAreaId property value. The taxAreaId property
 func (m *Customer) SetTaxAreaId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.taxAreaId = value
+    err := m.GetBackingStore().Set("taxAreaId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property
 func (m *Customer) SetTaxLiable(value *bool)() {
-    m.taxLiable = value
+    err := m.GetBackingStore().Set("taxLiable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *Customer) SetTaxRegistrationNumber(value *string)() {
-    m.taxRegistrationNumber = value
+    err := m.GetBackingStore().Set("taxRegistrationNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *Customer) SetType(value *string)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebsite sets the website property value. The website property
 func (m *Customer) SetWebsite(value *string)() {
-    m.website = value
+    err := m.GetBackingStore().Set("website", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Customerable 
+type Customerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddress()(PostalAddressTypeable)
+    GetBlocked()(*string)
+    GetCurrency()(Currencyable)
+    GetCurrencyCode()(*string)
+    GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetDisplayName()(*string)
+    GetEmail()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNumber()(*string)
+    GetPaymentMethod()(PaymentMethodable)
+    GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetPaymentTerm()(PaymentTermable)
+    GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetPhoneNumber()(*string)
+    GetPicture()([]Pictureable)
+    GetShipmentMethod()(ShipmentMethodable)
+    GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetTaxAreaDisplayName()(*string)
+    GetTaxAreaId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetTaxLiable()(*bool)
+    GetTaxRegistrationNumber()(*string)
+    GetType()(*string)
+    GetWebsite()(*string)
+    SetAddress(value PostalAddressTypeable)()
+    SetBlocked(value *string)()
+    SetCurrency(value Currencyable)()
+    SetCurrencyCode(value *string)()
+    SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetDisplayName(value *string)()
+    SetEmail(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNumber(value *string)()
+    SetPaymentMethod(value PaymentMethodable)()
+    SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetPaymentTerm(value PaymentTermable)()
+    SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetPhoneNumber(value *string)()
+    SetPicture(value []Pictureable)()
+    SetShipmentMethod(value ShipmentMethodable)()
+    SetShipmentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetTaxAreaDisplayName(value *string)()
+    SetTaxAreaId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetTaxLiable(value *bool)()
+    SetTaxRegistrationNumber(value *string)()
+    SetType(value *string)()
+    SetWebsite(value *string)()
 }

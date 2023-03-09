@@ -7,10 +7,6 @@ import (
 // UserExperienceAnalyticsDeviceWithoutCloudIdentity the user experience analytics Device without Cloud Identity.
 type UserExperienceAnalyticsDeviceWithoutCloudIdentity struct {
     Entity
-    // Azure Active Directory Device Id
-    azureAdDeviceId *string
-    // The tenant attach device's name.
-    deviceName *string
 }
 // NewUserExperienceAnalyticsDeviceWithoutCloudIdentity instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
 func NewUserExperienceAnalyticsDeviceWithoutCloudIdentity()(*UserExperienceAnalyticsDeviceWithoutCloudIdentity) {
@@ -25,11 +21,25 @@ func CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorVal
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. Azure Active Directory Device Id
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetAzureAdDeviceId()(*string) {
-    return m.azureAdDeviceId
+    val, err := m.GetBackingStore().Get("azureAdDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. The tenant attach device's name.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,9 +88,24 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) Serialize(writer i87
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. Azure Active Directory Device Id
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetAzureAdDeviceId(value *string)() {
-    m.azureAdDeviceId = value
+    err := m.GetBackingStore().Set("azureAdDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. The tenant attach device's name.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsDeviceWithoutCloudIdentityable 
+type UserExperienceAnalyticsDeviceWithoutCloudIdentityable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAzureAdDeviceId()(*string)
+    GetDeviceName()(*string)
+    SetAzureAdDeviceId(value *string)()
+    SetDeviceName(value *string)()
 }

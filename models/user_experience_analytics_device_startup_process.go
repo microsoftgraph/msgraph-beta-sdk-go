@@ -7,16 +7,6 @@ import (
 // UserExperienceAnalyticsDeviceStartupProcess the user experience analytics device startup process details.
 type UserExperienceAnalyticsDeviceStartupProcess struct {
     Entity
-    // The user experience analytics device id.
-    managedDeviceId *string
-    // User experience analytics device startup process name.
-    processName *string
-    // The user experience analytics device startup process product name.
-    productName *string
-    // The User experience analytics device startup process publisher.
-    publisher *string
-    // User experience analytics device startup process impact in milliseconds.
-    startupImpactInMs *int32
 }
 // NewUserExperienceAnalyticsDeviceStartupProcess instantiates a new userExperienceAnalyticsDeviceStartupProcess and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcess()(*UserExperienceAnalyticsDeviceStartupProcess) {
@@ -86,23 +76,58 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*string) {
-    return m.managedDeviceId
+    val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProcessName gets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) {
-    return m.processName
+    val, err := m.GetBackingStore().Get("processName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductName gets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) {
-    return m.productName
+    val, err := m.GetBackingStore().Get("productName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStartupImpactInMs gets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*int32) {
-    return m.startupImpactInMs
+    val, err := m.GetBackingStore().Get("startupImpactInMs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,21 +169,51 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i878a80d2
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    err := m.GetBackingStore().Set("managedDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessName sets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProcessName(value *string)() {
-    m.processName = value
+    err := m.GetBackingStore().Set("processName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductName sets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProductName(value *string)() {
-    m.productName = value
+    err := m.GetBackingStore().Set("productName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartupImpactInMs sets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetStartupImpactInMs(value *int32)() {
-    m.startupImpactInMs = value
+    err := m.GetBackingStore().Set("startupImpactInMs", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsDeviceStartupProcessable 
+type UserExperienceAnalyticsDeviceStartupProcessable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetManagedDeviceId()(*string)
+    GetProcessName()(*string)
+    GetProductName()(*string)
+    GetPublisher()(*string)
+    GetStartupImpactInMs()(*int32)
+    SetManagedDeviceId(value *string)()
+    SetProcessName(value *string)()
+    SetProductName(value *string)()
+    SetPublisher(value *string)()
+    SetStartupImpactInMs(value *int32)()
 }

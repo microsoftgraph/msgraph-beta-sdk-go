@@ -38,8 +38,8 @@ func NewItemBrandingFaviconRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemBrandingFaviconRequestBuilder instantiates a new FaviconRequestBuilder and sets the default values.

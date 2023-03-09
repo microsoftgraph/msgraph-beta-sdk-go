@@ -7,12 +7,6 @@ import (
 // BusinessScenarioPlanner 
 type BusinessScenarioPlanner struct {
     Entity
-    // The configuration of Planner plans that will be created for the scenario.
-    planConfiguration PlannerPlanConfigurationable
-    // The configuration of Planner tasks that will be created for the scenario.
-    taskConfiguration PlannerTaskConfigurationable
-    // The Planner tasks for the scenario.
-    tasks []BusinessScenarioTaskable
 }
 // NewBusinessScenarioPlanner instantiates a new businessScenarioPlanner and sets the default values.
 func NewBusinessScenarioPlanner()(*BusinessScenarioPlanner) {
@@ -66,15 +60,36 @@ func (m *BusinessScenarioPlanner) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetPlanConfiguration gets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
 func (m *BusinessScenarioPlanner) GetPlanConfiguration()(PlannerPlanConfigurationable) {
-    return m.planConfiguration
+    val, err := m.GetBackingStore().Get("planConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerPlanConfigurationable)
+    }
+    return nil
 }
 // GetTaskConfiguration gets the taskConfiguration property value. The configuration of Planner tasks that will be created for the scenario.
 func (m *BusinessScenarioPlanner) GetTaskConfiguration()(PlannerTaskConfigurationable) {
-    return m.taskConfiguration
+    val, err := m.GetBackingStore().Get("taskConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerTaskConfigurationable)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. The Planner tasks for the scenario.
 func (m *BusinessScenarioPlanner) GetTasks()([]BusinessScenarioTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BusinessScenarioTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BusinessScenarioPlanner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +123,33 @@ func (m *BusinessScenarioPlanner) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetPlanConfiguration sets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
 func (m *BusinessScenarioPlanner) SetPlanConfiguration(value PlannerPlanConfigurationable)() {
-    m.planConfiguration = value
+    err := m.GetBackingStore().Set("planConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskConfiguration sets the taskConfiguration property value. The configuration of Planner tasks that will be created for the scenario.
 func (m *BusinessScenarioPlanner) SetTaskConfiguration(value PlannerTaskConfigurationable)() {
-    m.taskConfiguration = value
+    err := m.GetBackingStore().Set("taskConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. The Planner tasks for the scenario.
 func (m *BusinessScenarioPlanner) SetTasks(value []BusinessScenarioTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BusinessScenarioPlannerable 
+type BusinessScenarioPlannerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPlanConfiguration()(PlannerPlanConfigurationable)
+    GetTaskConfiguration()(PlannerTaskConfigurationable)
+    GetTasks()([]BusinessScenarioTaskable)
+    SetPlanConfiguration(value PlannerPlanConfigurationable)()
+    SetTaskConfiguration(value PlannerTaskConfigurationable)()
+    SetTasks(value []BusinessScenarioTaskable)()
 }

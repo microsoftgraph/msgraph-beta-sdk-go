@@ -55,8 +55,8 @@ func NewItemCommandsCommandItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCommandsCommandItemRequestBuilder instantiates a new CommandItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemCommandsCommandItemRequestBuilder) Patch(ctx context.Context, body 
 }
 // Responsepayload provides operations to manage the responsepayload property of the microsoft.graph.command entity.
 func (m *ItemCommandsCommandItemRequestBuilder) Responsepayload()(*ItemCommandsItemResponsepayloadRequestBuilder) {
-    return NewItemCommandsItemResponsepayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCommandsItemResponsepayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property commands for devices
 func (m *ItemCommandsCommandItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCommandsCommandItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *ItemCommandsCommandItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

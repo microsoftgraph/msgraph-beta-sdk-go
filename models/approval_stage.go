@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ApprovalStage 
 type ApprovalStage struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The number of days that a request can be pending a response before it is automatically denied.
-    approvalStageTimeOutInDays *int32
-    // If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
-    escalationApprovers []UserSetable
-    // If escalation is required, the time a request can be pending a response from a primary approver.
-    escalationTimeInMinutes *int32
-    // Indicates whether the approver is required to provide a justification for approving a request.
-    isApproverJustificationRequired *bool
-    // If true, then one or more escalation approvers are configured in this approval stage.
-    isEscalationEnabled *bool
-    // The OdataType property
-    odataType *string
-    // The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
-    primaryApprovers []UserSetable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewApprovalStage instantiates a new approvalStage and sets the default values.
 func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,52 @@ func CreateApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalStage) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
-    return m.approvalStageTimeOutInDays
+    val, err := m.GetBackingStore().Get("approvalStageTimeOutInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ApprovalStage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
 func (m *ApprovalStage) GetEscalationApprovers()([]UserSetable) {
-    return m.escalationApprovers
+    val, err := m.GetBackingStore().Get("escalationApprovers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSetable)
+    }
+    return nil
 }
 // GetEscalationTimeInMinutes gets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
 func (m *ApprovalStage) GetEscalationTimeInMinutes()(*int32) {
-    return m.escalationTimeInMinutes
+    val, err := m.GetBackingStore().Get("escalationTimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -135,19 +156,47 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIsApproverJustificationRequired gets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
 func (m *ApprovalStage) GetIsApproverJustificationRequired()(*bool) {
-    return m.isApproverJustificationRequired
+    val, err := m.GetBackingStore().Get("isApproverJustificationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsEscalationEnabled gets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
 func (m *ApprovalStage) GetIsEscalationEnabled()(*bool) {
-    return m.isEscalationEnabled
+    val, err := m.GetBackingStore().Get("isEscalationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ApprovalStage) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
 func (m *ApprovalStage) GetPrimaryApprovers()([]UserSetable) {
-    return m.primaryApprovers
+    val, err := m.GetBackingStore().Get("primaryApprovers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,33 +260,83 @@ func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalStage) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApprovalStageTimeOutInDays sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *ApprovalStage) SetApprovalStageTimeOutInDays(value *int32)() {
-    m.approvalStageTimeOutInDays = value
+    err := m.GetBackingStore().Set("approvalStageTimeOutInDays", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ApprovalStage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
 func (m *ApprovalStage) SetEscalationApprovers(value []UserSetable)() {
-    m.escalationApprovers = value
+    err := m.GetBackingStore().Set("escalationApprovers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEscalationTimeInMinutes sets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
 func (m *ApprovalStage) SetEscalationTimeInMinutes(value *int32)() {
-    m.escalationTimeInMinutes = value
+    err := m.GetBackingStore().Set("escalationTimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsApproverJustificationRequired sets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
 func (m *ApprovalStage) SetIsApproverJustificationRequired(value *bool)() {
-    m.isApproverJustificationRequired = value
+    err := m.GetBackingStore().Set("isApproverJustificationRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEscalationEnabled sets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
 func (m *ApprovalStage) SetIsEscalationEnabled(value *bool)() {
-    m.isEscalationEnabled = value
+    err := m.GetBackingStore().Set("isEscalationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ApprovalStage) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrimaryApprovers sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
 func (m *ApprovalStage) SetPrimaryApprovers(value []UserSetable)() {
-    m.primaryApprovers = value
+    err := m.GetBackingStore().Set("primaryApprovers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ApprovalStageable 
+type ApprovalStageable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovalStageTimeOutInDays()(*int32)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEscalationApprovers()([]UserSetable)
+    GetEscalationTimeInMinutes()(*int32)
+    GetIsApproverJustificationRequired()(*bool)
+    GetIsEscalationEnabled()(*bool)
+    GetOdataType()(*string)
+    GetPrimaryApprovers()([]UserSetable)
+    SetApprovalStageTimeOutInDays(value *int32)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEscalationApprovers(value []UserSetable)()
+    SetEscalationTimeInMinutes(value *int32)()
+    SetIsApproverJustificationRequired(value *bool)()
+    SetIsEscalationEnabled(value *bool)()
+    SetOdataType(value *string)()
+    SetPrimaryApprovers(value []UserSetable)()
 }

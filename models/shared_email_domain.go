@@ -7,8 +7,6 @@ import (
 // SharedEmailDomain 
 type SharedEmailDomain struct {
     Entity
-    // The provisioningStatus property
-    provisioningStatus *string
 }
 // NewSharedEmailDomain instantiates a new sharedEmailDomain and sets the default values.
 func NewSharedEmailDomain()(*SharedEmailDomain) {
@@ -38,7 +36,14 @@ func (m *SharedEmailDomain) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetProvisioningStatus gets the provisioningStatus property value. The provisioningStatus property
 func (m *SharedEmailDomain) GetProvisioningStatus()(*string) {
-    return m.provisioningStatus
+    val, err := m.GetBackingStore().Get("provisioningStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharedEmailDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *SharedEmailDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetProvisioningStatus sets the provisioningStatus property value. The provisioningStatus property
 func (m *SharedEmailDomain) SetProvisioningStatus(value *string)() {
-    m.provisioningStatus = value
+    err := m.GetBackingStore().Set("provisioningStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharedEmailDomainable 
+type SharedEmailDomainable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetProvisioningStatus()(*string)
+    SetProvisioningStatus(value *string)()
 }

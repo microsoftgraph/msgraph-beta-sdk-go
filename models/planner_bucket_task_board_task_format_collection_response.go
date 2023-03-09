@@ -7,8 +7,6 @@ import (
 // PlannerBucketTaskBoardTaskFormatCollectionResponse 
 type PlannerBucketTaskBoardTaskFormatCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PlannerBucketTaskBoardTaskFormatable
 }
 // NewPlannerBucketTaskBoardTaskFormatCollectionResponse instantiates a new PlannerBucketTaskBoardTaskFormatCollectionResponse and sets the default values.
 func NewPlannerBucketTaskBoardTaskFormatCollectionResponse()(*PlannerBucketTaskBoardTaskFormatCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PlannerBucketTaskBoardTaskFormatCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *PlannerBucketTaskBoardTaskFormatCollectionResponse) GetValue()([]PlannerBucketTaskBoardTaskFormatable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerBucketTaskBoardTaskFormatable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerBucketTaskBoardTaskFormatCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PlannerBucketTaskBoardTaskFormatCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *PlannerBucketTaskBoardTaskFormatCollectionResponse) SetValue(value []PlannerBucketTaskBoardTaskFormatable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerBucketTaskBoardTaskFormatCollectionResponseable 
+type PlannerBucketTaskBoardTaskFormatCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PlannerBucketTaskBoardTaskFormatable)
+    SetValue(value []PlannerBucketTaskBoardTaskFormatable)()
 }

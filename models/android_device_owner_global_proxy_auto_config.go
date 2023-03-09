@@ -7,16 +7,14 @@ import (
 // AndroidDeviceOwnerGlobalProxyAutoConfig 
 type AndroidDeviceOwnerGlobalProxyAutoConfig struct {
     AndroidDeviceOwnerGlobalProxy
-    // The proxy auto-config URL
-    proxyAutoConfigURL *string
 }
 // NewAndroidDeviceOwnerGlobalProxyAutoConfig instantiates a new AndroidDeviceOwnerGlobalProxyAutoConfig and sets the default values.
 func NewAndroidDeviceOwnerGlobalProxyAutoConfig()(*AndroidDeviceOwnerGlobalProxyAutoConfig) {
     m := &AndroidDeviceOwnerGlobalProxyAutoConfig{
         AndroidDeviceOwnerGlobalProxy: *NewAndroidDeviceOwnerGlobalProxy(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerGlobalProxyAutoConfigFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) GetFieldDeserializers()(map[st
 }
 // GetProxyAutoConfigURL gets the proxyAutoConfigURL property value. The proxy auto-config URL
 func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) GetProxyAutoConfigURL()(*string) {
-    return m.proxyAutoConfigURL
+    val, err := m.GetBackingStore().Get("proxyAutoConfigURL")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) Serialize(writer i878a80d2330e
 }
 // SetProxyAutoConfigURL sets the proxyAutoConfigURL property value. The proxy auto-config URL
 func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) SetProxyAutoConfigURL(value *string)() {
-    m.proxyAutoConfigURL = value
+    err := m.GetBackingStore().Set("proxyAutoConfigURL", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerGlobalProxyAutoConfigable 
+type AndroidDeviceOwnerGlobalProxyAutoConfigable interface {
+    AndroidDeviceOwnerGlobalProxyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetProxyAutoConfigURL()(*string)
+    SetProxyAutoConfigURL(value *string)()
 }

@@ -7,16 +7,14 @@ import (
 // WebSegmentConfiguration 
 type WebSegmentConfiguration struct {
     SegmentConfiguration
-    // The applicationSegments property
-    applicationSegments []WebApplicationSegmentable
 }
 // NewWebSegmentConfiguration instantiates a new WebSegmentConfiguration and sets the default values.
 func NewWebSegmentConfiguration()(*WebSegmentConfiguration) {
     m := &WebSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.webSegmentConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.webSegmentConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWebSegmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateWebSegmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetApplicationSegments gets the applicationSegments property value. The applicationSegments property
 func (m *WebSegmentConfiguration) GetApplicationSegments()([]WebApplicationSegmentable) {
-    return m.applicationSegments
+    val, err := m.GetBackingStore().Get("applicationSegments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WebApplicationSegmentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WebSegmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,5 +71,15 @@ func (m *WebSegmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetApplicationSegments sets the applicationSegments property value. The applicationSegments property
 func (m *WebSegmentConfiguration) SetApplicationSegments(value []WebApplicationSegmentable)() {
-    m.applicationSegments = value
+    err := m.GetBackingStore().Set("applicationSegments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WebSegmentConfigurationable 
+type WebSegmentConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SegmentConfigurationable
+    GetApplicationSegments()([]WebApplicationSegmentable)
+    SetApplicationSegments(value []WebApplicationSegmentable)()
 }

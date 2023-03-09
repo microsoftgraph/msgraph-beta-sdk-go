@@ -3,36 +3,20 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // BrowserSharedCookieHistory 
 type BrowserSharedCookieHistory struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The comment for the shared cookie.
-    comment *string
-    // The name of the cookie.
-    displayName *string
-    // Controls whether a cookie is a host-only or domain cookie.
-    hostOnly *bool
-    // The URL of the cookie.
-    hostOrDomain *string
-    // The lastModifiedBy property
-    lastModifiedBy IdentitySetable
-    // The OdataType property
-    odataType *string
-    // The path of the cookie.
-    path *string
-    // The date and time when the cookie was last published.
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
-    sourceEnvironment *BrowserSharedCookieSourceEnvironment
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewBrowserSharedCookieHistory instantiates a new browserSharedCookieHistory and sets the default values.
 func NewBrowserSharedCookieHistory()(*BrowserSharedCookieHistory) {
     m := &BrowserSharedCookieHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBrowserSharedCookieHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,15 +25,41 @@ func CreateBrowserSharedCookieHistoryFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BrowserSharedCookieHistory) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *BrowserSharedCookieHistory) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetComment gets the comment property value. The comment for the shared cookie.
 func (m *BrowserSharedCookieHistory) GetComment()(*string) {
-    return m.comment
+    val, err := m.GetBackingStore().Get("comment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the cookie.
 func (m *BrowserSharedCookieHistory) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BrowserSharedCookieHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,31 +158,80 @@ func (m *BrowserSharedCookieHistory) GetFieldDeserializers()(map[string]func(i87
 }
 // GetHostOnly gets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
 func (m *BrowserSharedCookieHistory) GetHostOnly()(*bool) {
-    return m.hostOnly
+    val, err := m.GetBackingStore().Get("hostOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHostOrDomain gets the hostOrDomain property value. The URL of the cookie.
 func (m *BrowserSharedCookieHistory) GetHostOrDomain()(*string) {
-    return m.hostOrDomain
+    val, err := m.GetBackingStore().Get("hostOrDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
 func (m *BrowserSharedCookieHistory) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BrowserSharedCookieHistory) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPath gets the path property value. The path of the cookie.
 func (m *BrowserSharedCookieHistory) GetPath()(*string) {
-    return m.path
+    val, err := m.GetBackingStore().Get("path")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. The date and time when the cookie was last published.
 func (m *BrowserSharedCookieHistory) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.publishedDateTime
+    val, err := m.GetBackingStore().Get("publishedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSourceEnvironment gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
 func (m *BrowserSharedCookieHistory) GetSourceEnvironment()(*BrowserSharedCookieSourceEnvironment) {
-    return m.sourceEnvironment
+    val, err := m.GetBackingStore().Get("sourceEnvironment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BrowserSharedCookieSourceEnvironment)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BrowserSharedCookieHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -241,41 +300,101 @@ func (m *BrowserSharedCookieHistory) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BrowserSharedCookieHistory) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *BrowserSharedCookieHistory) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetComment sets the comment property value. The comment for the shared cookie.
 func (m *BrowserSharedCookieHistory) SetComment(value *string)() {
-    m.comment = value
+    err := m.GetBackingStore().Set("comment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the cookie.
 func (m *BrowserSharedCookieHistory) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHostOnly sets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
 func (m *BrowserSharedCookieHistory) SetHostOnly(value *bool)() {
-    m.hostOnly = value
+    err := m.GetBackingStore().Set("hostOnly", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHostOrDomain sets the hostOrDomain property value. The URL of the cookie.
 func (m *BrowserSharedCookieHistory) SetHostOrDomain(value *string)() {
-    m.hostOrDomain = value
+    err := m.GetBackingStore().Set("hostOrDomain", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
 func (m *BrowserSharedCookieHistory) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BrowserSharedCookieHistory) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPath sets the path property value. The path of the cookie.
 func (m *BrowserSharedCookieHistory) SetPath(value *string)() {
-    m.path = value
+    err := m.GetBackingStore().Set("path", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedDateTime sets the publishedDateTime property value. The date and time when the cookie was last published.
 func (m *BrowserSharedCookieHistory) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.publishedDateTime = value
+    err := m.GetBackingStore().Set("publishedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceEnvironment sets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
 func (m *BrowserSharedCookieHistory) SetSourceEnvironment(value *BrowserSharedCookieSourceEnvironment)() {
-    m.sourceEnvironment = value
+    err := m.GetBackingStore().Set("sourceEnvironment", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BrowserSharedCookieHistoryable 
+type BrowserSharedCookieHistoryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetComment()(*string)
+    GetDisplayName()(*string)
+    GetHostOnly()(*bool)
+    GetHostOrDomain()(*string)
+    GetLastModifiedBy()(IdentitySetable)
+    GetOdataType()(*string)
+    GetPath()(*string)
+    GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSourceEnvironment()(*BrowserSharedCookieSourceEnvironment)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetComment(value *string)()
+    SetDisplayName(value *string)()
+    SetHostOnly(value *bool)()
+    SetHostOrDomain(value *string)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetOdataType(value *string)()
+    SetPath(value *string)()
+    SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSourceEnvironment(value *BrowserSharedCookieSourceEnvironment)()
 }

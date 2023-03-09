@@ -7,8 +7,6 @@ import (
 // AppliedAuthenticationEventListenerCollectionResponse 
 type AppliedAuthenticationEventListenerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppliedAuthenticationEventListenerable
 }
 // NewAppliedAuthenticationEventListenerCollectionResponse instantiates a new AppliedAuthenticationEventListenerCollectionResponse and sets the default values.
 func NewAppliedAuthenticationEventListenerCollectionResponse()(*AppliedAuthenticationEventListenerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppliedAuthenticationEventListenerCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *AppliedAuthenticationEventListenerCollectionResponse) GetValue()([]AppliedAuthenticationEventListenerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppliedAuthenticationEventListenerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppliedAuthenticationEventListenerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppliedAuthenticationEventListenerCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *AppliedAuthenticationEventListenerCollectionResponse) SetValue(value []AppliedAuthenticationEventListenerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppliedAuthenticationEventListenerCollectionResponseable 
+type AppliedAuthenticationEventListenerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppliedAuthenticationEventListenerable)
+    SetValue(value []AppliedAuthenticationEventListenerable)()
 }

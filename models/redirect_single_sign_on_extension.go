@@ -7,22 +7,14 @@ import (
 // RedirectSingleSignOnExtension 
 type RedirectSingleSignOnExtension struct {
     SingleSignOnExtension
-    // Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
-    configurations []KeyTypedValuePairable
-    // Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
-    extensionIdentifier *string
-    // Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
-    teamIdentifier *string
-    // One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
-    urlPrefixes []string
 }
 // NewRedirectSingleSignOnExtension instantiates a new RedirectSingleSignOnExtension and sets the default values.
 func NewRedirectSingleSignOnExtension()(*RedirectSingleSignOnExtension) {
     m := &RedirectSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
-    odataTypeValue := "#microsoft.graph.redirectSingleSignOnExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.redirectSingleSignOnExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRedirectSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,11 +23,25 @@ func CreateRedirectSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *RedirectSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
-    return m.configurations
+    val, err := m.GetBackingStore().Get("configurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyTypedValuePairable)
+    }
+    return nil
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) GetExtensionIdentifier()(*string) {
-    return m.extensionIdentifier
+    val, err := m.GetBackingStore().Get("extensionIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,11 +98,25 @@ func (m *RedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
-    return m.teamIdentifier
+    val, err := m.GetBackingStore().Get("teamIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUrlPrefixes gets the urlPrefixes property value. One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
 func (m *RedirectSingleSignOnExtension) GetUrlPrefixes()([]string) {
-    return m.urlPrefixes
+    val, err := m.GetBackingStore().Get("urlPrefixes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RedirectSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -136,17 +156,42 @@ func (m *RedirectSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689638
 }
 // SetConfigurations sets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *RedirectSingleSignOnExtension) SetConfigurations(value []KeyTypedValuePairable)() {
-    m.configurations = value
+    err := m.GetBackingStore().Set("configurations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtensionIdentifier sets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) SetExtensionIdentifier(value *string)() {
-    m.extensionIdentifier = value
+    err := m.GetBackingStore().Set("extensionIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) SetTeamIdentifier(value *string)() {
-    m.teamIdentifier = value
+    err := m.GetBackingStore().Set("teamIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUrlPrefixes sets the urlPrefixes property value. One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
 func (m *RedirectSingleSignOnExtension) SetUrlPrefixes(value []string)() {
-    m.urlPrefixes = value
+    err := m.GetBackingStore().Set("urlPrefixes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RedirectSingleSignOnExtensionable 
+type RedirectSingleSignOnExtensionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SingleSignOnExtensionable
+    GetConfigurations()([]KeyTypedValuePairable)
+    GetExtensionIdentifier()(*string)
+    GetTeamIdentifier()(*string)
+    GetUrlPrefixes()([]string)
+    SetConfigurations(value []KeyTypedValuePairable)()
+    SetExtensionIdentifier(value *string)()
+    SetTeamIdentifier(value *string)()
+    SetUrlPrefixes(value []string)()
 }

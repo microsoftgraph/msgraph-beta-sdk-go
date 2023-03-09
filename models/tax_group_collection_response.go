@@ -7,8 +7,6 @@ import (
 // TaxGroupCollectionResponse 
 type TaxGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TaxGroupable
 }
 // NewTaxGroupCollectionResponse instantiates a new TaxGroupCollectionResponse and sets the default values.
 func NewTaxGroupCollectionResponse()(*TaxGroupCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TaxGroupCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *TaxGroupCollectionResponse) GetValue()([]TaxGroupable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TaxGroupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TaxGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TaxGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *TaxGroupCollectionResponse) SetValue(value []TaxGroupable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TaxGroupCollectionResponseable 
+type TaxGroupCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TaxGroupable)
+    SetValue(value []TaxGroupable)()
 }

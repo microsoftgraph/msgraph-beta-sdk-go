@@ -13,8 +13,8 @@ func NewSubjectRightsRequestAllSiteLocation()(*SubjectRightsRequestAllSiteLocati
     m := &SubjectRightsRequestAllSiteLocation{
         SubjectRightsRequestSiteLocation: *NewSubjectRightsRequestSiteLocation(),
     }
-    odataTypeValue := "#microsoft.graph.subjectRightsRequestAllSiteLocation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestAllSiteLocation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSubjectRightsRequestAllSiteLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *SubjectRightsRequestAllSiteLocation) Serialize(writer i878a80d2330e89d2
         return err
     }
     return nil
+}
+// SubjectRightsRequestAllSiteLocationable 
+type SubjectRightsRequestAllSiteLocationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SubjectRightsRequestSiteLocationable
 }

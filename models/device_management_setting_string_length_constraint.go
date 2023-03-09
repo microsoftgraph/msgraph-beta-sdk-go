@@ -7,18 +7,14 @@ import (
 // DeviceManagementSettingStringLengthConstraint 
 type DeviceManagementSettingStringLengthConstraint struct {
     DeviceManagementConstraint
-    // The maximum permitted string length
-    maximumLength *int32
-    // The minimum permitted string length
-    minimumLength *int32
 }
 // NewDeviceManagementSettingStringLengthConstraint instantiates a new DeviceManagementSettingStringLengthConstraint and sets the default values.
 func NewDeviceManagementSettingStringLengthConstraint()(*DeviceManagementSettingStringLengthConstraint) {
     m := &DeviceManagementSettingStringLengthConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingStringLengthConstraint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingStringLengthConstraint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceManagementSettingStringLengthConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *DeviceManagementSettingStringLengthConstraint) GetFieldDeserializers()(
 }
 // GetMaximumLength gets the maximumLength property value. The maximum permitted string length
 func (m *DeviceManagementSettingStringLengthConstraint) GetMaximumLength()(*int32) {
-    return m.maximumLength
+    val, err := m.GetBackingStore().Get("maximumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMinimumLength gets the minimumLength property value. The minimum permitted string length
 func (m *DeviceManagementSettingStringLengthConstraint) GetMinimumLength()(*int32) {
-    return m.minimumLength
+    val, err := m.GetBackingStore().Get("minimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingStringLengthConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *DeviceManagementSettingStringLengthConstraint) Serialize(writer i878a80
 }
 // SetMaximumLength sets the maximumLength property value. The maximum permitted string length
 func (m *DeviceManagementSettingStringLengthConstraint) SetMaximumLength(value *int32)() {
-    m.maximumLength = value
+    err := m.GetBackingStore().Set("maximumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumLength sets the minimumLength property value. The minimum permitted string length
 func (m *DeviceManagementSettingStringLengthConstraint) SetMinimumLength(value *int32)() {
-    m.minimumLength = value
+    err := m.GetBackingStore().Set("minimumLength", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementSettingStringLengthConstraintable 
+type DeviceManagementSettingStringLengthConstraintable interface {
+    DeviceManagementConstraintable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMaximumLength()(*int32)
+    GetMinimumLength()(*int32)
+    SetMaximumLength(value *int32)()
+    SetMinimumLength(value *int32)()
 }

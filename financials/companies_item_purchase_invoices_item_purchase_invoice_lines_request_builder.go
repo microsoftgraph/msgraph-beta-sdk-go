@@ -53,8 +53,8 @@ func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder(rawU
 }
 // Count provides operations to count the resources in the collection.
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) Count()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesCountRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get purchaseInvoiceLines from financials
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable, error) {

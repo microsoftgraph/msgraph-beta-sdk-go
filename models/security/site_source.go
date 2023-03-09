@@ -8,16 +8,14 @@ import (
 // SiteSource 
 type SiteSource struct {
     DataSource
-    // The site property
-    site ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable
 }
 // NewSiteSource instantiates a new SiteSource and sets the default values.
 func NewSiteSource()(*SiteSource) {
     m := &SiteSource{
         DataSource: *NewDataSource(),
     }
-    odataTypeValue := "#microsoft.graph.security.siteSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.siteSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSiteSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +39,14 @@ func (m *SiteSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetSite gets the site property value. The site property
 func (m *SiteSource) GetSite()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable) {
-    return m.site
+    val, err := m.GetBackingStore().Get("site")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SiteSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *SiteSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetSite sets the site property value. The site property
 func (m *SiteSource) SetSite(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)() {
-    m.site = value
+    err := m.GetBackingStore().Set("site", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SiteSourceable 
+type SiteSourceable interface {
+    DataSourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSite()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)
+    SetSite(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)()
 }

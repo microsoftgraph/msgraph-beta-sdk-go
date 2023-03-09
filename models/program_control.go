@@ -8,24 +8,6 @@ import (
 // ProgramControl 
 type ProgramControl struct {
     Entity
-    // The controlId of the control, in particular the identifier of an access review. Required on create.
-    controlId *string
-    // The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
-    controlTypeId *string
-    // The creation date and time of the program control.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name of the control.
-    displayName *string
-    // The user who created the program control.
-    owner UserIdentityable
-    // The program this control is part of.
-    program Programable
-    // The programId of the program this control is a part of. Required on create.
-    programId *string
-    // The resource, a group or an app, targeted by this program control's access review.
-    resource ProgramResourceable
-    // The life cycle status of the control.
-    status *string
 }
 // NewProgramControl instantiates a new programControl and sets the default values.
 func NewProgramControl()(*ProgramControl) {
@@ -40,19 +22,47 @@ func CreateProgramControlFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetControlId gets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) GetControlId()(*string) {
-    return m.controlId
+    val, err := m.GetBackingStore().Get("controlId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetControlTypeId gets the controlTypeId property value. The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
 func (m *ProgramControl) GetControlTypeId()(*string) {
-    return m.controlTypeId
+    val, err := m.GetBackingStore().Get("controlTypeId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The creation date and time of the program control.
 func (m *ProgramControl) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the control.
 func (m *ProgramControl) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProgramControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,23 +161,58 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOwner gets the owner property value. The user who created the program control.
 func (m *ProgramControl) GetOwner()(UserIdentityable) {
-    return m.owner
+    val, err := m.GetBackingStore().Get("owner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserIdentityable)
+    }
+    return nil
 }
 // GetProgram gets the program property value. The program this control is part of.
 func (m *ProgramControl) GetProgram()(Programable) {
-    return m.program
+    val, err := m.GetBackingStore().Get("program")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Programable)
+    }
+    return nil
 }
 // GetProgramId gets the programId property value. The programId of the program this control is a part of. Required on create.
 func (m *ProgramControl) GetProgramId()(*string) {
-    return m.programId
+    val, err := m.GetBackingStore().Get("programId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResource gets the resource property value. The resource, a group or an app, targeted by this program control's access review.
 func (m *ProgramControl) GetResource()(ProgramResourceable) {
-    return m.resource
+    val, err := m.GetBackingStore().Get("resource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ProgramResourceable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The life cycle status of the control.
 func (m *ProgramControl) GetStatus()(*string) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProgramControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,37 +278,87 @@ func (m *ProgramControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetControlId sets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) SetControlId(value *string)() {
-    m.controlId = value
+    err := m.GetBackingStore().Set("controlId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetControlTypeId sets the controlTypeId property value. The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
 func (m *ProgramControl) SetControlTypeId(value *string)() {
-    m.controlTypeId = value
+    err := m.GetBackingStore().Set("controlTypeId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The creation date and time of the program control.
 func (m *ProgramControl) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the control.
 func (m *ProgramControl) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwner sets the owner property value. The user who created the program control.
 func (m *ProgramControl) SetOwner(value UserIdentityable)() {
-    m.owner = value
+    err := m.GetBackingStore().Set("owner", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProgram sets the program property value. The program this control is part of.
 func (m *ProgramControl) SetProgram(value Programable)() {
-    m.program = value
+    err := m.GetBackingStore().Set("program", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProgramId sets the programId property value. The programId of the program this control is a part of. Required on create.
 func (m *ProgramControl) SetProgramId(value *string)() {
-    m.programId = value
+    err := m.GetBackingStore().Set("programId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResource sets the resource property value. The resource, a group or an app, targeted by this program control's access review.
 func (m *ProgramControl) SetResource(value ProgramResourceable)() {
-    m.resource = value
+    err := m.GetBackingStore().Set("resource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The life cycle status of the control.
 func (m *ProgramControl) SetStatus(value *string)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProgramControlable 
+type ProgramControlable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetControlId()(*string)
+    GetControlTypeId()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDisplayName()(*string)
+    GetOwner()(UserIdentityable)
+    GetProgram()(Programable)
+    GetProgramId()(*string)
+    GetResource()(ProgramResourceable)
+    GetStatus()(*string)
+    SetControlId(value *string)()
+    SetControlTypeId(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDisplayName(value *string)()
+    SetOwner(value UserIdentityable)()
+    SetProgram(value Programable)()
+    SetProgramId(value *string)()
+    SetResource(value ProgramResourceable)()
+    SetStatus(value *string)()
 }

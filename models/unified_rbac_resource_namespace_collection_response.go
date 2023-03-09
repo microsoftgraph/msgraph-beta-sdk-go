@@ -7,8 +7,6 @@ import (
 // UnifiedRbacResourceNamespaceCollectionResponse 
 type UnifiedRbacResourceNamespaceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRbacResourceNamespaceable
 }
 // NewUnifiedRbacResourceNamespaceCollectionResponse instantiates a new UnifiedRbacResourceNamespaceCollectionResponse and sets the default values.
 func NewUnifiedRbacResourceNamespaceCollectionResponse()(*UnifiedRbacResourceNamespaceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRbacResourceNamespaceCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRbacResourceNamespaceCollectionResponse) GetValue()([]UnifiedRbacResourceNamespaceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRbacResourceNamespaceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRbacResourceNamespaceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRbacResourceNamespaceCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRbacResourceNamespaceCollectionResponse) SetValue(value []UnifiedRbacResourceNamespaceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRbacResourceNamespaceCollectionResponseable 
+type UnifiedRbacResourceNamespaceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRbacResourceNamespaceable)
+    SetValue(value []UnifiedRbacResourceNamespaceable)()
 }

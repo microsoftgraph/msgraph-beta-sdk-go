@@ -7,18 +7,6 @@ import (
 // RoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
 type RoleAssignment struct {
     Entity
-    // Description of the Role Assignment.
-    description *string
-    // The display or friendly name of the role Assignment.
-    displayName *string
-    // List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-    resourceScopes []string
-    // Role definition this assignment is part of.
-    roleDefinition RoleDefinitionable
-    // List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-    scopeMembers []string
-    // Specifies the type of scope for a Role Assignment.
-    scopeType *RoleAssignmentScopeType
 }
 // NewRoleAssignment instantiates a new roleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {
@@ -51,11 +39,25 @@ func CreateRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetDescription gets the description property value. Description of the Role Assignment.
 func (m *RoleAssignment) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display or friendly name of the role Assignment.
 func (m *RoleAssignment) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -132,19 +134,47 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
 func (m *RoleAssignment) GetResourceScopes()([]string) {
-    return m.resourceScopes
+    val, err := m.GetBackingStore().Get("resourceScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetRoleDefinition gets the roleDefinition property value. Role definition this assignment is part of.
 func (m *RoleAssignment) GetRoleDefinition()(RoleDefinitionable) {
-    return m.roleDefinition
+    val, err := m.GetBackingStore().Get("roleDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RoleDefinitionable)
+    }
+    return nil
 }
 // GetScopeMembers gets the scopeMembers property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
 func (m *RoleAssignment) GetScopeMembers()([]string) {
-    return m.scopeMembers
+    val, err := m.GetBackingStore().Get("scopeMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetScopeType gets the scopeType property value. Specifies the type of scope for a Role Assignment.
 func (m *RoleAssignment) GetScopeType()(*RoleAssignmentScopeType) {
-    return m.scopeType
+    val, err := m.GetBackingStore().Get("scopeType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RoleAssignmentScopeType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,25 +223,60 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetDescription sets the description property value. Description of the Role Assignment.
 func (m *RoleAssignment) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display or friendly name of the role Assignment.
 func (m *RoleAssignment) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceScopes sets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
 func (m *RoleAssignment) SetResourceScopes(value []string)() {
-    m.resourceScopes = value
+    err := m.GetBackingStore().Set("resourceScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. Role definition this assignment is part of.
 func (m *RoleAssignment) SetRoleDefinition(value RoleDefinitionable)() {
-    m.roleDefinition = value
+    err := m.GetBackingStore().Set("roleDefinition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScopeMembers sets the scopeMembers property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
 func (m *RoleAssignment) SetScopeMembers(value []string)() {
-    m.scopeMembers = value
+    err := m.GetBackingStore().Set("scopeMembers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScopeType sets the scopeType property value. Specifies the type of scope for a Role Assignment.
 func (m *RoleAssignment) SetScopeType(value *RoleAssignmentScopeType)() {
-    m.scopeType = value
+    err := m.GetBackingStore().Set("scopeType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RoleAssignmentable 
+type RoleAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetResourceScopes()([]string)
+    GetRoleDefinition()(RoleDefinitionable)
+    GetScopeMembers()([]string)
+    GetScopeType()(*RoleAssignmentScopeType)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetResourceScopes(value []string)()
+    SetRoleDefinition(value RoleDefinitionable)()
+    SetScopeMembers(value []string)()
+    SetScopeType(value *RoleAssignmentScopeType)()
 }

@@ -7,8 +7,6 @@ import (
 // WindowsQualityUpdateProfileCollectionResponse 
 type WindowsQualityUpdateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsQualityUpdateProfileable
 }
 // NewWindowsQualityUpdateProfileCollectionResponse instantiates a new WindowsQualityUpdateProfileCollectionResponse and sets the default values.
 func NewWindowsQualityUpdateProfileCollectionResponse()(*WindowsQualityUpdateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsQualityUpdateProfileCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsQualityUpdateProfileCollectionResponse) GetValue()([]WindowsQualityUpdateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsQualityUpdateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsQualityUpdateProfileCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsQualityUpdateProfileCollectionResponse) SetValue(value []WindowsQualityUpdateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsQualityUpdateProfileCollectionResponseable 
+type WindowsQualityUpdateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsQualityUpdateProfileable)
+    SetValue(value []WindowsQualityUpdateProfileable)()
 }

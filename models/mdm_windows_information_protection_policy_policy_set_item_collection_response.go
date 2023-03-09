@@ -7,8 +7,6 @@ import (
 // MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse 
 type MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MdmWindowsInformationProtectionPolicyPolicySetItemable
 }
 // NewMdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse instantiates a new MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse and sets the default values.
 func NewMdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse()(*MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse) G
 }
 // GetValue gets the value property value. The value property
 func (m *MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse) GetValue()([]MdmWindowsInformationProtectionPolicyPolicySetItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MdmWindowsInformationProtectionPolicyPolicySetItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse) S
 }
 // SetValue sets the value property value. The value property
 func (m *MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponse) SetValue(value []MdmWindowsInformationProtectionPolicyPolicySetItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponseable 
+type MdmWindowsInformationProtectionPolicyPolicySetItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MdmWindowsInformationProtectionPolicyPolicySetItemable)
+    SetValue(value []MdmWindowsInformationProtectionPolicyPolicySetItemable)()
 }

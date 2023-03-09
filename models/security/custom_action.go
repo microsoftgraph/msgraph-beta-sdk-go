@@ -7,18 +7,14 @@ import (
 // CustomAction 
 type CustomAction struct {
     InformationProtectionAction
-    // Name of the custom action.
-    name *string
-    // Properties, in key-value pair format, of the action.
-    properties []KeyValuePairable
 }
 // NewCustomAction instantiates a new CustomAction and sets the default values.
 func NewCustomAction()(*CustomAction) {
     m := &CustomAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
-    odataTypeValue := "#microsoft.graph.security.customAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.customAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,11 +52,25 @@ func (m *CustomAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetName gets the name property value. Name of the custom action.
 func (m *CustomAction) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProperties gets the properties property value. Properties, in key-value pair format, of the action.
 func (m *CustomAction) GetProperties()([]KeyValuePairable) {
-    return m.properties
+    val, err := m.GetBackingStore().Get("properties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CustomAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *CustomAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetName sets the name property value. Name of the custom action.
 func (m *CustomAction) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperties sets the properties property value. Properties, in key-value pair format, of the action.
 func (m *CustomAction) SetProperties(value []KeyValuePairable)() {
-    m.properties = value
+    err := m.GetBackingStore().Set("properties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CustomActionable 
+type CustomActionable interface {
+    InformationProtectionActionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetName()(*string)
+    GetProperties()([]KeyValuePairable)
+    SetName(value *string)()
+    SetProperties(value []KeyValuePairable)()
 }

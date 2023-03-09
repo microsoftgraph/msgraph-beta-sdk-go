@@ -7,20 +7,14 @@ import (
 // AccessReviewInstanceDecisionItemServicePrincipalTarget 
 type AccessReviewInstanceDecisionItemServicePrincipalTarget struct {
     AccessReviewInstanceDecisionItemTarget
-    // The appId for the service principal entity being reviewed.
-    appId *string
-    // The display name of the service principal whose access is being reviewed.
-    servicePrincipalDisplayName *string
-    // The servicePrincipalId property
-    servicePrincipalId *string
 }
 // NewAccessReviewInstanceDecisionItemServicePrincipalTarget instantiates a new AccessReviewInstanceDecisionItemServicePrincipalTarget and sets the default values.
 func NewAccessReviewInstanceDecisionItemServicePrincipalTarget()(*AccessReviewInstanceDecisionItemServicePrincipalTarget) {
     m := &AccessReviewInstanceDecisionItemServicePrincipalTarget{
         AccessReviewInstanceDecisionItemTarget: *NewAccessReviewInstanceDecisionItemTarget(),
     }
-    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAccessReviewInstanceDecisionItemServicePrincipalTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +23,14 @@ func CreateAccessReviewInstanceDecisionItemServicePrincipalTargetFromDiscriminat
 }
 // GetAppId gets the appId property value. The appId for the service principal entity being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetAppId()(*string) {
-    return m.appId
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +69,25 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeseria
 }
 // GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name of the service principal whose access is being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalDisplayName()(*string) {
-    return m.servicePrincipalDisplayName
+    val, err := m.GetBackingStore().Get("servicePrincipalDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. The servicePrincipalId property
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalId()(*string) {
-    return m.servicePrincipalId
+    val, err := m.GetBackingStore().Get("servicePrincipalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) Serialize(write
 }
 // SetAppId sets the appId property value. The appId for the service principal entity being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetAppId(value *string)() {
-    m.appId = value
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalDisplayName sets the servicePrincipalDisplayName property value. The display name of the service principal whose access is being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrincipalDisplayName(value *string)() {
-    m.servicePrincipalDisplayName = value
+    err := m.GetBackingStore().Set("servicePrincipalDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. The servicePrincipalId property
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrincipalId(value *string)() {
-    m.servicePrincipalId = value
+    err := m.GetBackingStore().Set("servicePrincipalId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewInstanceDecisionItemServicePrincipalTargetable 
+type AccessReviewInstanceDecisionItemServicePrincipalTargetable interface {
+    AccessReviewInstanceDecisionItemTargetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppId()(*string)
+    GetServicePrincipalDisplayName()(*string)
+    GetServicePrincipalId()(*string)
+    SetAppId(value *string)()
+    SetServicePrincipalDisplayName(value *string)()
+    SetServicePrincipalId(value *string)()
 }

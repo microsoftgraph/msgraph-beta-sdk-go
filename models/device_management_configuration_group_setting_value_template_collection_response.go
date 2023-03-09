@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse 
 type DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationGroupSettingValueTemplateable
 }
 // NewDeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse instantiates a new DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse()(*DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplateCollectionRespons
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse) GetValue()([]DeviceManagementConfigurationGroupSettingValueTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationGroupSettingValueTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplateCollectionRespons
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponse) SetValue(value []DeviceManagementConfigurationGroupSettingValueTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponseable 
+type DeviceManagementConfigurationGroupSettingValueTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationGroupSettingValueTemplateable)
+    SetValue(value []DeviceManagementConfigurationGroupSettingValueTemplateable)()
 }

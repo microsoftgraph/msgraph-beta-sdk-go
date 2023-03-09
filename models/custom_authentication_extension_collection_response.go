@@ -7,8 +7,6 @@ import (
 // CustomAuthenticationExtensionCollectionResponse 
 type CustomAuthenticationExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CustomAuthenticationExtensionable
 }
 // NewCustomAuthenticationExtensionCollectionResponse instantiates a new CustomAuthenticationExtensionCollectionResponse and sets the default values.
 func NewCustomAuthenticationExtensionCollectionResponse()(*CustomAuthenticationExtensionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CustomAuthenticationExtensionCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *CustomAuthenticationExtensionCollectionResponse) GetValue()([]CustomAuthenticationExtensionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomAuthenticationExtensionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CustomAuthenticationExtensionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CustomAuthenticationExtensionCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *CustomAuthenticationExtensionCollectionResponse) SetValue(value []CustomAuthenticationExtensionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CustomAuthenticationExtensionCollectionResponseable 
+type CustomAuthenticationExtensionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CustomAuthenticationExtensionable)
+    SetValue(value []CustomAuthenticationExtensionable)()
 }

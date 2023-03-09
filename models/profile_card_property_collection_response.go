@@ -7,8 +7,6 @@ import (
 // ProfileCardPropertyCollectionResponse 
 type ProfileCardPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ProfileCardPropertyable
 }
 // NewProfileCardPropertyCollectionResponse instantiates a new ProfileCardPropertyCollectionResponse and sets the default values.
 func NewProfileCardPropertyCollectionResponse()(*ProfileCardPropertyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ProfileCardPropertyCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *ProfileCardPropertyCollectionResponse) GetValue()([]ProfileCardPropertyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProfileCardPropertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProfileCardPropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ProfileCardPropertyCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *ProfileCardPropertyCollectionResponse) SetValue(value []ProfileCardPropertyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProfileCardPropertyCollectionResponseable 
+type ProfileCardPropertyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ProfileCardPropertyable)
+    SetValue(value []ProfileCardPropertyable)()
 }

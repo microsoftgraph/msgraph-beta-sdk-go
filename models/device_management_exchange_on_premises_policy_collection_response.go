@@ -7,8 +7,6 @@ import (
 // DeviceManagementExchangeOnPremisesPolicyCollectionResponse 
 type DeviceManagementExchangeOnPremisesPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementExchangeOnPremisesPolicyable
 }
 // NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse instantiates a new DeviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse()(*DeviceManagementExchangeOnPremisesPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) GetValue()([]DeviceManagementExchangeOnPremisesPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementExchangeOnPremisesPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) SetValue(value []DeviceManagementExchangeOnPremisesPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementExchangeOnPremisesPolicyCollectionResponseable 
+type DeviceManagementExchangeOnPremisesPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementExchangeOnPremisesPolicyable)
+    SetValue(value []DeviceManagementExchangeOnPremisesPolicyable)()
 }

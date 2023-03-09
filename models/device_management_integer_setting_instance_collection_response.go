@@ -7,8 +7,6 @@ import (
 // DeviceManagementIntegerSettingInstanceCollectionResponse 
 type DeviceManagementIntegerSettingInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementIntegerSettingInstanceable
 }
 // NewDeviceManagementIntegerSettingInstanceCollectionResponse instantiates a new DeviceManagementIntegerSettingInstanceCollectionResponse and sets the default values.
 func NewDeviceManagementIntegerSettingInstanceCollectionResponse()(*DeviceManagementIntegerSettingInstanceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementIntegerSettingInstanceCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementIntegerSettingInstanceCollectionResponse) GetValue()([]DeviceManagementIntegerSettingInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementIntegerSettingInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntegerSettingInstanceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementIntegerSettingInstanceCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementIntegerSettingInstanceCollectionResponse) SetValue(value []DeviceManagementIntegerSettingInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntegerSettingInstanceCollectionResponseable 
+type DeviceManagementIntegerSettingInstanceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementIntegerSettingInstanceable)
+    SetValue(value []DeviceManagementIntegerSettingInstanceable)()
 }

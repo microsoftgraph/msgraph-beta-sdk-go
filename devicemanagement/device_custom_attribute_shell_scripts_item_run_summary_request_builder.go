@@ -41,8 +41,8 @@ func NewDeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceCustomAttributeShellScriptsItemRunSummaryRequestBuilder instantiates a new RunSummaryRequestBuilder and sets the default values.

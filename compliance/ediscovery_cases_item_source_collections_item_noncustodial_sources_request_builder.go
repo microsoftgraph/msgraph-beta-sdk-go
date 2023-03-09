@@ -53,8 +53,8 @@ func NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilde
 }
 // Count provides operations to count the resources in the collection.
 func (m *EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesCountRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of noncustodialDataSource associated with a sourceCollection.
 // [Find more info here]

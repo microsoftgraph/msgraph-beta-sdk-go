@@ -7,20 +7,14 @@ import (
 // DirectorySettingTemplate 
 type DirectorySettingTemplate struct {
     DirectoryObject
-    // Description of the template. Read-only.
-    description *string
-    // Display name of the template. Read-only.
-    displayName *string
-    // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
-    values []SettingTemplateValueable
 }
 // NewDirectorySettingTemplate instantiates a new DirectorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.directorySettingTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.directorySettingTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDirectorySettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,11 +23,25 @@ func CreateDirectorySettingTemplateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDescription gets the description property value. Description of the template. Read-only.
 func (m *DirectorySettingTemplate) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the template. Read-only.
 func (m *DirectorySettingTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,7 +84,14 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
 func (m *DirectorySettingTemplate) GetValues()([]SettingTemplateValueable) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SettingTemplateValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -110,13 +125,33 @@ func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDescription sets the description property value. Description of the template. Read-only.
 func (m *DirectorySettingTemplate) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the template. Read-only.
 func (m *DirectorySettingTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
 func (m *DirectorySettingTemplate) SetValues(value []SettingTemplateValueable)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectorySettingTemplateable 
+type DirectorySettingTemplateable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetValues()([]SettingTemplateValueable)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetValues(value []SettingTemplateValueable)()
 }

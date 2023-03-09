@@ -26,13 +26,13 @@ type VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderPostReque
 func NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) {
     m := &VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/microsoft.graph.getSharedUseLicenseUsageReport";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getSharedUseLicenseUsageReport";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder instantiates a new GetSharedUseLicenseUsageReportRequestBuilder and sets the default values.
@@ -41,7 +41,7 @@ func NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the shared use license usage reports, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
+// Post get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
@@ -63,13 +63,16 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) Pos
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation get the shared use license usage reports, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
+// ToPostRequestInformation get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
 func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

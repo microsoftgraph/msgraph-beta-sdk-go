@@ -7,8 +7,6 @@ import (
 // StandardWebPartCollectionResponse 
 type StandardWebPartCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []StandardWebPartable
 }
 // NewStandardWebPartCollectionResponse instantiates a new StandardWebPartCollectionResponse and sets the default values.
 func NewStandardWebPartCollectionResponse()(*StandardWebPartCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *StandardWebPartCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *StandardWebPartCollectionResponse) GetValue()([]StandardWebPartable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]StandardWebPartable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StandardWebPartCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *StandardWebPartCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *StandardWebPartCollectionResponse) SetValue(value []StandardWebPartable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StandardWebPartCollectionResponseable 
+type StandardWebPartCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]StandardWebPartable)
+    SetValue(value []StandardWebPartable)()
 }

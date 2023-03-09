@@ -7,8 +7,6 @@ import (
 // AndroidForWorkMobileAppConfigurationCollectionResponse 
 type AndroidForWorkMobileAppConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidForWorkMobileAppConfigurationable
 }
 // NewAndroidForWorkMobileAppConfigurationCollectionResponse instantiates a new AndroidForWorkMobileAppConfigurationCollectionResponse and sets the default values.
 func NewAndroidForWorkMobileAppConfigurationCollectionResponse()(*AndroidForWorkMobileAppConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidForWorkMobileAppConfigurationCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidForWorkMobileAppConfigurationCollectionResponse) GetValue()([]AndroidForWorkMobileAppConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidForWorkMobileAppConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkMobileAppConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidForWorkMobileAppConfigurationCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidForWorkMobileAppConfigurationCollectionResponse) SetValue(value []AndroidForWorkMobileAppConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidForWorkMobileAppConfigurationCollectionResponseable 
+type AndroidForWorkMobileAppConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidForWorkMobileAppConfigurationable)
+    SetValue(value []AndroidForWorkMobileAppConfigurationable)()
 }

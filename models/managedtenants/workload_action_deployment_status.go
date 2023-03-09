@@ -4,36 +4,20 @@ import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WorkloadActionDeploymentStatus 
 type WorkloadActionDeploymentStatus struct {
-    // The unique identifier for the workload action. Required. Read-only.
-    actionId *string
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The identifier of any policy that was created by applying the workload action. Optional. Read-only.
-    deployedPolicyId *string
-    // The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
-    error ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable
-    // The excludeGroups property
-    excludeGroups []string
-    // The includeAllUsers property
-    includeAllUsers *bool
-    // The includeGroups property
-    includeGroups []string
-    // The date and time the workload action was last deployed. Optional.
-    lastDeploymentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The OdataType property
-    odataType *string
-    // The status property
-    status *WorkloadActionStatus
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWorkloadActionDeploymentStatus instantiates a new workloadActionDeploymentStatus and sets the default values.
 func NewWorkloadActionDeploymentStatus()(*WorkloadActionDeploymentStatus) {
     m := &WorkloadActionDeploymentStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkloadActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,23 +26,63 @@ func CreateWorkloadActionDeploymentStatusFromDiscriminatorValue(parseNode i878a8
 }
 // GetActionId gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadActionDeploymentStatus) GetActionId()(*string) {
-    return m.actionId
+    val, err := m.GetBackingStore().Get("actionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadActionDeploymentStatus) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WorkloadActionDeploymentStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDeployedPolicyId gets the deployedPolicyId property value. The identifier of any policy that was created by applying the workload action. Optional. Read-only.
 func (m *WorkloadActionDeploymentStatus) GetDeployedPolicyId()(*string) {
-    return m.deployedPolicyId
+    val, err := m.GetBackingStore().Get("deployedPolicyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetError gets the error property value. The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
 func (m *WorkloadActionDeploymentStatus) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable) {
-    return m.error
+    val, err := m.GetBackingStore().Get("error")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable)
+    }
+    return nil
 }
 // GetExcludeGroups gets the excludeGroups property value. The excludeGroups property
 func (m *WorkloadActionDeploymentStatus) GetExcludeGroups()([]string) {
-    return m.excludeGroups
+    val, err := m.GetBackingStore().Get("excludeGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,23 +189,58 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
 }
 // GetIncludeAllUsers gets the includeAllUsers property value. The includeAllUsers property
 func (m *WorkloadActionDeploymentStatus) GetIncludeAllUsers()(*bool) {
-    return m.includeAllUsers
+    val, err := m.GetBackingStore().Get("includeAllUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIncludeGroups gets the includeGroups property value. The includeGroups property
 func (m *WorkloadActionDeploymentStatus) GetIncludeGroups()([]string) {
-    return m.includeGroups
+    val, err := m.GetBackingStore().Get("includeGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetLastDeploymentDateTime gets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
 func (m *WorkloadActionDeploymentStatus) GetLastDeploymentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastDeploymentDateTime
+    val, err := m.GetBackingStore().Get("lastDeploymentDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WorkloadActionDeploymentStatus) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *WorkloadActionDeploymentStatus) GetStatus()(*WorkloadActionStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WorkloadActionStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkloadActionDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -250,41 +309,101 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i878a80d2330e89d268963
 }
 // SetActionId sets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadActionDeploymentStatus) SetActionId(value *string)() {
-    m.actionId = value
+    err := m.GetBackingStore().Set("actionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadActionDeploymentStatus) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WorkloadActionDeploymentStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDeployedPolicyId sets the deployedPolicyId property value. The identifier of any policy that was created by applying the workload action. Optional. Read-only.
 func (m *WorkloadActionDeploymentStatus) SetDeployedPolicyId(value *string)() {
-    m.deployedPolicyId = value
+    err := m.GetBackingStore().Set("deployedPolicyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetError sets the error property value. The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
 func (m *WorkloadActionDeploymentStatus) SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable)() {
-    m.error = value
+    err := m.GetBackingStore().Set("error", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExcludeGroups sets the excludeGroups property value. The excludeGroups property
 func (m *WorkloadActionDeploymentStatus) SetExcludeGroups(value []string)() {
-    m.excludeGroups = value
+    err := m.GetBackingStore().Set("excludeGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludeAllUsers sets the includeAllUsers property value. The includeAllUsers property
 func (m *WorkloadActionDeploymentStatus) SetIncludeAllUsers(value *bool)() {
-    m.includeAllUsers = value
+    err := m.GetBackingStore().Set("includeAllUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludeGroups sets the includeGroups property value. The includeGroups property
 func (m *WorkloadActionDeploymentStatus) SetIncludeGroups(value []string)() {
-    m.includeGroups = value
+    err := m.GetBackingStore().Set("includeGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastDeploymentDateTime sets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
 func (m *WorkloadActionDeploymentStatus) SetLastDeploymentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastDeploymentDateTime = value
+    err := m.GetBackingStore().Set("lastDeploymentDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WorkloadActionDeploymentStatus) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *WorkloadActionDeploymentStatus) SetStatus(value *WorkloadActionStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkloadActionDeploymentStatusable 
+type WorkloadActionDeploymentStatusable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionId()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDeployedPolicyId()(*string)
+    GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable)
+    GetExcludeGroups()([]string)
+    GetIncludeAllUsers()(*bool)
+    GetIncludeGroups()([]string)
+    GetLastDeploymentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
+    GetStatus()(*WorkloadActionStatus)
+    SetActionId(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDeployedPolicyId(value *string)()
+    SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable)()
+    SetExcludeGroups(value []string)()
+    SetIncludeAllUsers(value *bool)()
+    SetIncludeGroups(value []string)()
+    SetLastDeploymentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
+    SetStatus(value *WorkloadActionStatus)()
 }

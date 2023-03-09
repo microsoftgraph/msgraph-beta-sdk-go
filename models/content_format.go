@@ -6,7 +6,7 @@ import (
 type ContentFormat int
 
 const (
-    DEFAULT_ESCAPED_CONTENTFORMAT ContentFormat = iota
+    DEFAULTESCAPED_CONTENTFORMAT ContentFormat = iota
     EMAIL_CONTENTFORMAT
 )
 
@@ -14,10 +14,10 @@ func (i ContentFormat) String() string {
     return []string{"default", "email"}[i]
 }
 func ParseContentFormat(v string) (any, error) {
-    result := DEFAULT_ESCAPED_CONTENTFORMAT
+    result := DEFAULTESCAPED_CONTENTFORMAT
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_CONTENTFORMAT
+            result = DEFAULTESCAPED_CONTENTFORMAT
         case "email":
             result = EMAIL_CONTENTFORMAT
         default:

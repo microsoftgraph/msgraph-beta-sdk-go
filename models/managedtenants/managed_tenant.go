@@ -8,74 +8,6 @@ import (
 // ManagedTenant 
 type ManagedTenant struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // Aggregate view of device compliance policies across managed tenants.
-    aggregatedPolicyCompliances []AggregatedPolicyComplianceable
-    // The collection of audit events across managed tenants.
-    auditEvents []AuditEventable
-    // The collection of cloud PC connections across managed tenants.
-    cloudPcConnections []CloudPcConnectionable
-    // The collection of cloud PC devices across managed tenants.
-    cloudPcDevices []CloudPcDeviceable
-    // Overview of cloud PC information across managed tenants.
-    cloudPcsOverview []CloudPcOverviewable
-    // Aggregate view of conditional access policy coverage across managed tenants.
-    conditionalAccessPolicyCoverages []ConditionalAccessPolicyCoverageable
-    // Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-    credentialUserRegistrationsSummaries []CredentialUserRegistrationsSummaryable
-    // Summary information for device compliance policy setting states across managed tenants.
-    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummaryable
-    // The collection of compliance for managed devices across managed tenants.
-    managedDeviceCompliances []ManagedDeviceComplianceable
-    // Trend insights for device compliance across managed tenants.
-    managedDeviceComplianceTrends []ManagedDeviceComplianceTrendable
-    // The managedTenantAlertLogs property
-    managedTenantAlertLogs []ManagedTenantAlertLogable
-    // The managedTenantAlertRuleDefinitions property
-    managedTenantAlertRuleDefinitions []ManagedTenantAlertRuleDefinitionable
-    // The managedTenantAlertRules property
-    managedTenantAlertRules []ManagedTenantAlertRuleable
-    // The managedTenantAlerts property
-    managedTenantAlerts []ManagedTenantAlertable
-    // The managedTenantApiNotifications property
-    managedTenantApiNotifications []ManagedTenantApiNotificationable
-    // The managedTenantEmailNotifications property
-    managedTenantEmailNotifications []ManagedTenantEmailNotificationable
-    // The managedTenantTicketingEndpoints property
-    managedTenantTicketingEndpoints []ManagedTenantTicketingEndpointable
-    // The collection of baseline management actions across managed tenants.
-    managementActions []ManagementActionable
-    // The tenant level status of management actions across managed tenants.
-    managementActionTenantDeploymentStatuses []ManagementActionTenantDeploymentStatusable
-    // The collection of baseline management intents across managed tenants.
-    managementIntents []ManagementIntentable
-    // The managementTemplateCollections property
-    managementTemplateCollections []ManagementTemplateCollectionable
-    // The managementTemplateCollectionTenantSummaries property
-    managementTemplateCollectionTenantSummaries []ManagementTemplateCollectionTenantSummaryable
-    // The collection of baseline management templates across managed tenants.
-    managementTemplates []ManagementTemplateable
-    // The managementTemplateSteps property
-    managementTemplateSteps []ManagementTemplateStepable
-    // The managementTemplateStepTenantSummaries property
-    managementTemplateStepTenantSummaries []ManagementTemplateStepTenantSummaryable
-    // The managementTemplateStepVersions property
-    managementTemplateStepVersions []ManagementTemplateStepVersionable
-    // The collection of role assignments to a signed-in user for a managed tenant.
-    myRoles []MyRoleable
-    // The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-    tenantGroups []TenantGroupable
-    // The collection of tenants associated with the managing entity.
-    tenants []Tenantable
-    // The collection of tenant level customized information across managed tenants.
-    tenantsCustomizedInformation []TenantCustomizedInformationable
-    // The collection tenant level detailed information across managed tenants.
-    tenantsDetailedInformation []TenantDetailedInformationable
-    // The collection of tenant tags across managed tenants.
-    tenantTags []TenantTagable
-    // The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-    windowsDeviceMalwareStates []WindowsDeviceMalwareStateable
-    // The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-    windowsProtectionStates []WindowsProtectionStateable
 }
 // NewManagedTenant instantiates a new ManagedTenant and sets the default values.
 func NewManagedTenant()(*ManagedTenant) {
@@ -90,35 +22,91 @@ func CreateManagedTenantFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAggregatedPolicyCompliances gets the aggregatedPolicyCompliances property value. Aggregate view of device compliance policies across managed tenants.
 func (m *ManagedTenant) GetAggregatedPolicyCompliances()([]AggregatedPolicyComplianceable) {
-    return m.aggregatedPolicyCompliances
+    val, err := m.GetBackingStore().Get("aggregatedPolicyCompliances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AggregatedPolicyComplianceable)
+    }
+    return nil
 }
 // GetAuditEvents gets the auditEvents property value. The collection of audit events across managed tenants.
 func (m *ManagedTenant) GetAuditEvents()([]AuditEventable) {
-    return m.auditEvents
+    val, err := m.GetBackingStore().Get("auditEvents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuditEventable)
+    }
+    return nil
 }
 // GetCloudPcConnections gets the cloudPcConnections property value. The collection of cloud PC connections across managed tenants.
 func (m *ManagedTenant) GetCloudPcConnections()([]CloudPcConnectionable) {
-    return m.cloudPcConnections
+    val, err := m.GetBackingStore().Get("cloudPcConnections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcConnectionable)
+    }
+    return nil
 }
 // GetCloudPcDevices gets the cloudPcDevices property value. The collection of cloud PC devices across managed tenants.
 func (m *ManagedTenant) GetCloudPcDevices()([]CloudPcDeviceable) {
-    return m.cloudPcDevices
+    val, err := m.GetBackingStore().Get("cloudPcDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcDeviceable)
+    }
+    return nil
 }
 // GetCloudPcsOverview gets the cloudPcsOverview property value. Overview of cloud PC information across managed tenants.
 func (m *ManagedTenant) GetCloudPcsOverview()([]CloudPcOverviewable) {
-    return m.cloudPcsOverview
+    val, err := m.GetBackingStore().Get("cloudPcsOverview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcOverviewable)
+    }
+    return nil
 }
 // GetConditionalAccessPolicyCoverages gets the conditionalAccessPolicyCoverages property value. Aggregate view of conditional access policy coverage across managed tenants.
 func (m *ManagedTenant) GetConditionalAccessPolicyCoverages()([]ConditionalAccessPolicyCoverageable) {
-    return m.conditionalAccessPolicyCoverages
+    val, err := m.GetBackingStore().Get("conditionalAccessPolicyCoverages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConditionalAccessPolicyCoverageable)
+    }
+    return nil
 }
 // GetCredentialUserRegistrationsSummaries gets the credentialUserRegistrationsSummaries property value. Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 func (m *ManagedTenant) GetCredentialUserRegistrationsSummaries()([]CredentialUserRegistrationsSummaryable) {
-    return m.credentialUserRegistrationsSummaries
+    val, err := m.GetBackingStore().Get("credentialUserRegistrationsSummaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CredentialUserRegistrationsSummaryable)
+    }
+    return nil
 }
 // GetDeviceCompliancePolicySettingStateSummaries gets the deviceCompliancePolicySettingStateSummaries property value. Summary information for device compliance policy setting states across managed tenants.
 func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable) {
-    return m.deviceCompliancePolicySettingStateSummaries
+    val, err := m.GetBackingStore().Get("deviceCompliancePolicySettingStateSummaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceCompliancePolicySettingStateSummaryable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -603,107 +591,289 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetManagedDeviceCompliances gets the managedDeviceCompliances property value. The collection of compliance for managed devices across managed tenants.
 func (m *ManagedTenant) GetManagedDeviceCompliances()([]ManagedDeviceComplianceable) {
-    return m.managedDeviceCompliances
+    val, err := m.GetBackingStore().Get("managedDeviceCompliances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceComplianceable)
+    }
+    return nil
 }
 // GetManagedDeviceComplianceTrends gets the managedDeviceComplianceTrends property value. Trend insights for device compliance across managed tenants.
 func (m *ManagedTenant) GetManagedDeviceComplianceTrends()([]ManagedDeviceComplianceTrendable) {
-    return m.managedDeviceComplianceTrends
+    val, err := m.GetBackingStore().Get("managedDeviceComplianceTrends")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceComplianceTrendable)
+    }
+    return nil
 }
 // GetManagedTenantAlertLogs gets the managedTenantAlertLogs property value. The managedTenantAlertLogs property
 func (m *ManagedTenant) GetManagedTenantAlertLogs()([]ManagedTenantAlertLogable) {
-    return m.managedTenantAlertLogs
+    val, err := m.GetBackingStore().Get("managedTenantAlertLogs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantAlertLogable)
+    }
+    return nil
 }
 // GetManagedTenantAlertRuleDefinitions gets the managedTenantAlertRuleDefinitions property value. The managedTenantAlertRuleDefinitions property
 func (m *ManagedTenant) GetManagedTenantAlertRuleDefinitions()([]ManagedTenantAlertRuleDefinitionable) {
-    return m.managedTenantAlertRuleDefinitions
+    val, err := m.GetBackingStore().Get("managedTenantAlertRuleDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantAlertRuleDefinitionable)
+    }
+    return nil
 }
 // GetManagedTenantAlertRules gets the managedTenantAlertRules property value. The managedTenantAlertRules property
 func (m *ManagedTenant) GetManagedTenantAlertRules()([]ManagedTenantAlertRuleable) {
-    return m.managedTenantAlertRules
+    val, err := m.GetBackingStore().Get("managedTenantAlertRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantAlertRuleable)
+    }
+    return nil
 }
 // GetManagedTenantAlerts gets the managedTenantAlerts property value. The managedTenantAlerts property
 func (m *ManagedTenant) GetManagedTenantAlerts()([]ManagedTenantAlertable) {
-    return m.managedTenantAlerts
+    val, err := m.GetBackingStore().Get("managedTenantAlerts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantAlertable)
+    }
+    return nil
 }
 // GetManagedTenantApiNotifications gets the managedTenantApiNotifications property value. The managedTenantApiNotifications property
 func (m *ManagedTenant) GetManagedTenantApiNotifications()([]ManagedTenantApiNotificationable) {
-    return m.managedTenantApiNotifications
+    val, err := m.GetBackingStore().Get("managedTenantApiNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantApiNotificationable)
+    }
+    return nil
 }
 // GetManagedTenantEmailNotifications gets the managedTenantEmailNotifications property value. The managedTenantEmailNotifications property
 func (m *ManagedTenant) GetManagedTenantEmailNotifications()([]ManagedTenantEmailNotificationable) {
-    return m.managedTenantEmailNotifications
+    val, err := m.GetBackingStore().Get("managedTenantEmailNotifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantEmailNotificationable)
+    }
+    return nil
 }
 // GetManagedTenantTicketingEndpoints gets the managedTenantTicketingEndpoints property value. The managedTenantTicketingEndpoints property
 func (m *ManagedTenant) GetManagedTenantTicketingEndpoints()([]ManagedTenantTicketingEndpointable) {
-    return m.managedTenantTicketingEndpoints
+    val, err := m.GetBackingStore().Get("managedTenantTicketingEndpoints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedTenantTicketingEndpointable)
+    }
+    return nil
 }
 // GetManagementActions gets the managementActions property value. The collection of baseline management actions across managed tenants.
 func (m *ManagedTenant) GetManagementActions()([]ManagementActionable) {
-    return m.managementActions
+    val, err := m.GetBackingStore().Get("managementActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementActionable)
+    }
+    return nil
 }
 // GetManagementActionTenantDeploymentStatuses gets the managementActionTenantDeploymentStatuses property value. The tenant level status of management actions across managed tenants.
 func (m *ManagedTenant) GetManagementActionTenantDeploymentStatuses()([]ManagementActionTenantDeploymentStatusable) {
-    return m.managementActionTenantDeploymentStatuses
+    val, err := m.GetBackingStore().Get("managementActionTenantDeploymentStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementActionTenantDeploymentStatusable)
+    }
+    return nil
 }
 // GetManagementIntents gets the managementIntents property value. The collection of baseline management intents across managed tenants.
 func (m *ManagedTenant) GetManagementIntents()([]ManagementIntentable) {
-    return m.managementIntents
+    val, err := m.GetBackingStore().Get("managementIntents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementIntentable)
+    }
+    return nil
 }
 // GetManagementTemplateCollections gets the managementTemplateCollections property value. The managementTemplateCollections property
 func (m *ManagedTenant) GetManagementTemplateCollections()([]ManagementTemplateCollectionable) {
-    return m.managementTemplateCollections
+    val, err := m.GetBackingStore().Get("managementTemplateCollections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateCollectionable)
+    }
+    return nil
 }
 // GetManagementTemplateCollectionTenantSummaries gets the managementTemplateCollectionTenantSummaries property value. The managementTemplateCollectionTenantSummaries property
 func (m *ManagedTenant) GetManagementTemplateCollectionTenantSummaries()([]ManagementTemplateCollectionTenantSummaryable) {
-    return m.managementTemplateCollectionTenantSummaries
+    val, err := m.GetBackingStore().Get("managementTemplateCollectionTenantSummaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateCollectionTenantSummaryable)
+    }
+    return nil
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of baseline management templates across managed tenants.
 func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplateable) {
-    return m.managementTemplates
+    val, err := m.GetBackingStore().Get("managementTemplates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateable)
+    }
+    return nil
 }
 // GetManagementTemplateSteps gets the managementTemplateSteps property value. The managementTemplateSteps property
 func (m *ManagedTenant) GetManagementTemplateSteps()([]ManagementTemplateStepable) {
-    return m.managementTemplateSteps
+    val, err := m.GetBackingStore().Get("managementTemplateSteps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateStepable)
+    }
+    return nil
 }
 // GetManagementTemplateStepTenantSummaries gets the managementTemplateStepTenantSummaries property value. The managementTemplateStepTenantSummaries property
 func (m *ManagedTenant) GetManagementTemplateStepTenantSummaries()([]ManagementTemplateStepTenantSummaryable) {
-    return m.managementTemplateStepTenantSummaries
+    val, err := m.GetBackingStore().Get("managementTemplateStepTenantSummaries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateStepTenantSummaryable)
+    }
+    return nil
 }
 // GetManagementTemplateStepVersions gets the managementTemplateStepVersions property value. The managementTemplateStepVersions property
 func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplateStepVersionable) {
-    return m.managementTemplateStepVersions
+    val, err := m.GetBackingStore().Get("managementTemplateStepVersions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementTemplateStepVersionable)
+    }
+    return nil
 }
 // GetMyRoles gets the myRoles property value. The collection of role assignments to a signed-in user for a managed tenant.
 func (m *ManagedTenant) GetMyRoles()([]MyRoleable) {
-    return m.myRoles
+    val, err := m.GetBackingStore().Get("myRoles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MyRoleable)
+    }
+    return nil
 }
 // GetTenantGroups gets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *ManagedTenant) GetTenantGroups()([]TenantGroupable) {
-    return m.tenantGroups
+    val, err := m.GetBackingStore().Get("tenantGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantGroupable)
+    }
+    return nil
 }
 // GetTenants gets the tenants property value. The collection of tenants associated with the managing entity.
 func (m *ManagedTenant) GetTenants()([]Tenantable) {
-    return m.tenants
+    val, err := m.GetBackingStore().Get("tenants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Tenantable)
+    }
+    return nil
 }
 // GetTenantsCustomizedInformation gets the tenantsCustomizedInformation property value. The collection of tenant level customized information across managed tenants.
 func (m *ManagedTenant) GetTenantsCustomizedInformation()([]TenantCustomizedInformationable) {
-    return m.tenantsCustomizedInformation
+    val, err := m.GetBackingStore().Get("tenantsCustomizedInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantCustomizedInformationable)
+    }
+    return nil
 }
 // GetTenantsDetailedInformation gets the tenantsDetailedInformation property value. The collection tenant level detailed information across managed tenants.
 func (m *ManagedTenant) GetTenantsDetailedInformation()([]TenantDetailedInformationable) {
-    return m.tenantsDetailedInformation
+    val, err := m.GetBackingStore().Get("tenantsDetailedInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantDetailedInformationable)
+    }
+    return nil
 }
 // GetTenantTags gets the tenantTags property value. The collection of tenant tags across managed tenants.
 func (m *ManagedTenant) GetTenantTags()([]TenantTagable) {
-    return m.tenantTags
+    val, err := m.GetBackingStore().Get("tenantTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TenantTagable)
+    }
+    return nil
 }
 // GetWindowsDeviceMalwareStates gets the windowsDeviceMalwareStates property value. The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *ManagedTenant) GetWindowsDeviceMalwareStates()([]WindowsDeviceMalwareStateable) {
-    return m.windowsDeviceMalwareStates
+    val, err := m.GetBackingStore().Get("windowsDeviceMalwareStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsDeviceMalwareStateable)
+    }
+    return nil
 }
 // GetWindowsProtectionStates gets the windowsProtectionStates property value. The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *ManagedTenant) GetWindowsProtectionStates()([]WindowsProtectionStateable) {
-    return m.windowsProtectionStates
+    val, err := m.GetBackingStore().Get("windowsProtectionStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsProtectionStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1055,137 +1225,312 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAggregatedPolicyCompliances sets the aggregatedPolicyCompliances property value. Aggregate view of device compliance policies across managed tenants.
 func (m *ManagedTenant) SetAggregatedPolicyCompliances(value []AggregatedPolicyComplianceable)() {
-    m.aggregatedPolicyCompliances = value
+    err := m.GetBackingStore().Set("aggregatedPolicyCompliances", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuditEvents sets the auditEvents property value. The collection of audit events across managed tenants.
 func (m *ManagedTenant) SetAuditEvents(value []AuditEventable)() {
-    m.auditEvents = value
+    err := m.GetBackingStore().Set("auditEvents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudPcConnections sets the cloudPcConnections property value. The collection of cloud PC connections across managed tenants.
 func (m *ManagedTenant) SetCloudPcConnections(value []CloudPcConnectionable)() {
-    m.cloudPcConnections = value
+    err := m.GetBackingStore().Set("cloudPcConnections", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudPcDevices sets the cloudPcDevices property value. The collection of cloud PC devices across managed tenants.
 func (m *ManagedTenant) SetCloudPcDevices(value []CloudPcDeviceable)() {
-    m.cloudPcDevices = value
+    err := m.GetBackingStore().Set("cloudPcDevices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCloudPcsOverview sets the cloudPcsOverview property value. Overview of cloud PC information across managed tenants.
 func (m *ManagedTenant) SetCloudPcsOverview(value []CloudPcOverviewable)() {
-    m.cloudPcsOverview = value
+    err := m.GetBackingStore().Set("cloudPcsOverview", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConditionalAccessPolicyCoverages sets the conditionalAccessPolicyCoverages property value. Aggregate view of conditional access policy coverage across managed tenants.
 func (m *ManagedTenant) SetConditionalAccessPolicyCoverages(value []ConditionalAccessPolicyCoverageable)() {
-    m.conditionalAccessPolicyCoverages = value
+    err := m.GetBackingStore().Set("conditionalAccessPolicyCoverages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCredentialUserRegistrationsSummaries sets the credentialUserRegistrationsSummaries property value. Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 func (m *ManagedTenant) SetCredentialUserRegistrationsSummaries(value []CredentialUserRegistrationsSummaryable)() {
-    m.credentialUserRegistrationsSummaries = value
+    err := m.GetBackingStore().Set("credentialUserRegistrationsSummaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceCompliancePolicySettingStateSummaries sets the deviceCompliancePolicySettingStateSummaries property value. Summary information for device compliance policy setting states across managed tenants.
 func (m *ManagedTenant) SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummaryable)() {
-    m.deviceCompliancePolicySettingStateSummaries = value
+    err := m.GetBackingStore().Set("deviceCompliancePolicySettingStateSummaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCompliances sets the managedDeviceCompliances property value. The collection of compliance for managed devices across managed tenants.
 func (m *ManagedTenant) SetManagedDeviceCompliances(value []ManagedDeviceComplianceable)() {
-    m.managedDeviceCompliances = value
+    err := m.GetBackingStore().Set("managedDeviceCompliances", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceComplianceTrends sets the managedDeviceComplianceTrends property value. Trend insights for device compliance across managed tenants.
 func (m *ManagedTenant) SetManagedDeviceComplianceTrends(value []ManagedDeviceComplianceTrendable)() {
-    m.managedDeviceComplianceTrends = value
+    err := m.GetBackingStore().Set("managedDeviceComplianceTrends", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantAlertLogs sets the managedTenantAlertLogs property value. The managedTenantAlertLogs property
 func (m *ManagedTenant) SetManagedTenantAlertLogs(value []ManagedTenantAlertLogable)() {
-    m.managedTenantAlertLogs = value
+    err := m.GetBackingStore().Set("managedTenantAlertLogs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantAlertRuleDefinitions sets the managedTenantAlertRuleDefinitions property value. The managedTenantAlertRuleDefinitions property
 func (m *ManagedTenant) SetManagedTenantAlertRuleDefinitions(value []ManagedTenantAlertRuleDefinitionable)() {
-    m.managedTenantAlertRuleDefinitions = value
+    err := m.GetBackingStore().Set("managedTenantAlertRuleDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantAlertRules sets the managedTenantAlertRules property value. The managedTenantAlertRules property
 func (m *ManagedTenant) SetManagedTenantAlertRules(value []ManagedTenantAlertRuleable)() {
-    m.managedTenantAlertRules = value
+    err := m.GetBackingStore().Set("managedTenantAlertRules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantAlerts sets the managedTenantAlerts property value. The managedTenantAlerts property
 func (m *ManagedTenant) SetManagedTenantAlerts(value []ManagedTenantAlertable)() {
-    m.managedTenantAlerts = value
+    err := m.GetBackingStore().Set("managedTenantAlerts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantApiNotifications sets the managedTenantApiNotifications property value. The managedTenantApiNotifications property
 func (m *ManagedTenant) SetManagedTenantApiNotifications(value []ManagedTenantApiNotificationable)() {
-    m.managedTenantApiNotifications = value
+    err := m.GetBackingStore().Set("managedTenantApiNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantEmailNotifications sets the managedTenantEmailNotifications property value. The managedTenantEmailNotifications property
 func (m *ManagedTenant) SetManagedTenantEmailNotifications(value []ManagedTenantEmailNotificationable)() {
-    m.managedTenantEmailNotifications = value
+    err := m.GetBackingStore().Set("managedTenantEmailNotifications", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedTenantTicketingEndpoints sets the managedTenantTicketingEndpoints property value. The managedTenantTicketingEndpoints property
 func (m *ManagedTenant) SetManagedTenantTicketingEndpoints(value []ManagedTenantTicketingEndpointable)() {
-    m.managedTenantTicketingEndpoints = value
+    err := m.GetBackingStore().Set("managedTenantTicketingEndpoints", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementActions sets the managementActions property value. The collection of baseline management actions across managed tenants.
 func (m *ManagedTenant) SetManagementActions(value []ManagementActionable)() {
-    m.managementActions = value
+    err := m.GetBackingStore().Set("managementActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementActionTenantDeploymentStatuses sets the managementActionTenantDeploymentStatuses property value. The tenant level status of management actions across managed tenants.
 func (m *ManagedTenant) SetManagementActionTenantDeploymentStatuses(value []ManagementActionTenantDeploymentStatusable)() {
-    m.managementActionTenantDeploymentStatuses = value
+    err := m.GetBackingStore().Set("managementActionTenantDeploymentStatuses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementIntents sets the managementIntents property value. The collection of baseline management intents across managed tenants.
 func (m *ManagedTenant) SetManagementIntents(value []ManagementIntentable)() {
-    m.managementIntents = value
+    err := m.GetBackingStore().Set("managementIntents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateCollections sets the managementTemplateCollections property value. The managementTemplateCollections property
 func (m *ManagedTenant) SetManagementTemplateCollections(value []ManagementTemplateCollectionable)() {
-    m.managementTemplateCollections = value
+    err := m.GetBackingStore().Set("managementTemplateCollections", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateCollectionTenantSummaries sets the managementTemplateCollectionTenantSummaries property value. The managementTemplateCollectionTenantSummaries property
 func (m *ManagedTenant) SetManagementTemplateCollectionTenantSummaries(value []ManagementTemplateCollectionTenantSummaryable)() {
-    m.managementTemplateCollectionTenantSummaries = value
+    err := m.GetBackingStore().Set("managementTemplateCollectionTenantSummaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplates sets the managementTemplates property value. The collection of baseline management templates across managed tenants.
 func (m *ManagedTenant) SetManagementTemplates(value []ManagementTemplateable)() {
-    m.managementTemplates = value
+    err := m.GetBackingStore().Set("managementTemplates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateSteps sets the managementTemplateSteps property value. The managementTemplateSteps property
 func (m *ManagedTenant) SetManagementTemplateSteps(value []ManagementTemplateStepable)() {
-    m.managementTemplateSteps = value
+    err := m.GetBackingStore().Set("managementTemplateSteps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateStepTenantSummaries sets the managementTemplateStepTenantSummaries property value. The managementTemplateStepTenantSummaries property
 func (m *ManagedTenant) SetManagementTemplateStepTenantSummaries(value []ManagementTemplateStepTenantSummaryable)() {
-    m.managementTemplateStepTenantSummaries = value
+    err := m.GetBackingStore().Set("managementTemplateStepTenantSummaries", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementTemplateStepVersions sets the managementTemplateStepVersions property value. The managementTemplateStepVersions property
 func (m *ManagedTenant) SetManagementTemplateStepVersions(value []ManagementTemplateStepVersionable)() {
-    m.managementTemplateStepVersions = value
+    err := m.GetBackingStore().Set("managementTemplateStepVersions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMyRoles sets the myRoles property value. The collection of role assignments to a signed-in user for a managed tenant.
 func (m *ManagedTenant) SetMyRoles(value []MyRoleable)() {
-    m.myRoles = value
+    err := m.GetBackingStore().Set("myRoles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantGroups sets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *ManagedTenant) SetTenantGroups(value []TenantGroupable)() {
-    m.tenantGroups = value
+    err := m.GetBackingStore().Set("tenantGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenants sets the tenants property value. The collection of tenants associated with the managing entity.
 func (m *ManagedTenant) SetTenants(value []Tenantable)() {
-    m.tenants = value
+    err := m.GetBackingStore().Set("tenants", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantsCustomizedInformation sets the tenantsCustomizedInformation property value. The collection of tenant level customized information across managed tenants.
 func (m *ManagedTenant) SetTenantsCustomizedInformation(value []TenantCustomizedInformationable)() {
-    m.tenantsCustomizedInformation = value
+    err := m.GetBackingStore().Set("tenantsCustomizedInformation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantsDetailedInformation sets the tenantsDetailedInformation property value. The collection tenant level detailed information across managed tenants.
 func (m *ManagedTenant) SetTenantsDetailedInformation(value []TenantDetailedInformationable)() {
-    m.tenantsDetailedInformation = value
+    err := m.GetBackingStore().Set("tenantsDetailedInformation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantTags sets the tenantTags property value. The collection of tenant tags across managed tenants.
 func (m *ManagedTenant) SetTenantTags(value []TenantTagable)() {
-    m.tenantTags = value
+    err := m.GetBackingStore().Set("tenantTags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsDeviceMalwareStates sets the windowsDeviceMalwareStates property value. The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *ManagedTenant) SetWindowsDeviceMalwareStates(value []WindowsDeviceMalwareStateable)() {
-    m.windowsDeviceMalwareStates = value
+    err := m.GetBackingStore().Set("windowsDeviceMalwareStates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsProtectionStates sets the windowsProtectionStates property value. The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 func (m *ManagedTenant) SetWindowsProtectionStates(value []WindowsProtectionStateable)() {
-    m.windowsProtectionStates = value
+    err := m.GetBackingStore().Set("windowsProtectionStates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedTenantable 
+type ManagedTenantable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAggregatedPolicyCompliances()([]AggregatedPolicyComplianceable)
+    GetAuditEvents()([]AuditEventable)
+    GetCloudPcConnections()([]CloudPcConnectionable)
+    GetCloudPcDevices()([]CloudPcDeviceable)
+    GetCloudPcsOverview()([]CloudPcOverviewable)
+    GetConditionalAccessPolicyCoverages()([]ConditionalAccessPolicyCoverageable)
+    GetCredentialUserRegistrationsSummaries()([]CredentialUserRegistrationsSummaryable)
+    GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable)
+    GetManagedDeviceCompliances()([]ManagedDeviceComplianceable)
+    GetManagedDeviceComplianceTrends()([]ManagedDeviceComplianceTrendable)
+    GetManagedTenantAlertLogs()([]ManagedTenantAlertLogable)
+    GetManagedTenantAlertRuleDefinitions()([]ManagedTenantAlertRuleDefinitionable)
+    GetManagedTenantAlertRules()([]ManagedTenantAlertRuleable)
+    GetManagedTenantAlerts()([]ManagedTenantAlertable)
+    GetManagedTenantApiNotifications()([]ManagedTenantApiNotificationable)
+    GetManagedTenantEmailNotifications()([]ManagedTenantEmailNotificationable)
+    GetManagedTenantTicketingEndpoints()([]ManagedTenantTicketingEndpointable)
+    GetManagementActions()([]ManagementActionable)
+    GetManagementActionTenantDeploymentStatuses()([]ManagementActionTenantDeploymentStatusable)
+    GetManagementIntents()([]ManagementIntentable)
+    GetManagementTemplateCollections()([]ManagementTemplateCollectionable)
+    GetManagementTemplateCollectionTenantSummaries()([]ManagementTemplateCollectionTenantSummaryable)
+    GetManagementTemplates()([]ManagementTemplateable)
+    GetManagementTemplateSteps()([]ManagementTemplateStepable)
+    GetManagementTemplateStepTenantSummaries()([]ManagementTemplateStepTenantSummaryable)
+    GetManagementTemplateStepVersions()([]ManagementTemplateStepVersionable)
+    GetMyRoles()([]MyRoleable)
+    GetTenantGroups()([]TenantGroupable)
+    GetTenants()([]Tenantable)
+    GetTenantsCustomizedInformation()([]TenantCustomizedInformationable)
+    GetTenantsDetailedInformation()([]TenantDetailedInformationable)
+    GetTenantTags()([]TenantTagable)
+    GetWindowsDeviceMalwareStates()([]WindowsDeviceMalwareStateable)
+    GetWindowsProtectionStates()([]WindowsProtectionStateable)
+    SetAggregatedPolicyCompliances(value []AggregatedPolicyComplianceable)()
+    SetAuditEvents(value []AuditEventable)()
+    SetCloudPcConnections(value []CloudPcConnectionable)()
+    SetCloudPcDevices(value []CloudPcDeviceable)()
+    SetCloudPcsOverview(value []CloudPcOverviewable)()
+    SetConditionalAccessPolicyCoverages(value []ConditionalAccessPolicyCoverageable)()
+    SetCredentialUserRegistrationsSummaries(value []CredentialUserRegistrationsSummaryable)()
+    SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummaryable)()
+    SetManagedDeviceCompliances(value []ManagedDeviceComplianceable)()
+    SetManagedDeviceComplianceTrends(value []ManagedDeviceComplianceTrendable)()
+    SetManagedTenantAlertLogs(value []ManagedTenantAlertLogable)()
+    SetManagedTenantAlertRuleDefinitions(value []ManagedTenantAlertRuleDefinitionable)()
+    SetManagedTenantAlertRules(value []ManagedTenantAlertRuleable)()
+    SetManagedTenantAlerts(value []ManagedTenantAlertable)()
+    SetManagedTenantApiNotifications(value []ManagedTenantApiNotificationable)()
+    SetManagedTenantEmailNotifications(value []ManagedTenantEmailNotificationable)()
+    SetManagedTenantTicketingEndpoints(value []ManagedTenantTicketingEndpointable)()
+    SetManagementActions(value []ManagementActionable)()
+    SetManagementActionTenantDeploymentStatuses(value []ManagementActionTenantDeploymentStatusable)()
+    SetManagementIntents(value []ManagementIntentable)()
+    SetManagementTemplateCollections(value []ManagementTemplateCollectionable)()
+    SetManagementTemplateCollectionTenantSummaries(value []ManagementTemplateCollectionTenantSummaryable)()
+    SetManagementTemplates(value []ManagementTemplateable)()
+    SetManagementTemplateSteps(value []ManagementTemplateStepable)()
+    SetManagementTemplateStepTenantSummaries(value []ManagementTemplateStepTenantSummaryable)()
+    SetManagementTemplateStepVersions(value []ManagementTemplateStepVersionable)()
+    SetMyRoles(value []MyRoleable)()
+    SetTenantGroups(value []TenantGroupable)()
+    SetTenants(value []Tenantable)()
+    SetTenantsCustomizedInformation(value []TenantCustomizedInformationable)()
+    SetTenantsDetailedInformation(value []TenantDetailedInformationable)()
+    SetTenantTags(value []TenantTagable)()
+    SetWindowsDeviceMalwareStates(value []WindowsDeviceMalwareStateable)()
+    SetWindowsProtectionStates(value []WindowsProtectionStateable)()
 }

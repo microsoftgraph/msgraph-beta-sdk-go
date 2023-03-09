@@ -7,8 +7,6 @@ import (
 // UserRegistrationCountCollectionResponse 
 type UserRegistrationCountCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserRegistrationCountable
 }
 // NewUserRegistrationCountCollectionResponse instantiates a new UserRegistrationCountCollectionResponse and sets the default values.
 func NewUserRegistrationCountCollectionResponse()(*UserRegistrationCountCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserRegistrationCountCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *UserRegistrationCountCollectionResponse) GetValue()([]UserRegistrationCountable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserRegistrationCountable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserRegistrationCountCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserRegistrationCountCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *UserRegistrationCountCollectionResponse) SetValue(value []UserRegistrationCountable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserRegistrationCountCollectionResponseable 
+type UserRegistrationCountCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserRegistrationCountable)
+    SetValue(value []UserRegistrationCountable)()
 }

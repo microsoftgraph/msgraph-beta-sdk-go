@@ -13,8 +13,8 @@ func NewManagedDeviceMobileAppConfigurationPolicySetItem()(*ManagedDeviceMobileA
     m := &ManagedDeviceMobileAppConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *ManagedDeviceMobileAppConfigurationPolicySetItem) Serialize(writer i878
         return err
     }
     return nil
+}
+// ManagedDeviceMobileAppConfigurationPolicySetItemable 
+type ManagedDeviceMobileAppConfigurationPolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
 }

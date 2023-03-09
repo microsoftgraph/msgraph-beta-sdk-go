@@ -7,8 +7,6 @@ import (
 // DeviceKeyCollectionResponse 
 type DeviceKeyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceKeyable
 }
 // NewDeviceKeyCollectionResponse instantiates a new DeviceKeyCollectionResponse and sets the default values.
 func NewDeviceKeyCollectionResponse()(*DeviceKeyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceKeyCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceKeyCollectionResponse) GetValue()([]DeviceKeyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceKeyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceKeyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceKeyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceKeyCollectionResponse) SetValue(value []DeviceKeyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceKeyCollectionResponseable 
+type DeviceKeyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceKeyable)
+    SetValue(value []DeviceKeyable)()
 }

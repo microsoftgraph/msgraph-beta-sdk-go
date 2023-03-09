@@ -27,13 +27,13 @@ type DataSharingConsentsItemConsentToDataSharingRequestBuilderPostRequestConfigu
 func NewDataSharingConsentsItemConsentToDataSharingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSharingConsentsItemConsentToDataSharingRequestBuilder) {
     m := &DataSharingConsentsItemConsentToDataSharingRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/dataSharingConsents/{dataSharingConsent%2Did}/microsoft.graph.consentToDataSharing";
+    m.urlTemplate = "{+baseurl}/deviceManagement/dataSharingConsents/{dataSharingConsent%2Did}/consentToDataSharing";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDataSharingConsentsItemConsentToDataSharingRequestBuilder instantiates a new ConsentToDataSharingRequestBuilder and sets the default values.

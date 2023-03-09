@@ -8,32 +8,6 @@ import (
 // UserExperienceAnalyticsAnomaly the user experience analytics anomaly entity contains anomaly details.
 type UserExperienceAnalyticsAnomaly struct {
     Entity
-    // Indicates the first occurrence date and time for the anomaly.
-    anomalyFirstOccurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The unique identifier of the anomaly.
-    anomalyId *string
-    // Indicates the latest occurrence date and time for the anomaly.
-    anomalyLatestOccurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name of the anomaly.
-    anomalyName *string
-    // Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.
-    anomalyType *UserExperienceAnalyticsAnomalyType
-    // The name of the application or module that caused the anomaly.
-    assetName *string
-    // The publisher of the application or module that caused the anomaly.
-    assetPublisher *string
-    // The version of the application or module that caused the anomaly.
-    assetVersion *string
-    // The unique identifier of the anomaly detection model.
-    detectionModelId *string
-    // The number of devices impacted by the anomaly. Valid values -2147483648 to 2147483647
-    deviceImpactedCount *int32
-    // The unique identifier of the anomaly detection model.
-    issueId *string
-    // Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.
-    severity *UserExperienceAnalyticsAnomalySeverity
-    // Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
-    state *UserExperienceAnalyticsAnomalyState
 }
 // NewUserExperienceAnalyticsAnomaly instantiates a new userExperienceAnalyticsAnomaly and sets the default values.
 func NewUserExperienceAnalyticsAnomaly()(*UserExperienceAnalyticsAnomaly) {
@@ -48,43 +22,113 @@ func CreateUserExperienceAnalyticsAnomalyFromDiscriminatorValue(parseNode i878a8
 }
 // GetAnomalyFirstOccurrenceDateTime gets the anomalyFirstOccurrenceDateTime property value. Indicates the first occurrence date and time for the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAnomalyFirstOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.anomalyFirstOccurrenceDateTime
+    val, err := m.GetBackingStore().Get("anomalyFirstOccurrenceDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAnomalyId gets the anomalyId property value. The unique identifier of the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAnomalyId()(*string) {
-    return m.anomalyId
+    val, err := m.GetBackingStore().Get("anomalyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAnomalyLatestOccurrenceDateTime gets the anomalyLatestOccurrenceDateTime property value. Indicates the latest occurrence date and time for the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAnomalyLatestOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.anomalyLatestOccurrenceDateTime
+    val, err := m.GetBackingStore().Get("anomalyLatestOccurrenceDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAnomalyName gets the anomalyName property value. The name of the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAnomalyName()(*string) {
-    return m.anomalyName
+    val, err := m.GetBackingStore().Get("anomalyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAnomalyType gets the anomalyType property value. Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.
 func (m *UserExperienceAnalyticsAnomaly) GetAnomalyType()(*UserExperienceAnalyticsAnomalyType) {
-    return m.anomalyType
+    val, err := m.GetBackingStore().Get("anomalyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsAnomalyType)
+    }
+    return nil
 }
 // GetAssetName gets the assetName property value. The name of the application or module that caused the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAssetName()(*string) {
-    return m.assetName
+    val, err := m.GetBackingStore().Get("assetName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAssetPublisher gets the assetPublisher property value. The publisher of the application or module that caused the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAssetPublisher()(*string) {
-    return m.assetPublisher
+    val, err := m.GetBackingStore().Get("assetPublisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAssetVersion gets the assetVersion property value. The version of the application or module that caused the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) GetAssetVersion()(*string) {
-    return m.assetVersion
+    val, err := m.GetBackingStore().Get("assetVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDetectionModelId gets the detectionModelId property value. The unique identifier of the anomaly detection model.
 func (m *UserExperienceAnalyticsAnomaly) GetDetectionModelId()(*string) {
-    return m.detectionModelId
+    val, err := m.GetBackingStore().Get("detectionModelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceImpactedCount gets the deviceImpactedCount property value. The number of devices impacted by the anomaly. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomaly) GetDeviceImpactedCount()(*int32) {
-    return m.deviceImpactedCount
+    val, err := m.GetBackingStore().Get("deviceImpactedCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAnomaly) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -223,15 +267,36 @@ func (m *UserExperienceAnalyticsAnomaly) GetFieldDeserializers()(map[string]func
 }
 // GetIssueId gets the issueId property value. The unique identifier of the anomaly detection model.
 func (m *UserExperienceAnalyticsAnomaly) GetIssueId()(*string) {
-    return m.issueId
+    val, err := m.GetBackingStore().Get("issueId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSeverity gets the severity property value. Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.
 func (m *UserExperienceAnalyticsAnomaly) GetSeverity()(*UserExperienceAnalyticsAnomalySeverity) {
-    return m.severity
+    val, err := m.GetBackingStore().Get("severity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsAnomalySeverity)
+    }
+    return nil
 }
 // GetState gets the state property value. Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
 func (m *UserExperienceAnalyticsAnomaly) GetState()(*UserExperienceAnalyticsAnomalyState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsAnomalyState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAnomaly) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -324,53 +389,123 @@ func (m *UserExperienceAnalyticsAnomaly) Serialize(writer i878a80d2330e89d268963
 }
 // SetAnomalyFirstOccurrenceDateTime sets the anomalyFirstOccurrenceDateTime property value. Indicates the first occurrence date and time for the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAnomalyFirstOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.anomalyFirstOccurrenceDateTime = value
+    err := m.GetBackingStore().Set("anomalyFirstOccurrenceDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnomalyId sets the anomalyId property value. The unique identifier of the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAnomalyId(value *string)() {
-    m.anomalyId = value
+    err := m.GetBackingStore().Set("anomalyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnomalyLatestOccurrenceDateTime sets the anomalyLatestOccurrenceDateTime property value. Indicates the latest occurrence date and time for the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAnomalyLatestOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.anomalyLatestOccurrenceDateTime = value
+    err := m.GetBackingStore().Set("anomalyLatestOccurrenceDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnomalyName sets the anomalyName property value. The name of the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAnomalyName(value *string)() {
-    m.anomalyName = value
+    err := m.GetBackingStore().Set("anomalyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnomalyType sets the anomalyType property value. Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.
 func (m *UserExperienceAnalyticsAnomaly) SetAnomalyType(value *UserExperienceAnalyticsAnomalyType)() {
-    m.anomalyType = value
+    err := m.GetBackingStore().Set("anomalyType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssetName sets the assetName property value. The name of the application or module that caused the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAssetName(value *string)() {
-    m.assetName = value
+    err := m.GetBackingStore().Set("assetName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssetPublisher sets the assetPublisher property value. The publisher of the application or module that caused the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAssetPublisher(value *string)() {
-    m.assetPublisher = value
+    err := m.GetBackingStore().Set("assetPublisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssetVersion sets the assetVersion property value. The version of the application or module that caused the anomaly.
 func (m *UserExperienceAnalyticsAnomaly) SetAssetVersion(value *string)() {
-    m.assetVersion = value
+    err := m.GetBackingStore().Set("assetVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionModelId sets the detectionModelId property value. The unique identifier of the anomaly detection model.
 func (m *UserExperienceAnalyticsAnomaly) SetDetectionModelId(value *string)() {
-    m.detectionModelId = value
+    err := m.GetBackingStore().Set("detectionModelId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceImpactedCount sets the deviceImpactedCount property value. The number of devices impacted by the anomaly. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomaly) SetDeviceImpactedCount(value *int32)() {
-    m.deviceImpactedCount = value
+    err := m.GetBackingStore().Set("deviceImpactedCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssueId sets the issueId property value. The unique identifier of the anomaly detection model.
 func (m *UserExperienceAnalyticsAnomaly) SetIssueId(value *string)() {
-    m.issueId = value
+    err := m.GetBackingStore().Set("issueId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSeverity sets the severity property value. Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.
 func (m *UserExperienceAnalyticsAnomaly) SetSeverity(value *UserExperienceAnalyticsAnomalySeverity)() {
-    m.severity = value
+    err := m.GetBackingStore().Set("severity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
 func (m *UserExperienceAnalyticsAnomaly) SetState(value *UserExperienceAnalyticsAnomalyState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAnomalyable 
+type UserExperienceAnalyticsAnomalyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnomalyFirstOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAnomalyId()(*string)
+    GetAnomalyLatestOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAnomalyName()(*string)
+    GetAnomalyType()(*UserExperienceAnalyticsAnomalyType)
+    GetAssetName()(*string)
+    GetAssetPublisher()(*string)
+    GetAssetVersion()(*string)
+    GetDetectionModelId()(*string)
+    GetDeviceImpactedCount()(*int32)
+    GetIssueId()(*string)
+    GetSeverity()(*UserExperienceAnalyticsAnomalySeverity)
+    GetState()(*UserExperienceAnalyticsAnomalyState)
+    SetAnomalyFirstOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAnomalyId(value *string)()
+    SetAnomalyLatestOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAnomalyName(value *string)()
+    SetAnomalyType(value *UserExperienceAnalyticsAnomalyType)()
+    SetAssetName(value *string)()
+    SetAssetPublisher(value *string)()
+    SetAssetVersion(value *string)()
+    SetDetectionModelId(value *string)()
+    SetDeviceImpactedCount(value *int32)()
+    SetIssueId(value *string)()
+    SetSeverity(value *UserExperienceAnalyticsAnomalySeverity)()
+    SetState(value *UserExperienceAnalyticsAnomalyState)()
 }

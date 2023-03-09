@@ -7,8 +7,6 @@ import (
 // OfficeSuiteAppCollectionResponse 
 type OfficeSuiteAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OfficeSuiteAppable
 }
 // NewOfficeSuiteAppCollectionResponse instantiates a new OfficeSuiteAppCollectionResponse and sets the default values.
 func NewOfficeSuiteAppCollectionResponse()(*OfficeSuiteAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OfficeSuiteAppCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *OfficeSuiteAppCollectionResponse) GetValue()([]OfficeSuiteAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OfficeSuiteAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OfficeSuiteAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OfficeSuiteAppCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *OfficeSuiteAppCollectionResponse) SetValue(value []OfficeSuiteAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OfficeSuiteAppCollectionResponseable 
+type OfficeSuiteAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OfficeSuiteAppable)
+    SetValue(value []OfficeSuiteAppable)()
 }

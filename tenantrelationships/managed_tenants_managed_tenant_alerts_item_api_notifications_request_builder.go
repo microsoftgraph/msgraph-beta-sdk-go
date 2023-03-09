@@ -53,8 +53,8 @@ func NewManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder instantiates a new ApiNotificationsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder(rawU
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder) Count()(*ManagedTenantsManagedTenantAlertsItemApiNotificationsCountRequestBuilder) {
-    return NewManagedTenantsManagedTenantAlertsItemApiNotificationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedTenantsManagedTenantAlertsItemApiNotificationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get apiNotifications from tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantApiNotificationCollectionResponseable, error) {

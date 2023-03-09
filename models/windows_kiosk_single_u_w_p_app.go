@@ -7,16 +7,14 @@ import (
 // WindowsKioskSingleUWPApp 
 type WindowsKioskSingleUWPApp struct {
     WindowsKioskAppConfiguration
-    // The uwpApp property
-    uwpApp WindowsKioskUWPAppable
 }
 // NewWindowsKioskSingleUWPApp instantiates a new WindowsKioskSingleUWPApp and sets the default values.
 func NewWindowsKioskSingleUWPApp()(*WindowsKioskSingleUWPApp) {
     m := &WindowsKioskSingleUWPApp{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsKioskSingleUWPApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskSingleUWPApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsKioskSingleUWPAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *WindowsKioskSingleUWPApp) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetUwpApp gets the uwpApp property value. The uwpApp property
 func (m *WindowsKioskSingleUWPApp) GetUwpApp()(WindowsKioskUWPAppable) {
-    return m.uwpApp
+    val, err := m.GetBackingStore().Get("uwpApp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsKioskUWPAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskSingleUWPApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsKioskSingleUWPApp) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetUwpApp sets the uwpApp property value. The uwpApp property
 func (m *WindowsKioskSingleUWPApp) SetUwpApp(value WindowsKioskUWPAppable)() {
-    m.uwpApp = value
+    err := m.GetBackingStore().Set("uwpApp", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsKioskSingleUWPAppable 
+type WindowsKioskSingleUWPAppable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsKioskAppConfigurationable
+    GetUwpApp()(WindowsKioskUWPAppable)
+    SetUwpApp(value WindowsKioskUWPAppable)()
 }

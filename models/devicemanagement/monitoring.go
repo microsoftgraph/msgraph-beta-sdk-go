@@ -8,10 +8,6 @@ import (
 // Monitoring 
 type Monitoring struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The collection of records of alert events.
-    alertRecords []AlertRecordable
-    // The collection of alert rules.
-    alertRules []AlertRuleable
 }
 // NewMonitoring instantiates a new monitoring and sets the default values.
 func NewMonitoring()(*Monitoring) {
@@ -26,11 +22,25 @@ func CreateMonitoringFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAlertRecords gets the alertRecords property value. The collection of records of alert events.
 func (m *Monitoring) GetAlertRecords()([]AlertRecordable) {
-    return m.alertRecords
+    val, err := m.GetBackingStore().Get("alertRecords")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertRecordable)
+    }
+    return nil
 }
 // GetAlertRules gets the alertRules property value. The collection of alert rules.
 func (m *Monitoring) GetAlertRules()([]AlertRuleable) {
-    return m.alertRules
+    val, err := m.GetBackingStore().Get("alertRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertRuleable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Monitoring) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,9 +105,24 @@ func (m *Monitoring) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAlertRecords sets the alertRecords property value. The collection of records of alert events.
 func (m *Monitoring) SetAlertRecords(value []AlertRecordable)() {
-    m.alertRecords = value
+    err := m.GetBackingStore().Set("alertRecords", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlertRules sets the alertRules property value. The collection of alert rules.
 func (m *Monitoring) SetAlertRules(value []AlertRuleable)() {
-    m.alertRules = value
+    err := m.GetBackingStore().Set("alertRules", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Monitoringable 
+type Monitoringable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlertRecords()([]AlertRecordable)
+    GetAlertRules()([]AlertRuleable)
+    SetAlertRecords(value []AlertRecordable)()
+    SetAlertRules(value []AlertRuleable)()
 }

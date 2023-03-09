@@ -7,8 +7,6 @@ import (
 // ClassificationJobResponse 
 type ClassificationJobResponse struct {
     JobResponseBase
-    // The result property
-    result DetectedSensitiveContentWrapperable
 }
 // NewClassificationJobResponse instantiates a new ClassificationJobResponse and sets the default values.
 func NewClassificationJobResponse()(*ClassificationJobResponse) {
@@ -38,7 +36,14 @@ func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetResult gets the result property value. The result property
 func (m *ClassificationJobResponse) GetResult()(DetectedSensitiveContentWrapperable) {
-    return m.result
+    val, err := m.GetBackingStore().Get("result")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DetectedSensitiveContentWrapperable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ClassificationJobResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *ClassificationJobResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetResult sets the result property value. The result property
 func (m *ClassificationJobResponse) SetResult(value DetectedSensitiveContentWrapperable)() {
-    m.result = value
+    err := m.GetBackingStore().Set("result", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ClassificationJobResponseable 
+type ClassificationJobResponseable interface {
+    JobResponseBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetResult()(DetectedSensitiveContentWrapperable)
+    SetResult(value DetectedSensitiveContentWrapperable)()
 }

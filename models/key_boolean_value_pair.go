@@ -7,16 +7,14 @@ import (
 // KeyBooleanValuePair 
 type KeyBooleanValuePair struct {
     KeyTypedValuePair
-    // The Boolean value of the key-value pair.
-    value *bool
 }
 // NewKeyBooleanValuePair instantiates a new KeyBooleanValuePair and sets the default values.
 func NewKeyBooleanValuePair()(*KeyBooleanValuePair) {
     m := &KeyBooleanValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
     }
-    odataTypeValue := "#microsoft.graph.keyBooleanValuePair";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.keyBooleanValuePair"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateKeyBooleanValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *KeyBooleanValuePair) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetValue gets the value property value. The Boolean value of the key-value pair.
 func (m *KeyBooleanValuePair) GetValue()(*bool) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *KeyBooleanValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *KeyBooleanValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetValue sets the value property value. The Boolean value of the key-value pair.
 func (m *KeyBooleanValuePair) SetValue(value *bool)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// KeyBooleanValuePairable 
+type KeyBooleanValuePairable interface {
+    KeyTypedValuePairable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*bool)
+    SetValue(value *bool)()
 }

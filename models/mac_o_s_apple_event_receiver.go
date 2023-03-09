@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MacOSAppleEventReceiver represents a process that can receive an Apple Event notification.
 type MacOSAppleEventReceiver struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Allow or block this app from receiving Apple events.
-    allowed *bool
-    // Code requirement for the app or binary that receives the Apple Event.
-    codeRequirement *string
-    // Bundle ID of the app or file path of the process or executable that receives the Apple Event.
-    identifier *string
-    // Process identifier types for MacOS Privacy Preferences
-    identifierType *MacOSProcessIdentifierType
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMacOSAppleEventReceiver instantiates a new macOSAppleEventReceiver and sets the default values.
 func NewMacOSAppleEventReceiver()(*MacOSAppleEventReceiver) {
     m := &MacOSAppleEventReceiver{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMacOSAppleEventReceiverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,15 +24,41 @@ func CreateMacOSAppleEventReceiverFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAppleEventReceiver) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowed gets the allowed property value. Allow or block this app from receiving Apple events.
 func (m *MacOSAppleEventReceiver) GetAllowed()(*bool) {
-    return m.allowed
+    val, err := m.GetBackingStore().Get("allowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MacOSAppleEventReceiver) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCodeRequirement gets the codeRequirement property value. Code requirement for the app or binary that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) GetCodeRequirement()(*string) {
-    return m.codeRequirement
+    val, err := m.GetBackingStore().Get("codeRequirement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSAppleEventReceiver) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -99,15 +117,36 @@ func (m *MacOSAppleEventReceiver) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIdentifier gets the identifier property value. Bundle ID of the app or file path of the process or executable that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) GetIdentifier()(*string) {
-    return m.identifier
+    val, err := m.GetBackingStore().Get("identifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentifierType gets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSAppleEventReceiver) GetIdentifierType()(*MacOSProcessIdentifierType) {
-    return m.identifierType
+    val, err := m.GetBackingStore().Get("identifierType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MacOSProcessIdentifierType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSAppleEventReceiver) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSAppleEventReceiver) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,25 +191,65 @@ func (m *MacOSAppleEventReceiver) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAppleEventReceiver) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowed sets the allowed property value. Allow or block this app from receiving Apple events.
 func (m *MacOSAppleEventReceiver) SetAllowed(value *bool)() {
-    m.allowed = value
+    err := m.GetBackingStore().Set("allowed", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MacOSAppleEventReceiver) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCodeRequirement sets the codeRequirement property value. Code requirement for the app or binary that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) SetCodeRequirement(value *string)() {
-    m.codeRequirement = value
+    err := m.GetBackingStore().Set("codeRequirement", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentifier sets the identifier property value. Bundle ID of the app or file path of the process or executable that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) SetIdentifier(value *string)() {
-    m.identifier = value
+    err := m.GetBackingStore().Set("identifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentifierType sets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSAppleEventReceiver) SetIdentifierType(value *MacOSProcessIdentifierType)() {
-    m.identifierType = value
+    err := m.GetBackingStore().Set("identifierType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSAppleEventReceiver) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSAppleEventReceiverable 
+type MacOSAppleEventReceiverable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowed()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCodeRequirement()(*string)
+    GetIdentifier()(*string)
+    GetIdentifierType()(*MacOSProcessIdentifierType)
+    GetOdataType()(*string)
+    SetAllowed(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCodeRequirement(value *string)()
+    SetIdentifier(value *string)()
+    SetIdentifierType(value *MacOSProcessIdentifierType)()
+    SetOdataType(value *string)()
 }

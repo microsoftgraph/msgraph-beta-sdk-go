@@ -7,20 +7,14 @@ import (
 // PlannerExternalBucketSource 
 type PlannerExternalBucketSource struct {
     PlannerBucketCreation
-    // Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
-    contextScenarioId *string
-    // Nullable. The id of the external entity's containing entity or context.
-    externalContextId *string
-    // Nullable. The id of the entity that an external service associates with a bucket.
-    externalObjectId *string
 }
 // NewPlannerExternalBucketSource instantiates a new PlannerExternalBucketSource and sets the default values.
 func NewPlannerExternalBucketSource()(*PlannerExternalBucketSource) {
     m := &PlannerExternalBucketSource{
         PlannerBucketCreation: *NewPlannerBucketCreation(),
     }
-    odataTypeValue := "#microsoft.graph.plannerExternalBucketSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerExternalBucketSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerExternalBucketSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,15 +23,36 @@ func CreatePlannerExternalBucketSourceFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetContextScenarioId gets the contextScenarioId property value. Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
 func (m *PlannerExternalBucketSource) GetContextScenarioId()(*string) {
-    return m.contextScenarioId
+    val, err := m.GetBackingStore().Get("contextScenarioId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalContextId gets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
 func (m *PlannerExternalBucketSource) GetExternalContextId()(*string) {
-    return m.externalContextId
+    val, err := m.GetBackingStore().Get("externalContextId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalObjectId gets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a bucket.
 func (m *PlannerExternalBucketSource) GetExternalObjectId()(*string) {
-    return m.externalObjectId
+    val, err := m.GetBackingStore().Get("externalObjectId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerExternalBucketSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,13 +117,33 @@ func (m *PlannerExternalBucketSource) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetContextScenarioId sets the contextScenarioId property value. Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
 func (m *PlannerExternalBucketSource) SetContextScenarioId(value *string)() {
-    m.contextScenarioId = value
+    err := m.GetBackingStore().Set("contextScenarioId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalContextId sets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
 func (m *PlannerExternalBucketSource) SetExternalContextId(value *string)() {
-    m.externalContextId = value
+    err := m.GetBackingStore().Set("externalContextId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalObjectId sets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a bucket.
 func (m *PlannerExternalBucketSource) SetExternalObjectId(value *string)() {
-    m.externalObjectId = value
+    err := m.GetBackingStore().Set("externalObjectId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerExternalBucketSourceable 
+type PlannerExternalBucketSourceable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PlannerBucketCreationable
+    GetContextScenarioId()(*string)
+    GetExternalContextId()(*string)
+    GetExternalObjectId()(*string)
+    SetContextScenarioId(value *string)()
+    SetExternalContextId(value *string)()
+    SetExternalObjectId(value *string)()
 }

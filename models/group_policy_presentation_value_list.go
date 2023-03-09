@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationValueList 
 type GroupPolicyPresentationValueList struct {
     GroupPolicyPresentationValue
-    // A list of pairs for the associated presentation.
-    values []KeyValuePairable
 }
 // NewGroupPolicyPresentationValueList instantiates a new GroupPolicyPresentationValueList and sets the default values.
 func NewGroupPolicyPresentationValueList()(*GroupPolicyPresentationValueList) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationValueList) GetFieldDeserializers()(map[string]fu
 }
 // GetValues gets the values property value. A list of pairs for the associated presentation.
 func (m *GroupPolicyPresentationValueList) GetValues()([]KeyValuePairable) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationValueList) Serialize(writer i878a80d2330e89d2689
 }
 // SetValues sets the values property value. A list of pairs for the associated presentation.
 func (m *GroupPolicyPresentationValueList) SetValues(value []KeyValuePairable)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationValueListable 
+type GroupPolicyPresentationValueListable interface {
+    GroupPolicyPresentationValueable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValues()([]KeyValuePairable)
+    SetValues(value []KeyValuePairable)()
 }

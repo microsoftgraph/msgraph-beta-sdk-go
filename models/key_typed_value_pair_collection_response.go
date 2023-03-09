@@ -7,8 +7,6 @@ import (
 // KeyTypedValuePairCollectionResponse 
 type KeyTypedValuePairCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []KeyTypedValuePairable
 }
 // NewKeyTypedValuePairCollectionResponse instantiates a new KeyTypedValuePairCollectionResponse and sets the default values.
 func NewKeyTypedValuePairCollectionResponse()(*KeyTypedValuePairCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *KeyTypedValuePairCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *KeyTypedValuePairCollectionResponse) GetValue()([]KeyTypedValuePairable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyTypedValuePairable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *KeyTypedValuePairCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *KeyTypedValuePairCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *KeyTypedValuePairCollectionResponse) SetValue(value []KeyTypedValuePairable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// KeyTypedValuePairCollectionResponseable 
+type KeyTypedValuePairCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]KeyTypedValuePairable)
+    SetValue(value []KeyTypedValuePairable)()
 }

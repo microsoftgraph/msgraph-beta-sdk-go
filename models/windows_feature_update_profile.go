@@ -8,26 +8,6 @@ import (
 // WindowsFeatureUpdateProfile windows Feature Update Profile
 type WindowsFeatureUpdateProfile struct {
     Entity
-    // The list of group assignments of the profile.
-    assignments []WindowsFeatureUpdateProfileAssignmentable
-    // The date time that the profile was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Friendly display name of the quality update profile deployable content
-    deployableContentDisplayName *string
-    // The description of the profile which is specified by the user.
-    description *string
-    // The display name of the profile.
-    displayName *string
-    // The last supported date for a feature update
-    endOfSupportDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
-    featureUpdateVersion *string
-    // The date time that the profile was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // List of Scope Tags for this Feature Update entity.
-    roleScopeTagIds []string
-    // The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
-    rolloutSettings WindowsUpdateRolloutSettingsable
 }
 // NewWindowsFeatureUpdateProfile instantiates a new windowsFeatureUpdateProfile and sets the default values.
 func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {
@@ -42,31 +22,80 @@ func CreateWindowsFeatureUpdateProfileFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfile) GetAssignments()([]WindowsFeatureUpdateProfileAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsFeatureUpdateProfileAssignmentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time that the profile was created.
 func (m *WindowsFeatureUpdateProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeployableContentDisplayName gets the deployableContentDisplayName property value. Friendly display name of the quality update profile deployable content
 func (m *WindowsFeatureUpdateProfile) GetDeployableContentDisplayName()(*string) {
-    return m.deployableContentDisplayName
+    val, err := m.GetBackingStore().Get("deployableContentDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of the profile which is specified by the user.
 func (m *WindowsFeatureUpdateProfile) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the profile.
 func (m *WindowsFeatureUpdateProfile) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEndOfSupportDate gets the endOfSupportDate property value. The last supported date for a feature update
 func (m *WindowsFeatureUpdateProfile) GetEndOfSupportDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.endOfSupportDate
+    val, err := m.GetBackingStore().Get("endOfSupportDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFeatureUpdateVersion gets the featureUpdateVersion property value. The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
 func (m *WindowsFeatureUpdateProfile) GetFeatureUpdateVersion()(*string) {
-    return m.featureUpdateVersion
+    val, err := m.GetBackingStore().Get("featureUpdateVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -183,15 +212,36 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsFeatureUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Feature Update entity.
 func (m *WindowsFeatureUpdateProfile) GetRoleScopeTagIds()([]string) {
-    return m.roleScopeTagIds
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetRolloutSettings gets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
 func (m *WindowsFeatureUpdateProfile) GetRolloutSettings()(WindowsUpdateRolloutSettingsable) {
-    return m.rolloutSettings
+    val, err := m.GetBackingStore().Get("rolloutSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsUpdateRolloutSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsFeatureUpdateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -267,41 +317,96 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfile) SetAssignments(value []WindowsFeatureUpdateProfileAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date time that the profile was created.
 func (m *WindowsFeatureUpdateProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeployableContentDisplayName sets the deployableContentDisplayName property value. Friendly display name of the quality update profile deployable content
 func (m *WindowsFeatureUpdateProfile) SetDeployableContentDisplayName(value *string)() {
-    m.deployableContentDisplayName = value
+    err := m.GetBackingStore().Set("deployableContentDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of the profile which is specified by the user.
 func (m *WindowsFeatureUpdateProfile) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the profile.
 func (m *WindowsFeatureUpdateProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEndOfSupportDate sets the endOfSupportDate property value. The last supported date for a feature update
 func (m *WindowsFeatureUpdateProfile) SetEndOfSupportDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endOfSupportDate = value
+    err := m.GetBackingStore().Set("endOfSupportDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFeatureUpdateVersion sets the featureUpdateVersion property value. The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
 func (m *WindowsFeatureUpdateProfile) SetFeatureUpdateVersion(value *string)() {
-    m.featureUpdateVersion = value
+    err := m.GetBackingStore().Set("featureUpdateVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsFeatureUpdateProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Feature Update entity.
 func (m *WindowsFeatureUpdateProfile) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRolloutSettings sets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
 func (m *WindowsFeatureUpdateProfile) SetRolloutSettings(value WindowsUpdateRolloutSettingsable)() {
-    m.rolloutSettings = value
+    err := m.GetBackingStore().Set("rolloutSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsFeatureUpdateProfileable 
+type WindowsFeatureUpdateProfileable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]WindowsFeatureUpdateProfileAssignmentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeployableContentDisplayName()(*string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetEndOfSupportDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetFeatureUpdateVersion()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRoleScopeTagIds()([]string)
+    GetRolloutSettings()(WindowsUpdateRolloutSettingsable)
+    SetAssignments(value []WindowsFeatureUpdateProfileAssignmentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeployableContentDisplayName(value *string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetEndOfSupportDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetFeatureUpdateVersion(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRoleScopeTagIds(value []string)()
+    SetRolloutSettings(value WindowsUpdateRolloutSettingsable)()
 }

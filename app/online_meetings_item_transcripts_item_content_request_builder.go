@@ -38,8 +38,8 @@ func NewOnlineMeetingsItemTranscriptsItemContentRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOnlineMeetingsItemTranscriptsItemContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
@@ -48,7 +48,7 @@ func NewOnlineMeetingsItemTranscriptsItemContentRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemTranscriptsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a field representing the content of the transcript. Read-only.
+// Get a field that represents the content of the transcript. Read-only.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -70,7 +70,7 @@ func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Get(ctx context
     }
     return res.([]byte), nil
 }
-// Put a field representing the content of the transcript. Read-only.
+// Put a field that represents the content of the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -86,7 +86,7 @@ func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Put(ctx context
     }
     return nil
 }
-// ToGetRequestInformation a field representing the content of the transcript. Read-only.
+// ToGetRequestInformation a field that represents the content of the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,7 +98,7 @@ func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation a field representing the content of the transcript. Read-only.
+// ToPutRequestInformation a field that represents the content of the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

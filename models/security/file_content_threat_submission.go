@@ -7,16 +7,14 @@ import (
 // FileContentThreatSubmission 
 type FileContentThreatSubmission struct {
     FileThreatSubmission
-    // It specifies the file content in base 64 format.
-    fileContent *string
 }
 // NewFileContentThreatSubmission instantiates a new FileContentThreatSubmission and sets the default values.
 func NewFileContentThreatSubmission()(*FileContentThreatSubmission) {
     m := &FileContentThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.fileContentThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.fileContentThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileContentThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *FileContentThreatSubmission) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFileContent gets the fileContent property value. It specifies the file content in base 64 format.
 func (m *FileContentThreatSubmission) GetFileContent()(*string) {
-    return m.fileContent
+    val, err := m.GetBackingStore().Get("fileContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FileContentThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *FileContentThreatSubmission) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetFileContent sets the fileContent property value. It specifies the file content in base 64 format.
 func (m *FileContentThreatSubmission) SetFileContent(value *string)() {
-    m.fileContent = value
+    err := m.GetBackingStore().Set("fileContent", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FileContentThreatSubmissionable 
+type FileContentThreatSubmissionable interface {
+    FileThreatSubmissionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileContent()(*string)
+    SetFileContent(value *string)()
 }

@@ -26,13 +26,13 @@ type AndroidForWorkSettingsUnbindRequestBuilderPostRequestConfiguration struct {
 func NewAndroidForWorkSettingsUnbindRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkSettingsUnbindRequestBuilder) {
     m := &AndroidForWorkSettingsUnbindRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/androidForWorkSettings/microsoft.graph.unbind";
+    m.urlTemplate = "{+baseurl}/deviceManagement/androidForWorkSettings/unbind";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAndroidForWorkSettingsUnbindRequestBuilder instantiates a new UnbindRequestBuilder and sets the default values.

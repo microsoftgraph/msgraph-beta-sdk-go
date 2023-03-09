@@ -7,32 +7,6 @@ import (
 // SensitivityLabel 
 type SensitivityLabel struct {
     Entity
-    // The applicableTo property
-    applicableTo *SensitivityLabelTarget
-    // The applicationMode property
-    applicationMode *ApplicationMode
-    // The assignedPolicies property
-    assignedPolicies []LabelPolicyable
-    // The autoLabeling property
-    autoLabeling AutoLabelingable
-    // The description property
-    description *string
-    // The displayName property
-    displayName *string
-    // The isDefault property
-    isDefault *bool
-    // The isEndpointProtectionEnabled property
-    isEndpointProtectionEnabled *bool
-    // The labelActions property
-    labelActions []LabelActionBaseable
-    // The name property
-    name *string
-    // The priority property
-    priority *int32
-    // The sublabels property
-    sublabels []SensitivityLabelable
-    // The toolTip property
-    toolTip *string
 }
 // NewSensitivityLabel instantiates a new sensitivityLabel and sets the default values.
 func NewSensitivityLabel()(*SensitivityLabel) {
@@ -47,27 +21,69 @@ func CreateSensitivityLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
 func (m *SensitivityLabel) GetApplicableTo()(*SensitivityLabelTarget) {
-    return m.applicableTo
+    val, err := m.GetBackingStore().Get("applicableTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SensitivityLabelTarget)
+    }
+    return nil
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
 func (m *SensitivityLabel) GetApplicationMode()(*ApplicationMode) {
-    return m.applicationMode
+    val, err := m.GetBackingStore().Get("applicationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationMode)
+    }
+    return nil
 }
 // GetAssignedPolicies gets the assignedPolicies property value. The assignedPolicies property
 func (m *SensitivityLabel) GetAssignedPolicies()([]LabelPolicyable) {
-    return m.assignedPolicies
+    val, err := m.GetBackingStore().Get("assignedPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LabelPolicyable)
+    }
+    return nil
 }
 // GetAutoLabeling gets the autoLabeling property value. The autoLabeling property
 func (m *SensitivityLabel) GetAutoLabeling()(AutoLabelingable) {
-    return m.autoLabeling
+    val, err := m.GetBackingStore().Get("autoLabeling")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AutoLabelingable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *SensitivityLabel) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *SensitivityLabel) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -218,31 +234,80 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
 func (m *SensitivityLabel) GetIsDefault()(*bool) {
-    return m.isDefault
+    val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
 func (m *SensitivityLabel) GetIsEndpointProtectionEnabled()(*bool) {
-    return m.isEndpointProtectionEnabled
+    val, err := m.GetBackingStore().Get("isEndpointProtectionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLabelActions gets the labelActions property value. The labelActions property
 func (m *SensitivityLabel) GetLabelActions()([]LabelActionBaseable) {
-    return m.labelActions
+    val, err := m.GetBackingStore().Get("labelActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LabelActionBaseable)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *SensitivityLabel) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. The priority property
 func (m *SensitivityLabel) GetPriority()(*int32) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSublabels gets the sublabels property value. The sublabels property
 func (m *SensitivityLabel) GetSublabels()([]SensitivityLabelable) {
-    return m.sublabels
+    val, err := m.GetBackingStore().Get("sublabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensitivityLabelable)
+    }
+    return nil
 }
 // GetToolTip gets the toolTip property value. The toolTip property
 func (m *SensitivityLabel) GetToolTip()(*string) {
-    return m.toolTip
+    val, err := m.GetBackingStore().Get("toolTip")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -346,53 +411,123 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetApplicableTo sets the applicableTo property value. The applicableTo property
 func (m *SensitivityLabel) SetApplicableTo(value *SensitivityLabelTarget)() {
-    m.applicableTo = value
+    err := m.GetBackingStore().Set("applicableTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property
 func (m *SensitivityLabel) SetApplicationMode(value *ApplicationMode)() {
-    m.applicationMode = value
+    err := m.GetBackingStore().Set("applicationMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignedPolicies sets the assignedPolicies property value. The assignedPolicies property
 func (m *SensitivityLabel) SetAssignedPolicies(value []LabelPolicyable)() {
-    m.assignedPolicies = value
+    err := m.GetBackingStore().Set("assignedPolicies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAutoLabeling sets the autoLabeling property value. The autoLabeling property
 func (m *SensitivityLabel) SetAutoLabeling(value AutoLabelingable)() {
-    m.autoLabeling = value
+    err := m.GetBackingStore().Set("autoLabeling", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *SensitivityLabel) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *SensitivityLabel) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *SensitivityLabel) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEndpointProtectionEnabled sets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
 func (m *SensitivityLabel) SetIsEndpointProtectionEnabled(value *bool)() {
-    m.isEndpointProtectionEnabled = value
+    err := m.GetBackingStore().Set("isEndpointProtectionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLabelActions sets the labelActions property value. The labelActions property
 func (m *SensitivityLabel) SetLabelActions(value []LabelActionBaseable)() {
-    m.labelActions = value
+    err := m.GetBackingStore().Set("labelActions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *SensitivityLabel) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. The priority property
 func (m *SensitivityLabel) SetPriority(value *int32)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSublabels sets the sublabels property value. The sublabels property
 func (m *SensitivityLabel) SetSublabels(value []SensitivityLabelable)() {
-    m.sublabels = value
+    err := m.GetBackingStore().Set("sublabels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetToolTip sets the toolTip property value. The toolTip property
 func (m *SensitivityLabel) SetToolTip(value *string)() {
-    m.toolTip = value
+    err := m.GetBackingStore().Set("toolTip", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SensitivityLabelable 
+type SensitivityLabelable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicableTo()(*SensitivityLabelTarget)
+    GetApplicationMode()(*ApplicationMode)
+    GetAssignedPolicies()([]LabelPolicyable)
+    GetAutoLabeling()(AutoLabelingable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIsDefault()(*bool)
+    GetIsEndpointProtectionEnabled()(*bool)
+    GetLabelActions()([]LabelActionBaseable)
+    GetName()(*string)
+    GetPriority()(*int32)
+    GetSublabels()([]SensitivityLabelable)
+    GetToolTip()(*string)
+    SetApplicableTo(value *SensitivityLabelTarget)()
+    SetApplicationMode(value *ApplicationMode)()
+    SetAssignedPolicies(value []LabelPolicyable)()
+    SetAutoLabeling(value AutoLabelingable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIsDefault(value *bool)()
+    SetIsEndpointProtectionEnabled(value *bool)()
+    SetLabelActions(value []LabelActionBaseable)()
+    SetName(value *string)()
+    SetPriority(value *int32)()
+    SetSublabels(value []SensitivityLabelable)()
+    SetToolTip(value *string)()
 }

@@ -41,8 +41,8 @@ func NewItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder instantiates a new ChannelItemRequestBuilder and sets the default values.

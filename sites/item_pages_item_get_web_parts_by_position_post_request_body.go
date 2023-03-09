@@ -2,26 +2,20 @@ package sites
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemPagesItemGetWebPartsByPositionPostRequestBody 
 type ItemPagesItemGetWebPartsByPositionPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The columnId property
-    columnId *float64
-    // The horizontalSectionId property
-    horizontalSectionId *float64
-    // The isInVerticalSection property
-    isInVerticalSection *bool
-    // The webPartIndex property
-    webPartIndex *float64
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemPagesItemGetWebPartsByPositionPostRequestBody instantiates a new ItemPagesItemGetWebPartsByPositionPostRequestBody and sets the default values.
 func NewItemPagesItemGetWebPartsByPositionPostRequestBody()(*ItemPagesItemGetWebPartsByPositionPostRequestBody) {
     m := &ItemPagesItemGetWebPartsByPositionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemPagesItemGetWebPartsByPositionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateItemPagesItemGetWebPartsByPositionPostRequestBodyFromDiscriminatorVal
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetColumnId gets the columnId property value. The columnId property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetColumnId()(*float64) {
-    return m.columnId
+    val, err := m.GetBackingStore().Get("columnId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetFieldDeserializer
 }
 // GetHorizontalSectionId gets the horizontalSectionId property value. The horizontalSectionId property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetHorizontalSectionId()(*float64) {
-    return m.horizontalSectionId
+    val, err := m.GetBackingStore().Get("horizontalSectionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetIsInVerticalSection gets the isInVerticalSection property value. The isInVerticalSection property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetIsInVerticalSection()(*bool) {
-    return m.isInVerticalSection
+    val, err := m.GetBackingStore().Get("isInVerticalSection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWebPartIndex gets the webPartIndex property value. The webPartIndex property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) GetWebPartIndex()(*float64) {
-    return m.webPartIndex
+    val, err := m.GetBackingStore().Get("webPartIndex")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) Serialize(writer i87
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetColumnId sets the columnId property value. The columnId property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) SetColumnId(value *float64)() {
-    m.columnId = value
+    err := m.GetBackingStore().Set("columnId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHorizontalSectionId sets the horizontalSectionId property value. The horizontalSectionId property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) SetHorizontalSectionId(value *float64)() {
-    m.horizontalSectionId = value
+    err := m.GetBackingStore().Set("horizontalSectionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsInVerticalSection sets the isInVerticalSection property value. The isInVerticalSection property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) SetIsInVerticalSection(value *bool)() {
-    m.isInVerticalSection = value
+    err := m.GetBackingStore().Set("isInVerticalSection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebPartIndex sets the webPartIndex property value. The webPartIndex property
 func (m *ItemPagesItemGetWebPartsByPositionPostRequestBody) SetWebPartIndex(value *float64)() {
-    m.webPartIndex = value
+    err := m.GetBackingStore().Set("webPartIndex", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemPagesItemGetWebPartsByPositionPostRequestBodyable 
+type ItemPagesItemGetWebPartsByPositionPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetColumnId()(*float64)
+    GetHorizontalSectionId()(*float64)
+    GetIsInVerticalSection()(*bool)
+    GetWebPartIndex()(*float64)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetColumnId(value *float64)()
+    SetHorizontalSectionId(value *float64)()
+    SetIsInVerticalSection(value *bool)()
+    SetWebPartIndex(value *float64)()
 }

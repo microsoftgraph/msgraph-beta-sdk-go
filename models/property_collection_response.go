@@ -7,8 +7,6 @@ import (
 // PropertyCollectionResponse 
 type PropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Propertyable
 }
 // NewPropertyCollectionResponse instantiates a new PropertyCollectionResponse and sets the default values.
 func NewPropertyCollectionResponse()(*PropertyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PropertyCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *PropertyCollectionResponse) GetValue()([]Propertyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Propertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *PropertyCollectionResponse) SetValue(value []Propertyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PropertyCollectionResponseable 
+type PropertyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Propertyable)
+    SetValue(value []Propertyable)()
 }

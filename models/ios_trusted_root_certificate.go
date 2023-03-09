@@ -7,18 +7,14 @@ import (
 // IosTrustedRootCertificate 
 type IosTrustedRootCertificate struct {
     DeviceConfiguration
-    // File name to display in UI.
-    certFileName *string
-    // Trusted Root Certificate.
-    trustedRootCertificate []byte
 }
 // NewIosTrustedRootCertificate instantiates a new iosTrustedRootCertificate and sets the default values.
 func NewIosTrustedRootCertificate()(*IosTrustedRootCertificate) {
     m := &IosTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosTrustedRootCertificate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosTrustedRootCertificate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +23,14 @@ func CreateIosTrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
 func (m *IosTrustedRootCertificate) GetCertFileName()(*string) {
-    return m.certFileName
+    val, err := m.GetBackingStore().Get("certFileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *IosTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate.
 func (m *IosTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
-    return m.trustedRootCertificate
+    val, err := m.GetBackingStore().Get("trustedRootCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosTrustedRootCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *IosTrustedRootCertificate) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetCertFileName sets the certFileName property value. File name to display in UI.
 func (m *IosTrustedRootCertificate) SetCertFileName(value *string)() {
-    m.certFileName = value
+    err := m.GetBackingStore().Set("certFileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrustedRootCertificate sets the trustedRootCertificate property value. Trusted Root Certificate.
 func (m *IosTrustedRootCertificate) SetTrustedRootCertificate(value []byte)() {
-    m.trustedRootCertificate = value
+    err := m.GetBackingStore().Set("trustedRootCertificate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosTrustedRootCertificateable 
+type IosTrustedRootCertificateable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertFileName()(*string)
+    GetTrustedRootCertificate()([]byte)
+    SetCertFileName(value *string)()
+    SetTrustedRootCertificate(value []byte)()
 }

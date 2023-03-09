@@ -7,14 +7,8 @@ import (
 // MessageRecipient 
 type MessageRecipient struct {
     Entity
-    // The deliveryStatus property
-    deliveryStatus *MessageStatus
-    // The events property
-    events []MessageEventable
-    // The recipientEmail property
-    recipientEmail *string
 }
-// NewMessageRecipient instantiates a new MessageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),
@@ -27,11 +21,25 @@ func CreateMessageRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDeliveryStatus gets the deliveryStatus property value. The deliveryStatus property
 func (m *MessageRecipient) GetDeliveryStatus()(*MessageStatus) {
-    return m.deliveryStatus
+    val, err := m.GetBackingStore().Get("deliveryStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MessageStatus)
+    }
+    return nil
 }
 // GetEvents gets the events property value. The events property
 func (m *MessageRecipient) GetEvents()([]MessageEventable) {
-    return m.events
+    val, err := m.GetBackingStore().Get("events")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MessageEventable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,7 +82,14 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetRecipientEmail gets the recipientEmail property value. The recipientEmail property
 func (m *MessageRecipient) GetRecipientEmail()(*string) {
-    return m.recipientEmail
+    val, err := m.GetBackingStore().Get("recipientEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MessageRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +124,33 @@ func (m *MessageRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDeliveryStatus sets the deliveryStatus property value. The deliveryStatus property
 func (m *MessageRecipient) SetDeliveryStatus(value *MessageStatus)() {
-    m.deliveryStatus = value
+    err := m.GetBackingStore().Set("deliveryStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEvents sets the events property value. The events property
 func (m *MessageRecipient) SetEvents(value []MessageEventable)() {
-    m.events = value
+    err := m.GetBackingStore().Set("events", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecipientEmail sets the recipientEmail property value. The recipientEmail property
 func (m *MessageRecipient) SetRecipientEmail(value *string)() {
-    m.recipientEmail = value
+    err := m.GetBackingStore().Set("recipientEmail", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MessageRecipientable 
+type MessageRecipientable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeliveryStatus()(*MessageStatus)
+    GetEvents()([]MessageEventable)
+    GetRecipientEmail()(*string)
+    SetDeliveryStatus(value *MessageStatus)()
+    SetEvents(value []MessageEventable)()
+    SetRecipientEmail(value *string)()
 }

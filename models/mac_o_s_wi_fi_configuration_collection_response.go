@@ -7,8 +7,6 @@ import (
 // MacOSWiFiConfigurationCollectionResponse 
 type MacOSWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSWiFiConfigurationable
 }
 // NewMacOSWiFiConfigurationCollectionResponse instantiates a new MacOSWiFiConfigurationCollectionResponse and sets the default values.
 func NewMacOSWiFiConfigurationCollectionResponse()(*MacOSWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSWiFiConfigurationCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSWiFiConfigurationCollectionResponse) GetValue()([]MacOSWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSWiFiConfigurationCollectionResponse) SetValue(value []MacOSWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSWiFiConfigurationCollectionResponseable 
+type MacOSWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSWiFiConfigurationable)
+    SetValue(value []MacOSWiFiConfigurationable)()
 }

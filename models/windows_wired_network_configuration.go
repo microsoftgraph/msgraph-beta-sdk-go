@@ -7,62 +7,14 @@ import (
 // WindowsWiredNetworkConfiguration 
 type WindowsWiredNetworkConfiguration struct {
     DeviceConfiguration
-    // Specify the duration for which automatic authentication attempts will be blocked from occuring after a failed authentication attempt.
-    authenticationBlockPeriodInMinutes *int32
-    // Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-    authenticationMethod *WiredNetworkAuthenticationMethod
-    // Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.
-    authenticationPeriodInSeconds *int32
-    // Specify the number of seconds between a failed authentication and the next authentication attempt. Valid range 1-3600.
-    authenticationRetryDelayPeriodInSeconds *int32
-    // Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
-    authenticationType *WiredNetworkAuthenticationType
-    // When TRUE, caches user credentials on the device so that users don't need to keep entering them each time they connect. When FALSE, do not cache credentials. Default value is FALSE.
-    cacheCredentials *bool
-    // When TRUE, prevents the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP. When FALSE, does not prevent the user from being prompted. Default value is FALSE.
-    disableUserPromptForServerValidation *bool
-    // Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
-    eapolStartPeriodInSeconds *int32
-    // Extensible Authentication Protocol (EAP) configuration types.
-    eapType *EapType
-    // When TRUE, the automatic configuration service for wired networks requires the use of 802.1X for port authentication. When FALSE, 802.1X is not required. Default value is FALSE.
-    enforce8021X *bool
-    // When TRUE, forces FIPS compliance. When FALSE, does not enable FIPS compliance. Default value is FALSE.
-    forceFIPSCompliance *bool
-    // Specify identity certificate for client authentication.
-    identityCertificateForClientAuthentication WindowsCertificateProfileBaseable
-    // Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-    innerAuthenticationProtocolForEAPTTLS *NonEapAuthenticationMethodForEapTtlsType
-    // Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.
-    maximumAuthenticationFailures *int32
-    // Specify the maximum number of EAPOL (Extensible Authentication Protocol over LAN) Start messages to be sent before returning failure. Valid range 1-100.
-    maximumEAPOLStartMessages *int32
-    // Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
-    outerIdentityPrivacyTemporaryValue *string
-    // When TRUE, enables verification of server's identity by validating the certificate when EAP type is selected as PEAP. When FALSE, the certificate is not validated. Default value is TRUE.
-    performServerValidation *bool
-    // When TRUE, enables cryptographic binding when EAP type is selected as PEAP. When FALSE, does not enable cryptogrpahic binding. Default value is TRUE.
-    requireCryptographicBinding *bool
-    // Specify root certificate for client validation.
-    rootCertificateForClientValidation Windows81TrustedRootCertificateable
-    // Specify root certificates for server validation. This collection can contain a maximum of 500 elements.
-    rootCertificatesForServerValidation []Windows81TrustedRootCertificateable
-    // Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-    secondaryAuthenticationMethod *WiredNetworkAuthenticationMethod
-    // Specify secondary identity certificate for client authentication.
-    secondaryIdentityCertificateForClientAuthentication WindowsCertificateProfileBaseable
-    // Specify secondary root certificate for client validation.
-    secondaryRootCertificateForClientValidation Windows81TrustedRootCertificateable
-    // Specify trusted server certificate names.
-    trustedServerCertificateNames []string
 }
 // NewWindowsWiredNetworkConfiguration instantiates a new WindowsWiredNetworkConfiguration and sets the default values.
 func NewWindowsWiredNetworkConfiguration()(*WindowsWiredNetworkConfiguration) {
     m := &WindowsWiredNetworkConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsWiredNetworkConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsWiredNetworkConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsWiredNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,43 +23,113 @@ func CreateWindowsWiredNetworkConfigurationFromDiscriminatorValue(parseNode i878
 }
 // GetAuthenticationBlockPeriodInMinutes gets the authenticationBlockPeriodInMinutes property value. Specify the duration for which automatic authentication attempts will be blocked from occuring after a failed authentication attempt.
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationBlockPeriodInMinutes()(*int32) {
-    return m.authenticationBlockPeriodInMinutes
+    val, err := m.GetBackingStore().Get("authenticationBlockPeriodInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationMethod()(*WiredNetworkAuthenticationMethod) {
-    return m.authenticationMethod
+    val, err := m.GetBackingStore().Get("authenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiredNetworkAuthenticationMethod)
+    }
+    return nil
 }
 // GetAuthenticationPeriodInSeconds gets the authenticationPeriodInSeconds property value. Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationPeriodInSeconds()(*int32) {
-    return m.authenticationPeriodInSeconds
+    val, err := m.GetBackingStore().Get("authenticationPeriodInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAuthenticationRetryDelayPeriodInSeconds gets the authenticationRetryDelayPeriodInSeconds property value. Specify the number of seconds between a failed authentication and the next authentication attempt. Valid range 1-3600.
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationRetryDelayPeriodInSeconds()(*int32) {
-    return m.authenticationRetryDelayPeriodInSeconds
+    val, err := m.GetBackingStore().Get("authenticationRetryDelayPeriodInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAuthenticationType gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationType()(*WiredNetworkAuthenticationType) {
-    return m.authenticationType
+    val, err := m.GetBackingStore().Get("authenticationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiredNetworkAuthenticationType)
+    }
+    return nil
 }
 // GetCacheCredentials gets the cacheCredentials property value. When TRUE, caches user credentials on the device so that users don't need to keep entering them each time they connect. When FALSE, do not cache credentials. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) GetCacheCredentials()(*bool) {
-    return m.cacheCredentials
+    val, err := m.GetBackingStore().Get("cacheCredentials")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisableUserPromptForServerValidation gets the disableUserPromptForServerValidation property value. When TRUE, prevents the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP. When FALSE, does not prevent the user from being prompted. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) GetDisableUserPromptForServerValidation()(*bool) {
-    return m.disableUserPromptForServerValidation
+    val, err := m.GetBackingStore().Get("disableUserPromptForServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEapolStartPeriodInSeconds gets the eapolStartPeriodInSeconds property value. Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
 func (m *WindowsWiredNetworkConfiguration) GetEapolStartPeriodInSeconds()(*int32) {
-    return m.eapolStartPeriodInSeconds
+    val, err := m.GetBackingStore().Get("eapolStartPeriodInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWiredNetworkConfiguration) GetEapType()(*EapType) {
-    return m.eapType
+    val, err := m.GetBackingStore().Get("eapType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EapType)
+    }
+    return nil
 }
 // GetEnforce8021X gets the enforce8021X property value. When TRUE, the automatic configuration service for wired networks requires the use of 802.1X for port authentication. When FALSE, 802.1X is not required. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) GetEnforce8021X()(*bool) {
-    return m.enforce8021X
+    val, err := m.GetBackingStore().Get("enforce8021X")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsWiredNetworkConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -364,59 +386,157 @@ func (m *WindowsWiredNetworkConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetForceFIPSCompliance gets the forceFIPSCompliance property value. When TRUE, forces FIPS compliance. When FALSE, does not enable FIPS compliance. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) GetForceFIPSCompliance()(*bool) {
-    return m.forceFIPSCompliance
+    val, err := m.GetBackingStore().Get("forceFIPSCompliance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Specify identity certificate for client authentication.
 func (m *WindowsWiredNetworkConfiguration) GetIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable) {
-    return m.identityCertificateForClientAuthentication
+    val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetInnerAuthenticationProtocolForEAPTTLS gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *WindowsWiredNetworkConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType) {
-    return m.innerAuthenticationProtocolForEAPTTLS
+    val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEAPTTLS")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NonEapAuthenticationMethodForEapTtlsType)
+    }
+    return nil
 }
 // GetMaximumAuthenticationFailures gets the maximumAuthenticationFailures property value. Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.
 func (m *WindowsWiredNetworkConfiguration) GetMaximumAuthenticationFailures()(*int32) {
-    return m.maximumAuthenticationFailures
+    val, err := m.GetBackingStore().Get("maximumAuthenticationFailures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMaximumEAPOLStartMessages gets the maximumEAPOLStartMessages property value. Specify the maximum number of EAPOL (Extensible Authentication Protocol over LAN) Start messages to be sent before returning failure. Valid range 1-100.
 func (m *WindowsWiredNetworkConfiguration) GetMaximumEAPOLStartMessages()(*int32) {
-    return m.maximumEAPOLStartMessages
+    val, err := m.GetBackingStore().Get("maximumEAPOLStartMessages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOuterIdentityPrivacyTemporaryValue gets the outerIdentityPrivacyTemporaryValue property value. Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
 func (m *WindowsWiredNetworkConfiguration) GetOuterIdentityPrivacyTemporaryValue()(*string) {
-    return m.outerIdentityPrivacyTemporaryValue
+    val, err := m.GetBackingStore().Get("outerIdentityPrivacyTemporaryValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPerformServerValidation gets the performServerValidation property value. When TRUE, enables verification of server's identity by validating the certificate when EAP type is selected as PEAP. When FALSE, the certificate is not validated. Default value is TRUE.
 func (m *WindowsWiredNetworkConfiguration) GetPerformServerValidation()(*bool) {
-    return m.performServerValidation
+    val, err := m.GetBackingStore().Get("performServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRequireCryptographicBinding gets the requireCryptographicBinding property value. When TRUE, enables cryptographic binding when EAP type is selected as PEAP. When FALSE, does not enable cryptogrpahic binding. Default value is TRUE.
 func (m *WindowsWiredNetworkConfiguration) GetRequireCryptographicBinding()(*bool) {
-    return m.requireCryptographicBinding
+    val, err := m.GetBackingStore().Get("requireCryptographicBinding")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRootCertificateForClientValidation gets the rootCertificateForClientValidation property value. Specify root certificate for client validation.
 func (m *WindowsWiredNetworkConfiguration) GetRootCertificateForClientValidation()(Windows81TrustedRootCertificateable) {
-    return m.rootCertificateForClientValidation
+    val, err := m.GetBackingStore().Get("rootCertificateForClientValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Windows81TrustedRootCertificateable)
+    }
+    return nil
 }
 // GetRootCertificatesForServerValidation gets the rootCertificatesForServerValidation property value. Specify root certificates for server validation. This collection can contain a maximum of 500 elements.
 func (m *WindowsWiredNetworkConfiguration) GetRootCertificatesForServerValidation()([]Windows81TrustedRootCertificateable) {
-    return m.rootCertificatesForServerValidation
+    val, err := m.GetBackingStore().Get("rootCertificatesForServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows81TrustedRootCertificateable)
+    }
+    return nil
 }
 // GetSecondaryAuthenticationMethod gets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) GetSecondaryAuthenticationMethod()(*WiredNetworkAuthenticationMethod) {
-    return m.secondaryAuthenticationMethod
+    val, err := m.GetBackingStore().Get("secondaryAuthenticationMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WiredNetworkAuthenticationMethod)
+    }
+    return nil
 }
 // GetSecondaryIdentityCertificateForClientAuthentication gets the secondaryIdentityCertificateForClientAuthentication property value. Specify secondary identity certificate for client authentication.
 func (m *WindowsWiredNetworkConfiguration) GetSecondaryIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable) {
-    return m.secondaryIdentityCertificateForClientAuthentication
+    val, err := m.GetBackingStore().Get("secondaryIdentityCertificateForClientAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetSecondaryRootCertificateForClientValidation gets the secondaryRootCertificateForClientValidation property value. Specify secondary root certificate for client validation.
 func (m *WindowsWiredNetworkConfiguration) GetSecondaryRootCertificateForClientValidation()(Windows81TrustedRootCertificateable) {
-    return m.secondaryRootCertificateForClientValidation
+    val, err := m.GetBackingStore().Get("secondaryRootCertificateForClientValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Windows81TrustedRootCertificateable)
+    }
+    return nil
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Specify trusted server certificate names.
 func (m *WindowsWiredNetworkConfiguration) GetTrustedServerCertificateNames()([]string) {
-    return m.trustedServerCertificateNames
+    val, err := m.GetBackingStore().Get("trustedServerCertificateNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsWiredNetworkConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -581,97 +701,222 @@ func (m *WindowsWiredNetworkConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetAuthenticationBlockPeriodInMinutes sets the authenticationBlockPeriodInMinutes property value. Specify the duration for which automatic authentication attempts will be blocked from occuring after a failed authentication attempt.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationBlockPeriodInMinutes(value *int32)() {
-    m.authenticationBlockPeriodInMinutes = value
+    err := m.GetBackingStore().Set("authenticationBlockPeriodInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationMethod(value *WiredNetworkAuthenticationMethod)() {
-    m.authenticationMethod = value
+    err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationPeriodInSeconds sets the authenticationPeriodInSeconds property value. Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationPeriodInSeconds(value *int32)() {
-    m.authenticationPeriodInSeconds = value
+    err := m.GetBackingStore().Set("authenticationPeriodInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationRetryDelayPeriodInSeconds sets the authenticationRetryDelayPeriodInSeconds property value. Specify the number of seconds between a failed authentication and the next authentication attempt. Valid range 1-3600.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationRetryDelayPeriodInSeconds(value *int32)() {
-    m.authenticationRetryDelayPeriodInSeconds = value
+    err := m.GetBackingStore().Set("authenticationRetryDelayPeriodInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAuthenticationType sets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationType(value *WiredNetworkAuthenticationType)() {
-    m.authenticationType = value
+    err := m.GetBackingStore().Set("authenticationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCacheCredentials sets the cacheCredentials property value. When TRUE, caches user credentials on the device so that users don't need to keep entering them each time they connect. When FALSE, do not cache credentials. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) SetCacheCredentials(value *bool)() {
-    m.cacheCredentials = value
+    err := m.GetBackingStore().Set("cacheCredentials", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisableUserPromptForServerValidation sets the disableUserPromptForServerValidation property value. When TRUE, prevents the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP. When FALSE, does not prevent the user from being prompted. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) SetDisableUserPromptForServerValidation(value *bool)() {
-    m.disableUserPromptForServerValidation = value
+    err := m.GetBackingStore().Set("disableUserPromptForServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEapolStartPeriodInSeconds sets the eapolStartPeriodInSeconds property value. Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
 func (m *WindowsWiredNetworkConfiguration) SetEapolStartPeriodInSeconds(value *int32)() {
-    m.eapolStartPeriodInSeconds = value
+    err := m.GetBackingStore().Set("eapolStartPeriodInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWiredNetworkConfiguration) SetEapType(value *EapType)() {
-    m.eapType = value
+    err := m.GetBackingStore().Set("eapType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnforce8021X sets the enforce8021X property value. When TRUE, the automatic configuration service for wired networks requires the use of 802.1X for port authentication. When FALSE, 802.1X is not required. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) SetEnforce8021X(value *bool)() {
-    m.enforce8021X = value
+    err := m.GetBackingStore().Set("enforce8021X", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetForceFIPSCompliance sets the forceFIPSCompliance property value. When TRUE, forces FIPS compliance. When FALSE, does not enable FIPS compliance. Default value is FALSE.
 func (m *WindowsWiredNetworkConfiguration) SetForceFIPSCompliance(value *bool)() {
-    m.forceFIPSCompliance = value
+    err := m.GetBackingStore().Set("forceFIPSCompliance", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificateForClientAuthentication sets the identityCertificateForClientAuthentication property value. Specify identity certificate for client authentication.
 func (m *WindowsWiredNetworkConfiguration) SetIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)() {
-    m.identityCertificateForClientAuthentication = value
+    err := m.GetBackingStore().Set("identityCertificateForClientAuthentication", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInnerAuthenticationProtocolForEAPTTLS sets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *WindowsWiredNetworkConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)() {
-    m.innerAuthenticationProtocolForEAPTTLS = value
+    err := m.GetBackingStore().Set("innerAuthenticationProtocolForEAPTTLS", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximumAuthenticationFailures sets the maximumAuthenticationFailures property value. Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.
 func (m *WindowsWiredNetworkConfiguration) SetMaximumAuthenticationFailures(value *int32)() {
-    m.maximumAuthenticationFailures = value
+    err := m.GetBackingStore().Set("maximumAuthenticationFailures", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximumEAPOLStartMessages sets the maximumEAPOLStartMessages property value. Specify the maximum number of EAPOL (Extensible Authentication Protocol over LAN) Start messages to be sent before returning failure. Valid range 1-100.
 func (m *WindowsWiredNetworkConfiguration) SetMaximumEAPOLStartMessages(value *int32)() {
-    m.maximumEAPOLStartMessages = value
+    err := m.GetBackingStore().Set("maximumEAPOLStartMessages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOuterIdentityPrivacyTemporaryValue sets the outerIdentityPrivacyTemporaryValue property value. Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
 func (m *WindowsWiredNetworkConfiguration) SetOuterIdentityPrivacyTemporaryValue(value *string)() {
-    m.outerIdentityPrivacyTemporaryValue = value
+    err := m.GetBackingStore().Set("outerIdentityPrivacyTemporaryValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPerformServerValidation sets the performServerValidation property value. When TRUE, enables verification of server's identity by validating the certificate when EAP type is selected as PEAP. When FALSE, the certificate is not validated. Default value is TRUE.
 func (m *WindowsWiredNetworkConfiguration) SetPerformServerValidation(value *bool)() {
-    m.performServerValidation = value
+    err := m.GetBackingStore().Set("performServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireCryptographicBinding sets the requireCryptographicBinding property value. When TRUE, enables cryptographic binding when EAP type is selected as PEAP. When FALSE, does not enable cryptogrpahic binding. Default value is TRUE.
 func (m *WindowsWiredNetworkConfiguration) SetRequireCryptographicBinding(value *bool)() {
-    m.requireCryptographicBinding = value
+    err := m.GetBackingStore().Set("requireCryptographicBinding", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificateForClientValidation sets the rootCertificateForClientValidation property value. Specify root certificate for client validation.
 func (m *WindowsWiredNetworkConfiguration) SetRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)() {
-    m.rootCertificateForClientValidation = value
+    err := m.GetBackingStore().Set("rootCertificateForClientValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRootCertificatesForServerValidation sets the rootCertificatesForServerValidation property value. Specify root certificates for server validation. This collection can contain a maximum of 500 elements.
 func (m *WindowsWiredNetworkConfiguration) SetRootCertificatesForServerValidation(value []Windows81TrustedRootCertificateable)() {
-    m.rootCertificatesForServerValidation = value
+    err := m.GetBackingStore().Set("rootCertificatesForServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecondaryAuthenticationMethod sets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) SetSecondaryAuthenticationMethod(value *WiredNetworkAuthenticationMethod)() {
-    m.secondaryAuthenticationMethod = value
+    err := m.GetBackingStore().Set("secondaryAuthenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecondaryIdentityCertificateForClientAuthentication sets the secondaryIdentityCertificateForClientAuthentication property value. Specify secondary identity certificate for client authentication.
 func (m *WindowsWiredNetworkConfiguration) SetSecondaryIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)() {
-    m.secondaryIdentityCertificateForClientAuthentication = value
+    err := m.GetBackingStore().Set("secondaryIdentityCertificateForClientAuthentication", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecondaryRootCertificateForClientValidation sets the secondaryRootCertificateForClientValidation property value. Specify secondary root certificate for client validation.
 func (m *WindowsWiredNetworkConfiguration) SetSecondaryRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)() {
-    m.secondaryRootCertificateForClientValidation = value
+    err := m.GetBackingStore().Set("secondaryRootCertificateForClientValidation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrustedServerCertificateNames sets the trustedServerCertificateNames property value. Specify trusted server certificate names.
 func (m *WindowsWiredNetworkConfiguration) SetTrustedServerCertificateNames(value []string)() {
-    m.trustedServerCertificateNames = value
+    err := m.GetBackingStore().Set("trustedServerCertificateNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsWiredNetworkConfigurationable 
+type WindowsWiredNetworkConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationBlockPeriodInMinutes()(*int32)
+    GetAuthenticationMethod()(*WiredNetworkAuthenticationMethod)
+    GetAuthenticationPeriodInSeconds()(*int32)
+    GetAuthenticationRetryDelayPeriodInSeconds()(*int32)
+    GetAuthenticationType()(*WiredNetworkAuthenticationType)
+    GetCacheCredentials()(*bool)
+    GetDisableUserPromptForServerValidation()(*bool)
+    GetEapolStartPeriodInSeconds()(*int32)
+    GetEapType()(*EapType)
+    GetEnforce8021X()(*bool)
+    GetForceFIPSCompliance()(*bool)
+    GetIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable)
+    GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetMaximumAuthenticationFailures()(*int32)
+    GetMaximumEAPOLStartMessages()(*int32)
+    GetOuterIdentityPrivacyTemporaryValue()(*string)
+    GetPerformServerValidation()(*bool)
+    GetRequireCryptographicBinding()(*bool)
+    GetRootCertificateForClientValidation()(Windows81TrustedRootCertificateable)
+    GetRootCertificatesForServerValidation()([]Windows81TrustedRootCertificateable)
+    GetSecondaryAuthenticationMethod()(*WiredNetworkAuthenticationMethod)
+    GetSecondaryIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable)
+    GetSecondaryRootCertificateForClientValidation()(Windows81TrustedRootCertificateable)
+    GetTrustedServerCertificateNames()([]string)
+    SetAuthenticationBlockPeriodInMinutes(value *int32)()
+    SetAuthenticationMethod(value *WiredNetworkAuthenticationMethod)()
+    SetAuthenticationPeriodInSeconds(value *int32)()
+    SetAuthenticationRetryDelayPeriodInSeconds(value *int32)()
+    SetAuthenticationType(value *WiredNetworkAuthenticationType)()
+    SetCacheCredentials(value *bool)()
+    SetDisableUserPromptForServerValidation(value *bool)()
+    SetEapolStartPeriodInSeconds(value *int32)()
+    SetEapType(value *EapType)()
+    SetEnforce8021X(value *bool)()
+    SetForceFIPSCompliance(value *bool)()
+    SetIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)()
+    SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetMaximumAuthenticationFailures(value *int32)()
+    SetMaximumEAPOLStartMessages(value *int32)()
+    SetOuterIdentityPrivacyTemporaryValue(value *string)()
+    SetPerformServerValidation(value *bool)()
+    SetRequireCryptographicBinding(value *bool)()
+    SetRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)()
+    SetRootCertificatesForServerValidation(value []Windows81TrustedRootCertificateable)()
+    SetSecondaryAuthenticationMethod(value *WiredNetworkAuthenticationMethod)()
+    SetSecondaryIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)()
+    SetSecondaryRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)()
+    SetTrustedServerCertificateNames(value []string)()
 }

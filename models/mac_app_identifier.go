@@ -7,16 +7,14 @@ import (
 // MacAppIdentifier 
 type MacAppIdentifier struct {
     MobileAppIdentifier
-    // The identifier for an app, as specified in the app store.
-    bundleId *string
 }
 // NewMacAppIdentifier instantiates a new MacAppIdentifier and sets the default values.
 func NewMacAppIdentifier()(*MacAppIdentifier) {
     m := &MacAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
     }
-    odataTypeValue := "#microsoft.graph.macAppIdentifier";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macAppIdentifier"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateMacAppIdentifierFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetBundleId gets the bundleId property value. The identifier for an app, as specified in the app store.
 func (m *MacAppIdentifier) GetBundleId()(*string) {
-    return m.bundleId
+    val, err := m.GetBackingStore().Get("bundleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *MacAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetBundleId sets the bundleId property value. The identifier for an app, as specified in the app store.
 func (m *MacAppIdentifier) SetBundleId(value *string)() {
-    m.bundleId = value
+    err := m.GetBackingStore().Set("bundleId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacAppIdentifierable 
+type MacAppIdentifierable interface {
+    MobileAppIdentifierable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBundleId()(*string)
+    SetBundleId(value *string)()
 }

@@ -60,8 +60,8 @@ func NewDeviceManagementRoleAssignmentsItemAppScopesRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementRoleAssignmentsItemAppScopesRequestBuilder instantiates a new AppScopesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewDeviceManagementRoleAssignmentsItemAppScopesRequestBuilder(rawUrl string
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeviceManagementRoleAssignmentsItemAppScopesRequestBuilder) Count()(*DeviceManagementRoleAssignmentsItemAppScopesCountRequestBuilder) {
-    return NewDeviceManagementRoleAssignmentsItemAppScopesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceManagementRoleAssignmentsItemAppScopesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
 func (m *DeviceManagementRoleAssignmentsItemAppScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRoleAssignmentsItemAppScopesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *DeviceManagementRoleAssignmentsItemAppScopesRequestBuilder) ToPostReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

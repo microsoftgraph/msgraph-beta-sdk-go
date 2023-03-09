@@ -26,7 +26,7 @@ type ReportsGetOneDriveUsageAccountDetailWithPeriodRequestBuilderGetRequestConfi
 func NewReportsGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetOneDriveUsageAccountDetailWithPeriodRequestBuilder) {
     m := &ReportsGetOneDriveUsageAccountDetailWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')";
+    m.urlTemplate = "{+baseurl}/print/reports/getOneDriveUsageAccountDetail(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewReportsGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(pat
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetOneDriveUsageAccountDetailWithPeriodRequestBuilder instantiates a new GetOneDriveUsageAccountDetailWithPeriodRequestBuilder and sets the default values.

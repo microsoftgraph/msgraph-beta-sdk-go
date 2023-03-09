@@ -13,8 +13,8 @@ func NewIosLobAppProvisioningConfigurationPolicySetItem()(*IosLobAppProvisioning
     m := &IosLobAppProvisioningConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
-    odataTypeValue := "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosLobAppProvisioningConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *IosLobAppProvisioningConfigurationPolicySetItem) Serialize(writer i878a
         return err
     }
     return nil
+}
+// IosLobAppProvisioningConfigurationPolicySetItemable 
+type IosLobAppProvisioningConfigurationPolicySetItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicySetItemable
 }

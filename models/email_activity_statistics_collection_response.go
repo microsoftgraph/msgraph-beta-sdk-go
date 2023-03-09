@@ -7,8 +7,6 @@ import (
 // EmailActivityStatisticsCollectionResponse 
 type EmailActivityStatisticsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EmailActivityStatisticsable
 }
 // NewEmailActivityStatisticsCollectionResponse instantiates a new EmailActivityStatisticsCollectionResponse and sets the default values.
 func NewEmailActivityStatisticsCollectionResponse()(*EmailActivityStatisticsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EmailActivityStatisticsCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *EmailActivityStatisticsCollectionResponse) GetValue()([]EmailActivityStatisticsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmailActivityStatisticsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmailActivityStatisticsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EmailActivityStatisticsCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *EmailActivityStatisticsCollectionResponse) SetValue(value []EmailActivityStatisticsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmailActivityStatisticsCollectionResponseable 
+type EmailActivityStatisticsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EmailActivityStatisticsable)
+    SetValue(value []EmailActivityStatisticsable)()
 }

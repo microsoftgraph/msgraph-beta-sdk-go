@@ -7,8 +7,6 @@ import (
 // ChromeOSOnboardingSettingsCollectionResponse 
 type ChromeOSOnboardingSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ChromeOSOnboardingSettingsable
 }
 // NewChromeOSOnboardingSettingsCollectionResponse instantiates a new ChromeOSOnboardingSettingsCollectionResponse and sets the default values.
 func NewChromeOSOnboardingSettingsCollectionResponse()(*ChromeOSOnboardingSettingsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ChromeOSOnboardingSettingsCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *ChromeOSOnboardingSettingsCollectionResponse) GetValue()([]ChromeOSOnboardingSettingsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ChromeOSOnboardingSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChromeOSOnboardingSettingsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ChromeOSOnboardingSettingsCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *ChromeOSOnboardingSettingsCollectionResponse) SetValue(value []ChromeOSOnboardingSettingsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChromeOSOnboardingSettingsCollectionResponseable 
+type ChromeOSOnboardingSettingsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ChromeOSOnboardingSettingsable)
+    SetValue(value []ChromeOSOnboardingSettingsable)()
 }

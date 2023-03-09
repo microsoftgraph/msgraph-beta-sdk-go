@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationOptionDefinitionCollectionResponse 
 type DeviceManagementConfigurationOptionDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationOptionDefinitionable
 }
 // NewDeviceManagementConfigurationOptionDefinitionCollectionResponse instantiates a new DeviceManagementConfigurationOptionDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationOptionDefinitionCollectionResponse()(*DeviceManagementConfigurationOptionDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationOptionDefinitionCollectionResponse) GetFie
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationOptionDefinitionCollectionResponse) GetValue()([]DeviceManagementConfigurationOptionDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationOptionDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationOptionDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationOptionDefinitionCollectionResponse) Serial
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationOptionDefinitionCollectionResponse) SetValue(value []DeviceManagementConfigurationOptionDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationOptionDefinitionCollectionResponseable 
+type DeviceManagementConfigurationOptionDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationOptionDefinitionable)
+    SetValue(value []DeviceManagementConfigurationOptionDefinitionable)()
 }

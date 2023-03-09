@@ -8,32 +8,6 @@ import (
 // IpSecurityProfile 
 type IpSecurityProfile struct {
     Entity
-    // The activityGroupNames property
-    activityGroupNames []string
-    // The address property
-    address *string
-    // The azureSubscriptionId property
-    azureSubscriptionId *string
-    // The azureTenantId property
-    azureTenantId *string
-    // The countHits property
-    countHits *int32
-    // The countHosts property
-    countHosts *int32
-    // The firstSeenDateTime property
-    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The ipCategories property
-    ipCategories []IpCategoryable
-    // The ipReferenceData property
-    ipReferenceData []IpReferenceDataable
-    // The lastSeenDateTime property
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The riskScore property
-    riskScore *string
-    // The tags property
-    tags []string
-    // The vendorInformation property
-    vendorInformation SecurityVendorInformationable
 }
 // NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
@@ -48,27 +22,69 @@ func CreateIpSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
 func (m *IpSecurityProfile) GetActivityGroupNames()([]string) {
-    return m.activityGroupNames
+    val, err := m.GetBackingStore().Get("activityGroupNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetAddress gets the address property value. The address property
 func (m *IpSecurityProfile) GetAddress()(*string) {
-    return m.address
+    val, err := m.GetBackingStore().Get("address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *IpSecurityProfile) GetAzureSubscriptionId()(*string) {
-    return m.azureSubscriptionId
+    val, err := m.GetBackingStore().Get("azureSubscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *IpSecurityProfile) GetAzureTenantId()(*string) {
-    return m.azureTenantId
+    val, err := m.GetBackingStore().Get("azureTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCountHits gets the countHits property value. The countHits property
 func (m *IpSecurityProfile) GetCountHits()(*int32) {
-    return m.countHits
+    val, err := m.GetBackingStore().Get("countHits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetCountHosts gets the countHosts property value. The countHosts property
 func (m *IpSecurityProfile) GetCountHosts()(*int32) {
-    return m.countHosts
+    val, err := m.GetBackingStore().Get("countHosts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -223,31 +239,80 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *IpSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.firstSeenDateTime
+    val, err := m.GetBackingStore().Get("firstSeenDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetIpCategories gets the ipCategories property value. The ipCategories property
 func (m *IpSecurityProfile) GetIpCategories()([]IpCategoryable) {
-    return m.ipCategories
+    val, err := m.GetBackingStore().Get("ipCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpCategoryable)
+    }
+    return nil
 }
 // GetIpReferenceData gets the ipReferenceData property value. The ipReferenceData property
 func (m *IpSecurityProfile) GetIpReferenceData()([]IpReferenceDataable) {
-    return m.ipReferenceData
+    val, err := m.GetBackingStore().Get("ipReferenceData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpReferenceDataable)
+    }
+    return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSeenDateTime
+    val, err := m.GetBackingStore().Get("lastSeenDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *IpSecurityProfile) GetRiskScore()(*string) {
-    return m.riskScore
+    val, err := m.GetBackingStore().Get("riskScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTags gets the tags property value. The tags property
 func (m *IpSecurityProfile) GetTags()([]string) {
-    return m.tags
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *IpSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    return m.vendorInformation
+    val, err := m.GetBackingStore().Get("vendorInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityVendorInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -345,53 +410,123 @@ func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetActivityGroupNames sets the activityGroupNames property value. The activityGroupNames property
 func (m *IpSecurityProfile) SetActivityGroupNames(value []string)() {
-    m.activityGroupNames = value
+    err := m.GetBackingStore().Set("activityGroupNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddress sets the address property value. The address property
 func (m *IpSecurityProfile) SetAddress(value *string)() {
-    m.address = value
+    err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *IpSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    m.azureSubscriptionId = value
+    err := m.GetBackingStore().Set("azureSubscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *IpSecurityProfile) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    err := m.GetBackingStore().Set("azureTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountHits sets the countHits property value. The countHits property
 func (m *IpSecurityProfile) SetCountHits(value *int32)() {
-    m.countHits = value
+    err := m.GetBackingStore().Set("countHits", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountHosts sets the countHosts property value. The countHosts property
 func (m *IpSecurityProfile) SetCountHosts(value *int32)() {
-    m.countHosts = value
+    err := m.GetBackingStore().Set("countHosts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *IpSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.firstSeenDateTime = value
+    err := m.GetBackingStore().Set("firstSeenDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpCategories sets the ipCategories property value. The ipCategories property
 func (m *IpSecurityProfile) SetIpCategories(value []IpCategoryable)() {
-    m.ipCategories = value
+    err := m.GetBackingStore().Set("ipCategories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpReferenceData sets the ipReferenceData property value. The ipReferenceData property
 func (m *IpSecurityProfile) SetIpReferenceData(value []IpReferenceDataable)() {
-    m.ipReferenceData = value
+    err := m.GetBackingStore().Set("ipReferenceData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *IpSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    err := m.GetBackingStore().Set("lastSeenDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *IpSecurityProfile) SetRiskScore(value *string)() {
-    m.riskScore = value
+    err := m.GetBackingStore().Set("riskScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. The tags property
 func (m *IpSecurityProfile) SetTags(value []string)() {
-    m.tags = value
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *IpSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    m.vendorInformation = value
+    err := m.GetBackingStore().Set("vendorInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IpSecurityProfileable 
+type IpSecurityProfileable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivityGroupNames()([]string)
+    GetAddress()(*string)
+    GetAzureSubscriptionId()(*string)
+    GetAzureTenantId()(*string)
+    GetCountHits()(*int32)
+    GetCountHosts()(*int32)
+    GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetIpCategories()([]IpCategoryable)
+    GetIpReferenceData()([]IpReferenceDataable)
+    GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRiskScore()(*string)
+    GetTags()([]string)
+    GetVendorInformation()(SecurityVendorInformationable)
+    SetActivityGroupNames(value []string)()
+    SetAddress(value *string)()
+    SetAzureSubscriptionId(value *string)()
+    SetAzureTenantId(value *string)()
+    SetCountHits(value *int32)()
+    SetCountHosts(value *int32)()
+    SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetIpCategories(value []IpCategoryable)()
+    SetIpReferenceData(value []IpReferenceDataable)()
+    SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRiskScore(value *string)()
+    SetTags(value []string)()
+    SetVendorInformation(value SecurityVendorInformationable)()
 }

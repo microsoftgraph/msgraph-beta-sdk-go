@@ -7,8 +7,6 @@ import (
 // WindowsFeatureUpdateProfileAssignmentCollectionResponse 
 type WindowsFeatureUpdateProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsFeatureUpdateProfileAssignmentable
 }
 // NewWindowsFeatureUpdateProfileAssignmentCollectionResponse instantiates a new WindowsFeatureUpdateProfileAssignmentCollectionResponse and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignmentCollectionResponse()(*WindowsFeatureUpdateProfileAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsFeatureUpdateProfileAssignmentCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsFeatureUpdateProfileAssignmentCollectionResponse) GetValue()([]WindowsFeatureUpdateProfileAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsFeatureUpdateProfileAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsFeatureUpdateProfileAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsFeatureUpdateProfileAssignmentCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsFeatureUpdateProfileAssignmentCollectionResponse) SetValue(value []WindowsFeatureUpdateProfileAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsFeatureUpdateProfileAssignmentCollectionResponseable 
+type WindowsFeatureUpdateProfileAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsFeatureUpdateProfileAssignmentable)
+    SetValue(value []WindowsFeatureUpdateProfileAssignmentable)()
 }

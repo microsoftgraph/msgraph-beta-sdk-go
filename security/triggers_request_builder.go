@@ -55,8 +55,8 @@ func NewTriggersRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTriggersRequestBuilder instantiates a new TriggersRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *TriggersRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba80
 }
 // RetentionEvents provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
 func (m *TriggersRequestBuilder) RetentionEvents()(*TriggersRetentionEventsRequestBuilder) {
-    return NewTriggersRetentionEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTriggersRetentionEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RetentionEventsById provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
 func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*TriggersRetenti
     if id != "" {
         urlTplParams["retentionEvent%2Did"] = id
     }
-    return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property triggers for security
 func (m *TriggersRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggersRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *TriggersRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

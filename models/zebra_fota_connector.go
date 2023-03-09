@@ -8,16 +8,6 @@ import (
 // ZebraFotaConnector 
 type ZebraFotaConnector struct {
     Entity
-    // Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
-    enrollmentAuthorizationUrl *string
-    // Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
-    enrollmentToken *string
-    // Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.
-    fotaAppsApproved *bool
-    // Date and time when the account was last synched with Zebra
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Represents various states for Zebra FOTA connector.
-    state *ZebraFotaConnectorState
 }
 // NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
 func NewZebraFotaConnector()(*ZebraFotaConnector) {
@@ -32,11 +22,25 @@ func CreateZebraFotaConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetEnrollmentAuthorizationUrl gets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
 func (m *ZebraFotaConnector) GetEnrollmentAuthorizationUrl()(*string) {
-    return m.enrollmentAuthorizationUrl
+    val, err := m.GetBackingStore().Get("enrollmentAuthorizationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnrollmentToken gets the enrollmentToken property value. Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
 func (m *ZebraFotaConnector) GetEnrollmentToken()(*string) {
-    return m.enrollmentToken
+    val, err := m.GetBackingStore().Get("enrollmentToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,15 +99,36 @@ func (m *ZebraFotaConnector) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFotaAppsApproved gets the fotaAppsApproved property value. Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.
 func (m *ZebraFotaConnector) GetFotaAppsApproved()(*bool) {
-    return m.fotaAppsApproved
+    val, err := m.GetBackingStore().Get("fotaAppsApproved")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Date and time when the account was last synched with Zebra
 func (m *ZebraFotaConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSyncDateTime
+    val, err := m.GetBackingStore().Get("lastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetState gets the state property value. Represents various states for Zebra FOTA connector.
 func (m *ZebraFotaConnector) GetState()(*ZebraFotaConnectorState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ZebraFotaConnectorState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ZebraFotaConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,21 +171,51 @@ func (m *ZebraFotaConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetEnrollmentAuthorizationUrl sets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
 func (m *ZebraFotaConnector) SetEnrollmentAuthorizationUrl(value *string)() {
-    m.enrollmentAuthorizationUrl = value
+    err := m.GetBackingStore().Set("enrollmentAuthorizationUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentToken sets the enrollmentToken property value. Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
 func (m *ZebraFotaConnector) SetEnrollmentToken(value *string)() {
-    m.enrollmentToken = value
+    err := m.GetBackingStore().Set("enrollmentToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFotaAppsApproved sets the fotaAppsApproved property value. Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.
 func (m *ZebraFotaConnector) SetFotaAppsApproved(value *bool)() {
-    m.fotaAppsApproved = value
+    err := m.GetBackingStore().Set("fotaAppsApproved", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Date and time when the account was last synched with Zebra
 func (m *ZebraFotaConnector) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    err := m.GetBackingStore().Set("lastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. Represents various states for Zebra FOTA connector.
 func (m *ZebraFotaConnector) SetState(value *ZebraFotaConnectorState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ZebraFotaConnectorable 
+type ZebraFotaConnectorable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEnrollmentAuthorizationUrl()(*string)
+    GetEnrollmentToken()(*string)
+    GetFotaAppsApproved()(*bool)
+    GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetState()(*ZebraFotaConnectorState)
+    SetEnrollmentAuthorizationUrl(value *string)()
+    SetEnrollmentToken(value *string)()
+    SetFotaAppsApproved(value *bool)()
+    SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetState(value *ZebraFotaConnectorState)()
 }

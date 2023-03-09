@@ -7,18 +7,14 @@ import (
 // OmaSettingInteger 
 type OmaSettingInteger struct {
     OmaSetting
-    // By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
-    isReadOnly *bool
-    // Value.
-    value *int32
 }
 // NewOmaSettingInteger instantiates a new OmaSettingInteger and sets the default values.
 func NewOmaSettingInteger()(*OmaSettingInteger) {
     m := &OmaSettingInteger{
         OmaSetting: *NewOmaSetting(),
     }
-    odataTypeValue := "#microsoft.graph.omaSettingInteger";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.omaSettingInteger"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOmaSettingIntegerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,11 +48,25 @@ func (m *OmaSettingInteger) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIsReadOnly gets the isReadOnly property value. By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
 func (m *OmaSettingInteger) GetIsReadOnly()(*bool) {
-    return m.isReadOnly
+    val, err := m.GetBackingStore().Get("isReadOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetValue gets the value property value. Value.
 func (m *OmaSettingInteger) GetValue()(*int32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OmaSettingInteger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *OmaSettingInteger) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetIsReadOnly sets the isReadOnly property value. By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
 func (m *OmaSettingInteger) SetIsReadOnly(value *bool)() {
-    m.isReadOnly = value
+    err := m.GetBackingStore().Set("isReadOnly", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. Value.
 func (m *OmaSettingInteger) SetValue(value *int32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OmaSettingIntegerable 
+type OmaSettingIntegerable interface {
+    OmaSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsReadOnly()(*bool)
+    GetValue()(*int32)
+    SetIsReadOnly(value *bool)()
+    SetValue(value *int32)()
 }

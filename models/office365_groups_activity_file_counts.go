@@ -7,16 +7,6 @@ import (
 // Office365GroupsActivityFileCounts 
 type Office365GroupsActivityFileCounts struct {
     Entity
-    // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
-    active *int64
-    // The date on which a number of files were active in the group's SharePoint site.
-    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The number of days the report covers.
-    reportPeriod *string
-    // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // The total number of files in the group's SharePoint document library.
-    total *int64
 }
 // NewOffice365GroupsActivityFileCounts instantiates a new Office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
@@ -31,7 +21,14 @@ func CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue(parseNode i87
 }
 // GetActive gets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
-    return m.active
+    val, err := m.GetBackingStore().Get("active")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -90,19 +87,47 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
 }
 // GetReportDate gets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
 func (m *Office365GroupsActivityFileCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.reportDate
+    val, err := m.GetBackingStore().Get("reportDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
 func (m *Office365GroupsActivityFileCounts) GetReportPeriod()(*string) {
-    return m.reportPeriod
+    val, err := m.GetBackingStore().Get("reportPeriod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365GroupsActivityFileCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.reportRefreshDate
+    val, err := m.GetBackingStore().Get("reportRefreshDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetTotal gets the total property value. The total number of files in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) GetTotal()(*int64) {
-    return m.total
+    val, err := m.GetBackingStore().Get("total")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Office365GroupsActivityFileCounts) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,21 +169,51 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i878a80d2330e89d268
 }
 // SetActive sets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) SetActive(value *int64)() {
-    m.active = value
+    err := m.GetBackingStore().Set("active", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
 func (m *Office365GroupsActivityFileCounts) SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.reportDate = value
+    err := m.GetBackingStore().Set("reportDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *Office365GroupsActivityFileCounts) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    err := m.GetBackingStore().Set("reportPeriod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365GroupsActivityFileCounts) SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.reportRefreshDate = value
+    err := m.GetBackingStore().Set("reportRefreshDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotal sets the total property value. The total number of files in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) SetTotal(value *int64)() {
-    m.total = value
+    err := m.GetBackingStore().Set("total", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Office365GroupsActivityFileCountsable 
+type Office365GroupsActivityFileCountsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActive()(*int64)
+    GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetReportPeriod()(*string)
+    GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetTotal()(*int64)
+    SetActive(value *int64)()
+    SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetReportPeriod(value *string)()
+    SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetTotal(value *int64)()
 }

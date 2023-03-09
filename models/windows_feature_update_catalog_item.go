@@ -7,16 +7,14 @@ import (
 // WindowsFeatureUpdateCatalogItem 
 type WindowsFeatureUpdateCatalogItem struct {
     WindowsUpdateCatalogItem
-    // The feature update version
-    version *string
 }
 // NewWindowsFeatureUpdateCatalogItem instantiates a new WindowsFeatureUpdateCatalogItem and sets the default values.
 func NewWindowsFeatureUpdateCatalogItem()(*WindowsFeatureUpdateCatalogItem) {
     m := &WindowsFeatureUpdateCatalogItem{
         WindowsUpdateCatalogItem: *NewWindowsUpdateCatalogItem(),
     }
-    odataTypeValue := "#microsoft.graph.windowsFeatureUpdateCatalogItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsFeatureUpdateCatalogItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsFeatureUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *WindowsFeatureUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
 }
 // GetVersion gets the version property value. The feature update version
 func (m *WindowsFeatureUpdateCatalogItem) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsFeatureUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsFeatureUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
 }
 // SetVersion sets the version property value. The feature update version
 func (m *WindowsFeatureUpdateCatalogItem) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsFeatureUpdateCatalogItemable 
+type WindowsFeatureUpdateCatalogItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsUpdateCatalogItemable
+    GetVersion()(*string)
+    SetVersion(value *string)()
 }

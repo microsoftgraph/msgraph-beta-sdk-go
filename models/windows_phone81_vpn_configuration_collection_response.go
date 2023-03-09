@@ -7,8 +7,6 @@ import (
 // WindowsPhone81VpnConfigurationCollectionResponse 
 type WindowsPhone81VpnConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81VpnConfigurationable
 }
 // NewWindowsPhone81VpnConfigurationCollectionResponse instantiates a new WindowsPhone81VpnConfigurationCollectionResponse and sets the default values.
 func NewWindowsPhone81VpnConfigurationCollectionResponse()(*WindowsPhone81VpnConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81VpnConfigurationCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81VpnConfigurationCollectionResponse) GetValue()([]WindowsPhone81VpnConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81VpnConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81VpnConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81VpnConfigurationCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81VpnConfigurationCollectionResponse) SetValue(value []WindowsPhone81VpnConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81VpnConfigurationCollectionResponseable 
+type WindowsPhone81VpnConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81VpnConfigurationable)
+    SetValue(value []WindowsPhone81VpnConfigurationable)()
 }

@@ -2,26 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AndroidDeviceOwnerKioskModeManagedFolder a folder containing pages of apps and weblinks on the Managed Home Screen
 type AndroidDeviceOwnerKioskModeManagedFolder struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Unique identifier for the folder
-    folderIdentifier *string
-    // Display name for the folder
-    folderName *string
-    // Items to be added to managed folder. This collection can contain a maximum of 500 elements.
-    items []AndroidDeviceOwnerKioskModeFolderItemable
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAndroidDeviceOwnerKioskModeManagedFolder instantiates a new androidDeviceOwnerKioskModeManagedFolder and sets the default values.
 func NewAndroidDeviceOwnerKioskModeManagedFolder()(*AndroidDeviceOwnerKioskModeManagedFolder) {
     m := &AndroidDeviceOwnerKioskModeManagedFolder{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +24,19 @@ func CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue(parseN
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,19 +89,47 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetFieldDeserializers()(map[s
 }
 // GetFolderIdentifier gets the folderIdentifier property value. Unique identifier for the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetFolderIdentifier()(*string) {
-    return m.folderIdentifier
+    val, err := m.GetBackingStore().Get("folderIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFolderName gets the folderName property value. Display name for the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetFolderName()(*string) {
-    return m.folderName
+    val, err := m.GetBackingStore().Get("folderName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetItems gets the items property value. Items to be added to managed folder. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetItems()([]AndroidDeviceOwnerKioskModeFolderItemable) {
-    return m.items
+    val, err := m.GetBackingStore().Get("items")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerKioskModeFolderItemable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -137,21 +171,56 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolder) Serialize(writer i878a80d2330
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetFolderIdentifier sets the folderIdentifier property value. Unique identifier for the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetFolderIdentifier(value *string)() {
-    m.folderIdentifier = value
+    err := m.GetBackingStore().Set("folderIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFolderName sets the folderName property value. Display name for the folder
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetFolderName(value *string)() {
-    m.folderName = value
+    err := m.GetBackingStore().Set("folderName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItems sets the items property value. Items to be added to managed folder. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetItems(value []AndroidDeviceOwnerKioskModeFolderItemable)() {
-    m.items = value
+    err := m.GetBackingStore().Set("items", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerKioskModeManagedFolderable 
+type AndroidDeviceOwnerKioskModeManagedFolderable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFolderIdentifier()(*string)
+    GetFolderName()(*string)
+    GetItems()([]AndroidDeviceOwnerKioskModeFolderItemable)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFolderIdentifier(value *string)()
+    SetFolderName(value *string)()
+    SetItems(value []AndroidDeviceOwnerKioskModeFolderItemable)()
+    SetOdataType(value *string)()
 }

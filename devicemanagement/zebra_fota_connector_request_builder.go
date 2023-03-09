@@ -48,11 +48,11 @@ type ZebraFotaConnectorRequestBuilderPatchRequestConfiguration struct {
 }
 // ApproveFotaApps provides operations to call the approveFotaApps method.
 func (m *ZebraFotaConnectorRequestBuilder) ApproveFotaApps()(*ZebraFotaConnectorApproveFotaAppsRequestBuilder) {
-    return NewZebraFotaConnectorApproveFotaAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaConnectorApproveFotaAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Connect provides operations to call the connect method.
 func (m *ZebraFotaConnectorRequestBuilder) Connect()(*ZebraFotaConnectorConnectRequestBuilder) {
-    return NewZebraFotaConnectorConnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaConnectorConnectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewZebraFotaConnectorRequestBuilderInternal instantiates a new ZebraFotaConnectorRequestBuilder and sets the default values.
 func NewZebraFotaConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZebraFotaConnectorRequestBuilder) {
@@ -63,8 +63,8 @@ func NewZebraFotaConnectorRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewZebraFotaConnectorRequestBuilder instantiates a new ZebraFotaConnectorRequestBuilder and sets the default values.
@@ -91,7 +91,7 @@ func (m *ZebraFotaConnectorRequestBuilder) Delete(ctx context.Context, requestCo
 }
 // Disconnect provides operations to call the disconnect method.
 func (m *ZebraFotaConnectorRequestBuilder) Disconnect()(*ZebraFotaConnectorDisconnectRequestBuilder) {
-    return NewZebraFotaConnectorDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaConnectorDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the singleton ZebraFotaConnector associated with account.
 func (m *ZebraFotaConnectorRequestBuilder) Get(ctx context.Context, requestConfiguration *ZebraFotaConnectorRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaConnectorable, error) {
@@ -114,7 +114,7 @@ func (m *ZebraFotaConnectorRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // HasActiveDeployments provides operations to call the hasActiveDeployments method.
 func (m *ZebraFotaConnectorRequestBuilder) HasActiveDeployments()(*ZebraFotaConnectorHasActiveDeploymentsRequestBuilder) {
-    return NewZebraFotaConnectorHasActiveDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewZebraFotaConnectorHasActiveDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property zebraFotaConnector in deviceManagement
 func (m *ZebraFotaConnectorRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaConnectorable, requestConfiguration *ZebraFotaConnectorRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaConnectorable, error) {
@@ -170,7 +170,10 @@ func (m *ZebraFotaConnectorRequestBuilder) ToPatchRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -7,14 +7,6 @@ import (
 // PrivilegedRole 
 type PrivilegedRole struct {
     Entity
-    // The assignments for this role. Read-only. Nullable.
-    assignments []PrivilegedRoleAssignmentable
-    // Role name.
-    name *string
-    // The settings for this role. Read-only. Nullable.
-    settings PrivilegedRoleSettingsable
-    // The summary information for this role. Read-only. Nullable.
-    summary PrivilegedRoleSummaryable
 }
 // NewPrivilegedRole instantiates a new privilegedRole and sets the default values.
 func NewPrivilegedRole()(*PrivilegedRole) {
@@ -29,7 +21,14 @@ func CreatePrivilegedRoleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAssignments gets the assignments property value. The assignments for this role. Read-only. Nullable.
 func (m *PrivilegedRole) GetAssignments()([]PrivilegedRoleAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegedRoleAssignmentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,15 +81,36 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetName gets the name property value. Role name.
 func (m *PrivilegedRole) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings for this role. Read-only. Nullable.
 func (m *PrivilegedRole) GetSettings()(PrivilegedRoleSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedRoleSettingsable)
+    }
+    return nil
 }
 // GetSummary gets the summary property value. The summary information for this role. Read-only. Nullable.
 func (m *PrivilegedRole) GetSummary()(PrivilegedRoleSummaryable) {
-    return m.summary
+    val, err := m.GetBackingStore().Get("summary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedRoleSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,17 +150,42 @@ func (m *PrivilegedRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAssignments sets the assignments property value. The assignments for this role. Read-only. Nullable.
 func (m *PrivilegedRole) SetAssignments(value []PrivilegedRoleAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Role name.
 func (m *PrivilegedRole) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings for this role. Read-only. Nullable.
 func (m *PrivilegedRole) SetSettings(value PrivilegedRoleSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSummary sets the summary property value. The summary information for this role. Read-only. Nullable.
 func (m *PrivilegedRole) SetSummary(value PrivilegedRoleSummaryable)() {
-    m.summary = value
+    err := m.GetBackingStore().Set("summary", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedRoleable 
+type PrivilegedRoleable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]PrivilegedRoleAssignmentable)
+    GetName()(*string)
+    GetSettings()(PrivilegedRoleSettingsable)
+    GetSummary()(PrivilegedRoleSummaryable)
+    SetAssignments(value []PrivilegedRoleAssignmentable)()
+    SetName(value *string)()
+    SetSettings(value PrivilegedRoleSettingsable)()
+    SetSummary(value PrivilegedRoleSummaryable)()
 }

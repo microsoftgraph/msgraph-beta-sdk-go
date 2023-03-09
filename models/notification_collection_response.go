@@ -7,8 +7,6 @@ import (
 // NotificationCollectionResponse 
 type NotificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Notificationable
 }
 // NewNotificationCollectionResponse instantiates a new NotificationCollectionResponse and sets the default values.
 func NewNotificationCollectionResponse()(*NotificationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *NotificationCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *NotificationCollectionResponse) GetValue()([]Notificationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Notificationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *NotificationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *NotificationCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *NotificationCollectionResponse) SetValue(value []Notificationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NotificationCollectionResponseable 
+type NotificationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Notificationable)
+    SetValue(value []Notificationable)()
 }

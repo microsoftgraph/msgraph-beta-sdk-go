@@ -7,16 +7,14 @@ import (
 // AddressBookAccountTargetContent 
 type AddressBookAccountTargetContent struct {
     AccountTargetContent
-    // List of user emails targeted for an attack simulation training campaign.
-    accountTargetEmails []string
 }
 // NewAddressBookAccountTargetContent instantiates a new AddressBookAccountTargetContent and sets the default values.
 func NewAddressBookAccountTargetContent()(*AddressBookAccountTargetContent) {
     m := &AddressBookAccountTargetContent{
         AccountTargetContent: *NewAccountTargetContent(),
     }
-    odataTypeValue := "#microsoft.graph.addressBookAccountTargetContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.addressBookAccountTargetContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAddressBookAccountTargetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateAddressBookAccountTargetContentFromDiscriminatorValue(parseNode i878a
 }
 // GetAccountTargetEmails gets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
 func (m *AddressBookAccountTargetContent) GetAccountTargetEmails()([]string) {
-    return m.accountTargetEmails
+    val, err := m.GetBackingStore().Get("accountTargetEmails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AddressBookAccountTargetContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,5 +67,15 @@ func (m *AddressBookAccountTargetContent) Serialize(writer i878a80d2330e89d26896
 }
 // SetAccountTargetEmails sets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
 func (m *AddressBookAccountTargetContent) SetAccountTargetEmails(value []string)() {
-    m.accountTargetEmails = value
+    err := m.GetBackingStore().Set("accountTargetEmails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AddressBookAccountTargetContentable 
+type AddressBookAccountTargetContentable interface {
+    AccountTargetContentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccountTargetEmails()([]string)
+    SetAccountTargetEmails(value []string)()
 }

@@ -7,8 +7,6 @@ import (
 // MacOSTrustedRootCertificateCollectionResponse 
 type MacOSTrustedRootCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSTrustedRootCertificateable
 }
 // NewMacOSTrustedRootCertificateCollectionResponse instantiates a new MacOSTrustedRootCertificateCollectionResponse and sets the default values.
 func NewMacOSTrustedRootCertificateCollectionResponse()(*MacOSTrustedRootCertificateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSTrustedRootCertificateCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSTrustedRootCertificateCollectionResponse) GetValue()([]MacOSTrustedRootCertificateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSTrustedRootCertificateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSTrustedRootCertificateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSTrustedRootCertificateCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSTrustedRootCertificateCollectionResponse) SetValue(value []MacOSTrustedRootCertificateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSTrustedRootCertificateCollectionResponseable 
+type MacOSTrustedRootCertificateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSTrustedRootCertificateable)
+    SetValue(value []MacOSTrustedRootCertificateable)()
 }

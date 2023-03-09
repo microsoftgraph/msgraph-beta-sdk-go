@@ -60,8 +60,8 @@ func NewTemplateSettingsItemSettingDefinitionsRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTemplateSettingsItemSettingDefinitionsRequestBuilder instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTemplateSettingsItemSettingDefinitionsRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to count the resources in the collection.
 func (m *TemplateSettingsItemSettingDefinitionsRequestBuilder) Count()(*TemplateSettingsItemSettingDefinitionsCountRequestBuilder) {
-    return NewTemplateSettingsItemSettingDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTemplateSettingsItemSettingDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list of related Setting Definitions
 func (m *TemplateSettingsItemSettingDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplateSettingsItemSettingDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *TemplateSettingsItemSettingDefinitionsRequestBuilder) ToPostRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

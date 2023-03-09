@@ -60,8 +60,8 @@ func NewTeamTemplatesRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamTemplatesRequestBuilder instantiates a new TeamTemplatesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTeamTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamTemplatesRequestBuilder) Count()(*TeamTemplatesCountRequestBuilder) {
-    return NewTeamTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the teamTemplateDefinition objects associated with a teamTemplate. 
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *TeamTemplatesRequestBuilder) ToPostRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

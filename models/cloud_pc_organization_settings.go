@@ -7,16 +7,6 @@ import (
 // CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
-    // Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
-    enableMEMAutoEnroll *bool
-    // The enableSingleSignOn property
-    enableSingleSignOn *bool
-    // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
-    osVersion *CloudPcOperatingSystem
-    // The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
-    userAccountType *CloudPcUserAccountType
-    // Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
-    windowsSettings CloudPcWindowsSettingsable
 }
 // NewCloudPcOrganizationSettings instantiates a new CloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
@@ -29,13 +19,27 @@ func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
 func CreateCloudPcOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcOrganizationSettings(), nil
 }
-// GetEnableMEMAutoEnroll gets the enableMEMAutoEnroll property value. Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+// GetEnableMEMAutoEnroll gets the enableMEMAutoEnroll property value. Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.
 func (m *CloudPcOrganizationSettings) GetEnableMEMAutoEnroll()(*bool) {
-    return m.enableMEMAutoEnroll
+    val, err := m.GetBackingStore().Get("enableMEMAutoEnroll")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
-// GetEnableSingleSignOn gets the enableSingleSignOn property value. The enableSingleSignOn property
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
 func (m *CloudPcOrganizationSettings) GetEnableSingleSignOn()(*bool) {
-    return m.enableSingleSignOn
+    val, err := m.GetBackingStore().Get("enableSingleSignOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,15 +98,36 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcOperatingSystem)
+    }
+    return nil
 }
 // GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
-    return m.userAccountType
+    val, err := m.GetBackingStore().Get("userAccountType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcUserAccountType)
+    }
+    return nil
 }
 // GetWindowsSettings gets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
 func (m *CloudPcOrganizationSettings) GetWindowsSettings()(CloudPcWindowsSettingsable) {
-    return m.windowsSettings
+    val, err := m.GetBackingStore().Get("windowsSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcWindowsSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,23 +169,53 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetEnableMEMAutoEnroll sets the enableMEMAutoEnroll property value. Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+// SetEnableMEMAutoEnroll sets the enableMEMAutoEnroll property value. Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.
 func (m *CloudPcOrganizationSettings) SetEnableMEMAutoEnroll(value *bool)() {
-    m.enableMEMAutoEnroll = value
+    err := m.GetBackingStore().Set("enableMEMAutoEnroll", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetEnableSingleSignOn sets the enableSingleSignOn property value. The enableSingleSignOn property
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
 func (m *CloudPcOrganizationSettings) SetEnableSingleSignOn(value *bool)() {
-    m.enableSingleSignOn = value
+    err := m.GetBackingStore().Set("enableSingleSignOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetUserAccountType(value *CloudPcUserAccountType)() {
-    m.userAccountType = value
+    err := m.GetBackingStore().Set("userAccountType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsSettings sets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
 func (m *CloudPcOrganizationSettings) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
-    m.windowsSettings = value
+    err := m.GetBackingStore().Set("windowsSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcOrganizationSettingsable 
+type CloudPcOrganizationSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEnableMEMAutoEnroll()(*bool)
+    GetEnableSingleSignOn()(*bool)
+    GetOsVersion()(*CloudPcOperatingSystem)
+    GetUserAccountType()(*CloudPcUserAccountType)
+    GetWindowsSettings()(CloudPcWindowsSettingsable)
+    SetEnableMEMAutoEnroll(value *bool)()
+    SetEnableSingleSignOn(value *bool)()
+    SetOsVersion(value *CloudPcOperatingSystem)()
+    SetUserAccountType(value *CloudPcUserAccountType)()
+    SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

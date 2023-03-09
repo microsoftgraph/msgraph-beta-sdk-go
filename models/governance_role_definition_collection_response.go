@@ -7,8 +7,6 @@ import (
 // GovernanceRoleDefinitionCollectionResponse 
 type GovernanceRoleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GovernanceRoleDefinitionable
 }
 // NewGovernanceRoleDefinitionCollectionResponse instantiates a new GovernanceRoleDefinitionCollectionResponse and sets the default values.
 func NewGovernanceRoleDefinitionCollectionResponse()(*GovernanceRoleDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GovernanceRoleDefinitionCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *GovernanceRoleDefinitionCollectionResponse) GetValue()([]GovernanceRoleDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceRoleDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GovernanceRoleDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GovernanceRoleDefinitionCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *GovernanceRoleDefinitionCollectionResponse) SetValue(value []GovernanceRoleDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GovernanceRoleDefinitionCollectionResponseable 
+type GovernanceRoleDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GovernanceRoleDefinitionable)
+    SetValue(value []GovernanceRoleDefinitionable)()
 }

@@ -7,18 +7,14 @@ import (
 // EdiscoveryReviewSet 
 type EdiscoveryReviewSet struct {
     DataSet
-    // Represents files within the review set.
-    files []EdiscoveryFileable
-    // Represents queries within the review set.
-    queries []EdiscoveryReviewSetQueryable
 }
 // NewEdiscoveryReviewSet instantiates a new EdiscoveryReviewSet and sets the default values.
 func NewEdiscoveryReviewSet()(*EdiscoveryReviewSet) {
     m := &EdiscoveryReviewSet{
         DataSet: *NewDataSet(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryReviewSet";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.ediscoveryReviewSet"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEdiscoveryReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,11 +56,25 @@ func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFiles gets the files property value. Represents files within the review set.
 func (m *EdiscoveryReviewSet) GetFiles()([]EdiscoveryFileable) {
-    return m.files
+    val, err := m.GetBackingStore().Get("files")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryFileable)
+    }
+    return nil
 }
 // GetQueries gets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) GetQueries()([]EdiscoveryReviewSetQueryable) {
-    return m.queries
+    val, err := m.GetBackingStore().Get("queries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryReviewSetQueryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,9 +106,24 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFiles sets the files property value. Represents files within the review set.
 func (m *EdiscoveryReviewSet) SetFiles(value []EdiscoveryFileable)() {
-    m.files = value
+    err := m.GetBackingStore().Set("files", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQueries sets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) SetQueries(value []EdiscoveryReviewSetQueryable)() {
-    m.queries = value
+    err := m.GetBackingStore().Set("queries", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryReviewSetable 
+type EdiscoveryReviewSetable interface {
+    DataSetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFiles()([]EdiscoveryFileable)
+    GetQueries()([]EdiscoveryReviewSetQueryable)
+    SetFiles(value []EdiscoveryFileable)()
+    SetQueries(value []EdiscoveryReviewSetQueryable)()
 }

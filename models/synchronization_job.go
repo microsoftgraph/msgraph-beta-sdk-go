@@ -7,16 +7,6 @@ import (
 // SynchronizationJob 
 type SynchronizationJob struct {
     Entity
-    // Schedule used to run the job. Read-only.
-    schedule SynchronizationScheduleable
-    // The synchronization schema configured for the job.
-    schema SynchronizationSchemaable
-    // Status of the job, which includes when the job was last run, current job state, and errors.
-    status SynchronizationStatusable
-    // Settings associated with the job. Some settings are inherited from the template.
-    synchronizationJobSettings []KeyValuePairable
-    // Identifier of the synchronization template this job is based on.
-    templateId *string
 }
 // NewSynchronizationJob instantiates a new synchronizationJob and sets the default values.
 func NewSynchronizationJob()(*SynchronizationJob) {
@@ -90,23 +80,58 @@ func (m *SynchronizationJob) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetSchedule gets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) GetSchedule()(SynchronizationScheduleable) {
-    return m.schedule
+    val, err := m.GetBackingStore().Get("schedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationScheduleable)
+    }
+    return nil
 }
 // GetSchema gets the schema property value. The synchronization schema configured for the job.
 func (m *SynchronizationJob) GetSchema()(SynchronizationSchemaable) {
-    return m.schema
+    val, err := m.GetBackingStore().Get("schema")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationSchemaable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Status of the job, which includes when the job was last run, current job state, and errors.
 func (m *SynchronizationJob) GetStatus()(SynchronizationStatusable) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SynchronizationStatusable)
+    }
+    return nil
 }
 // GetSynchronizationJobSettings gets the synchronizationJobSettings property value. Settings associated with the job. Some settings are inherited from the template.
 func (m *SynchronizationJob) GetSynchronizationJobSettings()([]KeyValuePairable) {
-    return m.synchronizationJobSettings
+    val, err := m.GetBackingStore().Get("synchronizationJobSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetTemplateId gets the templateId property value. Identifier of the synchronization template this job is based on.
 func (m *SynchronizationJob) GetTemplateId()(*string) {
-    return m.templateId
+    val, err := m.GetBackingStore().Get("templateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,21 +177,51 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetSchedule sets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) SetSchedule(value SynchronizationScheduleable)() {
-    m.schedule = value
+    err := m.GetBackingStore().Set("schedule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchema sets the schema property value. The synchronization schema configured for the job.
 func (m *SynchronizationJob) SetSchema(value SynchronizationSchemaable)() {
-    m.schema = value
+    err := m.GetBackingStore().Set("schema", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Status of the job, which includes when the job was last run, current job state, and errors.
 func (m *SynchronizationJob) SetStatus(value SynchronizationStatusable)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSynchronizationJobSettings sets the synchronizationJobSettings property value. Settings associated with the job. Some settings are inherited from the template.
 func (m *SynchronizationJob) SetSynchronizationJobSettings(value []KeyValuePairable)() {
-    m.synchronizationJobSettings = value
+    err := m.GetBackingStore().Set("synchronizationJobSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateId sets the templateId property value. Identifier of the synchronization template this job is based on.
 func (m *SynchronizationJob) SetTemplateId(value *string)() {
-    m.templateId = value
+    err := m.GetBackingStore().Set("templateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SynchronizationJobable 
+type SynchronizationJobable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSchedule()(SynchronizationScheduleable)
+    GetSchema()(SynchronizationSchemaable)
+    GetStatus()(SynchronizationStatusable)
+    GetSynchronizationJobSettings()([]KeyValuePairable)
+    GetTemplateId()(*string)
+    SetSchedule(value SynchronizationScheduleable)()
+    SetSchema(value SynchronizationSchemaable)()
+    SetStatus(value SynchronizationStatusable)()
+    SetSynchronizationJobSettings(value []KeyValuePairable)()
+    SetTemplateId(value *string)()
 }

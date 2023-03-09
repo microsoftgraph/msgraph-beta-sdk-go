@@ -7,28 +7,14 @@ import (
 // WindowsAppX 
 type WindowsAppX struct {
     MobileLobApp
-    // Contains properties for Windows architecture.
-    applicableArchitectures *WindowsArchitecture
-    // The Identity Name.
-    identityName *string
-    // The Identity Publisher Hash.
-    identityPublisherHash *string
-    // The Identity Resource Identifier.
-    identityResourceIdentifier *string
-    // The identity version.
-    identityVersion *string
-    // Whether or not the app is a bundle.
-    isBundle *bool
-    // The minimum operating system required for a Windows mobile app.
-    minimumSupportedOperatingSystem WindowsMinimumOperatingSystemable
 }
 // NewWindowsAppX instantiates a new WindowsAppX and sets the default values.
 func NewWindowsAppX()(*WindowsAppX) {
     m := &WindowsAppX{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsAppX";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsAppX"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsAppXFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +23,14 @@ func CreateWindowsAppXFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsAppX) GetApplicableArchitectures()(*WindowsArchitecture) {
-    return m.applicableArchitectures
+    val, err := m.GetBackingStore().Get("applicableArchitectures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsArchitecture)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,27 +109,69 @@ func (m *WindowsAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
 func (m *WindowsAppX) GetIdentityName()(*string) {
-    return m.identityName
+    val, err := m.GetBackingStore().Get("identityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityPublisherHash gets the identityPublisherHash property value. The Identity Publisher Hash.
 func (m *WindowsAppX) GetIdentityPublisherHash()(*string) {
-    return m.identityPublisherHash
+    val, err := m.GetBackingStore().Get("identityPublisherHash")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsAppX) GetIdentityResourceIdentifier()(*string) {
-    return m.identityResourceIdentifier
+    val, err := m.GetBackingStore().Get("identityResourceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version.
 func (m *WindowsAppX) GetIdentityVersion()(*string) {
-    return m.identityVersion
+    val, err := m.GetBackingStore().Get("identityVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsBundle gets the isBundle property value. Whether or not the app is a bundle.
 func (m *WindowsAppX) GetIsBundle()(*bool) {
-    return m.isBundle
+    val, err := m.GetBackingStore().Get("isBundle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
 func (m *WindowsAppX) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
-    return m.minimumSupportedOperatingSystem
+    val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsMinimumOperatingSystemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAppX) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -191,29 +226,69 @@ func (m *WindowsAppX) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsAppX) SetApplicableArchitectures(value *WindowsArchitecture)() {
-    m.applicableArchitectures = value
+    err := m.GetBackingStore().Set("applicableArchitectures", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityName sets the identityName property value. The Identity Name.
 func (m *WindowsAppX) SetIdentityName(value *string)() {
-    m.identityName = value
+    err := m.GetBackingStore().Set("identityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityPublisherHash sets the identityPublisherHash property value. The Identity Publisher Hash.
 func (m *WindowsAppX) SetIdentityPublisherHash(value *string)() {
-    m.identityPublisherHash = value
+    err := m.GetBackingStore().Set("identityPublisherHash", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsAppX) SetIdentityResourceIdentifier(value *string)() {
-    m.identityResourceIdentifier = value
+    err := m.GetBackingStore().Set("identityResourceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityVersion sets the identityVersion property value. The identity version.
 func (m *WindowsAppX) SetIdentityVersion(value *string)() {
-    m.identityVersion = value
+    err := m.GetBackingStore().Set("identityVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsBundle sets the isBundle property value. Whether or not the app is a bundle.
 func (m *WindowsAppX) SetIsBundle(value *bool)() {
-    m.isBundle = value
+    err := m.GetBackingStore().Set("isBundle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
 func (m *WindowsAppX) SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)() {
-    m.minimumSupportedOperatingSystem = value
+    err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAppXable 
+type WindowsAppXable interface {
+    MobileLobAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicableArchitectures()(*WindowsArchitecture)
+    GetIdentityName()(*string)
+    GetIdentityPublisherHash()(*string)
+    GetIdentityResourceIdentifier()(*string)
+    GetIdentityVersion()(*string)
+    GetIsBundle()(*bool)
+    GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable)
+    SetApplicableArchitectures(value *WindowsArchitecture)()
+    SetIdentityName(value *string)()
+    SetIdentityPublisherHash(value *string)()
+    SetIdentityResourceIdentifier(value *string)()
+    SetIdentityVersion(value *string)()
+    SetIsBundle(value *bool)()
+    SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)()
 }

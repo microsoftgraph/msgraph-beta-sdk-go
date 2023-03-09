@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ChannelSummary 
 type ChannelSummary struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The guestsCount property
-    guestsCount *int32
-    // The hasMembersFromOtherTenants property
-    hasMembersFromOtherTenants *bool
-    // The membersCount property
-    membersCount *int32
-    // The OdataType property
-    odataType *string
-    // The ownersCount property
-    ownersCount *int32
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewChannelSummary instantiates a new channelSummary and sets the default values.
 func NewChannelSummary()(*ChannelSummary) {
     m := &ChannelSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateChannelSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +24,19 @@ func CreateChannelSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelSummary) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ChannelSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,23 +95,58 @@ func (m *ChannelSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetGuestsCount gets the guestsCount property value. The guestsCount property
 func (m *ChannelSummary) GetGuestsCount()(*int32) {
-    return m.guestsCount
+    val, err := m.GetBackingStore().Get("guestsCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetHasMembersFromOtherTenants gets the hasMembersFromOtherTenants property value. The hasMembersFromOtherTenants property
 func (m *ChannelSummary) GetHasMembersFromOtherTenants()(*bool) {
-    return m.hasMembersFromOtherTenants
+    val, err := m.GetBackingStore().Get("hasMembersFromOtherTenants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMembersCount gets the membersCount property value. The membersCount property
 func (m *ChannelSummary) GetMembersCount()(*int32) {
-    return m.membersCount
+    val, err := m.GetBackingStore().Get("membersCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChannelSummary) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOwnersCount gets the ownersCount property value. The ownersCount property
 func (m *ChannelSummary) GetOwnersCount()(*int32) {
-    return m.ownersCount
+    val, err := m.GetBackingStore().Get("ownersCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChannelSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *ChannelSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelSummary) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ChannelSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetGuestsCount sets the guestsCount property value. The guestsCount property
 func (m *ChannelSummary) SetGuestsCount(value *int32)() {
-    m.guestsCount = value
+    err := m.GetBackingStore().Set("guestsCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasMembersFromOtherTenants sets the hasMembersFromOtherTenants property value. The hasMembersFromOtherTenants property
 func (m *ChannelSummary) SetHasMembersFromOtherTenants(value *bool)() {
-    m.hasMembersFromOtherTenants = value
+    err := m.GetBackingStore().Set("hasMembersFromOtherTenants", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembersCount sets the membersCount property value. The membersCount property
 func (m *ChannelSummary) SetMembersCount(value *int32)() {
-    m.membersCount = value
+    err := m.GetBackingStore().Set("membersCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChannelSummary) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwnersCount sets the ownersCount property value. The ownersCount property
 func (m *ChannelSummary) SetOwnersCount(value *int32)() {
-    m.ownersCount = value
+    err := m.GetBackingStore().Set("ownersCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChannelSummaryable 
+type ChannelSummaryable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetGuestsCount()(*int32)
+    GetHasMembersFromOtherTenants()(*bool)
+    GetMembersCount()(*int32)
+    GetOdataType()(*string)
+    GetOwnersCount()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetGuestsCount(value *int32)()
+    SetHasMembersFromOtherTenants(value *bool)()
+    SetMembersCount(value *int32)()
+    SetOdataType(value *string)()
+    SetOwnersCount(value *int32)()
 }

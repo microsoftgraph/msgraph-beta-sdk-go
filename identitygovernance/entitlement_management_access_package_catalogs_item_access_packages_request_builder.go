@@ -60,8 +60,8 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder instantiates a new AccessPackagesRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuild
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Get the access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
@@ -118,7 +118,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuil
 }
 // Search provides operations to call the Search method.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder) Search()(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesSearchRequestBuilder) {
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -143,7 +143,10 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

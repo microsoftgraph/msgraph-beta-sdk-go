@@ -7,44 +7,6 @@ import (
 // ComanagementEligibleDevice device Co-Management eligibility state
 type ComanagementEligibleDevice struct {
     Entity
-    // Device registration status.
-    clientRegistrationStatus *DeviceRegistrationState
-    // DeviceName
-    deviceName *string
-    // Device type.
-    deviceType *DeviceType
-    // EntitySource
-    entitySource *int32
-    // Management agent type.
-    managementAgents *ManagementAgentType
-    // Management state of device in Microsoft Intune.
-    managementState *ManagementState
-    // Manufacturer
-    manufacturer *string
-    // MDMStatus
-    mdmStatus *string
-    // Model
-    model *string
-    // OSDescription
-    osDescription *string
-    // OSVersion
-    osVersion *string
-    // Owner type of device.
-    ownerType *OwnerType
-    // ReferenceId
-    referenceId *string
-    // SerialNumber
-    serialNumber *string
-    // The status property
-    status *ComanagementEligibleType
-    // UPN
-    upn *string
-    // UserEmail
-    userEmail *string
-    // UserId
-    userId *string
-    // UserName
-    userName *string
 }
 // NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
@@ -59,19 +21,47 @@ func CreateComanagementEligibleDeviceFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetClientRegistrationStatus gets the clientRegistrationStatus property value. Device registration status.
 func (m *ComanagementEligibleDevice) GetClientRegistrationStatus()(*DeviceRegistrationState) {
-    return m.clientRegistrationStatus
+    val, err := m.GetBackingStore().Get("clientRegistrationStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceRegistrationState)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. DeviceName
 func (m *ComanagementEligibleDevice) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceType gets the deviceType property value. Device type.
 func (m *ComanagementEligibleDevice) GetDeviceType()(*DeviceType) {
-    return m.deviceType
+    val, err := m.GetBackingStore().Get("deviceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceType)
+    }
+    return nil
 }
 // GetEntitySource gets the entitySource property value. EntitySource
 func (m *ComanagementEligibleDevice) GetEntitySource()(*int32) {
-    return m.entitySource
+    val, err := m.GetBackingStore().Get("entitySource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -270,63 +260,168 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i87
 }
 // GetManagementAgents gets the managementAgents property value. Management agent type.
 func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType) {
-    return m.managementAgents
+    val, err := m.GetBackingStore().Get("managementAgents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementAgentType)
+    }
+    return nil
 }
 // GetManagementState gets the managementState property value. Management state of device in Microsoft Intune.
 func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
-    return m.managementState
+    val, err := m.GetBackingStore().Get("managementState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagementState)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer
 func (m *ComanagementEligibleDevice) GetManufacturer()(*string) {
-    return m.manufacturer
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMdmStatus gets the mdmStatus property value. MDMStatus
 func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
-    return m.mdmStatus
+    val, err := m.GetBackingStore().Get("mdmStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModel gets the model property value. Model
 func (m *ComanagementEligibleDevice) GetModel()(*string) {
-    return m.model
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsDescription gets the osDescription property value. OSDescription
 func (m *ComanagementEligibleDevice) GetOsDescription()(*string) {
-    return m.osDescription
+    val, err := m.GetBackingStore().Get("osDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. OSVersion
 func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
-    return m.ownerType
+    val, err := m.GetBackingStore().Get("ownerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OwnerType)
+    }
+    return nil
 }
 // GetReferenceId gets the referenceId property value. ReferenceId
 func (m *ComanagementEligibleDevice) GetReferenceId()(*string) {
-    return m.referenceId
+    val, err := m.GetBackingStore().Get("referenceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSerialNumber gets the serialNumber property value. SerialNumber
 func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
-    return m.serialNumber
+    val, err := m.GetBackingStore().Get("serialNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ComanagementEligibleType)
+    }
+    return nil
 }
 // GetUpn gets the upn property value. UPN
 func (m *ComanagementEligibleDevice) GetUpn()(*string) {
-    return m.upn
+    val, err := m.GetBackingStore().Get("upn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserEmail gets the userEmail property value. UserEmail
 func (m *ComanagementEligibleDevice) GetUserEmail()(*string) {
-    return m.userEmail
+    val, err := m.GetBackingStore().Get("userEmail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. UserId
 func (m *ComanagementEligibleDevice) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserName gets the userName property value. UserName
 func (m *ComanagementEligibleDevice) GetUserName()(*string) {
-    return m.userName
+    val, err := m.GetBackingStore().Get("userName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ComanagementEligibleDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -458,77 +553,177 @@ func (m *ComanagementEligibleDevice) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetClientRegistrationStatus sets the clientRegistrationStatus property value. Device registration status.
 func (m *ComanagementEligibleDevice) SetClientRegistrationStatus(value *DeviceRegistrationState)() {
-    m.clientRegistrationStatus = value
+    err := m.GetBackingStore().Set("clientRegistrationStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. DeviceName
 func (m *ComanagementEligibleDevice) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceType sets the deviceType property value. Device type.
 func (m *ComanagementEligibleDevice) SetDeviceType(value *DeviceType)() {
-    m.deviceType = value
+    err := m.GetBackingStore().Set("deviceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEntitySource sets the entitySource property value. EntitySource
 func (m *ComanagementEligibleDevice) SetEntitySource(value *int32)() {
-    m.entitySource = value
+    err := m.GetBackingStore().Set("entitySource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementAgents sets the managementAgents property value. Management agent type.
 func (m *ComanagementEligibleDevice) SetManagementAgents(value *ManagementAgentType)() {
-    m.managementAgents = value
+    err := m.GetBackingStore().Set("managementAgents", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagementState sets the managementState property value. Management state of device in Microsoft Intune.
 func (m *ComanagementEligibleDevice) SetManagementState(value *ManagementState)() {
-    m.managementState = value
+    err := m.GetBackingStore().Set("managementState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer
 func (m *ComanagementEligibleDevice) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMdmStatus sets the mdmStatus property value. MDMStatus
 func (m *ComanagementEligibleDevice) SetMdmStatus(value *string)() {
-    m.mdmStatus = value
+    err := m.GetBackingStore().Set("mdmStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModel sets the model property value. Model
 func (m *ComanagementEligibleDevice) SetModel(value *string)() {
-    m.model = value
+    err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsDescription sets the osDescription property value. OSDescription
 func (m *ComanagementEligibleDevice) SetOsDescription(value *string)() {
-    m.osDescription = value
+    err := m.GetBackingStore().Set("osDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. OSVersion
 func (m *ComanagementEligibleDevice) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *ComanagementEligibleDevice) SetOwnerType(value *OwnerType)() {
-    m.ownerType = value
+    err := m.GetBackingStore().Set("ownerType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReferenceId sets the referenceId property value. ReferenceId
 func (m *ComanagementEligibleDevice) SetReferenceId(value *string)() {
-    m.referenceId = value
+    err := m.GetBackingStore().Set("referenceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSerialNumber sets the serialNumber property value. SerialNumber
 func (m *ComanagementEligibleDevice) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    err := m.GetBackingStore().Set("serialNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *ComanagementEligibleDevice) SetStatus(value *ComanagementEligibleType)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUpn sets the upn property value. UPN
 func (m *ComanagementEligibleDevice) SetUpn(value *string)() {
-    m.upn = value
+    err := m.GetBackingStore().Set("upn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserEmail sets the userEmail property value. UserEmail
 func (m *ComanagementEligibleDevice) SetUserEmail(value *string)() {
-    m.userEmail = value
+    err := m.GetBackingStore().Set("userEmail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. UserId
 func (m *ComanagementEligibleDevice) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserName sets the userName property value. UserName
 func (m *ComanagementEligibleDevice) SetUserName(value *string)() {
-    m.userName = value
+    err := m.GetBackingStore().Set("userName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ComanagementEligibleDeviceable 
+type ComanagementEligibleDeviceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetClientRegistrationStatus()(*DeviceRegistrationState)
+    GetDeviceName()(*string)
+    GetDeviceType()(*DeviceType)
+    GetEntitySource()(*int32)
+    GetManagementAgents()(*ManagementAgentType)
+    GetManagementState()(*ManagementState)
+    GetManufacturer()(*string)
+    GetMdmStatus()(*string)
+    GetModel()(*string)
+    GetOsDescription()(*string)
+    GetOsVersion()(*string)
+    GetOwnerType()(*OwnerType)
+    GetReferenceId()(*string)
+    GetSerialNumber()(*string)
+    GetStatus()(*ComanagementEligibleType)
+    GetUpn()(*string)
+    GetUserEmail()(*string)
+    GetUserId()(*string)
+    GetUserName()(*string)
+    SetClientRegistrationStatus(value *DeviceRegistrationState)()
+    SetDeviceName(value *string)()
+    SetDeviceType(value *DeviceType)()
+    SetEntitySource(value *int32)()
+    SetManagementAgents(value *ManagementAgentType)()
+    SetManagementState(value *ManagementState)()
+    SetManufacturer(value *string)()
+    SetMdmStatus(value *string)()
+    SetModel(value *string)()
+    SetOsDescription(value *string)()
+    SetOsVersion(value *string)()
+    SetOwnerType(value *OwnerType)()
+    SetReferenceId(value *string)()
+    SetSerialNumber(value *string)()
+    SetStatus(value *ComanagementEligibleType)()
+    SetUpn(value *string)()
+    SetUserEmail(value *string)()
+    SetUserId(value *string)()
+    SetUserName(value *string)()
 }

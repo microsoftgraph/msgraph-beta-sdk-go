@@ -7,8 +7,6 @@ import (
 // FilterOperatorSchemaCollectionResponse 
 type FilterOperatorSchemaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []FilterOperatorSchemaable
 }
 // NewFilterOperatorSchemaCollectionResponse instantiates a new FilterOperatorSchemaCollectionResponse and sets the default values.
 func NewFilterOperatorSchemaCollectionResponse()(*FilterOperatorSchemaCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *FilterOperatorSchemaCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *FilterOperatorSchemaCollectionResponse) GetValue()([]FilterOperatorSchemaable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FilterOperatorSchemaable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FilterOperatorSchemaCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *FilterOperatorSchemaCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *FilterOperatorSchemaCollectionResponse) SetValue(value []FilterOperatorSchemaable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FilterOperatorSchemaCollectionResponseable 
+type FilterOperatorSchemaCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]FilterOperatorSchemaable)
+    SetValue(value []FilterOperatorSchemaable)()
 }

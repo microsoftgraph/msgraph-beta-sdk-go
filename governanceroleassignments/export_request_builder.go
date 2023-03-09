@@ -41,13 +41,13 @@ type ExportRequestBuilderGetRequestConfiguration struct {
 func NewExportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExportRequestBuilder) {
     m := &ExportRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/governanceRoleAssignments/microsoft.graph.export(){?%24top,%24skip,%24search,%24filter,%24count}";
+    m.urlTemplate = "{+baseurl}/governanceRoleAssignments/export(){?%24top,%24skip,%24search,%24filter,%24count}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewExportRequestBuilder instantiates a new ExportRequestBuilder and sets the default values.

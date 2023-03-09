@@ -60,8 +60,8 @@ func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSchoolsRequestBuilder instantiates a new SchoolsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewSchoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 }
 // Count provides operations to count the resources in the collection.
 func (m *SchoolsRequestBuilder) Count()(*SchoolsCountRequestBuilder) {
-    return NewSchoolsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delta provides operations to call the delta method.
 func (m *SchoolsRequestBuilder) Delta()(*SchoolsDeltaRequestBuilder) {
-    return NewSchoolsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of all school objects.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *SchoolsRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

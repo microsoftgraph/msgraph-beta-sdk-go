@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse 
 type DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationSettingGroupCollectionDefinitionable
 }
 // NewDeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse instantiates a new DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse()(*DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationSettingGroupCollectionDefinitionCollection
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse) GetValue()([]DeviceManagementConfigurationSettingGroupCollectionDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingGroupCollectionDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationSettingGroupCollectionDefinitionCollection
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponse) SetValue(value []DeviceManagementConfigurationSettingGroupCollectionDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponseable 
+type DeviceManagementConfigurationSettingGroupCollectionDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationSettingGroupCollectionDefinitionable)
+    SetValue(value []DeviceManagementConfigurationSettingGroupCollectionDefinitionable)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceManagementConfigurationSettingDefinitionCollectionResponse 
 type DeviceManagementConfigurationSettingDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementConfigurationSettingDefinitionable
 }
 // NewDeviceManagementConfigurationSettingDefinitionCollectionResponse instantiates a new DeviceManagementConfigurationSettingDefinitionCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationSettingDefinitionCollectionResponse()(*DeviceManagementConfigurationSettingDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementConfigurationSettingDefinitionCollectionResponse) GetFi
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingDefinitionCollectionResponse) GetValue()([]DeviceManagementConfigurationSettingDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementConfigurationSettingDefinitionCollectionResponse) Seria
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementConfigurationSettingDefinitionCollectionResponse) SetValue(value []DeviceManagementConfigurationSettingDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSettingDefinitionCollectionResponseable 
+type DeviceManagementConfigurationSettingDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementConfigurationSettingDefinitionable)
+    SetValue(value []DeviceManagementConfigurationSettingDefinitionable)()
 }

@@ -60,8 +60,8 @@ func NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigura
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsRequestBuilder instantiates a new CombinationConfigurationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigura
 }
 // Count provides operations to count the resources in the collection.
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsRequestBuilder) Count()(*ConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsCountRequestBuilder) {
-    return NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemCombinationConfigur
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

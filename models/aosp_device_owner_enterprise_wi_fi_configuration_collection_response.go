@@ -7,8 +7,6 @@ import (
 // AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse 
 type AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AospDeviceOwnerEnterpriseWiFiConfigurationable
 }
 // NewAospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse instantiates a new AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse and sets the default values.
 func NewAospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse()(*AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) GetFieldD
 }
 // GetValue gets the value property value. The value property
 func (m *AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) GetValue()([]AospDeviceOwnerEnterpriseWiFiConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AospDeviceOwnerEnterpriseWiFiConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) Serialize
 }
 // SetValue sets the value property value. The value property
 func (m *AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse) SetValue(value []AospDeviceOwnerEnterpriseWiFiConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponseable 
+type AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AospDeviceOwnerEnterpriseWiFiConfigurationable)
+    SetValue(value []AospDeviceOwnerEnterpriseWiFiConfigurationable)()
 }

@@ -55,8 +55,8 @@ func NewAccessReviewsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsRequestBuilder instantiates a new AccessReviewsRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewAccessReviewsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) Decisions()(*AccessReviewsDecisionsRequestBuilder) {
-    return NewAccessReviewsDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) DecisionsById(id string)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
@@ -78,11 +78,11 @@ func (m *AccessReviewsRequestBuilder) DecisionsById(id string)(*AccessReviewsDec
     if id != "" {
         urlTplParams["accessReviewInstanceDecisionItem%2Did"] = id
     }
-    return NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Definitions provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) Definitions()(*AccessReviewsDefinitionsRequestBuilder) {
-    return NewAccessReviewsDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) {
@@ -93,7 +93,7 @@ func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*AccessReviewsD
     if id != "" {
         urlTplParams["accessReviewScheduleDefinition%2Did"] = id
     }
-    return NewAccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property accessReviews for identityGovernance
 func (m *AccessReviewsRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -132,7 +132,7 @@ func (m *AccessReviewsRequestBuilder) Get(ctx context.Context, requestConfigurat
 }
 // HistoryDefinitions provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*AccessReviewsHistoryDefinitionsRequestBuilder) {
-    return NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HistoryDefinitionsById provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) {
@@ -143,7 +143,7 @@ func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*AccessR
     if id != "" {
         urlTplParams["accessReviewHistoryDefinition%2Did"] = id
     }
-    return NewAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property accessReviews in identityGovernance
 func (m *AccessReviewsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewSetable, requestConfiguration *AccessReviewsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewSetable, error) {
@@ -166,7 +166,7 @@ func (m *AccessReviewsRequestBuilder) Patch(ctx context.Context, body ie233ee762
 }
 // Policy provides operations to manage the policy property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) Policy()(*AccessReviewsPolicyRequestBuilder) {
-    return NewAccessReviewsPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property accessReviews for identityGovernance
 func (m *AccessReviewsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -203,7 +203,10 @@ func (m *AccessReviewsRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

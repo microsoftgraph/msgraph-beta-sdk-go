@@ -7,56 +7,14 @@ import (
 // KerberosSingleSignOnExtension 
 type KerberosSingleSignOnExtension struct {
     SingleSignOnExtension
-    // Gets or sets the Active Directory site.
-    activeDirectorySiteCode *string
-    // Enables or disables whether the Kerberos extension can automatically determine its site name.
-    blockActiveDirectorySiteAutoDiscovery *bool
-    // Enables or disables Keychain usage.
-    blockAutomaticLogin *bool
-    // Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.
-    cacheName *string
-    // Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.
-    credentialBundleIdAccessControlList []string
-    // Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
-    domainRealms []string
-    // Gets or sets a list of hosts or domain names for which the app extension performs SSO.
-    domains []string
-    // When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
-    isDefaultRealm *bool
-    // Enables or disables password changes.
-    passwordBlockModification *bool
-    // Gets or sets the URL that the user will be sent to when they initiate a password change.
-    passwordChangeUrl *string
-    // Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
-    passwordEnableLocalSync *bool
-    // Overrides the default password expiration in days. For most domains, this value is calculated automatically.
-    passwordExpirationDays *int32
-    // Gets or sets the number of days until the user is notified that their password will expire (default is 15).
-    passwordExpirationNotificationDays *int32
-    // Gets or sets the minimum number of days until a user can change their password again.
-    passwordMinimumAgeDays *int32
-    // Gets or sets the minimum length of a password.
-    passwordMinimumLength *int32
-    // Gets or sets the number of previous passwords to block.
-    passwordPreviousPasswordBlockCount *int32
-    // Enables or disables whether passwords must meet Active Directory's complexity requirements.
-    passwordRequireActiveDirectoryComplexity *bool
-    // Gets or sets a description of the password complexity requirements.
-    passwordRequirementsDescription *string
-    // Gets or sets the case-sensitive realm name for this profile.
-    realm *string
-    // Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
-    requireUserPresence *bool
-    // Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
-    userPrincipalName *string
 }
 // NewKerberosSingleSignOnExtension instantiates a new KerberosSingleSignOnExtension and sets the default values.
 func NewKerberosSingleSignOnExtension()(*KerberosSingleSignOnExtension) {
     m := &KerberosSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
-    odataTypeValue := "#microsoft.graph.kerberosSingleSignOnExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.kerberosSingleSignOnExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateKerberosSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,31 +23,80 @@ func CreateKerberosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80
 }
 // GetActiveDirectorySiteCode gets the activeDirectorySiteCode property value. Gets or sets the Active Directory site.
 func (m *KerberosSingleSignOnExtension) GetActiveDirectorySiteCode()(*string) {
-    return m.activeDirectorySiteCode
+    val, err := m.GetBackingStore().Get("activeDirectorySiteCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetBlockActiveDirectorySiteAutoDiscovery gets the blockActiveDirectorySiteAutoDiscovery property value. Enables or disables whether the Kerberos extension can automatically determine its site name.
 func (m *KerberosSingleSignOnExtension) GetBlockActiveDirectorySiteAutoDiscovery()(*bool) {
-    return m.blockActiveDirectorySiteAutoDiscovery
+    val, err := m.GetBackingStore().Get("blockActiveDirectorySiteAutoDiscovery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetBlockAutomaticLogin gets the blockAutomaticLogin property value. Enables or disables Keychain usage.
 func (m *KerberosSingleSignOnExtension) GetBlockAutomaticLogin()(*bool) {
-    return m.blockAutomaticLogin
+    val, err := m.GetBackingStore().Get("blockAutomaticLogin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetCacheName gets the cacheName property value. Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.
 func (m *KerberosSingleSignOnExtension) GetCacheName()(*string) {
-    return m.cacheName
+    val, err := m.GetBackingStore().Get("cacheName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCredentialBundleIdAccessControlList gets the credentialBundleIdAccessControlList property value. Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.
 func (m *KerberosSingleSignOnExtension) GetCredentialBundleIdAccessControlList()([]string) {
-    return m.credentialBundleIdAccessControlList
+    val, err := m.GetBackingStore().Get("credentialBundleIdAccessControlList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDomainRealms gets the domainRealms property value. Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
 func (m *KerberosSingleSignOnExtension) GetDomainRealms()([]string) {
-    return m.domainRealms
+    val, err := m.GetBackingStore().Get("domainRealms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDomains gets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *KerberosSingleSignOnExtension) GetDomains()([]string) {
-    return m.domains
+    val, err := m.GetBackingStore().Get("domains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *KerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -320,59 +327,157 @@ func (m *KerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(
 }
 // GetIsDefaultRealm gets the isDefaultRealm property value. When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
 func (m *KerberosSingleSignOnExtension) GetIsDefaultRealm()(*bool) {
-    return m.isDefaultRealm
+    val, err := m.GetBackingStore().Get("isDefaultRealm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordBlockModification gets the passwordBlockModification property value. Enables or disables password changes.
 func (m *KerberosSingleSignOnExtension) GetPasswordBlockModification()(*bool) {
-    return m.passwordBlockModification
+    val, err := m.GetBackingStore().Get("passwordBlockModification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordChangeUrl gets the passwordChangeUrl property value. Gets or sets the URL that the user will be sent to when they initiate a password change.
 func (m *KerberosSingleSignOnExtension) GetPasswordChangeUrl()(*string) {
-    return m.passwordChangeUrl
+    val, err := m.GetBackingStore().Get("passwordChangeUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasswordEnableLocalSync gets the passwordEnableLocalSync property value. Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
 func (m *KerberosSingleSignOnExtension) GetPasswordEnableLocalSync()(*bool) {
-    return m.passwordEnableLocalSync
+    val, err := m.GetBackingStore().Get("passwordEnableLocalSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Overrides the default password expiration in days. For most domains, this value is calculated automatically.
 func (m *KerberosSingleSignOnExtension) GetPasswordExpirationDays()(*int32) {
-    return m.passwordExpirationDays
+    val, err := m.GetBackingStore().Get("passwordExpirationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordExpirationNotificationDays gets the passwordExpirationNotificationDays property value. Gets or sets the number of days until the user is notified that their password will expire (default is 15).
 func (m *KerberosSingleSignOnExtension) GetPasswordExpirationNotificationDays()(*int32) {
-    return m.passwordExpirationNotificationDays
+    val, err := m.GetBackingStore().Get("passwordExpirationNotificationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumAgeDays gets the passwordMinimumAgeDays property value. Gets or sets the minimum number of days until a user can change their password again.
 func (m *KerberosSingleSignOnExtension) GetPasswordMinimumAgeDays()(*int32) {
-    return m.passwordMinimumAgeDays
+    val, err := m.GetBackingStore().Get("passwordMinimumAgeDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Gets or sets the minimum length of a password.
 func (m *KerberosSingleSignOnExtension) GetPasswordMinimumLength()(*int32) {
-    return m.passwordMinimumLength
+    val, err := m.GetBackingStore().Get("passwordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Gets or sets the number of previous passwords to block.
 func (m *KerberosSingleSignOnExtension) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    return m.passwordPreviousPasswordBlockCount
+    val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordRequireActiveDirectoryComplexity gets the passwordRequireActiveDirectoryComplexity property value. Enables or disables whether passwords must meet Active Directory's complexity requirements.
 func (m *KerberosSingleSignOnExtension) GetPasswordRequireActiveDirectoryComplexity()(*bool) {
-    return m.passwordRequireActiveDirectoryComplexity
+    val, err := m.GetBackingStore().Get("passwordRequireActiveDirectoryComplexity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordRequirementsDescription gets the passwordRequirementsDescription property value. Gets or sets a description of the password complexity requirements.
 func (m *KerberosSingleSignOnExtension) GetPasswordRequirementsDescription()(*string) {
-    return m.passwordRequirementsDescription
+    val, err := m.GetBackingStore().Get("passwordRequirementsDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *KerberosSingleSignOnExtension) GetRealm()(*string) {
-    return m.realm
+    val, err := m.GetBackingStore().Get("realm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequireUserPresence gets the requireUserPresence property value. Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
 func (m *KerberosSingleSignOnExtension) GetRequireUserPresence()(*bool) {
-    return m.requireUserPresence
+    val, err := m.GetBackingStore().Get("requireUserPresence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
 func (m *KerberosSingleSignOnExtension) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *KerberosSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -510,85 +615,195 @@ func (m *KerberosSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689638
 }
 // SetActiveDirectorySiteCode sets the activeDirectorySiteCode property value. Gets or sets the Active Directory site.
 func (m *KerberosSingleSignOnExtension) SetActiveDirectorySiteCode(value *string)() {
-    m.activeDirectorySiteCode = value
+    err := m.GetBackingStore().Set("activeDirectorySiteCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockActiveDirectorySiteAutoDiscovery sets the blockActiveDirectorySiteAutoDiscovery property value. Enables or disables whether the Kerberos extension can automatically determine its site name.
 func (m *KerberosSingleSignOnExtension) SetBlockActiveDirectorySiteAutoDiscovery(value *bool)() {
-    m.blockActiveDirectorySiteAutoDiscovery = value
+    err := m.GetBackingStore().Set("blockActiveDirectorySiteAutoDiscovery", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBlockAutomaticLogin sets the blockAutomaticLogin property value. Enables or disables Keychain usage.
 func (m *KerberosSingleSignOnExtension) SetBlockAutomaticLogin(value *bool)() {
-    m.blockAutomaticLogin = value
+    err := m.GetBackingStore().Set("blockAutomaticLogin", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCacheName sets the cacheName property value. Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.
 func (m *KerberosSingleSignOnExtension) SetCacheName(value *string)() {
-    m.cacheName = value
+    err := m.GetBackingStore().Set("cacheName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCredentialBundleIdAccessControlList sets the credentialBundleIdAccessControlList property value. Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.
 func (m *KerberosSingleSignOnExtension) SetCredentialBundleIdAccessControlList(value []string)() {
-    m.credentialBundleIdAccessControlList = value
+    err := m.GetBackingStore().Set("credentialBundleIdAccessControlList", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomainRealms sets the domainRealms property value. Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
 func (m *KerberosSingleSignOnExtension) SetDomainRealms(value []string)() {
-    m.domainRealms = value
+    err := m.GetBackingStore().Set("domainRealms", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomains sets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *KerberosSingleSignOnExtension) SetDomains(value []string)() {
-    m.domains = value
+    err := m.GetBackingStore().Set("domains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefaultRealm sets the isDefaultRealm property value. When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
 func (m *KerberosSingleSignOnExtension) SetIsDefaultRealm(value *bool)() {
-    m.isDefaultRealm = value
+    err := m.GetBackingStore().Set("isDefaultRealm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockModification sets the passwordBlockModification property value. Enables or disables password changes.
 func (m *KerberosSingleSignOnExtension) SetPasswordBlockModification(value *bool)() {
-    m.passwordBlockModification = value
+    err := m.GetBackingStore().Set("passwordBlockModification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordChangeUrl sets the passwordChangeUrl property value. Gets or sets the URL that the user will be sent to when they initiate a password change.
 func (m *KerberosSingleSignOnExtension) SetPasswordChangeUrl(value *string)() {
-    m.passwordChangeUrl = value
+    err := m.GetBackingStore().Set("passwordChangeUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordEnableLocalSync sets the passwordEnableLocalSync property value. Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
 func (m *KerberosSingleSignOnExtension) SetPasswordEnableLocalSync(value *bool)() {
-    m.passwordEnableLocalSync = value
+    err := m.GetBackingStore().Set("passwordEnableLocalSync", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Overrides the default password expiration in days. For most domains, this value is calculated automatically.
 func (m *KerberosSingleSignOnExtension) SetPasswordExpirationDays(value *int32)() {
-    m.passwordExpirationDays = value
+    err := m.GetBackingStore().Set("passwordExpirationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordExpirationNotificationDays sets the passwordExpirationNotificationDays property value. Gets or sets the number of days until the user is notified that their password will expire (default is 15).
 func (m *KerberosSingleSignOnExtension) SetPasswordExpirationNotificationDays(value *int32)() {
-    m.passwordExpirationNotificationDays = value
+    err := m.GetBackingStore().Set("passwordExpirationNotificationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumAgeDays sets the passwordMinimumAgeDays property value. Gets or sets the minimum number of days until a user can change their password again.
 func (m *KerberosSingleSignOnExtension) SetPasswordMinimumAgeDays(value *int32)() {
-    m.passwordMinimumAgeDays = value
+    err := m.GetBackingStore().Set("passwordMinimumAgeDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Gets or sets the minimum length of a password.
 func (m *KerberosSingleSignOnExtension) SetPasswordMinimumLength(value *int32)() {
-    m.passwordMinimumLength = value
+    err := m.GetBackingStore().Set("passwordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Gets or sets the number of previous passwords to block.
 func (m *KerberosSingleSignOnExtension) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    m.passwordPreviousPasswordBlockCount = value
+    err := m.GetBackingStore().Set("passwordPreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequireActiveDirectoryComplexity sets the passwordRequireActiveDirectoryComplexity property value. Enables or disables whether passwords must meet Active Directory's complexity requirements.
 func (m *KerberosSingleSignOnExtension) SetPasswordRequireActiveDirectoryComplexity(value *bool)() {
-    m.passwordRequireActiveDirectoryComplexity = value
+    err := m.GetBackingStore().Set("passwordRequireActiveDirectoryComplexity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequirementsDescription sets the passwordRequirementsDescription property value. Gets or sets a description of the password complexity requirements.
 func (m *KerberosSingleSignOnExtension) SetPasswordRequirementsDescription(value *string)() {
-    m.passwordRequirementsDescription = value
+    err := m.GetBackingStore().Set("passwordRequirementsDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealm sets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *KerberosSingleSignOnExtension) SetRealm(value *string)() {
-    m.realm = value
+    err := m.GetBackingStore().Set("realm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequireUserPresence sets the requireUserPresence property value. Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
 func (m *KerberosSingleSignOnExtension) SetRequireUserPresence(value *bool)() {
-    m.requireUserPresence = value
+    err := m.GetBackingStore().Set("requireUserPresence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
 func (m *KerberosSingleSignOnExtension) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// KerberosSingleSignOnExtensionable 
+type KerberosSingleSignOnExtensionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SingleSignOnExtensionable
+    GetActiveDirectorySiteCode()(*string)
+    GetBlockActiveDirectorySiteAutoDiscovery()(*bool)
+    GetBlockAutomaticLogin()(*bool)
+    GetCacheName()(*string)
+    GetCredentialBundleIdAccessControlList()([]string)
+    GetDomainRealms()([]string)
+    GetDomains()([]string)
+    GetIsDefaultRealm()(*bool)
+    GetPasswordBlockModification()(*bool)
+    GetPasswordChangeUrl()(*string)
+    GetPasswordEnableLocalSync()(*bool)
+    GetPasswordExpirationDays()(*int32)
+    GetPasswordExpirationNotificationDays()(*int32)
+    GetPasswordMinimumAgeDays()(*int32)
+    GetPasswordMinimumLength()(*int32)
+    GetPasswordPreviousPasswordBlockCount()(*int32)
+    GetPasswordRequireActiveDirectoryComplexity()(*bool)
+    GetPasswordRequirementsDescription()(*string)
+    GetRealm()(*string)
+    GetRequireUserPresence()(*bool)
+    GetUserPrincipalName()(*string)
+    SetActiveDirectorySiteCode(value *string)()
+    SetBlockActiveDirectorySiteAutoDiscovery(value *bool)()
+    SetBlockAutomaticLogin(value *bool)()
+    SetCacheName(value *string)()
+    SetCredentialBundleIdAccessControlList(value []string)()
+    SetDomainRealms(value []string)()
+    SetDomains(value []string)()
+    SetIsDefaultRealm(value *bool)()
+    SetPasswordBlockModification(value *bool)()
+    SetPasswordChangeUrl(value *string)()
+    SetPasswordEnableLocalSync(value *bool)()
+    SetPasswordExpirationDays(value *int32)()
+    SetPasswordExpirationNotificationDays(value *int32)()
+    SetPasswordMinimumAgeDays(value *int32)()
+    SetPasswordMinimumLength(value *int32)()
+    SetPasswordPreviousPasswordBlockCount(value *int32)()
+    SetPasswordRequireActiveDirectoryComplexity(value *bool)()
+    SetPasswordRequirementsDescription(value *string)()
+    SetRealm(value *string)()
+    SetRequireUserPresence(value *bool)()
+    SetUserPrincipalName(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // MobileAppIntentAndStateCollectionResponse 
 type MobileAppIntentAndStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppIntentAndStateable
 }
 // NewMobileAppIntentAndStateCollectionResponse instantiates a new MobileAppIntentAndStateCollectionResponse and sets the default values.
 func NewMobileAppIntentAndStateCollectionResponse()(*MobileAppIntentAndStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppIntentAndStateCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppIntentAndStateCollectionResponse) GetValue()([]MobileAppIntentAndStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppIntentAndStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppIntentAndStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppIntentAndStateCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppIntentAndStateCollectionResponse) SetValue(value []MobileAppIntentAndStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppIntentAndStateCollectionResponseable 
+type MobileAppIntentAndStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppIntentAndStateable)
+    SetValue(value []MobileAppIntentAndStateable)()
 }

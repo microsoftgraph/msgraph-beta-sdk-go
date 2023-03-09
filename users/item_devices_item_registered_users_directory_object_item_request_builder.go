@@ -41,8 +41,8 @@ func NewItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -50,10 +50,6 @@ func NewItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder(rawUrl s
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) Endpoint()(*ItemDevicesItemRegisteredUsersItemEndpointRequestBuilder) {
-    return NewItemDevicesItemRegisteredUsersItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -74,9 +70,17 @@ func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) ServicePrincipal()(*ItemDevicesItemRegisteredUsersItemServicePrincipalRequestBuilder) {
-    return NewItemDevicesItemRegisteredUsersItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemDevicesItemRegisteredUsersItemGraphEndpointRequestBuilder) {
+    return NewItemDevicesItemRegisteredUsersItemGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemDevicesItemRegisteredUsersItemGraphServicePrincipalRequestBuilder) {
+    return NewItemDevicesItemRegisteredUsersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GraphUser casts the previous resource to user.
+func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemDevicesItemRegisteredUsersItemGraphUserRequestBuilder) {
+    return NewItemDevicesItemRegisteredUsersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -93,8 +97,4 @@ func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) ToGetR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) User()(*ItemDevicesItemRegisteredUsersItemUserRequestBuilder) {
-    return NewItemDevicesItemRegisteredUsersItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

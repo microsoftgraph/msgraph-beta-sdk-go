@@ -7,14 +7,6 @@ import (
 // DeviceManagementConfigurationSimpleSettingDefinition 
 type DeviceManagementConfigurationSimpleSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
-    // Default setting value for this setting
-    defaultValue DeviceManagementConfigurationSettingValueable
-    // list of child settings that depend on this setting
-    dependedOnBy []DeviceManagementConfigurationSettingDependedOnByable
-    // list of parent settings this setting is dependent on
-    dependentOn []DeviceManagementConfigurationDependentOnable
-    // Definition of the value for this setting
-    valueDefinition DeviceManagementConfigurationSettingValueDefinitionable
 }
 // NewDeviceManagementConfigurationSimpleSettingDefinition instantiates a new DeviceManagementConfigurationSimpleSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingDefinition()(*DeviceManagementConfigurationSimpleSettingDefinition) {
@@ -47,15 +39,36 @@ func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminator
 }
 // GetDefaultValue gets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()(DeviceManagementConfigurationSettingValueable) {
-    return m.defaultValue
+    val, err := m.GetBackingStore().Get("defaultValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationSettingValueable)
+    }
+    return nil
 }
 // GetDependedOnBy gets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
-    return m.dependedOnBy
+    val, err := m.GetBackingStore().Get("dependedOnBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationSettingDependedOnByable)
+    }
+    return nil
 }
 // GetDependentOn gets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
-    return m.dependentOn
+    val, err := m.GetBackingStore().Get("dependentOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementConfigurationDependentOnable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,7 +125,14 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
 }
 // GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable) {
-    return m.valueDefinition
+    val, err := m.GetBackingStore().Get("valueDefinition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementConfigurationSettingValueDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,17 +176,42 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
 }
 // SetDefaultValue sets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDefaultValue(value DeviceManagementConfigurationSettingValueable)() {
-    m.defaultValue = value
+    err := m.GetBackingStore().Set("defaultValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependedOnBy sets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
-    m.dependedOnBy = value
+    err := m.GetBackingStore().Set("dependedOnBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDependentOn sets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
-    m.dependentOn = value
+    err := m.GetBackingStore().Set("dependentOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetValueDefinition(value DeviceManagementConfigurationSettingValueDefinitionable)() {
-    m.valueDefinition = value
+    err := m.GetBackingStore().Set("valueDefinition", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementConfigurationSimpleSettingDefinitionable 
+type DeviceManagementConfigurationSimpleSettingDefinitionable interface {
+    DeviceManagementConfigurationSettingDefinitionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultValue()(DeviceManagementConfigurationSettingValueable)
+    GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable)
+    GetDependentOn()([]DeviceManagementConfigurationDependentOnable)
+    GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable)
+    SetDefaultValue(value DeviceManagementConfigurationSettingValueable)()
+    SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)()
+    SetDependentOn(value []DeviceManagementConfigurationDependentOnable)()
+    SetValueDefinition(value DeviceManagementConfigurationSettingValueDefinitionable)()
 }

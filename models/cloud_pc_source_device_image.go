@@ -2,28 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CloudPcSourceDeviceImage 
 type CloudPcSourceDeviceImage struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The display name for the source image.
-    displayName *string
-    // The ID of the source image.
-    id *string
-    // The OdataType property
-    odataType *string
-    // The display name of subscription that hosts the source image.
-    subscriptionDisplayName *string
-    // The ID of subscription that hosts the source image.
-    subscriptionId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCloudPcSourceDeviceImage instantiates a new cloudPcSourceDeviceImage and sets the default values.
 func NewCloudPcSourceDeviceImage()(*CloudPcSourceDeviceImage) {
     m := &CloudPcSourceDeviceImage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcSourceDeviceImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,11 +24,30 @@ func CreateCloudPcSourceDeviceImageFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcSourceDeviceImage) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CloudPcSourceDeviceImage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name for the source image.
 func (m *CloudPcSourceDeviceImage) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,19 +106,47 @@ func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetId gets the id property value. The ID of the source image.
 func (m *CloudPcSourceDeviceImage) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcSourceDeviceImage) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubscriptionDisplayName gets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
-    return m.subscriptionDisplayName
+    val, err := m.GetBackingStore().Get("subscriptionDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionId()(*string) {
-    return m.subscriptionId
+    val, err := m.GetBackingStore().Get("subscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcSourceDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *CloudPcSourceDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcSourceDeviceImage) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CloudPcSourceDeviceImage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDisplayName sets the displayName property value. The display name for the source image.
 func (m *CloudPcSourceDeviceImage) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetId sets the id property value. The ID of the source image.
 func (m *CloudPcSourceDeviceImage) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcSourceDeviceImage) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubscriptionDisplayName sets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionDisplayName(value *string)() {
-    m.subscriptionDisplayName = value
+    err := m.GetBackingStore().Set("subscriptionDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubscriptionId sets the subscriptionId property value. The ID of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionId(value *string)() {
-    m.subscriptionId = value
+    err := m.GetBackingStore().Set("subscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcSourceDeviceImageable 
+type CloudPcSourceDeviceImageable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDisplayName()(*string)
+    GetId()(*string)
+    GetOdataType()(*string)
+    GetSubscriptionDisplayName()(*string)
+    GetSubscriptionId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDisplayName(value *string)()
+    SetId(value *string)()
+    SetOdataType(value *string)()
+    SetSubscriptionDisplayName(value *string)()
+    SetSubscriptionId(value *string)()
 }

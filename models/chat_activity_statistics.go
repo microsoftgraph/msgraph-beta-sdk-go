@@ -7,16 +7,14 @@ import (
 // ChatActivityStatistics 
 type ChatActivityStatistics struct {
     ActivityStatistics
-    // Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
-    afterHours *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewChatActivityStatistics instantiates a new ChatActivityStatistics and sets the default values.
 func NewChatActivityStatistics()(*ChatActivityStatistics) {
     m := &ChatActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
     }
-    odataTypeValue := "#microsoft.graph.chatActivityStatistics";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.chatActivityStatistics"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateChatActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +23,14 @@ func CreateChatActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAfterHours gets the afterHours property value. Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *ChatActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.afterHours
+    val, err := m.GetBackingStore().Get("afterHours")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *ChatActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAfterHours sets the afterHours property value. Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *ChatActivityStatistics) SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.afterHours = value
+    err := m.GetBackingStore().Set("afterHours", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChatActivityStatisticsable 
+type ChatActivityStatisticsable interface {
+    ActivityStatisticsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
 }

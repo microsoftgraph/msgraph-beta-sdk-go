@@ -7,10 +7,6 @@ import (
 // MeetingRegistrationBase 
 type MeetingRegistrationBase struct {
     Entity
-    // Specifies who can register for the meeting.
-    allowedRegistrant *MeetingAudience
-    // Registrants of the online meeting.
-    registrants []MeetingRegistrantBaseable
 }
 // NewMeetingRegistrationBase instantiates a new meetingRegistrationBase and sets the default values.
 func NewMeetingRegistrationBase()(*MeetingRegistrationBase) {
@@ -45,7 +41,14 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAllowedRegistrant gets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
-    return m.allowedRegistrant
+    val, err := m.GetBackingStore().Get("allowedRegistrant")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MeetingAudience)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,7 +81,14 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetRegistrants gets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistrationBase) GetRegistrants()([]MeetingRegistrantBaseable) {
-    return m.registrants
+    val, err := m.GetBackingStore().Get("registrants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MeetingRegistrantBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,9 +117,24 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)() {
-    m.allowedRegistrant = value
+    err := m.GetBackingStore().Set("allowedRegistrant", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistrants sets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseable)() {
-    m.registrants = value
+    err := m.GetBackingStore().Set("registrants", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingRegistrationBaseable 
+type MeetingRegistrationBaseable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedRegistrant()(*MeetingAudience)
+    GetRegistrants()([]MeetingRegistrantBaseable)
+    SetAllowedRegistrant(value *MeetingAudience)()
+    SetRegistrants(value []MeetingRegistrantBaseable)()
 }

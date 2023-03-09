@@ -8,24 +8,6 @@ import (
 // ManagedDeviceComplianceTrend 
 type ManagedDeviceComplianceTrend struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The number of devices with a compliant status. Required. Read-only.
-    compliantDeviceCount *int32
-    // The number of devices manged by Configuration Manager. Required. Read-only.
-    configManagerDeviceCount *int32
-    // The date and time compliance snapshot was performed. Required. Read-only.
-    countDateTime *string
-    // The number of devices with an error status. Required. Read-only.
-    errorDeviceCount *int32
-    // The number of devices that are in a grace period status. Required. Read-only.
-    inGracePeriodDeviceCount *int32
-    // The number of devices that are in a non-compliant status. Required. Read-only.
-    noncompliantDeviceCount *int32
-    // The display name for the managed tenant. Optional. Read-only.
-    tenantDisplayName *string
-    // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-    tenantId *string
-    // The number of devices in an unknown status. Required. Read-only.
-    unknownDeviceCount *int32
 }
 // NewManagedDeviceComplianceTrend instantiates a new managedDeviceComplianceTrend and sets the default values.
 func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
@@ -40,19 +22,47 @@ func CreateManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode i878a80d
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
-    return m.compliantDeviceCount
+    val, err := m.GetBackingStore().Get("compliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConfigManagerDeviceCount gets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetConfigManagerDeviceCount()(*int32) {
-    return m.configManagerDeviceCount
+    val, err := m.GetBackingStore().Get("configManagerDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetCountDateTime gets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetCountDateTime()(*string) {
-    return m.countDateTime
+    val, err := m.GetBackingStore().Get("countDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
-    return m.errorDeviceCount
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,23 +161,58 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
 }
 // GetInGracePeriodDeviceCount gets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
-    return m.inGracePeriodDeviceCount
+    val, err := m.GetBackingStore().Get("inGracePeriodDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNoncompliantDeviceCount gets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
-    return m.noncompliantDeviceCount
+    val, err := m.GetBackingStore().Get("noncompliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
-    return m.tenantDisplayName
+    val, err := m.GetBackingStore().Get("tenantDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetUnknownDeviceCount()(*int32) {
-    return m.unknownDeviceCount
+    val, err := m.GetBackingStore().Get("unknownDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceComplianceTrend) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,37 +278,87 @@ func (m *ManagedDeviceComplianceTrend) Serialize(writer i878a80d2330e89d26896388
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    err := m.GetBackingStore().Set("compliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigManagerDeviceCount sets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetConfigManagerDeviceCount(value *int32)() {
-    m.configManagerDeviceCount = value
+    err := m.GetBackingStore().Set("configManagerDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCountDateTime sets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCountDateTime(value *string)() {
-    m.countDateTime = value
+    err := m.GetBackingStore().Set("countDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInGracePeriodDeviceCount sets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetInGracePeriodDeviceCount(value *int32)() {
-    m.inGracePeriodDeviceCount = value
+    err := m.GetBackingStore().Set("inGracePeriodDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNoncompliantDeviceCount sets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetNoncompliantDeviceCount(value *int32)() {
-    m.noncompliantDeviceCount = value
+    err := m.GetBackingStore().Set("noncompliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    err := m.GetBackingStore().Set("tenantDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    err := m.GetBackingStore().Set("unknownDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceComplianceTrendable 
+type ManagedDeviceComplianceTrendable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompliantDeviceCount()(*int32)
+    GetConfigManagerDeviceCount()(*int32)
+    GetCountDateTime()(*string)
+    GetErrorDeviceCount()(*int32)
+    GetInGracePeriodDeviceCount()(*int32)
+    GetNoncompliantDeviceCount()(*int32)
+    GetTenantDisplayName()(*string)
+    GetTenantId()(*string)
+    GetUnknownDeviceCount()(*int32)
+    SetCompliantDeviceCount(value *int32)()
+    SetConfigManagerDeviceCount(value *int32)()
+    SetCountDateTime(value *string)()
+    SetErrorDeviceCount(value *int32)()
+    SetInGracePeriodDeviceCount(value *int32)()
+    SetNoncompliantDeviceCount(value *int32)()
+    SetTenantDisplayName(value *string)()
+    SetTenantId(value *string)()
+    SetUnknownDeviceCount(value *int32)()
 }

@@ -7,16 +7,14 @@ import (
 // KeyStringValuePair 
 type KeyStringValuePair struct {
     KeyTypedValuePair
-    // The string value of the key-value pair.
-    value *string
 }
 // NewKeyStringValuePair instantiates a new KeyStringValuePair and sets the default values.
 func NewKeyStringValuePair()(*KeyStringValuePair) {
     m := &KeyStringValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
     }
-    odataTypeValue := "#microsoft.graph.keyStringValuePair";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.keyStringValuePair"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateKeyStringValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +38,14 @@ func (m *KeyStringValuePair) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetValue gets the value property value. The string value of the key-value pair.
 func (m *KeyStringValuePair) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *KeyStringValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *KeyStringValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetValue sets the value property value. The string value of the key-value pair.
 func (m *KeyStringValuePair) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// KeyStringValuePairable 
+type KeyStringValuePairable interface {
+    KeyTypedValuePairable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*string)
+    SetValue(value *string)()
 }

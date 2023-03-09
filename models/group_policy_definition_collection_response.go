@@ -7,8 +7,6 @@ import (
 // GroupPolicyDefinitionCollectionResponse 
 type GroupPolicyDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyDefinitionable
 }
 // NewGroupPolicyDefinitionCollectionResponse instantiates a new GroupPolicyDefinitionCollectionResponse and sets the default values.
 func NewGroupPolicyDefinitionCollectionResponse()(*GroupPolicyDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyDefinitionCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyDefinitionCollectionResponse) GetValue()([]GroupPolicyDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyDefinitionCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyDefinitionCollectionResponse) SetValue(value []GroupPolicyDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyDefinitionCollectionResponseable 
+type GroupPolicyDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyDefinitionable)
+    SetValue(value []GroupPolicyDefinitionable)()
 }

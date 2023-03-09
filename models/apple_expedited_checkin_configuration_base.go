@@ -7,16 +7,14 @@ import (
 // AppleExpeditedCheckinConfigurationBase 
 type AppleExpeditedCheckinConfigurationBase struct {
     DeviceConfiguration
-    // Gets or sets whether to enable expedited device check-ins.
-    enableExpeditedCheckin *bool
 }
 // NewAppleExpeditedCheckinConfigurationBase instantiates a new AppleExpeditedCheckinConfigurationBase and sets the default values.
 func NewAppleExpeditedCheckinConfigurationBase()(*AppleExpeditedCheckinConfigurationBase) {
     m := &AppleExpeditedCheckinConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.appleExpeditedCheckinConfigurationBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appleExpeditedCheckinConfigurationBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +41,14 @@ func CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue(parseNod
 }
 // GetEnableExpeditedCheckin gets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
 func (m *AppleExpeditedCheckinConfigurationBase) GetEnableExpeditedCheckin()(*bool) {
-    return m.enableExpeditedCheckin
+    val, err := m.GetBackingStore().Get("enableExpeditedCheckin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleExpeditedCheckinConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,5 +81,15 @@ func (m *AppleExpeditedCheckinConfigurationBase) Serialize(writer i878a80d2330e8
 }
 // SetEnableExpeditedCheckin sets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
 func (m *AppleExpeditedCheckinConfigurationBase) SetEnableExpeditedCheckin(value *bool)() {
-    m.enableExpeditedCheckin = value
+    err := m.GetBackingStore().Set("enableExpeditedCheckin", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleExpeditedCheckinConfigurationBaseable 
+type AppleExpeditedCheckinConfigurationBaseable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEnableExpeditedCheckin()(*bool)
+    SetEnableExpeditedCheckin(value *bool)()
 }

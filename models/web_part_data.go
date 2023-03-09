@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WebPartData 
 type WebPartData struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
-    audiences []string
-    // Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
-    dataVersion *string
-    // Description of the web part.
-    description *string
-    // The OdataType property
-    odataType *string
-    // Properties bag of the web part.
-    properties Jsonable
-    // Contains collections of data that can be processed by server side services like search index and link fixup.
-    serverProcessedContent ServerProcessedContentable
-    // Title of the web part.
-    title *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWebPartData instantiates a new webPartData and sets the default values.
 func NewWebPartData()(*WebPartData) {
     m := &WebPartData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWebPartDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,52 @@ func CreateWebPartDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPartData) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAudiences gets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
 func (m *WebPartData) GetAudiences()([]string) {
-    return m.audiences
+    val, err := m.GetBackingStore().Get("audiences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WebPartData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDataVersion gets the dataVersion property value. Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
 func (m *WebPartData) GetDataVersion()(*string) {
-    return m.dataVersion
+    val, err := m.GetBackingStore().Get("dataVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the web part.
 func (m *WebPartData) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WebPartData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,19 +152,47 @@ func (m *WebPartData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WebPartData) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProperties gets the properties property value. Properties bag of the web part.
 func (m *WebPartData) GetProperties()(Jsonable) {
-    return m.properties
+    val, err := m.GetBackingStore().Get("properties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // GetServerProcessedContent gets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
 func (m *WebPartData) GetServerProcessedContent()(ServerProcessedContentable) {
-    return m.serverProcessedContent
+    val, err := m.GetBackingStore().Get("serverProcessedContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServerProcessedContentable)
+    }
+    return nil
 }
 // GetTitle gets the title property value. Title of the web part.
 func (m *WebPartData) GetTitle()(*string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WebPartData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -199,33 +248,83 @@ func (m *WebPartData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPartData) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAudiences sets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
 func (m *WebPartData) SetAudiences(value []string)() {
-    m.audiences = value
+    err := m.GetBackingStore().Set("audiences", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WebPartData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDataVersion sets the dataVersion property value. Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
 func (m *WebPartData) SetDataVersion(value *string)() {
-    m.dataVersion = value
+    err := m.GetBackingStore().Set("dataVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the web part.
 func (m *WebPartData) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WebPartData) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperties sets the properties property value. Properties bag of the web part.
 func (m *WebPartData) SetProperties(value Jsonable)() {
-    m.properties = value
+    err := m.GetBackingStore().Set("properties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServerProcessedContent sets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
 func (m *WebPartData) SetServerProcessedContent(value ServerProcessedContentable)() {
-    m.serverProcessedContent = value
+    err := m.GetBackingStore().Set("serverProcessedContent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. Title of the web part.
 func (m *WebPartData) SetTitle(value *string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WebPartDataable 
+type WebPartDataable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAudiences()([]string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDataVersion()(*string)
+    GetDescription()(*string)
+    GetOdataType()(*string)
+    GetProperties()(Jsonable)
+    GetServerProcessedContent()(ServerProcessedContentable)
+    GetTitle()(*string)
+    SetAudiences(value []string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDataVersion(value *string)()
+    SetDescription(value *string)()
+    SetOdataType(value *string)()
+    SetProperties(value Jsonable)()
+    SetServerProcessedContent(value ServerProcessedContentable)()
+    SetTitle(value *string)()
 }

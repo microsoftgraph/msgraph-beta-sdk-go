@@ -8,8 +8,6 @@ import (
 // ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse 
 type ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArchivedPrintJobable
 }
 // NewReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse instantiates a new ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse and sets the default values.
 func NewReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse()(*ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) {
@@ -43,7 +41,14 @@ func (m *ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTi
 }
 // GetValue gets the value property value. The value property
 func (m *ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArchivedPrintJobable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArchivedPrintJobable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTi
 }
 // SetValue sets the value property value. The value property
 func (m *ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArchivedPrintJobable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponseable 
+type ReportsGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArchivedPrintJobable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArchivedPrintJobable)()
 }

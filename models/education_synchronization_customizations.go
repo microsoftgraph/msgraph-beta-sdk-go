@@ -7,26 +7,14 @@ import (
 // EducationSynchronizationCustomizations 
 type EducationSynchronizationCustomizations struct {
     EducationSynchronizationCustomizationsBase
-    // Customizations for School entities.
-    school EducationSynchronizationCustomizationable
-    // Customizations for Section entities.
-    section EducationSynchronizationCustomizationable
-    // Customizations for Student entities.
-    student EducationSynchronizationCustomizationable
-    // Customizations for Student Enrollments.
-    studentEnrollment EducationSynchronizationCustomizationable
-    // Customizations for Teacher entities.
-    teacher EducationSynchronizationCustomizationable
-    // Customizations for Teacher Rosters.
-    teacherRoster EducationSynchronizationCustomizationable
 }
 // NewEducationSynchronizationCustomizations instantiates a new EducationSynchronizationCustomizations and sets the default values.
 func NewEducationSynchronizationCustomizations()(*EducationSynchronizationCustomizations) {
     m := &EducationSynchronizationCustomizations{
         EducationSynchronizationCustomizationsBase: *NewEducationSynchronizationCustomizationsBase(),
     }
-    odataTypeValue := "#microsoft.graph.educationSynchronizationCustomizations";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationSynchronizationCustomizations"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationSynchronizationCustomizationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -100,27 +88,69 @@ func (m *EducationSynchronizationCustomizations) GetFieldDeserializers()(map[str
 }
 // GetSchool gets the school property value. Customizations for School entities.
 func (m *EducationSynchronizationCustomizations) GetSchool()(EducationSynchronizationCustomizationable) {
-    return m.school
+    val, err := m.GetBackingStore().Get("school")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationable)
+    }
+    return nil
 }
 // GetSection gets the section property value. Customizations for Section entities.
 func (m *EducationSynchronizationCustomizations) GetSection()(EducationSynchronizationCustomizationable) {
-    return m.section
+    val, err := m.GetBackingStore().Get("section")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationable)
+    }
+    return nil
 }
 // GetStudent gets the student property value. Customizations for Student entities.
 func (m *EducationSynchronizationCustomizations) GetStudent()(EducationSynchronizationCustomizationable) {
-    return m.student
+    val, err := m.GetBackingStore().Get("student")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationable)
+    }
+    return nil
 }
 // GetStudentEnrollment gets the studentEnrollment property value. Customizations for Student Enrollments.
 func (m *EducationSynchronizationCustomizations) GetStudentEnrollment()(EducationSynchronizationCustomizationable) {
-    return m.studentEnrollment
+    val, err := m.GetBackingStore().Get("studentEnrollment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationable)
+    }
+    return nil
 }
 // GetTeacher gets the teacher property value. Customizations for Teacher entities.
 func (m *EducationSynchronizationCustomizations) GetTeacher()(EducationSynchronizationCustomizationable) {
-    return m.teacher
+    val, err := m.GetBackingStore().Get("teacher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationable)
+    }
+    return nil
 }
 // GetTeacherRoster gets the teacherRoster property value. Customizations for Teacher Rosters.
 func (m *EducationSynchronizationCustomizations) GetTeacherRoster()(EducationSynchronizationCustomizationable) {
-    return m.teacherRoster
+    val, err := m.GetBackingStore().Get("teacherRoster")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationSynchronizationCustomizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationCustomizations) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,25 +198,60 @@ func (m *EducationSynchronizationCustomizations) Serialize(writer i878a80d2330e8
 }
 // SetSchool sets the school property value. Customizations for School entities.
 func (m *EducationSynchronizationCustomizations) SetSchool(value EducationSynchronizationCustomizationable)() {
-    m.school = value
+    err := m.GetBackingStore().Set("school", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSection sets the section property value. Customizations for Section entities.
 func (m *EducationSynchronizationCustomizations) SetSection(value EducationSynchronizationCustomizationable)() {
-    m.section = value
+    err := m.GetBackingStore().Set("section", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStudent sets the student property value. Customizations for Student entities.
 func (m *EducationSynchronizationCustomizations) SetStudent(value EducationSynchronizationCustomizationable)() {
-    m.student = value
+    err := m.GetBackingStore().Set("student", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStudentEnrollment sets the studentEnrollment property value. Customizations for Student Enrollments.
 func (m *EducationSynchronizationCustomizations) SetStudentEnrollment(value EducationSynchronizationCustomizationable)() {
-    m.studentEnrollment = value
+    err := m.GetBackingStore().Set("studentEnrollment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeacher sets the teacher property value. Customizations for Teacher entities.
 func (m *EducationSynchronizationCustomizations) SetTeacher(value EducationSynchronizationCustomizationable)() {
-    m.teacher = value
+    err := m.GetBackingStore().Set("teacher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeacherRoster sets the teacherRoster property value. Customizations for Teacher Rosters.
 func (m *EducationSynchronizationCustomizations) SetTeacherRoster(value EducationSynchronizationCustomizationable)() {
-    m.teacherRoster = value
+    err := m.GetBackingStore().Set("teacherRoster", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationSynchronizationCustomizationsable 
+type EducationSynchronizationCustomizationsable interface {
+    EducationSynchronizationCustomizationsBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSchool()(EducationSynchronizationCustomizationable)
+    GetSection()(EducationSynchronizationCustomizationable)
+    GetStudent()(EducationSynchronizationCustomizationable)
+    GetStudentEnrollment()(EducationSynchronizationCustomizationable)
+    GetTeacher()(EducationSynchronizationCustomizationable)
+    GetTeacherRoster()(EducationSynchronizationCustomizationable)
+    SetSchool(value EducationSynchronizationCustomizationable)()
+    SetSection(value EducationSynchronizationCustomizationable)()
+    SetStudent(value EducationSynchronizationCustomizationable)()
+    SetStudentEnrollment(value EducationSynchronizationCustomizationable)()
+    SetTeacher(value EducationSynchronizationCustomizationable)()
+    SetTeacherRoster(value EducationSynchronizationCustomizationable)()
 }

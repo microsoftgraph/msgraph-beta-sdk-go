@@ -27,7 +27,7 @@ type ConfigManagerCollectionsGetPolicySummaryWithPolicyIdRequestBuilderGetReques
 func NewConfigManagerCollectionsGetPolicySummaryWithPolicyIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, policyId *string)(*ConfigManagerCollectionsGetPolicySummaryWithPolicyIdRequestBuilder) {
     m := &ConfigManagerCollectionsGetPolicySummaryWithPolicyIdRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId='{policyId}')";
+    m.urlTemplate = "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,8 +35,8 @@ func NewConfigManagerCollectionsGetPolicySummaryWithPolicyIdRequestBuilderIntern
     if policyId != nil {
         urlTplParams["policyId"] = *policyId
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConfigManagerCollectionsGetPolicySummaryWithPolicyIdRequestBuilder instantiates a new GetPolicySummaryWithPolicyIdRequestBuilder and sets the default values.

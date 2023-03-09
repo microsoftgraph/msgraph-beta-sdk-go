@@ -8,8 +8,6 @@ import (
 // ManagementActionDeploymentStatusCollectionResponse 
 type ManagementActionDeploymentStatusCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagementActionDeploymentStatusable
 }
 // NewManagementActionDeploymentStatusCollectionResponse instantiates a new ManagementActionDeploymentStatusCollectionResponse and sets the default values.
 func NewManagementActionDeploymentStatusCollectionResponse()(*ManagementActionDeploymentStatusCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *ManagementActionDeploymentStatusCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *ManagementActionDeploymentStatusCollectionResponse) GetValue()([]ManagementActionDeploymentStatusable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagementActionDeploymentStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagementActionDeploymentStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ManagementActionDeploymentStatusCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *ManagementActionDeploymentStatusCollectionResponse) SetValue(value []ManagementActionDeploymentStatusable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagementActionDeploymentStatusCollectionResponseable 
+type ManagementActionDeploymentStatusCollectionResponseable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagementActionDeploymentStatusable)
+    SetValue(value []ManagementActionDeploymentStatusable)()
 }

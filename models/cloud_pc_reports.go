@@ -7,8 +7,6 @@ import (
 // CloudPcReports 
 type CloudPcReports struct {
     Entity
-    // The export jobs created for downloading reports.
-    exportJobs []CloudPcExportJobable
 }
 // NewCloudPcReports instantiates a new CloudPcReports and sets the default values.
 func NewCloudPcReports()(*CloudPcReports) {
@@ -23,7 +21,14 @@ func CreateCloudPcReportsFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetExportJobs gets the exportJobs property value. The export jobs created for downloading reports.
 func (m *CloudPcReports) GetExportJobs()([]CloudPcExportJobable) {
-    return m.exportJobs
+    val, err := m.GetBackingStore().Get("exportJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcExportJobable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcReports) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,5 +69,15 @@ func (m *CloudPcReports) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetExportJobs sets the exportJobs property value. The export jobs created for downloading reports.
 func (m *CloudPcReports) SetExportJobs(value []CloudPcExportJobable)() {
-    m.exportJobs = value
+    err := m.GetBackingStore().Set("exportJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcReportsable 
+type CloudPcReportsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExportJobs()([]CloudPcExportJobable)
+    SetExportJobs(value []CloudPcExportJobable)()
 }

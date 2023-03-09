@@ -22,8 +22,8 @@ func NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroup
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroup
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Ref()(*ItemAgentGroupsItemPublishedResourcesItemAgentGroupsItemRefRequestBuilder) {
-    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -2,26 +2,20 @@ package communications
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PresencesItemSetPresencePostRequestBody 
 type PresencesItemSetPresencePostRequestBody struct {
-    // The activity property
-    activity *string
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The availability property
-    availability *string
-    // The expirationDuration property
-    expirationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The sessionId property
-    sessionId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPresencesItemSetPresencePostRequestBody instantiates a new PresencesItemSetPresencePostRequestBody and sets the default values.
 func NewPresencesItemSetPresencePostRequestBody()(*PresencesItemSetPresencePostRequestBody) {
     m := &PresencesItemSetPresencePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePresencesItemSetPresencePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,19 +24,52 @@ func CreatePresencesItemSetPresencePostRequestBodyFromDiscriminatorValue(parseNo
 }
 // GetActivity gets the activity property value. The activity property
 func (m *PresencesItemSetPresencePostRequestBody) GetActivity()(*string) {
-    return m.activity
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PresencesItemSetPresencePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAvailability gets the availability property value. The availability property
 func (m *PresencesItemSetPresencePostRequestBody) GetAvailability()(*string) {
-    return m.availability
+    val, err := m.GetBackingStore().Get("availability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PresencesItemSetPresencePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetExpirationDuration gets the expirationDuration property value. The expirationDuration property
 func (m *PresencesItemSetPresencePostRequestBody) GetExpirationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.expirationDuration
+    val, err := m.GetBackingStore().Get("expirationDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PresencesItemSetPresencePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,7 +118,14 @@ func (m *PresencesItemSetPresencePostRequestBody) GetFieldDeserializers()(map[st
 }
 // GetSessionId gets the sessionId property value. The sessionId property
 func (m *PresencesItemSetPresencePostRequestBody) GetSessionId()(*string) {
-    return m.sessionId
+    val, err := m.GetBackingStore().Get("sessionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PresencesItemSetPresencePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *PresencesItemSetPresencePostRequestBody) Serialize(writer i878a80d2330e
 }
 // SetActivity sets the activity property value. The activity property
 func (m *PresencesItemSetPresencePostRequestBody) SetActivity(value *string)() {
-    m.activity = value
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PresencesItemSetPresencePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAvailability sets the availability property value. The availability property
 func (m *PresencesItemSetPresencePostRequestBody) SetAvailability(value *string)() {
-    m.availability = value
+    err := m.GetBackingStore().Set("availability", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PresencesItemSetPresencePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetExpirationDuration sets the expirationDuration property value. The expirationDuration property
 func (m *PresencesItemSetPresencePostRequestBody) SetExpirationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.expirationDuration = value
+    err := m.GetBackingStore().Set("expirationDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSessionId sets the sessionId property value. The sessionId property
 func (m *PresencesItemSetPresencePostRequestBody) SetSessionId(value *string)() {
-    m.sessionId = value
+    err := m.GetBackingStore().Set("sessionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PresencesItemSetPresencePostRequestBodyable 
+type PresencesItemSetPresencePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivity()(*string)
+    GetAvailability()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetExpirationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetSessionId()(*string)
+    SetActivity(value *string)()
+    SetAvailability(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetExpirationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetSessionId(value *string)()
 }

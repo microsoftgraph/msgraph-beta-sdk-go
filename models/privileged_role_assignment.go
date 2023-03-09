@@ -8,18 +8,6 @@ import (
 // PrivilegedRoleAssignment 
 type PrivilegedRoleAssignment struct {
     Entity
-    // The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // true if the role assignment is activated. false if the role assignment is deactivated.
-    isElevated *bool
-    // Result message set by the service.
-    resultMessage *string
-    // Role identifier. In GUID string format.
-    roleId *string
-    // Read-only. Nullable. The associated role information.
-    roleInfo PrivilegedRoleable
-    // User identifier. In GUID string format.
-    userId *string
 }
 // NewPrivilegedRoleAssignment instantiates a new privilegedRoleAssignment and sets the default values.
 func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
@@ -34,7 +22,14 @@ func CreatePrivilegedRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
 func (m *PrivilegedRoleAssignment) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.expirationDateTime
+    val, err := m.GetBackingStore().Get("expirationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,23 +98,58 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsElevated gets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
 func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
-    return m.isElevated
+    val, err := m.GetBackingStore().Get("isElevated")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetResultMessage gets the resultMessage property value. Result message set by the service.
 func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
-    return m.resultMessage
+    val, err := m.GetBackingStore().Get("resultMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleId gets the roleId property value. Role identifier. In GUID string format.
 func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
-    return m.roleId
+    val, err := m.GetBackingStore().Get("roleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleInfo gets the roleInfo property value. Read-only. Nullable. The associated role information.
 func (m *PrivilegedRoleAssignment) GetRoleInfo()(PrivilegedRoleable) {
-    return m.roleInfo
+    val, err := m.GetBackingStore().Get("roleInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedRoleable)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. User identifier. In GUID string format.
 func (m *PrivilegedRoleAssignment) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +197,60 @@ func (m *PrivilegedRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
 func (m *PrivilegedRoleAssignment) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    err := m.GetBackingStore().Set("expirationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsElevated sets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
 func (m *PrivilegedRoleAssignment) SetIsElevated(value *bool)() {
-    m.isElevated = value
+    err := m.GetBackingStore().Set("isElevated", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResultMessage sets the resultMessage property value. Result message set by the service.
 func (m *PrivilegedRoleAssignment) SetResultMessage(value *string)() {
-    m.resultMessage = value
+    err := m.GetBackingStore().Set("resultMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleId sets the roleId property value. Role identifier. In GUID string format.
 func (m *PrivilegedRoleAssignment) SetRoleId(value *string)() {
-    m.roleId = value
+    err := m.GetBackingStore().Set("roleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleInfo sets the roleInfo property value. Read-only. Nullable. The associated role information.
 func (m *PrivilegedRoleAssignment) SetRoleInfo(value PrivilegedRoleable)() {
-    m.roleInfo = value
+    err := m.GetBackingStore().Set("roleInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. User identifier. In GUID string format.
 func (m *PrivilegedRoleAssignment) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrivilegedRoleAssignmentable 
+type PrivilegedRoleAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetIsElevated()(*bool)
+    GetResultMessage()(*string)
+    GetRoleId()(*string)
+    GetRoleInfo()(PrivilegedRoleable)
+    GetUserId()(*string)
+    SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetIsElevated(value *bool)()
+    SetResultMessage(value *string)()
+    SetRoleId(value *string)()
+    SetRoleInfo(value PrivilegedRoleable)()
+    SetUserId(value *string)()
 }

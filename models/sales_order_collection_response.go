@@ -7,8 +7,6 @@ import (
 // SalesOrderCollectionResponse 
 type SalesOrderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SalesOrderable
 }
 // NewSalesOrderCollectionResponse instantiates a new SalesOrderCollectionResponse and sets the default values.
 func NewSalesOrderCollectionResponse()(*SalesOrderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SalesOrderCollectionResponse) GetFieldDeserializers()(map[string]func(i
 }
 // GetValue gets the value property value. The value property
 func (m *SalesOrderCollectionResponse) GetValue()([]SalesOrderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SalesOrderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SalesOrderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SalesOrderCollectionResponse) Serialize(writer i878a80d2330e89d26896388
 }
 // SetValue sets the value property value. The value property
 func (m *SalesOrderCollectionResponse) SetValue(value []SalesOrderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SalesOrderCollectionResponseable 
+type SalesOrderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SalesOrderable)
+    SetValue(value []SalesOrderable)()
 }

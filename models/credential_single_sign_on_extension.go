@@ -7,24 +7,14 @@ import (
 // CredentialSingleSignOnExtension 
 type CredentialSingleSignOnExtension struct {
     SingleSignOnExtension
-    // Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
-    configurations []KeyTypedValuePairable
-    // Gets or sets a list of hosts or domain names for which the app extension performs SSO.
-    domains []string
-    // Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
-    extensionIdentifier *string
-    // Gets or sets the case-sensitive realm name for this profile.
-    realm *string
-    // Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
-    teamIdentifier *string
 }
 // NewCredentialSingleSignOnExtension instantiates a new CredentialSingleSignOnExtension and sets the default values.
 func NewCredentialSingleSignOnExtension()(*CredentialSingleSignOnExtension) {
     m := &CredentialSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
-    odataTypeValue := "#microsoft.graph.credentialSingleSignOnExtension";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.credentialSingleSignOnExtension"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCredentialSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,15 +23,36 @@ func CreateCredentialSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *CredentialSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
-    return m.configurations
+    val, err := m.GetBackingStore().Get("configurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyTypedValuePairable)
+    }
+    return nil
 }
 // GetDomains gets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *CredentialSingleSignOnExtension) GetDomains()([]string) {
-    return m.domains
+    val, err := m.GetBackingStore().Get("domains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *CredentialSingleSignOnExtension) GetExtensionIdentifier()(*string) {
-    return m.extensionIdentifier
+    val, err := m.GetBackingStore().Get("extensionIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,11 +119,25 @@ func (m *CredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]fun
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *CredentialSingleSignOnExtension) GetRealm()(*string) {
-    return m.realm
+    val, err := m.GetBackingStore().Get("realm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *CredentialSingleSignOnExtension) GetTeamIdentifier()(*string) {
-    return m.teamIdentifier
+    val, err := m.GetBackingStore().Get("teamIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CredentialSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -158,21 +183,51 @@ func (m *CredentialSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896
 }
 // SetConfigurations sets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *CredentialSingleSignOnExtension) SetConfigurations(value []KeyTypedValuePairable)() {
-    m.configurations = value
+    err := m.GetBackingStore().Set("configurations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDomains sets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *CredentialSingleSignOnExtension) SetDomains(value []string)() {
-    m.domains = value
+    err := m.GetBackingStore().Set("domains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtensionIdentifier sets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *CredentialSingleSignOnExtension) SetExtensionIdentifier(value *string)() {
-    m.extensionIdentifier = value
+    err := m.GetBackingStore().Set("extensionIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRealm sets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *CredentialSingleSignOnExtension) SetRealm(value *string)() {
-    m.realm = value
+    err := m.GetBackingStore().Set("realm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *CredentialSingleSignOnExtension) SetTeamIdentifier(value *string)() {
-    m.teamIdentifier = value
+    err := m.GetBackingStore().Set("teamIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CredentialSingleSignOnExtensionable 
+type CredentialSingleSignOnExtensionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SingleSignOnExtensionable
+    GetConfigurations()([]KeyTypedValuePairable)
+    GetDomains()([]string)
+    GetExtensionIdentifier()(*string)
+    GetRealm()(*string)
+    GetTeamIdentifier()(*string)
+    SetConfigurations(value []KeyTypedValuePairable)()
+    SetDomains(value []string)()
+    SetExtensionIdentifier(value *string)()
+    SetRealm(value *string)()
+    SetTeamIdentifier(value *string)()
 }

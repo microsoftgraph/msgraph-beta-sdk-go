@@ -7,18 +7,14 @@ import (
 // Windows10ImportedPFXCertificateProfile 
 type Windows10ImportedPFXCertificateProfile struct {
     WindowsCertificateProfileBase
-    // PFX Import Options.
-    intendedPurpose *IntendedPurpose
-    // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
-    managedDeviceCertificateStates []ManagedDeviceCertificateStateable
 }
 // NewWindows10ImportedPFXCertificateProfile instantiates a new Windows10ImportedPFXCertificateProfile and sets the default values.
 func NewWindows10ImportedPFXCertificateProfile()(*Windows10ImportedPFXCertificateProfile) {
     m := &Windows10ImportedPFXCertificateProfile{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odataTypeValue := "#microsoft.graph.windows10ImportedPFXCertificateProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10ImportedPFXCertificateProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10ImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,11 +52,25 @@ func (m *Windows10ImportedPFXCertificateProfile) GetFieldDeserializers()(map[str
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *Windows10ImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
-    return m.intendedPurpose
+    val, err := m.GetBackingStore().Get("intendedPurpose")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IntendedPurpose)
+    }
+    return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows10ImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    return m.managedDeviceCertificateStates
+    val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCertificateStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10ImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,9 +99,24 @@ func (m *Windows10ImportedPFXCertificateProfile) Serialize(writer i878a80d2330e8
 }
 // SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *Windows10ImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
-    m.intendedPurpose = value
+    err := m.GetBackingStore().Set("intendedPurpose", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows10ImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    m.managedDeviceCertificateStates = value
+    err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10ImportedPFXCertificateProfileable 
+type Windows10ImportedPFXCertificateProfileable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsCertificateProfileBaseable
+    GetIntendedPurpose()(*IntendedPurpose)
+    GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    SetIntendedPurpose(value *IntendedPurpose)()
+    SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
 }

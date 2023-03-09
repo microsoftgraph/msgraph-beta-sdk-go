@@ -55,8 +55,8 @@ func NewRiskyUserItemRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRiskyUserItemRequestBuilder instantiates a new RiskyUserItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewRiskyUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from riskyUsers by key (id)
+// Delete delete entity from riskyUsers
 func (m *RiskyUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RiskyUserItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,7 +105,7 @@ func (m *RiskyUserItemRequestBuilder) Get(ctx context.Context, requestConfigurat
 }
 // History provides operations to manage the history property of the microsoft.graph.riskyUser entity.
 func (m *RiskyUserItemRequestBuilder) History()(*ItemHistoryRequestBuilder) {
-    return NewItemHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HistoryById provides operations to manage the history property of the microsoft.graph.riskyUser entity.
 func (m *RiskyUserItemRequestBuilder) HistoryById(id string)(*ItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
@@ -116,9 +116,9 @@ func (m *RiskyUserItemRequestBuilder) HistoryById(id string)(*ItemHistoryRiskyUs
     if id != "" {
         urlTplParams["riskyUserHistoryItem%2Did"] = id
     }
-    return NewItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Patch update entity in riskyUsers by key (id)
+// Patch update entity in riskyUsers
 func (m *RiskyUserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, requestConfiguration *RiskyUserItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *RiskyUserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable), nil
 }
-// ToDeleteRequestInformation delete entity from riskyUsers by key (id)
+// ToDeleteRequestInformation delete entity from riskyUsers
 func (m *RiskyUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RiskyUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -165,14 +165,17 @@ func (m *RiskyUserItemRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in riskyUsers by key (id)
+// ToPatchRequestInformation update entity in riskyUsers
 func (m *RiskyUserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, requestConfiguration *RiskyUserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

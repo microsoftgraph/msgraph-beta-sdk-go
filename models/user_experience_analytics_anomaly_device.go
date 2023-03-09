@@ -8,24 +8,6 @@ import (
 // UserExperienceAnalyticsAnomalyDevice the user experience analytics anomaly entity contains device details.
 type UserExperienceAnalyticsAnomalyDevice struct {
     Entity
-    // The unique identifier of the anomaly.
-    anomalyId *string
-    // Indicates the first occurance date and time for the anomaly on the device.
-    anomalyOnDeviceFirstOccurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the latest occurance date and time for the anomaly on the device.
-    anomalyOnDeviceLatestOccurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The unique identifier of the device.
-    deviceId *string
-    // The manufacturer name of the device.
-    deviceManufacturer *string
-    // The model name of the device.
-    deviceModel *string
-    // The name of the device.
-    deviceName *string
-    // The name of the OS installed on the device.
-    osName *string
-    // The OS version installed on the device.
-    osVersion *string
 }
 // NewUserExperienceAnalyticsAnomalyDevice instantiates a new userExperienceAnalyticsAnomalyDevice and sets the default values.
 func NewUserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDevice) {
@@ -40,31 +22,80 @@ func CreateUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue(parseNode 
 }
 // GetAnomalyId gets the anomalyId property value. The unique identifier of the anomaly.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyId()(*string) {
-    return m.anomalyId
+    val, err := m.GetBackingStore().Get("anomalyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAnomalyOnDeviceFirstOccurrenceDateTime gets the anomalyOnDeviceFirstOccurrenceDateTime property value. Indicates the first occurance date and time for the anomaly on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceFirstOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.anomalyOnDeviceFirstOccurrenceDateTime
+    val, err := m.GetBackingStore().Get("anomalyOnDeviceFirstOccurrenceDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAnomalyOnDeviceLatestOccurrenceDateTime gets the anomalyOnDeviceLatestOccurrenceDateTime property value. Indicates the latest occurance date and time for the anomaly on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceLatestOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.anomalyOnDeviceLatestOccurrenceDateTime
+    val, err := m.GetBackingStore().Get("anomalyOnDeviceLatestOccurrenceDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceManufacturer()(*string) {
-    return m.deviceManufacturer
+    val, err := m.GetBackingStore().Get("deviceManufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceModel gets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceModel()(*string) {
-    return m.deviceModel
+    val, err := m.GetBackingStore().Get("deviceModel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -163,11 +194,25 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[strin
 }
 // GetOsName gets the osName property value. The name of the OS installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetOsName()(*string) {
-    return m.osName
+    val, err := m.GetBackingStore().Get("osName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. The OS version installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAnomalyDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,37 +278,87 @@ func (m *UserExperienceAnalyticsAnomalyDevice) Serialize(writer i878a80d2330e89d
 }
 // SetAnomalyId sets the anomalyId property value. The unique identifier of the anomaly.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetAnomalyId(value *string)() {
-    m.anomalyId = value
+    err := m.GetBackingStore().Set("anomalyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnomalyOnDeviceFirstOccurrenceDateTime sets the anomalyOnDeviceFirstOccurrenceDateTime property value. Indicates the first occurance date and time for the anomaly on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetAnomalyOnDeviceFirstOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.anomalyOnDeviceFirstOccurrenceDateTime = value
+    err := m.GetBackingStore().Set("anomalyOnDeviceFirstOccurrenceDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnomalyOnDeviceLatestOccurrenceDateTime sets the anomalyOnDeviceLatestOccurrenceDateTime property value. Indicates the latest occurance date and time for the anomaly on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetAnomalyOnDeviceLatestOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.anomalyOnDeviceLatestOccurrenceDateTime = value
+    err := m.GetBackingStore().Set("anomalyOnDeviceLatestOccurrenceDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceManufacturer(value *string)() {
-    m.deviceManufacturer = value
+    err := m.GetBackingStore().Set("deviceManufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    err := m.GetBackingStore().Set("deviceModel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsName sets the osName property value. The name of the OS installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetOsName(value *string)() {
-    m.osName = value
+    err := m.GetBackingStore().Set("osName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. The OS version installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsAnomalyDeviceable 
+type UserExperienceAnalyticsAnomalyDeviceable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnomalyId()(*string)
+    GetAnomalyOnDeviceFirstOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAnomalyOnDeviceLatestOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceId()(*string)
+    GetDeviceManufacturer()(*string)
+    GetDeviceModel()(*string)
+    GetDeviceName()(*string)
+    GetOsName()(*string)
+    GetOsVersion()(*string)
+    SetAnomalyId(value *string)()
+    SetAnomalyOnDeviceFirstOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAnomalyOnDeviceLatestOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceId(value *string)()
+    SetDeviceManufacturer(value *string)()
+    SetDeviceModel(value *string)()
+    SetDeviceName(value *string)()
+    SetOsName(value *string)()
+    SetOsVersion(value *string)()
 }

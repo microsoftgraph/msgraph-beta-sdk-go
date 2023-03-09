@@ -7,26 +7,14 @@ import (
 // AndroidLobApp 
 type AndroidLobApp struct {
     MobileLobApp
-    // The Identity Name.
-    identityName *string
-    // The identity version.
-    identityVersion *string
-    // The value for the minimum applicable operating system.
-    minimumSupportedOperatingSystem AndroidMinimumOperatingSystemable
-    // The package identifier.
-    packageId *string
-    // The version code of Android Line of Business (LoB) app.
-    versionCode *string
-    // The version name of Android Line of Business (LoB) app.
-    versionName *string
 }
 // NewAndroidLobApp instantiates a new AndroidLobApp and sets the default values.
 func NewAndroidLobApp()(*AndroidLobApp) {
     m := &AndroidLobApp{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.androidLobApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidLobApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -98,29 +86,71 @@ func (m *AndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIdentityName gets the identityName property value. The Identity Name.
+// GetIdentityName gets the identityName property value. The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) GetIdentityName()(*string) {
-    return m.identityName
+    val, err := m.GetBackingStore().Get("identityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version.
+// GetIdentityVersion gets the identityVersion property value. The identity version. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) GetIdentityVersion()(*string) {
-    return m.identityVersion
+    val, err := m.GetBackingStore().Get("identityVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *AndroidLobApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
-    return m.minimumSupportedOperatingSystem
+    val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidMinimumOperatingSystemable)
+    }
+    return nil
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *AndroidLobApp) GetPackageId()(*string) {
-    return m.packageId
+    val, err := m.GetBackingStore().Get("packageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersionCode gets the versionCode property value. The version code of Android Line of Business (LoB) app.
 func (m *AndroidLobApp) GetVersionCode()(*string) {
-    return m.versionCode
+    val, err := m.GetBackingStore().Get("versionCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersionName gets the versionName property value. The version name of Android Line of Business (LoB) app.
 func (m *AndroidLobApp) GetVersionName()(*string) {
-    return m.versionName
+    val, err := m.GetBackingStore().Get("versionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,27 +196,62 @@ func (m *AndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetIdentityName sets the identityName property value. The Identity Name.
+// SetIdentityName sets the identityName property value. The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) SetIdentityName(value *string)() {
-    m.identityName = value
+    err := m.GetBackingStore().Set("identityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version.
+// SetIdentityVersion sets the identityVersion property value. The identity version. This property is deprecated starting in February 2023 (Release 2302).
 func (m *AndroidLobApp) SetIdentityVersion(value *string)() {
-    m.identityVersion = value
+    err := m.GetBackingStore().Set("identityVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *AndroidLobApp) SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)() {
-    m.minimumSupportedOperatingSystem = value
+    err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *AndroidLobApp) SetPackageId(value *string)() {
-    m.packageId = value
+    err := m.GetBackingStore().Set("packageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionCode sets the versionCode property value. The version code of Android Line of Business (LoB) app.
 func (m *AndroidLobApp) SetVersionCode(value *string)() {
-    m.versionCode = value
+    err := m.GetBackingStore().Set("versionCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionName sets the versionName property value. The version name of Android Line of Business (LoB) app.
 func (m *AndroidLobApp) SetVersionName(value *string)() {
-    m.versionName = value
+    err := m.GetBackingStore().Set("versionName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidLobAppable 
+type AndroidLobAppable interface {
+    MobileLobAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIdentityName()(*string)
+    GetIdentityVersion()(*string)
+    GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable)
+    GetPackageId()(*string)
+    GetVersionCode()(*string)
+    GetVersionName()(*string)
+    SetIdentityName(value *string)()
+    SetIdentityVersion(value *string)()
+    SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)()
+    SetPackageId(value *string)()
+    SetVersionCode(value *string)()
+    SetVersionName(value *string)()
 }

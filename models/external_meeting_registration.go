@@ -13,8 +13,8 @@ func NewExternalMeetingRegistration()(*ExternalMeetingRegistration) {
     m := &ExternalMeetingRegistration{
         MeetingRegistrationBase: *NewMeetingRegistrationBase(),
     }
-    odataTypeValue := "#microsoft.graph.externalMeetingRegistration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.externalMeetingRegistration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateExternalMeetingRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *ExternalMeetingRegistration) Serialize(writer i878a80d2330e89d26896388a
         return err
     }
     return nil
+}
+// ExternalMeetingRegistrationable 
+type ExternalMeetingRegistrationable interface {
+    MeetingRegistrationBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

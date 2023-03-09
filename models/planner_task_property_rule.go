@@ -7,42 +7,14 @@ import (
 // PlannerTaskPropertyRule 
 type PlannerTaskPropertyRule struct {
     PlannerPropertyRule
-    // Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
-    appliedCategories PlannerFieldRulesable
-    // Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.
-    assignments PlannerFieldRulesable
-    // Rules and restrictions for checklist. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, update, check, reorder, block.
-    checkLists PlannerFieldRulesable
-    // Rules and restrictions for deleting the task. Accepted values are allow and block.
-    delete []string
-    // Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
-    dueDate []string
-    // Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
-    move []string
-    // Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
-    notes []string
-    // Rules and restrictions for changing the order of the task. Accepted values are allow and block.
-    order []string
-    // Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
-    percentComplete []string
-    // Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
-    previewType []string
-    // Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
-    priority []string
-    // Rules and restrictions for references. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, block.
-    references PlannerFieldRulesable
-    // Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
-    startDate []string
-    // Rules and restrictions for changing the title of the task. Accepted values are allow and block.
-    title []string
 }
 // NewPlannerTaskPropertyRule instantiates a new PlannerTaskPropertyRule and sets the default values.
 func NewPlannerTaskPropertyRule()(*PlannerTaskPropertyRule) {
     m := &PlannerTaskPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),
     }
-    odataTypeValue := "#microsoft.graph.plannerTaskPropertyRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.plannerTaskPropertyRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerTaskPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,23 +23,58 @@ func CreatePlannerTaskPropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAppliedCategories gets the appliedCategories property value. Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
 func (m *PlannerTaskPropertyRule) GetAppliedCategories()(PlannerFieldRulesable) {
-    return m.appliedCategories
+    val, err := m.GetBackingStore().Get("appliedCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
 }
 // GetAssignments gets the assignments property value. Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.
 func (m *PlannerTaskPropertyRule) GetAssignments()(PlannerFieldRulesable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
 }
 // GetCheckLists gets the checkLists property value. Rules and restrictions for checklist. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, update, check, reorder, block.
 func (m *PlannerTaskPropertyRule) GetCheckLists()(PlannerFieldRulesable) {
-    return m.checkLists
+    val, err := m.GetBackingStore().Get("checkLists")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
 }
 // GetDelete gets the delete property value. Rules and restrictions for deleting the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetDelete()([]string) {
-    return m.delete
+    val, err := m.GetBackingStore().Get("delete")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDueDate gets the dueDate property value. Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetDueDate()([]string) {
-    return m.dueDate
+    val, err := m.GetBackingStore().Get("dueDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -256,39 +263,102 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMove gets the move property value. Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
 func (m *PlannerTaskPropertyRule) GetMove()([]string) {
-    return m.move
+    val, err := m.GetBackingStore().Get("move")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetNotes gets the notes property value. Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetNotes()([]string) {
-    return m.notes
+    val, err := m.GetBackingStore().Get("notes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetOrder gets the order property value. Rules and restrictions for changing the order of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetOrder()([]string) {
-    return m.order
+    val, err := m.GetBackingStore().Get("order")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPercentComplete gets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
 func (m *PlannerTaskPropertyRule) GetPercentComplete()([]string) {
-    return m.percentComplete
+    val, err := m.GetBackingStore().Get("percentComplete")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPreviewType gets the previewType property value. Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetPreviewType()([]string) {
-    return m.previewType
+    val, err := m.GetBackingStore().Get("previewType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetPriority()([]string) {
-    return m.priority
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetReferences gets the references property value. Rules and restrictions for references. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, block.
 func (m *PlannerTaskPropertyRule) GetReferences()(PlannerFieldRulesable) {
-    return m.references
+    val, err := m.GetBackingStore().Get("references")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerFieldRulesable)
+    }
+    return nil
 }
 // GetStartDate gets the startDate property value. Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetStartDate()([]string) {
-    return m.startDate
+    val, err := m.GetBackingStore().Get("startDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetTitle gets the title property value. Rules and restrictions for changing the title of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetTitle()([]string) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -384,57 +454,132 @@ func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAppliedCategories sets the appliedCategories property value. Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
 func (m *PlannerTaskPropertyRule) SetAppliedCategories(value PlannerFieldRulesable)() {
-    m.appliedCategories = value
+    err := m.GetBackingStore().Set("appliedCategories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignments sets the assignments property value. Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.
 func (m *PlannerTaskPropertyRule) SetAssignments(value PlannerFieldRulesable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCheckLists sets the checkLists property value. Rules and restrictions for checklist. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, update, check, reorder, block.
 func (m *PlannerTaskPropertyRule) SetCheckLists(value PlannerFieldRulesable)() {
-    m.checkLists = value
+    err := m.GetBackingStore().Set("checkLists", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDelete sets the delete property value. Rules and restrictions for deleting the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetDelete(value []string)() {
-    m.delete = value
+    err := m.GetBackingStore().Set("delete", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDueDate sets the dueDate property value. Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetDueDate(value []string)() {
-    m.dueDate = value
+    err := m.GetBackingStore().Set("dueDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMove sets the move property value. Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
 func (m *PlannerTaskPropertyRule) SetMove(value []string)() {
-    m.move = value
+    err := m.GetBackingStore().Set("move", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotes sets the notes property value. Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetNotes(value []string)() {
-    m.notes = value
+    err := m.GetBackingStore().Set("notes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrder sets the order property value. Rules and restrictions for changing the order of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetOrder(value []string)() {
-    m.order = value
+    err := m.GetBackingStore().Set("order", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPercentComplete sets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
 func (m *PlannerTaskPropertyRule) SetPercentComplete(value []string)() {
-    m.percentComplete = value
+    err := m.GetBackingStore().Set("percentComplete", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreviewType sets the previewType property value. Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetPreviewType(value []string)() {
-    m.previewType = value
+    err := m.GetBackingStore().Set("previewType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPriority sets the priority property value. Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetPriority(value []string)() {
-    m.priority = value
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReferences sets the references property value. Rules and restrictions for references. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, block.
 func (m *PlannerTaskPropertyRule) SetReferences(value PlannerFieldRulesable)() {
-    m.references = value
+    err := m.GetBackingStore().Set("references", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartDate sets the startDate property value. Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetStartDate(value []string)() {
-    m.startDate = value
+    err := m.GetBackingStore().Set("startDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. Rules and restrictions for changing the title of the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetTitle(value []string)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerTaskPropertyRuleable 
+type PlannerTaskPropertyRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PlannerPropertyRuleable
+    GetAppliedCategories()(PlannerFieldRulesable)
+    GetAssignments()(PlannerFieldRulesable)
+    GetCheckLists()(PlannerFieldRulesable)
+    GetDelete()([]string)
+    GetDueDate()([]string)
+    GetMove()([]string)
+    GetNotes()([]string)
+    GetOrder()([]string)
+    GetPercentComplete()([]string)
+    GetPreviewType()([]string)
+    GetPriority()([]string)
+    GetReferences()(PlannerFieldRulesable)
+    GetStartDate()([]string)
+    GetTitle()([]string)
+    SetAppliedCategories(value PlannerFieldRulesable)()
+    SetAssignments(value PlannerFieldRulesable)()
+    SetCheckLists(value PlannerFieldRulesable)()
+    SetDelete(value []string)()
+    SetDueDate(value []string)()
+    SetMove(value []string)()
+    SetNotes(value []string)()
+    SetOrder(value []string)()
+    SetPercentComplete(value []string)()
+    SetPreviewType(value []string)()
+    SetPriority(value []string)()
+    SetReferences(value PlannerFieldRulesable)()
+    SetStartDate(value []string)()
+    SetTitle(value []string)()
 }

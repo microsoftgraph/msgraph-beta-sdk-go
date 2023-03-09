@@ -7,36 +7,14 @@ import (
 // AndroidDeviceOwnerVpnConfiguration 
 type AndroidDeviceOwnerVpnConfiguration struct {
     VpnConfiguration
-    // Whether or not to enable always-on VPN connection.
-    alwaysOn *bool
-    // If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
-    alwaysOnLockdown *bool
-    // Android VPN connection type.
-    connectionType *AndroidVpnConnectionType
-    // Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
-    customData []KeyValueable
-    // Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
-    customKeyValueData []KeyValuePairable
-    // Tenant level settings for the Derived Credentials to be used for authentication.
-    derivedCredentialSettings DeviceManagementDerivedCredentialSettingsable
-    // Identity certificate for client authentication when authentication method is certificate.
-    identityCertificate AndroidDeviceOwnerCertificateProfileBaseable
-    // Microsoft Tunnel site ID.
-    microsoftTunnelSiteId *string
-    // Proxy server.
-    proxyServer VpnProxyServerable
-    // Targeted mobile apps. This collection can contain a maximum of 500 elements.
-    targetedMobileApps []AppListItemable
-    // Targeted App package IDs.
-    targetedPackageIds []string
 }
 // NewAndroidDeviceOwnerVpnConfiguration instantiates a new AndroidDeviceOwnerVpnConfiguration and sets the default values.
 func NewAndroidDeviceOwnerVpnConfiguration()(*AndroidDeviceOwnerVpnConfiguration) {
     m := &AndroidDeviceOwnerVpnConfiguration{
         VpnConfiguration: *NewVpnConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerVpnConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerVpnConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidDeviceOwnerVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,27 +23,69 @@ func CreateAndroidDeviceOwnerVpnConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAlwaysOn gets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOn()(*bool) {
-    return m.alwaysOn
+    val, err := m.GetBackingStore().Get("alwaysOn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAlwaysOnLockdown gets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
-    return m.alwaysOnLockdown
+    val, err := m.GetBackingStore().Get("alwaysOnLockdown")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetConnectionType gets the connectionType property value. Android VPN connection type.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
-    return m.connectionType
+    val, err := m.GetBackingStore().Get("connectionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidVpnConnectionType)
+    }
+    return nil
 }
 // GetCustomData gets the customData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomData()([]KeyValueable) {
-    return m.customData
+    val, err := m.GetBackingStore().Get("customData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
-    return m.customKeyValueData
+    val, err := m.GetBackingStore().Get("customKeyValueData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    return m.derivedCredentialSettings
+    val, err := m.GetBackingStore().Get("derivedCredentialSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceManagementDerivedCredentialSettingsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -200,23 +220,58 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetIdentityCertificate()(AndroidDeviceOwnerCertificateProfileBaseable) {
-    return m.identityCertificate
+    val, err := m.GetBackingStore().Get("identityCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidDeviceOwnerCertificateProfileBaseable)
+    }
+    return nil
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
-    return m.microsoftTunnelSiteId
+    val, err := m.GetBackingStore().Get("microsoftTunnelSiteId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProxyServer gets the proxyServer property value. Proxy server.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyServer()(VpnProxyServerable) {
-    return m.proxyServer
+    val, err := m.GetBackingStore().Get("proxyServer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VpnProxyServerable)
+    }
+    return nil
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
-    return m.targetedMobileApps
+    val, err := m.GetBackingStore().Get("targetedMobileApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppListItemable)
+    }
+    return nil
 }
 // GetTargetedPackageIds gets the targetedPackageIds property value. Targeted App package IDs.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedPackageIds()([]string) {
-    return m.targetedPackageIds
+    val, err := m.GetBackingStore().Get("targetedPackageIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -307,45 +362,105 @@ func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAlwaysOn sets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetAlwaysOn(value *bool)() {
-    m.alwaysOn = value
+    err := m.GetBackingStore().Set("alwaysOn", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlwaysOnLockdown sets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetAlwaysOnLockdown(value *bool)() {
-    m.alwaysOnLockdown = value
+    err := m.GetBackingStore().Set("alwaysOnLockdown", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionType sets the connectionType property value. Android VPN connection type.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetConnectionType(value *AndroidVpnConnectionType)() {
-    m.connectionType = value
+    err := m.GetBackingStore().Set("connectionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomData sets the customData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetCustomData(value []KeyValueable)() {
-    m.customData = value
+    err := m.GetBackingStore().Set("customData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomKeyValueData sets the customKeyValueData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetCustomKeyValueData(value []KeyValuePairable)() {
-    m.customKeyValueData = value
+    err := m.GetBackingStore().Set("customKeyValueData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    m.derivedCredentialSettings = value
+    err := m.GetBackingStore().Set("derivedCredentialSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetIdentityCertificate(value AndroidDeviceOwnerCertificateProfileBaseable)() {
-    m.identityCertificate = value
+    err := m.GetBackingStore().Set("identityCertificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMicrosoftTunnelSiteId sets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetMicrosoftTunnelSiteId(value *string)() {
-    m.microsoftTunnelSiteId = value
+    err := m.GetBackingStore().Set("microsoftTunnelSiteId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyServer sets the proxyServer property value. Proxy server.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetProxyServer(value VpnProxyServerable)() {
-    m.proxyServer = value
+    err := m.GetBackingStore().Set("proxyServer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetedMobileApps sets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetTargetedMobileApps(value []AppListItemable)() {
-    m.targetedMobileApps = value
+    err := m.GetBackingStore().Set("targetedMobileApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetedPackageIds sets the targetedPackageIds property value. Targeted App package IDs.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetTargetedPackageIds(value []string)() {
-    m.targetedPackageIds = value
+    err := m.GetBackingStore().Set("targetedPackageIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidDeviceOwnerVpnConfigurationable 
+type AndroidDeviceOwnerVpnConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    VpnConfigurationable
+    GetAlwaysOn()(*bool)
+    GetAlwaysOnLockdown()(*bool)
+    GetConnectionType()(*AndroidVpnConnectionType)
+    GetCustomData()([]KeyValueable)
+    GetCustomKeyValueData()([]KeyValuePairable)
+    GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable)
+    GetIdentityCertificate()(AndroidDeviceOwnerCertificateProfileBaseable)
+    GetMicrosoftTunnelSiteId()(*string)
+    GetProxyServer()(VpnProxyServerable)
+    GetTargetedMobileApps()([]AppListItemable)
+    GetTargetedPackageIds()([]string)
+    SetAlwaysOn(value *bool)()
+    SetAlwaysOnLockdown(value *bool)()
+    SetConnectionType(value *AndroidVpnConnectionType)()
+    SetCustomData(value []KeyValueable)()
+    SetCustomKeyValueData(value []KeyValuePairable)()
+    SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
+    SetIdentityCertificate(value AndroidDeviceOwnerCertificateProfileBaseable)()
+    SetMicrosoftTunnelSiteId(value *string)()
+    SetProxyServer(value VpnProxyServerable)()
+    SetTargetedMobileApps(value []AppListItemable)()
+    SetTargetedPackageIds(value []string)()
 }

@@ -8,18 +8,6 @@ import (
 // TaskDefinition 
 type TaskDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The category property
-    category *LifecycleTaskCategory
-    // The continueOnError property
-    continueOnError *bool
-    // The description of the taskDefinition.
-    description *string
-    // The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
-    displayName *string
-    // The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
-    parameters []Parameterable
-    // The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
-    version *int32
 }
 // NewTaskDefinition instantiates a new taskDefinition and sets the default values.
 func NewTaskDefinition()(*TaskDefinition) {
@@ -34,19 +22,47 @@ func CreateTaskDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetCategory gets the category property value. The category property
 func (m *TaskDefinition) GetCategory()(*LifecycleTaskCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LifecycleTaskCategory)
+    }
+    return nil
 }
 // GetContinueOnError gets the continueOnError property value. The continueOnError property
 func (m *TaskDefinition) GetContinueOnError()(*bool) {
-    return m.continueOnError
+    val, err := m.GetBackingStore().Get("continueOnError")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description of the taskDefinition.
 func (m *TaskDefinition) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
 func (m *TaskDefinition) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -119,11 +135,25 @@ func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetParameters gets the parameters property value. The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
 func (m *TaskDefinition) GetParameters()([]Parameterable) {
-    return m.parameters
+    val, err := m.GetBackingStore().Get("parameters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Parameterable)
+    }
+    return nil
 }
 // GetVersion gets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
 func (m *TaskDefinition) GetVersion()(*int32) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,25 +206,60 @@ func (m *TaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetCategory sets the category property value. The category property
 func (m *TaskDefinition) SetCategory(value *LifecycleTaskCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContinueOnError sets the continueOnError property value. The continueOnError property
 func (m *TaskDefinition) SetContinueOnError(value *bool)() {
-    m.continueOnError = value
+    err := m.GetBackingStore().Set("continueOnError", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description of the taskDefinition.
 func (m *TaskDefinition) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
 func (m *TaskDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParameters sets the parameters property value. The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
 func (m *TaskDefinition) SetParameters(value []Parameterable)() {
-    m.parameters = value
+    err := m.GetBackingStore().Set("parameters", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
 func (m *TaskDefinition) SetVersion(value *int32)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TaskDefinitionable 
+type TaskDefinitionable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(*LifecycleTaskCategory)
+    GetContinueOnError()(*bool)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetParameters()([]Parameterable)
+    GetVersion()(*int32)
+    SetCategory(value *LifecycleTaskCategory)()
+    SetContinueOnError(value *bool)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetParameters(value []Parameterable)()
+    SetVersion(value *int32)()
 }

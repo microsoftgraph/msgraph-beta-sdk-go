@@ -60,8 +60,8 @@ func NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilder instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesReques
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilder) Count()(*ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesCountRequestBuilder) {
-    return NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

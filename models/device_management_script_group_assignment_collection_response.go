@@ -7,8 +7,6 @@ import (
 // DeviceManagementScriptGroupAssignmentCollectionResponse 
 type DeviceManagementScriptGroupAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementScriptGroupAssignmentable
 }
 // NewDeviceManagementScriptGroupAssignmentCollectionResponse instantiates a new DeviceManagementScriptGroupAssignmentCollectionResponse and sets the default values.
 func NewDeviceManagementScriptGroupAssignmentCollectionResponse()(*DeviceManagementScriptGroupAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementScriptGroupAssignmentCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementScriptGroupAssignmentCollectionResponse) GetValue()([]DeviceManagementScriptGroupAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementScriptGroupAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptGroupAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementScriptGroupAssignmentCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementScriptGroupAssignmentCollectionResponse) SetValue(value []DeviceManagementScriptGroupAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementScriptGroupAssignmentCollectionResponseable 
+type DeviceManagementScriptGroupAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementScriptGroupAssignmentable)
+    SetValue(value []DeviceManagementScriptGroupAssignmentable)()
 }

@@ -7,20 +7,14 @@ import (
 // Win32LobAppProductCodeDetection 
 type Win32LobAppProductCodeDetection struct {
     Win32LobAppDetection
-    // The product code of Win32 Line of Business (LoB) app.
-    productCode *string
-    // The product version of Win32 Line of Business (LoB) app.
-    productVersion *string
-    // Contains properties for detection operator.
-    productVersionOperator *Win32LobAppDetectionOperator
 }
 // NewWin32LobAppProductCodeDetection instantiates a new Win32LobAppProductCodeDetection and sets the default values.
 func NewWin32LobAppProductCodeDetection()(*Win32LobAppProductCodeDetection) {
     m := &Win32LobAppProductCodeDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppProductCodeDetection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppProductCodeDetection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppProductCodeDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,15 +58,36 @@ func (m *Win32LobAppProductCodeDetection) GetFieldDeserializers()(map[string]fun
 }
 // GetProductCode gets the productCode property value. The product code of Win32 Line of Business (LoB) app.
 func (m *Win32LobAppProductCodeDetection) GetProductCode()(*string) {
-    return m.productCode
+    val, err := m.GetBackingStore().Get("productCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductVersion gets the productVersion property value. The product version of Win32 Line of Business (LoB) app.
 func (m *Win32LobAppProductCodeDetection) GetProductVersion()(*string) {
-    return m.productVersion
+    val, err := m.GetBackingStore().Get("productVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductVersionOperator gets the productVersionOperator property value. Contains properties for detection operator.
 func (m *Win32LobAppProductCodeDetection) GetProductVersionOperator()(*Win32LobAppDetectionOperator) {
-    return m.productVersionOperator
+    val, err := m.GetBackingStore().Get("productVersionOperator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Win32LobAppDetectionOperator)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppProductCodeDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +118,33 @@ func (m *Win32LobAppProductCodeDetection) Serialize(writer i878a80d2330e89d26896
 }
 // SetProductCode sets the productCode property value. The product code of Win32 Line of Business (LoB) app.
 func (m *Win32LobAppProductCodeDetection) SetProductCode(value *string)() {
-    m.productCode = value
+    err := m.GetBackingStore().Set("productCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductVersion sets the productVersion property value. The product version of Win32 Line of Business (LoB) app.
 func (m *Win32LobAppProductCodeDetection) SetProductVersion(value *string)() {
-    m.productVersion = value
+    err := m.GetBackingStore().Set("productVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductVersionOperator sets the productVersionOperator property value. Contains properties for detection operator.
 func (m *Win32LobAppProductCodeDetection) SetProductVersionOperator(value *Win32LobAppDetectionOperator)() {
-    m.productVersionOperator = value
+    err := m.GetBackingStore().Set("productVersionOperator", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Win32LobAppProductCodeDetectionable 
+type Win32LobAppProductCodeDetectionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Win32LobAppDetectionable
+    GetProductCode()(*string)
+    GetProductVersion()(*string)
+    GetProductVersionOperator()(*Win32LobAppDetectionOperator)
+    SetProductCode(value *string)()
+    SetProductVersion(value *string)()
+    SetProductVersionOperator(value *Win32LobAppDetectionOperator)()
 }

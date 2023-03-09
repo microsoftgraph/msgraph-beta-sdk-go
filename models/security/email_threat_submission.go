@@ -8,32 +8,14 @@ import (
 // EmailThreatSubmission 
 type EmailThreatSubmission struct {
     ThreatSubmission
-    // If the email is phishing simulation, this field will not be null.
-    attackSimulationInfo AttackSimulationInfoable
-    // Specifies the internet message id of the email being submitted. This information is present in the email header.
-    internetMessageId *string
-    // The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
-    originalCategory *SubmissionCategory
-    // Specifies the date and time stamp when the email was received.
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the email address (in smtp format) of the recipient who received the email.
-    recipientEmailAddress *string
-    // Specifies the email address of the sender.
-    sender *string
-    // Specifies the IP address of the sender.
-    senderIP *string
-    // Specifies the subject of the email .
-    subject *string
-    // It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
-    tenantAllowOrBlockListAction TenantAllowOrBlockListActionable
 }
 // NewEmailThreatSubmission instantiates a new EmailThreatSubmission and sets the default values.
 func NewEmailThreatSubmission()(*EmailThreatSubmission) {
     m := &EmailThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
-    odataTypeValue := "#microsoft.graph.security.emailThreatSubmission";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.emailThreatSubmission"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +44,14 @@ func CreateEmailThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAttackSimulationInfo gets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
 func (m *EmailThreatSubmission) GetAttackSimulationInfo()(AttackSimulationInfoable) {
-    return m.attackSimulationInfo
+    val, err := m.GetBackingStore().Get("attackSimulationInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AttackSimulationInfoable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,35 +150,91 @@ func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetInternetMessageId gets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
 func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
-    return m.internetMessageId
+    val, err := m.GetBackingStore().Get("internetMessageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOriginalCategory gets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
 func (m *EmailThreatSubmission) GetOriginalCategory()(*SubmissionCategory) {
-    return m.originalCategory
+    val, err := m.GetBackingStore().Get("originalCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubmissionCategory)
+    }
+    return nil
 }
 // GetReceivedDateTime gets the receivedDateTime property value. Specifies the date and time stamp when the email was received.
 func (m *EmailThreatSubmission) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.receivedDateTime
+    val, err := m.GetBackingStore().Get("receivedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRecipientEmailAddress gets the recipientEmailAddress property value. Specifies the email address (in smtp format) of the recipient who received the email.
 func (m *EmailThreatSubmission) GetRecipientEmailAddress()(*string) {
-    return m.recipientEmailAddress
+    val, err := m.GetBackingStore().Get("recipientEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSender gets the sender property value. Specifies the email address of the sender.
 func (m *EmailThreatSubmission) GetSender()(*string) {
-    return m.sender
+    val, err := m.GetBackingStore().Get("sender")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSenderIP gets the senderIP property value. Specifies the IP address of the sender.
 func (m *EmailThreatSubmission) GetSenderIP()(*string) {
-    return m.senderIP
+    val, err := m.GetBackingStore().Get("senderIP")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. Specifies the subject of the email .
 func (m *EmailThreatSubmission) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantAllowOrBlockListAction gets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
 func (m *EmailThreatSubmission) GetTenantAllowOrBlockListAction()(TenantAllowOrBlockListActionable) {
-    return m.tenantAllowOrBlockListAction
+    val, err := m.GetBackingStore().Get("tenantAllowOrBlockListAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TenantAllowOrBlockListActionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmailThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -256,37 +301,87 @@ func (m *EmailThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAttackSimulationInfo sets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
 func (m *EmailThreatSubmission) SetAttackSimulationInfo(value AttackSimulationInfoable)() {
-    m.attackSimulationInfo = value
+    err := m.GetBackingStore().Set("attackSimulationInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInternetMessageId sets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
 func (m *EmailThreatSubmission) SetInternetMessageId(value *string)() {
-    m.internetMessageId = value
+    err := m.GetBackingStore().Set("internetMessageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOriginalCategory sets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
 func (m *EmailThreatSubmission) SetOriginalCategory(value *SubmissionCategory)() {
-    m.originalCategory = value
+    err := m.GetBackingStore().Set("originalCategory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReceivedDateTime sets the receivedDateTime property value. Specifies the date and time stamp when the email was received.
 func (m *EmailThreatSubmission) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTime = value
+    err := m.GetBackingStore().Set("receivedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecipientEmailAddress sets the recipientEmailAddress property value. Specifies the email address (in smtp format) of the recipient who received the email.
 func (m *EmailThreatSubmission) SetRecipientEmailAddress(value *string)() {
-    m.recipientEmailAddress = value
+    err := m.GetBackingStore().Set("recipientEmailAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSender sets the sender property value. Specifies the email address of the sender.
 func (m *EmailThreatSubmission) SetSender(value *string)() {
-    m.sender = value
+    err := m.GetBackingStore().Set("sender", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSenderIP sets the senderIP property value. Specifies the IP address of the sender.
 func (m *EmailThreatSubmission) SetSenderIP(value *string)() {
-    m.senderIP = value
+    err := m.GetBackingStore().Set("senderIP", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. Specifies the subject of the email .
 func (m *EmailThreatSubmission) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantAllowOrBlockListAction sets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
 func (m *EmailThreatSubmission) SetTenantAllowOrBlockListAction(value TenantAllowOrBlockListActionable)() {
-    m.tenantAllowOrBlockListAction = value
+    err := m.GetBackingStore().Set("tenantAllowOrBlockListAction", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmailThreatSubmissionable 
+type EmailThreatSubmissionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ThreatSubmissionable
+    GetAttackSimulationInfo()(AttackSimulationInfoable)
+    GetInternetMessageId()(*string)
+    GetOriginalCategory()(*SubmissionCategory)
+    GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRecipientEmailAddress()(*string)
+    GetSender()(*string)
+    GetSenderIP()(*string)
+    GetSubject()(*string)
+    GetTenantAllowOrBlockListAction()(TenantAllowOrBlockListActionable)
+    SetAttackSimulationInfo(value AttackSimulationInfoable)()
+    SetInternetMessageId(value *string)()
+    SetOriginalCategory(value *SubmissionCategory)()
+    SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRecipientEmailAddress(value *string)()
+    SetSender(value *string)()
+    SetSenderIP(value *string)()
+    SetSubject(value *string)()
+    SetTenantAllowOrBlockListAction(value TenantAllowOrBlockListActionable)()
 }

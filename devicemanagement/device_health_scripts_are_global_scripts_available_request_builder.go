@@ -27,13 +27,13 @@ type DeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilderGetRequestConfigu
 func NewDeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilder) {
     m := &DeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/microsoft.graph.areGlobalScriptsAvailable()";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/areGlobalScriptsAvailable()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceHealthScriptsAreGlobalScriptsAvailableRequestBuilder instantiates a new AreGlobalScriptsAvailableRequestBuilder and sets the default values.

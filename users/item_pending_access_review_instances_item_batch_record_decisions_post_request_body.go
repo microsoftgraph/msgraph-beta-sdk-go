@@ -2,26 +2,20 @@ package users
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody 
 type ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The decision property
-    decision *string
-    // The justification property
-    justification *string
-    // The principalId property
-    principalId *string
-    // The resourceId property
-    resourceId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody instantiates a new ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody and sets the default values.
 func NewItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody()(*ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) {
     m := &ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,11 +24,30 @@ func CreateItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDecision gets the decision property value. The decision property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetDecision()(*string) {
-    return m.decision
+    val, err := m.GetBackingStore().Get("decision")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody
 }
 // GetJustification gets the justification property value. The justification property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetJustification()(*string) {
-    return m.justification
+    val, err := m.GetBackingStore().Get("justification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrincipalId gets the principalId property value. The principalId property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetPrincipalId()(*string) {
-    return m.principalId
+    val, err := m.GetBackingStore().Get("principalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceId gets the resourceId property value. The resourceId property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) GetResourceId()(*string) {
-    return m.resourceId
+    val, err := m.GetBackingStore().Get("resourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDecision sets the decision property value. The decision property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetDecision(value *string)() {
-    m.decision = value
+    err := m.GetBackingStore().Set("decision", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJustification sets the justification property value. The justification property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetJustification(value *string)() {
-    m.justification = value
+    err := m.GetBackingStore().Set("justification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrincipalId sets the principalId property value. The principalId property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetPrincipalId(value *string)() {
-    m.principalId = value
+    err := m.GetBackingStore().Set("principalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceId sets the resourceId property value. The resourceId property
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBody) SetResourceId(value *string)() {
-    m.resourceId = value
+    err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBodyable 
+type ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDecision()(*string)
+    GetJustification()(*string)
+    GetPrincipalId()(*string)
+    GetResourceId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDecision(value *string)()
+    SetJustification(value *string)()
+    SetPrincipalId(value *string)()
+    SetResourceId(value *string)()
 }

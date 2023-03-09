@@ -7,8 +7,6 @@ import (
 // OsVersionCountCollectionResponse 
 type OsVersionCountCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OsVersionCountable
 }
 // NewOsVersionCountCollectionResponse instantiates a new OsVersionCountCollectionResponse and sets the default values.
 func NewOsVersionCountCollectionResponse()(*OsVersionCountCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OsVersionCountCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *OsVersionCountCollectionResponse) GetValue()([]OsVersionCountable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OsVersionCountable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OsVersionCountCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OsVersionCountCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *OsVersionCountCollectionResponse) SetValue(value []OsVersionCountable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OsVersionCountCollectionResponseable 
+type OsVersionCountCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OsVersionCountable)
+    SetValue(value []OsVersionCountable)()
 }

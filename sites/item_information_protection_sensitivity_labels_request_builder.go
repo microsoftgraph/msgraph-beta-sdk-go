@@ -60,8 +60,8 @@ func NewItemInformationProtectionSensitivityLabelsRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInformationProtectionSensitivityLabelsRequestBuilder instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
@@ -72,11 +72,11 @@ func NewItemInformationProtectionSensitivityLabelsRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemInformationProtectionSensitivityLabelsRequestBuilder) Count()(*ItemInformationProtectionSensitivityLabelsCountRequestBuilder) {
-    return NewItemInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Evaluate provides operations to call the evaluate method.
 func (m *ItemInformationProtectionSensitivityLabelsRequestBuilder) Evaluate()(*ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder) {
-    return NewItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get sensitivityLabels from sites
 func (m *ItemInformationProtectionSensitivityLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInformationProtectionSensitivityLabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable, error) {
@@ -139,7 +139,10 @@ func (m *ItemInformationProtectionSensitivityLabelsRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

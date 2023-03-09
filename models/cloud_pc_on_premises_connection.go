@@ -7,40 +7,8 @@ import (
 // CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
-    // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
-    adDomainName *string
-    // The password associated with adDomainUsername.
-    adDomainPassword *string
-    // The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
-    adDomainUsername *string
-    // The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
-    alternateResourceUrl *string
-    // The display name for the Azure network connection.
-    displayName *string
-    // The healthCheckStatus property
-    healthCheckStatus *CloudPcOnPremisesConnectionStatus
-    // The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
-    healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable
-    // When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
-    inUse *bool
-    // The managedBy property
-    managedBy *CloudPcManagementService
-    // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
-    organizationalUnit *string
-    // The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
-    resourceGroupId *string
-    // The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
-    subnetId *string
-    // The ID of the target Azure subscription that’s associated with your tenant.
-    subscriptionId *string
-    // The name of the target Azure subscription. Read-only.
-    subscriptionName *string
     // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    type_escaped *CloudPcOnPremisesConnectionType
-    // The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
-    virtualNetworkId *string
-    // Indicates resource location of the virtual target network. Read-only, computed value.
-    virtualNetworkLocation *string
+    TypeEscaped *CloudPcOnPremisesConnectionType
 }
 // NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
@@ -55,23 +23,58 @@ func CreateCloudPcOnPremisesConnectionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdDomainName gets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
 func (m *CloudPcOnPremisesConnection) GetAdDomainName()(*string) {
-    return m.adDomainName
+    val, err := m.GetBackingStore().Get("adDomainName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdDomainPassword gets the adDomainPassword property value. The password associated with adDomainUsername.
 func (m *CloudPcOnPremisesConnection) GetAdDomainPassword()(*string) {
-    return m.adDomainPassword
+    val, err := m.GetBackingStore().Get("adDomainPassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAdDomainUsername gets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
 func (m *CloudPcOnPremisesConnection) GetAdDomainUsername()(*string) {
-    return m.adDomainUsername
+    val, err := m.GetBackingStore().Get("adDomainUsername")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAlternateResourceUrl gets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
 func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
-    return m.alternateResourceUrl
+    val, err := m.GetBackingStore().Get("alternateResourceUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the Azure network connection.
 func (m *CloudPcOnPremisesConnection) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -250,51 +253,135 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
 }
 // GetHealthCheckStatus gets the healthCheckStatus property value. The healthCheckStatus property
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus) {
-    return m.healthCheckStatus
+    val, err := m.GetBackingStore().Get("healthCheckStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcOnPremisesConnectionStatus)
+    }
+    return nil
 }
 // GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable) {
-    return m.healthCheckStatusDetails
+    val, err := m.GetBackingStore().Get("healthCheckStatusDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcOnPremisesConnectionStatusDetailsable)
+    }
+    return nil
 }
 // GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
-    return m.inUse
+    val, err := m.GetBackingStore().Get("inUse")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetManagedBy gets the managedBy property value. The managedBy property
 func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
-    return m.managedBy
+    val, err := m.GetBackingStore().Get("managedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcManagementService)
+    }
+    return nil
 }
 // GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) GetOrganizationalUnit()(*string) {
-    return m.organizationalUnit
+    val, err := m.GetBackingStore().Get("organizationalUnit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceGroupId gets the resourceGroupId property value. The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
 func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
-    return m.resourceGroupId
+    val, err := m.GetBackingStore().Get("resourceGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubnetId gets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) GetSubnetId()(*string) {
-    return m.subnetId
+    val, err := m.GetBackingStore().Get("subnetId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
 func (m *CloudPcOnPremisesConnection) GetSubscriptionId()(*string) {
-    return m.subscriptionId
+    val, err := m.GetBackingStore().Get("subscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubscriptionName gets the subscriptionName property value. The name of the target Azure subscription. Read-only.
 func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
-    return m.subscriptionName
+    val, err := m.GetBackingStore().Get("subscriptionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
-    return m.type_escaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcOnPremisesConnectionType)
+    }
+    return nil
 }
 // GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
-    return m.virtualNetworkId
+    val, err := m.GetBackingStore().Get("virtualNetworkId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVirtualNetworkLocation gets the virtualNetworkLocation property value. Indicates resource location of the virtual target network. Read-only, computed value.
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkLocation()(*string) {
-    return m.virtualNetworkLocation
+    val, err := m.GetBackingStore().Get("virtualNetworkLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -411,69 +498,159 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdDomainName sets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
 func (m *CloudPcOnPremisesConnection) SetAdDomainName(value *string)() {
-    m.adDomainName = value
+    err := m.GetBackingStore().Set("adDomainName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdDomainPassword sets the adDomainPassword property value. The password associated with adDomainUsername.
 func (m *CloudPcOnPremisesConnection) SetAdDomainPassword(value *string)() {
-    m.adDomainPassword = value
+    err := m.GetBackingStore().Set("adDomainPassword", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdDomainUsername sets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
 func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
-    m.adDomainUsername = value
+    err := m.GetBackingStore().Set("adDomainUsername", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlternateResourceUrl sets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
 func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
-    m.alternateResourceUrl = value
+    err := m.GetBackingStore().Set("alternateResourceUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the Azure network connection.
 func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthCheckStatus sets the healthCheckStatus property value. The healthCheckStatus property
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)() {
-    m.healthCheckStatus = value
+    err := m.GetBackingStore().Set("healthCheckStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)() {
-    m.healthCheckStatusDetails = value
+    err := m.GetBackingStore().Set("healthCheckStatusDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
-    m.inUse = value
+    err := m.GetBackingStore().Set("inUse", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedBy sets the managedBy property value. The managedBy property
 func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
-    m.managedBy = value
+    err := m.GetBackingStore().Set("managedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) SetOrganizationalUnit(value *string)() {
-    m.organizationalUnit = value
+    err := m.GetBackingStore().Set("organizationalUnit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceGroupId sets the resourceGroupId property value. The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
 func (m *CloudPcOnPremisesConnection) SetResourceGroupId(value *string)() {
-    m.resourceGroupId = value
+    err := m.GetBackingStore().Set("resourceGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) SetSubnetId(value *string)() {
-    m.subnetId = value
+    err := m.GetBackingStore().Set("subnetId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubscriptionId sets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
 func (m *CloudPcOnPremisesConnection) SetSubscriptionId(value *string)() {
-    m.subscriptionId = value
+    err := m.GetBackingStore().Set("subscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubscriptionName sets the subscriptionName property value. The name of the target Azure subscription. Read-only.
 func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
-    m.subscriptionName = value
+    err := m.GetBackingStore().Set("subscriptionName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnectionType)() {
-    m.type_escaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkId(value *string)() {
-    m.virtualNetworkId = value
+    err := m.GetBackingStore().Set("virtualNetworkId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVirtualNetworkLocation sets the virtualNetworkLocation property value. Indicates resource location of the virtual target network. Read-only, computed value.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkLocation(value *string)() {
-    m.virtualNetworkLocation = value
+    err := m.GetBackingStore().Set("virtualNetworkLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudPcOnPremisesConnectionable 
+type CloudPcOnPremisesConnectionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdDomainName()(*string)
+    GetAdDomainPassword()(*string)
+    GetAdDomainUsername()(*string)
+    GetAlternateResourceUrl()(*string)
+    GetDisplayName()(*string)
+    GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus)
+    GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable)
+    GetInUse()(*bool)
+    GetManagedBy()(*CloudPcManagementService)
+    GetOrganizationalUnit()(*string)
+    GetResourceGroupId()(*string)
+    GetSubnetId()(*string)
+    GetSubscriptionId()(*string)
+    GetSubscriptionName()(*string)
+    GetType()(*CloudPcOnPremisesConnectionType)
+    GetVirtualNetworkId()(*string)
+    GetVirtualNetworkLocation()(*string)
+    SetAdDomainName(value *string)()
+    SetAdDomainPassword(value *string)()
+    SetAdDomainUsername(value *string)()
+    SetAlternateResourceUrl(value *string)()
+    SetDisplayName(value *string)()
+    SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)()
+    SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)()
+    SetInUse(value *bool)()
+    SetManagedBy(value *CloudPcManagementService)()
+    SetOrganizationalUnit(value *string)()
+    SetResourceGroupId(value *string)()
+    SetSubnetId(value *string)()
+    SetSubscriptionId(value *string)()
+    SetSubscriptionName(value *string)()
+    SetType(value *CloudPcOnPremisesConnectionType)()
+    SetVirtualNetworkId(value *string)()
+    SetVirtualNetworkLocation(value *string)()
 }

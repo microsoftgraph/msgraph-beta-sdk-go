@@ -7,14 +7,6 @@ import (
 // WindowsPrivacyDataAccessControlItem specify access control level per privacy data category
 type WindowsPrivacyDataAccessControlItem struct {
     Entity
-    // Determine the access level to specific Windows privacy data category.
-    accessLevel *WindowsPrivacyDataAccessLevel
-    // The Package Family Name of a Windows app. When set, the access level applies to the specified application.
-    appDisplayName *string
-    // The Package Family Name of a Windows app. When set, the access level applies to the specified application.
-    appPackageFamilyName *string
-    // Windows privacy data category specifier for privacy data access.
-    dataCategory *WindowsPrivacyDataCategory
 }
 // NewWindowsPrivacyDataAccessControlItem instantiates a new windowsPrivacyDataAccessControlItem and sets the default values.
 func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlItem) {
@@ -29,19 +21,47 @@ func CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue(parseNode i
 }
 // GetAccessLevel gets the accessLevel property value. Determine the access level to specific Windows privacy data category.
 func (m *WindowsPrivacyDataAccessControlItem) GetAccessLevel()(*WindowsPrivacyDataAccessLevel) {
-    return m.accessLevel
+    val, err := m.GetBackingStore().Get("accessLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsPrivacyDataAccessLevel)
+    }
+    return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) GetAppDisplayName()(*string) {
-    return m.appDisplayName
+    val, err := m.GetBackingStore().Get("appDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppPackageFamilyName gets the appPackageFamilyName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) GetAppPackageFamilyName()(*string) {
-    return m.appPackageFamilyName
+    val, err := m.GetBackingStore().Get("appPackageFamilyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDataCategory gets the dataCategory property value. Windows privacy data category specifier for privacy data access.
 func (m *WindowsPrivacyDataAccessControlItem) GetDataCategory()(*WindowsPrivacyDataCategory) {
-    return m.dataCategory
+    val, err := m.GetBackingStore().Get("dataCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsPrivacyDataCategory)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,17 +144,42 @@ func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i878a80d2330e89d2
 }
 // SetAccessLevel sets the accessLevel property value. Determine the access level to specific Windows privacy data category.
 func (m *WindowsPrivacyDataAccessControlItem) SetAccessLevel(value *WindowsPrivacyDataAccessLevel)() {
-    m.accessLevel = value
+    err := m.GetBackingStore().Set("accessLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    err := m.GetBackingStore().Set("appDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppPackageFamilyName sets the appPackageFamilyName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) SetAppPackageFamilyName(value *string)() {
-    m.appPackageFamilyName = value
+    err := m.GetBackingStore().Set("appPackageFamilyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDataCategory sets the dataCategory property value. Windows privacy data category specifier for privacy data access.
 func (m *WindowsPrivacyDataAccessControlItem) SetDataCategory(value *WindowsPrivacyDataCategory)() {
-    m.dataCategory = value
+    err := m.GetBackingStore().Set("dataCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPrivacyDataAccessControlItemable 
+type WindowsPrivacyDataAccessControlItemable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessLevel()(*WindowsPrivacyDataAccessLevel)
+    GetAppDisplayName()(*string)
+    GetAppPackageFamilyName()(*string)
+    GetDataCategory()(*WindowsPrivacyDataCategory)
+    SetAccessLevel(value *WindowsPrivacyDataAccessLevel)()
+    SetAppDisplayName(value *string)()
+    SetAppPackageFamilyName(value *string)()
+    SetDataCategory(value *WindowsPrivacyDataCategory)()
 }

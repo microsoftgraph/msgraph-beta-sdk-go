@@ -7,10 +7,6 @@ import (
 // DefaultUserRoleOverride 
 type DefaultUserRoleOverride struct {
     Entity
-    // The isDefault property
-    isDefault *bool
-    // The rolePermissions property
-    rolePermissions []UnifiedRolePermissionable
 }
 // NewDefaultUserRoleOverride instantiates a new defaultUserRoleOverride and sets the default values.
 func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {
@@ -54,11 +50,25 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
 func (m *DefaultUserRoleOverride) GetIsDefault()(*bool) {
-    return m.isDefault
+    val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRolePermissions gets the rolePermissions property value. The rolePermissions property
 func (m *DefaultUserRoleOverride) GetRolePermissions()([]UnifiedRolePermissionable) {
-    return m.rolePermissions
+    val, err := m.GetBackingStore().Get("rolePermissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRolePermissionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DefaultUserRoleOverride) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,9 +96,24 @@ func (m *DefaultUserRoleOverride) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *DefaultUserRoleOverride) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRolePermissions sets the rolePermissions property value. The rolePermissions property
 func (m *DefaultUserRoleOverride) SetRolePermissions(value []UnifiedRolePermissionable)() {
-    m.rolePermissions = value
+    err := m.GetBackingStore().Set("rolePermissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DefaultUserRoleOverrideable 
+type DefaultUserRoleOverrideable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsDefault()(*bool)
+    GetRolePermissions()([]UnifiedRolePermissionable)
+    SetIsDefault(value *bool)()
+    SetRolePermissions(value []UnifiedRolePermissionable)()
 }

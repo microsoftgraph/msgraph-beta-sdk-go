@@ -7,8 +7,6 @@ import (
 // DeviceManagementTemplateCollectionResponse 
 type DeviceManagementTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementTemplateable
 }
 // NewDeviceManagementTemplateCollectionResponse instantiates a new DeviceManagementTemplateCollectionResponse and sets the default values.
 func NewDeviceManagementTemplateCollectionResponse()(*DeviceManagementTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementTemplateCollectionResponse) GetFieldDeserializers()(map
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementTemplateCollectionResponse) GetValue()([]DeviceManagementTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementTemplateCollectionResponse) Serialize(writer i878a80d23
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementTemplateCollectionResponse) SetValue(value []DeviceManagementTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementTemplateCollectionResponseable 
+type DeviceManagementTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementTemplateable)
+    SetValue(value []DeviceManagementTemplateable)()
 }

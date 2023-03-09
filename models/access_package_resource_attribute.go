@@ -2,32 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AccessPackageResourceAttribute 
 type AccessPackageResourceAttribute struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
-    attributeDestination AccessPackageResourceAttributeDestinationable
-    // The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
-    attributeName *string
-    // Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
-    attributeSource AccessPackageResourceAttributeSourceable
-    // Unique identifier for the attribute on the access package resource. Read-only.
-    id *string
-    // Specifies whether or not an existing attribute value can be edited by the requester.
-    isEditable *bool
-    // Specifies whether the attribute will remain in the end system after an assignment ends.
-    isPersistedOnAssignmentRemoval *bool
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAccessPackageResourceAttribute instantiates a new accessPackageResourceAttribute and sets the default values.
 func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
     m := &AccessPackageResourceAttribute{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessPackageResourceAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,19 +24,52 @@ func CreateAccessPackageResourceAttributeFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAttributeDestination gets the attributeDestination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
 func (m *AccessPackageResourceAttribute) GetAttributeDestination()(AccessPackageResourceAttributeDestinationable) {
-    return m.attributeDestination
+    val, err := m.GetBackingStore().Get("attributeDestination")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageResourceAttributeDestinationable)
+    }
+    return nil
 }
 // GetAttributeName gets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
 func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
-    return m.attributeName
+    val, err := m.GetBackingStore().Get("attributeName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAttributeSource gets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
 func (m *AccessPackageResourceAttribute) GetAttributeSource()(AccessPackageResourceAttributeSourceable) {
-    return m.attributeSource
+    val, err := m.GetBackingStore().Get("attributeSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageResourceAttributeSourceable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AccessPackageResourceAttribute) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,19 +148,47 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
 }
 // GetId gets the id property value. Unique identifier for the attribute on the access package resource. Read-only.
 func (m *AccessPackageResourceAttribute) GetId()(*string) {
-    return m.id
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsEditable gets the isEditable property value. Specifies whether or not an existing attribute value can be edited by the requester.
 func (m *AccessPackageResourceAttribute) GetIsEditable()(*bool) {
-    return m.isEditable
+    val, err := m.GetBackingStore().Get("isEditable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsPersistedOnAssignmentRemoval gets the isPersistedOnAssignmentRemoval property value. Specifies whether the attribute will remain in the end system after an assignment ends.
 func (m *AccessPackageResourceAttribute) GetIsPersistedOnAssignmentRemoval()(*bool) {
-    return m.isPersistedOnAssignmentRemoval
+    val, err := m.GetBackingStore().Get("isPersistedOnAssignmentRemoval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageResourceAttribute) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,33 +244,83 @@ func (m *AccessPackageResourceAttribute) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributeDestination sets the attributeDestination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
 func (m *AccessPackageResourceAttribute) SetAttributeDestination(value AccessPackageResourceAttributeDestinationable)() {
-    m.attributeDestination = value
+    err := m.GetBackingStore().Set("attributeDestination", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributeName sets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
 func (m *AccessPackageResourceAttribute) SetAttributeName(value *string)() {
-    m.attributeName = value
+    err := m.GetBackingStore().Set("attributeName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttributeSource sets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
 func (m *AccessPackageResourceAttribute) SetAttributeSource(value AccessPackageResourceAttributeSourceable)() {
-    m.attributeSource = value
+    err := m.GetBackingStore().Set("attributeSource", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AccessPackageResourceAttribute) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetId sets the id property value. Unique identifier for the attribute on the access package resource. Read-only.
 func (m *AccessPackageResourceAttribute) SetId(value *string)() {
-    m.id = value
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEditable sets the isEditable property value. Specifies whether or not an existing attribute value can be edited by the requester.
 func (m *AccessPackageResourceAttribute) SetIsEditable(value *bool)() {
-    m.isEditable = value
+    err := m.GetBackingStore().Set("isEditable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPersistedOnAssignmentRemoval sets the isPersistedOnAssignmentRemoval property value. Specifies whether the attribute will remain in the end system after an assignment ends.
 func (m *AccessPackageResourceAttribute) SetIsPersistedOnAssignmentRemoval(value *bool)() {
-    m.isPersistedOnAssignmentRemoval = value
+    err := m.GetBackingStore().Set("isPersistedOnAssignmentRemoval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageResourceAttribute) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageResourceAttributeable 
+type AccessPackageResourceAttributeable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttributeDestination()(AccessPackageResourceAttributeDestinationable)
+    GetAttributeName()(*string)
+    GetAttributeSource()(AccessPackageResourceAttributeSourceable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetId()(*string)
+    GetIsEditable()(*bool)
+    GetIsPersistedOnAssignmentRemoval()(*bool)
+    GetOdataType()(*string)
+    SetAttributeDestination(value AccessPackageResourceAttributeDestinationable)()
+    SetAttributeName(value *string)()
+    SetAttributeSource(value AccessPackageResourceAttributeSourceable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetId(value *string)()
+    SetIsEditable(value *bool)()
+    SetIsPersistedOnAssignmentRemoval(value *bool)()
+    SetOdataType(value *string)()
 }

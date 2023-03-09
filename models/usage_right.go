@@ -7,12 +7,6 @@ import (
 // UsageRight 
 type UsageRight struct {
     Entity
-    // Product id corresponding to the usage right.
-    catalogId *string
-    // Identifier of the service corresponding to the usage right.
-    serviceIdentifier *string
-    // The state property
-    state *UsageRightState
 }
 // NewUsageRight instantiates a new usageRight and sets the default values.
 func NewUsageRight()(*UsageRight) {
@@ -27,7 +21,14 @@ func CreateUsageRightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetCatalogId gets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) GetCatalogId()(*string) {
-    return m.catalogId
+    val, err := m.GetBackingStore().Get("catalogId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,11 +67,25 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetServiceIdentifier gets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
 func (m *UsageRight) GetServiceIdentifier()(*string) {
-    return m.serviceIdentifier
+    val, err := m.GetBackingStore().Get("serviceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetState gets the state property value. The state property
 func (m *UsageRight) GetState()(*UsageRightState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UsageRightState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetCatalogId sets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) SetCatalogId(value *string)() {
-    m.catalogId = value
+    err := m.GetBackingStore().Set("catalogId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServiceIdentifier sets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
 func (m *UsageRight) SetServiceIdentifier(value *string)() {
-    m.serviceIdentifier = value
+    err := m.GetBackingStore().Set("serviceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state property
 func (m *UsageRight) SetState(value *UsageRightState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UsageRightable 
+type UsageRightable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCatalogId()(*string)
+    GetServiceIdentifier()(*string)
+    GetState()(*UsageRightState)
+    SetCatalogId(value *string)()
+    SetServiceIdentifier(value *string)()
+    SetState(value *UsageRightState)()
 }

@@ -60,8 +60,8 @@ func NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilder instantiates a new LocalizationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilder(rawUrl string, r
 }
 // Count provides operations to count the resources in the collection.
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Count()(*TermsOfUseAgreementsItemFileLocalizationsCountRequestBuilder) {
-    return NewTermsOfUseAgreementsItemFileLocalizationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemFileLocalizationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the localized version of the terms of use agreement files attached to the agreement.
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) ToPostRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

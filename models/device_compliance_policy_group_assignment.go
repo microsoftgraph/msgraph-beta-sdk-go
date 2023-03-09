@@ -7,12 +7,6 @@ import (
 // DeviceCompliancePolicyGroupAssignment 
 type DeviceCompliancePolicyGroupAssignment struct {
     Entity
-    // The navigation link to the  device compliance polic targeted.
-    deviceCompliancePolicy DeviceCompliancePolicyable
-    // Indicates if this group is should be excluded. Defaults that the group should be included
-    excludeGroup *bool
-    // The Id of the AAD group we are targeting the device compliance policy to.
-    targetGroupId *string
 }
 // NewDeviceCompliancePolicyGroupAssignment instantiates a new DeviceCompliancePolicyGroupAssignment and sets the default values.
 func NewDeviceCompliancePolicyGroupAssignment()(*DeviceCompliancePolicyGroupAssignment) {
@@ -27,11 +21,25 @@ func CreateDeviceCompliancePolicyGroupAssignmentFromDiscriminatorValue(parseNode
 }
 // GetDeviceCompliancePolicy gets the deviceCompliancePolicy property value. The navigation link to the  device compliance polic targeted.
 func (m *DeviceCompliancePolicyGroupAssignment) GetDeviceCompliancePolicy()(DeviceCompliancePolicyable) {
-    return m.deviceCompliancePolicy
+    val, err := m.GetBackingStore().Get("deviceCompliancePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceCompliancePolicyable)
+    }
+    return nil
 }
 // GetExcludeGroup gets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceCompliancePolicyGroupAssignment) GetExcludeGroup()(*bool) {
-    return m.excludeGroup
+    val, err := m.GetBackingStore().Get("excludeGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[stri
 }
 // GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
 func (m *DeviceCompliancePolicyGroupAssignment) GetTargetGroupId()(*string) {
-    return m.targetGroupId
+    val, err := m.GetBackingStore().Get("targetGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +115,33 @@ func (m *DeviceCompliancePolicyGroupAssignment) Serialize(writer i878a80d2330e89
 }
 // SetDeviceCompliancePolicy sets the deviceCompliancePolicy property value. The navigation link to the  device compliance polic targeted.
 func (m *DeviceCompliancePolicyGroupAssignment) SetDeviceCompliancePolicy(value DeviceCompliancePolicyable)() {
-    m.deviceCompliancePolicy = value
+    err := m.GetBackingStore().Set("deviceCompliancePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExcludeGroup sets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceCompliancePolicyGroupAssignment) SetExcludeGroup(value *bool)() {
-    m.excludeGroup = value
+    err := m.GetBackingStore().Set("excludeGroup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetGroupId sets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
 func (m *DeviceCompliancePolicyGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    err := m.GetBackingStore().Set("targetGroupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCompliancePolicyGroupAssignmentable 
+type DeviceCompliancePolicyGroupAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceCompliancePolicy()(DeviceCompliancePolicyable)
+    GetExcludeGroup()(*bool)
+    GetTargetGroupId()(*string)
+    SetDeviceCompliancePolicy(value DeviceCompliancePolicyable)()
+    SetExcludeGroup(value *bool)()
+    SetTargetGroupId(value *string)()
 }

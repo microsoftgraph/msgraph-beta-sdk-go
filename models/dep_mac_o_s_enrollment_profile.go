@@ -7,60 +7,14 @@ import (
 // DepMacOSEnrollmentProfile 
 type DepMacOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
-    // Indicates if Accessibility screen is disabled
-    accessibilityScreenDisabled *bool
-    // Indicates if UnlockWithWatch screen is disabled
-    autoUnlockWithWatchDisabled *bool
-    // Indicates if iCloud Documents and Desktop screen is disabled
-    chooseYourLockScreenDisabled *bool
-    // Indicates whether Setup Assistant will auto populate the primary account information
-    dontAutoPopulatePrimaryAccountInfo *bool
-    // Indicates whether the user will enable blockediting
-    enableRestrictEditing *bool
-    // Indicates if file vault is disabled
-    fileVaultDisabled *bool
-    // Indicates if iCloud Analytics screen is disabled
-    iCloudDiagnosticsDisabled *bool
-    // Indicates if iCloud Documents and Desktop screen is disabled
-    iCloudStorageDisabled *bool
-    // Indicates whether the profile is a local account
-    isLocalPrimaryAccount *bool
-    // Indicates whether the profile is a primary user
-    isPrimaryUser *bool
-    // Indicates whether the primary account information will be locked
-    lockPrimaryAccountInfo *bool
-    // Indicates whether or not this is the short name of the local account to manage
-    managedLocalUserShortName *bool
-    // Indicates if Passcode setup pane is disabled
-    passCodeDisabled *bool
-    // Indicates whether the user will prefill their account info
-    prefillAccountInfo *bool
-    // Indicates what the full name for the primary account is
-    primaryAccountFullName *string
-    // Indicates what the account name for the primary account is
-    primaryAccountUserName *string
-    // Indicates who the primary user of the profile is
-    primaryUser *string
-    // Indicates who the primary user of the profile is
-    primaryUserFullName *string
-    // Indicates if registration is disabled
-    registrationDisabled *bool
-    // Indicates if the device is network-tethered to run the command
-    requestRequiresNetworkTether *bool
-    // Indicates whether Setup Assistant will set the account as a regular user
-    setPrimarySetupAccountAsRegularUser *bool
-    // Indicates whether Setup Assistant will skip the user interface for primary account setup
-    skipPrimarySetupAccountCreation *bool
-    // Indicates if zoom setup pane is disabled
-    zoomDisabled *bool
 }
 // NewDepMacOSEnrollmentProfile instantiates a new DepMacOSEnrollmentProfile and sets the default values.
 func NewDepMacOSEnrollmentProfile()(*DepMacOSEnrollmentProfile) {
     m := &DepMacOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
     }
-    odataTypeValue := "#microsoft.graph.depMacOSEnrollmentProfile";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.depMacOSEnrollmentProfile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDepMacOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,23 +23,91 @@ func CreateDepMacOSEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAccessibilityScreenDisabled gets the accessibilityScreenDisabled property value. Indicates if Accessibility screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetAccessibilityScreenDisabled()(*bool) {
-    return m.accessibilityScreenDisabled
+    val, err := m.GetBackingStore().Get("accessibilityScreenDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAdminAccountFullName gets the adminAccountFullName property value. Indicates what the full name for the admin account is
+func (m *DepMacOSEnrollmentProfile) GetAdminAccountFullName()(*string) {
+    val, err := m.GetBackingStore().Get("adminAccountFullName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetAdminAccountPassword gets the adminAccountPassword property value. Indicates what the password for the admin account is
+func (m *DepMacOSEnrollmentProfile) GetAdminAccountPassword()(*string) {
+    val, err := m.GetBackingStore().Get("adminAccountPassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetAdminAccountUserName gets the adminAccountUserName property value. Indicates what the user name for the admin account is
+func (m *DepMacOSEnrollmentProfile) GetAdminAccountUserName()(*string) {
+    val, err := m.GetBackingStore().Get("adminAccountUserName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAutoUnlockWithWatchDisabled gets the autoUnlockWithWatchDisabled property value. Indicates if UnlockWithWatch screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetAutoUnlockWithWatchDisabled()(*bool) {
-    return m.autoUnlockWithWatchDisabled
+    val, err := m.GetBackingStore().Get("autoUnlockWithWatchDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetChooseYourLockScreenDisabled gets the chooseYourLockScreenDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetChooseYourLockScreenDisabled()(*bool) {
-    return m.chooseYourLockScreenDisabled
+    val, err := m.GetBackingStore().Get("chooseYourLockScreenDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDontAutoPopulatePrimaryAccountInfo gets the dontAutoPopulatePrimaryAccountInfo property value. Indicates whether Setup Assistant will auto populate the primary account information
 func (m *DepMacOSEnrollmentProfile) GetDontAutoPopulatePrimaryAccountInfo()(*bool) {
-    return m.dontAutoPopulatePrimaryAccountInfo
+    val, err := m.GetBackingStore().Get("dontAutoPopulatePrimaryAccountInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableRestrictEditing gets the enableRestrictEditing property value. Indicates whether the user will enable blockediting
 func (m *DepMacOSEnrollmentProfile) GetEnableRestrictEditing()(*bool) {
-    return m.enableRestrictEditing
+    val, err := m.GetBackingStore().Get("enableRestrictEditing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,6 +119,36 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetAccessibilityScreenDisabled(val)
+        }
+        return nil
+    }
+    res["adminAccountFullName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdminAccountFullName(val)
+        }
+        return nil
+    }
+    res["adminAccountPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdminAccountPassword(val)
+        }
+        return nil
+    }
+    res["adminAccountUserName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdminAccountUserName(val)
         }
         return nil
     }
@@ -150,6 +202,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["hideAdminAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHideAdminAccount(val)
+        }
+        return nil
+    }
     res["iCloudDiagnosticsDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -170,46 +232,6 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["isLocalPrimaryAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsLocalPrimaryAccount(val)
-        }
-        return nil
-    }
-    res["isPrimaryUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsPrimaryUser(val)
-        }
-        return nil
-    }
-    res["lockPrimaryAccountInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLockPrimaryAccountInfo(val)
-        }
-        return nil
-    }
-    res["managedLocalUserShortName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedLocalUserShortName(val)
-        }
-        return nil
-    }
     res["passCodeDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -217,16 +239,6 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetPassCodeDisabled(val)
-        }
-        return nil
-    }
-    res["prefillAccountInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrefillAccountInfo(val)
         }
         return nil
     }
@@ -247,26 +259,6 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetPrimaryAccountUserName(val)
-        }
-        return nil
-    }
-    res["primaryUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrimaryUser(val)
-        }
-        return nil
-    }
-    res["primaryUserFullName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrimaryUserFullName(val)
         }
         return nil
     }
@@ -324,75 +316,135 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFileVaultDisabled gets the fileVaultDisabled property value. Indicates if file vault is disabled
 func (m *DepMacOSEnrollmentProfile) GetFileVaultDisabled()(*bool) {
-    return m.fileVaultDisabled
+    val, err := m.GetBackingStore().Get("fileVaultDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetHideAdminAccount gets the hideAdminAccount property value. Indicates whether the admin account should be hidded or not
+func (m *DepMacOSEnrollmentProfile) GetHideAdminAccount()(*bool) {
+    val, err := m.GetBackingStore().Get("hideAdminAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudDiagnosticsDisabled gets the iCloudDiagnosticsDisabled property value. Indicates if iCloud Analytics screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetICloudDiagnosticsDisabled()(*bool) {
-    return m.iCloudDiagnosticsDisabled
+    val, err := m.GetBackingStore().Get("iCloudDiagnosticsDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetICloudStorageDisabled gets the iCloudStorageDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetICloudStorageDisabled()(*bool) {
-    return m.iCloudStorageDisabled
-}
-// GetIsLocalPrimaryAccount gets the isLocalPrimaryAccount property value. Indicates whether the profile is a local account
-func (m *DepMacOSEnrollmentProfile) GetIsLocalPrimaryAccount()(*bool) {
-    return m.isLocalPrimaryAccount
-}
-// GetIsPrimaryUser gets the isPrimaryUser property value. Indicates whether the profile is a primary user
-func (m *DepMacOSEnrollmentProfile) GetIsPrimaryUser()(*bool) {
-    return m.isPrimaryUser
-}
-// GetLockPrimaryAccountInfo gets the lockPrimaryAccountInfo property value. Indicates whether the primary account information will be locked
-func (m *DepMacOSEnrollmentProfile) GetLockPrimaryAccountInfo()(*bool) {
-    return m.lockPrimaryAccountInfo
-}
-// GetManagedLocalUserShortName gets the managedLocalUserShortName property value. Indicates whether or not this is the short name of the local account to manage
-func (m *DepMacOSEnrollmentProfile) GetManagedLocalUserShortName()(*bool) {
-    return m.managedLocalUserShortName
+    val, err := m.GetBackingStore().Get("iCloudStorageDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
-    return m.passCodeDisabled
-}
-// GetPrefillAccountInfo gets the prefillAccountInfo property value. Indicates whether the user will prefill their account info
-func (m *DepMacOSEnrollmentProfile) GetPrefillAccountInfo()(*bool) {
-    return m.prefillAccountInfo
+    val, err := m.GetBackingStore().Get("passCodeDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrimaryAccountFullName gets the primaryAccountFullName property value. Indicates what the full name for the primary account is
 func (m *DepMacOSEnrollmentProfile) GetPrimaryAccountFullName()(*string) {
-    return m.primaryAccountFullName
+    val, err := m.GetBackingStore().Get("primaryAccountFullName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrimaryAccountUserName gets the primaryAccountUserName property value. Indicates what the account name for the primary account is
 func (m *DepMacOSEnrollmentProfile) GetPrimaryAccountUserName()(*string) {
-    return m.primaryAccountUserName
-}
-// GetPrimaryUser gets the primaryUser property value. Indicates who the primary user of the profile is
-func (m *DepMacOSEnrollmentProfile) GetPrimaryUser()(*string) {
-    return m.primaryUser
-}
-// GetPrimaryUserFullName gets the primaryUserFullName property value. Indicates who the primary user of the profile is
-func (m *DepMacOSEnrollmentProfile) GetPrimaryUserFullName()(*string) {
-    return m.primaryUserFullName
+    val, err := m.GetBackingStore().Get("primaryAccountUserName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistrationDisabled gets the registrationDisabled property value. Indicates if registration is disabled
 func (m *DepMacOSEnrollmentProfile) GetRegistrationDisabled()(*bool) {
-    return m.registrationDisabled
+    val, err := m.GetBackingStore().Get("registrationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRequestRequiresNetworkTether gets the requestRequiresNetworkTether property value. Indicates if the device is network-tethered to run the command
 func (m *DepMacOSEnrollmentProfile) GetRequestRequiresNetworkTether()(*bool) {
-    return m.requestRequiresNetworkTether
+    val, err := m.GetBackingStore().Get("requestRequiresNetworkTether")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSetPrimarySetupAccountAsRegularUser gets the setPrimarySetupAccountAsRegularUser property value. Indicates whether Setup Assistant will set the account as a regular user
 func (m *DepMacOSEnrollmentProfile) GetSetPrimarySetupAccountAsRegularUser()(*bool) {
-    return m.setPrimarySetupAccountAsRegularUser
+    val, err := m.GetBackingStore().Get("setPrimarySetupAccountAsRegularUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSkipPrimarySetupAccountCreation gets the skipPrimarySetupAccountCreation property value. Indicates whether Setup Assistant will skip the user interface for primary account setup
 func (m *DepMacOSEnrollmentProfile) GetSkipPrimarySetupAccountCreation()(*bool) {
-    return m.skipPrimarySetupAccountCreation
+    val, err := m.GetBackingStore().Get("skipPrimarySetupAccountCreation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) GetZoomDisabled()(*bool) {
-    return m.zoomDisabled
+    val, err := m.GetBackingStore().Get("zoomDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -402,6 +454,24 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteBoolValue("accessibilityScreenDisabled", m.GetAccessibilityScreenDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("adminAccountFullName", m.GetAdminAccountFullName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("adminAccountPassword", m.GetAdminAccountPassword())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("adminAccountUserName", m.GetAdminAccountUserName())
         if err != nil {
             return err
         }
@@ -437,6 +507,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteBoolValue("hideAdminAccount", m.GetHideAdminAccount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("iCloudDiagnosticsDisabled", m.GetICloudDiagnosticsDisabled())
         if err != nil {
             return err
@@ -449,37 +525,7 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteBoolValue("isLocalPrimaryAccount", m.GetIsLocalPrimaryAccount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isPrimaryUser", m.GetIsPrimaryUser())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("lockPrimaryAccountInfo", m.GetLockPrimaryAccountInfo())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("managedLocalUserShortName", m.GetManagedLocalUserShortName())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("passCodeDisabled", m.GetPassCodeDisabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("prefillAccountInfo", m.GetPrefillAccountInfo())
         if err != nil {
             return err
         }
@@ -492,18 +538,6 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteStringValue("primaryAccountUserName", m.GetPrimaryAccountUserName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("primaryUser", m.GetPrimaryUser())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("primaryUserFullName", m.GetPrimaryUserFullName())
         if err != nil {
             return err
         }
@@ -542,93 +576,186 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAccessibilityScreenDisabled sets the accessibilityScreenDisabled property value. Indicates if Accessibility screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetAccessibilityScreenDisabled(value *bool)() {
-    m.accessibilityScreenDisabled = value
+    err := m.GetBackingStore().Set("accessibilityScreenDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdminAccountFullName sets the adminAccountFullName property value. Indicates what the full name for the admin account is
+func (m *DepMacOSEnrollmentProfile) SetAdminAccountFullName(value *string)() {
+    err := m.GetBackingStore().Set("adminAccountFullName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdminAccountPassword sets the adminAccountPassword property value. Indicates what the password for the admin account is
+func (m *DepMacOSEnrollmentProfile) SetAdminAccountPassword(value *string)() {
+    err := m.GetBackingStore().Set("adminAccountPassword", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdminAccountUserName sets the adminAccountUserName property value. Indicates what the user name for the admin account is
+func (m *DepMacOSEnrollmentProfile) SetAdminAccountUserName(value *string)() {
+    err := m.GetBackingStore().Set("adminAccountUserName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAutoUnlockWithWatchDisabled sets the autoUnlockWithWatchDisabled property value. Indicates if UnlockWithWatch screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetAutoUnlockWithWatchDisabled(value *bool)() {
-    m.autoUnlockWithWatchDisabled = value
+    err := m.GetBackingStore().Set("autoUnlockWithWatchDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChooseYourLockScreenDisabled sets the chooseYourLockScreenDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetChooseYourLockScreenDisabled(value *bool)() {
-    m.chooseYourLockScreenDisabled = value
+    err := m.GetBackingStore().Set("chooseYourLockScreenDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDontAutoPopulatePrimaryAccountInfo sets the dontAutoPopulatePrimaryAccountInfo property value. Indicates whether Setup Assistant will auto populate the primary account information
 func (m *DepMacOSEnrollmentProfile) SetDontAutoPopulatePrimaryAccountInfo(value *bool)() {
-    m.dontAutoPopulatePrimaryAccountInfo = value
+    err := m.GetBackingStore().Set("dontAutoPopulatePrimaryAccountInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableRestrictEditing sets the enableRestrictEditing property value. Indicates whether the user will enable blockediting
 func (m *DepMacOSEnrollmentProfile) SetEnableRestrictEditing(value *bool)() {
-    m.enableRestrictEditing = value
+    err := m.GetBackingStore().Set("enableRestrictEditing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileVaultDisabled sets the fileVaultDisabled property value. Indicates if file vault is disabled
 func (m *DepMacOSEnrollmentProfile) SetFileVaultDisabled(value *bool)() {
-    m.fileVaultDisabled = value
+    err := m.GetBackingStore().Set("fileVaultDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHideAdminAccount sets the hideAdminAccount property value. Indicates whether the admin account should be hidded or not
+func (m *DepMacOSEnrollmentProfile) SetHideAdminAccount(value *bool)() {
+    err := m.GetBackingStore().Set("hideAdminAccount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudDiagnosticsDisabled sets the iCloudDiagnosticsDisabled property value. Indicates if iCloud Analytics screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetICloudDiagnosticsDisabled(value *bool)() {
-    m.iCloudDiagnosticsDisabled = value
+    err := m.GetBackingStore().Set("iCloudDiagnosticsDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetICloudStorageDisabled sets the iCloudStorageDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetICloudStorageDisabled(value *bool)() {
-    m.iCloudStorageDisabled = value
-}
-// SetIsLocalPrimaryAccount sets the isLocalPrimaryAccount property value. Indicates whether the profile is a local account
-func (m *DepMacOSEnrollmentProfile) SetIsLocalPrimaryAccount(value *bool)() {
-    m.isLocalPrimaryAccount = value
-}
-// SetIsPrimaryUser sets the isPrimaryUser property value. Indicates whether the profile is a primary user
-func (m *DepMacOSEnrollmentProfile) SetIsPrimaryUser(value *bool)() {
-    m.isPrimaryUser = value
-}
-// SetLockPrimaryAccountInfo sets the lockPrimaryAccountInfo property value. Indicates whether the primary account information will be locked
-func (m *DepMacOSEnrollmentProfile) SetLockPrimaryAccountInfo(value *bool)() {
-    m.lockPrimaryAccountInfo = value
-}
-// SetManagedLocalUserShortName sets the managedLocalUserShortName property value. Indicates whether or not this is the short name of the local account to manage
-func (m *DepMacOSEnrollmentProfile) SetManagedLocalUserShortName(value *bool)() {
-    m.managedLocalUserShortName = value
+    err := m.GetBackingStore().Set("iCloudStorageDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPassCodeDisabled sets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) SetPassCodeDisabled(value *bool)() {
-    m.passCodeDisabled = value
-}
-// SetPrefillAccountInfo sets the prefillAccountInfo property value. Indicates whether the user will prefill their account info
-func (m *DepMacOSEnrollmentProfile) SetPrefillAccountInfo(value *bool)() {
-    m.prefillAccountInfo = value
+    err := m.GetBackingStore().Set("passCodeDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrimaryAccountFullName sets the primaryAccountFullName property value. Indicates what the full name for the primary account is
 func (m *DepMacOSEnrollmentProfile) SetPrimaryAccountFullName(value *string)() {
-    m.primaryAccountFullName = value
+    err := m.GetBackingStore().Set("primaryAccountFullName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrimaryAccountUserName sets the primaryAccountUserName property value. Indicates what the account name for the primary account is
 func (m *DepMacOSEnrollmentProfile) SetPrimaryAccountUserName(value *string)() {
-    m.primaryAccountUserName = value
-}
-// SetPrimaryUser sets the primaryUser property value. Indicates who the primary user of the profile is
-func (m *DepMacOSEnrollmentProfile) SetPrimaryUser(value *string)() {
-    m.primaryUser = value
-}
-// SetPrimaryUserFullName sets the primaryUserFullName property value. Indicates who the primary user of the profile is
-func (m *DepMacOSEnrollmentProfile) SetPrimaryUserFullName(value *string)() {
-    m.primaryUserFullName = value
+    err := m.GetBackingStore().Set("primaryAccountUserName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistrationDisabled sets the registrationDisabled property value. Indicates if registration is disabled
 func (m *DepMacOSEnrollmentProfile) SetRegistrationDisabled(value *bool)() {
-    m.registrationDisabled = value
+    err := m.GetBackingStore().Set("registrationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestRequiresNetworkTether sets the requestRequiresNetworkTether property value. Indicates if the device is network-tethered to run the command
 func (m *DepMacOSEnrollmentProfile) SetRequestRequiresNetworkTether(value *bool)() {
-    m.requestRequiresNetworkTether = value
+    err := m.GetBackingStore().Set("requestRequiresNetworkTether", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSetPrimarySetupAccountAsRegularUser sets the setPrimarySetupAccountAsRegularUser property value. Indicates whether Setup Assistant will set the account as a regular user
 func (m *DepMacOSEnrollmentProfile) SetSetPrimarySetupAccountAsRegularUser(value *bool)() {
-    m.setPrimarySetupAccountAsRegularUser = value
+    err := m.GetBackingStore().Set("setPrimarySetupAccountAsRegularUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkipPrimarySetupAccountCreation sets the skipPrimarySetupAccountCreation property value. Indicates whether Setup Assistant will skip the user interface for primary account setup
 func (m *DepMacOSEnrollmentProfile) SetSkipPrimarySetupAccountCreation(value *bool)() {
-    m.skipPrimarySetupAccountCreation = value
+    err := m.GetBackingStore().Set("skipPrimarySetupAccountCreation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetZoomDisabled sets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) SetZoomDisabled(value *bool)() {
-    m.zoomDisabled = value
+    err := m.GetBackingStore().Set("zoomDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DepMacOSEnrollmentProfileable 
+type DepMacOSEnrollmentProfileable interface {
+    DepEnrollmentBaseProfileable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessibilityScreenDisabled()(*bool)
+    GetAdminAccountFullName()(*string)
+    GetAdminAccountPassword()(*string)
+    GetAdminAccountUserName()(*string)
+    GetAutoUnlockWithWatchDisabled()(*bool)
+    GetChooseYourLockScreenDisabled()(*bool)
+    GetDontAutoPopulatePrimaryAccountInfo()(*bool)
+    GetEnableRestrictEditing()(*bool)
+    GetFileVaultDisabled()(*bool)
+    GetHideAdminAccount()(*bool)
+    GetICloudDiagnosticsDisabled()(*bool)
+    GetICloudStorageDisabled()(*bool)
+    GetPassCodeDisabled()(*bool)
+    GetPrimaryAccountFullName()(*string)
+    GetPrimaryAccountUserName()(*string)
+    GetRegistrationDisabled()(*bool)
+    GetRequestRequiresNetworkTether()(*bool)
+    GetSetPrimarySetupAccountAsRegularUser()(*bool)
+    GetSkipPrimarySetupAccountCreation()(*bool)
+    GetZoomDisabled()(*bool)
+    SetAccessibilityScreenDisabled(value *bool)()
+    SetAdminAccountFullName(value *string)()
+    SetAdminAccountPassword(value *string)()
+    SetAdminAccountUserName(value *string)()
+    SetAutoUnlockWithWatchDisabled(value *bool)()
+    SetChooseYourLockScreenDisabled(value *bool)()
+    SetDontAutoPopulatePrimaryAccountInfo(value *bool)()
+    SetEnableRestrictEditing(value *bool)()
+    SetFileVaultDisabled(value *bool)()
+    SetHideAdminAccount(value *bool)()
+    SetICloudDiagnosticsDisabled(value *bool)()
+    SetICloudStorageDisabled(value *bool)()
+    SetPassCodeDisabled(value *bool)()
+    SetPrimaryAccountFullName(value *string)()
+    SetPrimaryAccountUserName(value *string)()
+    SetRegistrationDisabled(value *bool)()
+    SetRequestRequiresNetworkTether(value *bool)()
+    SetSetPrimarySetupAccountAsRegularUser(value *bool)()
+    SetSkipPrimarySetupAccountCreation(value *bool)()
+    SetZoomDisabled(value *bool)()
 }

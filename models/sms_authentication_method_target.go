@@ -7,8 +7,6 @@ import (
 // SmsAuthenticationMethodTarget 
 type SmsAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
-    // Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
-    isUsableForSignIn *bool
 }
 // NewSmsAuthenticationMethodTarget instantiates a new SmsAuthenticationMethodTarget and sets the default values.
 func NewSmsAuthenticationMethodTarget()(*SmsAuthenticationMethodTarget) {
@@ -38,7 +36,14 @@ func (m *SmsAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(
 }
 // GetIsUsableForSignIn gets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
 func (m *SmsAuthenticationMethodTarget) GetIsUsableForSignIn()(*bool) {
-    return m.isUsableForSignIn
+    val, err := m.GetBackingStore().Get("isUsableForSignIn")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SmsAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *SmsAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d2689638
 }
 // SetIsUsableForSignIn sets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
 func (m *SmsAuthenticationMethodTarget) SetIsUsableForSignIn(value *bool)() {
-    m.isUsableForSignIn = value
+    err := m.GetBackingStore().Set("isUsableForSignIn", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SmsAuthenticationMethodTargetable 
+type SmsAuthenticationMethodTargetable interface {
+    AuthenticationMethodTargetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsUsableForSignIn()(*bool)
+    SetIsUsableForSignIn(value *bool)()
 }

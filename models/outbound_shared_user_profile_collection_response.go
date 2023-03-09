@@ -7,8 +7,6 @@ import (
 // OutboundSharedUserProfileCollectionResponse 
 type OutboundSharedUserProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OutboundSharedUserProfileable
 }
 // NewOutboundSharedUserProfileCollectionResponse instantiates a new OutboundSharedUserProfileCollectionResponse and sets the default values.
 func NewOutboundSharedUserProfileCollectionResponse()(*OutboundSharedUserProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OutboundSharedUserProfileCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *OutboundSharedUserProfileCollectionResponse) GetValue()([]OutboundSharedUserProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutboundSharedUserProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutboundSharedUserProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OutboundSharedUserProfileCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *OutboundSharedUserProfileCollectionResponse) SetValue(value []OutboundSharedUserProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OutboundSharedUserProfileCollectionResponseable 
+type OutboundSharedUserProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OutboundSharedUserProfileable)
+    SetValue(value []OutboundSharedUserProfileable)()
 }

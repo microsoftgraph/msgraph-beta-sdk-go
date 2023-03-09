@@ -7,8 +7,6 @@ import (
 // AndroidCertificateProfileBaseCollectionResponse 
 type AndroidCertificateProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidCertificateProfileBaseable
 }
 // NewAndroidCertificateProfileBaseCollectionResponse instantiates a new AndroidCertificateProfileBaseCollectionResponse and sets the default values.
 func NewAndroidCertificateProfileBaseCollectionResponse()(*AndroidCertificateProfileBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidCertificateProfileBaseCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidCertificateProfileBaseCollectionResponse) GetValue()([]AndroidCertificateProfileBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidCertificateProfileBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidCertificateProfileBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidCertificateProfileBaseCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidCertificateProfileBaseCollectionResponse) SetValue(value []AndroidCertificateProfileBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidCertificateProfileBaseCollectionResponseable 
+type AndroidCertificateProfileBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidCertificateProfileBaseable)
+    SetValue(value []AndroidCertificateProfileBaseable)()
 }

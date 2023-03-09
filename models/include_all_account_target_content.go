@@ -13,8 +13,8 @@ func NewIncludeAllAccountTargetContent()(*IncludeAllAccountTargetContent) {
     m := &IncludeAllAccountTargetContent{
         AccountTargetContent: *NewAccountTargetContent(),
     }
-    odataTypeValue := "#microsoft.graph.includeAllAccountTargetContent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.includeAllAccountTargetContent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIncludeAllAccountTargetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,4 +33,9 @@ func (m *IncludeAllAccountTargetContent) Serialize(writer i878a80d2330e89d268963
         return err
     }
     return nil
+}
+// IncludeAllAccountTargetContentable 
+type IncludeAllAccountTargetContentable interface {
+    AccountTargetContentable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

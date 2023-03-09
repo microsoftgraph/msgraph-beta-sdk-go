@@ -55,8 +55,8 @@ func NewSynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder instantiates a new EducationSynchronizationProfileItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
 }
 // Errors provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Errors()(*SynchronizationProfilesItemErrorsRequestBuilder) {
-    return NewSynchronizationProfilesItemErrorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemErrorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ErrorsById provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) ErrorsById(id string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
     if id != "" {
         urlTplParams["educationSynchronizationError%2Did"] = id
     }
-    return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get get synchronizationProfiles from education
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileable, error) {
@@ -136,23 +136,23 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
 }
 // Pause provides operations to call the pause method.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Pause()(*SynchronizationProfilesItemPauseRequestBuilder) {
-    return NewSynchronizationProfilesItemPauseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemPauseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ProfileStatus provides operations to manage the profileStatus property of the microsoft.graph.educationSynchronizationProfile entity.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) ProfileStatus()(*SynchronizationProfilesItemProfileStatusRequestBuilder) {
-    return NewSynchronizationProfilesItemProfileStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemProfileStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Reset provides operations to call the reset method.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Reset()(*SynchronizationProfilesItemResetRequestBuilder) {
-    return NewSynchronizationProfilesItemResetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemResetRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Resume provides operations to call the resume method.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Resume()(*SynchronizationProfilesItemResumeRequestBuilder) {
-    return NewSynchronizationProfilesItemResumeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemResumeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Start provides operations to call the start method.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Start()(*SynchronizationProfilesItemStartRequestBuilder) {
-    return NewSynchronizationProfilesItemStartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemStartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property synchronizationProfiles for education
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -189,7 +189,10 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -198,5 +201,5 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
 }
 // UploadUrl provides operations to call the uploadUrl method.
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) UploadUrl()(*SynchronizationProfilesItemUploadUrlRequestBuilder) {
-    return NewSynchronizationProfilesItemUploadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSynchronizationProfilesItemUploadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

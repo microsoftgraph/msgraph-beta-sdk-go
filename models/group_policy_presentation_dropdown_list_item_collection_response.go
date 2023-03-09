@@ -7,8 +7,6 @@ import (
 // GroupPolicyPresentationDropdownListItemCollectionResponse 
 type GroupPolicyPresentationDropdownListItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []GroupPolicyPresentationDropdownListItemable
 }
 // NewGroupPolicyPresentationDropdownListItemCollectionResponse instantiates a new GroupPolicyPresentationDropdownListItemCollectionResponse and sets the default values.
 func NewGroupPolicyPresentationDropdownListItemCollectionResponse()(*GroupPolicyPresentationDropdownListItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupPolicyPresentationDropdownListItemCollectionResponse) GetFieldDese
 }
 // GetValue gets the value property value. The value property
 func (m *GroupPolicyPresentationDropdownListItemCollectionResponse) GetValue()([]GroupPolicyPresentationDropdownListItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupPolicyPresentationDropdownListItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationDropdownListItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupPolicyPresentationDropdownListItemCollectionResponse) Serialize(wr
 }
 // SetValue sets the value property value. The value property
 func (m *GroupPolicyPresentationDropdownListItemCollectionResponse) SetValue(value []GroupPolicyPresentationDropdownListItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupPolicyPresentationDropdownListItemCollectionResponseable 
+type GroupPolicyPresentationDropdownListItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]GroupPolicyPresentationDropdownListItemable)
+    SetValue(value []GroupPolicyPresentationDropdownListItemable)()
 }

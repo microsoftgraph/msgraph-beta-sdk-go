@@ -60,8 +60,8 @@ func NewVirtualEndpointUserSettingsItemAssignmentsRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointUserSettingsItemAssignmentsRequestBuilder instantiates a new AssignmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewVirtualEndpointUserSettingsItemAssignmentsRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *VirtualEndpointUserSettingsItemAssignmentsRequestBuilder) Count()(*VirtualEndpointUserSettingsItemAssignmentsCountRequestBuilder) {
-    return NewVirtualEndpointUserSettingsItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewVirtualEndpointUserSettingsItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *VirtualEndpointUserSettingsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsItemAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingAssignmentCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *VirtualEndpointUserSettingsItemAssignmentsRequestBuilder) ToPostRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

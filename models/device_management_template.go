@@ -8,30 +8,6 @@ import (
 // DeviceManagementTemplate entity that represents a defined collection of device settings
 type DeviceManagementTemplate struct {
     Entity
-    // Collection of setting categories within the template
-    categories []DeviceManagementTemplateSettingCategoryable
-    // The template's description
-    description *string
-    // The template's display name
-    displayName *string
-    // Number of Intents created from this template.
-    intentCount *int32
-    // The template is deprecated or not. Intents cannot be created from a deprecated template.
-    isDeprecated *bool
-    // Collection of templates this template can migrate to
-    migratableTo []DeviceManagementTemplateable
-    // Supported platform types for policies.
-    platformType *PolicyPlatformType
-    // When the template was published
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Collection of all settings this template has
-    settings []DeviceManagementSettingInstanceable
-    // Template subtype
-    templateSubtype *DeviceManagementTemplateSubtype
-    // Template type
-    templateType *DeviceManagementTemplateType
-    // The template's version information
-    versionInfo *string
 }
 // NewDeviceManagementTemplate instantiates a new deviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
@@ -64,15 +40,36 @@ func CreateDeviceManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCategories gets the categories property value. Collection of setting categories within the template
 func (m *DeviceManagementTemplate) GetCategories()([]DeviceManagementTemplateSettingCategoryable) {
-    return m.categories
+    val, err := m.GetBackingStore().Get("categories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementTemplateSettingCategoryable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The template's description
 func (m *DeviceManagementTemplate) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The template's display name
 func (m *DeviceManagementTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -213,39 +210,102 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIntentCount gets the intentCount property value. Number of Intents created from this template.
 func (m *DeviceManagementTemplate) GetIntentCount()(*int32) {
-    return m.intentCount
+    val, err := m.GetBackingStore().Get("intentCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetIsDeprecated gets the isDeprecated property value. The template is deprecated or not. Intents cannot be created from a deprecated template.
 func (m *DeviceManagementTemplate) GetIsDeprecated()(*bool) {
-    return m.isDeprecated
+    val, err := m.GetBackingStore().Get("isDeprecated")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMigratableTo gets the migratableTo property value. Collection of templates this template can migrate to
 func (m *DeviceManagementTemplate) GetMigratableTo()([]DeviceManagementTemplateable) {
-    return m.migratableTo
+    val, err := m.GetBackingStore().Get("migratableTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementTemplateable)
+    }
+    return nil
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceManagementTemplate) GetPlatformType()(*PolicyPlatformType) {
-    return m.platformType
+    val, err := m.GetBackingStore().Get("platformType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PolicyPlatformType)
+    }
+    return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. When the template was published
 func (m *DeviceManagementTemplate) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.publishedDateTime
+    val, err := m.GetBackingStore().Get("publishedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. Collection of all settings this template has
 func (m *DeviceManagementTemplate) GetSettings()([]DeviceManagementSettingInstanceable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementSettingInstanceable)
+    }
+    return nil
 }
 // GetTemplateSubtype gets the templateSubtype property value. Template subtype
 func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplateSubtype) {
-    return m.templateSubtype
+    val, err := m.GetBackingStore().Get("templateSubtype")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementTemplateSubtype)
+    }
+    return nil
 }
 // GetTemplateType gets the templateType property value. Template type
 func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateType) {
-    return m.templateType
+    val, err := m.GetBackingStore().Get("templateType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementTemplateType)
+    }
+    return nil
 }
 // GetVersionInfo gets the versionInfo property value. The template's version information
 func (m *DeviceManagementTemplate) GetVersionInfo()(*string) {
-    return m.versionInfo
+    val, err := m.GetBackingStore().Get("versionInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -344,49 +404,114 @@ func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCategories sets the categories property value. Collection of setting categories within the template
 func (m *DeviceManagementTemplate) SetCategories(value []DeviceManagementTemplateSettingCategoryable)() {
-    m.categories = value
+    err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The template's description
 func (m *DeviceManagementTemplate) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The template's display name
 func (m *DeviceManagementTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIntentCount sets the intentCount property value. Number of Intents created from this template.
 func (m *DeviceManagementTemplate) SetIntentCount(value *int32)() {
-    m.intentCount = value
+    err := m.GetBackingStore().Set("intentCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDeprecated sets the isDeprecated property value. The template is deprecated or not. Intents cannot be created from a deprecated template.
 func (m *DeviceManagementTemplate) SetIsDeprecated(value *bool)() {
-    m.isDeprecated = value
+    err := m.GetBackingStore().Set("isDeprecated", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMigratableTo sets the migratableTo property value. Collection of templates this template can migrate to
 func (m *DeviceManagementTemplate) SetMigratableTo(value []DeviceManagementTemplateable)() {
-    m.migratableTo = value
+    err := m.GetBackingStore().Set("migratableTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceManagementTemplate) SetPlatformType(value *PolicyPlatformType)() {
-    m.platformType = value
+    err := m.GetBackingStore().Set("platformType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedDateTime sets the publishedDateTime property value. When the template was published
 func (m *DeviceManagementTemplate) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.publishedDateTime = value
+    err := m.GetBackingStore().Set("publishedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. Collection of all settings this template has
 func (m *DeviceManagementTemplate) SetSettings(value []DeviceManagementSettingInstanceable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateSubtype sets the templateSubtype property value. Template subtype
 func (m *DeviceManagementTemplate) SetTemplateSubtype(value *DeviceManagementTemplateSubtype)() {
-    m.templateSubtype = value
+    err := m.GetBackingStore().Set("templateSubtype", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateType sets the templateType property value. Template type
 func (m *DeviceManagementTemplate) SetTemplateType(value *DeviceManagementTemplateType)() {
-    m.templateType = value
+    err := m.GetBackingStore().Set("templateType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionInfo sets the versionInfo property value. The template's version information
 func (m *DeviceManagementTemplate) SetVersionInfo(value *string)() {
-    m.versionInfo = value
+    err := m.GetBackingStore().Set("versionInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementTemplateable 
+type DeviceManagementTemplateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategories()([]DeviceManagementTemplateSettingCategoryable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetIntentCount()(*int32)
+    GetIsDeprecated()(*bool)
+    GetMigratableTo()([]DeviceManagementTemplateable)
+    GetPlatformType()(*PolicyPlatformType)
+    GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSettings()([]DeviceManagementSettingInstanceable)
+    GetTemplateSubtype()(*DeviceManagementTemplateSubtype)
+    GetTemplateType()(*DeviceManagementTemplateType)
+    GetVersionInfo()(*string)
+    SetCategories(value []DeviceManagementTemplateSettingCategoryable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetIntentCount(value *int32)()
+    SetIsDeprecated(value *bool)()
+    SetMigratableTo(value []DeviceManagementTemplateable)()
+    SetPlatformType(value *PolicyPlatformType)()
+    SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSettings(value []DeviceManagementSettingInstanceable)()
+    SetTemplateSubtype(value *DeviceManagementTemplateSubtype)()
+    SetTemplateType(value *DeviceManagementTemplateType)()
+    SetVersionInfo(value *string)()
 }

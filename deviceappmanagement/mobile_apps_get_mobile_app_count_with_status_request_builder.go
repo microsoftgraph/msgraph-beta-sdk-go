@@ -26,7 +26,7 @@ type MobileAppsGetMobileAppCountWithStatusRequestBuilderGetRequestConfiguration 
 func NewMobileAppsGetMobileAppCountWithStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, status *string)(*MobileAppsGetMobileAppCountWithStatusRequestBuilder) {
     m := &MobileAppsGetMobileAppCountWithStatusRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/microsoft.graph.getMobileAppCount(status='{status}')";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/getMobileAppCount(status='{status}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewMobileAppsGetMobileAppCountWithStatusRequestBuilderInternal(pathParamete
     if status != nil {
         urlTplParams["status"] = *status
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsGetMobileAppCountWithStatusRequestBuilder instantiates a new GetMobileAppCountWithStatusRequestBuilder and sets the default values.

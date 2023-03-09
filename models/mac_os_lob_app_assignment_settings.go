@@ -7,16 +7,14 @@ import (
 // MacOsLobAppAssignmentSettings 
 type MacOsLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not to uninstall the app when device is removed from Intune.
-    uninstallOnDeviceRemoval *bool
 }
 // NewMacOsLobAppAssignmentSettings instantiates a new MacOsLobAppAssignmentSettings and sets the default values.
 func NewMacOsLobAppAssignmentSettings()(*MacOsLobAppAssignmentSettings) {
     m := &MacOsLobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
-    odataTypeValue := "#microsoft.graph.macOsLobAppAssignmentSettings";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOsLobAppAssignmentSettings"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOsLobAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,9 +36,16 @@ func (m *MacOsLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
 func (m *MacOsLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
-    return m.uninstallOnDeviceRemoval
+    val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOsLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,7 +61,17 @@ func (m *MacOsLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
 func (m *MacOsLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
-    m.uninstallOnDeviceRemoval = value
+    err := m.GetBackingStore().Set("uninstallOnDeviceRemoval", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOsLobAppAssignmentSettingsable 
+type MacOsLobAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUninstallOnDeviceRemoval()(*bool)
+    SetUninstallOnDeviceRemoval(value *bool)()
 }

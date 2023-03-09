@@ -2,34 +2,20 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WindowsPackageInformation contains properties for the package information for a Windows line of business app.
+// WindowsPackageInformation contains properties for the package information for a Windows line of business app. Used as property within windowsPhone81AppXBundle object, which is also being deprecated. This complex type will be deprecated in February 2023.
 type WindowsPackageInformation struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Contains properties for Windows architecture.
-    applicableArchitecture *WindowsArchitecture
-    // The Display Name.
-    displayName *string
-    // The Identity Name.
-    identityName *string
-    // The Identity Publisher.
-    identityPublisher *string
-    // The Identity Resource Identifier.
-    identityResourceIdentifier *string
-    // The Identity Version.
-    identityVersion *string
-    // The value for the minimum applicable operating system.
-    minimumSupportedOperatingSystem WindowsMinimumOperatingSystemable
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWindowsPackageInformation instantiates a new windowsPackageInformation and sets the default values.
 func NewWindowsPackageInformation()(*WindowsPackageInformation) {
     m := &WindowsPackageInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsPackageInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,15 +24,41 @@ func CreateWindowsPackageInformationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsPackageInformation) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApplicableArchitecture gets the applicableArchitecture property value. Contains properties for Windows architecture.
 func (m *WindowsPackageInformation) GetApplicableArchitecture()(*WindowsArchitecture) {
-    return m.applicableArchitecture
+    val, err := m.GetBackingStore().Get("applicableArchitecture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsArchitecture)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WindowsPackageInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The Display Name.
 func (m *WindowsPackageInformation) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -135,27 +147,69 @@ func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
 func (m *WindowsPackageInformation) GetIdentityName()(*string) {
-    return m.identityName
+    val, err := m.GetBackingStore().Get("identityName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityPublisher gets the identityPublisher property value. The Identity Publisher.
 func (m *WindowsPackageInformation) GetIdentityPublisher()(*string) {
-    return m.identityPublisher
+    val, err := m.GetBackingStore().Get("identityPublisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsPackageInformation) GetIdentityResourceIdentifier()(*string) {
-    return m.identityResourceIdentifier
+    val, err := m.GetBackingStore().Get("identityResourceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityVersion gets the identityVersion property value. The Identity Version.
 func (m *WindowsPackageInformation) GetIdentityVersion()(*string) {
-    return m.identityVersion
+    val, err := m.GetBackingStore().Get("identityVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *WindowsPackageInformation) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
-    return m.minimumSupportedOperatingSystem
+    val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsMinimumOperatingSystemable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsPackageInformation) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPackageInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -218,37 +272,92 @@ func (m *WindowsPackageInformation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsPackageInformation) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicableArchitecture sets the applicableArchitecture property value. Contains properties for Windows architecture.
 func (m *WindowsPackageInformation) SetApplicableArchitecture(value *WindowsArchitecture)() {
-    m.applicableArchitecture = value
+    err := m.GetBackingStore().Set("applicableArchitecture", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WindowsPackageInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDisplayName sets the displayName property value. The Display Name.
 func (m *WindowsPackageInformation) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityName sets the identityName property value. The Identity Name.
 func (m *WindowsPackageInformation) SetIdentityName(value *string)() {
-    m.identityName = value
+    err := m.GetBackingStore().Set("identityName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityPublisher sets the identityPublisher property value. The Identity Publisher.
 func (m *WindowsPackageInformation) SetIdentityPublisher(value *string)() {
-    m.identityPublisher = value
+    err := m.GetBackingStore().Set("identityPublisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsPackageInformation) SetIdentityResourceIdentifier(value *string)() {
-    m.identityResourceIdentifier = value
+    err := m.GetBackingStore().Set("identityResourceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityVersion sets the identityVersion property value. The Identity Version.
 func (m *WindowsPackageInformation) SetIdentityVersion(value *string)() {
-    m.identityVersion = value
+    err := m.GetBackingStore().Set("identityVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *WindowsPackageInformation) SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)() {
-    m.minimumSupportedOperatingSystem = value
+    err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsPackageInformation) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPackageInformationable 
+type WindowsPackageInformationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicableArchitecture()(*WindowsArchitecture)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDisplayName()(*string)
+    GetIdentityName()(*string)
+    GetIdentityPublisher()(*string)
+    GetIdentityResourceIdentifier()(*string)
+    GetIdentityVersion()(*string)
+    GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable)
+    GetOdataType()(*string)
+    SetApplicableArchitecture(value *WindowsArchitecture)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDisplayName(value *string)()
+    SetIdentityName(value *string)()
+    SetIdentityPublisher(value *string)()
+    SetIdentityResourceIdentifier(value *string)()
+    SetIdentityVersion(value *string)()
+    SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)()
+    SetOdataType(value *string)()
 }

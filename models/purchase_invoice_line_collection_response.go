@@ -7,8 +7,6 @@ import (
 // PurchaseInvoiceLineCollectionResponse 
 type PurchaseInvoiceLineCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PurchaseInvoiceLineable
 }
 // NewPurchaseInvoiceLineCollectionResponse instantiates a new PurchaseInvoiceLineCollectionResponse and sets the default values.
 func NewPurchaseInvoiceLineCollectionResponse()(*PurchaseInvoiceLineCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PurchaseInvoiceLineCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *PurchaseInvoiceLineCollectionResponse) GetValue()([]PurchaseInvoiceLineable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PurchaseInvoiceLineable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PurchaseInvoiceLineCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PurchaseInvoiceLineCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *PurchaseInvoiceLineCollectionResponse) SetValue(value []PurchaseInvoiceLineable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PurchaseInvoiceLineCollectionResponseable 
+type PurchaseInvoiceLineCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PurchaseInvoiceLineable)
+    SetValue(value []PurchaseInvoiceLineable)()
 }

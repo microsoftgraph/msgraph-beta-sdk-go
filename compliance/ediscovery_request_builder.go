@@ -48,7 +48,7 @@ type EdiscoveryRequestBuilderPatchRequestConfiguration struct {
 }
 // Cases provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
 func (m *EdiscoveryRequestBuilder) Cases()(*EdiscoveryCasesRequestBuilder) {
-    return NewEdiscoveryCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEdiscoveryCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CasesById provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
 func (m *EdiscoveryRequestBuilder) CasesById(id string)(*EdiscoveryCasesCaseItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *EdiscoveryRequestBuilder) CasesById(id string)(*EdiscoveryCasesCaseItem
     if id != "" {
         urlTplParams["case%2Did"] = id
     }
-    return NewEdiscoveryCasesCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEdiscoveryCasesCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewEdiscoveryRequestBuilderInternal instantiates a new EdiscoveryRequestBuilder and sets the default values.
 func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryRequestBuilder) {
@@ -70,8 +70,8 @@ func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEdiscoveryRequestBuilder instantiates a new EdiscoveryRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *EdiscoveryRequestBuilder) ToPatchRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

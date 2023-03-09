@@ -7,18 +7,6 @@ import (
 // DeviceManagementIntentDeviceStateSummary 
 type DeviceManagementIntentDeviceStateSummary struct {
     Entity
-    // Number of devices in conflict
-    conflictCount *int32
-    // Number of error devices
-    errorCount *int32
-    // Number of failed devices
-    failedCount *int32
-    // Number of not applicable devices
-    notApplicableCount *int32
-    // Number of not applicable devices due to mismatch platform and policy
-    notApplicablePlatformCount *int32
-    // Number of succeeded devices
-    successCount *int32
 }
 // NewDeviceManagementIntentDeviceStateSummary instantiates a new deviceManagementIntentDeviceStateSummary and sets the default values.
 func NewDeviceManagementIntentDeviceStateSummary()(*DeviceManagementIntentDeviceStateSummary) {
@@ -33,15 +21,36 @@ func CreateDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue(parseN
 }
 // GetConflictCount gets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceStateSummary) GetConflictCount()(*int32) {
-    return m.conflictCount
+    val, err := m.GetBackingStore().Get("conflictCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetErrorCount()(*int32) {
-    return m.errorCount
+    val, err := m.GetBackingStore().Get("errorCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedCount gets the failedCount property value. Number of failed devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetFailedCount()(*int32) {
-    return m.failedCount
+    val, err := m.GetBackingStore().Get("failedCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntentDeviceStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,15 +119,36 @@ func (m *DeviceManagementIntentDeviceStateSummary) GetFieldDeserializers()(map[s
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicableCount()(*int32) {
-    return m.notApplicableCount
+    val, err := m.GetBackingStore().Get("notApplicableCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicablePlatformCount gets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
 func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicablePlatformCount()(*int32) {
-    return m.notApplicablePlatformCount
+    val, err := m.GetBackingStore().Get("notApplicablePlatformCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetSuccessCount gets the successCount property value. Number of succeeded devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetSuccessCount()(*int32) {
-    return m.successCount
+    val, err := m.GetBackingStore().Get("successCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +196,60 @@ func (m *DeviceManagementIntentDeviceStateSummary) Serialize(writer i878a80d2330
 }
 // SetConflictCount sets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceStateSummary) SetConflictCount(value *int32)() {
-    m.conflictCount = value
+    err := m.GetBackingStore().Set("conflictCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetErrorCount(value *int32)() {
-    m.errorCount = value
+    err := m.GetBackingStore().Set("errorCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedCount sets the failedCount property value. Number of failed devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetFailedCount(value *int32)() {
-    m.failedCount = value
+    err := m.GetBackingStore().Set("failedCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetNotApplicableCount(value *int32)() {
-    m.notApplicableCount = value
+    err := m.GetBackingStore().Set("notApplicableCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicablePlatformCount sets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
 func (m *DeviceManagementIntentDeviceStateSummary) SetNotApplicablePlatformCount(value *int32)() {
-    m.notApplicablePlatformCount = value
+    err := m.GetBackingStore().Set("notApplicablePlatformCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSuccessCount sets the successCount property value. Number of succeeded devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetSuccessCount(value *int32)() {
-    m.successCount = value
+    err := m.GetBackingStore().Set("successCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementIntentDeviceStateSummaryable 
+type DeviceManagementIntentDeviceStateSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConflictCount()(*int32)
+    GetErrorCount()(*int32)
+    GetFailedCount()(*int32)
+    GetNotApplicableCount()(*int32)
+    GetNotApplicablePlatformCount()(*int32)
+    GetSuccessCount()(*int32)
+    SetConflictCount(value *int32)()
+    SetErrorCount(value *int32)()
+    SetFailedCount(value *int32)()
+    SetNotApplicableCount(value *int32)()
+    SetNotApplicablePlatformCount(value *int32)()
+    SetSuccessCount(value *int32)()
 }

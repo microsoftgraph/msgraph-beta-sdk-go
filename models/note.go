@@ -7,30 +7,14 @@ import (
 // Note 
 type Note struct {
     OutlookItem
-    // The attachments property
-    attachments []Attachmentable
-    // The body property
-    body ItemBodyable
-    // The extensions property
-    extensions []Extensionable
-    // The hasAttachments property
-    hasAttachments *bool
-    // The isDeleted property
-    isDeleted *bool
-    // The multiValueExtendedProperties property
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
-    // The singleValueExtendedProperties property
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
-    // The subject property
-    subject *string
 }
 // NewNote instantiates a new Note and sets the default values.
 func NewNote()(*Note) {
     m := &Note{
         OutlookItem: *NewOutlookItem(),
     }
-    odataTypeValue := "#microsoft.graph.note";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.note"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateNoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,15 +23,36 @@ func CreateNoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAttachments gets the attachments property value. The attachments property
 func (m *Note) GetAttachments()([]Attachmentable) {
-    return m.attachments
+    val, err := m.GetBackingStore().Get("attachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Attachmentable)
+    }
+    return nil
 }
 // GetBody gets the body property value. The body property
 func (m *Note) GetBody()(ItemBodyable) {
-    return m.body
+    val, err := m.GetBackingStore().Get("body")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemBodyable)
+    }
+    return nil
 }
 // GetExtensions gets the extensions property value. The extensions property
 func (m *Note) GetExtensions()([]Extensionable) {
-    return m.extensions
+    val, err := m.GetBackingStore().Get("extensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Extensionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,23 +157,58 @@ func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetHasAttachments gets the hasAttachments property value. The hasAttachments property
 func (m *Note) GetHasAttachments()(*bool) {
-    return m.hasAttachments
+    val, err := m.GetBackingStore().Get("hasAttachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsDeleted gets the isDeleted property value. The isDeleted property
 func (m *Note) GetIsDeleted()(*bool) {
-    return m.isDeleted
+    val, err := m.GetBackingStore().Get("isDeleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
 func (m *Note) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    return m.multiValueExtendedProperties
+    val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MultiValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
 func (m *Note) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    return m.singleValueExtendedProperties
+    val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SingleValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. The subject property
 func (m *Note) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -244,33 +284,78 @@ func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAttachments sets the attachments property value. The attachments property
 func (m *Note) SetAttachments(value []Attachmentable)() {
-    m.attachments = value
+    err := m.GetBackingStore().Set("attachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBody sets the body property value. The body property
 func (m *Note) SetBody(value ItemBodyable)() {
-    m.body = value
+    err := m.GetBackingStore().Set("body", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtensions sets the extensions property value. The extensions property
 func (m *Note) SetExtensions(value []Extensionable)() {
-    m.extensions = value
+    err := m.GetBackingStore().Set("extensions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. The hasAttachments property
 func (m *Note) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    err := m.GetBackingStore().Set("hasAttachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDeleted sets the isDeleted property value. The isDeleted property
 func (m *Note) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    err := m.GetBackingStore().Set("isDeleted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
 func (m *Note) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    m.multiValueExtendedProperties = value
+    err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
 func (m *Note) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    m.singleValueExtendedProperties = value
+    err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. The subject property
 func (m *Note) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Noteable 
+type Noteable interface {
+    OutlookItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttachments()([]Attachmentable)
+    GetBody()(ItemBodyable)
+    GetExtensions()([]Extensionable)
+    GetHasAttachments()(*bool)
+    GetIsDeleted()(*bool)
+    GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
+    GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
+    GetSubject()(*string)
+    SetAttachments(value []Attachmentable)()
+    SetBody(value ItemBodyable)()
+    SetExtensions(value []Extensionable)()
+    SetHasAttachments(value *bool)()
+    SetIsDeleted(value *bool)()
+    SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
+    SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
+    SetSubject(value *string)()
 }

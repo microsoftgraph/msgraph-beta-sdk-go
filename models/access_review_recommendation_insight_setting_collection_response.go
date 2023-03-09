@@ -7,8 +7,6 @@ import (
 // AccessReviewRecommendationInsightSettingCollectionResponse 
 type AccessReviewRecommendationInsightSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessReviewRecommendationInsightSettingable
 }
 // NewAccessReviewRecommendationInsightSettingCollectionResponse instantiates a new AccessReviewRecommendationInsightSettingCollectionResponse and sets the default values.
 func NewAccessReviewRecommendationInsightSettingCollectionResponse()(*AccessReviewRecommendationInsightSettingCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessReviewRecommendationInsightSettingCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *AccessReviewRecommendationInsightSettingCollectionResponse) GetValue()([]AccessReviewRecommendationInsightSettingable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewRecommendationInsightSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewRecommendationInsightSettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessReviewRecommendationInsightSettingCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *AccessReviewRecommendationInsightSettingCollectionResponse) SetValue(value []AccessReviewRecommendationInsightSettingable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewRecommendationInsightSettingCollectionResponseable 
+type AccessReviewRecommendationInsightSettingCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessReviewRecommendationInsightSettingable)
+    SetValue(value []AccessReviewRecommendationInsightSettingable)()
 }

@@ -60,8 +60,8 @@ func NewClassifyTextJobsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassifyTextJobsRequestBuilder instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewClassifyTextJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ClassifyTextJobsRequestBuilder) Count()(*ClassifyTextJobsCountRequestBuilder) {
-    return NewClassifyTextJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassifyTextJobsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get classifyTextJobs from dataClassification
 func (m *ClassifyTextJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassifyTextJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ClassifyTextJobsRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

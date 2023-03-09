@@ -26,7 +26,7 @@ type ReportsGetTeamsTeamActivityDetailWithPeriodRequestBuilderGetRequestConfigur
 func NewReportsGetTeamsTeamActivityDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetTeamsTeamActivityDetailWithPeriodRequestBuilder) {
     m := &ReportsGetTeamsTeamActivityDetailWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/microsoft.graph.getTeamsTeamActivityDetail(period='{period}')";
+    m.urlTemplate = "{+baseurl}/print/reports/getTeamsTeamActivityDetail(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -34,8 +34,8 @@ func NewReportsGetTeamsTeamActivityDetailWithPeriodRequestBuilderInternal(pathPa
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetTeamsTeamActivityDetailWithPeriodRequestBuilder instantiates a new GetTeamsTeamActivityDetailWithPeriodRequestBuilder and sets the default values.

@@ -7,8 +7,6 @@ import (
 // PayloadCompatibleAssignmentFilterCollectionResponse 
 type PayloadCompatibleAssignmentFilterCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PayloadCompatibleAssignmentFilterable
 }
 // NewPayloadCompatibleAssignmentFilterCollectionResponse instantiates a new PayloadCompatibleAssignmentFilterCollectionResponse and sets the default values.
 func NewPayloadCompatibleAssignmentFilterCollectionResponse()(*PayloadCompatibleAssignmentFilterCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PayloadCompatibleAssignmentFilterCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *PayloadCompatibleAssignmentFilterCollectionResponse) GetValue()([]PayloadCompatibleAssignmentFilterable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PayloadCompatibleAssignmentFilterable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PayloadCompatibleAssignmentFilterCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PayloadCompatibleAssignmentFilterCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *PayloadCompatibleAssignmentFilterCollectionResponse) SetValue(value []PayloadCompatibleAssignmentFilterable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PayloadCompatibleAssignmentFilterCollectionResponseable 
+type PayloadCompatibleAssignmentFilterCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PayloadCompatibleAssignmentFilterable)
+    SetValue(value []PayloadCompatibleAssignmentFilterable)()
 }
