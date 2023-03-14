@@ -45,7 +45,7 @@ func NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilder(rawUrl string
 // Post select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provision-on-demand?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) Post(ctx context.Context, body ItemSynchronizationJobsItemProvisionOnDemandPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringKeyStringValuePairable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

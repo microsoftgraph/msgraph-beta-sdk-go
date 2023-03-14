@@ -22,6 +22,17 @@ func NewSubjectRightsRequest()(*SubjectRightsRequest) {
 func CreateSubjectRightsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequest(), nil
 }
+// GetApprovers gets the approvers property value. The approvers property
+func (m *SubjectRightsRequest) GetApprovers()([]Userable) {
+    val, err := m.GetBackingStore().Get("approvers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Userable)
+    }
+    return nil
+}
 // GetAssignedTo gets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) GetAssignedTo()(Identityable) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -41,6 +52,17 @@ func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetCollaborators gets the collaborators property value. The collaborators property
+func (m *SubjectRightsRequest) GetCollaborators()([]Userable) {
+    val, err := m.GetBackingStore().Get("collaborators")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Userable)
     }
     return nil
 }
@@ -135,6 +157,20 @@ func (m *SubjectRightsRequest) GetExternalId()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["approvers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Userable, len(val))
+            for i, v := range val {
+                res[i] = v.(Userable)
+            }
+            m.SetApprovers(res)
+        }
+        return nil
+    }
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -152,6 +188,20 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetClosedDateTime(val)
+        }
+        return nil
+    }
+    res["collaborators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Userable, len(val))
+            for i, v := range val {
+                res[i] = v.(Userable)
+            }
+            m.SetCollaborators(res)
         }
         return nil
     }
@@ -595,6 +645,16 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    if m.GetApprovers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApprovers()))
+        for i, v := range m.GetApprovers() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("approvers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("assignedTo", m.GetAssignedTo())
         if err != nil {
@@ -603,6 +663,16 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteTimeValue("closedDateTime", m.GetClosedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCollaborators() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCollaborators()))
+        for i, v := range m.GetCollaborators() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("collaborators", cast)
         if err != nil {
             return err
         }
@@ -768,6 +838,13 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
+// SetApprovers sets the approvers property value. The approvers property
+func (m *SubjectRightsRequest) SetApprovers(value []Userable)() {
+    err := m.GetBackingStore().Set("approvers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAssignedTo sets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) SetAssignedTo(value Identityable)() {
     err := m.GetBackingStore().Set("assignedTo", value)
@@ -778,6 +855,13 @@ func (m *SubjectRightsRequest) SetAssignedTo(value Identityable)() {
 // SetClosedDateTime sets the closedDateTime property value. The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("closedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCollaborators sets the collaborators property value. The collaborators property
+func (m *SubjectRightsRequest) SetCollaborators(value []Userable)() {
+    err := m.GetBackingStore().Set("collaborators", value)
     if err != nil {
         panic(err)
     }
@@ -954,8 +1038,10 @@ func (m *SubjectRightsRequest) SetType(value *SubjectRightsRequestType)() {
 type SubjectRightsRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovers()([]Userable)
     GetAssignedTo()(Identityable)
     GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCollaborators()([]Userable)
     GetContentQuery()(*string)
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -980,8 +1066,10 @@ type SubjectRightsRequestable interface {
     GetStatus()(*SubjectRightsRequestStatus)
     GetTeam()(Teamable)
     GetType()(*SubjectRightsRequestType)
+    SetApprovers(value []Userable)()
     SetAssignedTo(value Identityable)()
     SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCollaborators(value []Userable)()
     SetContentQuery(value *string)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

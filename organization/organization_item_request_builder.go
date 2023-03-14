@@ -46,10 +46,6 @@ type OrganizationItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivateService provides operations to call the activateService method.
-func (m *OrganizationItemRequestBuilder) ActivateService()(*ItemActivateServiceRequestBuilder) {
-    return NewItemActivateServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Branding provides operations to manage the branding property of the microsoft.graph.organization entity.
 func (m *OrganizationItemRequestBuilder) Branding()(*ItemBrandingRequestBuilder) {
     return NewItemBrandingRequestBuilderInternal(m.pathParameters, m.requestAdapter)

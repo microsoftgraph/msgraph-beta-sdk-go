@@ -99,7 +99,7 @@ func (m *AttackSimulationSimulationsRequestBuilder) Get(ctx context.Context, req
 // Post create an attack simulation campaign for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attacksimulationroot-create-simulation?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/attacksimulationroot-post-simulation?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, requestConfiguration *AttackSimulationSimulationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

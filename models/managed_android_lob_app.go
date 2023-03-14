@@ -86,7 +86,7 @@ func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIdentityName gets the identityName property value. The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
+// GetIdentityName gets the identityName property value. The Identity Name. This property is deprecated starting  in February 2023 (Release 2302).
 func (m *ManagedAndroidLobApp) GetIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("identityName")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ManagedAndroidLobApp) GetIdentityName()(*string) {
     }
     return nil
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version. This property is deprecated starting in February 2023 (Release 2302).
+// GetIdentityVersion gets the identityVersion property value. The identity version. This property is deprecated starting  in February 2023 (Release 2302).
 func (m *ManagedAndroidLobApp) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -196,14 +196,14 @@ func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetIdentityName sets the identityName property value. The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
+// SetIdentityName sets the identityName property value. The Identity Name. This property is deprecated starting  in February 2023 (Release 2302).
 func (m *ManagedAndroidLobApp) SetIdentityName(value *string)() {
     err := m.GetBackingStore().Set("identityName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version. This property is deprecated starting in February 2023 (Release 2302).
+// SetIdentityVersion sets the identityVersion property value. The identity version. This property is deprecated starting  in February 2023 (Release 2302).
 func (m *ManagedAndroidLobApp) SetIdentityVersion(value *string)() {
     err := m.GetBackingStore().Set("identityVersion", value)
     if err != nil {

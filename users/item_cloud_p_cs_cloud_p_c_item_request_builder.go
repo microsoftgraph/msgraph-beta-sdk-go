@@ -163,6 +163,14 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemResto
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
     return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Start provides operations to call the start method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) Start()(*ItemCloudPCsItemStartRequestBuilder) {
+    return NewItemCloudPCsItemStartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Stop provides operations to call the stop method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) Stop()(*ItemCloudPCsItemStopRequestBuilder) {
+    return NewItemCloudPCsItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property cloudPCs for users
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -1,4 +1,4 @@
-package users
+package devicemanagement
 
 import (
     "context"
@@ -6,8 +6,8 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// ItemActivateServicePlanRequestBuilder provides operations to call the activateServicePlan method.
-type ItemActivateServicePlanRequestBuilder struct {
+// VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder provides operations to call the applyConfig method.
+type VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
     // The request adapter to use to execute the requests.
@@ -15,18 +15,18 @@ type ItemActivateServicePlanRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemActivateServicePlanRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemActivateServicePlanRequestBuilderPostRequestConfiguration struct {
+// VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemActivateServicePlanRequestBuilderInternal instantiates a new ActivateServicePlanRequestBuilder and sets the default values.
-func NewItemActivateServicePlanRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivateServicePlanRequestBuilder) {
-    m := &ItemActivateServicePlanRequestBuilder{
+// NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal instantiates a new ApplyConfigRequestBuilder and sets the default values.
+func NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) {
+    m := &VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/activateServicePlan";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/applyConfig";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -35,17 +35,14 @@ func NewItemActivateServicePlanRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter
     return m
 }
-// NewItemActivateServicePlanRequestBuilder instantiates a new ActivateServicePlanRequestBuilder and sets the default values.
-func NewItemActivateServicePlanRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivateServicePlanRequestBuilder) {
+// NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder instantiates a new ApplyConfigRequestBuilder and sets the default values.
+func NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemActivateServicePlanRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post activate a service plan with a given `servicePlanId` and `skuId` for a given user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-activateserviceplan?view=graph-rest-1.0
-func (m *ItemActivateServicePlanRequestBuilder) Post(ctx context.Context, body ItemActivateServicePlanPostRequestBodyable, requestConfiguration *ItemActivateServicePlanRequestBuilderPostRequestConfiguration)(error) {
+// Post invoke action applyConfig
+func (m *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) Post(ctx context.Context, body VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -60,8 +57,8 @@ func (m *ItemActivateServicePlanRequestBuilder) Post(ctx context.Context, body I
     }
     return nil
 }
-// ToPostRequestInformation activate a service plan with a given `servicePlanId` and `skuId` for a given user.
-func (m *ItemActivateServicePlanRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemActivateServicePlanPostRequestBodyable, requestConfiguration *ItemActivateServicePlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPostRequestInformation invoke action applyConfig
+func (m *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters

@@ -46,6 +46,36 @@ type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Approvers provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Approvers()(*SubjectRightsRequestsItemApproversRequestBuilder) {
+    return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApproversById provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ApproversById(id string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["user%2Did"] = id
+    }
+    return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Collaborators provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Collaborators()(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CollaboratorsById provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) CollaboratorsById(id string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["user%2Did"] = id
+    }
+    return NewSubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     m := &SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder{

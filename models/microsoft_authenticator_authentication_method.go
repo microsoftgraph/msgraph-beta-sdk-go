@@ -22,6 +22,17 @@ func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuth
 func CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftAuthenticatorAuthenticationMethod(), nil
 }
+// GetClientAppName gets the clientAppName property value. The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.
+func (m *MicrosoftAuthenticatorAuthenticationMethod) GetClientAppName()(*MicrosoftAuthenticatorAuthenticationMethodClientAppName) {
+    val, err := m.GetBackingStore().Get("clientAppName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MicrosoftAuthenticatorAuthenticationMethodClientAppName)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -69,6 +80,16 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
+    res["clientAppName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMicrosoftAuthenticatorAuthenticationMethodClientAppName)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientAppName(val.(*MicrosoftAuthenticatorAuthenticationMethodClientAppName))
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -138,6 +159,13 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d23
     if err != nil {
         return err
     }
+    if m.GetClientAppName() != nil {
+        cast := (*m.GetClientAppName()).String()
+        err = writer.WriteStringValue("clientAppName", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -169,6 +197,13 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d23
         }
     }
     return nil
+}
+// SetClientAppName sets the clientAppName property value. The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.
+func (m *MicrosoftAuthenticatorAuthenticationMethod) SetClientAppName(value *MicrosoftAuthenticatorAuthenticationMethodClientAppName)() {
+    err := m.GetBackingStore().Set("clientAppName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -209,11 +244,13 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) SetPhoneAppVersion(value *s
 type MicrosoftAuthenticatorAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetClientAppName()(*MicrosoftAuthenticatorAuthenticationMethodClientAppName)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDevice()(Deviceable)
     GetDeviceTag()(*string)
     GetDisplayName()(*string)
     GetPhoneAppVersion()(*string)
+    SetClientAppName(value *MicrosoftAuthenticatorAuthenticationMethodClientAppName)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDevice(value Deviceable)()
     SetDeviceTag(value *string)()

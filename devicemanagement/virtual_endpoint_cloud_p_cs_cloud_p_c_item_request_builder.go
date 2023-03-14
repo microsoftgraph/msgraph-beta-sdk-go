@@ -163,6 +163,14 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEnd
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Start provides operations to call the start method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Start()(*VirtualEndpointCloudPCsItemStartRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemStartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Stop provides operations to call the stop method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Stop()(*VirtualEndpointCloudPCsItemStopRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property cloudPCs for deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

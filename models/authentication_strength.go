@@ -45,7 +45,7 @@ func (m *AuthenticationStrength) GetAuthenticationStrengthId()(*string) {
     }
     return nil
 }
-// GetAuthenticationStrengthResult gets the authenticationStrengthResult property value. The authenticationStrengthResult property
+// GetAuthenticationStrengthResult gets the authenticationStrengthResult property value. The result of the authentication strength. The possible values are: notSet, skippedForProofUp, satisfied, singleChallengeRequired, multipleChallengesRequired, singleRegistrationRequired, multipleRegistrationsRequired, cannotSatisfyDueToCombinationConfiguration, cannotSatisfy, unknownFutureValue.
 func (m *AuthenticationStrength) GetAuthenticationStrengthResult()(*AuthenticationStrengthResult) {
     val, err := m.GetBackingStore().Get("authenticationStrengthResult")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *AuthenticationStrength) SetAuthenticationStrengthId(value *string)() {
         panic(err)
     }
 }
-// SetAuthenticationStrengthResult sets the authenticationStrengthResult property value. The authenticationStrengthResult property
+// SetAuthenticationStrengthResult sets the authenticationStrengthResult property value. The result of the authentication strength. The possible values are: notSet, skippedForProofUp, satisfied, singleChallengeRequired, multipleChallengesRequired, singleRegistrationRequired, multipleRegistrationsRequired, cannotSatisfyDueToCombinationConfiguration, cannotSatisfy, unknownFutureValue.
 func (m *AuthenticationStrength) SetAuthenticationStrengthResult(value *AuthenticationStrengthResult)() {
     err := m.GetBackingStore().Set("authenticationStrengthResult", value)
     if err != nil {

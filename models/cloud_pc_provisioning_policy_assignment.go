@@ -19,9 +19,34 @@ func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignme
 func CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicyAssignment(), nil
 }
+// GetAssignedUsers gets the assignedUsers property value. The assignedUsers property
+func (m *CloudPcProvisioningPolicyAssignment) GetAssignedUsers()([]Userable) {
+    val, err := m.GetBackingStore().Get("assignedUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Userable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Userable, len(val))
+            for i, v := range val {
+                res[i] = v.(Userable)
+            }
+            m.SetAssignedUsers(res)
+        }
+        return nil
+    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
@@ -51,6 +76,16 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
     if err != nil {
         return err
     }
+    if m.GetAssignedUsers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedUsers()))
+        for i, v := range m.GetAssignedUsers() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("assignedUsers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("target", m.GetTarget())
         if err != nil {
@@ -58,6 +93,13 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
         }
     }
     return nil
+}
+// SetAssignedUsers sets the assignedUsers property value. The assignedUsers property
+func (m *CloudPcProvisioningPolicyAssignment) SetAssignedUsers(value []Userable)() {
+    err := m.GetBackingStore().Set("assignedUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value CloudPcManagementAssignmentTargetable)() {
@@ -70,6 +112,8 @@ func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value CloudPcManagementA
 type CloudPcProvisioningPolicyAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedUsers()([]Userable)
     GetTarget()(CloudPcManagementAssignmentTargetable)
+    SetAssignedUsers(value []Userable)()
     SetTarget(value CloudPcManagementAssignmentTargetable)()
 }

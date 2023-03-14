@@ -23,7 +23,7 @@ type ItemSynchronizationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationRequestBuilderGetQueryParameters get synchronization from servicePrincipals
+// ItemSynchronizationRequestBuilderGetQueryParameters represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 type ItemSynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,7 +85,7 @@ func (m *ItemSynchronizationRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get get synchronization from servicePrincipals
+// Get represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 func (m *ItemSynchronizationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -173,7 +173,7 @@ func (m *ItemSynchronizationRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get synchronization from servicePrincipals
+// ToGetRequestInformation represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 func (m *ItemSynchronizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -52,6 +52,17 @@ func (m *CloudPcProvisioningPolicy) GetCloudPcGroupDisplayName()(*string) {
     }
     return nil
 }
+// GetCloudPcNamingTemplate gets the cloudPcNamingTemplate property value. The cloudPcNamingTemplate property
+func (m *CloudPcProvisioningPolicy) GetCloudPcNamingTemplate()(*string) {
+    val, err := m.GetBackingStore().Get("cloudPcNamingTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The provisioning policy description.
 func (m *CloudPcProvisioningPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -141,6 +152,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetCloudPcGroupDisplayName(val)
+        }
+        return nil
+    }
+    res["cloudPcNamingTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudPcNamingTemplate(val)
         }
         return nil
     }
@@ -439,6 +460,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("cloudPcNamingTemplate", m.GetCloudPcNamingTemplate())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -558,6 +585,13 @@ func (m *CloudPcProvisioningPolicy) SetCloudPcGroupDisplayName(value *string)() 
         panic(err)
     }
 }
+// SetCloudPcNamingTemplate sets the cloudPcNamingTemplate property value. The cloudPcNamingTemplate property
+func (m *CloudPcProvisioningPolicy) SetCloudPcNamingTemplate(value *string)() {
+    err := m.GetBackingStore().Set("cloudPcNamingTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The provisioning policy description.
 func (m *CloudPcProvisioningPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -670,6 +704,7 @@ type CloudPcProvisioningPolicyable interface {
     GetAlternateResourceUrl()(*string)
     GetAssignments()([]CloudPcProvisioningPolicyAssignmentable)
     GetCloudPcGroupDisplayName()(*string)
+    GetCloudPcNamingTemplate()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable)
@@ -688,6 +723,7 @@ type CloudPcProvisioningPolicyable interface {
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
     SetCloudPcGroupDisplayName(value *string)()
+    SetCloudPcNamingTemplate(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)()

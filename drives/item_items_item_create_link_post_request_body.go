@@ -120,6 +120,16 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["sendNotification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSendNotification(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -187,6 +197,17 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) GetScope()(*string) {
     }
     return nil
 }
+// GetSendNotification gets the sendNotification property value. The sendNotification property
+func (m *ItemItemsItemCreateLinkPostRequestBody) GetSendNotification()(*bool) {
+    val, err := m.GetBackingStore().Get("sendNotification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetType gets the type property value. The type property
 func (m *ItemItemsItemCreateLinkPostRequestBody) GetType()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -236,6 +257,12 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) Serialize(writer i878a80d2330e8
     }
     {
         err := writer.WriteStringValue("scope", m.GetScope())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("sendNotification", m.GetSendNotification())
         if err != nil {
             return err
         }
@@ -307,6 +334,13 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) SetScope(value *string)() {
         panic(err)
     }
 }
+// SetSendNotification sets the sendNotification property value. The sendNotification property
+func (m *ItemItemsItemCreateLinkPostRequestBody) SetSendNotification(value *bool)() {
+    err := m.GetBackingStore().Set("sendNotification", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetType sets the type property value. The type property
 func (m *ItemItemsItemCreateLinkPostRequestBody) SetType(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
@@ -326,6 +360,7 @@ type ItemItemsItemCreateLinkPostRequestBodyable interface {
     GetRecipients()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)
     GetRetainInheritedPermissions()(*bool)
     GetScope()(*string)
+    GetSendNotification()(*bool)
     GetType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -334,5 +369,6 @@ type ItemItemsItemCreateLinkPostRequestBodyable interface {
     SetRecipients(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable)()
     SetRetainInheritedPermissions(value *bool)()
     SetScope(value *string)()
+    SetSendNotification(value *bool)()
     SetType(value *string)()
 }

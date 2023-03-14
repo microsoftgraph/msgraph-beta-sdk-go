@@ -21,7 +21,7 @@ func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
 func CreateDeviceLogCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLogCollectionResponse(), nil
 }
-// GetEnrolledByUser gets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device
+// GetEnrolledByUser gets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device.
 func (m *DeviceLogCollectionResponse) GetEnrolledByUser()(*string) {
     val, err := m.GetBackingStore().Get("enrolledByUser")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *DeviceLogCollectionResponse) GetErrorCode()(*int64) {
     }
     return nil
 }
-// GetExpirationDateTimeUTC gets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs
+// GetExpirationDateTimeUTC gets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs.
 func (m *DeviceLogCollectionResponse) GetExpirationDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTimeUTC")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. The UPN for who initiated the request
+// GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. The UPN for who initiated the request.
 func (m *DeviceLogCollectionResponse) GetInitiatedByUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("initiatedByUserPrincipalName")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *DeviceLogCollectionResponse) GetInitiatedByUserPrincipalName()(*string)
     }
     return nil
 }
-// GetManagedDeviceId gets the managedDeviceId property value. The device Id
+// GetManagedDeviceId gets the managedDeviceId property value. Indicates Intune device unique identifier.
 func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*i561e97a8befe7661a44
     }
     return nil
 }
-// GetReceivedDateTimeUTC gets the receivedDateTimeUTC property value. The DateTime the request was received
+// GetReceivedDateTimeUTC gets the receivedDateTimeUTC property value. The DateTime the request was received.
 func (m *DeviceLogCollectionResponse) GetReceivedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("receivedDateTimeUTC")
     if err != nil {
@@ -192,7 +192,7 @@ func (m *DeviceLogCollectionResponse) GetReceivedDateTimeUTC()(*i336074805fc8539
     }
     return nil
 }
-// GetRequestedDateTimeUTC gets the requestedDateTimeUTC property value. The DateTime of the request
+// GetRequestedDateTimeUTC gets the requestedDateTimeUTC property value. The DateTime of the request.
 func (m *DeviceLogCollectionResponse) GetRequestedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestedDateTimeUTC")
     if err != nil {
@@ -305,7 +305,7 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetEnrolledByUser sets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device
+// SetEnrolledByUser sets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device.
 func (m *DeviceLogCollectionResponse) SetEnrolledByUser(value *string)() {
     err := m.GetBackingStore().Set("enrolledByUser", value)
     if err != nil {
@@ -319,35 +319,35 @@ func (m *DeviceLogCollectionResponse) SetErrorCode(value *int64)() {
         panic(err)
     }
 }
-// SetExpirationDateTimeUTC sets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs
+// SetExpirationDateTimeUTC sets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs.
 func (m *DeviceLogCollectionResponse) SetExpirationDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTimeUTC", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInitiatedByUserPrincipalName sets the initiatedByUserPrincipalName property value. The UPN for who initiated the request
+// SetInitiatedByUserPrincipalName sets the initiatedByUserPrincipalName property value. The UPN for who initiated the request.
 func (m *DeviceLogCollectionResponse) SetInitiatedByUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("initiatedByUserPrincipalName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManagedDeviceId sets the managedDeviceId property value. The device Id
+// SetManagedDeviceId sets the managedDeviceId property value. Indicates Intune device unique identifier.
 func (m *DeviceLogCollectionResponse) SetManagedDeviceId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("managedDeviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReceivedDateTimeUTC sets the receivedDateTimeUTC property value. The DateTime the request was received
+// SetReceivedDateTimeUTC sets the receivedDateTimeUTC property value. The DateTime the request was received.
 func (m *DeviceLogCollectionResponse) SetReceivedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("receivedDateTimeUTC", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestedDateTimeUTC sets the requestedDateTimeUTC property value. The DateTime of the request
+// SetRequestedDateTimeUTC sets the requestedDateTimeUTC property value. The DateTime of the request.
 func (m *DeviceLogCollectionResponse) SetRequestedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestedDateTimeUTC", value)
     if err != nil {

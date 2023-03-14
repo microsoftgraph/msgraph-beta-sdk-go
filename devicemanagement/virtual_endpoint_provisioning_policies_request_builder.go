@@ -51,6 +51,10 @@ type VirtualEndpointProvisioningPoliciesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ApplyConfig provides operations to call the applyConfig method.
+func (m *VirtualEndpointProvisioningPoliciesRequestBuilder) ApplyConfig()(*VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal instantiates a new ProvisioningPoliciesRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesRequestBuilder{

@@ -87,6 +87,17 @@ func (m *Incident) GetCustomTags()([]string) {
     }
     return nil
 }
+// GetDescription gets the description property value. The description property
+func (m *Incident) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDetermination gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) GetDetermination()(*AlertDetermination) {
     val, err := m.GetBackingStore().Get("determination")
@@ -184,6 +195,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
+        }
+        return nil
+    }
     res["determination"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAlertDetermination)
         if err != nil {
@@ -224,6 +245,30 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["recommendedActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecommendedActions(val)
+        }
+        return nil
+    }
+    res["recommendedHuntingQueries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRecommendedHuntingQueryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RecommendedHuntingQueryable, len(val))
+            for i, v := range val {
+                res[i] = v.(RecommendedHuntingQueryable)
+            }
+            m.SetRecommendedHuntingQueries(res)
+        }
+        return nil
+    }
     res["redirectIncidentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -251,6 +296,20 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetStatus(val.(*IncidentStatus))
+        }
+        return nil
+    }
+    res["systemTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSystemTags(res)
         }
         return nil
     }
@@ -288,6 +347,28 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
+// GetRecommendedActions gets the recommendedActions property value. The recommendedActions property
+func (m *Incident) GetRecommendedActions()(*string) {
+    val, err := m.GetBackingStore().Get("recommendedActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetRecommendedHuntingQueries gets the recommendedHuntingQueries property value. The recommendedHuntingQueries property
+func (m *Incident) GetRecommendedHuntingQueries()([]RecommendedHuntingQueryable) {
+    val, err := m.GetBackingStore().Get("recommendedHuntingQueries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RecommendedHuntingQueryable)
+    }
+    return nil
+}
 // GetRedirectIncidentId gets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) GetRedirectIncidentId()(*string) {
     val, err := m.GetBackingStore().Get("redirectIncidentId")
@@ -318,6 +399,17 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     }
     if val != nil {
         return val.(*IncidentStatus)
+    }
+    return nil
+}
+// GetSystemTags gets the systemTags property value. The systemTags property
+func (m *Incident) GetSystemTags()([]string) {
+    val, err := m.GetBackingStore().Get("systemTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -383,6 +475,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDetermination() != nil {
         cast := (*m.GetDetermination()).String()
         err = writer.WriteStringValue("determination", &cast)
@@ -409,6 +507,22 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("recommendedActions", m.GetRecommendedActions())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRecommendedHuntingQueries() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendedHuntingQueries()))
+        for i, v := range m.GetRecommendedHuntingQueries() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("recommendedHuntingQueries", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("redirectIncidentId", m.GetRedirectIncidentId())
         if err != nil {
             return err
@@ -424,6 +538,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSystemTags() != nil {
+        err = writer.WriteCollectionOfStringValues("systemTags", m.GetSystemTags())
         if err != nil {
             return err
         }
@@ -478,6 +598,13 @@ func (m *Incident) SetCustomTags(value []string)() {
         panic(err)
     }
 }
+// SetDescription sets the description property value. The description property
+func (m *Incident) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDetermination sets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) SetDetermination(value *AlertDetermination)() {
     err := m.GetBackingStore().Set("determination", value)
@@ -506,6 +633,20 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
+// SetRecommendedActions sets the recommendedActions property value. The recommendedActions property
+func (m *Incident) SetRecommendedActions(value *string)() {
+    err := m.GetBackingStore().Set("recommendedActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRecommendedHuntingQueries sets the recommendedHuntingQueries property value. The recommendedHuntingQueries property
+func (m *Incident) SetRecommendedHuntingQueries(value []RecommendedHuntingQueryable)() {
+    err := m.GetBackingStore().Set("recommendedHuntingQueries", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) SetRedirectIncidentId(value *string)() {
     err := m.GetBackingStore().Set("redirectIncidentId", value)
@@ -527,6 +668,13 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
         panic(err)
     }
 }
+// SetSystemTags sets the systemTags property value. The systemTags property
+func (m *Incident) SetSystemTags(value []string)() {
+    err := m.GetBackingStore().Set("systemTags", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -544,13 +692,17 @@ type Incidentable interface {
     GetComments()([]AlertCommentable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomTags()([]string)
+    GetDescription()(*string)
     GetDetermination()(*AlertDetermination)
     GetDisplayName()(*string)
     GetIncidentWebUrl()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRecommendedActions()(*string)
+    GetRecommendedHuntingQueries()([]RecommendedHuntingQueryable)
     GetRedirectIncidentId()(*string)
     GetSeverity()(*AlertSeverity)
     GetStatus()(*IncidentStatus)
+    GetSystemTags()([]string)
     GetTenantId()(*string)
     SetAlerts(value []Alertable)()
     SetAssignedTo(value *string)()
@@ -558,12 +710,16 @@ type Incidentable interface {
     SetComments(value []AlertCommentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomTags(value []string)()
+    SetDescription(value *string)()
     SetDetermination(value *AlertDetermination)()
     SetDisplayName(value *string)()
     SetIncidentWebUrl(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRecommendedActions(value *string)()
+    SetRecommendedHuntingQueries(value []RecommendedHuntingQueryable)()
     SetRedirectIncidentId(value *string)()
     SetSeverity(value *AlertSeverity)()
     SetStatus(value *IncidentStatus)()
+    SetSystemTags(value []string)()
     SetTenantId(value *string)()
 }
