@@ -46,10 +46,6 @@ type UserItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivateServicePlan provides operations to call the activateServicePlan method.
-func (m *UserItemRequestBuilder) ActivateServicePlan()(*ItemActivateServicePlanRequestBuilder) {
-    return NewItemActivateServicePlanRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Activities provides operations to manage the activities property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Activities()(*ItemActivitiesRequestBuilder) {
     return NewItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)

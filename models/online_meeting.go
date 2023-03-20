@@ -53,7 +53,18 @@ func (m *OnlineMeeting) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     }
     return nil
 }
-// GetAllowParticipantsToChangeName gets the allowParticipantsToChangeName property value. The allowParticipantsToChangeName property
+// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
+func (m *OnlineMeeting) GetAllowMeetingChat()(*MeetingChatMode) {
+    val, err := m.GetBackingStore().Get("allowMeetingChat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MeetingChatMode)
+    }
+    return nil
+}
+// GetAllowParticipantsToChangeName gets the allowParticipantsToChangeName property value. Specifies if participants are allowed to rename themselves in an instance of the meeting.
 func (m *OnlineMeeting) GetAllowParticipantsToChangeName()(*bool) {
     val, err := m.GetBackingStore().Get("allowParticipantsToChangeName")
     if err != nil {
@@ -226,6 +237,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
+        }
+        return nil
+    }
+    res["allowMeetingChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMeetingChatMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowMeetingChat(val.(*MeetingChatMode))
         }
         return nil
     }
@@ -801,6 +822,13 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetAllowMeetingChat() != nil {
+        cast := (*m.GetAllowMeetingChat()).String()
+        err = writer.WriteStringValue("allowMeetingChat", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("allowParticipantsToChangeName", m.GetAllowParticipantsToChangeName())
         if err != nil {
@@ -1025,7 +1053,14 @@ func (m *OnlineMeeting) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
         panic(err)
     }
 }
-// SetAllowParticipantsToChangeName sets the allowParticipantsToChangeName property value. The allowParticipantsToChangeName property
+// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat.
+func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
+    err := m.GetBackingStore().Set("allowMeetingChat", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowParticipantsToChangeName sets the allowParticipantsToChangeName property value. Specifies if participants are allowed to rename themselves in an instance of the meeting.
 func (m *OnlineMeeting) SetAllowParticipantsToChangeName(value *bool)() {
     err := m.GetBackingStore().Set("allowParticipantsToChangeName", value)
     if err != nil {
@@ -1256,6 +1291,7 @@ type OnlineMeetingable interface {
     GetAllowAttendeeToEnableCamera()(*bool)
     GetAllowAttendeeToEnableMic()(*bool)
     GetAllowedPresenters()(*OnlineMeetingPresenters)
+    GetAllowMeetingChat()(*MeetingChatMode)
     GetAllowParticipantsToChangeName()(*bool)
     GetAllowTeamworkReactions()(*bool)
     GetAlternativeRecording()([]byte)
@@ -1291,6 +1327,7 @@ type OnlineMeetingable interface {
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
+    SetAllowMeetingChat(value *MeetingChatMode)()
     SetAllowParticipantsToChangeName(value *bool)()
     SetAllowTeamworkReactions(value *bool)()
     SetAlternativeRecording(value []byte)()

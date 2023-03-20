@@ -38,7 +38,7 @@ func (m *MicrosoftAuthenticatorFeatureSettings) GetAdditionalData()(map[string]a
 func (m *MicrosoftAuthenticatorFeatureSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompanionAppAllowedState gets the companionAppAllowedState property value. The companionAppAllowedState property
+// GetCompanionAppAllowedState gets the companionAppAllowedState property value. Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.
 func (m *MicrosoftAuthenticatorFeatureSettings) GetCompanionAppAllowedState()(AuthenticationMethodFeatureConfigurationable) {
     val, err := m.GetBackingStore().Get("companionAppAllowedState")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *MicrosoftAuthenticatorFeatureSettings) SetAdditionalData(value map[stri
 func (m *MicrosoftAuthenticatorFeatureSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompanionAppAllowedState sets the companionAppAllowedState property value. The companionAppAllowedState property
+// SetCompanionAppAllowedState sets the companionAppAllowedState property value. Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.
 func (m *MicrosoftAuthenticatorFeatureSettings) SetCompanionAppAllowedState(value AuthenticationMethodFeatureConfigurationable)() {
     err := m.GetBackingStore().Set("companionAppAllowedState", value)
     if err != nil {

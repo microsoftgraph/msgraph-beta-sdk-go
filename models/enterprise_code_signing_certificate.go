@@ -20,7 +20,7 @@ func NewEnterpriseCodeSigningCertificate()(*EnterpriseCodeSigningCertificate) {
 func CreateEnterpriseCodeSigningCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnterpriseCodeSigningCertificate(), nil
 }
-// GetContent gets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
+// GetContent gets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
 func (m *EnterpriseCodeSigningCertificate) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *EnterpriseCodeSigningCertificate) GetContent()([]byte) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The Cert Expiration Date.
+// GetExpirationDateTime gets the expirationDateTime property value. The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIssuer gets the issuer property value. The Issuer value for the cert.
+// GetIssuer gets the issuer property value. The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
     }
     return nil
 }
-// GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
+// GetIssuerName gets the issuerName property value. The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
     val, err := m.GetBackingStore().Get("issuerName")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *EnterpriseCodeSigningCertificate) GetStatus()(*CertificateStatus) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The Subject Value for the cert.
+// GetSubject gets the subject property value. The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -171,7 +171,7 @@ func (m *EnterpriseCodeSigningCertificate) GetSubject()(*string) {
     }
     return nil
 }
-// GetSubjectName gets the subjectName property value. The Subject Name for the cert.
+// GetSubjectName gets the subjectName property value. The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetSubjectName()(*string) {
     val, err := m.GetBackingStore().Get("subjectName")
     if err != nil {
@@ -182,7 +182,7 @@ func (m *EnterpriseCodeSigningCertificate) GetSubjectName()(*string) {
     }
     return nil
 }
-// GetUploadDateTime gets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
+// GetUploadDateTime gets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("uploadDateTime")
     if err != nil {
@@ -250,28 +250,28 @@ func (m *EnterpriseCodeSigningCertificate) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetContent sets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
+// SetContent sets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
 func (m *EnterpriseCodeSigningCertificate) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The Cert Expiration Date.
+// SetExpirationDateTime sets the expirationDateTime property value. The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuer sets the issuer property value. The Issuer value for the cert.
+// SetIssuer sets the issuer property value. The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) SetIssuer(value *string)() {
     err := m.GetBackingStore().Set("issuer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuerName sets the issuerName property value. The Issuer Name for the cert.
+// SetIssuerName sets the issuerName property value. The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) SetIssuerName(value *string)() {
     err := m.GetBackingStore().Set("issuerName", value)
     if err != nil {
@@ -285,21 +285,21 @@ func (m *EnterpriseCodeSigningCertificate) SetStatus(value *CertificateStatus)()
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The Subject Value for the cert.
+// SetSubject sets the subject property value. The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubjectName sets the subjectName property value. The Subject Name for the cert.
+// SetSubjectName sets the subjectName property value. The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) SetSubjectName(value *string)() {
     err := m.GetBackingStore().Set("subjectName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUploadDateTime sets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
+// SetUploadDateTime sets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("uploadDateTime", value)
     if err != nil {

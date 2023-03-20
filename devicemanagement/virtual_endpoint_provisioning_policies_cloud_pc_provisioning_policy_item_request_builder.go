@@ -46,6 +46,10 @@ type VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Apply provides operations to call the apply method.
+func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) Apply()(*VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Assign provides operations to call the assign method.
 func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) Assign()(*VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)

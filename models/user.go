@@ -9,7 +9,7 @@ import (
 type User struct {
     DirectoryObject
 }
-// NewUser instantiates a new user and sets the default values.
+// NewUser instantiates a new User and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),

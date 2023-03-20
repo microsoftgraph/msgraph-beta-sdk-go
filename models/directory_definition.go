@@ -133,7 +133,7 @@ func (m *DirectoryDefinition) GetObjects()([]ObjectDefinitionable) {
     }
     return nil
 }
-// GetReadOnly gets the readOnly property value. The readOnly property
+// GetReadOnly gets the readOnly property value. Whether this object is read-only.
 func (m *DirectoryDefinition) GetReadOnly()(*bool) {
     val, err := m.GetBackingStore().Get("readOnly")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *DirectoryDefinition) SetObjects(value []ObjectDefinitionable)() {
         panic(err)
     }
 }
-// SetReadOnly sets the readOnly property value. The readOnly property
+// SetReadOnly sets the readOnly property value. Whether this object is read-only.
 func (m *DirectoryDefinition) SetReadOnly(value *bool)() {
     err := m.GetBackingStore().Set("readOnly", value)
     if err != nil {

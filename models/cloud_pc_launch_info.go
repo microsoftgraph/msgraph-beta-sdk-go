@@ -93,11 +93,53 @@ func (m *CloudPcLaunchInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["windows365SwitchCompatible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindows365SwitchCompatible(val)
+        }
+        return nil
+    }
+    res["windows365SwitchNotCompatibleReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindows365SwitchNotCompatibleReason(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcLaunchInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetWindows365SwitchCompatible gets the windows365SwitchCompatible property value. Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.
+func (m *CloudPcLaunchInfo) GetWindows365SwitchCompatible()(*bool) {
+    val, err := m.GetBackingStore().Get("windows365SwitchCompatible")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetWindows365SwitchNotCompatibleReason gets the windows365SwitchNotCompatibleReason property value. Indicates the reason the Cloud PC doesn't support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.
+func (m *CloudPcLaunchInfo) GetWindows365SwitchNotCompatibleReason()(*string) {
+    val, err := m.GetBackingStore().Get("windows365SwitchNotCompatibleReason")
     if err != nil {
         panic(err)
     }
@@ -122,6 +164,18 @@ func (m *CloudPcLaunchInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("windows365SwitchCompatible", m.GetWindows365SwitchCompatible())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("windows365SwitchNotCompatibleReason", m.GetWindows365SwitchNotCompatibleReason())
         if err != nil {
             return err
         }
@@ -166,6 +220,20 @@ func (m *CloudPcLaunchInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetWindows365SwitchCompatible sets the windows365SwitchCompatible property value. Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.
+func (m *CloudPcLaunchInfo) SetWindows365SwitchCompatible(value *bool)() {
+    err := m.GetBackingStore().Set("windows365SwitchCompatible", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWindows365SwitchNotCompatibleReason sets the windows365SwitchNotCompatibleReason property value. Indicates the reason the Cloud PC doesn't support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.
+func (m *CloudPcLaunchInfo) SetWindows365SwitchNotCompatibleReason(value *string)() {
+    err := m.GetBackingStore().Set("windows365SwitchNotCompatibleReason", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CloudPcLaunchInfoable 
 type CloudPcLaunchInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -175,8 +243,12 @@ type CloudPcLaunchInfoable interface {
     GetCloudPcId()(*string)
     GetCloudPcLaunchUrl()(*string)
     GetOdataType()(*string)
+    GetWindows365SwitchCompatible()(*bool)
+    GetWindows365SwitchNotCompatibleReason()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudPcId(value *string)()
     SetCloudPcLaunchUrl(value *string)()
     SetOdataType(value *string)()
+    SetWindows365SwitchCompatible(value *bool)()
+    SetWindows365SwitchNotCompatibleReason(value *string)()
 }

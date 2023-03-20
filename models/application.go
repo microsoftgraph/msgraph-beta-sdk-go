@@ -947,7 +947,7 @@ func (m *Application) GetSpa()(SpaApplicationable) {
     }
     return nil
 }
-// GetSynchronization gets the synchronization property value. The synchronization property
+// GetSynchronization gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 func (m *Application) GetSynchronization()(Synchronizationable) {
     val, err := m.GetBackingStore().Get("synchronization")
     if err != nil {
@@ -1633,7 +1633,7 @@ func (m *Application) SetSpa(value SpaApplicationable)() {
         panic(err)
     }
 }
-// SetSynchronization sets the synchronization property value. The synchronization property
+// SetSynchronization sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 func (m *Application) SetSynchronization(value Synchronizationable)() {
     err := m.GetBackingStore().Set("synchronization", value)
     if err != nil {
