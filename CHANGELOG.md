@@ -11,10 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-## [0.55.0] - 2023-03-03
-- shimmed "me" package, backing store , uuid fix and reduced file count.
+## [0.56.0] - 2023-03-20
 
 ### Changed
+
+- Weekly generation.
+
+## [0.55.0] - 2023-03-03
+
+### Changed
+
+- shimmed "me" package, backing store , uuid fix and reduced file count.
+
 
 ## [0.54.0] - 2023-01-24
 
