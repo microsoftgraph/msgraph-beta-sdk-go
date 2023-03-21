@@ -89,6 +89,10 @@ func (m *ItemDevicesItemMemberOfRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
+// GraphAdministrativeUnit casts the previous resource to administrativeUnit.
+func (m *ItemDevicesItemMemberOfRequestBuilder) GraphAdministrativeUnit()(*ItemDevicesItemMemberOfGraphAdministrativeUnitRequestBuilder) {
+    return NewItemDevicesItemMemberOfGraphAdministrativeUnitRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // GraphGroup casts the previous resource to group.
 func (m *ItemDevicesItemMemberOfRequestBuilder) GraphGroup()(*ItemDevicesItemMemberOfGraphGroupRequestBuilder) {
     return NewItemDevicesItemMemberOfGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)

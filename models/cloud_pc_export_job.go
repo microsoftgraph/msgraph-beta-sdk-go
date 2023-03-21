@@ -11,7 +11,7 @@ type CloudPcExportJob struct {
     // The selected columns of the report.
     SelectEscaped []string
 }
-// NewCloudPcExportJob instantiates a new cloudPcExportJob and sets the default values.
+// NewCloudPcExportJob instantiates a new CloudPcExportJob and sets the default values.
 func NewCloudPcExportJob()(*CloudPcExportJob) {
     m := &CloudPcExportJob{
         Entity: *NewEntity(),

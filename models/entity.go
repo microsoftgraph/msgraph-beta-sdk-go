@@ -42,8 +42,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessPackageAssignmentPolicy(), nil
                     case "#microsoft.graph.accessPackageAssignmentRequest":
                         return NewAccessPackageAssignmentRequest(), nil
+                    case "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension":
+                        return NewAccessPackageAssignmentRequestWorkflowExtension(), nil
                     case "#microsoft.graph.accessPackageAssignmentResourceRole":
                         return NewAccessPackageAssignmentResourceRole(), nil
+                    case "#microsoft.graph.accessPackageAssignmentWorkflowExtension":
+                        return NewAccessPackageAssignmentWorkflowExtension(), nil
                     case "#microsoft.graph.accessPackageCatalog":
                         return NewAccessPackageCatalog(), nil
                     case "#microsoft.graph.accessPackageResource":
@@ -622,6 +626,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomerPaymentJournal(), nil
                     case "#microsoft.graph.customExtensionHandler":
                         return NewCustomExtensionHandler(), nil
+                    case "#microsoft.graph.customExtensionStageSetting":
+                        return NewCustomExtensionStageSetting(), nil
                     case "#microsoft.graph.customSecurityAttributeDefinition":
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataClassificationService":

@@ -20,6 +20,17 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
 func CreateAccessPackageCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageCatalog(), nil
 }
+// GetAccessPackageCustomWorkflowExtensions gets the accessPackageCustomWorkflowExtensions property value. The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
+func (m *AccessPackageCatalog) GetAccessPackageCustomWorkflowExtensions()([]CustomCalloutExtensionable) {
+    val, err := m.GetBackingStore().Get("accessPackageCustomWorkflowExtensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomCalloutExtensionable)
+    }
+    return nil
+}
 // GetAccessPackageResourceRoles gets the accessPackageResourceRoles property value. The roles in each resource in a catalog. Read-only.
 func (m *AccessPackageCatalog) GetAccessPackageResourceRoles()([]AccessPackageResourceRoleable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceRoles")
@@ -144,6 +155,20 @@ func (m *AccessPackageCatalog) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["accessPackageCustomWorkflowExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomCalloutExtensionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomCalloutExtensionable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomCalloutExtensionable)
+            }
+            m.SetAccessPackageCustomWorkflowExtensions(res)
+        }
+        return nil
+    }
     res["accessPackageResourceRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleFromDiscriminatorValue)
         if err != nil {
@@ -345,6 +370,16 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    if m.GetAccessPackageCustomWorkflowExtensions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageCustomWorkflowExtensions()))
+        for i, v := range m.GetAccessPackageCustomWorkflowExtensions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("accessPackageCustomWorkflowExtensions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAccessPackageResourceRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceRoles()))
         for i, v := range m.GetAccessPackageResourceRoles() {
@@ -451,6 +486,13 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
+// SetAccessPackageCustomWorkflowExtensions sets the accessPackageCustomWorkflowExtensions property value. The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
+func (m *AccessPackageCatalog) SetAccessPackageCustomWorkflowExtensions(value []CustomCalloutExtensionable)() {
+    err := m.GetBackingStore().Set("accessPackageCustomWorkflowExtensions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. The roles in each resource in a catalog. Read-only.
 func (m *AccessPackageCatalog) SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)() {
     err := m.GetBackingStore().Set("accessPackageResourceRoles", value)
@@ -553,6 +595,7 @@ func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6
 type AccessPackageCatalogable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessPackageCustomWorkflowExtensions()([]CustomCalloutExtensionable)
     GetAccessPackageResourceRoles()([]AccessPackageResourceRoleable)
     GetAccessPackageResources()([]AccessPackageResourceable)
     GetAccessPackageResourceScopes()([]AccessPackageResourceScopeable)
@@ -567,6 +610,7 @@ type AccessPackageCatalogable interface {
     GetIsExternallyVisible()(*bool)
     GetModifiedBy()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetAccessPackageCustomWorkflowExtensions(value []CustomCalloutExtensionable)()
     SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)()
     SetAccessPackageResources(value []AccessPackageResourceable)()
     SetAccessPackageResourceScopes(value []AccessPackageResourceScopeable)()

@@ -54,6 +54,16 @@ func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUrl(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLogicAppWorkflowName gets the logicAppWorkflowName property value. The name of the logic app.
@@ -89,6 +99,17 @@ func (m *LogicAppTriggerEndpointConfiguration) GetSubscriptionId()(*string) {
     }
     return nil
 }
+// GetUrl gets the url property value. The URL to the logic app endpoint that will be triggered. Only required for app-only token scenarios where app is creating a customCalloutExtension without a signed-in user.
+func (m *LogicAppTriggerEndpointConfiguration) GetUrl()(*string) {
+    val, err := m.GetBackingStore().Get("url")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.CustomExtensionEndpointConfiguration.Serialize(writer)
@@ -109,6 +130,12 @@ func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d
     }
     {
         err = writer.WriteStringValue("subscriptionId", m.GetSubscriptionId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
             return err
         }
@@ -136,6 +163,13 @@ func (m *LogicAppTriggerEndpointConfiguration) SetSubscriptionId(value *string)(
         panic(err)
     }
 }
+// SetUrl sets the url property value. The URL to the logic app endpoint that will be triggered. Only required for app-only token scenarios where app is creating a customCalloutExtension without a signed-in user.
+func (m *LogicAppTriggerEndpointConfiguration) SetUrl(value *string)() {
+    err := m.GetBackingStore().Set("url", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // LogicAppTriggerEndpointConfigurationable 
 type LogicAppTriggerEndpointConfigurationable interface {
     CustomExtensionEndpointConfigurationable
@@ -143,7 +177,9 @@ type LogicAppTriggerEndpointConfigurationable interface {
     GetLogicAppWorkflowName()(*string)
     GetResourceGroupName()(*string)
     GetSubscriptionId()(*string)
+    GetUrl()(*string)
     SetLogicAppWorkflowName(value *string)()
     SetResourceGroupName(value *string)()
     SetSubscriptionId(value *string)()
+    SetUrl(value *string)()
 }

@@ -75,6 +75,17 @@ func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc85398
     }
     return nil
 }
+// GetCustomExtensionCalloutInstances gets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment request workflow.
+func (m *AccessPackageAssignmentRequest) GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable) {
+    val, err := m.GetBackingStore().Get("customExtensionCalloutInstances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomExtensionCalloutInstanceable)
+    }
+    return nil
+}
 // GetCustomExtensionHandlerInstances gets the customExtensionHandlerInstances property value. A collection of custom workflow extension instances being run on an assignment request. Read-only.
 func (m *AccessPackageAssignmentRequest) GetCustomExtensionHandlerInstances()([]CustomExtensionHandlerInstanceable) {
     val, err := m.GetBackingStore().Get("customExtensionHandlerInstances")
@@ -151,6 +162,20 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["customExtensionCalloutInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomExtensionCalloutInstanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomExtensionCalloutInstanceable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomExtensionCalloutInstanceable)
+            }
+            m.SetCustomExtensionCalloutInstances(res)
         }
         return nil
     }
@@ -367,6 +392,16 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetCustomExtensionCalloutInstances() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomExtensionCalloutInstances()))
+        for i, v := range m.GetCustomExtensionCalloutInstances() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("customExtensionCalloutInstances", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCustomExtensionHandlerInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomExtensionHandlerInstances()))
         for i, v := range m.GetCustomExtensionHandlerInstances() {
@@ -462,6 +497,13 @@ func (m *AccessPackageAssignmentRequest) SetCreatedDateTime(value *i336074805fc8
         panic(err)
     }
 }
+// SetCustomExtensionCalloutInstances sets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment request workflow.
+func (m *AccessPackageAssignmentRequest) SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)() {
+    err := m.GetBackingStore().Set("customExtensionCalloutInstances", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCustomExtensionHandlerInstances sets the customExtensionHandlerInstances property value. A collection of custom workflow extension instances being run on an assignment request. Read-only.
 func (m *AccessPackageAssignmentRequest) SetCustomExtensionHandlerInstances(value []CustomExtensionHandlerInstanceable)() {
     err := m.GetBackingStore().Set("customExtensionHandlerInstances", value)
@@ -534,6 +576,7 @@ type AccessPackageAssignmentRequestable interface {
     GetAnswers()([]AccessPackageAnswerable)
     GetCompletedDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable)
     GetCustomExtensionHandlerInstances()([]CustomExtensionHandlerInstanceable)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsValidationOnly()(*bool)
@@ -548,6 +591,7 @@ type AccessPackageAssignmentRequestable interface {
     SetAnswers(value []AccessPackageAnswerable)()
     SetCompletedDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)()
     SetCustomExtensionHandlerInstances(value []CustomExtensionHandlerInstanceable)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsValidationOnly(value *bool)()
