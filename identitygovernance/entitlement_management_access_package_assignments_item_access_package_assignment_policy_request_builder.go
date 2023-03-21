@@ -88,6 +88,21 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     }
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionHandlersCustomExtensionHandlerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// CustomExtensionStageSettings provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) CustomExtensionStageSettings()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CustomExtensionStageSettingsById provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) CustomExtensionStageSettingsById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["customExtensionStageSetting%2Did"] = id
+    }
+    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // Delete delete navigation property accessPackageAssignmentPolicy for identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

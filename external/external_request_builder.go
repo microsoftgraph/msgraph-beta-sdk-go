@@ -92,6 +92,10 @@ func (m *ExternalRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Externalable), nil
 }
+// IndustryData provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
+func (m *ExternalRequestBuilder) IndustryData()(*IndustryDataRequestBuilder) {
+    return NewIndustryDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update external
 func (m *ExternalRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Externalable, requestConfiguration *ExternalRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Externalable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

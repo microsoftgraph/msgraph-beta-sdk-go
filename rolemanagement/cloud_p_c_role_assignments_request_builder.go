@@ -16,7 +16,7 @@ type CloudPCRoleAssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CloudPCRoleAssignmentsRequestBuilderGetQueryParameters get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+// CloudPCRoleAssignmentsRequestBuilderGetQueryParameters get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 type CloudPCRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewCloudPCRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *CloudPCRoleAssignmentsRequestBuilder) Count()(*CloudPCRoleAssignmentsCountRequestBuilder) {
     return NewCloudPCRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+// Get get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
 func (m *CloudPCRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentMultipleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *CloudPCRoleAssignmentsRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentMultipleable), nil
 }
-// ToGetRequestInformation get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+// ToGetRequestInformation get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 func (m *CloudPCRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

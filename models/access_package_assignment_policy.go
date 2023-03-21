@@ -108,6 +108,17 @@ func (m *AccessPackageAssignmentPolicy) GetCustomExtensionHandlers()([]CustomExt
     }
     return nil
 }
+// GetCustomExtensionStageSettings gets the customExtensionStageSettings property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+func (m *AccessPackageAssignmentPolicy) GetCustomExtensionStageSettings()([]CustomExtensionStageSettingable) {
+    val, err := m.GetBackingStore().Get("customExtensionStageSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomExtensionStageSettingable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -236,6 +247,20 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
                 res[i] = v.(CustomExtensionHandlerable)
             }
             m.SetCustomExtensionHandlers(res)
+        }
+        return nil
+    }
+    res["customExtensionStageSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomExtensionStageSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomExtensionStageSettingable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomExtensionStageSettingable)
+            }
+            m.SetCustomExtensionStageSettings(res)
         }
         return nil
     }
@@ -448,6 +473,16 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetCustomExtensionStageSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomExtensionStageSettings()))
+        for i, v := range m.GetCustomExtensionStageSettings() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("customExtensionStageSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -564,6 +599,13 @@ func (m *AccessPackageAssignmentPolicy) SetCustomExtensionHandlers(value []Custo
         panic(err)
     }
 }
+// SetCustomExtensionStageSettings sets the customExtensionStageSettings property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+func (m *AccessPackageAssignmentPolicy) SetCustomExtensionStageSettings(value []CustomExtensionStageSettingable)() {
+    err := m.GetBackingStore().Set("customExtensionStageSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -639,6 +681,7 @@ type AccessPackageAssignmentPolicyable interface {
     GetCreatedBy()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomExtensionHandlers()([]CustomExtensionHandlerable)
+    GetCustomExtensionStageSettings()([]CustomExtensionStageSettingable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDurationInDays()(*int32)
@@ -656,6 +699,7 @@ type AccessPackageAssignmentPolicyable interface {
     SetCreatedBy(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomExtensionHandlers(value []CustomExtensionHandlerable)()
+    SetCustomExtensionStageSettings(value []CustomExtensionStageSettingable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDurationInDays(value *int32)()

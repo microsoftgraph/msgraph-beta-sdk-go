@@ -8,7 +8,7 @@ import (
 type ProgramControlType struct {
     Entity
 }
-// NewProgramControlType instantiates a new ProgramControlType and sets the default values.
+// NewProgramControlType instantiates a new programControlType and sets the default values.
 func NewProgramControlType()(*ProgramControlType) {
     m := &ProgramControlType{
         Entity: *NewEntity(),

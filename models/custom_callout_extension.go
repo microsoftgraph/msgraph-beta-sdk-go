@@ -29,6 +29,10 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension":
+                        return NewAccessPackageAssignmentRequestWorkflowExtension(), nil
+                    case "#microsoft.graph.accessPackageAssignmentWorkflowExtension":
+                        return NewAccessPackageAssignmentWorkflowExtension(), nil
                     case "#microsoft.graph.customAccessPackageWorkflowExtension":
                         return NewCustomAccessPackageWorkflowExtension(), nil
                     case "#microsoft.graph.customAuthenticationExtension":

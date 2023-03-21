@@ -19,7 +19,7 @@ func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
 func CreateEdiscoveryExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryExportOperation(), nil
 }
-// GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
+// GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
 func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobContainer")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     }
     return nil
 }
-// GetAzureBlobToken gets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
+// GetAzureBlobToken gets the azureBlobToken property value. The azureBlobToken property
 func (m *EdiscoveryExportOperation) GetAzureBlobToken()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobToken")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadata
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+// GetExportOptions gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30th, 2023. Going forward, the summary and load file are always included.
 func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
@@ -312,14 +312,14 @@ func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAzureBlobContainer sets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
+// SetAzureBlobContainer sets the azureBlobContainer property value. The azureBlobContainer property
 func (m *EdiscoveryExportOperation) SetAzureBlobContainer(value *string)() {
     err := m.GetBackingStore().Set("azureBlobContainer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAzureBlobToken sets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
+// SetAzureBlobToken sets the azureBlobToken property value. The azureBlobToken property
 func (m *EdiscoveryExportOperation) SetAzureBlobToken(value *string)() {
     err := m.GetBackingStore().Set("azureBlobToken", value)
     if err != nil {
@@ -340,7 +340,7 @@ func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMeta
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+// SetExportOptions sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30th, 2023. Going forward, the summary and load file are always included.
 func (m *EdiscoveryExportOperation) SetExportOptions(value *ExportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
