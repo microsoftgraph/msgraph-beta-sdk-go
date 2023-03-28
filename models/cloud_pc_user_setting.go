@@ -9,7 +9,7 @@ import (
 type CloudPcUserSetting struct {
     Entity
 }
-// NewCloudPcUserSetting instantiates a new cloudPcUserSetting and sets the default values.
+// NewCloudPcUserSetting instantiates a new CloudPcUserSetting and sets the default values.
 func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     m := &CloudPcUserSetting{
         Entity: *NewEntity(),

@@ -31,6 +31,17 @@ func (m *ManagedTenant) GetAggregatedPolicyCompliances()([]AggregatedPolicyCompl
     }
     return nil
 }
+// GetAppPerformances gets the appPerformances property value. The appPerformances property
+func (m *ManagedTenant) GetAppPerformances()([]AppPerformanceable) {
+    val, err := m.GetBackingStore().Get("appPerformances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppPerformanceable)
+    }
+    return nil
+}
 // GetAuditEvents gets the auditEvents property value. The collection of audit events across managed tenants.
 func (m *ManagedTenant) GetAuditEvents()([]AuditEventable) {
     val, err := m.GetBackingStore().Get("auditEvents")
@@ -97,6 +108,17 @@ func (m *ManagedTenant) GetCredentialUserRegistrationsSummaries()([]CredentialUs
     }
     return nil
 }
+// GetDeviceAppPerformances gets the deviceAppPerformances property value. The deviceAppPerformances property
+func (m *ManagedTenant) GetDeviceAppPerformances()([]DeviceAppPerformanceable) {
+    val, err := m.GetBackingStore().Get("deviceAppPerformances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceAppPerformanceable)
+    }
+    return nil
+}
 // GetDeviceCompliancePolicySettingStateSummaries gets the deviceCompliancePolicySettingStateSummaries property value. Summary information for device compliance policy setting states across managed tenants.
 func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicySettingStateSummaries")
@@ -105,6 +127,17 @@ func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]Devic
     }
     if val != nil {
         return val.([]DeviceCompliancePolicySettingStateSummaryable)
+    }
+    return nil
+}
+// GetDeviceHealthStatuses gets the deviceHealthStatuses property value. The deviceHealthStatuses property
+func (m *ManagedTenant) GetDeviceHealthStatuses()([]DeviceHealthStatusable) {
+    val, err := m.GetBackingStore().Get("deviceHealthStatuses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceHealthStatusable)
     }
     return nil
 }
@@ -122,6 +155,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 res[i] = v.(AggregatedPolicyComplianceable)
             }
             m.SetAggregatedPolicyCompliances(res)
+        }
+        return nil
+    }
+    res["appPerformances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppPerformanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppPerformanceable, len(val))
+            for i, v := range val {
+                res[i] = v.(AppPerformanceable)
+            }
+            m.SetAppPerformances(res)
         }
         return nil
     }
@@ -209,6 +256,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["deviceAppPerformances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceAppPerformanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceAppPerformanceable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceAppPerformanceable)
+            }
+            m.SetDeviceAppPerformances(res)
+        }
+        return nil
+    }
     res["deviceCompliancePolicySettingStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue)
         if err != nil {
@@ -220,6 +281,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 res[i] = v.(DeviceCompliancePolicySettingStateSummaryable)
             }
             m.SetDeviceCompliancePolicySettingStateSummaries(res)
+        }
+        return nil
+    }
+    res["deviceHealthStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceHealthStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceHealthStatusable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceHealthStatusable)
+            }
+            m.SetDeviceHealthStatuses(res)
         }
         return nil
     }
@@ -891,6 +966,16 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetAppPerformances() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppPerformances()))
+        for i, v := range m.GetAppPerformances() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("appPerformances", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAuditEvents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuditEvents()))
         for i, v := range m.GetAuditEvents() {
@@ -951,12 +1036,32 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetDeviceAppPerformances() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceAppPerformances()))
+        for i, v := range m.GetDeviceAppPerformances() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceAppPerformances", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDeviceCompliancePolicySettingStateSummaries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceCompliancePolicySettingStateSummaries()))
         for i, v := range m.GetDeviceCompliancePolicySettingStateSummaries() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicySettingStateSummaries", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceHealthStatuses() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceHealthStatuses()))
+        for i, v := range m.GetDeviceHealthStatuses() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceHealthStatuses", cast)
         if err != nil {
             return err
         }
@@ -1230,6 +1335,13 @@ func (m *ManagedTenant) SetAggregatedPolicyCompliances(value []AggregatedPolicyC
         panic(err)
     }
 }
+// SetAppPerformances sets the appPerformances property value. The appPerformances property
+func (m *ManagedTenant) SetAppPerformances(value []AppPerformanceable)() {
+    err := m.GetBackingStore().Set("appPerformances", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAuditEvents sets the auditEvents property value. The collection of audit events across managed tenants.
 func (m *ManagedTenant) SetAuditEvents(value []AuditEventable)() {
     err := m.GetBackingStore().Set("auditEvents", value)
@@ -1272,9 +1384,23 @@ func (m *ManagedTenant) SetCredentialUserRegistrationsSummaries(value []Credenti
         panic(err)
     }
 }
+// SetDeviceAppPerformances sets the deviceAppPerformances property value. The deviceAppPerformances property
+func (m *ManagedTenant) SetDeviceAppPerformances(value []DeviceAppPerformanceable)() {
+    err := m.GetBackingStore().Set("deviceAppPerformances", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceCompliancePolicySettingStateSummaries sets the deviceCompliancePolicySettingStateSummaries property value. Summary information for device compliance policy setting states across managed tenants.
 func (m *ManagedTenant) SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummaryable)() {
     err := m.GetBackingStore().Set("deviceCompliancePolicySettingStateSummaries", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceHealthStatuses sets the deviceHealthStatuses property value. The deviceHealthStatuses property
+func (m *ManagedTenant) SetDeviceHealthStatuses(value []DeviceHealthStatusable)() {
+    err := m.GetBackingStore().Set("deviceHealthStatuses", value)
     if err != nil {
         panic(err)
     }
@@ -1466,13 +1592,16 @@ type ManagedTenantable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAggregatedPolicyCompliances()([]AggregatedPolicyComplianceable)
+    GetAppPerformances()([]AppPerformanceable)
     GetAuditEvents()([]AuditEventable)
     GetCloudPcConnections()([]CloudPcConnectionable)
     GetCloudPcDevices()([]CloudPcDeviceable)
     GetCloudPcsOverview()([]CloudPcOverviewable)
     GetConditionalAccessPolicyCoverages()([]ConditionalAccessPolicyCoverageable)
     GetCredentialUserRegistrationsSummaries()([]CredentialUserRegistrationsSummaryable)
+    GetDeviceAppPerformances()([]DeviceAppPerformanceable)
     GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable)
+    GetDeviceHealthStatuses()([]DeviceHealthStatusable)
     GetManagedDeviceCompliances()([]ManagedDeviceComplianceable)
     GetManagedDeviceComplianceTrends()([]ManagedDeviceComplianceTrendable)
     GetManagedTenantAlertLogs()([]ManagedTenantAlertLogable)
@@ -1500,13 +1629,16 @@ type ManagedTenantable interface {
     GetWindowsDeviceMalwareStates()([]WindowsDeviceMalwareStateable)
     GetWindowsProtectionStates()([]WindowsProtectionStateable)
     SetAggregatedPolicyCompliances(value []AggregatedPolicyComplianceable)()
+    SetAppPerformances(value []AppPerformanceable)()
     SetAuditEvents(value []AuditEventable)()
     SetCloudPcConnections(value []CloudPcConnectionable)()
     SetCloudPcDevices(value []CloudPcDeviceable)()
     SetCloudPcsOverview(value []CloudPcOverviewable)()
     SetConditionalAccessPolicyCoverages(value []ConditionalAccessPolicyCoverageable)()
     SetCredentialUserRegistrationsSummaries(value []CredentialUserRegistrationsSummaryable)()
+    SetDeviceAppPerformances(value []DeviceAppPerformanceable)()
     SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummaryable)()
+    SetDeviceHealthStatuses(value []DeviceHealthStatusable)()
     SetManagedDeviceCompliances(value []ManagedDeviceComplianceable)()
     SetManagedDeviceComplianceTrends(value []ManagedDeviceComplianceTrendable)()
     SetManagedTenantAlertLogs(value []ManagedTenantAlertLogable)()

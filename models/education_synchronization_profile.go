@@ -8,7 +8,7 @@ import (
 type EducationSynchronizationProfile struct {
     Entity
 }
-// NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
+// NewEducationSynchronizationProfile instantiates a new EducationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {
     m := &EducationSynchronizationProfile{
         Entity: *NewEntity(),

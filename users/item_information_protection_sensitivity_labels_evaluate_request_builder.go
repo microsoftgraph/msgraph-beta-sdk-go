@@ -9,12 +9,7 @@ import (
 
 // ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder provides operations to call the evaluate method.
 type ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderPostRequestConfiguration struct {
@@ -26,14 +21,8 @@ type ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderPostRequest
 // NewItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderInternal instantiates a new EvaluateRequestBuilder and sets the default values.
 func NewItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder) {
     m := &ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/sensitivityLabels/evaluate", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/informationProtection/sensitivityLabels/evaluate";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder instantiates a new EvaluateRequestBuilder and sets the default values.
@@ -52,7 +41,7 @@ func (m *ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder) Post(
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEvaluateLabelJobResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEvaluateLabelJobResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -64,11 +53,11 @@ func (m *ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder) Post(
 // ToPostRequestInformation invoke action evaluate
 func (m *ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionSensitivityLabelsEvaluatePostRequestBodyable, requestConfiguration *ItemInformationProtectionSensitivityLabelsEvaluateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

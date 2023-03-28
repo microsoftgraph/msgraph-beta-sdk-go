@@ -8,12 +8,7 @@ import (
 
 // ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder provides operations to count the resources in the collection.
 type ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemResourcesItemRoleAssignmentRequestsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemResourcesItemRoleAssignmentRequestsCountRequestBuilderGetQueryParameters struct {
@@ -34,14 +29,8 @@ type ItemResourcesItemRoleAssignmentRequestsCountRequestBuilderGetRequestConfigu
 // NewItemResourcesItemRoleAssignmentRequestsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleAssignmentRequestsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder) {
     m := &ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignmentRequests/$count{?%24search,%24filter}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignmentRequests/$count{?%24search,%24filter}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemResourcesItemRoleAssignmentRequestsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
@@ -60,7 +49,7 @@ func (m *ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder) Get(ctx con
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -72,8 +61,8 @@ func (m *ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder) Get(ctx con
 // ToGetRequestInformation get the number of the resource
 func (m *ItemResourcesItemRoleAssignmentRequestsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentRequestsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {

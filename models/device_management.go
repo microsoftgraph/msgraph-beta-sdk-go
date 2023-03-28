@@ -1899,6 +1899,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["privilegeManagementElevations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrivilegeManagementElevationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrivilegeManagementElevationable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrivilegeManagementElevationable)
+            }
+            m.SetPrivilegeManagementElevations(res)
+        }
+        return nil
+    }
     res["remoteActionAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteActionAuditFromDiscriminatorValue)
         if err != nil {
@@ -3349,6 +3363,17 @@ func (m *DeviceManagement) GetOemWarrantyInformationOnboarding()([]OemWarrantyIn
     }
     if val != nil {
         return val.([]OemWarrantyInformationOnboardingable)
+    }
+    return nil
+}
+// GetPrivilegeManagementElevations gets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
+func (m *DeviceManagement) GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable) {
+    val, err := m.GetBackingStore().Get("privilegeManagementElevations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegeManagementElevationable)
     }
     return nil
 }
@@ -5111,6 +5136,16 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetPrivilegeManagementElevations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrivilegeManagementElevations()))
+        for i, v := range m.GetPrivilegeManagementElevations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("privilegeManagementElevations", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRemoteActionAudits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteActionAudits()))
         for i, v := range m.GetRemoteActionAudits() {
@@ -6523,6 +6558,13 @@ func (m *DeviceManagement) SetOemWarrantyInformationOnboarding(value []OemWarran
         panic(err)
     }
 }
+// SetPrivilegeManagementElevations sets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
+func (m *DeviceManagement) SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)() {
+    err := m.GetBackingStore().Set("privilegeManagementElevations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemoteActionAudits sets the remoteActionAudits property value. The list of device remote action audits with the tenant.
 func (m *DeviceManagement) SetRemoteActionAudits(value []RemoteActionAuditable)() {
     err := m.GetBackingStore().Set("remoteActionAudits", value)
@@ -7214,6 +7256,7 @@ type DeviceManagementable interface {
     GetNdesConnectors()([]NdesConnectorable)
     GetNotificationMessageTemplates()([]NotificationMessageTemplateable)
     GetOemWarrantyInformationOnboarding()([]OemWarrantyInformationOnboardingable)
+    GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable)
     GetRemoteActionAudits()([]RemoteActionAuditable)
     GetRemoteAssistancePartners()([]RemoteAssistancePartnerable)
     GetRemoteAssistanceSettings()(RemoteAssistanceSettingsable)
@@ -7391,6 +7434,7 @@ type DeviceManagementable interface {
     SetNdesConnectors(value []NdesConnectorable)()
     SetNotificationMessageTemplates(value []NotificationMessageTemplateable)()
     SetOemWarrantyInformationOnboarding(value []OemWarrantyInformationOnboardingable)()
+    SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)()
     SetRemoteActionAudits(value []RemoteActionAuditable)()
     SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)()
     SetRemoteAssistanceSettings(value RemoteAssistanceSettingsable)()

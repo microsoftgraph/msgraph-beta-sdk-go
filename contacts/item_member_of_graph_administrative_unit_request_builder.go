@@ -9,12 +9,7 @@ import (
 
 // ItemMemberOfGraphAdministrativeUnitRequestBuilder casts the previous resource to administrativeUnit.
 type ItemMemberOfGraphAdministrativeUnitRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemMemberOfGraphAdministrativeUnitRequestBuilderGetQueryParameters get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
 type ItemMemberOfGraphAdministrativeUnitRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type ItemMemberOfGraphAdministrativeUnitRequestBuilderGetRequestConfiguration st
 // NewItemMemberOfGraphAdministrativeUnitRequestBuilderInternal instantiates a new GraphAdministrativeUnitRequestBuilder and sets the default values.
 func NewItemMemberOfGraphAdministrativeUnitRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMemberOfGraphAdministrativeUnitRequestBuilder) {
     m := &ItemMemberOfGraphAdministrativeUnitRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/contacts/{orgContact%2Did}/memberOf/graph.administrativeUnit{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/contacts/{orgContact%2Did}/memberOf/graph.administrativeUnit{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMemberOfGraphAdministrativeUnitRequestBuilder instantiates a new GraphAdministrativeUnitRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewItemMemberOfGraphAdministrativeUnitRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemMemberOfGraphAdministrativeUnitRequestBuilder) Count()(*ItemMemberOfGraphAdministrativeUnitCountRequestBuilder) {
-    return NewItemMemberOfGraphAdministrativeUnitCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemMemberOfGraphAdministrativeUnitCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
 func (m *ItemMemberOfGraphAdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMemberOfGraphAdministrativeUnitRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
@@ -77,7 +66,7 @@ func (m *ItemMemberOfGraphAdministrativeUnitRequestBuilder) Get(ctx context.Cont
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdministrativeUnitCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdministrativeUnitCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -89,8 +78,8 @@ func (m *ItemMemberOfGraphAdministrativeUnitRequestBuilder) Get(ctx context.Cont
 // ToGetRequestInformation get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
 func (m *ItemMemberOfGraphAdministrativeUnitRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfGraphAdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

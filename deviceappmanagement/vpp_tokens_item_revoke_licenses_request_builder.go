@@ -8,12 +8,7 @@ import (
 
 // VppTokensItemRevokeLicensesRequestBuilder provides operations to call the revokeLicenses method.
 type VppTokensItemRevokeLicensesRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // VppTokensItemRevokeLicensesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VppTokensItemRevokeLicensesRequestBuilderPostRequestConfiguration struct {
@@ -25,14 +20,8 @@ type VppTokensItemRevokeLicensesRequestBuilderPostRequestConfiguration struct {
 // NewVppTokensItemRevokeLicensesRequestBuilderInternal instantiates a new RevokeLicensesRequestBuilder and sets the default values.
 func NewVppTokensItemRevokeLicensesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VppTokensItemRevokeLicensesRequestBuilder) {
     m := &VppTokensItemRevokeLicensesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/revokeLicenses", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/revokeLicenses";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewVppTokensItemRevokeLicensesRequestBuilder instantiates a new RevokeLicensesRequestBuilder and sets the default values.
@@ -51,7 +40,7 @@ func (m *VppTokensItemRevokeLicensesRequestBuilder) Post(ctx context.Context, bo
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -60,10 +49,10 @@ func (m *VppTokensItemRevokeLicensesRequestBuilder) Post(ctx context.Context, bo
 // ToPostRequestInformation revoke licenses associated with a specific appleVolumePurchaseProgramToken
 func (m *VppTokensItemRevokeLicensesRequestBuilder) ToPostRequestInformation(ctx context.Context, body VppTokensItemRevokeLicensesPostRequestBodyable, requestConfiguration *VppTokensItemRevokeLicensesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

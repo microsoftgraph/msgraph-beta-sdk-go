@@ -8,12 +8,7 @@ import (
 
 // ZebraFotaDeploymentsItemCancelRequestBuilder provides operations to call the cancel method.
 type ZebraFotaDeploymentsItemCancelRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration struct {
@@ -25,14 +20,8 @@ type ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration struct
 // NewZebraFotaDeploymentsItemCancelRequestBuilderInternal instantiates a new CancelRequestBuilder and sets the default values.
 func NewZebraFotaDeploymentsItemCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZebraFotaDeploymentsItemCancelRequestBuilder) {
     m := &ZebraFotaDeploymentsItemCancelRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaDeployments/{zebraFotaDeployment%2Did}/cancel", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/zebraFotaDeployments/{zebraFotaDeployment%2Did}/cancel";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewZebraFotaDeploymentsItemCancelRequestBuilder instantiates a new CancelRequestBuilder and sets the default values.
@@ -51,7 +40,7 @@ func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) Post(ctx context.Context,
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateZebraFotaDeploymentsItemCancelResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateZebraFotaDeploymentsItemCancelResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -63,8 +52,8 @@ func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) Post(ctx context.Context,
 // ToPostRequestInformation invoke action cancel
 func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

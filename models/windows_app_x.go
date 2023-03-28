@@ -107,7 +107,7 @@ func (m *WindowsAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIdentityName gets the identityName property value. The Identity Name.
+// GetIdentityName gets the identityName property value. The identity name of the uploaded app package. For example: 'Contoso.DemoApp'.
 func (m *WindowsAppX) GetIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("identityName")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *WindowsAppX) GetIdentityName()(*string) {
     }
     return nil
 }
-// GetIdentityPublisherHash gets the identityPublisherHash property value. The Identity Publisher Hash.
+// GetIdentityPublisherHash gets the identityPublisherHash property value. The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: 'AB82CD0XYZ'.
 func (m *WindowsAppX) GetIdentityPublisherHash()(*string) {
     val, err := m.GetBackingStore().Get("identityPublisherHash")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *WindowsAppX) GetIdentityPublisherHash()(*string) {
     }
     return nil
 }
-// GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
+// GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The identity resource identifier of the uploaded app package. For example: 'TestResourceId'.
 func (m *WindowsAppX) GetIdentityResourceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identityResourceIdentifier")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *WindowsAppX) GetIdentityResourceIdentifier()(*string) {
     }
     return nil
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version.
+// GetIdentityVersion gets the identityVersion property value. The identity version of the uploaded app package. For example: '1.0.0.0'.
 func (m *WindowsAppX) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -151,7 +151,7 @@ func (m *WindowsAppX) GetIdentityVersion()(*string) {
     }
     return nil
 }
-// GetIsBundle gets the isBundle property value. Whether or not the app is a bundle.
+// GetIsBundle gets the isBundle property value. When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.
 func (m *WindowsAppX) GetIsBundle()(*bool) {
     val, err := m.GetBackingStore().Get("isBundle")
     if err != nil {
@@ -231,35 +231,35 @@ func (m *WindowsAppX) SetApplicableArchitectures(value *WindowsArchitecture)() {
         panic(err)
     }
 }
-// SetIdentityName sets the identityName property value. The Identity Name.
+// SetIdentityName sets the identityName property value. The identity name of the uploaded app package. For example: 'Contoso.DemoApp'.
 func (m *WindowsAppX) SetIdentityName(value *string)() {
     err := m.GetBackingStore().Set("identityName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityPublisherHash sets the identityPublisherHash property value. The Identity Publisher Hash.
+// SetIdentityPublisherHash sets the identityPublisherHash property value. The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: 'AB82CD0XYZ'.
 func (m *WindowsAppX) SetIdentityPublisherHash(value *string)() {
     err := m.GetBackingStore().Set("identityPublisherHash", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier.
+// SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The identity resource identifier of the uploaded app package. For example: 'TestResourceId'.
 func (m *WindowsAppX) SetIdentityResourceIdentifier(value *string)() {
     err := m.GetBackingStore().Set("identityResourceIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version.
+// SetIdentityVersion sets the identityVersion property value. The identity version of the uploaded app package. For example: '1.0.0.0'.
 func (m *WindowsAppX) SetIdentityVersion(value *string)() {
     err := m.GetBackingStore().Set("identityVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsBundle sets the isBundle property value. Whether or not the app is a bundle.
+// SetIsBundle sets the isBundle property value. When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.
 func (m *WindowsAppX) SetIsBundle(value *bool)() {
     err := m.GetBackingStore().Set("isBundle", value)
     if err != nil {

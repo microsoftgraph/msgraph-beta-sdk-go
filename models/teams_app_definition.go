@@ -31,6 +31,17 @@ func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallatio
     }
     return nil
 }
+// GetAuthorization gets the authorization property value. The authorization property
+func (m *TeamsAppDefinition) GetAuthorization()(TeamsAppAuthorizationable) {
+    val, err := m.GetBackingStore().Get("authorization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsAppAuthorizationable)
+    }
+    return nil
+}
 // GetAzureADAppId gets the azureADAppId property value. The WebApplicationInfo.Id from the Teams app manifest.
 func (m *TeamsAppDefinition) GetAzureADAppId()(*string) {
     val, err := m.GetBackingStore().Get("azureADAppId")
@@ -107,6 +118,16 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAllowedInstallationScopes(val.(*TeamsAppInstallationScopes))
+        }
+        return nil
+    }
+    res["authorization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsAppAuthorizationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthorization(val.(TeamsAppAuthorizationable))
         }
         return nil
     }
@@ -312,6 +333,12 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteObjectValue("authorization", m.GetAuthorization())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("azureADAppId", m.GetAzureADAppId())
         if err != nil {
             return err
@@ -389,6 +416,13 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetAllowedInstallationScopes sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
 func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)() {
     err := m.GetBackingStore().Set("allowedInstallationScopes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAuthorization sets the authorization property value. The authorization property
+func (m *TeamsAppDefinition) SetAuthorization(value TeamsAppAuthorizationable)() {
+    err := m.GetBackingStore().Set("authorization", value)
     if err != nil {
         panic(err)
     }
@@ -482,6 +516,7 @@ type TeamsAppDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowedInstallationScopes()(*TeamsAppInstallationScopes)
+    GetAuthorization()(TeamsAppAuthorizationable)
     GetAzureADAppId()(*string)
     GetBot()(TeamworkBotable)
     GetColorIcon()(TeamsAppIconable)
@@ -495,6 +530,7 @@ type TeamsAppDefinitionable interface {
     GetTeamsAppId()(*string)
     GetVersion()(*string)
     SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)()
+    SetAuthorization(value TeamsAppAuthorizationable)()
     SetAzureADAppId(value *string)()
     SetBot(value TeamworkBotable)()
     SetColorIcon(value TeamsAppIconable)()

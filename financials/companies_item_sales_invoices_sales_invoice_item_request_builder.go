@@ -9,12 +9,7 @@ import (
 
 // CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
 type CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderGetQueryParameters get salesInvoices from financials
 type CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderGetQueryParameters struct {
@@ -41,23 +36,17 @@ type CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderPatchRequestConfigu
 }
 // Cancel provides operations to call the cancel method.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Cancel()(*CompaniesItemSalesInvoicesItemCancelRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CancelAndSend provides operations to call the cancelAndSend method.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) CancelAndSend()(*CompaniesItemSalesInvoicesItemCancelAndSendRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCancelAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemCancelAndSendRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal instantiates a new SalesInvoiceItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) {
     m := &CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder instantiates a new SalesInvoiceItemRequestBuilder and sets the default values.
@@ -68,11 +57,11 @@ func NewCompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder(rawUrl string, 
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Currency()(*CompaniesItemSalesInvoicesItemCurrencyRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemCurrencyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Customer provides operations to manage the customer property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Customer()(*CompaniesItemSalesInvoicesItemCustomerRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemCustomerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get salesInvoices from financials
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable, error) {
@@ -84,7 +73,7 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Get(ctx conte
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesInvoiceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesInvoiceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -103,7 +92,7 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Patch(ctx con
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesInvoiceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesInvoiceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -114,44 +103,44 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Patch(ctx con
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) PaymentTerm()(*CompaniesItemSalesInvoicesItemPaymentTermRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PostAndSend provides operations to call the postAndSend method.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) PostAndSend()(*CompaniesItemSalesInvoicesItemPostAndSendRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemPostAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemPostAndSendRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PostPath provides operations to call the post method.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) PostPath()(*CompaniesItemSalesInvoicesItemPostRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemPostRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemPostRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesInvoiceLines provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceLines()(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesInvoiceLinesById provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceLinesById(id string)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesInvoiceLine%2Did"] = id
     }
-    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Send provides operations to call the send method.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Send()(*CompaniesItemSalesInvoicesItemSendRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.salesInvoice entity.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ShipmentMethod()(*CompaniesItemSalesInvoicesItemShipmentMethodRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesItemShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesInvoicesItemShipmentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get salesInvoices from financials
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -166,11 +155,11 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ToGetRequestI
 // ToPatchRequestInformation update the navigation property salesInvoices in financials
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable, requestConfiguration *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

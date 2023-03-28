@@ -9,12 +9,7 @@ import (
 
 // ItemConnectorGroupsItemApplicationsRequestBuilder provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
 type ItemConnectorGroupsItemApplicationsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemConnectorGroupsItemApplicationsRequestBuilderGetQueryParameters get applications from onPremisesPublishingProfiles
 type ItemConnectorGroupsItemApplicationsRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration st
 // NewItemConnectorGroupsItemApplicationsRequestBuilderInternal instantiates a new ApplicationsRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
     m := &ItemConnectorGroupsItemApplicationsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorGroupsItemApplicationsRequestBuilder instantiates a new ApplicationsRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewItemConnectorGroupsItemApplicationsRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Count()(*ItemConnectorGroupsItemApplicationsCountRequestBuilder) {
-    return NewItemConnectorGroupsItemApplicationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemConnectorGroupsItemApplicationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get applications from onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationCollectionResponseable, error) {
@@ -77,7 +66,7 @@ func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Get(ctx context.Cont
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -89,8 +78,8 @@ func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Get(ctx context.Cont
 // ToGetRequestInformation get applications from onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

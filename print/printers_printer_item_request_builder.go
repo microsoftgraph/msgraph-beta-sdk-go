@@ -9,12 +9,7 @@ import (
 
 // PrintersPrinterItemRequestBuilder provides operations to manage the printers property of the microsoft.graph.print entity.
 type PrintersPrinterItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // PrintersPrinterItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrintersPrinterItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,30 +43,24 @@ type PrintersPrinterItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Connectors provides operations to manage the connectors property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) Connectors()(*PrintersItemConnectorsRequestBuilder) {
-    return NewPrintersItemConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConnectorsById provides operations to manage the connectors property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) ConnectorsById(id string)(*PrintersItemConnectorsPrintConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printConnector%2Did"] = id
     }
-    return NewPrintersItemConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewPrintersItemConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewPrintersPrinterItemRequestBuilderInternal instantiates a new PrinterItemRequestBuilder and sets the default values.
 func NewPrintersPrinterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersPrinterItemRequestBuilder) {
     m := &PrintersPrinterItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/print/printers/{printer%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrintersPrinterItemRequestBuilder instantiates a new PrinterItemRequestBuilder and sets the default values.
@@ -90,7 +79,7 @@ func (m *PrintersPrinterItemRequestBuilder) Delete(ctx context.Context, requestC
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -106,7 +95,7 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrinterFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrinterFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -117,7 +106,7 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
 }
 // GetCapabilities provides operations to call the getCapabilities method.
 func (m *PrintersPrinterItemRequestBuilder) GetCapabilities()(*PrintersItemGetCapabilitiesRequestBuilder) {
-    return NewPrintersItemGetCapabilitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemGetCapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property printers in print
 func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, error) {
@@ -129,7 +118,7 @@ func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body ie23
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrinterFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrinterFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -140,51 +129,51 @@ func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body ie23
 }
 // ResetDefaults provides operations to call the resetDefaults method.
 func (m *PrintersPrinterItemRequestBuilder) ResetDefaults()(*PrintersItemResetDefaultsRequestBuilder) {
-    return NewPrintersItemResetDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemResetDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RestoreFactoryDefaults provides operations to call the restoreFactoryDefaults method.
 func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersItemRestoreFactoryDefaultsRequestBuilder) {
-    return NewPrintersItemRestoreFactoryDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemRestoreFactoryDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Share provides operations to manage the share property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) Share()(*PrintersItemShareRequestBuilder) {
-    return NewPrintersItemShareRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemShareRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Shares provides operations to manage the shares property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestBuilder) {
-    return NewPrintersItemSharesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemSharesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SharesById provides operations to manage the shares property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) SharesById(id string)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printerShare%2Did"] = id
     }
-    return NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskTriggers provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTaskTriggersRequestBuilder) {
-    return NewPrintersItemTaskTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewPrintersItemTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskTriggersById provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) TaskTriggersById(id string)(*PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["printTaskTrigger%2Did"] = id
     }
-    return NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property printers for print
 func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -195,8 +184,8 @@ func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx conte
 // ToGetRequestInformation the list of printers registered in the tenant.
 func (m *PrintersPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -211,11 +200,11 @@ func (m *PrintersPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.
 // ToPatchRequestInformation update the navigation property printers in print
 func (m *PrintersPrinterItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

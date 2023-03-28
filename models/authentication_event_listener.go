@@ -8,7 +8,7 @@ import (
 type AuthenticationEventListener struct {
     Entity
 }
-// NewAuthenticationEventListener instantiates a new AuthenticationEventListener and sets the default values.
+// NewAuthenticationEventListener instantiates a new authenticationEventListener and sets the default values.
 func NewAuthenticationEventListener()(*AuthenticationEventListener) {
     m := &AuthenticationEventListener{
         Entity: *NewEntity(),

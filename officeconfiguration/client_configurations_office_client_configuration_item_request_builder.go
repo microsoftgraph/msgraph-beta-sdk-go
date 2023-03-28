@@ -9,12 +9,7 @@ import (
 
 // ClientConfigurationsOfficeClientConfigurationItemRequestBuilder provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
 type ClientConfigurationsOfficeClientConfigurationItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ClientConfigurationsOfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClientConfigurationsOfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,34 +43,28 @@ type ClientConfigurationsOfficeClientConfigurationItemRequestBuilderPatchRequest
 }
 // Assign provides operations to call the assign method.
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Assign()(*ClientConfigurationsItemAssignRequestBuilder) {
-    return NewClientConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewClientConfigurationsItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.officeClientConfiguration entity.
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Assignments()(*ClientConfigurationsItemAssignmentsRequestBuilder) {
-    return NewClientConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewClientConfigurationsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.officeClientConfiguration entity.
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) AssignmentsById(id string)(*ClientConfigurationsItemAssignmentsOfficeClientConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["officeClientConfigurationAssignment%2Did"] = id
     }
-    return NewClientConfigurationsItemAssignmentsOfficeClientConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewClientConfigurationsItemAssignmentsOfficeClientConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal instantiates a new OfficeClientConfigurationItemRequestBuilder and sets the default values.
 func NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {
     m := &ClientConfigurationsOfficeClientConfigurationItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/officeConfiguration/clientConfigurations/{officeClientConfiguration%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/officeConfiguration/clientConfigurations/{officeClientConfiguration%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewClientConfigurationsOfficeClientConfigurationItemRequestBuilder instantiates a new OfficeClientConfigurationItemRequestBuilder and sets the default values.
@@ -94,7 +83,7 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Delete
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -110,7 +99,7 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Get(ct
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOfficeClientConfigurationFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOfficeClientConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,7 +118,7 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Patch(
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOfficeClientConfigurationFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOfficeClientConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -140,13 +129,13 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Patch(
 }
 // PolicyPayload provides operations to manage the media for the officeConfiguration entity.
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) PolicyPayload()(*ClientConfigurationsItemPolicyPayloadRequestBuilder) {
-    return NewClientConfigurationsItemPolicyPayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewClientConfigurationsItemPolicyPayloadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property clientConfigurations for officeConfiguration
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsOfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -157,8 +146,8 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) ToDele
 // ToGetRequestInformation list of office Client configuration.
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsOfficeClientConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -173,11 +162,11 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) ToGetR
 // ToPatchRequestInformation update the navigation property clientConfigurations in officeConfiguration
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, requestConfiguration *ClientConfigurationsOfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -189,5 +178,5 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) ToPatc
 }
 // UserPreferencePayload provides operations to manage the media for the officeConfiguration entity.
 func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) UserPreferencePayload()(*ClientConfigurationsItemUserPreferencePayloadRequestBuilder) {
-    return NewClientConfigurationsItemUserPreferencePayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewClientConfigurationsItemUserPreferencePayloadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -9,12 +9,7 @@ import (
 
 // ItemSitesItemPagesSitePageItemRequestBuilder provides operations to manage the pages property of the microsoft.graph.site entity.
 type ItemSitesItemPagesSitePageItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemSitesItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,19 +43,13 @@ type ItemSitesItemPagesSitePageItemRequestBuilderPatchRequestConfiguration struc
 }
 // CanvasLayout provides operations to manage the canvasLayout property of the microsoft.graph.sitePage entity.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) CanvasLayout()(*ItemSitesItemPagesItemCanvasLayoutRequestBuilder) {
-    return NewItemSitesItemPagesItemCanvasLayoutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSitesItemPagesItemCanvasLayoutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemSitesItemPagesSitePageItemRequestBuilderInternal instantiates a new SitePageItemRequestBuilder and sets the default values.
 func NewItemSitesItemPagesSitePageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesSitePageItemRequestBuilder) {
     m := &ItemSitesItemPagesSitePageItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemPagesSitePageItemRequestBuilder instantiates a new SitePageItemRequestBuilder and sets the default values.
@@ -79,7 +68,7 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Delete(ctx context.Contex
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -95,7 +84,7 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Get(ctx context.Context, 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSitePageFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSitePageFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -106,7 +95,7 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Get(ctx context.Context, 
 }
 // GetWebPartsByPosition provides operations to call the getWebPartsByPosition method.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) GetWebPartsByPosition()(*ItemSitesItemPagesItemGetWebPartsByPositionRequestBuilder) {
-    return NewItemSitesItemPagesItemGetWebPartsByPositionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSitesItemPagesItemGetWebPartsByPositionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property pages in groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {
@@ -118,7 +107,7 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSitePageFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSitePageFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,13 +118,13 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context
 }
 // Publish provides operations to call the publish method.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Publish()(*ItemSitesItemPagesItemPublishRequestBuilder) {
-    return NewItemSitesItemPagesItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSitesItemPagesItemPublishRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property pages for groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -146,8 +135,8 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToDeleteRequestInformatio
 // ToGetRequestInformation the collection of pages in the SitePages list in this site.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -162,11 +151,11 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToGetRequestInformation(c
 // ToPatchRequestInformation update the navigation property pages in groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -178,16 +167,16 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) ToPatchRequestInformation
 }
 // WebParts provides operations to manage the webParts property of the microsoft.graph.sitePage entity.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebParts()(*ItemSitesItemPagesItemWebPartsRequestBuilder) {
-    return NewItemSitesItemPagesItemWebPartsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSitesItemPagesItemWebPartsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WebPartsById provides operations to manage the webParts property of the microsoft.graph.sitePage entity.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*ItemSitesItemPagesItemWebPartsWebPartItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["webPart%2Did"] = id
     }
-    return NewItemSitesItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemSitesItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

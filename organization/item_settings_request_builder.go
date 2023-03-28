@@ -9,12 +9,7 @@ import (
 
 // ItemSettingsRequestBuilder provides operations to manage the settings property of the microsoft.graph.organization entity.
 type ItemSettingsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemSettingsRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsRequestBuilderDeleteRequestConfiguration struct {
@@ -49,14 +44,8 @@ type ItemSettingsRequestBuilderPatchRequestConfiguration struct {
 // NewItemSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewItemSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsRequestBuilder) {
     m := &ItemSettingsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/organization/{organization%2Did}/settings{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSettingsRequestBuilder instantiates a new SettingsRequestBuilder and sets the default values.
@@ -67,7 +56,7 @@ func NewItemSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // ContactInsights provides operations to manage the contactInsights property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ContactInsights()(*ItemSettingsContactInsightsRequestBuilder) {
-    return NewItemSettingsContactInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsContactInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property settings for organization
 func (m *ItemSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -79,7 +68,7 @@ func (m *ItemSettingsRequestBuilder) Delete(ctx context.Context, requestConfigur
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -98,7 +87,7 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationSettingsFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -109,11 +98,11 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsItemInsightsRequestBuilder) {
-    return NewItemSettingsItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftApplicationDataAccess provides operations to manage the microsoftApplicationDataAccess property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) MicrosoftApplicationDataAccess()(*ItemSettingsMicrosoftApplicationDataAccessRequestBuilder) {
-    return NewItemSettingsMicrosoftApplicationDataAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsMicrosoftApplicationDataAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property settings in organization
 func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable, requestConfiguration *ItemSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable, error) {
@@ -125,7 +114,7 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationSettingsFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -136,32 +125,32 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
 }
 // PeopleInsights provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) PeopleInsights()(*ItemSettingsPeopleInsightsRequestBuilder) {
-    return NewItemSettingsPeopleInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsPeopleInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ProfileCardProperties()(*ItemSettingsProfileCardPropertiesRequestBuilder) {
-    return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ProfileCardPropertiesById provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["profileCardProperty%2Did"] = id
     }
-    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) Pronouns()(*ItemSettingsPronounsRequestBuilder) {
-    return NewItemSettingsPronounsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsPronounsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for organization
 func (m *ItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -172,8 +161,8 @@ func (m *ItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
 // ToGetRequestInformation retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
 func (m *ItemSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -188,11 +177,11 @@ func (m *ItemSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context
 // ToPatchRequestInformation update the navigation property settings in organization
 func (m *ItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable, requestConfiguration *ItemSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
