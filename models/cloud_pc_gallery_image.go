@@ -30,7 +30,7 @@ func (m *CloudPcGalleryImage) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEndDate gets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
+// GetEndDate gets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
 func (m *CloudPcGalleryImage) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endDate")
     if err != nil {
@@ -177,7 +177,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOffer gets the offer property value. The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// GetOffer gets the offer property value. The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetOffer()(*string) {
     val, err := m.GetBackingStore().Get("offer")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     }
     return nil
 }
-// GetPublisher gets the publisher property value. The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// GetPublisher gets the publisher property value. The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *CloudPcGalleryImage) GetSizeInGB()(*int32) {
     }
     return nil
 }
-// GetSku gets the sku property value. The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// GetSku gets the sku property value. The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetSku()(*string) {
     val, err := m.GetBackingStore().Get("sku")
     if err != nil {
@@ -364,7 +364,7 @@ func (m *CloudPcGalleryImage) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEndDate sets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
+// SetEndDate sets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
 func (m *CloudPcGalleryImage) SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("endDate", value)
     if err != nil {
@@ -378,7 +378,7 @@ func (m *CloudPcGalleryImage) SetExpirationDate(value *i878a80d2330e89d26896388a
         panic(err)
     }
 }
-// SetOffer sets the offer property value. The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// SetOffer sets the offer property value. The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetOffer(value *string)() {
     err := m.GetBackingStore().Set("offer", value)
     if err != nil {
@@ -392,7 +392,7 @@ func (m *CloudPcGalleryImage) SetOfferDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetPublisher sets the publisher property value. The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// SetPublisher sets the publisher property value. The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
     if err != nil {
@@ -413,7 +413,7 @@ func (m *CloudPcGalleryImage) SetSizeInGB(value *int32)() {
         panic(err)
     }
 }
-// SetSku sets the sku property value. The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// SetSku sets the sku property value. The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetSku(value *string)() {
     err := m.GetBackingStore().Set("sku", value)
     if err != nil {

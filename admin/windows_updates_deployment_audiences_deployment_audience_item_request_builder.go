@@ -9,12 +9,7 @@ import (
 
 // WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderDeleteRequestConfiguration struct {
@@ -49,14 +44,8 @@ type WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderPatchR
 // NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderInternal instantiates a new DeploymentAudienceItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
     m := &WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder instantiates a new DeploymentAudienceItemRequestBuilder and sets the default values.
@@ -75,7 +64,7 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -83,18 +72,18 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 }
 // Exclusions provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Exclusions()(*WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExclusionsById provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) ExclusionsById(id string)(*WindowsUpdatesDeploymentAudiencesItemExclusionsUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["updatableAsset%2Did"] = id
     }
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the set of updatableAsset resources to which a deployment can apply.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
@@ -106,7 +95,7 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateDeploymentAudienceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateDeploymentAudienceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -117,18 +106,18 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 }
 // Members provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Members()(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) MembersById(id string)(*WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["updatableAsset%2Did"] = id
     }
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property deploymentAudiences in admin
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
@@ -140,7 +129,7 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateDeploymentAudienceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateDeploymentAudienceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -152,8 +141,8 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 // ToDeleteRequestInformation delete navigation property deploymentAudiences for admin
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -164,8 +153,8 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 // ToGetRequestInformation the set of updatableAsset resources to which a deployment can apply.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -180,11 +169,11 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 // ToPatchRequestInformation update the navigation property deploymentAudiences in admin
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -196,9 +185,9 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 }
 // WindowsUpdatesUpdateAudience provides operations to call the updateAudience method.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) WindowsUpdatesUpdateAudience()(*WindowsUpdatesDeploymentAudiencesItemWindowsUpdatesUpdateAudienceRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemWindowsUpdatesUpdateAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemWindowsUpdatesUpdateAudienceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsUpdatesUpdateAudienceById provides operations to call the updateAudienceById method.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) WindowsUpdatesUpdateAudienceById()(*WindowsUpdatesDeploymentAudiencesItemWindowsUpdatesUpdateAudienceByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemWindowsUpdatesUpdateAudienceByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemWindowsUpdatesUpdateAudienceByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

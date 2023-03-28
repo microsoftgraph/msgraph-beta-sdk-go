@@ -9,12 +9,7 @@ import (
 
 // ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
 type ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetQueryParameters get applications from onPremisesPublishingProfiles
 type ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetRequestC
 // NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal instantiates a new ApplicationItemRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
     m := &ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications/{application%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications/{application%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder instantiates a new ApplicationItemRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Get(c
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -72,13 +61,13 @@ func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Get(c
 }
 // Logo provides operations to manage the media for the onPremisesPublishingProfile entity.
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) Logo()(*ItemConnectorGroupsItemApplicationsItemLogoRequestBuilder) {
-    return NewItemConnectorGroupsItemApplicationsItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemConnectorGroupsItemApplicationsItemLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get applications from onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

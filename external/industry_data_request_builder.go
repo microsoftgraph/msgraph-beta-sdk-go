@@ -9,12 +9,7 @@ import (
 
 // IndustryDataRequestBuilder provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
 type IndustryDataRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // IndustryDataRequestBuilderGetQueryParameters get industryData from external
 type IndustryDataRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type IndustryDataRequestBuilderGetRequestConfiguration struct {
 // NewIndustryDataRequestBuilderInternal instantiates a new IndustryDataRequestBuilder and sets the default values.
 func NewIndustryDataRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRequestBuilder) {
     m := &IndustryDataRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/external/industryData{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewIndustryDataRequestBuilder instantiates a new IndustryDataRequestBuilder and sets the default values.
@@ -53,18 +42,18 @@ func NewIndustryDataRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 }
 // DataConnectors provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) DataConnectors()(*IndustryDataDataConnectorsRequestBuilder) {
-    return NewIndustryDataDataConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataDataConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DataConnectorsById provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) DataConnectorsById(id string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["industryDataConnector%2Did"] = id
     }
-    return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get industryData from external
 func (m *IndustryDataRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRootable, error) {
@@ -76,7 +65,7 @@ func (m *IndustryDataRequestBuilder) Get(ctx context.Context, requestConfigurati
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateIndustryDataRootFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateIndustryDataRootFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -87,99 +76,99 @@ func (m *IndustryDataRequestBuilder) Get(ctx context.Context, requestConfigurati
 }
 // InboundFlows provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) InboundFlows()(*IndustryDataInboundFlowsRequestBuilder) {
-    return NewIndustryDataInboundFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataInboundFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InboundFlowsById provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) InboundFlowsById(id string)(*IndustryDataInboundFlowsInboundFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["inboundFlow%2Did"] = id
     }
-    return NewIndustryDataInboundFlowsInboundFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataInboundFlowsInboundFlowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) Operations()(*IndustryDataOperationsRequestBuilder) {
-    return NewIndustryDataOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) OperationsById(id string)(*IndustryDataOperationsLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["longRunningOperation%2Did"] = id
     }
-    return NewIndustryDataOperationsLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataOperationsLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ReferenceDefinitions provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) ReferenceDefinitions()(*IndustryDataReferenceDefinitionsRequestBuilder) {
-    return NewIndustryDataReferenceDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataReferenceDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ReferenceDefinitionsById provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) ReferenceDefinitionsById(id string)(*IndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["referenceDefinition%2Did"] = id
     }
-    return NewIndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleGroups provides operations to manage the roleGroups property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) RoleGroups()(*IndustryDataRoleGroupsRequestBuilder) {
-    return NewIndustryDataRoleGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataRoleGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleGroupsById provides operations to manage the roleGroups property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) RoleGroupsById(id string)(*IndustryDataRoleGroupsRoleGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["roleGroup%2Did"] = id
     }
-    return NewIndustryDataRoleGroupsRoleGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataRoleGroupsRoleGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Runs provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) Runs()(*IndustryDataRunsRequestBuilder) {
-    return NewIndustryDataRunsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RunsById provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) RunsById(id string)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["industryDataRun%2Did"] = id
     }
-    return NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // SourceSystems provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) SourceSystems()(*IndustryDataSourceSystemsRequestBuilder) {
-    return NewIndustryDataSourceSystemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataSourceSystemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SourceSystemsById provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) SourceSystemsById(id string)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sourceSystemDefinition%2Did"] = id
     }
-    return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get industryData from external
 func (m *IndustryDataRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -193,16 +182,16 @@ func (m *IndustryDataRequestBuilder) ToGetRequestInformation(ctx context.Context
 }
 // Years provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) Years()(*IndustryDataYearsRequestBuilder) {
-    return NewIndustryDataYearsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewIndustryDataYearsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // YearsById provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.
 func (m *IndustryDataRequestBuilder) YearsById(id string)(*IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["yearTimePeriodDefinition%2Did"] = id
     }
-    return NewIndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewIndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

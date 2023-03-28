@@ -9,12 +9,7 @@ import (
 
 // IndustryDataInboundFlowsItemYearRequestBuilder provides operations to manage the year property of the microsoft.graph.industryData.inboundFlow entity.
 type IndustryDataInboundFlowsItemYearRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // IndustryDataInboundFlowsItemYearRequestBuilderGetQueryParameters the year that the data brought in via this flow applies to.
 type IndustryDataInboundFlowsItemYearRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type IndustryDataInboundFlowsItemYearRequestBuilderGetRequestConfiguration struc
 // NewIndustryDataInboundFlowsItemYearRequestBuilderInternal instantiates a new YearRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemYearRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemYearRequestBuilder) {
     m := &IndustryDataInboundFlowsItemYearRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewIndustryDataInboundFlowsItemYearRequestBuilder instantiates a new YearRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *IndustryDataInboundFlowsItemYearRequestBuilder) Get(ctx context.Context
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateYearTimePeriodDefinitionFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateYearTimePeriodDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -73,8 +62,8 @@ func (m *IndustryDataInboundFlowsItemYearRequestBuilder) Get(ctx context.Context
 // ToGetRequestInformation the year that the data brought in via this flow applies to.
 func (m *IndustryDataInboundFlowsItemYearRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsItemYearRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

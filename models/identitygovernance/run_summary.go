@@ -168,7 +168,7 @@ func (m *RunSummary) GetTotalRuns()(*int32) {
     }
     return nil
 }
-// GetTotalTasks gets the totalTasks property value. The totalTasks property
+// GetTotalTasks gets the totalTasks property value. The total number of tasks processed by a workflow.
 func (m *RunSummary) GetTotalTasks()(*int32) {
     val, err := m.GetBackingStore().Get("totalTasks")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *RunSummary) GetTotalTasks()(*int32) {
     }
     return nil
 }
-// GetTotalUsers gets the totalUsers property value. The totalUsers property
+// GetTotalUsers gets the totalUsers property value. The total number of users processed by a workflow.
 func (m *RunSummary) GetTotalUsers()(*int32) {
     val, err := m.GetBackingStore().Get("totalUsers")
     if err != nil {
@@ -288,14 +288,14 @@ func (m *RunSummary) SetTotalRuns(value *int32)() {
         panic(err)
     }
 }
-// SetTotalTasks sets the totalTasks property value. The totalTasks property
+// SetTotalTasks sets the totalTasks property value. The total number of tasks processed by a workflow.
 func (m *RunSummary) SetTotalTasks(value *int32)() {
     err := m.GetBackingStore().Set("totalTasks", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalUsers sets the totalUsers property value. The totalUsers property
+// SetTotalUsers sets the totalUsers property value. The total number of users processed by a workflow.
 func (m *RunSummary) SetTotalUsers(value *int32)() {
     err := m.GetBackingStore().Set("totalUsers", value)
     if err != nil {

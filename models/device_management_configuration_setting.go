@@ -48,7 +48,7 @@ func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions
+// GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("settingDefinitions")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *DeviceManagementConfigurationSetting) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions
+// SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinitionable)() {
     err := m.GetBackingStore().Set("settingDefinitions", value)
     if err != nil {

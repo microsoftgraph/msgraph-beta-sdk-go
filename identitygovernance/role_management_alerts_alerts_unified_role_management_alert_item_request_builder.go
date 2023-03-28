@@ -9,12 +9,7 @@ import (
 
 // RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
 type RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,38 +43,32 @@ type RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderPatch
 }
 // AlertConfiguration provides operations to manage the alertConfiguration property of the microsoft.graph.unifiedRoleManagementAlert entity.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) AlertConfiguration()(*RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) {
-    return NewRoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewRoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AlertDefinition provides operations to manage the alertDefinition property of the microsoft.graph.unifiedRoleManagementAlert entity.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) AlertDefinition()(*RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) {
-    return NewRoleManagementAlertsAlertsItemAlertDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewRoleManagementAlertsAlertsItemAlertDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AlertIncidents provides operations to manage the alertIncidents property of the microsoft.graph.unifiedRoleManagementAlert entity.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) AlertIncidents()(*RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) {
-    return NewRoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewRoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AlertIncidentsById provides operations to manage the alertIncidents property of the microsoft.graph.unifiedRoleManagementAlert entity.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) AlertIncidentsById(id string)(*RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["unifiedRoleManagementAlertIncident%2Did"] = id
     }
-    return NewRoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewRoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewRoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderInternal instantiates a new UnifiedRoleManagementAlertItemRequestBuilder and sets the default values.
 func NewRoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) {
     m := &RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder instantiates a new UnifiedRoleManagementAlertItemRequestBuilder and sets the default values.
@@ -98,7 +87,7 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -114,7 +103,7 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUnifiedRoleManagementAlertFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUnifiedRoleManagementAlertFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -133,7 +122,7 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUnifiedRoleManagementAlertFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUnifiedRoleManagementAlertFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -144,13 +133,13 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
 }
 // Refresh provides operations to call the refresh method.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) Refresh()(*RoleManagementAlertsAlertsItemRefreshRequestBuilder) {
-    return NewRoleManagementAlertsAlertsItemRefreshRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewRoleManagementAlertsAlertsItemRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property alerts for identityGovernance
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -161,8 +150,8 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
 // ToGetRequestInformation get alerts from identityGovernance
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -177,11 +166,11 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
 // ToPatchRequestInformation update the navigation property alerts in identityGovernance
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertable, requestConfiguration *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

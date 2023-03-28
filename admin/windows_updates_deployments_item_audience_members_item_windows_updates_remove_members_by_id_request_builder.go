@@ -8,12 +8,7 @@ import (
 
 // WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder provides operations to call the removeMembersById method.
 type WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderPostRequestConfiguration struct {
@@ -25,14 +20,8 @@ type WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembers
 // NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderInternal instantiates a new WindowsUpdatesRemoveMembersByIdRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/members/{updatableAsset%2Did}/windowsUpdates.removeMembersById", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/members/{updatableAsset%2Did}/windowsUpdates.removeMembersById";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder instantiates a new WindowsUpdatesRemoveMembersByIdRequestBuilder and sets the default values.
@@ -54,7 +43,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMem
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -63,10 +52,10 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMem
 // ToPostRequestInformation remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRemoveMembersByIdPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

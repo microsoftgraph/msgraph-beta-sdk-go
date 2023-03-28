@@ -31,7 +31,7 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
     }
     return nil
 }
-// GetConnectivityResult gets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
+// GetConnectivityResult gets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
 func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     val, err := m.GetBackingStore().Get("connectivityResult")
     if err != nil {
@@ -702,7 +702,7 @@ func (m *CloudPC) SetAadDeviceId(value *string)() {
         panic(err)
     }
 }
-// SetConnectivityResult sets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
+// SetConnectivityResult sets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
 func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
     err := m.GetBackingStore().Set("connectivityResult", value)
     if err != nil {

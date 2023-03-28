@@ -9,12 +9,7 @@ import (
 
 // ImpactedResourcesImpactedResourceItemRequestBuilder provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
 type ImpactedResourcesImpactedResourceItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ImpactedResourcesImpactedResourceItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ImpactedResourcesImpactedResourceItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,19 +43,13 @@ type ImpactedResourcesImpactedResourceItemRequestBuilderPatchRequestConfiguratio
 }
 // Complete provides operations to call the complete method.
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Complete()(*ImpactedResourcesItemCompleteRequestBuilder) {
-    return NewImpactedResourcesItemCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewImpactedResourcesItemCompleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewImpactedResourcesImpactedResourceItemRequestBuilderInternal instantiates a new ImpactedResourceItemRequestBuilder and sets the default values.
 func NewImpactedResourcesImpactedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImpactedResourcesImpactedResourceItemRequestBuilder) {
     m := &ImpactedResourcesImpactedResourceItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/impactedResources/{impactedResource%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewImpactedResourcesImpactedResourceItemRequestBuilder instantiates a new ImpactedResourceItemRequestBuilder and sets the default values.
@@ -79,7 +68,7 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Delete(ctx context
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -87,7 +76,7 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Delete(ctx context
 }
 // Dismiss provides operations to call the dismiss method.
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Dismiss()(*ImpactedResourcesItemDismissRequestBuilder) {
-    return NewImpactedResourcesItemDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewImpactedResourcesItemDismissRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get impactedResources from directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
@@ -99,7 +88,7 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Get(ctx context.Co
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImpactedResourceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImpactedResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -118,7 +107,7 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Patch(ctx context.
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImpactedResourceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImpactedResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,17 +118,17 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Patch(ctx context.
 }
 // Postpone provides operations to call the postpone method.
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Postpone()(*ImpactedResourcesItemPostponeRequestBuilder) {
-    return NewImpactedResourcesItemPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewImpactedResourcesItemPostponeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reactivate provides operations to call the reactivate method.
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Reactivate()(*ImpactedResourcesItemReactivateRequestBuilder) {
-    return NewImpactedResourcesItemReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewImpactedResourcesItemReactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property impactedResources for directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -150,8 +139,8 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToDeleteRequestInf
 // ToGetRequestInformation get impactedResources from directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -166,11 +155,11 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToGetRequestInform
 // ToPatchRequestInformation update the navigation property impactedResources in directory
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, requestConfiguration *ImpactedResourcesImpactedResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

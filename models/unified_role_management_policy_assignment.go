@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
 }
-// NewUnifiedRoleManagementPolicyAssignment instantiates a new UnifiedRoleManagementPolicyAssignment and sets the default values.
+// NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {
     m := &UnifiedRoleManagementPolicyAssignment{
         Entity: *NewEntity(),

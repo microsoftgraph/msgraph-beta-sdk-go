@@ -9,12 +9,7 @@ import (
 
 // DriveItemRequestBuilder provides operations to manage the collection of drive entities.
 type DriveItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // DriveItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DriveItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,45 +43,39 @@ type DriveItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Activities provides operations to manage the activities property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Activities()(*ItemActivitiesRequestBuilder) {
-    return NewItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ActivitiesById provides operations to manage the activities property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) ActivitiesById(id string)(*ItemActivitiesItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["itemActivityOLD%2Did"] = id
     }
-    return NewItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Bundles provides operations to manage the bundles property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Bundles()(*ItemBundlesRequestBuilder) {
-    return NewItemBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemBundlesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BundlesById provides operations to manage the bundles property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) BundlesById(id string)(*ItemBundlesDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewItemBundlesDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemBundlesDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemRequestBuilder) {
     m := &DriveItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
@@ -105,7 +94,7 @@ func (m *DriveItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -113,18 +102,18 @@ func (m *DriveItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
 }
 // Following provides operations to manage the following property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Following()(*ItemFollowingRequestBuilder) {
-    return NewItemFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemFollowingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FollowingById provides operations to manage the following property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) FollowingById(id string)(*ItemFollowingDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewItemFollowingDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemFollowingDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 // [Find more info here]
@@ -139,7 +128,7 @@ func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDriveFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDriveFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -150,22 +139,22 @@ func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
 }
 // Items provides operations to manage the items property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
-    return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) ItemsById(id string)(*ItemItemsDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // List provides operations to manage the list property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) List()(*ItemListRequestBuilder) {
-    return NewItemListRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in drives
 func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
@@ -177,7 +166,7 @@ func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDriveFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDriveFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -188,40 +177,40 @@ func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
 }
 // Recent provides operations to call the recent method.
 func (m *DriveItemRequestBuilder) Recent()(*ItemRecentRequestBuilder) {
-    return NewItemRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRecentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Root provides operations to manage the root property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Root()(*ItemRootRequestBuilder) {
-    return NewItemRootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SearchWithQ provides operations to call the search method.
 func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*ItemSearchWithQRequestBuilder) {
-    return NewItemSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q)
+    return NewItemSearchWithQRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, q)
 }
 // SharedWithMe provides operations to call the sharedWithMe method.
 func (m *DriveItemRequestBuilder) SharedWithMe()(*ItemSharedWithMeRequestBuilder) {
-    return NewItemSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSharedWithMeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Special provides operations to manage the special property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Special()(*ItemSpecialRequestBuilder) {
-    return NewItemSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSpecialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SpecialById provides operations to manage the special property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) SpecialById(id string)(*ItemSpecialDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from drives
 func (m *DriveItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -232,8 +221,8 @@ func (m *DriveItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context
 // ToGetRequestInformation retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 func (m *DriveItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -248,11 +237,11 @@ func (m *DriveItemRequestBuilder) ToGetRequestInformation(ctx context.Context, r
 // ToPatchRequestInformation update entity in drives
 func (m *DriveItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

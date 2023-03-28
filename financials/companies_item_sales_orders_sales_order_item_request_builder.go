@@ -9,12 +9,7 @@ import (
 
 // CompaniesItemSalesOrdersSalesOrderItemRequestBuilder provides operations to manage the salesOrders property of the microsoft.graph.company entity.
 type CompaniesItemSalesOrdersSalesOrderItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // CompaniesItemSalesOrdersSalesOrderItemRequestBuilderGetQueryParameters get salesOrders from financials
 type CompaniesItemSalesOrdersSalesOrderItemRequestBuilderGetQueryParameters struct {
@@ -42,14 +37,8 @@ type CompaniesItemSalesOrdersSalesOrderItemRequestBuilderPatchRequestConfigurati
 // NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilderInternal instantiates a new SalesOrderItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) {
     m := &CompaniesItemSalesOrdersSalesOrderItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilder instantiates a new SalesOrderItemRequestBuilder and sets the default values.
@@ -60,11 +49,11 @@ func NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilder(rawUrl string, requ
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.salesOrder entity.
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) Currency()(*CompaniesItemSalesOrdersItemCurrencyRequestBuilder) {
-    return NewCompaniesItemSalesOrdersItemCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesOrdersItemCurrencyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Customer provides operations to manage the customer property of the microsoft.graph.salesOrder entity.
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) Customer()(*CompaniesItemSalesOrdersItemCustomerRequestBuilder) {
-    return NewCompaniesItemSalesOrdersItemCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesOrdersItemCustomerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get salesOrders from financials
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersSalesOrderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderable, error) {
@@ -76,7 +65,7 @@ func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) Get(ctx context.C
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesOrderFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesOrderFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -95,7 +84,7 @@ func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) Patch(ctx context
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesOrderFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesOrderFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -106,28 +95,28 @@ func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) Patch(ctx context
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.salesOrder entity.
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) PaymentTerm()(*CompaniesItemSalesOrdersItemPaymentTermRequestBuilder) {
-    return NewCompaniesItemSalesOrdersItemPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesOrdersItemPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesOrderLines provides operations to manage the salesOrderLines property of the microsoft.graph.salesOrder entity.
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) SalesOrderLines()(*CompaniesItemSalesOrdersItemSalesOrderLinesRequestBuilder) {
-    return NewCompaniesItemSalesOrdersItemSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemSalesOrdersItemSalesOrderLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesOrderLinesById provides operations to manage the salesOrderLines property of the microsoft.graph.salesOrder entity.
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) SalesOrderLinesById(id string)(*CompaniesItemSalesOrdersItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["salesOrderLine%2Did"] = id
     }
-    return NewCompaniesItemSalesOrdersItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewCompaniesItemSalesOrdersItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get salesOrders from financials
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersSalesOrderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -142,11 +131,11 @@ func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) ToGetRequestInfor
 // ToPatchRequestInformation update the navigation property salesOrders in financials
 func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderable, requestConfiguration *CompaniesItemSalesOrdersSalesOrderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

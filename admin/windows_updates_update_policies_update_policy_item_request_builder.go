@@ -9,12 +9,7 @@ import (
 
 // WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
 type WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,34 +43,28 @@ type WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderPatchRequestConfi
 }
 // Audience provides operations to manage the audience property of the microsoft.graph.windowsUpdates.updatePolicy entity.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Audience()(*WindowsUpdatesUpdatePoliciesItemAudienceRequestBuilder) {
-    return NewWindowsUpdatesUpdatePoliciesItemAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesUpdatePoliciesItemAudienceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ComplianceChanges provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ComplianceChanges()(*WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) {
-    return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ComplianceChangesById provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ComplianceChangesById(id string)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["complianceChange%2Did"] = id
     }
-    return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal instantiates a new UpdatePolicyItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder instantiates a new UpdatePolicyItemRequestBuilder and sets the default values.
@@ -94,7 +83,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Delete(ctx 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -110,7 +99,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Get(ctx con
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatePolicyFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatePolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,7 +118,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Patch(ctx c
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatePolicyFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatePolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -141,8 +130,8 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Patch(ctx c
 // ToDeleteRequestInformation delete navigation property updatePolicies for admin
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -153,8 +142,8 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToDeleteReq
 // ToGetRequestInformation a collection of policies for approving the deployment of different content to an audience over time.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -169,11 +158,11 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToGetReques
 // ToPatchRequestInformation update the navigation property updatePolicies in admin
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

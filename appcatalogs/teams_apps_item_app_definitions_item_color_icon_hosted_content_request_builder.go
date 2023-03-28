@@ -9,12 +9,7 @@ import (
 
 // TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder provides operations to manage the hostedContent property of the microsoft.graph.teamsAppIcon entity.
 type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderDeleteRequestConfiguration struct {
@@ -49,14 +44,8 @@ type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderPatchReq
 // NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderInternal instantiates a new HostedContentRequestBuilder and sets the default values.
 func NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) {
     m := &TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/colorIcon/hostedContent{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/colorIcon/hostedContent{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder instantiates a new HostedContentRequestBuilder and sets the default values.
@@ -67,7 +56,7 @@ func NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder(rawU
 }
 // Content provides operations to manage the media for the appCatalogs entity.
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) Content()(*TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) {
-    return NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property hostedContent for appCatalogs
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderDeleteRequestConfiguration)(error) {
@@ -79,7 +68,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) De
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -98,7 +87,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) Ge
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamworkHostedContentFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamworkHostedContentFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -117,7 +106,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) Pa
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamworkHostedContentFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamworkHostedContentFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,8 +118,8 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) Pa
 // ToDeleteRequestInformation delete navigation property hostedContent for appCatalogs
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -141,8 +130,8 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) To
 // ToGetRequestInformation retrieve the hosted content in an app's icon.
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -157,11 +146,11 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) To
 // ToPatchRequestInformation update the navigation property hostedContent in appCatalogs
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

@@ -9,12 +9,7 @@ import (
 
 // ItemJoinedGroupsRequestBuilder provides operations to manage the joinedGroups property of the microsoft.graph.user entity.
 type ItemJoinedGroupsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemJoinedGroupsRequestBuilderGetQueryParameters get joinedGroups from users
 type ItemJoinedGroupsRequestBuilderGetQueryParameters struct {
@@ -43,14 +38,8 @@ type ItemJoinedGroupsRequestBuilderGetRequestConfiguration struct {
 // NewItemJoinedGroupsRequestBuilderInternal instantiates a new JoinedGroupsRequestBuilder and sets the default values.
 func NewItemJoinedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedGroupsRequestBuilder) {
     m := &ItemJoinedGroupsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedGroupsRequestBuilder instantiates a new JoinedGroupsRequestBuilder and sets the default values.
@@ -61,11 +50,11 @@ func NewItemJoinedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Delta provides operations to call the delta method.
 func (m *ItemJoinedGroupsRequestBuilder) Delta()(*ItemJoinedGroupsDeltaRequestBuilder) {
-    return NewItemJoinedGroupsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemJoinedGroupsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateDynamicMembership provides operations to call the evaluateDynamicMembership method.
 func (m *ItemJoinedGroupsRequestBuilder) EvaluateDynamicMembership()(*ItemJoinedGroupsEvaluateDynamicMembershipRequestBuilder) {
-    return NewItemJoinedGroupsEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemJoinedGroupsEvaluateDynamicMembershipRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get joinedGroups from users
 func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
@@ -77,7 +66,7 @@ func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfigu
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGroupCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGroupCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -88,17 +77,17 @@ func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfigu
 }
 // GetByIds provides operations to call the getByIds method.
 func (m *ItemJoinedGroupsRequestBuilder) GetByIds()(*ItemJoinedGroupsGetByIdsRequestBuilder) {
-    return NewItemJoinedGroupsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemJoinedGroupsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *ItemJoinedGroupsRequestBuilder) GetUserOwnedObjects()(*ItemJoinedGroupsGetUserOwnedObjectsRequestBuilder) {
-    return NewItemJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get joinedGroups from users
 func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -112,5 +101,5 @@ func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Con
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemJoinedGroupsRequestBuilder) ValidateProperties()(*ItemJoinedGroupsValidatePropertiesRequestBuilder) {
-    return NewItemJoinedGroupsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemJoinedGroupsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

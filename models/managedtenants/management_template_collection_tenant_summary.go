@@ -251,6 +251,26 @@ func (m *ManagementTemplateCollectionTenantSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["regressedStepsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegressedStepsCount(val)
+        }
+        return nil
+    }
+    res["regressedUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegressedUsersCount(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -258,6 +278,16 @@ func (m *ManagementTemplateCollectionTenantSummary) GetFieldDeserializers()(map[
         }
         if val != nil {
             m.SetTenantId(val)
+        }
+        return nil
+    }
+    res["unlicensedUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnlicensedUsersCount(val)
         }
         return nil
     }
@@ -351,6 +381,28 @@ func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollect
     }
     return nil
 }
+// GetRegressedStepsCount gets the regressedStepsCount property value. The regressedStepsCount property
+func (m *ManagementTemplateCollectionTenantSummary) GetRegressedStepsCount()(*int32) {
+    val, err := m.GetBackingStore().Get("regressedStepsCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetRegressedUsersCount gets the regressedUsersCount property value. The regressedUsersCount property
+func (m *ManagementTemplateCollectionTenantSummary) GetRegressedUsersCount()(*int32) {
+    val, err := m.GetBackingStore().Get("regressedUsersCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *ManagementTemplateCollectionTenantSummary) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -359,6 +411,17 @@ func (m *ManagementTemplateCollectionTenantSummary) GetTenantId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUnlicensedUsersCount gets the unlicensedUsersCount property value. The unlicensedUsersCount property
+func (m *ManagementTemplateCollectionTenantSummary) GetUnlicensedUsersCount()(*int32) {
+    val, err := m.GetBackingStore().Get("unlicensedUsersCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -459,7 +522,25 @@ func (m *ManagementTemplateCollectionTenantSummary) Serialize(writer i878a80d233
         }
     }
     {
+        err = writer.WriteInt32Value("regressedStepsCount", m.GetRegressedStepsCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("regressedUsersCount", m.GetRegressedUsersCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("unlicensedUsersCount", m.GetUnlicensedUsersCount())
         if err != nil {
             return err
         }
@@ -571,9 +652,30 @@ func (m *ManagementTemplateCollectionTenantSummary) SetManagementTemplateCollect
         panic(err)
     }
 }
+// SetRegressedStepsCount sets the regressedStepsCount property value. The regressedStepsCount property
+func (m *ManagementTemplateCollectionTenantSummary) SetRegressedStepsCount(value *int32)() {
+    err := m.GetBackingStore().Set("regressedStepsCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRegressedUsersCount sets the regressedUsersCount property value. The regressedUsersCount property
+func (m *ManagementTemplateCollectionTenantSummary) SetRegressedUsersCount(value *int32)() {
+    err := m.GetBackingStore().Set("regressedUsersCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *ManagementTemplateCollectionTenantSummary) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUnlicensedUsersCount sets the unlicensedUsersCount property value. The unlicensedUsersCount property
+func (m *ManagementTemplateCollectionTenantSummary) SetUnlicensedUsersCount(value *int32)() {
+    err := m.GetBackingStore().Set("unlicensedUsersCount", value)
     if err != nil {
         panic(err)
     }
@@ -597,7 +699,10 @@ type ManagementTemplateCollectionTenantSummaryable interface {
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagementTemplateCollectionDisplayName()(*string)
     GetManagementTemplateCollectionId()(*string)
+    GetRegressedStepsCount()(*int32)
+    GetRegressedUsersCount()(*int32)
     GetTenantId()(*string)
+    GetUnlicensedUsersCount()(*int32)
     SetCompleteStepsCount(value *int32)()
     SetCompleteUsersCount(value *int32)()
     SetCreatedByUserId(value *string)()
@@ -613,5 +718,8 @@ type ManagementTemplateCollectionTenantSummaryable interface {
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagementTemplateCollectionDisplayName(value *string)()
     SetManagementTemplateCollectionId(value *string)()
+    SetRegressedStepsCount(value *int32)()
+    SetRegressedUsersCount(value *int32)()
     SetTenantId(value *string)()
+    SetUnlicensedUsersCount(value *int32)()
 }

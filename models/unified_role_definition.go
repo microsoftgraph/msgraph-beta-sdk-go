@@ -19,6 +19,17 @@ func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
 func CreateUnifiedRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleDefinition(), nil
 }
+// GetAllowedPrincipalTypes gets the allowedPrincipalTypes property value. The allowedPrincipalTypes property
+func (m *UnifiedRoleDefinition) GetAllowedPrincipalTypes()(*AllowedRolePrincipalTypes) {
+    val, err := m.GetBackingStore().Get("allowedPrincipalTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AllowedRolePrincipalTypes)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -44,6 +55,16 @@ func (m *UnifiedRoleDefinition) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allowedPrincipalTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAllowedRolePrincipalTypes)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedPrincipalTypes(val.(*AllowedRolePrincipalTypes))
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -231,6 +252,13 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    if m.GetAllowedPrincipalTypes() != nil {
+        cast := (*m.GetAllowedPrincipalTypes()).String()
+        err = writer.WriteStringValue("allowedPrincipalTypes", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -294,6 +322,13 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     return nil
+}
+// SetAllowedPrincipalTypes sets the allowedPrincipalTypes property value. The allowedPrincipalTypes property
+func (m *UnifiedRoleDefinition) SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes)() {
+    err := m.GetBackingStore().Set("allowedPrincipalTypes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) SetDescription(value *string)() {
@@ -362,6 +397,7 @@ func (m *UnifiedRoleDefinition) SetVersion(value *string)() {
 type UnifiedRoleDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedPrincipalTypes()(*AllowedRolePrincipalTypes)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetInheritsPermissionsFrom()([]UnifiedRoleDefinitionable)
@@ -371,6 +407,7 @@ type UnifiedRoleDefinitionable interface {
     GetRolePermissions()([]UnifiedRolePermissionable)
     GetTemplateId()(*string)
     GetVersion()(*string)
+    SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)()

@@ -9,12 +9,7 @@ import (
 
 // PlaceItemRequestBuilder provides operations to manage the collection of place entities.
 type PlaceItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // PlaceItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PlaceItemRequestBuilderDeleteRequestConfiguration struct {
@@ -33,14 +28,8 @@ type PlaceItemRequestBuilderPatchRequestConfiguration struct {
 // NewPlaceItemRequestBuilderInternal instantiates a new PlaceItemRequestBuilder and sets the default values.
 func NewPlaceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlaceItemRequestBuilder) {
     m := &PlaceItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/places/{place%2Did}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlaceItemRequestBuilder instantiates a new PlaceItemRequestBuilder and sets the default values.
@@ -59,7 +48,7 @@ func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -67,7 +56,7 @@ func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
 }
 // GraphRoom casts the previous resource to room.
 func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
-    return NewItemGraphRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 // [Find more info here]
@@ -82,7 +71,7 @@ func (m *PlaceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlaceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlaceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -94,8 +83,8 @@ func (m *PlaceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
 // ToDeleteRequestInformation delete entity from places
 func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -106,11 +95,11 @@ func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context
 // ToPatchRequestInformation update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 func (m *PlaceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, requestConfiguration *PlaceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

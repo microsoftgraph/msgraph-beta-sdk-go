@@ -9,7 +9,7 @@ import (
 type RiskyServicePrincipal struct {
     Entity
 }
-// NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
+// NewRiskyServicePrincipal instantiates a new RiskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),
@@ -118,6 +118,16 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
+        return nil
+    }
     res["isProcessing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -188,6 +198,17 @@ func (m *RiskyServicePrincipal) GetHistory()([]RiskyServicePrincipalHistoryItema
     }
     if val != nil {
         return val.([]RiskyServicePrincipalHistoryItemable)
+    }
+    return nil
+}
+// GetIsEnabled gets the isEnabled property value. The isEnabled property
+func (m *RiskyServicePrincipal) GetIsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -292,6 +313,12 @@ func (m *RiskyServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isProcessing", m.GetIsProcessing())
         if err != nil {
             return err
@@ -360,6 +387,13 @@ func (m *RiskyServicePrincipal) SetHistory(value []RiskyServicePrincipalHistoryI
         panic(err)
     }
 }
+// SetIsEnabled sets the isEnabled property value. The isEnabled property
+func (m *RiskyServicePrincipal) SetIsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsProcessing sets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
 func (m *RiskyServicePrincipal) SetIsProcessing(value *bool)() {
     err := m.GetBackingStore().Set("isProcessing", value)
@@ -410,6 +444,7 @@ type RiskyServicePrincipalable interface {
     GetAppId()(*string)
     GetDisplayName()(*string)
     GetHistory()([]RiskyServicePrincipalHistoryItemable)
+    GetIsEnabled()(*bool)
     GetIsProcessing()(*bool)
     GetRiskDetail()(*RiskDetail)
     GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -420,6 +455,7 @@ type RiskyServicePrincipalable interface {
     SetAppId(value *string)()
     SetDisplayName(value *string)()
     SetHistory(value []RiskyServicePrincipalHistoryItemable)()
+    SetIsEnabled(value *bool)()
     SetIsProcessing(value *bool)()
     SetRiskDetail(value *RiskDetail)()
     SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

@@ -8,12 +8,7 @@ import (
 
 // LocalizationsItemFaviconRequestBuilder provides operations to manage the media for the organizationalBranding entity.
 type LocalizationsItemFaviconRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // LocalizationsItemFaviconRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LocalizationsItemFaviconRequestBuilderGetRequestConfiguration struct {
@@ -32,14 +27,8 @@ type LocalizationsItemFaviconRequestBuilderPutRequestConfiguration struct {
 // NewLocalizationsItemFaviconRequestBuilderInternal instantiates a new FaviconRequestBuilder and sets the default values.
 func NewLocalizationsItemFaviconRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LocalizationsItemFaviconRequestBuilder) {
     m := &LocalizationsItemFaviconRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding/localizations/{organizationalBrandingLocalization%2Did}/favicon", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/branding/localizations/{organizationalBrandingLocalization%2Did}/favicon";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewLocalizationsItemFaviconRequestBuilder instantiates a new FaviconRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *LocalizationsItemFaviconRequestBuilder) Get(ctx context.Context, reques
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -80,7 +69,7 @@ func (m *LocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body [
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -89,8 +78,8 @@ func (m *LocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body [
 // ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *LocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LocalizationsItemFaviconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -101,8 +90,8 @@ func (m *LocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx con
 // ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *LocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *LocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.SetStreamContent(body)
     if requestConfiguration != nil {

@@ -9,12 +9,7 @@ import (
 
 // BrandingRequestBuilder provides operations to manage the organizationalBranding singleton.
 type BrandingRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // BrandingRequestBuilderGetQueryParameters get branding
 type BrandingRequestBuilderGetQueryParameters struct {
@@ -41,23 +36,17 @@ type BrandingRequestBuilderPatchRequestConfiguration struct {
 }
 // BackgroundImage provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) BackgroundImage()(*BackgroundImageRequestBuilder) {
-    return NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewBackgroundImageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BannerLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) BannerLogo()(*BannerLogoRequestBuilder) {
-    return NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewBannerLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewBrandingRequestBuilderInternal instantiates a new BrandingRequestBuilder and sets the default values.
 func NewBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BrandingRequestBuilder) {
     m := &BrandingRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/branding{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewBrandingRequestBuilder instantiates a new BrandingRequestBuilder and sets the default values.
@@ -68,11 +57,11 @@ func NewBrandingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 }
 // CustomCSS provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) CustomCSS()(*CustomCSSRequestBuilder) {
-    return NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCustomCSSRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Favicon provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) Favicon()(*FaviconRequestBuilder) {
-    return NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewFaviconRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get branding
 func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *BrandingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -84,7 +73,7 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationalBrandingFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationalBrandingFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -95,22 +84,22 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // HeaderLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) HeaderLogo()(*HeaderLogoRequestBuilder) {
-    return NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewHeaderLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) Localizations()(*LocalizationsRequestBuilder) {
-    return NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) LocalizationsById(id string)(*LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["organizationalBrandingLocalization%2Did"] = id
     }
-    return NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update branding
 func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, requestConfiguration *BrandingRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -122,7 +111,7 @@ func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationalBrandingFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOrganizationalBrandingFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -133,17 +122,17 @@ func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
 }
 // SquareLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) SquareLogo()(*SquareLogoRequestBuilder) {
-    return NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSquareLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SquareLogoDark provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) SquareLogoDark()(*SquareLogoDarkRequestBuilder) {
-    return NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get branding
 func (m *BrandingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BrandingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -158,11 +147,11 @@ func (m *BrandingRequestBuilder) ToGetRequestInformation(ctx context.Context, re
 // ToPatchRequestInformation update branding
 func (m *BrandingRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, requestConfiguration *BrandingRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

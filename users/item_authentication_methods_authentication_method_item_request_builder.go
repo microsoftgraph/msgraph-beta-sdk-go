@@ -9,12 +9,7 @@ import (
 
 // ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder provides operations to manage the methods property of the microsoft.graph.authentication entity.
 type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters represents all authentication methods registered to a user.
 type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
@@ -42,14 +37,8 @@ type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderPatchRequest
 // NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal instantiates a new AuthenticationMethodItemRequestBuilder and sets the default values.
 func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) {
     m := &ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/methods/{authenticationMethod%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication/methods/{authenticationMethod%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder instantiates a new AuthenticationMethodItemRequestBuilder and sets the default values.
@@ -60,11 +49,11 @@ func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder(rawUrl s
 }
 // DisableSmsSignIn provides operations to call the disableSmsSignIn method.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EnableSmsSignIn provides operations to call the enableSmsSignIn method.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents all authentication methods registered to a user.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable, error) {
@@ -76,7 +65,7 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ct
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -95,7 +84,7 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -106,13 +95,13 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
 }
 // ResetPassword provides operations to call the resetPassword method.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetPasswordRequestBuilder) {
-    return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation represents all authentication methods registered to a user.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -127,11 +116,11 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToGetR
 // ToPatchRequestInformation update the navigation property methods in users
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

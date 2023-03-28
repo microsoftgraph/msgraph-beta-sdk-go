@@ -167,7 +167,7 @@ func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version. This property is deprecated starting  in 2211(November 2022).
+// GetIdentityVersion gets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022).
 func (m *MacOSLobApp) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -337,7 +337,7 @@ func (m *MacOSLobApp) SetChildApps(value []MacOSLobChildAppable)() {
         panic(err)
     }
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version. This property is deprecated starting  in 2211(November 2022).
+// SetIdentityVersion sets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022).
 func (m *MacOSLobApp) SetIdentityVersion(value *string)() {
     err := m.GetBackingStore().Set("identityVersion", value)
     if err != nil {
