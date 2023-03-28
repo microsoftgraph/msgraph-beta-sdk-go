@@ -182,7 +182,7 @@ func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetRuns gets the runs property value. The runs property
+// GetRuns gets the runs property value. Workflow runs.
 func (m *Workflow) GetRuns()([]Runable) {
     val, err := m.GetBackingStore().Get("runs")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *Workflow) GetTaskReports()([]TaskReportable) {
     }
     return nil
 }
-// GetUserProcessingResults gets the userProcessingResults property value. The userProcessingResults property
+// GetUserProcessingResults gets the userProcessingResults property value. Per-user workflow execution results.
 func (m *Workflow) GetUserProcessingResults()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("userProcessingResults")
     if err != nil {
@@ -347,7 +347,7 @@ func (m *Workflow) SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetRuns sets the runs property value. The runs property
+// SetRuns sets the runs property value. Workflow runs.
 func (m *Workflow) SetRuns(value []Runable)() {
     err := m.GetBackingStore().Set("runs", value)
     if err != nil {
@@ -361,7 +361,7 @@ func (m *Workflow) SetTaskReports(value []TaskReportable)() {
         panic(err)
     }
 }
-// SetUserProcessingResults sets the userProcessingResults property value. The userProcessingResults property
+// SetUserProcessingResults sets the userProcessingResults property value. Per-user workflow execution results.
 func (m *Workflow) SetUserProcessingResults(value []UserProcessingResultable)() {
     err := m.GetBackingStore().Set("userProcessingResults", value)
     if err != nil {

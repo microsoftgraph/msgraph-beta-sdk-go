@@ -9,12 +9,7 @@ import (
 
 // SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,45 +43,39 @@ type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConf
 }
 // Approvers provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Approvers()(*SubjectRightsRequestsItemApproversRequestBuilder) {
-    return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ApproversById provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ApproversById(id string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["user%2Did"] = id
     }
-    return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Collaborators provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Collaborators()(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
-    return NewSubjectRightsRequestsItemCollaboratorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSubjectRightsRequestsItemCollaboratorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CollaboratorsById provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) CollaboratorsById(id string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["user%2Did"] = id
     }
-    return NewSubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewSubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     m := &SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilder instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
@@ -105,7 +94,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Delete(ctx
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -121,7 +110,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Get(ctx co
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSubjectRightsRequestFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSubjectRightsRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -132,26 +121,26 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Get(ctx co
 }
 // GetFinalAttachment provides operations to call the getFinalAttachment method.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) {
-    return NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetFinalReport provides operations to call the getFinalReport method.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalReport()(*SubjectRightsRequestsItemGetFinalReportRequestBuilder) {
-    return NewSubjectRightsRequestsItemGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSubjectRightsRequestsItemGetFinalReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Notes provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*SubjectRightsRequestsItemNotesRequestBuilder) {
-    return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NotesById provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) NotesById(id string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["authoredNote%2Did"] = id
     }
-    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property subjectRightsRequests in privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
@@ -163,7 +152,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSubjectRightsRequestFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSubjectRightsRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -174,13 +163,13 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx 
 }
 // Team provides operations to manage the team property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Team()(*SubjectRightsRequestsItemTeamRequestBuilder) {
-    return NewSubjectRightsRequestsItemTeamRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSubjectRightsRequestsItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property subjectRightsRequests for privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -191,8 +180,8 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToDeleteRe
 // ToGetRequestInformation get subjectRightsRequests from privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -207,11 +196,11 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToGetReque
 // ToPatchRequestInformation update the navigation property subjectRightsRequests in privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

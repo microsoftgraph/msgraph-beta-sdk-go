@@ -8,12 +8,7 @@ import (
 
 // TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder provides operations to manage the media for the appCatalogs entity.
 type TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderGetRequestConfiguration struct {
@@ -32,14 +27,8 @@ type TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBui
 // NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) {
     m := &TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/colorIcon/hostedContent/$value", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/colorIcon/hostedContent/$value";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentReques
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -80,7 +69,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentReques
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -89,8 +78,8 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentReques
 // ToGetRequestInformation get media content for the navigation property hostedContent from appCatalogs
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -101,8 +90,8 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentReques
 // ToPutRequestInformation update media content for the navigation property hostedContent in appCatalogs
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.SetStreamContent(body)
     if requestConfiguration != nil {

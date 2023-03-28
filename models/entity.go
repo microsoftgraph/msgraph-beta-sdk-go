@@ -1910,6 +1910,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrivilegedRoleSummary(), nil
                     case "#microsoft.graph.privilegedSignupStatus":
                         return NewPrivilegedSignupStatus(), nil
+                    case "#microsoft.graph.privilegeManagementElevation":
+                        return NewPrivilegeManagementElevation(), nil
                     case "#microsoft.graph.profile":
                         return NewProfile(), nil
                     case "#microsoft.graph.profileCardProperty":

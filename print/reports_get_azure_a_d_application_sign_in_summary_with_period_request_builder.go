@@ -8,12 +8,7 @@ import (
 
 // ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder provides operations to call the getAzureADApplicationSignInSummary method.
 type ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters invoke function getAzureADApplicationSignInSummary
 type ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters struct {
@@ -44,17 +39,11 @@ type ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequest
 // NewReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderInternal instantiates a new GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder and sets the default values.
 func NewReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) {
     m := &ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder{
-    }
-    m.urlTemplate = "{+baseurl}/print/reports/getAzureADApplicationSignInSummary(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/reports/getAzureADApplicationSignInSummary(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
     }
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder instantiates a new GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder and sets the default values.
@@ -73,7 +62,7 @@ func (m *ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) Get(
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateReportsGetAzureADApplicationSignInSummaryWithPeriodResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateReportsGetAzureADApplicationSignInSummaryWithPeriodResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -85,8 +74,8 @@ func (m *ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) Get(
 // ToGetRequestInformation invoke function getAzureADApplicationSignInSummary
 func (m *ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

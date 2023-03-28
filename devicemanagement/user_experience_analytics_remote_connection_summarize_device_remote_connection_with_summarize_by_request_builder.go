@@ -8,12 +8,7 @@ import (
 
 // UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder provides operations to call the summarizeDeviceRemoteConnection method.
 type UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetQueryParameters invoke function summarizeDeviceRemoteConnection
 type UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetQueryParameters struct {
@@ -44,17 +39,11 @@ type UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithS
 // NewUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal instantiates a new SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, summarizeBy *string)(*UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) {
     m := &UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder{
-    }
-    m.urlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRemoteConnection/summarizeDeviceRemoteConnection(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsRemoteConnection/summarizeDeviceRemoteConnection(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
     }
     if summarizeBy != nil {
         urlTplParams["summarizeBy"] = *summarizeBy
     }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder instantiates a new SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder and sets the default values.
@@ -73,7 +62,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionW
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -85,8 +74,8 @@ func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionW
 // ToGetRequestInformation invoke function summarizeDeviceRemoteConnection
 func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

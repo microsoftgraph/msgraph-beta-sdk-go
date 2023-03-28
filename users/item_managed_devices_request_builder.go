@@ -9,12 +9,7 @@ import (
 
 // ItemManagedDevicesRequestBuilder provides operations to manage the managedDevices property of the microsoft.graph.user entity.
 type ItemManagedDevicesRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemManagedDevicesRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ItemManagedDevicesRequestBuilderGetQueryParameters struct {
@@ -53,31 +48,25 @@ type ItemManagedDevicesRequestBuilderPostRequestConfiguration struct {
 }
 // AppDiagnosticsWithUpn provides operations to call the appDiagnostics method.
 func (m *ItemManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ItemManagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
-    return NewItemManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn)
+    return NewItemManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, upn)
 }
 // BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
 func (m *ItemManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) {
-    return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
 func (m *ItemManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ItemManagedDevicesBulkRestoreCloudPcRequestBuilder) {
-    return NewItemManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
 func (m *ItemManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
-    return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewItemManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesRequestBuilder) {
     m := &ItemManagedDevicesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedDevicesRequestBuilder instantiates a new ManagedDevicesRequestBuilder and sets the default values.
@@ -88,15 +77,15 @@ func NewItemManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemManagedDevicesRequestBuilder) Count()(*ItemManagedDevicesCountRequestBuilder) {
-    return NewItemManagedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DownloadAppDiagnostics provides operations to call the downloadAppDiagnostics method.
 func (m *ItemManagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ItemManagedDevicesDownloadAppDiagnosticsRequestBuilder) {
-    return NewItemManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExecuteAction provides operations to call the executeAction method.
 func (m *ItemManagedDevicesRequestBuilder) ExecuteAction()(*ItemManagedDevicesExecuteActionRequestBuilder) {
-    return NewItemManagedDevicesExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesExecuteActionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the managed devices associated with the user.
 func (m *ItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
@@ -108,7 +97,7 @@ func (m *ItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfi
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedDeviceCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedDeviceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -119,7 +108,7 @@ func (m *ItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // MoveDevicesToOU provides operations to call the moveDevicesToOU method.
 func (m *ItemManagedDevicesRequestBuilder) MoveDevicesToOU()(*ItemManagedDevicesMoveDevicesToOURequestBuilder) {
-    return NewItemManagedDevicesMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemManagedDevicesMoveDevicesToOURequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to managedDevices for users
 func (m *ItemManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ItemManagedDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
@@ -131,7 +120,7 @@ func (m *ItemManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233e
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedDeviceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedDeviceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -143,8 +132,8 @@ func (m *ItemManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233e
 // ToGetRequestInformation the managed devices associated with the user.
 func (m *ItemManagedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -159,11 +148,11 @@ func (m *ItemManagedDevicesRequestBuilder) ToGetRequestInformation(ctx context.C
 // ToPostRequestInformation create new navigation property to managedDevices for users
 func (m *ItemManagedDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ItemManagedDevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

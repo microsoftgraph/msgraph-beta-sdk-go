@@ -42,7 +42,7 @@ func (m *CloudPcSnapshot) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as'2014-01-01T00:00:00Z'.
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetSnapshotType gets the snapshotType property value. The type of snapshot. indicates how the snapshot is to be created. Possible values are automatic, manual. Default value is automatic.
+// GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
 func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshotType) {
     val, err := m.GetBackingStore().Get("snapshotType")
     if err != nil {
@@ -211,7 +211,7 @@ func (m *CloudPcSnapshot) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as'2014-01-01T00:00:00Z'.
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -225,7 +225,7 @@ func (m *CloudPcSnapshot) SetLastRestoredDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetSnapshotType sets the snapshotType property value. The type of snapshot. indicates how the snapshot is to be created. Possible values are automatic, manual. Default value is automatic.
+// SetSnapshotType sets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
 func (m *CloudPcSnapshot) SetSnapshotType(value *CloudPcSnapshotType)() {
     err := m.GetBackingStore().Set("snapshotType", value)
     if err != nil {

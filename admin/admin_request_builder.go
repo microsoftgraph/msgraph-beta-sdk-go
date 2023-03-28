@@ -9,12 +9,7 @@ import (
 
 // AdminRequestBuilder provides operations to manage the admin singleton.
 type AdminRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // AdminRequestBuilderGetQueryParameters get admin
 type AdminRequestBuilderGetQueryParameters struct {
@@ -42,14 +37,8 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
 // NewAdminRequestBuilderInternal instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdminRequestBuilder) {
     m := &AdminRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/admin{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdminRequestBuilder instantiates a new AdminRequestBuilder and sets the default values.
@@ -60,7 +49,7 @@ func NewAdminRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Edge provides operations to manage the edge property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) Edge()(*EdgeRequestBuilder) {
-    return NewEdgeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewEdgeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get admin
 func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *AdminRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable, error) {
@@ -72,7 +61,7 @@ func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *Adm
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdminFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdminFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -91,7 +80,7 @@ func (m *AdminRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdminFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdminFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -102,21 +91,21 @@ func (m *AdminRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6
 }
 // ReportSettings provides operations to manage the reportSettings property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) ReportSettings()(*ReportSettingsRequestBuilder) {
-    return NewReportSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewReportSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestBuilder) {
-    return NewServiceAnnouncementRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewServiceAnnouncementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sharepoint provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) Sharepoint()(*SharepointRequestBuilder) {
-    return NewSharepointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewSharepointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get admin
 func (m *AdminRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdminRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -131,11 +120,11 @@ func (m *AdminRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
 // ToPatchRequestInformation update admin
 func (m *AdminRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable, requestConfiguration *AdminRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -147,5 +136,5 @@ func (m *AdminRequestBuilder) ToPatchRequestInformation(ctx context.Context, bod
 }
 // Windows provides operations to manage the windows property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) Windows()(*WindowsRequestBuilder) {
-    return NewWindowsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

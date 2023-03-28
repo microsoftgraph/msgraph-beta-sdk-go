@@ -8,7 +8,7 @@ import (
 type OnPremisesPublishingProfile struct {
     Entity
 }
-// NewOnPremisesPublishingProfile instantiates a new OnPremisesPublishingProfile and sets the default values.
+// NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
     m := &OnPremisesPublishingProfile{
         Entity: *NewEntity(),

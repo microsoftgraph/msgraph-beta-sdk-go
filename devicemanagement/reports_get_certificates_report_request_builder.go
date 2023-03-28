@@ -8,12 +8,7 @@ import (
 
 // ReportsGetCertificatesReportRequestBuilder provides operations to call the getCertificatesReport method.
 type ReportsGetCertificatesReportRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ReportsGetCertificatesReportRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsGetCertificatesReportRequestBuilderPostRequestConfiguration struct {
@@ -25,14 +20,8 @@ type ReportsGetCertificatesReportRequestBuilderPostRequestConfiguration struct {
 // NewReportsGetCertificatesReportRequestBuilderInternal instantiates a new GetCertificatesReportRequestBuilder and sets the default values.
 func NewReportsGetCertificatesReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetCertificatesReportRequestBuilder) {
     m := &ReportsGetCertificatesReportRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reports/getCertificatesReport", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/reports/getCertificatesReport";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewReportsGetCertificatesReportRequestBuilder instantiates a new GetCertificatesReportRequestBuilder and sets the default values.
@@ -51,7 +40,7 @@ func (m *ReportsGetCertificatesReportRequestBuilder) Post(ctx context.Context, b
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -63,10 +52,10 @@ func (m *ReportsGetCertificatesReportRequestBuilder) Post(ctx context.Context, b
 // ToPostRequestInformation invoke action getCertificatesReport
 func (m *ReportsGetCertificatesReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetCertificatesReportPostRequestBodyable, requestConfiguration *ReportsGetCertificatesReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

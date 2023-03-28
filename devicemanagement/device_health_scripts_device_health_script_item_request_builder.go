@@ -9,12 +9,7 @@ import (
 
 // DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
 type DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,34 +43,28 @@ type DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderPatchRequestConfigur
 }
 // Assign provides operations to call the assign method.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Assign()(*DeviceHealthScriptsItemAssignRequestBuilder) {
-    return NewDeviceHealthScriptsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceHealthScript entity.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Assignments()(*DeviceHealthScriptsItemAssignmentsRequestBuilder) {
-    return NewDeviceHealthScriptsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceHealthScript entity.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) AssignmentsById(id string)(*DeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceHealthScriptAssignment%2Did"] = id
     }
-    return NewDeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewDeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDeviceHealthScriptsDeviceHealthScriptItemRequestBuilderInternal instantiates a new DeviceHealthScriptItemRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsDeviceHealthScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) {
     m := &DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceHealthScriptsDeviceHealthScriptItemRequestBuilder instantiates a new DeviceHealthScriptItemRequestBuilder and sets the default values.
@@ -94,7 +83,7 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Delete(ctx con
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -102,18 +91,18 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Delete(ctx con
 }
 // DeviceRunStates provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) DeviceRunStates()(*DeviceHealthScriptsItemDeviceRunStatesRequestBuilder) {
-    return NewDeviceHealthScriptsItemDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemDeviceRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceHealthScriptsItemDeviceRunStatesDeviceHealthScriptDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceHealthScriptDeviceState%2Did"] = id
     }
-    return NewDeviceHealthScriptsItemDeviceRunStatesDeviceHealthScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewDeviceHealthScriptsItemDeviceRunStatesDeviceHealthScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
@@ -125,7 +114,7 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Get(ctx contex
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceHealthScriptFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceHealthScriptFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -136,11 +125,11 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Get(ctx contex
 }
 // GetGlobalScriptHighestAvailableVersion provides operations to call the getGlobalScriptHighestAvailableVersion method.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) GetGlobalScriptHighestAvailableVersion()(*DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilder) {
-    return NewDeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetRemediationHistory provides operations to call the getRemediationHistory method.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) GetRemediationHistory()(*DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) {
-    return NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property deviceHealthScripts in deviceManagement
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, requestConfiguration *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
@@ -152,7 +141,7 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Patch(ctx cont
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceHealthScriptFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceHealthScriptFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -163,13 +152,13 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) Patch(ctx cont
 }
 // RunSummary provides operations to manage the runSummary property of the microsoft.graph.deviceHealthScript entity.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) RunSummary()(*DeviceHealthScriptsItemRunSummaryRequestBuilder) {
-    return NewDeviceHealthScriptsItemRunSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemRunSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deviceHealthScripts for deviceManagement
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -180,8 +169,8 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToDeleteReques
 // ToGetRequestInformation the list of device health scripts associated with the tenant.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -196,11 +185,11 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToGetRequestIn
 // ToPatchRequestInformation update the navigation property deviceHealthScripts in deviceManagement
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, requestConfiguration *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -212,5 +201,5 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToPatchRequest
 }
 // UpdateGlobalScript provides operations to call the updateGlobalScript method.
 func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) UpdateGlobalScript()(*DeviceHealthScriptsItemUpdateGlobalScriptRequestBuilder) {
-    return NewDeviceHealthScriptsItemUpdateGlobalScriptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeviceHealthScriptsItemUpdateGlobalScriptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

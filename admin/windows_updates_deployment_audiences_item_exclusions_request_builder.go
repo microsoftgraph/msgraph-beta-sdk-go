@@ -9,12 +9,7 @@ import (
 
 // WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 type WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderGetQueryParameters list the updatableAsset resources that are excluded from a deploymentAudience.
 type WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderGetQueryParameters struct {
@@ -54,14 +49,8 @@ type WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderPostRequestCon
 // NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderInternal instantiates a new ExclusionsRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) {
     m := &WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}/exclusions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}/exclusions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder instantiates a new ExclusionsRequestBuilder and sets the default values.
@@ -72,7 +61,7 @@ func NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) Count()(*WindowsUpdatesDeploymentAudiencesItemExclusionsCountRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list the updatableAsset resources that are excluded from a deploymentAudience.
 // [Find more info here]
@@ -87,7 +76,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) Get(ctx 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -106,7 +95,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) Post(ctx
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -118,8 +107,8 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) Post(ctx
 // ToGetRequestInformation list the updatableAsset resources that are excluded from a deploymentAudience.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -134,11 +123,11 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) ToGetReq
 // ToPostRequestInformation create new navigation property to exclusions for admin
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -150,17 +139,17 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) ToPostRe
 }
 // WindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -9,12 +9,7 @@ import (
 
 // PrivilegedRoleItemRequestBuilder provides operations to manage the collection of privilegedRole entities.
 type PrivilegedRoleItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,30 +43,24 @@ type PrivilegedRoleItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
 func (m *PrivilegedRoleItemRequestBuilder) Assignments()(*ItemAssignmentsRequestBuilder) {
-    return NewItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
 func (m *PrivilegedRoleItemRequestBuilder) AssignmentsById(id string)(*ItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["privilegedRoleAssignment%2Did"] = id
     }
-    return NewItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewPrivilegedRoleItemRequestBuilderInternal instantiates a new PrivilegedRoleItemRequestBuilder and sets the default values.
 func NewPrivilegedRoleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedRoleItemRequestBuilder) {
     m := &PrivilegedRoleItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedRoles/{privilegedRole%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/privilegedRoles/{privilegedRole%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivilegedRoleItemRequestBuilder instantiates a new PrivilegedRoleItemRequestBuilder and sets the default values.
@@ -90,7 +79,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Delete(ctx context.Context, requestCo
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -109,7 +98,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Get(ctx context.Context, requestConfi
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegedRoleFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegedRoleFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -128,7 +117,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Patch(ctx context.Context, body ie233
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegedRoleFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegedRoleFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -139,25 +128,25 @@ func (m *PrivilegedRoleItemRequestBuilder) Patch(ctx context.Context, body ie233
 }
 // SelfActivate provides operations to call the selfActivate method.
 func (m *PrivilegedRoleItemRequestBuilder) SelfActivate()(*ItemSelfActivateRequestBuilder) {
-    return NewItemSelfActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSelfActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SelfDeactivate provides operations to call the selfDeactivate method.
 func (m *PrivilegedRoleItemRequestBuilder) SelfDeactivate()(*ItemSelfDeactivateRequestBuilder) {
-    return NewItemSelfDeactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSelfDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.privilegedRole entity.
 func (m *PrivilegedRoleItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
-    return NewItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Summary provides operations to manage the summary property of the microsoft.graph.privilegedRole entity.
 func (m *PrivilegedRoleItemRequestBuilder) Summary()(*ItemSummaryRequestBuilder) {
-    return NewItemSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from privilegedRoles
 func (m *PrivilegedRoleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -168,8 +157,8 @@ func (m *PrivilegedRoleItemRequestBuilder) ToDeleteRequestInformation(ctx contex
 // ToGetRequestInformation retrieve the properties and relationships of privilegedRole object. 
 func (m *PrivilegedRoleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -184,11 +173,11 @@ func (m *PrivilegedRoleItemRequestBuilder) ToGetRequestInformation(ctx context.C
 // ToPatchRequestInformation update entity in privilegedRoles
 func (m *PrivilegedRoleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, requestConfiguration *PrivilegedRoleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

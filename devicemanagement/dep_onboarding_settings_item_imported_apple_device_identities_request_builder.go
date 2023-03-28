@@ -9,12 +9,7 @@ import (
 
 // DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
 type DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters the imported Apple device identities.
 type DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters struct {
@@ -54,14 +49,8 @@ type DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderPostReq
 // NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderInternal instantiates a new ImportedAppleDeviceIdentitiesRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) {
     m := &DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/importedAppleDeviceIdentities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/importedAppleDeviceIdentities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder instantiates a new ImportedAppleDeviceIdentitiesRequestBuilder and sets the default values.
@@ -72,7 +61,7 @@ func NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder(raw
 }
 // Count provides operations to count the resources in the collection.
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) Count()(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesCountRequestBuilder) {
-    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the imported Apple device identities.
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityCollectionResponseable, error) {
@@ -84,7 +73,7 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) G
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImportedAppleDeviceIdentityCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImportedAppleDeviceIdentityCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -95,7 +84,7 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) G
 }
 // ImportAppleDeviceIdentityList provides operations to call the importAppleDeviceIdentityList method.
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) ImportAppleDeviceIdentityList()(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListRequestBuilder) {
-    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to importedAppleDeviceIdentities for deviceManagement
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, requestConfiguration *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, error) {
@@ -107,7 +96,7 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) P
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImportedAppleDeviceIdentityFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImportedAppleDeviceIdentityFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -119,8 +108,8 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) P
 // ToGetRequestInformation the imported Apple device identities.
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -135,11 +124,11 @@ func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) T
 // ToPostRequestInformation create new navigation property to importedAppleDeviceIdentities for deviceManagement
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, requestConfiguration *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

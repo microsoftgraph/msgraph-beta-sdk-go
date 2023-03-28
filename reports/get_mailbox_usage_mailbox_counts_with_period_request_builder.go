@@ -8,12 +8,7 @@ import (
 
 // GetMailboxUsageMailboxCountsWithPeriodRequestBuilder provides operations to call the getMailboxUsageMailboxCounts method.
 type GetMailboxUsageMailboxCountsWithPeriodRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // GetMailboxUsageMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetMailboxUsageMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration struct {
@@ -25,17 +20,11 @@ type GetMailboxUsageMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration
 // NewGetMailboxUsageMailboxCountsWithPeriodRequestBuilderInternal instantiates a new GetMailboxUsageMailboxCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetMailboxUsageMailboxCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetMailboxUsageMailboxCountsWithPeriodRequestBuilder) {
     m := &GetMailboxUsageMailboxCountsWithPeriodRequestBuilder{
-    }
-    m.urlTemplate = "{+baseurl}/reports/getMailboxUsageMailboxCounts(period='{period}')";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getMailboxUsageMailboxCounts(period='{period}')", pathParameters),
     }
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetMailboxUsageMailboxCountsWithPeriodRequestBuilder instantiates a new GetMailboxUsageMailboxCountsWithPeriodRequestBuilder and sets the default values.
@@ -54,7 +43,7 @@ func (m *GetMailboxUsageMailboxCountsWithPeriodRequestBuilder) Get(ctx context.C
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -66,8 +55,8 @@ func (m *GetMailboxUsageMailboxCountsWithPeriodRequestBuilder) Get(ctx context.C
 // ToGetRequestInformation invoke function getMailboxUsageMailboxCounts
 func (m *GetMailboxUsageMailboxCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetMailboxUsageMailboxCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

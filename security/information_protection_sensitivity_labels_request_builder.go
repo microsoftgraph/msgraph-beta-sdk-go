@@ -9,12 +9,7 @@ import (
 
 // InformationProtectionSensitivityLabelsRequestBuilder provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 type InformationProtectionSensitivityLabelsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // InformationProtectionSensitivityLabelsRequestBuilderGetQueryParameters get a list of sensitivityLabel objects associated with a user or organization.
 type InformationProtectionSensitivityLabelsRequestBuilderGetQueryParameters struct {
@@ -54,14 +49,8 @@ type InformationProtectionSensitivityLabelsRequestBuilderPostRequestConfiguratio
 // NewInformationProtectionSensitivityLabelsRequestBuilderInternal instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
 func NewInformationProtectionSensitivityLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsRequestBuilder) {
     m := &InformationProtectionSensitivityLabelsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/security/informationProtection/sensitivityLabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewInformationProtectionSensitivityLabelsRequestBuilder instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
@@ -72,7 +61,7 @@ func NewInformationProtectionSensitivityLabelsRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to count the resources in the collection.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) Count()(*InformationProtectionSensitivityLabelsCountRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewInformationProtectionSensitivityLabelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of sensitivityLabel objects associated with a user or organization.
 // [Find more info here]
@@ -87,7 +76,7 @@ func (m *InformationProtectionSensitivityLabelsRequestBuilder) Get(ctx context.C
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSensitivityLabelCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSensitivityLabelCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -106,7 +95,7 @@ func (m *InformationProtectionSensitivityLabelsRequestBuilder) Post(ctx context.
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSensitivityLabelFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSensitivityLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -117,25 +106,25 @@ func (m *InformationProtectionSensitivityLabelsRequestBuilder) Post(ctx context.
 }
 // SecurityEvaluateApplication provides operations to call the evaluateApplication method.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) SecurityEvaluateApplication()(*InformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewInformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecurityEvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) SecurityEvaluateClassificationResults()(*InformationProtectionSensitivityLabelsSecurityEvaluateClassificationResultsRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsSecurityEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewInformationProtectionSensitivityLabelsSecurityEvaluateClassificationResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecurityEvaluateRemoval provides operations to call the evaluateRemoval method.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) SecurityEvaluateRemoval()(*InformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewInformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecurityExtractContentLabel provides operations to call the extractContentLabel method.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) SecurityExtractContentLabel()(*InformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilder) {
-    return NewInformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewInformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get a list of sensitivityLabel objects associated with a user or organization.
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -150,11 +139,11 @@ func (m *InformationProtectionSensitivityLabelsRequestBuilder) ToGetRequestInfor
 // ToPostRequestInformation create new navigation property to sensitivityLabels for security
 func (m *InformationProtectionSensitivityLabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *InformationProtectionSensitivityLabelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

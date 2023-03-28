@@ -9,12 +9,7 @@ import (
 
 // ItemOutlookRequestBuilder provides operations to manage the outlook property of the microsoft.graph.user entity.
 type ItemOutlookRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemOutlookRequestBuilderGetQueryParameters selective Outlook services available to the user. Read-only. Nullable.
 type ItemOutlookRequestBuilderGetQueryParameters struct {
@@ -33,14 +28,8 @@ type ItemOutlookRequestBuilderGetRequestConfiguration struct {
 // NewItemOutlookRequestBuilderInternal instantiates a new OutlookRequestBuilder and sets the default values.
 func NewItemOutlookRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookRequestBuilder) {
     m := &ItemOutlookRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook{?%24select}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/outlook{?%24select}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookRequestBuilder instantiates a new OutlookRequestBuilder and sets the default values.
@@ -59,7 +48,7 @@ func (m *ItemOutlookRequestBuilder) Get(ctx context.Context, requestConfiguratio
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOutlookUserFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOutlookUserFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -70,81 +59,81 @@ func (m *ItemOutlookRequestBuilder) Get(ctx context.Context, requestConfiguratio
 }
 // MasterCategories provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) MasterCategories()(*ItemOutlookMasterCategoriesRequestBuilder) {
-    return NewItemOutlookMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemOutlookMasterCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MasterCategoriesById provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) MasterCategoriesById(id string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["outlookCategory%2Did"] = id
     }
-    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // SupportedLanguages provides operations to call the supportedLanguages method.
 func (m *ItemOutlookRequestBuilder) SupportedLanguages()(*ItemOutlookSupportedLanguagesRequestBuilder) {
-    return NewItemOutlookSupportedLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemOutlookSupportedLanguagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SupportedTimeZones provides operations to call the supportedTimeZones method.
 func (m *ItemOutlookRequestBuilder) SupportedTimeZones()(*ItemOutlookSupportedTimeZonesRequestBuilder) {
-    return NewItemOutlookSupportedTimeZonesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemOutlookSupportedTimeZonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SupportedTimeZonesWithTimeZoneStandard provides operations to call the supportedTimeZones method.
 func (m *ItemOutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
-    return NewItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard)
+    return NewItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, timeZoneStandard)
 }
 // TaskFolders provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) TaskFolders()(*ItemOutlookTaskFoldersRequestBuilder) {
-    return NewItemOutlookTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemOutlookTaskFoldersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) TaskFoldersById(id string)(*ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["outlookTaskFolder%2Did"] = id
     }
-    return NewItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskGroups provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) TaskGroups()(*ItemOutlookTaskGroupsRequestBuilder) {
-    return NewItemOutlookTaskGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemOutlookTaskGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskGroupsById provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) TaskGroupsById(id string)(*ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["outlookTaskGroup%2Did"] = id
     }
-    return NewItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) Tasks()(*ItemOutlookTasksRequestBuilder) {
-    return NewItemOutlookTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemOutlookTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) TasksById(id string)(*ItemOutlookTasksOutlookTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["outlookTask%2Did"] = id
     }
-    return NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation selective Outlook services available to the user. Read-only. Nullable.
 func (m *ItemOutlookRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

@@ -9,12 +9,7 @@ import (
 
 // WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder provides operations to manage the deploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.
 type WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderGetQueryParameters deployment profile currently assigned to the Windows autopilot device.
 type WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderGetReque
 // NewWindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderInternal instantiates a new DeploymentProfileRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder) {
     m := &WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/deploymentProfile{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/deploymentProfile{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewWindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder instantiates a new DeploymentProfileRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder) Ge
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -73,8 +62,8 @@ func (m *WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder) Ge
 // ToGetRequestInformation deployment profile currently assigned to the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsAutopilotDeviceIdentitiesItemDeploymentProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

@@ -6,24 +6,13 @@ import (
 
 // ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder builds and executes requests for operations under \users\{user-id}\devices\{device-id}\registeredOwners\{directoryObject-id}
 type ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
     m := &ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -34,17 +23,17 @@ func NewItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder(rawUrl 
 }
 // GraphEndpoint casts the previous resource to endpoint.
 func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemDevicesItemRegisteredOwnersItemGraphEndpointRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemDevicesItemRegisteredOwnersItemGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphServicePrincipal casts the previous resource to servicePrincipal.
 func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemDevicesItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemDevicesItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphUser casts the previous resource to user.
 func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemDevicesItemRegisteredOwnersItemGraphUserRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemDevicesItemRegisteredOwnersItemGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Ref provides operations to manage the collection of user entities.
 func (m *ItemDevicesItemRegisteredOwnersDirectoryObjectItemRequestBuilder) Ref()(*ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

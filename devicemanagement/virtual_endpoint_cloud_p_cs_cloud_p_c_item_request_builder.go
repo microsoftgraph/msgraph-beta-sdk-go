@@ -9,12 +9,7 @@ import (
 
 // VirtualEndpointCloudPCsCloudPCItemRequestBuilder provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 type VirtualEndpointCloudPCsCloudPCItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,19 +43,13 @@ type VirtualEndpointCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration s
 }
 // ChangeUserAccountType provides operations to call the changeUserAccountType method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ChangeUserAccountType()(*VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal instantiates a new CloudPCItemRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
     m := &VirtualEndpointCloudPCsCloudPCItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewVirtualEndpointCloudPCsCloudPCItemRequestBuilder instantiates a new CloudPCItemRequestBuilder and sets the default values.
@@ -79,7 +68,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Co
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -87,7 +76,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Co
 }
 // EndGracePeriod provides operations to call the endGracePeriod method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*VirtualEndpointCloudPCsItemEndGracePeriodRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemEndGracePeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get cloud managed virtual desktops.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -99,7 +88,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Conte
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPCFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPCFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -110,19 +99,19 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Conte
 }
 // GetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property cloudPCs in deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -134,7 +123,7 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Con
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPCFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPCFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -145,37 +134,37 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Con
 }
 // Reboot provides operations to call the reboot method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reboot()(*VirtualEndpointCloudPCsItemRebootRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemRebootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Rename provides operations to call the rename method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Rename()(*VirtualEndpointCloudPCsItemRenameRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemRenameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reprovision provides operations to call the reprovision method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reprovision()(*VirtualEndpointCloudPCsItemReprovisionRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemReprovisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Restore provides operations to call the restore method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Start provides operations to call the start method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Start()(*VirtualEndpointCloudPCsItemStartRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemStartRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Stop provides operations to call the stop method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Stop()(*VirtualEndpointCloudPCsItemStopRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property cloudPCs for deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -186,8 +175,8 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInform
 // ToGetRequestInformation cloud managed virtual desktops.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -202,11 +191,11 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToGetRequestInformati
 // ToPatchRequestInformation update the navigation property cloudPCs in deviceManagement
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, requestConfiguration *VirtualEndpointCloudPCsCloudPCItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
@@ -218,5 +207,5 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) ToPatchRequestInforma
 }
 // Troubleshoot provides operations to call the troubleshoot method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Troubleshoot()(*VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -9,12 +9,7 @@ import (
 
 // SearchRequestBuilder provides operations to manage the searchEntity singleton.
 type SearchRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // SearchRequestBuilderGetQueryParameters get search
 type SearchRequestBuilderGetQueryParameters struct {
@@ -41,45 +36,39 @@ type SearchRequestBuilderPatchRequestConfiguration struct {
 }
 // Acronyms provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Acronyms()(*AcronymsRequestBuilder) {
-    return NewAcronymsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewAcronymsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AcronymsById provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) AcronymsById(id string)(*AcronymsAcronymItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["acronym%2Did"] = id
     }
-    return NewAcronymsAcronymItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewAcronymsAcronymItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Bookmarks provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Bookmarks()(*BookmarksRequestBuilder) {
-    return NewBookmarksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewBookmarksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BookmarksById provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) BookmarksById(id string)(*BookmarksBookmarkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["bookmark%2Did"] = id
     }
-    return NewBookmarksBookmarkItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewBookmarksBookmarkItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SearchRequestBuilder) {
     m := &SearchRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/search{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewSearchRequestBuilder instantiates a new SearchRequestBuilder and sets the default values.
@@ -98,7 +87,7 @@ func (m *SearchRequestBuilder) Get(ctx context.Context, requestConfiguration *Se
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSearchEntityFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSearchEntityFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -117,7 +106,7 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSearchEntityFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSearchEntityFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -128,28 +117,28 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
 }
 // Qnas provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Qnas()(*QnasRequestBuilder) {
-    return NewQnasRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewQnasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // QnasById provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) QnasById(id string)(*QnasQnaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["qna%2Did"] = id
     }
-    return NewQnasQnaItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewQnasQnaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Query provides operations to call the query method.
 func (m *SearchRequestBuilder) Query()(*QueryRequestBuilder) {
-    return NewQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get search
 func (m *SearchRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SearchRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -164,11 +153,11 @@ func (m *SearchRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
 // ToPatchRequestInformation update search
 func (m *SearchRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SearchEntityable, requestConfiguration *SearchRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

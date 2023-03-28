@@ -415,7 +415,7 @@ func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
     }
     return nil
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("supervisedModeEnabled")
     if err != nil {
@@ -703,7 +703,7 @@ func (m *DepEnrollmentBaseProfile) SetSiriDisabled(value *bool)() {
         panic(err)
     }
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) SetSupervisedModeEnabled(value *bool)() {
     err := m.GetBackingStore().Set("supervisedModeEnabled", value)
     if err != nil {

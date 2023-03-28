@@ -9,12 +9,7 @@ import (
 
 // CompaniesItemPurchaseInvoicesItemVendorRequestBuilder provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.
 type CompaniesItemPurchaseInvoicesItemVendorRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration struct {
@@ -49,14 +44,8 @@ type CompaniesItemPurchaseInvoicesItemVendorRequestBuilderPatchRequestConfigurat
 // NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal instantiates a new VendorRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemVendorRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/vendor{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/vendor{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilder instantiates a new VendorRequestBuilder and sets the default values.
@@ -67,7 +56,7 @@ func NewCompaniesItemPurchaseInvoicesItemVendorRequestBuilder(rawUrl string, req
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Currency()(*CompaniesItemPurchaseInvoicesItemVendorCurrencyRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesItemVendorCurrencyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property vendor for financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration)(error) {
@@ -79,7 +68,7 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Delete(ctx conte
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -95,7 +84,7 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Get(ctx context.
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVendorEscapedFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVendorEscapedFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -114,7 +103,7 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Patch(ctx contex
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVendorEscapedFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVendorEscapedFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -125,32 +114,32 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Patch(ctx contex
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PaymentMethod()(*CompaniesItemPurchaseInvoicesItemVendorPaymentMethodRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PaymentTerm()(*CompaniesItemPurchaseInvoicesItemVendorPaymentTermRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesItemVendorPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Picture()(*CompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PictureById(id string)(*CompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewCompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property vendor for financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -161,8 +150,8 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToDeleteRequestI
 // ToGetRequestInformation get vendor from financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -177,11 +166,11 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToGetRequestInfo
 // ToPatchRequestInformation update the navigation property vendor in financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VendorEscapedable, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }
