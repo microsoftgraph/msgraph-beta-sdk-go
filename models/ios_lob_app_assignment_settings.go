@@ -34,6 +34,16 @@ func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["preventManagedAppBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreventManagedAppBackup(val)
+        }
+        return nil
+    }
     res["uninstallOnDeviceRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -59,6 +69,17 @@ func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
 // GetIsRemovable gets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosLobAppAssignmentSettings) GetIsRemovable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemovable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetPreventManagedAppBackup gets the preventManagedAppBackup property value. When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
+func (m *IosLobAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
+    val, err := m.GetBackingStore().Get("preventManagedAppBackup")
     if err != nil {
         panic(err)
     }
@@ -102,6 +123,12 @@ func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteBoolValue("preventManagedAppBackup", m.GetPreventManagedAppBackup())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("uninstallOnDeviceRemoval", m.GetUninstallOnDeviceRemoval())
         if err != nil {
             return err
@@ -118,6 +145,13 @@ func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 // SetIsRemovable sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosLobAppAssignmentSettings) SetIsRemovable(value *bool)() {
     err := m.GetBackingStore().Set("isRemovable", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPreventManagedAppBackup sets the preventManagedAppBackup property value. When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
+func (m *IosLobAppAssignmentSettings) SetPreventManagedAppBackup(value *bool)() {
+    err := m.GetBackingStore().Set("preventManagedAppBackup", value)
     if err != nil {
         panic(err)
     }
@@ -141,9 +175,11 @@ type IosLobAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsRemovable()(*bool)
+    GetPreventManagedAppBackup()(*bool)
     GetUninstallOnDeviceRemoval()(*bool)
     GetVpnConfigurationId()(*string)
     SetIsRemovable(value *bool)()
+    SetPreventManagedAppBackup(value *bool)()
     SetUninstallOnDeviceRemoval(value *bool)()
     SetVpnConfigurationId(value *string)()
 }

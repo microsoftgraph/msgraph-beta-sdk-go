@@ -55,20 +55,23 @@ func NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilder(rawUrl
     return NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property managementIntents for tenantRelationships
-func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get the collection of baseline management intents across managed tenants.
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementIntentable, error) {

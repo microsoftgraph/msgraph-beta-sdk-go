@@ -55,20 +55,23 @@ func NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder(rawUrl
     return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property dataConnectors for external
-func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get set of connectors for importing data from source systems.
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {

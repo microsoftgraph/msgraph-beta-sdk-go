@@ -8,7 +8,7 @@ import (
 type CloudPcProvisioningPolicy struct {
     Entity
 }
-// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new CloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),

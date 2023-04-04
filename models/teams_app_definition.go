@@ -31,7 +31,7 @@ func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallatio
     }
     return nil
 }
-// GetAuthorization gets the authorization property value. The authorization property
+// GetAuthorization gets the authorization property value. Authorization requirements specified in the Teams app manifest.
 func (m *TeamsAppDefinition) GetAuthorization()(TeamsAppAuthorizationable) {
     val, err := m.GetBackingStore().Get("authorization")
     if err != nil {
@@ -420,7 +420,7 @@ func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppInstall
         panic(err)
     }
 }
-// SetAuthorization sets the authorization property value. The authorization property
+// SetAuthorization sets the authorization property value. Authorization requirements specified in the Teams app manifest.
 func (m *TeamsAppDefinition) SetAuthorization(value TeamsAppAuthorizationable)() {
     err := m.GetBackingStore().Set("authorization", value)
     if err != nil {

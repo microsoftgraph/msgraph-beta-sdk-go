@@ -59,20 +59,23 @@ func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilder(rawUrl string, req
     return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deployments for admin
-func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get deployments created using the deployment service.
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {

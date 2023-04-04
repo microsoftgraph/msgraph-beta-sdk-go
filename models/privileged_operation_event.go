@@ -9,7 +9,7 @@ import (
 type PrivilegedOperationEvent struct {
     Entity
 }
-// NewPrivilegedOperationEvent instantiates a new privilegedOperationEvent and sets the default values.
+// NewPrivilegedOperationEvent instantiates a new PrivilegedOperationEvent and sets the default values.
 func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),

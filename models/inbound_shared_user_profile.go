@@ -38,7 +38,7 @@ func (m *InboundSharedUserProfile) GetAdditionalData()(map[string]any) {
 func (m *InboundSharedUserProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
 func (m *InboundSharedUserProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -104,7 +104,7 @@ func (m *InboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetHomeTenantId gets the homeTenantId property value. The homeTenantId property
+// GetHomeTenantId gets the homeTenantId property value. The home tenant id of the external user. Read-only.
 func (m *InboundSharedUserProfile) GetHomeTenantId()(*string) {
     val, err := m.GetBackingStore().Get("homeTenantId")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *InboundSharedUserProfile) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The object id of the external user. Read-only.
 func (m *InboundSharedUserProfile) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *InboundSharedUserProfile) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the external user. Read-only.
 func (m *InboundSharedUserProfile) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -199,14 +199,14 @@ func (m *InboundSharedUserProfile) SetAdditionalData(value map[string]any)() {
 func (m *InboundSharedUserProfile) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
 func (m *InboundSharedUserProfile) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHomeTenantId sets the homeTenantId property value. The homeTenantId property
+// SetHomeTenantId sets the homeTenantId property value. The home tenant id of the external user. Read-only.
 func (m *InboundSharedUserProfile) SetHomeTenantId(value *string)() {
     err := m.GetBackingStore().Set("homeTenantId", value)
     if err != nil {
@@ -220,14 +220,14 @@ func (m *InboundSharedUserProfile) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The object id of the external user. Read-only.
 func (m *InboundSharedUserProfile) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the external user. Read-only.
 func (m *InboundSharedUserProfile) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

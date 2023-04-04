@@ -65,7 +65,28 @@ func (m *CallTranscript) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["metadataContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMetadataContent(val)
+        }
+        return nil
+    }
     return res
+}
+// GetMetadataContent gets the metadataContent property value. The metadataContent property
+func (m *CallTranscript) GetMetadataContent()([]byte) {
+    val, err := m.GetBackingStore().Get("metadataContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,6 +102,12 @@ func (m *CallTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteByteArrayValue("metadataContent", m.GetMetadataContent())
         if err != nil {
             return err
         }
@@ -101,12 +128,21 @@ func (m *CallTranscript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetMetadataContent sets the metadataContent property value. The metadataContent property
+func (m *CallTranscript) SetMetadataContent(value []byte)() {
+    err := m.GetBackingStore().Set("metadataContent", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CallTranscriptable 
 type CallTranscriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContent()([]byte)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMetadataContent()([]byte)
     SetContent(value []byte)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMetadataContent(value []byte)()
 }

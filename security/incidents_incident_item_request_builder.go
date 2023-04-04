@@ -70,20 +70,23 @@ func NewIncidentsIncidentItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewIncidentsIncidentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property incidents for security
-func (m *IncidentsIncidentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IncidentsIncidentItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *IncidentsIncidentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IncidentsIncidentItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get a collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
 func (m *IncidentsIncidentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentsIncidentItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Incidentable, error) {

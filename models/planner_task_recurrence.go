@@ -114,7 +114,7 @@ func (m *PlannerTaskRecurrence) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetNextInSeriesTaskId gets the nextInSeriesTaskId property value. The nextInSeriesTaskId property
+// GetNextInSeriesTaskId gets the nextInSeriesTaskId property value. The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.
 func (m *PlannerTaskRecurrence) GetNextInSeriesTaskId()(*string) {
     val, err := m.GetBackingStore().Get("nextInSeriesTaskId")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *PlannerTaskRecurrence) GetNextInSeriesTaskId()(*string) {
     }
     return nil
 }
-// GetOccurrenceId gets the occurrenceId property value. The occurrenceId property
+// GetOccurrenceId gets the occurrenceId property value. The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.
 func (m *PlannerTaskRecurrence) GetOccurrenceId()(*int32) {
     val, err := m.GetBackingStore().Get("occurrenceId")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *PlannerTaskRecurrence) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPreviousInSeriesTaskId gets the previousInSeriesTaskId property value. The previousInSeriesTaskId property
+// GetPreviousInSeriesTaskId gets the previousInSeriesTaskId property value. The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
 func (m *PlannerTaskRecurrence) GetPreviousInSeriesTaskId()(*string) {
     val, err := m.GetBackingStore().Get("previousInSeriesTaskId")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *PlannerTaskRecurrence) GetPreviousInSeriesTaskId()(*string) {
     }
     return nil
 }
-// GetRecurrenceStartDateTime gets the recurrenceStartDateTime property value. The recurrenceStartDateTime property
+// GetRecurrenceStartDateTime gets the recurrenceStartDateTime property value. The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerTaskRecurrence) GetRecurrenceStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("recurrenceStartDateTime")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *PlannerTaskRecurrence) GetRecurrenceStartDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetSchedule gets the schedule property value. The schedule property
+// GetSchedule gets the schedule property value. The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn't assigned, clients may terminate the series by assigning null to this property.
 func (m *PlannerTaskRecurrence) GetSchedule()(PlannerRecurrenceScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -180,7 +180,7 @@ func (m *PlannerTaskRecurrence) GetSchedule()(PlannerRecurrenceScheduleable) {
     }
     return nil
 }
-// GetSeriesId gets the seriesId property value. The seriesId property
+// GetSeriesId gets the seriesId property value. The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
 func (m *PlannerTaskRecurrence) GetSeriesId()(*string) {
     val, err := m.GetBackingStore().Get("seriesId")
     if err != nil {
@@ -254,14 +254,14 @@ func (m *PlannerTaskRecurrence) SetAdditionalData(value map[string]any)() {
 func (m *PlannerTaskRecurrence) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNextInSeriesTaskId sets the nextInSeriesTaskId property value. The nextInSeriesTaskId property
+// SetNextInSeriesTaskId sets the nextInSeriesTaskId property value. The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.
 func (m *PlannerTaskRecurrence) SetNextInSeriesTaskId(value *string)() {
     err := m.GetBackingStore().Set("nextInSeriesTaskId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOccurrenceId sets the occurrenceId property value. The occurrenceId property
+// SetOccurrenceId sets the occurrenceId property value. The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.
 func (m *PlannerTaskRecurrence) SetOccurrenceId(value *int32)() {
     err := m.GetBackingStore().Set("occurrenceId", value)
     if err != nil {
@@ -275,28 +275,28 @@ func (m *PlannerTaskRecurrence) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPreviousInSeriesTaskId sets the previousInSeriesTaskId property value. The previousInSeriesTaskId property
+// SetPreviousInSeriesTaskId sets the previousInSeriesTaskId property value. The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
 func (m *PlannerTaskRecurrence) SetPreviousInSeriesTaskId(value *string)() {
     err := m.GetBackingStore().Set("previousInSeriesTaskId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecurrenceStartDateTime sets the recurrenceStartDateTime property value. The recurrenceStartDateTime property
+// SetRecurrenceStartDateTime sets the recurrenceStartDateTime property value. The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PlannerTaskRecurrence) SetRecurrenceStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("recurrenceStartDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedule sets the schedule property value. The schedule property
+// SetSchedule sets the schedule property value. The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn't assigned, clients may terminate the series by assigning null to this property.
 func (m *PlannerTaskRecurrence) SetSchedule(value PlannerRecurrenceScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSeriesId sets the seriesId property value. The seriesId property
+// SetSeriesId sets the seriesId property value. The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
 func (m *PlannerTaskRecurrence) SetSeriesId(value *string)() {
     err := m.GetBackingStore().Set("seriesId", value)
     if err != nil {

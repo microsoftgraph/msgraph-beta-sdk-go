@@ -8,7 +8,7 @@ import (
 type MessageRecipient struct {
     Entity
 }
-// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new MessageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),

@@ -122,6 +122,26 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["maxUserDeferralsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaxUserDeferralsCount(val)
+        }
+        return nil
+    }
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMacOSPriority)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPriority(val.(*MacOSPriority))
+        }
+        return nil
+    }
     res["updateScheduleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateScheduleType)
         if err != nil {
@@ -152,6 +172,28 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFirmwareUpdateBehavior()(*MacOSSof
     }
     if val != nil {
         return val.(*MacOSSoftwareUpdateBehavior)
+    }
+    return nil
+}
+// GetMaxUserDeferralsCount gets the maxUserDeferralsCount property value. The maximum number of times the system allows the user to postpone an update before it’s installed. Supported values: 0 - 366. Valid values 0 to 365
+func (m *MacOSSoftwareUpdateConfiguration) GetMaxUserDeferralsCount()(*int32) {
+    val, err := m.GetBackingStore().Get("maxUserDeferralsCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetPriority gets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
+func (m *MacOSSoftwareUpdateConfiguration) GetPriority()(*MacOSPriority) {
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MacOSPriority)
     }
     return nil
 }
@@ -221,6 +263,19 @@ func (m *MacOSSoftwareUpdateConfiguration) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteInt32Value("maxUserDeferralsCount", m.GetMaxUserDeferralsCount())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPriority() != nil {
+        cast := (*m.GetPriority()).String()
+        err = writer.WriteStringValue("priority", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUpdateScheduleType() != nil {
         cast := (*m.GetUpdateScheduleType()).String()
         err = writer.WriteStringValue("updateScheduleType", &cast)
@@ -271,6 +326,20 @@ func (m *MacOSSoftwareUpdateConfiguration) SetFirmwareUpdateBehavior(value *MacO
         panic(err)
     }
 }
+// SetMaxUserDeferralsCount sets the maxUserDeferralsCount property value. The maximum number of times the system allows the user to postpone an update before it’s installed. Supported values: 0 - 366. Valid values 0 to 365
+func (m *MacOSSoftwareUpdateConfiguration) SetMaxUserDeferralsCount(value *int32)() {
+    err := m.GetBackingStore().Set("maxUserDeferralsCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPriority sets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
+func (m *MacOSSoftwareUpdateConfiguration) SetPriority(value *MacOSPriority)() {
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetUpdateScheduleType(value *MacOSSoftwareUpdateScheduleType)() {
     err := m.GetBackingStore().Set("updateScheduleType", value)
@@ -294,6 +363,8 @@ type MacOSSoftwareUpdateConfigurationable interface {
     GetCriticalUpdateBehavior()(*MacOSSoftwareUpdateBehavior)
     GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable)
     GetFirmwareUpdateBehavior()(*MacOSSoftwareUpdateBehavior)
+    GetMaxUserDeferralsCount()(*int32)
+    GetPriority()(*MacOSPriority)
     GetUpdateScheduleType()(*MacOSSoftwareUpdateScheduleType)
     GetUpdateTimeWindowUtcOffsetInMinutes()(*int32)
     SetAllOtherUpdateBehavior(value *MacOSSoftwareUpdateBehavior)()
@@ -301,6 +372,8 @@ type MacOSSoftwareUpdateConfigurationable interface {
     SetCriticalUpdateBehavior(value *MacOSSoftwareUpdateBehavior)()
     SetCustomUpdateTimeWindows(value []CustomUpdateTimeWindowable)()
     SetFirmwareUpdateBehavior(value *MacOSSoftwareUpdateBehavior)()
+    SetMaxUserDeferralsCount(value *int32)()
+    SetPriority(value *MacOSPriority)()
     SetUpdateScheduleType(value *MacOSSoftwareUpdateScheduleType)()
     SetUpdateTimeWindowUtcOffsetInMinutes(value *int32)()
 }
