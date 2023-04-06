@@ -662,6 +662,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeletedItemContainer(), nil
                     case "#microsoft.graph.deletedTeam":
                         return NewDeletedTeam(), nil
+                    case "#microsoft.graph.deltaParticipants":
+                        return NewDeltaParticipants(), nil
                     case "#microsoft.graph.depEnrollmentBaseProfile":
                         return NewDepEnrollmentBaseProfile(), nil
                     case "#microsoft.graph.depEnrollmentProfile":

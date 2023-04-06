@@ -30,7 +30,10 @@ func NewInboundSharedUserProfilesItemRemovePersonalDataRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfilesItemRemovePersonalDataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action removePersonalData
+// Post create a request to remove the personal data for an inboundSharedUserProfile. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-1.0
 func (m *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilder) Post(ctx context.Context, requestConfiguration *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilder) Post(ctx
     }
     return nil
 }
-// ToPostRequestInformation invoke action removePersonalData
+// ToPostRequestInformation create a request to remove the personal data for an inboundSharedUserProfile. 
 func (m *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *InboundSharedUserProfilesItemRemovePersonalDataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

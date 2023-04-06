@@ -200,6 +200,16 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["vpnTrafficDirection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseVpnTrafficDirection)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVpnTrafficDirection(val.(*VpnTrafficDirection))
+        }
+        return nil
+    }
     return res
 }
 // GetLocalAddressRanges gets the localAddressRanges property value. Local address range. This collection can contain a maximum of 500 elements.
@@ -290,6 +300,17 @@ func (m *VpnTrafficRule) GetRoutingPolicyType()(*VpnTrafficRuleRoutingPolicyType
     }
     return nil
 }
+// GetVpnTrafficDirection gets the vpnTrafficDirection property value. Specify whether the rule applies to inbound traffic or outbound traffic.
+func (m *VpnTrafficRule) GetVpnTrafficDirection()(*VpnTrafficDirection) {
+    val, err := m.GetBackingStore().Get("vpnTrafficDirection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VpnTrafficDirection)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -372,6 +393,13 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRoutingPolicyType() != nil {
         cast := (*m.GetRoutingPolicyType()).String()
         err := writer.WriteStringValue("routingPolicyType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetVpnTrafficDirection() != nil {
+        cast := (*m.GetVpnTrafficDirection()).String()
+        err := writer.WriteStringValue("vpnTrafficDirection", &cast)
         if err != nil {
             return err
         }
@@ -472,6 +500,13 @@ func (m *VpnTrafficRule) SetRoutingPolicyType(value *VpnTrafficRuleRoutingPolicy
         panic(err)
     }
 }
+// SetVpnTrafficDirection sets the vpnTrafficDirection property value. Specify whether the rule applies to inbound traffic or outbound traffic.
+func (m *VpnTrafficRule) SetVpnTrafficDirection(value *VpnTrafficDirection)() {
+    err := m.GetBackingStore().Set("vpnTrafficDirection", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // VpnTrafficRuleable 
 type VpnTrafficRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -489,6 +524,7 @@ type VpnTrafficRuleable interface {
     GetRemoteAddressRanges()([]IPv4Rangeable)
     GetRemotePortRanges()([]NumberRangeable)
     GetRoutingPolicyType()(*VpnTrafficRuleRoutingPolicyType)
+    GetVpnTrafficDirection()(*VpnTrafficDirection)
     SetAppId(value *string)()
     SetAppType(value *VpnTrafficRuleAppType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -501,4 +537,5 @@ type VpnTrafficRuleable interface {
     SetRemoteAddressRanges(value []IPv4Rangeable)()
     SetRemotePortRanges(value []NumberRangeable)()
     SetRoutingPolicyType(value *VpnTrafficRuleRoutingPolicyType)()
+    SetVpnTrafficDirection(value *VpnTrafficDirection)()
 }

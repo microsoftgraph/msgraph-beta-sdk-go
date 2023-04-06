@@ -21,6 +21,17 @@ func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
 func CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSGeneralDeviceConfiguration(), nil
 }
+// GetActivationLockWhenSupervisedAllowed gets the activationLockWhenSupervisedAllowed property value. When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.
+func (m *MacOSGeneralDeviceConfiguration) GetActivationLockWhenSupervisedAllowed()(*bool) {
+    val, err := m.GetBackingStore().Get("activationLockWhenSupervisedAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAddingGameCenterFriendsBlocked gets the addingGameCenterFriendsBlocked property value. Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) GetAddingGameCenterFriendsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("addingGameCenterFriendsBlocked")
@@ -189,6 +200,16 @@ func (m *MacOSGeneralDeviceConfiguration) GetEraseContentAndSettingsBlocked()(*b
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
+    res["activationLockWhenSupervisedAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivationLockWhenSupervisedAllowed(val)
+        }
+        return nil
+    }
     res["addingGameCenterFriendsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1284,6 +1305,12 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
         return err
     }
     {
+        err = writer.WriteBoolValue("activationLockWhenSupervisedAllowed", m.GetActivationLockWhenSupervisedAllowed())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("addingGameCenterFriendsBlocked", m.GetAddingGameCenterFriendsBlocked())
         if err != nil {
             return err
@@ -1649,6 +1676,13 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
         }
     }
     return nil
+}
+// SetActivationLockWhenSupervisedAllowed sets the activationLockWhenSupervisedAllowed property value. When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.
+func (m *MacOSGeneralDeviceConfiguration) SetActivationLockWhenSupervisedAllowed(value *bool)() {
+    err := m.GetBackingStore().Set("activationLockWhenSupervisedAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddingGameCenterFriendsBlocked sets the addingGameCenterFriendsBlocked property value. Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetAddingGameCenterFriendsBlocked(value *bool)() {
@@ -2067,6 +2101,7 @@ func (m *MacOSGeneralDeviceConfiguration) SetWallpaperModificationBlocked(value 
 type MacOSGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivationLockWhenSupervisedAllowed()(*bool)
     GetAddingGameCenterFriendsBlocked()(*bool)
     GetAirDropBlocked()(*bool)
     GetAppleWatchBlockAutoUnlock()(*bool)
@@ -2126,6 +2161,7 @@ type MacOSGeneralDeviceConfigurationable interface {
     GetTouchIdTimeoutInHours()(*int32)
     GetUpdateDelayPolicy()(*MacOSSoftwareUpdateDelayPolicy)
     GetWallpaperModificationBlocked()(*bool)
+    SetActivationLockWhenSupervisedAllowed(value *bool)()
     SetAddingGameCenterFriendsBlocked(value *bool)()
     SetAirDropBlocked(value *bool)()
     SetAppleWatchBlockAutoUnlock(value *bool)()

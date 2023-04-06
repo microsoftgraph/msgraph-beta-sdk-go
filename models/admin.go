@@ -252,6 +252,7 @@ type Adminable interface {
     SetServiceAnnouncement(value ServiceAnnouncementable)()
     SetWindows(value AdminWindowsable)()
 }
+
 // AdminWindows 
 type AdminWindows struct {
     Entity
@@ -321,3 +322,4 @@ type AdminWindowsable interface {
     GetUpdates()(AdminWindowsUpdatesable)
     SetUpdates(value AdminWindowsUpdatesable)()
 }
+

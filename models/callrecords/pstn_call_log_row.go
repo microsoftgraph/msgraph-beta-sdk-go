@@ -365,6 +365,16 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["otherPartyCountryCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOtherPartyCountryCode(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -474,6 +484,17 @@ func (m *PstnCallLogRow) GetOdataType()(*string) {
 // GetOperator gets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) GetOperator()(*string) {
     val, err := m.GetBackingStore().Get("operator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. The otherPartyCountryCode property
+func (m *PstnCallLogRow) GetOtherPartyCountryCode()(*string) {
+    val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
         panic(err)
     }
@@ -660,6 +681,12 @@ func (m *PstnCallLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err := writer.WriteStringValue("otherPartyCountryCode", m.GetOtherPartyCountryCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
         if err != nil {
             return err
@@ -840,6 +867,13 @@ func (m *PstnCallLogRow) SetOperator(value *string)() {
         panic(err)
     }
 }
+// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. The otherPartyCountryCode property
+func (m *PstnCallLogRow) SetOtherPartyCountryCode(value *string)() {
+    err := m.GetBackingStore().Set("otherPartyCountryCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartDateTime sets the startDateTime property value. Call start time.
 func (m *PstnCallLogRow) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
@@ -906,6 +940,7 @@ type PstnCallLogRowable interface {
     GetLicenseCapability()(*string)
     GetOdataType()(*string)
     GetOperator()(*string)
+    GetOtherPartyCountryCode()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTenantCountryCode()(*string)
     GetUsageCountryCode()(*string)
@@ -931,6 +966,7 @@ type PstnCallLogRowable interface {
     SetLicenseCapability(value *string)()
     SetOdataType(value *string)()
     SetOperator(value *string)()
+    SetOtherPartyCountryCode(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTenantCountryCode(value *string)()
     SetUsageCountryCode(value *string)()

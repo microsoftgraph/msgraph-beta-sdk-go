@@ -91,16 +91,6 @@ func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
-    res["identityVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityVersion(val)
-        }
-        return nil
-    }
     res["ignoreVersionDetection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -166,17 +156,6 @@ func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
-}
-// GetIdentityVersion gets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022).
-func (m *MacOSLobApp) GetIdentityVersion()(*string) {
-    val, err := m.GetBackingStore().Get("identityVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
 func (m *MacOSLobApp) GetIgnoreVersionDetection()(*bool) {
@@ -273,12 +252,6 @@ func (m *MacOSLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err = writer.WriteStringValue("identityVersion", m.GetIdentityVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("ignoreVersionDetection", m.GetIgnoreVersionDetection())
         if err != nil {
             return err
@@ -337,13 +310,6 @@ func (m *MacOSLobApp) SetChildApps(value []MacOSLobChildAppable)() {
         panic(err)
     }
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022).
-func (m *MacOSLobApp) SetIdentityVersion(value *string)() {
-    err := m.GetBackingStore().Set("identityVersion", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetIgnoreVersionDetection sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
 func (m *MacOSLobApp) SetIgnoreVersionDetection(value *bool)() {
     err := m.GetBackingStore().Set("ignoreVersionDetection", value)
@@ -393,7 +359,6 @@ type MacOSLobAppable interface {
     GetBuildNumber()(*string)
     GetBundleId()(*string)
     GetChildApps()([]MacOSLobChildAppable)
-    GetIdentityVersion()(*string)
     GetIgnoreVersionDetection()(*bool)
     GetInstallAsManaged()(*bool)
     GetMd5Hash()([]string)
@@ -403,7 +368,6 @@ type MacOSLobAppable interface {
     SetBuildNumber(value *string)()
     SetBundleId(value *string)()
     SetChildApps(value []MacOSLobChildAppable)()
-    SetIdentityVersion(value *string)()
     SetIgnoreVersionDetection(value *bool)()
     SetInstallAsManaged(value *bool)()
     SetMd5Hash(value []string)()

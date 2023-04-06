@@ -566,7 +566,7 @@ func (m *PlannerTask) GetProgressTaskBoardFormat()(PlannerProgressTaskBoardTaskF
     }
     return nil
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. Defines active or inactive recurrence for the task. null when the recurrence has never been defined for the task.
 func (m *PlannerTask) GetRecurrence()(PlannerTaskRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -942,7 +942,7 @@ func (m *PlannerTask) SetProgressTaskBoardFormat(value PlannerProgressTaskBoardT
         panic(err)
     }
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. Defines active or inactive recurrence for the task. null when the recurrence has never been defined for the task.
 func (m *PlannerTask) SetRecurrence(value PlannerTaskRecurrenceable)() {
     err := m.GetBackingStore().Set("recurrence", value)
     if err != nil {

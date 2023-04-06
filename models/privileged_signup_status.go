@@ -8,7 +8,7 @@ import (
 type PrivilegedSignupStatus struct {
     Entity
 }
-// NewPrivilegedSignupStatus instantiates a new privilegedSignupStatus and sets the default values.
+// NewPrivilegedSignupStatus instantiates a new PrivilegedSignupStatus and sets the default values.
 func NewPrivilegedSignupStatus()(*PrivilegedSignupStatus) {
     m := &PrivilegedSignupStatus{
         Entity: *NewEntity(),

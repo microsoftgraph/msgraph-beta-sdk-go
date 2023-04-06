@@ -9,7 +9,7 @@ import (
 type WindowsUpdateState struct {
     Entity
 }
-// NewWindowsUpdateState instantiates a new windowsUpdateState and sets the default values.
+// NewWindowsUpdateState instantiates a new WindowsUpdateState and sets the default values.
 func NewWindowsUpdateState()(*WindowsUpdateState) {
     m := &WindowsUpdateState{
         Entity: *NewEntity(),

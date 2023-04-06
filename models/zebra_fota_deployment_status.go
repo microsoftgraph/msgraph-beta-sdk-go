@@ -61,6 +61,17 @@ func (m *ZebraFotaDeploymentStatus) GetCompleteOrCanceledDateTime()(*i336074805f
     }
     return nil
 }
+// GetErrorCode gets the errorCode property value. An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.
+func (m *ZebraFotaDeploymentStatus) GetErrorCode()(*ZebraFotaErrorCode) {
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ZebraFotaErrorCode)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -81,6 +92,16 @@ func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetCompleteOrCanceledDateTime(val)
+        }
+        return nil
+    }
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseZebraFotaErrorCode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetErrorCode(val.(*ZebraFotaErrorCode))
         }
         return nil
     }
@@ -373,6 +394,13 @@ func (m *ZebraFotaDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetErrorCode() != nil {
+        cast := (*m.GetErrorCode()).String()
+        err := writer.WriteStringValue("errorCode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
@@ -485,6 +513,13 @@ func (m *ZebraFotaDeploymentStatus) SetCompleteOrCanceledDateTime(value *i336074
         panic(err)
     }
 }
+// SetErrorCode sets the errorCode property value. An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.
+func (m *ZebraFotaDeploymentStatus) SetErrorCode(value *ZebraFotaErrorCode)() {
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time when the deployment status was updated from Zebra
 func (m *ZebraFotaDeploymentStatus) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
@@ -584,6 +619,7 @@ type ZebraFotaDeploymentStatusable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCancelRequested()(*bool)
     GetCompleteOrCanceledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetErrorCode()(*ZebraFotaErrorCode)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetState()(*ZebraFotaDeploymentState)
@@ -600,6 +636,7 @@ type ZebraFotaDeploymentStatusable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCancelRequested(value *bool)()
     SetCompleteOrCanceledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetErrorCode(value *ZebraFotaErrorCode)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetState(value *ZebraFotaDeploymentState)()
