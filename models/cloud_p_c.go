@@ -211,6 +211,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["powerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcPowerState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPowerState(val.(*CloudPcPowerState))
+        }
+        return nil
+    }
     res["provisioningPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -423,6 +433,17 @@ func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallRe
     }
     return nil
 }
+// GetPowerState gets the powerState property value. The powerState property
+func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
+    val, err := m.GetBackingStore().Get("powerState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcPowerState)
+    }
+    return nil
+}
 // GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) GetProvisioningPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("provisioningPolicyId")
@@ -629,6 +650,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetPowerState() != nil {
+        cast := (*m.GetPowerState()).String()
+        err = writer.WriteStringValue("powerState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("provisioningPolicyId", m.GetProvisioningPolicyId())
         if err != nil {
@@ -793,6 +821,13 @@ func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInsta
         panic(err)
     }
 }
+// SetPowerState sets the powerState property value. The powerState property
+func (m *CloudPC) SetPowerState(value *CloudPcPowerState)() {
+    err := m.GetBackingStore().Set("powerState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
     err := m.GetBackingStore().Set("provisioningPolicyId", value)
@@ -881,6 +916,7 @@ type CloudPCable interface {
     GetOnPremisesConnectionName()(*string)
     GetOsVersion()(*CloudPcOperatingSystem)
     GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable)
+    GetPowerState()(*CloudPcPowerState)
     GetProvisioningPolicyId()(*string)
     GetProvisioningPolicyName()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
@@ -905,6 +941,7 @@ type CloudPCable interface {
     SetOnPremisesConnectionName(value *string)()
     SetOsVersion(value *CloudPcOperatingSystem)()
     SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)()
+    SetPowerState(value *CloudPcPowerState)()
     SetProvisioningPolicyId(value *string)()
     SetProvisioningPolicyName(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()

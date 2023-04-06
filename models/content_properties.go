@@ -35,6 +35,8 @@ func CreateContentPropertiesFromDiscriminatorValue(parseNode i878a80d2330e89d268
                 switch *mappingValue {
                     case "#microsoft.graph.attachmentContentProperties":
                         return NewAttachmentContentProperties(), nil
+                    case "#microsoft.graph.fileContentProperties":
+                        return NewFileContentProperties(), nil
                 }
             }
         }

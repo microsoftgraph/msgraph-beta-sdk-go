@@ -30,7 +30,10 @@ func NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action exportPersonalData
+// Post create a request to export the personal data for an inboundSharedUserProfile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
 func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) Post(ctx context.Context, body InboundSharedUserProfilesItemExportPersonalDataPostRequestBodyable, requestConfiguration *InboundSharedUserProfilesItemExportPersonalDataRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) Post(ctx
     }
     return nil
 }
-// ToPostRequestInformation invoke action exportPersonalData
+// ToPostRequestInformation create a request to export the personal data for an inboundSharedUserProfile.
 func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) ToPostRequestInformation(ctx context.Context, body InboundSharedUserProfilesItemExportPersonalDataPostRequestBodyable, requestConfiguration *InboundSharedUserProfilesItemExportPersonalDataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

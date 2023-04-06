@@ -9,7 +9,7 @@ import (
 type User struct {
     DirectoryObject
 }
-// NewUser instantiates a new User and sets the default values.
+// NewUser instantiates a new user and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
@@ -3117,7 +3117,7 @@ func (m *User) GetShowInAddressList()(*bool) {
     }
     return nil
 }
-// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.There's a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) GetSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("signInActivity")
     if err != nil {
@@ -5256,7 +5256,7 @@ func (m *User) SetShowInAddressList(value *bool)() {
         panic(err)
     }
 }
-// SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.There's a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) SetSignInActivity(value SignInActivityable)() {
     err := m.GetBackingStore().Set("signInActivity", value)
     if err != nil {

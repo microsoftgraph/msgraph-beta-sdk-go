@@ -196,6 +196,16 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["isMigratingToConfigurationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsMigratingToConfigurationPolicy(val)
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -273,6 +283,17 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(i878a80
 // GetIsAssigned gets the isAssigned property value. Signifies whether or not the intent is assigned to users
 func (m *DeviceManagementIntent) GetIsAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("isAssigned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsMigratingToConfigurationPolicy gets the isMigratingToConfigurationPolicy property value. Signifies whether or not the intent is being migrated to the configurationPolicies endpoint
+func (m *DeviceManagementIntent) GetIsMigratingToConfigurationPolicy()(*bool) {
+    val, err := m.GetBackingStore().Get("isMigratingToConfigurationPolicy")
     if err != nil {
         panic(err)
     }
@@ -418,6 +439,12 @@ func (m *DeviceManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteBoolValue("isMigratingToConfigurationPolicy", m.GetIsMigratingToConfigurationPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
@@ -519,6 +546,13 @@ func (m *DeviceManagementIntent) SetIsAssigned(value *bool)() {
         panic(err)
     }
 }
+// SetIsMigratingToConfigurationPolicy sets the isMigratingToConfigurationPolicy property value. Signifies whether or not the intent is being migrated to the configurationPolicies endpoint
+func (m *DeviceManagementIntent) SetIsMigratingToConfigurationPolicy(value *bool)() {
+    err := m.GetBackingStore().Set("isMigratingToConfigurationPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. When the intent was last modified
 func (m *DeviceManagementIntent) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -573,6 +607,7 @@ type DeviceManagementIntentable interface {
     GetDeviceStateSummary()(DeviceManagementIntentDeviceStateSummaryable)
     GetDisplayName()(*string)
     GetIsAssigned()(*bool)
+    GetIsMigratingToConfigurationPolicy()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleScopeTagIds()([]string)
     GetSettings()([]DeviceManagementSettingInstanceable)
@@ -587,6 +622,7 @@ type DeviceManagementIntentable interface {
     SetDeviceStateSummary(value DeviceManagementIntentDeviceStateSummaryable)()
     SetDisplayName(value *string)()
     SetIsAssigned(value *bool)()
+    SetIsMigratingToConfigurationPolicy(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRoleScopeTagIds(value []string)()
     SetSettings(value []DeviceManagementSettingInstanceable)()

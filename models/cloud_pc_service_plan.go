@@ -45,6 +45,16 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["provisioningType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcProvisioningType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisioningType(val.(*CloudPcProvisioningType))
+        }
+        return nil
+    }
     res["ramInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -106,6 +116,17 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
+    val, err := m.GetBackingStore().Get("provisioningType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcProvisioningType)
+    }
+    return nil
 }
 // GetRamInGB gets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
@@ -185,6 +206,13 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetProvisioningType() != nil {
+        cast := (*m.GetProvisioningType()).String()
+        err = writer.WriteStringValue("provisioningType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("ramInGB", m.GetRamInGB())
         if err != nil {
@@ -228,6 +256,13 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+func (m *CloudPcServicePlan) SetProvisioningType(value *CloudPcProvisioningType)() {
+    err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
         panic(err)
     }
@@ -279,6 +314,7 @@ type CloudPcServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetProvisioningType()(*CloudPcProvisioningType)
     GetRamInGB()(*int32)
     GetStorageInGB()(*int32)
     GetSupportedSolution()(*CloudPcManagementService)
@@ -286,6 +322,7 @@ type CloudPcServicePlanable interface {
     GetUserProfileInGB()(*int32)
     GetVCpuCount()(*int32)
     SetDisplayName(value *string)()
+    SetProvisioningType(value *CloudPcProvisioningType)()
     SetRamInGB(value *int32)()
     SetStorageInGB(value *int32)()
     SetSupportedSolution(value *CloudPcManagementService)()

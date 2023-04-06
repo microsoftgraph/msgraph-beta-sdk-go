@@ -132,6 +132,14 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
 }
+// PowerOff provides operations to call the powerOff method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) PowerOff()(*ItemCloudPCsItemPowerOffRequestBuilder) {
+    return NewItemCloudPCsItemPowerOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PowerOn provides operations to call the powerOn method.
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) PowerOn()(*ItemCloudPCsItemPowerOnRequestBuilder) {
+    return NewItemCloudPCsItemPowerOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Reboot provides operations to call the reboot method.
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reboot()(*ItemCloudPCsItemRebootRequestBuilder) {
     return NewItemCloudPCsItemRebootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

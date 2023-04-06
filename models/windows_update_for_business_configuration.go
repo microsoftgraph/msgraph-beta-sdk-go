@@ -110,17 +110,6 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*W
     }
     return nil
 }
-// GetDeviceUpdateStates gets the deviceUpdateStates property value. Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
-func (m *WindowsUpdateForBusinessConfiguration) GetDeviceUpdateStates()([]WindowsUpdateStateable) {
-    val, err := m.GetBackingStore().Get("deviceUpdateStates")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WindowsUpdateStateable)
-    }
-    return nil
-}
 // GetDriversExcluded gets the driversExcluded property value. When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) GetDriversExcluded()(*bool) {
     val, err := m.GetBackingStore().Get("driversExcluded")
@@ -322,20 +311,6 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
         }
         if val != nil {
             m.SetDeliveryOptimizationMode(val.(*WindowsDeliveryOptimizationMode))
-        }
-        return nil
-    }
-    res["deviceUpdateStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsUpdateStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsUpdateStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsUpdateStateable)
-            }
-            m.SetDeviceUpdateStates(res)
         }
         return nil
     }
@@ -866,16 +841,6 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
             return err
         }
     }
-    if m.GetDeviceUpdateStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceUpdateStates()))
-        for i, v := range m.GetDeviceUpdateStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("deviceUpdateStates", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteBoolValue("driversExcluded", m.GetDriversExcluded())
         if err != nil {
@@ -1095,13 +1060,6 @@ func (m *WindowsUpdateForBusinessConfiguration) SetDeliveryOptimizationMode(valu
         panic(err)
     }
 }
-// SetDeviceUpdateStates sets the deviceUpdateStates property value. Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
-func (m *WindowsUpdateForBusinessConfiguration) SetDeviceUpdateStates(value []WindowsUpdateStateable)() {
-    err := m.GetBackingStore().Set("deviceUpdateStates", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetDriversExcluded sets the driversExcluded property value. When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
 func (m *WindowsUpdateForBusinessConfiguration) SetDriversExcluded(value *bool)() {
     err := m.GetBackingStore().Set("driversExcluded", value)
@@ -1310,7 +1268,6 @@ type WindowsUpdateForBusinessConfigurationable interface {
     GetDeadlineForQualityUpdatesInDays()(*int32)
     GetDeadlineGracePeriodInDays()(*int32)
     GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode)
-    GetDeviceUpdateStates()([]WindowsUpdateStateable)
     GetDriversExcluded()(*bool)
     GetEngagedRestartDeadlineInDays()(*int32)
     GetEngagedRestartSnoozeScheduleInDays()(*int32)
@@ -1347,7 +1304,6 @@ type WindowsUpdateForBusinessConfigurationable interface {
     SetDeadlineForQualityUpdatesInDays(value *int32)()
     SetDeadlineGracePeriodInDays(value *int32)()
     SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)()
-    SetDeviceUpdateStates(value []WindowsUpdateStateable)()
     SetDriversExcluded(value *bool)()
     SetEngagedRestartDeadlineInDays(value *int32)()
     SetEngagedRestartSnoozeScheduleInDays(value *int32)()

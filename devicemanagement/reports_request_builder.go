@@ -251,9 +251,29 @@ func (m *ReportsRequestBuilder) GetDevicePoliciesComplianceReport()(*ReportsGetD
 func (m *ReportsRequestBuilder) GetDevicePolicySettingsComplianceReport()(*ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) {
     return NewReportsGetDevicePolicySettingsComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetDevicesStatusByPolicyPlatformComplianceReport provides operations to call the getDevicesStatusByPolicyPlatformComplianceReport method.
+func (m *ReportsRequestBuilder) GetDevicesStatusByPolicyPlatformComplianceReport()(*ReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder) {
+    return NewReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetDevicesStatusBySettingReport provides operations to call the getDevicesStatusBySettingReport method.
 func (m *ReportsRequestBuilder) GetDevicesStatusBySettingReport()(*ReportsGetDevicesStatusBySettingReportRequestBuilder) {
     return NewReportsGetDevicesStatusBySettingReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetDeviceStatusByCompliacePolicyReport provides operations to call the getDeviceStatusByCompliacePolicyReport method.
+func (m *ReportsRequestBuilder) GetDeviceStatusByCompliacePolicyReport()(*ReportsGetDeviceStatusByCompliacePolicyReportRequestBuilder) {
+    return NewReportsGetDeviceStatusByCompliacePolicyReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetDeviceStatusByCompliancePolicySettingReport provides operations to call the getDeviceStatusByCompliancePolicySettingReport method.
+func (m *ReportsRequestBuilder) GetDeviceStatusByCompliancePolicySettingReport()(*ReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilder) {
+    return NewReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetDeviceStatusSummaryByCompliacePolicyReport provides operations to call the getDeviceStatusSummaryByCompliacePolicyReport method.
+func (m *ReportsRequestBuilder) GetDeviceStatusSummaryByCompliacePolicyReport()(*ReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder) {
+    return NewReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetDeviceStatusSummaryByCompliancePolicySettingsReport provides operations to call the getDeviceStatusSummaryByCompliancePolicySettingsReport method.
+func (m *ReportsRequestBuilder) GetDeviceStatusSummaryByCompliancePolicySettingsReport()(*ReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder) {
+    return NewReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetDevicesWithoutCompliancePolicyReport provides operations to call the getDevicesWithoutCompliancePolicyReport method.
 func (m *ReportsRequestBuilder) GetDevicesWithoutCompliancePolicyReport()(*ReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder) {

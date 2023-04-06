@@ -88,7 +88,7 @@ func (m *OutboundSharedUserProfile) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenants gets the tenants property value. The tenants property
+// GetTenants gets the tenants property value. The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
 func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
     val, err := m.GetBackingStore().Get("tenants")
     if err != nil {
@@ -99,7 +99,7 @@ func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The object id of the external user. Read-only.
 func (m *OutboundSharedUserProfile) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -160,14 +160,14 @@ func (m *OutboundSharedUserProfile) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenants sets the tenants property value. The tenants property
+// SetTenants sets the tenants property value. The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
 func (m *OutboundSharedUserProfile) SetTenants(value []TenantReferenceable)() {
     err := m.GetBackingStore().Set("tenants", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The object id of the external user. Read-only.
 func (m *OutboundSharedUserProfile) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

@@ -21,9 +21,34 @@ func NewAndroidWorkProfileGeneralDeviceConfiguration()(*AndroidWorkProfileGenera
 func CreateAndroidWorkProfileGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileGeneralDeviceConfiguration(), nil
 }
+// GetAllowedGoogleAccountDomains gets the allowedGoogleAccountDomains property value. Determine domains allow-list for accounts that can be added to work profile.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetAllowedGoogleAccountDomains()([]string) {
+    val, err := m.GetBackingStore().Get("allowedGoogleAccountDomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
+    res["allowedGoogleAccountDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAllowedGoogleAccountDomains(res)
+        }
+        return nil
+    }
     res["passwordBlockFaceUnlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -161,6 +186,16 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetVpnEnableAlwaysOnLockdownMode(val)
+        }
+        return nil
+    }
+    res["workProfileAccountUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidWorkProfileAccountUse)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfileAccountUse(val.(*AndroidWorkProfileAccountUse))
         }
         return nil
     }
@@ -630,6 +665,17 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetVpnEnableAlwaysOnLockd
     }
     return nil
 }
+// GetWorkProfileAccountUse gets the workProfileAccountUse property value. An enum representing possible values for account use in work profile.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileAccountUse()(*AndroidWorkProfileAccountUse) {
+    val, err := m.GetBackingStore().Get("workProfileAccountUse")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidWorkProfileAccountUse)
+    }
+    return nil
+}
 // GetWorkProfileAllowAppInstallsFromUnknownSources gets the workProfileAllowAppInstallsFromUnknownSources property value. Indicates whether to allow installation of apps from unknown sources.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileAllowAppInstallsFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileAllowAppInstallsFromUnknownSources")
@@ -977,6 +1023,12 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
     if err != nil {
         return err
     }
+    if m.GetAllowedGoogleAccountDomains() != nil {
+        err = writer.WriteCollectionOfStringValues("allowedGoogleAccountDomains", m.GetAllowedGoogleAccountDomains())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("passwordBlockFaceUnlock", m.GetPasswordBlockFaceUnlock())
         if err != nil {
@@ -1059,6 +1111,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
     }
     {
         err = writer.WriteBoolValue("vpnEnableAlwaysOnLockdownMode", m.GetVpnEnableAlwaysOnLockdownMode())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWorkProfileAccountUse() != nil {
+        cast := (*m.GetWorkProfileAccountUse()).String()
+        err = writer.WriteStringValue("workProfileAccountUse", &cast)
         if err != nil {
             return err
         }
@@ -1255,6 +1314,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
     }
     return nil
 }
+// SetAllowedGoogleAccountDomains sets the allowedGoogleAccountDomains property value. Determine domains allow-list for accounts that can be added to work profile.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetAllowedGoogleAccountDomains(value []string)() {
+    err := m.GetBackingStore().Set("allowedGoogleAccountDomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordBlockFaceUnlock sets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetPasswordBlockFaceUnlock(value *bool)() {
     err := m.GetBackingStore().Set("passwordBlockFaceUnlock", value)
@@ -1349,6 +1415,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetVpnAlwaysOnPackageIden
 // SetVpnEnableAlwaysOnLockdownMode sets the vpnEnableAlwaysOnLockdownMode property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetVpnEnableAlwaysOnLockdownMode(value *bool)() {
     err := m.GetBackingStore().Set("vpnEnableAlwaysOnLockdownMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfileAccountUse sets the workProfileAccountUse property value. An enum representing possible values for account use in work profile.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileAccountUse(value *AndroidWorkProfileAccountUse)() {
+    err := m.GetBackingStore().Set("workProfileAccountUse", value)
     if err != nil {
         panic(err)
     }
@@ -1574,6 +1647,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileRequirePass
 type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedGoogleAccountDomains()([]string)
     GetPasswordBlockFaceUnlock()(*bool)
     GetPasswordBlockFingerprintUnlock()(*bool)
     GetPasswordBlockIrisUnlock()(*bool)
@@ -1588,6 +1662,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     GetSecurityRequireVerifyApps()(*bool)
     GetVpnAlwaysOnPackageIdentifier()(*string)
     GetVpnEnableAlwaysOnLockdownMode()(*bool)
+    GetWorkProfileAccountUse()(*AndroidWorkProfileAccountUse)
     GetWorkProfileAllowAppInstallsFromUnknownSources()(*bool)
     GetWorkProfileAllowWidgets()(*bool)
     GetWorkProfileBlockAddingAccounts()(*bool)
@@ -1619,6 +1694,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32)
     GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity)
     GetWorkProfileRequirePassword()(*bool)
+    SetAllowedGoogleAccountDomains(value []string)()
     SetPasswordBlockFaceUnlock(value *bool)()
     SetPasswordBlockFingerprintUnlock(value *bool)()
     SetPasswordBlockIrisUnlock(value *bool)()
@@ -1633,6 +1709,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     SetSecurityRequireVerifyApps(value *bool)()
     SetVpnAlwaysOnPackageIdentifier(value *string)()
     SetVpnEnableAlwaysOnLockdownMode(value *bool)()
+    SetWorkProfileAccountUse(value *AndroidWorkProfileAccountUse)()
     SetWorkProfileAllowAppInstallsFromUnknownSources(value *bool)()
     SetWorkProfileAllowWidgets(value *bool)()
     SetWorkProfileBlockAddingAccounts(value *bool)()

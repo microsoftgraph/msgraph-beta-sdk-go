@@ -132,6 +132,14 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
 }
+// PowerOff provides operations to call the powerOff method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) PowerOff()(*VirtualEndpointCloudPCsItemPowerOffRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemPowerOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PowerOn provides operations to call the powerOn method.
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) PowerOn()(*VirtualEndpointCloudPCsItemPowerOnRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemPowerOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Reboot provides operations to call the reboot method.
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reboot()(*VirtualEndpointCloudPCsItemRebootRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRebootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

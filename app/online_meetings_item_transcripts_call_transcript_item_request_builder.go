@@ -93,6 +93,10 @@ func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable), nil
 }
+// MetadataContent provides operations to manage the media for the commsApplication entity.
+func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) MetadataContent()(*OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) {
+    return NewOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property transcripts in app
 func (m *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable, requestConfiguration *OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

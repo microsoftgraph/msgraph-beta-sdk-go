@@ -280,6 +280,16 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["otherPartyCountryCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOtherPartyCountryCode(val)
+        }
+        return nil
+    }
     res["signalingLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -317,6 +327,16 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetTrunkFullyQualifiedDomainName(val)
+        }
+        return nil
+    }
+    res["userCountryCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserCountryCode(val)
         }
         return nil
     }
@@ -429,6 +449,17 @@ func (m *DirectRoutingLogRow) GetOdataType()(*string) {
     }
     return nil
 }
+// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. The otherPartyCountryCode property
+func (m *DirectRoutingLogRow) GetOtherPartyCountryCode()(*string) {
+    val, err := m.GetBackingStore().Get("otherPartyCountryCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSignalingLocation gets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
 func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
     val, err := m.GetBackingStore().Get("signalingLocation")
@@ -465,6 +496,17 @@ func (m *DirectRoutingLogRow) GetSuccessfulCall()(*bool) {
 // GetTrunkFullyQualifiedDomainName gets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
 func (m *DirectRoutingLogRow) GetTrunkFullyQualifiedDomainName()(*string) {
     val, err := m.GetBackingStore().Get("trunkFullyQualifiedDomainName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetUserCountryCode gets the userCountryCode property value. The userCountryCode property
+func (m *DirectRoutingLogRow) GetUserCountryCode()(*string) {
+    val, err := m.GetBackingStore().Get("userCountryCode")
     if err != nil {
         panic(err)
     }
@@ -599,6 +641,12 @@ func (m *DirectRoutingLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err := writer.WriteStringValue("otherPartyCountryCode", m.GetOtherPartyCountryCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("signalingLocation", m.GetSignalingLocation())
         if err != nil {
             return err
@@ -618,6 +666,12 @@ func (m *DirectRoutingLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("trunkFullyQualifiedDomainName", m.GetTrunkFullyQualifiedDomainName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("userCountryCode", m.GetUserCountryCode())
         if err != nil {
             return err
         }
@@ -764,6 +818,13 @@ func (m *DirectRoutingLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. The otherPartyCountryCode property
+func (m *DirectRoutingLogRow) SetOtherPartyCountryCode(value *string)() {
+    err := m.GetBackingStore().Set("otherPartyCountryCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignalingLocation sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
 func (m *DirectRoutingLogRow) SetSignalingLocation(value *string)() {
     err := m.GetBackingStore().Set("signalingLocation", value)
@@ -788,6 +849,13 @@ func (m *DirectRoutingLogRow) SetSuccessfulCall(value *bool)() {
 // SetTrunkFullyQualifiedDomainName sets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
 func (m *DirectRoutingLogRow) SetTrunkFullyQualifiedDomainName(value *string)() {
     err := m.GetBackingStore().Set("trunkFullyQualifiedDomainName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserCountryCode sets the userCountryCode property value. The userCountryCode property
+func (m *DirectRoutingLogRow) SetUserCountryCode(value *string)() {
+    err := m.GetBackingStore().Set("userCountryCode", value)
     if err != nil {
         panic(err)
     }
@@ -834,10 +902,12 @@ type DirectRoutingLogRowable interface {
     GetMediaBypassEnabled()(*bool)
     GetMediaPathLocation()(*string)
     GetOdataType()(*string)
+    GetOtherPartyCountryCode()(*string)
     GetSignalingLocation()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSuccessfulCall()(*bool)
     GetTrunkFullyQualifiedDomainName()(*string)
+    GetUserCountryCode()(*string)
     GetUserDisplayName()(*string)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
@@ -857,10 +927,12 @@ type DirectRoutingLogRowable interface {
     SetMediaBypassEnabled(value *bool)()
     SetMediaPathLocation(value *string)()
     SetOdataType(value *string)()
+    SetOtherPartyCountryCode(value *string)()
     SetSignalingLocation(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSuccessfulCall(value *bool)()
     SetTrunkFullyQualifiedDomainName(value *string)()
+    SetUserCountryCode(value *string)()
     SetUserDisplayName(value *string)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()

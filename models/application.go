@@ -958,7 +958,7 @@ func (m *Application) GetSynchronization()(Synchronizationable) {
     }
     return nil
 }
-// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -1640,7 +1640,7 @@ func (m *Application) SetSynchronization(value Synchronizationable)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {

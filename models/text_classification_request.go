@@ -19,9 +19,30 @@ func NewTextClassificationRequest()(*TextClassificationRequest) {
 func CreateTextClassificationRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTextClassificationRequest(), nil
 }
+// GetContentMetaData gets the contentMetaData property value. The contentMetaData property
+func (m *TextClassificationRequest) GetContentMetaData()(ClassificationRequestContentMetaDataable) {
+    val, err := m.GetBackingStore().Get("contentMetaData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ClassificationRequestContentMetaDataable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["contentMetaData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateClassificationRequestContentMetaDataFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentMetaData(val.(ClassificationRequestContentMetaDataable))
+        }
+        return nil
+    }
     res["fileExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -140,6 +161,12 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     {
+        err = writer.WriteObjectValue("contentMetaData", m.GetContentMetaData())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("fileExtension", m.GetFileExtension())
         if err != nil {
             return err
@@ -172,6 +199,13 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     return nil
+}
+// SetContentMetaData sets the contentMetaData property value. The contentMetaData property
+func (m *TextClassificationRequest) SetContentMetaData(value ClassificationRequestContentMetaDataable)() {
+    err := m.GetBackingStore().Set("contentMetaData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileExtension sets the fileExtension property value. The fileExtension property
 func (m *TextClassificationRequest) SetFileExtension(value *string)() {
@@ -212,11 +246,13 @@ func (m *TextClassificationRequest) SetText(value *string)() {
 type TextClassificationRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContentMetaData()(ClassificationRequestContentMetaDataable)
     GetFileExtension()(*string)
     GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance)
     GetScopesToRun()(*SensitiveTypeScope)
     GetSensitiveTypeIds()([]string)
     GetText()(*string)
+    SetContentMetaData(value ClassificationRequestContentMetaDataable)()
     SetFileExtension(value *string)()
     SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)()
     SetScopesToRun(value *SensitiveTypeScope)()

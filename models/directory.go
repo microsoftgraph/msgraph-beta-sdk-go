@@ -269,7 +269,7 @@ func (m *Directory) GetImpactedResources()([]ImpactedResourceable) {
     }
     return nil
 }
-// GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
+// GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
     val, err := m.GetBackingStore().Get("inboundSharedUserProfiles")
     if err != nil {
@@ -501,7 +501,7 @@ func (m *Directory) SetImpactedResources(value []ImpactedResourceable)() {
         panic(err)
     }
 }
-// SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
+// SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
     err := m.GetBackingStore().Set("inboundSharedUserProfiles", value)
     if err != nil {
