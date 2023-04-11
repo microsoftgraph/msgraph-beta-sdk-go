@@ -1,4 +1,4 @@
-package tenantadmin
+package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
@@ -83,7 +83,7 @@ func (m *IdleSessionSignOut) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.
+// GetIsEnabled gets the isEnabled property value. The isEnabled property
 func (m *IdleSessionSignOut) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *IdleSessionSignOut) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSignOutAfterInSeconds gets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.
+// GetSignOutAfterInSeconds gets the signOutAfterInSeconds property value. The signOutAfterInSeconds property
 func (m *IdleSessionSignOut) GetSignOutAfterInSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("signOutAfterInSeconds")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *IdleSessionSignOut) GetSignOutAfterInSeconds()(*int64) {
     }
     return nil
 }
-// GetWarnAfterInSeconds gets the warnAfterInSeconds property value. Number of seconds of inactivity after which a user is notified that they'll be signed out.
+// GetWarnAfterInSeconds gets the warnAfterInSeconds property value. The warnAfterInSeconds property
 func (m *IdleSessionSignOut) GetWarnAfterInSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("warnAfterInSeconds")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *IdleSessionSignOut) SetAdditionalData(value map[string]any)() {
 func (m *IdleSessionSignOut) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsEnabled sets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.
+// SetIsEnabled sets the isEnabled property value. The isEnabled property
 func (m *IdleSessionSignOut) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
@@ -186,14 +186,14 @@ func (m *IdleSessionSignOut) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSignOutAfterInSeconds sets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.
+// SetSignOutAfterInSeconds sets the signOutAfterInSeconds property value. The signOutAfterInSeconds property
 func (m *IdleSessionSignOut) SetSignOutAfterInSeconds(value *int64)() {
     err := m.GetBackingStore().Set("signOutAfterInSeconds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWarnAfterInSeconds sets the warnAfterInSeconds property value. Number of seconds of inactivity after which a user is notified that they'll be signed out.
+// SetWarnAfterInSeconds sets the warnAfterInSeconds property value. The warnAfterInSeconds property
 func (m *IdleSessionSignOut) SetWarnAfterInSeconds(value *int64)() {
     err := m.GetBackingStore().Set("warnAfterInSeconds", value)
     if err != nil {

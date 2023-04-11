@@ -628,6 +628,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["managedServiceIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateManagedIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagedServiceIdentity(val.(ManagedIdentityable))
+        }
+        return nil
+    }
     res["mfaDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMfaDetailFromDiscriminatorValue)
         if err != nil {
@@ -1052,6 +1062,17 @@ func (m *SignIn) GetLocation()(SignInLocationable) {
     }
     if val != nil {
         return val.(SignInLocationable)
+    }
+    return nil
+}
+// GetManagedServiceIdentity gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+func (m *SignIn) GetManagedServiceIdentity()(ManagedIdentityable) {
+    val, err := m.GetBackingStore().Get("managedServiceIdentity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedIdentityable)
     }
     return nil
 }
@@ -1628,6 +1649,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteObjectValue("managedServiceIdentity", m.GetManagedServiceIdentity())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("mfaDetail", m.GetMfaDetail())
         if err != nil {
             return err
@@ -2054,6 +2081,13 @@ func (m *SignIn) SetLocation(value SignInLocationable)() {
         panic(err)
     }
 }
+// SetManagedServiceIdentity sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+func (m *SignIn) SetManagedServiceIdentity(value ManagedIdentityable)() {
+    err := m.GetBackingStore().Set("managedServiceIdentity", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMfaDetail sets the mfaDetail property value. The mfaDetail property
 func (m *SignIn) SetMfaDetail(value MfaDetailable)() {
     err := m.GetBackingStore().Set("mfaDetail", value)
@@ -2307,6 +2341,7 @@ type SignInable interface {
     GetIsInteractive()(*bool)
     GetIsTenantRestricted()(*bool)
     GetLocation()(SignInLocationable)
+    GetManagedServiceIdentity()(ManagedIdentityable)
     GetMfaDetail()(MfaDetailable)
     GetNetworkLocationDetails()([]NetworkLocationDetailable)
     GetOriginalRequestId()(*string)
@@ -2370,6 +2405,7 @@ type SignInable interface {
     SetIsInteractive(value *bool)()
     SetIsTenantRestricted(value *bool)()
     SetLocation(value SignInLocationable)()
+    SetManagedServiceIdentity(value ManagedIdentityable)()
     SetMfaDetail(value MfaDetailable)()
     SetNetworkLocationDetails(value []NetworkLocationDetailable)()
     SetOriginalRequestId(value *string)()

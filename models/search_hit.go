@@ -82,16 +82,6 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["_summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSummary(val)
-        }
-        return nil
-    }
     res["contentSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -159,6 +149,16 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetResultTemplateId(val)
+        }
+        return nil
+    }
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSummary(val)
         }
         return nil
     }
@@ -263,9 +263,9 @@ func (m *SearchHit) GetSource()(Entityable) {
     }
     return nil
 }
-// GetSummary gets the _summary property value. The _summary property
+// GetSummary gets the summary property value. A summary of the result, if a summary is available.
 func (m *SearchHit) GetSummary()(*string) {
-    val, err := m.GetBackingStore().Get("_summary")
+    val, err := m.GetBackingStore().Get("summary")
     if err != nil {
         panic(err)
     }
@@ -319,6 +319,12 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err := writer.WriteStringValue("summary", m.GetSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("_id", m.GetId())
         if err != nil {
             return err
@@ -332,12 +338,6 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err := writer.WriteObjectValue("_source", m.GetSource())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("_summary", m.GetSummary())
         if err != nil {
             return err
         }
@@ -431,9 +431,9 @@ func (m *SearchHit) SetSource(value Entityable)() {
         panic(err)
     }
 }
-// SetSummary sets the _summary property value. The _summary property
+// SetSummary sets the summary property value. A summary of the result, if a summary is available.
 func (m *SearchHit) SetSummary(value *string)() {
-    err := m.GetBackingStore().Set("_summary", value)
+    err := m.GetBackingStore().Set("summary", value)
     if err != nil {
         panic(err)
     }
