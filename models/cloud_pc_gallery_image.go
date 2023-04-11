@@ -8,7 +8,7 @@ import (
 type CloudPcGalleryImage struct {
     Entity
 }
-// NewCloudPcGalleryImage instantiates a new cloudPcGalleryImage and sets the default values.
+// NewCloudPcGalleryImage instantiates a new CloudPcGalleryImage and sets the default values.
 func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     m := &CloudPcGalleryImage{
         Entity: *NewEntity(),

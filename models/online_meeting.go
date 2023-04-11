@@ -786,7 +786,7 @@ func (m *OnlineMeeting) GetVirtualAppointment()(VirtualAppointmentable) {
     }
     return nil
 }
-// GetWatermarkProtection gets the watermarkProtection property value. Specifies whether a watermark applies for different entities.
+// GetWatermarkProtection gets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
 func (m *OnlineMeeting) GetWatermarkProtection()(WatermarkProtectionValuesable) {
     val, err := m.GetBackingStore().Get("watermarkProtection")
     if err != nil {
@@ -1277,7 +1277,7 @@ func (m *OnlineMeeting) SetVirtualAppointment(value VirtualAppointmentable)() {
         panic(err)
     }
 }
-// SetWatermarkProtection sets the watermarkProtection property value. Specifies whether a watermark applies for different entities.
+// SetWatermarkProtection sets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
 func (m *OnlineMeeting) SetWatermarkProtection(value WatermarkProtectionValuesable)() {
     err := m.GetBackingStore().Set("watermarkProtection", value)
     if err != nil {

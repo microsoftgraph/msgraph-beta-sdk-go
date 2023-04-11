@@ -1,4 +1,4 @@
-package tenantadmin
+package models
 import (
     "errors"
 )

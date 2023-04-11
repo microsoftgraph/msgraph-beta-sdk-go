@@ -502,8 +502,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewClassificationJobResponse(), nil
                     case "#microsoft.graph.cloudAppSecurityProfile":
                         return NewCloudAppSecurityProfile(), nil
-                    case "#microsoft.graph.cloudCommunications":
-                        return NewCloudCommunications(), nil
                     case "#microsoft.graph.cloudPC":
                         return NewCloudPC(), nil
                     case "#microsoft.graph.cloudPcAuditEvent":
@@ -2112,6 +2110,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSharedPCConfiguration(), nil
                     case "#microsoft.graph.sharedWithChannelTeamInfo":
                         return NewSharedWithChannelTeamInfo(), nil
+                    case "#microsoft.graph.sharepoint":
+                        return NewSharepoint(), nil
+                    case "#microsoft.graph.sharepointSettings":
+                        return NewSharepointSettings(), nil
                     case "#microsoft.graph.shift":
                         return NewShift(), nil
                     case "#microsoft.graph.shiftPreferences":
