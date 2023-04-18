@@ -38,31 +38,9 @@ type CommunicationsRequestBuilderPatchRequestConfiguration struct {
 func (m *CommunicationsRequestBuilder) CallRecords()(*CallRecordsRequestBuilder) {
     return NewCallRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CallRecordsById provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*CallRecordsCallRecordItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["callRecord%2Did"] = id
-    }
-    return NewCallRecordsCallRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Calls provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
 func (m *CommunicationsRequestBuilder) Calls()(*CallsRequestBuilder) {
     return NewCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CallsById provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) CallsById(id string)(*CallsCallItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["call%2Did"] = id
-    }
-    return NewCallsCallItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCommunicationsRequestBuilderInternal instantiates a new CommunicationsRequestBuilder and sets the default values.
 func NewCommunicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunicationsRequestBuilder) {
@@ -104,17 +82,6 @@ func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*GetPresencesByUse
 func (m *CommunicationsRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
     return NewOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OnlineMeetingsById provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeetingsOnlineMeetingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onlineMeeting%2Did"] = id
-    }
-    return NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update communications
 func (m *CommunicationsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCommunicationsable, requestConfiguration *CommunicationsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCommunicationsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -137,17 +104,6 @@ func (m *CommunicationsRequestBuilder) Patch(ctx context.Context, body ie233ee76
 // Presences provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
 func (m *CommunicationsRequestBuilder) Presences()(*PresencesRequestBuilder) {
     return NewPresencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PresencesById provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
-func (m *CommunicationsRequestBuilder) PresencesById(id string)(*PresencesPresenceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["presence%2Did"] = id
-    }
-    return NewPresencesPresenceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get communications
 func (m *CommunicationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommunicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

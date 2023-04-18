@@ -39,6 +39,17 @@ type CompaniesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CompaniesRequestBuilderGetQueryParameters
 }
+// ByCompanyId provides operations to manage the companies property of the microsoft.graph.financials entity.
+func (m *CompaniesRequestBuilder) ByCompanyId(companyId string)(*CompaniesCompanyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if companyId != "" {
+        urlTplParams["company%2Did"] = companyId
+    }
+    return NewCompaniesCompanyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesRequestBuilderInternal instantiates a new CompaniesRequestBuilder and sets the default values.
 func NewCompaniesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesRequestBuilder) {
     m := &CompaniesRequestBuilder{

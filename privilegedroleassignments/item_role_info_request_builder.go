@@ -45,17 +45,6 @@ type ItemRoleInfoRequestBuilderPatchRequestConfiguration struct {
 func (m *ItemRoleInfoRequestBuilder) Assignments()(*ItemRoleInfoAssignmentsRequestBuilder) {
     return NewItemRoleInfoAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
-func (m *ItemRoleInfoRequestBuilder) AssignmentsById(id string)(*ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["privilegedRoleAssignment%2Did1"] = id
-    }
-    return NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemRoleInfoRequestBuilderInternal instantiates a new RoleInfoRequestBuilder and sets the default values.
 func NewItemRoleInfoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleInfoRequestBuilder) {
     m := &ItemRoleInfoRequestBuilder{

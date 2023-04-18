@@ -46,6 +46,17 @@ type DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRestrictedAppsViolationId provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) ByRestrictedAppsViolationId(restrictedAppsViolationId string)(*DeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if restrictedAppsViolationId != "" {
+        urlTplParams["restrictedAppsViolation%2Did"] = restrictedAppsViolationId
+    }
+    return NewDeviceConfigurationRestrictedAppsViolationsRestrictedAppsViolationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal instantiates a new DeviceConfigurationRestrictedAppsViolationsRequestBuilder and sets the default values.
 func NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
     m := &DeviceConfigurationRestrictedAppsViolationsRequestBuilder{

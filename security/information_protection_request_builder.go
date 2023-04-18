@@ -116,17 +116,6 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body i0
 func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*InformationProtectionSensitivityLabelsRequestBuilder) {
     return NewInformationProtectionSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did"] = id
-    }
-    return NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property informationProtection for security
 func (m *InformationProtectionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

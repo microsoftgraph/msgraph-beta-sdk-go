@@ -46,6 +46,17 @@ type CommandsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCommandId provides operations to manage the collection of command entities.
+func (m *CommandsRequestBuilder) ByCommandId(commandId string)(*CommandItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if commandId != "" {
+        urlTplParams["command%2Did"] = commandId
+    }
+    return NewCommandItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCommandsRequestBuilderInternal instantiates a new CommandsRequestBuilder and sets the default values.
 func NewCommandsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommandsRequestBuilder) {
     m := &CommandsRequestBuilder{

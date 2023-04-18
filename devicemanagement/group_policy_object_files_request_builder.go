@@ -46,6 +46,17 @@ type GroupPolicyObjectFilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyObjectFileId provides operations to manage the groupPolicyObjectFiles property of the microsoft.graph.deviceManagement entity.
+func (m *GroupPolicyObjectFilesRequestBuilder) ByGroupPolicyObjectFileId(groupPolicyObjectFileId string)(*GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyObjectFileId != "" {
+        urlTplParams["groupPolicyObjectFile%2Did"] = groupPolicyObjectFileId
+    }
+    return NewGroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyObjectFilesRequestBuilderInternal instantiates a new GroupPolicyObjectFilesRequestBuilder and sets the default values.
 func NewGroupPolicyObjectFilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyObjectFilesRequestBuilder) {
     m := &GroupPolicyObjectFilesRequestBuilder{

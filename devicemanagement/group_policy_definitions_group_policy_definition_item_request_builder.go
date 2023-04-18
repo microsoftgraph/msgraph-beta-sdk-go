@@ -124,17 +124,6 @@ func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Patch(ct
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) Presentations()(*GroupPolicyDefinitionsItemPresentationsRequestBuilder) {
     return NewGroupPolicyDefinitionsItemPresentationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
-func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) PresentationsById(id string)(*GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["groupPolicyPresentation%2Did"] = id
-    }
-    return NewGroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // PreviousVersionDefinition provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionsGroupPolicyDefinitionItemRequestBuilder) PreviousVersionDefinition()(*GroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilder) {
     return NewGroupPolicyDefinitionsItemPreviousVersionDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

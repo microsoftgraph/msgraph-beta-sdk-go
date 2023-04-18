@@ -46,6 +46,17 @@ type DirectoryProvisioningRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByProvisioningObjectSummaryId provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.
+func (m *DirectoryProvisioningRequestBuilder) ByProvisioningObjectSummaryId(provisioningObjectSummaryId string)(*DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if provisioningObjectSummaryId != "" {
+        urlTplParams["provisioningObjectSummary%2Did"] = provisioningObjectSummaryId
+    }
+    return NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryProvisioningRequestBuilderInternal instantiates a new DirectoryProvisioningRequestBuilder and sets the default values.
 func NewDirectoryProvisioningRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryProvisioningRequestBuilder) {
     m := &DirectoryProvisioningRequestBuilder{

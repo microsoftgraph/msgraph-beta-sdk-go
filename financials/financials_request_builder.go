@@ -38,17 +38,6 @@ type FinancialsRequestBuilderPatchRequestConfiguration struct {
 func (m *FinancialsRequestBuilder) Companies()(*CompaniesRequestBuilder) {
     return NewCompaniesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CompaniesById provides operations to manage the companies property of the microsoft.graph.financials entity.
-func (m *FinancialsRequestBuilder) CompaniesById(id string)(*CompaniesCompanyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["company%2Did"] = id
-    }
-    return NewCompaniesCompanyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewFinancialsRequestBuilderInternal instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FinancialsRequestBuilder) {
     m := &FinancialsRequestBuilder{

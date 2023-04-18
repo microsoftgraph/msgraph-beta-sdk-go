@@ -46,6 +46,17 @@ type RecommendationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRecommendationId provides operations to manage the recommendations property of the microsoft.graph.directory entity.
+func (m *RecommendationsRequestBuilder) ByRecommendationId(recommendationId string)(*RecommendationsRecommendationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if recommendationId != "" {
+        urlTplParams["recommendation%2Did"] = recommendationId
+    }
+    return NewRecommendationsRecommendationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRecommendationsRequestBuilderInternal instantiates a new RecommendationsRequestBuilder and sets the default values.
 func NewRecommendationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RecommendationsRequestBuilder) {
     m := &RecommendationsRequestBuilder{

@@ -46,6 +46,17 @@ type TeamTemplateDefinitionRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamTemplateDefinitionId provides operations to manage the collection of teamTemplateDefinition entities.
+func (m *TeamTemplateDefinitionRequestBuilder) ByTeamTemplateDefinitionId(teamTemplateDefinitionId string)(*TeamTemplateDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamTemplateDefinitionId != "" {
+        urlTplParams["teamTemplateDefinition%2Did"] = teamTemplateDefinitionId
+    }
+    return NewTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplateDefinitionRequestBuilderInternal instantiates a new TeamTemplateDefinitionRequestBuilder and sets the default values.
 func NewTeamTemplateDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplateDefinitionRequestBuilder) {
     m := &TeamTemplateDefinitionRequestBuilder{

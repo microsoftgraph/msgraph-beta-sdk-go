@@ -46,6 +46,17 @@ type CompaniesItemJournalLinesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByJournalLineId provides operations to manage the journalLines property of the microsoft.graph.company entity.
+func (m *CompaniesItemJournalLinesRequestBuilder) ByJournalLineId(journalLineId string)(*CompaniesItemJournalLinesJournalLineItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if journalLineId != "" {
+        urlTplParams["journalLine%2Did"] = journalLineId
+    }
+    return NewCompaniesItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemJournalLinesRequestBuilderInternal instantiates a new JournalLinesRequestBuilder and sets the default values.
 func NewCompaniesItemJournalLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalLinesRequestBuilder) {
     m := &CompaniesItemJournalLinesRequestBuilder{

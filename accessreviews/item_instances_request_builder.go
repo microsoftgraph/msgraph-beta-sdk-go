@@ -46,6 +46,17 @@ type ItemInstancesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessReviewId1 provides operations to manage the instances property of the microsoft.graph.accessReview entity.
+func (m *ItemInstancesRequestBuilder) ByAccessReviewId1(accessReviewId1 string)(*ItemInstancesAccessReviewItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessReviewId1 != "" {
+        urlTplParams["accessReview%2Did1"] = accessReviewId1
+    }
+    return NewItemInstancesAccessReviewItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemInstancesRequestBuilderInternal instantiates a new InstancesRequestBuilder and sets the default values.
 func NewItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesRequestBuilder) {
     m := &ItemInstancesRequestBuilder{

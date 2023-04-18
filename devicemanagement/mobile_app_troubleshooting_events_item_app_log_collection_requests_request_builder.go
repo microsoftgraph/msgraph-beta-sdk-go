@@ -46,6 +46,17 @@ type MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAppLogCollectionRequestId provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
+func (m *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) ByAppLogCollectionRequestId(appLogCollectionRequestId string)(*MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if appLogCollectionRequestId != "" {
+        urlTplParams["appLogCollectionRequest%2Did"] = appLogCollectionRequestId
+    }
+    return NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderInternal instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.
 func NewMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) {
     m := &MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder{

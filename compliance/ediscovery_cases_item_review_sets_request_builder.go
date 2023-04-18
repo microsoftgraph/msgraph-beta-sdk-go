@@ -46,6 +46,17 @@ type EdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByReviewSetId provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
+func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ByReviewSetId(reviewSetId string)(*EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if reviewSetId != "" {
+        urlTplParams["reviewSet%2Did"] = reviewSetId
+    }
+    return NewEdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdiscoveryCasesItemReviewSetsRequestBuilderInternal instantiates a new ReviewSetsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemReviewSetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemReviewSetsRequestBuilder) {
     m := &EdiscoveryCasesItemReviewSetsRequestBuilder{

@@ -49,17 +49,6 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Audience()(
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ComplianceChanges()(*WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ComplianceChangesById provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.
-func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ComplianceChangesById(id string)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["complianceChange%2Did"] = id
-    }
-    return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesComplianceChangeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal instantiates a new UpdatePolicyItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder{

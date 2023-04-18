@@ -46,6 +46,17 @@ type SignInsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySignInId provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+func (m *SignInsRequestBuilder) BySignInId(signInId string)(*SignInsSignInItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if signInId != "" {
+        urlTplParams["signIn%2Did"] = signInId
+    }
+    return NewSignInsSignInItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // ConfirmCompromised provides operations to call the confirmCompromised method.
 func (m *SignInsRequestBuilder) ConfirmCompromised()(*SignInsConfirmCompromisedRequestBuilder) {
     return NewSignInsConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

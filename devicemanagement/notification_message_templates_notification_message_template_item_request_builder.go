@@ -93,17 +93,6 @@ func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuild
 func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMessages()(*NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) {
     return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LocalizedNotificationMessagesById provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
-func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMessagesById(id string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["localizedNotificationMessage%2Did"] = id
-    }
-    return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property notificationMessageTemplates in deviceManagement
 func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotificationMessageTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

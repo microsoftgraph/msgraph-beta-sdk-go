@@ -46,6 +46,17 @@ type VirtualEndpointGalleryImagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcGalleryImageId provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointGalleryImagesRequestBuilder) ByCloudPcGalleryImageId(cloudPcGalleryImageId string)(*VirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcGalleryImageId != "" {
+        urlTplParams["cloudPcGalleryImage%2Did"] = cloudPcGalleryImageId
+    }
+    return NewVirtualEndpointGalleryImagesCloudPcGalleryImageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointGalleryImagesRequestBuilderInternal instantiates a new GalleryImagesRequestBuilder and sets the default values.
 func NewVirtualEndpointGalleryImagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointGalleryImagesRequestBuilder) {
     m := &VirtualEndpointGalleryImagesRequestBuilder{

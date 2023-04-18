@@ -46,6 +46,17 @@ type ConditionalAccessAuthenticationStrengthPoliciesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAuthenticationStrengthPolicyId provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
+func (m *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder) ByAuthenticationStrengthPolicyId(authenticationStrengthPolicyId string)(*ConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if authenticationStrengthPolicyId != "" {
+        urlTplParams["authenticationStrengthPolicy%2Did"] = authenticationStrengthPolicyId
+    }
+    return NewConditionalAccessAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConditionalAccessAuthenticationStrengthPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder) {
     m := &ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder{

@@ -44,6 +44,17 @@ type ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMentionId provides operations to manage the mentions property of the microsoft.graph.post entity.
+func (m *ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) ByMentionId(mentionId string)(*ItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if mentionId != "" {
+        urlTplParams["mention%2Did"] = mentionId
+    }
+    return NewItemConversationsItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemConversationsItemThreadsItemPostsItemMentionsRequestBuilderInternal instantiates a new MentionsRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemMentionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemMentionsRequestBuilder{

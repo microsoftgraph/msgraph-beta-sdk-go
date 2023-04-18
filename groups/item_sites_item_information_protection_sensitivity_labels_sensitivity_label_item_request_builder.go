@@ -112,17 +112,6 @@ func (m *ItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItem
 func (m *ItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) Sublabels()(*ItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) {
     return NewItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SublabelsById provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
-func (m *ItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) SublabelsById(id string)(*ItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did1"] = id
-    }
-    return NewItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property sensitivityLabels for groups
 func (m *ItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

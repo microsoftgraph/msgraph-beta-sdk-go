@@ -35,6 +35,17 @@ type ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetReque
     // Request query parameters
     QueryParameters *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetQueryParameters
 }
+// ByUserConfigurationId provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationId(userConfigurationId string)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userConfigurationId != "" {
+        urlTplParams["userConfiguration%2Did"] = userConfigurationId
+    }
+    return NewItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderInternal instantiates a new UserConfigurationsRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder{

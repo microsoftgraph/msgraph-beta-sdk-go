@@ -11,7 +11,7 @@ import (
 type ExchangeRoleAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeRoleAssignmentsRequestBuilderGetQueryParameters get roleAssignments from roleManagement
+// ExchangeRoleAssignmentsRequestBuilderGetQueryParameters get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)- Exchange Online
 type ExchangeRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,6 +46,17 @@ type ExchangeRoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleAssignmentId provides operations to manage the roleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
+func (m *ExchangeRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentId(unifiedRoleAssignmentId string)(*ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleAssignmentId != "" {
+        urlTplParams["unifiedRoleAssignment%2Did"] = unifiedRoleAssignmentId
+    }
+    return NewExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewExchangeRoleAssignmentsRequestBuilderInternal instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
 func NewExchangeRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeRoleAssignmentsRequestBuilder) {
     m := &ExchangeRoleAssignmentsRequestBuilder{
@@ -63,7 +74,10 @@ func NewExchangeRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ExchangeRoleAssignmentsRequestBuilder) Count()(*ExchangeRoleAssignmentsCountRequestBuilder) {
     return NewExchangeRoleAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get roleAssignments from roleManagement
+// Get get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)- Exchange Online
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
 func (m *ExchangeRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +96,10 @@ func (m *ExchangeRoleAssignmentsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentCollectionResponseable), nil
 }
-// Post create new navigation property to roleAssignments for roleManagement
+// Post create a new unifiedRoleAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
 func (m *ExchangeRoleAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, requestConfiguration *ExchangeRoleAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -101,7 +118,7 @@ func (m *ExchangeRoleAssignmentsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable), nil
 }
-// ToGetRequestInformation get roleAssignments from roleManagement
+// ToGetRequestInformation get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)- Exchange Online
 func (m *ExchangeRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -117,7 +134,7 @@ func (m *ExchangeRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to roleAssignments for roleManagement
+// ToPostRequestInformation create a new unifiedRoleAssignment object.
 func (m *ExchangeRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, requestConfiguration *ExchangeRoleAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

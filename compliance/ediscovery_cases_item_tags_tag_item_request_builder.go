@@ -45,17 +45,6 @@ type EdiscoveryCasesItemTagsTagItemRequestBuilderPatchRequestConfiguration struc
 func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTags()(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
     return NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ChildTagsById provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
-func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTagsById(id string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["tag%2Did1"] = id
-    }
-    return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal instantiates a new TagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsTagItemRequestBuilder) {
     m := &EdiscoveryCasesItemTagsTagItemRequestBuilder{

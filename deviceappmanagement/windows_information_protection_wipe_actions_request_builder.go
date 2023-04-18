@@ -46,6 +46,17 @@ type WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsInformationProtectionWipeActionId provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ByWindowsInformationProtectionWipeActionId(windowsInformationProtectionWipeActionId string)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsInformationProtectionWipeActionId != "" {
+        urlTplParams["windowsInformationProtectionWipeAction%2Did"] = windowsInformationProtectionWipeActionId
+    }
+    return NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsInformationProtectionWipeActionsRequestBuilderInternal instantiates a new WindowsInformationProtectionWipeActionsRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionWipeActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionWipeActionsRequestBuilder) {
     m := &WindowsInformationProtectionWipeActionsRequestBuilder{

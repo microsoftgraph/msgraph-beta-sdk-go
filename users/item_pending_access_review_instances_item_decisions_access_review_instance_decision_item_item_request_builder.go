@@ -93,17 +93,6 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisi
 func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*ItemPendingAccessReviewInstancesItemDecisionsItemInsightsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemDecisionsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
-func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceInsight%2Did"] = id
-    }
-    return NewItemPendingAccessReviewInstancesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *ItemPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

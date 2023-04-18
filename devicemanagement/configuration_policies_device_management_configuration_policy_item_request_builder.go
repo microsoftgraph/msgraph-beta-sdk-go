@@ -49,17 +49,6 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Assignments()(*ConfigurationPoliciesItemAssignmentsRequestBuilder) {
     return NewConfigurationPoliciesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
-func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) AssignmentsById(id string)(*ConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationPolicyAssignment%2Did"] = id
-    }
-    return NewConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilder and sets the default values.
 func NewConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) {
     m := &ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder{
@@ -138,17 +127,6 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Settings()(*ConfigurationPoliciesItemSettingsRequestBuilder) {
     return NewConfigurationPoliciesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
-func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) SettingsById(id string)(*ConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationSetting%2Did"] = id
-    }
-    return NewConfigurationPoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property configurationPolicies for deviceManagement
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

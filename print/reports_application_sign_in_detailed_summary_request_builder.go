@@ -46,6 +46,17 @@ type ReportsApplicationSignInDetailedSummaryRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApplicationSignInDetailedSummaryId provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
+func (m *ReportsApplicationSignInDetailedSummaryRequestBuilder) ByApplicationSignInDetailedSummaryId(applicationSignInDetailedSummaryId string)(*ReportsApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if applicationSignInDetailedSummaryId != "" {
+        urlTplParams["applicationSignInDetailedSummary%2Did"] = applicationSignInDetailedSummaryId
+    }
+    return NewReportsApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsApplicationSignInDetailedSummaryRequestBuilderInternal instantiates a new ApplicationSignInDetailedSummaryRequestBuilder and sets the default values.
 func NewReportsApplicationSignInDetailedSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsApplicationSignInDetailedSummaryRequestBuilder) {
     m := &ReportsApplicationSignInDetailedSummaryRequestBuilder{

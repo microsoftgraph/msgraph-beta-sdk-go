@@ -46,6 +46,17 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWorkbookChartSeriesId provides operations to manage the series property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) ByWorkbookChartSeriesId(workbookChartSeriesId string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesWorkbookChartSeriesItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookChartSeriesId != "" {
+        urlTplParams["workbookChartSeries%2Did"] = workbookChartSeriesId
+    }
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesWorkbookChartSeriesItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderInternal instantiates a new SeriesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder{
@@ -66,7 +77,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) Coun
 // Get retrieve a list of chartseries objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartseries-list?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/chart-list-series?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartSeriesCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

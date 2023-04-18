@@ -112,17 +112,6 @@ func (m *LabelsRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802b
 func (m *LabelsRequestBuilder) RetentionLabels()(*LabelsRetentionLabelsRequestBuilder) {
     return NewLabelsRetentionLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RetentionLabelsById provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
-func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["retentionLabel%2Did"] = id
-    }
-    return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property labels for security
 func (m *LabelsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -46,6 +46,17 @@ type DomainSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDomainSecurityProfileId provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
+func (m *DomainSecurityProfilesRequestBuilder) ByDomainSecurityProfileId(domainSecurityProfileId string)(*DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if domainSecurityProfileId != "" {
+        urlTplParams["domainSecurityProfile%2Did"] = domainSecurityProfileId
+    }
+    return NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDomainSecurityProfilesRequestBuilderInternal instantiates a new DomainSecurityProfilesRequestBuilder and sets the default values.
 func NewDomainSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainSecurityProfilesRequestBuilder) {
     m := &DomainSecurityProfilesRequestBuilder{

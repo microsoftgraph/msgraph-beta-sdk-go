@@ -46,6 +46,17 @@ type ConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementConfigurationSettingTemplateId provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
+func (m *ConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilder) ByDeviceManagementConfigurationSettingTemplateId(deviceManagementConfigurationSettingTemplateId string)(*ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementConfigurationSettingTemplateId != "" {
+        urlTplParams["deviceManagementConfigurationSettingTemplate%2Did"] = deviceManagementConfigurationSettingTemplateId
+    }
+    return NewConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilderInternal instantiates a new SettingTemplatesRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilder) {
     m := &ConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilder{

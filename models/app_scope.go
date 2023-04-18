@@ -7,8 +7,6 @@ import (
 // AppScope 
 type AppScope struct {
     Entity
-    // Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
-    TypeEscaped *string
 }
 // NewAppScope instantiates a new appScope and sets the default values.
 func NewAppScope()(*AppScope) {

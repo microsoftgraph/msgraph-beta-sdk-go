@@ -46,6 +46,17 @@ type ConfigurationPoliciesItemAssignmentsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementConfigurationPolicyAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
+func (m *ConfigurationPoliciesItemAssignmentsRequestBuilder) ByDeviceManagementConfigurationPolicyAssignmentId(deviceManagementConfigurationPolicyAssignmentId string)(*ConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementConfigurationPolicyAssignmentId != "" {
+        urlTplParams["deviceManagementConfigurationPolicyAssignment%2Did"] = deviceManagementConfigurationPolicyAssignmentId
+    }
+    return NewConfigurationPoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConfigurationPoliciesItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewConfigurationPoliciesItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPoliciesItemAssignmentsRequestBuilder) {
     m := &ConfigurationPoliciesItemAssignmentsRequestBuilder{

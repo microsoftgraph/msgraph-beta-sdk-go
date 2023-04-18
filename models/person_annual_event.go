@@ -7,8 +7,6 @@ import (
 // PersonAnnualEvent 
 type PersonAnnualEvent struct {
     ItemFacet
-    // The type property
-    TypeEscaped *PersonAnnualEventType
 }
 // NewPersonAnnualEvent instantiates a new PersonAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {

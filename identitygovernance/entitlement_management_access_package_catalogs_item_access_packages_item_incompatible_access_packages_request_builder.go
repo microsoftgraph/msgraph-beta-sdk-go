@@ -39,6 +39,17 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibl
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderGetQueryParameters
 }
+// ByAccessPackageId1 gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageCatalogs.item.accessPackages.item.incompatibleAccessPackages.item collection
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) ByAccessPackageId1(accessPackageId1 string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesAccessPackageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageId1 != "" {
+        urlTplParams["accessPackage%2Did1"] = accessPackageId1
+    }
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderInternal instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) {
     m := &EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder{

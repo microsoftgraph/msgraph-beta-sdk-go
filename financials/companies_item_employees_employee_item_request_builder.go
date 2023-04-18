@@ -112,17 +112,6 @@ func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Patch(ctx context.Con
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) Picture()(*CompaniesItemEmployeesItemPictureRequestBuilder) {
     return NewCompaniesItemEmployeesItemPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PictureById provides operations to manage the picture property of the microsoft.graph.employee entity.
-func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) PictureById(id string)(*CompaniesItemEmployeesItemPicturePictureItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property employees for financials
 func (m *CompaniesItemEmployeesEmployeeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemEmployeesEmployeeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

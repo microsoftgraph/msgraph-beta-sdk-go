@@ -46,6 +46,17 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) ByUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionId string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsAppHealthAppPerformanceByAppVersionId != "" {
+        urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByAppVersion%2Did"] = userExperienceAnalyticsAppHealthAppPerformanceByAppVersionId
+    }
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder{

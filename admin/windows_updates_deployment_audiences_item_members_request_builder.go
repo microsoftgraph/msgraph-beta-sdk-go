@@ -46,6 +46,17 @@ type WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUpdatableAssetId provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if updatableAssetId != "" {
+        urlTplParams["updatableAsset%2Did"] = updatableAssetId
+    }
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
     m := &WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder{

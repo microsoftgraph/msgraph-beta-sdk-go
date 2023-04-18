@@ -46,6 +46,17 @@ type VirtualEndpointOnPremisesConnectionsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcOnPremisesConnectionId provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointOnPremisesConnectionsRequestBuilder) ByCloudPcOnPremisesConnectionId(cloudPcOnPremisesConnectionId string)(*VirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcOnPremisesConnectionId != "" {
+        urlTplParams["cloudPcOnPremisesConnection%2Did"] = cloudPcOnPremisesConnectionId
+    }
+    return NewVirtualEndpointOnPremisesConnectionsCloudPcOnPremisesConnectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal instantiates a new OnPremisesConnectionsRequestBuilder and sets the default values.
 func NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {
     m := &VirtualEndpointOnPremisesConnectionsRequestBuilder{

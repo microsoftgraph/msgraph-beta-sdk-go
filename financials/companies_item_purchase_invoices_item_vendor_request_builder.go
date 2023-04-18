@@ -124,17 +124,6 @@ func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PaymentTerm()(*C
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) Picture()(*CompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilder) {
     return NewCompaniesItemPurchaseInvoicesItemVendorPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PictureById provides operations to manage the picture property of the microsoft.graph.vendor entity.
-func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) PictureById(id string)(*CompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemPurchaseInvoicesItemVendorPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property vendor for financials
 func (m *CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

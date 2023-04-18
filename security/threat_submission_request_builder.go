@@ -74,46 +74,13 @@ func (m *ThreatSubmissionRequestBuilder) Delete(ctx context.Context, requestConf
 func (m *ThreatSubmissionRequestBuilder) EmailThreats()(*ThreatSubmissionEmailThreatsRequestBuilder) {
     return NewThreatSubmissionEmailThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EmailThreatsById provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-func (m *ThreatSubmissionRequestBuilder) EmailThreatsById(id string)(*ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["emailThreatSubmission%2Did"] = id
-    }
-    return NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // EmailThreatSubmissionPolicies provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPolicies()(*ThreatSubmissionEmailThreatSubmissionPoliciesRequestBuilder) {
     return NewThreatSubmissionEmailThreatSubmissionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EmailThreatSubmissionPoliciesById provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
-func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPoliciesById(id string)(*ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["emailThreatSubmissionPolicy%2Did"] = id
-    }
-    return NewThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // FileThreats provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) FileThreats()(*ThreatSubmissionFileThreatsRequestBuilder) {
     return NewThreatSubmissionFileThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// FileThreatsById provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-func (m *ThreatSubmissionRequestBuilder) FileThreatsById(id string)(*ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["fileThreatSubmission%2Did"] = id
-    }
-    return NewThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 func (m *ThreatSubmissionRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatSubmissionRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatSubmissionRootable, error) {
@@ -201,15 +168,4 @@ func (m *ThreatSubmissionRequestBuilder) ToPatchRequestInformation(ctx context.C
 // UrlThreats provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) UrlThreats()(*ThreatSubmissionUrlThreatsRequestBuilder) {
     return NewThreatSubmissionUrlThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UrlThreatsById provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-func (m *ThreatSubmissionRequestBuilder) UrlThreatsById(id string)(*ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["urlThreatSubmission%2Did"] = id
-    }
-    return NewThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

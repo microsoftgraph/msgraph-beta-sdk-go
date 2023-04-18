@@ -49,17 +49,6 @@ func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) Assign()(*Device
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) Assignments()(*DeviceShellScriptsItemAssignmentsRequestBuilder) {
     return NewDeviceShellScriptsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceShellScript entity.
-func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) AssignmentsById(id string)(*DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementScriptAssignment%2Did"] = id
-    }
-    return NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewDeviceShellScriptsDeviceShellScriptItemRequestBuilderInternal instantiates a new DeviceShellScriptItemRequestBuilder and sets the default values.
 func NewDeviceShellScriptsDeviceShellScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsDeviceShellScriptItemRequestBuilder) {
     m := &DeviceShellScriptsDeviceShellScriptItemRequestBuilder{
@@ -93,17 +82,6 @@ func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) Delete(ctx conte
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) DeviceRunStates()(*DeviceShellScriptsItemDeviceRunStatesRequestBuilder) {
     return NewDeviceShellScriptsItemDeviceRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceShellScript entity.
-func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceShellScriptsItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementScriptDeviceState%2Did"] = id
-    }
-    return NewDeviceShellScriptsItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the list of device shell scripts associated with the tenant.
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceShellScriptsDeviceShellScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceShellScriptable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -126,17 +104,6 @@ func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) Get(ctx context.
 // GroupAssignments provides operations to manage the groupAssignments property of the microsoft.graph.deviceShellScript entity.
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) GroupAssignments()(*DeviceShellScriptsItemGroupAssignmentsRequestBuilder) {
     return NewDeviceShellScriptsItemGroupAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.deviceShellScript entity.
-func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) GroupAssignmentsById(id string)(*DeviceShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementScriptGroupAssignment%2Did"] = id
-    }
-    return NewDeviceShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property deviceShellScripts in deviceManagement
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceShellScriptable, requestConfiguration *DeviceShellScriptsDeviceShellScriptItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceShellScriptable, error) {
@@ -209,15 +176,4 @@ func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) ToPatchRequestIn
 // UserRunStates provides operations to manage the userRunStates property of the microsoft.graph.deviceShellScript entity.
 func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) UserRunStates()(*DeviceShellScriptsItemUserRunStatesRequestBuilder) {
     return NewDeviceShellScriptsItemUserRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UserRunStatesById provides operations to manage the userRunStates property of the microsoft.graph.deviceShellScript entity.
-func (m *DeviceShellScriptsDeviceShellScriptItemRequestBuilder) UserRunStatesById(id string)(*DeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementScriptUserState%2Did"] = id
-    }
-    return NewDeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

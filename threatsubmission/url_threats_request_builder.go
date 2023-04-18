@@ -46,6 +46,17 @@ type UrlThreatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUrlThreatSubmissionId provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+func (m *UrlThreatsRequestBuilder) ByUrlThreatSubmissionId(urlThreatSubmissionId string)(*UrlThreatsUrlThreatSubmissionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if urlThreatSubmissionId != "" {
+        urlTplParams["urlThreatSubmission%2Did"] = urlThreatSubmissionId
+    }
+    return NewUrlThreatsUrlThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUrlThreatsRequestBuilderInternal instantiates a new UrlThreatsRequestBuilder and sets the default values.
 func NewUrlThreatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UrlThreatsRequestBuilder) {
     m := &UrlThreatsRequestBuilder{

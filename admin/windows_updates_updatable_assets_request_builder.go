@@ -46,6 +46,17 @@ type WindowsUpdatesUpdatableAssetsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUpdatableAssetId provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if updatableAssetId != "" {
+        urlTplParams["updatableAsset%2Did"] = updatableAssetId
+    }
+    return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
     m := &WindowsUpdatesUpdatableAssetsRequestBuilder{

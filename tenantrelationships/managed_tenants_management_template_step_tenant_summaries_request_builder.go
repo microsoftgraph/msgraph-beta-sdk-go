@@ -46,6 +46,17 @@ type ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagementTemplateStepTenantSummaryId provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) ByManagementTemplateStepTenantSummaryId(managementTemplateStepTenantSummaryId string)(*ManagedTenantsManagementTemplateStepTenantSummariesManagementTemplateStepTenantSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managementTemplateStepTenantSummaryId != "" {
+        urlTplParams["managementTemplateStepTenantSummary%2Did"] = managementTemplateStepTenantSummaryId
+    }
+    return NewManagedTenantsManagementTemplateStepTenantSummariesManagementTemplateStepTenantSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagementTemplateStepTenantSummariesRequestBuilderInternal instantiates a new ManagementTemplateStepTenantSummariesRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplateStepTenantSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) {
     m := &ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder{

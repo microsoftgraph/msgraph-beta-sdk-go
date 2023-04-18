@@ -93,17 +93,6 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequest
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) HostedContents()(*ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessageHostedContent%2Did"] = id
-    }
-    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property replies in teamTemplateDefinition
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

@@ -9,8 +9,6 @@ import (
 type PersonDataSource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The type of data source.
-    TypeEscaped *string
 }
 // NewPersonDataSource instantiates a new personDataSource and sets the default values.
 func NewPersonDataSource()(*PersonDataSource) {

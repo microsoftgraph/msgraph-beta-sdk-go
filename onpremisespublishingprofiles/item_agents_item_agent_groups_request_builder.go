@@ -39,6 +39,17 @@ type ItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAgentsItemAgentGroupsRequestBuilderGetQueryParameters
 }
+// ByOnPremisesAgentGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item.agentGroups.item collection
+func (m *ItemAgentsItemAgentGroupsRequestBuilder) ByOnPremisesAgentGroupId(onPremisesAgentGroupId string)(*ItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if onPremisesAgentGroupId != "" {
+        urlTplParams["onPremisesAgentGroup%2Did"] = onPremisesAgentGroupId
+    }
+    return NewItemAgentsItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAgentsItemAgentGroupsRequestBuilderInternal instantiates a new AgentGroupsRequestBuilder and sets the default values.
 func NewItemAgentsItemAgentGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentsItemAgentGroupsRequestBuilder) {
     m := &ItemAgentsItemAgentGroupsRequestBuilder{

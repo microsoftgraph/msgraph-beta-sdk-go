@@ -39,6 +39,17 @@ type CompaniesItemAgedAccountsPayableRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *CompaniesItemAgedAccountsPayableRequestBuilderGetQueryParameters
 }
+// ByAgedAccountsPayableId provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
+func (m *CompaniesItemAgedAccountsPayableRequestBuilder) ByAgedAccountsPayableId(agedAccountsPayableId string)(*CompaniesItemAgedAccountsPayableAgedAccountsPayableItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if agedAccountsPayableId != "" {
+        urlTplParams["agedAccountsPayable%2Did"] = agedAccountsPayableId
+    }
+    return NewCompaniesItemAgedAccountsPayableAgedAccountsPayableItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemAgedAccountsPayableRequestBuilderInternal instantiates a new AgedAccountsPayableRequestBuilder and sets the default values.
 func NewCompaniesItemAgedAccountsPayableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAgedAccountsPayableRequestBuilder) {
     m := &CompaniesItemAgedAccountsPayableRequestBuilder{

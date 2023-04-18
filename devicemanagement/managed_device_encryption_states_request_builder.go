@@ -46,6 +46,17 @@ type ManagedDeviceEncryptionStatesRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedDeviceEncryptionStateId provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
+func (m *ManagedDeviceEncryptionStatesRequestBuilder) ByManagedDeviceEncryptionStateId(managedDeviceEncryptionStateId string)(*ManagedDeviceEncryptionStatesManagedDeviceEncryptionStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceEncryptionStateId != "" {
+        urlTplParams["managedDeviceEncryptionState%2Did"] = managedDeviceEncryptionStateId
+    }
+    return NewManagedDeviceEncryptionStatesManagedDeviceEncryptionStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedDeviceEncryptionStatesRequestBuilderInternal instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.
 func NewManagedDeviceEncryptionStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceEncryptionStatesRequestBuilder) {
     m := &ManagedDeviceEncryptionStatesRequestBuilder{

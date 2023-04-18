@@ -46,6 +46,17 @@ type ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAssignmentFilterEvaluationStatusDetailsId provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.
+func (m *ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder) ByAssignmentFilterEvaluationStatusDetailsId(assignmentFilterEvaluationStatusDetailsId string)(*ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsAssignmentFilterEvaluationStatusDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if assignmentFilterEvaluationStatusDetailsId != "" {
+        urlTplParams["assignmentFilterEvaluationStatusDetails%2Did"] = assignmentFilterEvaluationStatusDetailsId
+    }
+    return NewManagedDevicesItemAssignmentFilterEvaluationStatusDetailsAssignmentFilterEvaluationStatusDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal instantiates a new AssignmentFilterEvaluationStatusDetailsRequestBuilder and sets the default values.
 func NewManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder) {
     m := &ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder{

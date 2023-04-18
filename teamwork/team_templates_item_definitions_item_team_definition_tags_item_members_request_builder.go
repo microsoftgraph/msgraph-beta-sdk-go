@@ -46,6 +46,17 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamworkTagMemberId provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder) ByTeamworkTagMemberId(teamworkTagMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamworkTagMemberId != "" {
+        urlTplParams["teamworkTagMember%2Did"] = teamworkTagMemberId
+    }
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersRequestBuilder{

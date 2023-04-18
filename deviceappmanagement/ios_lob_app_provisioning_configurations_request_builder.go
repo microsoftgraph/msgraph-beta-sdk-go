@@ -46,6 +46,17 @@ type IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIosLobAppProvisioningConfigurationId provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) ByIosLobAppProvisioningConfigurationId(iosLobAppProvisioningConfigurationId string)(*IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if iosLobAppProvisioningConfigurationId != "" {
+        urlTplParams["iosLobAppProvisioningConfiguration%2Did"] = iosLobAppProvisioningConfigurationId
+    }
+    return NewIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIosLobAppProvisioningConfigurationsRequestBuilderInternal instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosLobAppProvisioningConfigurationsRequestBuilder) {
     m := &IosLobAppProvisioningConfigurationsRequestBuilder{

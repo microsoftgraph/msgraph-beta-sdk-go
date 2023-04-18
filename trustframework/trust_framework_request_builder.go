@@ -70,17 +70,6 @@ func (m *TrustFrameworkRequestBuilder) Get(ctx context.Context, requestConfigura
 func (m *TrustFrameworkRequestBuilder) KeySets()(*KeySetsRequestBuilder) {
     return NewKeySetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// KeySetsById provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
-func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*KeySetsTrustFrameworkKeySetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["trustFrameworkKeySet%2Did"] = id
-    }
-    return NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update trustFramework
 func (m *TrustFrameworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable, requestConfiguration *TrustFrameworkRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -103,17 +92,6 @@ func (m *TrustFrameworkRequestBuilder) Patch(ctx context.Context, body ie233ee76
 // Policies provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
 func (m *TrustFrameworkRequestBuilder) Policies()(*PoliciesRequestBuilder) {
     return NewPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PoliciesById provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
-func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*PoliciesTrustFrameworkPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["trustFrameworkPolicy%2Did"] = id
-    }
-    return NewPoliciesTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get trustFramework
 func (m *TrustFrameworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TrustFrameworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

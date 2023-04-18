@@ -38,17 +38,6 @@ type AppRequestBuilderPatchRequestConfiguration struct {
 func (m *AppRequestBuilder) Calls()(*CallsRequestBuilder) {
     return NewCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CallsById provides operations to manage the calls property of the microsoft.graph.commsApplication entity.
-func (m *AppRequestBuilder) CallsById(id string)(*CallsCallItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["call%2Did"] = id
-    }
-    return NewCallsCallItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewAppRequestBuilderInternal instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRequestBuilder) {
     m := &AppRequestBuilder{
@@ -84,17 +73,6 @@ func (m *AppRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRe
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
 func (m *AppRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
     return NewOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OnlineMeetingsById provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
-func (m *AppRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeetingsOnlineMeetingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onlineMeeting%2Did"] = id
-    }
-    return NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update app
 func (m *AppRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, requestConfiguration *AppRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, error) {

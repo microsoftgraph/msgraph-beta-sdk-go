@@ -45,17 +45,6 @@ type TemplatesDeviceManagementTemplateItemRequestBuilderPatchRequestConfiguratio
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Categories()(*TemplatesItemCategoriesRequestBuilder) {
     return NewTemplatesItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementTemplateSettingCategory%2Did"] = id
-    }
-    return NewTemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CompareWithTemplateId provides operations to call the compare method.
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
     return NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, templateId)
@@ -116,17 +105,6 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Get(ctx context.Co
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableTo()(*TemplatesItemMigratableToRequestBuilder) {
     return NewTemplatesItemMigratableToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MigratableToById provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableToById(id string)(*TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementTemplate%2Did1"] = id
-    }
-    return NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property templates in deviceManagement
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable, requestConfiguration *TemplatesDeviceManagementTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -149,17 +127,6 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Patch(ctx context.
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Settings()(*TemplatesItemSettingsRequestBuilder) {
     return NewTemplatesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*TemplatesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementSettingInstance%2Did"] = id
-    }
-    return NewTemplatesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property templates for deviceManagement
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceManagementTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -105,17 +105,6 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) Health()(*DevicesItemHealthReq
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Operations()(*DevicesItemOperationsRequestBuilder) {
     return NewDevicesItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OperationsById provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.
-func (m *DevicesTeamworkDeviceItemRequestBuilder) OperationsById(id string)(*DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamworkDeviceOperation%2Did"] = id
-    }
-    return NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property devices in teamwork
 func (m *DevicesTeamworkDeviceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable, requestConfiguration *DevicesTeamworkDeviceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

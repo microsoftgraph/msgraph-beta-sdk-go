@@ -46,6 +46,17 @@ type AppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAppleEnrollmentProfileAssignmentId provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.
+func (m *AppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilder) ByAppleEnrollmentProfileAssignmentId(appleEnrollmentProfileAssignmentId string)(*AppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if appleEnrollmentProfileAssignmentId != "" {
+        urlTplParams["appleEnrollmentProfileAssignment%2Did"] = appleEnrollmentProfileAssignmentId
+    }
+    return NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsAppleEnrollmentProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilder) {
     m := &AppleUserInitiatedEnrollmentProfilesItemAssignmentsRequestBuilder{

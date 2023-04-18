@@ -46,6 +46,17 @@ type ClassifyTextJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByJobResponseBaseId provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.
+func (m *ClassifyTextJobsRequestBuilder) ByJobResponseBaseId(jobResponseBaseId string)(*ClassifyTextJobsJobResponseBaseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if jobResponseBaseId != "" {
+        urlTplParams["jobResponseBase%2Did"] = jobResponseBaseId
+    }
+    return NewClassifyTextJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClassifyTextJobsRequestBuilderInternal instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.
 func NewClassifyTextJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassifyTextJobsRequestBuilder) {
     m := &ClassifyTextJobsRequestBuilder{

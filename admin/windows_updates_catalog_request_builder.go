@@ -74,17 +74,6 @@ func (m *WindowsUpdatesCatalogRequestBuilder) Delete(ctx context.Context, reques
 func (m *WindowsUpdatesCatalogRequestBuilder) Entries()(*WindowsUpdatesCatalogEntriesRequestBuilder) {
     return NewWindowsUpdatesCatalogEntriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EntriesById provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
-func (m *WindowsUpdatesCatalogRequestBuilder) EntriesById(id string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["catalogEntry%2Did"] = id
-    }
-    return NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *WindowsUpdatesCatalogRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesCatalogRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

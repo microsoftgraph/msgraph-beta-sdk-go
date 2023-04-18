@@ -112,17 +112,6 @@ func (m *ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigu
 func (m *ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilder) SettingDefinitions()(*ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsRequestBuilder) {
     return NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSettingTemplate entity.
-func (m *ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilder) SettingDefinitionsById(id string)(*ConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
-    }
-    return NewConfigurationPolicyTemplatesItemSettingTemplatesItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property settingTemplates for deviceManagement
 func (m *ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

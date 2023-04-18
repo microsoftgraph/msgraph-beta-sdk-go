@@ -46,6 +46,17 @@ type ItemProfileProjectsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByProjectParticipationId provides operations to manage the projects property of the microsoft.graph.profile entity.
+func (m *ItemProfileProjectsRequestBuilder) ByProjectParticipationId(projectParticipationId string)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if projectParticipationId != "" {
+        urlTplParams["projectParticipation%2Did"] = projectParticipationId
+    }
+    return NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileProjectsRequestBuilderInternal instantiates a new ProjectsRequestBuilder and sets the default values.
 func NewItemProfileProjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileProjectsRequestBuilder) {
     m := &ItemProfileProjectsRequestBuilder{

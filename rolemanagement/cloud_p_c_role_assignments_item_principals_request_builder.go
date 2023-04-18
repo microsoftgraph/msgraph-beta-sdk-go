@@ -39,6 +39,17 @@ type CloudPCRoleAssignmentsItemPrincipalsRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *CloudPCRoleAssignmentsItemPrincipalsRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *CloudPCRoleAssignmentsItemPrincipalsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*CloudPCRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewCloudPCRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCloudPCRoleAssignmentsItemPrincipalsRequestBuilderInternal instantiates a new PrincipalsRequestBuilder and sets the default values.
 func NewCloudPCRoleAssignmentsItemPrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsItemPrincipalsRequestBuilder) {
     m := &CloudPCRoleAssignmentsItemPrincipalsRequestBuilder{

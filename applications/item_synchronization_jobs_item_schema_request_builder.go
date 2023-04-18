@@ -74,17 +74,6 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Delete(ctx context.Con
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Directories()(*ItemSynchronizationJobsItemSchemaDirectoriesRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaDirectoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DirectoriesById provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
-func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) DirectoriesById(id string)(*ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryDefinition%2Did"] = id
-    }
-    return NewItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // FilterOperators provides operations to call the filterOperators method.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) FilterOperators()(*ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

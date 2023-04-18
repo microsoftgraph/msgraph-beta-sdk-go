@@ -39,6 +39,17 @@ type CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetReque
     // Request query parameters
     QueryParameters *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetQueryParameters
 }
+// BySalesCreditMemoLineId provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.
+func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) BySalesCreditMemoLineId(salesCreditMemoLineId string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if salesCreditMemoLineId != "" {
+        urlTplParams["salesCreditMemoLine%2Did"] = salesCreditMemoLineId
+    }
+    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) {
     m := &CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder{

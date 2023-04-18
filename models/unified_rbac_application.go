@@ -80,7 +80,7 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
+// GetResourceNamespaces gets the resourceNamespaces property value. Resource that represents a collection of related actions.
 func (m *UnifiedRbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
     val, err := m.GetBackingStore().Get("resourceNamespaces")
     if err != nil {
@@ -91,7 +91,7 @@ func (m *UnifiedRbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNa
     }
     return nil
 }
-// GetRoleAssignments gets the roleAssignments property value. The roleAssignments property
+// GetRoleAssignments gets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *UnifiedRbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -102,7 +102,7 @@ func (m *UnifiedRbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentabl
     }
     return nil
 }
-// GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
+// GetRoleDefinitions gets the roleDefinitions property value. The roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -113,7 +113,7 @@ func (m *UnifiedRbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionabl
     }
     return nil
 }
-// GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. The transitiveRoleAssignments property
+// GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. Resource to grant access to users or groups that are transitive.
 func (m *UnifiedRbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("transitiveRoleAssignments")
     if err != nil {
@@ -172,28 +172,28 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
+// SetResourceNamespaces sets the resourceNamespaces property value. Resource that represents a collection of related actions.
 func (m *UnifiedRbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
     err := m.GetBackingStore().Set("resourceNamespaces", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleAssignments sets the roleAssignments property value. The roleAssignments property
+// SetRoleAssignments sets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *UnifiedRbacApplication) SetRoleAssignments(value []UnifiedRoleAssignmentable)() {
     err := m.GetBackingStore().Set("roleAssignments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleDefinitions sets the roleDefinitions property value. The roleDefinitions property
+// SetRoleDefinitions sets the roleDefinitions property value. The roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinitions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTransitiveRoleAssignments sets the transitiveRoleAssignments property value. The transitiveRoleAssignments property
+// SetTransitiveRoleAssignments sets the transitiveRoleAssignments property value. Resource to grant access to users or groups that are transitive.
 func (m *UnifiedRbacApplication) SetTransitiveRoleAssignments(value []UnifiedRoleAssignmentable)() {
     err := m.GetBackingStore().Set("transitiveRoleAssignments", value)
     if err != nil {

@@ -74,17 +74,6 @@ func (m *DeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemR
 func (m *DeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStates()(*DeviceShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) {
     return NewDeviceShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
-func (m *DeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementScriptDeviceState%2Did"] = id
-    }
-    return NewDeviceShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get list of run states for this script across all users.
 func (m *DeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceShellScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

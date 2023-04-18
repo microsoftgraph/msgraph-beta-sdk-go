@@ -93,17 +93,6 @@ func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Get(ctx context.Co
 func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Indicators()(*ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) {
     return NewThreatIntelligenceArticlesItemIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IndicatorsById provides operations to manage the indicators property of the microsoft.graph.security.article entity.
-func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) IndicatorsById(id string)(*ThreatIntelligenceArticlesItemIndicatorsArticleIndicatorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["articleIndicator%2Did"] = id
-    }
-    return NewThreatIntelligenceArticlesItemIndicatorsArticleIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property articles in security
 func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Articleable, requestConfiguration *ThreatIntelligenceArticlesArticleItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Articleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

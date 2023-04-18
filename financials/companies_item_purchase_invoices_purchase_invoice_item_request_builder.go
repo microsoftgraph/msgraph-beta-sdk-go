@@ -97,17 +97,6 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PostPat
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PurchaseInvoiceLines()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) {
     return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PurchaseInvoiceLinesById provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
-func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PurchaseInvoiceLinesById(id string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["purchaseInvoiceLine%2Did"] = id
-    }
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get purchaseInvoices from financials
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

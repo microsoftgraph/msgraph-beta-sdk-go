@@ -74,17 +74,6 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Delete(ctx conte
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) ExecutionScope()(*LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExecutionScopeById provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) ExecutionScopeById(id string)(*LifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["user%2Did"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the workflows in the lifecycle workflows instance.
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -139,31 +128,9 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Patch(ctx contex
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Runs()(*LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RunsById provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) RunsById(id string)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["run%2Did"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // TaskReports provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) TaskReports()(*LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TaskReportsById provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) TaskReportsById(id string)(*LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["taskReport%2Did"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property workflows for identityGovernance
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -214,29 +181,7 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) ToPatchRequestIn
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) UserProcessingResults()(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// UserProcessingResultsById provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) UserProcessingResultsById(id string)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userProcessingResult%2Did"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Versions provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Versions()(*LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// VersionsById provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) VersionsById(id string)(*LifecycleWorkflowsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workflowVersion%2DversionNumber"] = id
-    }
-    return NewLifecycleWorkflowsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

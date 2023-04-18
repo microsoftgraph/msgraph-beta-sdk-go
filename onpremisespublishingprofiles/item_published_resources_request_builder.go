@@ -46,6 +46,17 @@ type ItemPublishedResourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPublishedResourceId provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.
+func (m *ItemPublishedResourcesRequestBuilder) ByPublishedResourceId(publishedResourceId string)(*ItemPublishedResourcesPublishedResourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if publishedResourceId != "" {
+        urlTplParams["publishedResource%2Did"] = publishedResourceId
+    }
+    return NewItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPublishedResourcesRequestBuilderInternal instantiates a new PublishedResourcesRequestBuilder and sets the default values.
 func NewItemPublishedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPublishedResourcesRequestBuilder) {
     m := &ItemPublishedResourcesRequestBuilder{

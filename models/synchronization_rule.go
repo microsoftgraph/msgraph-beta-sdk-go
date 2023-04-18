@@ -38,6 +38,17 @@ func (m *SynchronizationRule) GetAdditionalData()(map[string]any) {
 func (m *SynchronizationRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetContainerFilter gets the containerFilter property value. The containerFilter property
+func (m *SynchronizationRule) GetContainerFilter()(ContainerFilterable) {
+    val, err := m.GetBackingStore().Get("containerFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContainerFilterable)
+    }
+    return nil
+}
 // GetEditable gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
 func (m *SynchronizationRule) GetEditable()(*bool) {
     val, err := m.GetBackingStore().Get("editable")
@@ -52,6 +63,16 @@ func (m *SynchronizationRule) GetEditable()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["containerFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContainerFilterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContainerFilter(val.(ContainerFilterable))
+        }
+        return nil
+    }
     res["editable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -59,6 +80,16 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetEditable(val)
+        }
+        return nil
+    }
+    res["groupFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateGroupFilterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGroupFilter(val.(GroupFilterable))
         }
         return nil
     }
@@ -152,6 +183,17 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetGroupFilter gets the groupFilter property value. The groupFilter property
+func (m *SynchronizationRule) GetGroupFilter()(GroupFilterable) {
+    val, err := m.GetBackingStore().Get("groupFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(GroupFilterable)
+    }
+    return nil
+}
 // GetId gets the id property value. Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
 func (m *SynchronizationRule) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -243,7 +285,19 @@ func (m *SynchronizationRule) GetTargetDirectoryName()(*string) {
 // Serialize serializes information the current object
 func (m *SynchronizationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("containerFilter", m.GetContainerFilter())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("editable", m.GetEditable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("groupFilter", m.GetGroupFilter())
         if err != nil {
             return err
         }
@@ -323,9 +377,23 @@ func (m *SynchronizationRule) SetAdditionalData(value map[string]any)() {
 func (m *SynchronizationRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetContainerFilter sets the containerFilter property value. The containerFilter property
+func (m *SynchronizationRule) SetContainerFilter(value ContainerFilterable)() {
+    err := m.GetBackingStore().Set("containerFilter", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEditable sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
 func (m *SynchronizationRule) SetEditable(value *bool)() {
     err := m.GetBackingStore().Set("editable", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetGroupFilter sets the groupFilter property value. The groupFilter property
+func (m *SynchronizationRule) SetGroupFilter(value GroupFilterable)() {
+    err := m.GetBackingStore().Set("groupFilter", value)
     if err != nil {
         panic(err)
     }
@@ -392,7 +460,9 @@ type SynchronizationRuleable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetContainerFilter()(ContainerFilterable)
     GetEditable()(*bool)
+    GetGroupFilter()(GroupFilterable)
     GetId()(*string)
     GetMetadata()([]StringKeyStringValuePairable)
     GetName()(*string)
@@ -402,7 +472,9 @@ type SynchronizationRuleable interface {
     GetSourceDirectoryName()(*string)
     GetTargetDirectoryName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetContainerFilter(value ContainerFilterable)()
     SetEditable(value *bool)()
+    SetGroupFilter(value GroupFilterable)()
     SetId(value *string)()
     SetMetadata(value []StringKeyStringValuePairable)()
     SetName(value *string)()

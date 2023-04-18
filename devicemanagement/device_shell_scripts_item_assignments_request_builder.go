@@ -46,6 +46,17 @@ type DeviceShellScriptsItemAssignmentsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementScriptAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceShellScript entity.
+func (m *DeviceShellScriptsItemAssignmentsRequestBuilder) ByDeviceManagementScriptAssignmentId(deviceManagementScriptAssignmentId string)(*DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementScriptAssignmentId != "" {
+        urlTplParams["deviceManagementScriptAssignment%2Did"] = deviceManagementScriptAssignmentId
+    }
+    return NewDeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceShellScriptsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemAssignmentsRequestBuilder) {
     m := &DeviceShellScriptsItemAssignmentsRequestBuilder{

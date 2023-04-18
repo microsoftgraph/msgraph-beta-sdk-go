@@ -46,6 +46,17 @@ type ItemServicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBookingServiceId provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
+func (m *ItemServicesRequestBuilder) ByBookingServiceId(bookingServiceId string)(*ItemServicesBookingServiceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bookingServiceId != "" {
+        urlTplParams["bookingService%2Did"] = bookingServiceId
+    }
+    return NewItemServicesBookingServiceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemServicesRequestBuilderInternal instantiates a new ServicesRequestBuilder and sets the default values.
 func NewItemServicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemServicesRequestBuilder) {
     m := &ItemServicesRequestBuilder{

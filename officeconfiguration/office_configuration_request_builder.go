@@ -38,17 +38,6 @@ type OfficeConfigurationRequestBuilderPatchRequestConfiguration struct {
 func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*ClientConfigurationsRequestBuilder) {
     return NewClientConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ClientConfigurationsById provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
-func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["officeClientConfiguration%2Did"] = id
-    }
-    return NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewOfficeConfigurationRequestBuilderInternal instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
 func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OfficeConfigurationRequestBuilder) {
     m := &OfficeConfigurationRequestBuilder{

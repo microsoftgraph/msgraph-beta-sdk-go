@@ -46,6 +46,17 @@ type ItemProfilePatentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemPatentId provides operations to manage the patents property of the microsoft.graph.profile entity.
+func (m *ItemProfilePatentsRequestBuilder) ByItemPatentId(itemPatentId string)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemPatentId != "" {
+        urlTplParams["itemPatent%2Did"] = itemPatentId
+    }
+    return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfilePatentsRequestBuilderInternal instantiates a new PatentsRequestBuilder and sets the default values.
 func NewItemProfilePatentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePatentsRequestBuilder) {
     m := &ItemProfilePatentsRequestBuilder{

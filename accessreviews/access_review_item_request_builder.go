@@ -62,17 +62,6 @@ func NewAccessReviewItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *AccessReviewItemRequestBuilder) Decisions()(*ItemDecisionsRequestBuilder) {
     return NewItemDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*ItemDecisionsAccessReviewDecisionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewDecision%2Did"] = id
-    }
-    return NewItemDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete in the Azure AD access reviews feature, delete an accessReview object.
 // [Find more info here]
 // 
@@ -118,31 +107,9 @@ func (m *AccessReviewItemRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *AccessReviewItemRequestBuilder) Instances()(*ItemInstancesRequestBuilder) {
     return NewItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// InstancesById provides operations to manage the instances property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*ItemInstancesAccessReviewItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReview%2Did1"] = id
-    }
-    return NewItemInstancesAccessReviewItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // MyDecisions provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) MyDecisions()(*ItemMyDecisionsRequestBuilder) {
     return NewItemMyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// MyDecisionsById provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewDecision%2Did"] = id
-    }
-    return NewItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch in the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
 // [Find more info here]
@@ -173,17 +140,6 @@ func (m *AccessReviewItemRequestBuilder) ResetDecisions()(*ItemResetDecisionsReq
 // Reviewers provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) Reviewers()(*ItemReviewersRequestBuilder) {
     return NewItemReviewersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ReviewersById provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewReviewer%2Did"] = id
-    }
-    return NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendReminder provides operations to call the sendReminder method.
 func (m *AccessReviewItemRequestBuilder) SendReminder()(*ItemSendReminderRequestBuilder) {

@@ -46,6 +46,17 @@ type GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyMigrationReportId provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
+func (m *GroupPolicyMigrationReportsRequestBuilder) ByGroupPolicyMigrationReportId(groupPolicyMigrationReportId string)(*GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyMigrationReportId != "" {
+        urlTplParams["groupPolicyMigrationReport%2Did"] = groupPolicyMigrationReportId
+    }
+    return NewGroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyMigrationReportsRequestBuilderInternal instantiates a new GroupPolicyMigrationReportsRequestBuilder and sets the default values.
 func NewGroupPolicyMigrationReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyMigrationReportsRequestBuilder) {
     m := &GroupPolicyMigrationReportsRequestBuilder{

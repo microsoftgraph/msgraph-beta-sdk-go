@@ -46,6 +46,17 @@ type IndustryDataRoleGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRoleGroupId provides operations to manage the roleGroups property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataRoleGroupsRequestBuilder) ByRoleGroupId(roleGroupId string)(*IndustryDataRoleGroupsRoleGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if roleGroupId != "" {
+        urlTplParams["roleGroup%2Did"] = roleGroupId
+    }
+    return NewIndustryDataRoleGroupsRoleGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIndustryDataRoleGroupsRequestBuilderInternal instantiates a new RoleGroupsRequestBuilder and sets the default values.
 func NewIndustryDataRoleGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRoleGroupsRequestBuilder) {
     m := &IndustryDataRoleGroupsRequestBuilder{

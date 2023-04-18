@@ -112,17 +112,6 @@ func (m *ComanagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequ
 func (m *ComanagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) SettingStates()(*ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) {
     return NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SettingStatesById provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
-func (m *ComanagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) SettingStatesById(id string)(*ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["securityBaselineSettingState%2Did"] = id
-    }
-    return NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property securityBaselineStates for deviceManagement
 func (m *ComanagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

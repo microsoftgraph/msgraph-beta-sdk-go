@@ -46,6 +46,17 @@ type IosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIosLobAppProvisioningConfigurationAssignmentId provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
+func (m *IosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilder) ByIosLobAppProvisioningConfigurationAssignmentId(iosLobAppProvisioningConfigurationAssignmentId string)(*IosLobAppProvisioningConfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if iosLobAppProvisioningConfigurationAssignmentId != "" {
+        urlTplParams["iosLobAppProvisioningConfigurationAssignment%2Did"] = iosLobAppProvisioningConfigurationAssignmentId
+    }
+    return NewIosLobAppProvisioningConfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilder) {
     m := &IosLobAppProvisioningConfigurationsItemAssignmentsRequestBuilder{

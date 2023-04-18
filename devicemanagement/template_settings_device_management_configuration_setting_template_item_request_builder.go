@@ -112,17 +112,6 @@ func (m *TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequest
 func (m *TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilder) SettingDefinitions()(*TemplateSettingsItemSettingDefinitionsRequestBuilder) {
     return NewTemplateSettingsItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSettingTemplate entity.
-func (m *TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilder) SettingDefinitionsById(id string)(*TemplateSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
-    }
-    return NewTemplateSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property templateSettings for deviceManagement
 func (m *TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -46,6 +46,17 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) ByUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId != "" {
+        urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails%2Did"] = userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId
+    }
+    return NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder{

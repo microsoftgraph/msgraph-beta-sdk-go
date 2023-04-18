@@ -46,6 +46,17 @@ type ComanagementEligibleDevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByComanagementEligibleDeviceId provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
+func (m *ComanagementEligibleDevicesRequestBuilder) ByComanagementEligibleDeviceId(comanagementEligibleDeviceId string)(*ComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if comanagementEligibleDeviceId != "" {
+        urlTplParams["comanagementEligibleDevice%2Did"] = comanagementEligibleDeviceId
+    }
+    return NewComanagementEligibleDevicesComanagementEligibleDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewComanagementEligibleDevicesRequestBuilderInternal instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.
 func NewComanagementEligibleDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagementEligibleDevicesRequestBuilder) {
     m := &ComanagementEligibleDevicesRequestBuilder{

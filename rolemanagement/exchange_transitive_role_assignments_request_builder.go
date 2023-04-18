@@ -11,7 +11,7 @@ import (
 type ExchangeTransitiveRoleAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeTransitiveRoleAssignmentsRequestBuilderGetQueryParameters get transitiveRoleAssignments from roleManagement
+// ExchangeTransitiveRoleAssignmentsRequestBuilderGetQueryParameters resource to grant access to users or groups that are transitive.
 type ExchangeTransitiveRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,6 +46,17 @@ type ExchangeTransitiveRoleAssignmentsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleAssignmentId provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
+func (m *ExchangeTransitiveRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentId(unifiedRoleAssignmentId string)(*ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleAssignmentId != "" {
+        urlTplParams["unifiedRoleAssignment%2Did"] = unifiedRoleAssignmentId
+    }
+    return NewExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewExchangeTransitiveRoleAssignmentsRequestBuilderInternal instantiates a new TransitiveRoleAssignmentsRequestBuilder and sets the default values.
 func NewExchangeTransitiveRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeTransitiveRoleAssignmentsRequestBuilder) {
     m := &ExchangeTransitiveRoleAssignmentsRequestBuilder{
@@ -63,7 +74,7 @@ func NewExchangeTransitiveRoleAssignmentsRequestBuilder(rawUrl string, requestAd
 func (m *ExchangeTransitiveRoleAssignmentsRequestBuilder) Count()(*ExchangeTransitiveRoleAssignmentsCountRequestBuilder) {
     return NewExchangeTransitiveRoleAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get transitiveRoleAssignments from roleManagement
+// Get resource to grant access to users or groups that are transitive.
 func (m *ExchangeTransitiveRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeTransitiveRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +112,7 @@ func (m *ExchangeTransitiveRoleAssignmentsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable), nil
 }
-// ToGetRequestInformation get transitiveRoleAssignments from roleManagement
+// ToGetRequestInformation resource to grant access to users or groups that are transitive.
 func (m *ExchangeTransitiveRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeTransitiveRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

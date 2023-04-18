@@ -46,6 +46,17 @@ type FileSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByFileSecurityProfileId provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+func (m *FileSecurityProfilesRequestBuilder) ByFileSecurityProfileId(fileSecurityProfileId string)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if fileSecurityProfileId != "" {
+        urlTplParams["fileSecurityProfile%2Did"] = fileSecurityProfileId
+    }
+    return NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewFileSecurityProfilesRequestBuilderInternal instantiates a new FileSecurityProfilesRequestBuilder and sets the default values.
 func NewFileSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileSecurityProfilesRequestBuilder) {
     m := &FileSecurityProfilesRequestBuilder{

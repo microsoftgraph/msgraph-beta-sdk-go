@@ -59,6 +59,10 @@ func (m *ItemTeamOwnersUserItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
+// MailboxSettings the mailboxSettings property
+func (m *ItemTeamOwnersUserItemRequestBuilder) MailboxSettings()(*ItemTeamOwnersItemMailboxSettingsRequestBuilder) {
+    return NewItemTeamOwnersItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
 func (m *ItemTeamOwnersUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamOwnersUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

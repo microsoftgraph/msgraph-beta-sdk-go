@@ -46,6 +46,17 @@ type TemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementTemplateId provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
+func (m *TemplatesRequestBuilder) ByDeviceManagementTemplateId(deviceManagementTemplateId string)(*TemplatesDeviceManagementTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementTemplateId != "" {
+        urlTplParams["deviceManagementTemplate%2Did"] = deviceManagementTemplateId
+    }
+    return NewTemplatesDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTemplatesRequestBuilderInternal instantiates a new TemplatesRequestBuilder and sets the default values.
 func NewTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesRequestBuilder) {
     m := &TemplatesRequestBuilder{

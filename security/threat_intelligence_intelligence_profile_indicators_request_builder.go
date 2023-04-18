@@ -46,6 +46,17 @@ type ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIntelligenceProfileIndicatorId provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) ByIntelligenceProfileIndicatorId(intelligenceProfileIndicatorId string)(*ThreatIntelligenceIntelligenceProfileIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if intelligenceProfileIndicatorId != "" {
+        urlTplParams["intelligenceProfileIndicator%2Did"] = intelligenceProfileIndicatorId
+    }
+    return NewThreatIntelligenceIntelligenceProfileIndicatorsIntelligenceProfileIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderInternal instantiates a new IntelligenceProfileIndicatorsRequestBuilder and sets the default values.
 func NewThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) {
     m := &ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder{

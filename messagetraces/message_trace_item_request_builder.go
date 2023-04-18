@@ -112,17 +112,6 @@ func (m *MessageTraceItemRequestBuilder) Patch(ctx context.Context, body ie233ee
 func (m *MessageTraceItemRequestBuilder) Recipients()(*ItemRecipientsRequestBuilder) {
     return NewItemRecipientsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RecipientsById provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
-func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*ItemRecipientsMessageRecipientItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["messageRecipient%2Did"] = id
-    }
-    return NewItemRecipientsMessageRecipientItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete entity from messageTraces
 func (m *MessageTraceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessageTraceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

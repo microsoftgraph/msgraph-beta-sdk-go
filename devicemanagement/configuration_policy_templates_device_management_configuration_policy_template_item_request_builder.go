@@ -112,17 +112,6 @@ func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplate
 func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) SettingTemplates()(*ConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilder) {
     return NewConfigurationPolicyTemplatesItemSettingTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SettingTemplatesById provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
-func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) SettingTemplatesById(id string)(*ConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationSettingTemplate%2Did"] = id
-    }
-    return NewConfigurationPolicyTemplatesItemSettingTemplatesDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property configurationPolicyTemplates for deviceManagement
 func (m *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

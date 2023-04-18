@@ -112,17 +112,6 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) Tenants()(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
     return NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TenantsById provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
-func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) TenantsById(id string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["tenantReference%2DtenantId"] = id
-    }
-    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property outboundSharedUserProfiles for directory
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

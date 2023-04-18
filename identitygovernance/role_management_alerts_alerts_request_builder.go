@@ -46,6 +46,17 @@ type RoleManagementAlertsAlertsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleManagementAlertId provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
+func (m *RoleManagementAlertsAlertsRequestBuilder) ByUnifiedRoleManagementAlertId(unifiedRoleManagementAlertId string)(*RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleManagementAlertId != "" {
+        urlTplParams["unifiedRoleManagementAlert%2Did"] = unifiedRoleManagementAlertId
+    }
+    return NewRoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRoleManagementAlertsAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
 func NewRoleManagementAlertsAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementAlertsAlertsRequestBuilder) {
     m := &RoleManagementAlertsAlertsRequestBuilder{

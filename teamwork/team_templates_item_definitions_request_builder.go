@@ -46,6 +46,17 @@ type TeamTemplatesItemDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamTemplateDefinitionId provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
+func (m *TeamTemplatesItemDefinitionsRequestBuilder) ByTeamTemplateDefinitionId(teamTemplateDefinitionId string)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamTemplateDefinitionId != "" {
+        urlTplParams["teamTemplateDefinition%2Did"] = teamTemplateDefinitionId
+    }
+    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplatesItemDefinitionsRequestBuilderInternal instantiates a new DefinitionsRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsRequestBuilder{

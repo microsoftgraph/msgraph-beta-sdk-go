@@ -74,17 +74,6 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Excludes()(*ServicePrincipalCreationPoliciesItemExcludesRequestBuilder) {
     return NewServicePrincipalCreationPoliciesItemExcludesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExcludesById provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
-func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) ExcludesById(id string)(*ServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["servicePrincipalCreationConditionSet%2Did"] = id
-    }
-    return NewServicePrincipalCreationPoliciesItemExcludesServicePrincipalCreationConditionSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get servicePrincipalCreationPolicies from policies
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -107,17 +96,6 @@ func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemReque
 // Includes provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Includes()(*ServicePrincipalCreationPoliciesItemIncludesRequestBuilder) {
     return NewServicePrincipalCreationPoliciesItemIncludesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// IncludesById provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
-func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) IncludesById(id string)(*ServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["servicePrincipalCreationConditionSet%2Did"] = id
-    }
-    return NewServicePrincipalCreationPoliciesItemIncludesServicePrincipalCreationConditionSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property servicePrincipalCreationPolicies in policies
 func (m *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable, requestConfiguration *ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable, error) {

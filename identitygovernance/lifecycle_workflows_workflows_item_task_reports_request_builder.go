@@ -40,6 +40,17 @@ type LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters
 }
+// ByTaskReportId provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) ByTaskReportId(taskReportId string)(*LifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if taskReportId != "" {
+        urlTplParams["taskReport%2Did"] = taskReportId
+    }
+    return NewLifecycleWorkflowsWorkflowsItemTaskReportsTaskReportItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderInternal instantiates a new TaskReportsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder{

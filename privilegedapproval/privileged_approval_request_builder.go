@@ -46,6 +46,17 @@ type PrivilegedApprovalRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedApprovalId provides operations to manage the collection of privilegedApproval entities.
+func (m *PrivilegedApprovalRequestBuilder) ByPrivilegedApprovalId(privilegedApprovalId string)(*PrivilegedApprovalItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedApprovalId != "" {
+        urlTplParams["privilegedApproval%2Did"] = privilegedApprovalId
+    }
+    return NewPrivilegedApprovalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegedApprovalRequestBuilderInternal instantiates a new PrivilegedApprovalRequestBuilder and sets the default values.
 func NewPrivilegedApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedApprovalRequestBuilder) {
     m := &PrivilegedApprovalRequestBuilder{

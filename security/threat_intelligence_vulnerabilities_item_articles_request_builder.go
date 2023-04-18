@@ -39,6 +39,17 @@ type ThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *ThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilderGetQueryParameters
 }
+// ByArticleId provides operations to manage the articles property of the microsoft.graph.security.vulnerability entity.
+func (m *ThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilder) ByArticleId(articleId string)(*ThreatIntelligenceVulnerabilitiesItemArticlesArticleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if articleId != "" {
+        urlTplParams["article%2Did"] = articleId
+    }
+    return NewThreatIntelligenceVulnerabilitiesItemArticlesArticleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilderInternal instantiates a new ArticlesRequestBuilder and sets the default values.
 func NewThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilder) {
     m := &ThreatIntelligenceVulnerabilitiesItemArticlesRequestBuilder{

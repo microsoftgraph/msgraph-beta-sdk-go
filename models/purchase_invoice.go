@@ -9,8 +9,6 @@ import (
 // PurchaseInvoice 
 type PurchaseInvoice struct {
     Entity
-    // The vendor property
-    VendorEscaped VendorEscapedable
 }
 // NewPurchaseInvoice instantiates a new purchaseInvoice and sets the default values.
 func NewPurchaseInvoice()(*PurchaseInvoice) {

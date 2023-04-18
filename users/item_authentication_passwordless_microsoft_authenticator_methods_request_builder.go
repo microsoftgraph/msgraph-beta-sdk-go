@@ -39,6 +39,17 @@ type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGe
     // Request query parameters
     QueryParameters *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
 }
+// ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodId provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodId(passwordlessMicrosoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if passwordlessMicrosoftAuthenticatorAuthenticationMethodId != "" {
+        urlTplParams["passwordlessMicrosoftAuthenticatorAuthenticationMethod%2Did"] = passwordlessMicrosoftAuthenticatorAuthenticationMethodId
+    }
+    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsPasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
     m := &ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder{

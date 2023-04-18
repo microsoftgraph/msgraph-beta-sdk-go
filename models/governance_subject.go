@@ -7,8 +7,6 @@ import (
 // GovernanceSubject 
 type GovernanceSubject struct {
     Entity
-    // The type of the subject. The value can be User, Group, and ServicePrincipal.
-    TypeEscaped *string
 }
 // NewGovernanceSubject instantiates a new governanceSubject and sets the default values.
 func NewGovernanceSubject()(*GovernanceSubject) {

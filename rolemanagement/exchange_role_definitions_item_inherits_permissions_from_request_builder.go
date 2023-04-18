@@ -46,6 +46,17 @@ type ExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleDefinitionId1 provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
+func (m *ExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) ByUnifiedRoleDefinitionId1(unifiedRoleDefinitionId1 string)(*ExchangeRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleDefinitionId1 != "" {
+        urlTplParams["unifiedRoleDefinition%2Did1"] = unifiedRoleDefinitionId1
+    }
+    return NewExchangeRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilderInternal instantiates a new InheritsPermissionsFromRequestBuilder and sets the default values.
 func NewExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) {
     m := &ExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilder{

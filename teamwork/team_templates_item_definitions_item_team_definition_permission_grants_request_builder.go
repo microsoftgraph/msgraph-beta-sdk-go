@@ -46,6 +46,17 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByResourceSpecificPermissionGrantId provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if resourceSpecificPermissionGrantId != "" {
+        urlTplParams["resourceSpecificPermissionGrant%2Did"] = resourceSpecificPermissionGrantId
+    }
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilderInternal instantiates a new PermissionGrantsRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder{

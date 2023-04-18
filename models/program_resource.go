@@ -7,8 +7,6 @@ import (
 // ProgramResource 
 type ProgramResource struct {
     Identity
-    // Type of the resource, indicating whether it is a group or an app.
-    TypeEscaped *string
 }
 // NewProgramResource instantiates a new ProgramResource and sets the default values.
 func NewProgramResource()(*ProgramResource) {

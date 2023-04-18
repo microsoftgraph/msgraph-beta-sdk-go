@@ -7,10 +7,8 @@ import (
 // CloudPcServicePlan 
 type CloudPcServicePlan struct {
     Entity
-    // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-    TypeEscaped *CloudPcServicePlanType
 }
-// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),

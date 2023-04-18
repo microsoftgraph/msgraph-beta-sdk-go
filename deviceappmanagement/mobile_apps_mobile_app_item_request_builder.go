@@ -49,31 +49,9 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Assign()(*MobileAppsItemAssignRe
 func (m *MobileAppsMobileAppItemRequestBuilder) Assignments()(*MobileAppsItemAssignmentsRequestBuilder) {
     return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*MobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppAssignment%2Did"] = id
-    }
-    return NewMobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Categories()(*MobileAppsItemCategoriesRequestBuilder) {
     return NewMobileAppsItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CategoriesById provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppCategory%2Did"] = id
-    }
-    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMobileAppsMobileAppItemRequestBuilderInternal instantiates a new MobileAppItemRequestBuilder and sets the default values.
 func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsMobileAppItemRequestBuilder) {
@@ -107,17 +85,6 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Delete(ctx context.Context, requ
 // DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) DeviceStatuses()(*MobileAppsItemDeviceStatusesRequestBuilder) {
     return NewMobileAppsItemDeviceStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) DeviceStatusesById(id string)(*MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppInstallStatus%2Did"] = id
-    }
-    return NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the mobile apps.
 func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, error) {
@@ -177,17 +144,6 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body 
 func (m *MobileAppsMobileAppItemRequestBuilder) Relationships()(*MobileAppsItemRelationshipsRequestBuilder) {
     return NewMobileAppsItemRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RelationshipsById provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) RelationshipsById(id string)(*MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppRelationship%2Did"] = id
-    }
-    return NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property mobileApps for deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -240,15 +196,4 @@ func (m *MobileAppsMobileAppItemRequestBuilder) UpdateRelationships()(*MobileApp
 // UserStatuses provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) UserStatuses()(*MobileAppsItemUserStatusesRequestBuilder) {
     return NewMobileAppsItemUserStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UserStatusesById provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) UserStatusesById(id string)(*MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userAppInstallStatus%2Did"] = id
-    }
-    return NewMobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

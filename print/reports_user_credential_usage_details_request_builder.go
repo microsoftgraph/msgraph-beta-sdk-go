@@ -46,6 +46,17 @@ type ReportsUserCredentialUsageDetailsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserCredentialUsageDetailsId provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
+func (m *ReportsUserCredentialUsageDetailsRequestBuilder) ByUserCredentialUsageDetailsId(userCredentialUsageDetailsId string)(*ReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userCredentialUsageDetailsId != "" {
+        urlTplParams["userCredentialUsageDetails%2Did"] = userCredentialUsageDetailsId
+    }
+    return NewReportsUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsUserCredentialUsageDetailsRequestBuilderInternal instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
 func NewReportsUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsUserCredentialUsageDetailsRequestBuilder) {
     m := &ReportsUserCredentialUsageDetailsRequestBuilder{

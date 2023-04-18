@@ -46,6 +46,17 @@ type MobileAppsItemUserStatusesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserAppInstallStatusId provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemUserStatusesRequestBuilder) ByUserAppInstallStatusId(userAppInstallStatusId string)(*MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userAppInstallStatusId != "" {
+        urlTplParams["userAppInstallStatus%2Did"] = userAppInstallStatusId
+    }
+    return NewMobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemUserStatusesRequestBuilderInternal instantiates a new UserStatusesRequestBuilder and sets the default values.
 func NewMobileAppsItemUserStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemUserStatusesRequestBuilder) {
     m := &MobileAppsItemUserStatusesRequestBuilder{

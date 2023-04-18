@@ -46,6 +46,17 @@ type ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecision
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGovernanceInsightId provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
+func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsRequestBuilder) ByGovernanceInsightId(governanceInsightId string)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsGovernanceInsightItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if governanceInsightId != "" {
+        urlTplParams["governanceInsight%2Did"] = governanceInsightId
+    }
+    return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsRequestBuilderInternal instantiates a new InsightsRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesItemStagesItemDecisionsItemInstanceDecisionsItemInsightsRequestBuilder{

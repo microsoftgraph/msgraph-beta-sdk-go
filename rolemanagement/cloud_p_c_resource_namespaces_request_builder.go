@@ -46,6 +46,17 @@ type CloudPCResourceNamespacesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRbacResourceNamespaceId provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.
+func (m *CloudPCResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceId(unifiedRbacResourceNamespaceId string)(*CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRbacResourceNamespaceId != "" {
+        urlTplParams["unifiedRbacResourceNamespace%2Did"] = unifiedRbacResourceNamespaceId
+    }
+    return NewCloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCloudPCResourceNamespacesRequestBuilderInternal instantiates a new ResourceNamespacesRequestBuilder and sets the default values.
 func NewCloudPCResourceNamespacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCResourceNamespacesRequestBuilder) {
     m := &CloudPCResourceNamespacesRequestBuilder{

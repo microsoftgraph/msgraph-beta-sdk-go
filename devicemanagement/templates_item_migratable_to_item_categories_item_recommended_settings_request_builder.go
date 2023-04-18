@@ -46,6 +46,17 @@ type TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementSettingInstanceId provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
+func (m *TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilder) ByDeviceManagementSettingInstanceId(deviceManagementSettingInstanceId string)(*TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementSettingInstanceId != "" {
+        urlTplParams["deviceManagementSettingInstance%2Did"] = deviceManagementSettingInstanceId
+    }
+    return NewTemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilderInternal instantiates a new RecommendedSettingsRequestBuilder and sets the default values.
 func NewTemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilder) {
     m := &TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsRequestBuilder{

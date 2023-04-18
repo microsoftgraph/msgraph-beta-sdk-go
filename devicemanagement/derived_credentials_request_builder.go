@@ -46,6 +46,17 @@ type DerivedCredentialsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementDerivedCredentialSettingsId provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.
+func (m *DerivedCredentialsRequestBuilder) ByDeviceManagementDerivedCredentialSettingsId(deviceManagementDerivedCredentialSettingsId string)(*DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementDerivedCredentialSettingsId != "" {
+        urlTplParams["deviceManagementDerivedCredentialSettings%2Did"] = deviceManagementDerivedCredentialSettingsId
+    }
+    return NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDerivedCredentialsRequestBuilderInternal instantiates a new DerivedCredentialsRequestBuilder and sets the default values.
 func NewDerivedCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DerivedCredentialsRequestBuilder) {
     m := &DerivedCredentialsRequestBuilder{

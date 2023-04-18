@@ -46,6 +46,17 @@ type ItemScopedRoleMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByScopedRoleMembershipId provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
+func (m *ItemScopedRoleMembersRequestBuilder) ByScopedRoleMembershipId(scopedRoleMembershipId string)(*ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if scopedRoleMembershipId != "" {
+        urlTplParams["scopedRoleMembership%2Did"] = scopedRoleMembershipId
+    }
+    return NewItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemScopedRoleMembersRequestBuilderInternal instantiates a new ScopedRoleMembersRequestBuilder and sets the default values.
 func NewItemScopedRoleMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedRoleMembersRequestBuilder) {
     m := &ItemScopedRoleMembersRequestBuilder{

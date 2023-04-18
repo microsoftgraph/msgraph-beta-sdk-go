@@ -39,6 +39,17 @@ type ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderGetQueryParameters
 }
+// ByManagedTenantAlertLogId provides operations to manage the alertLogs property of the microsoft.graph.managedTenants.managedTenantAlert entity.
+func (m *ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) ByManagedTenantAlertLogId(managedTenantAlertLogId string)(*ManagedTenantsManagedTenantAlertsItemAlertLogsManagedTenantAlertLogItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedTenantAlertLogId != "" {
+        urlTplParams["managedTenantAlertLog%2Did"] = managedTenantAlertLogId
+    }
+    return NewManagedTenantsManagedTenantAlertsItemAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderInternal instantiates a new AlertLogsRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder{

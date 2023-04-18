@@ -7,8 +7,6 @@ import (
 // DriveItem 
 type DriveItem struct {
     BaseItem
-    // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    PackageEscaped PackageEscapedable
 }
 // NewDriveItem instantiates a new driveItem and sets the default values.
 func NewDriveItem()(*DriveItem) {
@@ -346,6 +344,16 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["retentionLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemRetentionLabelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRetentionLabel(val.(ItemRetentionLabelable))
+        }
+        return nil
+    }
     res["root"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRootFromDiscriminatorValue)
         if err != nil {
@@ -644,6 +652,17 @@ func (m *DriveItem) GetRemoteItem()(RemoteItemable) {
     }
     return nil
 }
+// GetRetentionLabel gets the retentionLabel property value. The retentionLabel property
+func (m *DriveItem) GetRetentionLabel()(ItemRetentionLabelable) {
+    val, err := m.GetBackingStore().Get("retentionLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemRetentionLabelable)
+    }
+    return nil
+}
 // GetRoot gets the root property value. If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 func (m *DriveItem) GetRoot()(Rootable) {
     val, err := m.GetBackingStore().Get("root")
@@ -938,6 +957,12 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteObjectValue("retentionLabel", m.GetRetentionLabel())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("root", m.GetRoot())
         if err != nil {
             return err
@@ -1183,6 +1208,13 @@ func (m *DriveItem) SetRemoteItem(value RemoteItemable)() {
         panic(err)
     }
 }
+// SetRetentionLabel sets the retentionLabel property value. The retentionLabel property
+func (m *DriveItem) SetRetentionLabel(value ItemRetentionLabelable)() {
+    err := m.GetBackingStore().Set("retentionLabel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoot sets the root property value. If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
 func (m *DriveItem) SetRoot(value Rootable)() {
     err := m.GetBackingStore().Set("root", value)
@@ -1300,6 +1332,7 @@ type DriveItemable interface {
     GetPhoto()(Photoable)
     GetPublication()(PublicationFacetable)
     GetRemoteItem()(RemoteItemable)
+    GetRetentionLabel()(ItemRetentionLabelable)
     GetRoot()(Rootable)
     GetSearchResult()(SearchResultable)
     GetShared()(Sharedable)
@@ -1335,6 +1368,7 @@ type DriveItemable interface {
     SetPhoto(value Photoable)()
     SetPublication(value PublicationFacetable)()
     SetRemoteItem(value RemoteItemable)()
+    SetRetentionLabel(value ItemRetentionLabelable)()
     SetRoot(value Rootable)()
     SetSearchResult(value SearchResultable)()
     SetShared(value Sharedable)()

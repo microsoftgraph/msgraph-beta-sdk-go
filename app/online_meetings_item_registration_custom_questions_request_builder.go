@@ -46,6 +46,17 @@ type OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMeetingRegistrationQuestionId provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
+func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ByMeetingRegistrationQuestionId(meetingRegistrationQuestionId string)(*OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if meetingRegistrationQuestionId != "" {
+        urlTplParams["meetingRegistrationQuestion%2Did"] = meetingRegistrationQuestionId
+    }
+    return NewOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal instantiates a new CustomQuestionsRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
     m := &OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder{

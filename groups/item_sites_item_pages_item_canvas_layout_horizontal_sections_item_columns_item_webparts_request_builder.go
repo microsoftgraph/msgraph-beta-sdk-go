@@ -46,6 +46,17 @@ type ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebparts
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWebPartId provides operations to manage the webparts property of the microsoft.graph.horizontalSectionColumn entity.
+func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder) ByWebPartId(webPartId string)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsWebPartItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if webPartId != "" {
+        urlTplParams["webPart%2Did"] = webPartId
+    }
+    return NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsWebPartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderInternal instantiates a new WebpartsRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder) {
     m := &ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder{

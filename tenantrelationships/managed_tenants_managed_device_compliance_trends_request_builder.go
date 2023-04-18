@@ -46,6 +46,17 @@ type ManagedTenantsManagedDeviceComplianceTrendsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedDeviceComplianceTrendId provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) ByManagedDeviceComplianceTrendId(managedDeviceComplianceTrendId string)(*ManagedTenantsManagedDeviceComplianceTrendsManagedDeviceComplianceTrendItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceComplianceTrendId != "" {
+        urlTplParams["managedDeviceComplianceTrend%2Did"] = managedDeviceComplianceTrendId
+    }
+    return NewManagedTenantsManagedDeviceComplianceTrendsManagedDeviceComplianceTrendItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagedDeviceComplianceTrendsRequestBuilderInternal instantiates a new ManagedDeviceComplianceTrendsRequestBuilder and sets the default values.
 func NewManagedTenantsManagedDeviceComplianceTrendsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) {
     m := &ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder{

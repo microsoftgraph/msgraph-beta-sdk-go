@@ -46,6 +46,17 @@ type EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustodianId provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ByCustodianId(custodianId string)(*EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if custodianId != "" {
+        urlTplParams["custodian%2Did"] = custodianId
+    }
+    return NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdiscoveryCasesItemCustodiansRequestBuilderInternal instantiates a new CustodiansRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansRequestBuilder{

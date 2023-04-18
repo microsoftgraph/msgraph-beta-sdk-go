@@ -39,6 +39,17 @@ type ThreatIntelligenceHostsItemPassiveDnsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemPassiveDnsRequestBuilderGetQueryParameters
 }
+// ByPassiveDnsRecordId provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemPassiveDnsRequestBuilder) ByPassiveDnsRecordId(passiveDnsRecordId string)(*ThreatIntelligenceHostsItemPassiveDnsPassiveDnsRecordItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if passiveDnsRecordId != "" {
+        urlTplParams["passiveDnsRecord%2Did"] = passiveDnsRecordId
+    }
+    return NewThreatIntelligenceHostsItemPassiveDnsPassiveDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceHostsItemPassiveDnsRequestBuilderInternal instantiates a new PassiveDnsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemPassiveDnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemPassiveDnsRequestBuilder) {
     m := &ThreatIntelligenceHostsItemPassiveDnsRequestBuilder{

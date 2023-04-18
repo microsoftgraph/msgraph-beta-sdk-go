@@ -46,6 +46,17 @@ type CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementComplianceActionItemId provides operations to manage the scheduledActionConfigurations property of the microsoft.graph.deviceManagementComplianceScheduledActionForRule entity.
+func (m *CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilder) ByDeviceManagementComplianceActionItemId(deviceManagementComplianceActionItemId string)(*CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsDeviceManagementComplianceActionItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementComplianceActionItemId != "" {
+        urlTplParams["deviceManagementComplianceActionItem%2Did"] = deviceManagementComplianceActionItemId
+    }
+    return NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsDeviceManagementComplianceActionItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilderInternal instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
 func NewCompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilder) {
     m := &CompliancePoliciesItemScheduledActionsForRuleItemScheduledActionConfigurationsRequestBuilder{

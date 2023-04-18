@@ -46,6 +46,17 @@ type LifecycleWorkflowsCustomTaskExtensionsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustomTaskExtensionId provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) ByCustomTaskExtensionId(customTaskExtensionId string)(*LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if customTaskExtensionId != "" {
+        urlTplParams["customTaskExtension%2Did"] = customTaskExtensionId
+    }
+    return NewLifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsCustomTaskExtensionsRequestBuilderInternal instantiates a new CustomTaskExtensionsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsCustomTaskExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) {
     m := &LifecycleWorkflowsCustomTaskExtensionsRequestBuilder{

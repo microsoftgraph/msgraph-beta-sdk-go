@@ -8,7 +8,7 @@ import (
 type EstimateStatisticsOperation struct {
     CaseOperation
 }
-// NewEstimateStatisticsOperation instantiates a new EstimateStatisticsOperation and sets the default values.
+// NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     m := &EstimateStatisticsOperation{
         CaseOperation: *NewCaseOperation(),

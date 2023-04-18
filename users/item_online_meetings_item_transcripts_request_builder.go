@@ -46,6 +46,17 @@ type ItemOnlineMeetingsItemTranscriptsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCallTranscriptId provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ByCallTranscriptId(callTranscriptId string)(*ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if callTranscriptId != "" {
+        urlTplParams["callTranscript%2Did"] = callTranscriptId
+    }
+    return NewItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnlineMeetingsItemTranscriptsRequestBuilderInternal instantiates a new TranscriptsRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsItemTranscriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemTranscriptsRequestBuilder) {
     m := &ItemOnlineMeetingsItemTranscriptsRequestBuilder{

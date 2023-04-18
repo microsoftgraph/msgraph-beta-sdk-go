@@ -46,6 +46,17 @@ type B2cUserFlowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByB2cIdentityUserFlowId provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
+func (m *B2cUserFlowsRequestBuilder) ByB2cIdentityUserFlowId(b2cIdentityUserFlowId string)(*B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if b2cIdentityUserFlowId != "" {
+        urlTplParams["b2cIdentityUserFlow%2Did"] = b2cIdentityUserFlowId
+    }
+    return NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2cUserFlowsRequestBuilderInternal instantiates a new B2cUserFlowsRequestBuilder and sets the default values.
 func NewB2cUserFlowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsRequestBuilder) {
     m := &B2cUserFlowsRequestBuilder{

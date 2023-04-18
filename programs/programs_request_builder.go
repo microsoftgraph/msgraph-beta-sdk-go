@@ -46,6 +46,17 @@ type ProgramsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByProgramId provides operations to manage the collection of program entities.
+func (m *ProgramsRequestBuilder) ByProgramId(programId string)(*ProgramItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if programId != "" {
+        urlTplParams["program%2Did"] = programId
+    }
+    return NewProgramItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewProgramsRequestBuilderInternal instantiates a new ProgramsRequestBuilder and sets the default values.
 func NewProgramsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProgramsRequestBuilder) {
     m := &ProgramsRequestBuilder{

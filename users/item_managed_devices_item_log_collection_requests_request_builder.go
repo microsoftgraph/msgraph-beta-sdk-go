@@ -46,6 +46,17 @@ type ItemManagedDevicesItemLogCollectionRequestsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceLogCollectionResponseId provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.
+func (m *ItemManagedDevicesItemLogCollectionRequestsRequestBuilder) ByDeviceLogCollectionResponseId(deviceLogCollectionResponseId string)(*ItemManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceLogCollectionResponseId != "" {
+        urlTplParams["deviceLogCollectionResponse%2Did"] = deviceLogCollectionResponseId
+    }
+    return NewItemManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemManagedDevicesItemLogCollectionRequestsRequestBuilderInternal instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.
 func NewItemManagedDevicesItemLogCollectionRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesItemLogCollectionRequestsRequestBuilder) {
     m := &ItemManagedDevicesItemLogCollectionRequestsRequestBuilder{

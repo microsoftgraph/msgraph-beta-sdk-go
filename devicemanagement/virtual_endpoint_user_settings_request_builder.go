@@ -46,6 +46,17 @@ type VirtualEndpointUserSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcUserSettingId provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointUserSettingsRequestBuilder) ByCloudPcUserSettingId(cloudPcUserSettingId string)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcUserSettingId != "" {
+        urlTplParams["cloudPcUserSetting%2Did"] = cloudPcUserSettingId
+    }
+    return NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointUserSettingsRequestBuilderInternal instantiates a new UserSettingsRequestBuilder and sets the default values.
 func NewVirtualEndpointUserSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointUserSettingsRequestBuilder) {
     m := &VirtualEndpointUserSettingsRequestBuilder{

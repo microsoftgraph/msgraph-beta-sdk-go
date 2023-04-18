@@ -46,6 +46,17 @@ type DepOnboardingSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDepOnboardingSettingId provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
+func (m *DepOnboardingSettingsRequestBuilder) ByDepOnboardingSettingId(depOnboardingSettingId string)(*DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if depOnboardingSettingId != "" {
+        urlTplParams["depOnboardingSetting%2Did"] = depOnboardingSettingId
+    }
+    return NewDepOnboardingSettingsDepOnboardingSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDepOnboardingSettingsRequestBuilderInternal instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsRequestBuilder) {
     m := &DepOnboardingSettingsRequestBuilder{

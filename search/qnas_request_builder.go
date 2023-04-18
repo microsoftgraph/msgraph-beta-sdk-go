@@ -46,6 +46,17 @@ type QnasRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByQnaId provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
+func (m *QnasRequestBuilder) ByQnaId(qnaId string)(*QnasQnaItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if qnaId != "" {
+        urlTplParams["qna%2Did"] = qnaId
+    }
+    return NewQnasQnaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewQnasRequestBuilderInternal instantiates a new QnasRequestBuilder and sets the default values.
 func NewQnasRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*QnasRequestBuilder) {
     m := &QnasRequestBuilder{

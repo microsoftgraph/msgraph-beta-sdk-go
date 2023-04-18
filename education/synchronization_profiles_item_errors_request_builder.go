@@ -46,6 +46,17 @@ type SynchronizationProfilesItemErrorsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationSynchronizationErrorId provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
+func (m *SynchronizationProfilesItemErrorsRequestBuilder) ByEducationSynchronizationErrorId(educationSynchronizationErrorId string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationSynchronizationErrorId != "" {
+        urlTplParams["educationSynchronizationError%2Did"] = educationSynchronizationErrorId
+    }
+    return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSynchronizationProfilesItemErrorsRequestBuilderInternal instantiates a new ErrorsRequestBuilder and sets the default values.
 func NewSynchronizationProfilesItemErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SynchronizationProfilesItemErrorsRequestBuilder) {
     m := &SynchronizationProfilesItemErrorsRequestBuilder{

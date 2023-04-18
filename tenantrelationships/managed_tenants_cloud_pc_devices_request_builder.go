@@ -46,6 +46,17 @@ type ManagedTenantsCloudPcDevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcDeviceId provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsCloudPcDevicesRequestBuilder) ByCloudPcDeviceId(cloudPcDeviceId string)(*ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcDeviceId != "" {
+        urlTplParams["cloudPcDevice%2Did"] = cloudPcDeviceId
+    }
+    return NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsCloudPcDevicesRequestBuilderInternal instantiates a new CloudPcDevicesRequestBuilder and sets the default values.
 func NewManagedTenantsCloudPcDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcDevicesRequestBuilder) {
     m := &ManagedTenantsCloudPcDevicesRequestBuilder{

@@ -39,6 +39,17 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilde
     // Request query parameters
     QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilderGetQueryParameters
 }
+// ByChannelId provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilder) ByChannelId(channelId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if channelId != "" {
+        urlTplParams["channel%2Did"] = channelId
+    }
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilderInternal instantiates a new IncomingChannelsRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilder{

@@ -46,6 +46,17 @@ type UserExperienceAnalyticsDeviceStartupHistoryRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsDeviceStartupHistoryId provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) ByUserExperienceAnalyticsDeviceStartupHistoryId(userExperienceAnalyticsDeviceStartupHistoryId string)(*UserExperienceAnalyticsDeviceStartupHistoryUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsDeviceStartupHistoryId != "" {
+        urlTplParams["userExperienceAnalyticsDeviceStartupHistory%2Did"] = userExperienceAnalyticsDeviceStartupHistoryId
+    }
+    return NewUserExperienceAnalyticsDeviceStartupHistoryUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder{

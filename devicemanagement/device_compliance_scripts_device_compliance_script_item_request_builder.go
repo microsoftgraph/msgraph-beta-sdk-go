@@ -49,17 +49,6 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Assign
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Assignments()(*DeviceComplianceScriptsItemAssignmentsRequestBuilder) {
     return NewDeviceComplianceScriptsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceComplianceScript entity.
-func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) AssignmentsById(id string)(*DeviceComplianceScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceHealthScriptAssignment%2Did"] = id
-    }
-    return NewDeviceComplianceScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal instantiates a new DeviceComplianceScriptItemRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) {
     m := &DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder{
@@ -92,17 +81,6 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Delete
 // DeviceRunStates provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) DeviceRunStates()(*DeviceComplianceScriptsItemDeviceRunStatesRequestBuilder) {
     return NewDeviceComplianceScriptsItemDeviceRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.
-func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceComplianceScriptDeviceState%2Did"] = id
-    }
-    return NewDeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of device compliance scripts associated with the tenant.
 func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptable, error) {

@@ -46,6 +46,17 @@ type VirtualEndpointAuditEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcAuditEventId provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointAuditEventsRequestBuilder) ByCloudPcAuditEventId(cloudPcAuditEventId string)(*VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcAuditEventId != "" {
+        urlTplParams["cloudPcAuditEvent%2Did"] = cloudPcAuditEventId
+    }
+    return NewVirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointAuditEventsRequestBuilderInternal instantiates a new AuditEventsRequestBuilder and sets the default values.
 func NewVirtualEndpointAuditEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointAuditEventsRequestBuilder) {
     m := &VirtualEndpointAuditEventsRequestBuilder{

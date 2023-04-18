@@ -46,6 +46,17 @@ type ReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserRegistrationDetailsId provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
+func (m *ReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilder) ByUserRegistrationDetailsId(userRegistrationDetailsId string)(*ReportsAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userRegistrationDetailsId != "" {
+        urlTplParams["userRegistrationDetails%2Did"] = userRegistrationDetailsId
+    }
+    return NewReportsAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilderInternal instantiates a new UserRegistrationDetailsRequestBuilder and sets the default values.
 func NewReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilder) {
     m := &ReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilder{

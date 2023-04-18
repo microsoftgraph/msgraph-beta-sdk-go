@@ -46,6 +46,17 @@ type ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagementActionTenantDeploymentStatusId provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) ByManagementActionTenantDeploymentStatusId(managementActionTenantDeploymentStatusId string)(*ManagedTenantsManagementActionTenantDeploymentStatusesManagementActionTenantDeploymentStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managementActionTenantDeploymentStatusId != "" {
+        urlTplParams["managementActionTenantDeploymentStatus%2Did"] = managementActionTenantDeploymentStatusId
+    }
+    return NewManagedTenantsManagementActionTenantDeploymentStatusesManagementActionTenantDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderInternal instantiates a new ManagementActionTenantDeploymentStatusesRequestBuilder and sets the default values.
 func NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) {
     m := &ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder{

@@ -46,6 +46,17 @@ type UserExperienceAnalyticsAnomalyRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsAnomalyId provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAnomalyRequestBuilder) ByUserExperienceAnalyticsAnomalyId(userExperienceAnalyticsAnomalyId string)(*UserExperienceAnalyticsAnomalyUserExperienceAnalyticsAnomalyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsAnomalyId != "" {
+        urlTplParams["userExperienceAnalyticsAnomaly%2Did"] = userExperienceAnalyticsAnomalyId
+    }
+    return NewUserExperienceAnalyticsAnomalyUserExperienceAnalyticsAnomalyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsAnomalyRequestBuilderInternal instantiates a new UserExperienceAnalyticsAnomalyRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAnomalyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsAnomalyRequestBuilder) {
     m := &UserExperienceAnalyticsAnomalyRequestBuilder{

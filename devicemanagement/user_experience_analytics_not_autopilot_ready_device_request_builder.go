@@ -46,6 +46,17 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsNotAutopilotReadyDeviceId provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) ByUserExperienceAnalyticsNotAutopilotReadyDeviceId(userExperienceAnalyticsNotAutopilotReadyDeviceId string)(*UserExperienceAnalyticsNotAutopilotReadyDeviceUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsNotAutopilotReadyDeviceId != "" {
+        urlTplParams["userExperienceAnalyticsNotAutopilotReadyDevice%2Did"] = userExperienceAnalyticsNotAutopilotReadyDeviceId
+    }
+    return NewUserExperienceAnalyticsNotAutopilotReadyDeviceUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal instantiates a new UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) {
     m := &UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder{

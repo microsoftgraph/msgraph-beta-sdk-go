@@ -46,6 +46,17 @@ type ItemManagedDevicesItemSecurityBaselineStatesRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySecurityBaselineStateId provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
+func (m *ItemManagedDevicesItemSecurityBaselineStatesRequestBuilder) BySecurityBaselineStateId(securityBaselineStateId string)(*ItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if securityBaselineStateId != "" {
+        urlTplParams["securityBaselineState%2Did"] = securityBaselineStateId
+    }
+    return NewItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemManagedDevicesItemSecurityBaselineStatesRequestBuilderInternal instantiates a new SecurityBaselineStatesRequestBuilder and sets the default values.
 func NewItemManagedDevicesItemSecurityBaselineStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesItemSecurityBaselineStatesRequestBuilder) {
     m := &ItemManagedDevicesItemSecurityBaselineStatesRequestBuilder{

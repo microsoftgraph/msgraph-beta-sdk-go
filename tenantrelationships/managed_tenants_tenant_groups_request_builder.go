@@ -46,6 +46,17 @@ type ManagedTenantsTenantGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTenantGroupId provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsTenantGroupsRequestBuilder) ByTenantGroupId(tenantGroupId string)(*ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if tenantGroupId != "" {
+        urlTplParams["tenantGroup%2Did"] = tenantGroupId
+    }
+    return NewManagedTenantsTenantGroupsTenantGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsTenantGroupsRequestBuilderInternal instantiates a new TenantGroupsRequestBuilder and sets the default values.
 func NewManagedTenantsTenantGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantGroupsRequestBuilder) {
     m := &ManagedTenantsTenantGroupsRequestBuilder{

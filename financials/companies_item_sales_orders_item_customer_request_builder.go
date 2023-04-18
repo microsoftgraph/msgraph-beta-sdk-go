@@ -124,17 +124,6 @@ func (m *CompaniesItemSalesOrdersItemCustomerRequestBuilder) PaymentTerm()(*Comp
 func (m *CompaniesItemSalesOrdersItemCustomerRequestBuilder) Picture()(*CompaniesItemSalesOrdersItemCustomerPictureRequestBuilder) {
     return NewCompaniesItemSalesOrdersItemCustomerPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PictureById provides operations to manage the picture property of the microsoft.graph.customer entity.
-func (m *CompaniesItemSalesOrdersItemCustomerRequestBuilder) PictureById(id string)(*CompaniesItemSalesOrdersItemCustomerPicturePictureItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemSalesOrdersItemCustomerPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.
 func (m *CompaniesItemSalesOrdersItemCustomerRequestBuilder) ShipmentMethod()(*CompaniesItemSalesOrdersItemCustomerShipmentMethodRequestBuilder) {
     return NewCompaniesItemSalesOrdersItemCustomerShipmentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

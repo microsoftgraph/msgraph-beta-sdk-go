@@ -46,6 +46,17 @@ type CompaniesItemShipmentMethodsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByShipmentMethodId provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.
+func (m *CompaniesItemShipmentMethodsRequestBuilder) ByShipmentMethodId(shipmentMethodId string)(*CompaniesItemShipmentMethodsShipmentMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if shipmentMethodId != "" {
+        urlTplParams["shipmentMethod%2Did"] = shipmentMethodId
+    }
+    return NewCompaniesItemShipmentMethodsShipmentMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemShipmentMethodsRequestBuilderInternal instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
 func NewCompaniesItemShipmentMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemShipmentMethodsRequestBuilder) {
     m := &CompaniesItemShipmentMethodsRequestBuilder{

@@ -46,6 +46,17 @@ type SetsItemParentGroupSetsItemChildrenRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTermId provides operations to manage the children property of the microsoft.graph.termStore.set entity.
+func (m *SetsItemParentGroupSetsItemChildrenRequestBuilder) ByTermId(termId string)(*SetsItemParentGroupSetsItemChildrenTermItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if termId != "" {
+        urlTplParams["term%2Did"] = termId
+    }
+    return NewSetsItemParentGroupSetsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSetsItemParentGroupSetsItemChildrenRequestBuilderInternal instantiates a new ChildrenRequestBuilder and sets the default values.
 func NewSetsItemParentGroupSetsItemChildrenRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SetsItemParentGroupSetsItemChildrenRequestBuilder) {
     m := &SetsItemParentGroupSetsItemChildrenRequestBuilder{

@@ -45,17 +45,6 @@ type ItemItemsExternalItemItemRequestBuilderPutRequestConfiguration struct {
 func (m *ItemItemsExternalItemItemRequestBuilder) Activities()(*ItemItemsItemActivitiesRequestBuilder) {
     return NewItemItemsItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ActivitiesById provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
-func (m *ItemItemsExternalItemItemRequestBuilder) ActivitiesById(id string)(*ItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["externalActivity%2Did"] = id
-    }
-    return NewItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemItemsExternalItemItemRequestBuilderInternal instantiates a new ExternalItemItemRequestBuilder and sets the default values.
 func NewItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsExternalItemItemRequestBuilder) {
     m := &ItemItemsExternalItemItemRequestBuilder{

@@ -9,8 +9,6 @@ import (
 type Property struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The type property
-    TypeEscaped *PropertyType
 }
 // NewProperty instantiates a new property and sets the default values.
 func NewProperty()(*Property) {
@@ -152,6 +150,16 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["rankingHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRankingHintFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRankingHint(val.(RankingHintable))
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePropertyType)
         if err != nil {
@@ -252,6 +260,17 @@ func (m *Property) GetOdataType()(*string) {
     }
     return nil
 }
+// GetRankingHint gets the rankingHint property value. Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.
+func (m *Property) GetRankingHint()(RankingHintable) {
+    val, err := m.GetBackingStore().Get("rankingHint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RankingHintable)
+    }
+    return nil
+}
 // GetType gets the type property value. The type property
 func (m *Property) GetType()(*PropertyType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -315,6 +334,12 @@ func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("rankingHint", m.GetRankingHint())
         if err != nil {
             return err
         }
@@ -408,6 +433,13 @@ func (m *Property) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRankingHint sets the rankingHint property value. Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.
+func (m *Property) SetRankingHint(value RankingHintable)() {
+    err := m.GetBackingStore().Set("rankingHint", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetType sets the type property value. The type property
 func (m *Property) SetType(value *PropertyType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
@@ -430,6 +462,7 @@ type Propertyable interface {
     GetLabels()([]Label)
     GetName()(*string)
     GetOdataType()(*string)
+    GetRankingHint()(RankingHintable)
     GetType()(*PropertyType)
     SetAliases(value []string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -441,5 +474,6 @@ type Propertyable interface {
     SetLabels(value []Label)()
     SetName(value *string)()
     SetOdataType(value *string)()
+    SetRankingHint(value RankingHintable)()
     SetType(value *PropertyType)()
 }

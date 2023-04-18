@@ -39,6 +39,17 @@ type ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderGetQueryParameters
 }
+// ByManagedTenantEmailNotificationId provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
+func (m *ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilder) ByManagedTenantEmailNotificationId(managedTenantEmailNotificationId string)(*ManagedTenantsManagedTenantAlertsItemEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedTenantEmailNotificationId != "" {
+        urlTplParams["managedTenantEmailNotification%2Did"] = managedTenantEmailNotificationId
+    }
+    return NewManagedTenantsManagedTenantAlertsItemEmailNotificationsManagedTenantEmailNotificationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderInternal instantiates a new EmailNotificationsRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilder{

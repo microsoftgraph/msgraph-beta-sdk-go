@@ -51,31 +51,9 @@ func NewAuditLogsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *AuditLogsRequestBuilder) DirectoryAudits()(*DirectoryAuditsRequestBuilder) {
     return NewDirectoryAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DirectoryAuditsById provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryAudit%2Did"] = id
-    }
-    return NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // DirectoryProvisioning provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) DirectoryProvisioning()(*DirectoryProvisioningRequestBuilder) {
     return NewDirectoryProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DirectoryProvisioningById provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) DirectoryProvisioningById(id string)(*DirectoryProvisioningProvisioningObjectSummaryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["provisioningObjectSummary%2Did"] = id
-    }
-    return NewDirectoryProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get auditLogs
 func (m *AuditLogsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditLogRootable, error) {
@@ -119,31 +97,9 @@ func (m *AuditLogsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
 func (m *AuditLogsRequestBuilder) Provisioning()(*ProvisioningRequestBuilder) {
     return NewProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ProvisioningById provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["provisioningObjectSummary%2Did"] = id
-    }
-    return NewProvisioningProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SignIns provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) SignIns()(*SignInsRequestBuilder) {
     return NewSignInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SignInsById provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-func (m *AuditLogsRequestBuilder) SignInsById(id string)(*SignInsSignInItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["signIn%2Did"] = id
-    }
-    return NewSignInsSignInItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get auditLogs
 func (m *AuditLogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

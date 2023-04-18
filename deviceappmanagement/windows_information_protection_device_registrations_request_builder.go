@@ -46,6 +46,17 @@ type WindowsInformationProtectionDeviceRegistrationsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsInformationProtectionDeviceRegistrationId provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.
+func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) ByWindowsInformationProtectionDeviceRegistrationId(windowsInformationProtectionDeviceRegistrationId string)(*WindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsInformationProtectionDeviceRegistrationId != "" {
+        urlTplParams["windowsInformationProtectionDeviceRegistration%2Did"] = windowsInformationProtectionDeviceRegistrationId
+    }
+    return NewWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     m := &WindowsInformationProtectionDeviceRegistrationsRequestBuilder{

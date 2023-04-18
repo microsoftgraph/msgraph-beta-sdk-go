@@ -39,6 +39,17 @@ type CompaniesItemCompanyInformationRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *CompaniesItemCompanyInformationRequestBuilderGetQueryParameters
 }
+// ByCompanyInformationId provides operations to manage the companyInformation property of the microsoft.graph.company entity.
+func (m *CompaniesItemCompanyInformationRequestBuilder) ByCompanyInformationId(companyInformationId string)(*CompaniesItemCompanyInformationCompanyInformationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if companyInformationId != "" {
+        urlTplParams["companyInformation%2Did"] = companyInformationId
+    }
+    return NewCompaniesItemCompanyInformationCompanyInformationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemCompanyInformationRequestBuilderInternal instantiates a new CompanyInformationRequestBuilder and sets the default values.
 func NewCompaniesItemCompanyInformationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCompanyInformationRequestBuilder) {
     m := &CompaniesItemCompanyInformationRequestBuilder{

@@ -45,17 +45,6 @@ type ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRe
 func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) Columns()(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder) {
     return NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ColumnsById provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.
-func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) ColumnsById(id string)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["horizontalSectionColumn%2Did"] = id
-    }
-    return NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal instantiates a new HorizontalSectionItemRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
     m := &ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder{

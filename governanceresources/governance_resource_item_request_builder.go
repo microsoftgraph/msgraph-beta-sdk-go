@@ -116,61 +116,17 @@ func (m *GovernanceResourceItemRequestBuilder) Patch(ctx context.Context, body i
 func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleAssignmentRequestsRequestBuilder) {
     return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentRequestsById provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
-func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequestsById(id string)(*ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleAssignmentRequest%2Did"] = id
-    }
-    return NewItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleAssignments()(*ItemRoleAssignmentsRequestBuilder) {
     return NewItemRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
-func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentsById(id string)(*ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleAssignment%2Did"] = id
-    }
-    return NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleDefinitions()(*ItemRoleDefinitionsRequestBuilder) {
     return NewItemRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
-func (m *GovernanceResourceItemRequestBuilder) RoleDefinitionsById(id string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleDefinition%2Did"] = id
-    }
-    return NewItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleSettings()(*ItemRoleSettingsRequestBuilder) {
     return NewItemRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleSettingsById provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
-func (m *GovernanceResourceItemRequestBuilder) RoleSettingsById(id string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleSetting%2Did"] = id
-    }
-    return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from governanceResources
 func (m *GovernanceResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GovernanceResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

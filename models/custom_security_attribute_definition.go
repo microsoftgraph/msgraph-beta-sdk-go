@@ -7,8 +7,6 @@ import (
 // CustomSecurityAttributeDefinition 
 type CustomSecurityAttributeDefinition struct {
     Entity
-    // Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-    TypeEscaped *string
 }
 // NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {

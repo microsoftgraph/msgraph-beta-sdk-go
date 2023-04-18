@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackageResourceRoleScopesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageResourceRoleScopeId provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAccessPackageResourceRoleScopesRequestBuilder) ByAccessPackageResourceRoleScopeId(accessPackageResourceRoleScopeId string)(*EntitlementManagementAccessPackageResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageResourceRoleScopeId != "" {
+        urlTplParams["accessPackageResourceRoleScope%2Did"] = accessPackageResourceRoleScopeId
+    }
+    return NewEntitlementManagementAccessPackageResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageResourceRoleScopesRequestBuilderInternal instantiates a new AccessPackageResourceRoleScopesRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceRoleScopesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceRoleScopesRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceRoleScopesRequestBuilder{

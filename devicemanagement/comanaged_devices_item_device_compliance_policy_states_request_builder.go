@@ -46,6 +46,17 @@ type ComanagedDevicesItemDeviceCompliancePolicyStatesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceCompliancePolicyStateId provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
+func (m *ComanagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) ByDeviceCompliancePolicyStateId(deviceCompliancePolicyStateId string)(*ComanagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceCompliancePolicyStateId != "" {
+        urlTplParams["deviceCompliancePolicyState%2Did"] = deviceCompliancePolicyStateId
+    }
+    return NewComanagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewComanagedDevicesItemDeviceCompliancePolicyStatesRequestBuilderInternal instantiates a new DeviceCompliancePolicyStatesRequestBuilder and sets the default values.
 func NewComanagedDevicesItemDeviceCompliancePolicyStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) {
     m := &ComanagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder{

@@ -46,6 +46,17 @@ type ItemMobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMobileAppTroubleshootingEventId provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.
+func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) ByMobileAppTroubleshootingEventId(mobileAppTroubleshootingEventId string)(*ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if mobileAppTroubleshootingEventId != "" {
+        urlTplParams["mobileAppTroubleshootingEvent%2Did"] = mobileAppTroubleshootingEventId
+    }
+    return NewItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMobileAppTroubleshootingEventsRequestBuilderInternal instantiates a new MobileAppTroubleshootingEventsRequestBuilder and sets the default values.
 func NewItemMobileAppTroubleshootingEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMobileAppTroubleshootingEventsRequestBuilder) {
     m := &ItemMobileAppTroubleshootingEventsRequestBuilder{

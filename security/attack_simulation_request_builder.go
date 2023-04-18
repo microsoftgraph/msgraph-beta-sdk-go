@@ -93,17 +93,6 @@ func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *AttackSimulationRequestBuilder) Operations()(*AttackSimulationOperationsRequestBuilder) {
     return NewAttackSimulationOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OperationsById provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) OperationsById(id string)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["attackSimulationOperation%2Did"] = id
-    }
-    return NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property attackSimulation in security
 func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable, requestConfiguration *AttackSimulationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -127,46 +116,13 @@ func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body ie233ee
 func (m *AttackSimulationRequestBuilder) Payloads()(*AttackSimulationPayloadsRequestBuilder) {
     return NewAttackSimulationPayloadsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PayloadsById provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) PayloadsById(id string)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["payload%2Did"] = id
-    }
-    return NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SimulationAutomations provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*AttackSimulationSimulationAutomationsRequestBuilder) {
     return NewAttackSimulationSimulationAutomationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SimulationAutomationsById provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["simulationAutomation%2Did"] = id
-    }
-    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Simulations provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) Simulations()(*AttackSimulationSimulationsRequestBuilder) {
     return NewAttackSimulationSimulationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SimulationsById provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*AttackSimulationSimulationsSimulationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["simulation%2Did"] = id
-    }
-    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property attackSimulation for security
 func (m *AttackSimulationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

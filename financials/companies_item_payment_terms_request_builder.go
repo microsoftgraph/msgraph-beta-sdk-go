@@ -46,6 +46,17 @@ type CompaniesItemPaymentTermsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPaymentTermId provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
+func (m *CompaniesItemPaymentTermsRequestBuilder) ByPaymentTermId(paymentTermId string)(*CompaniesItemPaymentTermsPaymentTermItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if paymentTermId != "" {
+        urlTplParams["paymentTerm%2Did"] = paymentTermId
+    }
+    return NewCompaniesItemPaymentTermsPaymentTermItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemPaymentTermsRequestBuilderInternal instantiates a new PaymentTermsRequestBuilder and sets the default values.
 func NewCompaniesItemPaymentTermsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPaymentTermsRequestBuilder) {
     m := &CompaniesItemPaymentTermsRequestBuilder{

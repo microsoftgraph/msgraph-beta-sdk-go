@@ -46,6 +46,17 @@ type TemplateSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementConfigurationSettingTemplateId provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.
+func (m *TemplateSettingsRequestBuilder) ByDeviceManagementConfigurationSettingTemplateId(deviceManagementConfigurationSettingTemplateId string)(*TemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementConfigurationSettingTemplateId != "" {
+        urlTplParams["deviceManagementConfigurationSettingTemplate%2Did"] = deviceManagementConfigurationSettingTemplateId
+    }
+    return NewTemplateSettingsDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTemplateSettingsRequestBuilderInternal instantiates a new TemplateSettingsRequestBuilder and sets the default values.
 func NewTemplateSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplateSettingsRequestBuilder) {
     m := &TemplateSettingsRequestBuilder{

@@ -50,6 +50,17 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilderPostRequ
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) Add()(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersAddRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.team entity.
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conversationMemberId != "" {
+        urlTplParams["conversationMember%2Did"] = conversationMemberId
+    }
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder{

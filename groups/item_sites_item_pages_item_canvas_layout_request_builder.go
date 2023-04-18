@@ -93,17 +93,6 @@ func (m *ItemSitesItemPagesItemCanvasLayoutRequestBuilder) Get(ctx context.Conte
 func (m *ItemSitesItemPagesItemCanvasLayoutRequestBuilder) HorizontalSections()(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) {
     return NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HorizontalSectionsById provides operations to manage the horizontalSections property of the microsoft.graph.canvasLayout entity.
-func (m *ItemSitesItemPagesItemCanvasLayoutRequestBuilder) HorizontalSectionsById(id string)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["horizontalSection%2Did"] = id
-    }
-    return NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property canvasLayout in groups
 func (m *ItemSitesItemPagesItemCanvasLayoutRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CanvasLayoutable, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CanvasLayoutable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

@@ -120,17 +120,6 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Patch(ctx con
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Queries()(*EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) {
     return NewEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// QueriesById provides operations to manage the queries property of the microsoft.graph.ediscovery.reviewSet entity.
-func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) QueriesById(id string)(*EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["reviewSetQuery%2Did"] = id
-    }
-    return NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property reviewSets for compliance
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

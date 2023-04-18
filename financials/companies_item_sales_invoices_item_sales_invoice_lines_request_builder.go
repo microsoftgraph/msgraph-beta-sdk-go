@@ -39,6 +39,17 @@ type CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderGetQueryParameters
 }
+// BySalesInvoiceLineId provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
+func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) BySalesInvoiceLineId(salesInvoiceLineId string)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if salesInvoiceLineId != "" {
+        urlTplParams["salesInvoiceLine%2Did"] = salesInvoiceLineId
+    }
+    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal instantiates a new SalesInvoiceLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder) {
     m := &CompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilder{

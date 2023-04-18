@@ -46,6 +46,17 @@ type ItemResourcesItemRoleDefinitionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGovernanceRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
+func (m *ItemResourcesItemRoleDefinitionsRequestBuilder) ByGovernanceRoleDefinitionId(governanceRoleDefinitionId string)(*ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if governanceRoleDefinitionId != "" {
+        urlTplParams["governanceRoleDefinition%2Did"] = governanceRoleDefinitionId
+    }
+    return NewItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemResourcesItemRoleDefinitionsRequestBuilderInternal instantiates a new RoleDefinitionsRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleDefinitionsRequestBuilder) {
     m := &ItemResourcesItemRoleDefinitionsRequestBuilder{

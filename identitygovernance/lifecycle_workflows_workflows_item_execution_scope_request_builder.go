@@ -39,6 +39,17 @@ type LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetQueryParameters
 }
+// ByUserId provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ByUserId(userId string)(*LifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userId != "" {
+        urlTplParams["user%2Did"] = userId
+    }
+    return NewLifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal instantiates a new ExecutionScopeRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder{

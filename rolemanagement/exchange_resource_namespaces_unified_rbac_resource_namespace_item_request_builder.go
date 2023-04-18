@@ -18,7 +18,7 @@ type ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
+// ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters resource that represents a collection of related actions.
 type ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilde
     }
     return nil
 }
-// Get get resourceNamespaces from roleManagement
+// Get resource that represents a collection of related actions.
 func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,17 +116,6 @@ func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilde
 func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActions()(*ExchangeResourceNamespacesItemResourceActionsRequestBuilder) {
     return NewExchangeResourceNamespacesItemResourceActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourceActionsById provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
-func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*ExchangeResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRbacResourceAction%2Did"] = id
-    }
-    return NewExchangeResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property resourceNamespaces for roleManagement
 func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -139,7 +128,7 @@ func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get resourceNamespaces from roleManagement
+// ToGetRequestInformation resource that represents a collection of related actions.
 func (m *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

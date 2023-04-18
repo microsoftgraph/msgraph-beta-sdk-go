@@ -45,17 +45,6 @@ type EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResource
 func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) AccessPackageResources()(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilder) {
     return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AccessPackageResourcesById provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
-func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) AccessPackageResourcesById(id string)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageResource%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewEntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderInternal instantiates a new AccessPackageResourceEnvironmentItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder{

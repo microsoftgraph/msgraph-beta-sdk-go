@@ -39,6 +39,17 @@ type CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderGetQueryParameters
 }
+// ByEdiscoveryReviewTagId provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
+func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) ByEdiscoveryReviewTagId(ediscoveryReviewTagId string)(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if ediscoveryReviewTagId != "" {
+        urlTplParams["ediscoveryReviewTag%2Did"] = ediscoveryReviewTagId
+    }
+    return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderInternal instantiates a new TagsRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder) {
     m := &CasesEdiscoveryCasesItemReviewSetsItemFilesItemTagsRequestBuilder{

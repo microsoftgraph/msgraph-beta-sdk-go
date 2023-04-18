@@ -46,6 +46,17 @@ type IndustryDataReferenceDefinitionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByReferenceDefinitionId provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataReferenceDefinitionsRequestBuilder) ByReferenceDefinitionId(referenceDefinitionId string)(*IndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if referenceDefinitionId != "" {
+        urlTplParams["referenceDefinition%2Did"] = referenceDefinitionId
+    }
+    return NewIndustryDataReferenceDefinitionsReferenceDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIndustryDataReferenceDefinitionsRequestBuilderInternal instantiates a new ReferenceDefinitionsRequestBuilder and sets the default values.
 func NewIndustryDataReferenceDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataReferenceDefinitionsRequestBuilder) {
     m := &IndustryDataReferenceDefinitionsRequestBuilder{

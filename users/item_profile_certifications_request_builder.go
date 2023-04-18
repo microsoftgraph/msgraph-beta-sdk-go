@@ -46,6 +46,17 @@ type ItemProfileCertificationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPersonCertificationId provides operations to manage the certifications property of the microsoft.graph.profile entity.
+func (m *ItemProfileCertificationsRequestBuilder) ByPersonCertificationId(personCertificationId string)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if personCertificationId != "" {
+        urlTplParams["personCertification%2Did"] = personCertificationId
+    }
+    return NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileCertificationsRequestBuilderInternal instantiates a new CertificationsRequestBuilder and sets the default values.
 func NewItemProfileCertificationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileCertificationsRequestBuilder) {
     m := &ItemProfileCertificationsRequestBuilder{

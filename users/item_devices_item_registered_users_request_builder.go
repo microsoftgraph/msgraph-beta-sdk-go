@@ -39,6 +39,17 @@ type ItemDevicesItemRegisteredUsersRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *ItemDevicesItemRegisteredUsersRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.registeredUsers.item collection
+func (m *ItemDevicesItemRegisteredUsersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemDevicesItemRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDevicesItemRegisteredUsersRequestBuilderInternal instantiates a new RegisteredUsersRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredUsersRequestBuilder) {
     m := &ItemDevicesItemRegisteredUsersRequestBuilder{

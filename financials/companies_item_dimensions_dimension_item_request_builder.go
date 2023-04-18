@@ -44,17 +44,6 @@ func NewCompaniesItemDimensionsDimensionItemRequestBuilder(rawUrl string, reques
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionsItemDimensionValuesRequestBuilder) {
     return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DimensionValuesById provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
-func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValuesById(id string)(*CompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["dimensionValue%2Did"] = id
-    }
-    return NewCompaniesItemDimensionsItemDimensionValuesDimensionValueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get dimensions from financials
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Dimensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

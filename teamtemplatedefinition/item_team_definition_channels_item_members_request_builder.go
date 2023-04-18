@@ -50,6 +50,17 @@ type ItemTeamDefinitionChannelsItemMembersRequestBuilderPostRequestConfiguration
 func (m *ItemTeamDefinitionChannelsItemMembersRequestBuilder) Add()(*ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.channel entity.
+func (m *ItemTeamDefinitionChannelsItemMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemTeamDefinitionChannelsItemMembersConversationMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conversationMemberId != "" {
+        urlTplParams["conversationMember%2Did"] = conversationMemberId
+    }
+    return NewItemTeamDefinitionChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamDefinitionChannelsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMembersRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemMembersRequestBuilder{

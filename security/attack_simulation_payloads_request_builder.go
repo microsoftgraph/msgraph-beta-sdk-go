@@ -46,6 +46,17 @@ type AttackSimulationPayloadsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPayloadId provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationPayloadsRequestBuilder) ByPayloadId(payloadId string)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if payloadId != "" {
+        urlTplParams["payload%2Did"] = payloadId
+    }
+    return NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAttackSimulationPayloadsRequestBuilderInternal instantiates a new PayloadsRequestBuilder and sets the default values.
 func NewAttackSimulationPayloadsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationPayloadsRequestBuilder) {
     m := &AttackSimulationPayloadsRequestBuilder{

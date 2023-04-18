@@ -46,6 +46,17 @@ type ItemProfileNotesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPersonAnnotationId provides operations to manage the notes property of the microsoft.graph.profile entity.
+func (m *ItemProfileNotesRequestBuilder) ByPersonAnnotationId(personAnnotationId string)(*ItemProfileNotesPersonAnnotationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if personAnnotationId != "" {
+        urlTplParams["personAnnotation%2Did"] = personAnnotationId
+    }
+    return NewItemProfileNotesPersonAnnotationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileNotesRequestBuilderInternal instantiates a new NotesRequestBuilder and sets the default values.
 func NewItemProfileNotesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileNotesRequestBuilder) {
     m := &ItemProfileNotesRequestBuilder{

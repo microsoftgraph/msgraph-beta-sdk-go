@@ -58,31 +58,9 @@ func NewAccessReviewsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *AccessReviewsRequestBuilder) Decisions()(*AccessReviewsDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsRequestBuilder) DecisionsById(id string)(*AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewInstanceDecisionItem%2Did"] = id
-    }
-    return NewAccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Definitions provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) Definitions()(*AccessReviewsDefinitionsRequestBuilder) {
     return NewAccessReviewsDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewScheduleDefinition%2Did"] = id
-    }
-    return NewAccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property accessReviews for identityGovernance
 func (m *AccessReviewsRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -122,17 +100,6 @@ func (m *AccessReviewsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // HistoryDefinitions provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
 func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*AccessReviewsHistoryDefinitionsRequestBuilder) {
     return NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// HistoryDefinitionsById provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewHistoryDefinition%2Did"] = id
-    }
-    return NewAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property accessReviews in identityGovernance
 func (m *AccessReviewsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewSetable, requestConfiguration *AccessReviewsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewSetable, error) {

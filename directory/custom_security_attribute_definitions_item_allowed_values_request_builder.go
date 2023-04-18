@@ -46,6 +46,17 @@ type CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAllowedValueId provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
+func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ByAllowedValueId(allowedValueId string)(*CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if allowedValueId != "" {
+        urlTplParams["allowedValue%2Did"] = allowedValueId
+    }
+    return NewCustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderInternal instantiates a new AllowedValuesRequestBuilder and sets the default values.
 func NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) {
     m := &CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder{

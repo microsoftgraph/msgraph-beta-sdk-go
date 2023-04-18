@@ -31,17 +31,6 @@ type IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration st
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Activities()(*IndustryDataRunsItemActivitiesRequestBuilder) {
     return NewIndustryDataRunsItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ActivitiesById provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
-func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) ActivitiesById(id string)(*IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["industryDataRunActivity%2Did"] = id
-    }
-    return NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal instantiates a new IndustryDataRunItemRequestBuilder and sets the default values.
 func NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
     m := &IndustryDataRunsIndustryDataRunItemRequestBuilder{

@@ -46,6 +46,17 @@ type PrivilegedAccessGroupAssignmentSchedulesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedAccessGroupAssignmentScheduleId provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.
+func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) ByPrivilegedAccessGroupAssignmentScheduleId(privilegedAccessGroupAssignmentScheduleId string)(*PrivilegedAccessGroupAssignmentSchedulesPrivilegedAccessGroupAssignmentScheduleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedAccessGroupAssignmentScheduleId != "" {
+        urlTplParams["privilegedAccessGroupAssignmentSchedule%2Did"] = privilegedAccessGroupAssignmentScheduleId
+    }
+    return NewPrivilegedAccessGroupAssignmentSchedulesPrivilegedAccessGroupAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilderInternal instantiates a new AssignmentSchedulesRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupAssignmentSchedulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) {
     m := &PrivilegedAccessGroupAssignmentSchedulesRequestBuilder{

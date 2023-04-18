@@ -9,8 +9,6 @@ import (
 type MicrosoftManagedDesktop struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
-    TypeEscaped *MicrosoftManagedDesktopType
 }
 // NewMicrosoftManagedDesktop instantiates a new microsoftManagedDesktop and sets the default values.
 func NewMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {

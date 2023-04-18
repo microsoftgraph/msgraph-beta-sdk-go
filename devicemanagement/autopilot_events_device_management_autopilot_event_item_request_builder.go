@@ -112,17 +112,6 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Patch(
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetails()(*AutopilotEventsItemPolicyStatusDetailsRequestBuilder) {
     return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PolicyStatusDetailsById provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
-func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetailsById(id string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementAutopilotPolicyStatusDetail%2Did"] = id
-    }
-    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property autopilotEvents for deviceManagement
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -9,8 +9,6 @@ import (
 // Customer 
 type Customer struct {
     Entity
-    // The type property
-    TypeEscaped *string
 }
 // NewCustomer instantiates a new customer and sets the default values.
 func NewCustomer()(*Customer) {

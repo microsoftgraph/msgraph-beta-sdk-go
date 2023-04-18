@@ -46,6 +46,17 @@ type EvaluateLabelJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByJobResponseBaseId provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.
+func (m *EvaluateLabelJobsRequestBuilder) ByJobResponseBaseId(jobResponseBaseId string)(*EvaluateLabelJobsJobResponseBaseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if jobResponseBaseId != "" {
+        urlTplParams["jobResponseBase%2Did"] = jobResponseBaseId
+    }
+    return NewEvaluateLabelJobsJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEvaluateLabelJobsRequestBuilderInternal instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.
 func NewEvaluateLabelJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateLabelJobsRequestBuilder) {
     m := &EvaluateLabelJobsRequestBuilder{

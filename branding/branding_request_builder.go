@@ -90,17 +90,6 @@ func (m *BrandingRequestBuilder) HeaderLogo()(*HeaderLogoRequestBuilder) {
 func (m *BrandingRequestBuilder) Localizations()(*LocalizationsRequestBuilder) {
     return NewLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *BrandingRequestBuilder) LocalizationsById(id string)(*LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["organizationalBrandingLocalization%2Did"] = id
-    }
-    return NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update branding
 func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, requestConfiguration *BrandingRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

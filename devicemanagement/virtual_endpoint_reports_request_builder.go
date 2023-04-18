@@ -74,17 +74,6 @@ func (m *VirtualEndpointReportsRequestBuilder) Delete(ctx context.Context, reque
 func (m *VirtualEndpointReportsRequestBuilder) ExportJobs()(*VirtualEndpointReportsExportJobsRequestBuilder) {
     return NewVirtualEndpointReportsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExportJobsById provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
-func (m *VirtualEndpointReportsRequestBuilder) ExportJobsById(id string)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["cloudPcExportJob%2Did"] = id
-    }
-    return NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get cloud PC related reports.
 func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

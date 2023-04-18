@@ -46,6 +46,17 @@ type CompaniesItemVendorsItemPictureRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPictureId provides operations to manage the picture property of the microsoft.graph.vendor entity.
+func (m *CompaniesItemVendorsItemPictureRequestBuilder) ByPictureId(pictureId string)(*CompaniesItemVendorsItemPicturePictureItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if pictureId != "" {
+        urlTplParams["picture%2Did"] = pictureId
+    }
+    return NewCompaniesItemVendorsItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemVendorsItemPictureRequestBuilderInternal instantiates a new PictureRequestBuilder and sets the default values.
 func NewCompaniesItemVendorsItemPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemVendorsItemPictureRequestBuilder) {
     m := &CompaniesItemVendorsItemPictureRequestBuilder{

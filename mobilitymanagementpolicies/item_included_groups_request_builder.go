@@ -39,6 +39,17 @@ type ItemIncludedGroupsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemIncludedGroupsRequestBuilderGetQueryParameters
 }
+// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.mobilityManagementPolicies.item.includedGroups.item collection
+func (m *ItemIncludedGroupsRequestBuilder) ByGroupId(groupId string)(*ItemIncludedGroupsGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupId != "" {
+        urlTplParams["group%2Did"] = groupId
+    }
+    return NewItemIncludedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemIncludedGroupsRequestBuilderInternal instantiates a new IncludedGroupsRequestBuilder and sets the default values.
 func NewItemIncludedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemIncludedGroupsRequestBuilder) {
     m := &ItemIncludedGroupsRequestBuilder{

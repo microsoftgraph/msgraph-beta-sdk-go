@@ -112,17 +112,6 @@ func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReque
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettings()(*TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) {
     return NewTemplatesItemCategoriesItemRecommendedSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RecommendedSettingsById provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
-func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettingsById(id string)(*TemplatesItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementSettingInstance%2Did"] = id
-    }
-    return NewTemplatesItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

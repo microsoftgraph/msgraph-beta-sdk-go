@@ -46,6 +46,17 @@ type AutopilotEventsItemPolicyStatusDetailsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementAutopilotPolicyStatusDetailId provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
+func (m *AutopilotEventsItemPolicyStatusDetailsRequestBuilder) ByDeviceManagementAutopilotPolicyStatusDetailId(deviceManagementAutopilotPolicyStatusDetailId string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementAutopilotPolicyStatusDetailId != "" {
+        urlTplParams["deviceManagementAutopilotPolicyStatusDetail%2Did"] = deviceManagementAutopilotPolicyStatusDetailId
+    }
+    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.
 func NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AutopilotEventsItemPolicyStatusDetailsRequestBuilder) {
     m := &AutopilotEventsItemPolicyStatusDetailsRequestBuilder{

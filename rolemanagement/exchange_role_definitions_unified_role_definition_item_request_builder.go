@@ -18,7 +18,7 @@ type ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderGetQueryParameters get roleDefinitions from roleManagement
+// ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderGetQueryParameters the roles allowed by RBAC providers and the permissions assigned to the roles.
 type ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get get roleDefinitions from roleManagement
+// Get the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,17 +96,6 @@ func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) Get(ctx
 // InheritsPermissionsFrom provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
 func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFrom()(*ExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilder) {
     return NewExchangeRoleDefinitionsItemInheritsPermissionsFromRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// InheritsPermissionsFromById provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
-func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFromById(id string)(*ExchangeRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleDefinition%2Did1"] = id
-    }
-    return NewExchangeRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property roleDefinitions in roleManagement
 func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, requestConfiguration *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
@@ -139,7 +128,7 @@ func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get roleDefinitions from roleManagement
+// ToGetRequestInformation the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -46,6 +46,17 @@ type VirtualEndpointExternalPartnerSettingsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcExternalPartnerSettingId provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) ByCloudPcExternalPartnerSettingId(cloudPcExternalPartnerSettingId string)(*VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcExternalPartnerSettingId != "" {
+        urlTplParams["cloudPcExternalPartnerSetting%2Did"] = cloudPcExternalPartnerSettingId
+    }
+    return NewVirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointExternalPartnerSettingsRequestBuilderInternal instantiates a new ExternalPartnerSettingsRequestBuilder and sets the default values.
 func NewVirtualEndpointExternalPartnerSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointExternalPartnerSettingsRequestBuilder) {
     m := &VirtualEndpointExternalPartnerSettingsRequestBuilder{

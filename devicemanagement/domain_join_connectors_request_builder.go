@@ -46,6 +46,17 @@ type DomainJoinConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementDomainJoinConnectorId provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
+func (m *DomainJoinConnectorsRequestBuilder) ByDeviceManagementDomainJoinConnectorId(deviceManagementDomainJoinConnectorId string)(*DomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementDomainJoinConnectorId != "" {
+        urlTplParams["deviceManagementDomainJoinConnector%2Did"] = deviceManagementDomainJoinConnectorId
+    }
+    return NewDomainJoinConnectorsDeviceManagementDomainJoinConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDomainJoinConnectorsRequestBuilderInternal instantiates a new DomainJoinConnectorsRequestBuilder and sets the default values.
 func NewDomainJoinConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainJoinConnectorsRequestBuilder) {
     m := &DomainJoinConnectorsRequestBuilder{

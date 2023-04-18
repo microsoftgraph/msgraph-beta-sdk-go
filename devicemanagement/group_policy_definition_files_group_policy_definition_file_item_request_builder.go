@@ -58,17 +58,6 @@ func NewGroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder(ra
 func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) Definitions()(*GroupPolicyDefinitionFilesItemDefinitionsRequestBuilder) {
     return NewGroupPolicyDefinitionFilesItemDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
-func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) DefinitionsById(id string)(*GroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["groupPolicyDefinition%2Did"] = id
-    }
-    return NewGroupPolicyDefinitionFilesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete delete navigation property groupPolicyDefinitionFiles for deviceManagement
 func (m *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyDefinitionFilesGroupPolicyDefinitionFileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

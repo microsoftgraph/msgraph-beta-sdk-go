@@ -46,6 +46,17 @@ type GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyPresentationValueId provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
+func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder) ByGroupPolicyPresentationValueId(groupPolicyPresentationValueId string)(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyPresentationValueId != "" {
+        urlTplParams["groupPolicyPresentationValue%2Did"] = groupPolicyPresentationValueId
+    }
+    return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilderInternal instantiates a new PresentationValuesRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder) {
     m := &GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder{

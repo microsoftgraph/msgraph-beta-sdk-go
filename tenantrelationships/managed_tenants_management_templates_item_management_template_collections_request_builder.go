@@ -39,6 +39,17 @@ type ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBu
     // Request query parameters
     QueryParameters *ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilderGetQueryParameters
 }
+// ByManagementTemplateCollectionId provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managementTemplate entity.
+func (m *ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilder) ByManagementTemplateCollectionId(managementTemplateCollectionId string)(*ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managementTemplateCollectionId != "" {
+        urlTplParams["managementTemplateCollection%2Did"] = managementTemplateCollectionId
+    }
+    return NewManagedTenantsManagementTemplatesItemManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilderInternal instantiates a new ManagementTemplateCollectionsRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilder) {
     m := &ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilder{

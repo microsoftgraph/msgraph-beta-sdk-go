@@ -39,6 +39,17 @@ type LifecycleWorkflowsTaskDefinitionsRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters
 }
+// ByTaskDefinitionId provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) ByTaskDefinitionId(taskDefinitionId string)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if taskDefinitionId != "" {
+        urlTplParams["taskDefinition%2Did"] = taskDefinitionId
+    }
+    return NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsTaskDefinitionsRequestBuilderInternal instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsTaskDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsTaskDefinitionsRequestBuilder) {
     m := &LifecycleWorkflowsTaskDefinitionsRequestBuilder{

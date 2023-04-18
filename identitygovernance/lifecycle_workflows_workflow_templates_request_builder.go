@@ -39,6 +39,17 @@ type LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowTemplatesRequestBuilderGetQueryParameters
 }
+// ByWorkflowTemplateId provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+func (m *LifecycleWorkflowsWorkflowTemplatesRequestBuilder) ByWorkflowTemplateId(workflowTemplateId string)(*LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workflowTemplateId != "" {
+        urlTplParams["workflowTemplate%2Did"] = workflowTemplateId
+    }
+    return NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowTemplatesRequestBuilderInternal instantiates a new WorkflowTemplatesRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowTemplatesRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowTemplatesRequestBuilder{

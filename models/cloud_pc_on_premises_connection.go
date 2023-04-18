@@ -7,8 +7,6 @@ import (
 // CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
-    // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    TypeEscaped *CloudPcOnPremisesConnectionType
 }
 // NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {

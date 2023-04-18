@@ -45,76 +45,21 @@ type EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBu
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageCustomWorkflowExtensions()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AccessPackageCustomWorkflowExtensionsById provides operations to manage the accessPackageCustomWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageCustomWorkflowExtensionsById(id string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["customCalloutExtension%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AccessPackageResourceRoles provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageResourceRoles()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AccessPackageResourceRolesById provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageResourceRolesById(id string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageResourceRole%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // AccessPackageResources provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageResources()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AccessPackageResourcesById provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageResourcesById(id string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageResource%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AccessPackageResourceScopes provides operations to manage the accessPackageResourceScopes property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageResourceScopes()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceScopesRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourceScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AccessPackageResourceScopesById provides operations to manage the accessPackageResourceScopes property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackageResourceScopesById(id string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceScopesAccessPackageResourceScopeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageResourceScope%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourceScopesAccessPackageResourceScopeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AccessPackages provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AccessPackagesById provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackagesById(id string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewEntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilderInternal instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) {
@@ -132,17 +77,6 @@ func NewEntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemReques
 // CustomAccessPackageWorkflowExtensions provides operations to manage the customAccessPackageWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) CustomAccessPackageWorkflowExtensions()(*EntitlementManagementAccessPackageCatalogsItemCustomAccessPackageWorkflowExtensionsRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemCustomAccessPackageWorkflowExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CustomAccessPackageWorkflowExtensionsById provides operations to manage the customAccessPackageWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) CustomAccessPackageWorkflowExtensionsById(id string)(*EntitlementManagementAccessPackageCatalogsItemCustomAccessPackageWorkflowExtensionsCustomAccessPackageWorkflowExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["customAccessPackageWorkflowExtension%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageCatalogsItemCustomAccessPackageWorkflowExtensionsCustomAccessPackageWorkflowExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property accessPackageCatalogs for identityGovernance
 func (m *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(error) {

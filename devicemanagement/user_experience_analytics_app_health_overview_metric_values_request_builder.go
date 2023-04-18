@@ -46,6 +46,17 @@ type UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsMetricId provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
+func (m *UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) ByUserExperienceAnalyticsMetricId(userExperienceAnalyticsMetricId string)(*UserExperienceAnalyticsAppHealthOverviewMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsMetricId != "" {
+        urlTplParams["userExperienceAnalyticsMetric%2Did"] = userExperienceAnalyticsMetricId
+    }
+    return NewUserExperienceAnalyticsAppHealthOverviewMetricValuesUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilderInternal instantiates a new MetricValuesRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder{

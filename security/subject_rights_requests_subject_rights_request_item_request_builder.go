@@ -45,31 +45,9 @@ type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConf
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Approvers()(*SubjectRightsRequestsItemApproversRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ApproversById provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ApproversById(id string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["user%2Did"] = id
-    }
-    return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Collaborators provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Collaborators()(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
     return NewSubjectRightsRequestsItemCollaboratorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CollaboratorsById provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) CollaboratorsById(id string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["user%2Did"] = id
-    }
-    return NewSubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
@@ -130,17 +108,6 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalRe
 // Notes provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*SubjectRightsRequestsItemNotesRequestBuilder) {
     return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// NotesById provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) NotesById(id string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["authoredNote%2Did"] = id
-    }
-    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property subjectRightsRequests in security
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {

@@ -46,6 +46,17 @@ type GovernanceResourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGovernanceResourceId provides operations to manage the collection of governanceResource entities.
+func (m *GovernanceResourcesRequestBuilder) ByGovernanceResourceId(governanceResourceId string)(*GovernanceResourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if governanceResourceId != "" {
+        urlTplParams["governanceResource%2Did"] = governanceResourceId
+    }
+    return NewGovernanceResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGovernanceResourcesRequestBuilderInternal instantiates a new GovernanceResourcesRequestBuilder and sets the default values.
 func NewGovernanceResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceResourcesRequestBuilder) {
     m := &GovernanceResourcesRequestBuilder{

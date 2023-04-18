@@ -46,6 +46,17 @@ type UserExperienceAnalyticsResourcePerformanceRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsResourcePerformanceId provides operations to manage the userExperienceAnalyticsResourcePerformance property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsResourcePerformanceRequestBuilder) ByUserExperienceAnalyticsResourcePerformanceId(userExperienceAnalyticsResourcePerformanceId string)(*UserExperienceAnalyticsResourcePerformanceUserExperienceAnalyticsResourcePerformanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsResourcePerformanceId != "" {
+        urlTplParams["userExperienceAnalyticsResourcePerformance%2Did"] = userExperienceAnalyticsResourcePerformanceId
+    }
+    return NewUserExperienceAnalyticsResourcePerformanceUserExperienceAnalyticsResourcePerformanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsResourcePerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsResourcePerformanceRequestBuilder{

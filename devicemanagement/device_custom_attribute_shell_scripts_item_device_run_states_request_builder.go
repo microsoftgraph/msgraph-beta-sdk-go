@@ -46,6 +46,17 @@ type DeviceCustomAttributeShellScriptsItemDeviceRunStatesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementScriptDeviceStateId provides operations to manage the deviceRunStates property of the microsoft.graph.deviceCustomAttributeShellScript entity.
+func (m *DeviceCustomAttributeShellScriptsItemDeviceRunStatesRequestBuilder) ByDeviceManagementScriptDeviceStateId(deviceManagementScriptDeviceStateId string)(*DeviceCustomAttributeShellScriptsItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementScriptDeviceStateId != "" {
+        urlTplParams["deviceManagementScriptDeviceState%2Did"] = deviceManagementScriptDeviceStateId
+    }
+    return NewDeviceCustomAttributeShellScriptsItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceCustomAttributeShellScriptsItemDeviceRunStatesRequestBuilderInternal instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptsItemDeviceRunStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCustomAttributeShellScriptsItemDeviceRunStatesRequestBuilder) {
     m := &DeviceCustomAttributeShellScriptsItemDeviceRunStatesRequestBuilder{

@@ -46,6 +46,17 @@ type ItemPendingAccessReviewInstancesItemContactedReviewersRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessReviewReviewerId provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
+func (m *ItemPendingAccessReviewInstancesItemContactedReviewersRequestBuilder) ByAccessReviewReviewerId(accessReviewReviewerId string)(*ItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessReviewReviewerId != "" {
+        urlTplParams["accessReviewReviewer%2Did"] = accessReviewReviewerId
+    }
+    return NewItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPendingAccessReviewInstancesItemContactedReviewersRequestBuilderInternal instantiates a new ContactedReviewersRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemContactedReviewersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemContactedReviewersRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesItemContactedReviewersRequestBuilder{

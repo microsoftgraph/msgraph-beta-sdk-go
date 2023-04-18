@@ -45,17 +45,6 @@ type ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguratio
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Applications()(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
     return NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ApplicationsById provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
-func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ApplicationsById(id string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["application%2Did"] = id
-    }
-    return NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.
 func NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
     m := &ItemConnectorGroupsConnectorGroupItemRequestBuilder{
@@ -107,17 +96,6 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Get(ctx context.Co
 // Members provides operations to manage the members property of the microsoft.graph.connectorGroup entity.
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Members()(*ItemConnectorGroupsItemMembersRequestBuilder) {
     return NewItemConnectorGroupsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
-func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) MembersById(id string)(*ItemConnectorGroupsItemMembersConnectorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["connector%2Did"] = id
-    }
-    return NewItemConnectorGroupsItemMembersConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property connectorGroups in onPremisesPublishingProfiles
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {

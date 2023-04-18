@@ -62,6 +62,17 @@ func (m *ComanagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ComanagedDevicesB
 func (m *ComanagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
     return NewComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByManagedDeviceId provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
+func (m *ComanagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ComanagedDevicesManagedDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceId != "" {
+        urlTplParams["managedDevice%2Did"] = managedDeviceId
+    }
+    return NewComanagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewComanagedDevicesRequestBuilderInternal instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
 func NewComanagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesRequestBuilder) {
     m := &ComanagedDevicesRequestBuilder{

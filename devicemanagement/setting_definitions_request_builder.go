@@ -46,6 +46,17 @@ type SettingDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementSettingDefinitionId provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagement entity.
+func (m *SettingDefinitionsRequestBuilder) ByDeviceManagementSettingDefinitionId(deviceManagementSettingDefinitionId string)(*SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementSettingDefinitionId != "" {
+        urlTplParams["deviceManagementSettingDefinition%2Did"] = deviceManagementSettingDefinitionId
+    }
+    return NewSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSettingDefinitionsRequestBuilderInternal instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
 func NewSettingDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingDefinitionsRequestBuilder) {
     m := &SettingDefinitionsRequestBuilder{

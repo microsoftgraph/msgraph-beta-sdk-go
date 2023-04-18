@@ -169,14 +169,3 @@ func (m *ItemPagesSitePageItemRequestBuilder) ToPatchRequestInformation(ctx cont
 func (m *ItemPagesSitePageItemRequestBuilder) WebParts()(*ItemPagesItemWebPartsRequestBuilder) {
     return NewItemPagesItemWebPartsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// WebPartsById provides operations to manage the webParts property of the microsoft.graph.sitePage entity.
-func (m *ItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*ItemPagesItemWebPartsWebPartItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["webPart%2Did"] = id
-    }
-    return NewItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}

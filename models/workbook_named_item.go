@@ -7,8 +7,6 @@ import (
 // WorkbookNamedItem 
 type WorkbookNamedItem struct {
     Entity
-    // Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
-    TypeEscaped *string
 }
 // NewWorkbookNamedItem instantiates a new workbookNamedItem and sets the default values.
 func NewWorkbookNamedItem()(*WorkbookNamedItem) {

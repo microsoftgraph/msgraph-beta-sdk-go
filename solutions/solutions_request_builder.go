@@ -38,17 +38,6 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
 func (m *SolutionsRequestBuilder) BusinessScenarios()(*BusinessScenariosRequestBuilder) {
     return NewBusinessScenariosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BusinessScenariosById provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*BusinessScenariosBusinessScenarioItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["businessScenario%2Did"] = id
-    }
-    return NewBusinessScenariosBusinessScenarioItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
     m := &SolutionsRequestBuilder{

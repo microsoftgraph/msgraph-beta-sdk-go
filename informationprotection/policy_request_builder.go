@@ -93,17 +93,6 @@ func (m *PolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *Po
 func (m *PolicyRequestBuilder) Labels()(*PolicyLabelsRequestBuilder) {
     return NewPolicyLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LabelsById provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
-func (m *PolicyRequestBuilder) LabelsById(id string)(*PolicyLabelsInformationProtectionLabelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["informationProtectionLabel%2Did"] = id
-    }
-    return NewPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property policy in informationProtection
 func (m *PolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable, requestConfiguration *PolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

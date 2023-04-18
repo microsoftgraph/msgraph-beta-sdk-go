@@ -46,6 +46,17 @@ type GroupPolicyConfigurationsItemDefinitionValuesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyDefinitionValueId provides operations to manage the definitionValues property of the microsoft.graph.groupPolicyConfiguration entity.
+func (m *GroupPolicyConfigurationsItemDefinitionValuesRequestBuilder) ByGroupPolicyDefinitionValueId(groupPolicyDefinitionValueId string)(*GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyDefinitionValueId != "" {
+        urlTplParams["groupPolicyDefinitionValue%2Did"] = groupPolicyDefinitionValueId
+    }
+    return NewGroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyConfigurationsItemDefinitionValuesRequestBuilderInternal instantiates a new DefinitionValuesRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationsItemDefinitionValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsItemDefinitionValuesRequestBuilder) {
     m := &GroupPolicyConfigurationsItemDefinitionValuesRequestBuilder{

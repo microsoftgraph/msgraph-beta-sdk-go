@@ -114,14 +114,3 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToGetRequestInformation(c
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) Workflows()(*LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// WorkflowsById provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
-func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) WorkflowsById(id string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workflow%2Did"] = id
-    }
-    return NewLifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}

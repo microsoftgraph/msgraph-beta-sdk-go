@@ -8,8 +8,6 @@ import (
 // PrivilegedRoleAssignmentRequest 
 type PrivilegedRoleAssignmentRequest struct {
     Entity
-    // Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
-    TypeEscaped *string
 }
 // NewPrivilegedRoleAssignmentRequest instantiates a new privilegedRoleAssignmentRequest and sets the default values.
 func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {

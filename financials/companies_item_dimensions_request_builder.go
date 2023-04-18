@@ -39,6 +39,17 @@ type CompaniesItemDimensionsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CompaniesItemDimensionsRequestBuilderGetQueryParameters
 }
+// ByDimensionId provides operations to manage the dimensions property of the microsoft.graph.company entity.
+func (m *CompaniesItemDimensionsRequestBuilder) ByDimensionId(dimensionId string)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if dimensionId != "" {
+        urlTplParams["dimension%2Did"] = dimensionId
+    }
+    return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemDimensionsRequestBuilderInternal instantiates a new DimensionsRequestBuilder and sets the default values.
 func NewCompaniesItemDimensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionsRequestBuilder) {
     m := &CompaniesItemDimensionsRequestBuilder{

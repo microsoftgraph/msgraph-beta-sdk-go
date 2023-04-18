@@ -46,6 +46,17 @@ type ReportsCredentialUserRegistrationDetailsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCredentialUserRegistrationDetailsId provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
+func (m *ReportsCredentialUserRegistrationDetailsRequestBuilder) ByCredentialUserRegistrationDetailsId(credentialUserRegistrationDetailsId string)(*ReportsCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if credentialUserRegistrationDetailsId != "" {
+        urlTplParams["credentialUserRegistrationDetails%2Did"] = credentialUserRegistrationDetailsId
+    }
+    return NewReportsCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsCredentialUserRegistrationDetailsRequestBuilderInternal instantiates a new CredentialUserRegistrationDetailsRequestBuilder and sets the default values.
 func NewReportsCredentialUserRegistrationDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsCredentialUserRegistrationDetailsRequestBuilder) {
     m := &ReportsCredentialUserRegistrationDetailsRequestBuilder{

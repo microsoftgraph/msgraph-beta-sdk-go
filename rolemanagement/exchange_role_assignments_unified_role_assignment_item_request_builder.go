@@ -18,7 +18,7 @@ type ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters get roleAssignments from roleManagement
+// ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters resource to grant access to users or groups.
 type ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete(
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*ExchangeRoleAssignmentsItemDirectoryScopeRequestBuilder) {
     return NewExchangeRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get roleAssignments from roleManagement
+// Get resource to grant access to users or groups.
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +136,7 @@ func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get roleAssignments from roleManagement
+// ToGetRequestInformation resource to grant access to users or groups.
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

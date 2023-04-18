@@ -39,6 +39,17 @@ type ThreatIntelligenceHostsItemTrackersRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters
 }
+// ByHostTrackerId provides operations to manage the trackers property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) ByHostTrackerId(hostTrackerId string)(*ThreatIntelligenceHostsItemTrackersHostTrackerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if hostTrackerId != "" {
+        urlTplParams["hostTracker%2Did"] = hostTrackerId
+    }
+    return NewThreatIntelligenceHostsItemTrackersHostTrackerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceHostsItemTrackersRequestBuilderInternal instantiates a new TrackersRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemTrackersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemTrackersRequestBuilder) {
     m := &ThreatIntelligenceHostsItemTrackersRequestBuilder{

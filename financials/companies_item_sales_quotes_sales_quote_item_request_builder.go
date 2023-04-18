@@ -105,17 +105,6 @@ func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) PaymentTerm()(*Co
 func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) SalesQuoteLines()(*CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) {
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SalesQuoteLinesById provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
-func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) SalesQuoteLinesById(id string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["salesQuoteLine%2Did"] = id
-    }
-    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Send provides operations to call the send method.
 func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) Send()(*CompaniesItemSalesQuotesItemSendRequestBuilder) {
     return NewCompaniesItemSalesQuotesItemSendRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

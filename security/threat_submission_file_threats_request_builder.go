@@ -46,6 +46,17 @@ type ThreatSubmissionFileThreatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByFileThreatSubmissionId provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+func (m *ThreatSubmissionFileThreatsRequestBuilder) ByFileThreatSubmissionId(fileThreatSubmissionId string)(*ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if fileThreatSubmissionId != "" {
+        urlTplParams["fileThreatSubmission%2Did"] = fileThreatSubmissionId
+    }
+    return NewThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatSubmissionFileThreatsRequestBuilderInternal instantiates a new FileThreatsRequestBuilder and sets the default values.
 func NewThreatSubmissionFileThreatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionFileThreatsRequestBuilder) {
     m := &ThreatSubmissionFileThreatsRequestBuilder{

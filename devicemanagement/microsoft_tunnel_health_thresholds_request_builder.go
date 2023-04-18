@@ -46,6 +46,17 @@ type MicrosoftTunnelHealthThresholdsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMicrosoftTunnelHealthThresholdId provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.
+func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) ByMicrosoftTunnelHealthThresholdId(microsoftTunnelHealthThresholdId string)(*MicrosoftTunnelHealthThresholdsMicrosoftTunnelHealthThresholdItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if microsoftTunnelHealthThresholdId != "" {
+        urlTplParams["microsoftTunnelHealthThreshold%2Did"] = microsoftTunnelHealthThresholdId
+    }
+    return NewMicrosoftTunnelHealthThresholdsMicrosoftTunnelHealthThresholdItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal instantiates a new MicrosoftTunnelHealthThresholdsRequestBuilder and sets the default values.
 func NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelHealthThresholdsRequestBuilder) {
     m := &MicrosoftTunnelHealthThresholdsRequestBuilder{

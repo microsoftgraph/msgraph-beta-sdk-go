@@ -46,6 +46,17 @@ type MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMicrosoftTunnelConfigurationId provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
+func (m *MicrosoftTunnelConfigurationsRequestBuilder) ByMicrosoftTunnelConfigurationId(microsoftTunnelConfigurationId string)(*MicrosoftTunnelConfigurationsMicrosoftTunnelConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if microsoftTunnelConfigurationId != "" {
+        urlTplParams["microsoftTunnelConfiguration%2Did"] = microsoftTunnelConfigurationId
+    }
+    return NewMicrosoftTunnelConfigurationsMicrosoftTunnelConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMicrosoftTunnelConfigurationsRequestBuilderInternal instantiates a new MicrosoftTunnelConfigurationsRequestBuilder and sets the default values.
 func NewMicrosoftTunnelConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelConfigurationsRequestBuilder) {
     m := &MicrosoftTunnelConfigurationsRequestBuilder{

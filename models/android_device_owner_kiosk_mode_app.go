@@ -7,8 +7,6 @@ import (
 // AndroidDeviceOwnerKioskModeApp 
 type AndroidDeviceOwnerKioskModeApp struct {
     AndroidDeviceOwnerKioskModeFolderItem
-    // Package name of application
-    PackageEscaped *string
 }
 // NewAndroidDeviceOwnerKioskModeApp instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
 func NewAndroidDeviceOwnerKioskModeApp()(*AndroidDeviceOwnerKioskModeApp) {

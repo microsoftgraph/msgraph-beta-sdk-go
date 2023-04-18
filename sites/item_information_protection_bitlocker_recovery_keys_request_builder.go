@@ -39,6 +39,17 @@ type ItemInformationProtectionBitlockerRecoveryKeysRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilderGetQueryParameters
 }
+// ByBitlockerRecoveryKeyId provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+func (m *ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyId(bitlockerRecoveryKeyId string)(*ItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bitlockerRecoveryKeyId != "" {
+        urlTplParams["bitlockerRecoveryKey%2Did"] = bitlockerRecoveryKeyId
+    }
+    return NewItemInformationProtectionBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal instantiates a new RecoveryKeysRequestBuilder and sets the default values.
 func NewItemInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) {
     m := &ItemInformationProtectionBitlockerRecoveryKeysRequestBuilder{

@@ -46,6 +46,17 @@ type CompaniesItemTaxAreasRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTaxAreaId provides operations to manage the taxAreas property of the microsoft.graph.company entity.
+func (m *CompaniesItemTaxAreasRequestBuilder) ByTaxAreaId(taxAreaId string)(*CompaniesItemTaxAreasTaxAreaItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if taxAreaId != "" {
+        urlTplParams["taxArea%2Did"] = taxAreaId
+    }
+    return NewCompaniesItemTaxAreasTaxAreaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemTaxAreasRequestBuilderInternal instantiates a new TaxAreasRequestBuilder and sets the default values.
 func NewCompaniesItemTaxAreasRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemTaxAreasRequestBuilder) {
     m := &CompaniesItemTaxAreasRequestBuilder{

@@ -46,6 +46,17 @@ type DeviceShellScriptsItemGroupAssignmentsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementScriptGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.deviceShellScript entity.
+func (m *DeviceShellScriptsItemGroupAssignmentsRequestBuilder) ByDeviceManagementScriptGroupAssignmentId(deviceManagementScriptGroupAssignmentId string)(*DeviceShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementScriptGroupAssignmentId != "" {
+        urlTplParams["deviceManagementScriptGroupAssignment%2Did"] = deviceManagementScriptGroupAssignmentId
+    }
+    return NewDeviceShellScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceShellScriptsItemGroupAssignmentsRequestBuilderInternal instantiates a new GroupAssignmentsRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemGroupAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemGroupAssignmentsRequestBuilder) {
     m := &DeviceShellScriptsItemGroupAssignmentsRequestBuilder{

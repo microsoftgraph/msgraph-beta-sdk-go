@@ -46,6 +46,17 @@ type EmbeddedSIMActivationCodePoolsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEmbeddedSIMActivationCodePoolId provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
+func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) ByEmbeddedSIMActivationCodePoolId(embeddedSIMActivationCodePoolId string)(*EmbeddedSIMActivationCodePoolsEmbeddedSIMActivationCodePoolItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if embeddedSIMActivationCodePoolId != "" {
+        urlTplParams["embeddedSIMActivationCodePool%2Did"] = embeddedSIMActivationCodePoolId
+    }
+    return NewEmbeddedSIMActivationCodePoolsEmbeddedSIMActivationCodePoolItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal instantiates a new EmbeddedSIMActivationCodePoolsRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmbeddedSIMActivationCodePoolsRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolsRequestBuilder{

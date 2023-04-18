@@ -93,17 +93,6 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Get(ctx context
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValues()(*UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) {
     return NewUserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MetricValuesById provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesById(id string)(*UserExperienceAnalyticsAppHealthOverviewMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userExperienceAnalyticsMetric%2Did"] = id
-    }
-    return NewUserExperienceAnalyticsAppHealthOverviewMetricValuesUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

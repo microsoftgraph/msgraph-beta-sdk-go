@@ -7,8 +7,6 @@ import (
 // TypedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
-    // The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-    TypeEscaped *EmailType
 }
 // NewTypedEmailAddress instantiates a new TypedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {

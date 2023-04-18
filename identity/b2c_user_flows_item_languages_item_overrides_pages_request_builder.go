@@ -46,6 +46,17 @@ type B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserFlowLanguagePageId provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
+func (m *B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) ByUserFlowLanguagePageId(userFlowLanguagePageId string)(*B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userFlowLanguagePageId != "" {
+        urlTplParams["userFlowLanguagePage%2Did"] = userFlowLanguagePageId
+    }
+    return NewB2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilderInternal instantiates a new OverridesPagesRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) {
     m := &B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder{

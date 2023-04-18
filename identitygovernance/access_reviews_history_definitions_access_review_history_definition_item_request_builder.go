@@ -93,17 +93,6 @@ func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequest
 func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) Instances()(*AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) {
     return NewAccessReviewsHistoryDefinitionsItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// InstancesById provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
-func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) InstancesById(id string)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewHistoryInstance%2Did"] = id
-    }
-    return NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property historyDefinitions in identityGovernance
 func (m *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, requestConfiguration *AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

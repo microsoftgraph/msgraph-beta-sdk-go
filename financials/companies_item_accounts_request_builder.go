@@ -39,6 +39,17 @@ type CompaniesItemAccountsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CompaniesItemAccountsRequestBuilderGetQueryParameters
 }
+// ByAccountId provides operations to manage the accounts property of the microsoft.graph.company entity.
+func (m *CompaniesItemAccountsRequestBuilder) ByAccountId(accountId string)(*CompaniesItemAccountsAccountItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accountId != "" {
+        urlTplParams["account%2Did"] = accountId
+    }
+    return NewCompaniesItemAccountsAccountItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemAccountsRequestBuilderInternal instantiates a new AccountsRequestBuilder and sets the default values.
 func NewCompaniesItemAccountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAccountsRequestBuilder) {
     m := &CompaniesItemAccountsRequestBuilder{

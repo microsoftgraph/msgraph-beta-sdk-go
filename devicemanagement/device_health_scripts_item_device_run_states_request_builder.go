@@ -46,6 +46,17 @@ type DeviceHealthScriptsItemDeviceRunStatesRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceHealthScriptDeviceStateId provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.
+func (m *DeviceHealthScriptsItemDeviceRunStatesRequestBuilder) ByDeviceHealthScriptDeviceStateId(deviceHealthScriptDeviceStateId string)(*DeviceHealthScriptsItemDeviceRunStatesDeviceHealthScriptDeviceStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceHealthScriptDeviceStateId != "" {
+        urlTplParams["deviceHealthScriptDeviceState%2Did"] = deviceHealthScriptDeviceStateId
+    }
+    return NewDeviceHealthScriptsItemDeviceRunStatesDeviceHealthScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceHealthScriptsItemDeviceRunStatesRequestBuilderInternal instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsItemDeviceRunStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsItemDeviceRunStatesRequestBuilder) {
     m := &DeviceHealthScriptsItemDeviceRunStatesRequestBuilder{

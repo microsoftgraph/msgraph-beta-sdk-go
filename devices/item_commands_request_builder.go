@@ -46,6 +46,17 @@ type ItemCommandsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCommandId provides operations to manage the commands property of the microsoft.graph.device entity.
+func (m *ItemCommandsRequestBuilder) ByCommandId(commandId string)(*ItemCommandsCommandItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if commandId != "" {
+        urlTplParams["command%2Did"] = commandId
+    }
+    return NewItemCommandsCommandItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCommandsRequestBuilderInternal instantiates a new CommandsRequestBuilder and sets the default values.
 func NewItemCommandsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommandsRequestBuilder) {
     m := &ItemCommandsRequestBuilder{

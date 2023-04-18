@@ -46,6 +46,17 @@ type ItemBusinessFlowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBusinessFlowId provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
+func (m *ItemBusinessFlowsRequestBuilder) ByBusinessFlowId(businessFlowId string)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if businessFlowId != "" {
+        urlTplParams["businessFlow%2Did"] = businessFlowId
+    }
+    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemBusinessFlowsRequestBuilderInternal instantiates a new BusinessFlowsRequestBuilder and sets the default values.
 func NewItemBusinessFlowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBusinessFlowsRequestBuilder) {
     m := &ItemBusinessFlowsRequestBuilder{

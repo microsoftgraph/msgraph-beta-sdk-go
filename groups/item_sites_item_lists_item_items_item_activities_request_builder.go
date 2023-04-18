@@ -46,6 +46,17 @@ type ItemSitesItemListsItemItemsItemActivitiesRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemActivityOLDId provides operations to manage the activities property of the microsoft.graph.listItem entity.
+func (m *ItemSitesItemListsItemItemsItemActivitiesRequestBuilder) ByItemActivityOLDId(itemActivityOLDId string)(*ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemActivityOLDId != "" {
+        urlTplParams["itemActivityOLD%2Did"] = itemActivityOLDId
+    }
+    return NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemListsItemItemsItemActivitiesRequestBuilderInternal instantiates a new ActivitiesRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemItemsItemActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsItemActivitiesRequestBuilder) {
     m := &ItemSitesItemListsItemItemsItemActivitiesRequestBuilder{

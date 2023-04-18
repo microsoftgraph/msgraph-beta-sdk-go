@@ -9,8 +9,6 @@ import (
 type Credential struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The type for this credential. Valid values: username, password, or other.
-    TypeEscaped *string
 }
 // NewCredential instantiates a new credential and sets the default values.
 func NewCredential()(*Credential) {

@@ -46,6 +46,17 @@ type ItemSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDirectorySettingId provides operations to manage the settings property of the microsoft.graph.group entity.
+func (m *ItemSettingsRequestBuilder) ByDirectorySettingId(directorySettingId string)(*ItemSettingsDirectorySettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directorySettingId != "" {
+        urlTplParams["directorySetting%2Did"] = directorySettingId
+    }
+    return NewItemSettingsDirectorySettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewItemSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsRequestBuilder) {
     m := &ItemSettingsRequestBuilder{

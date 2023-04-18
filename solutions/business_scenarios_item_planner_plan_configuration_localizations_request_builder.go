@@ -46,6 +46,17 @@ type BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPlannerPlanConfigurationLocalizationId provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
+func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ByPlannerPlanConfigurationLocalizationId(plannerPlanConfigurationLocalizationId string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if plannerPlanConfigurationLocalizationId != "" {
+        urlTplParams["plannerPlanConfigurationLocalization%2Did"] = plannerPlanConfigurationLocalizationId
+    }
+    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal instantiates a new LocalizationsRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     m := &BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder{

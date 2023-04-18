@@ -46,6 +46,17 @@ type ItemProfileNamesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPersonNameId provides operations to manage the names property of the microsoft.graph.profile entity.
+func (m *ItemProfileNamesRequestBuilder) ByPersonNameId(personNameId string)(*ItemProfileNamesPersonNameItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if personNameId != "" {
+        urlTplParams["personName%2Did"] = personNameId
+    }
+    return NewItemProfileNamesPersonNameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileNamesRequestBuilderInternal instantiates a new NamesRequestBuilder and sets the default values.
 func NewItemProfileNamesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileNamesRequestBuilder) {
     m := &ItemProfileNamesRequestBuilder{

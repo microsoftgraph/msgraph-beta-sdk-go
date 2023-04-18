@@ -46,6 +46,17 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsImpactingProcessId provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) ByUserExperienceAnalyticsImpactingProcessId(userExperienceAnalyticsImpactingProcessId string)(*UserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsImpactingProcessId != "" {
+        urlTplParams["userExperienceAnalyticsImpactingProcess%2Did"] = userExperienceAnalyticsImpactingProcessId
+    }
+    return NewUserExperienceAnalyticsImpactingProcessUserExperienceAnalyticsImpactingProcessItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal instantiates a new UserExperienceAnalyticsImpactingProcessRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsImpactingProcessRequestBuilder) {
     m := &UserExperienceAnalyticsImpactingProcessRequestBuilder{

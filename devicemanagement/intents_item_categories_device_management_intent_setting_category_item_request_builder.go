@@ -112,17 +112,6 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) Settings()(*IntentsItemCategoriesItemSettingsRequestBuilder) {
     return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
-func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) SettingsById(id string)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementSettingInstance%2Did"] = id
-    }
-    return NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

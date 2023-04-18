@@ -46,6 +46,17 @@ type CompaniesItemEmployeesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEmployeeId provides operations to manage the employees property of the microsoft.graph.company entity.
+func (m *CompaniesItemEmployeesRequestBuilder) ByEmployeeId(employeeId string)(*CompaniesItemEmployeesEmployeeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if employeeId != "" {
+        urlTplParams["employee%2Did"] = employeeId
+    }
+    return NewCompaniesItemEmployeesEmployeeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemEmployeesRequestBuilderInternal instantiates a new EmployeesRequestBuilder and sets the default values.
 func NewCompaniesItemEmployeesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemEmployeesRequestBuilder) {
     m := &CompaniesItemEmployeesRequestBuilder{

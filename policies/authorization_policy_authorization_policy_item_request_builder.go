@@ -58,17 +58,6 @@ func NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilder(rawUrl string, 
 func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverrides()(*AuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilder) {
     return NewAuthorizationPolicyItemDefaultUserRoleOverridesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DefaultUserRoleOverridesById provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
-func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverridesById(id string)(*AuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["defaultUserRoleOverride%2Did"] = id
-    }
-    return NewAuthorizationPolicyItemDefaultUserRoleOverridesDefaultUserRoleOverrideItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete delete navigation property authorizationPolicy for policies
 func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthorizationPolicyAuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

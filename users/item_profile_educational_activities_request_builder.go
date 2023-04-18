@@ -46,6 +46,17 @@ type ItemProfileEducationalActivitiesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationalActivityId provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
+func (m *ItemProfileEducationalActivitiesRequestBuilder) ByEducationalActivityId(educationalActivityId string)(*ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationalActivityId != "" {
+        urlTplParams["educationalActivity%2Did"] = educationalActivityId
+    }
+    return NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileEducationalActivitiesRequestBuilderInternal instantiates a new EducationalActivitiesRequestBuilder and sets the default values.
 func NewItemProfileEducationalActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileEducationalActivitiesRequestBuilder) {
     m := &ItemProfileEducationalActivitiesRequestBuilder{

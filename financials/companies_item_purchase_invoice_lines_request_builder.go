@@ -39,6 +39,17 @@ type CompaniesItemPurchaseInvoiceLinesRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *CompaniesItemPurchaseInvoiceLinesRequestBuilderGetQueryParameters
 }
+// ByPurchaseInvoiceLineId provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.
+func (m *CompaniesItemPurchaseInvoiceLinesRequestBuilder) ByPurchaseInvoiceLineId(purchaseInvoiceLineId string)(*CompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if purchaseInvoiceLineId != "" {
+        urlTplParams["purchaseInvoiceLine%2Did"] = purchaseInvoiceLineId
+    }
+    return NewCompaniesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemPurchaseInvoiceLinesRequestBuilderInternal instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoiceLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoiceLinesRequestBuilder) {
     m := &CompaniesItemPurchaseInvoiceLinesRequestBuilder{

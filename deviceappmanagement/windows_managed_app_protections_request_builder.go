@@ -46,6 +46,17 @@ type WindowsManagedAppProtectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsManagedAppProtectionId provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+func (m *WindowsManagedAppProtectionsRequestBuilder) ByWindowsManagedAppProtectionId(windowsManagedAppProtectionId string)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsManagedAppProtectionId != "" {
+        urlTplParams["windowsManagedAppProtection%2Did"] = windowsManagedAppProtectionId
+    }
+    return NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsManagedAppProtectionsRequestBuilderInternal instantiates a new WindowsManagedAppProtectionsRequestBuilder and sets the default values.
 func NewWindowsManagedAppProtectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsRequestBuilder) {
     m := &WindowsManagedAppProtectionsRequestBuilder{

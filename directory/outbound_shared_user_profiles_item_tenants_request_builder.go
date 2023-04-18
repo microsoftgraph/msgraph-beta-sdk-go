@@ -46,6 +46,17 @@ type OutboundSharedUserProfilesItemTenantsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTenantReferenceTenantId provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
+func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ByTenantReferenceTenantId(tenantReferenceTenantId string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if tenantReferenceTenantId != "" {
+        urlTplParams["tenantReference%2DtenantId"] = tenantReferenceTenantId
+    }
+    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal instantiates a new TenantsRequestBuilder and sets the default values.
 func NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
     m := &OutboundSharedUserProfilesItemTenantsRequestBuilder{

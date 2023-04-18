@@ -46,6 +46,17 @@ type DeviceManagementScriptsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementScriptId provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementScriptsRequestBuilder) ByDeviceManagementScriptId(deviceManagementScriptId string)(*DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementScriptId != "" {
+        urlTplParams["deviceManagementScript%2Did"] = deviceManagementScriptId
+    }
+    return NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceManagementScriptsRequestBuilderInternal instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementScriptsRequestBuilder) {
     m := &DeviceManagementScriptsRequestBuilder{

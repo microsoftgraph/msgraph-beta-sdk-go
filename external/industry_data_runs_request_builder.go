@@ -39,6 +39,17 @@ type IndustryDataRunsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IndustryDataRunsRequestBuilderGetQueryParameters
 }
+// ByIndustryDataRunId provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataRunsRequestBuilder) ByIndustryDataRunId(industryDataRunId string)(*IndustryDataRunsIndustryDataRunItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if industryDataRunId != "" {
+        urlTplParams["industryDataRun%2Did"] = industryDataRunId
+    }
+    return NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIndustryDataRunsRequestBuilderInternal instantiates a new RunsRequestBuilder and sets the default values.
 func NewIndustryDataRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRunsRequestBuilder) {
     m := &IndustryDataRunsRequestBuilder{

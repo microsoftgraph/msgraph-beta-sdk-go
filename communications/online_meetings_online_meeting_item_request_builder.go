@@ -49,17 +49,6 @@ func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AlternativeRecording()(*
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReports()(*OnlineMeetingsItemAttendanceReportsRequestBuilder) {
     return NewOnlineMeetingsItemAttendanceReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["meetingAttendanceReport%2Did"] = id
-    }
-    return NewOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AttendeeReport provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*OnlineMeetingsItemAttendeeReportRequestBuilder) {
     return NewOnlineMeetingsItemAttendeeReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -111,6 +100,10 @@ func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
+}
+// GetVirtualAppointmentJoinWebUrl provides operations to call the getVirtualAppointmentJoinWebUrl method.
+func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) GetVirtualAppointmentJoinWebUrl()(*OnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilder) {
+    return NewOnlineMeetingsItemGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MeetingAttendanceReport provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) MeetingAttendanceReport()(*OnlineMeetingsItemMeetingAttendanceReportRequestBuilder) {
@@ -191,17 +184,6 @@ func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) ToPatchRequestInformatio
 // Transcripts provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) Transcripts()(*OnlineMeetingsItemTranscriptsRequestBuilder) {
     return NewOnlineMeetingsItemTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TranscriptsById provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*OnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["callTranscript%2Did"] = id
-    }
-    return NewOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) VirtualAppointment()(*OnlineMeetingsItemVirtualAppointmentRequestBuilder) {

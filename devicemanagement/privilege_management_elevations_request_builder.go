@@ -46,6 +46,17 @@ type PrivilegeManagementElevationsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegeManagementElevationId provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.
+func (m *PrivilegeManagementElevationsRequestBuilder) ByPrivilegeManagementElevationId(privilegeManagementElevationId string)(*PrivilegeManagementElevationsPrivilegeManagementElevationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegeManagementElevationId != "" {
+        urlTplParams["privilegeManagementElevation%2Did"] = privilegeManagementElevationId
+    }
+    return NewPrivilegeManagementElevationsPrivilegeManagementElevationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegeManagementElevationsRequestBuilderInternal instantiates a new PrivilegeManagementElevationsRequestBuilder and sets the default values.
 func NewPrivilegeManagementElevationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegeManagementElevationsRequestBuilder) {
     m := &PrivilegeManagementElevationsRequestBuilder{

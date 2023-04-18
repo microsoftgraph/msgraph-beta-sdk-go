@@ -42,6 +42,17 @@ type ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOutlookTaskId provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
+func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) ByOutlookTaskId(outlookTaskId string)(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksOutlookTaskItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if outlookTaskId != "" {
+        urlTplParams["outlookTask%2Did"] = outlookTaskId
+    }
+    return NewItemOutlookTaskGroupsItemTaskFoldersItemTasksOutlookTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
 func NewItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) {
     m := &ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder{
@@ -81,7 +92,10 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskCollectionResponseable), nil
 }
-// Post create new navigation property to tasks for users
+// Post create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +130,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to tasks for users
+// ToPostRequestInformation create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone.
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

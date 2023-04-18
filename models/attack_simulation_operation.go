@@ -7,8 +7,6 @@ import (
 // AttackSimulationOperation 
 type AttackSimulationOperation struct {
     LongRunningOperation
-    // The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
-    TypeEscaped *AttackSimulationOperationType
 }
 // NewAttackSimulationOperation instantiates a new AttackSimulationOperation and sets the default values.
 func NewAttackSimulationOperation()(*AttackSimulationOperation) {

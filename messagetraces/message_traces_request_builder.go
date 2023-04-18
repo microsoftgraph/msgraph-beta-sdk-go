@@ -46,6 +46,17 @@ type MessageTracesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMessageTraceId provides operations to manage the collection of messageTrace entities.
+func (m *MessageTracesRequestBuilder) ByMessageTraceId(messageTraceId string)(*MessageTraceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if messageTraceId != "" {
+        urlTplParams["messageTrace%2Did"] = messageTraceId
+    }
+    return NewMessageTraceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMessageTracesRequestBuilderInternal instantiates a new MessageTracesRequestBuilder and sets the default values.
 func NewMessageTracesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageTracesRequestBuilder) {
     m := &MessageTracesRequestBuilder{

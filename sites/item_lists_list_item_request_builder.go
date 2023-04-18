@@ -49,17 +49,6 @@ func (m *ItemListsListItemRequestBuilder) Activities()(*ItemListsItemActivitiesR
 func (m *ItemListsListItemRequestBuilder) Columns()(*ItemListsItemColumnsRequestBuilder) {
     return NewItemListsItemColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ColumnsById provides operations to manage the columns property of the microsoft.graph.list entity.
-func (m *ItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["columnDefinition%2Did"] = id
-    }
-    return NewItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemListsListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsListItemRequestBuilder) {
     m := &ItemListsListItemRequestBuilder{
@@ -76,17 +65,6 @@ func NewItemListsListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) ContentTypes()(*ItemListsItemContentTypesRequestBuilder) {
     return NewItemListsItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ContentTypesById provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-func (m *ItemListsListItemRequestBuilder) ContentTypesById(id string)(*ItemListsItemContentTypesContentTypeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["contentType%2Did"] = id
-    }
-    return NewItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -131,31 +109,9 @@ func (m *ItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ItemListsListItemRequestBuilder) Items()(*ItemListsItemItemsRequestBuilder) {
     return NewItemListsItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ItemsById provides operations to manage the items property of the microsoft.graph.list entity.
-func (m *ItemListsListItemRequestBuilder) ItemsById(id string)(*ItemListsItemItemsListItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["listItem%2Did"] = id
-    }
-    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Operations()(*ItemListsItemOperationsRequestBuilder) {
     return NewItemListsItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OperationsById provides operations to manage the operations property of the microsoft.graph.list entity.
-func (m *ItemListsListItemRequestBuilder) OperationsById(id string)(*ItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["richLongRunningOperation%2Did"] = id
-    }
-    return NewItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property lists in sites
 func (m *ItemListsListItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, requestConfiguration *ItemListsListItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
@@ -179,17 +135,6 @@ func (m *ItemListsListItemRequestBuilder) Patch(ctx context.Context, body ie233e
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Subscriptions()(*ItemListsItemSubscriptionsRequestBuilder) {
     return NewItemListsItemSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.list entity.
-func (m *ItemListsListItemRequestBuilder) SubscriptionsById(id string)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["subscription%2Did"] = id
-    }
-    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

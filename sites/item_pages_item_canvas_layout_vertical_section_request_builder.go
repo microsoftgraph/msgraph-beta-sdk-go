@@ -160,14 +160,3 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToPatchRequestI
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Webparts()(*ItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilder) {
     return NewItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// WebpartsById provides operations to manage the webparts property of the microsoft.graph.verticalSection entity.
-func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) WebpartsById(id string)(*ItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["webPart%2Did"] = id
-    }
-    return NewItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}

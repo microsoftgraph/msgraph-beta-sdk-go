@@ -45,17 +45,6 @@ type ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderPat
 func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) AgentGroups()(*ItemAgentGroupsItemPublishedResourcesItemAgentGroupsRequestBuilder) {
     return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AgentGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item.agentGroups.item collection
-func (m *ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) AgentGroupsById(id string)(*ItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onPremisesAgentGroup%2Did1"] = id
-    }
-    return NewItemAgentGroupsItemPublishedResourcesItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal instantiates a new PublishedResourceItemRequestBuilder and sets the default values.
 func NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
     m := &ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder{

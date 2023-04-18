@@ -46,6 +46,17 @@ type ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByInformationProtectionLabelId provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
+func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProtectionLabelId(informationProtectionLabelId string)(*ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if informationProtectionLabelId != "" {
+        urlTplParams["informationProtectionLabel%2Did"] = informationProtectionLabelId
+    }
+    return NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilderInternal instantiates a new LabelsRequestBuilder and sets the default values.
 func NewItemSitesItemInformationProtectionPolicyLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) {
     m := &ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder{

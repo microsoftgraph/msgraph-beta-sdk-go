@@ -46,6 +46,17 @@ type UserSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserSecurityProfileId provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
+func (m *UserSecurityProfilesRequestBuilder) ByUserSecurityProfileId(userSecurityProfileId string)(*UserSecurityProfilesUserSecurityProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userSecurityProfileId != "" {
+        urlTplParams["userSecurityProfile%2Did"] = userSecurityProfileId
+    }
+    return NewUserSecurityProfilesUserSecurityProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserSecurityProfilesRequestBuilderInternal instantiates a new UserSecurityProfilesRequestBuilder and sets the default values.
 func NewUserSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserSecurityProfilesRequestBuilder) {
     m := &UserSecurityProfilesRequestBuilder{

@@ -49,17 +49,6 @@ func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Assign()
 func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) Assignments()(*IntuneBrandingProfilesItemAssignmentsRequestBuilder) {
     return NewIntuneBrandingProfilesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
-func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) AssignmentsById(id string)(*IntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["intuneBrandingProfileAssignment%2Did"] = id
-    }
-    return NewIntuneBrandingProfilesItemAssignmentsIntuneBrandingProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal instantiates a new IntuneBrandingProfileItemRequestBuilder and sets the default values.
 func NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
     m := &IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder{

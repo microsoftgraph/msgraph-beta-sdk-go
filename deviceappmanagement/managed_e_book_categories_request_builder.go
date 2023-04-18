@@ -46,6 +46,17 @@ type ManagedEBookCategoriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedEBookCategoryId provides operations to manage the managedEBookCategories property of the microsoft.graph.deviceAppManagement entity.
+func (m *ManagedEBookCategoriesRequestBuilder) ByManagedEBookCategoryId(managedEBookCategoryId string)(*ManagedEBookCategoriesManagedEBookCategoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedEBookCategoryId != "" {
+        urlTplParams["managedEBookCategory%2Did"] = managedEBookCategoryId
+    }
+    return NewManagedEBookCategoriesManagedEBookCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedEBookCategoriesRequestBuilderInternal instantiates a new ManagedEBookCategoriesRequestBuilder and sets the default values.
 func NewManagedEBookCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBookCategoriesRequestBuilder) {
     m := &ManagedEBookCategoriesRequestBuilder{

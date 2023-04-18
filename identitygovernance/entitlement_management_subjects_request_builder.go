@@ -46,6 +46,17 @@ type EntitlementManagementSubjectsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageSubjectId provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementSubjectsRequestBuilder) ByAccessPackageSubjectId(accessPackageSubjectId string)(*EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageSubjectId != "" {
+        urlTplParams["accessPackageSubject%2Did"] = accessPackageSubjectId
+    }
+    return NewEntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementSubjectsRequestBuilderInternal instantiates a new SubjectsRequestBuilder and sets the default values.
 func NewEntitlementManagementSubjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementSubjectsRequestBuilder) {
     m := &EntitlementManagementSubjectsRequestBuilder{

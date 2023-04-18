@@ -46,6 +46,17 @@ type EdiscoveryCasesItemSourceCollectionsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySourceCollectionId provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
+func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) BySourceCollectionId(sourceCollectionId string)(*EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sourceCollectionId != "" {
+        urlTplParams["sourceCollection%2Did"] = sourceCollectionId
+    }
+    return NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdiscoveryCasesItemSourceCollectionsRequestBuilderInternal instantiates a new SourceCollectionsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemSourceCollectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemSourceCollectionsRequestBuilder) {
     m := &EdiscoveryCasesItemSourceCollectionsRequestBuilder{

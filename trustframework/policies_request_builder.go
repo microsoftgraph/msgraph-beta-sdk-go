@@ -46,6 +46,17 @@ type PoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTrustFrameworkPolicyId provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
+func (m *PoliciesRequestBuilder) ByTrustFrameworkPolicyId(trustFrameworkPolicyId string)(*PoliciesTrustFrameworkPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if trustFrameworkPolicyId != "" {
+        urlTplParams["trustFrameworkPolicy%2Did"] = trustFrameworkPolicyId
+    }
+    return NewPoliciesTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PoliciesRequestBuilder) {
     m := &PoliciesRequestBuilder{

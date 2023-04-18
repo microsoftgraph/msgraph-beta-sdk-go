@@ -46,6 +46,17 @@ type ManagedTenantsDeviceAppPerformancesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceAppPerformanceId provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsDeviceAppPerformancesRequestBuilder) ByDeviceAppPerformanceId(deviceAppPerformanceId string)(*ManagedTenantsDeviceAppPerformancesDeviceAppPerformanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceAppPerformanceId != "" {
+        urlTplParams["deviceAppPerformance%2Did"] = deviceAppPerformanceId
+    }
+    return NewManagedTenantsDeviceAppPerformancesDeviceAppPerformanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsDeviceAppPerformancesRequestBuilderInternal instantiates a new DeviceAppPerformancesRequestBuilder and sets the default values.
 func NewManagedTenantsDeviceAppPerformancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsDeviceAppPerformancesRequestBuilder) {
     m := &ManagedTenantsDeviceAppPerformancesRequestBuilder{

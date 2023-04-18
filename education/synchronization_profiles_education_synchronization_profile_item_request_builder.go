@@ -74,17 +74,6 @@ func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilde
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Errors()(*SynchronizationProfilesItemErrorsRequestBuilder) {
     return NewSynchronizationProfilesItemErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ErrorsById provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
-func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) ErrorsById(id string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSynchronizationError%2Did"] = id
-    }
-    return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get synchronizationProfiles from education
 func (m *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesEducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

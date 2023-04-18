@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderGetQueryParameters the collection of rules that apply to the user's Inbox folder.
+// ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderGetQueryParameters get all the messageRule objects defined for the user's inbox.
 type ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -42,6 +42,17 @@ type ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMessageRuleId provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ByMessageRuleId(messageRuleId string)(*ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if messageRuleId != "" {
+        urlTplParams["messageRule%2Did"] = messageRuleId
+    }
+    return NewItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderInternal instantiates a new MessageRulesRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder{
@@ -59,7 +70,10 @@ func NewItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder(rawUrl str
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) Count()(*ItemMailFoldersItemChildFoldersItemMessageRulesCountRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessageRulesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of rules that apply to the user's Inbox folder.
+// Get get all the messageRule objects defined for the user's inbox.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +92,10 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleCollectionResponseable), nil
 }
-// Post create new navigation property to messageRules for users
+// Post create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -97,7 +114,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) Post(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable), nil
 }
-// ToGetRequestInformation the collection of rules that apply to the user's Inbox folder.
+// ToGetRequestInformation get all the messageRule objects defined for the user's inbox.
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -113,7 +130,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to messageRules for users
+// ToPostRequestInformation create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRuleable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

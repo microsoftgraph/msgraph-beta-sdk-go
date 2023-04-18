@@ -46,6 +46,17 @@ type PolicySetsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPolicySetId provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.
+func (m *PolicySetsRequestBuilder) ByPolicySetId(policySetId string)(*PolicySetsPolicySetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if policySetId != "" {
+        urlTplParams["policySet%2Did"] = policySetId
+    }
+    return NewPolicySetsPolicySetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPolicySetsRequestBuilderInternal instantiates a new PolicySetsRequestBuilder and sets the default values.
 func NewPolicySetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsRequestBuilder) {
     m := &PolicySetsRequestBuilder{

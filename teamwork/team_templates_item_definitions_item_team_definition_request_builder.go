@@ -45,17 +45,6 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderPatchRequestCon
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) AllChannels()(*TeamTemplatesItemDefinitionsItemTeamDefinitionAllChannelsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionAllChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AllChannelsById provides operations to manage the allChannels property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) AllChannelsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionAllChannelsChannelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["channel%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionAllChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Archive provides operations to call the archive method.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Archive()(*TeamTemplatesItemDefinitionsItemTeamDefinitionArchiveRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -63,17 +52,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Archive()
 // Channels provides operations to manage the channels property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Channels()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ChannelsById provides operations to manage the channels property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) ChannelsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["channel%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Clone provides operations to call the clone method.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Clone()(*TeamTemplatesItemDefinitionsItemTeamDefinitionCloneRequestBuilder) {
@@ -142,76 +120,21 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Group()(*
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) IncomingChannels()(*TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IncomingChannelsById provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) IncomingChannelsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["channel%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionIncomingChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) InstalledApps()(*TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) InstalledAppsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamsAppInstallation%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Members()(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById provides operations to manage the members property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) MembersById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["conversationMember%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Operations()(*TeamTemplatesItemDefinitionsItemTeamDefinitionOperationsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OperationsById provides operations to manage the operations property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) OperationsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOperationsTeamsAsyncOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamsAsyncOperation%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Owners provides operations to manage the owners property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Owners()(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OwnersById provides operations to manage the owners property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) OwnersById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["user%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property teamDefinition in teamwork
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
@@ -236,17 +159,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Patch(ctx
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) PermissionGrants()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PermissionGrantsById provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) PermissionGrantsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Photo()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPhotoRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -266,17 +178,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) SendActiv
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Tags()(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TagsById provides operations to manage the tags property of the microsoft.graph.team entity.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) TagsById(id string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamworkTag%2Did"] = id
-    }
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Template provides operations to manage the template property of the microsoft.graph.team entity.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Template()(*TeamTemplatesItemDefinitionsItemTeamDefinitionTemplateRequestBuilder) {

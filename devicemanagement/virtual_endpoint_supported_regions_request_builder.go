@@ -46,6 +46,17 @@ type VirtualEndpointSupportedRegionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcSupportedRegionId provides operations to manage the supportedRegions property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointSupportedRegionsRequestBuilder) ByCloudPcSupportedRegionId(cloudPcSupportedRegionId string)(*VirtualEndpointSupportedRegionsCloudPcSupportedRegionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcSupportedRegionId != "" {
+        urlTplParams["cloudPcSupportedRegion%2Did"] = cloudPcSupportedRegionId
+    }
+    return NewVirtualEndpointSupportedRegionsCloudPcSupportedRegionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointSupportedRegionsRequestBuilderInternal instantiates a new SupportedRegionsRequestBuilder and sets the default values.
 func NewVirtualEndpointSupportedRegionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointSupportedRegionsRequestBuilder) {
     m := &VirtualEndpointSupportedRegionsRequestBuilder{

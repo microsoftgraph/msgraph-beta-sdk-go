@@ -46,6 +46,17 @@ type EntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApprovalStepId provides operations to manage the steps property of the microsoft.graph.approval entity.
+func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilder) ByApprovalStepId(approvalStepId string)(*EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if approvalStepId != "" {
+        urlTplParams["approvalStep%2Did"] = approvalStepId
+    }
+    return NewEntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilderInternal instantiates a new StepsRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilder) {
     m := &EntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilder{

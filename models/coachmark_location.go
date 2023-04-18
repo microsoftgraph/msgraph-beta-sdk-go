@@ -9,8 +9,6 @@ import (
 type CoachmarkLocation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
-    TypeEscaped *CoachmarkLocationType
 }
 // NewCoachmarkLocation instantiates a new coachmarkLocation and sets the default values.
 func NewCoachmarkLocation()(*CoachmarkLocation) {
