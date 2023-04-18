@@ -46,6 +46,17 @@ type GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyOperationId provides operations to manage the groupPolicyOperations property of the microsoft.graph.groupPolicyUploadedDefinitionFile entity.
+func (m *GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder) ByGroupPolicyOperationId(groupPolicyOperationId string)(*GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsGroupPolicyOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyOperationId != "" {
+        urlTplParams["groupPolicyOperation%2Did"] = groupPolicyOperationId
+    }
+    return NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsGroupPolicyOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilderInternal instantiates a new GroupPolicyOperationsRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder) {
     m := &GroupPolicyUploadedDefinitionFilesItemGroupPolicyOperationsRequestBuilder{

@@ -46,6 +46,17 @@ type ItemPendingAccessReviewInstancesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessReviewInstanceId provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
+func (m *ItemPendingAccessReviewInstancesRequestBuilder) ByAccessReviewInstanceId(accessReviewInstanceId string)(*ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessReviewInstanceId != "" {
+        urlTplParams["accessReviewInstance%2Did"] = accessReviewInstanceId
+    }
+    return NewItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPendingAccessReviewInstancesRequestBuilderInternal instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesRequestBuilder{

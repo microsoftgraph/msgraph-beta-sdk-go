@@ -91,17 +91,6 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Get(ctx cont
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) MultiValueExtendedProperties()(*ItemOutlookTaskFoldersItemMultiValueExtendedPropertiesRequestBuilder) {
     return NewItemOutlookTaskFoldersItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
-func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemOutlookTaskFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemOutlookTaskFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property taskFolders in users
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -125,31 +114,9 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx co
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) SingleValueExtendedProperties()(*ItemOutlookTaskFoldersItemSingleValueExtendedPropertiesRequestBuilder) {
     return NewItemOutlookTaskFoldersItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
-func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemOutlookTaskFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemOutlookTaskFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Tasks provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Tasks()(*ItemOutlookTaskFoldersItemTasksRequestBuilder) {
     return NewItemOutlookTaskFoldersItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TasksById provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
-func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) TasksById(id string)(*ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["outlookTask%2Did"] = id
-    }
-    return NewItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property taskFolders for users
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

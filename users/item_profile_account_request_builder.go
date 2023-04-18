@@ -46,6 +46,17 @@ type ItemProfileAccountRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserAccountInformationId provides operations to manage the account property of the microsoft.graph.profile entity.
+func (m *ItemProfileAccountRequestBuilder) ByUserAccountInformationId(userAccountInformationId string)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userAccountInformationId != "" {
+        urlTplParams["userAccountInformation%2Did"] = userAccountInformationId
+    }
+    return NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileAccountRequestBuilderInternal instantiates a new AccountRequestBuilder and sets the default values.
 func NewItemProfileAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileAccountRequestBuilder) {
     m := &ItemProfileAccountRequestBuilder{

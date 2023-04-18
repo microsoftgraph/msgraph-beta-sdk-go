@@ -46,6 +46,17 @@ type ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagementTemplateStepDeploymentId provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
+func (m *ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) ByManagementTemplateStepDeploymentId(managementTemplateStepDeploymentId string)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsManagementTemplateStepDeploymentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managementTemplateStepDeploymentId != "" {
+        urlTplParams["managementTemplateStepDeployment%2Did"] = managementTemplateStepDeploymentId
+    }
+    return NewManagedTenantsManagementTemplateStepVersionsItemDeploymentsManagementTemplateStepDeploymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilderInternal instantiates a new DeploymentsRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder) {
     m := &ManagedTenantsManagementTemplateStepVersionsItemDeploymentsRequestBuilder{

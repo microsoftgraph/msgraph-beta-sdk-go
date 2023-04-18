@@ -46,6 +46,17 @@ type CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustomerPaymentId provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
+func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) ByCustomerPaymentId(customerPaymentId string)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if customerPaymentId != "" {
+        urlTplParams["customerPayment%2Did"] = customerPaymentId
+    }
+    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) {
     m := &CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder{

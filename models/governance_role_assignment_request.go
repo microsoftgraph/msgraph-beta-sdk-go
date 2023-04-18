@@ -8,8 +8,6 @@ import (
 // GovernanceRoleAssignmentRequest 
 type GovernanceRoleAssignmentRequest struct {
     Entity
-    // Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-    TypeEscaped *string
 }
 // NewGovernanceRoleAssignmentRequest instantiates a new governanceRoleAssignmentRequest and sets the default values.
 func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {

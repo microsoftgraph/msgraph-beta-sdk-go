@@ -40,6 +40,17 @@ type LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetReques
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters
 }
+// ByUserProcessingResultId provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) ByUserProcessingResultId(userProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userProcessingResultId != "" {
+        urlTplParams["userProcessingResult%2Did"] = userProcessingResultId
+    }
+    return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderInternal instantiates a new UserProcessingResultsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder{

@@ -50,7 +50,7 @@ func (m *PstnCallLogRow) GetCallDurationSource()(*PstnCallDurationSource) {
     }
     return nil
 }
-// GetCalleeNumber gets the calleeNumber property value. Number dialed in E.164 format.
+// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call (E.164).
 func (m *PstnCallLogRow) GetCalleeNumber()(*string) {
     val, err := m.GetBackingStore().Get("calleeNumber")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *PstnCallLogRow) GetCalleeNumber()(*string) {
     }
     return nil
 }
-// GetCallerNumber gets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
+// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call (E.164).
 func (m *PstnCallLogRow) GetCallerNumber()(*string) {
     val, err := m.GetBackingStore().Get("callerNumber")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *PstnCallLogRow) GetCallId()(*string) {
     }
     return nil
 }
-// GetCallType gets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+// GetCallType gets the callType property value. Indicates whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
 func (m *PstnCallLogRow) GetCallType()(*string) {
     val, err := m.GetBackingStore().Get("callType")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *PstnCallLogRow) GetConnectionCharge()(*float64) {
     }
     return nil
 }
-// GetCurrency gets the currency property value. Type of currency used to calculate the cost of the call. For details, see ISO 4217.
+// GetCurrency gets the currency property value. Type of currency used to calculate the cost of the call (ISO 4217).
 func (m *PstnCallLogRow) GetCurrency()(*string) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *PstnCallLogRow) GetCurrency()(*string) {
     }
     return nil
 }
-// GetDestinationContext gets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+// GetDestinationContext gets the destinationContext property value. Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
 func (m *PstnCallLogRow) GetDestinationContext()(*string) {
     val, err := m.GetBackingStore().Get("destinationContext")
     if err != nil {
@@ -437,7 +437,7 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetId gets the id property value. Unique call identifier. GUID.
+// GetId gets the id property value. Unique call identifier (GUID).
 func (m *PstnCallLogRow) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -492,7 +492,7 @@ func (m *PstnCallLogRow) GetOperator()(*string) {
     }
     return nil
 }
-// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. The otherPartyCountryCode property
+// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) GetOtherPartyCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
@@ -547,7 +547,7 @@ func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
 func (m *PstnCallLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -748,14 +748,14 @@ func (m *PstnCallLogRow) SetCallDurationSource(value *PstnCallDurationSource)() 
         panic(err)
     }
 }
-// SetCalleeNumber sets the calleeNumber property value. Number dialed in E.164 format.
+// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call (E.164).
 func (m *PstnCallLogRow) SetCalleeNumber(value *string)() {
     err := m.GetBackingStore().Set("calleeNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCallerNumber sets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
+// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call (E.164).
 func (m *PstnCallLogRow) SetCallerNumber(value *string)() {
     err := m.GetBackingStore().Set("callerNumber", value)
     if err != nil {
@@ -769,7 +769,7 @@ func (m *PstnCallLogRow) SetCallId(value *string)() {
         panic(err)
     }
 }
-// SetCallType sets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+// SetCallType sets the callType property value. Indicates whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
 func (m *PstnCallLogRow) SetCallType(value *string)() {
     err := m.GetBackingStore().Set("callType", value)
     if err != nil {
@@ -797,14 +797,14 @@ func (m *PstnCallLogRow) SetConnectionCharge(value *float64)() {
         panic(err)
     }
 }
-// SetCurrency sets the currency property value. Type of currency used to calculate the cost of the call. For details, see ISO 4217.
+// SetCurrency sets the currency property value. Type of currency used to calculate the cost of the call (ISO 4217).
 func (m *PstnCallLogRow) SetCurrency(value *string)() {
     err := m.GetBackingStore().Set("currency", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationContext sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+// SetDestinationContext sets the destinationContext property value. Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
 func (m *PstnCallLogRow) SetDestinationContext(value *string)() {
     err := m.GetBackingStore().Set("destinationContext", value)
     if err != nil {
@@ -832,7 +832,7 @@ func (m *PstnCallLogRow) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         panic(err)
     }
 }
-// SetId sets the id property value. Unique call identifier. GUID.
+// SetId sets the id property value. Unique call identifier (GUID).
 func (m *PstnCallLogRow) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -867,7 +867,7 @@ func (m *PstnCallLogRow) SetOperator(value *string)() {
         panic(err)
     }
 }
-// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. The otherPartyCountryCode property
+// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) SetOtherPartyCountryCode(value *string)() {
     err := m.GetBackingStore().Set("otherPartyCountryCode", value)
     if err != nil {
@@ -902,7 +902,7 @@ func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
 func (m *PstnCallLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

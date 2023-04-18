@@ -73,17 +73,6 @@ func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration 
 func (m *TermStoreRequestBuilder) Groups()(*GroupsRequestBuilder) {
     return NewGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) GroupsById(id string)(*GroupsGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return NewGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the properties of a store object.
 // [Find more info here]
 // 
@@ -109,17 +98,6 @@ func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b991
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *TermStoreRequestBuilder) Sets()(*SetsRequestBuilder) {
     return NewSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) SetsById(id string)(*SetsSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["set%2Did"] = id
-    }
-    return NewSetsSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation read the properties and relationships of a store object.
 func (m *TermStoreRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermStoreRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

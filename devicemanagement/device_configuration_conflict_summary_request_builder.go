@@ -46,6 +46,17 @@ type DeviceConfigurationConflictSummaryRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceConfigurationConflictSummaryId provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) ByDeviceConfigurationConflictSummaryId(deviceConfigurationConflictSummaryId string)(*DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceConfigurationConflictSummaryId != "" {
+        urlTplParams["deviceConfigurationConflictSummary%2Did"] = deviceConfigurationConflictSummaryId
+    }
+    return NewDeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceConfigurationConflictSummaryRequestBuilderInternal instantiates a new DeviceConfigurationConflictSummaryRequestBuilder and sets the default values.
 func NewDeviceConfigurationConflictSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationConflictSummaryRequestBuilder) {
     m := &DeviceConfigurationConflictSummaryRequestBuilder{

@@ -46,6 +46,17 @@ type ThreatIntelligenceHostsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByHostId provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceHostsRequestBuilder) ByHostId(hostId string)(*ThreatIntelligenceHostsHostItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if hostId != "" {
+        urlTplParams["host%2Did"] = hostId
+    }
+    return NewThreatIntelligenceHostsHostItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceHostsRequestBuilderInternal instantiates a new HostsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsRequestBuilder) {
     m := &ThreatIntelligenceHostsRequestBuilder{

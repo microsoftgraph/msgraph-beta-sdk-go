@@ -45,31 +45,9 @@ type TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfigura
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatuses()(*TermsAndConditionsItemAcceptanceStatusesRequestBuilder) {
     return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AcceptanceStatusesById provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatusesById(id string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["termsAndConditionsAcceptanceStatus%2Did"] = id
-    }
-    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Assignments()(*TermsAndConditionsItemAssignmentsRequestBuilder) {
     return NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById(id string)(*TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["termsAndConditionsAssignment%2Did"] = id
-    }
-    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
 func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
@@ -122,17 +100,6 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Get(ctx context
 // GroupAssignments provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignments()(*TermsAndConditionsItemGroupAssignmentsRequestBuilder) {
     return NewTermsAndConditionsItemGroupAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignmentsById(id string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["termsAndConditionsGroupAssignment%2Did"] = id
-    }
-    return NewTermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property termsAndConditions in deviceManagement
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsable, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsable, error) {

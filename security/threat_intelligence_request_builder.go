@@ -45,31 +45,9 @@ type ThreatIntelligenceRequestBuilderPatchRequestConfiguration struct {
 func (m *ThreatIntelligenceRequestBuilder) ArticleIndicators()(*ThreatIntelligenceArticleIndicatorsRequestBuilder) {
     return NewThreatIntelligenceArticleIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ArticleIndicatorsById provides operations to manage the articleIndicators property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) ArticleIndicatorsById(id string)(*ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["articleIndicator%2Did"] = id
-    }
-    return NewThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Articles provides operations to manage the articles property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) Articles()(*ThreatIntelligenceArticlesRequestBuilder) {
     return NewThreatIntelligenceArticlesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ArticlesById provides operations to manage the articles property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) ArticlesById(id string)(*ThreatIntelligenceArticlesArticleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["article%2Did"] = id
-    }
-    return NewThreatIntelligenceArticlesArticleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewThreatIntelligenceRequestBuilderInternal instantiates a new ThreatIntelligenceRequestBuilder and sets the default values.
 func NewThreatIntelligenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceRequestBuilder) {
@@ -123,106 +101,29 @@ func (m *ThreatIntelligenceRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *ThreatIntelligenceRequestBuilder) HostComponents()(*ThreatIntelligenceHostComponentsRequestBuilder) {
     return NewThreatIntelligenceHostComponentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HostComponentsById provides operations to manage the hostComponents property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) HostComponentsById(id string)(*ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["hostComponent%2Did"] = id
-    }
-    return NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // HostCookies provides operations to manage the hostCookies property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) HostCookies()(*ThreatIntelligenceHostCookiesRequestBuilder) {
     return NewThreatIntelligenceHostCookiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// HostCookiesById provides operations to manage the hostCookies property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) HostCookiesById(id string)(*ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["hostCookie%2Did"] = id
-    }
-    return NewThreatIntelligenceHostCookiesHostCookieItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Hosts provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) Hosts()(*ThreatIntelligenceHostsRequestBuilder) {
     return NewThreatIntelligenceHostsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HostsById provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) HostsById(id string)(*ThreatIntelligenceHostsHostItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["host%2Did"] = id
-    }
-    return NewThreatIntelligenceHostsHostItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // HostTrackers provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) HostTrackers()(*ThreatIntelligenceHostTrackersRequestBuilder) {
     return NewThreatIntelligenceHostTrackersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// HostTrackersById provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) HostTrackersById(id string)(*ThreatIntelligenceHostTrackersHostTrackerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["hostTracker%2Did"] = id
-    }
-    return NewThreatIntelligenceHostTrackersHostTrackerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // IntelligenceProfileIndicators provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) IntelligenceProfileIndicators()(*ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) {
     return NewThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IntelligenceProfileIndicatorsById provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) IntelligenceProfileIndicatorsById(id string)(*ThreatIntelligenceIntelligenceProfileIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["intelligenceProfileIndicator%2Did"] = id
-    }
-    return NewThreatIntelligenceIntelligenceProfileIndicatorsIntelligenceProfileIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // IntelProfiles provides operations to manage the intelProfiles property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) IntelProfiles()(*ThreatIntelligenceIntelProfilesRequestBuilder) {
     return NewThreatIntelligenceIntelProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IntelProfilesById provides operations to manage the intelProfiles property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) IntelProfilesById(id string)(*ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["intelligenceProfile%2Did"] = id
-    }
-    return NewThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // PassiveDnsRecords provides operations to manage the passiveDnsRecords property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) PassiveDnsRecords()(*ThreatIntelligencePassiveDnsRecordsRequestBuilder) {
     return NewThreatIntelligencePassiveDnsRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PassiveDnsRecordsById provides operations to manage the passiveDnsRecords property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) PassiveDnsRecordsById(id string)(*ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["passiveDnsRecord%2Did"] = id
-    }
-    return NewThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property threatIntelligence in security
 func (m *ThreatIntelligenceRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatIntelligenceable, requestConfiguration *ThreatIntelligenceRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatIntelligenceable, error) {
@@ -291,15 +192,4 @@ func (m *ThreatIntelligenceRequestBuilder) ToPatchRequestInformation(ctx context
 // Vulnerabilities provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.
 func (m *ThreatIntelligenceRequestBuilder) Vulnerabilities()(*ThreatIntelligenceVulnerabilitiesRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// VulnerabilitiesById provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceRequestBuilder) VulnerabilitiesById(id string)(*ThreatIntelligenceVulnerabilitiesVulnerabilityItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["vulnerability%2Did"] = id
-    }
-    return NewThreatIntelligenceVulnerabilitiesVulnerabilityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -46,6 +46,17 @@ type GroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicySettingMappingId provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
+func (m *GroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilder) ByGroupPolicySettingMappingId(groupPolicySettingMappingId string)(*GroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicySettingMappingId != "" {
+        urlTplParams["groupPolicySettingMapping%2Did"] = groupPolicySettingMappingId
+    }
+    return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilderInternal instantiates a new GroupPolicySettingMappingsRequestBuilder and sets the default values.
 func NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilder) {
     m := &GroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilder{

@@ -93,17 +93,6 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Get(ctx context.
 func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemChannelsItemMessagesItemHostedContentsRequestBuilder) {
     return NewItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessageHostedContent%2Did"] = id
-    }
-    return NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property messages in teams
 func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx contex
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemChannelsItemMessagesItemRepliesRequestBuilder) {
     return NewItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessage%2Did1"] = id
-    }
-    return NewItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetReaction provides operations to call the setReaction method.
 func (m *ItemChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemChannelsItemMessagesItemSetReactionRequestBuilder) {

@@ -1366,6 +1366,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewItemPhone(), nil
                     case "#microsoft.graph.itemPublication":
                         return NewItemPublication(), nil
+                    case "#microsoft.graph.itemRetentionLabel":
+                        return NewItemRetentionLabel(), nil
                     case "#microsoft.graph.jobResponseBase":
                         return NewJobResponseBase(), nil
                     case "#microsoft.graph.journal":

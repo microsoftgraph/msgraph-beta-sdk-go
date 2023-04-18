@@ -46,6 +46,17 @@ type UserExperienceAnalyticsRemoteConnectionRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsRemoteConnectionId provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) ByUserExperienceAnalyticsRemoteConnectionId(userExperienceAnalyticsRemoteConnectionId string)(*UserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsRemoteConnectionId != "" {
+        urlTplParams["userExperienceAnalyticsRemoteConnection%2Did"] = userExperienceAnalyticsRemoteConnectionId
+    }
+    return NewUserExperienceAnalyticsRemoteConnectionUserExperienceAnalyticsRemoteConnectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal instantiates a new UserExperienceAnalyticsRemoteConnectionRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
     m := &UserExperienceAnalyticsRemoteConnectionRequestBuilder{

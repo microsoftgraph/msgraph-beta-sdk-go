@@ -46,6 +46,17 @@ type ItemRoleSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGovernanceRoleSettingId provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
+func (m *ItemRoleSettingsRequestBuilder) ByGovernanceRoleSettingId(governanceRoleSettingId string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if governanceRoleSettingId != "" {
+        urlTplParams["governanceRoleSetting%2Did"] = governanceRoleSettingId
+    }
+    return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemRoleSettingsRequestBuilderInternal instantiates a new RoleSettingsRequestBuilder and sets the default values.
 func NewItemRoleSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleSettingsRequestBuilder) {
     m := &ItemRoleSettingsRequestBuilder{

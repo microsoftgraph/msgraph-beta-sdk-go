@@ -46,6 +46,17 @@ type ThreatIntelligenceArticlesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByArticleId provides operations to manage the articles property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceArticlesRequestBuilder) ByArticleId(articleId string)(*ThreatIntelligenceArticlesArticleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if articleId != "" {
+        urlTplParams["article%2Did"] = articleId
+    }
+    return NewThreatIntelligenceArticlesArticleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceArticlesRequestBuilderInternal instantiates a new ArticlesRequestBuilder and sets the default values.
 func NewThreatIntelligenceArticlesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceArticlesRequestBuilder) {
     m := &ThreatIntelligenceArticlesRequestBuilder{

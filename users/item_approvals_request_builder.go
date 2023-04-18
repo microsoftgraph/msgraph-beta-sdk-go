@@ -46,6 +46,17 @@ type ItemApprovalsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApprovalId provides operations to manage the approvals property of the microsoft.graph.user entity.
+func (m *ItemApprovalsRequestBuilder) ByApprovalId(approvalId string)(*ItemApprovalsApprovalItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if approvalId != "" {
+        urlTplParams["approval%2Did"] = approvalId
+    }
+    return NewItemApprovalsApprovalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemApprovalsRequestBuilderInternal instantiates a new ApprovalsRequestBuilder and sets the default values.
 func NewItemApprovalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemApprovalsRequestBuilder) {
     m := &ItemApprovalsRequestBuilder{

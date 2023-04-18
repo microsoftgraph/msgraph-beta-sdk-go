@@ -9,8 +9,6 @@ import (
 // Item 
 type Item struct {
     Entity
-    // The type property
-    TypeEscaped *string
 }
 // NewItem instantiates a new item and sets the default values.
 func NewItem()(*Item) {

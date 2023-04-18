@@ -18,7 +18,7 @@ type ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters get openShifts from teamTemplateDefinition
+// ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters the set of open shifts in a scheduling group in the schedule.
 type ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get openShifts from teamTemplateDefinition
+// Get the set of open shifts in a scheduling group in the schedule.
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get openShifts from teamTemplateDefinition
+// ToGetRequestInformation the set of open shifts in a scheduling group in the schedule.
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -116,17 +116,6 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValue
 func (m *GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) PresentationValues()(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilder) {
     return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PresentationValuesById provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
-func (m *GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) PresentationValuesById(id string)(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["groupPolicyPresentationValue%2Did"] = id
-    }
-    return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property definitionValues for deviceManagement
 func (m *GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -7,8 +7,6 @@ import (
 // Command 
 type Command struct {
     Entity
-    // The type property
-    TypeEscaped *string
 }
 // NewCommand instantiates a new command and sets the default values.
 func NewCommand()(*Command) {

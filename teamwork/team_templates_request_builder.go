@@ -46,6 +46,17 @@ type TeamTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamTemplateId provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
+func (m *TeamTemplatesRequestBuilder) ByTeamTemplateId(teamTemplateId string)(*TeamTemplatesTeamTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamTemplateId != "" {
+        urlTplParams["teamTemplate%2Did"] = teamTemplateId
+    }
+    return NewTeamTemplatesTeamTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamTemplatesRequestBuilderInternal instantiates a new TeamTemplatesRequestBuilder and sets the default values.
 func NewTeamTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesRequestBuilder) {
     m := &TeamTemplatesRequestBuilder{

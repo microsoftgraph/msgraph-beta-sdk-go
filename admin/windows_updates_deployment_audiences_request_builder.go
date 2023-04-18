@@ -46,6 +46,17 @@ type WindowsUpdatesDeploymentAudiencesRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeploymentAudienceId provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ByDeploymentAudienceId(deploymentAudienceId string)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deploymentAudienceId != "" {
+        urlTplParams["deploymentAudience%2Did"] = deploymentAudienceId
+    }
+    return NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesDeploymentAudiencesRequestBuilderInternal instantiates a new DeploymentAudiencesRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesRequestBuilder) {
     m := &WindowsUpdatesDeploymentAudiencesRequestBuilder{

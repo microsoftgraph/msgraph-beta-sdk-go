@@ -46,6 +46,17 @@ type UserExperienceAnalyticsScoreHistoryRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsScoreHistoryId provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) ByUserExperienceAnalyticsScoreHistoryId(userExperienceAnalyticsScoreHistoryId string)(*UserExperienceAnalyticsScoreHistoryUserExperienceAnalyticsScoreHistoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsScoreHistoryId != "" {
+        urlTplParams["userExperienceAnalyticsScoreHistory%2Did"] = userExperienceAnalyticsScoreHistoryId
+    }
+    return NewUserExperienceAnalyticsScoreHistoryUserExperienceAnalyticsScoreHistoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsScoreHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsScoreHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsScoreHistoryRequestBuilder{

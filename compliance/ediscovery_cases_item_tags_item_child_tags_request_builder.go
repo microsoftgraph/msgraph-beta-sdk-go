@@ -39,6 +39,17 @@ type EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters
 }
+// ByTagId1 provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
+func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ByTagId1(tagId1 string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if tagId1 != "" {
+        urlTplParams["tag%2Did1"] = tagId1
+    }
+    return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal instantiates a new ChildTagsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
     m := &EdiscoveryCasesItemTagsItemChildTagsRequestBuilder{

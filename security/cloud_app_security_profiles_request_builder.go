@@ -46,6 +46,17 @@ type CloudAppSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudAppSecurityProfileId provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+func (m *CloudAppSecurityProfilesRequestBuilder) ByCloudAppSecurityProfileId(cloudAppSecurityProfileId string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudAppSecurityProfileId != "" {
+        urlTplParams["cloudAppSecurityProfile%2Did"] = cloudAppSecurityProfileId
+    }
+    return NewCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCloudAppSecurityProfilesRequestBuilderInternal instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.
 func NewCloudAppSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudAppSecurityProfilesRequestBuilder) {
     m := &CloudAppSecurityProfilesRequestBuilder{

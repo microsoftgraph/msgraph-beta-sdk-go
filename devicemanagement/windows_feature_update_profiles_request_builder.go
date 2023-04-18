@@ -46,6 +46,17 @@ type WindowsFeatureUpdateProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsFeatureUpdateProfileId provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsFeatureUpdateProfilesRequestBuilder) ByWindowsFeatureUpdateProfileId(windowsFeatureUpdateProfileId string)(*WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsFeatureUpdateProfileId != "" {
+        urlTplParams["windowsFeatureUpdateProfile%2Did"] = windowsFeatureUpdateProfileId
+    }
+    return NewWindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsFeatureUpdateProfilesRequestBuilderInternal instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsFeatureUpdateProfilesRequestBuilder) {
     m := &WindowsFeatureUpdateProfilesRequestBuilder{

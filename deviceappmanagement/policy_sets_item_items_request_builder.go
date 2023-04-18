@@ -46,6 +46,17 @@ type PolicySetsItemItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPolicySetItemId provides operations to manage the items property of the microsoft.graph.policySet entity.
+func (m *PolicySetsItemItemsRequestBuilder) ByPolicySetItemId(policySetItemId string)(*PolicySetsItemItemsPolicySetItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if policySetItemId != "" {
+        urlTplParams["policySetItem%2Did"] = policySetItemId
+    }
+    return NewPolicySetsItemItemsPolicySetItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPolicySetsItemItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
 func NewPolicySetsItemItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsItemItemsRequestBuilder) {
     m := &PolicySetsItemItemsRequestBuilder{

@@ -46,6 +46,17 @@ type ItemRecipientsItemEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMessageEventId provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
+func (m *ItemRecipientsItemEventsRequestBuilder) ByMessageEventId(messageEventId string)(*ItemRecipientsItemEventsMessageEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if messageEventId != "" {
+        urlTplParams["messageEvent%2Did"] = messageEventId
+    }
+    return NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemRecipientsItemEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewItemRecipientsItemEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRecipientsItemEventsRequestBuilder) {
     m := &ItemRecipientsItemEventsRequestBuilder{

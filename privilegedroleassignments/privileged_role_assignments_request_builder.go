@@ -46,6 +46,17 @@ type PrivilegedRoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedRoleAssignmentId provides operations to manage the collection of privilegedRoleAssignment entities.
+func (m *PrivilegedRoleAssignmentsRequestBuilder) ByPrivilegedRoleAssignmentId(privilegedRoleAssignmentId string)(*PrivilegedRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedRoleAssignmentId != "" {
+        urlTplParams["privilegedRoleAssignment%2Did"] = privilegedRoleAssignmentId
+    }
+    return NewPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegedRoleAssignmentsRequestBuilderInternal instantiates a new PrivilegedRoleAssignmentsRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedRoleAssignmentsRequestBuilder) {
     m := &PrivilegedRoleAssignmentsRequestBuilder{

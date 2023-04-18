@@ -46,6 +46,17 @@ type UserExperienceAnalyticsDeviceTimelineEventRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsDeviceTimelineEventId provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) ByUserExperienceAnalyticsDeviceTimelineEventId(userExperienceAnalyticsDeviceTimelineEventId string)(*UserExperienceAnalyticsDeviceTimelineEventUserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsDeviceTimelineEventId != "" {
+        urlTplParams["userExperienceAnalyticsDeviceTimelineEvent%2Did"] = userExperienceAnalyticsDeviceTimelineEventId
+    }
+    return NewUserExperienceAnalyticsDeviceTimelineEventUserExperienceAnalyticsDeviceTimelineEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsDeviceTimelineEventRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceTimelineEventRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceTimelineEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsDeviceTimelineEventRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceTimelineEventRequestBuilder{

@@ -46,6 +46,17 @@ type ProgramControlTypesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByProgramControlTypeId provides operations to manage the collection of programControlType entities.
+func (m *ProgramControlTypesRequestBuilder) ByProgramControlTypeId(programControlTypeId string)(*ProgramControlTypeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if programControlTypeId != "" {
+        urlTplParams["programControlType%2Did"] = programControlTypeId
+    }
+    return NewProgramControlTypeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewProgramControlTypesRequestBuilderInternal instantiates a new ProgramControlTypesRequestBuilder and sets the default values.
 func NewProgramControlTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProgramControlTypesRequestBuilder) {
     m := &ProgramControlTypesRequestBuilder{

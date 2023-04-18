@@ -46,6 +46,17 @@ type VirtualEndpointSnapshotsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcSnapshotId provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointSnapshotsRequestBuilder) ByCloudPcSnapshotId(cloudPcSnapshotId string)(*VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcSnapshotId != "" {
+        urlTplParams["cloudPcSnapshot%2Did"] = cloudPcSnapshotId
+    }
+    return NewVirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointSnapshotsRequestBuilderInternal instantiates a new SnapshotsRequestBuilder and sets the default values.
 func NewVirtualEndpointSnapshotsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointSnapshotsRequestBuilder) {
     m := &VirtualEndpointSnapshotsRequestBuilder{

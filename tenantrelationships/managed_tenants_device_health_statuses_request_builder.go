@@ -46,6 +46,17 @@ type ManagedTenantsDeviceHealthStatusesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceHealthStatusId provides operations to manage the deviceHealthStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsDeviceHealthStatusesRequestBuilder) ByDeviceHealthStatusId(deviceHealthStatusId string)(*ManagedTenantsDeviceHealthStatusesDeviceHealthStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceHealthStatusId != "" {
+        urlTplParams["deviceHealthStatus%2Did"] = deviceHealthStatusId
+    }
+    return NewManagedTenantsDeviceHealthStatusesDeviceHealthStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsDeviceHealthStatusesRequestBuilderInternal instantiates a new DeviceHealthStatusesRequestBuilder and sets the default values.
 func NewManagedTenantsDeviceHealthStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsDeviceHealthStatusesRequestBuilder) {
     m := &ManagedTenantsDeviceHealthStatusesRequestBuilder{

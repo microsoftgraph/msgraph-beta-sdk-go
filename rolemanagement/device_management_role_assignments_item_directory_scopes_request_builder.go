@@ -39,6 +39,17 @@ type DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetRequestC
     // Request query parameters
     QueryParameters *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewDeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderInternal instantiates a new DirectoryScopesRequestBuilder and sets the default values.
 func NewDeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder) {
     m := &DeviceManagementRoleAssignmentsItemDirectoryScopesRequestBuilder{

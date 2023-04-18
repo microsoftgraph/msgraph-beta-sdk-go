@@ -46,6 +46,17 @@ type ItemInstancesItemDecisionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessReviewDecisionId provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
+func (m *ItemInstancesItemDecisionsRequestBuilder) ByAccessReviewDecisionId(accessReviewDecisionId string)(*ItemInstancesItemDecisionsAccessReviewDecisionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessReviewDecisionId != "" {
+        urlTplParams["accessReviewDecision%2Did"] = accessReviewDecisionId
+    }
+    return NewItemInstancesItemDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemInstancesItemDecisionsRequestBuilderInternal instantiates a new DecisionsRequestBuilder and sets the default values.
 func NewItemInstancesItemDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesItemDecisionsRequestBuilder) {
     m := &ItemInstancesItemDecisionsRequestBuilder{

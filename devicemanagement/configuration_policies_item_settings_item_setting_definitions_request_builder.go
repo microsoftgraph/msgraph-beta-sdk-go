@@ -39,6 +39,17 @@ type ConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderGetQueryParameters
 }
+// ByDeviceManagementConfigurationSettingDefinitionId provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
+func (m *ConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder) ByDeviceManagementConfigurationSettingDefinitionId(deviceManagementConfigurationSettingDefinitionId string)(*ConfigurationPoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementConfigurationSettingDefinitionId != "" {
+        urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = deviceManagementConfigurationSettingDefinitionId
+    }
+    return NewConfigurationPoliciesItemSettingsItemSettingDefinitionsDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderInternal instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
 func NewConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder) {
     m := &ConfigurationPoliciesItemSettingsItemSettingDefinitionsRequestBuilder{

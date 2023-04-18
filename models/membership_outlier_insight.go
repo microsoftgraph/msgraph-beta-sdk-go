@@ -66,6 +66,16 @@ func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val.(Userable))
+        }
+        return nil
+    }
     res["member"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -107,6 +117,17 @@ func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+func (m *MembershipOutlierInsight) GetLastModifiedBy()(Userable) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Userable)
+    }
+    return nil
 }
 // GetMember gets the member property value. Navigation link to a member object. For example, to a user.
 func (m *MembershipOutlierInsight) GetMember()(DirectoryObjectable) {
@@ -171,6 +192,12 @@ func (m *MembershipOutlierInsight) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("member", m.GetMember())
         if err != nil {
             return err
@@ -212,6 +239,13 @@ func (m *MembershipOutlierInsight) SetContainerId(value *string)() {
         panic(err)
     }
 }
+// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+func (m *MembershipOutlierInsight) SetLastModifiedBy(value Userable)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMember sets the member property value. Navigation link to a member object. For example, to a user.
 func (m *MembershipOutlierInsight) SetMember(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("member", value)
@@ -246,12 +280,14 @@ type MembershipOutlierInsightable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContainer()(DirectoryObjectable)
     GetContainerId()(*string)
+    GetLastModifiedBy()(Userable)
     GetMember()(DirectoryObjectable)
     GetMemberId()(*string)
     GetOutlierContainerType()(*OutlierContainerType)
     GetOutlierMemberType()(*OutlierMemberType)
     SetContainer(value DirectoryObjectable)()
     SetContainerId(value *string)()
+    SetLastModifiedBy(value Userable)()
     SetMember(value DirectoryObjectable)()
     SetMemberId(value *string)()
     SetOutlierContainerType(value *OutlierContainerType)()

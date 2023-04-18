@@ -46,6 +46,17 @@ type CompaniesItemCurrenciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCurrencyId provides operations to manage the currencies property of the microsoft.graph.company entity.
+func (m *CompaniesItemCurrenciesRequestBuilder) ByCurrencyId(currencyId string)(*CompaniesItemCurrenciesCurrencyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if currencyId != "" {
+        urlTplParams["currency%2Did"] = currencyId
+    }
+    return NewCompaniesItemCurrenciesCurrencyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemCurrenciesRequestBuilderInternal instantiates a new CurrenciesRequestBuilder and sets the default values.
 func NewCompaniesItemCurrenciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCurrenciesRequestBuilder) {
     m := &CompaniesItemCurrenciesRequestBuilder{

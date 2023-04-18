@@ -46,6 +46,17 @@ type DirectoryRoleAssignmentApprovalsItemStepsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApprovalStepId provides operations to manage the steps property of the microsoft.graph.approval entity.
+func (m *DirectoryRoleAssignmentApprovalsItemStepsRequestBuilder) ByApprovalStepId(approvalStepId string)(*DirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if approvalStepId != "" {
+        urlTplParams["approvalStep%2Did"] = approvalStepId
+    }
+    return NewDirectoryRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryRoleAssignmentApprovalsItemStepsRequestBuilderInternal instantiates a new StepsRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentApprovalsItemStepsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentApprovalsItemStepsRequestBuilder) {
     m := &DirectoryRoleAssignmentApprovalsItemStepsRequestBuilder{

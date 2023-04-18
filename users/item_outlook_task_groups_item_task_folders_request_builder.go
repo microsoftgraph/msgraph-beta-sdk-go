@@ -42,6 +42,17 @@ type ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOutlookTaskFolderId provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
+func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) ByOutlookTaskFolderId(outlookTaskFolderId string)(*ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if outlookTaskFolderId != "" {
+        urlTplParams["outlookTaskFolder%2Did"] = outlookTaskFolderId
+    }
+    return NewItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal instantiates a new TaskFoldersRequestBuilder and sets the default values.
 func NewItemOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) {
     m := &ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder{
@@ -81,7 +92,10 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable), nil
 }
-// Post create new navigation property to taskFolders for users
+// Post create an Outlook task folder under a specified outlookTaskGroup.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +130,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to taskFolders for users
+// ToPostRequestInformation create an Outlook task folder under a specified outlookTaskGroup.
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

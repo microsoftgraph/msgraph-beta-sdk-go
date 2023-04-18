@@ -39,6 +39,17 @@ type SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *SubjectRightsRequestsItemApproversRequestBuilderGetQueryParameters
 }
+// ByUserId provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsItemApproversRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userId != "" {
+        urlTplParams["user%2Did"] = userId
+    }
+    return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSubjectRightsRequestsItemApproversRequestBuilderInternal instantiates a new ApproversRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsItemApproversRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsItemApproversRequestBuilder) {
     m := &SubjectRightsRequestsItemApproversRequestBuilder{

@@ -46,6 +46,17 @@ type EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEmbeddedSIMDeviceStateId provides operations to manage the deviceStates property of the microsoft.graph.embeddedSIMActivationCodePool entity.
+func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ByEmbeddedSIMDeviceStateId(embeddedSIMDeviceStateId string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if embeddedSIMDeviceStateId != "" {
+        urlTplParams["embeddedSIMDeviceState%2Did"] = embeddedSIMDeviceStateId
+    }
+    return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderInternal instantiates a new DeviceStatesRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder{

@@ -38,31 +38,9 @@ type SearchRequestBuilderPatchRequestConfiguration struct {
 func (m *SearchRequestBuilder) Acronyms()(*AcronymsRequestBuilder) {
     return NewAcronymsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AcronymsById provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
-func (m *SearchRequestBuilder) AcronymsById(id string)(*AcronymsAcronymItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["acronym%2Did"] = id
-    }
-    return NewAcronymsAcronymItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Bookmarks provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Bookmarks()(*BookmarksRequestBuilder) {
     return NewBookmarksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BookmarksById provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
-func (m *SearchRequestBuilder) BookmarksById(id string)(*BookmarksBookmarkItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["bookmark%2Did"] = id
-    }
-    return NewBookmarksBookmarkItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SearchRequestBuilder) {
@@ -118,17 +96,6 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
 // Qnas provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
 func (m *SearchRequestBuilder) Qnas()(*QnasRequestBuilder) {
     return NewQnasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// QnasById provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
-func (m *SearchRequestBuilder) QnasById(id string)(*QnasQnaItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["qna%2Did"] = id
-    }
-    return NewQnasQnaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Query provides operations to call the query method.
 func (m *SearchRequestBuilder) Query()(*QueryRequestBuilder) {

@@ -46,6 +46,17 @@ type MonitoringAlertRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAlertRecordId provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
+func (m *MonitoringAlertRecordsRequestBuilder) ByAlertRecordId(alertRecordId string)(*MonitoringAlertRecordsAlertRecordItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if alertRecordId != "" {
+        urlTplParams["alertRecord%2Did"] = alertRecordId
+    }
+    return NewMonitoringAlertRecordsAlertRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMonitoringAlertRecordsRequestBuilderInternal instantiates a new AlertRecordsRequestBuilder and sets the default values.
 func NewMonitoringAlertRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringAlertRecordsRequestBuilder) {
     m := &MonitoringAlertRecordsRequestBuilder{

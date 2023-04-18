@@ -46,6 +46,17 @@ type DeviceAppManagementTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceAppManagementTaskId provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.
+func (m *DeviceAppManagementTasksRequestBuilder) ByDeviceAppManagementTaskId(deviceAppManagementTaskId string)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceAppManagementTaskId != "" {
+        urlTplParams["deviceAppManagementTask%2Did"] = deviceAppManagementTaskId
+    }
+    return NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceAppManagementTasksRequestBuilderInternal instantiates a new DeviceAppManagementTasksRequestBuilder and sets the default values.
 func NewDeviceAppManagementTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceAppManagementTasksRequestBuilder) {
     m := &DeviceAppManagementTasksRequestBuilder{

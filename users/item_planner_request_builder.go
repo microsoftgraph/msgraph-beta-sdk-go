@@ -45,17 +45,6 @@ type ItemPlannerRequestBuilderPatchRequestConfiguration struct {
 func (m *ItemPlannerRequestBuilder) All()(*ItemPlannerAllRequestBuilder) {
     return NewItemPlannerAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AllById provides operations to manage the all property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) AllById(id string)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerDelta%2Did"] = id
-    }
-    return NewItemPlannerAllPlannerDeltaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemPlannerRequestBuilderInternal instantiates a new PlannerRequestBuilder and sets the default values.
 func NewItemPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRequestBuilder) {
     m := &ItemPlannerRequestBuilder{
@@ -88,17 +77,6 @@ func (m *ItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfigura
 // FavoritePlans provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
 func (m *ItemPlannerRequestBuilder) FavoritePlans()(*ItemPlannerFavoritePlansRequestBuilder) {
     return NewItemPlannerFavoritePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// FavoritePlansById provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) FavoritePlansById(id string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
 // [Find more info here]
@@ -148,61 +126,17 @@ func (m *ItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
 func (m *ItemPlannerRequestBuilder) Plans()(*ItemPlannerPlansRequestBuilder) {
     return NewItemPlannerPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RecentPlans provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
 func (m *ItemPlannerRequestBuilder) RecentPlans()(*ItemPlannerRecentPlansRequestBuilder) {
     return NewItemPlannerRecentPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RecentPlansById provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) RecentPlansById(id string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RosterPlans provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 func (m *ItemPlannerRequestBuilder) RosterPlans()(*ItemPlannerRosterPlansRequestBuilder) {
     return NewItemPlannerRosterPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RosterPlansById provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) RosterPlansById(id string)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *ItemPlannerRequestBuilder) Tasks()(*ItemPlannerTasksRequestBuilder) {
     return NewItemPlannerTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) TasksById(id string)(*ItemPlannerTasksPlannerTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewItemPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property planner for users
 func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

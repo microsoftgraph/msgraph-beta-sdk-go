@@ -39,6 +39,17 @@ type ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilderGetQueryParameters
 }
+// ByEventId2 provides operations to manage the instances property of the microsoft.graph.event entity.
+func (m *ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilder) ByEventId2(eventId2 string)(*ItemEventsItemExceptionOccurrencesItemInstancesEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if eventId2 != "" {
+        urlTplParams["event%2Did2"] = eventId2
+    }
+    return NewItemEventsItemExceptionOccurrencesItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemEventsItemExceptionOccurrencesItemInstancesRequestBuilderInternal instantiates a new InstancesRequestBuilder and sets the default values.
 func NewItemEventsItemExceptionOccurrencesItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilder) {
     m := &ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilder{

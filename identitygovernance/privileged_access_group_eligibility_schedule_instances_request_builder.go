@@ -46,6 +46,17 @@ type PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedAccessGroupEligibilityScheduleInstanceId provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
+func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) ByPrivilegedAccessGroupEligibilityScheduleInstanceId(privilegedAccessGroupEligibilityScheduleInstanceId string)(*PrivilegedAccessGroupEligibilityScheduleInstancesPrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedAccessGroupEligibilityScheduleInstanceId != "" {
+        urlTplParams["privilegedAccessGroupEligibilityScheduleInstance%2Did"] = privilegedAccessGroupEligibilityScheduleInstanceId
+    }
+    return NewPrivilegedAccessGroupEligibilityScheduleInstancesPrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderInternal instantiates a new EligibilityScheduleInstancesRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) {
     m := &PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder{

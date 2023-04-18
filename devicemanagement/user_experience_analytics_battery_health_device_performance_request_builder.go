@@ -46,6 +46,17 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsBatteryHealthDevicePerformanceId provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) ByUserExperienceAnalyticsBatteryHealthDevicePerformanceId(userExperienceAnalyticsBatteryHealthDevicePerformanceId string)(*UserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsBatteryHealthDevicePerformanceId != "" {
+        urlTplParams["userExperienceAnalyticsBatteryHealthDevicePerformance%2Did"] = userExperienceAnalyticsBatteryHealthDevicePerformanceId
+    }
+    return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder{

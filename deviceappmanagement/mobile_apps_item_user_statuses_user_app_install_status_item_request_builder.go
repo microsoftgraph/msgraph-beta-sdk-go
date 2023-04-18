@@ -78,17 +78,6 @@ func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Delet
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) DeviceStatuses()(*MobileAppsItemUserStatusesItemDeviceStatusesRequestBuilder) {
     return NewMobileAppsItemUserStatusesItemDeviceStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.
-func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*MobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppInstallStatus%2Did"] = id
-    }
-    return NewMobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the list of installation states for this mobile app.
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

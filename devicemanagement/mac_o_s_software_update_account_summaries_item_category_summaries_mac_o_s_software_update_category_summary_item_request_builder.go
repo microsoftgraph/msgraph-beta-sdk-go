@@ -157,14 +157,3 @@ func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUp
 func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilder) UpdateStateSummaries()(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesRequestBuilder) {
     return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// UpdateStateSummariesById provides operations to manage the updateStateSummaries property of the microsoft.graph.macOSSoftwareUpdateCategorySummary entity.
-func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUpdateCategorySummaryItemRequestBuilder) UpdateStateSummariesById(id string)(*MacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["macOSSoftwareUpdateStateSummary%2Did"] = id
-    }
-    return NewMacOSSoftwareUpdateAccountSummariesItemCategorySummariesItemUpdateStateSummariesMacOSSoftwareUpdateStateSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}

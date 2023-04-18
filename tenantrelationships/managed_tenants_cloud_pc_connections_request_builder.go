@@ -46,6 +46,17 @@ type ManagedTenantsCloudPcConnectionsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcConnectionId provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) ByCloudPcConnectionId(cloudPcConnectionId string)(*ManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcConnectionId != "" {
+        urlTplParams["cloudPcConnection%2Did"] = cloudPcConnectionId
+    }
+    return NewManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsCloudPcConnectionsRequestBuilderInternal instantiates a new CloudPcConnectionsRequestBuilder and sets the default values.
 func NewManagedTenantsCloudPcConnectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCloudPcConnectionsRequestBuilder) {
     m := &ManagedTenantsCloudPcConnectionsRequestBuilder{

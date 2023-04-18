@@ -46,6 +46,17 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsWorkFromAnywhereDeviceId provides operations to manage the metricDevices property of the microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric entity.
+func (m *UserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesRequestBuilder) ByUserExperienceAnalyticsWorkFromAnywhereDeviceId(userExperienceAnalyticsWorkFromAnywhereDeviceId string)(*UserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesUserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsWorkFromAnywhereDeviceId != "" {
+        urlTplParams["userExperienceAnalyticsWorkFromAnywhereDevice%2Did"] = userExperienceAnalyticsWorkFromAnywhereDeviceId
+    }
+    return NewUserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesUserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesRequestBuilderInternal instantiates a new MetricDevicesRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesRequestBuilder) {
     m := &UserExperienceAnalyticsWorkFromAnywhereMetricsItemMetricDevicesRequestBuilder{

@@ -74,17 +74,6 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) De
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRules()(*RoleManagementPoliciesItemEffectiveRulesRequestBuilder) {
     return NewRoleManagementPoliciesItemEffectiveRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EffectiveRulesById provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRulesById(id string)(*RoleManagementPoliciesItemEffectiveRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleManagementPolicyRule%2Did"] = id
-    }
-    return NewRoleManagementPoliciesItemEffectiveRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get represents the role management policies.
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Pa
 // Rules provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Rules()(*RoleManagementPoliciesItemRulesRequestBuilder) {
     return NewRoleManagementPoliciesItemRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RulesById provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) RulesById(id string)(*RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleManagementPolicyRule%2Did"] = id
-    }
-    return NewRoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleManagementPolicies for policies
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

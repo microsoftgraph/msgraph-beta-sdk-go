@@ -46,6 +46,17 @@ type EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedGroupSourceId provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.legalHold entity.
+func (m *EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder) ByUnifiedGroupSourceId(unifiedGroupSourceId string)(*EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedGroupSourceId != "" {
+        urlTplParams["unifiedGroupSource%2Did"] = unifiedGroupSourceId
+    }
+    return NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilderInternal instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder) {
     m := &EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder{

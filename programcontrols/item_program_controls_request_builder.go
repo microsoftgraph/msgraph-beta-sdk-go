@@ -46,6 +46,17 @@ type ItemProgramControlsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByProgramControlId1 provides operations to manage the controls property of the microsoft.graph.program entity.
+func (m *ItemProgramControlsRequestBuilder) ByProgramControlId1(programControlId1 string)(*ItemProgramControlsProgramControlItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if programControlId1 != "" {
+        urlTplParams["programControl%2Did1"] = programControlId1
+    }
+    return NewItemProgramControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProgramControlsRequestBuilderInternal instantiates a new ControlsRequestBuilder and sets the default values.
 func NewItemProgramControlsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProgramControlsRequestBuilder) {
     m := &ItemProgramControlsRequestBuilder{

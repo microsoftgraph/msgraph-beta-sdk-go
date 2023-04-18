@@ -46,6 +46,17 @@ type ThreatIntelligenceHostCookiesRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByHostCookieId provides operations to manage the hostCookies property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceHostCookiesRequestBuilder) ByHostCookieId(hostCookieId string)(*ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if hostCookieId != "" {
+        urlTplParams["hostCookie%2Did"] = hostCookieId
+    }
+    return NewThreatIntelligenceHostCookiesHostCookieItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceHostCookiesRequestBuilderInternal instantiates a new HostCookiesRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostCookiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostCookiesRequestBuilder) {
     m := &ThreatIntelligenceHostCookiesRequestBuilder{

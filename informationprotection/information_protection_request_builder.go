@@ -55,17 +55,6 @@ func NewInformationProtectionRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*DataLossPreventionPoliciesRequestBuilder) {
     return NewDataLossPreventionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DataLossPreventionPoliciesById provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["dataLossPreventionPolicy%2Did"] = id
-    }
-    return NewDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // DecryptBuffer provides operations to call the decryptBuffer method.
 func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*DecryptBufferRequestBuilder) {
     return NewDecryptBufferRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -120,17 +109,6 @@ func (m *InformationProtectionRequestBuilder) Policy()(*PolicyRequestBuilder) {
 func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*SensitivityLabelsRequestBuilder) {
     return NewSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelsSensitivityLabelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did"] = id
-    }
-    return NewSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*SensitivityPolicySettingsRequestBuilder) {
     return NewSensitivityPolicySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -142,17 +120,6 @@ func (m *InformationProtectionRequestBuilder) SignDigest()(*SignDigestRequestBui
 // ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatAssessmentRequestsRequestBuilder) {
     return NewThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["threatAssessmentRequest%2Did"] = id
-    }
-    return NewThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get informationProtection
 func (m *InformationProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

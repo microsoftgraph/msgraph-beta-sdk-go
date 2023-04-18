@@ -49,17 +49,6 @@ func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuild
 func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) Assignments()(*WindowsQualityUpdateProfilesItemAssignmentsRequestBuilder) {
     return NewWindowsQualityUpdateProfilesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdateProfile entity.
-func (m *WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*WindowsQualityUpdateProfilesItemAssignmentsWindowsQualityUpdateProfileAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["windowsQualityUpdateProfileAssignment%2Did"] = id
-    }
-    return NewWindowsQualityUpdateProfilesItemAssignmentsWindowsQualityUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal instantiates a new WindowsQualityUpdateProfileItemRequestBuilder and sets the default values.
 func NewWindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder) {
     m := &WindowsQualityUpdateProfilesWindowsQualityUpdateProfileItemRequestBuilder{

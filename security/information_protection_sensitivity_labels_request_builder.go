@@ -46,6 +46,17 @@ type InformationProtectionSensitivityLabelsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySensitivityLabelId provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
+func (m *InformationProtectionSensitivityLabelsRequestBuilder) BySensitivityLabelId(sensitivityLabelId string)(*InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sensitivityLabelId != "" {
+        urlTplParams["sensitivityLabel%2Did"] = sensitivityLabelId
+    }
+    return NewInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewInformationProtectionSensitivityLabelsRequestBuilderInternal instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
 func NewInformationProtectionSensitivityLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsRequestBuilder) {
     m := &InformationProtectionSensitivityLabelsRequestBuilder{

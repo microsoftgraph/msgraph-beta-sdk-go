@@ -7,8 +7,6 @@ import (
 // ItemEmail 
 type ItemEmail struct {
     ItemFacet
-    // The type property
-    TypeEscaped *EmailType
 }
 // NewItemEmail instantiates a new ItemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {

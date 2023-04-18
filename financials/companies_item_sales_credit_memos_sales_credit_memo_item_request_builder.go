@@ -101,17 +101,6 @@ func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) Payment
 func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) SalesCreditMemoLines()(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) {
     return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SalesCreditMemoLinesById provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.
-func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) SalesCreditMemoLinesById(id string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["salesCreditMemoLine%2Did"] = id
-    }
-    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get salesCreditMemos from financials
 func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

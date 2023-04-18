@@ -46,6 +46,17 @@ type VirtualEndpointServicePlansRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcServicePlanId provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointServicePlansRequestBuilder) ByCloudPcServicePlanId(cloudPcServicePlanId string)(*VirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcServicePlanId != "" {
+        urlTplParams["cloudPcServicePlan%2Did"] = cloudPcServicePlanId
+    }
+    return NewVirtualEndpointServicePlansCloudPcServicePlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointServicePlansRequestBuilderInternal instantiates a new ServicePlansRequestBuilder and sets the default values.
 func NewVirtualEndpointServicePlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointServicePlansRequestBuilder) {
     m := &VirtualEndpointServicePlansRequestBuilder{

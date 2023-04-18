@@ -45,17 +45,6 @@ type GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderPatchRequestConfi
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Children()(*GroupPolicyCategoriesItemChildrenRequestBuilder) {
     return NewGroupPolicyCategoriesItemChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ChildrenById provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
-func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["groupPolicyCategory%2Did1"] = id
-    }
-    return NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
 func NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) {
     m := &GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder{
@@ -76,17 +65,6 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) DefinitionF
 // Definitions provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Definitions()(*GroupPolicyCategoriesItemDefinitionsRequestBuilder) {
     return NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
-func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) DefinitionsById(id string)(*GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["groupPolicyDefinition%2Did"] = id
-    }
-    return NewGroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property groupPolicyCategories for deviceManagement
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {

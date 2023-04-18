@@ -46,6 +46,17 @@ type VirtualEndpointReportsExportJobsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCloudPcExportJobId provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+func (m *VirtualEndpointReportsExportJobsRequestBuilder) ByCloudPcExportJobId(cloudPcExportJobId string)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPcExportJobId != "" {
+        urlTplParams["cloudPcExportJob%2Did"] = cloudPcExportJobId
+    }
+    return NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointReportsExportJobsRequestBuilderInternal instantiates a new ExportJobsRequestBuilder and sets the default values.
 func NewVirtualEndpointReportsExportJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsExportJobsRequestBuilder) {
     m := &VirtualEndpointReportsExportJobsRequestBuilder{

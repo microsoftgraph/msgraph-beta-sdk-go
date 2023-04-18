@@ -46,6 +46,17 @@ type CompaniesItemCustomerPaymentsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustomerPaymentId provides operations to manage the customerPayments property of the microsoft.graph.company entity.
+func (m *CompaniesItemCustomerPaymentsRequestBuilder) ByCustomerPaymentId(customerPaymentId string)(*CompaniesItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if customerPaymentId != "" {
+        urlTplParams["customerPayment%2Did"] = customerPaymentId
+    }
+    return NewCompaniesItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemCustomerPaymentsRequestBuilderInternal instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentsRequestBuilder) {
     m := &CompaniesItemCustomerPaymentsRequestBuilder{

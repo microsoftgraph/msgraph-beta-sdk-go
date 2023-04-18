@@ -45,17 +45,6 @@ type ConditionalAccessRequestBuilderPatchRequestConfiguration struct {
 func (m *ConditionalAccessRequestBuilder) AuthenticationContextClassReferences()(*ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) {
     return NewConditionalAccessAuthenticationContextClassReferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AuthenticationContextClassReferencesById provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessRequestBuilder) AuthenticationContextClassReferencesById(id string)(*ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["authenticationContextClassReference%2Did"] = id
-    }
-    return NewConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AuthenticationStrength provides operations to manage the authenticationStrength property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) AuthenticationStrength()(*ConditionalAccessAuthenticationStrengthRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -116,17 +105,6 @@ func (m *ConditionalAccessRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ConditionalAccessRequestBuilder) NamedLocations()(*ConditionalAccessNamedLocationsRequestBuilder) {
     return NewConditionalAccessNamedLocationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NamedLocationsById provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessRequestBuilder) NamedLocationsById(id string)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["namedLocation%2Did"] = id
-    }
-    return NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property conditionalAccess in identity
 func (m *ConditionalAccessRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessRootable, requestConfiguration *ConditionalAccessRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessRootable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -150,31 +128,9 @@ func (m *ConditionalAccessRequestBuilder) Patch(ctx context.Context, body ie233e
 func (m *ConditionalAccessRequestBuilder) Policies()(*ConditionalAccessPoliciesRequestBuilder) {
     return NewConditionalAccessPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PoliciesById provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessRequestBuilder) PoliciesById(id string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["conditionalAccessPolicy%2Did"] = id
-    }
-    return NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Templates provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) Templates()(*ConditionalAccessTemplatesRequestBuilder) {
     return NewConditionalAccessTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TemplatesById provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessRequestBuilder) TemplatesById(id string)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["conditionalAccessTemplate%2Did"] = id
-    }
-    return NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property conditionalAccess for identity
 func (m *ConditionalAccessRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

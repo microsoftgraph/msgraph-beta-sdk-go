@@ -46,6 +46,17 @@ type RiskyUsersItemHistoryRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRiskyUserHistoryItemId provides operations to manage the history property of the microsoft.graph.riskyUser entity.
+func (m *RiskyUsersItemHistoryRequestBuilder) ByRiskyUserHistoryItemId(riskyUserHistoryItemId string)(*RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if riskyUserHistoryItemId != "" {
+        urlTplParams["riskyUserHistoryItem%2Did"] = riskyUserHistoryItemId
+    }
+    return NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRiskyUsersItemHistoryRequestBuilderInternal instantiates a new HistoryRequestBuilder and sets the default values.
 func NewRiskyUsersItemHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersItemHistoryRequestBuilder) {
     m := &RiskyUsersItemHistoryRequestBuilder{

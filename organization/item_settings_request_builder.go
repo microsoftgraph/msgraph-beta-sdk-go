@@ -131,17 +131,6 @@ func (m *ItemSettingsRequestBuilder) PeopleInsights()(*ItemSettingsPeopleInsight
 func (m *ItemSettingsRequestBuilder) ProfileCardProperties()(*ItemSettingsProfileCardPropertiesRequestBuilder) {
     return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ProfileCardPropertiesById provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
-func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["profileCardProperty%2Did"] = id
-    }
-    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.organizationSettings entity.
 func (m *ItemSettingsRequestBuilder) Pronouns()(*ItemSettingsPronounsRequestBuilder) {
     return NewItemSettingsPronounsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

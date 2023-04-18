@@ -46,6 +46,17 @@ type ItemProfilePositionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWorkPositionId provides operations to manage the positions property of the microsoft.graph.profile entity.
+func (m *ItemProfilePositionsRequestBuilder) ByWorkPositionId(workPositionId string)(*ItemProfilePositionsWorkPositionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workPositionId != "" {
+        urlTplParams["workPosition%2Did"] = workPositionId
+    }
+    return NewItemProfilePositionsWorkPositionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfilePositionsRequestBuilderInternal instantiates a new PositionsRequestBuilder and sets the default values.
 func NewItemProfilePositionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePositionsRequestBuilder) {
     m := &ItemProfilePositionsRequestBuilder{

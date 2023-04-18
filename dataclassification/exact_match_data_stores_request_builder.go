@@ -46,6 +46,17 @@ type ExactMatchDataStoresRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByExactMatchDataStoreId provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+func (m *ExactMatchDataStoresRequestBuilder) ByExactMatchDataStoreId(exactMatchDataStoreId string)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if exactMatchDataStoreId != "" {
+        urlTplParams["exactMatchDataStore%2Did"] = exactMatchDataStoreId
+    }
+    return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewExactMatchDataStoresRequestBuilderInternal instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.
 func NewExactMatchDataStoresRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresRequestBuilder) {
     m := &ExactMatchDataStoresRequestBuilder{

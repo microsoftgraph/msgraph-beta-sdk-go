@@ -7,8 +7,6 @@ import (
 // AccessPackageSubject 
 type AccessPackageSubject struct {
     Entity
-    // The resource type of the subject.
-    TypeEscaped *string
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {

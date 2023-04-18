@@ -46,6 +46,17 @@ type CompaniesItemSalesQuotesItemCustomerPictureRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPictureId provides operations to manage the picture property of the microsoft.graph.customer entity.
+func (m *CompaniesItemSalesQuotesItemCustomerPictureRequestBuilder) ByPictureId(pictureId string)(*CompaniesItemSalesQuotesItemCustomerPicturePictureItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if pictureId != "" {
+        urlTplParams["picture%2Did"] = pictureId
+    }
+    return NewCompaniesItemSalesQuotesItemCustomerPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemSalesQuotesItemCustomerPictureRequestBuilderInternal instantiates a new PictureRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuotesItemCustomerPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuotesItemCustomerPictureRequestBuilder) {
     m := &CompaniesItemSalesQuotesItemCustomerPictureRequestBuilder{

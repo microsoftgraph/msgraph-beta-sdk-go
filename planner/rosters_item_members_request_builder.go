@@ -46,6 +46,17 @@ type RostersItemMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPlannerRosterMemberId provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
+func (m *RostersItemMembersRequestBuilder) ByPlannerRosterMemberId(plannerRosterMemberId string)(*RostersItemMembersPlannerRosterMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if plannerRosterMemberId != "" {
+        urlTplParams["plannerRosterMember%2Did"] = plannerRosterMemberId
+    }
+    return NewRostersItemMembersPlannerRosterMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRostersItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewRostersItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersItemMembersRequestBuilder) {
     m := &RostersItemMembersRequestBuilder{

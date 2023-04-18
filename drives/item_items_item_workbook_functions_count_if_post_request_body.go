@@ -10,8 +10,6 @@ import (
 type ItemItemsItemWorkbookFunctionsCountIfPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The range property
-    RangeEscaped ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable
 }
 // NewItemItemsItemWorkbookFunctionsCountIfPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsCountIfPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsCountIfPostRequestBody()(*ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) {

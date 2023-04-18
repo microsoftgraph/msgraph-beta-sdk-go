@@ -46,6 +46,17 @@ type EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByNoncustodialDataSourceId provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ByNoncustodialDataSourceId(noncustodialDataSourceId string)(*EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if noncustodialDataSourceId != "" {
+        urlTplParams["noncustodialDataSource%2Did"] = noncustodialDataSourceId
+    }
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal instantiates a new NoncustodialDataSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {
     m := &EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder{

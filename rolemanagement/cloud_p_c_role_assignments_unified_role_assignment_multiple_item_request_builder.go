@@ -45,17 +45,6 @@ type CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderPatchR
 func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) AppScopes()(*CloudPCRoleAssignmentsItemAppScopesRequestBuilder) {
     return NewCloudPCRoleAssignmentsItemAppScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppScopesById provides operations to manage the appScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
-func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) AppScopesById(id string)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["appScope%2Did"] = id
-    }
-    return NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewCloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentMultipleItemRequestBuilder and sets the default values.
 func NewCloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
     m := &CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder{
@@ -88,17 +77,6 @@ func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) 
 // DirectoryScopes provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) DirectoryScopes()(*CloudPCRoleAssignmentsItemDirectoryScopesRequestBuilder) {
     return NewCloudPCRoleAssignmentsItemDirectoryScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DirectoryScopesById provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
-func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) DirectoryScopesById(id string)(*CloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewCloudPCRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get roleAssignments from roleManagement
 func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentMultipleable, error) {
@@ -141,17 +119,6 @@ func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) 
 // Principals provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) Principals()(*CloudPCRoleAssignmentsItemPrincipalsRequestBuilder) {
     return NewCloudPCRoleAssignmentsItemPrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PrincipalsById provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
-func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) PrincipalsById(id string)(*CloudPCRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewCloudPCRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
 func (m *CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) RoleDefinition()(*CloudPCRoleAssignmentsItemRoleDefinitionRequestBuilder) {

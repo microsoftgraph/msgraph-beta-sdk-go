@@ -74,17 +74,6 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Exclusions()(*WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExclusionsById provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
-func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) ExclusionsById(id string)(*WindowsUpdatesDeploymentAudiencesItemExclusionsUpdatableAssetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["updatableAsset%2Did"] = id
-    }
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the set of updatableAsset resources to which a deployment can apply.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -107,17 +96,6 @@ func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) 
 // Members provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Members()(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// MembersById provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
-func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) MembersById(id string)(*WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["updatableAsset%2Did"] = id
-    }
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property deploymentAudiences in admin
 func (m *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {

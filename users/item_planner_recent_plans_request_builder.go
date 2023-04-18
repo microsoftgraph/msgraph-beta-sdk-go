@@ -39,6 +39,17 @@ type ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPlannerRecentPlansRequestBuilderGetQueryParameters
 }
+// ByPlannerPlanId provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
+func (m *ItemPlannerRecentPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerRecentPlansPlannerPlanItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if plannerPlanId != "" {
+        urlTplParams["plannerPlan%2Did"] = plannerPlanId
+    }
+    return NewItemPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPlannerRecentPlansRequestBuilderInternal instantiates a new RecentPlansRequestBuilder and sets the default values.
 func NewItemPlannerRecentPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRecentPlansRequestBuilder) {
     m := &ItemPlannerRecentPlansRequestBuilder{

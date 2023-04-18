@@ -46,6 +46,17 @@ type ThreatSubmissionEmailThreatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEmailThreatSubmissionId provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
+func (m *ThreatSubmissionEmailThreatsRequestBuilder) ByEmailThreatSubmissionId(emailThreatSubmissionId string)(*ThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if emailThreatSubmissionId != "" {
+        urlTplParams["emailThreatSubmission%2Did"] = emailThreatSubmissionId
+    }
+    return NewThreatSubmissionEmailThreatsEmailThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatSubmissionEmailThreatsRequestBuilderInternal instantiates a new EmailThreatsRequestBuilder and sets the default values.
 func NewThreatSubmissionEmailThreatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionEmailThreatsRequestBuilder) {
     m := &ThreatSubmissionEmailThreatsRequestBuilder{

@@ -37,6 +37,17 @@ type ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilderGetQueryParameters
 }
+// ByEventId2 provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+func (m *ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilder) ByEventId2(eventId2 string)(*ItemCalendarEventsItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if eventId2 != "" {
+        urlTplParams["event%2Did2"] = eventId2
+    }
+    return NewItemCalendarEventsItemInstancesItemExceptionOccurrencesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilderInternal instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
 func NewItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilder) {
     m := &ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilder{

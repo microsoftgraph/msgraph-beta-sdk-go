@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageAssignmentResourceRoleId provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) ByAccessPackageAssignmentResourceRoleId(accessPackageAssignmentResourceRoleId string)(*EntitlementManagementAccessPackageAssignmentResourceRolesAccessPackageAssignmentResourceRoleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageAssignmentResourceRoleId != "" {
+        urlTplParams["accessPackageAssignmentResourceRole%2Did"] = accessPackageAssignmentResourceRoleId
+    }
+    return NewEntitlementManagementAccessPackageAssignmentResourceRolesAccessPackageAssignmentResourceRoleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderInternal instantiates a new AccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder{

@@ -46,6 +46,17 @@ type CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPictureId provides operations to manage the picture property of the microsoft.graph.item entity.
+func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilder) ByPictureId(pictureId string)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if pictureId != "" {
+        urlTplParams["picture%2Did"] = pictureId
+    }
+    return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilderInternal instantiates a new PictureRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilder) {
     m := &CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilder{

@@ -9,8 +9,6 @@ import (
 type CloudPcDomainJoinConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    TypeEscaped *CloudPcDomainJoinType
 }
 // NewCloudPcDomainJoinConfiguration instantiates a new cloudPcDomainJoinConfiguration and sets the default values.
 func NewCloudPcDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {

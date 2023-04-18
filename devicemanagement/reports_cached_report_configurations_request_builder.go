@@ -46,6 +46,17 @@ type ReportsCachedReportConfigurationsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementCachedReportConfigurationId provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
+func (m *ReportsCachedReportConfigurationsRequestBuilder) ByDeviceManagementCachedReportConfigurationId(deviceManagementCachedReportConfigurationId string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementCachedReportConfigurationId != "" {
+        urlTplParams["deviceManagementCachedReportConfiguration%2Did"] = deviceManagementCachedReportConfigurationId
+    }
+    return NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsCachedReportConfigurationsRequestBuilderInternal instantiates a new CachedReportConfigurationsRequestBuilder and sets the default values.
 func NewReportsCachedReportConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsCachedReportConfigurationsRequestBuilder) {
     m := &ReportsCachedReportConfigurationsRequestBuilder{

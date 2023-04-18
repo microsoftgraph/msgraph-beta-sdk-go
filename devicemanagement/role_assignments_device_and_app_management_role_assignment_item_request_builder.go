@@ -112,17 +112,6 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTags()(*RoleAssignmentsItemRoleScopeTagsRequestBuilder) {
     return NewRoleAssignmentsItemRoleScopeTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleScopeTagsById provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
-func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTagsById(id string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["roleScopeTag%2Did"] = id
-    }
-    return NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property roleAssignments for deviceManagement
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

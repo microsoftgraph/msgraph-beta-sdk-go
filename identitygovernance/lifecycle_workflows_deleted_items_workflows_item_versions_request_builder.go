@@ -39,6 +39,17 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilderGetQueryParameters
 }
+// ByWorkflowVersionVersionNumber provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilder) ByWorkflowVersionVersionNumber(workflowVersionVersionNumber string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workflowVersionVersionNumber != "" {
+        urlTplParams["workflowVersion%2DversionNumber"] = workflowVersionVersionNumber
+    }
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilderInternal instantiates a new VersionsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilder) {
     m := &LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsRequestBuilder{

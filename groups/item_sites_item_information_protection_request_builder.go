@@ -62,17 +62,6 @@ func NewItemSitesItemInformationProtectionRequestBuilder(rawUrl string, requestA
 func (m *ItemSitesItemInformationProtectionRequestBuilder) DataLossPreventionPolicies()(*ItemSitesItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) {
     return NewItemSitesItemInformationProtectionDataLossPreventionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DataLossPreventionPoliciesById provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
-func (m *ItemSitesItemInformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["dataLossPreventionPolicy%2Did"] = id
-    }
-    return NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // DecryptBuffer provides operations to call the decryptBuffer method.
 func (m *ItemSitesItemInformationProtectionRequestBuilder) DecryptBuffer()(*ItemSitesItemInformationProtectionDecryptBufferRequestBuilder) {
     return NewItemSitesItemInformationProtectionDecryptBufferRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -143,17 +132,6 @@ func (m *ItemSitesItemInformationProtectionRequestBuilder) Policy()(*ItemSitesIt
 func (m *ItemSitesItemInformationProtectionRequestBuilder) SensitivityLabels()(*ItemSitesItemInformationProtectionSensitivityLabelsRequestBuilder) {
     return NewItemSitesItemInformationProtectionSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
-func (m *ItemSitesItemInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*ItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sensitivityLabel%2Did"] = id
-    }
-    return NewItemSitesItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
 func (m *ItemSitesItemInformationProtectionRequestBuilder) SensitivityPolicySettings()(*ItemSitesItemInformationProtectionSensitivityPolicySettingsRequestBuilder) {
     return NewItemSitesItemInformationProtectionSensitivityPolicySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -165,17 +143,6 @@ func (m *ItemSitesItemInformationProtectionRequestBuilder) SignDigest()(*ItemSit
 // ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *ItemSitesItemInformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder) {
     return NewItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-func (m *ItemSitesItemInformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ItemSitesItemInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["threatAssessmentRequest%2Did"] = id
-    }
-    return NewItemSitesItemInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property informationProtection for groups
 func (m *ItemSitesItemInformationProtectionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

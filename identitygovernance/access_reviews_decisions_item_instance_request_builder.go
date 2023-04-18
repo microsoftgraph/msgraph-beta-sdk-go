@@ -70,31 +70,9 @@ func NewAccessReviewsDecisionsItemInstanceRequestBuilder(rawUrl string, requestA
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ContactedReviewers()(*AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ContactedReviewersById provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
-func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ContactedReviewersById(id string)(*AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewReviewer%2Did"] = id
-    }
-    return NewAccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Decisions()(*AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
-func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) DecisionsById(id string)(*AccessReviewsDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewInstanceDecisionItem%2Did1"] = id
-    }
-    return NewAccessReviewsDecisionsItemInstanceDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Definition()(*AccessReviewsDecisionsItemInstanceDefinitionRequestBuilder) {
@@ -165,17 +143,6 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) SendReminder()(*Acces
 // Stages provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Stages()(*AccessReviewsDecisionsItemInstanceStagesRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// StagesById provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) StagesById(id string)(*AccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewStage%2Did"] = id
-    }
-    return NewAccessReviewsDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Stop provides operations to call the stop method.
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Stop()(*AccessReviewsDecisionsItemInstanceStopRequestBuilder) {

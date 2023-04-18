@@ -8,8 +8,6 @@ import (
 // CloudAppSecurityProfile 
 type CloudAppSecurityProfile struct {
     Entity
-    // The type property
-    TypeEscaped *string
 }
 // NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {

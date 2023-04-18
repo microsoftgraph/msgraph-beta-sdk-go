@@ -46,6 +46,17 @@ type ItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWebPartId provides operations to manage the webparts property of the microsoft.graph.verticalSection entity.
+func (m *ItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilder) ByWebPartId(webPartId string)(*ItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if webPartId != "" {
+        urlTplParams["webPart%2Did"] = webPartId
+    }
+    return NewItemPagesItemCanvasLayoutVerticalSectionWebpartsWebPartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilderInternal instantiates a new WebpartsRequestBuilder and sets the default values.
 func NewItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilder) {
     m := &ItemPagesItemCanvasLayoutVerticalSectionWebpartsRequestBuilder{

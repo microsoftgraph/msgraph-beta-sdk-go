@@ -46,6 +46,17 @@ type ThreatIntelligenceIntelProfilesRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIntelligenceProfileId provides operations to manage the intelProfiles property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceIntelProfilesRequestBuilder) ByIntelligenceProfileId(intelligenceProfileId string)(*ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if intelligenceProfileId != "" {
+        urlTplParams["intelligenceProfile%2Did"] = intelligenceProfileId
+    }
+    return NewThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceIntelProfilesRequestBuilderInternal instantiates a new IntelProfilesRequestBuilder and sets the default values.
 func NewThreatIntelligenceIntelProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceIntelProfilesRequestBuilder) {
     m := &ThreatIntelligenceIntelProfilesRequestBuilder{

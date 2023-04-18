@@ -38,31 +38,9 @@ type MonitoringRequestBuilderPatchRequestConfiguration struct {
 func (m *MonitoringRequestBuilder) AlertRecords()(*AlertRecordsRequestBuilder) {
     return NewAlertRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AlertRecordsById provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*AlertRecordsAlertRecordItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["alertRecord%2Did"] = id
-    }
-    return NewAlertRecordsAlertRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AlertRules provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
 func (m *MonitoringRequestBuilder) AlertRules()(*AlertRulesRequestBuilder) {
     return NewAlertRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AlertRulesById provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*AlertRulesAlertRuleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["alertRule%2Did"] = id
-    }
-    return NewAlertRulesAlertRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMonitoringRequestBuilderInternal instantiates a new MonitoringRequestBuilder and sets the default values.
 func NewMonitoringRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringRequestBuilder) {

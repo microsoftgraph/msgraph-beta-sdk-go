@@ -39,6 +39,17 @@ type ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilderG
     // Request query parameters
     QueryParameters *ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilderGetQueryParameters
 }
+// ByManagementTemplateStepId provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managementTemplate entity.
+func (m *ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder) ByManagementTemplateStepId(managementTemplateStepId string)(*ManagedTenantsManagementTemplatesItemManagementTemplateStepsManagementTemplateStepItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managementTemplateStepId != "" {
+        urlTplParams["managementTemplateStep%2Did"] = managementTemplateStepId
+    }
+    return NewManagedTenantsManagementTemplatesItemManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilderInternal instantiates a new ManagementTemplateStepsRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder) {
     m := &ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder{

@@ -46,6 +46,17 @@ type DepOnboardingSettingsItemEnrollmentProfilesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEnrollmentProfileId provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
+func (m *DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) ByEnrollmentProfileId(enrollmentProfileId string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if enrollmentProfileId != "" {
+        urlTplParams["enrollmentProfile%2Did"] = enrollmentProfileId
+    }
+    return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilderInternal instantiates a new EnrollmentProfilesRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) {
     m := &DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder{

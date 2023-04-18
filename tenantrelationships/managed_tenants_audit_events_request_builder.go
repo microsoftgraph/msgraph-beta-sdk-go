@@ -46,6 +46,17 @@ type ManagedTenantsAuditEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAuditEventId provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsAuditEventsRequestBuilder) ByAuditEventId(auditEventId string)(*ManagedTenantsAuditEventsAuditEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if auditEventId != "" {
+        urlTplParams["auditEvent%2Did"] = auditEventId
+    }
+    return NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsAuditEventsRequestBuilderInternal instantiates a new AuditEventsRequestBuilder and sets the default values.
 func NewManagedTenantsAuditEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsAuditEventsRequestBuilder) {
     m := &ManagedTenantsAuditEventsRequestBuilder{

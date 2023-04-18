@@ -46,6 +46,17 @@ type BookmarksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBookmarkId provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
+func (m *BookmarksRequestBuilder) ByBookmarkId(bookmarkId string)(*BookmarksBookmarkItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bookmarkId != "" {
+        urlTplParams["bookmark%2Did"] = bookmarkId
+    }
+    return NewBookmarksBookmarkItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBookmarksRequestBuilderInternal instantiates a new BookmarksRequestBuilder and sets the default values.
 func NewBookmarksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookmarksRequestBuilder) {
     m := &BookmarksRequestBuilder{

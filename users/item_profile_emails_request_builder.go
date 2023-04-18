@@ -46,6 +46,17 @@ type ItemProfileEmailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemEmailId provides operations to manage the emails property of the microsoft.graph.profile entity.
+func (m *ItemProfileEmailsRequestBuilder) ByItemEmailId(itemEmailId string)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemEmailId != "" {
+        urlTplParams["itemEmail%2Did"] = itemEmailId
+    }
+    return NewItemProfileEmailsItemEmailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileEmailsRequestBuilderInternal instantiates a new EmailsRequestBuilder and sets the default values.
 func NewItemProfileEmailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileEmailsRequestBuilder) {
     m := &ItemProfileEmailsRequestBuilder{

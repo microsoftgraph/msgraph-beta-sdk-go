@@ -8,8 +8,6 @@ import (
 // GovernanceResource 
 type GovernanceResource struct {
     Entity
-    // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-    TypeEscaped *string
 }
 // NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {

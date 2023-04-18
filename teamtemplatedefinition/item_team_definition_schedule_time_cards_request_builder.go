@@ -46,6 +46,17 @@ type ItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTimeCardId provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ByTimeCardId(timeCardId string)(*ItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if timeCardId != "" {
+        urlTplParams["timeCard%2Did"] = timeCardId
+    }
+    return NewItemTeamDefinitionScheduleTimeCardsTimeCardItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // ClockIn provides operations to call the clockIn method.
 func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ClockIn()(*ItemTeamDefinitionScheduleTimeCardsClockInRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeCardsClockInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -89,7 +100,10 @@ func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable), nil
 }
-// Post create new navigation property to timeCards for teamTemplateDefinition
+// Post create a timeCard instance in a schedule.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +138,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to timeCards for teamTemplateDefinition
+// ToPostRequestInformation create a timeCard instance in a schedule.
 func (m *ItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

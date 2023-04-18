@@ -120,17 +120,6 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitio
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilder) Presentations()(*GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsRequestBuilder) {
     return NewGroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
-func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilder) PresentationsById(id string)(*GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["groupPolicyPresentation%2Did"] = id
-    }
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property previousVersionDefinition for deviceManagement
 func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

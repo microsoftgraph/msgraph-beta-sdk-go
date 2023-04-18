@@ -46,6 +46,17 @@ type ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEnrollmentConfigurationAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
+func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ByEnrollmentConfigurationAssignmentId(enrollmentConfigurationAssignmentId string)(*ItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if enrollmentConfigurationAssignmentId != "" {
+        urlTplParams["enrollmentConfigurationAssignment%2Did"] = enrollmentConfigurationAssignmentId
+    }
+    return NewItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) {
     m := &ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder{

@@ -46,6 +46,17 @@ type ManagedTenantsManagedDeviceCompliancesRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedDeviceComplianceId provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsManagedDeviceCompliancesRequestBuilder) ByManagedDeviceComplianceId(managedDeviceComplianceId string)(*ManagedTenantsManagedDeviceCompliancesManagedDeviceComplianceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceComplianceId != "" {
+        urlTplParams["managedDeviceCompliance%2Did"] = managedDeviceComplianceId
+    }
+    return NewManagedTenantsManagedDeviceCompliancesManagedDeviceComplianceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagedDeviceCompliancesRequestBuilderInternal instantiates a new ManagedDeviceCompliancesRequestBuilder and sets the default values.
 func NewManagedTenantsManagedDeviceCompliancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedDeviceCompliancesRequestBuilder) {
     m := &ManagedTenantsManagedDeviceCompliancesRequestBuilder{

@@ -46,6 +46,17 @@ type EnterpriseCodeSigningCertificatesRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEnterpriseCodeSigningCertificateId provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.
+func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ByEnterpriseCodeSigningCertificateId(enterpriseCodeSigningCertificateId string)(*EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if enterpriseCodeSigningCertificateId != "" {
+        urlTplParams["enterpriseCodeSigningCertificate%2Did"] = enterpriseCodeSigningCertificateId
+    }
+    return NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEnterpriseCodeSigningCertificatesRequestBuilderInternal instantiates a new EnterpriseCodeSigningCertificatesRequestBuilder and sets the default values.
 func NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseCodeSigningCertificatesRequestBuilder) {
     m := &EnterpriseCodeSigningCertificatesRequestBuilder{

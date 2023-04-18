@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageAssignmentPolicyId provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
+func (m *EntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesRequestBuilder) ByAccessPackageAssignmentPolicyId(accessPackageAssignmentPolicyId string)(*EntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageAssignmentPolicyId != "" {
+        urlTplParams["accessPackageAssignmentPolicy%2Did"] = accessPackageAssignmentPolicyId
+    }
+    return NewEntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesRequestBuilderInternal instantiates a new AccessPackageAssignmentPoliciesRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemAccessPackageAssignmentPoliciesRequestBuilder{

@@ -45,17 +45,6 @@ type ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilderPatchR
 func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) AlertLogs()(*ManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertsItemAlertLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AlertLogsById provides operations to manage the alertLogs property of the microsoft.graph.managedTenants.managedTenantAlert entity.
-func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) AlertLogsById(id string)(*ManagedTenantsManagedTenantAlertsItemAlertLogsManagedTenantAlertLogItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedTenantAlertLog%2Did"] = id
-    }
-    return NewManagedTenantsManagedTenantAlertsItemAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AlertRule provides operations to manage the alertRule property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) AlertRule()(*ManagedTenantsManagedTenantAlertsItemAlertRuleRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertsItemAlertRuleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -63,17 +52,6 @@ func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) 
 // ApiNotifications provides operations to manage the apiNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) ApiNotifications()(*ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ApiNotificationsById provides operations to manage the apiNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
-func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) ApiNotificationsById(id string)(*ManagedTenantsManagedTenantAlertsItemApiNotificationsManagedTenantApiNotificationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedTenantApiNotification%2Did"] = id
-    }
-    return NewManagedTenantsManagedTenantAlertsItemApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilderInternal instantiates a new ManagedTenantAlertItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) {
@@ -107,17 +85,6 @@ func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) 
 // EmailNotifications provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) EmailNotifications()(*ManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertsItemEmailNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EmailNotificationsById provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
-func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) EmailNotificationsById(id string)(*ManagedTenantsManagedTenantAlertsItemEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedTenantEmailNotification%2Did"] = id
-    }
-    return NewManagedTenantsManagedTenantAlertsItemEmailNotificationsManagedTenantEmailNotificationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get managedTenantAlerts from tenantRelationships
 func (m *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertable, error) {

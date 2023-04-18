@@ -66,31 +66,9 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignment
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) CustomExtensionHandlers()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionHandlersRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionHandlersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CustomExtensionHandlersById provides operations to manage the customExtensionHandlers property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) CustomExtensionHandlersById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionHandlersCustomExtensionHandlerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["customExtensionHandler%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionHandlersCustomExtensionHandlerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CustomExtensionStageSettings provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) CustomExtensionStageSettings()(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CustomExtensionStageSettingsById provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) CustomExtensionStageSettingsById(id string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["customExtensionStageSetting%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property accessPackageAssignmentPolicy for identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyRequestBuilderDeleteRequestConfiguration)(error) {

@@ -46,6 +46,17 @@ type DeviceConfigurationsItemGroupAssignmentsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceConfigurationGroupAssignmentId provides operations to manage the groupAssignments property of the microsoft.graph.deviceConfiguration entity.
+func (m *DeviceConfigurationsItemGroupAssignmentsRequestBuilder) ByDeviceConfigurationGroupAssignmentId(deviceConfigurationGroupAssignmentId string)(*DeviceConfigurationsItemGroupAssignmentsDeviceConfigurationGroupAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceConfigurationGroupAssignmentId != "" {
+        urlTplParams["deviceConfigurationGroupAssignment%2Did"] = deviceConfigurationGroupAssignmentId
+    }
+    return NewDeviceConfigurationsItemGroupAssignmentsDeviceConfigurationGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceConfigurationsItemGroupAssignmentsRequestBuilderInternal instantiates a new GroupAssignmentsRequestBuilder and sets the default values.
 func NewDeviceConfigurationsItemGroupAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationsItemGroupAssignmentsRequestBuilder) {
     m := &DeviceConfigurationsItemGroupAssignmentsRequestBuilder{

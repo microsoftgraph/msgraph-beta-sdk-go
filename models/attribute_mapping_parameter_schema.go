@@ -9,8 +9,6 @@ import (
 type AttributeMappingParameterSchema struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The type property
-    TypeEscaped *AttributeType
 }
 // NewAttributeMappingParameterSchema instantiates a new attributeMappingParameterSchema and sets the default values.
 func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {

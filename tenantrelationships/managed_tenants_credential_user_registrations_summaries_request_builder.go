@@ -46,6 +46,17 @@ type ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCredentialUserRegistrationsSummaryId provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) ByCredentialUserRegistrationsSummaryId(credentialUserRegistrationsSummaryId string)(*ManagedTenantsCredentialUserRegistrationsSummariesCredentialUserRegistrationsSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if credentialUserRegistrationsSummaryId != "" {
+        urlTplParams["credentialUserRegistrationsSummary%2Did"] = credentialUserRegistrationsSummaryId
+    }
+    return NewManagedTenantsCredentialUserRegistrationsSummariesCredentialUserRegistrationsSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderInternal instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.
 func NewManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) {
     m := &ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder{

@@ -46,6 +46,17 @@ type WindowsUpdatesUpdatePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUpdatePolicyId provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ByUpdatePolicyId(updatePolicyId string)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if updatePolicyId != "" {
+        urlTplParams["updatePolicy%2Did"] = updatePolicyId
+    }
+    return NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesUpdatePoliciesRequestBuilderInternal instantiates a new UpdatePoliciesRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesRequestBuilder{

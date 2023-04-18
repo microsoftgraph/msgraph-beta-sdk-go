@@ -112,17 +112,6 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestB
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) Steps()(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilder) {
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
-func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) StepsById(id string)(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["approvalStep%2Did"] = id
-    }
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property approval for identityGovernance
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

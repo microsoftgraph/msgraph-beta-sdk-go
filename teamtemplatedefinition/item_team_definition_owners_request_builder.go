@@ -39,6 +39,17 @@ type ItemTeamDefinitionOwnersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTeamDefinitionOwnersRequestBuilderGetQueryParameters
 }
+// ByUserId provides operations to manage the owners property of the microsoft.graph.team entity.
+func (m *ItemTeamDefinitionOwnersRequestBuilder) ByUserId(userId string)(*ItemTeamDefinitionOwnersUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userId != "" {
+        urlTplParams["user%2Did"] = userId
+    }
+    return NewItemTeamDefinitionOwnersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamDefinitionOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
 func NewItemTeamDefinitionOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionOwnersRequestBuilder) {
     m := &ItemTeamDefinitionOwnersRequestBuilder{

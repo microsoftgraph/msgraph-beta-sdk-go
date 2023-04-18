@@ -46,6 +46,17 @@ type WdacSupplementalPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsDefenderApplicationControlSupplementalPolicyId provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.
+func (m *WdacSupplementalPoliciesRequestBuilder) ByWindowsDefenderApplicationControlSupplementalPolicyId(windowsDefenderApplicationControlSupplementalPolicyId string)(*WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsDefenderApplicationControlSupplementalPolicyId != "" {
+        urlTplParams["windowsDefenderApplicationControlSupplementalPolicy%2Did"] = windowsDefenderApplicationControlSupplementalPolicyId
+    }
+    return NewWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWdacSupplementalPoliciesRequestBuilderInternal instantiates a new WdacSupplementalPoliciesRequestBuilder and sets the default values.
 func NewWdacSupplementalPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WdacSupplementalPoliciesRequestBuilder) {
     m := &WdacSupplementalPoliciesRequestBuilder{

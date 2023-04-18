@@ -46,6 +46,17 @@ type ItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOpenShiftChangeRequestId provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
+func (m *ItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilder) ByOpenShiftChangeRequestId(openShiftChangeRequestId string)(*ItemTeamDefinitionScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if openShiftChangeRequestId != "" {
+        urlTplParams["openShiftChangeRequest%2Did"] = openShiftChangeRequestId
+    }
+    return NewItemTeamDefinitionScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilderInternal instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilder) {
     m := &ItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilder{

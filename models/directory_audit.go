@@ -9,7 +9,7 @@ import (
 type DirectoryAudit struct {
     Entity
 }
-// NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
+// NewDirectoryAudit instantiates a new DirectoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {
     m := &DirectoryAudit{
         Entity: *NewEntity(),

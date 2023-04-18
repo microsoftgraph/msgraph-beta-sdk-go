@@ -44,6 +44,17 @@ type ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.event entity.
+func (m *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if extensionId != "" {
+        urlTplParams["extension%2Did"] = extensionId
+    }
+    return NewItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsRequestBuilderInternal instantiates a new ExtensionsRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsRequestBuilder) {
     m := &ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemExtensionsRequestBuilder{

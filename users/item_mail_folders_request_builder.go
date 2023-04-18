@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersRequestBuilderGetQueryParameters get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+// ItemMailFoldersRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type ItemMailFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -19,6 +19,8 @@ type ItemMailFoldersRequestBuilderGetQueryParameters struct {
     Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Include Hidden Folders
+    IncludeHiddenFolders *string
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Select properties to be returned
@@ -44,10 +46,21 @@ type ItemMailFoldersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMailFolderId provides operations to manage the mailFolders property of the microsoft.graph.user entity.
+func (m *ItemMailFoldersRequestBuilder) ByMailFolderId(mailFolderId string)(*ItemMailFoldersMailFolderItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if mailFolderId != "" {
+        urlTplParams["mailFolder%2Did"] = mailFolderId
+    }
+    return NewItemMailFoldersMailFolderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMailFoldersRequestBuilderInternal instantiates a new MailFoldersRequestBuilder and sets the default values.
 func NewItemMailFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersRequestBuilder) {
     m := &ItemMailFoldersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders{?includeHiddenFolders*,%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
     return m
 }
@@ -65,7 +78,7 @@ func (m *ItemMailFoldersRequestBuilder) Count()(*ItemMailFoldersCountRequestBuil
 func (m *ItemMailFoldersRequestBuilder) Delta()(*ItemMailFoldersDeltaRequestBuilder) {
     return NewItemMailFoldersDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+// Get the user's mail folders. Read-only. Nullable.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
@@ -109,7 +122,7 @@ func (m *ItemMailFoldersRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable), nil
 }
-// ToGetRequestInformation get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+// ToGetRequestInformation the user's mail folders. Read-only. Nullable.
 func (m *ItemMailFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

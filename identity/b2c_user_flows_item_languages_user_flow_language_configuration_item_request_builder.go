@@ -58,17 +58,6 @@ func NewB2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder
 func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) DefaultPages()(*B2cUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) {
     return NewB2cUserFlowsItemLanguagesItemDefaultPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DefaultPagesById provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) DefaultPagesById(id string)(*B2cUserFlowsItemLanguagesItemDefaultPagesUserFlowLanguagePageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userFlowLanguagePage%2Did"] = id
-    }
-    return NewB2cUserFlowsItemLanguagesItemDefaultPagesUserFlowLanguagePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete delete navigation property languages for identity
 func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -107,17 +96,6 @@ func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
 // OverridesPages provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
 func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) OverridesPages()(*B2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilder) {
     return NewB2cUserFlowsItemLanguagesItemOverridesPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OverridesPagesById provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) OverridesPagesById(id string)(*B2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userFlowLanguagePage%2Did"] = id
-    }
-    return NewB2cUserFlowsItemLanguagesItemOverridesPagesUserFlowLanguagePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property languages in identity
 func (m *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguageConfigurationable, requestConfiguration *B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguageConfigurationable, error) {

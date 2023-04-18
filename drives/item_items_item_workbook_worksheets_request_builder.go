@@ -50,6 +50,17 @@ type ItemItemsItemWorkbookWorksheetsRequestBuilderPostRequestConfiguration struc
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookWorksheetId provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ByWorkbookWorksheetId(workbookWorksheetId string)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookWorksheetId != "" {
+        urlTplParams["workbookWorksheet%2Did"] = workbookWorksheetId
+    }
+    return NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal instantiates a new WorksheetsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsRequestBuilder{
@@ -70,7 +81,7 @@ func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Count()(*ItemItemsItemWo
 // Get retrieve a list of worksheet objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-list-worksheets?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/worksheet-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookWorksheetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

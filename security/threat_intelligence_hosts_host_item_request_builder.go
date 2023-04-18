@@ -45,17 +45,6 @@ type ThreatIntelligenceHostsHostItemRequestBuilderPatchRequestConfiguration stru
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Components()(*ThreatIntelligenceHostsItemComponentsRequestBuilder) {
     return NewThreatIntelligenceHostsItemComponentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ComponentsById provides operations to manage the components property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ComponentsById(id string)(*ThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["hostComponent%2Did"] = id
-    }
-    return NewThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewThreatIntelligenceHostsHostItemRequestBuilderInternal instantiates a new HostItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsHostItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsHostItemRequestBuilder) {
     m := &ThreatIntelligenceHostsHostItemRequestBuilder{
@@ -72,17 +61,6 @@ func NewThreatIntelligenceHostsHostItemRequestBuilder(rawUrl string, requestAdap
 // Cookies provides operations to manage the cookies property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Cookies()(*ThreatIntelligenceHostsItemCookiesRequestBuilder) {
     return NewThreatIntelligenceHostsItemCookiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CookiesById provides operations to manage the cookies property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsHostItemRequestBuilder) CookiesById(id string)(*ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["hostCookie%2Did"] = id
-    }
-    return NewThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property hosts for security
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsHostItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -123,31 +101,9 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Get(ctx context.Context,
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) PassiveDns()(*ThreatIntelligenceHostsItemPassiveDnsRequestBuilder) {
     return NewThreatIntelligenceHostsItemPassiveDnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PassiveDnsById provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsHostItemRequestBuilder) PassiveDnsById(id string)(*ThreatIntelligenceHostsItemPassiveDnsPassiveDnsRecordItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["passiveDnsRecord%2Did"] = id
-    }
-    return NewThreatIntelligenceHostsItemPassiveDnsPassiveDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // PassiveDnsReverse provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) PassiveDnsReverse()(*ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) {
     return NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PassiveDnsReverseById provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsHostItemRequestBuilder) PassiveDnsReverseById(id string)(*ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["passiveDnsRecord%2Did"] = id
-    }
-    return NewThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property hosts in security
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable, requestConfiguration *ThreatIntelligenceHostsHostItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable, error) {
@@ -220,15 +176,4 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ToPatchRequestInformatio
 // Trackers provides operations to manage the trackers property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Trackers()(*ThreatIntelligenceHostsItemTrackersRequestBuilder) {
     return NewThreatIntelligenceHostsItemTrackersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TrackersById provides operations to manage the trackers property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsHostItemRequestBuilder) TrackersById(id string)(*ThreatIntelligenceHostsItemTrackersHostTrackerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["hostTracker%2Did"] = id
-    }
-    return NewThreatIntelligenceHostsItemTrackersHostTrackerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

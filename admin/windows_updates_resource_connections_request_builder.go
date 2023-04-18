@@ -46,6 +46,17 @@ type WindowsUpdatesResourceConnectionsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByResourceConnectionId provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesResourceConnectionsRequestBuilder) ByResourceConnectionId(resourceConnectionId string)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if resourceConnectionId != "" {
+        urlTplParams["resourceConnection%2Did"] = resourceConnectionId
+    }
+    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesResourceConnectionsRequestBuilderInternal instantiates a new ResourceConnectionsRequestBuilder and sets the default values.
 func NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesResourceConnectionsRequestBuilder) {
     m := &WindowsUpdatesResourceConnectionsRequestBuilder{

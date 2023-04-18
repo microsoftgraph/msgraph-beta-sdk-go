@@ -50,6 +50,17 @@ type VirtualEndpointCloudPCsRequestBuilderPostRequestConfiguration struct {
 func (m *VirtualEndpointCloudPCsRequestBuilder) BulkResize()(*VirtualEndpointCloudPCsBulkResizeRequestBuilder) {
     return NewVirtualEndpointCloudPCsBulkResizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByCloudPCId provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointCloudPCsRequestBuilder) ByCloudPCId(cloudPCId string)(*VirtualEndpointCloudPCsCloudPCItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if cloudPCId != "" {
+        urlTplParams["cloudPC%2Did"] = cloudPCId
+    }
+    return NewVirtualEndpointCloudPCsCloudPCItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointCloudPCsRequestBuilderInternal instantiates a new CloudPCsRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsRequestBuilder) {
     m := &VirtualEndpointCloudPCsRequestBuilder{

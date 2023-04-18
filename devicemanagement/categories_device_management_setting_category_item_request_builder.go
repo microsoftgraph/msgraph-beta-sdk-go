@@ -112,17 +112,6 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) Patch(ctx 
 func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitions()(*CategoriesItemSettingDefinitionsRequestBuilder) {
     return NewCategoriesItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
-func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitionsById(id string)(*CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementSettingDefinition%2Did"] = id
-    }
-    return NewCategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CategoriesDeviceManagementSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

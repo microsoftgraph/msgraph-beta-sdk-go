@@ -46,6 +46,17 @@ type WindowsAutopilotDeploymentProfilesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsAutopilotDeploymentProfileId provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) ByWindowsAutopilotDeploymentProfileId(windowsAutopilotDeploymentProfileId string)(*WindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsAutopilotDeploymentProfileId != "" {
+        urlTplParams["windowsAutopilotDeploymentProfile%2Did"] = windowsAutopilotDeploymentProfileId
+    }
+    return NewWindowsAutopilotDeploymentProfilesWindowsAutopilotDeploymentProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal instantiates a new WindowsAutopilotDeploymentProfilesRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeploymentProfilesRequestBuilder) {
     m := &WindowsAutopilotDeploymentProfilesRequestBuilder{

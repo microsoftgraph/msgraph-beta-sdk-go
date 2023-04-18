@@ -8,7 +8,7 @@ import (
 type WindowsDomainJoinConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsDomainJoinConfiguration instantiates a new windowsDomainJoinConfiguration and sets the default values.
+// NewWindowsDomainJoinConfiguration instantiates a new WindowsDomainJoinConfiguration and sets the default values.
 func NewWindowsDomainJoinConfiguration()(*WindowsDomainJoinConfiguration) {
     m := &WindowsDomainJoinConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

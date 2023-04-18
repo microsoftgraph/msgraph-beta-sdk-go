@@ -46,6 +46,17 @@ type ThreatIntelligenceArticleIndicatorsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByArticleIndicatorId provides operations to manage the articleIndicators property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) ByArticleIndicatorId(articleIndicatorId string)(*ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if articleIndicatorId != "" {
+        urlTplParams["articleIndicator%2Did"] = articleIndicatorId
+    }
+    return NewThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceArticleIndicatorsRequestBuilderInternal instantiates a new ArticleIndicatorsRequestBuilder and sets the default values.
 func NewThreatIntelligenceArticleIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceArticleIndicatorsRequestBuilder) {
     m := &ThreatIntelligenceArticleIndicatorsRequestBuilder{

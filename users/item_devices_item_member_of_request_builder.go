@@ -39,6 +39,17 @@ type ItemDevicesItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDevicesItemMemberOfRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the memberOf property of the microsoft.graph.device entity.
+func (m *ItemDevicesItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemMemberOfDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemDevicesItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDevicesItemMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewItemDevicesItemMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemMemberOfRequestBuilder) {
     m := &ItemDevicesItemMemberOfRequestBuilder{

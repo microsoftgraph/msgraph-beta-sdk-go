@@ -46,6 +46,17 @@ type ExchangeOnPremisesPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementExchangeOnPremisesPolicyId provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
+func (m *ExchangeOnPremisesPoliciesRequestBuilder) ByDeviceManagementExchangeOnPremisesPolicyId(deviceManagementExchangeOnPremisesPolicyId string)(*ExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementExchangeOnPremisesPolicyId != "" {
+        urlTplParams["deviceManagementExchangeOnPremisesPolicy%2Did"] = deviceManagementExchangeOnPremisesPolicyId
+    }
+    return NewExchangeOnPremisesPoliciesDeviceManagementExchangeOnPremisesPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewExchangeOnPremisesPoliciesRequestBuilderInternal instantiates a new ExchangeOnPremisesPoliciesRequestBuilder and sets the default values.
 func NewExchangeOnPremisesPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeOnPremisesPoliciesRequestBuilder) {
     m := &ExchangeOnPremisesPoliciesRequestBuilder{

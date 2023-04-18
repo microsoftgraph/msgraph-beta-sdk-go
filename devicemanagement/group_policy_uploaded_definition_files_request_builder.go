@@ -46,6 +46,17 @@ type GroupPolicyUploadedDefinitionFilesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyUploadedDefinitionFileId provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
+func (m *GroupPolicyUploadedDefinitionFilesRequestBuilder) ByGroupPolicyUploadedDefinitionFileId(groupPolicyUploadedDefinitionFileId string)(*GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyUploadedDefinitionFileId != "" {
+        urlTplParams["groupPolicyUploadedDefinitionFile%2Did"] = groupPolicyUploadedDefinitionFileId
+    }
+    return NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal instantiates a new GroupPolicyUploadedDefinitionFilesRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyUploadedDefinitionFilesRequestBuilder) {
     m := &GroupPolicyUploadedDefinitionFilesRequestBuilder{

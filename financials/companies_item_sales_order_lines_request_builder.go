@@ -39,6 +39,17 @@ type CompaniesItemSalesOrderLinesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CompaniesItemSalesOrderLinesRequestBuilderGetQueryParameters
 }
+// BySalesOrderLineId provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
+func (m *CompaniesItemSalesOrderLinesRequestBuilder) BySalesOrderLineId(salesOrderLineId string)(*CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if salesOrderLineId != "" {
+        urlTplParams["salesOrderLine%2Did"] = salesOrderLineId
+    }
+    return NewCompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemSalesOrderLinesRequestBuilderInternal instantiates a new SalesOrderLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrderLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrderLinesRequestBuilder) {
     m := &CompaniesItemSalesOrderLinesRequestBuilder{

@@ -46,6 +46,17 @@ type PrivilegedRolesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedRoleId provides operations to manage the collection of privilegedRole entities.
+func (m *PrivilegedRolesRequestBuilder) ByPrivilegedRoleId(privilegedRoleId string)(*PrivilegedRoleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedRoleId != "" {
+        urlTplParams["privilegedRole%2Did"] = privilegedRoleId
+    }
+    return NewPrivilegedRoleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegedRolesRequestBuilderInternal instantiates a new PrivilegedRolesRequestBuilder and sets the default values.
 func NewPrivilegedRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedRolesRequestBuilder) {
     m := &PrivilegedRolesRequestBuilder{

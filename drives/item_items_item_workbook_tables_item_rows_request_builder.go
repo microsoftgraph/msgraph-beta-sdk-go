@@ -50,6 +50,17 @@ type ItemItemsItemWorkbookTablesItemRowsRequestBuilderPostRequestConfiguration s
 func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemRowsAddRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemRowsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookTableRowId provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) ByWorkbookTableRowId(workbookTableRowId string)(*ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookTableRowId != "" {
+        urlTplParams["workbookTableRow%2Did"] = workbookTableRowId
+    }
+    return NewItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookTablesItemRowsRequestBuilderInternal instantiates a new RowsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemRowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemRowsRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemRowsRequestBuilder{

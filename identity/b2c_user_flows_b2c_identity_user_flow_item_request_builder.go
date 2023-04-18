@@ -93,31 +93,9 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Get(ctx context.Cont
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) IdentityProviders()(*B2cUserFlowsItemIdentityProvidersRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IdentityProvidersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.identityProviders.item collection
-func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) IdentityProvidersById(id string)(*B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityProvider%2Did"] = id
-    }
-    return NewB2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Languages provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Languages()(*B2cUserFlowsItemLanguagesRequestBuilder) {
     return NewB2cUserFlowsItemLanguagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// LanguagesById provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.
-func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) LanguagesById(id string)(*B2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userFlowLanguageConfiguration%2Did"] = id
-    }
-    return NewB2cUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property b2cUserFlows in identity
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, requestConfiguration *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, error) {
@@ -187,29 +165,7 @@ func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) ToPatchRequestInform
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignments()(*B2cUserFlowsItemUserAttributeAssignmentsRequestBuilder) {
     return NewB2cUserFlowsItemUserAttributeAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// UserAttributeAssignmentsById provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.
-func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id string)(*B2cUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityUserFlowAttributeAssignment%2Did"] = id
-    }
-    return NewB2cUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // UserFlowIdentityProviders provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) UserFlowIdentityProviders()(*B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) {
     return NewB2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UserFlowIdentityProvidersById provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
-func (m *B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) UserFlowIdentityProvidersById(id string)(*B2cUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityProviderBase%2Did"] = id
-    }
-    return NewB2cUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

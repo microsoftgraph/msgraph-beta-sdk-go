@@ -49,17 +49,6 @@ func (m *OrganizationItemRequestBuilder) Branding()(*ItemBrandingRequestBuilder)
 func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfiguration()(*ItemCertificateBasedAuthConfigurationRequestBuilder) {
     return NewItemCertificateBasedAuthConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CertificateBasedAuthConfigurationById provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfigurationById(id string)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["certificateBasedAuthConfiguration%2Did"] = id
-    }
-    return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
     return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -101,17 +90,6 @@ func (m *OrganizationItemRequestBuilder) Delete(ctx context.Context, requestConf
 func (m *OrganizationItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.organization entity.
-func (m *OrganizationItemRequestBuilder) ExtensionsById(id string)(*ItemExtensionsExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
 // [Find more info here]
 // 
@@ -141,6 +119,10 @@ func (m *OrganizationItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsR
 // GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *OrganizationItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
     return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PartnerInformation provides operations to manage the partnerInformation property of the microsoft.graph.organization entity.
+func (m *OrganizationItemRequestBuilder) PartnerInformation()(*ItemPartnerInformationRequestBuilder) {
+    return NewItemPartnerInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.
 // [Find more info here]

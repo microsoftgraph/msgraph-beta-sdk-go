@@ -39,6 +39,17 @@ type ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderGetReque
     // Request query parameters
     QueryParameters *ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderGetQueryParameters
 }
+// ByManagedTenantApiNotificationId provides operations to manage the apiNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
+func (m *ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder) ByManagedTenantApiNotificationId(managedTenantApiNotificationId string)(*ManagedTenantsManagedTenantAlertsItemApiNotificationsManagedTenantApiNotificationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedTenantApiNotificationId != "" {
+        urlTplParams["managedTenantApiNotification%2Did"] = managedTenantApiNotificationId
+    }
+    return NewManagedTenantsManagedTenantAlertsItemApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderInternal instantiates a new ApiNotificationsRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertsItemApiNotificationsRequestBuilder{

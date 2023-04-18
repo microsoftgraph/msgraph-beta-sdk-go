@@ -45,17 +45,6 @@ type ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderPatchRequestConfigurat
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Agents()(*ItemAgentGroupsItemAgentsRequestBuilder) {
     return NewItemAgentGroupsItemAgentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AgentsById provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.
-func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*ItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onPremisesAgent%2Did"] = id
-    }
-    return NewItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
 func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
     m := &ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder{
@@ -126,17 +115,6 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Patch(ctx contex
 // PublishedResources provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResources()(*ItemAgentGroupsItemPublishedResourcesRequestBuilder) {
     return NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PublishedResourcesById provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
-func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourcesById(id string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["publishedResource%2Did"] = id
-    }
-    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property agentGroups for onPremisesPublishingProfiles
 func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

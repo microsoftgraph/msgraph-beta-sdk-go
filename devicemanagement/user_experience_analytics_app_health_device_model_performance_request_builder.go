@@ -46,6 +46,17 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsAppHealthDeviceModelPerformanceId provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) ByUserExperienceAnalyticsAppHealthDeviceModelPerformanceId(userExperienceAnalyticsAppHealthDeviceModelPerformanceId string)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsAppHealthDeviceModelPerformanceId != "" {
+        urlTplParams["userExperienceAnalyticsAppHealthDeviceModelPerformance%2Did"] = userExperienceAnalyticsAppHealthDeviceModelPerformanceId
+    }
+    return NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder{

@@ -37,6 +37,17 @@ type ItemThreadsItemPostsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemThreadsItemPostsRequestBuilderGetQueryParameters
 }
+// ByPostId provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
+func (m *ItemThreadsItemPostsRequestBuilder) ByPostId(postId string)(*ItemThreadsItemPostsPostItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if postId != "" {
+        urlTplParams["post%2Did"] = postId
+    }
+    return NewItemThreadsItemPostsPostItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemThreadsItemPostsRequestBuilderInternal instantiates a new PostsRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsRequestBuilder) {
     m := &ItemThreadsItemPostsRequestBuilder{

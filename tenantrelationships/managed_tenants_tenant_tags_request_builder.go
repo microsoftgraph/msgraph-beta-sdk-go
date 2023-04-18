@@ -46,6 +46,17 @@ type ManagedTenantsTenantTagsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTenantTagId provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsTenantTagsRequestBuilder) ByTenantTagId(tenantTagId string)(*ManagedTenantsTenantTagsTenantTagItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if tenantTagId != "" {
+        urlTplParams["tenantTag%2Did"] = tenantTagId
+    }
+    return NewManagedTenantsTenantTagsTenantTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsTenantTagsRequestBuilderInternal instantiates a new TenantTagsRequestBuilder and sets the default values.
 func NewManagedTenantsTenantTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantTagsRequestBuilder) {
     m := &ManagedTenantsTenantTagsRequestBuilder{

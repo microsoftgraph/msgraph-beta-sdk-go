@@ -39,7 +39,7 @@ func (m *PstnBlockedUsersLogRow) GetAdditionalData()(map[string]any) {
 func (m *PstnBlockedUsersLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockDateTime gets the blockDateTime property value. The blockDateTime property
+// GetBlockDateTime gets the blockDateTime property value. The date and time when the user was blocked/unblocked from making PSTN calls. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PstnBlockedUsersLogRow) GetBlockDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("blockDateTime")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *PstnBlockedUsersLogRow) GetBlockDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetBlockReason gets the blockReason property value. The blockReason property
+// GetBlockReason gets the blockReason property value. The reason why the user is blocked/unblocked from making calls.
 func (m *PstnBlockedUsersLogRow) GetBlockReason()(*string) {
     val, err := m.GetBackingStore().Get("blockReason")
     if err != nil {
@@ -167,7 +167,7 @@ func (m *PstnBlockedUsersLogRow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemediationId gets the remediationId property value. The remediationId property
+// GetRemediationId gets the remediationId property value. Unique identifier (GUID) for the blocking/unblocking action.
 func (m *PstnBlockedUsersLogRow) GetRemediationId()(*string) {
     val, err := m.GetBackingStore().Get("remediationId")
     if err != nil {
@@ -178,7 +178,7 @@ func (m *PstnBlockedUsersLogRow) GetRemediationId()(*string) {
     }
     return nil
 }
-// GetUserBlockMode gets the userBlockMode property value. The userBlockMode property
+// GetUserBlockMode gets the userBlockMode property value. Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.
 func (m *PstnBlockedUsersLogRow) GetUserBlockMode()(*PstnUserBlockMode) {
     val, err := m.GetBackingStore().Get("userBlockMode")
     if err != nil {
@@ -189,7 +189,7 @@ func (m *PstnBlockedUsersLogRow) GetUserBlockMode()(*PstnUserBlockMode) {
     }
     return nil
 }
-// GetUserDisplayName gets the userDisplayName property value. The userDisplayName property
+// GetUserDisplayName gets the userDisplayName property value. Display name of the user.
 func (m *PstnBlockedUsersLogRow) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *PstnBlockedUsersLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
 func (m *PstnBlockedUsersLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -211,7 +211,7 @@ func (m *PstnBlockedUsersLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnBlockedUsersLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *PstnBlockedUsersLogRow) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetUserTelephoneNumber gets the userTelephoneNumber property value. The userTelephoneNumber property
+// GetUserTelephoneNumber gets the userTelephoneNumber property value. User's blocked number. For details, see E.164.
 func (m *PstnBlockedUsersLogRow) GetUserTelephoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("userTelephoneNumber")
     if err != nil {
@@ -309,14 +309,14 @@ func (m *PstnBlockedUsersLogRow) SetAdditionalData(value map[string]any)() {
 func (m *PstnBlockedUsersLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockDateTime sets the blockDateTime property value. The blockDateTime property
+// SetBlockDateTime sets the blockDateTime property value. The date and time when the user was blocked/unblocked from making PSTN calls. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PstnBlockedUsersLogRow) SetBlockDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("blockDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBlockReason sets the blockReason property value. The blockReason property
+// SetBlockReason sets the blockReason property value. The reason why the user is blocked/unblocked from making calls.
 func (m *PstnBlockedUsersLogRow) SetBlockReason(value *string)() {
     err := m.GetBackingStore().Set("blockReason", value)
     if err != nil {
@@ -330,42 +330,42 @@ func (m *PstnBlockedUsersLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemediationId sets the remediationId property value. The remediationId property
+// SetRemediationId sets the remediationId property value. Unique identifier (GUID) for the blocking/unblocking action.
 func (m *PstnBlockedUsersLogRow) SetRemediationId(value *string)() {
     err := m.GetBackingStore().Set("remediationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserBlockMode sets the userBlockMode property value. The userBlockMode property
+// SetUserBlockMode sets the userBlockMode property value. Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.
 func (m *PstnBlockedUsersLogRow) SetUserBlockMode(value *PstnUserBlockMode)() {
     err := m.GetBackingStore().Set("userBlockMode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. The userDisplayName property
+// SetUserDisplayName sets the userDisplayName property value. Display name of the user.
 func (m *PstnBlockedUsersLogRow) SetUserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("userDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
 func (m *PstnBlockedUsersLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnBlockedUsersLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserTelephoneNumber sets the userTelephoneNumber property value. The userTelephoneNumber property
+// SetUserTelephoneNumber sets the userTelephoneNumber property value. User's blocked number. For details, see E.164.
 func (m *PstnBlockedUsersLogRow) SetUserTelephoneNumber(value *string)() {
     err := m.GetBackingStore().Set("userTelephoneNumber", value)
     if err != nil {

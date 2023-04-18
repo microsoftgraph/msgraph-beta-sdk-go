@@ -45,17 +45,6 @@ type ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration struct {
 func (m *ItemItemsDriveItemItemRequestBuilder) Activities()(*ItemItemsItemActivitiesRequestBuilder) {
     return NewItemItemsItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ActivitiesById provides operations to manage the activities property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsDriveItemItemRequestBuilder) ActivitiesById(id string)(*ItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["itemActivityOLD%2Did"] = id
-    }
-    return NewItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Analytics provides operations to manage the analytics property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Analytics()(*ItemItemsItemAnalyticsRequestBuilder) {
     return NewItemItemsItemAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -75,17 +64,6 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Checkout()(*ItemItemsItemCheckout
 // Children provides operations to manage the children property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Children()(*ItemItemsItemChildrenRequestBuilder) {
     return NewItemItemsItemChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ChildrenById provides operations to manage the children property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsDriveItemItemRequestBuilder) ChildrenById(id string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did1"] = id
-    }
-    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemsDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
 func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsDriveItemItemRequestBuilder) {
@@ -202,17 +180,6 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Patch(ctx context.Context, body i
 func (m *ItemItemsDriveItemItemRequestBuilder) Permissions()(*ItemItemsItemPermissionsRequestBuilder) {
     return NewItemItemsItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PermissionsById provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsDriveItemItemRequestBuilder) PermissionsById(id string)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["permission%2Did"] = id
-    }
-    return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Preview provides operations to call the preview method.
 func (m *ItemItemsDriveItemItemRequestBuilder) Preview()(*ItemItemsItemPreviewRequestBuilder) {
     return NewItemItemsItemPreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -220,6 +187,10 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Preview()(*ItemItemsItemPreviewRe
 // Restore provides operations to call the restore method.
 func (m *ItemItemsDriveItemItemRequestBuilder) Restore()(*ItemItemsItemRestoreRequestBuilder) {
     return NewItemItemsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetentionLabel provides operations to manage the retentionLabel property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsDriveItemItemRequestBuilder) RetentionLabel()(*ItemItemsItemRetentionLabelRequestBuilder) {
+    return NewItemItemsItemRetentionLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SearchWithQ provides operations to call the search method.
 func (m *ItemItemsDriveItemItemRequestBuilder) SearchWithQ(q *string)(*ItemItemsItemSearchWithQRequestBuilder) {
@@ -229,31 +200,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) SearchWithQ(q *string)(*ItemItems
 func (m *ItemItemsDriveItemItemRequestBuilder) Subscriptions()(*ItemItemsItemSubscriptionsRequestBuilder) {
     return NewItemItemsItemSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsDriveItemItemRequestBuilder) SubscriptionsById(id string)(*ItemItemsItemSubscriptionsSubscriptionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["subscription%2Did"] = id
-    }
-    return NewItemItemsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Thumbnails provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Thumbnails()(*ItemItemsItemThumbnailsRequestBuilder) {
     return NewItemItemsItemThumbnailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ThumbnailsById provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsDriveItemItemRequestBuilder) ThumbnailsById(id string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["thumbnailSet%2Did"] = id
-    }
-    return NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property items for drives
 func (m *ItemItemsDriveItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -311,17 +260,6 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ValidatePermission()(*ItemItemsIt
 // Versions provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Versions()(*ItemItemsItemVersionsRequestBuilder) {
     return NewItemItemsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// VersionsById provides operations to manage the versions property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsDriveItemItemRequestBuilder) VersionsById(id string)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItemVersion%2Did"] = id
-    }
-    return NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Workbook provides operations to manage the workbook property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Workbook()(*ItemItemsItemWorkbookRequestBuilder) {

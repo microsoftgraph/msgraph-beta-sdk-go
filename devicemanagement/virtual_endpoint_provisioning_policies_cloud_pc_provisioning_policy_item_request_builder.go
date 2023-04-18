@@ -53,17 +53,6 @@ func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequest
 func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) Assignments()(*VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
-func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) AssignmentsById(id string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["cloudPcProvisioningPolicyAssignment%2Did"] = id
-    }
-    return NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewVirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderInternal instantiates a new CloudPcProvisioningPolicyItemRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder{

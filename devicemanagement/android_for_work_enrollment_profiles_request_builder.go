@@ -46,6 +46,17 @@ type AndroidForWorkEnrollmentProfilesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAndroidForWorkEnrollmentProfileId provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) ByAndroidForWorkEnrollmentProfileId(androidForWorkEnrollmentProfileId string)(*AndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if androidForWorkEnrollmentProfileId != "" {
+        urlTplParams["androidForWorkEnrollmentProfile%2Did"] = androidForWorkEnrollmentProfileId
+    }
+    return NewAndroidForWorkEnrollmentProfilesAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.
 func NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkEnrollmentProfilesRequestBuilder) {
     m := &AndroidForWorkEnrollmentProfilesRequestBuilder{

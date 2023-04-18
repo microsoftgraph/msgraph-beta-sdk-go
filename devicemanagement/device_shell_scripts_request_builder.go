@@ -46,6 +46,17 @@ type DeviceShellScriptsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceShellScriptId provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceShellScriptsRequestBuilder) ByDeviceShellScriptId(deviceShellScriptId string)(*DeviceShellScriptsDeviceShellScriptItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceShellScriptId != "" {
+        urlTplParams["deviceShellScript%2Did"] = deviceShellScriptId
+    }
+    return NewDeviceShellScriptsDeviceShellScriptItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceShellScriptsRequestBuilderInternal instantiates a new DeviceShellScriptsRequestBuilder and sets the default values.
 func NewDeviceShellScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsRequestBuilder) {
     m := &DeviceShellScriptsRequestBuilder{

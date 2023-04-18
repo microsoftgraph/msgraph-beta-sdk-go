@@ -8,8 +8,6 @@ import (
 // ProviderTenantSetting 
 type ProviderTenantSetting struct {
     Entity
-    // The vendor property
-    VendorEscaped *string
 }
 // NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {

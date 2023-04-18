@@ -46,6 +46,17 @@ type ItemProfilePhonesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemPhoneId provides operations to manage the phones property of the microsoft.graph.profile entity.
+func (m *ItemProfilePhonesRequestBuilder) ByItemPhoneId(itemPhoneId string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemPhoneId != "" {
+        urlTplParams["itemPhone%2Did"] = itemPhoneId
+    }
+    return NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfilePhonesRequestBuilderInternal instantiates a new PhonesRequestBuilder and sets the default values.
 func NewItemProfilePhonesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePhonesRequestBuilder) {
     m := &ItemProfilePhonesRequestBuilder{

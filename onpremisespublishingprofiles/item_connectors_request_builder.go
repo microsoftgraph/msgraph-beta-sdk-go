@@ -46,6 +46,17 @@ type ItemConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByConnectorId provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
+func (m *ItemConnectorsRequestBuilder) ByConnectorId(connectorId string)(*ItemConnectorsConnectorItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if connectorId != "" {
+        urlTplParams["connector%2Did"] = connectorId
+    }
+    return NewItemConnectorsConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemConnectorsRequestBuilderInternal instantiates a new ConnectorsRequestBuilder and sets the default values.
 func NewItemConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsRequestBuilder) {
     m := &ItemConnectorsRequestBuilder{

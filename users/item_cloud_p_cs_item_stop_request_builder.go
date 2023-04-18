@@ -30,7 +30,10 @@ func NewItemCloudPCsItemStopRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemStopRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action stop
+// Post stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-1.0
 func (m *ItemCloudPCsItemStopRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCloudPCsItemStopRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCloudPCsItemStopRequestBuilder) Post(ctx context.Context, requestCo
     }
     return nil
 }
-// ToPostRequestInformation invoke action stop
+// ToPostRequestInformation stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
 func (m *ItemCloudPCsItemStopRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemStopRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

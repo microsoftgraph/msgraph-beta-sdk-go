@@ -49,17 +49,6 @@ func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder
 func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) Assignments()(*WindowsDriverUpdateProfilesItemAssignmentsRequestBuilder) {
     return NewWindowsDriverUpdateProfilesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsDriverUpdateProfile entity.
-func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*WindowsDriverUpdateProfilesItemAssignmentsWindowsDriverUpdateProfileAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["windowsDriverUpdateProfileAssignment%2Did"] = id
-    }
-    return NewWindowsDriverUpdateProfilesItemAssignmentsWindowsDriverUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewWindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilderInternal instantiates a new WindowsDriverUpdateProfileItemRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) {
     m := &WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder{
@@ -92,17 +81,6 @@ func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder
 // DriverInventories provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
 func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) DriverInventories()(*WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) {
     return NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DriverInventoriesById provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
-func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) DriverInventoriesById(id string)(*WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["windowsDriverUpdateInventory%2Did"] = id
-    }
-    return NewWindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExecuteAction provides operations to call the executeAction method.
 func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) ExecuteAction()(*WindowsDriverUpdateProfilesItemExecuteActionRequestBuilder) {

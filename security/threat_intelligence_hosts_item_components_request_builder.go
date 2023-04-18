@@ -39,6 +39,17 @@ type ThreatIntelligenceHostsItemComponentsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemComponentsRequestBuilderGetQueryParameters
 }
+// ByHostComponentId provides operations to manage the components property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemComponentsRequestBuilder) ByHostComponentId(hostComponentId string)(*ThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if hostComponentId != "" {
+        urlTplParams["hostComponent%2Did"] = hostComponentId
+    }
+    return NewThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceHostsItemComponentsRequestBuilderInternal instantiates a new ComponentsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemComponentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemComponentsRequestBuilder) {
     m := &ThreatIntelligenceHostsItemComponentsRequestBuilder{

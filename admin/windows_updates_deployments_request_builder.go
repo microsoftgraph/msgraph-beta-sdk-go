@@ -46,6 +46,17 @@ type WindowsUpdatesDeploymentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeploymentId provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
+func (m *WindowsUpdatesDeploymentsRequestBuilder) ByDeploymentId(deploymentId string)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deploymentId != "" {
+        urlTplParams["deployment%2Did"] = deploymentId
+    }
+    return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesDeploymentsRequestBuilderInternal instantiates a new DeploymentsRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsRequestBuilder) {
     m := &WindowsUpdatesDeploymentsRequestBuilder{

@@ -46,6 +46,17 @@ type ReportsMonthlyPrintUsageByPrinterRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrintUsageByPrinterId provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
+func (m *ReportsMonthlyPrintUsageByPrinterRequestBuilder) ByPrintUsageByPrinterId(printUsageByPrinterId string)(*ReportsMonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printUsageByPrinterId != "" {
+        urlTplParams["printUsageByPrinter%2Did"] = printUsageByPrinterId
+    }
+    return NewReportsMonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsMonthlyPrintUsageByPrinterRequestBuilderInternal instantiates a new MonthlyPrintUsageByPrinterRequestBuilder and sets the default values.
 func NewReportsMonthlyPrintUsageByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsMonthlyPrintUsageByPrinterRequestBuilder) {
     m := &ReportsMonthlyPrintUsageByPrinterRequestBuilder{

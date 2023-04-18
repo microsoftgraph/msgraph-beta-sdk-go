@@ -8,8 +8,6 @@ import (
 // SourceSystemDefinition 
 type SourceSystemDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
-    VendorEscaped *string
 }
 // NewSourceSystemDefinition instantiates a new sourceSystemDefinition and sets the default values.
 func NewSourceSystemDefinition()(*SourceSystemDefinition) {

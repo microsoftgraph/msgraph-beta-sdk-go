@@ -93,17 +93,6 @@ func (m *RostersPlannerRosterItemRequestBuilder) Get(ctx context.Context, reques
 func (m *RostersPlannerRosterItemRequestBuilder) Members()(*RostersItemMembersRequestBuilder) {
     return NewRostersItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
-func (m *RostersPlannerRosterItemRequestBuilder) MembersById(id string)(*RostersItemMembersPlannerRosterMemberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerRosterMember%2Did"] = id
-    }
-    return NewRostersItemMembersPlannerRosterMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property rosters in planner
 func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body
 // Plans provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
 func (m *RostersPlannerRosterItemRequestBuilder) Plans()(*RostersItemPlansRequestBuilder) {
     return NewRostersItemPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PlansById provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
-func (m *RostersPlannerRosterItemRequestBuilder) PlansById(id string)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property rosters for planner
 func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

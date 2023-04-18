@@ -39,6 +39,17 @@ type LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetQueryParameters
 }
+// ByWorkflowVersionVersionNumber provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) ByWorkflowVersionVersionNumber(workflowVersionVersionNumber string)(*LifecycleWorkflowsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workflowVersionVersionNumber != "" {
+        urlTplParams["workflowVersion%2DversionNumber"] = workflowVersionVersionNumber
+    }
+    return NewLifecycleWorkflowsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowsItemVersionsRequestBuilderInternal instantiates a new VersionsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder{

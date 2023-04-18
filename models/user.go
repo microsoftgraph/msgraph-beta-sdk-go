@@ -2089,6 +2089,20 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["serviceProvisioningErrors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceProvisioningErrorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceProvisioningErrorable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceProvisioningErrorable)
+            }
+            m.SetServiceProvisioningErrors(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserSettingsFromDiscriminatorValue)
         if err != nil {
@@ -3095,6 +3109,17 @@ func (m *User) GetSecurityIdentifier()(*string) {
     }
     return nil
 }
+// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+func (m *User) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
+    val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceProvisioningErrorable)
+    }
+    return nil
+}
 // GetSettings gets the settings property value. The settings property
 func (m *User) GetSettings()(UserSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
@@ -3117,7 +3142,7 @@ func (m *User) GetShowInAddressList()(*bool) {
     }
     return nil
 }
-// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will return pages with up to 120 users.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) GetSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("signInActivity")
     if err != nil {
@@ -4240,6 +4265,16 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetServiceProvisioningErrors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceProvisioningErrors()))
+        for i, v := range m.GetServiceProvisioningErrors() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("serviceProvisioningErrors", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -5242,6 +5277,13 @@ func (m *User) SetSecurityIdentifier(value *string)() {
         panic(err)
     }
 }
+// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+func (m *User) SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)() {
+    err := m.GetBackingStore().Set("serviceProvisioningErrors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. The settings property
 func (m *User) SetSettings(value UserSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -5256,7 +5298,7 @@ func (m *User) SetShowInAddressList(value *bool)() {
         panic(err)
     }
 }
-// SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will return pages with up to 120 users.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) SetSignInActivity(value SignInActivityable)() {
     err := m.GetBackingStore().Set("signInActivity", value)
     if err != nil {
@@ -5491,6 +5533,7 @@ type Userable interface {
     GetSchools()([]string)
     GetScopedRoleMemberOf()([]ScopedRoleMembershipable)
     GetSecurityIdentifier()(*string)
+    GetServiceProvisioningErrors()([]ServiceProvisioningErrorable)
     GetSettings()(UserSettingsable)
     GetShowInAddressList()(*bool)
     GetSignInActivity()(SignInActivityable)
@@ -5634,6 +5677,7 @@ type Userable interface {
     SetSchools(value []string)()
     SetScopedRoleMemberOf(value []ScopedRoleMembershipable)()
     SetSecurityIdentifier(value *string)()
+    SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)()
     SetSettings(value UserSettingsable)()
     SetShowInAddressList(value *bool)()
     SetSignInActivity(value SignInActivityable)()

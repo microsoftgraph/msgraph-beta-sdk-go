@@ -46,6 +46,17 @@ type CompaniesItemItemCategoriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemCategoryId provides operations to manage the itemCategories property of the microsoft.graph.company entity.
+func (m *CompaniesItemItemCategoriesRequestBuilder) ByItemCategoryId(itemCategoryId string)(*CompaniesItemItemCategoriesItemCategoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemCategoryId != "" {
+        urlTplParams["itemCategory%2Did"] = itemCategoryId
+    }
+    return NewCompaniesItemItemCategoriesItemCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemItemCategoriesRequestBuilderInternal instantiates a new ItemCategoriesRequestBuilder and sets the default values.
 func NewCompaniesItemItemCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemCategoriesRequestBuilder) {
     m := &CompaniesItemItemCategoriesRequestBuilder{

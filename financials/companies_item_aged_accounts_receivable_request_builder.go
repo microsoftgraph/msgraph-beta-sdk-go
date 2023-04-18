@@ -39,6 +39,17 @@ type CompaniesItemAgedAccountsReceivableRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *CompaniesItemAgedAccountsReceivableRequestBuilderGetQueryParameters
 }
+// ByAgedAccountsReceivableId provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
+func (m *CompaniesItemAgedAccountsReceivableRequestBuilder) ByAgedAccountsReceivableId(agedAccountsReceivableId string)(*CompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if agedAccountsReceivableId != "" {
+        urlTplParams["agedAccountsReceivable%2Did"] = agedAccountsReceivableId
+    }
+    return NewCompaniesItemAgedAccountsReceivableAgedAccountsReceivableItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemAgedAccountsReceivableRequestBuilderInternal instantiates a new AgedAccountsReceivableRequestBuilder and sets the default values.
 func NewCompaniesItemAgedAccountsReceivableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemAgedAccountsReceivableRequestBuilder) {
     m := &CompaniesItemAgedAccountsReceivableRequestBuilder{

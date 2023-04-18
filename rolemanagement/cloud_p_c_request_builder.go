@@ -112,46 +112,13 @@ func (m *CloudPCRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 func (m *CloudPCRequestBuilder) ResourceNamespaces()(*CloudPCResourceNamespacesRequestBuilder) {
     return NewCloudPCResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourceNamespacesById provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *CloudPCRequestBuilder) ResourceNamespacesById(id string)(*CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRbacResourceNamespace%2Did"] = id
-    }
-    return NewCloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
 func (m *CloudPCRequestBuilder) RoleAssignments()(*CloudPCRoleAssignmentsRequestBuilder) {
     return NewCloudPCRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *CloudPCRequestBuilder) RoleAssignmentsById(id string)(*CloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentMultiple%2Did"] = id
-    }
-    return NewCloudPCRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
 func (m *CloudPCRequestBuilder) RoleDefinitions()(*CloudPCRoleDefinitionsRequestBuilder) {
     return NewCloudPCRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *CloudPCRequestBuilder) RoleDefinitionsById(id string)(*CloudPCRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleDefinition%2Did"] = id
-    }
-    return NewCloudPCRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property cloudPC for roleManagement
 func (m *CloudPCRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CloudPCRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -46,6 +46,17 @@ type TemplatesItemMigratableToRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementTemplateId1 provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.
+func (m *TemplatesItemMigratableToRequestBuilder) ByDeviceManagementTemplateId1(deviceManagementTemplateId1 string)(*TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementTemplateId1 != "" {
+        urlTplParams["deviceManagementTemplate%2Did1"] = deviceManagementTemplateId1
+    }
+    return NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTemplatesItemMigratableToRequestBuilderInternal instantiates a new MigratableToRequestBuilder and sets the default values.
 func NewTemplatesItemMigratableToRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesItemMigratableToRequestBuilder) {
     m := &TemplatesItemMigratableToRequestBuilder{

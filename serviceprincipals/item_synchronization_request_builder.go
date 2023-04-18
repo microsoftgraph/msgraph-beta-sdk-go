@@ -97,17 +97,6 @@ func (m *ItemSynchronizationRequestBuilder) Get(ctx context.Context, requestConf
 func (m *ItemSynchronizationRequestBuilder) Jobs()(*ItemSynchronizationJobsRequestBuilder) {
     return NewItemSynchronizationJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// JobsById provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
-func (m *ItemSynchronizationRequestBuilder) JobsById(id string)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["synchronizationJob%2Did"] = id
-    }
-    return NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property synchronization in servicePrincipals
 func (m *ItemSynchronizationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, requestConfiguration *ItemSynchronizationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -138,17 +127,6 @@ func (m *ItemSynchronizationRequestBuilder) Secrets()(*ItemSynchronizationSecret
 // Templates provides operations to manage the templates property of the microsoft.graph.synchronization entity.
 func (m *ItemSynchronizationRequestBuilder) Templates()(*ItemSynchronizationTemplatesRequestBuilder) {
     return NewItemSynchronizationTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TemplatesById provides operations to manage the templates property of the microsoft.graph.synchronization entity.
-func (m *ItemSynchronizationRequestBuilder) TemplatesById(id string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["synchronizationTemplate%2Did"] = id
-    }
-    return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property synchronization for servicePrincipals
 func (m *ItemSynchronizationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

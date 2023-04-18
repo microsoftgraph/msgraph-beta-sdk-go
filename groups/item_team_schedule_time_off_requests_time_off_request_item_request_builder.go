@@ -18,7 +18,7 @@ type ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters get timeOffRequests from groups
+// ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters the time off requests in the schedule.
 type ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -68,7 +68,7 @@ func (m *ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get timeOffRequests from groups
+// Get the time off requests in the schedule.
 func (m *ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get timeOffRequests from groups
+// ToGetRequestInformation the time off requests in the schedule.
 func (m *ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

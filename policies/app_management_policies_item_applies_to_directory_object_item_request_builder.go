@@ -11,7 +11,7 @@ import (
 type AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetQueryParameters get appliesTo from policies
+// AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetQueryParameters collection of application and service principals to which a policy is applied.
 type AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get appliesTo from policies
+// Get collection of application and service principals to which a policy is applied.
 func (m *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get appliesTo from policies
+// ToGetRequestInformation collection of application and service principals to which a policy is applied.
 func (m *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

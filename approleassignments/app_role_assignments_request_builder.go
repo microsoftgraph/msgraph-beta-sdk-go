@@ -46,6 +46,17 @@ type AppRoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAppRoleAssignmentId provides operations to manage the collection of appRoleAssignment entities.
+func (m *AppRoleAssignmentsRequestBuilder) ByAppRoleAssignmentId(appRoleAssignmentId string)(*AppRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if appRoleAssignmentId != "" {
+        urlTplParams["appRoleAssignment%2Did"] = appRoleAssignmentId
+    }
+    return NewAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAppRoleAssignmentsRequestBuilderInternal instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
 func NewAppRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRoleAssignmentsRequestBuilder) {
     m := &AppRoleAssignmentsRequestBuilder{

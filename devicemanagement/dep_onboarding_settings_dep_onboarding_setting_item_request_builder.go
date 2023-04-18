@@ -82,17 +82,6 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Delete(ctx
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) EnrollmentProfiles()(*DepOnboardingSettingsItemEnrollmentProfilesRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EnrollmentProfilesById provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
-func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["enrollmentProfile%2Did"] = id
-    }
-    return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // GenerateEncryptionPublicKey provides operations to call the generateEncryptionPublicKey method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) GenerateEncryptionPublicKey()(*DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) {
     return NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -123,17 +112,6 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) GetEncrypt
 // ImportedAppleDeviceIdentities provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentities()(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilder) {
     return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ImportedAppleDeviceIdentitiesById provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
-func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentitiesById(id string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["importedAppleDeviceIdentity%2Did"] = id
-    }
-    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property depOnboardingSettings in deviceManagement
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {

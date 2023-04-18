@@ -45,17 +45,6 @@ type WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderPa
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Apps()(*WindowsManagedAppProtectionsItemAppsRequestBuilder) {
     return NewWindowsManagedAppProtectionsItemAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppsById provides operations to manage the apps property of the microsoft.graph.windowsManagedAppProtection entity.
-func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) AppsById(id string)(*WindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedMobileApp%2Did"] = id
-    }
-    return NewWindowsManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Assign provides operations to call the assign method.
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Assign()(*WindowsManagedAppProtectionsItemAssignRequestBuilder) {
     return NewWindowsManagedAppProtectionsItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -63,17 +52,6 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
 // Assignments provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) Assignments()(*WindowsManagedAppProtectionsItemAssignmentsRequestBuilder) {
     return NewWindowsManagedAppProtectionsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.
-func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) AssignmentsById(id string)(*WindowsManagedAppProtectionsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["targetedManagedAppPolicyAssignment%2Did"] = id
-    }
-    return NewWindowsManagedAppProtectionsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal instantiates a new WindowsManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {

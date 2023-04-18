@@ -39,6 +39,17 @@ type PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters
 }
+// ByUserId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.printerShares.item.allowedUsers.item collection
+func (m *PrinterSharesItemAllowedUsersRequestBuilder) ByUserId(userId string)(*PrinterSharesItemAllowedUsersUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userId != "" {
+        urlTplParams["user%2Did"] = userId
+    }
+    return NewPrinterSharesItemAllowedUsersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrinterSharesItemAllowedUsersRequestBuilderInternal instantiates a new AllowedUsersRequestBuilder and sets the default values.
 func NewPrinterSharesItemAllowedUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemAllowedUsersRequestBuilder) {
     m := &PrinterSharesItemAllowedUsersRequestBuilder{

@@ -7,8 +7,6 @@ import (
 // UnifiedRbacResourceScope 
 type UnifiedRbacResourceScope struct {
     Entity
-    // The type property
-    TypeEscaped *string
 }
 // NewUnifiedRbacResourceScope instantiates a new unifiedRbacResourceScope and sets the default values.
 func NewUnifiedRbacResourceScope()(*UnifiedRbacResourceScope) {

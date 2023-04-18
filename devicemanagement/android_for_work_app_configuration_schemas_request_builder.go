@@ -46,6 +46,17 @@ type AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAndroidForWorkAppConfigurationSchemaId provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) ByAndroidForWorkAppConfigurationSchemaId(androidForWorkAppConfigurationSchemaId string)(*AndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if androidForWorkAppConfigurationSchemaId != "" {
+        urlTplParams["androidForWorkAppConfigurationSchema%2Did"] = androidForWorkAppConfigurationSchemaId
+    }
+    return NewAndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal instantiates a new AndroidForWorkAppConfigurationSchemasRequestBuilder and sets the default values.
 func NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkAppConfigurationSchemasRequestBuilder) {
     m := &AndroidForWorkAppConfigurationSchemasRequestBuilder{

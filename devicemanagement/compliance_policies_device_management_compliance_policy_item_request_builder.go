@@ -49,17 +49,6 @@ func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) A
 func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) Assignments()(*CompliancePoliciesItemAssignmentsRequestBuilder) {
     return NewCompliancePoliciesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.
-func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) AssignmentsById(id string)(*CompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationPolicyAssignment%2Did"] = id
-    }
-    return NewCompliancePoliciesItemAssignmentsDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewCompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilderInternal instantiates a new DeviceManagementCompliancePolicyItemRequestBuilder and sets the default values.
 func NewCompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) {
     m := &CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder{
@@ -131,17 +120,6 @@ func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) P
 func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) ScheduledActionsForRule()(*CompliancePoliciesItemScheduledActionsForRuleRequestBuilder) {
     return NewCompliancePoliciesItemScheduledActionsForRuleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ScheduledActionsForRuleById provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceManagementCompliancePolicy entity.
-func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) ScheduledActionsForRuleById(id string)(*CompliancePoliciesItemScheduledActionsForRuleDeviceManagementComplianceScheduledActionForRuleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementComplianceScheduledActionForRule%2Did"] = id
-    }
-    return NewCompliancePoliciesItemScheduledActionsForRuleDeviceManagementComplianceScheduledActionForRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SetScheduledActions provides operations to call the setScheduledActions method.
 func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) SetScheduledActions()(*CompliancePoliciesItemSetScheduledActionsRequestBuilder) {
     return NewCompliancePoliciesItemSetScheduledActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -149,17 +127,6 @@ func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) S
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) Settings()(*CompliancePoliciesItemSettingsRequestBuilder) {
     return NewCompliancePoliciesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.
-func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) SettingsById(id string)(*CompliancePoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementConfigurationSetting%2Did"] = id
-    }
-    return NewCompliancePoliciesItemSettingsDeviceManagementConfigurationSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property compliancePolicies for deviceManagement
 func (m *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompliancePoliciesDeviceManagementCompliancePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

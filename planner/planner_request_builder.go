@@ -38,17 +38,6 @@ type PlannerRequestBuilderPatchRequestConfiguration struct {
 func (m *PlannerRequestBuilder) Buckets()(*BucketsRequestBuilder) {
     return NewBucketsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BucketsById provides operations to manage the buckets property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) BucketsById(id string)(*BucketsPlannerBucketItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerBucket%2Did"] = id
-    }
-    return NewBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewPlannerRequestBuilderInternal instantiates a new PlannerRequestBuilder and sets the default values.
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerRequestBuilder) {
     m := &PlannerRequestBuilder{
@@ -104,46 +93,13 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 func (m *PlannerRequestBuilder) Plans()(*PlansRequestBuilder) {
     return NewPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PlansById provides operations to manage the plans property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) PlansById(id string)(*PlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Rosters provides operations to manage the rosters property of the microsoft.graph.planner entity.
 func (m *PlannerRequestBuilder) Rosters()(*RostersRequestBuilder) {
     return NewRostersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RostersById provides operations to manage the rosters property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) RostersById(id string)(*RostersPlannerRosterItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerRoster%2Did"] = id
-    }
-    return NewRostersPlannerRosterItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Tasks provides operations to manage the tasks property of the microsoft.graph.planner entity.
 func (m *PlannerRequestBuilder) Tasks()(*TasksRequestBuilder) {
     return NewTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TasksById provides operations to manage the tasks property of the microsoft.graph.planner entity.
-func (m *PlannerRequestBuilder) TasksById(id string)(*TasksPlannerTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get planner
 func (m *PlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

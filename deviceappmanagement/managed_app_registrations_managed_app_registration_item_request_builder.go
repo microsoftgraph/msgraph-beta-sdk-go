@@ -45,17 +45,6 @@ type ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderPatchRequest
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) AppliedPolicies()(*ManagedAppRegistrationsItemAppliedPoliciesRequestBuilder) {
     return NewManagedAppRegistrationsItemAppliedPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppliedPoliciesById provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.
-func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) AppliedPoliciesById(id string)(*ManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedAppPolicy%2Did"] = id
-    }
-    return NewManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     m := &ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder{
@@ -108,31 +97,9 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Get(ct
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) IntendedPolicies()(*ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) {
     return NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IntendedPoliciesById provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
-func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) IntendedPoliciesById(id string)(*ManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedAppPolicy%2Did"] = id
-    }
-    return NewManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Operations()(*ManagedAppRegistrationsItemOperationsRequestBuilder) {
     return NewManagedAppRegistrationsItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OperationsById provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
-func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) OperationsById(id string)(*ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedAppOperation%2Did"] = id
-    }
-    return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property managedAppRegistrations in deviceAppManagement
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {

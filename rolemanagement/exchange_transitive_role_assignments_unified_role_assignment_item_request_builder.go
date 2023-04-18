@@ -18,7 +18,7 @@ type ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters get transitiveRoleAssignments from roleManagement
+// ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters resource to grant access to users or groups that are transitive.
 type ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilde
 func (m *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*ExchangeTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilder) {
     return NewExchangeTransitiveRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get transitiveRoleAssignments from roleManagement
+// Get resource to grant access to users or groups that are transitive.
 func (m *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +136,7 @@ func (m *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get transitiveRoleAssignments from roleManagement
+// ToGetRequestInformation resource to grant access to users or groups that are transitive.
 func (m *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

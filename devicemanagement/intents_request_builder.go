@@ -46,6 +46,17 @@ type IntentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementIntentId provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
+func (m *IntentsRequestBuilder) ByDeviceManagementIntentId(deviceManagementIntentId string)(*IntentsDeviceManagementIntentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementIntentId != "" {
+        urlTplParams["deviceManagementIntent%2Did"] = deviceManagementIntentId
+    }
+    return NewIntentsDeviceManagementIntentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIntentsRequestBuilderInternal instantiates a new IntentsRequestBuilder and sets the default values.
 func NewIntentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsRequestBuilder) {
     m := &IntentsRequestBuilder{

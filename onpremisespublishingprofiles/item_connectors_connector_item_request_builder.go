@@ -93,17 +93,6 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) Get(ctx context.Context, req
 func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOf()(*ItemConnectorsItemMemberOfRequestBuilder) {
     return NewItemConnectorsItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MemberOfById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item.memberOf.item collection
-func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOfById(id string)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["connectorGroup%2Did"] = id
-    }
-    return NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property connectors in onPremisesPublishingProfiles
 func (m *ItemConnectorsConnectorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *ItemConnectorsConnectorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

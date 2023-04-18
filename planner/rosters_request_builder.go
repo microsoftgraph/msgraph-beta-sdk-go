@@ -46,6 +46,17 @@ type RostersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPlannerRosterId provides operations to manage the rosters property of the microsoft.graph.planner entity.
+func (m *RostersRequestBuilder) ByPlannerRosterId(plannerRosterId string)(*RostersPlannerRosterItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if plannerRosterId != "" {
+        urlTplParams["plannerRoster%2Did"] = plannerRosterId
+    }
+    return NewRostersPlannerRosterItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRostersRequestBuilderInternal instantiates a new RostersRequestBuilder and sets the default values.
 func NewRostersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersRequestBuilder) {
     m := &RostersRequestBuilder{

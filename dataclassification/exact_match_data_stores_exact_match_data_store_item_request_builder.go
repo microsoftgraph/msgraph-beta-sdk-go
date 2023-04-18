@@ -116,17 +116,6 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Patch(ctx co
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Sessions()(*ExactMatchDataStoresItemSessionsRequestBuilder) {
     return NewExactMatchDataStoresItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SessionsById provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
-func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) SessionsById(id string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["exactMatchSession%2Did"] = id
-    }
-    return NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

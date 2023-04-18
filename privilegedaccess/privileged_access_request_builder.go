@@ -46,6 +46,17 @@ type PrivilegedAccessRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedAccessId provides operations to manage the collection of privilegedAccess entities.
+func (m *PrivilegedAccessRequestBuilder) ByPrivilegedAccessId(privilegedAccessId string)(*PrivilegedAccessItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedAccessId != "" {
+        urlTplParams["privilegedAccess%2Did"] = privilegedAccessId
+    }
+    return NewPrivilegedAccessItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrivilegedAccessRequestBuilderInternal instantiates a new PrivilegedAccessRequestBuilder and sets the default values.
 func NewPrivilegedAccessRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessRequestBuilder) {
     m := &PrivilegedAccessRequestBuilder{

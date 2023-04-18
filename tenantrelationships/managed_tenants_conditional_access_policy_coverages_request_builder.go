@@ -46,6 +46,17 @@ type ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByConditionalAccessPolicyCoverageId provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) ByConditionalAccessPolicyCoverageId(conditionalAccessPolicyCoverageId string)(*ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conditionalAccessPolicyCoverageId != "" {
+        urlTplParams["conditionalAccessPolicyCoverage%2Did"] = conditionalAccessPolicyCoverageId
+    }
+    return NewManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderInternal instantiates a new ConditionalAccessPolicyCoveragesRequestBuilder and sets the default values.
 func NewManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) {
     m := &ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder{

@@ -112,46 +112,13 @@ func (m *ExchangeRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
 func (m *ExchangeRequestBuilder) ResourceNamespaces()(*ExchangeResourceNamespacesRequestBuilder) {
     return NewExchangeResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourceNamespacesById provides operations to manage the resourceNamespaces property of the microsoft.graph.unifiedRbacApplication entity.
-func (m *ExchangeRequestBuilder) ResourceNamespacesById(id string)(*ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRbacResourceNamespace%2Did"] = id
-    }
-    return NewExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
 func (m *ExchangeRequestBuilder) RoleAssignments()(*ExchangeRoleAssignmentsRequestBuilder) {
     return NewExchangeRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
-func (m *ExchangeRequestBuilder) RoleAssignmentsById(id string)(*ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignment%2Did"] = id
-    }
-    return NewExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
 func (m *ExchangeRequestBuilder) RoleDefinitions()(*ExchangeRoleDefinitionsRequestBuilder) {
     return NewExchangeRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
-func (m *ExchangeRequestBuilder) RoleDefinitionsById(id string)(*ExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleDefinition%2Did"] = id
-    }
-    return NewExchangeRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property exchange for roleManagement
 func (m *ExchangeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -201,15 +168,4 @@ func (m *ExchangeRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 // TransitiveRoleAssignments provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
 func (m *ExchangeRequestBuilder) TransitiveRoleAssignments()(*ExchangeTransitiveRoleAssignmentsRequestBuilder) {
     return NewExchangeTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TransitiveRoleAssignmentsById provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
-func (m *ExchangeRequestBuilder) TransitiveRoleAssignmentsById(id string)(*ExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignment%2Did"] = id
-    }
-    return NewExchangeTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

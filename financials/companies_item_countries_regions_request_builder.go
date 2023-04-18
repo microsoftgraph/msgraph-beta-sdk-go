@@ -46,6 +46,17 @@ type CompaniesItemCountriesRegionsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCountryRegionId provides operations to manage the countriesRegions property of the microsoft.graph.company entity.
+func (m *CompaniesItemCountriesRegionsRequestBuilder) ByCountryRegionId(countryRegionId string)(*CompaniesItemCountriesRegionsCountryRegionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if countryRegionId != "" {
+        urlTplParams["countryRegion%2Did"] = countryRegionId
+    }
+    return NewCompaniesItemCountriesRegionsCountryRegionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemCountriesRegionsRequestBuilderInternal instantiates a new CountriesRegionsRequestBuilder and sets the default values.
 func NewCompaniesItemCountriesRegionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCountriesRegionsRequestBuilder) {
     m := &CompaniesItemCountriesRegionsRequestBuilder{

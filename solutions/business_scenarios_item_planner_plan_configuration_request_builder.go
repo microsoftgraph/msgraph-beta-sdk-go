@@ -96,17 +96,6 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx co
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizations()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LocalizationsById provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
-func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) LocalizationsById(id string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlanConfigurationLocalization%2Did"] = id
-    }
-    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the properties of a plannerPlanConfiguration object for a businessScenario.
 // [Find more info here]
 // 

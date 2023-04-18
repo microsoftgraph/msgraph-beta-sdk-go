@@ -46,6 +46,17 @@ type BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBusinessScenarioTaskId provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
+func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ByBusinessScenarioTaskId(businessScenarioTaskId string)(*BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if businessScenarioTaskId != "" {
+        urlTplParams["businessScenarioTask%2Did"] = businessScenarioTaskId
+    }
+    return NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBusinessScenariosItemPlannerTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerTasksRequestBuilder) {
     m := &BusinessScenariosItemPlannerTasksRequestBuilder{

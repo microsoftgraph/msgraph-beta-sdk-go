@@ -39,7 +39,7 @@ func (m *SmsLogRow) GetAdditionalData()(map[string]any) {
 func (m *SmsLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCallCharge gets the callCharge property value. The callCharge property
+// GetCallCharge gets the callCharge property value. Amount of money or cost of the SMS that is charged.
 func (m *SmsLogRow) GetCallCharge()(*float64) {
     val, err := m.GetBackingStore().Get("callCharge")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *SmsLogRow) GetCallCharge()(*float64) {
     }
     return nil
 }
-// GetCurrency gets the currency property value. The currency property
+// GetCurrency gets the currency property value. Currency used to calculate the cost of the call. For details, see ISO 4217.
 func (m *SmsLogRow) GetCurrency()(*string) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *SmsLogRow) GetCurrency()(*string) {
     }
     return nil
 }
-// GetDestinationContext gets the destinationContext property value. The destinationContext property
+// GetDestinationContext gets the destinationContext property value. Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
 func (m *SmsLogRow) GetDestinationContext()(*string) {
     val, err := m.GetBackingStore().Get("destinationContext")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *SmsLogRow) GetDestinationContext()(*string) {
     }
     return nil
 }
-// GetDestinationName gets the destinationName property value. The destinationName property
+// GetDestinationName gets the destinationName property value. Country or region of a phone number that received the SMS.
 func (m *SmsLogRow) GetDestinationName()(*string) {
     val, err := m.GetBackingStore().Get("destinationName")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *SmsLogRow) GetDestinationName()(*string) {
     }
     return nil
 }
-// GetDestinationNumber gets the destinationNumber property value. The destinationNumber property
+// GetDestinationNumber gets the destinationNumber property value. Partially obfuscated phone number that received the SMS. For details, see E.164.
 func (m *SmsLogRow) GetDestinationNumber()(*string) {
     val, err := m.GetBackingStore().Get("destinationNumber")
     if err != nil {
@@ -289,7 +289,7 @@ func (m *SmsLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. Unique identifier (GUID) for the SMS.
 func (m *SmsLogRow) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -300,7 +300,7 @@ func (m *SmsLogRow) GetId()(*string) {
     }
     return nil
 }
-// GetLicenseCapability gets the licenseCapability property value. The licenseCapability property
+// GetLicenseCapability gets the licenseCapability property value. The license used for the SMS.
 func (m *SmsLogRow) GetLicenseCapability()(*string) {
     val, err := m.GetBackingStore().Get("licenseCapability")
     if err != nil {
@@ -322,7 +322,7 @@ func (m *SmsLogRow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. The otherPartyCountryCode property
+// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
 func (m *SmsLogRow) GetOtherPartyCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
@@ -333,7 +333,7 @@ func (m *SmsLogRow) GetOtherPartyCountryCode()(*string) {
     }
     return nil
 }
-// GetSentDateTime gets the sentDateTime property value. The sentDateTime property
+// GetSentDateTime gets the sentDateTime property value. The date and time when the SMS was sent.
 func (m *SmsLogRow) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sentDateTime")
     if err != nil {
@@ -344,7 +344,7 @@ func (m *SmsLogRow) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     }
     return nil
 }
-// GetSmsId gets the smsId property value. The smsId property
+// GetSmsId gets the smsId property value. SMS identifier. Not guaranteed to be unique.
 func (m *SmsLogRow) GetSmsId()(*string) {
     val, err := m.GetBackingStore().Get("smsId")
     if err != nil {
@@ -355,7 +355,7 @@ func (m *SmsLogRow) GetSmsId()(*string) {
     }
     return nil
 }
-// GetSmsType gets the smsType property value. The smsType property
+// GetSmsType gets the smsType property value. Type of SMS such as outbound or inbound.
 func (m *SmsLogRow) GetSmsType()(*string) {
     val, err := m.GetBackingStore().Get("smsType")
     if err != nil {
@@ -366,7 +366,7 @@ func (m *SmsLogRow) GetSmsType()(*string) {
     }
     return nil
 }
-// GetSmsUnits gets the smsUnits property value. The smsUnits property
+// GetSmsUnits gets the smsUnits property value. Number of SMS units sent/received.
 func (m *SmsLogRow) GetSmsUnits()(*int32) {
     val, err := m.GetBackingStore().Get("smsUnits")
     if err != nil {
@@ -377,7 +377,7 @@ func (m *SmsLogRow) GetSmsUnits()(*int32) {
     }
     return nil
 }
-// GetSourceNumber gets the sourceNumber property value. The sourceNumber property
+// GetSourceNumber gets the sourceNumber property value. Partially obfuscated phone number that sent the SMS. For details, see E.164.
 func (m *SmsLogRow) GetSourceNumber()(*string) {
     val, err := m.GetBackingStore().Get("sourceNumber")
     if err != nil {
@@ -388,7 +388,7 @@ func (m *SmsLogRow) GetSourceNumber()(*string) {
     }
     return nil
 }
-// GetTenantCountryCode gets the tenantCountryCode property value. The tenantCountryCode property
+// GetTenantCountryCode gets the tenantCountryCode property value. Country code of the tenant. For details, see ISO 3166-1 alpha-2.
 func (m *SmsLogRow) GetTenantCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("tenantCountryCode")
     if err != nil {
@@ -399,7 +399,7 @@ func (m *SmsLogRow) GetTenantCountryCode()(*string) {
     }
     return nil
 }
-// GetUserCountryCode gets the userCountryCode property value. The userCountryCode property
+// GetUserCountryCode gets the userCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
 func (m *SmsLogRow) GetUserCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("userCountryCode")
     if err != nil {
@@ -410,7 +410,7 @@ func (m *SmsLogRow) GetUserCountryCode()(*string) {
     }
     return nil
 }
-// GetUserDisplayName gets the userDisplayName property value. The userDisplayName property
+// GetUserDisplayName gets the userDisplayName property value. Display name of the user.
 func (m *SmsLogRow) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -421,7 +421,7 @@ func (m *SmsLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
 func (m *SmsLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -432,7 +432,7 @@ func (m *SmsLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *SmsLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -578,49 +578,49 @@ func (m *SmsLogRow) SetAdditionalData(value map[string]any)() {
 func (m *SmsLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCallCharge sets the callCharge property value. The callCharge property
+// SetCallCharge sets the callCharge property value. Amount of money or cost of the SMS that is charged.
 func (m *SmsLogRow) SetCallCharge(value *float64)() {
     err := m.GetBackingStore().Set("callCharge", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCurrency sets the currency property value. The currency property
+// SetCurrency sets the currency property value. Currency used to calculate the cost of the call. For details, see ISO 4217.
 func (m *SmsLogRow) SetCurrency(value *string)() {
     err := m.GetBackingStore().Set("currency", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationContext sets the destinationContext property value. The destinationContext property
+// SetDestinationContext sets the destinationContext property value. Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
 func (m *SmsLogRow) SetDestinationContext(value *string)() {
     err := m.GetBackingStore().Set("destinationContext", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationName sets the destinationName property value. The destinationName property
+// SetDestinationName sets the destinationName property value. Country or region of a phone number that received the SMS.
 func (m *SmsLogRow) SetDestinationName(value *string)() {
     err := m.GetBackingStore().Set("destinationName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationNumber sets the destinationNumber property value. The destinationNumber property
+// SetDestinationNumber sets the destinationNumber property value. Partially obfuscated phone number that received the SMS. For details, see E.164.
 func (m *SmsLogRow) SetDestinationNumber(value *string)() {
     err := m.GetBackingStore().Set("destinationNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. Unique identifier (GUID) for the SMS.
 func (m *SmsLogRow) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLicenseCapability sets the licenseCapability property value. The licenseCapability property
+// SetLicenseCapability sets the licenseCapability property value. The license used for the SMS.
 func (m *SmsLogRow) SetLicenseCapability(value *string)() {
     err := m.GetBackingStore().Set("licenseCapability", value)
     if err != nil {
@@ -634,77 +634,77 @@ func (m *SmsLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. The otherPartyCountryCode property
+// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
 func (m *SmsLogRow) SetOtherPartyCountryCode(value *string)() {
     err := m.GetBackingStore().Set("otherPartyCountryCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSentDateTime sets the sentDateTime property value. The sentDateTime property
+// SetSentDateTime sets the sentDateTime property value. The date and time when the SMS was sent.
 func (m *SmsLogRow) SetSentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("sentDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSmsId sets the smsId property value. The smsId property
+// SetSmsId sets the smsId property value. SMS identifier. Not guaranteed to be unique.
 func (m *SmsLogRow) SetSmsId(value *string)() {
     err := m.GetBackingStore().Set("smsId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSmsType sets the smsType property value. The smsType property
+// SetSmsType sets the smsType property value. Type of SMS such as outbound or inbound.
 func (m *SmsLogRow) SetSmsType(value *string)() {
     err := m.GetBackingStore().Set("smsType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSmsUnits sets the smsUnits property value. The smsUnits property
+// SetSmsUnits sets the smsUnits property value. Number of SMS units sent/received.
 func (m *SmsLogRow) SetSmsUnits(value *int32)() {
     err := m.GetBackingStore().Set("smsUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceNumber sets the sourceNumber property value. The sourceNumber property
+// SetSourceNumber sets the sourceNumber property value. Partially obfuscated phone number that sent the SMS. For details, see E.164.
 func (m *SmsLogRow) SetSourceNumber(value *string)() {
     err := m.GetBackingStore().Set("sourceNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantCountryCode sets the tenantCountryCode property value. The tenantCountryCode property
+// SetTenantCountryCode sets the tenantCountryCode property value. Country code of the tenant. For details, see ISO 3166-1 alpha-2.
 func (m *SmsLogRow) SetTenantCountryCode(value *string)() {
     err := m.GetBackingStore().Set("tenantCountryCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCountryCode sets the userCountryCode property value. The userCountryCode property
+// SetUserCountryCode sets the userCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
 func (m *SmsLogRow) SetUserCountryCode(value *string)() {
     err := m.GetBackingStore().Set("userCountryCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. The userDisplayName property
+// SetUserDisplayName sets the userDisplayName property value. Display name of the user.
 func (m *SmsLogRow) SetUserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("userDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
 func (m *SmsLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *SmsLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

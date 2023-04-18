@@ -46,6 +46,17 @@ type CertificateConnectorDetailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCertificateConnectorDetailsId provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.
+func (m *CertificateConnectorDetailsRequestBuilder) ByCertificateConnectorDetailsId(certificateConnectorDetailsId string)(*CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if certificateConnectorDetailsId != "" {
+        urlTplParams["certificateConnectorDetails%2Did"] = certificateConnectorDetailsId
+    }
+    return NewCertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCertificateConnectorDetailsRequestBuilderInternal instantiates a new CertificateConnectorDetailsRequestBuilder and sets the default values.
 func NewCertificateConnectorDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CertificateConnectorDetailsRequestBuilder) {
     m := &CertificateConnectorDetailsRequestBuilder{

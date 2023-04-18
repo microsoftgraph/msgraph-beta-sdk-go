@@ -46,6 +46,17 @@ type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserExperienceAnalyticsMetricHistoryId provides operations to manage the userExperienceAnalyticsDeviceMetricHistory property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) ByUserExperienceAnalyticsMetricHistoryId(userExperienceAnalyticsMetricHistoryId string)(*UserExperienceAnalyticsDeviceMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userExperienceAnalyticsMetricHistoryId != "" {
+        urlTplParams["userExperienceAnalyticsMetricHistory%2Did"] = userExperienceAnalyticsMetricHistoryId
+    }
+    return NewUserExperienceAnalyticsDeviceMetricHistoryUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder{

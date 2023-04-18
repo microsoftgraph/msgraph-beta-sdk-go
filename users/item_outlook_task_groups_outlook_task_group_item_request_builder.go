@@ -110,17 +110,6 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Patch(ctx cont
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFolders()(*ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) {
     return NewItemOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
-func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFoldersById(id string)(*ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["outlookTaskFolder%2Did"] = id
-    }
-    return NewItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property taskGroups for users
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

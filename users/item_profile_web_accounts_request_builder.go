@@ -46,6 +46,17 @@ type ItemProfileWebAccountsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWebAccountId provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
+func (m *ItemProfileWebAccountsRequestBuilder) ByWebAccountId(webAccountId string)(*ItemProfileWebAccountsWebAccountItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if webAccountId != "" {
+        urlTplParams["webAccount%2Did"] = webAccountId
+    }
+    return NewItemProfileWebAccountsWebAccountItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileWebAccountsRequestBuilderInternal instantiates a new WebAccountsRequestBuilder and sets the default values.
 func NewItemProfileWebAccountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileWebAccountsRequestBuilder) {
     m := &ItemProfileWebAccountsRequestBuilder{

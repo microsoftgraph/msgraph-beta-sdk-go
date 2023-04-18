@@ -8,8 +8,6 @@ import (
 // SynchronizationTemplate 
 type SynchronizationTemplate struct {
     Entity
-    // true if this template is recommended to be the default for the application.
-    DefaultEscaped *bool
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {

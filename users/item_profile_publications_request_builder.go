@@ -46,6 +46,17 @@ type ItemProfilePublicationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemPublicationId provides operations to manage the publications property of the microsoft.graph.profile entity.
+func (m *ItemProfilePublicationsRequestBuilder) ByItemPublicationId(itemPublicationId string)(*ItemProfilePublicationsItemPublicationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemPublicationId != "" {
+        urlTplParams["itemPublication%2Did"] = itemPublicationId
+    }
+    return NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfilePublicationsRequestBuilderInternal instantiates a new PublicationsRequestBuilder and sets the default values.
 func NewItemProfilePublicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePublicationsRequestBuilder) {
     m := &ItemProfilePublicationsRequestBuilder{

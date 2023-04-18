@@ -9,8 +9,6 @@ import (
 type PasswordSingleSignOnField struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // Type of the credential. The values can be text, password.
-    TypeEscaped *string
 }
 // NewPasswordSingleSignOnField instantiates a new passwordSingleSignOnField and sets the default values.
 func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {

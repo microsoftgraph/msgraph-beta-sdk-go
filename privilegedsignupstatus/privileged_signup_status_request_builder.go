@@ -46,6 +46,17 @@ type PrivilegedSignupStatusRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrivilegedSignupStatusId provides operations to manage the collection of privilegedSignupStatus entities.
+func (m *PrivilegedSignupStatusRequestBuilder) ByPrivilegedSignupStatusId(privilegedSignupStatusId string)(*PrivilegedSignupStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if privilegedSignupStatusId != "" {
+        urlTplParams["privilegedSignupStatus%2Did"] = privilegedSignupStatusId
+    }
+    return NewPrivilegedSignupStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // CanSignUp provides operations to call the canSignUp method.
 func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*CanSignUpRequestBuilder) {
     return NewCanSignUpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

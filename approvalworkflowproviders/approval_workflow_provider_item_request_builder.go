@@ -45,31 +45,9 @@ type ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration struct 
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlows()(*ItemBusinessFlowsRequestBuilder) {
     return NewItemBusinessFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BusinessFlowsById provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["businessFlow%2Did"] = id
-    }
-    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // BusinessFlowsWithRequestsAwaitingMyDecision provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecision()(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
     return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BusinessFlowsWithRequestsAwaitingMyDecisionById provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecisionById(id string)(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["businessFlow%2Did"] = id
-    }
-    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewApprovalWorkflowProviderItemRequestBuilderInternal instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
 func NewApprovalWorkflowProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalWorkflowProviderItemRequestBuilder) {
@@ -141,17 +119,6 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Patch(ctx context.Context, 
 // PolicyTemplates provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplates()(*ItemPolicyTemplatesRequestBuilder) {
     return NewItemPolicyTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PolicyTemplatesById provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id string)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governancePolicyTemplate%2Did"] = id
-    }
-    return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from approvalWorkflowProviders
 func (m *ApprovalWorkflowProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -46,6 +46,17 @@ type ItemTeamChannelsItemMessagesItemRepliesRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChatMessageId1 provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
+func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) ByChatMessageId1(chatMessageId1 string)(*ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chatMessageId1 != "" {
+        urlTplParams["chatMessage%2Did1"] = chatMessageId1
+    }
+    return NewItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamChannelsItemMessagesItemRepliesRequestBuilderInternal instantiates a new RepliesRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesItemRepliesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) {
     m := &ItemTeamChannelsItemMessagesItemRepliesRequestBuilder{

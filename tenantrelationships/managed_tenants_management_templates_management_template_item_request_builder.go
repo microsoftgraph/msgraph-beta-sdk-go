@@ -93,31 +93,9 @@ func (m *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) 
 func (m *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) ManagementTemplateCollections()(*ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilder) {
     return NewManagedTenantsManagementTemplatesItemManagementTemplateCollectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ManagementTemplateCollectionsById provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managementTemplate entity.
-func (m *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) ManagementTemplateCollectionsById(id string)(*ManagedTenantsManagementTemplatesItemManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managementTemplateCollection%2Did"] = id
-    }
-    return NewManagedTenantsManagementTemplatesItemManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ManagementTemplateSteps provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managementTemplate entity.
 func (m *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) ManagementTemplateSteps()(*ManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilder) {
     return NewManagedTenantsManagementTemplatesItemManagementTemplateStepsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ManagementTemplateStepsById provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managementTemplate entity.
-func (m *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) ManagementTemplateStepsById(id string)(*ManagedTenantsManagementTemplatesItemManagementTemplateStepsManagementTemplateStepItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managementTemplateStep%2Did"] = id
-    }
-    return NewManagedTenantsManagementTemplatesItemManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property managementTemplates in tenantRelationships
 func (m *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, requestConfiguration *ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {

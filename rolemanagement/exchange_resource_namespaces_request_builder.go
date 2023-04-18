@@ -11,7 +11,7 @@ import (
 type ExchangeResourceNamespacesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeResourceNamespacesRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
+// ExchangeResourceNamespacesRequestBuilderGetQueryParameters resource that represents a collection of related actions.
 type ExchangeResourceNamespacesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,6 +46,17 @@ type ExchangeResourceNamespacesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRbacResourceNamespaceId provides operations to manage the resourceNamespaces property of the microsoft.graph.unifiedRbacApplication entity.
+func (m *ExchangeResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceId(unifiedRbacResourceNamespaceId string)(*ExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRbacResourceNamespaceId != "" {
+        urlTplParams["unifiedRbacResourceNamespace%2Did"] = unifiedRbacResourceNamespaceId
+    }
+    return NewExchangeResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewExchangeResourceNamespacesRequestBuilderInternal instantiates a new ResourceNamespacesRequestBuilder and sets the default values.
 func NewExchangeResourceNamespacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeResourceNamespacesRequestBuilder) {
     m := &ExchangeResourceNamespacesRequestBuilder{
@@ -63,7 +74,7 @@ func NewExchangeResourceNamespacesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ExchangeResourceNamespacesRequestBuilder) Count()(*ExchangeResourceNamespacesCountRequestBuilder) {
     return NewExchangeResourceNamespacesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resourceNamespaces from roleManagement
+// Get resource that represents a collection of related actions.
 func (m *ExchangeResourceNamespacesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeResourceNamespacesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +112,7 @@ func (m *ExchangeResourceNamespacesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
-// ToGetRequestInformation get resourceNamespaces from roleManagement
+// ToGetRequestInformation resource that represents a collection of related actions.
 func (m *ExchangeResourceNamespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeResourceNamespacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

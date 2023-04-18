@@ -46,6 +46,17 @@ type CompaniesItemPaymentMethodsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPaymentMethodId provides operations to manage the paymentMethods property of the microsoft.graph.company entity.
+func (m *CompaniesItemPaymentMethodsRequestBuilder) ByPaymentMethodId(paymentMethodId string)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if paymentMethodId != "" {
+        urlTplParams["paymentMethod%2Did"] = paymentMethodId
+    }
+    return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemPaymentMethodsRequestBuilderInternal instantiates a new PaymentMethodsRequestBuilder and sets the default values.
 func NewCompaniesItemPaymentMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPaymentMethodsRequestBuilder) {
     m := &CompaniesItemPaymentMethodsRequestBuilder{

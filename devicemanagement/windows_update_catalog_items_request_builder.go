@@ -46,6 +46,17 @@ type WindowsUpdateCatalogItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsUpdateCatalogItemId provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsUpdateCatalogItemsRequestBuilder) ByWindowsUpdateCatalogItemId(windowsUpdateCatalogItemId string)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsUpdateCatalogItemId != "" {
+        urlTplParams["windowsUpdateCatalogItem%2Did"] = windowsUpdateCatalogItemId
+    }
+    return NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdateCatalogItemsRequestBuilderInternal instantiates a new WindowsUpdateCatalogItemsRequestBuilder and sets the default values.
 func NewWindowsUpdateCatalogItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdateCatalogItemsRequestBuilder) {
     m := &WindowsUpdateCatalogItemsRequestBuilder{

@@ -74,17 +74,6 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Delete(ctx conte
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStages()(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
     return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DispositionReviewStagesById provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
-func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStagesById(id string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["dispositionReviewStage%2Did"] = id
-    }
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get retentionLabels from security
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

@@ -45,17 +45,6 @@ type CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequ
 func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValues()(*CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) {
     return NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AllowedValuesById provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
-func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValuesById(id string)(*CustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["allowedValue%2Did"] = id
-    }
-    return NewCustomSecurityAttributeDefinitionsItemAllowedValuesAllowedValueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderInternal instantiates a new CustomSecurityAttributeDefinitionItemRequestBuilder and sets the default values.
 func NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) {
     m := &CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder{

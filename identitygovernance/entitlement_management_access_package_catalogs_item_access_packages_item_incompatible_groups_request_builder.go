@@ -39,6 +39,17 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibl
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsRequestBuilderGetQueryParameters
 }
+// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageCatalogs.item.accessPackages.item.incompatibleGroups.item collection
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsRequestBuilder) ByGroupId(groupId string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupId != "" {
+        urlTplParams["group%2Did"] = groupId
+    }
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsRequestBuilderInternal instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsRequestBuilder) {
     m := &EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleGroupsRequestBuilder{

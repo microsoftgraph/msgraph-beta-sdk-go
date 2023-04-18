@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftIt
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters get openShifts from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters the set of open shifts in a scheduling group in the schedule.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShi
     }
     return nil
 }
-// Get get openShifts from teamwork
+// Get the set of open shifts in a scheduling group in the schedule.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShi
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get openShifts from teamwork
+// ToGetRequestInformation the set of open shifts in a scheduling group in the schedule.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

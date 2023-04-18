@@ -46,6 +46,17 @@ type CloudPCRoleAssignmentsItemAppScopesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAppScopeId provides operations to manage the appScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *CloudPCRoleAssignmentsItemAppScopesRequestBuilder) ByAppScopeId(appScopeId string)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if appScopeId != "" {
+        urlTplParams["appScope%2Did"] = appScopeId
+    }
+    return NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCloudPCRoleAssignmentsItemAppScopesRequestBuilderInternal instantiates a new AppScopesRequestBuilder and sets the default values.
 func NewCloudPCRoleAssignmentsItemAppScopesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsItemAppScopesRequestBuilder) {
     m := &CloudPCRoleAssignmentsItemAppScopesRequestBuilder{

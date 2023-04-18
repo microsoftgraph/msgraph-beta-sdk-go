@@ -59,6 +59,10 @@ func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
+// MailboxSettings the mailboxSettings property
+func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilder) MailboxSettings()(*LifecycleWorkflowsWorkflowsItemExecutionScopeItemMailboxSettingsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemExecutionScopeItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation the unique identifier of the Azure AD identity that last modified the workflow object.
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemExecutionScopeUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

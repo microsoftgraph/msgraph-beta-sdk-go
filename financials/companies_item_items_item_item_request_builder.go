@@ -116,17 +116,6 @@ func (m *CompaniesItemItemsItemItemRequestBuilder) Patch(ctx context.Context, bo
 func (m *CompaniesItemItemsItemItemRequestBuilder) Picture()(*CompaniesItemItemsItemPictureRequestBuilder) {
     return NewCompaniesItemItemsItemPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
-func (m *CompaniesItemItemsItemItemRequestBuilder) PictureById(id string)(*CompaniesItemItemsItemPicturePictureItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["picture%2Did"] = id
-    }
-    return NewCompaniesItemItemsItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property items for financials
 func (m *CompaniesItemItemsItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemItemsItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

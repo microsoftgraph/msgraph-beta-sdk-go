@@ -46,6 +46,17 @@ type IpSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIpSecurityProfileId provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
+func (m *IpSecurityProfilesRequestBuilder) ByIpSecurityProfileId(ipSecurityProfileId string)(*IpSecurityProfilesIpSecurityProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if ipSecurityProfileId != "" {
+        urlTplParams["ipSecurityProfile%2Did"] = ipSecurityProfileId
+    }
+    return NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIpSecurityProfilesRequestBuilderInternal instantiates a new IpSecurityProfilesRequestBuilder and sets the default values.
 func NewIpSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IpSecurityProfilesRequestBuilder) {
     m := &IpSecurityProfilesRequestBuilder{

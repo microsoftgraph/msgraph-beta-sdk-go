@@ -11,7 +11,7 @@ import (
 type IndustryDataDataConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataDataConnectorsRequestBuilderGetQueryParameters get a list of the azureDataLakeConnector objects and their properties.
+// IndustryDataDataConnectorsRequestBuilderGetQueryParameters get the industryDataConnector resources from the **dataConnector** navigation property.
 type IndustryDataDataConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,6 +46,17 @@ type IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIndustryDataConnectorId provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataDataConnectorsRequestBuilder) ByIndustryDataConnectorId(industryDataConnectorId string)(*IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if industryDataConnectorId != "" {
+        urlTplParams["industryDataConnector%2Did"] = industryDataConnectorId
+    }
+    return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIndustryDataDataConnectorsRequestBuilderInternal instantiates a new DataConnectorsRequestBuilder and sets the default values.
 func NewIndustryDataDataConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataDataConnectorsRequestBuilder) {
     m := &IndustryDataDataConnectorsRequestBuilder{
@@ -63,10 +74,10 @@ func NewIndustryDataDataConnectorsRequestBuilder(rawUrl string, requestAdapter i
 func (m *IndustryDataDataConnectorsRequestBuilder) Count()(*IndustryDataDataConnectorsCountRequestBuilder) {
     return NewIndustryDataDataConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the azureDataLakeConnector objects and their properties.
+// Get get the industryDataConnector resources from the **dataConnector** navigation property.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,10 +96,10 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable), nil
 }
-// Post create a new industryDataConnector object.
+// Post create a new azureDataLakeConnector object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -107,7 +118,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
-// ToGetRequestInformation get a list of the azureDataLakeConnector objects and their properties.
+// ToGetRequestInformation get the industryDataConnector resources from the **dataConnector** navigation property.
 func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -123,7 +134,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new industryDataConnector object.
+// ToPostRequestInformation create a new azureDataLakeConnector object.
 func (m *IndustryDataDataConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

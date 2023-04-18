@@ -46,6 +46,17 @@ type ConfigurationPolicyTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementConfigurationPolicyTemplateId provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
+func (m *ConfigurationPolicyTemplatesRequestBuilder) ByDeviceManagementConfigurationPolicyTemplateId(deviceManagementConfigurationPolicyTemplateId string)(*ConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementConfigurationPolicyTemplateId != "" {
+        urlTplParams["deviceManagementConfigurationPolicyTemplate%2Did"] = deviceManagementConfigurationPolicyTemplateId
+    }
+    return NewConfigurationPolicyTemplatesDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConfigurationPolicyTemplatesRequestBuilderInternal instantiates a new ConfigurationPolicyTemplatesRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPolicyTemplatesRequestBuilder) {
     m := &ConfigurationPolicyTemplatesRequestBuilder{

@@ -45,46 +45,13 @@ type RoleManagementAlertsRequestBuilderPatchRequestConfiguration struct {
 func (m *RoleManagementAlertsRequestBuilder) AlertConfigurations()(*RoleManagementAlertsAlertConfigurationsRequestBuilder) {
     return NewRoleManagementAlertsAlertConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AlertConfigurationsById provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
-func (m *RoleManagementAlertsRequestBuilder) AlertConfigurationsById(id string)(*RoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleManagementAlertConfiguration%2Did"] = id
-    }
-    return NewRoleManagementAlertsAlertConfigurationsUnifiedRoleManagementAlertConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AlertDefinitions provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
 func (m *RoleManagementAlertsRequestBuilder) AlertDefinitions()(*RoleManagementAlertsAlertDefinitionsRequestBuilder) {
     return NewRoleManagementAlertsAlertDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AlertDefinitionsById provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
-func (m *RoleManagementAlertsRequestBuilder) AlertDefinitionsById(id string)(*RoleManagementAlertsAlertDefinitionsUnifiedRoleManagementAlertDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleManagementAlertDefinition%2Did"] = id
-    }
-    return NewRoleManagementAlertsAlertDefinitionsUnifiedRoleManagementAlertDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Alerts provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
 func (m *RoleManagementAlertsRequestBuilder) Alerts()(*RoleManagementAlertsAlertsRequestBuilder) {
     return NewRoleManagementAlertsAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AlertsById provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
-func (m *RoleManagementAlertsRequestBuilder) AlertsById(id string)(*RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleManagementAlert%2Did"] = id
-    }
-    return NewRoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewRoleManagementAlertsRequestBuilderInternal instantiates a new RoleManagementAlertsRequestBuilder and sets the default values.
 func NewRoleManagementAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementAlertsRequestBuilder) {
@@ -137,17 +104,6 @@ func (m *RoleManagementAlertsRequestBuilder) Get(ctx context.Context, requestCon
 // Operations provides operations to manage the operations property of the microsoft.graph.roleManagementAlert entity.
 func (m *RoleManagementAlertsRequestBuilder) Operations()(*RoleManagementAlertsOperationsRequestBuilder) {
     return NewRoleManagementAlertsOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OperationsById provides operations to manage the operations property of the microsoft.graph.roleManagementAlert entity.
-func (m *RoleManagementAlertsRequestBuilder) OperationsById(id string)(*RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["longRunningOperation%2Did"] = id
-    }
-    return NewRoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property roleManagementAlerts in identityGovernance
 func (m *RoleManagementAlertsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleManagementAlertable, requestConfiguration *RoleManagementAlertsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleManagementAlertable, error) {

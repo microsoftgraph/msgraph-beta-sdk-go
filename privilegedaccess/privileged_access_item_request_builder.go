@@ -112,76 +112,21 @@ func (m *PrivilegedAccessItemRequestBuilder) Patch(ctx context.Context, body ie2
 func (m *PrivilegedAccessItemRequestBuilder) Resources()(*ItemResourcesRequestBuilder) {
     return NewItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourcesById provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) ResourcesById(id string)(*ItemResourcesGovernanceResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceResource%2Did"] = id
-    }
-    return NewItemResourcesGovernanceResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleAssignmentRequests provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleAssignmentRequestsRequestBuilder) {
     return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleAssignmentRequestsById provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequestsById(id string)(*ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleAssignmentRequest%2Did"] = id
-    }
-    return NewItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignments()(*ItemRoleAssignmentsRequestBuilder) {
     return NewItemRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentsById(id string)(*ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleAssignment%2Did"] = id
-    }
-    return NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitions()(*ItemRoleDefinitionsRequestBuilder) {
     return NewItemRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitionsById(id string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleDefinition%2Did"] = id
-    }
-    return NewItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleSettings()(*ItemRoleSettingsRequestBuilder) {
     return NewItemRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleSettingsById provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["governanceRoleSetting%2Did"] = id
-    }
-    return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from privilegedAccess
 func (m *PrivilegedAccessItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

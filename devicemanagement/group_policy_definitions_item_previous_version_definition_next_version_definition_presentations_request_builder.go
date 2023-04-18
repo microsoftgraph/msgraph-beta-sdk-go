@@ -46,6 +46,17 @@ type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPre
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupPolicyPresentationId provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
+func (m *GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsRequestBuilder) ByGroupPolicyPresentationId(groupPolicyPresentationId string)(*GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupPolicyPresentationId != "" {
+        urlTplParams["groupPolicyPresentation%2Did"] = groupPolicyPresentationId
+    }
+    return NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsRequestBuilderInternal instantiates a new PresentationsRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsRequestBuilder) {
     m := &GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionPresentationsRequestBuilder{

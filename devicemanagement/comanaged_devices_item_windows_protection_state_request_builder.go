@@ -74,17 +74,6 @@ func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) Delete(ctx co
 func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwareState()(*ComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilder) {
     return NewComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DetectedMalwareStateById provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.
-func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*ComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateWindowsDeviceMalwareStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["windowsDeviceMalwareState%2Did"] = id
-    }
-    return NewComanagedDevicesItemWindowsProtectionStateDetectedMalwareStateWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the device protection status. This property is read-only.
 func (m *ComanagedDevicesItemWindowsProtectionStateRequestBuilder) Get(ctx context.Context, requestConfiguration *ComanagedDevicesItemWindowsProtectionStateRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

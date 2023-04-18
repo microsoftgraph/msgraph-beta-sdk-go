@@ -46,6 +46,17 @@ type ItemDevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceId provides operations to manage the devices property of the microsoft.graph.user entity.
+func (m *ItemDevicesRequestBuilder) ByDeviceId(deviceId string)(*ItemDevicesDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceId != "" {
+        urlTplParams["device%2Did"] = deviceId
+    }
+    return NewItemDevicesDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDevicesRequestBuilderInternal instantiates a new DevicesRequestBuilder and sets the default values.
 func NewItemDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesRequestBuilder) {
     m := &ItemDevicesRequestBuilder{

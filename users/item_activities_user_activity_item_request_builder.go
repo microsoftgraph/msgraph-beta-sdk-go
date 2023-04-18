@@ -93,17 +93,6 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) Get(ctx context.Context, 
 func (m *ItemActivitiesUserActivityItemRequestBuilder) HistoryItems()(*ItemActivitiesItemHistoryItemsRequestBuilder) {
     return NewItemActivitiesItemHistoryItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HistoryItemsById provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
-func (m *ItemActivitiesUserActivityItemRequestBuilder) HistoryItemsById(id string)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["activityHistoryItem%2Did"] = id
-    }
-    return NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property activities in users
 func (m *ItemActivitiesUserActivityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

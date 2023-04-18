@@ -46,6 +46,17 @@ type MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMicrosoftTunnelServerId provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
+func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) ByMicrosoftTunnelServerId(microsoftTunnelServerId string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if microsoftTunnelServerId != "" {
+        urlTplParams["microsoftTunnelServer%2Did"] = microsoftTunnelServerId
+    }
+    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal instantiates a new MicrosoftTunnelServersRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) {
     m := &MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder{

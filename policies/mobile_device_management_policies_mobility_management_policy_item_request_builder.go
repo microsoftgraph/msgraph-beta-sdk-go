@@ -93,17 +93,6 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) {
     return NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IncludedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection
-func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id string)(*MobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return NewMobileDeviceManagementPoliciesItemIncludedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property mobileDeviceManagementPolicies in policies
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

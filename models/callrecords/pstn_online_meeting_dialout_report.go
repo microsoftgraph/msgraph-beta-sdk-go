@@ -38,7 +38,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetAdditionalData()(map[string]any) {
 func (m *PstnOnlineMeetingDialoutReport) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCurrency gets the currency property value. The currency property
+// GetCurrency gets the currency property value. Currency used to calculate the cost of the call. For details, see ISO 4217.
 func (m *PstnOnlineMeetingDialoutReport) GetCurrency()(*string) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetCurrency()(*string) {
     }
     return nil
 }
-// GetDestinationContext gets the destinationContext property value. The destinationContext property
+// GetDestinationContext gets the destinationContext property value. Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
 func (m *PstnOnlineMeetingDialoutReport) GetDestinationContext()(*string) {
     val, err := m.GetBackingStore().Get("destinationContext")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotalCallCharge gets the totalCallCharge property value. The totalCallCharge property
+// GetTotalCallCharge gets the totalCallCharge property value. Total costs of all the calls within the selected time range, including call charges and connection fees.
 func (m *PstnOnlineMeetingDialoutReport) GetTotalCallCharge()(*float64) {
     val, err := m.GetBackingStore().Get("totalCallCharge")
     if err != nil {
@@ -187,7 +187,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetTotalCallCharge()(*float64) {
     }
     return nil
 }
-// GetTotalCalls gets the totalCalls property value. The totalCalls property
+// GetTotalCalls gets the totalCalls property value. Total number of dial-out calls within the selected time range.
 func (m *PstnOnlineMeetingDialoutReport) GetTotalCalls()(*int32) {
     val, err := m.GetBackingStore().Get("totalCalls")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetTotalCalls()(*int32) {
     }
     return nil
 }
-// GetTotalCallSeconds gets the totalCallSeconds property value. The totalCallSeconds property
+// GetTotalCallSeconds gets the totalCallSeconds property value. Total duration of all the calls within the selected time range, in seconds.
 func (m *PstnOnlineMeetingDialoutReport) GetTotalCallSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("totalCallSeconds")
     if err != nil {
@@ -209,7 +209,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetTotalCallSeconds()(*int32) {
     }
     return nil
 }
-// GetUsageLocation gets the usageLocation property value. The usageLocation property
+// GetUsageLocation gets the usageLocation property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
 func (m *PstnOnlineMeetingDialoutReport) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
     if err != nil {
@@ -220,7 +220,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetUsageLocation()(*string) {
     }
     return nil
 }
-// GetUserDisplayName gets the userDisplayName property value. The userDisplayName property
+// GetUserDisplayName gets the userDisplayName property value. Display name of the user.
 func (m *PstnOnlineMeetingDialoutReport) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -231,7 +231,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
 func (m *PstnOnlineMeetingDialoutReport) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -242,7 +242,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnOnlineMeetingDialoutReport) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -334,14 +334,14 @@ func (m *PstnOnlineMeetingDialoutReport) SetAdditionalData(value map[string]any)
 func (m *PstnOnlineMeetingDialoutReport) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCurrency sets the currency property value. The currency property
+// SetCurrency sets the currency property value. Currency used to calculate the cost of the call. For details, see ISO 4217.
 func (m *PstnOnlineMeetingDialoutReport) SetCurrency(value *string)() {
     err := m.GetBackingStore().Set("currency", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationContext sets the destinationContext property value. The destinationContext property
+// SetDestinationContext sets the destinationContext property value. Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
 func (m *PstnOnlineMeetingDialoutReport) SetDestinationContext(value *string)() {
     err := m.GetBackingStore().Set("destinationContext", value)
     if err != nil {
@@ -355,49 +355,49 @@ func (m *PstnOnlineMeetingDialoutReport) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotalCallCharge sets the totalCallCharge property value. The totalCallCharge property
+// SetTotalCallCharge sets the totalCallCharge property value. Total costs of all the calls within the selected time range, including call charges and connection fees.
 func (m *PstnOnlineMeetingDialoutReport) SetTotalCallCharge(value *float64)() {
     err := m.GetBackingStore().Set("totalCallCharge", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalCalls sets the totalCalls property value. The totalCalls property
+// SetTotalCalls sets the totalCalls property value. Total number of dial-out calls within the selected time range.
 func (m *PstnOnlineMeetingDialoutReport) SetTotalCalls(value *int32)() {
     err := m.GetBackingStore().Set("totalCalls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalCallSeconds sets the totalCallSeconds property value. The totalCallSeconds property
+// SetTotalCallSeconds sets the totalCallSeconds property value. Total duration of all the calls within the selected time range, in seconds.
 func (m *PstnOnlineMeetingDialoutReport) SetTotalCallSeconds(value *int32)() {
     err := m.GetBackingStore().Set("totalCallSeconds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsageLocation sets the usageLocation property value. The usageLocation property
+// SetUsageLocation sets the usageLocation property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
 func (m *PstnOnlineMeetingDialoutReport) SetUsageLocation(value *string)() {
     err := m.GetBackingStore().Set("usageLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. The userDisplayName property
+// SetUserDisplayName sets the userDisplayName property value. Display name of the user.
 func (m *PstnOnlineMeetingDialoutReport) SetUserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("userDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
 func (m *PstnOnlineMeetingDialoutReport) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnOnlineMeetingDialoutReport) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

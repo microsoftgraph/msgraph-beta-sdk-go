@@ -46,6 +46,17 @@ type ItemResourcesItemRoleAssignmentRequestsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGovernanceRoleAssignmentRequestId provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
+func (m *ItemResourcesItemRoleAssignmentRequestsRequestBuilder) ByGovernanceRoleAssignmentRequestId(governanceRoleAssignmentRequestId string)(*ItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if governanceRoleAssignmentRequestId != "" {
+        urlTplParams["governanceRoleAssignmentRequest%2Did"] = governanceRoleAssignmentRequestId
+    }
+    return NewItemResourcesItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemResourcesItemRoleAssignmentRequestsRequestBuilderInternal instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleAssignmentRequestsRequestBuilder) {
     m := &ItemResourcesItemRoleAssignmentRequestsRequestBuilder{

@@ -46,6 +46,17 @@ type OnPremisesPublishingProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOnPremisesPublishingProfileId provides operations to manage the collection of onPremisesPublishingProfile entities.
+func (m *OnPremisesPublishingProfilesRequestBuilder) ByOnPremisesPublishingProfileId(onPremisesPublishingProfileId string)(*OnPremisesPublishingProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if onPremisesPublishingProfileId != "" {
+        urlTplParams["onPremisesPublishingProfile%2Did"] = onPremisesPublishingProfileId
+    }
+    return NewOnPremisesPublishingProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewOnPremisesPublishingProfilesRequestBuilderInternal instantiates a new OnPremisesPublishingProfilesRequestBuilder and sets the default values.
 func NewOnPremisesPublishingProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremisesPublishingProfilesRequestBuilder) {
     m := &OnPremisesPublishingProfilesRequestBuilder{

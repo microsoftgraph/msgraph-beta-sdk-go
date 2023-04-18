@@ -46,6 +46,17 @@ type ItemProfileInterestsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPersonInterestId provides operations to manage the interests property of the microsoft.graph.profile entity.
+func (m *ItemProfileInterestsRequestBuilder) ByPersonInterestId(personInterestId string)(*ItemProfileInterestsPersonInterestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if personInterestId != "" {
+        urlTplParams["personInterest%2Did"] = personInterestId
+    }
+    return NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemProfileInterestsRequestBuilderInternal instantiates a new InterestsRequestBuilder and sets the default values.
 func NewItemProfileInterestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileInterestsRequestBuilder) {
     m := &ItemProfileInterestsRequestBuilder{

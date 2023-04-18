@@ -40,6 +40,17 @@ type LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetQueryParameters
 }
+// ByRunId provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) ByRunId(runId string)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if runId != "" {
+        urlTplParams["run%2Did"] = runId
+    }
+    return NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowsItemRunsRequestBuilderInternal instantiates a new RunsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemRunsRequestBuilder{

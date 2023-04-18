@@ -78,31 +78,9 @@ func (m *WindowsUpdatesRequestBuilder) Delete(ctx context.Context, requestConfig
 func (m *WindowsUpdatesRequestBuilder) DeploymentAudiences()(*WindowsUpdatesDeploymentAudiencesRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeploymentAudiencesById provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesRequestBuilder) DeploymentAudiencesById(id string)(*WindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deploymentAudience%2Did"] = id
-    }
-    return NewWindowsUpdatesDeploymentAudiencesDeploymentAudienceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Deployments provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) Deployments()(*WindowsUpdatesDeploymentsRequestBuilder) {
     return NewWindowsUpdatesDeploymentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DeploymentsById provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesRequestBuilder) DeploymentsById(id string)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deployment%2Did"] = id
-    }
-    return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
 func (m *WindowsUpdatesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable, error) {
@@ -145,17 +123,6 @@ func (m *WindowsUpdatesRequestBuilder) Patch(ctx context.Context, body ie233ee76
 // ResourceConnections provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) ResourceConnections()(*WindowsUpdatesResourceConnectionsRequestBuilder) {
     return NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ResourceConnectionsById provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesRequestBuilder) ResourceConnectionsById(id string)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["resourceConnection%2Did"] = id
-    }
-    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property updates for admin
 func (m *WindowsUpdatesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -206,29 +173,7 @@ func (m *WindowsUpdatesRequestBuilder) ToPatchRequestInformation(ctx context.Con
 func (m *WindowsUpdatesRequestBuilder) UpdatableAssets()(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// UpdatableAssetsById provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesRequestBuilder) UpdatableAssetsById(id string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["updatableAsset%2Did"] = id
-    }
-    return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // UpdatePolicies provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
 func (m *WindowsUpdatesRequestBuilder) UpdatePolicies()(*WindowsUpdatesUpdatePoliciesRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UpdatePoliciesById provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
-func (m *WindowsUpdatesRequestBuilder) UpdatePoliciesById(id string)(*WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["updatePolicy%2Did"] = id
-    }
-    return NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

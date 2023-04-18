@@ -46,6 +46,17 @@ type IntuneBrandingProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIntuneBrandingProfileId provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
+func (m *IntuneBrandingProfilesRequestBuilder) ByIntuneBrandingProfileId(intuneBrandingProfileId string)(*IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if intuneBrandingProfileId != "" {
+        urlTplParams["intuneBrandingProfile%2Did"] = intuneBrandingProfileId
+    }
+    return NewIntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIntuneBrandingProfilesRequestBuilderInternal instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.
 func NewIntuneBrandingProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntuneBrandingProfilesRequestBuilder) {
     m := &IntuneBrandingProfilesRequestBuilder{

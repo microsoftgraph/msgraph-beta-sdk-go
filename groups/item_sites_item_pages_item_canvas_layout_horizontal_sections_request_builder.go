@@ -46,6 +46,17 @@ type ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByHorizontalSectionId provides operations to manage the horizontalSections property of the microsoft.graph.canvasLayout entity.
+func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) ByHorizontalSectionId(horizontalSectionId string)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if horizontalSectionId != "" {
+        urlTplParams["horizontalSection%2Did"] = horizontalSectionId
+    }
+    return NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderInternal instantiates a new HorizontalSectionsRequestBuilder and sets the default values.
 func NewItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder) {
     m := &ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsRequestBuilder{

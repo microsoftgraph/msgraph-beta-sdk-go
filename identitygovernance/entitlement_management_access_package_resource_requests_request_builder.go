@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackageResourceRequestsRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageResourceRequestId provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) ByAccessPackageResourceRequestId(accessPackageResourceRequestId string)(*EntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageResourceRequestId != "" {
+        urlTplParams["accessPackageResourceRequest%2Did"] = accessPackageResourceRequestId
+    }
+    return NewEntitlementManagementAccessPackageResourceRequestsAccessPackageResourceRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageResourceRequestsRequestBuilderInternal instantiates a new AccessPackageResourceRequestsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceRequestsRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceRequestsRequestBuilder{

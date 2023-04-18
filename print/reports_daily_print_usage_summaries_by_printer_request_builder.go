@@ -46,6 +46,17 @@ type ReportsDailyPrintUsageSummariesByPrinterRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrintUsageByPrinterId provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
+func (m *ReportsDailyPrintUsageSummariesByPrinterRequestBuilder) ByPrintUsageByPrinterId(printUsageByPrinterId string)(*ReportsDailyPrintUsageSummariesByPrinterPrintUsageByPrinterItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printUsageByPrinterId != "" {
+        urlTplParams["printUsageByPrinter%2Did"] = printUsageByPrinterId
+    }
+    return NewReportsDailyPrintUsageSummariesByPrinterPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsDailyPrintUsageSummariesByPrinterRequestBuilderInternal instantiates a new DailyPrintUsageSummariesByPrinterRequestBuilder and sets the default values.
 func NewReportsDailyPrintUsageSummariesByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsDailyPrintUsageSummariesByPrinterRequestBuilder) {
     m := &ReportsDailyPrintUsageSummariesByPrinterRequestBuilder{

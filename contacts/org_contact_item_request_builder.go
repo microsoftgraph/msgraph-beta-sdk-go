@@ -82,17 +82,6 @@ func (m *OrgContactItemRequestBuilder) Delete(ctx context.Context, requestConfig
 func (m *OrgContactItemRequestBuilder) DirectReports()(*ItemDirectReportsRequestBuilder) {
     return NewItemDirectReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DirectReportsById provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) DirectReportsById(id string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get the properties and relationships of an organizational contact object.
 // [Find more info here]
 // 
@@ -131,17 +120,6 @@ func (m *OrgContactItemRequestBuilder) Manager()(*ItemManagerRequestBuilder) {
 func (m *OrgContactItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MemberOfById provides operations to manage the memberOf property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) MemberOfById(id string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update entity in contacts
 func (m *OrgContactItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, requestConfiguration *OrgContactItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -164,6 +142,10 @@ func (m *OrgContactItemRequestBuilder) Patch(ctx context.Context, body ie233ee76
 // Restore provides operations to call the restore method.
 func (m *OrgContactItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetryServiceProvisioning provides operations to call the retryServiceProvisioning method.
+func (m *OrgContactItemRequestBuilder) RetryServiceProvisioning()(*ItemRetryServiceProvisioningRequestBuilder) {
+    return NewItemRetryServiceProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from contacts
 func (m *OrgContactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OrgContactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -214,29 +196,7 @@ func (m *OrgContactItemRequestBuilder) ToPatchRequestInformation(ctx context.Con
 func (m *OrgContactItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
     return NewItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) TransitiveMemberOfById(id string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // TransitiveReports provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
 func (m *OrgContactItemRequestBuilder) TransitiveReports()(*ItemTransitiveReportsRequestBuilder) {
     return NewItemTransitiveReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TransitiveReportsById provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) TransitiveReportsById(id string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

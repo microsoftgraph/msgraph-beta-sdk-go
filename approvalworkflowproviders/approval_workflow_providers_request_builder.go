@@ -46,6 +46,17 @@ type ApprovalWorkflowProvidersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApprovalWorkflowProviderId provides operations to manage the collection of approvalWorkflowProvider entities.
+func (m *ApprovalWorkflowProvidersRequestBuilder) ByApprovalWorkflowProviderId(approvalWorkflowProviderId string)(*ApprovalWorkflowProviderItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if approvalWorkflowProviderId != "" {
+        urlTplParams["approvalWorkflowProvider%2Did"] = approvalWorkflowProviderId
+    }
+    return NewApprovalWorkflowProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewApprovalWorkflowProvidersRequestBuilderInternal instantiates a new ApprovalWorkflowProvidersRequestBuilder and sets the default values.
 func NewApprovalWorkflowProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalWorkflowProvidersRequestBuilder) {
     m := &ApprovalWorkflowProvidersRequestBuilder{

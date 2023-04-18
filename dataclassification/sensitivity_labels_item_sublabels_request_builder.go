@@ -46,6 +46,17 @@ type SensitivityLabelsItemSublabelsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySensitivityLabelId1 provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
+func (m *SensitivityLabelsItemSublabelsRequestBuilder) BySensitivityLabelId1(sensitivityLabelId1 string)(*SensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sensitivityLabelId1 != "" {
+        urlTplParams["sensitivityLabel%2Did1"] = sensitivityLabelId1
+    }
+    return NewSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSensitivityLabelsItemSublabelsRequestBuilderInternal instantiates a new SublabelsRequestBuilder and sets the default values.
 func NewSensitivityLabelsItemSublabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitivityLabelsItemSublabelsRequestBuilder) {
     m := &SensitivityLabelsItemSublabelsRequestBuilder{

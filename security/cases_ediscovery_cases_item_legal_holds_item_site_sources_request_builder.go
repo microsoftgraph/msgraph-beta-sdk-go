@@ -46,6 +46,17 @@ type CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySiteSourceId provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
+func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) BySiteSourceId(siteSourceId string)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if siteSourceId != "" {
+        urlTplParams["siteSource%2Did"] = siteSourceId
+    }
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal instantiates a new SiteSourcesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) {
     m := &CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder{

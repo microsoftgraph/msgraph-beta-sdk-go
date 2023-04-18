@@ -46,6 +46,17 @@ type ManagedTenantsTenantsDetailedInformationRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTenantDetailedInformationId provides operations to manage the tenantsDetailedInformation property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsTenantsDetailedInformationRequestBuilder) ByTenantDetailedInformationId(tenantDetailedInformationId string)(*ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if tenantDetailedInformationId != "" {
+        urlTplParams["tenantDetailedInformation%2Did"] = tenantDetailedInformationId
+    }
+    return NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedTenantsTenantsDetailedInformationRequestBuilderInternal instantiates a new TenantsDetailedInformationRequestBuilder and sets the default values.
 func NewManagedTenantsTenantsDetailedInformationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantsDetailedInformationRequestBuilder) {
     m := &ManagedTenantsTenantsDetailedInformationRequestBuilder{

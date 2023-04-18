@@ -50,6 +50,17 @@ type ItemChatsRequestBuilderPostRequestConfiguration struct {
 func (m *ItemChatsRequestBuilder) AllMessages()(*ItemChatsAllMessagesRequestBuilder) {
     return NewItemChatsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByChatId provides operations to manage the chats property of the microsoft.graph.user entity.
+func (m *ItemChatsRequestBuilder) ByChatId(chatId string)(*ItemChatsChatItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chatId != "" {
+        urlTplParams["chat%2Did"] = chatId
+    }
+    return NewItemChatsChatItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewItemChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsRequestBuilder) {
     m := &ItemChatsRequestBuilder{

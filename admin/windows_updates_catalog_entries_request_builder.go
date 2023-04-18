@@ -46,6 +46,17 @@ type WindowsUpdatesCatalogEntriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCatalogEntryId provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
+func (m *WindowsUpdatesCatalogEntriesRequestBuilder) ByCatalogEntryId(catalogEntryId string)(*WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if catalogEntryId != "" {
+        urlTplParams["catalogEntry%2Did"] = catalogEntryId
+    }
+    return NewWindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesCatalogEntriesRequestBuilderInternal instantiates a new EntriesRequestBuilder and sets the default values.
 func NewWindowsUpdatesCatalogEntriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesCatalogEntriesRequestBuilder) {
     m := &WindowsUpdatesCatalogEntriesRequestBuilder{

@@ -46,6 +46,17 @@ type ItemAgentGroupsItemPublishedResourcesRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPublishedResourceId provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
+func (m *ItemAgentGroupsItemPublishedResourcesRequestBuilder) ByPublishedResourceId(publishedResourceId string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if publishedResourceId != "" {
+        urlTplParams["publishedResource%2Did"] = publishedResourceId
+    }
+    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal instantiates a new PublishedResourcesRequestBuilder and sets the default values.
 func NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsItemPublishedResourcesRequestBuilder) {
     m := &ItemAgentGroupsItemPublishedResourcesRequestBuilder{

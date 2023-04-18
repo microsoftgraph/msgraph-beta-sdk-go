@@ -46,6 +46,17 @@ type ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAttendanceRecordId provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
+func (m *ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder) ByAttendanceRecordId(attendanceRecordId string)(*ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if attendanceRecordId != "" {
+        urlTplParams["attendanceRecord%2Did"] = attendanceRecordId
+    }
+    return NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderInternal instantiates a new AttendanceRecordsRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder) {
     m := &ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder{

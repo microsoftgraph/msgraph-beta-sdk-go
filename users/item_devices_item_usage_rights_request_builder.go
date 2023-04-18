@@ -46,6 +46,17 @@ type ItemDevicesItemUsageRightsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUsageRightId provides operations to manage the usageRights property of the microsoft.graph.device entity.
+func (m *ItemDevicesItemUsageRightsRequestBuilder) ByUsageRightId(usageRightId string)(*ItemDevicesItemUsageRightsUsageRightItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if usageRightId != "" {
+        urlTplParams["usageRight%2Did"] = usageRightId
+    }
+    return NewItemDevicesItemUsageRightsUsageRightItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDevicesItemUsageRightsRequestBuilderInternal instantiates a new UsageRightsRequestBuilder and sets the default values.
 func NewItemDevicesItemUsageRightsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemUsageRightsRequestBuilder) {
     m := &ItemDevicesItemUsageRightsRequestBuilder{

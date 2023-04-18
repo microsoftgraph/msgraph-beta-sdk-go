@@ -39,6 +39,17 @@ type ItemTransitiveReportsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveReportsRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
+func (m *ItemTransitiveReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTransitiveReportsRequestBuilderInternal instantiates a new TransitiveReportsRequestBuilder and sets the default values.
 func NewItemTransitiveReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTransitiveReportsRequestBuilder) {
     m := &ItemTransitiveReportsRequestBuilder{

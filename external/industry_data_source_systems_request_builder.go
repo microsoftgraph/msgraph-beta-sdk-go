@@ -46,6 +46,17 @@ type IndustryDataSourceSystemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySourceSystemDefinitionId provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.
+func (m *IndustryDataSourceSystemsRequestBuilder) BySourceSystemDefinitionId(sourceSystemDefinitionId string)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sourceSystemDefinitionId != "" {
+        urlTplParams["sourceSystemDefinition%2Did"] = sourceSystemDefinitionId
+    }
+    return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIndustryDataSourceSystemsRequestBuilderInternal instantiates a new SourceSystemsRequestBuilder and sets the default values.
 func NewIndustryDataSourceSystemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataSourceSystemsRequestBuilder) {
     m := &IndustryDataSourceSystemsRequestBuilder{

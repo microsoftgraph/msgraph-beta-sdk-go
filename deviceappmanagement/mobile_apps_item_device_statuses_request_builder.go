@@ -46,6 +46,17 @@ type MobileAppsItemDeviceStatusesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMobileAppInstallStatusId provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemDeviceStatusesRequestBuilder) ByMobileAppInstallStatusId(mobileAppInstallStatusId string)(*MobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if mobileAppInstallStatusId != "" {
+        urlTplParams["mobileAppInstallStatus%2Did"] = mobileAppInstallStatusId
+    }
+    return NewMobileAppsItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemDeviceStatusesRequestBuilderInternal instantiates a new DeviceStatusesRequestBuilder and sets the default values.
 func NewMobileAppsItemDeviceStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemDeviceStatusesRequestBuilder) {
     m := &MobileAppsItemDeviceStatusesRequestBuilder{

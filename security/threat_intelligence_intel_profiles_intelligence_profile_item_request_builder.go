@@ -93,17 +93,6 @@ func (m *ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilder) G
 func (m *ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilder) Indicators()(*ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) {
     return NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// IndicatorsById provides operations to manage the indicators property of the microsoft.graph.security.intelligenceProfile entity.
-func (m *ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilder) IndicatorsById(id string)(*ThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["intelligenceProfileIndicator%2Did"] = id
-    }
-    return NewThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property intelProfiles in security
 func (m *ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileable, requestConfiguration *ThreatIntelligenceIntelProfilesIntelligenceProfileItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

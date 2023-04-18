@@ -157,17 +157,6 @@ func (m *ReportsAuthenticationMethodsRequestBuilder) ToPatchRequestInformation(c
 func (m *ReportsAuthenticationMethodsRequestBuilder) UserRegistrationDetails()(*ReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilder) {
     return NewReportsAuthenticationMethodsUserRegistrationDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// UserRegistrationDetailsById provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
-func (m *ReportsAuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id string)(*ReportsAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["userRegistrationDetails%2Did"] = id
-    }
-    return NewReportsAuthenticationMethodsUserRegistrationDetailsUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // UsersRegisteredByFeature provides operations to call the usersRegisteredByFeature method.
 func (m *ReportsAuthenticationMethodsRequestBuilder) UsersRegisteredByFeature()(*ReportsAuthenticationMethodsUsersRegisteredByFeatureRequestBuilder) {
     return NewReportsAuthenticationMethodsUsersRegisteredByFeatureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

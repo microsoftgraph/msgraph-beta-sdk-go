@@ -46,6 +46,17 @@ type ItemPendingAccessReviewInstancesItemStagesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessReviewStageId provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+func (m *ItemPendingAccessReviewInstancesItemStagesRequestBuilder) ByAccessReviewStageId(accessReviewStageId string)(*ItemPendingAccessReviewInstancesItemStagesAccessReviewStageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessReviewStageId != "" {
+        urlTplParams["accessReviewStage%2Did"] = accessReviewStageId
+    }
+    return NewItemPendingAccessReviewInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPendingAccessReviewInstancesItemStagesRequestBuilderInternal instantiates a new StagesRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemStagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemStagesRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesItemStagesRequestBuilder{

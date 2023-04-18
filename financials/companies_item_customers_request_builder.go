@@ -46,6 +46,17 @@ type CompaniesItemCustomersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustomerId provides operations to manage the customers property of the microsoft.graph.company entity.
+func (m *CompaniesItemCustomersRequestBuilder) ByCustomerId(customerId string)(*CompaniesItemCustomersCustomerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if customerId != "" {
+        urlTplParams["customer%2Did"] = customerId
+    }
+    return NewCompaniesItemCustomersCustomerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemCustomersRequestBuilderInternal instantiates a new CustomersRequestBuilder and sets the default values.
 func NewCompaniesItemCustomersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomersRequestBuilder) {
     m := &CompaniesItemCustomersRequestBuilder{

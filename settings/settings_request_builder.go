@@ -44,6 +44,17 @@ type SettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDirectorySettingId provides operations to manage the collection of directorySetting entities.
+func (m *SettingsRequestBuilder) ByDirectorySettingId(directorySettingId string)(*DirectorySettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directorySettingId != "" {
+        urlTplParams["directorySetting%2Did"] = directorySettingId
+    }
+    return NewDirectorySettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsRequestBuilder) {
     m := &SettingsRequestBuilder{

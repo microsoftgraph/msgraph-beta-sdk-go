@@ -46,6 +46,17 @@ type ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChromeOSOnboardingSettingsId provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
+func (m *ChromeOSOnboardingSettingsRequestBuilder) ByChromeOSOnboardingSettingsId(chromeOSOnboardingSettingsId string)(*ChromeOSOnboardingSettingsChromeOSOnboardingSettingsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chromeOSOnboardingSettingsId != "" {
+        urlTplParams["chromeOSOnboardingSettings%2Did"] = chromeOSOnboardingSettingsId
+    }
+    return NewChromeOSOnboardingSettingsChromeOSOnboardingSettingsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // Connect provides operations to call the connect method.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Connect()(*ChromeOSOnboardingSettingsConnectRequestBuilder) {
     return NewChromeOSOnboardingSettingsConnectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

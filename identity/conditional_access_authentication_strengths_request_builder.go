@@ -45,17 +45,6 @@ type ConditionalAccessAuthenticationStrengthsRequestBuilderPatchRequestConfigura
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationMethodModes()(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AuthenticationMethodModesById provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
-func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationMethodModesById(id string)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["authenticationMethodModeDetail%2Did"] = id
-    }
-    return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal instantiates a new AuthenticationStrengthsRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsRequestBuilder) {
     m := &ConditionalAccessAuthenticationStrengthsRequestBuilder{
@@ -126,17 +115,6 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) Patch(ctx conte
 // Policies provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) Policies()(*ConditionalAccessAuthenticationStrengthsPoliciesRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PoliciesById provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
-func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) PoliciesById(id string)(*ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["authenticationStrengthPolicy%2Did"] = id
-    }
-    return NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property authenticationStrengths for identity
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

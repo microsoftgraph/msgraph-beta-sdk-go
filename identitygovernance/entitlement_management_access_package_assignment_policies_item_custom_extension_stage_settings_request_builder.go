@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStag
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustomExtensionStageSettingId provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) ByCustomExtensionStageSettingId(customExtensionStageSettingId string)(*EntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if customExtensionStageSettingId != "" {
+        urlTplParams["customExtensionStageSetting%2Did"] = customExtensionStageSettingId
+    }
+    return NewEntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilderInternal instantiates a new CustomExtensionStageSettingsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder{

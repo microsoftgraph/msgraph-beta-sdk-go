@@ -97,17 +97,6 @@ func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTun
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServers()(*MicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilder) {
     return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MicrosoftTunnelServersById provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
-func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServersById(id string)(*MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["microsoftTunnelServer%2Did"] = id
-    }
-    return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property microsoftTunnelSites in deviceManagement
 func (m *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, requestConfiguration *MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

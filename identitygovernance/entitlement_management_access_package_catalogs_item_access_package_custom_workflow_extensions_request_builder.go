@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowEx
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCustomCalloutExtensionId provides operations to manage the accessPackageCustomWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) ByCustomCalloutExtensionId(customCalloutExtensionId string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if customCalloutExtensionId != "" {
+        urlTplParams["customCalloutExtension%2Did"] = customCalloutExtensionId
+    }
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal instantiates a new AccessPackageCustomWorkflowExtensionsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) {
     m := &EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder{

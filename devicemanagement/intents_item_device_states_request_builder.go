@@ -46,6 +46,17 @@ type IntentsItemDeviceStatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementIntentDeviceStateId provides operations to manage the deviceStates property of the microsoft.graph.deviceManagementIntent entity.
+func (m *IntentsItemDeviceStatesRequestBuilder) ByDeviceManagementIntentDeviceStateId(deviceManagementIntentDeviceStateId string)(*IntentsItemDeviceStatesDeviceManagementIntentDeviceStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementIntentDeviceStateId != "" {
+        urlTplParams["deviceManagementIntentDeviceState%2Did"] = deviceManagementIntentDeviceStateId
+    }
+    return NewIntentsItemDeviceStatesDeviceManagementIntentDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIntentsItemDeviceStatesRequestBuilderInternal instantiates a new DeviceStatesRequestBuilder and sets the default values.
 func NewIntentsItemDeviceStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemDeviceStatesRequestBuilder) {
     m := &IntentsItemDeviceStatesRequestBuilder{

@@ -46,6 +46,17 @@ type CompaniesItemItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemId provides operations to manage the items property of the microsoft.graph.company entity.
+func (m *CompaniesItemItemsRequestBuilder) ByItemId(itemId string)(*CompaniesItemItemsItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemId != "" {
+        urlTplParams["item%2Did"] = itemId
+    }
+    return NewCompaniesItemItemsItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCompaniesItemItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
 func NewCompaniesItemItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemsRequestBuilder) {
     m := &CompaniesItemItemsRequestBuilder{

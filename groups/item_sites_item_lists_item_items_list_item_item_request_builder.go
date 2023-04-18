@@ -45,17 +45,6 @@ type ItemSitesItemListsItemItemsListItemItemRequestBuilderPatchRequestConfigurat
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Activities()(*ItemSitesItemListsItemItemsItemActivitiesRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ActivitiesById provides operations to manage the activities property of the microsoft.graph.listItem entity.
-func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ActivitiesById(id string)(*ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["itemActivityOLD%2Did"] = id
-    }
-    return NewItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Analytics()(*ItemSitesItemListsItemItemsItemAnalyticsRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -96,17 +85,6 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Delete(ctx conte
 // DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) DocumentSetVersions()(*ItemSitesItemListsItemItemsItemDocumentSetVersionsRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemDocumentSetVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*ItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["documentSetVersion%2Did"] = id
-    }
-    return NewItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*ItemSitesItemListsItemItemsItemDriveItemRequestBuilder) {
@@ -206,15 +184,4 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) ToPatchRequestIn
 // Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Versions()(*ItemSitesItemListsItemItemsItemVersionsRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
-func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) VersionsById(id string)(*ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["listItemVersion%2Did"] = id
-    }
-    return NewItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -1023,6 +1023,20 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["serviceProvisioningErrors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceProvisioningErrorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceProvisioningErrorable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServiceProvisioningErrorable)
+            }
+            m.SetServiceProvisioningErrors(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectorySettingFromDiscriminatorValue)
         if err != nil {
@@ -1649,6 +1663,17 @@ func (m *Group) GetSecurityIdentifier()(*string) {
     }
     return nil
 }
+// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+func (m *Group) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
+    val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceProvisioningErrorable)
+    }
+    return nil
+}
 // GetSettings gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *Group) GetSettings()([]DirectorySettingable) {
     val, err := m.GetBackingStore().Get("settings")
@@ -2260,6 +2285,16 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetServiceProvisioningErrors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceProvisioningErrors()))
+        for i, v := range m.GetServiceProvisioningErrors() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("serviceProvisioningErrors", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
@@ -2816,6 +2851,13 @@ func (m *Group) SetSecurityIdentifier(value *string)() {
         panic(err)
     }
 }
+// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+func (m *Group) SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)() {
+    err := m.GetBackingStore().Set("serviceProvisioningErrors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *Group) SetSettings(value []DirectorySettingable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -2970,6 +3012,7 @@ type Groupable interface {
     GetResourceProvisioningOptions()([]string)
     GetSecurityEnabled()(*bool)
     GetSecurityIdentifier()(*string)
+    GetServiceProvisioningErrors()([]ServiceProvisioningErrorable)
     GetSettings()([]DirectorySettingable)
     GetSites()([]Siteable)
     GetTeam()(Teamable)
@@ -3048,6 +3091,7 @@ type Groupable interface {
     SetResourceProvisioningOptions(value []string)()
     SetSecurityEnabled(value *bool)()
     SetSecurityIdentifier(value *string)()
+    SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)()
     SetSettings(value []DirectorySettingable)()
     SetSites(value []Siteable)()
     SetTeam(value Teamable)()

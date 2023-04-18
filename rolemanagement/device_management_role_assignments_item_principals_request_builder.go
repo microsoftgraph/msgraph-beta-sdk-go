@@ -39,6 +39,17 @@ type DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.
+func (m *DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewDeviceManagementRoleAssignmentsItemPrincipalsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderInternal instantiates a new PrincipalsRequestBuilder and sets the default values.
 func NewDeviceManagementRoleAssignmentsItemPrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder) {
     m := &DeviceManagementRoleAssignmentsItemPrincipalsRequestBuilder{

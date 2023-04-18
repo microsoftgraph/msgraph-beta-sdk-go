@@ -49,17 +49,6 @@ func (m *RoleScopeTagsRoleScopeTagItemRequestBuilder) Assign()(*RoleScopeTagsIte
 func (m *RoleScopeTagsRoleScopeTagItemRequestBuilder) Assignments()(*RoleScopeTagsItemAssignmentsRequestBuilder) {
     return NewRoleScopeTagsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.roleScopeTag entity.
-func (m *RoleScopeTagsRoleScopeTagItemRequestBuilder) AssignmentsById(id string)(*RoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["roleScopeTagAutoAssignment%2Did"] = id
-    }
-    return NewRoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewRoleScopeTagsRoleScopeTagItemRequestBuilderInternal instantiates a new RoleScopeTagItemRequestBuilder and sets the default values.
 func NewRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleScopeTagsRoleScopeTagItemRequestBuilder) {
     m := &RoleScopeTagsRoleScopeTagItemRequestBuilder{

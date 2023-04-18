@@ -46,6 +46,17 @@ type WdacSupplementalPoliciesItemDeviceStatusesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId provides operations to manage the deviceStatuses property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.
+func (m *WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) ByWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId string)(*WdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId != "" {
+        urlTplParams["windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus%2Did"] = windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId
+    }
+    return NewWdacSupplementalPoliciesItemDeviceStatusesWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWdacSupplementalPoliciesItemDeviceStatusesRequestBuilderInternal instantiates a new DeviceStatusesRequestBuilder and sets the default values.
 func NewWdacSupplementalPoliciesItemDeviceStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder) {
     m := &WdacSupplementalPoliciesItemDeviceStatusesRequestBuilder{

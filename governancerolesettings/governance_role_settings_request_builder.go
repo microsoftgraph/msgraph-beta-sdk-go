@@ -46,6 +46,17 @@ type GovernanceRoleSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGovernanceRoleSettingId provides operations to manage the collection of governanceRoleSetting entities.
+func (m *GovernanceRoleSettingsRequestBuilder) ByGovernanceRoleSettingId(governanceRoleSettingId string)(*GovernanceRoleSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if governanceRoleSettingId != "" {
+        urlTplParams["governanceRoleSetting%2Did"] = governanceRoleSettingId
+    }
+    return NewGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGovernanceRoleSettingsRequestBuilderInternal instantiates a new GovernanceRoleSettingsRequestBuilder and sets the default values.
 func NewGovernanceRoleSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceRoleSettingsRequestBuilder) {
     m := &GovernanceRoleSettingsRequestBuilder{

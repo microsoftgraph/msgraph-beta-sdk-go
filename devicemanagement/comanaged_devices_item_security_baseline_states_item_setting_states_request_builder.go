@@ -46,6 +46,17 @@ type ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySecurityBaselineSettingStateId provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
+func (m *ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) BySecurityBaselineSettingStateId(securityBaselineSettingStateId string)(*ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if securityBaselineSettingStateId != "" {
+        urlTplParams["securityBaselineSettingState%2Did"] = securityBaselineSettingStateId
+    }
+    return NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderInternal instantiates a new SettingStatesRequestBuilder and sets the default values.
 func NewComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) {
     m := &ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder{
