@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetQueryParameters get the last addToReviewSetOperation object associated with a source collection. 
+// EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the sourceCollection to the specified reviewSet.
 type EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,10 +40,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the last addToReviewSetOperation object associated with a source collection. 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0
+// Get adds the results of the sourceCollection to the specified reviewSet.
 func (m *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AddToReviewSetOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -62,7 +59,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestB
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AddToReviewSetOperationable), nil
 }
-// ToGetRequestInformation get the last addToReviewSetOperation object associated with a source collection. 
+// ToGetRequestInformation adds the results of the sourceCollection to the specified reviewSet.
 func (m *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

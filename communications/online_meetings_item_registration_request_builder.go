@@ -18,7 +18,7 @@ type OnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters get the externalMeetingRegistration details associated with an onlineMeeting.
+// OnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 type OnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,10 +58,7 @@ func NewOnlineMeetingsItemRegistrationRequestBuilder(rawUrl string, requestAdapt
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) CustomQuestions()(*OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
     return NewOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+// Delete delete navigation property registration for communications
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,10 +74,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get get the externalMeetingRegistration details associated with an onlineMeeting.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+// Get the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,10 +93,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable), nil
 }
-// Patch update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+// Patch update the navigation property registration in communications
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +112,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable), nil
 }
-// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// ToDeleteRequestInformation delete navigation property registration for communications
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +124,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting.
+// ToGetRequestInformation the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +140,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+// ToPatchRequestInformation update the navigation property registration in communications
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

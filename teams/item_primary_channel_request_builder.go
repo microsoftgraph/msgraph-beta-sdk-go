@@ -18,7 +18,7 @@ type ItemPrimaryChannelRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPrimaryChannelRequestBuilderGetQueryParameters get the default channel, **General**, of a team.
+// ItemPrimaryChannelRequestBuilderGetQueryParameters the general channel for the team.
 type ItemPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,10 +82,7 @@ func (m *ItemPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantI
 func (m *ItemPrimaryChannelRequestBuilder) FilesFolder()(*ItemPrimaryChannelFilesFolderRequestBuilder) {
     return NewItemPrimaryChannelFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the default channel, **General**, of a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
+// Get the general channel for the team.
 func (m *ItemPrimaryChannelRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPrimaryChannelRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -159,7 +156,7 @@ func (m *ItemPrimaryChannelRequestBuilder) ToDeleteRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the default channel, **General**, of a team.
+// ToGetRequestInformation the general channel for the team.
 func (m *ItemPrimaryChannelRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

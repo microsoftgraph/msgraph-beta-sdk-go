@@ -32,10 +32,6 @@ func CreatePlannerPropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.plannerBucketPropertyRule":
-                        return NewPlannerBucketPropertyRule(), nil
-                    case "#microsoft.graph.plannerPlanPropertyRule":
-                        return NewPlannerPlanPropertyRule(), nil
                     case "#microsoft.graph.plannerTaskPropertyRule":
                         return NewPlannerTaskPropertyRule(), nil
                 }

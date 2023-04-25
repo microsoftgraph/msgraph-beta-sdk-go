@@ -11,7 +11,7 @@ import (
 type ItemSettingsProfileCardPropertiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSettingsProfileCardPropertiesRequestBuilderGetQueryParameters get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
+// ItemSettingsProfileCardPropertiesRequestBuilderGetQueryParameters contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 type ItemSettingsProfileCardPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemSettingsProfileCardPropertiesRequestBuilder(rawUrl string, requestAd
 func (m *ItemSettingsProfileCardPropertiesRequestBuilder) Count()(*ItemSettingsProfileCardPropertiesCountRequestBuilder) {
     return NewItemSettingsProfileCardPropertiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationsettings-list-profilecardproperties?view=graph-rest-1.0
+// Get contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *ItemSettingsProfileCardPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsProfileCardPropertiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemSettingsProfileCardPropertiesRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyCollectionResponseable), nil
 }
-// Post create a new profileCardProperty for an organization. The new property is identified by its **directoryPropertyName** property. For more information on adding properties to the profile card for an organization, see customize the profile card.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationsettings-post-profilecardproperties?view=graph-rest-1.0
+// Post create new navigation property to profileCardProperties for organization
 func (m *ItemSettingsProfileCardPropertiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, requestConfiguration *ItemSettingsProfileCardPropertiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemSettingsProfileCardPropertiesRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable), nil
 }
-// ToGetRequestInformation get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
+// ToGetRequestInformation contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *ItemSettingsProfileCardPropertiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsProfileCardPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemSettingsProfileCardPropertiesRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new profileCardProperty for an organization. The new property is identified by its **directoryPropertyName** property. For more information on adding properties to the profile card for an organization, see customize the profile card.
+// ToPostRequestInformation create new navigation property to profileCardProperties for organization
 func (m *ItemSettingsProfileCardPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfileCardPropertyable, requestConfiguration *ItemSettingsProfileCardPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -38,9 +38,6 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentReque
     return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get extractedTextContent for the navigation property files from security
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

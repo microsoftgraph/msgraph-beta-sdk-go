@@ -9,7 +9,7 @@ import (
 type ApplicationSignInDetailedSummary struct {
     Entity
 }
-// NewApplicationSignInDetailedSummary instantiates a new applicationSignInDetailedSummary and sets the default values.
+// NewApplicationSignInDetailedSummary instantiates a new ApplicationSignInDetailedSummary and sets the default values.
 func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
     m := &ApplicationSignInDetailedSummary{
         Entity: *NewEntity(),

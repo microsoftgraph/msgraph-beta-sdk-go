@@ -79,9 +79,6 @@ func (m *ItemCalendarViewRequestBuilder) Count()(*ItemCalendarViewCountRequestBu
     return NewItemCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the set of appointments of this business in a specified date range. Read-only. Nullable.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
 func (m *ItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

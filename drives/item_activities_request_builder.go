@@ -11,7 +11,7 @@ import (
 type ItemActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemActivitiesRequestBuilderGetQueryParameters list the recent activities that took place on an item or under a hierarchy.
+// ItemActivitiesRequestBuilderGetQueryParameters the list of recent activities that took place under this drive.
 type ItemActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ItemActivitiesRequestBuilder) Count()(*ItemActivitiesCountRequestBuilder) {
     return NewItemActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the recent activities that took place on an item or under a hierarchy.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/activities-list?view=graph-rest-1.0
+// Get the list of recent activities that took place under this drive.
 func (m *ItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable), nil
 }
-// ToGetRequestInformation list the recent activities that took place on an item or under a hierarchy.
+// ToGetRequestInformation the list of recent activities that took place under this drive.
 func (m *ItemActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

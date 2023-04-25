@@ -11,7 +11,7 @@ import (
 type TriggersRetentionEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TriggersRetentionEventsRequestBuilderGetQueryParameters get a list of the retentionEvent objects and their properties.
+// TriggersRetentionEventsRequestBuilderGetQueryParameters get retentionEvents from security
 type TriggersRetentionEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewTriggersRetentionEventsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *TriggersRetentionEventsRequestBuilder) Count()(*TriggersRetentionEventsCountRequestBuilder) {
     return NewTriggersRetentionEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the retentionEvent objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
+// Get get retentionEvents from security
 func (m *TriggersRetentionEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggersRetentionEventsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *TriggersRetentionEventsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventCollectionResponseable), nil
 }
-// Post create a new retentionEvent object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
+// Post create new navigation property to retentionEvents for security
 func (m *TriggersRetentionEventsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, requestConfiguration *TriggersRetentionEventsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *TriggersRetentionEventsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable), nil
 }
-// ToGetRequestInformation get a list of the retentionEvent objects and their properties.
+// ToGetRequestInformation get retentionEvents from security
 func (m *TriggersRetentionEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *TriggersRetentionEventsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new retentionEvent object.
+// ToPostRequestInformation create new navigation property to retentionEvents for security
 func (m *TriggersRetentionEventsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, requestConfiguration *TriggersRetentionEventsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

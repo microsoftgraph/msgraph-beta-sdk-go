@@ -19,6 +19,17 @@ func NewPrivilegedAccessGroup()(*PrivilegedAccessGroup) {
 func CreatePrivilegedAccessGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedAccessGroup(), nil
 }
+// GetAssignmentApprovals gets the assignmentApprovals property value. The assignmentApprovals property
+func (m *PrivilegedAccessGroup) GetAssignmentApprovals()([]Approvalable) {
+    val, err := m.GetBackingStore().Get("assignmentApprovals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Approvalable)
+    }
+    return nil
+}
 // GetAssignmentScheduleInstances gets the assignmentScheduleInstances property value. The assignmentScheduleInstances property
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleInstances()([]PrivilegedAccessGroupAssignmentScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("assignmentScheduleInstances")
@@ -88,6 +99,20 @@ func (m *PrivilegedAccessGroup) GetEligibilitySchedules()([]PrivilegedAccessGrou
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignmentApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Approvalable, len(val))
+            for i, v := range val {
+                res[i] = v.(Approvalable)
+            }
+            m.SetAssignmentApprovals(res)
+        }
+        return nil
+    }
     res["assignmentScheduleInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrivilegedAccessGroupAssignmentScheduleInstanceFromDiscriminatorValue)
         if err != nil {
@@ -180,6 +205,16 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    if m.GetAssignmentApprovals() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentApprovals()))
+        for i, v := range m.GetAssignmentApprovals() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("assignmentApprovals", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAssignmentScheduleInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentScheduleInstances()))
         for i, v := range m.GetAssignmentScheduleInstances() {
@@ -242,6 +277,13 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
+// SetAssignmentApprovals sets the assignmentApprovals property value. The assignmentApprovals property
+func (m *PrivilegedAccessGroup) SetAssignmentApprovals(value []Approvalable)() {
+    err := m.GetBackingStore().Set("assignmentApprovals", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAssignmentScheduleInstances sets the assignmentScheduleInstances property value. The assignmentScheduleInstances property
 func (m *PrivilegedAccessGroup) SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)() {
     err := m.GetBackingStore().Set("assignmentScheduleInstances", value)
@@ -288,12 +330,14 @@ func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccess
 type PrivilegedAccessGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentApprovals()([]Approvalable)
     GetAssignmentScheduleInstances()([]PrivilegedAccessGroupAssignmentScheduleInstanceable)
     GetAssignmentScheduleRequests()([]PrivilegedAccessGroupAssignmentScheduleRequestable)
     GetAssignmentSchedules()([]PrivilegedAccessGroupAssignmentScheduleable)
     GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
     GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable)
     GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable)
+    SetAssignmentApprovals(value []Approvalable)()
     SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)()
     SetAssignmentScheduleRequests(value []PrivilegedAccessGroupAssignmentScheduleRequestable)()
     SetAssignmentSchedules(value []PrivilegedAccessGroupAssignmentScheduleable)()

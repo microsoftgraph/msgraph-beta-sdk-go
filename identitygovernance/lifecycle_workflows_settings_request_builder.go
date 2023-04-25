@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsSettingsRequestBuilderGetQueryParameters read the properties and relationships of a lifecycleManagementSettings object.
+// LifecycleWorkflowsSettingsRequestBuilderGetQueryParameters the settings of the lifecycle workflows instance.
 type LifecycleWorkflowsSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,10 +47,7 @@ func NewLifecycleWorkflowsSettingsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of a lifecycleManagementSettings object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-get?view=graph-rest-1.0
+// Get the settings of the lifecycle workflows instance.
 func (m *LifecycleWorkflowsSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleManagementSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,10 +66,7 @@ func (m *LifecycleWorkflowsSettingsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleManagementSettingsable), nil
 }
-// Patch update the properties of a lifecycleManagementSettings object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-update?view=graph-rest-1.0
+// Patch update the navigation property settings in identityGovernance
 func (m *LifecycleWorkflowsSettingsRequestBuilder) Patch(ctx context.Context, body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleManagementSettingsable, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderPatchRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleManagementSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -91,7 +85,7 @@ func (m *LifecycleWorkflowsSettingsRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleManagementSettingsable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a lifecycleManagementSettings object.
+// ToGetRequestInformation the settings of the lifecycle workflows instance.
 func (m *LifecycleWorkflowsSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -107,7 +101,7 @@ func (m *LifecycleWorkflowsSettingsRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a lifecycleManagementSettings object.
+// ToPatchRequestInformation update the navigation property settings in identityGovernance
 func (m *LifecycleWorkflowsSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleManagementSettingsable, requestConfiguration *LifecycleWorkflowsSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

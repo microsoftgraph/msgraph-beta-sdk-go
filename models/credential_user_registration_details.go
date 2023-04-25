@@ -8,7 +8,7 @@ import (
 type CredentialUserRegistrationDetails struct {
     Entity
 }
-// NewCredentialUserRegistrationDetails instantiates a new CredentialUserRegistrationDetails and sets the default values.
+// NewCredentialUserRegistrationDetails instantiates a new credentialUserRegistrationDetails and sets the default values.
 func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) {
     m := &CredentialUserRegistrationDetails{
         Entity: *NewEntity(),

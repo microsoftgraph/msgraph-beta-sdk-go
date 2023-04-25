@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetQueryParameters get a list of the noncustodialDataSource objects and their properties.
+// EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetQueryParameters returns a list of case noncustodialDataSource objects for this case.  Nullable.
 type EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,10 +82,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) EdiscoveryApp
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryRemoveHoldRequestBuilder) {
     return NewEdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the noncustodialDataSource objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-list?view=graph-rest-1.0
+// Get returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,10 +101,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Get(ctx conte
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable), nil
 }
-// Post create a new noncustodialDataSource object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-post?view=graph-rest-1.0
+// Post create new navigation property to noncustodialDataSources for compliance
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Post(ctx cont
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable), nil
 }
-// ToGetRequestInformation get a list of the noncustodialDataSource objects and their properties.
+// ToGetRequestInformation returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new noncustodialDataSource object.
+// ToPostRequestInformation create new navigation property to noncustodialDataSources for compliance
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

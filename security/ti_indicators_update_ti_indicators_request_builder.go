@@ -30,10 +30,7 @@ func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
+// Post invoke action updateTiIndicators
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsUpdateTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context,
     }
     return res.(TiIndicatorsUpdateTiIndicatorsResponseable), nil
 }
-// ToPostRequestInformation update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// ToPostRequestInformation invoke action updateTiIndicators
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

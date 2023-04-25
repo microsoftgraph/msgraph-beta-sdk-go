@@ -11,7 +11,7 @@ import (
 type ItemRoleInfoAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRoleInfoAssignmentsRequestBuilderGetQueryParameters retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
+// ItemRoleInfoAssignmentsRequestBuilderGetQueryParameters the assignments for this role. Read-only. Nullable.
 type ItemRoleInfoAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemRoleInfoAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemRoleInfoAssignmentsRequestBuilder) Count()(*ItemRoleInfoAssignmentsCountRequestBuilder) {
     return NewItemRoleInfoAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrole-list-assignments?view=graph-rest-1.0
+// Get the assignments for this role. Read-only. Nullable.
 func (m *ItemRoleInfoAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleInfoAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ItemRoleInfoAssignmentsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
+// ToGetRequestInformation the assignments for this role. Read-only. Nullable.
 func (m *ItemRoleInfoAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleInfoAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

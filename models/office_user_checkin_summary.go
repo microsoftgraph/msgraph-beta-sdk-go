@@ -38,7 +38,7 @@ func (m *OfficeUserCheckinSummary) GetAdditionalData()(map[string]any) {
 func (m *OfficeUserCheckinSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFailedUserCount gets the failedUserCount property value. Total failed user check ins for the last 3 months.
+// GetFailedUserCount gets the failedUserCount property value. The failedUserCount property
 func (m *OfficeUserCheckinSummary) GetFailedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedUserCount")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *OfficeUserCheckinSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSucceededUserCount gets the succeededUserCount property value. Total successful user check ins for the last 3 months.
+// GetSucceededUserCount gets the succeededUserCount property value. The succeededUserCount property
 func (m *OfficeUserCheckinSummary) GetSucceededUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("succeededUserCount")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *OfficeUserCheckinSummary) SetAdditionalData(value map[string]any)() {
 func (m *OfficeUserCheckinSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFailedUserCount sets the failedUserCount property value. Total failed user check ins for the last 3 months.
+// SetFailedUserCount sets the failedUserCount property value. The failedUserCount property
 func (m *OfficeUserCheckinSummary) SetFailedUserCount(value *int32)() {
     err := m.GetBackingStore().Set("failedUserCount", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *OfficeUserCheckinSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSucceededUserCount sets the succeededUserCount property value. Total successful user check ins for the last 3 months.
+// SetSucceededUserCount sets the succeededUserCount property value. The succeededUserCount property
 func (m *OfficeUserCheckinSummary) SetSucceededUserCount(value *int32)() {
     err := m.GetBackingStore().Set("succeededUserCount", value)
     if err != nil {

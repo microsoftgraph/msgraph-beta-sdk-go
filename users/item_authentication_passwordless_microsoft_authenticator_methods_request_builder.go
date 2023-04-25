@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
+// ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilde
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCountRequestBuilder) {
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/passwordlessmicrosoftauthenticatorauthenticationmethod-list?view=graph-rest-1.0
+// Get represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
+// ToGetRequestInformation represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

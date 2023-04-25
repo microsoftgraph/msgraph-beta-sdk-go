@@ -8,7 +8,7 @@ import (
 type Profile struct {
     Entity
 }
-// NewProfile instantiates a new profile and sets the default values.
+// NewProfile instantiates a new Profile and sets the default values.
 func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *NewEntity(),

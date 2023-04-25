@@ -31,10 +31,7 @@ func NewItemTeamScheduleTimeCardsClockInRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleTimeCardsClockInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clock in to start a timeCard.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
+// Post invoke action clockIn
 func (m *ItemTeamScheduleTimeCardsClockInRequestBuilder) Post(ctx context.Context, body ItemTeamScheduleTimeCardsClockInPostRequestBodyable, requestConfiguration *ItemTeamScheduleTimeCardsClockInRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemTeamScheduleTimeCardsClockInRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToPostRequestInformation clock in to start a timeCard.
+// ToPostRequestInformation invoke action clockIn
 func (m *ItemTeamScheduleTimeCardsClockInRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamScheduleTimeCardsClockInPostRequestBodyable, requestConfiguration *ItemTeamScheduleTimeCardsClockInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

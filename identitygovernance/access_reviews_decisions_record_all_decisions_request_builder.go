@@ -30,10 +30,7 @@ func NewAccessReviewsDecisionsRecordAllDecisionsRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDecisionsRecordAllDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post as a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-recordalldecisions?view=graph-rest-1.0
+// Post invoke action recordAllDecisions
 func (m *AccessReviewsDecisionsRecordAllDecisionsRequestBuilder) Post(ctx context.Context, body AccessReviewsDecisionsRecordAllDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsDecisionsRecordAllDecisionsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *AccessReviewsDecisionsRecordAllDecisionsRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation as a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+// ToPostRequestInformation invoke action recordAllDecisions
 func (m *AccessReviewsDecisionsRecordAllDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsDecisionsRecordAllDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsDecisionsRecordAllDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

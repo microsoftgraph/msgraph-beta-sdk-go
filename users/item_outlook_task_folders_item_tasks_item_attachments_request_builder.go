@@ -11,7 +11,7 @@ import (
 type ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderGetQueryParameters get a list of attachment objects attached to an Outlook task.
+// ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 type ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,10 +76,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Count()(*
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemOutlookTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemOutlookTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of attachment objects attached to an Outlook task.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+// Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +95,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Get(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
 }
-// Post use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+// Post create new navigation property to attachments for users
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +114,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
-// ToGetRequestInformation get a list of attachment objects attached to an Outlook task.
+// ToGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +130,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+// ToPostRequestInformation create new navigation property to attachments for users
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

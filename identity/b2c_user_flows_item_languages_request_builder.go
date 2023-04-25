@@ -11,7 +11,7 @@ import (
 type B2cUserFlowsItemLanguagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemLanguagesRequestBuilderGetQueryParameters retrieve a list of languages supported for customization in an Azure AD B2C user flow. **Note:** To retrieve a list of languages supported for customization, you must first enable language customization on your Azure AD B2C user flow. For more information, see Update b2cIdentityUserFlow.
+// B2cUserFlowsItemLanguagesRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 type B2cUserFlowsItemLanguagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewB2cUserFlowsItemLanguagesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *B2cUserFlowsItemLanguagesRequestBuilder) Count()(*B2cUserFlowsItemLanguagesCountRequestBuilder) {
     return NewB2cUserFlowsItemLanguagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of languages supported for customization in an Azure AD B2C user flow. **Note:** To retrieve a list of languages supported for customization, you must first enable language customization on your Azure AD B2C user flow. For more information, see Update b2cIdentityUserFlow.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-languages?view=graph-rest-1.0
+// Get the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *B2cUserFlowsItemLanguagesRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguageConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *B2cUserFlowsItemLanguagesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguageConfigurationable), nil
 }
-// ToGetRequestInformation retrieve a list of languages supported for customization in an Azure AD B2C user flow. **Note:** To retrieve a list of languages supported for customization, you must first enable language customization on your Azure AD B2C user flow. For more information, see Update b2cIdentityUserFlow.
+// ToGetRequestInformation the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *B2cUserFlowsItemLanguagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

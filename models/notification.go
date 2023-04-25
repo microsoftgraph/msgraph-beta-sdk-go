@@ -9,7 +9,7 @@ import (
 type Notification struct {
     Entity
 }
-// NewNotification instantiates a new notification and sets the default values.
+// NewNotification instantiates a new Notification and sets the default values.
 func NewNotification()(*Notification) {
     m := &Notification{
         Entity: *NewEntity(),

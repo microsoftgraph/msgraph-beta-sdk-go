@@ -11,7 +11,7 @@ import (
 type BusinessScenariosItemPlannerTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BusinessScenariosItemPlannerTasksRequestBuilderGetQueryParameters get a list of the businessScenarioTask objects and their properties.
+// BusinessScenariosItemPlannerTasksRequestBuilderGetQueryParameters the Planner tasks for the scenario.
 type BusinessScenariosItemPlannerTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewBusinessScenariosItemPlannerTasksRequestBuilder(rawUrl string, requestAd
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Count()(*BusinessScenariosItemPlannerTasksCountRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the businessScenarioTask objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
+// Get the Planner tasks for the scenario.
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable), nil
 }
-// Post create a new businessScenarioTask object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
+// Post create new navigation property to tasks for solutions
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
 }
-// ToGetRequestInformation get a list of the businessScenarioTask objects and their properties.
+// ToGetRequestInformation the Planner tasks for the scenario.
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new businessScenarioTask object.
+// ToPostRequestInformation create new navigation property to tasks for solutions
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderGetQueryParameters list the updatableAsset resources that are members of a deploymentAudience.
+// WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderGetQueryParameters specifies the assets to include in the audience.
 type WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder(rawUrl string
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) Count()(*WindowsUpdatesDeploymentsItemAudienceMembersCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentsItemAudienceMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the updatableAsset resources that are members of a deploymentAudience.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
+// Get specifies the assets to include in the audience.
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) Post(ctx co
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToGetRequestInformation list the updatableAsset resources that are members of a deploymentAudience.
+// ToGetRequestInformation specifies the assets to include in the audience.
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

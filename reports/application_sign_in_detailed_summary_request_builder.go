@@ -11,7 +11,7 @@ import (
 type ApplicationSignInDetailedSummaryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters retrieve the applicationSignInDetailedSummary objects.
+// ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters represents a detailed summary of an application sign-in.
 type ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAda
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Count()(*ApplicationSignInDetailedSummaryCountRequestBuilder) {
     return NewApplicationSignInDetailedSummaryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the applicationSignInDetailedSummary objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-list-applicationsignindetailedsummary?view=graph-rest-1.0
+// Get represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryable), nil
 }
-// ToGetRequestInformation retrieve the applicationSignInDetailedSummary objects.
+// ToGetRequestInformation represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemProfileAnniversariesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileAnniversariesRequestBuilderGetQueryParameters retrieve a list of personAnniversary objects for the given user from their profile.
+// ItemProfileAnniversariesRequestBuilderGetQueryParameters represents the details of meaningful dates associated with a person.
 type ItemProfileAnniversariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemProfileAnniversariesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemProfileAnniversariesRequestBuilder) Count()(*ItemProfileAnniversariesCountRequestBuilder) {
     return NewItemProfileAnniversariesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of personAnniversary objects for the given user from their profile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
+// Get represents the details of meaningful dates associated with a person.
 func (m *ItemProfileAnniversariesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAnniversariesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemProfileAnniversariesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventCollectionResponseable), nil
 }
-// Post use this API to create a new personAnniversary object in a user's profile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
+// Post create new navigation property to anniversaries for users
 func (m *ItemProfileAnniversariesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, requestConfiguration *ItemProfileAnniversariesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemProfileAnniversariesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable), nil
 }
-// ToGetRequestInformation retrieve a list of personAnniversary objects for the given user from their profile.
+// ToGetRequestInformation represents the details of meaningful dates associated with a person.
 func (m *ItemProfileAnniversariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAnniversariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemProfileAnniversariesRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new personAnniversary object in a user's profile.
+// ToPostRequestInformation create new navigation property to anniversaries for users
 func (m *ItemProfileAnniversariesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, requestConfiguration *ItemProfileAnniversariesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

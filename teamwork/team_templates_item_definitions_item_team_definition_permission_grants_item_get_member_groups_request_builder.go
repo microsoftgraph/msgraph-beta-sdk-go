@@ -30,10 +30,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMem
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+// Post invoke action getMemberGroups
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMe
     }
     return res.(TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsResponseable), nil
 }
-// ToPostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+// ToPostRequestInformation invoke action getMemberGroups
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPermissionGrantsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

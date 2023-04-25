@@ -38,9 +38,6 @@ func NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder(
     return NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property defaultPages from identity
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

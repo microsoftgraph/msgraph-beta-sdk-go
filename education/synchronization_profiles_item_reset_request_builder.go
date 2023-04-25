@@ -30,10 +30,7 @@ func NewSynchronizationProfilesItemResetRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemResetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset the sync of a specific school data synchronization profile in the tenant.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-reset?view=graph-rest-1.0
+// Post invoke action reset
 func (m *SynchronizationProfilesItemResetRequestBuilder) Post(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *SynchronizationProfilesItemResetRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation reset the sync of a specific school data synchronization profile in the tenant.
+// ToPostRequestInformation invoke action reset
 func (m *SynchronizationProfilesItemResetRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

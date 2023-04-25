@@ -18,7 +18,7 @@ type ItemSettingsContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsContactMergeSuggestionsRequestBuilderGetQueryParameters read the properties and relationships of a contactMergeSuggestions object.
+// ItemSettingsContactMergeSuggestionsRequestBuilderGetQueryParameters the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 type ItemSettingsContactMergeSuggestionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of a contactMergeSuggestions object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
+// Get the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable), nil
 }
-// Patch update the properties of a contactMergeSuggestions object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
+// Patch update the navigation property contactMergeSuggestions in users
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a contactMergeSuggestions object.
+// ToGetRequestInformation the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a contactMergeSuggestions object.
+// ToPatchRequestInformation update the navigation property contactMergeSuggestions in users
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

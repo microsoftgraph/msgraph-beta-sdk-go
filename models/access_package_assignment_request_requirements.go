@@ -170,6 +170,16 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["verifiableCredentialRequirementStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVerifiableCredentialRequirementStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiableCredentialRequirementStatus(val.(VerifiableCredentialRequirementStatusable))
+        }
+        return nil
+    }
     return res
 }
 // GetIsApprovalRequired gets the isApprovalRequired property value. Indicates whether a request must be approved by an approver.
@@ -282,6 +292,17 @@ func (m *AccessPackageAssignmentRequestRequirements) GetSchedule()(RequestSchedu
     }
     return nil
 }
+// GetVerifiableCredentialRequirementStatus gets the verifiableCredentialRequirementStatus property value. The status of the process to process the verifiable credential, if any.
+func (m *AccessPackageAssignmentRequestRequirements) GetVerifiableCredentialRequirementStatus()(VerifiableCredentialRequirementStatusable) {
+    val, err := m.GetBackingStore().Get("verifiableCredentialRequirementStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VerifiableCredentialRequirementStatusable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetExistingAnswers() != nil {
@@ -354,6 +375,12 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
     }
     {
         err := writer.WriteObjectValue("schedule", m.GetSchedule())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("verifiableCredentialRequirementStatus", m.GetVerifiableCredentialRequirementStatus())
         if err != nil {
             return err
         }
@@ -454,6 +481,13 @@ func (m *AccessPackageAssignmentRequestRequirements) SetSchedule(value RequestSc
         panic(err)
     }
 }
+// SetVerifiableCredentialRequirementStatus sets the verifiableCredentialRequirementStatus property value. The status of the process to process the verifiable credential, if any.
+func (m *AccessPackageAssignmentRequestRequirements) SetVerifiableCredentialRequirementStatus(value VerifiableCredentialRequirementStatusable)() {
+    err := m.GetBackingStore().Set("verifiableCredentialRequirementStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageAssignmentRequestRequirementsable 
 type AccessPackageAssignmentRequestRequirementsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -471,6 +505,7 @@ type AccessPackageAssignmentRequestRequirementsable interface {
     GetPolicyId()(*string)
     GetQuestions()([]AccessPackageQuestionable)
     GetSchedule()(RequestScheduleable)
+    GetVerifiableCredentialRequirementStatus()(VerifiableCredentialRequirementStatusable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExistingAnswers(value []AccessPackageAnswerable)()
     SetIsApprovalRequired(value *bool)()
@@ -483,4 +518,5 @@ type AccessPackageAssignmentRequestRequirementsable interface {
     SetPolicyId(value *string)()
     SetQuestions(value []AccessPackageQuestionable)()
     SetSchedule(value RequestScheduleable)()
+    SetVerifiableCredentialRequirementStatus(value VerifiableCredentialRequirementStatusable)()
 }

@@ -93,10 +93,7 @@ func (m *ItemGroupsItemMembersRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.IdentityCollectionResponseable), nil
 }
-// Post create a new externalGroupMember object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+// Post create new navigation property to members for connections
 func (m *ItemGroupsItemMembersRequestBuilder) Post(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Identityable, requestConfiguration *ItemGroupsItemMembersRequestBuilderPostRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Identityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -131,7 +128,7 @@ func (m *ItemGroupsItemMembersRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new externalGroupMember object.
+// ToPostRequestInformation create new navigation property to members for connections
 func (m *ItemGroupsItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Identityable, requestConfiguration *ItemGroupsItemMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

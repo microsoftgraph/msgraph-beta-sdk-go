@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourceCollectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourceCollectionsRequestBuilderGetQueryParameters get the list of sourceCollections from a case object.
+// EdiscoveryCasesItemSourceCollectionsRequestBuilderGetQueryParameters returns a list of sourceCollection objects associated with this case.
 type EdiscoveryCasesItemSourceCollectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewEdiscoveryCasesItemSourceCollectionsRequestBuilder(rawUrl string, reques
 func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) Count()(*EdiscoveryCasesItemSourceCollectionsCountRequestBuilder) {
     return NewEdiscoveryCasesItemSourceCollectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of sourceCollections from a case object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-list-sourcecollections?view=graph-rest-1.0
+// Get returns a list of sourceCollection objects associated with this case.
 func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) Get(ctx context.Con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionCollectionResponseable), nil
 }
-// Post create a new sourceCollection object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post-sourcecollections?view=graph-rest-1.0
+// Post create new navigation property to sourceCollections for compliance
 func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, requestConfiguration *EdiscoveryCasesItemSourceCollectionsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) Post(ctx context.Co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable), nil
 }
-// ToGetRequestInformation get the list of sourceCollections from a case object.
+// ToGetRequestInformation returns a list of sourceCollection objects associated with this case.
 func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new sourceCollection object.
+// ToPostRequestInformation create new navigation property to sourceCollections for compliance
 func (m *EdiscoveryCasesItemSourceCollectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, requestConfiguration *EdiscoveryCasesItemSourceCollectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

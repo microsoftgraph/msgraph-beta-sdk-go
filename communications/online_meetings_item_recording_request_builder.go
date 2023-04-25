@@ -38,9 +38,6 @@ func NewOnlineMeetingsItemRecordingRequestBuilder(rawUrl string, requestAdapter 
     return NewOnlineMeetingsItemRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream of the recording of a Teams live event. Read-only.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
 func (m *OnlineMeetingsItemRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

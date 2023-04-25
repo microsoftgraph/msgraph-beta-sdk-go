@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersItemChildFoldersItemContactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetQueryParameters get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder.
+// ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetQueryParameters the contacts in the folder. Navigation property. Read-only. Nullable.
 type ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,10 +76,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Count()(*
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+// Get the contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +95,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactCollectionResponseable), nil
 }
-// Post add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+// Post create new navigation property to contacts for users
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +114,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
-// ToGetRequestInformation get all the contacts in the signed-in user's mailbox (.../me/contacts), or from the specified contact folder.
+// ToGetRequestInformation the contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +130,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+// ToPostRequestInformation create new navigation property to contacts for users
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

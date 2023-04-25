@@ -30,10 +30,7 @@ func NewItemUnpublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewItemUnpublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
+// Post prevents the general public from seeing the scheduling page of this business.
 func (m *ItemUnpublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemUnpublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemUnpublishRequestBuilder) Post(ctx context.Context, requestConfigura
     }
     return nil
 }
-// ToPostRequestInformation make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.
+// ToPostRequestInformation prevents the general public from seeing the scheduling page of this business.
 func (m *ItemUnpublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemUnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

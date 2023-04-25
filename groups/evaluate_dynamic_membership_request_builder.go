@@ -31,10 +31,7 @@ func NewEvaluateDynamicMembershipRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateDynamicMembershipRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0
+// Post invoke action evaluateDynamicMembership
 func (m *EvaluateDynamicMembershipRequestBuilder) Post(ctx context.Context, body EvaluateDynamicMembershipPostRequestBodyable, requestConfiguration *EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluateDynamicMembershipResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *EvaluateDynamicMembershipRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluateDynamicMembershipResultable), nil
 }
-// ToPostRequestInformation evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
+// ToPostRequestInformation invoke action evaluateDynamicMembership
 func (m *EvaluateDynamicMembershipRequestBuilder) ToPostRequestInformation(ctx context.Context, body EvaluateDynamicMembershipPostRequestBodyable, requestConfiguration *EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

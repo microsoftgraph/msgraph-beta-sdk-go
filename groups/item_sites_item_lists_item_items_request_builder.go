@@ -11,7 +11,7 @@ import (
 type ItemSitesItemListsItemItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemItemsRequestBuilderGetQueryParameters get the collection of [items][item] in a [list][].
+// ItemSitesItemListsItemItemsRequestBuilderGetQueryParameters all items contained in the list.
 type ItemSitesItemListsItemItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,10 +82,7 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) Delta()(*ItemSitesItemListsI
 func (m *ItemSitesItemListsItemItemsRequestBuilder) DeltaWithToken(token *string)(*ItemSitesItemListsItemItemsDeltaWithTokenRequestBuilder) {
     return NewItemSitesItemListsItemItemsDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
 }
-// Get get the collection of [items][item] in a [list][].
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+// Get all items contained in the list.
 func (m *ItemSitesItemListsItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,10 +101,7 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemCollectionResponseable), nil
 }
-// Post create a new [listItem][] in a [list][].
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+// Post create new navigation property to items for groups
 func (m *ItemSitesItemListsItemItemsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable), nil
 }
-// ToGetRequestInformation get the collection of [items][item] in a [list][].
+// ToGetRequestInformation all items contained in the list.
 func (m *ItemSitesItemListsItemItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new [listItem][] in a [list][].
+// ToPostRequestInformation create new navigation property to items for groups
 func (m *ItemSitesItemListsItemItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

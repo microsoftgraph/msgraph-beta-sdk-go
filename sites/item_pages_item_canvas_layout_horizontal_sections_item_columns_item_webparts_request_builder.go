@@ -11,7 +11,7 @@ import (
 type ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderGetQueryParameters get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
+// ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderGetQueryParameters the collection of WebParts in this column.
 type ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsReques
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder) Count()(*ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsCountRequestBuilder) {
     return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/webpart-list?view=graph-rest-1.0
+// Get the collection of WebParts in this column.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable), nil
 }
-// ToGetRequestInformation get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
+// ToGetRequestInformation the collection of WebParts in this column.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

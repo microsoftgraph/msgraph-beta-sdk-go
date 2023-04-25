@@ -9,7 +9,7 @@ import (
 type Team struct {
     Entity
 }
-// NewTeam instantiates a new team and sets the default values.
+// NewTeam instantiates a new Team and sets the default values.
 func NewTeam()(*Team) {
     m := &Team{
         Entity: *NewEntity(),

@@ -30,10 +30,7 @@ func NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-1.0
+// Post invoke action deleteTiIndicatorsByExternalId
 func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) Post(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(TiIndicatorsDeleteTiIndicatorsByExternalIdResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) Post(ctx cont
     }
     return res.(TiIndicatorsDeleteTiIndicatorsByExternalIdResponseable), nil
 }
-// ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
+// ToPostRequestInformation invoke action deleteTiIndicatorsByExternalId
 func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

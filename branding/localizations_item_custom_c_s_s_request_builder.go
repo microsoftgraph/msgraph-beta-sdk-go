@@ -38,9 +38,6 @@ func NewLocalizationsItemCustomCSSRequestBuilder(rawUrl string, requestAdapter i
     return NewLocalizationsItemCustomCSSRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *LocalizationsItemCustomCSSRequestBuilder) Get(ctx context.Context, requestConfiguration *LocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

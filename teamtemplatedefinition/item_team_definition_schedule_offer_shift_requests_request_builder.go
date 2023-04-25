@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilderGetQueryParameters get offerShiftRequests from teamTemplateDefinition
 type ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder(rawUrl string
 func (m *ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder) Count()(*ItemTeamDefinitionScheduleOfferShiftRequestsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleOfferShiftRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of all offerShiftRequest objects in a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
+// Get get offerShiftRequests from teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfferShiftRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder) Post(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfferShiftRequestable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// ToGetRequestInformation get offerShiftRequests from teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

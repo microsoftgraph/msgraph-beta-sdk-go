@@ -31,10 +31,7 @@ func NewItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
+// Post invoke action copyToNotebook
 func (m *ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilder) Post(ctx context.Context, body ItemSitesItemOnenoteSectionsItemCopyToNotebookPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable), nil
 }
-// ToPostRequestInformation copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+// ToPostRequestInformation invoke action copyToNotebook
 func (m *ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemOnenoteSectionsItemCopyToNotebookPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteSectionsItemCopyToNotebookRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

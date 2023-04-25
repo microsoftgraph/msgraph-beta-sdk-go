@@ -31,10 +31,7 @@ func NewItemSelfActivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemSelfActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post activate the role that is assigned to the requester.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrole-selfactivate?view=graph-rest-1.0
+// Post invoke action selfActivate
 func (m *ItemSelfActivateRequestBuilder) Post(ctx context.Context, body ItemSelfActivatePostRequestBodyable, requestConfiguration *ItemSelfActivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemSelfActivateRequestBuilder) Post(ctx context.Context, body ItemSelf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// ToPostRequestInformation activate the role that is assigned to the requester.
+// ToPostRequestInformation invoke action selfActivate
 func (m *ItemSelfActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSelfActivatePostRequestBodyable, requestConfiguration *ItemSelfActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

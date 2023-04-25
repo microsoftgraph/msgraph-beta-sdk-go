@@ -11,7 +11,7 @@ import (
 type ItemProfileWebsitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileWebsitesRequestBuilderGetQueryParameters retrieve a list of personWebsite objects from a user's profile.
+// ItemProfileWebsitesRequestBuilderGetQueryParameters represents detailed information about websites associated with a user in various services.
 type ItemProfileWebsitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemProfileWebsitesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemProfileWebsitesRequestBuilder) Count()(*ItemProfileWebsitesCountRequestBuilder) {
     return NewItemProfileWebsitesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of personWebsite objects from a user's profile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
+// Get represents detailed information about websites associated with a user in various services.
 func (m *ItemProfileWebsitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileWebsitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemProfileWebsitesRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteCollectionResponseable), nil
 }
-// Post create a new personWebsite object in a user's profile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
+// Post create new navigation property to websites for users
 func (m *ItemProfileWebsitesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemProfileWebsitesRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable), nil
 }
-// ToGetRequestInformation retrieve a list of personWebsite objects from a user's profile.
+// ToGetRequestInformation represents detailed information about websites associated with a user in various services.
 func (m *ItemProfileWebsitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebsitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemProfileWebsitesRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new personWebsite object in a user's profile.
+// ToPostRequestInformation create new navigation property to websites for users
 func (m *ItemProfileWebsitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewInformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequest
     urlParams["request-raw-url"] = rawUrl
     return NewInformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateapplication?view=graph-rest-1.0
+// Post invoke action evaluateApplication
 func (m *InformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilder) Post(ctx context.Context, body InformationProtectionSensitivityLabelsSecurityEvaluateApplicationEvaluateApplicationPostRequestBodyable, requestConfiguration *InformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilderPostRequestConfiguration)(InformationProtectionSensitivityLabelsSecurityEvaluateApplicationEvaluateApplicationResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *InformationProtectionSensitivityLabelsSecurityEvaluateApplicationReques
     }
     return res.(InformationProtectionSensitivityLabelsSecurityEvaluateApplicationEvaluateApplicationResponseable), nil
 }
-// ToPostRequestInformation compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
+// ToPostRequestInformation invoke action evaluateApplication
 func (m *InformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilder) ToPostRequestInformation(ctx context.Context, body InformationProtectionSensitivityLabelsSecurityEvaluateApplicationEvaluateApplicationPostRequestBodyable, requestConfiguration *InformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

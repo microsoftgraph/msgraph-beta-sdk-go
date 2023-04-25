@@ -11,7 +11,7 @@ import (
 type ManagedTenantsManagedDeviceCompliancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsManagedDeviceCompliancesRequestBuilderGetQueryParameters get a list of the managedDeviceCompliance objects and their properties.
+// ManagedTenantsManagedDeviceCompliancesRequestBuilderGetQueryParameters the collection of compliance for managed devices across managed tenants.
 type ManagedTenantsManagedDeviceCompliancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewManagedTenantsManagedDeviceCompliancesRequestBuilder(rawUrl string, requ
 func (m *ManagedTenantsManagedDeviceCompliancesRequestBuilder) Count()(*ManagedTenantsManagedDeviceCompliancesCountRequestBuilder) {
     return NewManagedTenantsManagedDeviceCompliancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the managedDeviceCompliance objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliances?view=graph-rest-1.0
+// Get the collection of compliance for managed devices across managed tenants.
 func (m *ManagedTenantsManagedDeviceCompliancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedDeviceCompliancesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedDeviceComplianceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ManagedTenantsManagedDeviceCompliancesRequestBuilder) Post(ctx context.
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedDeviceComplianceable), nil
 }
-// ToGetRequestInformation get a list of the managedDeviceCompliance objects and their properties.
+// ToGetRequestInformation the collection of compliance for managed devices across managed tenants.
 func (m *ManagedTenantsManagedDeviceCompliancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagedDeviceCompliancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters retrieve a list of swapShiftsChangeRequest objects in the team.
+// ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters the swap requests for shifts in the schedule.
 type ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder(rawUrl 
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Count()(*ItemTeamDefinitionScheduleSwapShiftsChangeRequestsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleSwapShiftsChangeRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of swapShiftsChangeRequest objects in the team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0
+// Get the swap requests for shifts in the schedule.
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable), nil
 }
-// Post create an instance of a swapShiftsChangeRequest object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0
+// Post create new navigation property to swapShiftsChangeRequests for teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable), nil
 }
-// ToGetRequestInformation retrieve a list of swapShiftsChangeRequest objects in the team.
+// ToGetRequestInformation the swap requests for shifts in the schedule.
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of a swapShiftsChangeRequest object.
+// ToPostRequestInformation create new navigation property to swapShiftsChangeRequests for teamTemplateDefinition
 func (m *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *ItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

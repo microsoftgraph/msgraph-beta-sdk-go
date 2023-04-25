@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerTaskConfigurationRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a plannerTaskConfiguration object.
+// BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetQueryParameters the configuration of Planner tasks that will be created for the scenario.
 type BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get read the properties and relationships of a plannerTaskConfiguration object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
+// Get the configuration of Planner tasks that will be created for the scenario.
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable), nil
 }
-// Patch update the properties of a plannerTaskConfiguration object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
+// Patch update the navigation property taskConfiguration in solutions
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a plannerTaskConfiguration object.
+// ToGetRequestInformation the configuration of Planner tasks that will be created for the scenario.
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a plannerTaskConfiguration object.
+// ToPatchRequestInformation update the navigation property taskConfiguration in solutions
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type CallsItemAudioRoutingGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters retrieve a list of **audioRoutingGroup** objects.
+// CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters get audioRoutingGroups from app
 type CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewCallsItemAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter 
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Count()(*CallsItemAudioRoutingGroupsCountRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of **audioRoutingGroup** objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
+// Get get audioRoutingGroups from app
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable), nil
 }
-// Post create a new **audioRoutingGroup**.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
+// Post create new navigation property to audioRoutingGroups for app
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable), nil
 }
-// ToGetRequestInformation retrieve a list of **audioRoutingGroup** objects.
+// ToGetRequestInformation get audioRoutingGroups from app
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new **audioRoutingGroup**.
+// ToPostRequestInformation create new navigation property to audioRoutingGroups for app
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

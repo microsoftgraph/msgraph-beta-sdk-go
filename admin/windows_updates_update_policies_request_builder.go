@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesUpdatePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesUpdatePoliciesRequestBuilderGetQueryParameters get a list of updatePolicy objects and their properties.
+// WindowsUpdatesUpdatePoliciesRequestBuilderGetQueryParameters a collection of policies for approving the deployment of different content to an audience over time.
 type WindowsUpdatesUpdatePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewWindowsUpdatesUpdatePoliciesRequestBuilder(rawUrl string, requestAdapter
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Count()(*WindowsUpdatesUpdatePoliciesCountRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of updatePolicy objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-1.0
+// Get a collection of policies for approving the deployment of different content to an audience over time.
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyCollectionResponseable), nil
 }
-// Post create a new updatePolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-1.0
+// Post create new navigation property to updatePolicies for admin
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable), nil
 }
-// ToGetRequestInformation get a list of updatePolicy objects and their properties.
+// ToGetRequestInformation a collection of policies for approving the deployment of different content to an audience over time.
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new updatePolicy object.
+// ToPostRequestInformation create new navigation property to updatePolicies for admin
 func (m *WindowsUpdatesUpdatePoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

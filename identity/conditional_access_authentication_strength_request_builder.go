@@ -18,7 +18,7 @@ type ConditionalAccessAuthenticationStrengthRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessAuthenticationStrengthRequestBuilderGetQueryParameters get authenticationStrength from identity
+// ConditionalAccessAuthenticationStrengthRequestBuilderGetQueryParameters defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
 type ConditionalAccessAuthenticationStrengthRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get get authenticationStrength from identity
+// Get defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get authenticationStrength from identity
+// ToGetRequestInformation defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
 func (m *ConditionalAccessAuthenticationStrengthRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

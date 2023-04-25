@@ -273,6 +273,20 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["verifiedCredentialsData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVerifiedCredentialDataFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VerifiedCredentialDataable, len(val))
+            for i, v := range val {
+                res[i] = v.(VerifiedCredentialDataable)
+            }
+            m.SetVerifiedCredentialsData(res)
+        }
+        return nil
+    }
     return res
 }
 // GetIsValidationOnly gets the isValidationOnly property value. True if the request is not to be processed for assignment.
@@ -349,6 +363,17 @@ func (m *AccessPackageAssignmentRequest) GetSchedule()(RequestScheduleable) {
     }
     if val != nil {
         return val.(RequestScheduleable)
+    }
+    return nil
+}
+// GetVerifiedCredentialsData gets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+func (m *AccessPackageAssignmentRequest) GetVerifiedCredentialsData()([]VerifiedCredentialDataable) {
+    val, err := m.GetBackingStore().Get("verifiedCredentialsData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]VerifiedCredentialDataable)
     }
     return nil
 }
@@ -460,6 +485,16 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetVerifiedCredentialsData() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVerifiedCredentialsData()))
+        for i, v := range m.GetVerifiedCredentialsData() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("verifiedCredentialsData", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
@@ -567,6 +602,13 @@ func (m *AccessPackageAssignmentRequest) SetSchedule(value RequestScheduleable)(
         panic(err)
     }
 }
+// SetVerifiedCredentialsData sets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+func (m *AccessPackageAssignmentRequest) SetVerifiedCredentialsData(value []VerifiedCredentialDataable)() {
+    err := m.GetBackingStore().Set("verifiedCredentialsData", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageAssignmentRequestable 
 type AccessPackageAssignmentRequestable interface {
     Entityable
@@ -586,6 +628,7 @@ type AccessPackageAssignmentRequestable interface {
     GetRequestStatus()(*string)
     GetRequestType()(*string)
     GetSchedule()(RequestScheduleable)
+    GetVerifiedCredentialsData()([]VerifiedCredentialDataable)
     SetAccessPackage(value AccessPackageable)()
     SetAccessPackageAssignment(value AccessPackageAssignmentable)()
     SetAnswers(value []AccessPackageAnswerable)()
@@ -601,4 +644,5 @@ type AccessPackageAssignmentRequestable interface {
     SetRequestStatus(value *string)()
     SetRequestType(value *string)()
     SetSchedule(value RequestScheduleable)()
+    SetVerifiedCredentialsData(value []VerifiedCredentialDataable)()
 }

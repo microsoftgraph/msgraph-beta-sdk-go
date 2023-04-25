@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters get the list of dataSource objects associated with a source collection.
+// EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters custodian sources that are included in the sourceCollection.
 type EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder(r
 func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemSourceCollectionsItemCustodianSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of dataSource objects associated with a source collection.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-1.0
+// Get custodian sources that are included in the sourceCollection.
 func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder)
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of dataSource objects associated with a source collection.
+// ToGetRequestInformation custodian sources that are included in the sourceCollection.
 func (m *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemCustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewPresencesItemSetStatusMessageRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesItemSetStatusMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set a presence status message for a user. An optional expiration date and time can be supplied.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+// Post invoke action setStatusMessage
 func (m *PresencesItemSetStatusMessageRequestBuilder) Post(ctx context.Context, body PresencesItemSetStatusMessagePostRequestBodyable, requestConfiguration *PresencesItemSetStatusMessageRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *PresencesItemSetStatusMessageRequestBuilder) Post(ctx context.Context, 
     }
     return nil
 }
-// ToPostRequestInformation set a presence status message for a user. An optional expiration date and time can be supplied.
+// ToPostRequestInformation invoke action setStatusMessage
 func (m *PresencesItemSetStatusMessageRequestBuilder) ToPostRequestInformation(ctx context.Context, body PresencesItemSetStatusMessagePostRequestBodyable, requestConfiguration *PresencesItemSetStatusMessageRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

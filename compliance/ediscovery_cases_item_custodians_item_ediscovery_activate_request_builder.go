@@ -30,10 +30,7 @@ func NewEdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-custodian-activate?view=graph-rest-1.0
+// Post invoke action activate
 func (m *EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilder) Post
     }
     return nil
 }
-// ToPostRequestInformation activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
+// ToPostRequestInformation invoke action activate
 func (m *EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type MobileAppManagementPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppManagementPoliciesRequestBuilderGetQueryParameters get a list of the mobilityManagementPolicy objects and their properties.
+// MobileAppManagementPoliciesRequestBuilderGetQueryParameters the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 type MobileAppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewMobileAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter 
 func (m *MobileAppManagementPoliciesRequestBuilder) Count()(*MobileAppManagementPoliciesCountRequestBuilder) {
     return NewMobileAppManagementPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the mobilityManagementPolicy objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list?view=graph-rest-1.0
+// Get the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
-// ToGetRequestInformation get a list of the mobilityManagementPolicy objects and their properties.
+// ToGetRequestInformation the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *MobileAppManagementPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

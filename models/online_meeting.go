@@ -9,7 +9,7 @@ import (
 type OnlineMeeting struct {
     Entity
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -720,7 +720,7 @@ func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     }
     return nil
 }
-// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
 func (m *OnlineMeeting) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
     val, err := m.GetBackingStore().Get("shareMeetingChatHistoryDefault")
     if err != nil {
@@ -1235,7 +1235,7 @@ func (m *OnlineMeeting) SetRegistration(value MeetingRegistrationable)() {
         panic(err)
     }
 }
-// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
 func (m *OnlineMeeting) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
     err := m.GetBackingStore().Set("shareMeetingChatHistoryDefault", value)
     if err != nil {

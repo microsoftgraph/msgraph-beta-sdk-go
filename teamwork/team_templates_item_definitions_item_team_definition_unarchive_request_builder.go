@@ -30,10 +30,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore an archived team. This restores users' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
+// Post invoke action unarchive
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilder) 
     }
     return nil
 }
-// ToPostRequestInformation restore an archived team. This restores users' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
+// ToPostRequestInformation invoke action unarchive
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

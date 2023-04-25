@@ -11,7 +11,7 @@ import (
 type ItemSitesItemOnenoteSectionGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemOnenoteSectionGroupsRequestBuilderGetQueryParameters retrieve a list of sectionGroup objects.
+// ItemSitesItemOnenoteSectionGroupsRequestBuilderGetQueryParameters the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 type ItemSitesItemOnenoteSectionGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemSitesItemOnenoteSectionGroupsRequestBuilder(rawUrl string, requestAd
 func (m *ItemSitesItemOnenoteSectionGroupsRequestBuilder) Count()(*ItemSitesItemOnenoteSectionGroupsCountRequestBuilder) {
     return NewItemSitesItemOnenoteSectionGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of sectionGroup objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+// Get the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *ItemSitesItemOnenoteSectionGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable), nil
 }
-// ToGetRequestInformation retrieve a list of sectionGroup objects.
+// ToGetRequestInformation the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *ItemSitesItemOnenoteSectionGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookTablesItemSortRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookTablesItemSortRequestBuilderGetQueryParameters retrieve the properties and relationships of tablesort object.
+// ItemItemsItemWorkbookTablesItemSortRequestBuilderGetQueryParameters represents the sorting for the table. Read-only.
 type ItemItemsItemWorkbookTablesItemSortRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,10 +78,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get retrieve the properties and relationships of tablesort object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablesort-get?view=graph-rest-1.0
+// Get represents the sorting for the table. Read-only.
 func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemSortRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableSortable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -135,7 +132,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of tablesort object.
+// ToGetRequestInformation represents the sorting for the table. Read-only.
 func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemSortRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

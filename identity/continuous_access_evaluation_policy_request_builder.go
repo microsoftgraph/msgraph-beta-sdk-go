@@ -18,7 +18,7 @@ type ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a continuousAccessEvaluationPolicy object.
+// ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters represents entry point for continuous access evaluation policy.
 type ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of a continuousAccessEvaluationPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/continuousaccessevaluationpolicy-get?view=graph-rest-1.0
+// Get represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable), nil
 }
-// Patch update the properties of a continuousAccessEvaluationPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/continuousaccessevaluationpolicy-update?view=graph-rest-1.0
+// Patch update the navigation property continuousAccessEvaluationPolicy in identity
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a continuousAccessEvaluationPolicy object.
+// ToGetRequestInformation represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a continuousAccessEvaluationPolicy object.
+// ToPatchRequestInformation update the navigation property continuousAccessEvaluationPolicy in identity
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

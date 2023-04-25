@@ -118,16 +118,6 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
-    res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateReportRootFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReports(val.(ReportRootable))
-        }
-        return nil
-    }
     res["services"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintServiceFromDiscriminatorValue)
         if err != nil {
@@ -226,17 +216,6 @@ func (m *Print) GetPrinterShares()([]PrinterShareable) {
     }
     return nil
 }
-// GetReports gets the reports property value. The reports property
-func (m *Print) GetReports()(ReportRootable) {
-    val, err := m.GetBackingStore().Get("reports")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ReportRootable)
-    }
-    return nil
-}
 // GetServices gets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) GetServices()([]PrintServiceable) {
     val, err := m.GetBackingStore().Get("services")
@@ -325,12 +304,6 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("printerShares", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("reports", m.GetReports())
         if err != nil {
             return err
         }
@@ -425,13 +398,6 @@ func (m *Print) SetPrinterShares(value []PrinterShareable)() {
         panic(err)
     }
 }
-// SetReports sets the reports property value. The reports property
-func (m *Print) SetReports(value ReportRootable)() {
-    err := m.GetBackingStore().Set("reports", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetServices sets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) SetServices(value []PrintServiceable)() {
     err := m.GetBackingStore().Set("services", value)
@@ -471,7 +437,6 @@ type Printable interface {
     GetOperations()([]PrintOperationable)
     GetPrinters()([]Printerable)
     GetPrinterShares()([]PrinterShareable)
-    GetReports()(ReportRootable)
     GetServices()([]PrintServiceable)
     GetSettings()(PrintSettingsable)
     GetShares()([]PrinterShareable)
@@ -482,7 +447,6 @@ type Printable interface {
     SetOperations(value []PrintOperationable)()
     SetPrinters(value []Printerable)()
     SetPrinterShares(value []PrinterShareable)()
-    SetReports(value ReportRootable)()
     SetServices(value []PrintServiceable)()
     SetSettings(value PrintSettingsable)()
     SetShares(value []PrinterShareable)()

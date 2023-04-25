@@ -8,7 +8,7 @@ import (
 type OutlookUser struct {
     Entity
 }
-// NewOutlookUser instantiates a new outlookUser and sets the default values.
+// NewOutlookUser instantiates a new OutlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
     m := &OutlookUser{
         Entity: *NewEntity(),

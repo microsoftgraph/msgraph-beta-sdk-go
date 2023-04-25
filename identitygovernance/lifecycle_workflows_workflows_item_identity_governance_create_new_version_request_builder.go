@@ -31,10 +31,7 @@ func NewLifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionRequest
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create a new version of the workflow object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0
+// Post invoke action createNewVersion
 func (m *LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionRequestBuilder) Post(ctx context.Context, body LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionCreateNewVersionPostRequestBodyable, requestConfiguration *LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionRequestBuilderPostRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionReques
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable), nil
 }
-// ToPostRequestInformation create a new version of the workflow object.
+// ToPostRequestInformation invoke action createNewVersion
 func (m *LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionRequestBuilder) ToPostRequestInformation(ctx context.Context, body LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionCreateNewVersionPostRequestBodyable, requestConfiguration *LifecycleWorkflowsWorkflowsItemIdentityGovernanceCreateNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

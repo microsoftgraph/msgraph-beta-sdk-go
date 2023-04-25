@@ -93,10 +93,7 @@ func (m *RostersRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterCollectionResponseable), nil
 }
-// Post create a new plannerRoster object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-post-rosters?view=graph-rest-1.0
+// Post create new navigation property to rosters for planner
 func (m *RostersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -131,7 +128,7 @@ func (m *RostersRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new plannerRoster object.
+// ToPostRequestInformation create new navigation property to rosters for planner
 func (m *RostersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

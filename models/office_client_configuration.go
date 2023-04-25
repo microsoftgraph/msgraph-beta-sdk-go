@@ -39,7 +39,7 @@ func CreateOfficeClientConfigurationFromDiscriminatorValue(parseNode i878a80d233
     }
     return NewOfficeClientConfiguration(), nil
 }
-// GetAssignments gets the assignments property value. The list of group assignments for the policy.
+// GetAssignments gets the assignments property value. The assignments property
 func (m *OfficeClientConfiguration) GetAssignments()([]OfficeClientConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *OfficeClientConfiguration) GetAssignments()([]OfficeClientConfiguration
     }
     return nil
 }
-// GetCheckinStatuses gets the checkinStatuses property value. List of office Client check-in status.
+// GetCheckinStatuses gets the checkinStatuses property value. The checkinStatuses property
 func (m *OfficeClientConfiguration) GetCheckinStatuses()([]OfficeClientCheckinStatusable) {
     val, err := m.GetBackingStore().Get("checkinStatuses")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *OfficeClientConfiguration) GetCheckinStatuses()([]OfficeClientCheckinSt
     }
     return nil
 }
-// GetDescription gets the description property value. Not yet documented
+// GetDescription gets the description property value. The description property
 func (m *OfficeClientConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *OfficeClientConfiguration) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Admin provided description of the office client configuration policy.
+// GetDisplayName gets the displayName property value. The displayName property
 func (m *OfficeClientConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetPolicyPayload gets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
+// GetPolicyPayload gets the policyPayload property value. The policyPayload property
 func (m *OfficeClientConfiguration) GetPolicyPayload()([]byte) {
     val, err := m.GetBackingStore().Get("policyPayload")
     if err != nil {
@@ -187,7 +187,7 @@ func (m *OfficeClientConfiguration) GetPolicyPayload()([]byte) {
     }
     return nil
 }
-// GetPriority gets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
+// GetPriority gets the priority property value. The priority property
 func (m *OfficeClientConfiguration) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *OfficeClientConfiguration) GetPriority()(*int32) {
     }
     return nil
 }
-// GetUserCheckinSummary gets the userCheckinSummary property value. User check-in summary for the policy.
+// GetUserCheckinSummary gets the userCheckinSummary property value. The userCheckinSummary property
 func (m *OfficeClientConfiguration) GetUserCheckinSummary()(OfficeUserCheckinSummaryable) {
     val, err := m.GetBackingStore().Get("userCheckinSummary")
     if err != nil {
@@ -209,7 +209,7 @@ func (m *OfficeClientConfiguration) GetUserCheckinSummary()(OfficeUserCheckinSum
     }
     return nil
 }
-// GetUserPreferencePayload gets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
+// GetUserPreferencePayload gets the userPreferencePayload property value. The userPreferencePayload property
 func (m *OfficeClientConfiguration) GetUserPreferencePayload()([]byte) {
     val, err := m.GetBackingStore().Get("userPreferencePayload")
     if err != nil {
@@ -284,56 +284,56 @@ func (m *OfficeClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAssignments sets the assignments property value. The list of group assignments for the policy.
+// SetAssignments sets the assignments property value. The assignments property
 func (m *OfficeClientConfiguration) SetAssignments(value []OfficeClientConfigurationAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCheckinStatuses sets the checkinStatuses property value. List of office Client check-in status.
+// SetCheckinStatuses sets the checkinStatuses property value. The checkinStatuses property
 func (m *OfficeClientConfiguration) SetCheckinStatuses(value []OfficeClientCheckinStatusable)() {
     err := m.GetBackingStore().Set("checkinStatuses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Not yet documented
+// SetDescription sets the description property value. The description property
 func (m *OfficeClientConfiguration) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Admin provided description of the office client configuration policy.
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *OfficeClientConfiguration) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyPayload sets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
+// SetPolicyPayload sets the policyPayload property value. The policyPayload property
 func (m *OfficeClientConfiguration) SetPolicyPayload(value []byte)() {
     err := m.GetBackingStore().Set("policyPayload", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
+// SetPriority sets the priority property value. The priority property
 func (m *OfficeClientConfiguration) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCheckinSummary sets the userCheckinSummary property value. User check-in summary for the policy.
+// SetUserCheckinSummary sets the userCheckinSummary property value. The userCheckinSummary property
 func (m *OfficeClientConfiguration) SetUserCheckinSummary(value OfficeUserCheckinSummaryable)() {
     err := m.GetBackingStore().Set("userCheckinSummary", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPreferencePayload sets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
+// SetUserPreferencePayload sets the userPreferencePayload property value. The userPreferencePayload property
 func (m *OfficeClientConfiguration) SetUserPreferencePayload(value []byte)() {
     err := m.GetBackingStore().Set("userPreferencePayload", value)
     if err != nil {

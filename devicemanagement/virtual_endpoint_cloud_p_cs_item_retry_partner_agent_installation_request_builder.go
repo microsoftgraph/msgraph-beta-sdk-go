@@ -30,10 +30,7 @@ func NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
+// Post invoke action retryPartnerAgentInstallation
 func (m *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder)
     }
     return nil
 }
-// ToPostRequestInformation retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
+// ToPostRequestInformation invoke action retryPartnerAgentInstallation
 func (m *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

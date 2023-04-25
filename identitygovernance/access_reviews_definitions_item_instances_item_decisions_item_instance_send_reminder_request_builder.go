@@ -30,10 +30,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendRemind
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send a reminder to the reviewers of a currently active accessReviewInstance.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
+// Post invoke action sendReminder
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendRemin
     }
     return nil
 }
-// ToPostRequestInformation send a reminder to the reviewers of a currently active accessReviewInstance.
+// ToPostRequestInformation invoke action sendReminder
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemDecisionsItemInstanceSendReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters get a list of the complianceChange objects and their properties.
+// WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder(rawUrl s
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Count()(*WindowsUpdatesUpdatePoliciesItemComplianceChangesCountRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the complianceChange objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-1.0
+// Get compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Get(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeCollectionResponseable), nil
 }
-// Post create a new contentApproval object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-1.0
+// Post create new navigation property to complianceChanges for admin
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Post(c
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable), nil
 }
-// ToGetRequestInformation get a list of the complianceChange objects and their properties.
+// ToGetRequestInformation compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new contentApproval object.
+// ToPostRequestInformation create new navigation property to complianceChanges for admin
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

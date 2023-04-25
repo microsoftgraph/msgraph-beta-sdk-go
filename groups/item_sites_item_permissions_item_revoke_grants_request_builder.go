@@ -31,10 +31,7 @@ func NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
+// Post invoke action revokeGrants
 func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) Post(ctx context.Context, body ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToPostRequestInformation revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+// ToPostRequestInformation invoke action revokeGrants
 func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

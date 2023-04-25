@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetQueryParameters get a list of siteSource objects and their properties.
+// EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
 type EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder(rawUrl string
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansItemSiteSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of siteSource objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-sitesources?view=graph-rest-1.0
+// Get data source entity for SharePoint sites associated with the custodian.
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Get(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceCollectionResponseable), nil
 }
-// Post create a new custodian siteSource object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-sitesources?view=graph-rest-1.0
+// Post create new navigation property to siteSources for compliance
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) Post(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable), nil
 }
-// ToGetRequestInformation get a list of siteSource objects and their properties.
+// ToGetRequestInformation data source entity for SharePoint sites associated with the custodian.
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new custodian siteSource object.
+// ToPostRequestInformation create new navigation property to siteSources for compliance
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

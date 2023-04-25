@@ -11,7 +11,7 @@ import (
 type VirtualEndpointGalleryImagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointGalleryImagesRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcGalleryImage objects.
+// VirtualEndpointGalleryImagesRequestBuilderGetQueryParameters the gallery image resource on Cloud PC.
 type VirtualEndpointGalleryImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewVirtualEndpointGalleryImagesRequestBuilder(rawUrl string, requestAdapter
 func (m *VirtualEndpointGalleryImagesRequestBuilder) Count()(*VirtualEndpointGalleryImagesCountRequestBuilder) {
     return NewVirtualEndpointGalleryImagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the properties and relationships of the cloudPcGalleryImage objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
+// Get the gallery image resource on Cloud PC.
 func (m *VirtualEndpointGalleryImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointGalleryImagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcGalleryImageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *VirtualEndpointGalleryImagesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcGalleryImageable), nil
 }
-// ToGetRequestInformation list the properties and relationships of the cloudPcGalleryImage objects.
+// ToGetRequestInformation the gallery image resource on Cloud PC.
 func (m *VirtualEndpointGalleryImagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointGalleryImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

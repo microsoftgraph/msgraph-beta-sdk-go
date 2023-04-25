@@ -11,7 +11,7 @@ import (
 type ItemTokenLifetimePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+// ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
 type ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Count()(*ItemTokenLifetimePoliciesCountRequestBuilder) {
     return NewItemTokenLifetimePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+// Get the tokenLifetimePolicies assigned to this application. Supports $expand.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *ItemTokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, reque
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Ref()(*ItemTokenLifetimePoliciesRefRequestBuilder) {
     return NewItemTokenLifetimePoliciesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+// ToGetRequestInformation the tokenLifetimePolicies assigned to this application. Supports $expand.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

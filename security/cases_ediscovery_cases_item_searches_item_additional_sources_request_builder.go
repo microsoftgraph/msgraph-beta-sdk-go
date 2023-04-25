@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderGetQueryParameters get the list of additional sources associated with an eDiscovery search.
+// CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderGetQueryParameters adds an additional source to the eDiscovery search.
 type CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewCasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder(rawU
 func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSearchesItemAdditionalSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of additional sources associated with an eDiscovery search.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0
+// Get adds an additional source to the eDiscovery search.
 func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) Ge
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable), nil
 }
-// Post create a new additional source associated with an eDiscovery search.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0
+// Post create new navigation property to additionalSources for security
 func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) Po
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable), nil
 }
-// ToGetRequestInformation get the list of additional sources associated with an eDiscovery search.
+// ToGetRequestInformation adds an additional source to the eDiscovery search.
 func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new additional source associated with an eDiscovery search.
+// ToPostRequestInformation create new navigation property to additionalSources for security
 func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

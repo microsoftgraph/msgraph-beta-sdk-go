@@ -11,7 +11,7 @@ import (
 type ItemAgentGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAgentGroupsRequestBuilderGetQueryParameters retrieve a list of onPremisesAgentGroup objects.
+// ItemAgentGroupsRequestBuilderGetQueryParameters list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 type ItemAgentGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemAgentGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemAgentGroupsRequestBuilder) Count()(*ItemAgentGroupsCountRequestBuilder) {
     return NewItemAgentGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of onPremisesAgentGroup objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-1.0
+// Get list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *ItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable), nil
 }
-// Post create a new onPremisesAgentGroup object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-1.0
+// Post create new navigation property to agentGroups for onPremisesPublishingProfiles
 func (m *ItemAgentGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *ItemAgentGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemAgentGroupsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable), nil
 }
-// ToGetRequestInformation retrieve a list of onPremisesAgentGroup objects.
+// ToGetRequestInformation list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *ItemAgentGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemAgentGroupsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new onPremisesAgentGroup object.
+// ToPostRequestInformation create new navigation property to agentGroups for onPremisesPublishingProfiles
 func (m *ItemAgentGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *ItemAgentGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

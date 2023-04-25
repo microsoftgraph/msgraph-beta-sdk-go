@@ -11,7 +11,7 @@ import (
 type ItemDrivesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDrivesRequestBuilderGetQueryParameters retrieve the list of Drive resources available for a target User, Group, or Site.
+// ItemDrivesRequestBuilderGetQueryParameters a collection of drives available for this user. Read-only.
 type ItemDrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemDrivesRequestBuilder) Count()(*ItemDrivesCountRequestBuilder) {
     return NewItemDrivesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of Drive resources available for a target User, Group, or Site.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0
+// Get a collection of drives available for this user. Read-only.
 func (m *ItemDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDrivesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ItemDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve the list of Drive resources available for a target User, Group, or Site.
+// ToGetRequestInformation a collection of drives available for this user. Read-only.
 func (m *ItemDrivesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemProfilePublicationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfilePublicationsRequestBuilderGetQueryParameters retrieve a list of itemPublication objects from a user's profile.
+// ItemProfilePublicationsRequestBuilderGetQueryParameters represents details of any publications a user has added to their profile.
 type ItemProfilePublicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemProfilePublicationsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemProfilePublicationsRequestBuilder) Count()(*ItemProfilePublicationsCountRequestBuilder) {
     return NewItemProfilePublicationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of itemPublication objects from a user's profile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
+// Get represents details of any publications a user has added to their profile.
 func (m *ItemProfilePublicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePublicationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemProfilePublicationsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationCollectionResponseable), nil
 }
-// Post create a new itemPublication object in a user's profile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
+// Post create new navigation property to publications for users
 func (m *ItemProfilePublicationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemProfilePublicationsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
-// ToGetRequestInformation retrieve a list of itemPublication objects from a user's profile.
+// ToGetRequestInformation represents details of any publications a user has added to their profile.
 func (m *ItemProfilePublicationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemProfilePublicationsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new itemPublication object in a user's profile.
+// ToPostRequestInformation create new navigation property to publications for users
 func (m *ItemProfilePublicationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

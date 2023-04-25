@@ -10,7 +10,7 @@ import (
 type ServicePrincipal struct {
     DirectoryObject
 }
-// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -1136,7 +1136,7 @@ func (m *ServicePrincipal) GetPreferredTokenSigningKeyEndDateTime()(*i336074805f
     }
     return nil
 }
-// GetPreferredTokenSigningKeyThumbprint gets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+// GetPreferredTokenSigningKeyThumbprint gets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
 func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("preferredTokenSigningKeyThumbprint")
     if err != nil {
@@ -1224,7 +1224,7 @@ func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     }
     return nil
 }
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 func (m *ServicePrincipal) GetSignInAudience()(*string) {
     val, err := m.GetBackingStore().Get("signInAudience")
     if err != nil {
@@ -2024,7 +2024,7 @@ func (m *ServicePrincipal) SetPreferredTokenSigningKeyEndDateTime(value *i336074
         panic(err)
     }
 }
-// SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+// SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)() {
     err := m.GetBackingStore().Set("preferredTokenSigningKeyThumbprint", value)
     if err != nil {
@@ -2080,7 +2080,7 @@ func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
         panic(err)
     }
 }
-// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 func (m *ServicePrincipal) SetSignInAudience(value *string)() {
     err := m.GetBackingStore().Set("signInAudience", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageCatalogsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageCatalogsRequestBuilderGetQueryParameters retrieve a list of accessPackageCatalog objects.
+// EntitlementManagementAccessPackageCatalogsRequestBuilderGetQueryParameters a container of access packages.
 type EntitlementManagementAccessPackageCatalogsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewEntitlementManagementAccessPackageCatalogsRequestBuilder(rawUrl string, 
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of accessPackageCatalog objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackagecatalogs?view=graph-rest-1.0
+// Get a container of access packages.
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogCollectionResponseable), nil
 }
-// Post create a new accessPackageCatalog object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-post-accesspackagecatalogs?view=graph-rest-1.0
+// Post create new navigation property to accessPackageCatalogs for identityGovernance
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Post(ctx cont
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) Search()(*EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of accessPackageCatalog objects.
+// ToGetRequestInformation a container of access packages.
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new accessPackageCatalog object.
+// ToPostRequestInformation create new navigation property to accessPackageCatalogs for identityGovernance
 func (m *EntitlementManagementAccessPackageCatalogsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable, requestConfiguration *EntitlementManagementAccessPackageCatalogsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

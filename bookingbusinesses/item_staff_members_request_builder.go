@@ -11,7 +11,7 @@ import (
 type ItemStaffMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemStaffMembersRequestBuilderGetQueryParameters get a list of bookingStaffMember objects in the specified bookingBusiness.
+// ItemStaffMembersRequestBuilderGetQueryParameters all the staff members that provide services in this business. Read-only. Nullable.
 type ItemStaffMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemStaffMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemStaffMembersRequestBuilder) Count()(*ItemStaffMembersCountRequestBuilder) {
     return NewItemStaffMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of bookingStaffMember objects in the specified bookingBusiness.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
+// Get all the staff members that provide services in this business. Read-only. Nullable.
 func (m *ItemStaffMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemStaffMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemStaffMembersRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberCollectionResponseable), nil
 }
-// Post create a new staff member in the specified bookingBusiness.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
+// Post create new navigation property to staffMembers for bookingBusinesses
 func (m *ItemStaffMembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable, requestConfiguration *ItemStaffMembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemStaffMembersRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable), nil
 }
-// ToGetRequestInformation get a list of bookingStaffMember objects in the specified bookingBusiness.
+// ToGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
 func (m *ItemStaffMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemStaffMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemStaffMembersRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new staff member in the specified bookingBusiness.
+// ToPostRequestInformation create new navigation property to staffMembers for bookingBusinesses
 func (m *ItemStaffMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable, requestConfiguration *ItemStaffMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

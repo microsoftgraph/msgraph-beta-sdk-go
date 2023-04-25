@@ -18,7 +18,7 @@ type ItemRoleInfoSummaryRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemRoleInfoSummaryRequestBuilderGetQueryParameters retrieve the properties and relationships of privilegedRoleSummary object.
+// ItemRoleInfoSummaryRequestBuilderGetQueryParameters the summary information for this role. Read-only. Nullable.
 type ItemRoleInfoSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemRoleInfoSummaryRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get retrieve the properties and relationships of privilegedRoleSummary object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrolesummary-get?view=graph-rest-1.0
+// Get the summary information for this role. Read-only. Nullable.
 func (m *ItemRoleInfoSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleInfoSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *ItemRoleInfoSummaryRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of privilegedRoleSummary object.
+// ToGetRequestInformation the summary information for this role. Read-only. Nullable.
 func (m *ItemRoleInfoSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleInfoSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemThreadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemThreadsRequestBuilderGetQueryParameters get all the threads of a group. Note: You can also get all the threads of a conversation.
+// ItemThreadsRequestBuilderGetQueryParameters the group's conversation threads. Nullable.
 type ItemThreadsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,7 @@ func NewItemThreadsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ItemThreadsRequestBuilder) Count()(*ItemThreadsCountRequestBuilder) {
     return NewItemThreadsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the threads of a group. Note: You can also get all the threads of a conversation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
+// Get the group's conversation threads. Nullable.
 func (m *ItemThreadsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemThreadsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable), nil
 }
-// Post start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group. Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
+// Post create new navigation property to threads for groups
 func (m *ItemThreadsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ItemThreadsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -114,7 +108,7 @@ func (m *ItemThreadsRequestBuilder) Post(ctx context.Context, body ie233ee762e29
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable), nil
 }
-// ToGetRequestInformation get all the threads of a group. Note: You can also get all the threads of a conversation.
+// ToGetRequestInformation the group's conversation threads. Nullable.
 func (m *ItemThreadsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +124,7 @@ func (m *ItemThreadsRequestBuilder) ToGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group. Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
+// ToPostRequestInformation create new navigation property to threads for groups
 func (m *ItemThreadsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ItemThreadsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
