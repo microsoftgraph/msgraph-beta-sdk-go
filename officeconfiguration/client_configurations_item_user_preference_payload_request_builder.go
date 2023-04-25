@@ -37,7 +37,7 @@ func NewClientConfigurationsItemUserPreferencePayloadRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewClientConfigurationsItemUserPreferencePayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get preference settings JSON string in binary format, these values can be overridden by the user.
+// Get get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
 func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) Get(ctx context.Context, requestConfiguration *ClientConfigurationsItemUserPreferencePayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) Get(ctx co
     }
     return res.([]byte), nil
 }
-// Put preference settings JSON string in binary format, these values can be overridden by the user.
+// Put update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
 func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemUserPreferencePayloadRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) Put(ctx co
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation preference settings JSON string in binary format, these values can be overridden by the user.
+// ToGetRequestInformation get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
 func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsItemUserPreferencePayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation preference settings JSON string in binary format, these values can be overridden by the user.
+// ToPutRequestInformation update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
 func (m *ClientConfigurationsItemUserPreferencePayloadRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemUserPreferencePayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

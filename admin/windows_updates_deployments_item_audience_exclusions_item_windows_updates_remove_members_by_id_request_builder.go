@@ -30,10 +30,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveM
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
+// Post invoke action removeMembersById
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilder) Post(ctx context.Context, body WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRemoveMembersByIdPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemove
     }
     return nil
 }
-// ToPostRequestInformation remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
+// ToPostRequestInformation invoke action removeMembersById
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRemoveMembersByIdPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsItemWindowsUpdatesRemoveMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

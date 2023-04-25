@@ -31,10 +31,7 @@ func NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
+// Post invoke action bulkReprovisionCloudPc
 func (m *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesBulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable), nil
 }
-// ToPostRequestInformation bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+// ToPostRequestInformation invoke action bulkReprovisionCloudPc
 func (m *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesBulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

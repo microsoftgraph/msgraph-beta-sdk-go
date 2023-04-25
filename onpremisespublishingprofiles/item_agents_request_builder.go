@@ -11,7 +11,7 @@ import (
 type ItemAgentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAgentsRequestBuilderGetQueryParameters retrieve a list of onPremisesAgent objects.
+// ItemAgentsRequestBuilderGetQueryParameters list of existing onPremisesAgent objects. Read-only. Nullable.
 type ItemAgentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemAgentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemAgentsRequestBuilder) Count()(*ItemAgentsCountRequestBuilder) {
     return NewItemAgentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of onPremisesAgent objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onpremisesagent-list?view=graph-rest-1.0
+// Get list of existing onPremisesAgent objects. Read-only. Nullable.
 func (m *ItemAgentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemAgentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentable), nil
 }
-// ToGetRequestInformation retrieve a list of onPremisesAgent objects.
+// ToGetRequestInformation list of existing onPremisesAgent objects. Read-only. Nullable.
 func (m *ItemAgentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

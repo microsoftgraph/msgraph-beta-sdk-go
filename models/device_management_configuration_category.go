@@ -19,7 +19,7 @@ func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCa
 func CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationCategory(), nil
 }
-// GetCategoryDescription gets the categoryDescription property value. Description of the category header
+// GetCategoryDescription gets the categoryDescription property value. Description of the category header in policy summary.
 func (m *DeviceManagementConfigurationCategory) GetCategoryDescription()(*string) {
     val, err := m.GetBackingStore().Get("categoryDescription")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *DeviceManagementConfigurationCategory) GetChildCategoryIds()([]string) 
     }
     return nil
 }
-// GetDescription gets the description property value. Description of the item
+// GetDescription gets the description property value. Description of the category. For example: Display
 func (m *DeviceManagementConfigurationCategory) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *DeviceManagementConfigurationCategory) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name of the item
+// GetDisplayName gets the displayName property value. Name of the category. For example: Device Lock
 func (m *DeviceManagementConfigurationCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -182,7 +182,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetHelpText gets the helpText property value. Help text of the item
+// GetHelpText gets the helpText property value. Help text of the category. Give more details of the category.
 func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
     val, err := m.GetBackingStore().Get("helpText")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
     }
     return nil
 }
-// GetParentCategoryId gets the parentCategoryId property value. Parent id of the category.
+// GetParentCategoryId gets the parentCategoryId property value. Direct parent id of the category. If the category is the root, the parent id is same as its id.
 func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
     val, err := m.GetBackingStore().Get("parentCategoryId")
     if err != nil {
@@ -336,7 +336,7 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetCategoryDescription sets the categoryDescription property value. Description of the category header
+// SetCategoryDescription sets the categoryDescription property value. Description of the category header in policy summary.
 func (m *DeviceManagementConfigurationCategory) SetCategoryDescription(value *string)() {
     err := m.GetBackingStore().Set("categoryDescription", value)
     if err != nil {
@@ -350,21 +350,21 @@ func (m *DeviceManagementConfigurationCategory) SetChildCategoryIds(value []stri
         panic(err)
     }
 }
-// SetDescription sets the description property value. Description of the item
+// SetDescription sets the description property value. Description of the category. For example: Display
 func (m *DeviceManagementConfigurationCategory) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name of the item
+// SetDisplayName sets the displayName property value. Name of the category. For example: Device Lock
 func (m *DeviceManagementConfigurationCategory) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHelpText sets the helpText property value. Help text of the item
+// SetHelpText sets the helpText property value. Help text of the category. Give more details of the category.
 func (m *DeviceManagementConfigurationCategory) SetHelpText(value *string)() {
     err := m.GetBackingStore().Set("helpText", value)
     if err != nil {
@@ -378,7 +378,7 @@ func (m *DeviceManagementConfigurationCategory) SetName(value *string)() {
         panic(err)
     }
 }
-// SetParentCategoryId sets the parentCategoryId property value. Parent id of the category.
+// SetParentCategoryId sets the parentCategoryId property value. Direct parent id of the category. If the category is the root, the parent id is same as its id.
 func (m *DeviceManagementConfigurationCategory) SetParentCategoryId(value *string)() {
     err := m.GetBackingStore().Set("parentCategoryId", value)
     if err != nil {

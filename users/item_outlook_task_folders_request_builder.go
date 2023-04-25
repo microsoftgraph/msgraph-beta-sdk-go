@@ -11,7 +11,7 @@ import (
 type ItemOutlookTaskFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookTaskFoldersRequestBuilderGetQueryParameters get all the Outlook task folders in the user's mailbox.
+// ItemOutlookTaskFoldersRequestBuilderGetQueryParameters get taskFolders from users
 type ItemOutlookTaskFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,7 @@ func NewItemOutlookTaskFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemOutlookTaskFoldersRequestBuilder) Count()(*ItemOutlookTaskFoldersCountRequestBuilder) {
     return NewItemOutlookTaskFoldersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the Outlook task folders in the user's mailbox.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
+// Get get taskFolders from users
 func (m *ItemOutlookTaskFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemOutlookTaskFoldersRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable), nil
 }
-// Post create a task folder in the default task group (`My Tasks`) of the user's mailbox.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0
+// Post create new navigation property to taskFolders for users
 func (m *ItemOutlookTaskFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -114,7 +108,7 @@ func (m *ItemOutlookTaskFoldersRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// ToGetRequestInformation get all the Outlook task folders in the user's mailbox.
+// ToGetRequestInformation get taskFolders from users
 func (m *ItemOutlookTaskFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +124,7 @@ func (m *ItemOutlookTaskFoldersRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+// ToPostRequestInformation create new navigation property to taskFolders for users
 func (m *ItemOutlookTaskFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

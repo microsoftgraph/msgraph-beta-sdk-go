@@ -30,10 +30,7 @@ func NewItemCloudPCsItemReprovisionRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemReprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reprovision a specific Cloud PC.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
+// Post invoke action reprovision
 func (m *ItemCloudPCsItemReprovisionRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *ItemCloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemCloudPCsItemReprovisionRequestBuilder) Post(ctx context.Context, bo
     }
     return nil
 }
-// ToPostRequestInformation reprovision a specific Cloud PC.
+// ToPostRequestInformation invoke action reprovision
 func (m *ItemCloudPCsItemReprovisionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *ItemCloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

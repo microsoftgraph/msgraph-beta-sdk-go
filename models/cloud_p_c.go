@@ -9,7 +9,7 @@ import (
 type CloudPC struct {
     Entity
 }
-// NewCloudPC instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new CloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),

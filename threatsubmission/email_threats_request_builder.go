@@ -11,7 +11,7 @@ import (
 type EmailThreatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EmailThreatsRequestBuilderGetQueryParameters get a list of the emailThreatSubmission objects and their properties.
+// EmailThreatsRequestBuilderGetQueryParameters get emailThreats from threatSubmission
 type EmailThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewEmailThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *EmailThreatsRequestBuilder) Count()(*EmailThreatsCountRequestBuilder) {
     return NewEmailThreatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the emailThreatSubmission objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-1.0
+// Get get emailThreats from threatSubmission
 func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *EmailThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable), nil
 }
-// Post create a new emailThreatSubmission object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-1.0
+// Post create new navigation property to emailThreats for threatSubmission
 func (m *EmailThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *EmailThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *EmailThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bb
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable), nil
 }
-// ToGetRequestInformation get a list of the emailThreatSubmission objects and their properties.
+// ToGetRequestInformation get emailThreats from threatSubmission
 func (m *EmailThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EmailThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *EmailThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new emailThreatSubmission object.
+// ToPostRequestInformation create new navigation property to emailThreats for threatSubmission
 func (m *EmailThreatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *EmailThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

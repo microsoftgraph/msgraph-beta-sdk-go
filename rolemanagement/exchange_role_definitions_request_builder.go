@@ -11,7 +11,7 @@ import (
 type ExchangeRoleDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeRoleDefinitionsRequestBuilderGetQueryParameters get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
+// ExchangeRoleDefinitionsRequestBuilderGetQueryParameters the roles allowed by RBAC providers and the permissions assigned to the roles.
 type ExchangeRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewExchangeRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ExchangeRoleDefinitionsRequestBuilder) Count()(*ExchangeRoleDefinitionsCountRequestBuilder) {
     return NewExchangeRoleDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+// Get the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *ExchangeRoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeRoleDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ExchangeRoleDefinitionsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable), nil
 }
-// ToGetRequestInformation get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
+// ToGetRequestInformation the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *ExchangeRoleDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeRoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

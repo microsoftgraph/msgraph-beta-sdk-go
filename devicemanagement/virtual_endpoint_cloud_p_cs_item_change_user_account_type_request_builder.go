@@ -30,10 +30,7 @@ func NewVirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post change the account type of the user on a specific Cloud PC.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
+// Post invoke action changeUserAccountType
 func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder) Post(ct
     }
     return nil
 }
-// ToPostRequestInformation change the account type of the user on a specific Cloud PC.
+// ToPostRequestInformation invoke action changeUserAccountType
 func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

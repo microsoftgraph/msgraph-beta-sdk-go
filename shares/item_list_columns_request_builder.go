@@ -11,7 +11,7 @@ import (
 type ItemListColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListColumnsRequestBuilderGetQueryParameters get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+// ItemListColumnsRequestBuilderGetQueryParameters get columns from shares
 type ItemListColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemListColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemListColumnsRequestBuilder) Count()(*ItemListColumnsCountRequestBuilder) {
     return NewItemListColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
+// Get get columns from shares
 func (m *ItemListColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemListColumnsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+// Post create new navigation property to columns for shares
 func (m *ItemListColumnsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListColumnsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemListColumnsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+// ToGetRequestInformation get columns from shares
 func (m *ItemListColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemListColumnsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// ToPostRequestInformation create new navigation property to columns for shares
 func (m *ItemListColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

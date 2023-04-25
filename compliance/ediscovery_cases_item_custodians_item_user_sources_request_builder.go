@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderGetQueryParameters get a list of the userSource objects and their properties.
+// EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderGetQueryParameters data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 type EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder(rawUrl string
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the userSource objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-usersources?view=graph-rest-1.0
+// Get data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Get(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable), nil
 }
-// Post create a new custodian userSource object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-usersources?view=graph-rest-1.0
+// Post create new navigation property to userSources for compliance
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Post(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable), nil
 }
-// ToGetRequestInformation get a list of the userSource objects and their properties.
+// ToGetRequestInformation data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new custodian userSource object.
+// ToPostRequestInformation create new navigation property to userSources for compliance
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

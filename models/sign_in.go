@@ -9,7 +9,7 @@ import (
 type SignIn struct {
     Entity
 }
-// NewSignIn instantiates a new signIn and sets the default values.
+// NewSignIn instantiates a new SignIn and sets the default values.
 func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),

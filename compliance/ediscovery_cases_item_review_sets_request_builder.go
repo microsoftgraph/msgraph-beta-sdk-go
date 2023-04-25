@@ -93,10 +93,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable), nil
 }
-// Post create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0
+// Post create new navigation property to reviewSets for compliance
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -131,7 +128,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
+// ToPostRequestInformation create new navigation property to reviewSets for compliance
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

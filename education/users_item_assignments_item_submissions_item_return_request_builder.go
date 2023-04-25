@@ -31,10 +31,7 @@ func NewUsersItemAssignmentsItemSubmissionsItemReturnRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemSubmissionsItemReturnRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
+// Post invoke action return
 func (m *UsersItemAssignmentsItemSubmissionsItemReturnRequestBuilder) Post(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemReturnRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemReturnRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable), nil
 }
-// ToPostRequestInformation make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
+// ToPostRequestInformation invoke action return
 func (m *UsersItemAssignmentsItemSubmissionsItemReturnRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemReturnRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

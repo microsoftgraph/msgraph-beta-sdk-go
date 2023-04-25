@@ -31,10 +31,7 @@ func NewItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/nameditem-range?view=graph-rest-1.0
+// Get invoke function range
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable), nil
 }
-// ToGetRequestInformation returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
+// ToGetRequestInformation invoke function range
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

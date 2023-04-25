@@ -30,10 +30,7 @@ func NewItemTeamDefinitionSendActivityNotificationRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
+// Post invoke action sendActivityNotification
 func (m *ItemTeamDefinitionSendActivityNotificationRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemTeamDefinitionSendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationRequestBuilder) Post(ctx cont
     }
     return nil
 }
-// ToPostRequestInformation send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
+// ToPostRequestInformation invoke action sendActivityNotification
 func (m *ItemTeamDefinitionSendActivityNotificationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamDefinitionSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemTeamDefinitionSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewWindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembers
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
+// Post invoke action addMembersById
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilder) Post(ctx context.Context, body WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdAddMembersByIdPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMember
     }
     return nil
 }
-// ToPostRequestInformation add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+// ToPostRequestInformation invoke action addMembersById
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdAddMembersByIdPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

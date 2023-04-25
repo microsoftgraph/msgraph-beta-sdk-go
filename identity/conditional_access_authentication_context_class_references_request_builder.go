@@ -11,7 +11,7 @@ import (
 type ConditionalAccessAuthenticationContextClassReferencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetQueryParameters retrieve a list of authenticationContextClassReference objects.
+// ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified authentication context class references.
 type ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewConditionalAccessAuthenticationContextClassReferencesRequestBuilder(rawU
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Count()(*ConditionalAccessAuthenticationContextClassReferencesCountRequestBuilder) {
     return NewConditionalAccessAuthenticationContextClassReferencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of authenticationContextClassReference objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0
+// Get read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable), nil
 }
-// Post create a new authenticationContextClassReference.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccessroot-post-authenticationcontextclassreferences?view=graph-rest-1.0
+// Post create new navigation property to authenticationContextClassReferences for identity
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable), nil
 }
-// ToGetRequestInformation retrieve a list of authenticationContextClassReference objects.
+// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new authenticationContextClassReference.
+// ToPostRequestInformation create new navigation property to authenticationContextClassReferences for identity
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

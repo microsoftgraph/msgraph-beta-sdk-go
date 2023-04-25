@@ -11,7 +11,7 @@ import (
 type ClientConfigurationsItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClientConfigurationsItemAssignmentsRequestBuilderGetQueryParameters the list of group assignments for the policy.
+// ClientConfigurationsItemAssignmentsRequestBuilderGetQueryParameters get assignments from officeConfiguration
 type ClientConfigurationsItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewClientConfigurationsItemAssignmentsRequestBuilder(rawUrl string, request
 func (m *ClientConfigurationsItemAssignmentsRequestBuilder) Count()(*ClientConfigurationsItemAssignmentsCountRequestBuilder) {
     return NewClientConfigurationsItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of group assignments for the policy.
+// Get get assignments from officeConfiguration
 func (m *ClientConfigurationsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ClientConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ClientConfigurationsItemAssignmentsRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationAssignmentable), nil
 }
-// ToGetRequestInformation the list of group assignments for the policy.
+// ToGetRequestInformation get assignments from officeConfiguration
 func (m *ClientConfigurationsItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

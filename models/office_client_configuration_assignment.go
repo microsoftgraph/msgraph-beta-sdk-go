@@ -34,7 +34,7 @@ func (m *OfficeClientConfigurationAssignment) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetTarget gets the target property value. The target assignment defined by the admin.
+// GetTarget gets the target property value. The target property
 func (m *OfficeClientConfigurationAssignment) GetTarget()(OfficeConfigurationAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *OfficeClientConfigurationAssignment) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetTarget sets the target property value. The target assignment defined by the admin.
+// SetTarget sets the target property value. The target property
 func (m *OfficeClientConfigurationAssignment) SetTarget(value OfficeConfigurationAssignmentTargetable)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

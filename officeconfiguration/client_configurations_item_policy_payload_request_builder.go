@@ -37,7 +37,7 @@ func NewClientConfigurationsItemPolicyPayloadRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewClientConfigurationsItemPolicyPayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get policy settings JSON string in binary format, these values cannot be changed by the user.
+// Get get policyPayload for the navigation property clientConfigurations from officeConfiguration
 func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Get(ctx context.Context, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +56,7 @@ func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Get(ctx context.Co
     }
     return res.([]byte), nil
 }
-// Put policy settings JSON string in binary format, these values cannot be changed by the user.
+// Put update policyPayload for the navigation property clientConfigurations in officeConfiguration
 func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +75,7 @@ func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Put(ctx context.Co
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
+// ToGetRequestInformation get policyPayload for the navigation property clientConfigurations from officeConfiguration
 func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +87,7 @@ func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
+// ToPutRequestInformation update policyPayload for the navigation property clientConfigurations in officeConfiguration
 func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

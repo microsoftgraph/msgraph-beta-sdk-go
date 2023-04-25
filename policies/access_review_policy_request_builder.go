@@ -18,7 +18,7 @@ type AccessReviewPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviewPolicyRequestBuilderGetQueryParameters read the properties and relationships of an accessReviewPolicy object.
+// AccessReviewPolicyRequestBuilderGetQueryParameters the policy that contains directory-level access review settings.
 type AccessReviewPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *AccessReviewPolicyRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get read the properties and relationships of an accessReviewPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-1.0
+// Get the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *AccessReviewPolicyRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable), nil
 }
-// Patch update the properties of an accessReviewPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-1.0
+// Patch update the navigation property accessReviewPolicy in policies
 func (m *AccessReviewPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *AccessReviewPolicyRequestBuilder) ToDeleteRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an accessReviewPolicy object.
+// ToGetRequestInformation the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *AccessReviewPolicyRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an accessReviewPolicy object.
+// ToPatchRequestInformation update the navigation property accessReviewPolicy in policies
 func (m *AccessReviewPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

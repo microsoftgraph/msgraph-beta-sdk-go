@@ -8,7 +8,7 @@ import (
 type CustomAuthenticationExtension struct {
     CustomCalloutExtension
 }
-// NewCustomAuthenticationExtension instantiates a new customAuthenticationExtension and sets the default values.
+// NewCustomAuthenticationExtension instantiates a new CustomAuthenticationExtension and sets the default values.
 func NewCustomAuthenticationExtension()(*CustomAuthenticationExtension) {
     m := &CustomAuthenticationExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),

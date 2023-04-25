@@ -9,7 +9,7 @@ import (
 type CalendarGroup struct {
     Entity
 }
-// NewCalendarGroup instantiates a new calendarGroup and sets the default values.
+// NewCalendarGroup instantiates a new CalendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {
     m := &CalendarGroup{
         Entity: *NewEntity(),

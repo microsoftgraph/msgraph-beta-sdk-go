@@ -38,9 +38,6 @@ func NewItemBrandingFaviconRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemBrandingFaviconRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
 func (m *ItemBrandingFaviconRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingFaviconRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemCookiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemCookiesRequestBuilderGetQueryParameters get a list of hostCookie resources.
+// ThreatIntelligenceHostsItemCookiesRequestBuilderGetQueryParameters the hostCookies that are associated with this host.
 type ThreatIntelligenceHostsItemCookiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewThreatIntelligenceHostsItemCookiesRequestBuilder(rawUrl string, requestA
 func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) Count()(*ThreatIntelligenceHostsItemCookiesCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemCookiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of hostCookie resources.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-host-list-cookies?view=graph-rest-1.0
+// Get the hostCookies that are associated with this host.
 func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemCookiesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCookieCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) Get(ctx context.Conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCookieCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of hostCookie resources.
+// ToGetRequestInformation the hostCookies that are associated with this host.
 func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemCookiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

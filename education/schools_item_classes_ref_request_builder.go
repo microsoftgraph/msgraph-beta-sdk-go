@@ -11,7 +11,7 @@ import (
 type SchoolsItemClassesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemClassesRefRequestBuilderGetQueryParameters retrieve a list of classes owned by a school.
+// SchoolsItemClassesRefRequestBuilderGetQueryParameters classes taught at the school. Nullable.
 type SchoolsItemClassesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewSchoolsItemClassesRefRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemClassesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of classes owned by a school.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
+// Get classes taught at the school. Nullable.
 func (m *SchoolsItemClassesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *SchoolsItemClassesRefRequestBuilder) Post(ctx context.Context, body ie2
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list of classes owned by a school.
+// ToGetRequestInformation classes taught at the school. Nullable.
 func (m *SchoolsItemClassesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

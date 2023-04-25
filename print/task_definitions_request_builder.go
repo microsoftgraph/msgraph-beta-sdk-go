@@ -11,7 +11,7 @@ import (
 type TaskDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TaskDefinitionsRequestBuilderGetQueryParameters retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// TaskDefinitionsRequestBuilderGetQueryParameters get taskDefinitions from print
 type TaskDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewTaskDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *TaskDefinitionsRequestBuilder) Count()(*TaskDefinitionsCountRequestBuilder) {
     return NewTaskDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
+// Get get taskDefinitions from print
 func (m *TaskDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *TaskDefinitionsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionCollectionResponseable), nil
 }
-// Post create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
+// Post create new navigation property to taskDefinitions for print
 func (m *TaskDefinitionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable, requestConfiguration *TaskDefinitionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *TaskDefinitionsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable), nil
 }
-// ToGetRequestInformation retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// ToGetRequestInformation get taskDefinitions from print
 func (m *TaskDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *TaskDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// ToPostRequestInformation create new navigation property to taskDefinitions for print
 func (m *TaskDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable, requestConfiguration *TaskDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

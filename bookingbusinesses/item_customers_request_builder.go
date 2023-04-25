@@ -11,7 +11,7 @@ import (
 type ItemCustomersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCustomersRequestBuilderGetQueryParameters get a list of bookingCustomer objects.
+// ItemCustomersRequestBuilderGetQueryParameters all the customers of this business. Read-only. Nullable.
 type ItemCustomersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemCustomersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemCustomersRequestBuilder) Count()(*ItemCustomersCountRequestBuilder) {
     return NewItemCustomersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of bookingCustomer objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
+// Get all the customers of this business. Read-only. Nullable.
 func (m *ItemCustomersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCustomersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemCustomersRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerCollectionResponseable), nil
 }
-// Post create a new bookingCustomer object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
+// Post create new navigation property to customers for bookingBusinesses
 func (m *ItemCustomersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, requestConfiguration *ItemCustomersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemCustomersRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable), nil
 }
-// ToGetRequestInformation get a list of bookingCustomer objects.
+// ToGetRequestInformation all the customers of this business. Read-only. Nullable.
 func (m *ItemCustomersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCustomersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemCustomersRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new bookingCustomer object.
+// ToPostRequestInformation create new navigation property to customers for bookingBusinesses
 func (m *ItemCustomersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, requestConfiguration *ItemCustomersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

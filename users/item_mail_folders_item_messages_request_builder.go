@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemMessagesRequestBuilderGetQueryParameters list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+// ItemMailFoldersItemMessagesRequestBuilderGetQueryParameters the collection of messages in the mailFolder.
 type ItemMailFoldersItemMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func (m *ItemMailFoldersItemMessagesRequestBuilder) Count()(*ItemMailFoldersItem
 func (m *ItemMailFoldersItemMessagesRequestBuilder) Delta()(*ItemMailFoldersItemMessagesDeltaRequestBuilder) {
     return NewItemMailFoldersItemMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+// Get the collection of messages in the mailFolder.
 func (m *ItemMailFoldersItemMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +97,7 @@ func (m *ItemMailFoldersItemMessagesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable), nil
 }
-// Post use this API to create a new Message in a mailfolder.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+// Post create new navigation property to messages for users
 func (m *ItemMailFoldersItemMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *ItemMailFoldersItemMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemMailFoldersItemMessagesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
-// ToGetRequestInformation list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+// ToGetRequestInformation the collection of messages in the mailFolder.
 func (m *ItemMailFoldersItemMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *ItemMailFoldersItemMessagesRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new Message in a mailfolder.
+// ToPostRequestInformation create new navigation property to messages for users
 func (m *ItemMailFoldersItemMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *ItemMailFoldersItemMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

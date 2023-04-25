@@ -68,9 +68,6 @@ func (m *ItemTransitiveMemberOfRequestBuilder) Count()(*ItemTransitiveMemberOfCo
     return NewItemTransitiveMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the groups that a group is a member of, either directly and through nested membership. Nullable.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
 func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

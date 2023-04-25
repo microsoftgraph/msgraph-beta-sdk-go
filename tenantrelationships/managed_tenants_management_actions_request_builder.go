@@ -11,7 +11,7 @@ import (
 type ManagedTenantsManagementActionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsManagementActionsRequestBuilderGetQueryParameters get a list of the managementAction objects and their properties.
+// ManagedTenantsManagementActionsRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
 type ManagedTenantsManagementActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewManagedTenantsManagementActionsRequestBuilder(rawUrl string, requestAdap
 func (m *ManagedTenantsManagementActionsRequestBuilder) Count()(*ManagedTenantsManagementActionsCountRequestBuilder) {
     return NewManagedTenantsManagementActionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the managementAction objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0
+// Get the collection of baseline management actions across managed tenants.
 func (m *ManagedTenantsManagementActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ManagedTenantsManagementActionsRequestBuilder) Post(ctx context.Context
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionable), nil
 }
-// ToGetRequestInformation get a list of the managementAction objects and their properties.
+// ToGetRequestInformation the collection of baseline management actions across managed tenants.
 func (m *ManagedTenantsManagementActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

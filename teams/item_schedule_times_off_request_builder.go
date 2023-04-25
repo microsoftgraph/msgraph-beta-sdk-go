@@ -11,7 +11,7 @@ import (
 type ItemScheduleTimesOffRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule.
+// ItemScheduleTimesOffRequestBuilderGetQueryParameters the instances of times off in the schedule.
 type ItemScheduleTimesOffRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,10 +72,7 @@ func NewItemScheduleTimesOffRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemScheduleTimesOffRequestBuilder) Count()(*ItemScheduleTimesOffCountRequestBuilder) {
     return NewItemScheduleTimesOffCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOff instances in a schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
+// Get the instances of times off in the schedule.
 func (m *ItemScheduleTimesOffRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleTimesOffRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,10 +91,7 @@ func (m *ItemScheduleTimesOffRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffCollectionResponseable), nil
 }
-// Post create a new timeOff instance in a schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
+// Post create new navigation property to timesOff for teams
 func (m *ItemScheduleTimesOffRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffable, requestConfiguration *ItemScheduleTimesOffRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ItemScheduleTimesOffRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffable), nil
 }
-// ToGetRequestInformation get the list of timeOff instances in a schedule.
+// ToGetRequestInformation the instances of times off in the schedule.
 func (m *ItemScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimesOffRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +126,7 @@ func (m *ItemScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOff instance in a schedule.
+// ToPostRequestInformation create new navigation property to timesOff for teams
 func (m *ItemScheduleTimesOffRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffable, requestConfiguration *ItemScheduleTimesOffRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

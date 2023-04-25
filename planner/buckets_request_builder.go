@@ -11,7 +11,7 @@ import (
 type BucketsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BucketsRequestBuilderGetQueryParameters retrieve a list of **plannerbucket** objects.
+// BucketsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified buckets
 type BucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func (m *BucketsRequestBuilder) Count()(*BucketsCountRequestBuilder) {
 func (m *BucketsRequestBuilder) Delta()(*BucketsDeltaRequestBuilder) {
     return NewBucketsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of **plannerbucket** objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
+// Get read-only. Nullable. Returns a collection of the specified buckets
 func (m *BucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +97,7 @@ func (m *BucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *B
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketCollectionResponseable), nil
 }
-// Post create a new plannerBucket object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
+// Post create new navigation property to buckets for planner
 func (m *BucketsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketable, requestConfiguration *BucketsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *BucketsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketable), nil
 }
-// ToGetRequestInformation retrieve a list of **plannerbucket** objects.
+// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified buckets
 func (m *BucketsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *BucketsRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new plannerBucket object.
+// ToPostRequestInformation create new navigation property to buckets for planner
 func (m *BucketsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketable, requestConfiguration *BucketsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

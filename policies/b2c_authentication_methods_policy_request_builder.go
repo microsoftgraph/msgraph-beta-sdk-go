@@ -18,7 +18,7 @@ type B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters read the properties of a b2cAuthenticationMethodsPolicy object.
+// B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters the Azure AD B2C policies that define how end users register via local accounts.
 type B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get read the properties of a b2cAuthenticationMethodsPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get?view=graph-rest-1.0
+// Get the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable), nil
 }
-// Patch update the properties of a b2cAuthenticationMethodsPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update?view=graph-rest-1.0
+// Patch update the navigation property b2cAuthenticationMethodsPolicy in policies
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a b2cAuthenticationMethodsPolicy object.
+// ToGetRequestInformation the Azure AD B2C policies that define how end users register via local accounts.
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a b2cAuthenticationMethodsPolicy object.
+// ToPatchRequestInformation update the navigation property b2cAuthenticationMethodsPolicy in policies
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

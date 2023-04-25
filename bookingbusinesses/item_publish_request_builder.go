@@ -30,10 +30,7 @@ func NewItemPublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post make the scheduling page of this business available to external customers. Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
+// Post makes the scheduling page of this business available to the general public.
 func (m *ItemPublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemPublishRequestBuilder) Post(ctx context.Context, requestConfigurati
     }
     return nil
 }
-// ToPostRequestInformation make the scheduling page of this business available to external customers. Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.
+// ToPostRequestInformation makes the scheduling page of this business available to the general public.
 func (m *ItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

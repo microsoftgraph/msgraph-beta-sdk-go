@@ -101,10 +101,6 @@ func (m *PrintRequestBuilder) Printers()(*PrintersRequestBuilder) {
 func (m *PrintRequestBuilder) PrinterShares()(*PrinterSharesRequestBuilder) {
     return NewPrinterSharesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Reports provides operations to manage the reports property of the microsoft.graph.print entity.
-func (m *PrintRequestBuilder) Reports()(*ReportsRequestBuilder) {
-    return NewReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Services provides operations to manage the services property of the microsoft.graph.print entity.
 func (m *PrintRequestBuilder) Services()(*ServicesRequestBuilder) {
     return NewServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters get the intelligenceProfileIndicator resources from the **indicators** navigation property of an intelligenceProfile.
+// ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters includes an assemblage of high-fidelity network indicators of compromise.
 type ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder(rawUrl strin
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Count()(*ThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the intelligenceProfileIndicator resources from the **indicators** navigation property of an intelligenceProfile.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0
+// Get includes an assemblage of high-fidelity network indicators of compromise.
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileIndicatorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Get(ctx co
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IntelligenceProfileIndicatorCollectionResponseable), nil
 }
-// ToGetRequestInformation get the intelligenceProfileIndicator resources from the **indicators** navigation property of an intelligenceProfile.
+// ToGetRequestInformation includes an assemblage of high-fidelity network indicators of compromise.
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

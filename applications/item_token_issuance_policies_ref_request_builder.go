@@ -11,7 +11,7 @@ import (
 type ItemTokenIssuancePoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters list the tokenIssuancePolicy objects that are assigned to an application.
+// ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters get ref of tokenIssuancePolicies from applications
 type ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewItemTokenIssuancePoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list the tokenIssuancePolicy objects that are assigned to an application.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+// Get get ref of tokenIssuancePolicies from applications
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
+// ToGetRequestInformation get ref of tokenIssuancePolicies from applications
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

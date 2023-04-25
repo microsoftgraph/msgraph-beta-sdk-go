@@ -11,7 +11,7 @@ import (
 type ItemConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemConnectorsRequestBuilderGetQueryParameters retrieve a list of connector objects.
+// ItemConnectorsRequestBuilderGetQueryParameters list of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
 type ItemConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ItemConnectorsRequestBuilder) Count()(*ItemConnectorsCountRequestBuilder) {
     return NewItemConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of connector objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connector-list?view=graph-rest-1.0
+// Get list of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ItemConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemConnectorsRequestBuilder) Post(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable), nil
 }
-// ToGetRequestInformation retrieve a list of connector objects.
+// ToGetRequestInformation list of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ItemConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

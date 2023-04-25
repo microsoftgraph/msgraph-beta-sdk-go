@@ -11,7 +11,7 @@ import (
 type ItemSynchronizationJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationJobsRequestBuilderGetQueryParameters list existing jobs for a given application instance (service principal).
+// ItemSynchronizationJobsRequestBuilderGetQueryParameters performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 type ItemSynchronizationJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemSynchronizationJobsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemSynchronizationJobsRequestBuilder) Count()(*ItemSynchronizationJobsCountRequestBuilder) {
     return NewItemSynchronizationJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list existing jobs for a given application instance (service principal).
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-1.0
+// Get performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobCollectionResponseable), nil
 }
-// Post create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-1.0
+// Post create new navigation property to jobs for servicePrincipals
 func (m *ItemSynchronizationJobsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, requestConfiguration *ItemSynchronizationJobsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable), nil
 }
-// ToGetRequestInformation list existing jobs for a given application instance (service principal).
+// ToGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *ItemSynchronizationJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+// ToPostRequestInformation create new navigation property to jobs for servicePrincipals
 func (m *ItemSynchronizationJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, requestConfiguration *ItemSynchronizationJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

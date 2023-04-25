@@ -31,10 +31,7 @@ func NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post start a break in a specific timeCard.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-startbreak?view=graph-rest-1.0
+// Post invoke action startBreak
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) Post(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToPostRequestInformation start a break in a specific timeCard.
+// ToPostRequestInformation invoke action startBreak
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

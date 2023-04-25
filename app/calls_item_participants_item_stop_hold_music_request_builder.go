@@ -31,10 +31,7 @@ func NewCallsItemParticipantsItemStopHoldMusicRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemParticipantsItemStopHoldMusicRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reincorporate a participant previously put on hold to the call.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
+// Post invoke action stopHoldMusic
 func (m *CallsItemParticipantsItemStopHoldMusicRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsItemStopHoldMusicPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemStopHoldMusicRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StopHoldMusicOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *CallsItemParticipantsItemStopHoldMusicRequestBuilder) Post(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StopHoldMusicOperationable), nil
 }
-// ToPostRequestInformation reincorporate a participant previously put on hold to the call.
+// ToPostRequestInformation invoke action stopHoldMusic
 func (m *CallsItemParticipantsItemStopHoldMusicRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemParticipantsItemStopHoldMusicPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemStopHoldMusicRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

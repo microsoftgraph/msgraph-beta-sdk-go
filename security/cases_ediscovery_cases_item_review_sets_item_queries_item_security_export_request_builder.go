@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post initiate an export from a **reviewSet** query.  For details, see Export documents from a review set in eDiscovery (Premium).
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-export?view=graph-rest-1.0
+// Post invoke action export
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestBuilder) Post(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportExportPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestB
     }
     return nil
 }
-// ToPostRequestInformation initiate an export from a **reviewSet** query.  For details, see Export documents from a review set in eDiscovery (Premium).
+// ToPostRequestInformation invoke action export
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestBuilder) ToPostRequestInformation(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportExportPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

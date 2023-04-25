@@ -35,7 +35,7 @@ func (m *OfficeClientCheckinStatus) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppliedPolicies gets the appliedPolicies property value. List of policies delivered to the device as last checkin.
+// GetAppliedPolicies gets the appliedPolicies property value. The appliedPolicies property
 func (m *OfficeClientCheckinStatus) GetAppliedPolicies()([]string) {
     val, err := m.GetBackingStore().Get("appliedPolicies")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *OfficeClientCheckinStatus) GetAppliedPolicies()([]string) {
 func (m *OfficeClientCheckinStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCheckinDateTime gets the checkinDateTime property value. Last device check-in time in UTC.
+// GetCheckinDateTime gets the checkinDateTime property value. The checkinDateTime property
 func (m *OfficeClientCheckinStatus) GetCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("checkinDateTime")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *OfficeClientCheckinStatus) GetCheckinDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetDeviceName gets the deviceName property value. Device name trying to check-in.
+// GetDeviceName gets the deviceName property value. The deviceName property
 func (m *OfficeClientCheckinStatus) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *OfficeClientCheckinStatus) GetDeviceName()(*string) {
     }
     return nil
 }
-// GetDevicePlatform gets the devicePlatform property value. Device platform trying to check-in.
+// GetDevicePlatform gets the devicePlatform property value. The devicePlatform property
 func (m *OfficeClientCheckinStatus) GetDevicePlatform()(*string) {
     val, err := m.GetBackingStore().Get("devicePlatform")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *OfficeClientCheckinStatus) GetDevicePlatform()(*string) {
     }
     return nil
 }
-// GetDevicePlatformVersion gets the devicePlatformVersion property value. Device platform version trying to check-in.
+// GetDevicePlatformVersion gets the devicePlatformVersion property value. The devicePlatformVersion property
 func (m *OfficeClientCheckinStatus) GetDevicePlatformVersion()(*string) {
     val, err := m.GetBackingStore().Get("devicePlatformVersion")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *OfficeClientCheckinStatus) GetDevicePlatformVersion()(*string) {
     }
     return nil
 }
-// GetErrorMessage gets the errorMessage property value. Error message if any associated for the last checkin.
+// GetErrorMessage gets the errorMessage property value. The errorMessage property
 func (m *OfficeClientCheckinStatus) GetErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("errorMessage")
     if err != nil {
@@ -225,7 +225,7 @@ func (m *OfficeClientCheckinStatus) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. User identifier using the device.
+// GetUserId gets the userId property value. The userId property
 func (m *OfficeClientCheckinStatus) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -236,7 +236,7 @@ func (m *OfficeClientCheckinStatus) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. User principal name using the device.
+// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *OfficeClientCheckinStatus) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -247,7 +247,7 @@ func (m *OfficeClientCheckinStatus) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetWasSuccessful gets the wasSuccessful property value. If the last checkin was successful.
+// GetWasSuccessful gets the wasSuccessful property value. The wasSuccessful property
 func (m *OfficeClientCheckinStatus) GetWasSuccessful()(*bool) {
     val, err := m.GetBackingStore().Get("wasSuccessful")
     if err != nil {
@@ -335,7 +335,7 @@ func (m *OfficeClientCheckinStatus) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppliedPolicies sets the appliedPolicies property value. List of policies delivered to the device as last checkin.
+// SetAppliedPolicies sets the appliedPolicies property value. The appliedPolicies property
 func (m *OfficeClientCheckinStatus) SetAppliedPolicies(value []string)() {
     err := m.GetBackingStore().Set("appliedPolicies", value)
     if err != nil {
@@ -346,35 +346,35 @@ func (m *OfficeClientCheckinStatus) SetAppliedPolicies(value []string)() {
 func (m *OfficeClientCheckinStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCheckinDateTime sets the checkinDateTime property value. Last device check-in time in UTC.
+// SetCheckinDateTime sets the checkinDateTime property value. The checkinDateTime property
 func (m *OfficeClientCheckinStatus) SetCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("checkinDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceName sets the deviceName property value. Device name trying to check-in.
+// SetDeviceName sets the deviceName property value. The deviceName property
 func (m *OfficeClientCheckinStatus) SetDeviceName(value *string)() {
     err := m.GetBackingStore().Set("deviceName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDevicePlatform sets the devicePlatform property value. Device platform trying to check-in.
+// SetDevicePlatform sets the devicePlatform property value. The devicePlatform property
 func (m *OfficeClientCheckinStatus) SetDevicePlatform(value *string)() {
     err := m.GetBackingStore().Set("devicePlatform", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDevicePlatformVersion sets the devicePlatformVersion property value. Device platform version trying to check-in.
+// SetDevicePlatformVersion sets the devicePlatformVersion property value. The devicePlatformVersion property
 func (m *OfficeClientCheckinStatus) SetDevicePlatformVersion(value *string)() {
     err := m.GetBackingStore().Set("devicePlatformVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetErrorMessage sets the errorMessage property value. Error message if any associated for the last checkin.
+// SetErrorMessage sets the errorMessage property value. The errorMessage property
 func (m *OfficeClientCheckinStatus) SetErrorMessage(value *string)() {
     err := m.GetBackingStore().Set("errorMessage", value)
     if err != nil {
@@ -388,21 +388,21 @@ func (m *OfficeClientCheckinStatus) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. User identifier using the device.
+// SetUserId sets the userId property value. The userId property
 func (m *OfficeClientCheckinStatus) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. User principal name using the device.
+// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *OfficeClientCheckinStatus) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWasSuccessful sets the wasSuccessful property value. If the last checkin was successful.
+// SetWasSuccessful sets the wasSuccessful property value. The wasSuccessful property
 func (m *OfficeClientCheckinStatus) SetWasSuccessful(value *bool)() {
     err := m.GetBackingStore().Set("wasSuccessful", value)
     if err != nil {

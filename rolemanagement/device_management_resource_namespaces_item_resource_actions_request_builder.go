@@ -11,7 +11,7 @@ import (
 type DeviceManagementResourceNamespacesItemResourceActionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceManagementResourceNamespacesItemResourceActionsRequestBuilderGetQueryParameters get a list of the unifiedRbacResourceAction objects and their properties.
+// DeviceManagementResourceNamespacesItemResourceActionsRequestBuilderGetQueryParameters operations that an authorized principal are allowed to perform.
 type DeviceManagementResourceNamespacesItemResourceActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewDeviceManagementResourceNamespacesItemResourceActionsRequestBuilder(rawU
 func (m *DeviceManagementResourceNamespacesItemResourceActionsRequestBuilder) Count()(*DeviceManagementResourceNamespacesItemResourceActionsCountRequestBuilder) {
     return NewDeviceManagementResourceNamespacesItemResourceActionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the unifiedRbacResourceAction objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+// Get operations that an authorized principal are allowed to perform.
 func (m *DeviceManagementResourceNamespacesItemResourceActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementResourceNamespacesItemResourceActionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *DeviceManagementResourceNamespacesItemResourceActionsRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable), nil
 }
-// ToGetRequestInformation get a list of the unifiedRbacResourceAction objects and their properties.
+// ToGetRequestInformation operations that an authorized principal are allowed to perform.
 func (m *DeviceManagementResourceNamespacesItemResourceActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementResourceNamespacesItemResourceActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

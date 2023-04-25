@@ -30,10 +30,7 @@ func NewItemSynchronizationJobsItemRestartRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemRestartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
+// Post invoke action restart
 func (m *ItemSynchronizationJobsItemRestartRequestBuilder) Post(ctx context.Context, body ItemSynchronizationJobsItemRestartPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemRestartRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemSynchronizationJobsItemRestartRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+// ToPostRequestInformation invoke action restart
 func (m *ItemSynchronizationJobsItemRestartRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemRestartPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemRestartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

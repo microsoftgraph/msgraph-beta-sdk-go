@@ -11,7 +11,7 @@ import (
 type ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderGetQueryParameters retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
+// ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderGetQueryParameters get threatAssessmentRequests from groups
 type ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder
 func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder) Count()(*ItemSitesItemInformationProtectionThreatAssessmentRequestsCountRequestBuilder) {
     return NewItemSitesItemInformationProtectionThreatAssessmentRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0
+// Get get threatAssessmentRequests from groups
 func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestCollectionResponseable), nil
 }
-// Post create a new threat assessment request. A threat assessment request can be one of the following types:
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0
+// Post create new navigation property to threatAssessmentRequests for groups
 func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestable, requestConfiguration *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestable), nil
 }
-// ToGetRequestInformation retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
+// ToGetRequestInformation get threatAssessmentRequests from groups
 func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new threat assessment request. A threat assessment request can be one of the following types:
+// ToPostRequestInformation create new navigation property to threatAssessmentRequests for groups
 func (m *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestable, requestConfiguration *ItemSitesItemInformationProtectionThreatAssessmentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

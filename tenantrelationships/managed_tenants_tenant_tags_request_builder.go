@@ -11,7 +11,7 @@ import (
 type ManagedTenantsTenantTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsTenantTagsRequestBuilderGetQueryParameters get a list of the tenantTag objects and their properties.
+// ManagedTenantsTenantTagsRequestBuilderGetQueryParameters the collection of tenant tags across managed tenants.
 type ManagedTenantsTenantTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewManagedTenantsTenantTagsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ManagedTenantsTenantTagsRequestBuilder) Count()(*ManagedTenantsTenantTagsCountRequestBuilder) {
     return NewManagedTenantsTenantTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tenantTag objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-1.0
+// Get the collection of tenant tags across managed tenants.
 func (m *ManagedTenantsTenantTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantTagsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ManagedTenantsTenantTagsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagCollectionResponseable), nil
 }
-// Post create a new tenantTag object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-1.0
+// Post create new navigation property to tenantTags for tenantRelationships
 func (m *ManagedTenantsTenantTagsRequestBuilder) Post(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, requestConfiguration *ManagedTenantsTenantTagsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ManagedTenantsTenantTagsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
 }
-// ToGetRequestInformation get a list of the tenantTag objects and their properties.
+// ToGetRequestInformation the collection of tenant tags across managed tenants.
 func (m *ManagedTenantsTenantTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ManagedTenantsTenantTagsRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new tenantTag object.
+// ToPostRequestInformation create new navigation property to tenantTags for tenantRelationships
 func (m *ManagedTenantsTenantTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, requestConfiguration *ManagedTenantsTenantTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

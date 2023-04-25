@@ -38,9 +38,6 @@ func NewOnlineMeetingsItemAlternativeRecordingRequestBuilder(rawUrl string, requ
     return NewOnlineMeetingsItemAlternativeRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

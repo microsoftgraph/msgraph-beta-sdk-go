@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookTablesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookTablesRequestBuilderGetQueryParameters retrieve a list of table objects.
+// ItemItemsItemWorkbookTablesRequestBuilderGetQueryParameters represents a collection of tables associated with the workbook. Read-only.
 type ItemItemsItemWorkbookTablesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func NewItemItemsItemWorkbookTablesRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Count()(*ItemItemsItemWorkbookTablesCountRequestBuilder) {
     return NewItemItemsItemWorkbookTablesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of table objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-list?view=graph-rest-1.0
+// Get represents a collection of tables associated with the workbook. Read-only.
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *ItemItemsItemWorkbookTablesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableable), nil
 }
-// ToGetRequestInformation retrieve a list of table objects.
+// ToGetRequestInformation represents a collection of tables associated with the workbook. Read-only.
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

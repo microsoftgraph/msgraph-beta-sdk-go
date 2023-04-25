@@ -30,10 +30,7 @@ func NewPolicyLabelsEvaluateApplicationRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyLabelsEvaluateApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
+// Post invoke action evaluateApplication
 func (m *PolicyLabelsEvaluateApplicationRequestBuilder) Post(ctx context.Context, body PolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateApplicationResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *PolicyLabelsEvaluateApplicationRequestBuilder) Post(ctx context.Context
     }
     return res.(PolicyLabelsEvaluateApplicationResponseable), nil
 }
-// ToPostRequestInformation compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
+// ToPostRequestInformation invoke action evaluateApplication
 func (m *PolicyLabelsEvaluateApplicationRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

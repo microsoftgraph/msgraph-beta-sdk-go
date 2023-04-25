@@ -30,10 +30,7 @@ func NewIndustryDataDataConnectorsItemIndustryDataValidateRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataDataConnectorsItemIndustryDataValidateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post perform validations applicable for the specific instance of the data connector.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
+// Post invoke action validate
 func (m *IndustryDataDataConnectorsItemIndustryDataValidateRequestBuilder) Post(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemIndustryDataValidateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *IndustryDataDataConnectorsItemIndustryDataValidateRequestBuilder) Post(
     }
     return nil
 }
-// ToPostRequestInformation perform validations applicable for the specific instance of the data connector.
+// ToPostRequestInformation invoke action validate
 func (m *IndustryDataDataConnectorsItemIndustryDataValidateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemIndustryDataValidateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

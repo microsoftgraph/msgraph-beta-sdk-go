@@ -18,7 +18,7 @@ type ItemSettingsItemInsightsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsItemInsightsRequestBuilderGetQueryParameters get the user-customizable privacy settings for itemInsights and meeting hours insights.
+// ItemSettingsItemInsightsRequestBuilderGetQueryParameters the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 type ItemSettingsItemInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemSettingsItemInsightsRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get the user-customizable privacy settings for itemInsights and meeting hours insights.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
+// Get the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 func (m *ItemSettingsItemInsightsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsItemInsightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemSettingsItemInsightsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable), nil
 }
-// Patch update the privacy settings for itemInsights and meeting hours insights of a user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
+// Patch update the navigation property itemInsights in users
 func (m *ItemSettingsItemInsightsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, requestConfiguration *ItemSettingsItemInsightsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemSettingsItemInsightsRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the user-customizable privacy settings for itemInsights and meeting hours insights.
+// ToGetRequestInformation the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 func (m *ItemSettingsItemInsightsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsItemInsightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ItemSettingsItemInsightsRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the privacy settings for itemInsights and meeting hours insights of a user.
+// ToPatchRequestInformation update the navigation property itemInsights in users
 func (m *ItemSettingsItemInsightsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, requestConfiguration *ItemSettingsItemInsightsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

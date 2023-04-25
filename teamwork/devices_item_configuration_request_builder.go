@@ -18,7 +18,7 @@ type DevicesItemConfigurationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesItemConfigurationRequestBuilderGetQueryParameters get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+// DevicesItemConfigurationRequestBuilderGetQueryParameters the configuration properties of the device.
 type DevicesItemConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *DevicesItemConfigurationRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdeviceconfiguration-get?view=graph-rest-1.0
+// Get the configuration properties of the device.
 func (m *DevicesItemConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesItemConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *DevicesItemConfigurationRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+// ToGetRequestInformation the configuration properties of the device.
 func (m *DevicesItemConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

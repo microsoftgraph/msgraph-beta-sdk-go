@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetQueryParameters get a list of the workflowVersion objects and their properties.
+// LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetQueryParameters the workflow versions that are available.
 type LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewLifecycleWorkflowsWorkflowsItemVersionsRequestBuilder(rawUrl string, req
 func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemVersionsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the workflowVersion objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
+// Get the workflow versions that are available.
 func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowVersionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) Get(ctx context.
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowVersionCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the workflowVersion objects and their properties.
+// ToGetRequestInformation the workflow versions that are available.
 func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

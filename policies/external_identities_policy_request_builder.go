@@ -18,7 +18,7 @@ type ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExternalIdentitiesPolicyRequestBuilderGetQueryParameters read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+// ExternalIdentitiesPolicyRequestBuilderGetQueryParameters represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 type ExternalIdentitiesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalidentitiespolicy-get?view=graph-rest-1.0
+// Get represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *ExternalIdentitiesPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable), nil
 }
-// Patch update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalidentitiespolicy-update?view=graph-rest-1.0
+// Patch update the navigation property externalIdentitiesPolicy in policies
 func (m *ExternalIdentitiesPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+// ToGetRequestInformation represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *ExternalIdentitiesPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+// ToPatchRequestInformation update the navigation property externalIdentitiesPolicy in policies
 func (m *ExternalIdentitiesPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

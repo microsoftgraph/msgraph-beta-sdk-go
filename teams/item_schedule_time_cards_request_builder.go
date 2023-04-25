@@ -11,7 +11,7 @@ import (
 type ItemScheduleTimeCardsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleTimeCardsRequestBuilderGetQueryParameters retrieve a list of timeCard entries in a schedule.
+// ItemScheduleTimeCardsRequestBuilderGetQueryParameters get timeCards from teams
 type ItemScheduleTimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func NewItemScheduleTimeCardsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ItemScheduleTimeCardsRequestBuilder) Count()(*ItemScheduleTimeCardsCountRequestBuilder) {
     return NewItemScheduleTimeCardsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of timeCard entries in a schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0
+// Get get timeCards from teams
 func (m *ItemScheduleTimeCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +97,7 @@ func (m *ItemScheduleTimeCardsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable), nil
 }
-// Post create a timeCard instance in a schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0
+// Post create new navigation property to timeCards for teams
 func (m *ItemScheduleTimeCardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemScheduleTimeCardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemScheduleTimeCardsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToGetRequestInformation retrieve a list of timeCard entries in a schedule.
+// ToGetRequestInformation get timeCards from teams
 func (m *ItemScheduleTimeCardsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimeCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *ItemScheduleTimeCardsRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a timeCard instance in a schedule.
+// ToPostRequestInformation create new navigation property to timeCards for teams
 func (m *ItemScheduleTimeCardsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *ItemScheduleTimeCardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type LearningProvidersItemLearningContentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LearningProvidersItemLearningContentsRequestBuilderGetQueryParameters get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
+// LearningProvidersItemLearningContentsRequestBuilderGetQueryParameters learning catalog items for the provider.
 type LearningProvidersItemLearningContentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewLearningProvidersItemLearningContentsRequestBuilder(rawUrl string, reque
 func (m *LearningProvidersItemLearningContentsRequestBuilder) Count()(*LearningProvidersItemLearningContentsCountRequestBuilder) {
     return NewLearningProvidersItemLearningContentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-list-learningcontents?view=graph-rest-1.0
+// Get learning catalog items for the provider.
 func (m *LearningProvidersItemLearningContentsRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *LearningProvidersItemLearningContentsRequestBuilder) Post(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable), nil
 }
-// ToGetRequestInformation get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
+// ToGetRequestInformation learning catalog items for the provider.
 func (m *LearningProvidersItemLearningContentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the remote connection history records of a Cloud PC during a given period.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
+// Post invoke action getRemoteConnectionHistoricalReports
 func (m *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetRemoteConnectionHistoricalReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilde
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation get the remote connection history records of a Cloud PC during a given period.
+// ToPostRequestInformation invoke action getRemoteConnectionHistoricalReports
 func (m *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetRemoteConnectionHistoricalReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

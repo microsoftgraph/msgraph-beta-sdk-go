@@ -11,7 +11,7 @@ import (
 type MeClassesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeClassesRequestBuilderGetQueryParameters retrieve a collection of educationClass resources.
+// MeClassesRequestBuilderGetQueryParameters classes to which the user belongs. Nullable.
 type MeClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewMeClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *MeClassesRequestBuilder) Count()(*MeClassesCountRequestBuilder) {
     return NewMeClassesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a collection of educationClass resources.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
+// Get classes to which the user belongs. Nullable.
 func (m *MeClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *MeClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *MeClassesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a collection of educationClass resources.
+// ToGetRequestInformation classes to which the user belongs. Nullable.
 func (m *MeClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

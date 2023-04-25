@@ -30,10 +30,7 @@ func NewSecurityActionsItemCancelSecurityActionRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancel a security operation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/securityaction-cancelsecurityaction?view=graph-rest-1.0
+// Post invoke action cancelSecurityAction
 func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) Post(ctx context.Context, requestConfiguration *SecurityActionsItemCancelSecurityActionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) Post(ctx context
     }
     return nil
 }
-// ToPostRequestInformation cancel a security operation.
+// ToPostRequestInformation invoke action cancelSecurityAction
 func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SecurityActionsItemCancelSecurityActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

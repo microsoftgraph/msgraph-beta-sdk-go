@@ -11,7 +11,7 @@ import (
 type ItemOutlookTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookTasksRequestBuilderGetQueryParameters get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks.
+// ItemOutlookTasksRequestBuilderGetQueryParameters get tasks from users
 type ItemOutlookTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,7 @@ func NewItemOutlookTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemOutlookTasksRequestBuilder) Count()(*ItemOutlookTasksCountRequestBuilder) {
     return NewItemOutlookTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
+// Get get tasks from users
 func (m *ItemOutlookTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemOutlookTasksRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskCollectionResponseable), nil
 }
-// Post create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-post-tasks?view=graph-rest-1.0
+// Post create new navigation property to tasks for users
 func (m *ItemOutlookTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, requestConfiguration *ItemOutlookTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -114,7 +108,7 @@ func (m *ItemOutlookTasksRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable), nil
 }
-// ToGetRequestInformation get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks.
+// ToGetRequestInformation get tasks from users
 func (m *ItemOutlookTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +124,7 @@ func (m *ItemOutlookTasksRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
+// ToPostRequestInformation create new navigation property to tasks for users
 func (m *ItemOutlookTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, requestConfiguration *ItemOutlookTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

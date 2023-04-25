@@ -140,6 +140,16 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["systemCredentialPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSystemCredentialPreferencesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemCredentialPreferences(val.(SystemCredentialPreferencesable))
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy.
@@ -194,6 +204,17 @@ func (m *AuthenticationMethodsPolicy) GetRegistrationEnforcement()(RegistrationE
     }
     if val != nil {
         return val.(RegistrationEnforcementable)
+    }
+    return nil
+}
+// GetSystemCredentialPreferences gets the systemCredentialPreferences property value. Prompt users with their most-preferred credential for multifactor authentication.
+func (m *AuthenticationMethodsPolicy) GetSystemCredentialPreferences()(SystemCredentialPreferencesable) {
+    val, err := m.GetBackingStore().Get("systemCredentialPreferences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SystemCredentialPreferencesable)
     }
     return nil
 }
@@ -256,6 +277,12 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("systemCredentialPreferences", m.GetSystemCredentialPreferences())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
@@ -314,6 +341,13 @@ func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value Registrat
         panic(err)
     }
 }
+// SetSystemCredentialPreferences sets the systemCredentialPreferences property value. Prompt users with their most-preferred credential for multifactor authentication.
+func (m *AuthenticationMethodsPolicy) SetSystemCredentialPreferences(value SystemCredentialPreferencesable)() {
+    err := m.GetBackingStore().Set("systemCredentialPreferences", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AuthenticationMethodsPolicyable 
 type AuthenticationMethodsPolicyable interface {
     Entityable
@@ -326,6 +360,7 @@ type AuthenticationMethodsPolicyable interface {
     GetPolicyVersion()(*string)
     GetReconfirmationInDays()(*int32)
     GetRegistrationEnforcement()(RegistrationEnforcementable)
+    GetSystemCredentialPreferences()(SystemCredentialPreferencesable)
     SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfigurationable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
@@ -334,4 +369,5 @@ type AuthenticationMethodsPolicyable interface {
     SetPolicyVersion(value *string)()
     SetReconfirmationInDays(value *int32)()
     SetRegistrationEnforcement(value RegistrationEnforcementable)()
+    SetSystemCredentialPreferences(value SystemCredentialPreferencesable)()
 }

@@ -11,7 +11,7 @@ import (
 type ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderGetQueryParameters get Outlook task folders in a specific outlookTaskGroup.
+// ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderGetQueryParameters the collection of task folders in the task group. Read-only. Nullable.
 type ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,7 @@ func NewItemOutlookTaskGroupsItemTaskFoldersRequestBuilder(rawUrl string, reques
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Count()(*ItemOutlookTaskGroupsItemTaskFoldersCountRequestBuilder) {
     return NewItemOutlookTaskGroupsItemTaskFoldersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get Outlook task folders in a specific outlookTaskGroup.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
+// Get the collection of task folders in the task group. Read-only. Nullable.
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable), nil
 }
-// Post create an Outlook task folder under a specified outlookTaskGroup.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0
+// Post create new navigation property to taskFolders for users
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -114,7 +108,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// ToGetRequestInformation get Outlook task folders in a specific outlookTaskGroup.
+// ToGetRequestInformation the collection of task folders in the task group. Read-only. Nullable.
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +124,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an Outlook task folder under a specified outlookTaskGroup.
+// ToPostRequestInformation create new navigation property to taskFolders for users
 func (m *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

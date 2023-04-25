@@ -11,7 +11,7 @@ import (
 type ItemMyDecisionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMyDecisionsRequestBuilderGetQueryParameters in the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
+// ItemMyDecisionsRequestBuilderGetQueryParameters the collection of decisions for the caller, if the caller is a reviewer.
 type ItemMyDecisionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemMyDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemMyDecisionsRequestBuilder) Count()(*ItemMyDecisionsCountRequestBuilder) {
     return NewItemMyDecisionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get in the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-1.0
+// Get the collection of decisions for the caller, if the caller is a reviewer.
 func (m *ItemMyDecisionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMyDecisionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemMyDecisionsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable), nil
 }
-// ToGetRequestInformation in the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
+// ToGetRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
 func (m *ItemMyDecisionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMyDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

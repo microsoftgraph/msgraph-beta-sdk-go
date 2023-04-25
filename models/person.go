@@ -8,7 +8,7 @@ import (
 type Person struct {
     Entity
 }
-// NewPerson instantiates a new person and sets the default values.
+// NewPerson instantiates a new Person and sets the default values.
 func NewPerson()(*Person) {
     m := &Person{
         Entity: *NewEntity(),

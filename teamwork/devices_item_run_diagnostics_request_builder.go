@@ -30,10 +30,7 @@ func NewDevicesItemRunDiagnosticsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesItemRunDiagnosticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdevice-rundiagnostics?view=graph-rest-1.0
+// Post invoke action runDiagnostics
 func (m *DevicesItemRunDiagnosticsRequestBuilder) Post(ctx context.Context, requestConfiguration *DevicesItemRunDiagnosticsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *DevicesItemRunDiagnosticsRequestBuilder) Post(ctx context.Context, requ
     }
     return nil
 }
-// ToPostRequestInformation run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
+// ToPostRequestInformation invoke action runDiagnostics
 func (m *DevicesItemRunDiagnosticsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DevicesItemRunDiagnosticsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

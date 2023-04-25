@@ -31,10 +31,7 @@ func NewItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
+// Post invoke action provisionEmail
 func (m *ItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable), nil
 }
-// ToPostRequestInformation provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.
+// ToPostRequestInformation invoke action provisionEmail
 func (m *ItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelProvisionEmailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

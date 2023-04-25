@@ -31,10 +31,7 @@ func NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post adds a new name to the collection of the given scope using the user's locale for the formula.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/nameditem-addformulalocal?view=graph-rest-1.0
+// Post invoke action addFormulaLocal
 func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookNamesAddFormulaLocalPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) Post(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable), nil
 }
-// ToPostRequestInformation adds a new name to the collection of the given scope using the user's locale for the formula.
+// ToPostRequestInformation invoke action addFormulaLocal
 func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookNamesAddFormulaLocalPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

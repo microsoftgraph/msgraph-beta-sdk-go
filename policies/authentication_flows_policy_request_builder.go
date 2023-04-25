@@ -18,7 +18,7 @@ type AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationFlowsPolicyRequestBuilderGetQueryParameters read the properties and relationships of an authenticationFlowsPolicy object.
+// AuthenticationFlowsPolicyRequestBuilderGetQueryParameters the policy configuration of the self-service sign-up experience of external users.
 type AuthenticationFlowsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get read the properties and relationships of an authenticationFlowsPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationflowspolicy-get?view=graph-rest-1.0
+// Get the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationFlowsPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationFlowsPolicyable), nil
 }
-// Patch update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationflowspolicy-update?view=graph-rest-1.0
+// Patch update the navigation property authenticationFlowsPolicy in policies
 func (m *AuthenticationFlowsPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationFlowsPolicyable, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationFlowsPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an authenticationFlowsPolicy object.
+// ToGetRequestInformation the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
+// ToPatchRequestInformation update the navigation property authenticationFlowsPolicy in policies
 func (m *AuthenticationFlowsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationFlowsPolicyable, requestConfiguration *AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetQueryParameters retrieve a Teams app icon associated with a specific definition of an app.
+// TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetQueryParameters the color version of the Teams app's icon.
 type TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get retrieve a Teams app icon associated with a specific definition of an app.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamsappicon-get?view=graph-rest-1.0
+// Get the color version of the Teams app's icon.
 func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +124,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) ToDeleteRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a Teams app icon associated with a specific definition of an app.
+// ToGetRequestInformation the color version of the Teams app's icon.
 func (m *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewInformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewInformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateremoval?view=graph-rest-1.0
+// Post invoke action evaluateRemoval
 func (m *InformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilder) Post(ctx context.Context, body InformationProtectionSensitivityLabelsSecurityEvaluateRemovalEvaluateRemovalPostRequestBodyable, requestConfiguration *InformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilderPostRequestConfiguration)(InformationProtectionSensitivityLabelsSecurityEvaluateRemovalEvaluateRemovalResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *InformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBui
     }
     return res.(InformationProtectionSensitivityLabelsSecurityEvaluateRemovalEvaluateRemovalResponseable), nil
 }
-// ToPostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: 
+// ToPostRequestInformation invoke action evaluateRemoval
 func (m *InformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilder) ToPostRequestInformation(ctx context.Context, body InformationProtectionSensitivityLabelsSecurityEvaluateRemovalEvaluateRemovalPostRequestBodyable, requestConfiguration *InformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

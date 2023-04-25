@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetQueryParameters get a list of the deleted workflow objects and their properties.
+// LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetQueryParameters deleted workflows that end up in the deletedItemsContainer.
 type LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder(rawUrl string, req
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Count()(*LifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the deleted workflow objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0
+// Get deleted workflows that end up in the deletedItemsContainer.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Get(ctx context.
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the deleted workflow objects and their properties.
+// ToGetRequestInformation deleted workflows that end up in the deletedItemsContainer.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

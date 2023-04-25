@@ -18,7 +18,7 @@ type SharepointSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SharepointSettingsRequestBuilderGetQueryParameters get the tenant-level settings for SharePoint and OneDrive.
+// SharepointSettingsRequestBuilderGetQueryParameters get settings from admin
 type SharepointSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *SharepointSettingsRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get the tenant-level settings for SharePoint and OneDrive.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tenantadmin-settings-get?view=graph-rest-1.0
+// Get get settings from admin
 func (m *SharepointSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharepointSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *SharepointSettingsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharepointSettingsable), nil
 }
-// Patch update one or more tenant-level settings for SharePoint and OneDrive.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tenantadmin-settings-update?view=graph-rest-1.0
+// Patch update the navigation property settings in admin
 func (m *SharepointSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharepointSettingsable, requestConfiguration *SharepointSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharepointSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *SharepointSettingsRequestBuilder) ToDeleteRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the tenant-level settings for SharePoint and OneDrive.
+// ToGetRequestInformation get settings from admin
 func (m *SharepointSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *SharepointSettingsRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update one or more tenant-level settings for SharePoint and OneDrive.
+// ToPatchRequestInformation update the navigation property settings in admin
 func (m *SharepointSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharepointSettingsable, requestConfiguration *SharepointSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

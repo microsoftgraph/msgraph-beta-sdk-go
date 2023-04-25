@@ -11,7 +11,7 @@ import (
 type ItemOnlineMeetingsItemTranscriptsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnlineMeetingsItemTranscriptsRequestBuilderGetQueryParameters retrieve the list of callTranscript objects associated with an onlineMeeting.
+// ItemOnlineMeetingsItemTranscriptsRequestBuilderGetQueryParameters the transcripts of an online meeting. Read-only.
 type ItemOnlineMeetingsItemTranscriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemOnlineMeetingsItemTranscriptsRequestBuilder(rawUrl string, requestAd
 func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Count()(*ItemOnlineMeetingsItemTranscriptsCountRequestBuilder) {
     return NewItemOnlineMeetingsItemTranscriptsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of callTranscript objects associated with an onlineMeeting.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+// Get the transcripts of an online meeting. Read-only.
 func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemTranscriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable), nil
 }
-// ToGetRequestInformation retrieve the list of callTranscript objects associated with an onlineMeeting.
+// ToGetRequestInformation the transcripts of an online meeting. Read-only.
 func (m *ItemOnlineMeetingsItemTranscriptsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemTranscriptsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

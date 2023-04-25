@@ -8,7 +8,7 @@ import (
 type Authentication struct {
     Entity
 }
-// NewAuthentication instantiates a new authentication and sets the default values.
+// NewAuthentication instantiates a new Authentication and sets the default values.
 func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
@@ -156,6 +156,16 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["signInPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSignInPreferencesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInPreferences(val.(SignInPreferencesable))
+        }
+        return nil
+    }
     res["softwareOathMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -263,6 +273,17 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     }
     if val != nil {
         return val.([]PhoneAuthenticationMethodable)
+    }
+    return nil
+}
+// GetSignInPreferences gets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
+func (m *Authentication) GetSignInPreferences()(SignInPreferencesable) {
+    val, err := m.GetBackingStore().Get("signInPreferences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInPreferencesable)
     }
     return nil
 }
@@ -385,6 +406,12 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("signInPreferences", m.GetSignInPreferences())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSoftwareOathMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSoftwareOathMethods()))
         for i, v := range m.GetSoftwareOathMethods() {
@@ -473,6 +500,13 @@ func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)(
         panic(err)
     }
 }
+// SetSignInPreferences sets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
+func (m *Authentication) SetSignInPreferences(value SignInPreferencesable)() {
+    err := m.GetBackingStore().Set("signInPreferences", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSoftwareOathMethods sets the softwareOathMethods property value. The softwareOathMethods property
 func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("softwareOathMethods", value)
@@ -506,6 +540,7 @@ type Authenticationable interface {
     GetPasswordlessMicrosoftAuthenticatorMethods()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)
     GetPasswordMethods()([]PasswordAuthenticationMethodable)
     GetPhoneMethods()([]PhoneAuthenticationMethodable)
+    GetSignInPreferences()(SignInPreferencesable)
     GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable)
     GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
     GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable)
@@ -517,6 +552,7 @@ type Authenticationable interface {
     SetPasswordlessMicrosoftAuthenticatorMethods(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)()
     SetPasswordMethods(value []PasswordAuthenticationMethodable)()
     SetPhoneMethods(value []PhoneAuthenticationMethodable)()
+    SetSignInPreferences(value SignInPreferencesable)()
     SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)()
     SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)()
     SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethodable)()

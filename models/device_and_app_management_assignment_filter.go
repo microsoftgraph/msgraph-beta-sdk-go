@@ -38,7 +38,7 @@ func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNod
     }
     return NewDeviceAndAppManagementAssignmentFilter(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Creation time of the Assignment Filter.
+// GetCreatedDateTime gets the createdDateTime property value. The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
 func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i33607480
     }
     return nil
 }
-// GetDescription gets the description property value. Description of the Assignment Filter.
+// GetDescription gets the description property value. Optional description of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. DisplayName of the Assignment Filter.
+// GetDisplayName gets the displayName property value. The name of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -164,7 +164,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
 func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -175,7 +175,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336
     }
     return nil
 }
-// GetPayloads gets the payloads property value. Associated assignments for a specific filter
+// GetPayloads gets the payloads property value. Indicates associated assignments for a specific filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetPayloads()([]PayloadByFilterable) {
     val, err := m.GetBackingStore().Get("payloads")
     if err != nil {
@@ -197,7 +197,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformTy
     }
     return nil
 }
-// GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
+// GetRoleScopeTags gets the roleScopeTags property value. Indicates role scope tags assigned for the assignment filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
     if err != nil {
@@ -208,7 +208,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
     }
     return nil
 }
-// GetRule gets the rule property value. Rule definition of the Assignment Filter.
+// GetRule gets the rule property value. Rule definition of the assignment filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetRule()(*string) {
     val, err := m.GetBackingStore().Get("rule")
     if err != nil {
@@ -280,35 +280,35 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. Creation time of the Assignment Filter.
+// SetCreatedDateTime sets the createdDateTime property value. The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
 func (m *DeviceAndAppManagementAssignmentFilter) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Description of the Assignment Filter.
+// SetDescription sets the description property value. Optional description of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. DisplayName of the Assignment Filter.
+// SetDisplayName sets the displayName property value. The name of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
 func (m *DeviceAndAppManagementAssignmentFilter) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPayloads sets the payloads property value. Associated assignments for a specific filter
+// SetPayloads sets the payloads property value. Indicates associated assignments for a specific filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetPayloads(value []PayloadByFilterable)() {
     err := m.GetBackingStore().Set("payloads", value)
     if err != nil {
@@ -322,14 +322,14 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetPlatform(value *DevicePlatfo
         panic(err)
     }
 }
-// SetRoleScopeTags sets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
+// SetRoleScopeTags sets the roleScopeTags property value. Indicates role scope tags assigned for the assignment filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetRoleScopeTags(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTags", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRule sets the rule property value. Rule definition of the Assignment Filter.
+// SetRule sets the rule property value. Rule definition of the assignment filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetRule(value *string)() {
     err := m.GetBackingStore().Set("rule", value)
     if err != nil {

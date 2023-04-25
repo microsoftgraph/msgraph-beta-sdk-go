@@ -11,7 +11,7 @@ import (
 type TermsOfUseAgreementsItemAcceptancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermsOfUseAgreementsItemAcceptancesRequestBuilderGetQueryParameters get the details about the acceptance records for a specific agreement.
+// TermsOfUseAgreementsItemAcceptancesRequestBuilderGetQueryParameters read-only. Information about acceptances of this agreement.
 type TermsOfUseAgreementsItemAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewTermsOfUseAgreementsItemAcceptancesRequestBuilder(rawUrl string, request
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Count()(*TermsOfUseAgreementsItemAcceptancesCountRequestBuilder) {
     return NewTermsOfUseAgreementsItemAcceptancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the details about the acceptance records for a specific agreement.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
+// Get read-only. Information about acceptances of this agreement.
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable), nil
 }
-// ToGetRequestInformation get the details about the acceptance records for a specific agreement.
+// ToGetRequestInformation read-only. Information about acceptances of this agreement.
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

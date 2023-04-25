@@ -11,7 +11,7 @@ import (
 type ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a post.
+// ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 type ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,10 +76,7 @@ func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Count()(*It
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemThreadsItemPostsItemInReplyToAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of attachment objects attached to a post.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+// Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -117,7 +114,7 @@ func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) Post(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects attached to a post.
+// ToGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 func (m *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

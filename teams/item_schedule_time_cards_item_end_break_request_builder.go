@@ -31,10 +31,7 @@ func NewItemScheduleTimeCardsItemEndBreakRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemScheduleTimeCardsItemEndBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post end the open break in a specific timeCard.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-endbreak?view=graph-rest-1.0
+// Post invoke action endBreak
 func (m *ItemScheduleTimeCardsItemEndBreakRequestBuilder) Post(ctx context.Context, body ItemScheduleTimeCardsItemEndBreakPostRequestBodyable, requestConfiguration *ItemScheduleTimeCardsItemEndBreakRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemScheduleTimeCardsItemEndBreakRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToPostRequestInformation end the open break in a specific timeCard.
+// ToPostRequestInformation invoke action endBreak
 func (m *ItemScheduleTimeCardsItemEndBreakRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemScheduleTimeCardsItemEndBreakPostRequestBodyable, requestConfiguration *ItemScheduleTimeCardsItemEndBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

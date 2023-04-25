@@ -11,7 +11,7 @@ import (
 type ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderGetQueryParameters get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
+// ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderGetQueryParameters the set of vertical columns in this section.
 type ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder(raw
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder) Count()(*ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsCountRequestBuilder) {
     return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/horizontalsectioncolumn-list?view=graph-rest-1.0
+// Get the set of vertical columns in this section.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionColumnCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder) P
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionColumnable), nil
 }
-// ToGetRequestInformation get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
+// ToGetRequestInformation the set of vertical columns in this section.
 func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ClassesItemMembersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemMembersRefRequestBuilderGetQueryParameters retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+// ClassesItemMembersRefRequestBuilderGetQueryParameters all users in the class. Nullable.
 type ClassesItemMembersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewClassesItemMembersRefRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemMembersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
+// Get all users in the class. Nullable.
 func (m *ClassesItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *ClassesItemMembersRefRequestBuilder) Post(ctx context.Context, body ie2
     }
     return nil
 }
-// ToGetRequestInformation retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+// ToGetRequestInformation all users in the class. Nullable.
 func (m *ClassesItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

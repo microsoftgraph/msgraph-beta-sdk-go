@@ -30,10 +30,7 @@ func NewTiIndicatorsDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-1.0
+// Post invoke action deleteTiIndicators
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsDeleteTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context,
     }
     return res.(TiIndicatorsDeleteTiIndicatorsResponseable), nil
 }
-// ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// ToPostRequestInformation invoke action deleteTiIndicators
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

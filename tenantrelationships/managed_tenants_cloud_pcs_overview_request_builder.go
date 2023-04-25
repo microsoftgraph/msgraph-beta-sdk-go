@@ -11,7 +11,7 @@ import (
 type ManagedTenantsCloudPcsOverviewRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsCloudPcsOverviewRequestBuilderGetQueryParameters get a list of the cloudPcOverview objects and their properties.
+// ManagedTenantsCloudPcsOverviewRequestBuilderGetQueryParameters overview of cloud PC information across managed tenants.
 type ManagedTenantsCloudPcsOverviewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewManagedTenantsCloudPcsOverviewRequestBuilder(rawUrl string, requestAdapt
 func (m *ManagedTenantsCloudPcsOverviewRequestBuilder) Count()(*ManagedTenantsCloudPcsOverviewCountRequestBuilder) {
     return NewManagedTenantsCloudPcsOverviewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the cloudPcOverview objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-1.0
+// Get overview of cloud PC information across managed tenants.
 func (m *ManagedTenantsCloudPcsOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcsOverviewRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcOverviewCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ManagedTenantsCloudPcsOverviewRequestBuilder) Post(ctx context.Context,
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcOverviewable), nil
 }
-// ToGetRequestInformation get a list of the cloudPcOverview objects and their properties.
+// ToGetRequestInformation overview of cloud PC information across managed tenants.
 func (m *ManagedTenantsCloudPcsOverviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcsOverviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ThreatSubmissionUrlThreatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatSubmissionUrlThreatsRequestBuilderGetQueryParameters get a list of the urlThreatSubmission objects and their properties.
+// ThreatSubmissionUrlThreatsRequestBuilderGetQueryParameters get urlThreats from security
 type ThreatSubmissionUrlThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewThreatSubmissionUrlThreatsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ThreatSubmissionUrlThreatsRequestBuilder) Count()(*ThreatSubmissionUrlThreatsCountRequestBuilder) {
     return NewThreatSubmissionUrlThreatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the urlThreatSubmission objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-list?view=graph-rest-1.0
+// Get get urlThreats from security
 func (m *ThreatSubmissionUrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatSubmissionUrlThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ThreatSubmissionUrlThreatsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable), nil
 }
-// Post create a new urlThreatSubmission object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-post-urlthreats?view=graph-rest-1.0
+// Post create new navigation property to urlThreats for security
 func (m *ThreatSubmissionUrlThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *ThreatSubmissionUrlThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ThreatSubmissionUrlThreatsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable), nil
 }
-// ToGetRequestInformation get a list of the urlThreatSubmission objects and their properties.
+// ToGetRequestInformation get urlThreats from security
 func (m *ThreatSubmissionUrlThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionUrlThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ThreatSubmissionUrlThreatsRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new urlThreatSubmission object.
+// ToPostRequestInformation create new navigation property to urlThreats for security
 func (m *ThreatSubmissionUrlThreatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *ThreatSubmissionUrlThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

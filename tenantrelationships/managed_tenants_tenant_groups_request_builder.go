@@ -11,7 +11,7 @@ import (
 type ManagedTenantsTenantGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsTenantGroupsRequestBuilderGetQueryParameters get a list of the tenantGroup objects and their properties.
+// ManagedTenantsTenantGroupsRequestBuilderGetQueryParameters the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 type ManagedTenantsTenantGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewManagedTenantsTenantGroupsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ManagedTenantsTenantGroupsRequestBuilder) Count()(*ManagedTenantsTenantGroupsCountRequestBuilder) {
     return NewManagedTenantsTenantGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tenantGroup objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
+// Get the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *ManagedTenantsTenantGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable), nil
 }
-// ToGetRequestInformation get a list of the tenantGroup objects and their properties.
+// ToGetRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *ManagedTenantsTenantGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,10 +31,7 @@ func NewPolicyLabelsExtractLabelRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyLabelsExtractLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-1.0
+// Post invoke action extractLabel
 func (m *PolicyLabelsExtractLabelRequestBuilder) Post(ctx context.Context, body PolicyLabelsExtractLabelPostRequestBodyable, requestConfiguration *PolicyLabelsExtractLabelRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *PolicyLabelsExtractLabelRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable), nil
 }
-// ToPostRequestInformation using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
+// ToPostRequestInformation invoke action extractLabel
 func (m *PolicyLabelsExtractLabelRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicyLabelsExtractLabelPostRequestBodyable, requestConfiguration *PolicyLabelsExtractLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

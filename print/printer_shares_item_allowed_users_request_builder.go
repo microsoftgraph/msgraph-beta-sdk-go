@@ -11,7 +11,7 @@ import (
 type PrinterSharesItemAllowedUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+// PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters the users who have access to print using the printer.
 type PrinterSharesItemAllowedUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewPrinterSharesItemAllowedUsersRequestBuilder(rawUrl string, requestAdapte
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Count()(*PrinterSharesItemAllowedUsersCountRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+// Get the users who have access to print using the printer.
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *PrinterSharesItemAllowedUsersRequestBuilder) Get(ctx context.Context, r
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) Ref()(*PrinterSharesItemAllowedUsersRefRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+// ToGetRequestInformation the users who have access to print using the printer.
 func (m *PrinterSharesItemAllowedUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

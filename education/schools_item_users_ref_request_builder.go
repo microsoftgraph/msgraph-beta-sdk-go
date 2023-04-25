@@ -11,7 +11,7 @@ import (
 type SchoolsItemUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemUsersRefRequestBuilderGetQueryParameters retrieve a list of users at a school.
+// SchoolsItemUsersRefRequestBuilderGetQueryParameters users in the school. Nullable.
 type SchoolsItemUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewSchoolsItemUsersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of users at a school.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
+// Get users in the school. Nullable.
 func (m *SchoolsItemUsersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) Post(ctx context.Context, body ie233
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list of users at a school.
+// ToGetRequestInformation users in the school. Nullable.
 func (m *SchoolsItemUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

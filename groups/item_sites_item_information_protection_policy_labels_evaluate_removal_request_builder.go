@@ -30,10 +30,7 @@ func NewItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
+// Post invoke action evaluateRemoval
 func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, body ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBui
     }
     return res.(ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalResponseable), nil
 }
-// ToPostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
+// ToPostRequestInformation invoke action evaluateRemoval
 func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,10 +31,7 @@ func NewItemMakeEligibleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemMakeEligibleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post make the role assignment eligible. If the role assignment is already eligible before the call, it does nothing. If the role assignment is permanent and the requestor is different from the target user, the role assignment will become eligible and the role will be deactivated for the target user. If the requestor is the target user and the role is Security Administrator or Privileged Role Administrator, the role will be activated with the default expiration.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedroleassignment-makeeligible?view=graph-rest-1.0
+// Post invoke action makeEligible
 func (m *ItemMakeEligibleRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemMakeEligibleRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemMakeEligibleRequestBuilder) Post(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// ToPostRequestInformation make the role assignment eligible. If the role assignment is already eligible before the call, it does nothing. If the role assignment is permanent and the requestor is different from the target user, the role assignment will become eligible and the role will be deactivated for the target user. If the requestor is the target user and the role is Security Administrator or Privileged Role Administrator, the role will be activated with the default expiration.
+// ToPostRequestInformation invoke action makeEligible
 func (m *ItemMakeEligibleRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemMakeEligibleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

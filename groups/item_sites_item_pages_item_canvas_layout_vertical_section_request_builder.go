@@ -18,7 +18,7 @@ type ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters read the properties and relationships of a verticalSection object.
+// ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters vertical section on the SharePoint page.
 type ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Delete
     }
     return nil
 }
-// Get read the properties and relationships of a verticalSection object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/verticalsection-get?view=graph-rest-1.0
+// Get vertical section on the SharePoint page.
 func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a verticalSection object.
+// ToGetRequestInformation vertical section on the SharePoint page.
 func (m *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutVerticalSectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

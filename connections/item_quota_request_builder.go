@@ -18,7 +18,7 @@ type ItemQuotaRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemQuotaRequestBuilderGetQueryParameters retrieve the properties and relationships of a connectionQuota object.
+// ItemQuotaRequestBuilderGetQueryParameters get quota from connections
 type ItemQuotaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemQuotaRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
-// Get retrieve the properties and relationships of a connectionQuota object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
+// Get get quota from connections
 func (m *ItemQuotaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemQuotaRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *ItemQuotaRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a connectionQuota object.
+// ToGetRequestInformation get quota from connections
 func (m *ItemQuotaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemQuotaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

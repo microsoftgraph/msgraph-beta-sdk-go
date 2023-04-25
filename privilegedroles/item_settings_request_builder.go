@@ -18,7 +18,7 @@ type ItemSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsRequestBuilderGetQueryParameters retrieve the role settings for the given role. A privilegedRoleSettings object will be returned.
+// ItemSettingsRequestBuilderGetQueryParameters the settings for this role. Read-only. Nullable.
 type ItemSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemSettingsRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get retrieve the role settings for the given role. A privilegedRoleSettings object will be returned.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrolesettings-get?view=graph-rest-1.0
+// Get the settings for this role. Read-only. Nullable.
 func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleSettingsable), nil
 }
-// Patch update the role settings for the given role setting. A privilegedRoleSettings object will be returned.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrolesettings-update?view=graph-rest-1.0
+// Patch update the navigation property settings in privilegedRoles
 func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleSettingsable, requestConfiguration *ItemSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the role settings for the given role. A privilegedRoleSettings object will be returned.
+// ToGetRequestInformation the settings for this role. Read-only. Nullable.
 func (m *ItemSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ItemSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the role settings for the given role setting. A privilegedRoleSettings object will be returned.
+// ToPatchRequestInformation update the navigation property settings in privilegedRoles
 func (m *ItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleSettingsable, requestConfiguration *ItemSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

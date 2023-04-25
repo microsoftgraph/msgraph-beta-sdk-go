@@ -11,7 +11,7 @@ import (
 type CallsItemParticipantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemParticipantsRequestBuilderGetQueryParameters retrieve a list of participant objects in the call.
+// CallsItemParticipantsRequestBuilderGetQueryParameters get participants from app
 type CallsItemParticipantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewCallsItemParticipantsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *CallsItemParticipantsRequestBuilder) Count()(*CallsItemParticipantsCountRequestBuilder) {
     return NewCallsItemParticipantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of participant objects in the call.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
+// Get get participants from app
 func (m *CallsItemParticipantsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemParticipantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParticipantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *CallsItemParticipantsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Participantable), nil
 }
-// ToGetRequestInformation retrieve a list of participant objects in the call.
+// ToGetRequestInformation get participants from app
 func (m *CallsItemParticipantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemParticipantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

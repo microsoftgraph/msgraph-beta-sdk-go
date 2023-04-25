@@ -23,7 +23,7 @@ func NewCustomTaskExtension()(*CustomTaskExtension) {
 func CreateCustomTaskExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTaskExtension(), nil
 }
-// GetCallbackConfiguration gets the callbackConfiguration property value. The callback configuration for a custom extension.
+// GetCallbackConfiguration gets the callbackConfiguration property value. The callback configuration for a custom task extension.
 func (m *CustomTaskExtension) GetCallbackConfiguration()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionCallbackConfigurationable) {
     val, err := m.GetBackingStore().Get("callbackConfiguration")
     if err != nil {
@@ -171,7 +171,7 @@ func (m *CustomTaskExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCallbackConfiguration sets the callbackConfiguration property value. The callback configuration for a custom extension.
+// SetCallbackConfiguration sets the callbackConfiguration property value. The callback configuration for a custom task extension.
 func (m *CustomTaskExtension) SetCallbackConfiguration(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionCallbackConfigurationable)() {
     err := m.GetBackingStore().Set("callbackConfiguration", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetQueryParameters list the updatableAsset resources that are excluded from a deploymentAudience.
+// WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
 type WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewWindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder(rawUrl str
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Count()(*WindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the updatableAsset resources that are excluded from a deploymentAudience.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-1.0
+// Get specifies the assets to exclude from the audience.
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) Post(ctx
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToGetRequestInformation list the updatableAsset resources that are excluded from a deploymentAudience.
+// ToGetRequestInformation specifies the assets to exclude from the audience.
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

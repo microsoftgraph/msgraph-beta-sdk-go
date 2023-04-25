@@ -11,7 +11,7 @@ import (
 type VirtualEndpointServicePlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointServicePlansRequestBuilderGetQueryParameters list the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
+// VirtualEndpointServicePlansRequestBuilderGetQueryParameters cloud PC service plans.
 type VirtualEndpointServicePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewVirtualEndpointServicePlansRequestBuilder(rawUrl string, requestAdapter 
 func (m *VirtualEndpointServicePlansRequestBuilder) Count()(*VirtualEndpointServicePlansCountRequestBuilder) {
     return NewVirtualEndpointServicePlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
+// Get cloud PC service plans.
 func (m *VirtualEndpointServicePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointServicePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcServicePlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *VirtualEndpointServicePlansRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcServicePlanable), nil
 }
-// ToGetRequestInformation list the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
+// ToGetRequestInformation cloud PC service plans.
 func (m *VirtualEndpointServicePlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointServicePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

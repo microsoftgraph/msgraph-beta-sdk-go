@@ -30,7 +30,7 @@ func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]Auth
     }
     return nil
 }
-// GetAuthenticationStrength gets the authenticationStrength property value. The authenticationStrength property
+// GetAuthenticationStrength gets the authenticationStrength property value. Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
 func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStrengthRootable) {
     val, err := m.GetBackingStore().Get("authenticationStrength")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStreng
     }
     return nil
 }
-// GetAuthenticationStrengths gets the authenticationStrengths property value. Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
+// GetAuthenticationStrengths gets the authenticationStrengths property value. The authenticationStrengths property
 func (m *ConditionalAccessRoot) GetAuthenticationStrengths()(AuthenticationStrengthRootable) {
     val, err := m.GetBackingStore().Get("authenticationStrengths")
     if err != nil {
@@ -233,14 +233,14 @@ func (m *ConditionalAccessRoot) SetAuthenticationContextClassReferences(value []
         panic(err)
     }
 }
-// SetAuthenticationStrength sets the authenticationStrength property value. The authenticationStrength property
+// SetAuthenticationStrength sets the authenticationStrength property value. Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
 func (m *ConditionalAccessRoot) SetAuthenticationStrength(value AuthenticationStrengthRootable)() {
     err := m.GetBackingStore().Set("authenticationStrength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationStrengths sets the authenticationStrengths property value. Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
+// SetAuthenticationStrengths sets the authenticationStrengths property value. The authenticationStrengths property
 func (m *ConditionalAccessRoot) SetAuthenticationStrengths(value AuthenticationStrengthRootable)() {
     err := m.GetBackingStore().Set("authenticationStrengths", value)
     if err != nil {

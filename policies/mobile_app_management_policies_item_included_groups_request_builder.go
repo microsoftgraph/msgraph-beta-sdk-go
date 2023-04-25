@@ -11,7 +11,7 @@ import (
 type MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetQueryParameters get the list of groups that are included in a mobile app management policy.
+// MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetQueryParameters azure AD groups under the scope of the mobility management application if appliesTo is selected
 type MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewMobileAppManagementPoliciesItemIncludedGroupsRequestBuilder(rawUrl strin
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Count()(*MobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of groups that are included in a mobile app management policy.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
+// Get azure AD groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Get(ctx co
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) Ref()(*MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
+// ToGetRequestInformation azure AD groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

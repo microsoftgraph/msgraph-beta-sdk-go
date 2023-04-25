@@ -31,10 +31,7 @@ func NewInformationProtectionSensitivityLabelsSecurityExtractContentLabelRequest
     urlParams["request-raw-url"] = rawUrl
     return NewInformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-1.0
+// Post invoke action extractContentLabel
 func (m *InformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilder) Post(ctx context.Context, body InformationProtectionSensitivityLabelsSecurityExtractContentLabelExtractContentLabelPostRequestBodyable, requestConfiguration *InformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *InformationProtectionSensitivityLabelsSecurityExtractContentLabelReques
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable), nil
 }
-// ToPostRequestInformation use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
+// ToPostRequestInformation invoke action extractContentLabel
 func (m *InformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilder) ToPostRequestInformation(ctx context.Context, body InformationProtectionSensitivityLabelsSecurityExtractContentLabelExtractContentLabelPostRequestBodyable, requestConfiguration *InformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

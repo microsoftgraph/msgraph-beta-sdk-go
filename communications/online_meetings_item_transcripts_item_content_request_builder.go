@@ -39,9 +39,6 @@ func NewOnlineMeetingsItemTranscriptsItemContentRequestBuilder(rawUrl string, re
     return NewOnlineMeetingsItemTranscriptsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a field that represents the content of the transcript. Read-only.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

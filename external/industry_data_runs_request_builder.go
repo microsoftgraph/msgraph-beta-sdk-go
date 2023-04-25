@@ -11,7 +11,7 @@ import (
 type IndustryDataRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRunsRequestBuilderGetQueryParameters get a list of the industryDataRun objects and their properties.
+// IndustryDataRunsRequestBuilderGetQueryParameters set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 type IndustryDataRunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewIndustryDataRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *IndustryDataRunsRequestBuilder) Count()(*IndustryDataRunsCountRequestBuilder) {
     return NewIndustryDataRunsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the industryDataRun objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
+// Get set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 func (m *IndustryDataRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRunsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *IndustryDataRunsRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *IndustryDataRunsRequestBuilder) IndustryDataGetStatistics()(*IndustryDataRunsIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get a list of the industryDataRun objects and their properties.
+// ToGetRequestInformation set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 func (m *IndustryDataRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

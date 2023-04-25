@@ -11,7 +11,7 @@ import (
 type ItemTeamPrimaryChannelTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamPrimaryChannelTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
+// ItemTeamPrimaryChannelTabsRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
 type ItemTeamPrimaryChannelTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemTeamPrimaryChannelTabsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Count()(*ItemTeamPrimaryChannelTabsCountRequestBuilder) {
     return NewItemTeamPrimaryChannelTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified channel within a team. 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+// Get a collection of all the tabs in the channel. A navigation property.
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemTeamPrimaryChannelTabsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
+// ToGetRequestInformation a collection of all the tabs in the channel. A navigation property.
 func (m *ItemTeamPrimaryChannelTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

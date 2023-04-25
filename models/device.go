@@ -886,7 +886,7 @@ func (m *Device) GetProfileType()(*string) {
     }
     return nil
 }
-// GetRegisteredOwners gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+// GetRegisteredOwners gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *Device) GetRegisteredOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("registeredOwners")
     if err != nil {
@@ -1517,7 +1517,7 @@ func (m *Device) SetProfileType(value *string)() {
         panic(err)
     }
 }
-// SetRegisteredOwners sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+// SetRegisteredOwners sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *Device) SetRegisteredOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("registeredOwners", value)
     if err != nil {

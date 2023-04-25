@@ -38,7 +38,7 @@ func (m *OfficeConfiguration) GetAdditionalData()(map[string]any) {
 func (m *OfficeConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientConfigurations gets the clientConfigurations property value. List of office Client configuration.
+// GetClientConfigurations gets the clientConfigurations property value. The clientConfigurations property
 func (m *OfficeConfiguration) GetClientConfigurations()([]OfficeClientConfigurationable) {
     val, err := m.GetBackingStore().Get("clientConfigurations")
     if err != nil {
@@ -113,7 +113,7 @@ func (m *OfficeConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantCheckinStatuses gets the tenantCheckinStatuses property value. List of office Client check-in status.
+// GetTenantCheckinStatuses gets the tenantCheckinStatuses property value. The tenantCheckinStatuses property
 func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinStatusable) {
     val, err := m.GetBackingStore().Get("tenantCheckinStatuses")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinSt
     }
     return nil
 }
-// GetTenantUserCheckinSummary gets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
+// GetTenantUserCheckinSummary gets the tenantUserCheckinSummary property value. The tenantUserCheckinSummary property
 func (m *OfficeConfiguration) GetTenantUserCheckinSummary()(OfficeUserCheckinSummaryable) {
     val, err := m.GetBackingStore().Get("tenantUserCheckinSummary")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *OfficeConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *OfficeConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientConfigurations sets the clientConfigurations property value. List of office Client configuration.
+// SetClientConfigurations sets the clientConfigurations property value. The clientConfigurations property
 func (m *OfficeConfiguration) SetClientConfigurations(value []OfficeClientConfigurationable)() {
     err := m.GetBackingStore().Set("clientConfigurations", value)
     if err != nil {
@@ -202,14 +202,14 @@ func (m *OfficeConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantCheckinStatuses sets the tenantCheckinStatuses property value. List of office Client check-in status.
+// SetTenantCheckinStatuses sets the tenantCheckinStatuses property value. The tenantCheckinStatuses property
 func (m *OfficeConfiguration) SetTenantCheckinStatuses(value []OfficeClientCheckinStatusable)() {
     err := m.GetBackingStore().Set("tenantCheckinStatuses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantUserCheckinSummary sets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
+// SetTenantUserCheckinSummary sets the tenantUserCheckinSummary property value. The tenantUserCheckinSummary property
 func (m *OfficeConfiguration) SetTenantUserCheckinSummary(value OfficeUserCheckinSummaryable)() {
     err := m.GetBackingStore().Set("tenantUserCheckinSummary", value)
     if err != nil {

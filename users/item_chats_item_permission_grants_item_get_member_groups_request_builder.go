@@ -30,10 +30,7 @@ func NewItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+// Post invoke action getMemberGroups
 func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context, body ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *ItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(ItemChatsItemPermissionGrantsItemGetMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) Post(ct
     }
     return res.(ItemChatsItemPermissionGrantsItemGetMemberGroupsResponseable), nil
 }
-// ToPostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+// ToPostRequestInformation invoke action getMemberGroups
 func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *ItemChatsItemPermissionGrantsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

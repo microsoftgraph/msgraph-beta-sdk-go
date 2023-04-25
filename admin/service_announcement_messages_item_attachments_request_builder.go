@@ -11,7 +11,7 @@ import (
 type ServiceAnnouncementMessagesItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ServiceAnnouncementMessagesItemAttachmentsRequestBuilderGetQueryParameters get a list of attachments associated with a service message.
+// ServiceAnnouncementMessagesItemAttachmentsRequestBuilderGetQueryParameters a collection of serviceAnnouncementAttachments.
 type ServiceAnnouncementMessagesItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewServiceAnnouncementMessagesItemAttachmentsRequestBuilder(rawUrl string, 
 func (m *ServiceAnnouncementMessagesItemAttachmentsRequestBuilder) Count()(*ServiceAnnouncementMessagesItemAttachmentsCountRequestBuilder) {
     return NewServiceAnnouncementMessagesItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of attachments associated with a service message.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
+// Get a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementMessagesItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceAnnouncementAttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceAnnouncementAttachmentable), nil
 }
-// ToGetRequestInformation get a list of attachments associated with a service message.
+// ToGetRequestInformation a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementMessagesItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

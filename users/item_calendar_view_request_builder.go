@@ -74,9 +74,6 @@ func (m *ItemCalendarViewRequestBuilder) Delta()(*ItemCalendarViewDeltaRequestBu
     return NewItemCalendarViewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the calendar view for the calendar. Read-only. Nullable.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-calendarview?view=graph-rest-1.0
 func (m *ItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

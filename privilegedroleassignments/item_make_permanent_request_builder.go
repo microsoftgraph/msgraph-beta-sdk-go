@@ -31,10 +31,7 @@ func NewItemMakePermanentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemMakePermanentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post make the role assignment permanent.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedroleassignment-makepermanent?view=graph-rest-1.0
+// Post invoke action makePermanent
 func (m *ItemMakePermanentRequestBuilder) Post(ctx context.Context, body ItemMakePermanentPostRequestBodyable, requestConfiguration *ItemMakePermanentRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemMakePermanentRequestBuilder) Post(ctx context.Context, body ItemMak
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// ToPostRequestInformation make the role assignment permanent.
+// ToPostRequestInformation invoke action makePermanent
 func (m *ItemMakePermanentRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMakePermanentPostRequestBodyable, requestConfiguration *ItemMakePermanentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

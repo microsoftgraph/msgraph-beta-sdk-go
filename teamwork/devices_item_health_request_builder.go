@@ -18,7 +18,7 @@ type DevicesItemHealthRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesItemHealthRequestBuilderGetQueryParameters get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
+// DevicesItemHealthRequestBuilderGetQueryParameters the health properties of the device.
 type DevicesItemHealthRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *DevicesItemHealthRequestBuilder) Delete(ctx context.Context, requestCon
     }
     return nil
 }
-// Get get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdevicehealth-get?view=graph-rest-1.0
+// Get the health properties of the device.
 func (m *DevicesItemHealthRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesItemHealthRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceHealthable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *DevicesItemHealthRequestBuilder) ToDeleteRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
+// ToGetRequestInformation the health properties of the device.
 func (m *DevicesItemHealthRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemHealthRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

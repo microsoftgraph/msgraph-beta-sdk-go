@@ -11,7 +11,7 @@ import (
 type RiskyUsersItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskyUsersItemHistoryRequestBuilderGetQueryParameters get the risk history of a riskyUser resource.
+// RiskyUsersItemHistoryRequestBuilderGetQueryParameters get history from identityProtection
 type RiskyUsersItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewRiskyUsersItemHistoryRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *RiskyUsersItemHistoryRequestBuilder) Count()(*RiskyUsersItemHistoryCountRequestBuilder) {
     return NewRiskyUsersItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the risk history of a riskyUser resource.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+// Get get history from identityProtection
 func (m *RiskyUsersItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *RiskyUsersItemHistoryRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemable), nil
 }
-// ToGetRequestInformation get the risk history of a riskyUser resource.
+// ToGetRequestInformation get history from identityProtection
 func (m *RiskyUsersItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

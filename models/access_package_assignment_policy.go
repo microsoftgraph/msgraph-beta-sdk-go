@@ -358,6 +358,16 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["verifiableCredentialSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVerifiableCredentialSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiableCredentialSettings(val.(VerifiableCredentialSettingsable))
+        }
+        return nil
+    }
     return res
 }
 // GetModifiedBy gets the modifiedBy property value. The modifiedBy property
@@ -412,6 +422,17 @@ func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(RequestorSettings
     }
     if val != nil {
         return val.(RequestorSettingsable)
+    }
+    return nil
+}
+// GetVerifiableCredentialSettings gets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+func (m *AccessPackageAssignmentPolicy) GetVerifiableCredentialSettings()(VerifiableCredentialSettingsable) {
+    val, err := m.GetBackingStore().Get("verifiableCredentialSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VerifiableCredentialSettingsable)
     }
     return nil
 }
@@ -537,6 +558,12 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err = writer.WriteObjectValue("requestorSettings", m.GetRequestorSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("verifiableCredentialSettings", m.GetVerifiableCredentialSettings())
         if err != nil {
             return err
         }
@@ -669,6 +696,13 @@ func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value RequestorSett
         panic(err)
     }
 }
+// SetVerifiableCredentialSettings sets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+func (m *AccessPackageAssignmentPolicy) SetVerifiableCredentialSettings(value VerifiableCredentialSettingsable)() {
+    err := m.GetBackingStore().Set("verifiableCredentialSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageAssignmentPolicyable 
 type AccessPackageAssignmentPolicyable interface {
     Entityable
@@ -691,6 +725,7 @@ type AccessPackageAssignmentPolicyable interface {
     GetQuestions()([]AccessPackageQuestionable)
     GetRequestApprovalSettings()(ApprovalSettingsable)
     GetRequestorSettings()(RequestorSettingsable)
+    GetVerifiableCredentialSettings()(VerifiableCredentialSettingsable)
     SetAccessPackage(value AccessPackageable)()
     SetAccessPackageCatalog(value AccessPackageCatalogable)()
     SetAccessPackageId(value *string)()
@@ -709,4 +744,5 @@ type AccessPackageAssignmentPolicyable interface {
     SetQuestions(value []AccessPackageQuestionable)()
     SetRequestApprovalSettings(value ApprovalSettingsable)()
     SetRequestorSettings(value RequestorSettingsable)()
+    SetVerifiableCredentialSettings(value VerifiableCredentialSettingsable)()
 }
