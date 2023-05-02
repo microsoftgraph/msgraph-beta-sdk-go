@@ -41,6 +41,10 @@ type UsersItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Activate provides operations to call the activate method.
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Activate()(*UsersItemAssignmentsItemActivateRequestBuilder) {
+    return NewUsersItemAssignmentsItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Categories provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Categories()(*UsersItemAssignmentsItemCategoriesRequestBuilder) {
     return NewUsersItemAssignmentsItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -57,6 +61,10 @@ func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilder(rawUrl string,
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Deactivate provides operations to call the deactivate method.
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Deactivate()(*UsersItemAssignmentsItemDeactivateRequestBuilder) {
+    return NewUsersItemAssignmentsItemDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property assignments for education
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {

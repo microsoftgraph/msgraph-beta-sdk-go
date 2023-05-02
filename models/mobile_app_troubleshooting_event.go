@@ -41,6 +41,17 @@ func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCo
     }
     return nil
 }
+// GetDeviceId gets the deviceId property value. Device identifier created or collected by Intune.
+func (m *MobileAppTroubleshootingEvent) GetDeviceId()(*string) {
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementTroubleshootingEvent.GetFieldDeserializers()
@@ -65,6 +76,16 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
                 res[i] = v.(AppLogCollectionRequestable)
             }
             m.SetAppLogCollectionRequests(res)
+        }
+        return nil
+    }
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceId(val)
         }
         return nil
     }
@@ -159,6 +180,12 @@ func (m *MobileAppTroubleshootingEvent) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("deviceId", m.GetDeviceId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetHistory() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistory()))
         for i, v := range m.GetHistory() {
@@ -197,6 +224,13 @@ func (m *MobileAppTroubleshootingEvent) SetAppLogCollectionRequests(value []AppL
         panic(err)
     }
 }
+// SetDeviceId sets the deviceId property value. Device identifier created or collected by Intune.
+func (m *MobileAppTroubleshootingEvent) SetDeviceId(value *string)() {
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHistory sets the history property value. Intune Mobile Application Troubleshooting History Item
 func (m *MobileAppTroubleshootingEvent) SetHistory(value []MobileAppTroubleshootingHistoryItemable)() {
     err := m.GetBackingStore().Set("history", value)
@@ -224,11 +258,13 @@ type MobileAppTroubleshootingEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicationId()(*string)
     GetAppLogCollectionRequests()([]AppLogCollectionRequestable)
+    GetDeviceId()(*string)
     GetHistory()([]MobileAppTroubleshootingHistoryItemable)
     GetManagedDeviceIdentifier()(*string)
     GetUserId()(*string)
     SetApplicationId(value *string)()
     SetAppLogCollectionRequests(value []AppLogCollectionRequestable)()
+    SetDeviceId(value *string)()
     SetHistory(value []MobileAppTroubleshootingHistoryItemable)()
     SetManagedDeviceIdentifier(value *string)()
     SetUserId(value *string)()

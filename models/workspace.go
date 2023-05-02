@@ -8,7 +8,7 @@ import (
 type Workspace struct {
     Place
 }
-// NewWorkspace instantiates a new workspace and sets the default values.
+// NewWorkspace instantiates a new Workspace and sets the default values.
 func NewWorkspace()(*Workspace) {
     m := &Workspace{
         Place: *NewPlace(),

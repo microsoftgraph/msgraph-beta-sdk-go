@@ -6,21 +6,21 @@ import (
 type DeviceManagementConfigurationPlatforms int
 
 const (
-    // None.
+    // Default. No platform type specified.
     NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS DeviceManagementConfigurationPlatforms = iota
-    // Android.
+    // Settings for Android platform.
     ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
-    // iOS.
+    // Settings for iOS platform.
     IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
-    // MacOS.
+    // Settings for MacOS platform.
     MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     // Windows 10 X.
     WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
-    // Windows 10.
+    // Settings for Windows 10 platform.
     WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
-    // Linux.
+    // Settings for Linux platform.
     LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
-    // Sentinel member for cases where the client cannot handle the new enum values.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
 )
 

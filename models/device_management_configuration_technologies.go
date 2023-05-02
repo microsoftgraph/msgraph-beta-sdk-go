@@ -6,21 +6,21 @@ import (
 type DeviceManagementConfigurationTechnologies int
 
 const (
-    // Setting cannot be deployed through any channel
+    // Default. Setting cannot be deployed through any channel.
     NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES DeviceManagementConfigurationTechnologies = iota
-    // Setting can be deployed through the MDM channel
+    // Setting can be deployed through the MDM channel.
     MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through the Windows10XManagement channel
     WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    // Setting can be deployed through the ConfigManager channel
+    // Setting can be deployed through the ConfigManager channel.
     CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    // Setting can be deployed through the AppleRemoteManagement channel
+    // Setting can be deployed through the AppleRemoteManagement channel.
     APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    // Setting can be deployed through the SENSE agent channel
+    // Setting can be deployed through the SENSE agent channel.
     MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    // Setting can be deployed through the Exchange Online agent channel
+    // Setting can be deployed through the Exchange Online agent channel.
     EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    // Setting can be deployed through the Linux Mdm channel
+    // Setting can be deployed through the Linux Mdm channel.
     LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through device enrollment.
     ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES

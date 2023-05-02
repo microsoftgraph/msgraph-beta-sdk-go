@@ -106,6 +106,16 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["localAdminPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLocalAdminPasswordSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocalAdminPassword(val.(LocalAdminPasswordSettingsable))
+        }
+        return nil
+    }
     res["multiFactorAuthConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMultiFactorAuthConfiguration)
         if err != nil {
@@ -127,6 +137,17 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetLocalAdminPassword gets the localAdminPassword property value. Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
+func (m *DeviceRegistrationPolicy) GetLocalAdminPassword()(LocalAdminPasswordSettingsable) {
+    val, err := m.GetBackingStore().Get("localAdminPassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LocalAdminPasswordSettingsable)
+    }
+    return nil
 }
 // GetMultiFactorAuthConfiguration gets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
 func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration) {
@@ -180,6 +201,12 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("localAdminPassword", m.GetLocalAdminPassword())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMultiFactorAuthConfiguration() != nil {
         cast := (*m.GetMultiFactorAuthConfiguration()).String()
         err = writer.WriteStringValue("multiFactorAuthConfiguration", &cast)
@@ -223,6 +250,13 @@ func (m *DeviceRegistrationPolicy) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetLocalAdminPassword sets the localAdminPassword property value. Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
+func (m *DeviceRegistrationPolicy) SetLocalAdminPassword(value LocalAdminPasswordSettingsable)() {
+    err := m.GetBackingStore().Set("localAdminPassword", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMultiFactorAuthConfiguration sets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
 func (m *DeviceRegistrationPolicy) SetMultiFactorAuthConfiguration(value *MultiFactorAuthConfiguration)() {
     err := m.GetBackingStore().Set("multiFactorAuthConfiguration", value)
@@ -245,12 +279,14 @@ type DeviceRegistrationPolicyable interface {
     GetAzureADRegistration()(AzureADRegistrationPolicyable)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetLocalAdminPassword()(LocalAdminPasswordSettingsable)
     GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration)
     GetUserDeviceQuota()(*int32)
     SetAzureADJoin(value AzureAdJoinPolicyable)()
     SetAzureADRegistration(value AzureADRegistrationPolicyable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetLocalAdminPassword(value LocalAdminPasswordSettingsable)()
     SetMultiFactorAuthConfiguration(value *MultiFactorAuthConfiguration)()
     SetUserDeviceQuota(value *int32)()
 }

@@ -66,7 +66,7 @@ func (m *IosStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetIsRemovable gets the isRemovable property value. Whether or not the app can be removed by the user.
+// GetIsRemovable gets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosStoreAppAssignmentSettings) GetIsRemovable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemovable")
     if err != nil {
@@ -142,7 +142,7 @@ func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetIsRemovable sets the isRemovable property value. Whether or not the app can be removed by the user.
+// SetIsRemovable sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosStoreAppAssignmentSettings) SetIsRemovable(value *bool)() {
     err := m.GetBackingStore().Set("isRemovable", value)
     if err != nil {

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsModelScores the user experience analytics model scores entity consolidates the various endpoint analytics scores.
+// UserExperienceAnalyticsModelScores 
 type UserExperienceAnalyticsModelScores struct {
     Entity
 }
-// NewUserExperienceAnalyticsModelScores instantiates a new userExperienceAnalyticsModelScores and sets the default values.
+// NewUserExperienceAnalyticsModelScores instantiates a new UserExperienceAnalyticsModelScores and sets the default values.
 func NewUserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScores) {
     m := &UserExperienceAnalyticsModelScores{
         Entity: *NewEntity(),

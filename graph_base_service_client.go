@@ -91,9 +91,9 @@ import (
     iabd30d9ba6ae302fd2d3145e0da70036496a2167b9e0cbc049bab96d9d9a29b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/directorysettingtemplates"
     iac77c9b5b86109e8ad626e30830db719efb3cc77c7babab332b409d84ae324a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/riskyusers"
     iaec68a3d2c3ba0a78ebb66cd93fd1c5d2a6e0450b97a0cf19d94cb58956bec1d "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects"
+    iafb3b7ae1114ae421f1fe37eecf3d6ea996bddc1f4ed4b4af35d75ee91334efa "github.com/microsoftgraph/msgraph-beta-sdk-go/devicelocalcredentials"
     ib71e32ed3a7f0f8a512aa55c1428492116ff2d1bae5015a9b89f910ecbc7c6bd "github.com/microsoftgraph/msgraph-beta-sdk-go/governancerolesettings"
     ib85b32f0384596c14f04b8d0f3dc8737da4b97428d7af145db2f1b06d7d9444e "github.com/microsoftgraph/msgraph-beta-sdk-go/programs"
-    ibcc2ba1bd11f45f4381ae4007e619ef47b74dbf731b922816aff1ed4d5d47a0f "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration"
     ibd3e65bb14e91a8a05d902c54fadec2c1b6931676c97f76da4969c975770aab2 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals"
     ibf9394d7c54feda53ca523241dde659e8725041c25384ede68e72731d68d5abe "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses"
     ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1 "github.com/microsoftgraph/msgraph-beta-sdk-go/places"
@@ -271,6 +271,10 @@ func (m *GraphBaseServiceClient) DataPolicyOperations()(*i0f747ff1f24810ff511606
 func (m *GraphBaseServiceClient) DeviceAppManagement()(*idc4afe653def183ef95500aa004f556fdf3c3747771f17c8472ca3cad61cebf4.DeviceAppManagementRequestBuilder) {
     return idc4afe653def183ef95500aa004f556fdf3c3747771f17c8472ca3cad61cebf4.NewDeviceAppManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DeviceLocalCredentials provides operations to manage the collection of deviceLocalCredentialInfo entities.
+func (m *GraphBaseServiceClient) DeviceLocalCredentials()(*iafb3b7ae1114ae421f1fe37eecf3d6ea996bddc1f4ed4b4af35d75ee91334efa.DeviceLocalCredentialsRequestBuilder) {
+    return iafb3b7ae1114ae421f1fe37eecf3d6ea996bddc1f4ed4b4af35d75ee91334efa.NewDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DeviceManagement provides operations to manage the deviceManagement singleton.
 func (m *GraphBaseServiceClient) DeviceManagement()(*i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09.DeviceManagementRequestBuilder) {
     return i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09.NewDeviceManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -414,10 +418,6 @@ func (m *GraphBaseServiceClient) Monitoring()(*i3c2d5b7a05b0c58ca1d3b72343c5f032
 // Oauth2PermissionGrants provides operations to manage the collection of oAuth2PermissionGrant entities.
 func (m *GraphBaseServiceClient) Oauth2PermissionGrants()(*ie2e0818e93fcfbb33fde071a9354c3c22bedab0ec20855b7d5232d29bcc65bad.Oauth2PermissionGrantsRequestBuilder) {
     return ie2e0818e93fcfbb33fde071a9354c3c22bedab0ec20855b7d5232d29bcc65bad.NewOauth2PermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OfficeConfiguration provides operations to manage the officeConfiguration singleton.
-func (m *GraphBaseServiceClient) OfficeConfiguration()(*ibcc2ba1bd11f45f4381ae4007e619ef47b74dbf731b922816aff1ed4d5d47a0f.OfficeConfigurationRequestBuilder) {
-    return ibcc2ba1bd11f45f4381ae4007e619ef47b74dbf731b922816aff1ed4d5d47a0f.NewOfficeConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnPremisesPublishingProfiles provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *GraphBaseServiceClient) OnPremisesPublishingProfiles()(*i0d38f6e6ea6126fff7bb7a5c3c2d82fe471d00233209e2b6b2ce6ccb21ce50f5.OnPremisesPublishingProfilesRequestBuilder) {

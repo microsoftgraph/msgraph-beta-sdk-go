@@ -6,24 +6,26 @@ import (
 type DeviceManagementConfigurationControlType int
 
 const (
-    // Don’t override default
+    // Default. UX uses default UX element base on setting type for the setting.
     DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE DeviceManagementConfigurationControlType = iota
-    // Display Choice in dropdown
+    // Display the setting in dropdown box.
     DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
-    // Display text input in small text input
+    // Display text input in small text input.
     SMALLTEXTBOX_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
-    // Display text input in large text input
+    // Display text input in large text input.
     LARGETEXTBOX_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
-    // Allow for toggle control type
+    // Allow for toggle control type.
     TOGGLE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
-    // Allow for multiheader grid control type
+    // Allow for multiheader grid control type.
     MULTIHEADERGRID_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
-    // Allow for context pane control type
+    // Allow for context pane control type.
     CONTEXTPANE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
 )
 
 func (i DeviceManagementConfigurationControlType) String() string {
-    return []string{"default", "dropdown", "smallTextBox", "largeTextBox", "toggle", "multiheaderGrid", "contextPane"}[i]
+    return []string{"default", "dropdown", "smallTextBox", "largeTextBox", "toggle", "multiheaderGrid", "contextPane", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationControlType(v string) (any, error) {
     result := DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
@@ -42,6 +44,8 @@ func ParseDeviceManagementConfigurationControlType(v string) (any, error) {
             result = MULTIHEADERGRID_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "contextPane":
             result = CONTEXTPANE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationControlType value: " + v)
     }

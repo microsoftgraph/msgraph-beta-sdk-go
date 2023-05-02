@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaDeployment the Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
+// ZebraFotaDeployment 
 type ZebraFotaDeployment struct {
     Entity
 }
-// NewZebraFotaDeployment instantiates a new zebraFotaDeployment and sets the default values.
+// NewZebraFotaDeployment instantiates a new ZebraFotaDeployment and sets the default values.
 func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
     m := &ZebraFotaDeployment{
         Entity: *NewEntity(),
@@ -131,7 +131,32 @@ func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
+        }
+        return nil
+    }
     return res
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
+func (m *ZebraFotaDeployment) GetRoleScopeTagIds()([]string) {
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ZebraFotaDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,6 +198,12 @@ func (m *ZebraFotaDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetRoleScopeTagIds() != nil {
+        err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDeploymentAssignments sets the deploymentAssignments property value. Collection of Android FOTA Assignment
@@ -210,6 +241,13 @@ func (m *ZebraFotaDeployment) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
+func (m *ZebraFotaDeployment) SetRoleScopeTagIds(value []string)() {
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ZebraFotaDeploymentable 
 type ZebraFotaDeploymentable interface {
     Entityable
@@ -219,9 +257,11 @@ type ZebraFotaDeploymentable interface {
     GetDeploymentStatus()(ZebraFotaDeploymentStatusable)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetRoleScopeTagIds()([]string)
     SetDeploymentAssignments(value []AndroidFotaDeploymentAssignmentable)()
     SetDeploymentSettings(value ZebraFotaDeploymentSettingsable)()
     SetDeploymentStatus(value ZebraFotaDeploymentStatusable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetRoleScopeTagIds(value []string)()
 }

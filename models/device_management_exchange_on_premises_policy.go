@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExchangeOnPremisesPolicy singleton entity which represents the Exchange OnPremises policy configured for a tenant.
+// DeviceManagementExchangeOnPremisesPolicy 
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
 }
-// NewDeviceManagementExchangeOnPremisesPolicy instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
+// NewDeviceManagementExchangeOnPremisesPolicy instantiates a new DeviceManagementExchangeOnPremisesPolicy and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPremisesPolicy) {
     m := &DeviceManagementExchangeOnPremisesPolicy{
         Entity: *NewEntity(),

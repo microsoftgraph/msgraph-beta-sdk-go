@@ -74,10 +74,6 @@ func NewManagedDevicesManagedDeviceItemRequestBuilder(rawUrl string, requestAdap
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) CreateDeviceLogCollectionRequest()(*ManagedDevicesItemCreateDeviceLogCollectionRequestRequestBuilder) {
     return NewManagedDevicesItemCreateDeviceLogCollectionRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CreateRemoteHelpSession provides operations to call the createRemoteHelpSession method.
-func (m *ManagedDevicesManagedDeviceItemRequestBuilder) CreateRemoteHelpSession()(*ManagedDevicesItemCreateRemoteHelpSessionRequestBuilder) {
-    return NewManagedDevicesItemCreateRemoteHelpSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete delete navigation property managedDevices for deviceManagement
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedDevicesManagedDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -133,10 +129,6 @@ func (m *ManagedDevicesManagedDeviceItemRequestBuilder) DisableLostMode()(*Manag
 // EnableLostMode provides operations to call the enableLostMode method.
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) EnableLostMode()(*ManagedDevicesItemEnableLostModeRequestBuilder) {
     return NewManagedDevicesItemEnableLostModeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EndRemoteHelpSession provides operations to call the endRemoteHelpSession method.
-func (m *ManagedDevicesManagedDeviceItemRequestBuilder) EndRemoteHelpSession()(*ManagedDevicesItemEndRemoteHelpSessionRequestBuilder) {
-    return NewManagedDevicesItemEndRemoteHelpSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EnrollNowAction provides operations to call the enrollNowAction method.
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) EnrollNowAction()(*ManagedDevicesItemEnrollNowActionRequestBuilder) {
@@ -260,10 +252,6 @@ func (m *ManagedDevicesManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*Ma
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RequestRemoteAssistance()(*ManagedDevicesItemRequestRemoteAssistanceRequestBuilder) {
     return NewManagedDevicesItemRequestRemoteAssistanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RequestRemoteHelpSessionAccess provides operations to call the requestRemoteHelpSessionAccess method.
-func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RequestRemoteHelpSessionAccess()(*ManagedDevicesItemRequestRemoteHelpSessionAccessRequestBuilder) {
-    return NewManagedDevicesItemRequestRemoteHelpSessionAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ResetPasscode provides operations to call the resetPasscode method.
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) ResetPasscode()(*ManagedDevicesItemResetPasscodeRequestBuilder) {
     return NewManagedDevicesItemResetPasscodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -279,10 +267,6 @@ func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RestoreCloudPc()(*Manage
 // Retire provides operations to call the retire method.
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) Retire()(*ManagedDevicesItemRetireRequestBuilder) {
     return NewManagedDevicesItemRetireRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RetrieveRemoteHelpSessionWithSessionKey provides operations to call the retrieveRemoteHelpSession method.
-func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RetrieveRemoteHelpSessionWithSessionKey(sessionKey *string)(*ManagedDevicesItemRetrieveRemoteHelpSessionWithSessionKeyRequestBuilder) {
-    return NewManagedDevicesItemRetrieveRemoteHelpSessionWithSessionKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sessionKey)
 }
 // RevokeAppleVppLicenses provides operations to call the revokeAppleVppLicenses method.
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RevokeAppleVppLicenses()(*ManagedDevicesItemRevokeAppleVppLicensesRequestBuilder) {

@@ -612,6 +612,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCurrency(), nil
                     case "#microsoft.graph.customAccessPackageWorkflowExtension":
                         return NewCustomAccessPackageWorkflowExtension(), nil
+                    case "#microsoft.graph.customAppScope":
+                        return NewCustomAppScope(), nil
                     case "#microsoft.graph.customAuthenticationExtension":
                         return NewCustomAuthenticationExtension(), nil
                     case "#microsoft.graph.customCalloutExtension":
@@ -772,6 +774,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceHealthScriptRunSummary(), nil
                     case "#microsoft.graph.deviceInstallState":
                         return NewDeviceInstallState(), nil
+                    case "#microsoft.graph.deviceLocalCredentialInfo":
+                        return NewDeviceLocalCredentialInfo(), nil
                     case "#microsoft.graph.deviceLogCollectionResponse":
                         return NewDeviceLogCollectionResponse(), nil
                     case "#microsoft.graph.deviceManagement":
@@ -894,6 +898,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceManagementStringSettingInstance(), nil
                     case "#microsoft.graph.deviceManagementTemplate":
                         return NewDeviceManagementTemplate(), nil
+                    case "#microsoft.graph.deviceManagementTemplateInsightsDefinition":
+                        return NewDeviceManagementTemplateInsightsDefinition(), nil
                     case "#microsoft.graph.deviceManagementTemplateSettingCategory":
                         return NewDeviceManagementTemplateSettingCategory(), nil
                     case "#microsoft.graph.deviceManagementTroubleshootingEvent":
@@ -1026,6 +1032,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmbeddedSIMDeviceState(), nil
                     case "#microsoft.graph.employee":
                         return NewEmployee(), nil
+                    case "#microsoft.graph.employeeExperienceUser":
+                        return NewEmployeeExperienceUser(), nil
                     case "#microsoft.graph.endpoint":
                         return NewEndpoint(), nil
                     case "#microsoft.graph.enrollmentConfigurationAssignment":
@@ -1376,10 +1384,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewJournalLine(), nil
                     case "#microsoft.graph.languageProficiency":
                         return NewLanguageProficiency(), nil
+                    case "#microsoft.graph.learningAssignment":
+                        return NewLearningAssignment(), nil
                     case "#microsoft.graph.learningContent":
                         return NewLearningContent(), nil
+                    case "#microsoft.graph.learningCourseActivity":
+                        return NewLearningCourseActivity(), nil
                     case "#microsoft.graph.learningProvider":
                         return NewLearningProvider(), nil
+                    case "#microsoft.graph.learningSelfInitiatedCourse":
+                        return NewLearningSelfInitiatedCourse(), nil
                     case "#microsoft.graph.licenseDetails":
                         return NewLicenseDetails(), nil
                     case "#microsoft.graph.linkedResource":
@@ -1660,10 +1674,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOffice365GroupsActivityStorage(), nil
                     case "#microsoft.graph.office365ServicesUserCounts":
                         return NewOffice365ServicesUserCounts(), nil
-                    case "#microsoft.graph.officeClientConfiguration":
-                        return NewOfficeClientConfiguration(), nil
-                    case "#microsoft.graph.officeClientConfigurationAssignment":
-                        return NewOfficeClientConfigurationAssignment(), nil
                     case "#microsoft.graph.officeGraphInsights":
                         return NewOfficeGraphInsights(), nil
                     case "#microsoft.graph.officeSuiteApp":
@@ -1912,8 +1922,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrivilegedRoleSummary(), nil
                     case "#microsoft.graph.privilegedSignupStatus":
                         return NewPrivilegedSignupStatus(), nil
-                    case "#microsoft.graph.privilegeManagementElevation":
-                        return NewPrivilegeManagementElevation(), nil
                     case "#microsoft.graph.profile":
                         return NewProfile(), nil
                     case "#microsoft.graph.profileCardProperty":
@@ -2678,10 +2686,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsMicrosoftEdgeApp(), nil
                     case "#microsoft.graph.windowsMobileMSI":
                         return NewWindowsMobileMSI(), nil
-                    case "#microsoft.graph.windowsOfficeClientConfiguration":
-                        return NewWindowsOfficeClientConfiguration(), nil
-                    case "#microsoft.graph.windowsOfficeClientSecurityConfiguration":
-                        return NewWindowsOfficeClientSecurityConfiguration(), nil
                     case "#microsoft.graph.windowsPhone81AppX":
                         return NewWindowsPhone81AppX(), nil
                     case "#microsoft.graph.windowsPhone81AppXBundle":

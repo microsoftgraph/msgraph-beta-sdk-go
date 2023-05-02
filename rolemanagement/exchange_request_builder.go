@@ -54,6 +54,10 @@ func NewExchangeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CustomAppScopes provides operations to manage the customAppScopes property of the microsoft.graph.unifiedRbacApplication entity.
+func (m *ExchangeRequestBuilder) CustomAppScopes()(*ExchangeCustomAppScopesRequestBuilder) {
+    return NewExchangeCustomAppScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property exchange for roleManagement
 func (m *ExchangeRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

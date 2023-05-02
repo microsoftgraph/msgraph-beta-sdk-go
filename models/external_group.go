@@ -8,7 +8,7 @@ import (
 type ExternalGroup struct {
     Entity
 }
-// NewExternalGroup instantiates a new externalGroup and sets the default values.
+// NewExternalGroup instantiates a new ExternalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {
     m := &ExternalGroup{
         Entity: *NewEntity(),

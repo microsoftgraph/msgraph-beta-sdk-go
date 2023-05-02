@@ -9,7 +9,7 @@ import (
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
 }
-// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
+// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccountEnterpriseSettings) {
     m := &AndroidManagedStoreAccountEnterpriseSettings{
         Entity: *NewEntity(),

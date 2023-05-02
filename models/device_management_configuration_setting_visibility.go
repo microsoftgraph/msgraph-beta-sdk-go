@@ -6,16 +6,18 @@ import (
 type DeviceManagementConfigurationSettingVisibility int
 
 const (
-    // Not visible
+    // Default. Not visible.
     NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY DeviceManagementConfigurationSettingVisibility = iota
-    // Visible to setting catalog UX
+    // Visible to setting catalog policy type.
     SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-    // Visible to template
+    // Visible to template policy type.
     TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
 )
 
 func (i DeviceManagementConfigurationSettingVisibility) String() string {
-    return []string{"none", "settingsCatalog", "template"}[i]
+    return []string{"none", "settingsCatalog", "template", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationSettingVisibility(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
@@ -26,6 +28,8 @@ func ParseDeviceManagementConfigurationSettingVisibility(v string) (any, error) 
             result = SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
         case "template":
             result = TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)
     }

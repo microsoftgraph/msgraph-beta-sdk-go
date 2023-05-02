@@ -6,7 +6,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MobileAppRelationshipState describes the installation status details of the child app in the context of UPN and device id.
+// MobileAppRelationshipState describes the installation status details of the child app in the context of UPN and device id. This will be deprecated starting May, 2023 (Intune Release 2305). 
 type MobileAppRelationshipState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore

@@ -66,6 +66,10 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable), nil
 }
+// LearningCourseActivities provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
+func (m *EmployeeExperienceRequestBuilder) LearningCourseActivities()(*LearningCourseActivitiesRequestBuilder) {
+    return NewLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // LearningProviders provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningProvidersRequestBuilder) {
     return NewLearningProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

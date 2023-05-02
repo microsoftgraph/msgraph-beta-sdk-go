@@ -8,7 +8,7 @@ import (
 type LearningProvider struct {
     Entity
 }
-// NewLearningProvider instantiates a new learningProvider and sets the default values.
+// NewLearningProvider instantiates a new LearningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {
     m := &LearningProvider{
         Entity: *NewEntity(),
@@ -54,6 +54,20 @@ func (m *LearningProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 res[i] = v.(LearningContentable)
             }
             m.SetLearningContents(res)
+        }
+        return nil
+    }
+    res["learningCourseActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLearningCourseActivityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]LearningCourseActivityable, len(val))
+            for i, v := range val {
+                res[i] = v.(LearningCourseActivityable)
+            }
+            m.SetLearningCourseActivities(res)
         }
         return nil
     }
@@ -117,6 +131,17 @@ func (m *LearningProvider) GetLearningContents()([]LearningContentable) {
     }
     if val != nil {
         return val.([]LearningContentable)
+    }
+    return nil
+}
+// GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
+func (m *LearningProvider) GetLearningCourseActivities()([]LearningCourseActivityable) {
+    val, err := m.GetBackingStore().Get("learningCourseActivities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LearningCourseActivityable)
     }
     return nil
 }
@@ -197,6 +222,16 @@ func (m *LearningProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetLearningCourseActivities() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningCourseActivities()))
+        for i, v := range m.GetLearningCourseActivities() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("learningCourseActivities", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("loginWebUrl", m.GetLoginWebUrl())
         if err != nil {
@@ -243,6 +278,13 @@ func (m *LearningProvider) SetLearningContents(value []LearningContentable)() {
         panic(err)
     }
 }
+// SetLearningCourseActivities sets the learningCourseActivities property value. The learningCourseActivities property
+func (m *LearningProvider) SetLearningCourseActivities(value []LearningCourseActivityable)() {
+    err := m.GetBackingStore().Set("learningCourseActivities", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLoginWebUrl sets the loginWebUrl property value. Authentication URL to access the courses for the provider. Optional.
 func (m *LearningProvider) SetLoginWebUrl(value *string)() {
     err := m.GetBackingStore().Set("loginWebUrl", value)
@@ -284,6 +326,7 @@ type LearningProviderable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetLearningContents()([]LearningContentable)
+    GetLearningCourseActivities()([]LearningCourseActivityable)
     GetLoginWebUrl()(*string)
     GetLongLogoWebUrlForDarkTheme()(*string)
     GetLongLogoWebUrlForLightTheme()(*string)
@@ -291,6 +334,7 @@ type LearningProviderable interface {
     GetSquareLogoWebUrlForLightTheme()(*string)
     SetDisplayName(value *string)()
     SetLearningContents(value []LearningContentable)()
+    SetLearningCourseActivities(value []LearningCourseActivityable)()
     SetLoginWebUrl(value *string)()
     SetLongLogoWebUrlForDarkTheme(value *string)()
     SetLongLogoWebUrlForLightTheme(value *string)()
