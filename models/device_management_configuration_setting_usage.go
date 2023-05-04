@@ -6,16 +6,18 @@ import (
 type DeviceManagementConfigurationSettingUsage int
 
 const (
-    // No setting type specified
+    // Default. No setting type specified.
     NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE DeviceManagementConfigurationSettingUsage = iota
-    // Configuration setting
+    // Configuration setting type.
     CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-    // Compliance setting
+    // Compliance setting type.
     COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
 )
 
 func (i DeviceManagementConfigurationSettingUsage) String() string {
-    return []string{"none", "configuration", "compliance"}[i]
+    return []string{"none", "configuration", "compliance", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationSettingUsage(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
@@ -26,6 +28,8 @@ func ParseDeviceManagementConfigurationSettingUsage(v string) (any, error) {
             result = CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
         case "compliance":
             result = COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)
     }

@@ -8,7 +8,7 @@ import (
 type InferenceClassification struct {
     Entity
 }
-// NewInferenceClassification instantiates a new InferenceClassification and sets the default values.
+// NewInferenceClassification instantiates a new inferenceClassification and sets the default values.
 func NewInferenceClassification()(*InferenceClassification) {
     m := &InferenceClassification{
         Entity: *NewEntity(),

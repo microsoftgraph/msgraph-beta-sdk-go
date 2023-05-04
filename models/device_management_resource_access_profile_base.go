@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileBase base Profile Type for Resource Access
+// DeviceManagementResourceAccessProfileBase 
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
 }
-// NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
+// NewDeviceManagementResourceAccessProfileBase instantiates a new DeviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {
     m := &DeviceManagementResourceAccessProfileBase{
         Entity: *NewEntity(),

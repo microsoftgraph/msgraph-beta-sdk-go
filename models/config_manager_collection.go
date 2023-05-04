@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConfigManagerCollection a ConfigManager defined collection of devices or users.
+// ConfigManagerCollection 
 type ConfigManagerCollection struct {
     Entity
 }
-// NewConfigManagerCollection instantiates a new configManagerCollection and sets the default values.
+// NewConfigManagerCollection instantiates a new ConfigManagerCollection and sets the default values.
 func NewConfigManagerCollection()(*ConfigManagerCollection) {
     m := &ConfigManagerCollection{
         Entity: *NewEntity(),

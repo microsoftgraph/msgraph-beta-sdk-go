@@ -38,6 +38,17 @@ func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNod
     }
     return NewDeviceAndAppManagementAssignmentFilter(), nil
 }
+// GetAssignmentFilterManagementType gets the assignmentFilterManagementType property value. Supported filter management types whether its devices or apps.
+func (m *DeviceAndAppManagementAssignmentFilter) GetAssignmentFilterManagementType()(*AssignmentFilterManagementType) {
+    val, err := m.GetBackingStore().Get("assignmentFilterManagementType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AssignmentFilterManagementType)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
 func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -74,6 +85,16 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignmentFilterManagementType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAssignmentFilterManagementType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentFilterManagementType(val.(*AssignmentFilterManagementType))
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -225,6 +246,13 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
     if err != nil {
         return err
     }
+    if m.GetAssignmentFilterManagementType() != nil {
+        cast := (*m.GetAssignmentFilterManagementType()).String()
+        err = writer.WriteStringValue("assignmentFilterManagementType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -279,6 +307,13 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
         }
     }
     return nil
+}
+// SetAssignmentFilterManagementType sets the assignmentFilterManagementType property value. Supported filter management types whether its devices or apps.
+func (m *DeviceAndAppManagementAssignmentFilter) SetAssignmentFilterManagementType(value *AssignmentFilterManagementType)() {
+    err := m.GetBackingStore().Set("assignmentFilterManagementType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
 func (m *DeviceAndAppManagementAssignmentFilter) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -340,6 +375,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetRule(value *string)() {
 type DeviceAndAppManagementAssignmentFilterable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentFilterManagementType()(*AssignmentFilterManagementType)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
@@ -348,6 +384,7 @@ type DeviceAndAppManagementAssignmentFilterable interface {
     GetPlatform()(*DevicePlatformType)
     GetRoleScopeTags()([]string)
     GetRule()(*string)
+    SetAssignmentFilterManagementType(value *AssignmentFilterManagementType)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()

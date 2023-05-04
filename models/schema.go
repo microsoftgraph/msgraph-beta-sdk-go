@@ -8,7 +8,7 @@ import (
 type Schema struct {
     Entity
 }
-// NewSchema instantiates a new schema and sets the default values.
+// NewSchema instantiates a new Schema and sets the default values.
 func NewSchema()(*Schema) {
     m := &Schema{
         Entity: *NewEntity(),

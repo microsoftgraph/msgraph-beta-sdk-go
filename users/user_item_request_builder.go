@@ -181,6 +181,10 @@ func (m *UserItemRequestBuilder) Drive()(*ItemDriveRequestBuilder) {
 func (m *UserItemRequestBuilder) Drives()(*ItemDrivesRequestBuilder) {
     return NewItemDrivesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EmployeeExperience provides operations to manage the employeeExperience property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) EmployeeExperience()(*ItemEmployeeExperienceRequestBuilder) {
+    return NewItemEmployeeExperienceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Events provides operations to manage the events property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Events()(*ItemEventsRequestBuilder) {
     return NewItemEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

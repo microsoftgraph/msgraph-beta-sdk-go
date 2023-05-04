@@ -205,7 +205,7 @@ func (m *Participant) GetRecordingInfo()(RecordingInfoable) {
     }
     return nil
 }
-// GetRemovedState gets the removedState property value. The removedState property
+// GetRemovedState gets the removedState property value. Indicates the reason why the participant was removed from the roster.
 func (m *Participant) GetRemovedState()(RemovedStateable) {
     val, err := m.GetBackingStore().Get("removedState")
     if err != nil {
@@ -227,7 +227,7 @@ func (m *Participant) GetRestrictedExperience()(OnlineMeetingRestrictedable) {
     }
     return nil
 }
-// GetRosterSequenceNumber gets the rosterSequenceNumber property value. The rosterSequenceNumber property
+// GetRosterSequenceNumber gets the rosterSequenceNumber property value. Indicates the roster sequence number the participant was last updated in.
 func (m *Participant) GetRosterSequenceNumber()(*int64) {
     val, err := m.GetBackingStore().Get("rosterSequenceNumber")
     if err != nil {
@@ -359,7 +359,7 @@ func (m *Participant) SetRecordingInfo(value RecordingInfoable)() {
         panic(err)
     }
 }
-// SetRemovedState sets the removedState property value. The removedState property
+// SetRemovedState sets the removedState property value. Indicates the reason why the participant was removed from the roster.
 func (m *Participant) SetRemovedState(value RemovedStateable)() {
     err := m.GetBackingStore().Set("removedState", value)
     if err != nil {
@@ -373,7 +373,7 @@ func (m *Participant) SetRestrictedExperience(value OnlineMeetingRestrictedable)
         panic(err)
     }
 }
-// SetRosterSequenceNumber sets the rosterSequenceNumber property value. The rosterSequenceNumber property
+// SetRosterSequenceNumber sets the rosterSequenceNumber property value. Indicates the roster sequence number the participant was last updated in.
 func (m *Participant) SetRosterSequenceNumber(value *int64)() {
     err := m.GetBackingStore().Set("rosterSequenceNumber", value)
     if err != nil {

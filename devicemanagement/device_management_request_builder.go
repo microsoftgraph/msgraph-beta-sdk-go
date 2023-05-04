@@ -438,10 +438,6 @@ func (m *DeviceManagementRequestBuilder) NdesConnectors()(*NdesConnectorsRequest
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*NotificationMessageTemplatesRequestBuilder) {
     return NewNotificationMessageTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OemWarrantyInformationOnboarding provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboarding()(*OemWarrantyInformationOnboardingRequestBuilder) {
-    return NewOemWarrantyInformationOnboardingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -460,10 +456,6 @@ func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable), nil
-}
-// PrivilegeManagementElevations provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.
-func (m *DeviceManagementRequestBuilder) PrivilegeManagementElevations()(*PrivilegeManagementElevationsRequestBuilder) {
-    return NewPrivilegeManagementElevationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RemoteActionAudits provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteActionAudits()(*RemoteActionAuditsRequestBuilder) {
@@ -532,6 +524,10 @@ func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*Software
 // TelecomExpenseManagementPartners provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*TelecomExpenseManagementPartnersRequestBuilder) {
     return NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TemplateInsights provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) TemplateInsights()(*TemplateInsightsRequestBuilder) {
+    return NewTemplateInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Templates provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Templates()(*TemplatesRequestBuilder) {

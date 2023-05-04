@@ -8,7 +8,7 @@ import (
 type ContactFolder struct {
     Entity
 }
-// NewContactFolder instantiates a new ContactFolder and sets the default values.
+// NewContactFolder instantiates a new contactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {
     m := &ContactFolder{
         Entity: *NewEntity(),

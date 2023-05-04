@@ -19,9 +19,34 @@ func NewUnifiedRbacApplication()(*UnifiedRbacApplication) {
 func CreateUnifiedRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRbacApplication(), nil
 }
+// GetCustomAppScopes gets the customAppScopes property value. The customAppScopes property
+func (m *UnifiedRbacApplication) GetCustomAppScopes()([]CustomAppScopeable) {
+    val, err := m.GetBackingStore().Get("customAppScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomAppScopeable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["customAppScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomAppScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomAppScopeable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomAppScopeable)
+            }
+            m.SetCustomAppScopes(res)
+        }
+        return nil
+    }
     res["resourceNamespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
         if err != nil {
@@ -130,6 +155,16 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
+    if m.GetCustomAppScopes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomAppScopes()))
+        for i, v := range m.GetCustomAppScopes() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("customAppScopes", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResourceNamespaces() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceNamespaces()))
         for i, v := range m.GetResourceNamespaces() {
@@ -172,6 +207,13 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
+// SetCustomAppScopes sets the customAppScopes property value. The customAppScopes property
+func (m *UnifiedRbacApplication) SetCustomAppScopes(value []CustomAppScopeable)() {
+    err := m.GetBackingStore().Set("customAppScopes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceNamespaces sets the resourceNamespaces property value. Resource that represents a collection of related actions.
 func (m *UnifiedRbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
     err := m.GetBackingStore().Set("resourceNamespaces", value)
@@ -204,10 +246,12 @@ func (m *UnifiedRbacApplication) SetTransitiveRoleAssignments(value []UnifiedRol
 type UnifiedRbacApplicationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustomAppScopes()([]CustomAppScopeable)
     GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable)
     GetRoleAssignments()([]UnifiedRoleAssignmentable)
     GetRoleDefinitions()([]UnifiedRoleDefinitionable)
     GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable)
+    SetCustomAppScopes(value []CustomAppScopeable)()
     SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)()
     SetRoleAssignments(value []UnifiedRoleAssignmentable)()
     SetRoleDefinitions(value []UnifiedRoleDefinitionable)()

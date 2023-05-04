@@ -8,7 +8,7 @@ import (
 type MailFolder struct {
     Entity
 }
-// NewMailFolder instantiates a new MailFolder and sets the default values.
+// NewMailFolder instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),

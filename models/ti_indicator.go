@@ -9,7 +9,7 @@ import (
 type TiIndicator struct {
     Entity
 }
-// NewTiIndicator instantiates a new tiIndicator and sets the default values.
+// NewTiIndicator instantiates a new TiIndicator and sets the default values.
 func NewTiIndicator()(*TiIndicator) {
     m := &TiIndicator{
         Entity: *NewEntity(),

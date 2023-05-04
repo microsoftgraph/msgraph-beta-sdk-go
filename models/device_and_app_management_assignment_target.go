@@ -36,6 +36,8 @@ func CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue(parseNod
                         return NewAllDevicesAssignmentTarget(), nil
                     case "#microsoft.graph.allLicensedUsersAssignmentTarget":
                         return NewAllLicensedUsersAssignmentTarget(), nil
+                    case "#microsoft.graph.androidFotaDeploymentAssignmentTarget":
+                        return NewAndroidFotaDeploymentAssignmentTarget(), nil
                     case "#microsoft.graph.configurationManagerCollectionAssignmentTarget":
                         return NewConfigurationManagerCollectionAssignmentTarget(), nil
                     case "#microsoft.graph.exclusionGroupAssignmentTarget":

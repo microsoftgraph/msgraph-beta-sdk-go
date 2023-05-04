@@ -32,6 +32,8 @@ func CreateDictionaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.customAppScopeAttributesDictionary":
+                        return NewCustomAppScopeAttributesDictionary(), nil
                     case "#microsoft.graph.resultTemplateDictionary":
                         return NewResultTemplateDictionary(), nil
                 }

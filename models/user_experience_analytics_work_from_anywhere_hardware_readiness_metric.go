@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric struct {
     Entity
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) {
     m := &UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric{
         Entity: *NewEntity(),

@@ -9,7 +9,7 @@ import (
 type WindowsAutopilotDeploymentProfile struct {
     Entity
 }
-// NewWindowsAutopilotDeploymentProfile instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
+// NewWindowsAutopilotDeploymentProfile instantiates a new WindowsAutopilotDeploymentProfile and sets the default values.
 func NewWindowsAutopilotDeploymentProfile()(*WindowsAutopilotDeploymentProfile) {
     m := &WindowsAutopilotDeploymentProfile{
         Entity: *NewEntity(),

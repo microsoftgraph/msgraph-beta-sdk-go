@@ -59,7 +59,7 @@ func (m *DeltaParticipants) GetParticipants()([]Participantable) {
     }
     return nil
 }
-// GetSequenceNumber gets the sequenceNumber property value. The sequenceNumber property
+// GetSequenceNumber gets the sequenceNumber property value. The sequence number for the roster update that is used to identify the notification order.
 func (m *DeltaParticipants) GetSequenceNumber()(*int64) {
     val, err := m.GetBackingStore().Get("sequenceNumber")
     if err != nil {
@@ -101,7 +101,7 @@ func (m *DeltaParticipants) SetParticipants(value []Participantable)() {
         panic(err)
     }
 }
-// SetSequenceNumber sets the sequenceNumber property value. The sequenceNumber property
+// SetSequenceNumber sets the sequenceNumber property value. The sequence number for the roster update that is used to identify the notification order.
 func (m *DeltaParticipants) SetSequenceNumber(value *int64)() {
     err := m.GetBackingStore().Set("sequenceNumber", value)
     if err != nil {

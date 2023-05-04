@@ -54,7 +54,7 @@ func (m *TimeCard) GetClockOutEvent()(TimeCardEventable) {
     }
     return nil
 }
-// GetConfirmedBy gets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
+// GetConfirmedBy gets the confirmedBy property value. Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
 func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
     val, err := m.GetBackingStore().Get("confirmedBy")
     if err != nil {
@@ -281,7 +281,7 @@ func (m *TimeCard) SetClockOutEvent(value TimeCardEventable)() {
         panic(err)
     }
 }
-// SetConfirmedBy sets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
+// SetConfirmedBy sets the confirmedBy property value. Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
 func (m *TimeCard) SetConfirmedBy(value *ConfirmedBy)() {
     err := m.GetBackingStore().Set("confirmedBy", value)
     if err != nil {
