@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionWipeAction 
+// WindowsInformationProtectionWipeAction represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
 type WindowsInformationProtectionWipeAction struct {
     Entity
 }
-// NewWindowsInformationProtectionWipeAction instantiates a new WindowsInformationProtectionWipeAction and sets the default values.
+// NewWindowsInformationProtectionWipeAction instantiates a new windowsInformationProtectionWipeAction and sets the default values.
 func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWipeAction) {
     m := &WindowsInformationProtectionWipeAction{
         Entity: *NewEntity(),

@@ -82,14 +82,6 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
     }
     return nil
 }
-// EdiscoveryEstimateStatistics provides operations to call the estimateStatistics method.
-func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) EdiscoveryEstimateStatistics()(*EdiscoveryCasesItemSourceCollectionsItemEdiscoveryEstimateStatisticsRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemEdiscoveryEstimateStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryPurgeData provides operations to call the purgeData method.
-func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) EdiscoveryPurgeData()(*EdiscoveryCasesItemSourceCollectionsItemEdiscoveryPurgeDataRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsItemEdiscoveryPurgeDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get returns a list of sourceCollection objects associated with this case.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -112,6 +104,14 @@ func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder)
 // LastEstimateStatisticsOperation provides operations to manage the lastEstimateStatisticsOperation property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) LastEstimateStatisticsOperation()(*EdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilder) {
     return NewEdiscoveryCasesItemSourceCollectionsItemLastEstimateStatisticsOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryEstimateStatistics provides operations to call the estimateStatistics method.
+func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) MicrosoftGraphEdiscoveryEstimateStatistics()(*EdiscoveryCasesItemSourceCollectionsItemMicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilder) {
+    return NewEdiscoveryCasesItemSourceCollectionsItemMicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryPurgeData provides operations to call the purgeData method.
+func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) MicrosoftGraphEdiscoveryPurgeData()(*EdiscoveryCasesItemSourceCollectionsItemMicrosoftGraphEdiscoveryPurgeDataRequestBuilder) {
+    return NewEdiscoveryCasesItemSourceCollectionsItemMicrosoftGraphEdiscoveryPurgeDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NoncustodialSources provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) NoncustodialSources()(*EdiscoveryCasesItemSourceCollectionsItemNoncustodialSourcesRequestBuilder) {

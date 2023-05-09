@@ -9,7 +9,7 @@ import (
 type EducationAssignment struct {
     Entity
 }
-// NewEducationAssignment instantiates a new EducationAssignment and sets the default values.
+// NewEducationAssignment instantiates a new educationAssignment and sets the default values.
 func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),
@@ -352,6 +352,16 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["gradingCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEducationGradingCategoryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGradingCategory(val.(EducationGradingCategoryable))
+        }
+        return nil
+    }
     res["instructions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -473,6 +483,17 @@ func (m *EducationAssignment) GetGrading()(EducationAssignmentGradeTypeable) {
     }
     return nil
 }
+// GetGradingCategory gets the gradingCategory property value. The gradingCategory property
+func (m *EducationAssignment) GetGradingCategory()(EducationGradingCategoryable) {
+    val, err := m.GetBackingStore().Get("gradingCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationGradingCategoryable)
+    }
+    return nil
+}
 // GetInstructions gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
 func (m *EducationAssignment) GetInstructions()(EducationItemBodyable) {
     val, err := m.GetBackingStore().Get("instructions")
@@ -550,7 +571,7 @@ func (m *EducationAssignment) GetRubric()(EducationRubricable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+// GetStatus gets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
 func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -657,6 +678,12 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteObjectValue("grading", m.GetGrading())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("gradingCategory", m.GetGradingCategory())
         if err != nil {
             return err
         }
@@ -813,6 +840,13 @@ func (m *EducationAssignment) SetGrading(value EducationAssignmentGradeTypeable)
         panic(err)
     }
 }
+// SetGradingCategory sets the gradingCategory property value. The gradingCategory property
+func (m *EducationAssignment) SetGradingCategory(value EducationGradingCategoryable)() {
+    err := m.GetBackingStore().Set("gradingCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInstructions sets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
 func (m *EducationAssignment) SetInstructions(value EducationItemBodyable)() {
     err := m.GetBackingStore().Set("instructions", value)
@@ -862,7 +896,7 @@ func (m *EducationAssignment) SetRubric(value EducationRubricable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+// SetStatus sets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
 func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
@@ -903,6 +937,7 @@ type EducationAssignmentable interface {
     GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFeedbackResourcesFolderUrl()(*string)
     GetGrading()(EducationAssignmentGradeTypeable)
+    GetGradingCategory()(EducationGradingCategoryable)
     GetInstructions()(EducationItemBodyable)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -929,6 +964,7 @@ type EducationAssignmentable interface {
     SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFeedbackResourcesFolderUrl(value *string)()
     SetGrading(value EducationAssignmentGradeTypeable)()
+    SetGradingCategory(value EducationGradingCategoryable)()
     SetInstructions(value EducationItemBodyable)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

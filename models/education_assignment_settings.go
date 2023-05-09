@@ -8,7 +8,7 @@ import (
 type EducationAssignmentSettings struct {
     Entity
 }
-// NewEducationAssignmentSettings instantiates a new EducationAssignmentSettings and sets the default values.
+// NewEducationAssignmentSettings instantiates a new educationAssignmentSettings and sets the default values.
 func NewEducationAssignmentSettings()(*EducationAssignmentSettings) {
     m := &EducationAssignmentSettings{
         Entity: *NewEntity(),
@@ -22,6 +22,20 @@ func CreateEducationAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["gradingCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationGradingCategoryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationGradingCategoryable, len(val))
+            for i, v := range val {
+                res[i] = v.(EducationGradingCategoryable)
+            }
+            m.SetGradingCategories(res)
+        }
+        return nil
+    }
     res["submissionAnimationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -33,6 +47,17 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetGradingCategories gets the gradingCategories property value. The gradingCategories property
+func (m *EducationAssignmentSettings) GetGradingCategories()([]EducationGradingCategoryable) {
+    val, err := m.GetBackingStore().Get("gradingCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationGradingCategoryable)
+    }
+    return nil
 }
 // GetSubmissionAnimationDisabled gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
 func (m *EducationAssignmentSettings) GetSubmissionAnimationDisabled()(*bool) {
@@ -51,6 +76,16 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
+    if m.GetGradingCategories() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGradingCategories()))
+        for i, v := range m.GetGradingCategories() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("gradingCategories", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("submissionAnimationDisabled", m.GetSubmissionAnimationDisabled())
         if err != nil {
@@ -58,6 +93,13 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     return nil
+}
+// SetGradingCategories sets the gradingCategories property value. The gradingCategories property
+func (m *EducationAssignmentSettings) SetGradingCategories(value []EducationGradingCategoryable)() {
+    err := m.GetBackingStore().Set("gradingCategories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
 func (m *EducationAssignmentSettings) SetSubmissionAnimationDisabled(value *bool)() {
@@ -70,6 +112,8 @@ func (m *EducationAssignmentSettings) SetSubmissionAnimationDisabled(value *bool
 type EducationAssignmentSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGradingCategories()([]EducationGradingCategoryable)
     GetSubmissionAnimationDisabled()(*bool)
+    SetGradingCategories(value []EducationGradingCategoryable)()
     SetSubmissionAnimationDisabled(value *bool)()
 }

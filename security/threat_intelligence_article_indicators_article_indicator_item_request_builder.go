@@ -41,6 +41,10 @@ type ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderPatchR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Artifact provides operations to manage the artifact property of the microsoft.graph.security.indicator entity.
+func (m *ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) Artifact()(*ThreatIntelligenceArticleIndicatorsItemArtifactRequestBuilder) {
+    return NewThreatIntelligenceArticleIndicatorsItemArtifactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderInternal instantiates a new ArticleIndicatorItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) {
     m := &ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder{

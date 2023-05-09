@@ -63,9 +63,9 @@ func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunable), nil
 }
-// IndustryDataGetStatistics provides operations to call the getStatistics method.
-func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) IndustryDataGetStatistics()(*IndustryDataRunsItemIndustryDataGetStatisticsRequestBuilder) {
-    return NewIndustryDataRunsItemIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphIndustryDataGetStatistics provides operations to call the getStatistics method.
+func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
+    return NewIndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

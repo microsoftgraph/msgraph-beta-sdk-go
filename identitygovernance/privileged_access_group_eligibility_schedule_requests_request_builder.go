@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetQueryParameters get eligibilityScheduleRequests from identityGovernance
+// PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetQueryParameters the schedule requests for operations to create, update, delete, extend, and renew an eligibility.
 type PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Count()
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get eligibilityScheduleRequests from identityGovernance
+// Get the schedule requests for operations to create, update, delete, extend, and renew an eligibility.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Post(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleRequestable), nil
 }
-// ToGetRequestInformation get eligibilityScheduleRequests from identityGovernance
+// ToGetRequestInformation the schedule requests for operations to create, update, delete, extend, and renew an eligibility.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

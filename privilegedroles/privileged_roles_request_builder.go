@@ -11,7 +11,7 @@ import (
 type PrivilegedRolesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedRolesRequestBuilderGetQueryParameters retrieve a list of privilegedRole objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
+// PrivilegedRolesRequestBuilderGetQueryParameters get entities from privilegedRoles
 type PrivilegedRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewPrivilegedRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *PrivilegedRolesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of privilegedRole objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrole-list?view=graph-rest-1.0
+// Get get entities from privilegedRoles
 func (m *PrivilegedRolesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedRolesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *PrivilegedRolesRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable), nil
 }
-// ToGetRequestInformation retrieve a list of privilegedRole objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
+// ToGetRequestInformation get entities from privilegedRoles
 func (m *PrivilegedRolesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

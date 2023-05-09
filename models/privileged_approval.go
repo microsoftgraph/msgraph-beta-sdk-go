@@ -9,7 +9,7 @@ import (
 type PrivilegedApproval struct {
     Entity
 }
-// NewPrivilegedApproval instantiates a new PrivilegedApproval and sets the default values.
+// NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
     m := &PrivilegedApproval{
         Entity: *NewEntity(),
@@ -31,7 +31,7 @@ func (m *PrivilegedApproval) GetApprovalDuration()(*i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// GetApprovalState gets the approvalState property value. Possible values are: pending, approved, denied, aborted, canceled.
+// GetApprovalState gets the approvalState property value. The approvalState property
 func (m *PrivilegedApproval) GetApprovalState()(*ApprovalState) {
     val, err := m.GetBackingStore().Get("approvalState")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *PrivilegedApproval) GetApproverReason()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *PrivilegedApproval) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -190,7 +190,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetRequest gets the request property value. Read-only. The role assignment request for this approval object
+// GetRequest gets the request property value. The request property
 func (m *PrivilegedApproval) GetRequest()(PrivilegedRoleAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("request")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *PrivilegedApproval) GetRoleInfo()(PrivilegedRoleable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *PrivilegedApproval) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -338,7 +338,7 @@ func (m *PrivilegedApproval) SetApprovalDuration(value *i878a80d2330e89d26896388
         panic(err)
     }
 }
-// SetApprovalState sets the approvalState property value. Possible values are: pending, approved, denied, aborted, canceled.
+// SetApprovalState sets the approvalState property value. The approvalState property
 func (m *PrivilegedApproval) SetApprovalState(value *ApprovalState)() {
     err := m.GetBackingStore().Set("approvalState", value)
     if err != nil {
@@ -359,14 +359,14 @@ func (m *PrivilegedApproval) SetApproverReason(value *string)() {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *PrivilegedApproval) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequest sets the request property value. Read-only. The role assignment request for this approval object
+// SetRequest sets the request property value. The request property
 func (m *PrivilegedApproval) SetRequest(value PrivilegedRoleAssignmentRequestable)() {
     err := m.GetBackingStore().Set("request", value)
     if err != nil {
@@ -394,7 +394,7 @@ func (m *PrivilegedApproval) SetRoleInfo(value PrivilegedRoleable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *PrivilegedApproval) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

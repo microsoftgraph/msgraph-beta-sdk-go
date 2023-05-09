@@ -11,7 +11,7 @@ import (
 type ItemItemsItemActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemActivitiesRequestBuilderGetQueryParameters write-only property. Returns results.
+// ItemItemsItemActivitiesRequestBuilderGetQueryParameters returns a list of activities performed on the item. Write-only.
 type ItemItemsItemActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemItemsItemActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemItemsItemActivitiesRequestBuilder) Count()(*ItemItemsItemActivitiesCountRequestBuilder) {
     return NewItemItemsItemActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get write-only property. Returns results.
+// Get returns a list of activities performed on the item. Write-only.
 func (m *ItemItemsItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemItemsItemActivitiesRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable), nil
 }
-// ToGetRequestInformation write-only property. Returns results.
+// ToGetRequestInformation returns a list of activities performed on the item. Write-only.
 func (m *ItemItemsItemActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

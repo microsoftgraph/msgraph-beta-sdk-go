@@ -71,6 +71,17 @@ func (m *RoleManagement) GetDirectory()(RbacApplicationable) {
     }
     return nil
 }
+// GetEnterpriseApps gets the enterpriseApps property value. The enterpriseApps property
+func (m *RoleManagement) GetEnterpriseApps()([]RbacApplicationable) {
+    val, err := m.GetBackingStore().Get("enterpriseApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RbacApplicationable)
+    }
+    return nil
+}
 // GetEntitlementManagement gets the entitlementManagement property value. The RbacApplication for Entitlement Management
 func (m *RoleManagement) GetEntitlementManagement()(RbacApplicationable) {
     val, err := m.GetBackingStore().Get("entitlementManagement")
@@ -123,6 +134,20 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetDirectory(val.(RbacApplicationable))
+        }
+        return nil
+    }
+    res["enterpriseApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRbacApplicationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RbacApplicationable, len(val))
+            for i, v := range val {
+                res[i] = v.(RbacApplicationable)
+            }
+            m.SetEnterpriseApps(res)
         }
         return nil
     }
@@ -189,6 +214,16 @@ func (m *RoleManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetEnterpriseApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseApps()))
+        for i, v := range m.GetEnterpriseApps() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("enterpriseApps", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("entitlementManagement", m.GetEntitlementManagement())
         if err != nil {
@@ -247,6 +282,13 @@ func (m *RoleManagement) SetDirectory(value RbacApplicationable)() {
         panic(err)
     }
 }
+// SetEnterpriseApps sets the enterpriseApps property value. The enterpriseApps property
+func (m *RoleManagement) SetEnterpriseApps(value []RbacApplicationable)() {
+    err := m.GetBackingStore().Set("enterpriseApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEntitlementManagement sets the entitlementManagement property value. The RbacApplication for Entitlement Management
 func (m *RoleManagement) SetEntitlementManagement(value RbacApplicationable)() {
     err := m.GetBackingStore().Set("entitlementManagement", value)
@@ -277,6 +319,7 @@ type RoleManagementable interface {
     GetCloudPC()(RbacApplicationMultipleable)
     GetDeviceManagement()(RbacApplicationMultipleable)
     GetDirectory()(RbacApplicationable)
+    GetEnterpriseApps()([]RbacApplicationable)
     GetEntitlementManagement()(RbacApplicationable)
     GetExchange()(UnifiedRbacApplicationable)
     GetOdataType()(*string)
@@ -284,6 +327,7 @@ type RoleManagementable interface {
     SetCloudPC(value RbacApplicationMultipleable)()
     SetDeviceManagement(value RbacApplicationMultipleable)()
     SetDirectory(value RbacApplicationable)()
+    SetEnterpriseApps(value []RbacApplicationable)()
     SetEntitlementManagement(value RbacApplicationable)()
     SetExchange(value UnifiedRbacApplicationable)()
     SetOdataType(value *string)()

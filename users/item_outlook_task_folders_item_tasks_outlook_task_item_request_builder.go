@@ -95,10 +95,6 @@ func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) Get(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable), nil
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.
-func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) MultiValueExtendedProperties()(*ItemOutlookTaskFoldersItemTasksItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemOutlookTaskFoldersItemTasksItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property tasks in users
 func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, requestConfiguration *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -117,10 +113,6 @@ func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) Patch(ctx
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable), nil
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.
-func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) SingleValueExtendedProperties()(*ItemOutlookTaskFoldersItemTasksItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemOutlookTaskFoldersItemTasksItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tasks for users
 func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

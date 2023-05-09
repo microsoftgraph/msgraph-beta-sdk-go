@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetQueryParameters get group from identityGovernance
+// PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetQueryParameters references the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
 type PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get group from identityGovernance
+// Get references the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
-// ToGetRequestInformation get group from identityGovernance
+// ToGetRequestInformation references the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

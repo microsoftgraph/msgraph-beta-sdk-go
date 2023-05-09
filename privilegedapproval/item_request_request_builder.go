@@ -11,7 +11,7 @@ import (
 type ItemRequestRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRequestRequestBuilderGetQueryParameters read-only. The role assignment request for this approval object
+// ItemRequestRequestBuilderGetQueryParameters get request from privilegedApproval
 type ItemRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemRequestRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read-only. The role assignment request for this approval object
+// Get get request from privilegedApproval
 func (m *ItemRequestRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRequestRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemRequestRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable), nil
 }
-// ToGetRequestInformation read-only. The role assignment request for this approval object
+// ToGetRequestInformation get request from privilegedApproval
 func (m *ItemRequestRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRequestRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

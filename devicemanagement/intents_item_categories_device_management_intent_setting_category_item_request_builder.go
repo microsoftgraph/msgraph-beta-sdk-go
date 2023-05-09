@@ -108,6 +108,10 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentSettingCategoryable), nil
 }
+// SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
+func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) SettingDefinitions()(*IntentsItemCategoriesItemSettingDefinitionsRequestBuilder) {
+    return NewIntentsItemCategoriesItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) Settings()(*IntentsItemCategoriesItemSettingsRequestBuilder) {
     return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

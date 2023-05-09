@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelSite 
+// MicrosoftTunnelSite entity that represents a Microsoft Tunnel site
 type MicrosoftTunnelSite struct {
     Entity
 }
-// NewMicrosoftTunnelSite instantiates a new MicrosoftTunnelSite and sets the default values.
+// NewMicrosoftTunnelSite instantiates a new microsoftTunnelSite and sets the default values.
 func NewMicrosoftTunnelSite()(*MicrosoftTunnelSite) {
     m := &MicrosoftTunnelSite{
         Entity: *NewEntity(),

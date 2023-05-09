@@ -37,7 +37,7 @@ func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminator
     }
     return NewDeviceManagementConfigurationSimpleSettingDefinition(), nil
 }
-// GetDefaultValue gets the defaultValue property value. Default setting value for this setting.
+// GetDefaultValue gets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()(DeviceManagementConfigurationSettingValueable) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -48,7 +48,7 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()
     }
     return nil
 }
-// GetDependedOnBy gets the dependedOnBy property value. list of child settings that depend on this setting.
+// GetDependedOnBy gets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
     val, err := m.GetBackingStore().Get("dependedOnBy")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependedOnBy()
     }
     return nil
 }
-// GetDependentOn gets the dependentOn property value. list of parent settings this setting is dependent on.
+// GetDependentOn gets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
     val, err := m.GetBackingStore().Get("dependentOn")
     if err != nil {
@@ -123,7 +123,7 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
     }
     return res
 }
-// GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting.
+// GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable) {
     val, err := m.GetBackingStore().Get("valueDefinition")
     if err != nil {
@@ -174,28 +174,28 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
     }
     return nil
 }
-// SetDefaultValue sets the defaultValue property value. Default setting value for this setting.
+// SetDefaultValue sets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDefaultValue(value DeviceManagementConfigurationSettingValueable)() {
     err := m.GetBackingStore().Set("defaultValue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDependedOnBy sets the dependedOnBy property value. list of child settings that depend on this setting.
+// SetDependedOnBy sets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
     err := m.GetBackingStore().Set("dependedOnBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDependentOn sets the dependentOn property value. list of parent settings this setting is dependent on.
+// SetDependentOn sets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
     err := m.GetBackingStore().Set("dependentOn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting.
+// SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetValueDefinition(value DeviceManagementConfigurationSettingValueDefinitionable)() {
     err := m.GetBackingStore().Set("valueDefinition", value)
     if err != nil {

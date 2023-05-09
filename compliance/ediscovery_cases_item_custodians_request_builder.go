@@ -74,14 +74,6 @@ func NewEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl string, requestAdapte
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EdiscoveryApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemCustodiansRequestBuilder) EdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansEdiscoveryApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryRemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemCustodiansRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansEdiscoveryRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get returns a list of case custodian objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CustodianCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -100,6 +92,14 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Context, r
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CustodianCollectionResponseable), nil
+}
+// MicrosoftGraphEdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to custodians for compliance
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {

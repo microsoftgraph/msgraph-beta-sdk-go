@@ -108,6 +108,10 @@ func (m *ItemInsightsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemInsightsable), nil
 }
+// Shared provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsRequestBuilder) Shared()(*ItemInsightsSharedRequestBuilder) {
+    return NewItemInsightsSharedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property insights for users
 func (m *ItemInsightsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -152,4 +156,12 @@ func (m *ItemInsightsRequestBuilder) ToPatchRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Trending provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsRequestBuilder) Trending()(*ItemInsightsTrendingRequestBuilder) {
+    return NewItemInsightsTrendingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Used provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsRequestBuilder) Used()(*ItemInsightsUsedRequestBuilder) {
+    return NewItemInsightsUsedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

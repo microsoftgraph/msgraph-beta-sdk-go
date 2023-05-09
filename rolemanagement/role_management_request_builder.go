@@ -59,6 +59,10 @@ func (m *RoleManagementRequestBuilder) DeviceManagement()(*DeviceManagementReque
 func (m *RoleManagementRequestBuilder) Directory()(*DirectoryRequestBuilder) {
     return NewDirectoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EnterpriseApps provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
+func (m *RoleManagementRequestBuilder) EnterpriseApps()(*EnterpriseAppsRequestBuilder) {
+    return NewEnterpriseAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
 func (m *RoleManagementRequestBuilder) EntitlementManagement()(*EntitlementManagementRequestBuilder) {
     return NewEntitlementManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

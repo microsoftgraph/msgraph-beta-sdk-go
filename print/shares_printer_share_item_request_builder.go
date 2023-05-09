@@ -97,6 +97,10 @@ func (m *SharesPrinterShareItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable), nil
 }
+// Jobs provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+func (m *SharesPrinterShareItemRequestBuilder) Jobs()(*SharesItemJobsRequestBuilder) {
+    return NewSharesItemJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property shares in print
 func (m *SharesPrinterShareItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, requestConfiguration *SharesPrinterShareItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

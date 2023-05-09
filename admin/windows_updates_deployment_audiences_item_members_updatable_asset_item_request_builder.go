@@ -89,6 +89,22 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBu
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
+// MicrosoftGraphWindowsUpdatesAddMembers provides operations to call the addMembers method.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesAddMembers()(*WindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesAddMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesAddMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesAddMembersById provides operations to call the addMembersById method.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesAddMembersById()(*WindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesRemoveMembers provides operations to call the removeMembers method.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesRemoveMembers()(*WindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesRemoveMembersById provides operations to call the removeMembersById method.
+func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) MicrosoftGraphWindowsUpdatesRemoveMembersById()(*WindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemMicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property members in admin
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -152,20 +168,4 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBu
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// WindowsUpdatesAddMembers provides operations to call the addMembers method.
-func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesAddMembers()(*WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesAddMembersById provides operations to call the addMembersById method.
-func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesAddMembersById()(*WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesAddMembersByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesRemoveMembers provides operations to call the removeMembers method.
-func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesRemoveMembers()(*WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesRemoveMembersRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesRemoveMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesRemoveMembersById provides operations to call the removeMembersById method.
-func (m *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) WindowsUpdatesRemoveMembersById()(*WindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemMembersItemWindowsUpdatesRemoveMembersByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

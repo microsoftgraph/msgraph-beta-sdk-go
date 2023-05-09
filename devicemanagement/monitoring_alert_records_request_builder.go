@@ -74,10 +74,6 @@ func NewMonitoringAlertRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *MonitoringAlertRecordsRequestBuilder) Count()(*MonitoringAlertRecordsCountRequestBuilder) {
     return NewMonitoringAlertRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeviceManagementGetPortalNotifications provides operations to call the getPortalNotifications method.
-func (m *MonitoringAlertRecordsRequestBuilder) DeviceManagementGetPortalNotifications()(*MonitoringAlertRecordsDeviceManagementGetPortalNotificationsRequestBuilder) {
-    return NewMonitoringAlertRecordsDeviceManagementGetPortalNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the collection of records of alert events.
 func (m *MonitoringAlertRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *MonitoringAlertRecordsRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -96,6 +92,10 @@ func (m *MonitoringAlertRecordsRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable), nil
+}
+// MicrosoftGraphDeviceManagementGetPortalNotifications provides operations to call the getPortalNotifications method.
+func (m *MonitoringAlertRecordsRequestBuilder) MicrosoftGraphDeviceManagementGetPortalNotifications()(*MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder) {
+    return NewMonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to alertRecords for deviceManagement
 func (m *MonitoringAlertRecordsRequestBuilder) Post(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, requestConfiguration *MonitoringAlertRecordsRequestBuilderPostRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {

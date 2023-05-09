@@ -40,7 +40,7 @@ func (m *ConditionalAccessEnumeratedExternalTenants) GetFieldDeserializers()(map
     }
     return res
 }
-// GetMembers gets the members property value. Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
+// GetMembers gets the members property value. A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
 func (m *ConditionalAccessEnumeratedExternalTenants) GetMembers()([]string) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -65,7 +65,7 @@ func (m *ConditionalAccessEnumeratedExternalTenants) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetMembers sets the members property value. Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
+// SetMembers sets the members property value. A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
 func (m *ConditionalAccessEnumeratedExternalTenants) SetMembers(value []string)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {

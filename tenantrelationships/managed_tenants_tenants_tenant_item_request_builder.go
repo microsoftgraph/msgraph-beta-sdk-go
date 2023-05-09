@@ -89,13 +89,13 @@ func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// ManagedTenantsOffboardTenant provides operations to call the offboardTenant method.
-func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ManagedTenantsOffboardTenant()(*ManagedTenantsTenantsItemManagedTenantsOffboardTenantRequestBuilder) {
-    return NewManagedTenantsTenantsItemManagedTenantsOffboardTenantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphManagedTenantsOffboardTenant provides operations to call the offboardTenant method.
+func (m *ManagedTenantsTenantsTenantItemRequestBuilder) MicrosoftGraphManagedTenantsOffboardTenant()(*ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilder) {
+    return NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ManagedTenantsResetTenantOnboardingStatus provides operations to call the resetTenantOnboardingStatus method.
-func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ManagedTenantsResetTenantOnboardingStatus()(*ManagedTenantsTenantsItemManagedTenantsResetTenantOnboardingStatusRequestBuilder) {
-    return NewManagedTenantsTenantsItemManagedTenantsResetTenantOnboardingStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphManagedTenantsResetTenantOnboardingStatus provides operations to call the resetTenantOnboardingStatus method.
+func (m *ManagedTenantsTenantsTenantItemRequestBuilder) MicrosoftGraphManagedTenantsResetTenantOnboardingStatus()(*ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder) {
+    return NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tenants in tenantRelationships
 func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, requestConfiguration *ManagedTenantsTenantsTenantItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {

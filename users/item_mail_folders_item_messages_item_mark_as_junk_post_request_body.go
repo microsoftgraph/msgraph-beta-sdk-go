@@ -53,7 +53,7 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetFieldDeser
     }
     return res
 }
-// GetMoveToJunk gets the moveToJunk property value. The moveToJunk property
+// GetMoveToJunk gets the moveToJunk property value. The MoveToJunk property
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) GetMoveToJunk()(*bool) {
     val, err := m.GetBackingStore().Get("moveToJunk")
     if err != nil {
@@ -91,7 +91,7 @@ func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) SetAdditional
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMoveToJunk sets the moveToJunk property value. The moveToJunk property
+// SetMoveToJunk sets the moveToJunk property value. The MoveToJunk property
 func (m *ItemMailFoldersItemMessagesItemMarkAsJunkPostRequestBody) SetMoveToJunk(value *bool)() {
     err := m.GetBackingStore().Set("moveToJunk", value)
     if err != nil {

@@ -18,7 +18,7 @@ type PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedApprovalItemRequestBuilderGetQueryParameters retrieve the properties and relationships of privilegedapproval object.
+// PrivilegedApprovalItemRequestBuilderGetQueryParameters get entity from privilegedApproval by key
 type PrivilegedApprovalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *PrivilegedApprovalItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get retrieve the properties and relationships of privilegedapproval object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedapproval-get?view=graph-rest-1.0
+// Get get entity from privilegedApproval by key
 func (m *PrivilegedApprovalItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *PrivilegedApprovalItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable), nil
 }
-// Patch update the properties of privilegedapproval object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedapproval-update?view=graph-rest-1.0
+// Patch update entity in privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, requestConfiguration *PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +128,7 @@ func (m *PrivilegedApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of privilegedapproval object.
+// ToGetRequestInformation get entity from privilegedApproval by key
 func (m *PrivilegedApprovalItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +144,7 @@ func (m *PrivilegedApprovalItemRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of privilegedapproval object.
+// ToPatchRequestInformation update entity in privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, requestConfiguration *PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

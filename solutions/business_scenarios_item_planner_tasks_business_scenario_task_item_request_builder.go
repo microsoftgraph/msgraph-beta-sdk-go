@@ -41,6 +41,14 @@ type BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderPatc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AssignedToTaskBoardFormat provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
+func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*BusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder) {
+    return NewBusinessScenariosItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BucketTaskBoardFormat provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
+func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) BucketTaskBoardFormat()(*BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) {
+    return NewBusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal instantiates a new BusinessScenarioTaskItemRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) {
     m := &BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder{
@@ -69,6 +77,10 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
         return err
     }
     return nil
+}
+// Details provides operations to manage the details property of the microsoft.graph.plannerTask entity.
+func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Details()(*BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) {
+    return NewBusinessScenariosItemPlannerTasksItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the Planner tasks for the scenario.
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
@@ -107,6 +119,10 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
+}
+// ProgressTaskBoardFormat provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
+func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ProgressTaskBoardFormat()(*BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilder) {
+    return NewBusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tasks for solutions
 func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

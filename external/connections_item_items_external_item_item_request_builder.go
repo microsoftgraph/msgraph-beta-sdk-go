@@ -74,10 +74,6 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// ExternalConnectorsAddActivities provides operations to call the addActivities method.
-func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ExternalConnectorsAddActivities()(*ConnectionsItemItemsItemExternalConnectorsAddActivitiesRequestBuilder) {
-    return NewConnectionsItemItemsItemExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get items from external
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -96,6 +92,10 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Get(ctx context.Con
         return nil, nil
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable), nil
+}
+// MicrosoftGraphExternalConnectorsAddActivities provides operations to call the addActivities method.
+func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) MicrosoftGraphExternalConnectorsAddActivities()(*ConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) {
+    return NewConnectionsItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put update the navigation property items in external
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Put(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderPutRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, error) {

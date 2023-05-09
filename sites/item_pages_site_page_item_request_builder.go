@@ -58,6 +58,10 @@ func NewItemPagesSitePageItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemPagesSitePageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemPagesSitePageItemRequestBuilder) CreatedByUser()(*ItemPagesItemCreatedByUserRequestBuilder) {
+    return NewItemPagesItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property pages for sites
 func (m *ItemPagesSitePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -96,6 +100,10 @@ func (m *ItemPagesSitePageItemRequestBuilder) Get(ctx context.Context, requestCo
 // GetWebPartsByPosition provides operations to call the getWebPartsByPosition method.
 func (m *ItemPagesSitePageItemRequestBuilder) GetWebPartsByPosition()(*ItemPagesItemGetWebPartsByPositionRequestBuilder) {
     return NewItemPagesItemGetWebPartsByPositionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemPagesSitePageItemRequestBuilder) LastModifiedByUser()(*ItemPagesItemLastModifiedByUserRequestBuilder) {
+    return NewItemPagesItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property pages in sites
 func (m *ItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {

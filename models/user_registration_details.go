@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -110,6 +111,16 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetIsSsprRegistered(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
         }
         return nil
     }
@@ -236,6 +247,17 @@ func (m *UserRegistrationDetails) GetIsSsprRegistered()(*bool) {
     }
     return nil
 }
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *UserRegistrationDetails) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetMethodsRegistered gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     val, err := m.GetBackingStore().Get("methodsRegistered")
@@ -335,6 +357,12 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMethodsRegistered() != nil {
         err = writer.WriteCollectionOfStringValues("methodsRegistered", m.GetMethodsRegistered())
         if err != nil {
@@ -418,6 +446,13 @@ func (m *UserRegistrationDetails) SetIsSsprRegistered(value *bool)() {
         panic(err)
     }
 }
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *UserRegistrationDetails) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMethodsRegistered sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
     err := m.GetBackingStore().Set("methodsRegistered", value)
@@ -458,6 +493,7 @@ type UserRegistrationDetailsable interface {
     GetIsSsprCapable()(*bool)
     GetIsSsprEnabled()(*bool)
     GetIsSsprRegistered()(*bool)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMethodsRegistered()([]string)
     GetUserDisplayName()(*string)
     GetUserPrincipalName()(*string)
@@ -470,6 +506,7 @@ type UserRegistrationDetailsable interface {
     SetIsSsprCapable(value *bool)()
     SetIsSsprEnabled(value *bool)()
     SetIsSsprRegistered(value *bool)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMethodsRegistered(value []string)()
     SetUserDisplayName(value *string)()
     SetUserPrincipalName(value *string)()

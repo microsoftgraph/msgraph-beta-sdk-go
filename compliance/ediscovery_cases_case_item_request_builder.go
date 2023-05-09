@@ -74,14 +74,6 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// EdiscoveryClose provides operations to call the close method.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) EdiscoveryClose()(*EdiscoveryCasesItemEdiscoveryCloseRequestBuilder) {
-    return NewEdiscoveryCasesItemEdiscoveryCloseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryReopen provides operations to call the reopen method.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) EdiscoveryReopen()(*EdiscoveryCasesItemEdiscoveryReopenRequestBuilder) {
-    return NewEdiscoveryCasesItemEdiscoveryReopenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get cases from compliance
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -104,6 +96,14 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Get(ctx context.Context, request
 // LegalHolds provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHolds()(*EdiscoveryCasesItemLegalHoldsRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryClose provides operations to call the close method.
+func (m *EdiscoveryCasesCaseItemRequestBuilder) MicrosoftGraphEdiscoveryClose()(*EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder) {
+    return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryReopen provides operations to call the reopen method.
+func (m *EdiscoveryCasesCaseItemRequestBuilder) MicrosoftGraphEdiscoveryReopen()(*EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) {
+    return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSources()(*EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {

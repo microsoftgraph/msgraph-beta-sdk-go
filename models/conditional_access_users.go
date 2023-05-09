@@ -49,7 +49,7 @@ func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     }
     return nil
 }
-// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded in the policy scope. Optionally populated.
+// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     val, err := m.GetBackingStore().Get("excludeGuestsOrExternalUsers")
     if err != nil {
@@ -338,7 +338,7 @@ func (m *ConditionalAccessUsers) SetExcludeGroups(value []string)() {
         panic(err)
     }
 }
-// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded in the policy scope. Optionally populated.
+// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) SetExcludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
     err := m.GetBackingStore().Set("excludeGuestsOrExternalUsers", value)
     if err != nil {

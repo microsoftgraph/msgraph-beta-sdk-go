@@ -62,10 +62,6 @@ func NewItemItemsItemWorkbookOperationsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
-func (m *ItemItemsItemWorkbookOperationsRequestBuilder) Count()(*ItemItemsItemWorkbookOperationsCountRequestBuilder) {
-    return NewItemItemsItemWorkbookOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
 func (m *ItemItemsItemWorkbookOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

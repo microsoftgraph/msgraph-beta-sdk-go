@@ -89,6 +89,10 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable), nil
 }
+// MicrosoftGraphSecurityResetToDefault provides operations to call the resetToDefault method.
+func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) MicrosoftGraphSecurityResetToDefault()(*CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property settings in security
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -107,10 +111,6 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Conte
         return nil, nil
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable), nil
-}
-// SecurityResetToDefault provides operations to call the resetToDefault method.
-func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) SecurityResetToDefault()(*CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for security
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

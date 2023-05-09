@@ -147,7 +147,7 @@ func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
     }
     return nil
 }
-// GetSharepoint gets the sharepoint property value. A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
+// GetSharepoint gets the sharepoint property value. The sharepoint property
 func (m *Admin) GetSharepoint()(Sharepointable) {
     val, err := m.GetBackingStore().Get("sharepoint")
     if err != nil {
@@ -254,7 +254,7 @@ func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable)() {
         panic(err)
     }
 }
-// SetSharepoint sets the sharepoint property value. A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
+// SetSharepoint sets the sharepoint property value. The sharepoint property
 func (m *Admin) SetSharepoint(value Sharepointable)() {
     err := m.GetBackingStore().Set("sharepoint", value)
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type DeletedItemContainer struct {
     Entity
 }
-// NewDeletedItemContainer instantiates a new DeletedItemContainer and sets the default values.
+// NewDeletedItemContainer instantiates a new deletedItemContainer and sets the default values.
 func NewDeletedItemContainer()(*DeletedItemContainer) {
     m := &DeletedItemContainer{
         Entity: *NewEntity(),

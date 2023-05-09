@@ -8,7 +8,7 @@ import (
 type OnPremisesAgentGroup struct {
     Entity
 }
-// NewOnPremisesAgentGroup instantiates a new OnPremisesAgentGroup and sets the default values.
+// NewOnPremisesAgentGroup instantiates a new onPremisesAgentGroup and sets the default values.
 func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
     m := &OnPremisesAgentGroup{
         Entity: *NewEntity(),

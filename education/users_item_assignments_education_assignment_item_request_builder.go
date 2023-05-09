@@ -101,6 +101,10 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable), nil
 }
+// GradingCategory provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*UsersItemAssignmentsItemGradingCategoryRequestBuilder) {
+    return NewUsersItemAssignmentsItemGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property assignments in education
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

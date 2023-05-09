@@ -19,7 +19,7 @@ func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
 func CreatePrivilegedRoleSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleSummary(), nil
 }
-// GetElevatedCount gets the elevatedCount property value. The number of users that have the role assigned and the role is activated.
+// GetElevatedCount gets the elevatedCount property value. The elevatedCount property
 func (m *PrivilegedRoleSummary) GetElevatedCount()(*int32) {
     val, err := m.GetBackingStore().Get("elevatedCount")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetManagedCount gets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
+// GetManagedCount gets the managedCount property value. The managedCount property
 func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
     val, err := m.GetBackingStore().Get("managedCount")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
     }
     return nil
 }
-// GetMfaEnabled gets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
+// GetMfaEnabled gets the mfaEnabled property value. The mfaEnabled property
 func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("mfaEnabled")
     if err != nil {
@@ -107,7 +107,7 @@ func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
     }
     return nil
 }
-// GetStatus gets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
+// GetStatus gets the status property value. The status property
 func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
     }
     return nil
 }
-// GetUsersCount gets the usersCount property value. The number of users that are assigned with the role.
+// GetUsersCount gets the usersCount property value. The usersCount property
 func (m *PrivilegedRoleSummary) GetUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("usersCount")
     if err != nil {
@@ -168,35 +168,35 @@ func (m *PrivilegedRoleSummary) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetElevatedCount sets the elevatedCount property value. The number of users that have the role assigned and the role is activated.
+// SetElevatedCount sets the elevatedCount property value. The elevatedCount property
 func (m *PrivilegedRoleSummary) SetElevatedCount(value *int32)() {
     err := m.GetBackingStore().Set("elevatedCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManagedCount sets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
+// SetManagedCount sets the managedCount property value. The managedCount property
 func (m *PrivilegedRoleSummary) SetManagedCount(value *int32)() {
     err := m.GetBackingStore().Set("managedCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMfaEnabled sets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
+// SetMfaEnabled sets the mfaEnabled property value. The mfaEnabled property
 func (m *PrivilegedRoleSummary) SetMfaEnabled(value *bool)() {
     err := m.GetBackingStore().Set("mfaEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
+// SetStatus sets the status property value. The status property
 func (m *PrivilegedRoleSummary) SetStatus(value *RoleSummaryStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsersCount sets the usersCount property value. The number of users that are assigned with the role.
+// SetUsersCount sets the usersCount property value. The usersCount property
 func (m *PrivilegedRoleSummary) SetUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("usersCount", value)
     if err != nil {

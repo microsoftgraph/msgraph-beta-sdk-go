@@ -89,13 +89,13 @@ func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Get(ctx context.Co
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
 }
-// ManagedTenantsAssignTag provides operations to call the assignTag method.
-func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) ManagedTenantsAssignTag()(*ManagedTenantsTenantTagsItemManagedTenantsAssignTagRequestBuilder) {
-    return NewManagedTenantsTenantTagsItemManagedTenantsAssignTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphManagedTenantsAssignTag provides operations to call the assignTag method.
+func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) MicrosoftGraphManagedTenantsAssignTag()(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) {
+    return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ManagedTenantsUnassignTag provides operations to call the unassignTag method.
-func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) ManagedTenantsUnassignTag()(*ManagedTenantsTenantTagsItemManagedTenantsUnassignTagRequestBuilder) {
-    return NewManagedTenantsTenantTagsItemManagedTenantsUnassignTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphManagedTenantsUnassignTag provides operations to call the unassignTag method.
+func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) MicrosoftGraphManagedTenantsUnassignTag()(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilder) {
+    return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tenantTags in tenantRelationships
 func (m *ManagedTenantsTenantTagsTenantTagItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, requestConfiguration *ManagedTenantsTenantTagsTenantTagItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {

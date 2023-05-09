@@ -108,6 +108,10 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementRoleAssignmentable), nil
 }
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.roleAssignment entity.
+func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleDefinition()(*RoleAssignmentsItemRoleDefinitionRequestBuilder) {
+    return NewRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RoleScopeTags provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTags()(*RoleAssignmentsItemRoleScopeTagsRequestBuilder) {
     return NewRoleAssignmentsItemRoleScopeTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

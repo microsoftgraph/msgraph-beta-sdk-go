@@ -20,7 +20,7 @@ func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
 func CreatePrivilegedRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleAssignment(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
+// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
 func (m *PrivilegedRoleAssignment) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIsElevated gets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
+// GetIsElevated gets the isElevated property value. The isElevated property
 func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
     val, err := m.GetBackingStore().Get("isElevated")
     if err != nil {
@@ -107,7 +107,7 @@ func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
     }
     return nil
 }
-// GetResultMessage gets the resultMessage property value. Result message set by the service.
+// GetResultMessage gets the resultMessage property value. The resultMessage property
 func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
     val, err := m.GetBackingStore().Get("resultMessage")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
     }
     return nil
 }
-// GetRoleId gets the roleId property value. Role identifier. In GUID string format.
+// GetRoleId gets the roleId property value. The roleId property
 func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
     }
     return nil
 }
-// GetRoleInfo gets the roleInfo property value. Read-only. Nullable. The associated role information.
+// GetRoleInfo gets the roleInfo property value. The roleInfo property
 func (m *PrivilegedRoleAssignment) GetRoleInfo()(PrivilegedRoleable) {
     val, err := m.GetBackingStore().Get("roleInfo")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *PrivilegedRoleAssignment) GetRoleInfo()(PrivilegedRoleable) {
     }
     return nil
 }
-// GetUserId gets the userId property value. User identifier. In GUID string format.
+// GetUserId gets the userId property value. The userId property
 func (m *PrivilegedRoleAssignment) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -195,42 +195,42 @@ func (m *PrivilegedRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
+// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
 func (m *PrivilegedRoleAssignment) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsElevated sets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
+// SetIsElevated sets the isElevated property value. The isElevated property
 func (m *PrivilegedRoleAssignment) SetIsElevated(value *bool)() {
     err := m.GetBackingStore().Set("isElevated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResultMessage sets the resultMessage property value. Result message set by the service.
+// SetResultMessage sets the resultMessage property value. The resultMessage property
 func (m *PrivilegedRoleAssignment) SetResultMessage(value *string)() {
     err := m.GetBackingStore().Set("resultMessage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleId sets the roleId property value. Role identifier. In GUID string format.
+// SetRoleId sets the roleId property value. The roleId property
 func (m *PrivilegedRoleAssignment) SetRoleId(value *string)() {
     err := m.GetBackingStore().Set("roleId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleInfo sets the roleInfo property value. Read-only. Nullable. The associated role information.
+// SetRoleInfo sets the roleInfo property value. The roleInfo property
 func (m *PrivilegedRoleAssignment) SetRoleInfo(value PrivilegedRoleable)() {
     err := m.GetBackingStore().Set("roleInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. User identifier. In GUID string format.
+// SetUserId sets the userId property value. The userId property
 func (m *PrivilegedRoleAssignment) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

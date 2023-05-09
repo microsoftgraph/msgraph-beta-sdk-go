@@ -9,7 +9,7 @@ import (
 type CloudAppSecurityProfile struct {
     Entity
 }
-// NewCloudAppSecurityProfile instantiates a new CloudAppSecurityProfile and sets the default values.
+// NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
     m := &CloudAppSecurityProfile{
         Entity: *NewEntity(),

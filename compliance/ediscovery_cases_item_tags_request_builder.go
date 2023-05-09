@@ -74,10 +74,6 @@ func NewEdiscoveryCasesItemTagsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Count()(*EdiscoveryCasesItemTagsCountRequestBuilder) {
     return NewEdiscoveryCasesItemTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EdiscoveryAsHierarchy provides operations to call the asHierarchy method.
-func (m *EdiscoveryCasesItemTagsRequestBuilder) EdiscoveryAsHierarchy()(*EdiscoveryCasesItemTagsEdiscoveryAsHierarchyRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsEdiscoveryAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get returns a list of tag objects associated to this case.
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -96,6 +92,10 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, request
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable), nil
+}
+// MicrosoftGraphEdiscoveryAsHierarchy provides operations to call the asHierarchy method.
+func (m *EdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphEdiscoveryAsHierarchy()(*EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) {
+    return NewEdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to tags for compliance
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {

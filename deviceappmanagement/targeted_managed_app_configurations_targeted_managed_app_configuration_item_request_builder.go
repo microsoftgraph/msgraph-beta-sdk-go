@@ -128,6 +128,10 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable), nil
 }
+// Settings provides operations to manage the settings property of the microsoft.graph.managedAppConfiguration entity.
+func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Settings()(*TargetedManagedAppConfigurationsItemSettingsRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // TargetApps provides operations to call the targetApps method.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) TargetApps()(*TargetedManagedAppConfigurationsItemTargetAppsRequestBuilder) {
     return NewTargetedManagedAppConfigurationsItemTargetAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -11,7 +11,7 @@ import (
 type ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters the assignments for this role. Read-only. Nullable.
+// ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters get assignments from privilegedApproval
 type ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the assignments for this role. Read-only. Nullable.
+// Get get assignments from privilegedApproval
 func (m *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// ToGetRequestInformation the assignments for this role. Read-only. Nullable.
+// ToGetRequestInformation get assignments from privilegedApproval
 func (m *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleInfoAssignmentsPrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

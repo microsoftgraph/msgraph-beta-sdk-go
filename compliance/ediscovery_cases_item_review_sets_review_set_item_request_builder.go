@@ -70,14 +70,6 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// EdiscoveryAddToReviewSet provides operations to call the addToReviewSet method.
-func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) EdiscoveryAddToReviewSet()(*EdiscoveryCasesItemReviewSetsItemEdiscoveryAddToReviewSetRequestBuilder) {
-    return NewEdiscoveryCasesItemReviewSetsItemEdiscoveryAddToReviewSetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryExport provides operations to call the export method.
-func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) EdiscoveryExport()(*EdiscoveryCasesItemReviewSetsItemEdiscoveryExportRequestBuilder) {
-    return NewEdiscoveryCasesItemReviewSetsItemEdiscoveryExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get returns a list of reviewSet objects in the case. Read-only. Nullable.
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -96,6 +88,14 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable), nil
+}
+// MicrosoftGraphEdiscoveryAddToReviewSet provides operations to call the addToReviewSet method.
+func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) MicrosoftGraphEdiscoveryAddToReviewSet()(*EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryAddToReviewSetRequestBuilder) {
+    return NewEdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryAddToReviewSetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryExport provides operations to call the export method.
+func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) MicrosoftGraphEdiscoveryExport()(*EdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportRequestBuilder) {
+    return NewEdiscoveryCasesItemReviewSetsItemMicrosoftGraphEdiscoveryExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property reviewSets in compliance
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {

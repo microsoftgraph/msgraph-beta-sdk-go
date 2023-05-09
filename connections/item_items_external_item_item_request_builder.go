@@ -74,10 +74,6 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ExternalConnectorsAddActivities provides operations to call the addActivities method.
-func (m *ItemItemsExternalItemItemRequestBuilder) ExternalConnectorsAddActivities()(*ItemItemsItemExternalConnectorsAddActivitiesRequestBuilder) {
-    return NewItemItemsItemExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get items from connections
 func (m *ItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -96,6 +92,10 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable), nil
+}
+// MicrosoftGraphExternalConnectorsAddActivities provides operations to call the addActivities method.
+func (m *ItemItemsExternalItemItemRequestBuilder) MicrosoftGraphExternalConnectorsAddActivities()(*ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder) {
+    return NewItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put update the navigation property items in connections
 func (m *ItemItemsExternalItemItemRequestBuilder) Put(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, requestConfiguration *ItemItemsExternalItemItemRequestBuilderPutRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, error) {

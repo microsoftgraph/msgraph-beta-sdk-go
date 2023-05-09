@@ -118,7 +118,7 @@ func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Navigation link to a member object who modified the record. For example, to a user.
 func (m *MembershipOutlierInsight) GetLastModifiedBy()(Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -239,7 +239,7 @@ func (m *MembershipOutlierInsight) SetContainerId(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Navigation link to a member object who modified the record. For example, to a user.
 func (m *MembershipOutlierInsight) SetLastModifiedBy(value Userable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

@@ -112,6 +112,14 @@ func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationable), nil
 }
+// TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
+func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) TeamsApp()(*ItemTeamworkInstalledAppsItemTeamsAppRequestBuilder) {
+    return NewItemTeamworkInstalledAppsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TeamsAppDefinition provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
+func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemTeamworkInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
+    return NewItemTeamworkInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property installedApps for users
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

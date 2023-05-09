@@ -89,9 +89,9 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Get(
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
-// IndustryDataValidate provides operations to call the validate method.
-func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) IndustryDataValidate()(*IndustryDataDataConnectorsItemIndustryDataValidateRequestBuilder) {
-    return NewIndustryDataDataConnectorsItemIndustryDataValidateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphIndustryDataValidate provides operations to call the validate method.
+func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) MicrosoftGraphIndustryDataValidate()(*IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) {
+    return NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property dataConnectors in external
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {

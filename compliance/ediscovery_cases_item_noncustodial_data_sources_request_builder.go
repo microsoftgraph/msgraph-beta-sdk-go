@@ -74,14 +74,6 @@ func NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder(rawUrl string, 
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Count()(*EdiscoveryCasesItemNoncustodialDataSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemNoncustodialDataSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EdiscoveryApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) EdiscoveryApplyHold()(*EdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryRemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -100,6 +92,14 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable), nil
+}
+// MicrosoftGraphEdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to noncustodialDataSources for compliance
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, error) {

@@ -58,6 +58,10 @@ func NewItemSitesItemPagesSitePageItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPagesSitePageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemSitesItemPagesSitePageItemRequestBuilder) CreatedByUser()(*ItemSitesItemPagesItemCreatedByUserRequestBuilder) {
+    return NewItemSitesItemPagesItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property pages for groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -96,6 +100,10 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Get(ctx context.Context, 
 // GetWebPartsByPosition provides operations to call the getWebPartsByPosition method.
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) GetWebPartsByPosition()(*ItemSitesItemPagesItemGetWebPartsByPositionRequestBuilder) {
     return NewItemSitesItemPagesItemGetWebPartsByPositionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemSitesItemPagesSitePageItemRequestBuilder) LastModifiedByUser()(*ItemSitesItemPagesItemLastModifiedByUserRequestBuilder) {
+    return NewItemSitesItemPagesItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property pages in groups
 func (m *ItemSitesItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemSitesItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {

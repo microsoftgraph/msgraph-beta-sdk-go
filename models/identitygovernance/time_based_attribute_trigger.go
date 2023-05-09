@@ -46,7 +46,7 @@ func (m *TimeBasedAttributeTrigger) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOffsetInDays gets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -60 and 60 days.
+// GetOffsetInDays gets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.
 func (m *TimeBasedAttributeTrigger) GetOffsetInDays()(*int32) {
     val, err := m.GetBackingStore().Get("offsetInDays")
     if err != nil {
@@ -89,7 +89,7 @@ func (m *TimeBasedAttributeTrigger) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetOffsetInDays sets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -60 and 60 days.
+// SetOffsetInDays sets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.
 func (m *TimeBasedAttributeTrigger) SetOffsetInDays(value *int32)() {
     err := m.GetBackingStore().Set("offsetInDays", value)
     if err != nil {

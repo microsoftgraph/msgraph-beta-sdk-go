@@ -41,6 +41,10 @@ type WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.windowsInformationProtection entity.
+func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) Assignments()(*WindowsInformationProtectionPoliciesItemAssignmentsRequestBuilder) {
+    return NewWindowsInformationProtectionPoliciesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderInternal instantiates a new WindowsInformationProtectionPolicyItemRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) {
     m := &WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder{
@@ -69,6 +73,10 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
         return err
     }
     return nil
+}
+// ExemptAppLockerFiles provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ExemptAppLockerFiles()(*WindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) {
+    return NewWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get windows information protection for apps running on devices which are not MDM enrolled.
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionPolicyable, error) {
@@ -107,6 +115,10 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionPolicyable), nil
+}
+// ProtectedAppLockerFiles provides operations to manage the protectedAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ProtectedAppLockerFiles()(*WindowsInformationProtectionPoliciesItemProtectedAppLockerFilesRequestBuilder) {
+    return NewWindowsInformationProtectionPoliciesItemProtectedAppLockerFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
 func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

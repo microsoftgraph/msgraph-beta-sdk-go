@@ -93,6 +93,22 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) Get(ctx 
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable), nil
 }
+// MicrosoftGraphWindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to exclusions for admin
 func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -144,20 +160,4 @@ func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) ToPostRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// WindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
-func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
-func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
-func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
-func (m *WindowsUpdatesDeploymentAudiencesItemExclusionsRequestBuilder) WindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentAudiencesItemExclusionsWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

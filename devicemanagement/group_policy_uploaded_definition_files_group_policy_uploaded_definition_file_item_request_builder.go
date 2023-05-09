@@ -58,6 +58,10 @@ func NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemR
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Definitions provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
+func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) Definitions()(*GroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilder) {
+    return NewGroupPolicyUploadedDefinitionFilesItemDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
 func (m *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyUploadedDefinitionFilesGroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

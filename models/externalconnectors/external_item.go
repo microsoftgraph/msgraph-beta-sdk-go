@@ -31,7 +31,7 @@ func (m *ExternalItem) GetAcl()([]Aclable) {
     }
     return nil
 }
-// GetActivities gets the activities property value. Write-only property. Returns results.
+// GetActivities gets the activities property value. Returns a list of activities performed on the item. Write-only.
 func (m *ExternalItem) GetActivities()([]ExternalActivityable) {
     val, err := m.GetBackingStore().Get("activities")
     if err != nil {
@@ -164,7 +164,7 @@ func (m *ExternalItem) SetAcl(value []Aclable)() {
         panic(err)
     }
 }
-// SetActivities sets the activities property value. Write-only property. Returns results.
+// SetActivities sets the activities property value. Returns a list of activities performed on the item. Write-only.
 func (m *ExternalItem) SetActivities(value []ExternalActivityable)() {
     err := m.GetBackingStore().Set("activities", value)
     if err != nil {

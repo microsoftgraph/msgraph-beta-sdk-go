@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileThreatDefenseConnector 
+// MobileThreatDefenseConnector entity which represents a connection to Mobile Threat Defense partner.
 type MobileThreatDefenseConnector struct {
     Entity
 }
-// NewMobileThreatDefenseConnector instantiates a new MobileThreatDefenseConnector and sets the default values.
+// NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),

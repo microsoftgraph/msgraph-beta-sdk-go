@@ -70,10 +70,6 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// EdiscoveryResetToDefault provides operations to call the resetToDefault method.
-func (m *EdiscoveryCasesItemSettingsRequestBuilder) EdiscoveryResetToDefault()(*EdiscoveryCasesItemSettingsEdiscoveryResetToDefaultRequestBuilder) {
-    return NewEdiscoveryCasesItemSettingsEdiscoveryResetToDefaultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get settings from compliance
 func (m *EdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSettingsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -92,6 +88,10 @@ func (m *EdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context, req
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable), nil
+}
+// MicrosoftGraphEdiscoveryResetToDefault provides operations to call the resetToDefault method.
+func (m *EdiscoveryCasesItemSettingsRequestBuilder) MicrosoftGraphEdiscoveryResetToDefault()(*EdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultRequestBuilder) {
+    return NewEdiscoveryCasesItemSettingsMicrosoftGraphEdiscoveryResetToDefaultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property settings in compliance
 func (m *EdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, requestConfiguration *EdiscoveryCasesItemSettingsRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, error) {
