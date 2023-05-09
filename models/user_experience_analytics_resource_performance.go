@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsResourcePerformance 
+// UserExperienceAnalyticsResourcePerformance the user experience analytics resource performance entity.
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsResourcePerformance instantiates a new UserExperienceAnalyticsResourcePerformance and sets the default values.
+// NewUserExperienceAnalyticsResourcePerformance instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformance) {
     m := &UserExperienceAnalyticsResourcePerformance{
         Entity: *NewEntity(),

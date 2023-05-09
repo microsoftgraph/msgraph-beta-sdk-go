@@ -87,10 +87,6 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
-func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) MultiValueExtendedProperties()(*ItemOutlookTaskGroupsItemTaskFoldersItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemOutlookTaskGroupsItemTaskFoldersItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property taskFolders in users
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -109,10 +105,6 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
-func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) SingleValueExtendedProperties()(*ItemOutlookTaskGroupsItemTaskFoldersItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemOutlookTaskGroupsItemTaskFoldersItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) Tasks()(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) {

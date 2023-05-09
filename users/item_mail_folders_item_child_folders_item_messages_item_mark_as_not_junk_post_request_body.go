@@ -53,7 +53,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsNotJunkPostRequest
     }
     return res
 }
-// GetMoveToInbox gets the moveToInbox property value. The moveToInbox property
+// GetMoveToInbox gets the moveToInbox property value. The MoveToInbox property
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsNotJunkPostRequestBody) GetMoveToInbox()(*bool) {
     val, err := m.GetBackingStore().Get("moveToInbox")
     if err != nil {
@@ -91,7 +91,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsNotJunkPostRequest
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsNotJunkPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMoveToInbox sets the moveToInbox property value. The moveToInbox property
+// SetMoveToInbox sets the moveToInbox property value. The MoveToInbox property
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsNotJunkPostRequestBody) SetMoveToInbox(value *bool)() {
     err := m.GetBackingStore().Set("moveToInbox", value)
     if err != nil {

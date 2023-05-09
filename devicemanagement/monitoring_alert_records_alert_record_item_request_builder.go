@@ -70,10 +70,6 @@ func (m *MonitoringAlertRecordsAlertRecordItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// DeviceManagementSetPortalNotificationAsSent provides operations to call the setPortalNotificationAsSent method.
-func (m *MonitoringAlertRecordsAlertRecordItemRequestBuilder) DeviceManagementSetPortalNotificationAsSent()(*MonitoringAlertRecordsItemDeviceManagementSetPortalNotificationAsSentRequestBuilder) {
-    return NewMonitoringAlertRecordsItemDeviceManagementSetPortalNotificationAsSentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the collection of records of alert events.
 func (m *MonitoringAlertRecordsAlertRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MonitoringAlertRecordsAlertRecordItemRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -92,6 +88,10 @@ func (m *MonitoringAlertRecordsAlertRecordItemRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable), nil
+}
+// MicrosoftGraphDeviceManagementSetPortalNotificationAsSent provides operations to call the setPortalNotificationAsSent method.
+func (m *MonitoringAlertRecordsAlertRecordItemRequestBuilder) MicrosoftGraphDeviceManagementSetPortalNotificationAsSent()(*MonitoringAlertRecordsItemMicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilder) {
+    return NewMonitoringAlertRecordsItemMicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property alertRecords in deviceManagement
 func (m *MonitoringAlertRecordsAlertRecordItemRequestBuilder) Patch(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, requestConfiguration *MonitoringAlertRecordsAlertRecordItemRequestBuilderPatchRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {

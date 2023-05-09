@@ -93,9 +93,9 @@ func (m *ManagedTenantsTenantGroupsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable), nil
 }
-// ManagedTenantsTenantSearch provides operations to call the tenantSearch method.
-func (m *ManagedTenantsTenantGroupsRequestBuilder) ManagedTenantsTenantSearch()(*ManagedTenantsTenantGroupsManagedTenantsTenantSearchRequestBuilder) {
-    return NewManagedTenantsTenantGroupsManagedTenantsTenantSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphManagedTenantsTenantSearch provides operations to call the tenantSearch method.
+func (m *ManagedTenantsTenantGroupsRequestBuilder) MicrosoftGraphManagedTenantsTenantSearch()(*ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilder) {
+    return NewManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to tenantGroups for tenantRelationships
 func (m *ManagedTenantsTenantGroupsRequestBuilder) Post(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *ManagedTenantsTenantGroupsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {

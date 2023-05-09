@@ -97,6 +97,14 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Get(ctx context.Co
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Members()(*WindowsUpdatesDeploymentsItemAudienceMembersRequestBuilder) {
     return NewWindowsUpdatesDeploymentsItemAudienceMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphWindowsUpdatesUpdateAudience provides operations to call the updateAudience method.
+func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) MicrosoftGraphWindowsUpdatesUpdateAudience()(*WindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphWindowsUpdatesUpdateAudienceById provides operations to call the updateAudienceById method.
+func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) MicrosoftGraphWindowsUpdatesUpdateAudienceById()(*WindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceMicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property audience in admin
 func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -160,12 +168,4 @@ func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) ToPatchRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// WindowsUpdatesUpdateAudience provides operations to call the updateAudience method.
-func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) WindowsUpdatesUpdateAudience()(*WindowsUpdatesDeploymentsItemAudienceWindowsUpdatesUpdateAudienceRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceWindowsUpdatesUpdateAudienceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WindowsUpdatesUpdateAudienceById provides operations to call the updateAudienceById method.
-func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) WindowsUpdatesUpdateAudienceById()(*WindowsUpdatesDeploymentsItemAudienceWindowsUpdatesUpdateAudienceByIdRequestBuilder) {
-    return NewWindowsUpdatesDeploymentsItemAudienceWindowsUpdatesUpdateAudienceByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

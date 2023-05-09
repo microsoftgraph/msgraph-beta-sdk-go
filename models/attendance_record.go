@@ -30,7 +30,7 @@ func (m *AttendanceRecord) GetAttendanceIntervals()([]AttendanceIntervalable) {
     }
     return nil
 }
-// GetEmailAddress gets the emailAddress property value. Email address of the user associated with this atttendance record.
+// GetEmailAddress gets the emailAddress property value. Email address of the user associated with this attendance record.
 func (m *AttendanceRecord) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -110,7 +110,7 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIdentity gets the identity property value. Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
+// GetIdentity gets the identity property value. Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) GetIdentity()(Identityable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -209,14 +209,14 @@ func (m *AttendanceRecord) SetAttendanceIntervals(value []AttendanceIntervalable
         panic(err)
     }
 }
-// SetEmailAddress sets the emailAddress property value. Email address of the user associated with this atttendance record.
+// SetEmailAddress sets the emailAddress property value. Email address of the user associated with this attendance record.
 func (m *AttendanceRecord) SetEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("emailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentity sets the identity property value. Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
+// SetIdentity sets the identity property value. Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) SetIdentity(value Identityable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {

@@ -97,6 +97,10 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
 func (m *PrintersPrinterItemRequestBuilder) GetCapabilities()(*PrintersItemGetCapabilitiesRequestBuilder) {
     return NewPrintersItemGetCapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Jobs provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+func (m *PrintersPrinterItemRequestBuilder) Jobs()(*PrintersItemJobsRequestBuilder) {
+    return NewPrintersItemJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property printers in print
 func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

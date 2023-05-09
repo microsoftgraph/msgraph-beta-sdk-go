@@ -93,6 +93,22 @@ func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) Get(c
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable), nil
 }
+// MicrosoftGraphSecurityEvaluateApplication provides operations to call the evaluateApplication method.
+func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityEvaluateApplication()(*ItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateApplicationRequestBuilder) {
+    return NewItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphSecurityEvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
+func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityEvaluateClassificationResults()(*ItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder) {
+    return NewItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphSecurityEvaluateRemoval provides operations to call the evaluateRemoval method.
+func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityEvaluateRemoval()(*ItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateRemovalRequestBuilder) {
+    return NewItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateRemovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphSecurityExtractContentLabel provides operations to call the extractContentLabel method.
+func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) MicrosoftGraphSecurityExtractContentLabel()(*ItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilder) {
+    return NewItemSecurityInformationProtectionSensitivityLabelsMicrosoftGraphSecurityExtractContentLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to sensitivityLabels for users
 func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -111,22 +127,6 @@ func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) Post(
         return nil, nil
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable), nil
-}
-// SecurityEvaluateApplication provides operations to call the evaluateApplication method.
-func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) SecurityEvaluateApplication()(*ItemSecurityInformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilder) {
-    return NewItemSecurityInformationProtectionSensitivityLabelsSecurityEvaluateApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SecurityEvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
-func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) SecurityEvaluateClassificationResults()(*ItemSecurityInformationProtectionSensitivityLabelsSecurityEvaluateClassificationResultsRequestBuilder) {
-    return NewItemSecurityInformationProtectionSensitivityLabelsSecurityEvaluateClassificationResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SecurityEvaluateRemoval provides operations to call the evaluateRemoval method.
-func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) SecurityEvaluateRemoval()(*ItemSecurityInformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilder) {
-    return NewItemSecurityInformationProtectionSensitivityLabelsSecurityEvaluateRemovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SecurityExtractContentLabel provides operations to call the extractContentLabel method.
-func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) SecurityExtractContentLabel()(*ItemSecurityInformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilder) {
-    return NewItemSecurityInformationProtectionSensitivityLabelsSecurityExtractContentLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionSensitivityLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type PrivilegedRoleAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedRoleAssignmentsRequestBuilderGetQueryParameters retrieve a list of privilegedRoleAssignment objects, which correspond to all role assignments for the organization.
+// PrivilegedRoleAssignmentsRequestBuilderGetQueryParameters get entities from privilegedRoleAssignments
 type PrivilegedRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewPrivilegedRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *PrivilegedRoleAssignmentsRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of privilegedRoleAssignment objects, which correspond to all role assignments for the organization.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedroleassignment-list?view=graph-rest-1.0
+// Get get entities from privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +97,7 @@ func (m *PrivilegedRoleAssignmentsRequestBuilder) Get(ctx context.Context, reque
 func (m *PrivilegedRoleAssignmentsRequestBuilder) My()(*MyRequestBuilder) {
     return NewMyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post use this API to create a new  privilegedRoleAssignment.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedroleassignment-post-privilegedroleassignments?view=graph-rest-1.0
+// Post add new entity to privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *PrivilegedRoleAssignmentsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// ToGetRequestInformation retrieve a list of privilegedRoleAssignment objects, which correspond to all role assignments for the organization.
+// ToGetRequestInformation get entities from privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *PrivilegedRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new  privilegedRoleAssignment.
+// ToPostRequestInformation add new entity to privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

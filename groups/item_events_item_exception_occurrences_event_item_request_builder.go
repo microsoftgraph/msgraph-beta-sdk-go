@@ -95,14 +95,6 @@ func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) Get(ctx cont
 func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) Instances()(*ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilder) {
     return NewItemEventsItemExceptionOccurrencesItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemEventsItemExceptionOccurrencesItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemEventsItemExceptionOccurrencesItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) SingleValueExtendedProperties()(*ItemEventsItemExceptionOccurrencesItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemEventsItemExceptionOccurrencesItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) SnoozeReminder()(*ItemEventsItemExceptionOccurrencesItemSnoozeReminderRequestBuilder) {
     return NewItemEventsItemExceptionOccurrencesItemSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

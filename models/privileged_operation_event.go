@@ -20,7 +20,7 @@ func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
 func CreatePrivilegedOperationEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedOperationEvent(), nil
 }
-// GetAdditionalInformation gets the additionalInformation property value. Detailed human readable information for the event.
+// GetAdditionalInformation gets the additionalInformation property value. The additionalInformation property
 func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
     }
     return nil
 }
-// GetCreationDateTime gets the creationDateTime property value. Indicates the time when the event is created.
+// GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
 func (m *PrivilegedOperationEvent) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *PrivilegedOperationEvent) GetCreationDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.
+// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
 func (m *PrivilegedOperationEvent) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetReferenceKey gets the referenceKey property value. Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
+// GetReferenceKey gets the referenceKey property value. The referenceKey property
 func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
     val, err := m.GetBackingStore().Get("referenceKey")
     if err != nil {
@@ -209,7 +209,7 @@ func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
     }
     return nil
 }
-// GetReferenceSystem gets the referenceSystem property value. Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
+// GetReferenceSystem gets the referenceSystem property value. The referenceSystem property
 func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
     val, err := m.GetBackingStore().Get("referenceSystem")
     if err != nil {
@@ -220,7 +220,7 @@ func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
     }
     return nil
 }
-// GetRequestorId gets the requestorId property value. The user id of the requestor who initiates the operation.
+// GetRequestorId gets the requestorId property value. The requestorId property
 func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
     val, err := m.GetBackingStore().Get("requestorId")
     if err != nil {
@@ -231,7 +231,7 @@ func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
     }
     return nil
 }
-// GetRequestorName gets the requestorName property value. The user name of the requestor who initiates the operation.
+// GetRequestorName gets the requestorName property value. The requestorName property
 func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
     val, err := m.GetBackingStore().Get("requestorName")
     if err != nil {
@@ -242,7 +242,7 @@ func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
     }
     return nil
 }
-// GetRequestType gets the requestType property value. The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
+// GetRequestType gets the requestType property value. The requestType property
 func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
@@ -253,7 +253,7 @@ func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
     }
     return nil
 }
-// GetRoleId gets the roleId property value. The id of the role that is associated with the operation.
+// GetRoleId gets the roleId property value. The roleId property
 func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -264,7 +264,7 @@ func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
     }
     return nil
 }
-// GetRoleName gets the roleName property value. The name of the role.
+// GetRoleName gets the roleName property value. The roleName property
 func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
     val, err := m.GetBackingStore().Get("roleName")
     if err != nil {
@@ -275,7 +275,7 @@ func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenant (organization) id.
+// GetTenantId gets the tenantId property value. The tenantId property
 func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -286,7 +286,7 @@ func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The id of the user that is associated with the operation.
+// GetUserId gets the userId property value. The userId property
 func (m *PrivilegedOperationEvent) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -297,7 +297,7 @@ func (m *PrivilegedOperationEvent) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserMail gets the userMail property value. The user's email.
+// GetUserMail gets the userMail property value. The userMail property
 func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
     val, err := m.GetBackingStore().Get("userMail")
     if err != nil {
@@ -308,7 +308,7 @@ func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
     }
     return nil
 }
-// GetUserName gets the userName property value. The user's display name.
+// GetUserName gets the userName property value. The userName property
 func (m *PrivilegedOperationEvent) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -411,98 +411,98 @@ func (m *PrivilegedOperationEvent) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAdditionalInformation sets the additionalInformation property value. Detailed human readable information for the event.
+// SetAdditionalInformation sets the additionalInformation property value. The additionalInformation property
 func (m *PrivilegedOperationEvent) SetAdditionalInformation(value *string)() {
     err := m.GetBackingStore().Set("additionalInformation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreationDateTime sets the creationDateTime property value. Indicates the time when the event is created.
+// SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
 func (m *PrivilegedOperationEvent) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("creationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.
+// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
 func (m *PrivilegedOperationEvent) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReferenceKey sets the referenceKey property value. Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
+// SetReferenceKey sets the referenceKey property value. The referenceKey property
 func (m *PrivilegedOperationEvent) SetReferenceKey(value *string)() {
     err := m.GetBackingStore().Set("referenceKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReferenceSystem sets the referenceSystem property value. Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
+// SetReferenceSystem sets the referenceSystem property value. The referenceSystem property
 func (m *PrivilegedOperationEvent) SetReferenceSystem(value *string)() {
     err := m.GetBackingStore().Set("referenceSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestorId sets the requestorId property value. The user id of the requestor who initiates the operation.
+// SetRequestorId sets the requestorId property value. The requestorId property
 func (m *PrivilegedOperationEvent) SetRequestorId(value *string)() {
     err := m.GetBackingStore().Set("requestorId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestorName sets the requestorName property value. The user name of the requestor who initiates the operation.
+// SetRequestorName sets the requestorName property value. The requestorName property
 func (m *PrivilegedOperationEvent) SetRequestorName(value *string)() {
     err := m.GetBackingStore().Set("requestorName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
+// SetRequestType sets the requestType property value. The requestType property
 func (m *PrivilegedOperationEvent) SetRequestType(value *string)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleId sets the roleId property value. The id of the role that is associated with the operation.
+// SetRoleId sets the roleId property value. The roleId property
 func (m *PrivilegedOperationEvent) SetRoleId(value *string)() {
     err := m.GetBackingStore().Set("roleId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleName sets the roleName property value. The name of the role.
+// SetRoleName sets the roleName property value. The roleName property
 func (m *PrivilegedOperationEvent) SetRoleName(value *string)() {
     err := m.GetBackingStore().Set("roleName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenant (organization) id.
+// SetTenantId sets the tenantId property value. The tenantId property
 func (m *PrivilegedOperationEvent) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The id of the user that is associated with the operation.
+// SetUserId sets the userId property value. The userId property
 func (m *PrivilegedOperationEvent) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserMail sets the userMail property value. The user's email.
+// SetUserMail sets the userMail property value. The userMail property
 func (m *PrivilegedOperationEvent) SetUserMail(value *string)() {
     err := m.GetBackingStore().Set("userMail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserName sets the userName property value. The user's display name.
+// SetUserName sets the userName property value. The userName property
 func (m *PrivilegedOperationEvent) SetUserName(value *string)() {
     err := m.GetBackingStore().Set("userName", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetQueryParameters get targetSchedule from identityGovernance
+// PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetQueryParameters schedule created by this request.
 type PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewPrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleReques
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get targetSchedule from identityGovernance
+// Get schedule created by this request.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleable), nil
 }
-// ToGetRequestInformation get targetSchedule from identityGovernance
+// ToGetRequestInformation schedule created by this request.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

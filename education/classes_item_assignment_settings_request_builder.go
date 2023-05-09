@@ -89,6 +89,10 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable), nil
 }
+// GradingCategories provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.
+func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingCategories()(*ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) {
+    return NewClassesItemAssignmentSettingsGradingCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property assignmentSettings in education
 func (m *ClassesItemAssignmentSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

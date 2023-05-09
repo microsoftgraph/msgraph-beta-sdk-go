@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationDeviceStateSummary struct {
     Entity
 }
-// NewDeviceConfigurationDeviceStateSummary instantiates a new DeviceConfigurationDeviceStateSummary and sets the default values.
+// NewDeviceConfigurationDeviceStateSummary instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
 func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateSummary) {
     m := &DeviceConfigurationDeviceStateSummary{
         Entity: *NewEntity(),

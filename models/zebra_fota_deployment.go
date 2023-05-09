@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaDeployment 
+// ZebraFotaDeployment the Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
 type ZebraFotaDeployment struct {
     Entity
 }
-// NewZebraFotaDeployment instantiates a new ZebraFotaDeployment and sets the default values.
+// NewZebraFotaDeployment instantiates a new zebraFotaDeployment and sets the default values.
 func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
     m := &ZebraFotaDeployment{
         Entity: *NewEntity(),

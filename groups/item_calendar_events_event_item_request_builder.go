@@ -129,10 +129,6 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) Get(ctx context.Context, req
 func (m *ItemCalendarEventsEventItemRequestBuilder) Instances()(*ItemCalendarEventsItemInstancesRequestBuilder) {
     return NewItemCalendarEventsItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemCalendarEventsEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarEventsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarEventsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property events in groups
 func (m *ItemCalendarEventsEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *ItemCalendarEventsEventItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -151,10 +147,6 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) Patch(ctx context.Context, b
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemCalendarEventsEventItemRequestBuilder) SingleValueExtendedProperties()(*ItemCalendarEventsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *ItemCalendarEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemSnoozeReminderRequestBuilder) {

@@ -8,7 +8,7 @@ import (
 type CloudPcSharedUseServicePlan struct {
     Entity
 }
-// NewCloudPcSharedUseServicePlan instantiates a new CloudPcSharedUseServicePlan and sets the default values.
+// NewCloudPcSharedUseServicePlan instantiates a new cloudPcSharedUseServicePlan and sets the default values.
 func NewCloudPcSharedUseServicePlan()(*CloudPcSharedUseServicePlan) {
     m := &CloudPcSharedUseServicePlan{
         Entity: *NewEntity(),

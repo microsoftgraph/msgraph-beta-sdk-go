@@ -18,7 +18,7 @@ type PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedRoleItemRequestBuilderGetQueryParameters retrieve the properties and relationships of privilegedRole object. 
+// PrivilegedRoleItemRequestBuilderGetQueryParameters get entity from privilegedRoles by key
 type PrivilegedRoleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,10 +74,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get retrieve the properties and relationships of privilegedRole object. 
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrole-get?view=graph-rest-1.0
+// Get get entity from privilegedRoles by key
 func (m *PrivilegedRoleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedRoleItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -143,7 +140,7 @@ func (m *PrivilegedRoleItemRequestBuilder) ToDeleteRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of privilegedRole object. 
+// ToGetRequestInformation get entity from privilegedRoles by key
 func (m *PrivilegedRoleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

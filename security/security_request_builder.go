@@ -114,6 +114,10 @@ func (m *SecurityRequestBuilder) IpSecurityProfiles()(*IpSecurityProfilesRequest
 func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
     return NewLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
+func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {
+    return NewMicrosoftGraphSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update security
 func (m *SecurityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -148,10 +152,6 @@ func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
 // SecurityActions provides operations to manage the securityActions property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecurityActions()(*SecurityActionsRequestBuilder) {
     return NewSecurityActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
-func (m *SecurityRequestBuilder) SecurityRunHuntingQuery()(*SecurityRunHuntingQueryRequestBuilder) {
-    return NewSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {

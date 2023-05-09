@@ -18,7 +18,7 @@ type ItemItemsItemActivitiesExternalActivityItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemActivitiesExternalActivityItemRequestBuilderGetQueryParameters write-only property. Returns results.
+// ItemItemsItemActivitiesExternalActivityItemRequestBuilderGetQueryParameters returns a list of activities performed on the item. Write-only.
 type ItemItemsItemActivitiesExternalActivityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get write-only property. Returns results.
+// Get returns a list of activities performed on the item. Write-only.
 func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesExternalActivityItemRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation write-only property. Returns results.
+// ToGetRequestInformation returns a list of activities performed on the item. Write-only.
 func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemActivitiesExternalActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

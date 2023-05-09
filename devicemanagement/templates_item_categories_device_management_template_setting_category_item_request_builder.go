@@ -112,6 +112,10 @@ func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReque
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettings()(*TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) {
     return NewTemplatesItemCategoriesItemRecommendedSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
+func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) SettingDefinitions()(*TemplatesItemCategoriesItemSettingDefinitionsRequestBuilder) {
+    return NewTemplatesItemCategoriesItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

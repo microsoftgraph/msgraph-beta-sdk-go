@@ -30,6 +30,17 @@ func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
     }
     return nil
 }
+// GetAuthenticationContext gets the authenticationContext property value. The authenticationContext property
+func (m *UnifiedRbacResourceAction) GetAuthenticationContext()(AuthenticationContextClassReferenceable) {
+    val, err := m.GetBackingStore().Get("authenticationContext")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationContextClassReferenceable)
+    }
+    return nil
+}
 // GetAuthenticationContextId gets the authenticationContextId property value. The authenticationContextId property
 func (m *UnifiedRbacResourceAction) GetAuthenticationContextId()(*string) {
     val, err := m.GetBackingStore().Get("authenticationContextId")
@@ -62,6 +73,16 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetActionVerb(val)
+        }
+        return nil
+    }
+    res["authenticationContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationContextClassReferenceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationContext(val.(AuthenticationContextClassReferenceable))
         }
         return nil
     }
@@ -184,6 +205,12 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("authenticationContext", m.GetAuthenticationContext())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("authenticationContextId", m.GetAuthenticationContextId())
         if err != nil {
             return err
@@ -224,6 +251,13 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
 // SetActionVerb sets the actionVerb property value. HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
 func (m *UnifiedRbacResourceAction) SetActionVerb(value *string)() {
     err := m.GetBackingStore().Set("actionVerb", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAuthenticationContext sets the authenticationContext property value. The authenticationContext property
+func (m *UnifiedRbacResourceAction) SetAuthenticationContext(value AuthenticationContextClassReferenceable)() {
+    err := m.GetBackingStore().Set("authenticationContext", value)
     if err != nil {
         panic(err)
     }
@@ -275,6 +309,7 @@ type UnifiedRbacResourceActionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionVerb()(*string)
+    GetAuthenticationContext()(AuthenticationContextClassReferenceable)
     GetAuthenticationContextId()(*string)
     GetDescription()(*string)
     GetIsAuthenticationContextSettable()(*bool)
@@ -282,6 +317,7 @@ type UnifiedRbacResourceActionable interface {
     GetResourceScope()(UnifiedRbacResourceScopeable)
     GetResourceScopeId()(*string)
     SetActionVerb(value *string)()
+    SetAuthenticationContext(value AuthenticationContextClassReferenceable)()
     SetAuthenticationContextId(value *string)()
     SetDescription(value *string)()
     SetIsAuthenticationContextSettable(value *bool)()

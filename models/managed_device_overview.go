@@ -9,7 +9,7 @@ import (
 type ManagedDeviceOverview struct {
     Entity
 }
-// NewManagedDeviceOverview instantiates a new ManagedDeviceOverview and sets the default values.
+// NewManagedDeviceOverview instantiates a new managedDeviceOverview and sets the default values.
 func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
     m := &ManagedDeviceOverview{
         Entity: *NewEntity(),

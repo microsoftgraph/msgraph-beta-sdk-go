@@ -19,7 +19,7 @@ func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignme
 func CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicyAssignment(), nil
 }
-// GetAssignedUsers gets the assignedUsers property value. The assignedUsers property
+// GetAssignedUsers gets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
 func (m *CloudPcProvisioningPolicyAssignment) GetAssignedUsers()([]Userable) {
     val, err := m.GetBackingStore().Get("assignedUsers")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetAssignedUsers sets the assignedUsers property value. The assignedUsers property
+// SetAssignedUsers sets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
 func (m *CloudPcProvisioningPolicyAssignment) SetAssignedUsers(value []Userable)() {
     err := m.GetBackingStore().Set("assignedUsers", value)
     if err != nil {

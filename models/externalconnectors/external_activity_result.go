@@ -20,7 +20,7 @@ func NewExternalActivityResult()(*ExternalActivityResult) {
 func CreateExternalActivityResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalActivityResult(), nil
 }
-// GetError gets the error property value. Error information explaining failure to process external activity.
+// GetError gets the error property value. Error information that explains the failure to process an external activity.
 func (m *ExternalActivityResult) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ExternalActivityResult) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetError sets the error property value. Error information explaining failure to process external activity.
+// SetError sets the error property value. Error information that explains the failure to process an external activity.
 func (m *ExternalActivityResult) SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {

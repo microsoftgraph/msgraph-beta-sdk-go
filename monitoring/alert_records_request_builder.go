@@ -74,10 +74,6 @@ func NewAlertRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *AlertRecordsRequestBuilder) Count()(*AlertRecordsCountRequestBuilder) {
     return NewAlertRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeviceManagementGetPortalNotifications provides operations to call the getPortalNotifications method.
-func (m *AlertRecordsRequestBuilder) DeviceManagementGetPortalNotifications()(*AlertRecordsDeviceManagementGetPortalNotificationsRequestBuilder) {
-    return NewAlertRecordsDeviceManagementGetPortalNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the collection of records of alert events.
 func (m *AlertRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRecordsRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -96,6 +92,10 @@ func (m *AlertRecordsRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable), nil
+}
+// MicrosoftGraphDeviceManagementGetPortalNotifications provides operations to call the getPortalNotifications method.
+func (m *AlertRecordsRequestBuilder) MicrosoftGraphDeviceManagementGetPortalNotifications()(*AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder) {
+    return NewAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to alertRecords for monitoring
 func (m *AlertRecordsRequestBuilder) Post(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, requestConfiguration *AlertRecordsRequestBuilderPostRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {

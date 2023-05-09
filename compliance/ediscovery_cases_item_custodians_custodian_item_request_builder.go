@@ -70,26 +70,6 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// EdiscoveryActivate provides operations to call the activate method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryActivate()(*EdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryApplyHold provides operations to call the applyHold method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansItemEdiscoveryApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryRelease provides operations to call the release method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryRelease()(*EdiscoveryCasesItemCustodiansItemEdiscoveryReleaseRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryReleaseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryRemoveHold provides operations to call the removeHold method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansItemEdiscoveryRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// EdiscoveryUpdateIndex provides operations to call the updateIndex method.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) EdiscoveryUpdateIndex()(*EdiscoveryCasesItemCustodiansItemEdiscoveryUpdateIndexRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemEdiscoveryUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get returns a list of case custodian objects for this case.  Nullable.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -108,6 +88,30 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
+}
+// LastIndexOperation provides operations to manage the lastIndexOperation property of the microsoft.graph.ediscovery.dataSourceContainer entity.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) LastIndexOperation()(*EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryActivate provides operations to call the activate method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryActivate()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryApplyHold provides operations to call the applyHold method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryRelease provides operations to call the release method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryRelease()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryReleaseRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryReleaseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryRemoveHold provides operations to call the removeHold method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphEdiscoveryUpdateIndex provides operations to call the updateIndex method.
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryUpdateIndex()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property custodians in compliance
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {

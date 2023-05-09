@@ -75,9 +75,31 @@ func (m *OnlineMeeting) GetAllowParticipantsToChangeName()(*bool) {
     }
     return nil
 }
+// GetAllowRecording gets the allowRecording property value. The allowRecording property
+func (m *OnlineMeeting) GetAllowRecording()(*bool) {
+    val, err := m.GetBackingStore().Get("allowRecording")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
     val, err := m.GetBackingStore().Get("allowTeamworkReactions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAllowTranscription gets the allowTranscription property value. The allowTranscription property
+func (m *OnlineMeeting) GetAllowTranscription()(*bool) {
+    val, err := m.GetBackingStore().Get("allowTranscription")
     if err != nil {
         panic(err)
     }
@@ -260,6 +282,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["allowRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowRecording(val)
+        }
+        return nil
+    }
     res["allowTeamworkReactions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -267,6 +299,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAllowTeamworkReactions(val)
+        }
+        return nil
+    }
+    res["allowTranscription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowTranscription(val)
         }
         return nil
     }
@@ -836,7 +878,19 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteBoolValue("allowRecording", m.GetAllowRecording())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("allowTeamworkReactions", m.GetAllowTeamworkReactions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowTranscription", m.GetAllowTranscription())
         if err != nil {
             return err
         }
@@ -1067,9 +1121,23 @@ func (m *OnlineMeeting) SetAllowParticipantsToChangeName(value *bool)() {
         panic(err)
     }
 }
+// SetAllowRecording sets the allowRecording property value. The allowRecording property
+func (m *OnlineMeeting) SetAllowRecording(value *bool)() {
+    err := m.GetBackingStore().Set("allowRecording", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
     err := m.GetBackingStore().Set("allowTeamworkReactions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowTranscription sets the allowTranscription property value. The allowTranscription property
+func (m *OnlineMeeting) SetAllowTranscription(value *bool)() {
+    err := m.GetBackingStore().Set("allowTranscription", value)
     if err != nil {
         panic(err)
     }
@@ -1293,7 +1361,9 @@ type OnlineMeetingable interface {
     GetAllowedPresenters()(*OnlineMeetingPresenters)
     GetAllowMeetingChat()(*MeetingChatMode)
     GetAllowParticipantsToChangeName()(*bool)
+    GetAllowRecording()(*bool)
     GetAllowTeamworkReactions()(*bool)
+    GetAllowTranscription()(*bool)
     GetAlternativeRecording()([]byte)
     GetAnonymizeIdentityForRoles()([]OnlineMeetingRole)
     GetAttendanceReports()([]MeetingAttendanceReportable)
@@ -1329,7 +1399,9 @@ type OnlineMeetingable interface {
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
     SetAllowMeetingChat(value *MeetingChatMode)()
     SetAllowParticipantsToChangeName(value *bool)()
+    SetAllowRecording(value *bool)()
     SetAllowTeamworkReactions(value *bool)()
+    SetAllowTranscription(value *bool)()
     SetAlternativeRecording(value []byte)()
     SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()

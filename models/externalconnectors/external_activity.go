@@ -85,7 +85,7 @@ func (m *ExternalActivity) GetPerformedBy()(Identityable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. When the particular activity occurred.
+// GetStartDateTime gets the startDateTime property value. The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ExternalActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *ExternalActivity) SetPerformedBy(value Identityable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. When the particular activity occurred.
+// SetStartDateTime sets the startDateTime property value. The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ExternalActivity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

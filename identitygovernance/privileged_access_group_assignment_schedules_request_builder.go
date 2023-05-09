@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupAssignmentSchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetQueryParameters get assignmentSchedules from identityGovernance
+// PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetQueryParameters the assignment schedules to activate a just-in-time access.
 type PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Count()(*Privil
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get assignmentSchedules from identityGovernance
+// Get the assignment schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupAssignmentScheduleable), nil
 }
-// ToGetRequestInformation get assignmentSchedules from identityGovernance
+// ToGetRequestInformation the assignment schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroupAssignmentSchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentSchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

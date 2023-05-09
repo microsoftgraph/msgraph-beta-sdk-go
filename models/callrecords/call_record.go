@@ -10,7 +10,7 @@ import (
 type CallRecord struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCallRecord instantiates a new CallRecord and sets the default values.
+// NewCallRecord instantiates a new callRecord and sets the default values.
 func NewCallRecord()(*CallRecord) {
     m := &CallRecord{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

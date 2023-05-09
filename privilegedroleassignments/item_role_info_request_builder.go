@@ -18,7 +18,7 @@ type ItemRoleInfoRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemRoleInfoRequestBuilderGetQueryParameters read-only. Nullable. The associated role information.
+// ItemRoleInfoRequestBuilderGetQueryParameters get roleInfo from privilegedRoleAssignments
 type ItemRoleInfoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemRoleInfoRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get read-only. Nullable. The associated role information.
+// Get get roleInfo from privilegedRoleAssignments
 func (m *ItemRoleInfoRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleInfoRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ItemRoleInfoRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read-only. Nullable. The associated role information.
+// ToGetRequestInformation get roleInfo from privilegedRoleAssignments
 func (m *ItemRoleInfoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleInfoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

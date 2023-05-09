@@ -1125,7 +1125,7 @@ func (m *ServicePrincipal) GetPreferredSingleSignOnMode()(*string) {
     }
     return nil
 }
-// GetPreferredTokenSigningKeyEndDateTime gets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
+// GetPreferredTokenSigningKeyEndDateTime gets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
 func (m *ServicePrincipal) GetPreferredTokenSigningKeyEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("preferredTokenSigningKeyEndDateTime")
     if err != nil {
@@ -2017,7 +2017,7 @@ func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
         panic(err)
     }
 }
-// SetPreferredTokenSigningKeyEndDateTime sets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
+// SetPreferredTokenSigningKeyEndDateTime sets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("preferredTokenSigningKeyEndDateTime", value)
     if err != nil {

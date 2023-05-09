@@ -75,17 +75,9 @@ func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Get(ctx context.Contex
 func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Mentions()(*ItemThreadsItemPostsItemInReplyToMentionsRequestBuilder) {
     return NewItemThreadsItemPostsItemInReplyToMentionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
-func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) MultiValueExtendedProperties()(*ItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Reply provides operations to call the reply method.
 func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) Reply()(*ItemThreadsItemPostsItemInReplyToReplyRequestBuilder) {
     return NewItemThreadsItemPostsItemInReplyToReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
-func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) SingleValueExtendedProperties()(*ItemThreadsItemPostsItemInReplyToSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
 func (m *ItemThreadsItemPostsItemInReplyToRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemInReplyToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

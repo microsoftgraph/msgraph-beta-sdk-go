@@ -89,9 +89,9 @@ func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) Get(
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionable), nil
 }
-// ManagedTenantsApply provides operations to call the apply method.
-func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) ManagedTenantsApply()(*ManagedTenantsManagementActionsItemManagedTenantsApplyRequestBuilder) {
-    return NewManagedTenantsManagementActionsItemManagedTenantsApplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// MicrosoftGraphManagedTenantsApply provides operations to call the apply method.
+func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) MicrosoftGraphManagedTenantsApply()(*ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilder) {
+    return NewManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property managementActions in tenantRelationships
 func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionable, requestConfiguration *ManagedTenantsManagementActionsManagementActionItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionable, error) {

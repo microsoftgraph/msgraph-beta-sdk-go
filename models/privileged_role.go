@@ -19,7 +19,7 @@ func NewPrivilegedRole()(*PrivilegedRole) {
 func CreatePrivilegedRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRole(), nil
 }
-// GetAssignments gets the assignments property value. The assignments for this role. Read-only. Nullable.
+// GetAssignments gets the assignments property value. The assignments property
 func (m *PrivilegedRole) GetAssignments()([]PrivilegedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -79,7 +79,7 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetName gets the name property value. Role name.
+// GetName gets the name property value. The name property
 func (m *PrivilegedRole) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -90,7 +90,7 @@ func (m *PrivilegedRole) GetName()(*string) {
     }
     return nil
 }
-// GetSettings gets the settings property value. The settings for this role. Read-only. Nullable.
+// GetSettings gets the settings property value. The settings property
 func (m *PrivilegedRole) GetSettings()(PrivilegedRoleSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -101,7 +101,7 @@ func (m *PrivilegedRole) GetSettings()(PrivilegedRoleSettingsable) {
     }
     return nil
 }
-// GetSummary gets the summary property value. The summary information for this role. Read-only. Nullable.
+// GetSummary gets the summary property value. The summary property
 func (m *PrivilegedRole) GetSummary()(PrivilegedRoleSummaryable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -148,28 +148,28 @@ func (m *PrivilegedRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetAssignments sets the assignments property value. The assignments for this role. Read-only. Nullable.
+// SetAssignments sets the assignments property value. The assignments property
 func (m *PrivilegedRole) SetAssignments(value []PrivilegedRoleAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Role name.
+// SetName sets the name property value. The name property
 func (m *PrivilegedRole) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSettings sets the settings property value. The settings for this role. Read-only. Nullable.
+// SetSettings sets the settings property value. The settings property
 func (m *PrivilegedRole) SetSettings(value PrivilegedRoleSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSummary sets the summary property value. The summary information for this role. Read-only. Nullable.
+// SetSummary sets the summary property value. The summary property
 func (m *PrivilegedRole) SetSummary(value PrivilegedRoleSummaryable)() {
     err := m.GetBackingStore().Set("summary", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetQueryParameters get group from identityGovernance
+// PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetQueryParameters references the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand.
 type PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get group from identityGovernance
+// Get references the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
-// ToGetRequestInformation get group from identityGovernance
+// ToGetRequestInformation references the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
