@@ -18,7 +18,7 @@ type ManagedTenantsManagementActionsManagementActionItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsManagementActionsManagementActionItemRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
+// ManagedTenantsManagementActionsManagementActionItemRequestBuilderGetQueryParameters read the properties and relationships of a managementAction object.
 type ManagedTenantsManagementActionsManagementActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the collection of baseline management actions across managed tenants.
+// Get read the properties and relationships of a managementAction object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managementaction-get?view=graph-rest-1.0
 func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionsManagementActionItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of baseline management actions across managed tenants.
+// ToGetRequestInformation read the properties and relationships of a managementAction object.
 func (m *ManagedTenantsManagementActionsManagementActionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionsManagementActionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

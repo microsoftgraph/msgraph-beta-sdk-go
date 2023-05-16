@@ -18,7 +18,7 @@ type ItemProfileProjectsProjectParticipationItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileProjectsProjectParticipationItemRequestBuilderGetQueryParameters represents detailed information about projects associated with a user.
+// ItemProfileProjectsProjectParticipationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a projectParticipation object in a user's profile.
 type ItemProfileProjectsProjectParticipationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileProjectsProjectParticipationItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property projects for users
+// Delete delete a projectParticipation object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/projectparticipation-delete?view=graph-rest-1.0
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get represents detailed information about projects associated with a user.
+// Get retrieve the properties and relationships of a projectParticipation object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-1.0
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable), nil
 }
-// Patch update the navigation property projects in users
+// Patch update the properties of a projectParticipation object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/projectparticipation-update?view=graph-rest-1.0
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable), nil
 }
-// ToDeleteRequestInformation delete navigation property projects for users
+// ToDeleteRequestInformation delete a projectParticipation object from a user's profile.
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents detailed information about projects associated with a user.
+// ToGetRequestInformation retrieve the properties and relationships of a projectParticipation object in a user's profile.
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property projects in users
+// ToPatchRequestInformation update the properties of a projectParticipation object in a user's profile.
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemSitesItemOnenoteSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemOnenoteSectionsRequestBuilderGetQueryParameters the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ItemSitesItemOnenoteSectionsRequestBuilderGetQueryParameters retrieve a list of section objects.
 type ItemSitesItemOnenoteSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemSitesItemOnenoteSectionsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSitesItemOnenoteSectionsRequestBuilder) Count()(*ItemSitesItemOnenoteSectionsCountRequestBuilder) {
     return NewItemSitesItemOnenoteSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Get retrieve a list of section objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemSitesItemOnenoteSectionsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable), nil
 }
-// ToGetRequestInformation the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of section objects.
 func (m *ItemSitesItemOnenoteSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

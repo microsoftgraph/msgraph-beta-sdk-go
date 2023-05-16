@@ -31,7 +31,10 @@ func NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationReq
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action validateAuthenticationConfiguration
+// Post an API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) Post(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConfigurationValidationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConfigurationValidationable), nil
 }
-// ToPostRequestInformation invoke action validateAuthenticationConfiguration
+// ToPostRequestInformation an API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
 func (m *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsItemValidateAuthenticationConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

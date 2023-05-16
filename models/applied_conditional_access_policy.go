@@ -50,24 +50,24 @@ func (m *AppliedConditionalAccessPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c
     return m.backingStore
 }
 // GetConditionsNotSatisfied gets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
-func (m *AppliedConditionalAccessPolicy) GetConditionsNotSatisfied()(*ConditionalAccessConditions) {
+func (m *AppliedConditionalAccessPolicy) GetConditionsNotSatisfied()([]ConditionalAccessConditions) {
     val, err := m.GetBackingStore().Get("conditionsNotSatisfied")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConditionalAccessConditions)
+        return val.([]ConditionalAccessConditions)
     }
     return nil
 }
 // GetConditionsSatisfied gets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
-func (m *AppliedConditionalAccessPolicy) GetConditionsSatisfied()(*ConditionalAccessConditions) {
+func (m *AppliedConditionalAccessPolicy) GetConditionsSatisfied()([]ConditionalAccessConditions) {
     val, err := m.GetBackingStore().Get("conditionsSatisfied")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConditionalAccessConditions)
+        return val.([]ConditionalAccessConditions)
     }
     return nil
 }
@@ -129,22 +129,30 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["conditionsNotSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConditionalAccessConditions)
+        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessConditions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionsNotSatisfied(val.(*ConditionalAccessConditions))
+            res := make([]ConditionalAccessConditions, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessConditions))
+            }
+            m.SetConditionsNotSatisfied(res)
         }
         return nil
     }
     res["conditionsSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConditionalAccessConditions)
+        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessConditions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionsSatisfied(val.(*ConditionalAccessConditions))
+            res := make([]ConditionalAccessConditions, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessConditions))
+            }
+            m.SetConditionsSatisfied(res)
         }
         return nil
     }
@@ -324,15 +332,13 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i878a80d2330e89d268963
         }
     }
     if m.GetConditionsNotSatisfied() != nil {
-        cast := (*m.GetConditionsNotSatisfied()).String()
-        err := writer.WriteStringValue("conditionsNotSatisfied", &cast)
+        err := writer.WriteCollectionOfStringValues("conditionsNotSatisfied", SerializeConditionalAccessConditions(m.GetConditionsNotSatisfied()))
         if err != nil {
             return err
         }
     }
     if m.GetConditionsSatisfied() != nil {
-        cast := (*m.GetConditionsSatisfied()).String()
-        err := writer.WriteStringValue("conditionsSatisfied", &cast)
+        err := writer.WriteCollectionOfStringValues("conditionsSatisfied", SerializeConditionalAccessConditions(m.GetConditionsSatisfied()))
         if err != nil {
             return err
         }
@@ -427,14 +433,14 @@ func (m *AppliedConditionalAccessPolicy) SetBackingStore(value ie8677ce2c7e1b4c2
     m.backingStore = value
 }
 // SetConditionsNotSatisfied sets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
-func (m *AppliedConditionalAccessPolicy) SetConditionsNotSatisfied(value *ConditionalAccessConditions)() {
+func (m *AppliedConditionalAccessPolicy) SetConditionsNotSatisfied(value []ConditionalAccessConditions)() {
     err := m.GetBackingStore().Set("conditionsNotSatisfied", value)
     if err != nil {
         panic(err)
     }
 }
 // SetConditionsSatisfied sets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
-func (m *AppliedConditionalAccessPolicy) SetConditionsSatisfied(value *ConditionalAccessConditions)() {
+func (m *AppliedConditionalAccessPolicy) SetConditionsSatisfied(value []ConditionalAccessConditions)() {
     err := m.GetBackingStore().Set("conditionsSatisfied", value)
     if err != nil {
         panic(err)
@@ -510,8 +516,8 @@ type AppliedConditionalAccessPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationStrength()(AuthenticationStrengthable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetConditionsNotSatisfied()(*ConditionalAccessConditions)
-    GetConditionsSatisfied()(*ConditionalAccessConditions)
+    GetConditionsNotSatisfied()([]ConditionalAccessConditions)
+    GetConditionsSatisfied()([]ConditionalAccessConditions)
     GetDisplayName()(*string)
     GetEnforcedGrantControls()([]string)
     GetEnforcedSessionControls()([]string)
@@ -523,8 +529,8 @@ type AppliedConditionalAccessPolicyable interface {
     GetSessionControlsNotSatisfied()([]string)
     SetAuthenticationStrength(value AuthenticationStrengthable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetConditionsNotSatisfied(value *ConditionalAccessConditions)()
-    SetConditionsSatisfied(value *ConditionalAccessConditions)()
+    SetConditionsNotSatisfied(value []ConditionalAccessConditions)()
+    SetConditionsSatisfied(value []ConditionalAccessConditions)()
     SetDisplayName(value *string)()
     SetEnforcedGrantControls(value []string)()
     SetEnforcedSessionControls(value []string)()

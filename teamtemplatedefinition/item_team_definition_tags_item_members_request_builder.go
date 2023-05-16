@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionTagsItemMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionTagsItemMembersRequestBuilderGetQueryParameters users assigned to the tag.
+// ItemTeamDefinitionTagsItemMembersRequestBuilderGetQueryParameters get a list of the members of a standard tag in a team and their properties.
 type ItemTeamDefinitionTagsItemMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemTeamDefinitionTagsItemMembersRequestBuilder(rawUrl string, requestAd
 func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) Count()(*ItemTeamDefinitionTagsItemMembersCountRequestBuilder) {
     return NewItemTeamDefinitionTagsItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get users assigned to the tag.
+// Get get a list of the members of a standard tag in a team and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
 func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsItemMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberCollectionResponseable), nil
 }
-// Post create new navigation property to members for teamTemplateDefinition
+// Post create a new teamworkTagMember object in a team.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
 func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, requestConfiguration *ItemTeamDefinitionTagsItemMembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable), nil
 }
-// ToGetRequestInformation users assigned to the tag.
+// ToGetRequestInformation get a list of the members of a standard tag in a team and their properties.
 func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to members for teamTemplateDefinition
+// ToPostRequestInformation create a new teamworkTagMember object in a team.
 func (m *ItemTeamDefinitionTagsItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, requestConfiguration *ItemTeamDefinitionTagsItemMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemConnectorsConnectorItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemConnectorsConnectorItemRequestBuilderGetQueryParameters list of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
+// ItemConnectorsConnectorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a connector object.
 type ItemConnectorsConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get list of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
+// Get retrieve the properties and relationships of a connector object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/connector-get?view=graph-rest-1.0
 func (m *ItemConnectorsConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorsConnectorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation list of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a connector object.
 func (m *ItemConnectorsConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorsConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

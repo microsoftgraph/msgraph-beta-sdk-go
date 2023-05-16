@@ -31,7 +31,10 @@ func NewItemMessagesItemCopyRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemMessagesItemCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action copy
+// Post copy a message to a folder within the user's mailbox.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
 func (m *ItemMessagesItemCopyRequestBuilder) Post(ctx context.Context, body ItemMessagesItemCopyPostRequestBodyable, requestConfiguration *ItemMessagesItemCopyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemMessagesItemCopyRequestBuilder) Post(ctx context.Context, body Item
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
-// ToPostRequestInformation invoke action copy
+// ToPostRequestInformation copy a message to a folder within the user's mailbox.
 func (m *ItemMessagesItemCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMessagesItemCopyPostRequestBodyable, requestConfiguration *ItemMessagesItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

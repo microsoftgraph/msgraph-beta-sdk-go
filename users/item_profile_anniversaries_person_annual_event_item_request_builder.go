@@ -18,7 +18,7 @@ type ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetQueryParameters represents the details of meaningful dates associated with a person.
+// ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personAnniversary object in a user's profile.
 type ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileAnniversariesPersonAnnualEventItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property anniversaries for users
+// Delete delete a personAnniversary object from the user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-1.0
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get represents the details of meaningful dates associated with a person.
+// Get retrieve the properties and relationships of a personAnniversary object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personanniversary-get?view=graph-rest-1.0
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable), nil
 }
-// Patch update the navigation property anniversaries in users
+// Patch update the properties of a personAnniversary object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personanniversary-update?view=graph-rest-1.0
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) Patch(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable), nil
 }
-// ToDeleteRequestInformation delete navigation property anniversaries for users
+// ToDeleteRequestInformation delete a personAnniversary object from the user's profile.
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the details of meaningful dates associated with a person.
+// ToGetRequestInformation retrieve the properties and relationships of a personAnniversary object in a user's profile.
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property anniversaries in users
+// ToPatchRequestInformation update the properties of a personAnniversary object in a user's profile.
 func (m *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnualEventable, requestConfiguration *ItemProfileAnniversariesPersonAnnualEventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

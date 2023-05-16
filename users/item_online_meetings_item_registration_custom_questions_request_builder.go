@@ -11,7 +11,7 @@ import (
 type ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetQueryParameters custom registration questions.
+// ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetQueryParameters get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 type ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder(rawUrl s
 func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Count()(*ItemOnlineMeetingsItemRegistrationCustomQuestionsCountRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationCustomQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get custom registration questions.
+// Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionCollectionResponseable), nil
 }
-// Post create new navigation property to customQuestions for users
+// Post create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Post(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
-// ToGetRequestInformation custom registration questions.
+// ToGetRequestInformation get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to customQuestions for users
+// ToPostRequestInformation create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *ItemOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

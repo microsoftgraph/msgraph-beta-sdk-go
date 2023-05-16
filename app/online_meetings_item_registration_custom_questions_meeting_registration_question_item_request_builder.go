@@ -18,7 +18,7 @@ type OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionIte
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetQueryParameters custom registration questions.
+// OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetQueryParameters get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 type OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestion
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property customQuestions for app
+// Delete delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestio
     }
     return nil
 }
-// Get custom registration questions.
+// Get get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
-// Patch update the navigation property customQuestions in app
+// Patch update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
-// ToDeleteRequestInformation delete navigation property customQuestions for app
+// ToDeleteRequestInformation delete a custom registration question from a meetingRegistration object on behalf of the organizer.
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation custom registration questions.
+// ToGetRequestInformation get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestio
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property customQuestions in app
+// ToPatchRequestInformation update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

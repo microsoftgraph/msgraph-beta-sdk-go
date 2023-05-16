@@ -38,6 +38,9 @@ func NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsItemValueContent
     return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property hostedContents from teamTemplateDefinition
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
 func (m *ItemTeamDefinitionChannelsItemMessagesItemHostedContentsItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemHostedContentsItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

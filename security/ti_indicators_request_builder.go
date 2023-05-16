@@ -11,7 +11,7 @@ import (
 type TiIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TiIndicatorsRequestBuilderGetQueryParameters get tiIndicators from security
+// TiIndicatorsRequestBuilderGetQueryParameters retrieve a list of tiIndicator objects.
 type TiIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,10 @@ func (m *TiIndicatorsRequestBuilder) DeleteTiIndicators()(*TiIndicatorsDeleteTiI
 func (m *TiIndicatorsRequestBuilder) DeleteTiIndicatorsByExternalId()(*TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) {
     return NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get tiIndicators from security
+// Get retrieve a list of tiIndicator objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicators-list?view=graph-rest-1.0
 func (m *TiIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *TiIndicatorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +104,10 @@ func (m *TiIndicatorsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorCollectionResponseable), nil
 }
-// Post create new navigation property to tiIndicators for security
+// Post create a new tiIndicator object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicators-post?view=graph-rest-1.0
 func (m *TiIndicatorsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *TiIndicatorsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
 func (m *TiIndicatorsRequestBuilder) SubmitTiIndicators()(*TiIndicatorsSubmitTiIndicatorsRequestBuilder) {
     return NewTiIndicatorsSubmitTiIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get tiIndicators from security
+// ToGetRequestInformation retrieve a list of tiIndicator objects.
 func (m *TiIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *TiIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to tiIndicators for security
+// ToPostRequestInformation create a new tiIndicator object.
 func (m *TiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderGetQueryParameters returns a list of case legalHold objects for this case.  Nullable.
+// EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderGetQueryParameters read the properties and relationships of a legalHold object.
 type EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property legalHolds for compliance
+// Delete delete a legalHold object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-delete?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get returns a list of case legalHold objects for this case.  Nullable.
+// Get read the properties and relationships of a legalHold object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-get?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Get(ctx conte
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable), nil
 }
-// Patch update the navigation property legalHolds in compliance
+// Patch update the properties of a legalHold object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-update?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Patch(ctx con
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) SiteSources()(*EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property legalHolds for compliance
+// ToDeleteRequestInformation delete a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation returns a list of case legalHold objects for this case.  Nullable.
+// ToGetRequestInformation read the properties and relationships of a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property legalHolds in compliance
+// ToPatchRequestInformation update the properties of a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

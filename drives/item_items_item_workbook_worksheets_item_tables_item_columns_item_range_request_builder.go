@@ -31,7 +31,10 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function range
+// Get gets the range object associated with the entire column.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-range?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBui
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable), nil
 }
-// ToGetRequestInformation invoke function range
+// ToGetRequestInformation gets the range object associated with the entire column.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

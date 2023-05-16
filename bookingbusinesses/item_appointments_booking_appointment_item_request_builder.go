@@ -18,7 +18,7 @@ type ItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAppointmentsBookingAppointmentItemRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
+// ItemAppointmentsBookingAppointmentItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
 type ItemAppointmentsBookingAppointmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewItemAppointmentsBookingAppointmentItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property appointments for bookingBusinesses
+// Delete delete a bookingAppointment in the specified bookingBusiness.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get all the appointments of this business. Read-only. Nullable.
+// Get get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable), nil
 }
-// Patch update the navigation property appointments in bookingBusinesses
+// Patch update the properties of a bookingAppointment object in the specified bookingBusiness.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property appointments for bookingBusinesses
+// ToDeleteRequestInformation delete a bookingAppointment in the specified bookingBusiness.
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation all the appointments of this business. Read-only. Nullable.
+// ToGetRequestInformation get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property appointments in bookingBusinesses
+// ToPatchRequestInformation update the properties of a bookingAppointment object in the specified bookingBusiness.
 func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *ItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

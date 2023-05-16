@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters the calendars in the calendar group. Navigation property. Read-only. Nullable.
+// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters retrieve a list of calendars belonging to a calendar group.
 type ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,10 @@ func NewItemCalendarGroupsItemCalendarsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the calendars in the calendar group. Navigation property. Read-only. Nullable.
+// Get retrieve a list of calendars belonging to a calendar group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable), nil
 }
-// Post create new navigation property to calendars for users
+// Post use this API to create a new calendar in a calendar group for a user.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
-// ToGetRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of calendars belonging to a calendar group.
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +130,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to calendars for users
+// ToPostRequestInformation use this API to create a new calendar in a calendar group for a user.
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

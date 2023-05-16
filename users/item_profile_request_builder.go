@@ -18,7 +18,7 @@ type ItemProfileRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileRequestBuilderGetQueryParameters represents properties that are descriptive of a user in a tenant.
+// ItemProfileRequestBuilderGetQueryParameters retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 type ItemProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func NewItemProfileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property profile for users
+// Delete deletes a profile object from a user's account.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
 func (m *ItemProfileRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +101,10 @@ func (m *ItemProfileRequestBuilder) EducationalActivities()(*ItemProfileEducatio
 func (m *ItemProfileRequestBuilder) Emails()(*ItemProfileEmailsRequestBuilder) {
     return NewItemProfileEmailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents properties that are descriptive of a user in a tenant.
+// Get retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
 func (m *ItemProfileRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -176,7 +182,7 @@ func (m *ItemProfileRequestBuilder) Publications()(*ItemProfilePublicationsReque
 func (m *ItemProfileRequestBuilder) Skills()(*ItemProfileSkillsRequestBuilder) {
     return NewItemProfileSkillsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property profile for users
+// ToDeleteRequestInformation deletes a profile object from a user's account.
 func (m *ItemProfileRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -188,7 +194,7 @@ func (m *ItemProfileRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents properties that are descriptive of a user in a tenant.
+// ToGetRequestInformation retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 func (m *ItemProfileRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

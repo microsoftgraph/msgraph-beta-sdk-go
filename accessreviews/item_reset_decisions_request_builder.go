@@ -30,7 +30,10 @@ func NewItemResetDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemResetDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action resetDecisions
+// Post in the Azure AD access reviews feature, reset the decisions of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accessreview-reset?view=graph-rest-1.0
 func (m *ItemResetDecisionsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemResetDecisionsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemResetDecisionsRequestBuilder) Post(ctx context.Context, requestConf
     }
     return nil
 }
-// ToPostRequestInformation invoke action resetDecisions
+// ToPostRequestInformation in the Azure AD access reviews feature, reset the decisions of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 func (m *ItemResetDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemResetDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

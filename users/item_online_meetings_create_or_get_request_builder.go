@@ -31,7 +31,10 @@ func NewItemOnlineMeetingsCreateOrGetRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsCreateOrGetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action createOrGet
+// Post create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsCreateOrGetRequestBuilder) Post(ctx context.Context, body ItemOnlineMeetingsCreateOrGetPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsCreateOrGetRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemOnlineMeetingsCreateOrGetRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// ToPostRequestInformation invoke action createOrGet
+// ToPostRequestInformation create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
 func (m *ItemOnlineMeetingsCreateOrGetRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemOnlineMeetingsCreateOrGetPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsCreateOrGetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

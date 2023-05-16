@@ -11,7 +11,7 @@ import (
 type IndustryDataYearsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataYearsRequestBuilderGetQueryParameters set of years represented in the system.
+// IndustryDataYearsRequestBuilderGetQueryParameters get a list of the yearTimePeriodDefinition objects and their properties.
 type IndustryDataYearsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewIndustryDataYearsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IndustryDataYearsRequestBuilder) Count()(*IndustryDataYearsCountRequestBuilder) {
     return NewIndustryDataYearsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get set of years represented in the system.
+// Get get a list of the yearTimePeriodDefinition objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
 func (m *IndustryDataYearsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataYearsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *IndustryDataYearsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionCollectionResponseable), nil
 }
-// Post create new navigation property to years for external
+// Post create a new yearTimePeriodDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
 func (m *IndustryDataYearsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, requestConfiguration *IndustryDataYearsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *IndustryDataYearsRequestBuilder) Post(ctx context.Context, body id2b46a
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable), nil
 }
-// ToGetRequestInformation set of years represented in the system.
+// ToGetRequestInformation get a list of the yearTimePeriodDefinition objects and their properties.
 func (m *IndustryDataYearsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataYearsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *IndustryDataYearsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to years for external
+// ToPostRequestInformation create a new yearTimePeriodDefinition object.
 func (m *IndustryDataYearsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, requestConfiguration *IndustryDataYearsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

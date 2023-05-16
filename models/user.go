@@ -9,7 +9,7 @@ import (
 type User struct {
     DirectoryObject
 }
-// NewUser instantiates a new user and sets the default values.
+// NewUser instantiates a new User and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
@@ -1358,6 +1358,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["isLicenseReconciliationNeeded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsLicenseReconciliationNeeded(val)
+        }
+        return nil
+    }
     res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -2426,6 +2436,17 @@ func (m *User) GetInterests()([]string) {
     }
     return nil
 }
+// GetIsLicenseReconciliationNeeded gets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
+    val, err := m.GetBackingStore().Get("isLicenseReconciliationNeeded")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
 func (m *User) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
@@ -3130,7 +3151,7 @@ func (m *User) GetSecurityIdentifier()(*string) {
     }
     return nil
 }
-// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *User) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
     val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
     if err != nil {
@@ -3812,6 +3833,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     if m.GetInterests() != nil {
         err = writer.WriteCollectionOfStringValues("interests", m.GetInterests())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isLicenseReconciliationNeeded", m.GetIsLicenseReconciliationNeeded())
         if err != nil {
             return err
         }
@@ -4863,6 +4890,13 @@ func (m *User) SetInterests(value []string)() {
         panic(err)
     }
 }
+// SetIsLicenseReconciliationNeeded sets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+func (m *User) SetIsLicenseReconciliationNeeded(value *bool)() {
+    err := m.GetBackingStore().Set("isLicenseReconciliationNeeded", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
 func (m *User) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
@@ -5311,7 +5345,7 @@ func (m *User) SetSecurityIdentifier(value *string)() {
         panic(err)
     }
 }
-// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *User) SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)() {
     err := m.GetBackingStore().Set("serviceProvisioningErrors", value)
     if err != nil {
@@ -5504,6 +5538,7 @@ type Userable interface {
     GetInformationProtection()(InformationProtectionable)
     GetInsights()(ItemInsightsable)
     GetInterests()([]string)
+    GetIsLicenseReconciliationNeeded()(*bool)
     GetIsManagementRestricted()(*bool)
     GetIsResourceAccount()(*bool)
     GetJobTitle()(*string)
@@ -5649,6 +5684,7 @@ type Userable interface {
     SetInformationProtection(value InformationProtectionable)()
     SetInsights(value ItemInsightsable)()
     SetInterests(value []string)()
+    SetIsLicenseReconciliationNeeded(value *bool)()
     SetIsManagementRestricted(value *bool)()
     SetIsResourceAccount(value *bool)()
     SetJobTitle(value *string)()

@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetQueryParameters data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a userSource object.
 type EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property userSources for compliance
+// Delete delete a userSource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-usersource-delete?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilde
     }
     return nil
 }
-// Get data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// Get read the properties and relationships of a userSource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-usersource-get?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilde
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable), nil
 }
-// ToDeleteRequestInformation delete navigation property userSources for compliance
+// ToDeleteRequestInformation delete a userSource object.
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// ToGetRequestInformation read the properties and relationships of a userSource object.
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

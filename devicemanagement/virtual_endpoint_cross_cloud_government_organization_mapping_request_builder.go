@@ -18,7 +18,7 @@ type VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+// VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
 type VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilder) D
     }
     return nil
 }
-// Get cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+// Get read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0
 func (m *VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCrossCloudGovernmentOrganizationMappingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilder) T
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+// ToGetRequestInformation read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
 func (m *VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCrossCloudGovernmentOrganizationMappingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

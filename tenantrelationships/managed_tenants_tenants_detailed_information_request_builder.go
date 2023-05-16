@@ -11,7 +11,7 @@ import (
 type ManagedTenantsTenantsDetailedInformationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsTenantsDetailedInformationRequestBuilderGetQueryParameters the collection tenant level detailed information across managed tenants.
+// ManagedTenantsTenantsDetailedInformationRequestBuilderGetQueryParameters get a list of the tenantDetailedInformation objects and their properties.
 type ManagedTenantsTenantsDetailedInformationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewManagedTenantsTenantsDetailedInformationRequestBuilder(rawUrl string, re
 func (m *ManagedTenantsTenantsDetailedInformationRequestBuilder) Count()(*ManagedTenantsTenantsDetailedInformationCountRequestBuilder) {
     return NewManagedTenantsTenantsDetailedInformationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection tenant level detailed information across managed tenants.
+// Get get a list of the tenantDetailedInformation objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantsdetailedinformation?view=graph-rest-1.0
 func (m *ManagedTenantsTenantsDetailedInformationRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantsDetailedInformationRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ManagedTenantsTenantsDetailedInformationRequestBuilder) Post(ctx contex
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable), nil
 }
-// ToGetRequestInformation the collection tenant level detailed information across managed tenants.
+// ToGetRequestInformation get a list of the tenantDetailedInformation objects and their properties.
 func (m *ManagedTenantsTenantsDetailedInformationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsDetailedInformationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters the time off requests in the schedule.
+// ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeoffrequest object.
 type ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,10 @@ func NewItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property timeOffRequests for teams
+// Delete delete a timeOffRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
 func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,7 +71,10 @@ func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get the time off requests in the schedule.
+// Get retrieve the properties and relationships of a timeoffrequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
 func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +112,7 @@ func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Patch(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffRequestable), nil
 }
-// ToDeleteRequestInformation delete navigation property timeOffRequests for teams
+// ToDeleteRequestInformation delete a timeOffRequest object.
 func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -118,7 +124,7 @@ func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the time off requests in the schedule.
+// ToGetRequestInformation retrieve the properties and relationships of a timeoffrequest object.
 func (m *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters get learningCourseActivities from users
+// ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
 type ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemEmployeeExperienceLearningCourseActivitiesRequestBuilder(rawUrl stri
 func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) Count()(*ItemEmployeeExperienceLearningCourseActivitiesCountRequestBuilder) {
     return NewItemEmployeeExperienceLearningCourseActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get learningCourseActivities from users
+// Get get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/learningcourseactivity-list?view=graph-rest-1.0
 func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningCourseActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) Get(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningCourseActivityCollectionResponseable), nil
 }
-// ToGetRequestInformation get learningCourseActivities from users
+// ToGetRequestInformation get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
 func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

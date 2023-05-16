@@ -38,7 +38,7 @@ func (m *AuthenticationConfigurationValidation) GetAdditionalData()(map[string]a
 func (m *AuthenticationConfigurationValidation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrors gets the errors property value. The errors property
+// GetErrors gets the errors property value. Errors in the validation result of a customAuthenticationExtension.
 func (m *AuthenticationConfigurationValidation) GetErrors()([]GenericErrorable) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -103,7 +103,7 @@ func (m *AuthenticationConfigurationValidation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetWarnings gets the warnings property value. The warnings property
+// GetWarnings gets the warnings property value. Warnings in the validation result of a customAuthenticationExtension.
 func (m *AuthenticationConfigurationValidation) GetWarnings()([]GenericErrorable) {
     val, err := m.GetBackingStore().Get("warnings")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *AuthenticationConfigurationValidation) SetAdditionalData(value map[stri
 func (m *AuthenticationConfigurationValidation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrors sets the errors property value. The errors property
+// SetErrors sets the errors property value. Errors in the validation result of a customAuthenticationExtension.
 func (m *AuthenticationConfigurationValidation) SetErrors(value []GenericErrorable)() {
     err := m.GetBackingStore().Set("errors", value)
     if err != nil {
@@ -175,7 +175,7 @@ func (m *AuthenticationConfigurationValidation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetWarnings sets the warnings property value. The warnings property
+// SetWarnings sets the warnings property value. Warnings in the validation result of a customAuthenticationExtension.
 func (m *AuthenticationConfigurationValidation) SetWarnings(value []GenericErrorable)() {
     err := m.GetBackingStore().Set("warnings", value)
     if err != nil {

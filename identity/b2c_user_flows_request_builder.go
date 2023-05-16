@@ -11,7 +11,7 @@ import (
 type B2cUserFlowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsRequestBuilderGetQueryParameters represents entry point for B2C identity userflows.
+// B2cUserFlowsRequestBuilderGetQueryParameters retrieve a list of b2cIdentityUserFlow objects.
 type B2cUserFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewB2cUserFlowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *B2cUserFlowsRequestBuilder) Count()(*B2cUserFlowsCountRequestBuilder) {
     return NewB2cUserFlowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents entry point for B2C identity userflows.
+// Get retrieve a list of b2cIdentityUserFlow objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0
 func (m *B2cUserFlowsRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *B2cUserFlowsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowCollectionResponseable), nil
 }
-// Post create new navigation property to b2cUserFlows for identity
+// Post create a new b2cIdentityUserFlow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0
 func (m *B2cUserFlowsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, requestConfiguration *B2cUserFlowsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *B2cUserFlowsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable), nil
 }
-// ToGetRequestInformation represents entry point for B2C identity userflows.
+// ToGetRequestInformation retrieve a list of b2cIdentityUserFlow objects.
 func (m *B2cUserFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *B2cUserFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to b2cUserFlows for identity
+// ToPostRequestInformation create a new b2cIdentityUserFlow object.
 func (m *B2cUserFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable, requestConfiguration *B2cUserFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

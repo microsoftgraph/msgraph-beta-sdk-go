@@ -18,7 +18,7 @@ type ItemProfilePositionsWorkPositionItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePositionsWorkPositionItemRequestBuilderGetQueryParameters represents detailed information about work positions associated with a user's profile.
+// ItemProfilePositionsWorkPositionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workPosition object in a user's profile.
 type ItemProfilePositionsWorkPositionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfilePositionsWorkPositionItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePositionsWorkPositionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property positions for users
+// Delete delete a specific workPosition object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get represents detailed information about work positions associated with a user's profile.
+// Get retrieve the properties and relationships of a workPosition object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable), nil
 }
-// Patch update the navigation property positions in users
+// Patch update the properties of a workPosition object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable), nil
 }
-// ToDeleteRequestInformation delete navigation property positions for users
+// ToDeleteRequestInformation delete a specific workPosition object from a user's profile.
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents detailed information about work positions associated with a user's profile.
+// ToGetRequestInformation retrieve the properties and relationships of a workPosition object in a user's profile.
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property positions in users
+// ToPatchRequestInformation update the properties of a workPosition object in a user's profile.
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

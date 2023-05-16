@@ -11,7 +11,7 @@ import (
 type ItemScopedMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScopedMembersRequestBuilderGetQueryParameters members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// ItemScopedMembersRequestBuilderGetQueryParameters retrieve a list of scopedRoleMembership objects for a directory role.
 type ItemScopedMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemScopedMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemScopedMembersRequestBuilder) Count()(*ItemScopedMembersCountRequestBuilder) {
     return NewItemScopedMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// Get retrieve a list of scopedRoleMembership objects for a directory role.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0
 func (m *ItemScopedMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScopedMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemScopedMembersRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable), nil
 }
-// ToGetRequestInformation members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of scopedRoleMembership objects for a directory role.
 func (m *ItemScopedMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScopedMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

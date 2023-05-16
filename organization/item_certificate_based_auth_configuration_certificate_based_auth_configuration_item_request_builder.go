@@ -18,7 +18,7 @@ type ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+// ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters get the properties of a certificateBasedAuthConfiguration object.
 type ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,10 @@ func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationIt
     urlParams["request-raw-url"] = rawUrl
     return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property certificateBasedAuthConfiguration for organization
+// Delete delete a certificateBasedAuthConfiguration object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,10 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
     }
     return nil
 }
-// Get navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+// Get get the properties of a certificateBasedAuthConfiguration object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +88,7 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable), nil
 }
-// ToDeleteRequestInformation delete navigation property certificateBasedAuthConfiguration for organization
+// ToDeleteRequestInformation delete a certificateBasedAuthConfiguration object.
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -94,7 +100,7 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+// ToGetRequestInformation get the properties of a certificateBasedAuthConfiguration object.
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

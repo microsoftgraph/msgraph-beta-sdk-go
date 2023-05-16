@@ -31,7 +31,10 @@ func NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantReque
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action offboardTenant
+// Post carries out the appropriate procedures to remove a managed tenant from the multi-tenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multi-tenant management platform.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-1.0
 func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequ
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// ToPostRequestInformation invoke action offboardTenant
+// ToPostRequestInformation carries out the appropriate procedures to remove a managed tenant from the multi-tenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multi-tenant management platform.
 func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

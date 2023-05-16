@@ -18,7 +18,7 @@ type ItemProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAddressesItemAddressItemRequestBuilderGetQueryParameters represents details of addresses associated with the user.
+// ItemProfileAddressesItemAddressItemRequestBuilderGetQueryParameters read the properties and relationships of an itemAddress object.
 type ItemProfileAddressesItemAddressItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileAddressesItemAddressItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAddressesItemAddressItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property addresses for users
+// Delete deletes an itemAddress object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-1.0
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get represents details of addresses associated with the user.
+// Get read the properties and relationships of an itemAddress object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itemaddress-get?view=graph-rest-1.0
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable), nil
 }
-// Patch update the navigation property addresses in users
+// Patch update the properties of an itemAddress object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itemaddress-update?view=graph-rest-1.0
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable), nil
 }
-// ToDeleteRequestInformation delete navigation property addresses for users
+// ToDeleteRequestInformation deletes an itemAddress object.
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents details of addresses associated with the user.
+// ToGetRequestInformation read the properties and relationships of an itemAddress object.
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property addresses in users
+// ToPatchRequestInformation update the properties of an itemAddress object.
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

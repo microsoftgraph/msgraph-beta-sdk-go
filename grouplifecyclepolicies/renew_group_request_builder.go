@@ -30,7 +30,10 @@ func NewRenewGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewRenewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action renewGroup
+// Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0
 func (m *RenewGroupRequestBuilder) Post(ctx context.Context, body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(RenewGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *RenewGroupRequestBuilder) Post(ctx context.Context, body RenewGroupPost
     }
     return res.(RenewGroupResponseable), nil
 }
-// ToPostRequestInformation invoke action renewGroup
+// ToPostRequestInformation renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 func (m *RenewGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

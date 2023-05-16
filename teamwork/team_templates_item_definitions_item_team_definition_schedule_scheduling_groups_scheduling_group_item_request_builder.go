@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSched
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters the logical grouping of users in the schedule (usually by role).
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a schedulingGroup by ID.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,10 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSc
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property schedulingGroups for teamwork
+// Delete mark a schedulingGroup as inactive by setting its **isActive** property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,7 +71,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsS
     }
     return nil
 }
-// Get the logical grouping of users in the schedule (usually by role).
+// Get retrieve the properties and relationships of a schedulingGroup by ID.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +93,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsS
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable), nil
 }
-// Patch update the navigation property schedulingGroups in teamwork
+// Patch replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns `404 Not found`.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -106,7 +115,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsS
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable), nil
 }
-// ToDeleteRequestInformation delete navigation property schedulingGroups for teamwork
+// ToDeleteRequestInformation mark a schedulingGroup as inactive by setting its **isActive** property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -118,7 +127,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsS
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the logical grouping of users in the schedule (usually by role).
+// ToGetRequestInformation retrieve the properties and relationships of a schedulingGroup by ID.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +143,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsS
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property schedulingGroups in teamwork
+// ToPatchRequestInformation replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns `404 Not found`.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

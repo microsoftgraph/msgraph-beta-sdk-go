@@ -18,7 +18,7 @@ type EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetQueryParameters returns a list of case noncustodialDataSource objects for this case.  Nullable.
+// EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a noncustodialDataSource object.
 type EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
     }
     return nil
 }
-// Get returns a list of case noncustodialDataSource objects for this case.  Nullable.
+// Get read the properties and relationships of a noncustodialDataSource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-get?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -144,7 +147,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation returns a list of case noncustodialDataSource objects for this case.  Nullable.
+// ToGetRequestInformation read the properties and relationships of a noncustodialDataSource object.
 func (m *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+// ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
 type ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,10 @@ func NewItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemReq
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property attachments for groups
+// Delete delete an attachment from a user calendar event, message, Outlook task, or post.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
 func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,10 @@ func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRe
     }
     return nil
 }
-// Get the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+// Get read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
 func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +88,7 @@ func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property attachments for groups
+// ToDeleteRequestInformation delete an attachment from a user calendar event, message, Outlook task, or post.
 func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -94,7 +100,7 @@ func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+// ToGetRequestInformation read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
 func (m *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

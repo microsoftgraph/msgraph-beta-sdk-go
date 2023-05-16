@@ -18,7 +18,7 @@ type ManagedTenantsTenantsTenantItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsTenantsTenantItemRequestBuilderGetQueryParameters the collection of tenants associated with the managing entity.
+// ManagedTenantsTenantsTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a tenant object.
 type ManagedTenantsTenantsTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get the collection of tenants associated with the managing entity.
+// Get read the properties and relationships of a tenant object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenant-get?view=graph-rest-1.0
 func (m *ManagedTenantsTenantsTenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantsTenantItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of tenants associated with the managing entity.
+// ToGetRequestInformation read the properties and relationships of a tenant object.
 func (m *ManagedTenantsTenantsTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

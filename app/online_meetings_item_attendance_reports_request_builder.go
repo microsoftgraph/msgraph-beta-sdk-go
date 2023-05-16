@@ -11,7 +11,7 @@ import (
 type OnlineMeetingsItemAttendanceReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OnlineMeetingsItemAttendanceReportsRequestBuilderGetQueryParameters the attendance reports of an online meeting. Read-only.
+// OnlineMeetingsItemAttendanceReportsRequestBuilderGetQueryParameters get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 type OnlineMeetingsItemAttendanceReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewOnlineMeetingsItemAttendanceReportsRequestBuilder(rawUrl string, request
 func (m *OnlineMeetingsItemAttendanceReportsRequestBuilder) Count()(*OnlineMeetingsItemAttendanceReportsCountRequestBuilder) {
     return NewOnlineMeetingsItemAttendanceReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the attendance reports of an online meeting. Read-only.
+// Get get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
 func (m *OnlineMeetingsItemAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *OnlineMeetingsItemAttendanceReportsRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
-// ToGetRequestInformation the attendance reports of an online meeting. Read-only.
+// ToGetRequestInformation get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 func (m *OnlineMeetingsItemAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TiIndicatorsTiIndicatorItemRequestBuilderGetQueryParameters get tiIndicators from security
+// TiIndicatorsTiIndicatorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tiIndicator object.
 type TiIndicatorsTiIndicatorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewTiIndicatorsTiIndicatorItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tiIndicators for security
+// Delete delete a tiIndicator object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-1.0
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get tiIndicators from security
+// Get retrieve the properties and relationships of a tiIndicator object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-get?view=graph-rest-1.0
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable), nil
 }
-// Patch update the navigation property tiIndicators in security
+// Patch update the properties of a tiIndicator object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-update?view=graph-rest-1.0
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable), nil
 }
-// ToDeleteRequestInformation delete navigation property tiIndicators for security
+// ToDeleteRequestInformation delete a tiIndicator object.
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get tiIndicators from security
+// ToGetRequestInformation retrieve the properties and relationships of a tiIndicator object.
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tiIndicators in security
+// ToPatchRequestInformation update the properties of a tiIndicator object.
 func (m *TiIndicatorsTiIndicatorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable, requestConfiguration *TiIndicatorsTiIndicatorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

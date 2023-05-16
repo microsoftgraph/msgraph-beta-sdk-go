@@ -38,6 +38,9 @@ func NewOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder(rawUrl st
     return NewOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
 func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

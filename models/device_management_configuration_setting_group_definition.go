@@ -37,7 +37,7 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
     }
     return NewDeviceManagementConfigurationSettingGroupDefinition(), nil
 }
-// GetChildIds gets the childIds property value. Dependent child settings to this group of settings.
+// GetChildIds gets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]string) {
     val, err := m.GetBackingStore().Get("childIds")
     if err != nil {
@@ -151,7 +151,7 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
     }
     return nil
 }
-// SetChildIds sets the childIds property value. Dependent child settings to this group of settings.
+// SetChildIds sets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetChildIds(value []string)() {
     err := m.GetBackingStore().Set("childIds", value)
     if err != nil {

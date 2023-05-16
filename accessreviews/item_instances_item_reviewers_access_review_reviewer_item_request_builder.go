@@ -54,7 +54,10 @@ func NewItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property reviewers for accessReviews
+// Delete in the Azure AD access reviews feature, update an existing accessReview object to remove a user as a reviewer.  This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified. This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accessreview-removereviewer?view=graph-rest-1.0
 func (m *ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +111,7 @@ func (m *ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilder) Patch
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewReviewerable), nil
 }
-// ToDeleteRequestInformation delete navigation property reviewers for accessReviews
+// ToDeleteRequestInformation in the Azure AD access reviews feature, update an existing accessReview object to remove a user as a reviewer.  This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified. This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 
 func (m *ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

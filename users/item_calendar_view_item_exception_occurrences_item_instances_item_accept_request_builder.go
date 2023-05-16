@@ -30,7 +30,10 @@ func NewItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action accept
+// Post accept the specified event in a user calendar.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
 func (m *ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestBuilder) Post(ctx context.Context, body ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptPostRequestBodyable, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestB
     }
     return nil
 }
-// ToPostRequestInformation invoke action accept
+// ToPostRequestInformation accept the specified event in a user calendar.
 func (m *ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptPostRequestBodyable, requestConfiguration *ItemCalendarViewItemExceptionOccurrencesItemInstancesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

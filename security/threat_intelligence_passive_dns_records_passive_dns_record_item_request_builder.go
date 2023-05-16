@@ -18,7 +18,7 @@ type ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+// ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters read the properties and relationships of a passiveDnsRecord object.
 type ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) 
     }
     return nil
 }
-// Get retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a passiveDnsRecord object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-passivednsrecord-get?view=graph-rest-1.0
 func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.PassiveDnsRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a passiveDnsRecord object.
 func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

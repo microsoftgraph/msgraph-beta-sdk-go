@@ -11,7 +11,7 @@ import (
 type ItemTermStoreGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreGroupsRequestBuilderGetQueryParameters collection of all groups available in the term store.
+// ItemTermStoreGroupsRequestBuilderGetQueryParameters read the properties and relationships of a term store group object.
 type ItemTermStoreGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemTermStoreGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemTermStoreGroupsRequestBuilder) Count()(*ItemTermStoreGroupsCountRequestBuilder) {
     return NewItemTermStoreGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of all groups available in the term store.
+// Get read the properties and relationships of a term store group object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0
 func (m *ItemTermStoreGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemTermStoreGroupsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.GroupCollectionResponseable), nil
 }
-// Post create new navigation property to groups for sites
+// Post create a new group object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0
 func (m *ItemTermStoreGroupsRequestBuilder) Post(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, requestConfiguration *ItemTermStoreGroupsRequestBuilderPostRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemTermStoreGroupsRequestBuilder) Post(ctx context.Context, body i45fc
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable), nil
 }
-// ToGetRequestInformation collection of all groups available in the term store.
+// ToGetRequestInformation read the properties and relationships of a term store group object.
 func (m *ItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to groups for sites
+// ToPostRequestInformation create a new group object.
 func (m *ItemTermStoreGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, requestConfiguration *ItemTermStoreGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -148,6 +148,10 @@ func (m *ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder)
 func (m *ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Stop()(*ItemPendingAccessReviewInstancesItemStopRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StopApplyDecisions provides operations to call the stopApplyDecisions method.
+func (m *ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) StopApplyDecisions()(*ItemPendingAccessReviewInstancesItemStopApplyDecisionsRequestBuilder) {
+    return NewItemPendingAccessReviewInstancesItemStopApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property pendingAccessReviewInstances for users
 func (m *ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

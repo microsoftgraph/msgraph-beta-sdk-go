@@ -30,7 +30,10 @@ func NewVirtualEndpointUserSettingsItemAssignRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointUserSettingsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action assign
+// Post assign a cloudPcUserSetting to user groups.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
 func (m *VirtualEndpointUserSettingsItemAssignRequestBuilder) Post(ctx context.Context, body VirtualEndpointUserSettingsItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointUserSettingsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *VirtualEndpointUserSettingsItemAssignRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation invoke action assign
+// ToPostRequestInformation assign a cloudPcUserSetting to user groups.
 func (m *VirtualEndpointUserSettingsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointUserSettingsItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointUserSettingsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

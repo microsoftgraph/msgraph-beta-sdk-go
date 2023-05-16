@@ -22,7 +22,7 @@ func NewContract()(*Contract) {
 func CreateContractFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContract(), nil
 }
-// GetContractType gets the contractType property value. The contractType property
+// GetContractType gets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) GetContractType()(*string) {
     val, err := m.GetBackingStore().Get("contractType")
     if err != nil {
@@ -33,7 +33,7 @@ func (m *Contract) GetContractType()(*string) {
     }
     return nil
 }
-// GetCustomerId gets the customerId property value. The customerId property
+// GetCustomerId gets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
 func (m *Contract) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -44,7 +44,7 @@ func (m *Contract) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf67
     }
     return nil
 }
-// GetDefaultDomainName gets the defaultDomainName property value. The defaultDomainName property
+// GetDefaultDomainName gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) GetDefaultDomainName()(*string) {
     val, err := m.GetBackingStore().Get("defaultDomainName")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *Contract) GetDefaultDomainName()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 func (m *Contract) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -143,28 +143,28 @@ func (m *Contract) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetContractType sets the contractType property value. The contractType property
+// SetContractType sets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) SetContractType(value *string)() {
     err := m.GetBackingStore().Set("contractType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomerId sets the customerId property value. The customerId property
+// SetCustomerId sets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
 func (m *Contract) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("customerId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDefaultDomainName sets the defaultDomainName property value. The defaultDomainName property
+// SetDefaultDomainName sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) SetDefaultDomainName(value *string)() {
     err := m.GetBackingStore().Set("defaultDomainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 func (m *Contract) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

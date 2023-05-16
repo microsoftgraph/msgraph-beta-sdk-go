@@ -11,7 +11,7 @@ import (
 type ItemEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEventsRequestBuilderGetQueryParameters the group's events.
+// ItemEventsRequestBuilderGetQueryParameters retrieve a list of event objects.
 type ItemEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func (m *ItemEventsRequestBuilder) Count()(*ItemEventsCountRequestBuilder) {
 func (m *ItemEventsRequestBuilder) Delta()(*ItemEventsDeltaRequestBuilder) {
     return NewItemEventsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the group's events.
+// Get retrieve a list of event objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0
 func (m *ItemEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemEventsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
 }
-// Post create new navigation property to events for groups
+// Post use this API to create a new event.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-post-events?view=graph-rest-1.0
 func (m *ItemEventsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *ItemEventsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemEventsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
-// ToGetRequestInformation the group's events.
+// ToGetRequestInformation retrieve a list of event objects.
 func (m *ItemEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to events for groups
+// ToPostRequestInformation use this API to create a new event.
 func (m *ItemEventsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *ItemEventsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

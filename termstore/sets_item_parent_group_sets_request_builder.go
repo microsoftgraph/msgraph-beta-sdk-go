@@ -11,7 +11,7 @@ import (
 type SetsItemParentGroupSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SetsItemParentGroupSetsRequestBuilderGetQueryParameters all sets under the group in a term [store].
+// SetsItemParentGroupSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties.
 type SetsItemParentGroupSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewSetsItemParentGroupSetsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *SetsItemParentGroupSetsRequestBuilder) Count()(*SetsItemParentGroupSetsCountRequestBuilder) {
     return NewSetsItemParentGroupSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all sets under the group in a term [store].
+// Get get a list of the set objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
 func (m *SetsItemParentGroupSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *SetsItemParentGroupSetsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.SetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *SetsItemParentGroupSetsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// ToGetRequestInformation all sets under the group in a term [store].
+// ToGetRequestInformation get a list of the set objects and their properties.
 func (m *SetsItemParentGroupSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SetsItemParentGroupSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

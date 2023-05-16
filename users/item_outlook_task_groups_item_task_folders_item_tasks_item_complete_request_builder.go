@@ -30,7 +30,10 @@ func NewItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action complete
+// Post complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The **completedDateTime** property represents the date when the task is finished. The time portion of **completedDateTime** is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder
     }
     return res.(ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteResponseable), nil
 }
-// ToPostRequestInformation invoke action complete
+// ToPostRequestInformation complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The **completedDateTime** property represents the date when the task is finished. The time portion of **completedDateTime** is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -20,7 +20,7 @@ func NewTeamTemplateDefinition()(*TeamTemplateDefinition) {
 func CreateTeamTemplateDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamTemplateDefinition(), nil
 }
-// GetAudience gets the audience property value. The audience property
+// GetAudience gets the audience property value. Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.
 func (m *TeamTemplateDefinition) GetAudience()(*TeamTemplateAudience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *TeamTemplateDefinition) GetAudience()(*TeamTemplateAudience) {
     }
     return nil
 }
-// GetCategories gets the categories property value. The categories property
+// GetCategories gets the categories property value. The assigned categories for the team template.
 func (m *TeamTemplateDefinition) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *TeamTemplateDefinition) GetCategories()([]string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A brief description of the team template as it will appear to the users in Microsoft Teams.
 func (m *TeamTemplateDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *TeamTemplateDefinition) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The user defined name of the team template.
 func (m *TeamTemplateDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *TeamTemplateDefinition) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIconUrl gets the iconUrl property value. The iconUrl property
+// GetIconUrl gets the iconUrl property value. The icon url for the team template.
 func (m *TeamTemplateDefinition) GetIconUrl()(*string) {
     val, err := m.GetBackingStore().Get("iconUrl")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *TeamTemplateDefinition) GetIconUrl()(*string) {
     }
     return nil
 }
-// GetLanguageTag gets the languageTag property value. The languageTag property
+// GetLanguageTag gets the languageTag property value. Language the template is available in.
 func (m *TeamTemplateDefinition) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
     if err != nil {
@@ -215,7 +215,7 @@ func (m *TeamTemplateDefinition) GetLanguageTag()(*string) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user who last modified the team template.
 func (m *TeamTemplateDefinition) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -226,7 +226,7 @@ func (m *TeamTemplateDefinition) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time of when the team template was last modified.
 func (m *TeamTemplateDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -237,7 +237,7 @@ func (m *TeamTemplateDefinition) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetParentTemplateId gets the parentTemplateId property value. The parentTemplateId property
+// GetParentTemplateId gets the parentTemplateId property value. The templateId for the team template
 func (m *TeamTemplateDefinition) GetParentTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("parentTemplateId")
     if err != nil {
@@ -248,7 +248,7 @@ func (m *TeamTemplateDefinition) GetParentTemplateId()(*string) {
     }
     return nil
 }
-// GetPublisherName gets the publisherName property value. The publisherName property
+// GetPublisherName gets the publisherName property value. The organization which published the team template.
 func (m *TeamTemplateDefinition) GetPublisherName()(*string) {
     val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
@@ -259,7 +259,7 @@ func (m *TeamTemplateDefinition) GetPublisherName()(*string) {
     }
     return nil
 }
-// GetShortDescription gets the shortDescription property value. The shortDescription property
+// GetShortDescription gets the shortDescription property value. A short-description of the team template as it will appear to the users in Microsoft Teams.
 func (m *TeamTemplateDefinition) GetShortDescription()(*string) {
     val, err := m.GetBackingStore().Get("shortDescription")
     if err != nil {
@@ -270,7 +270,7 @@ func (m *TeamTemplateDefinition) GetShortDescription()(*string) {
     }
     return nil
 }
-// GetTeamDefinition gets the teamDefinition property value. The teamDefinition property
+// GetTeamDefinition gets the teamDefinition property value. Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
 func (m *TeamTemplateDefinition) GetTeamDefinition()(Teamable) {
     val, err := m.GetBackingStore().Get("teamDefinition")
     if err != nil {
@@ -362,84 +362,84 @@ func (m *TeamTemplateDefinition) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetAudience sets the audience property value. The audience property
+// SetAudience sets the audience property value. Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.
 func (m *TeamTemplateDefinition) SetAudience(value *TeamTemplateAudience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCategories sets the categories property value. The categories property
+// SetCategories sets the categories property value. The assigned categories for the team template.
 func (m *TeamTemplateDefinition) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A brief description of the team template as it will appear to the users in Microsoft Teams.
 func (m *TeamTemplateDefinition) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The user defined name of the team template.
 func (m *TeamTemplateDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIconUrl sets the iconUrl property value. The iconUrl property
+// SetIconUrl sets the iconUrl property value. The icon url for the team template.
 func (m *TeamTemplateDefinition) SetIconUrl(value *string)() {
     err := m.GetBackingStore().Set("iconUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLanguageTag sets the languageTag property value. The languageTag property
+// SetLanguageTag sets the languageTag property value. Language the template is available in.
 func (m *TeamTemplateDefinition) SetLanguageTag(value *string)() {
     err := m.GetBackingStore().Set("languageTag", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the user who last modified the team template.
 func (m *TeamTemplateDefinition) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time of when the team template was last modified.
 func (m *TeamTemplateDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParentTemplateId sets the parentTemplateId property value. The parentTemplateId property
+// SetParentTemplateId sets the parentTemplateId property value. The templateId for the team template
 func (m *TeamTemplateDefinition) SetParentTemplateId(value *string)() {
     err := m.GetBackingStore().Set("parentTemplateId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublisherName sets the publisherName property value. The publisherName property
+// SetPublisherName sets the publisherName property value. The organization which published the team template.
 func (m *TeamTemplateDefinition) SetPublisherName(value *string)() {
     err := m.GetBackingStore().Set("publisherName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShortDescription sets the shortDescription property value. The shortDescription property
+// SetShortDescription sets the shortDescription property value. A short-description of the team template as it will appear to the users in Microsoft Teams.
 func (m *TeamTemplateDefinition) SetShortDescription(value *string)() {
     err := m.GetBackingStore().Set("shortDescription", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTeamDefinition sets the teamDefinition property value. The teamDefinition property
+// SetTeamDefinition sets the teamDefinition property value. Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
 func (m *TeamTemplateDefinition) SetTeamDefinition(value Teamable)() {
     err := m.GetBackingStore().Set("teamDefinition", value)
     if err != nil {

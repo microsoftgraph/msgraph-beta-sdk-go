@@ -10,7 +10,7 @@ import (
 type ItemDevicesItemRegisteredOwnersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property registeredOwners for users
+// ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteQueryParameters remove a user as a registered owner of the device.
 type ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewItemDevicesItemRegisteredOwnersItemRefRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property registeredOwners for users
+// Delete remove a user as a registered owner of the device.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
 func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property registeredOwners for users
+// ToDeleteRequestInformation remove a user as a registered owner of the device.
 func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

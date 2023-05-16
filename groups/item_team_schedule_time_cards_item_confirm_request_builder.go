@@ -31,7 +31,10 @@ func NewItemTeamScheduleTimeCardsItemConfirmRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleTimeCardsItemConfirmRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action confirm
+// Post confirm a specific timeCard.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0
 func (m *ItemTeamScheduleTimeCardsItemConfirmRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeCardsItemConfirmRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemTeamScheduleTimeCardsItemConfirmRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToPostRequestInformation invoke action confirm
+// ToPostRequestInformation confirm a specific timeCard.
 func (m *ItemTeamScheduleTimeCardsItemConfirmRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeCardsItemConfirmRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

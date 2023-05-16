@@ -18,7 +18,7 @@ type ItemPlannerRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPlannerRequestBuilderGetQueryParameters selective Planner services available to the user. Read-only. Nullable.
+// ItemPlannerRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
 type ItemPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,10 @@ func (m *ItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfigura
 func (m *ItemPlannerRequestBuilder) FavoritePlans()(*ItemPlannerFavoritePlansRequestBuilder) {
     return NewItemPlannerFavoritePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get selective Planner services available to the user. Read-only. Nullable.
+// Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0
 func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,6 +101,9 @@ func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable), nil
 }
 // Patch update the navigation property planner in users
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0
 func (m *ItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, requestConfiguration *ItemPlannerRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -144,7 +150,7 @@ func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation selective Planner services available to the user. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
 func (m *ItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

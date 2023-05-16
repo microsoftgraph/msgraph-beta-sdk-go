@@ -18,7 +18,7 @@ type ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetQueryParameters retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetQueryParameters read the properties and relationships of a hostComponent object.
 type ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a hostComponent object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-hostcomponent-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a hostComponent object.
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

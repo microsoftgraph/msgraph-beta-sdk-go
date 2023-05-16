@@ -18,7 +18,7 @@ type AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AcronymsAcronymItemRequestBuilderGetQueryParameters administrative answer in Microsoft Search results to define common acronyms in a organization.
+// AcronymsAcronymItemRequestBuilderGetQueryParameters read the properties and relationships of an acronym object.
 type AcronymsAcronymItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewAcronymsAcronymItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAcronymsAcronymItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property acronyms for search
+// Delete deletes an acronym object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
 func (m *AcronymsAcronymItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *AcronymsAcronymItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get administrative answer in Microsoft Search results to define common acronyms in a organization.
+// Get read the properties and relationships of an acronym object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
 func (m *AcronymsAcronymItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *AcronymsAcronymItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable), nil
 }
-// Patch update the navigation property acronyms in search
+// Patch update the properties of an acronym object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
 func (m *AcronymsAcronymItemRequestBuilder) Patch(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsAcronymItemRequestBuilderPatchRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Patch(ctx context.Context, body iea4
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable), nil
 }
-// ToDeleteRequestInformation delete navigation property acronyms for search
+// ToDeleteRequestInformation deletes an acronym object.
 func (m *AcronymsAcronymItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *AcronymsAcronymItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation administrative answer in Microsoft Search results to define common acronyms in a organization.
+// ToGetRequestInformation read the properties and relationships of an acronym object.
 func (m *AcronymsAcronymItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *AcronymsAcronymItemRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property acronyms in search
+// ToPatchRequestInformation update the properties of an acronym object.
 func (m *AcronymsAcronymItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsAcronymItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

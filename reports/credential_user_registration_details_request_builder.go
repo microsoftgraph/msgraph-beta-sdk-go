@@ -11,7 +11,7 @@ import (
 type CredentialUserRegistrationDetailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of credentialUserRegistrationDetails objects for a given tenant.
 type CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl string, requestAd
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Count()(*CredentialUserRegistrationDetailsCountRequestBuilder) {
     return NewCredentialUserRegistrationDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// Get get a list of credentialUserRegistrationDetails objects for a given tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-1.0
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable), nil
 }
-// ToGetRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// ToGetRequestInformation get a list of credentialUserRegistrationDetails objects for a given tenant.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

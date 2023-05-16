@@ -31,7 +31,10 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function totalRowRange
+// Get gets the range object associated with totals row of the table.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/table-totalrowrange?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable), nil
 }
-// ToGetRequestInformation invoke function totalRowRange
+// ToGetRequestInformation gets the range object associated with totals row of the table.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemTotalRowRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

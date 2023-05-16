@@ -30,7 +30,10 @@ func NewManagedDevicesItemReprovisionCloudPcRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action reprovisionCloudPc
+// Post reprovision a Cloud PC with an Intune managed device ID.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
 func (m *ManagedDevicesItemReprovisionCloudPcRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemReprovisionCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ManagedDevicesItemReprovisionCloudPcRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToPostRequestInformation invoke action reprovisionCloudPc
+// ToPostRequestInformation reprovision a Cloud PC with an Intune managed device ID.
 func (m *ManagedDevicesItemReprovisionCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

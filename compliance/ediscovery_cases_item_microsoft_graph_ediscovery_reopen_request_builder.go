@@ -30,7 +30,10 @@ func NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action reopen
+// Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-reopen?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) Post(ctx context.Context, requestConfiguration *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) Post(c
     }
     return nil
 }
-// ToPostRequestInformation invoke action reopen
+// ToPostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
 func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

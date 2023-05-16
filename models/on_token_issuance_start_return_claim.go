@@ -38,7 +38,7 @@ func (m *OnTokenIssuanceStartReturnClaim) GetAdditionalData()(map[string]any) {
 func (m *OnTokenIssuanceStartReturnClaim) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClaimIdInApiResponse gets the claimIdInApiResponse property value. The claimIdInApiResponse property
+// GetClaimIdInApiResponse gets the claimIdInApiResponse property value. The identifier of the claim returned by an API that is to be add to a token being issued.
 func (m *OnTokenIssuanceStartReturnClaim) GetClaimIdInApiResponse()(*string) {
     val, err := m.GetBackingStore().Get("claimIdInApiResponse")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *OnTokenIssuanceStartReturnClaim) SetAdditionalData(value map[string]any
 func (m *OnTokenIssuanceStartReturnClaim) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClaimIdInApiResponse sets the claimIdInApiResponse property value. The claimIdInApiResponse property
+// SetClaimIdInApiResponse sets the claimIdInApiResponse property value. The identifier of the claim returned by an API that is to be add to a token being issued.
 func (m *OnTokenIssuanceStartReturnClaim) SetClaimIdInApiResponse(value *string)() {
     err := m.GetBackingStore().Set("claimIdInApiResponse", value)
     if err != nil {

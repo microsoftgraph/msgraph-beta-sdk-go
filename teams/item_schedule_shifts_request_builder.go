@@ -11,7 +11,7 @@ import (
 type ItemScheduleShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleShiftsRequestBuilderGetQueryParameters the shifts in the schedule.
+// ItemScheduleShiftsRequestBuilderGetQueryParameters get the list of shift instances in a schedule.
 type ItemScheduleShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,10 @@ func NewItemScheduleShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemScheduleShiftsRequestBuilder) Count()(*ItemScheduleShiftsCountRequestBuilder) {
     return NewItemScheduleShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the shifts in the schedule.
+// Get get the list of shift instances in a schedule.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
 func (m *ItemScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleShiftsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,10 @@ func (m *ItemScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable), nil
 }
-// Post create new navigation property to shifts for teams
+// Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
 func (m *ItemScheduleShiftsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemScheduleShiftsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *ItemScheduleShiftsRequestBuilder) Post(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable), nil
 }
-// ToGetRequestInformation the shifts in the schedule.
+// ToGetRequestInformation get the list of shift instances in a schedule.
 func (m *ItemScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +132,7 @@ func (m *ItemScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to shifts for teams
+// ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 func (m *ItemScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemScheduleShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

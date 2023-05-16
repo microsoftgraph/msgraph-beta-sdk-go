@@ -18,7 +18,7 @@ type ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsExternalItemItemRequestBuilderGetQueryParameters get items from connections
+// ItemItemsExternalItemItemRequestBuilderGetQueryParameters get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in `429` HTTP errors.
 type ItemItemsExternalItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewItemItemsExternalItemItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property items for connections
+// Delete delete an externalitem.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
 func (m *ItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get items from connections
+// Get get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in `429` HTTP errors.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
 func (m *ItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Put(ctx context.Context, body 
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalItemable), nil
 }
-// ToDeleteRequestInformation delete navigation property items for connections
+// ToDeleteRequestInformation delete an externalitem.
 func (m *ItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get items from connections
+// ToGetRequestInformation get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in `429` HTTP errors.
 func (m *ItemItemsExternalItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

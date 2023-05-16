@@ -18,7 +18,7 @@ type ItemProfileLanguagesLanguageProficiencyItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetQueryParameters represents detailed information about languages that a user has added to their profile.
+// ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a languageProficiency object within a user's profile.
 type ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileLanguagesLanguageProficiencyItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property languages for users
+// Delete delete a languageProficiency object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get represents detailed information about languages that a user has added to their profile.
+// Get retrieve the properties and relationships of a languageProficiency object within a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable), nil
 }
-// Patch update the navigation property languages in users
+// Patch update the properties of a languageProficiency object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable), nil
 }
-// ToDeleteRequestInformation delete navigation property languages for users
+// ToDeleteRequestInformation delete a languageProficiency object from a user's profile.
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents detailed information about languages that a user has added to their profile.
+// ToGetRequestInformation retrieve the properties and relationships of a languageProficiency object within a user's profile.
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property languages in users
+// ToPatchRequestInformation update the properties of a languageProficiency object in a user's profile.
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LanguageProficiencyable, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

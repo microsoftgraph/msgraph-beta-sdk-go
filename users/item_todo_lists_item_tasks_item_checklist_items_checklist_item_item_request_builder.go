@@ -18,7 +18,7 @@ type ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderGetQueryParameters a collection of smaller subtasks linked to the more complex parent task.
+// ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderGetQueryParameters read the properties and relationships of a checklistItem object.
 type ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property checklistItems for users
+// Delete delete a checklistItem object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder
     }
     return nil
 }
-// Get a collection of smaller subtasks linked to the more complex parent task.
+// Get read the properties and relationships of a checklistItem object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable), nil
 }
-// Patch update the navigation property checklistItems in users
+// Patch update the properties of a checklistItem object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable), nil
 }
-// ToDeleteRequestInformation delete navigation property checklistItems for users
+// ToDeleteRequestInformation delete a checklistItem object.
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of smaller subtasks linked to the more complex parent task.
+// ToGetRequestInformation read the properties and relationships of a checklistItem object.
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property checklistItems in users
+// ToPatchRequestInformation update the properties of a checklistItem object.
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

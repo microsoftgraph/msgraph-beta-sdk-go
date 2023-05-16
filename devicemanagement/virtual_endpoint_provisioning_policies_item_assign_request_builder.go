@@ -30,7 +30,10 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action assign
+// Post assign cloudPcProvisioningPolicy to user groups.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
 func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) Post(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation invoke action assign
+// ToPostRequestInformation assign cloudPcProvisioningPolicy to user groups.
 func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

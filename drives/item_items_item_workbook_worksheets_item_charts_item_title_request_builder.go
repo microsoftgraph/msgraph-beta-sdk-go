@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetQueryParameters represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetQueryParameters retrieve the properties and relationships of charttitle object.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Delet
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemTitleFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemTitleFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// Get retrieve the properties and relationships of charttitle object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/charttitle-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartTitleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartTitleable), nil
 }
-// Patch update the navigation property title in drives
+// Patch update the properties of charttitle object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/charttitle-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartTitleable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartTitleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) ToDel
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// ToGetRequestInformation retrieve the properties and relationships of charttitle object.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property title in drives
+// ToPatchRequestInformation update the properties of charttitle object.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartTitleable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

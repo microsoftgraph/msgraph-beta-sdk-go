@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageResourceRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageResourceRequestsRequestBuilderGetQueryParameters represents a request to add or remove a resource to or from a catalog respectively.
+// EntitlementManagementAccessPackageResourceRequestsRequestBuilderGetQueryParameters retrieve a list of accessPackageResourceRequest objects.
 type EntitlementManagementAccessPackageResourceRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEntitlementManagementAccessPackageResourceRequestsRequestBuilder(rawUrl 
 func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) Count()(*EntitlementManagementAccessPackageResourceRequestsCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageResourceRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents a request to add or remove a resource to or from a catalog respectively.
+// Get retrieve a list of accessPackageResourceRequest objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourcerequests?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourceRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestCollectionResponseable), nil
 }
-// Post create new navigation property to accessPackageResourceRequests for identityGovernance
+// Post create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-post-accesspackageresourcerequests?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestable, requestConfiguration *EntitlementManagementAccessPackageResourceRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestable), nil
 }
-// ToGetRequestInformation represents a request to add or remove a resource to or from a catalog respectively.
+// ToGetRequestInformation retrieve a list of accessPackageResourceRequest objects.
 func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourceRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to accessPackageResourceRequests for identityGovernance
+// ToPostRequestInformation create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 func (m *EntitlementManagementAccessPackageResourceRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestable, requestConfiguration *EntitlementManagementAccessPackageResourceRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

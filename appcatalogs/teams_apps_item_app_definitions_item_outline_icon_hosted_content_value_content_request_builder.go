@@ -38,6 +38,9 @@ func NewTeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentReque
     return NewTeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property hostedContent from appCatalogs
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-1.0
 func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -18,7 +18,7 @@ type TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderGetQueryParameters the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderGetQueryParameters retrieve the hosted content in an app's icon.
 type TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) 
     }
     return nil
 }
-// Get the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// Get retrieve the hosted content in an app's icon.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-1.0
 func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// ToGetRequestInformation retrieve the hosted content in an app's icon.
 func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

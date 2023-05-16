@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters localized names for the plan configuration.
+// BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfigurationLocalization object.
 type BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCon
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property localizations for solutions
+// Delete delete a plannerPlanConfigurationLocalization object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return nil
 }
-// Get localized names for the plan configuration.
+// Get read the properties and relationships of a plannerPlanConfigurationLocalization object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable), nil
 }
-// Patch update the navigation property localizations in solutions
+// Patch update the properties of a plannerPlanConfigurationLocalization object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable), nil
 }
-// ToDeleteRequestInformation delete navigation property localizations for solutions
+// ToDeleteRequestInformation delete a plannerPlanConfigurationLocalization object.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation localized names for the plan configuration.
+// ToGetRequestInformation read the properties and relationships of a plannerPlanConfigurationLocalization object.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanCo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property localizations in solutions
+// ToPatchRequestInformation update the properties of a plannerPlanConfigurationLocalization object.
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

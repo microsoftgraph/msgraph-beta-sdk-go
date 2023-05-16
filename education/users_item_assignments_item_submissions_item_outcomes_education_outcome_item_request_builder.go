@@ -54,7 +54,10 @@ func NewUsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemReque
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property outcomes for education
+// Delete delete a feedback resource from a submission. This can only be done by a teacher.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-delete?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationOutcomeable), nil
 }
-// Patch update the navigation property outcomes in education
+// Patch update the properties of an educationOutcome object. Only teachers can perform this operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationoutcome-update?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationOutcomeable, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationOutcomeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationOutcomeable), nil
 }
-// ToDeleteRequestInformation delete navigation property outcomes for education
+// ToDeleteRequestInformation delete a feedback resource from a submission. This can only be done by a teacher.
 func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property outcomes in education
+// ToPatchRequestInformation update the properties of an educationOutcome object. Only teachers can perform this operation.
 func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationOutcomeable, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

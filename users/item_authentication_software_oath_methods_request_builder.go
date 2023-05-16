@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationSoftwareOathMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters get softwareOathMethods from users
+// ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters retrieve a list of a user's software OATH token authentication method objects and their properties.
 type ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemAuthenticationSoftwareOathMethodsRequestBuilder(rawUrl string, reque
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) Count()(*ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) {
     return NewItemAuthenticationSoftwareOathMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get softwareOathMethods from users
+// Get retrieve a list of a user's software OATH token authentication method objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable), nil
 }
-// ToGetRequestInformation get softwareOathMethods from users
+// ToGetRequestInformation retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

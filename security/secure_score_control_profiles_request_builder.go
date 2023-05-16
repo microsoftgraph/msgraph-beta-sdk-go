@@ -11,7 +11,7 @@ import (
 type SecureScoreControlProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SecureScoreControlProfilesRequestBuilderGetQueryParameters get secureScoreControlProfiles from security
+// SecureScoreControlProfilesRequestBuilderGetQueryParameters retrieves a list of secureScoreControlProfile objects for a tenant.
 type SecureScoreControlProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewSecureScoreControlProfilesRequestBuilder(rawUrl string, requestAdapter i
 func (m *SecureScoreControlProfilesRequestBuilder) Count()(*SecureScoreControlProfilesCountRequestBuilder) {
     return NewSecureScoreControlProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get secureScoreControlProfiles from security
+// Get retrieves a list of secureScoreControlProfile objects for a tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/securescorecontrolprofiles-list?view=graph-rest-1.0
 func (m *SecureScoreControlProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *SecureScoreControlProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecureScoreControlProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *SecureScoreControlProfilesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecureScoreControlProfileable), nil
 }
-// ToGetRequestInformation get secureScoreControlProfiles from security
+// ToGetRequestInformation retrieves a list of secureScoreControlProfile objects for a tenant.
 func (m *SecureScoreControlProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecureScoreControlProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

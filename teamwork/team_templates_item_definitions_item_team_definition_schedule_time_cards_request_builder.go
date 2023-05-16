@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderGetQueryParameters get timeCards from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderGetQueryParameters retrieve a list of timeCard entries in a schedule.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBu
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get timeCards from teamwork
+// Get retrieve a list of timeCard entries in a schedule.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +100,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable), nil
 }
-// Post create new navigation property to timeCards for teamwork
+// Post create a timeCard instance in a schedule.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// ToGetRequestInformation get timeCards from teamwork
+// ToGetRequestInformation retrieve a list of timeCard entries in a schedule.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +138,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestB
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to timeCards for teamwork
+// ToPostRequestInformation create a timeCard instance in a schedule.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

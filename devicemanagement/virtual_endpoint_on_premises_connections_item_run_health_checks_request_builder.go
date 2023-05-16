@@ -30,7 +30,10 @@ func NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action runHealthChecks
+// Post run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) 
     }
     return nil
 }
-// ToPostRequestInformation invoke action runHealthChecks
+// ToPostRequestInformation run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
 func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

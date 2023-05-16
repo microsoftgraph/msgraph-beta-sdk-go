@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetQueryParameters the instances of eligibility schedules to activate a just-in-time access.
+// PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetQueryParameters read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
 type PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) Count(
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get the instances of eligibility schedules to activate a just-in-time access.
+// Get read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) Post(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable), nil
 }
-// ToGetRequestInformation the instances of eligibility schedules to activate a just-in-time access.
+// ToGetRequestInformation read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

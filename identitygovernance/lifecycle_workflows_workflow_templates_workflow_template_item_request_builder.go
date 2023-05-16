@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetQueryParameters the workflow templates in the lifecycle workflow instance.
+// LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a workflowTemplate object.
 type LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,10 @@ func NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the workflow templates in the lifecycle workflow instance.
+// Get read the properties and relationships of a workflowTemplate object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) 
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) Tasks()(*LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the workflow templates in the lifecycle workflow instance.
+// ToGetRequestInformation read the properties and relationships of a workflowTemplate object.
 func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,10 @@ func NewItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequestB
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action forward
+// Post this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
 func (m *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequestBuilder) Post(ctx context.Context, body ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequest
     }
     return nil
 }
-// ToPostRequestInformation invoke action forward
+// ToPostRequestInformation this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
 func (m *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarsItemCalendarViewItemExceptionOccurrencesItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

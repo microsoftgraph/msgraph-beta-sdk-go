@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemLegalHoldsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemLegalHoldsRequestBuilderGetQueryParameters returns a list of case legalHold objects for this case.  Nullable.
+// EdiscoveryCasesItemLegalHoldsRequestBuilderGetQueryParameters read the properties and relationships of a legalHold object.
 type EdiscoveryCasesItemLegalHoldsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEdiscoveryCasesItemLegalHoldsRequestBuilder(rawUrl string, requestAdapte
 func (m *EdiscoveryCasesItemLegalHoldsRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsCountRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of case legalHold objects for this case.  Nullable.
+// Get read the properties and relationships of a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *EdiscoveryCasesItemLegalHoldsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable), nil
 }
-// ToGetRequestInformation returns a list of case legalHold objects for this case.  Nullable.
+// ToGetRequestInformation read the properties and relationships of a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

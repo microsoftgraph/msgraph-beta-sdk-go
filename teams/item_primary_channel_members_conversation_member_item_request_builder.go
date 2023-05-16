@@ -18,7 +18,7 @@ type ItemPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetQueryParameters a collection of membership records associated with the channel.
+// ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a channel.
 type ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemPrimaryChannelMembersConversationMemberItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property members for teams
+// Delete delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get a collection of membership records associated with the channel.
+// Get get a conversationMember from a channel.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
-// Patch update the navigation property members in teams
+// Patch update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Patch(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
-// ToDeleteRequestInformation delete navigation property members for teams
+// ToDeleteRequestInformation delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of membership records associated with the channel.
+// ToGetRequestInformation get a conversationMember from a channel.
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property members in teams
+// ToPatchRequestInformation update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

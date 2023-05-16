@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetQueryParameters represents the datalabels on the chart. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetQueryParameters retrieve the properties and relationships of chartdatalabels object.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) 
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the datalabels on the chart. Read-only.
+// Get retrieve the properties and relationships of chartdatalabels object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chartdatalabels-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartDataLabelsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartDataLabelsable), nil
 }
-// Patch update the navigation property dataLabels in drives
+// Patch update the properties of chartdatalabels object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chartdatalabels-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartDataLabelsable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartDataLabelsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the datalabels on the chart. Read-only.
+// ToGetRequestInformation retrieve the properties and relationships of chartdatalabels object.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property dataLabels in drives
+// ToPatchRequestInformation update the properties of chartdatalabels object.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartDataLabelsable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

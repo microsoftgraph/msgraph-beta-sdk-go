@@ -18,7 +18,7 @@ type TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetQueryParameters get retentionEventTypes from security
+// TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionEventType object.
 type TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property retentionEventTypes for security
+// Delete delete a retentionEventType object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentioneventtype-delete?view=graph-rest-1.0
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) De
     }
     return nil
 }
-// Get get retentionEventTypes from security
+// Get read the properties and relationships of a retentionEventType object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Pa
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable), nil
 }
-// ToDeleteRequestInformation delete navigation property retentionEventTypes for security
+// ToDeleteRequestInformation delete a retentionEventType object.
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get retentionEventTypes from security
+// ToGetRequestInformation read the properties and relationships of a retentionEventType object.
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

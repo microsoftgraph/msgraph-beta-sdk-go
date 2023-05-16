@@ -11,7 +11,7 @@ import (
 type ItemTokenLifetimePoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenLifetimePoliciesRefRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
+// ItemTokenLifetimePoliciesRefRequestBuilderGetQueryParameters list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 type ItemTokenLifetimePoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,10 @@ func NewItemTokenLifetimePoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenLifetimePoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the tokenLifetimePolicies assigned to this application. Supports $expand.
+// Get list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to tokenLifetimePolicies for applications
+// Post assign a tokenLifetimePolicy to an application or servicePrincipal.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -90,7 +96,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToGetRequestInformation the tokenLifetimePolicies assigned to this application. Supports $expand.
+// ToGetRequestInformation list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -106,7 +112,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to tokenLifetimePolicies for applications
+// ToPostRequestInformation assign a tokenLifetimePolicy to an application or servicePrincipal.
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

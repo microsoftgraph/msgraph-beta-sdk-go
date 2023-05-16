@@ -30,7 +30,10 @@ func NewDevicesItemUpdateSoftwareRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesItemUpdateSoftwareRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action updateSoftware
+// Post update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdevice-updatesoftware?view=graph-rest-1.0
 func (m *DevicesItemUpdateSoftwareRequestBuilder) Post(ctx context.Context, body DevicesItemUpdateSoftwarePostRequestBodyable, requestConfiguration *DevicesItemUpdateSoftwareRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *DevicesItemUpdateSoftwareRequestBuilder) Post(ctx context.Context, body
     }
     return nil
 }
-// ToPostRequestInformation invoke action updateSoftware
+// ToPostRequestInformation update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
 func (m *DevicesItemUpdateSoftwareRequestBuilder) ToPostRequestInformation(ctx context.Context, body DevicesItemUpdateSoftwarePostRequestBodyable, requestConfiguration *DevicesItemUpdateSoftwareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

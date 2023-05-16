@@ -11,7 +11,7 @@ import (
 type ItemProfileNotesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileNotesRequestBuilderGetQueryParameters represents notes that a user has added to their profile.
+// ItemProfileNotesRequestBuilderGetQueryParameters retrieve a list of personAnnotation objects from a user's profile.
 type ItemProfileNotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemProfileNotesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemProfileNotesRequestBuilder) Count()(*ItemProfileNotesCountRequestBuilder) {
     return NewItemProfileNotesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents notes that a user has added to their profile.
+// Get retrieve a list of personAnnotation objects from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
 func (m *ItemProfileNotesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNotesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemProfileNotesRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationCollectionResponseable), nil
 }
-// Post create new navigation property to notes for users
+// Post create a new personAnnotation object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
 func (m *ItemProfileNotesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *ItemProfileNotesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemProfileNotesRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable), nil
 }
-// ToGetRequestInformation represents notes that a user has added to their profile.
+// ToGetRequestInformation retrieve a list of personAnnotation objects from a user's profile.
 func (m *ItemProfileNotesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemProfileNotesRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to notes for users
+// ToPostRequestInformation create a new personAnnotation object in a user's profile.
 func (m *ItemProfileNotesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *ItemProfileNotesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

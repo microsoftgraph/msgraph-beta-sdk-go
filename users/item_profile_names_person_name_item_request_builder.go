@@ -18,7 +18,7 @@ type ItemProfileNamesPersonNameItemRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileNamesPersonNameItemRequestBuilderGetQueryParameters represents the names a user has added to their profile.
+// ItemProfileNamesPersonNameItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personName object in a user's profile.
 type ItemProfileNamesPersonNameItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileNamesPersonNameItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileNamesPersonNameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property names for users
+// Delete delete a personName object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get represents the names a user has added to their profile.
+// Get retrieve the properties and relationships of a personName object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-1.0
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable), nil
 }
-// Patch update the navigation property names in users
+// Patch update the properties of a personName object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personname-update?view=graph-rest-1.0
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable), nil
 }
-// ToDeleteRequestInformation delete navigation property names for users
+// ToDeleteRequestInformation delete a personName object from a user's profile.
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the names a user has added to their profile.
+// ToGetRequestInformation retrieve the properties and relationships of a personName object in a user's profile.
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property names in users
+// ToPatchRequestInformation update the properties of a personName object in a user's profile.
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

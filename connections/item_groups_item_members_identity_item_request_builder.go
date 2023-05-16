@@ -54,7 +54,10 @@ func NewItemGroupsItemMembersIdentityItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemGroupsItemMembersIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property members for connections
+// Delete delete an externalGroupMember object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
 func (m *ItemGroupsItemMembersIdentityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemGroupsItemMembersIdentityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +111,7 @@ func (m *ItemGroupsItemMembersIdentityItemRequestBuilder) Patch(ctx context.Cont
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Identityable), nil
 }
-// ToDeleteRequestInformation delete navigation property members for connections
+// ToDeleteRequestInformation delete an externalGroupMember object.
 func (m *ItemGroupsItemMembersIdentityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsItemMembersIdentityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

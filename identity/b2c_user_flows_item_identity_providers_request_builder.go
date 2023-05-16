@@ -11,7 +11,7 @@ import (
 type B2cUserFlowsItemIdentityProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters get identityProviders from identity
+// B2cUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters get the identity providers in a b2cIdentityUserFlow object.
 type B2cUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewB2cUserFlowsItemIdentityProvidersRequestBuilder(rawUrl string, requestAd
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Count()(*B2cUserFlowsItemIdentityProvidersCountRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get identityProviders from identity
+// Get get the identity providers in a b2cIdentityUserFlow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,7 +93,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Contex
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Ref()(*B2cUserFlowsItemIdentityProvidersRefRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get identityProviders from identity
+// ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

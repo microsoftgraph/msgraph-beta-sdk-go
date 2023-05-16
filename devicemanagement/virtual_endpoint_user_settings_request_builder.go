@@ -11,7 +11,7 @@ import (
 type VirtualEndpointUserSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointUserSettingsRequestBuilderGetQueryParameters cloud PC user settings.
+// VirtualEndpointUserSettingsRequestBuilderGetQueryParameters retrieve a list of cloudPcUserSetting objects.
 type VirtualEndpointUserSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewVirtualEndpointUserSettingsRequestBuilder(rawUrl string, requestAdapter 
 func (m *VirtualEndpointUserSettingsRequestBuilder) Count()(*VirtualEndpointUserSettingsCountRequestBuilder) {
     return NewVirtualEndpointUserSettingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get cloud PC user settings.
+// Get retrieve a list of cloudPcUserSetting objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
 func (m *VirtualEndpointUserSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *VirtualEndpointUserSettingsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingCollectionResponseable), nil
 }
-// Post create new navigation property to userSettings for deviceManagement
+// Post create a new cloudPcUserSetting object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
 func (m *VirtualEndpointUserSettingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *VirtualEndpointUserSettingsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable), nil
 }
-// ToGetRequestInformation cloud PC user settings.
+// ToGetRequestInformation retrieve a list of cloudPcUserSetting objects.
 func (m *VirtualEndpointUserSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *VirtualEndpointUserSettingsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to userSettings for deviceManagement
+// ToPostRequestInformation create a new cloudPcUserSetting object.
 func (m *VirtualEndpointUserSettingsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserSettingable, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

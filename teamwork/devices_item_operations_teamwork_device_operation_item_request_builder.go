@@ -18,7 +18,7 @@ type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters the async operations on the device.
+// DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters get the details of an async, long-running operation on a Microsoft Teams-enabled device.
 type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get the async operations on the device.
+// Get get the details of an async, long-running operation on a Microsoft Teams-enabled device.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworkdeviceoperation-get?view=graph-rest-1.0
 func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the async operations on the device.
+// ToGetRequestInformation get the details of an async, long-running operation on a Microsoft Teams-enabled device.
 func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type LearningProvidersLearningProviderItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LearningProvidersLearningProviderItemRequestBuilderGetQueryParameters a collection of learning providers.
+// LearningProvidersLearningProviderItemRequestBuilderGetQueryParameters read the properties and relationships of a learningProvider object.
 type LearningProvidersLearningProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewLearningProvidersLearningProviderItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property learningProviders for employeeExperience
+// Delete delete a learningProvider resource and remove its registration in Viva Learning for the tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/employeeexperience-delete-learningproviders?view=graph-rest-1.0
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get a collection of learning providers.
+// Get read the properties and relationships of a learningProvider object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-get?view=graph-rest-1.0
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +103,10 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningCourseActivities()(*LearningProvidersItemLearningCourseActivitiesRequestBuilder) {
     return NewLearningProvidersItemLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property learningProviders in employeeExperience
+// Patch update the properties of a learningProvider object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-update?view=graph-rest-1.0
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +125,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable), nil
 }
-// ToDeleteRequestInformation delete navigation property learningProviders for employeeExperience
+// ToDeleteRequestInformation delete a learningProvider resource and remove its registration in Viva Learning for the tenant.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +137,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of learning providers.
+// ToGetRequestInformation read the properties and relationships of a learningProvider object.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,7 +153,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property learningProviders in employeeExperience
+// ToPatchRequestInformation update the properties of a learningProvider object.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

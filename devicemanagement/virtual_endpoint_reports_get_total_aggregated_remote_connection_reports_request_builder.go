@@ -30,7 +30,10 @@ func NewVirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getTotalAggregatedRemoteConnectionReports
+// Post get the total aggregated remote connection usage of a Cloud PC during a given time span.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-1.0
 func (m *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestB
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getTotalAggregatedRemoteConnectionReports
+// ToPostRequestInformation get the total aggregated remote connection usage of a Cloud PC during a given time span.
 func (m *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

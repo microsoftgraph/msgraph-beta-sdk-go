@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemOperationsRequestBuilderGetQueryParameters returns a list of case caseOperation objects for this case.
+// CasesEdiscoveryCasesItemOperationsRequestBuilderGetQueryParameters get a list of the caseOperation objects and their properties.
 type CasesEdiscoveryCasesItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewCasesEdiscoveryCasesItemOperationsRequestBuilder(rawUrl string, requestA
 func (m *CasesEdiscoveryCasesItemOperationsRequestBuilder) Count()(*CasesEdiscoveryCasesItemOperationsCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of case caseOperation objects for this case.
+// Get get a list of the caseOperation objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *CasesEdiscoveryCasesItemOperationsRequestBuilder) Post(ctx context.Cont
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable), nil
 }
-// ToGetRequestInformation returns a list of case caseOperation objects for this case.
+// ToGetRequestInformation get a list of the caseOperation objects and their properties.
 func (m *CasesEdiscoveryCasesItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

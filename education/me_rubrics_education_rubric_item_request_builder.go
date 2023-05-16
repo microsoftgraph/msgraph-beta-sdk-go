@@ -18,7 +18,7 @@ type MeRubricsEducationRubricItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MeRubricsEducationRubricItemRequestBuilderGetQueryParameters when set, the grading rubric attached to the assignment.
+// MeRubricsEducationRubricItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.
 type MeRubricsEducationRubricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewMeRubricsEducationRubricItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewMeRubricsEducationRubricItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property rubrics for education
+// Delete delete an educationRubric object. Only teachers can perform this operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationrubric-delete?view=graph-rest-1.0
 func (m *MeRubricsEducationRubricItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MeRubricsEducationRubricItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *MeRubricsEducationRubricItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get when set, the grading rubric attached to the assignment.
+// Get retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationrubric-get?view=graph-rest-1.0
 func (m *MeRubricsEducationRubricItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MeRubricsEducationRubricItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *MeRubricsEducationRubricItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable), nil
 }
-// Patch update the navigation property rubrics in education
+// Patch update the properties of an educationRubric object. Only teachers can perform this operation. Updating a rubric attached to an assignment (`PATCH /education/classes/{id}/assignments/{id}/rubric`) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under `/education/users/{id}/rubrics`. After the assignment is published, an immutable copy of the rubric is made that is attached to that specific assignment. That rubric can be retrieved using GET /education/classes/{id}/assignments/{id}/rubric, but it cannot be updated.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationrubric-update?view=graph-rest-1.0
 func (m *MeRubricsEducationRubricItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, requestConfiguration *MeRubricsEducationRubricItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *MeRubricsEducationRubricItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable), nil
 }
-// ToDeleteRequestInformation delete navigation property rubrics for education
+// ToDeleteRequestInformation delete an educationRubric object. Only teachers can perform this operation.
 func (m *MeRubricsEducationRubricItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeRubricsEducationRubricItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *MeRubricsEducationRubricItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation when set, the grading rubric attached to the assignment.
+// ToGetRequestInformation retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.
 func (m *MeRubricsEducationRubricItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeRubricsEducationRubricItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *MeRubricsEducationRubricItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property rubrics in education
+// ToPatchRequestInformation update the properties of an educationRubric object. Only teachers can perform this operation. Updating a rubric attached to an assignment (`PATCH /education/classes/{id}/assignments/{id}/rubric`) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under `/education/users/{id}/rubrics`. After the assignment is published, an immutable copy of the rubric is made that is attached to that specific assignment. That rubric can be retrieved using GET /education/classes/{id}/assignments/{id}/rubric, but it cannot be updated.
 func (m *MeRubricsEducationRubricItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, requestConfiguration *MeRubricsEducationRubricItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type EntitlementManagementSettingsRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementSettingsRequestBuilderGetQueryParameters represents the settings that control the behavior of Azure AD entitlement management.
+// EntitlementManagementSettingsRequestBuilderGetQueryParameters retrieve the properties of an entitlementManagementSettings object.
 type EntitlementManagementSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *EntitlementManagementSettingsRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get represents the settings that control the behavior of Azure AD entitlement management.
+// Get retrieve the properties of an entitlementManagementSettings object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
 func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementSettingsable), nil
 }
-// Patch update the navigation property settings in identityGovernance
+// Patch update an existing entitlementManagementSettings object to change one or more of its properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
 func (m *EntitlementManagementSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementSettingsable, requestConfiguration *EntitlementManagementSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the settings that control the behavior of Azure AD entitlement management.
+// ToGetRequestInformation retrieve the properties of an entitlementManagementSettings object.
 func (m *EntitlementManagementSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property settings in identityGovernance
+// ToPatchRequestInformation update an existing entitlementManagementSettings object to change one or more of its properties.
 func (m *EntitlementManagementSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementSettingsable, requestConfiguration *EntitlementManagementSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemLegalHoldsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemLegalHoldsRequestBuilderGetQueryParameters returns a list of case eDiscoveryHoldPolicy objects for this case.
+// CasesEdiscoveryCasesItemLegalHoldsRequestBuilderGetQueryParameters get a list of the ediscoveryHoldPolicy objects and their properties.
 type CasesEdiscoveryCasesItemLegalHoldsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewCasesEdiscoveryCasesItemLegalHoldsRequestBuilder(rawUrl string, requestA
 func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) Count()(*CasesEdiscoveryCasesItemLegalHoldsCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemLegalHoldsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of case eDiscoveryHoldPolicy objects for this case.
+// Get get a list of the ediscoveryHoldPolicy objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-legalholds?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) Get(ctx context.Conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyCollectionResponseable), nil
 }
-// Post create new navigation property to legalHolds for security
+// Post create a new ediscoveryHoldPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-legalholds?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) Post(ctx context.Cont
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable), nil
 }
-// ToGetRequestInformation returns a list of case eDiscoveryHoldPolicy objects for this case.
+// ToGetRequestInformation get a list of the ediscoveryHoldPolicy objects and their properties.
 func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to legalHolds for security
+// ToPostRequestInformation create a new ediscoveryHoldPolicy object.
 func (m *CasesEdiscoveryCasesItemLegalHoldsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

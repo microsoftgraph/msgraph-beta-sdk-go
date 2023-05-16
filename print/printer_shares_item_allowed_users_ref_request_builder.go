@@ -11,7 +11,7 @@ import (
 type PrinterSharesItemAllowedUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrinterSharesItemAllowedUsersRefRequestBuilderGetQueryParameters the users who have access to print using the printer.
+// PrinterSharesItemAllowedUsersRefRequestBuilderGetQueryParameters retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 type PrinterSharesItemAllowedUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,10 @@ func NewPrinterSharesItemAllowedUsersRefRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemAllowedUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the users who have access to print using the printer.
+// Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to allowedUsers for print
+// Post grant the specified user access to submit print jobs to the associated printerShare.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *PrinterSharesItemAllowedUsersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -90,7 +96,7 @@ func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToGetRequestInformation the users who have access to print using the printer.
+// ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
 func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -106,7 +112,7 @@ func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to allowedUsers for print
+// ToPostRequestInformation grant the specified user access to submit print jobs to the associated printerShare.
 func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *PrinterSharesItemAllowedUsersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

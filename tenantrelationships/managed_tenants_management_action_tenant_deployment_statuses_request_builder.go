@@ -11,7 +11,7 @@ import (
 type ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters the tenant level status of management actions across managed tenants.
+// ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters get a list of the managementActionTenantDeploymentStatus objects and their properties.
 type ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder(raw
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) Count()(*ManagedTenantsManagementActionTenantDeploymentStatusesCountRequestBuilder) {
     return NewManagedTenantsManagementActionTenantDeploymentStatusesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the tenant level status of management actions across managed tenants.
+// Get get a list of the managementActionTenantDeploymentStatus objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) P
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable), nil
 }
-// ToGetRequestInformation the tenant level status of management actions across managed tenants.
+// ToGetRequestInformation get a list of the managementActionTenantDeploymentStatus objects and their properties.
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

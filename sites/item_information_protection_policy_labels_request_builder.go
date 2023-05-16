@@ -11,7 +11,7 @@ import (
 type ItemInformationProtectionPolicyLabelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInformationProtectionPolicyLabelsRequestBuilderGetQueryParameters get labels from sites
+// ItemInformationProtectionPolicyLabelsRequestBuilderGetQueryParameters get a collection of information protection labels available to the user or to the organization.
 type ItemInformationProtectionPolicyLabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -90,7 +90,10 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateRemoval()(
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ExtractLabel()(*ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get labels from sites
+// Get get a collection of information protection labels available to the user or to the organization.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInformationProtectionPolicyLabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Post(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable), nil
 }
-// ToGetRequestInformation get labels from sites
+// ToGetRequestInformation get a collection of information protection labels available to the user or to the organization.
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionPolicyLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

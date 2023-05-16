@@ -8,7 +8,7 @@ import (
 type ConnectionOperation struct {
     Entity
 }
-// NewConnectionOperation instantiates a new connectionOperation and sets the default values.
+// NewConnectionOperation instantiates a new ConnectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {
     m := &ConnectionOperation{
         Entity: *NewEntity(),

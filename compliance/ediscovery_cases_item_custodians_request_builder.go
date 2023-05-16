@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemCustodiansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemCustodiansRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
+// EdiscoveryCasesItemCustodiansRequestBuilderGetQueryParameters get a list of the custodian objects and their properties.
 type EdiscoveryCasesItemCustodiansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl string, requestAdapte
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of case custodian objects for this case.  Nullable.
+// Get get a list of the custodian objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CustodianCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +104,10 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryAp
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create new navigation property to custodians for compliance
+// Post create a new custodian object. After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
 }
-// ToGetRequestInformation returns a list of case custodian objects for this case.  Nullable.
+// ToGetRequestInformation get a list of the custodian objects and their properties.
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to custodians for compliance
+// ToPostRequestInformation create a new custodian object. After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

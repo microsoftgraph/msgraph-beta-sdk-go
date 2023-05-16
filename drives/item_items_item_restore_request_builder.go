@@ -31,7 +31,10 @@ func NewItemItemsItemRestoreRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action restore
+// Post restore a driveItem that has been deleted and is currently in the recycle bin. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
 func (m *ItemItemsItemRestoreRequestBuilder) Post(ctx context.Context, body ItemItemsItemRestorePostRequestBodyable, requestConfiguration *ItemItemsItemRestoreRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemItemsItemRestoreRequestBuilder) Post(ctx context.Context, body Item
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToPostRequestInformation invoke action restore
+// ToPostRequestInformation restore a driveItem that has been deleted and is currently in the recycle bin. 
 func (m *ItemItemsItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemRestorePostRequestBodyable, requestConfiguration *ItemItemsItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

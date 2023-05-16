@@ -18,7 +18,7 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters the fileAttachment and itemAttachment attachments for the message.
+// ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
 type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -63,7 +63,10 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentIte
     }
     return nil
 }
-// Get the fileAttachment and itemAttachment attachments for the message.
+// Get read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +97,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentIte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the fileAttachment and itemAttachment attachments for the message.
+// ToGetRequestInformation read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

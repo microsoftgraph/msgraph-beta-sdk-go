@@ -11,7 +11,7 @@ import (
 type PrintersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrintersRequestBuilderGetQueryParameters the list of printers registered in the tenant.
+// PrintersRequestBuilderGetQueryParameters retrieve the list of **printers** that are registered in the tenant.
 type PrintersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *PrintersRequestBuilder) Count()(*PrintersCountRequestBuilder) {
 func (m *PrintersRequestBuilder) Create()(*PrintersCreateRequestBuilder) {
     return NewPrintersCreateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of printers registered in the tenant.
+// Get retrieve the list of **printers** that are registered in the tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
 func (m *PrintersRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *PrintersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable), nil
 }
-// ToGetRequestInformation the list of printers registered in the tenant.
+// ToGetRequestInformation retrieve the list of **printers** that are registered in the tenant.
 func (m *PrintersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

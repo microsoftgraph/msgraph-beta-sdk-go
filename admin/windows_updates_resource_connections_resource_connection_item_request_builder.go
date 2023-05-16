@@ -18,7 +18,7 @@ type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters service connections to external resources such as analytics workspaces.
+// WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of an operationalInsightsConnection object.
 type WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property resourceConnections for admin
+// Delete delete an operationalInsightsConnection object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return nil
 }
-// Get service connections to external resources such as analytics workspaces.
+// Get read the properties and relationships of an operationalInsightsConnection object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable), nil
 }
-// ToDeleteRequestInformation delete navigation property resourceConnections for admin
+// ToDeleteRequestInformation delete an operationalInsightsConnection object.
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation service connections to external resources such as analytics workspaces.
+// ToGetRequestInformation read the properties and relationships of an operationalInsightsConnection object.
 func (m *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

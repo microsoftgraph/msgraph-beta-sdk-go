@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderGetQueryParameters read-only. Nullable. Additional details about the task.
+// BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderGetQueryParameters retrieve the properties and relationships of a **plannerTaskDetails** object.
 type BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get read-only. Nullable. Additional details about the task.
+// Get retrieve the properties and relationships of a **plannerTaskDetails** object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskDetailsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,6 +93,9 @@ func (m *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskDetailsable), nil
 }
 // Patch update the navigation property details in solutions
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskDetailsable, requestConfiguration *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskDetailsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read-only. Nullable. Additional details about the task.
+// ToGetRequestInformation retrieve the properties and relationships of a **plannerTaskDetails** object.
 func (m *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

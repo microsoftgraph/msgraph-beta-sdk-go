@@ -11,7 +11,7 @@ import (
 type ItemOutlookTaskGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookTaskGroupsRequestBuilderGetQueryParameters get taskGroups from users
+// ItemOutlookTaskGroupsRequestBuilderGetQueryParameters get all the Outlook task groups in the user's mailbox. The response always includes the default task group `My Tasks`, and any other task groups that have been created in the mailbox.
 type ItemOutlookTaskGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,10 @@ func NewItemOutlookTaskGroupsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ItemOutlookTaskGroupsRequestBuilder) Count()(*ItemOutlookTaskGroupsCountRequestBuilder) {
     return NewItemOutlookTaskGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get taskGroups from users
+// Get get all the Outlook task groups in the user's mailbox. The response always includes the default task group `My Tasks`, and any other task groups that have been created in the mailbox.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *ItemOutlookTaskGroupsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupCollectionResponseable), nil
 }
-// Post create new navigation property to taskGroups for users
+// Post create an Outlook task group in the user's mailbox.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, requestConfiguration *ItemOutlookTaskGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *ItemOutlookTaskGroupsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable), nil
 }
-// ToGetRequestInformation get taskGroups from users
+// ToGetRequestInformation get all the Outlook task groups in the user's mailbox. The response always includes the default task group `My Tasks`, and any other task groups that have been created in the mailbox.
 func (m *ItemOutlookTaskGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +130,7 @@ func (m *ItemOutlookTaskGroupsRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to taskGroups for users
+// ToPostRequestInformation create an Outlook task group in the user's mailbox.
 func (m *ItemOutlookTaskGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, requestConfiguration *ItemOutlookTaskGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

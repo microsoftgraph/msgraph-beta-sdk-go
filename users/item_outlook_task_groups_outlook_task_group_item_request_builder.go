@@ -18,7 +18,7 @@ type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters get taskGroups from users
+// ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters get the properties and relationships of the specified Outlook task group.
 type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -68,7 +68,10 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get taskGroups from users
+// Get get the properties and relationships of the specified Outlook task group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +125,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get taskGroups from users
+// ToGetRequestInformation get the properties and relationships of the specified Outlook task group.
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

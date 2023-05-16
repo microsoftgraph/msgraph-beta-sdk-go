@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderGetQueryParameters get teamDefinition from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderGetQueryParameters get the properties of the team associated with a teamTemplateDefinition object.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,7 +90,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get teamDefinition from teamwork
+// Get get the properties of the team associated with a teamTemplateDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -196,7 +199,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get teamDefinition from teamwork
+// ToGetRequestInformation get the properties of the team associated with a teamTemplateDefinition object.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

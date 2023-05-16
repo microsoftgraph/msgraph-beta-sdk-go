@@ -11,7 +11,7 @@ import (
 type ItemSitesItemPagesItemWebPartsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemPagesItemWebPartsRequestBuilderGetQueryParameters collection of webparts on the SharePoint page
+// ItemSitesItemPagesItemWebPartsRequestBuilderGetQueryParameters read the properties and relationships of a webPart object.
 type ItemSitesItemPagesItemWebPartsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemPagesItemWebPartsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemSitesItemPagesItemWebPartsRequestBuilder) Count()(*ItemSitesItemPagesItemWebPartsCountRequestBuilder) {
     return NewItemSitesItemPagesItemWebPartsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of webparts on the SharePoint page
+// Get read the properties and relationships of a webPart object.
 func (m *ItemSitesItemPagesItemWebPartsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemWebPartsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemSitesItemPagesItemWebPartsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebPartable), nil
 }
-// ToGetRequestInformation collection of webparts on the SharePoint page
+// ToGetRequestInformation read the properties and relationships of a webPart object.
 func (m *ItemSitesItemPagesItemWebPartsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemWebPartsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

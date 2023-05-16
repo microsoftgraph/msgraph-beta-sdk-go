@@ -18,7 +18,7 @@ type ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters the collection of column definitions for this contentType.
+// ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 type ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property columns for drives
+// Delete remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the collection of column definitions for this contentType.
+// Get retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
-// Patch update the navigation property columns in drives
+// Patch update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patc
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemListContentTypesItemColumnsItemSourceColumnRequestBuilder) {
     return NewItemListContentTypesItemColumnsItemSourceColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property columns for drives
+// ToDeleteRequestInformation remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of column definitions for this contentType.
+// ToGetRequestInformation retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property columns in drives
+// ToPatchRequestInformation update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

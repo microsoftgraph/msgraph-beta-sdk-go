@@ -11,7 +11,7 @@ import (
 type EntitlementManagementConnectedOrganizationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementConnectedOrganizationsRequestBuilderGetQueryParameters represents references to a directory or domain of another organization whose users can request access.
+// EntitlementManagementConnectedOrganizationsRequestBuilderGetQueryParameters retrieve a list of connectedOrganization objects.
 type EntitlementManagementConnectedOrganizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEntitlementManagementConnectedOrganizationsRequestBuilder(rawUrl string,
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Count()(*EntitlementManagementConnectedOrganizationsCountRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents references to a directory or domain of another organization whose users can request access.
+// Get retrieve a list of connectedOrganization objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationCollectionResponseable), nil
 }
-// Post create new navigation property to connectedOrganizations for identityGovernance
+// Post create a new connectedOrganization object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Post(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable), nil
 }
-// ToGetRequestInformation represents references to a directory or domain of another organization whose users can request access.
+// ToGetRequestInformation retrieve a list of connectedOrganization objects.
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to connectedOrganizations for identityGovernance
+// ToPostRequestInformation create a new connectedOrganization object.
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

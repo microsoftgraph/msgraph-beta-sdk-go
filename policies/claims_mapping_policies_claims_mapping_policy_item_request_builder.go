@@ -18,7 +18,7 @@ type ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a claimsMappingPolicy object.
 type ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property claimsMappingPolicies for policies
+// Delete delete a claimsMappingPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/claimsmappingpolicy-delete?view=graph-rest-1.0
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// Get retrieve the properties and relationships of a claimsMappingPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/claimsmappingpolicy-get?view=graph-rest-1.0
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable), nil
 }
-// Patch update the navigation property claimsMappingPolicies in policies
+// Patch update the properties of a claimsMappingPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/claimsmappingpolicy-update?view=graph-rest-1.0
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property claimsMappingPolicies for policies
+// ToDeleteRequestInformation delete a claimsMappingPolicy object.
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// ToGetRequestInformation retrieve the properties and relationships of a claimsMappingPolicy object.
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property claimsMappingPolicies in policies
+// ToPatchRequestInformation update the properties of a claimsMappingPolicy object.
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

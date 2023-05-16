@@ -18,7 +18,7 @@ type ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePublicationsItemPublicationItemRequestBuilderGetQueryParameters represents details of any publications a user has added to their profile.
+// ItemProfilePublicationsItemPublicationItemRequestBuilderGetQueryParameters read the properties and relationships of an itemPublication object in a user's profile.
 type ItemProfilePublicationsItemPublicationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfilePublicationsItemPublicationItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property publications for users
+// Delete deletes an itemPublication object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get represents details of any publications a user has added to their profile.
+// Get read the properties and relationships of an itemPublication object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
-// Patch update the navigation property publications in users
+// Patch update the properties of an itemPublication object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Patch(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
-// ToDeleteRequestInformation delete navigation property publications for users
+// ToDeleteRequestInformation deletes an itemPublication object.
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents details of any publications a user has added to their profile.
+// ToGetRequestInformation read the properties and relationships of an itemPublication object in a user's profile.
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property publications in users
+// ToPatchRequestInformation update the properties of an itemPublication object in a user's profile.
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

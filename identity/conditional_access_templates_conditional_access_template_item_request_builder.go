@@ -11,7 +11,7 @@ import (
 type ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+// ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a conditionalAccessTemplate object.
 type ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,10 @@ func NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+// Get read the properties and relationships of a conditionalAccessTemplate object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccesstemplate-get?view=graph-rest-1.0
 func (m *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +62,7 @@ func (m *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessTemplateable), nil
 }
-// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+// ToGetRequestInformation read the properties and relationships of a conditionalAccessTemplate object.
 func (m *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

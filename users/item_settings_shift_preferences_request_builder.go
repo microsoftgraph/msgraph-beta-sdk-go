@@ -18,7 +18,7 @@ type ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters the shift preferences for the user.
+// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID.
 type ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get the shift preferences for the user.
+// Get retrieve the properties and relationships of a shiftPreferences object by ID.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable), nil
 }
-// Patch update the navigation property shiftPreferences in users
+// Patch update the properties and relationships of a shiftPreferences object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the shift preferences for the user.
+// ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID.
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property shiftPreferences in users
+// ToPatchRequestInformation update the properties and relationships of a shiftPreferences object.
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

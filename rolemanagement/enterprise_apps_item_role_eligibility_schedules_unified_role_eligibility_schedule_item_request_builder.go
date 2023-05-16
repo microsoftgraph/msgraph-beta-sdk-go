@@ -18,7 +18,7 @@ type EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleIte
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters get roleEligibilitySchedules from roleManagement
+// EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters read the properties and relationships of an unifiedRoleEligibilitySchedule object.
 type EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,10 @@ func (m *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilitySchedul
 func (m *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilder) DirectoryScope()(*EnterpriseAppsItemRoleEligibilitySchedulesItemDirectoryScopeRequestBuilder) {
     return NewEnterpriseAppsItemRoleEligibilitySchedulesItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get roleEligibilitySchedules from roleManagement
+// Get read the properties and relationships of an unifiedRoleEligibilitySchedule object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedule-get?view=graph-rest-1.0
 func (m *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilitySchedul
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get roleEligibilitySchedules from roleManagement
+// ToGetRequestInformation read the properties and relationships of an unifiedRoleEligibilitySchedule object.
 func (m *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

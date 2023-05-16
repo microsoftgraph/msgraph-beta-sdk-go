@@ -89,7 +89,10 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable), nil
 }
-// Patch update the navigation property templates in servicePrincipals
+// Patch update (override) the synchronization template associated with a given application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -140,7 +143,7 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property templates in servicePrincipals
+// ToPatchRequestInformation update (override) the synchronization template associated with a given application.
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
+// ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared.
 type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,10 @@ func NewItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property calendarPermissions for users
+// Delete delete calendarPermission.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,7 +71,10 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) De
     }
     return nil
 }
-// Get the permissions of the users with whom the calendar is shared.
+// Get get the specified permissions object of a user or group calendar that has been shared.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +93,10 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable), nil
 }
-// Patch update the navigation property calendarPermissions in users
+// Patch update the permissions assigned to an existing sharee or delegate, through the corresponding calendarPermission object for a calendar.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -106,7 +115,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Pa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable), nil
 }
-// ToDeleteRequestInformation delete navigation property calendarPermissions for users
+// ToDeleteRequestInformation delete calendarPermission.
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -118,7 +127,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the permissions of the users with whom the calendar is shared.
+// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared.
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +143,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property calendarPermissions in users
+// ToPatchRequestInformation update the permissions assigned to an existing sharee or delegate, through the corresponding calendarPermission object for a calendar.
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

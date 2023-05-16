@@ -18,7 +18,7 @@ type WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetQueryParameters a collection of policies for approving the deployment of different content to an audience over time.
+// WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetQueryParameters read the properties and relationships of an updatePolicy object.
 type WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,10 @@ func NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property updatePolicies for admin
+// Delete delete an updatePolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +81,10 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get a collection of policies for approving the deployment of different content to an audience over time.
+// Get read the properties and relationships of an updatePolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-get?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +103,10 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Get(ctx con
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable), nil
 }
-// Patch update the navigation property updatePolicies in admin
+// Patch update the properties of an updatePolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-updatepolicy-update?view=graph-rest-1.0
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +125,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property updatePolicies for admin
+// ToDeleteRequestInformation delete an updatePolicy object.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +137,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of policies for approving the deployment of different content to an audience over time.
+// ToGetRequestInformation read the properties and relationships of an updatePolicy object.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,7 +153,7 @@ func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property updatePolicies in admin
+// ToPatchRequestInformation update the properties of an updatePolicy object.
 func (m *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, requestConfiguration *WindowsUpdatesUpdatePoliciesUpdatePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

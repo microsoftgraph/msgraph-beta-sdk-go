@@ -18,7 +18,7 @@ type AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetQueryParameters the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetQueryParameters read the properties of an appManagementPolicy object.
 type AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property appManagementPolicies for policies
+// Delete delete an appManagementPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/appManagementPolicy-delete?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// Get read the properties of an appManagementPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/appmanagementpolicy-get?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable), nil
 }
-// Patch update the navigation property appManagementPolicies in policies
+// Patch update an appManagementPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/appManagementPolicy-update?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property appManagementPolicies for policies
+// ToDeleteRequestInformation delete an appManagementPolicy object.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// ToGetRequestInformation read the properties of an appManagementPolicy object.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property appManagementPolicies in policies
+// ToPatchRequestInformation update an appManagementPolicy object.
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -10,7 +10,7 @@ import (
 type B2cUserFlowsItemIdentityProvidersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemIdentityProvidersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property identityProviders for identity
+// B2cUserFlowsItemIdentityProvidersItemRefRequestBuilderDeleteQueryParameters delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
 type B2cUserFlowsItemIdentityProvidersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewB2cUserFlowsItemIdentityProvidersItemRefRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemIdentityProvidersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property identityProviders for identity
+// Delete delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0
 func (m *B2cUserFlowsItemIdentityProvidersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *B2cUserFlowsItemIdentityProvidersItemRefRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property identityProviders for identity
+// ToDeleteRequestInformation delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
 func (m *B2cUserFlowsItemIdentityProvidersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

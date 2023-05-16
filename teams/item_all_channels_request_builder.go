@@ -11,7 +11,7 @@ import (
 type ItemAllChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAllChannelsRequestBuilderGetQueryParameters list of channels either hosted in or shared with the team (incoming channels).
+// ItemAllChannelsRequestBuilderGetQueryParameters get the list of channels either in this team or shared with this team (incoming channels).
 type ItemAllChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemAllChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemAllChannelsRequestBuilder) Count()(*ItemAllChannelsCountRequestBuilder) {
     return NewItemAllChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of channels either hosted in or shared with the team (incoming channels).
+// Get get the list of channels either in this team or shared with this team (incoming channels).
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0
 func (m *ItemAllChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAllChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ItemAllChannelsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
-// ToGetRequestInformation list of channels either hosted in or shared with the team (incoming channels).
+// ToGetRequestInformation get the list of channels either in this team or shared with this team (incoming channels).
 func (m *ItemAllChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAllChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

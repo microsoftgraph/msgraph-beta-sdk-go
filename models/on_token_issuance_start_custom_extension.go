@@ -21,7 +21,7 @@ func NewOnTokenIssuanceStartCustomExtension()(*OnTokenIssuanceStartCustomExtensi
 func CreateOnTokenIssuanceStartCustomExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnTokenIssuanceStartCustomExtension(), nil
 }
-// GetClaimsForTokenConfiguration gets the claimsForTokenConfiguration property value. The claimsForTokenConfiguration property
+// GetClaimsForTokenConfiguration gets the claimsForTokenConfiguration property value. Collection of claims to be returned by the API called by this custom authentication extension.
 func (m *OnTokenIssuanceStartCustomExtension) GetClaimsForTokenConfiguration()([]OnTokenIssuanceStartReturnClaimable) {
     val, err := m.GetBackingStore().Get("claimsForTokenConfiguration")
     if err != nil {
@@ -69,7 +69,7 @@ func (m *OnTokenIssuanceStartCustomExtension) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetClaimsForTokenConfiguration sets the claimsForTokenConfiguration property value. The claimsForTokenConfiguration property
+// SetClaimsForTokenConfiguration sets the claimsForTokenConfiguration property value. Collection of claims to be returned by the API called by this custom authentication extension.
 func (m *OnTokenIssuanceStartCustomExtension) SetClaimsForTokenConfiguration(value []OnTokenIssuanceStartReturnClaimable)() {
     err := m.GetBackingStore().Set("claimsForTokenConfiguration", value)
     if err != nil {

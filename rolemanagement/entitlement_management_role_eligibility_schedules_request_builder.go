@@ -11,7 +11,7 @@ import (
 type EntitlementManagementRoleEligibilitySchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementRoleEligibilitySchedulesRequestBuilderGetQueryParameters get roleEligibilitySchedules from roleManagement
+// EntitlementManagementRoleEligibilitySchedulesRequestBuilderGetQueryParameters get a list of the unifiedRoleEligibilitySchedule objects and their properties.
 type EntitlementManagementRoleEligibilitySchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Count()(*E
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get roleEligibilitySchedules from roleManagement
+// Get get a list of the unifiedRoleEligibilitySchedule objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilitySchedulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleable), nil
 }
-// ToGetRequestInformation get roleEligibilitySchedules from roleManagement
+// ToGetRequestInformation get a list of the unifiedRoleEligibilitySchedule objects and their properties.
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilitySchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

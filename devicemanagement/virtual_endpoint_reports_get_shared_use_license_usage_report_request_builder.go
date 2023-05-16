@@ -30,7 +30,10 @@ func NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getSharedUseLicenseUsageReport
+// Post get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
 func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) Pos
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getSharedUseLicenseUsageReport
+// ToPostRequestInformation get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
 func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

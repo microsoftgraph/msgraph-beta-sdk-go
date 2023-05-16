@@ -18,7 +18,7 @@ type ItemSchemaRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSchemaRequestBuilderGetQueryParameters get schema from connections
+// ItemSchemaRequestBuilderGetQueryParameters retrieve the properties of a schema for an externalConnection.
 type ItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemSchemaRequestBuilder) Delete(ctx context.Context, requestConfigurat
     }
     return nil
 }
-// Get get schema from connections
+// Get retrieve the properties of a schema for an externalConnection.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
 func (m *ItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSchemaRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *ItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable), nil
 }
-// Patch update the navigation property schema in connections
+// Patch update the properties of a schema for an externalConnection.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
 func (m *ItemSchemaRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *ItemSchemaRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *ItemSchemaRequestBuilder) ToDeleteRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get schema from connections
+// ToGetRequestInformation retrieve the properties of a schema for an externalConnection.
 func (m *ItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *ItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property schema in connections
+// ToPatchRequestInformation update the properties of a schema for an externalConnection.
 func (m *ItemSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *ItemSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

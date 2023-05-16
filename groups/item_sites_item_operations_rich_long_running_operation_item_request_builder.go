@@ -18,7 +18,7 @@ type ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters the collection of long running operations for the site.
+// ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters read the properties of a richLongRunningOperation object.
 type ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the collection of long running operations for the site.
+// Get read the properties of a richLongRunningOperation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0
 func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RichLongRunningOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of long running operations for the site.
+// ToGetRequestInformation read the properties of a richLongRunningOperation object.
 func (m *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

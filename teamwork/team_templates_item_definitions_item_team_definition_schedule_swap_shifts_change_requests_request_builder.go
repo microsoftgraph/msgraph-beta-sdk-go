@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters the swap requests for shifts in the schedule.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters retrieve a list of swapShiftsChangeRequest objects in a team.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRe
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the swap requests for shifts in the schedule.
+// Get retrieve a list of swapShiftsChangeRequest objects in a team.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable), nil
 }
-// Post create new navigation property to swapShiftsChangeRequests for teamwork
+// Post create an instance of a swapShiftsChangeRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable), nil
 }
-// ToGetRequestInformation the swap requests for shifts in the schedule.
+// ToGetRequestInformation retrieve a list of swapShiftsChangeRequest objects in a team.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeR
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to swapShiftsChangeRequests for teamwork
+// ToPostRequestInformation create an instance of a swapShiftsChangeRequest object.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -66,7 +66,10 @@ func NewItemOnlineMeetingsOnlineMeetingItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property onlineMeetings for users
+// Delete delete an onlineMeeting object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -109,7 +112,10 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) GetVirtualAppointmen
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) MeetingAttendanceReport()(*ItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilder) {
     return NewItemOnlineMeetingsItemMeetingAttendanceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property onlineMeetings in users
+// Patch update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -136,7 +142,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Recording()(*ItemOnl
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Registration()(*ItemOnlineMeetingsItemRegistrationRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property onlineMeetings for users
+// ToDeleteRequestInformation delete an onlineMeeting object.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -164,7 +170,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property onlineMeetings in users
+// ToPatchRequestInformation update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

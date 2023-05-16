@@ -18,7 +18,7 @@ type ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCovera
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParameters aggregate view of conditional access policy coverage across managed tenants.
+// ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParameters read the properties and relationships of a conditionalAccessPolicyCoverage object.
 type ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCo
     }
     return nil
 }
-// Get aggregate view of conditional access policy coverage across managed tenants.
+// Get read the properties and relationships of a conditionalAccessPolicyCoverage object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-conditionalaccesspolicycoverage-get?view=graph-rest-1.0
 func (m *ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation aggregate view of conditional access policy coverage across managed tenants.
+// ToGetRequestInformation read the properties and relationships of a conditionalAccessPolicyCoverage object.
 func (m *ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,7 +31,10 @@ func NewItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action extractLabel
+// Post using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-1.0
 func (m *ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionPolicyLabelsExtractLabelPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) Post(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable), nil
 }
-// ToPostRequestInformation invoke action extractLabel
+// ToPostRequestInformation using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
 func (m *ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionPolicyLabelsExtractLabelPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

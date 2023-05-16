@@ -11,7 +11,7 @@ import (
 type ItemSitesItemContentTypesItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemContentTypesItemColumnsRequestBuilderGetQueryParameters the collection of column definitions for this contentType.
+// ItemSitesItemContentTypesItemColumnsRequestBuilderGetQueryParameters get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].
 type ItemSitesItemContentTypesItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemSitesItemContentTypesItemColumnsRequestBuilder(rawUrl string, reques
 func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) Count()(*ItemSitesItemContentTypesItemColumnsCountRequestBuilder) {
     return NewItemSitesItemContentTypesItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of column definitions for this contentType.
+// Get get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create new navigation property to columns for groups
+// Post add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemSitesItemContentTypesItemColumnsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation the collection of column definitions for this contentType.
+// ToGetRequestInformation get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].
 func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to columns for groups
+// ToPostRequestInformation add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 func (m *ItemSitesItemContentTypesItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemSitesItemContentTypesItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

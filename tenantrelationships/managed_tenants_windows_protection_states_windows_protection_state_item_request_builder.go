@@ -18,7 +18,7 @@ type ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderGetQueryParameters the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderGetQueryParameters read the properties and relationships of a windowsProtectionState object.
 type ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestB
     }
     return nil
 }
-// Get the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// Get read the properties and relationships of a windowsProtectionState object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-windowsprotectionstate-get?view=graph-rest-1.0
 func (m *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.WindowsProtectionStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// ToGetRequestInformation read the properties and relationships of a windowsProtectionState object.
 func (m *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

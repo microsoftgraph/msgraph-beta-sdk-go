@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerPlanConfigurationRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetQueryParameters the configuration of Planner plans that will be created for the scenario.
+// BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfiguration object.
 type BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get the configuration of Planner plans that will be created for the scenario.
+// Get read the properties and relationships of a plannerPlanConfiguration object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx co
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizations()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property planConfiguration in solutions
+// Patch update the properties of a plannerPlanConfiguration object for a businessScenario.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the configuration of Planner plans that will be created for the scenario.
+// ToGetRequestInformation read the properties and relationships of a plannerPlanConfiguration object.
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property planConfiguration in solutions
+// ToPatchRequestInformation update the properties of a plannerPlanConfiguration object for a businessScenario.
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

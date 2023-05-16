@@ -11,7 +11,7 @@ import (
 type SynchronizationProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SynchronizationProfilesRequestBuilderGetQueryParameters get synchronizationProfiles from education
+// SynchronizationProfilesRequestBuilderGetQueryParameters retrieve the collection of school data synchronization profiles in the tenant.
 type SynchronizationProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewSynchronizationProfilesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *SynchronizationProfilesRequestBuilder) Count()(*SynchronizationProfilesCountRequestBuilder) {
     return NewSynchronizationProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get synchronizationProfiles from education
+// Get retrieve the collection of school data synchronization profiles in the tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-1.0
 func (m *SynchronizationProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *SynchronizationProfilesRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileable), nil
 }
-// ToGetRequestInformation get synchronizationProfiles from education
+// ToGetRequestInformation retrieve the collection of school data synchronization profiles in the tenant.
 func (m *SynchronizationProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

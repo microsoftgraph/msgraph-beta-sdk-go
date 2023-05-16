@@ -31,7 +31,10 @@ func NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardi
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action resetTenantOnboardingStatus
+// Post carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multi-tenant management platform using the offboardTenant action. By invoking this action the platform will attempt to onboard the managed tenant for management.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-1.0
 func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboard
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// ToPostRequestInformation invoke action resetTenantOnboardingStatus
+// ToPostRequestInformation carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multi-tenant management platform using the offboardTenant action. By invoking this action the platform will attempt to onboard the managed tenant for management.
 func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

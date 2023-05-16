@@ -38,6 +38,9 @@ func NewLocalizationsItemFaviconRequestBuilder(rawUrl string, requestAdapter i2a
     return NewLocalizationsItemFaviconRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *LocalizationsItemFaviconRequestBuilder) Get(ctx context.Context, requestConfiguration *LocalizationsItemFaviconRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

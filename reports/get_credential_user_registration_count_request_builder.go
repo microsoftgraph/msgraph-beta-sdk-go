@@ -10,7 +10,7 @@ import (
 type GetCredentialUserRegistrationCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters invoke function getCredentialUserRegistrationCount
+// GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
 type GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,10 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getCredentialUserRegistrationCount
+// Get report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0
 func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(GetCredentialUserRegistrationCountResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,7 +71,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Conte
     }
     return res.(GetCredentialUserRegistrationCountResponseable), nil
 }
-// ToGetRequestInformation invoke function getCredentialUserRegistrationCount
+// ToGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
 func (m *GetCredentialUserRegistrationCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMem
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters users assigned to the tag.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters get the properties and relationships of a member of a standard tag in a team. 
 type TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTag
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property members for teamwork
+// Delete delete a member from a standard tag in a team.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTa
     }
     return nil
 }
-// Get users assigned to the tag.
+// Get get the properties and relationships of a member of a standard tag in a team. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable), nil
 }
-// ToDeleteRequestInformation delete navigation property members for teamwork
+// ToDeleteRequestInformation delete a member from a standard tag in a team.
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTa
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation users assigned to the tag.
+// ToGetRequestInformation get the properties and relationships of a member of a standard tag in a team. 
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionTagsItemMembersTeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

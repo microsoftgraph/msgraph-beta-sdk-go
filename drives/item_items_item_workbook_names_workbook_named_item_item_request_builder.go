@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters retrieve the properties and relationships of nameditem object.
 type ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property names for drives
+// Delete delete a workbookNamedItem object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// Get retrieve the properties and relationships of nameditem object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/nameditem-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable), nil
 }
-// Patch update the navigation property names in drives
+// Patch update the properties of nameditem object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/nameditem-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Patch(ct
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookNamesItemRangeRequestBuilder) {
     return NewItemItemsItemWorkbookNamesItemRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property names for drives
+// ToDeleteRequestInformation delete a workbookNamedItem object.
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// ToGetRequestInformation retrieve the properties and relationships of nameditem object.
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property names in drives
+// ToPatchRequestInformation update the properties of nameditem object.
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

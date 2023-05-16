@@ -30,7 +30,10 @@ func NewItemDeletePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action deletePasswordSingleSignOnCredentials
+// Post delete single sign-on credentials using a password for a user or group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-1.0
 func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body ItemDeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemDeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action deletePasswordSingleSignOnCredentials
+// ToPostRequestInformation delete single sign-on credentials using a password for a user or group.
 func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemDeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemDeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

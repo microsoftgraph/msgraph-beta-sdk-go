@@ -11,7 +11,7 @@ import (
 type ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderGetQueryParameters a collection of resources linked to the task.
+// ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderGetQueryParameters get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
 type ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemTodoListsItemTasksItemLinkedResourcesRequestBuilder(rawUrl string, r
 func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) Count()(*ItemTodoListsItemTasksItemLinkedResourcesCountRequestBuilder) {
     return NewItemTodoListsItemTasksItemLinkedResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of resources linked to the task.
+// Get get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceCollectionResponseable), nil
 }
-// Post create new navigation property to linkedResources for users
+// Post create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a todoTask.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) Post(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable), nil
 }
-// ToGetRequestInformation a collection of resources linked to the task.
+// ToGetRequestInformation get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to linkedResources for users
+// ToPostRequestInformation create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a todoTask.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

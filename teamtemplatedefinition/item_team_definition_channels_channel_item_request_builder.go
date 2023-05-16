@@ -18,7 +18,7 @@ type ItemTeamDefinitionChannelsChannelItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionChannelsChannelItemRequestBuilderGetQueryParameters the collection of channels and messages associated with the team.
+// ItemTeamDefinitionChannelsChannelItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
 type ItemTeamDefinitionChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewItemTeamDefinitionChannelsChannelItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property channels for teamTemplateDefinition
+// Delete delete the channel.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +85,10 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) DoesUserHaveAccess
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) FilesFolder()(*ItemTeamDefinitionChannelsItemFilesFolderRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of channels and messages associated with the team.
+// Get retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -109,7 +115,10 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Members()(*ItemTea
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Messages()(*ItemTeamDefinitionChannelsItemMessagesRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property channels in teamTemplateDefinition
+// Patch update the properties of the specified channel.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -144,7 +153,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) SharedWithTeams()(
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Tabs()(*ItemTeamDefinitionChannelsItemTabsRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property channels for teamTemplateDefinition
+// ToDeleteRequestInformation delete the channel.
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,7 +165,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of channels and messages associated with the team.
+// ToGetRequestInformation retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -172,7 +181,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property channels in teamTemplateDefinition
+// ToPatchRequestInformation update the properties of the specified channel.
 func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ItemTeamDefinitionChannelsChannelItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

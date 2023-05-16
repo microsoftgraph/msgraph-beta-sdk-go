@@ -18,7 +18,7 @@ type ItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListsItemItemsListItemItemRequestBuilderGetQueryParameters all items contained in the list.
+// ItemListsItemItemsListItemItemRequestBuilderGetQueryParameters returns the metadata for an [item][] in a [list][].
 type ItemListsItemItemsListItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) CreatedByUser()(*ItemList
 func (m *ItemListsItemItemsListItemItemRequestBuilder) CreateLink()(*ItemListsItemItemsItemCreateLinkRequestBuilder) {
     return NewItemListsItemItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete navigation property items for sites
+// Delete removes an item from a [list][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
 func (m *ItemListsItemItemsListItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +101,10 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*ItemListsIte
 func (m *ItemListsItemItemsListItemItemRequestBuilder) Fields()(*ItemListsItemItemsItemFieldsRequestBuilder) {
     return NewItemListsItemItemsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all items contained in the list.
+// Get returns the metadata for an [item][] in a [list][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
 func (m *ItemListsItemItemsListItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -144,7 +150,7 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable), nil
 }
-// ToDeleteRequestInformation delete navigation property items for sites
+// ToDeleteRequestInformation removes an item from a [list][].
 func (m *ItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,7 +162,7 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation all items contained in the list.
+// ToGetRequestInformation returns the metadata for an [item][] in a [list][].
 func (m *ItemListsItemItemsListItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

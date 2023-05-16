@@ -11,7 +11,7 @@ import (
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters get ref of identityProviders from identity
+// B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters get the identity providers in a b2cIdentityUserFlow object.
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,10 @@ func NewB2cUserFlowsItemIdentityProvidersRefRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get ref of identityProviders from identity
+// Get get the identity providers in a b2cIdentityUserFlow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to identityProviders for identity
+// Post add identity providers in a b2cIdentityUserFlow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-post-identityproviders?view=graph-rest-1.0
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -90,7 +96,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToGetRequestInformation get ref of identityProviders from identity
+// ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -106,7 +112,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to identityProviders for identity
+// ToPostRequestInformation add identity providers in a b2cIdentityUserFlow object.
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -212,7 +212,7 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+// GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
 func (m *KeyCredential) GetType()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *KeyCredential) GetType()(*string) {
     }
     return nil
 }
-// GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
+// GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
 func (m *KeyCredential) GetUsage()(*string) {
     val, err := m.GetBackingStore().Get("usage")
     if err != nil {
@@ -358,14 +358,14 @@ func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetType sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+// SetType sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
 func (m *KeyCredential) SetType(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsage sets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
+// SetUsage sets the usage property value. A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
 func (m *KeyCredential) SetUsage(value *string)() {
     err := m.GetBackingStore().Set("usage", value)
     if err != nil {

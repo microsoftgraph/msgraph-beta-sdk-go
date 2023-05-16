@@ -18,7 +18,7 @@ type PrintersPrinterItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrintersPrinterItemRequestBuilderGetQueryParameters the list of printers registered in the tenant.
+// PrintersPrinterItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printer object.
 type PrintersPrinterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewPrintersPrinterItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersPrinterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property printers for print
+// Delete delete (unregister) a printer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
 func (m *PrintersPrinterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *PrintersPrinterItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get the list of printers registered in the tenant.
+// Get retrieve the properties and relationships of a printer object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
 func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +107,10 @@ func (m *PrintersPrinterItemRequestBuilder) GetCapabilities()(*PrintersItemGetCa
 func (m *PrintersPrinterItemRequestBuilder) Jobs()(*PrintersItemJobsRequestBuilder) {
     return NewPrintersItemJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property printers in print
+// Patch update the properties of a printer object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
 func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -140,7 +149,7 @@ func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestB
 func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTaskTriggersRequestBuilder) {
     return NewPrintersItemTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property printers for print
+// ToDeleteRequestInformation delete (unregister) a printer.
 func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -152,7 +161,7 @@ func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of printers registered in the tenant.
+// ToGetRequestInformation retrieve the properties and relationships of a printer object.
 func (m *PrintersPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -168,7 +177,7 @@ func (m *PrintersPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property printers in print
+// ToPatchRequestInformation update the properties of a printer object.
 func (m *PrintersPrinterItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

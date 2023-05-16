@@ -54,7 +54,10 @@ func NewDelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssi
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property accessAssignments for tenantRelationships
+// Delete delete a delegatedAdminAccessAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +111,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminAccessAssignmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property accessAssignments for tenantRelationships
+// ToDeleteRequestInformation delete a delegatedAdminAccessAssignment object.
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

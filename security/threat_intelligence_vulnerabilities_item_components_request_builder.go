@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters components related to this vulnerability article.
+// ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
 type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder(rawUrl str
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Count()(*ThreatIntelligenceVulnerabilitiesItemComponentsCountRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesItemComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get components related to this vulnerability article.
+// Get get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.VulnerabilityComponentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Post(ctx
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.VulnerabilityComponentable), nil
 }
-// ToGetRequestInformation components related to this vulnerability article.
+// ToGetRequestInformation get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

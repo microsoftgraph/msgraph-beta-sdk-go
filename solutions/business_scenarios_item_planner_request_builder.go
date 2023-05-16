@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerRequestBuilderGetQueryParameters planner content related to the scenario.
+// BusinessScenariosItemPlannerRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioPlanner object.
 type BusinessScenariosItemPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get planner content related to the scenario.
+// Get read the properties and relationships of a businessScenarioPlanner object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation planner content related to the scenario.
+// ToGetRequestInformation read the properties and relationships of a businessScenarioPlanner object.
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

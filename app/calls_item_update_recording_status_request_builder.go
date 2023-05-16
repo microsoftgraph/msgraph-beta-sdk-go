@@ -31,7 +31,10 @@ func NewCallsItemUpdateRecordingStatusRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemUpdateRecordingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action updateRecordingStatus
+// Post update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
 func (m *CallsItemUpdateRecordingStatusRequestBuilder) Post(ctx context.Context, body CallsItemUpdateRecordingStatusPostRequestBodyable, requestConfiguration *CallsItemUpdateRecordingStatusRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UpdateRecordingStatusOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *CallsItemUpdateRecordingStatusRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UpdateRecordingStatusOperationable), nil
 }
-// ToPostRequestInformation invoke action updateRecordingStatus
+// ToPostRequestInformation update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
 func (m *CallsItemUpdateRecordingStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemUpdateRecordingStatusPostRequestBodyable, requestConfiguration *CallsItemUpdateRecordingStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

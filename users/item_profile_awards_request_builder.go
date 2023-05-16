@@ -11,7 +11,7 @@ import (
 type ItemProfileAwardsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileAwardsRequestBuilderGetQueryParameters represents the details of awards or honors associated with a person.
+// ItemProfileAwardsRequestBuilderGetQueryParameters retrieve a list of personAward objects from a user's profile.
 type ItemProfileAwardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemProfileAwardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemProfileAwardsRequestBuilder) Count()(*ItemProfileAwardsCountRequestBuilder) {
     return NewItemProfileAwardsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the details of awards or honors associated with a person.
+// Get retrieve a list of personAward objects from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
 func (m *ItemProfileAwardsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAwardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemProfileAwardsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardCollectionResponseable), nil
 }
-// Post create new navigation property to awards for users
+// Post create a new personAward object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
 func (m *ItemProfileAwardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemProfileAwardsRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
-// ToGetRequestInformation represents the details of awards or honors associated with a person.
+// ToGetRequestInformation retrieve a list of personAward objects from a user's profile.
 func (m *ItemProfileAwardsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemProfileAwardsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to awards for users
+// ToPostRequestInformation create a new personAward object in a user's profile.
 func (m *ItemProfileAwardsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

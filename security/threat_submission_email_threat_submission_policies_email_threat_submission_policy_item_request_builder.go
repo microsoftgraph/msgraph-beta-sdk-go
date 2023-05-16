@@ -18,7 +18,7 @@ type ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyIte
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters get emailThreatSubmissionPolicies from security
+// ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of an emailThreatSubmissionPolicy object.
 type ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolic
     }
     return nil
 }
-// Get get emailThreatSubmissionPolicies from security
+// Get read the properties and relationships of an emailThreatSubmissionPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-get?view=graph-rest-1.0
 func (m *ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolic
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get emailThreatSubmissionPolicies from security
+// ToGetRequestInformation read the properties and relationships of an emailThreatSubmissionPolicy object.
 func (m *ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionEmailThreatSubmissionPoliciesEmailThreatSubmissionPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

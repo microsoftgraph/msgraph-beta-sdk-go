@@ -11,7 +11,7 @@ import (
 type QnasRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// QnasRequestBuilderGetQueryParameters administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+// QnasRequestBuilderGetQueryParameters get a list of the qna objects and their properties.
 type QnasRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewQnasRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *QnasRequestBuilder) Count()(*QnasCountRequestBuilder) {
     return NewQnasCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+// Get get a list of the qna objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
 func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *QnasRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.QnaCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *QnasRequestBuilder) Get(ctx context.Context, requestConfiguration *Qnas
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.QnaCollectionResponseable), nil
 }
-// Post create new navigation property to qnas for search
+// Post create a new qna object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
 func (m *QnasRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnasRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *QnasRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable), nil
 }
-// ToGetRequestInformation administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+// ToGetRequestInformation get a list of the qna objects and their properties.
 func (m *QnasRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *QnasRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *QnasRequestBuilder) ToGetRequestInformation(ctx context.Context, reques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to qnas for search
+// ToPostRequestInformation create a new qna object.
 func (m *QnasRequestBuilder) ToPostRequestInformation(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnasRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

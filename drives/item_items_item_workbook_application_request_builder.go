@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookApplicationRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookApplicationRequestBuilderGetQueryParameters get application from drives
+// ItemItemsItemWorkbookApplicationRequestBuilderGetQueryParameters retrieve the properties and relationships of a workbookApplication object.
 type ItemItemsItemWorkbookApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get get application from drives
+// Get retrieve the properties and relationships of a workbookApplication object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbookapplication-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookApplicationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookApplicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemItemsItemWorkbookApplicationRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get application from drives
+// ToGetRequestInformation retrieve the properties and relationships of a workbookApplication object.
 func (m *ItemItemsItemWorkbookApplicationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookApplicationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

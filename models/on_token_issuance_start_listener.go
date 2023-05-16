@@ -36,7 +36,7 @@ func (m *OnTokenIssuanceStartListener) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetHandler gets the handler property value. The handler property
+// GetHandler gets the handler property value. The handler to invoke when conditions are met for this onTokenIssuanceStartListener.
 func (m *OnTokenIssuanceStartListener) GetHandler()(OnTokenIssuanceStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *OnTokenIssuanceStartListener) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetHandler sets the handler property value. The handler property
+// SetHandler sets the handler property value. The handler to invoke when conditions are met for this onTokenIssuanceStartListener.
 func (m *OnTokenIssuanceStartListener) SetHandler(value OnTokenIssuanceStartHandlerable)() {
     err := m.GetBackingStore().Set("handler", value)
     if err != nil {

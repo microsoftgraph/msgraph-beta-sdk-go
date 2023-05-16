@@ -18,7 +18,7 @@ type ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarGroupsCalendarGroupItemRequestBuilderGetQueryParameters the user's calendar groups. Read-only. Nullable.
+// ItemCalendarGroupsCalendarGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a calendar group object.
 type ItemCalendarGroupsCalendarGroupItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -56,7 +56,10 @@ func NewItemCalendarGroupsCalendarGroupItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property calendarGroups for users
+// Delete delete a calendar group other than the default calendar group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,7 +75,10 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get the user's calendar groups. Read-only. Nullable.
+// Get retrieve the properties and relationships of a calendar group object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +97,10 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable), nil
 }
-// Patch update the navigation property calendarGroups in users
+// Patch update the properties of calendargroup object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable), nil
 }
-// ToDeleteRequestInformation delete navigation property calendarGroups for users
+// ToDeleteRequestInformation delete a calendar group other than the default calendar group.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -122,7 +131,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the user's calendar groups. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a calendar group object.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +147,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property calendarGroups in users
+// ToPatchRequestInformation update the properties of calendargroup object.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

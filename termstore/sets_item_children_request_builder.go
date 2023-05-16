@@ -11,7 +11,7 @@ import (
 type SetsItemChildrenRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SetsItemChildrenRequestBuilderGetQueryParameters children terms of set in term [store].
+// SetsItemChildrenRequestBuilderGetQueryParameters get the first level children of a [set] or [term] resource using the children navigation property.
 type SetsItemChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewSetsItemChildrenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *SetsItemChildrenRequestBuilder) Count()(*SetsItemChildrenCountRequestBuilder) {
     return NewSetsItemChildrenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get children terms of set in term [store].
+// Get get the first level children of a [set] or [term] resource using the children navigation property.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
 func (m *SetsItemChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *SetsItemChildrenRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.TermCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *SetsItemChildrenRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.TermCollectionResponseable), nil
 }
-// Post create new navigation property to children for termStore
+// Post create a new term object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
 func (m *SetsItemChildrenRequestBuilder) Post(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, requestConfiguration *SetsItemChildrenRequestBuilderPostRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *SetsItemChildrenRequestBuilder) Post(ctx context.Context, body i45fc416
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable), nil
 }
-// ToGetRequestInformation children terms of set in term [store].
+// ToGetRequestInformation get the first level children of a [set] or [term] resource using the children navigation property.
 func (m *SetsItemChildrenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SetsItemChildrenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *SetsItemChildrenRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to children for termStore
+// ToPostRequestInformation create a new term object.
 func (m *SetsItemChildrenRequestBuilder) ToPostRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, requestConfiguration *SetsItemChildrenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
