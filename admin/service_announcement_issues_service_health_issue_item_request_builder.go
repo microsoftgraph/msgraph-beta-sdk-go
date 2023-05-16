@@ -18,7 +18,7 @@ type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
 type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// Get retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
 func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// ToGetRequestInformation retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
 func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

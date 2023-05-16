@@ -18,7 +18,7 @@ type ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a notebook object.
 type ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// Get retrieve the properties and relationships of a notebook object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,7 +135,7 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a notebook object.
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

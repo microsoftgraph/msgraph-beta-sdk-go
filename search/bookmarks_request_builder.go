@@ -11,7 +11,7 @@ import (
 type BookmarksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookmarksRequestBuilderGetQueryParameters administrative answer in Microsoft Search results for common search queries in an organization.
+// BookmarksRequestBuilderGetQueryParameters get a list of bookmark objects and their properties.
 type BookmarksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewBookmarksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *BookmarksRequestBuilder) Count()(*BookmarksCountRequestBuilder) {
     return NewBookmarksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get administrative answer in Microsoft Search results for common search queries in an organization.
+// Get get a list of bookmark objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
 func (m *BookmarksRequestBuilder) Get(ctx context.Context, requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *BookmarksRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable), nil
 }
-// Post create new navigation property to bookmarks for search
+// Post create a new bookmark object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
 func (m *BookmarksRequestBuilder) Post(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *BookmarksRequestBuilder) Post(ctx context.Context, body iea48ada8ff4490
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable), nil
 }
-// ToGetRequestInformation administrative answer in Microsoft Search results for common search queries in an organization.
+// ToGetRequestInformation get a list of bookmark objects and their properties.
 func (m *BookmarksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *BookmarksRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to bookmarks for search
+// ToPostRequestInformation create a new bookmark object.
 func (m *BookmarksRequestBuilder) ToPostRequestInformation(ctx context.Context, body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

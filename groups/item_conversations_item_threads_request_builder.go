@@ -11,7 +11,7 @@ import (
 type ItemConversationsItemThreadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemConversationsItemThreadsRequestBuilderGetQueryParameters a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+// ItemConversationsItemThreadsRequestBuilderGetQueryParameters get all the threads in a group conversation.Note: You can also get all the threads of a group. 
 type ItemConversationsItemThreadsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,10 @@ func NewItemConversationsItemThreadsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemConversationsItemThreadsRequestBuilder) Count()(*ItemConversationsItemThreadsCountRequestBuilder) {
     return NewItemConversationsItemThreadsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+// Get get all the threads in a group conversation.Note: You can also get all the threads of a group. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +113,7 @@ func (m *ItemConversationsItemThreadsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable), nil
 }
-// ToGetRequestInformation a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+// ToGetRequestInformation get all the threads in a group conversation.Note: You can also get all the threads of a group. 
 func (m *ItemConversationsItemThreadsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

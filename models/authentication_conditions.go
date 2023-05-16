@@ -34,7 +34,7 @@ func (m *AuthenticationConditions) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApplications gets the applications property value. The applications property
+// GetApplications gets the applications property value. Applications which will trigger a custom authentication extension.
 func (m *AuthenticationConditions) GetApplications()(AuthenticationConditionsApplicationsable) {
     val, err := m.GetBackingStore().Get("applications")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *AuthenticationConditions) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetApplications sets the applications property value. The applications property
+// SetApplications sets the applications property value. Applications which will trigger a custom authentication extension.
 func (m *AuthenticationConditions) SetApplications(value AuthenticationConditionsApplicationsable)() {
     err := m.GetBackingStore().Set("applications", value)
     if err != nil {

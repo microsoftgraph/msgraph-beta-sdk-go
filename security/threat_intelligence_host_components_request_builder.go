@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters read the properties and relationships of a hostComponent object.
 type ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceHostComponentsRequestBuilder(rawUrl string, requestAda
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) Count()(*ThreatIntelligenceHostComponentsCountRequestBuilder) {
     return NewThreatIntelligenceHostComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a hostComponent object.
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceHostComponentsRequestBuilder) Post(ctx context.Contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable), nil
 }
-// ToGetRequestInformation retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a hostComponent object.
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

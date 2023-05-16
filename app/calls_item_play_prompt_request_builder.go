@@ -31,7 +31,10 @@ func NewCallsItemPlayPromptRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemPlayPromptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action playPrompt
+// Post play a prompt in the call. For more information about how to handle operations, see commsOperation
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
 func (m *CallsItemPlayPromptRequestBuilder) Post(ctx context.Context, body CallsItemPlayPromptPostRequestBodyable, requestConfiguration *CallsItemPlayPromptRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlayPromptOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *CallsItemPlayPromptRequestBuilder) Post(ctx context.Context, body Calls
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlayPromptOperationable), nil
 }
-// ToPostRequestInformation invoke action playPrompt
+// ToPostRequestInformation play a prompt in the call. For more information about how to handle operations, see commsOperation
 func (m *CallsItemPlayPromptRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemPlayPromptPostRequestBodyable, requestConfiguration *CallsItemPlayPromptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

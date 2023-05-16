@@ -18,7 +18,7 @@ type ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetQueryParameters represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an educationalActivity object from a users profile.
 type ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property educationalActivities for users
+// Delete delete an educationalActivity object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationalactivity-delete?view=graph-rest-1.0
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return nil
 }
-// Get represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// Get retrieve the properties and relationships of an educationalActivity object from a users profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-1.0
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
-// Patch update the navigation property educationalActivities in users
+// Patch update the properties of an educationalActivity object within a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationalactivity-update?view=graph-rest-1.0
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
-// ToDeleteRequestInformation delete navigation property educationalActivities for users
+// ToDeleteRequestInformation delete an educationalActivity object from a user's profile.
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// ToGetRequestInformation retrieve the properties and relationships of an educationalActivity object from a users profile.
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property educationalActivities in users
+// ToPatchRequestInformation update the properties of an educationalActivity object within a user's profile.
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

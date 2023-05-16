@@ -18,7 +18,7 @@ type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetQueryParameters the policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+// TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a tokenLifetimePolicy object.
 type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tokenLifetimePolicies for policies
+// Delete delete a tokenLifetimePolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-delete?view=graph-rest-1.0
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get the policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+// Get retrieve the properties and relationships of a tokenLifetimePolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-get?view=graph-rest-1.0
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable), nil
 }
-// Patch update the navigation property tokenLifetimePolicies in policies
+// Patch update the properties of a tokenLifetimePolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-update?view=graph-rest-1.0
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property tokenLifetimePolicies for policies
+// ToDeleteRequestInformation delete a tokenLifetimePolicy object.
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+// ToGetRequestInformation retrieve the properties and relationships of a tokenLifetimePolicy object.
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tokenLifetimePolicies in policies
+// ToPatchRequestInformation update the properties of a tokenLifetimePolicy object.
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyable, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

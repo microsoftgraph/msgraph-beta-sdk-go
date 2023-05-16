@@ -33,7 +33,7 @@ func (m *AuthorizationPolicy) GetAllowedToSignUpEmailBasedSubscriptions()(*bool)
     }
     return nil
 }
-// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
 func (m *AuthorizationPolicy) GetAllowedToUseSSPR()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToUseSSPR")
     if err != nil {
@@ -66,7 +66,7 @@ func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     }
     return nil
 }
-// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
+// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.
 func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
     val, err := m.GetBackingStore().Get("allowUserConsentForRiskyApps")
     if err != nil {
@@ -356,7 +356,7 @@ func (m *AuthorizationPolicy) SetAllowedToSignUpEmailBasedSubscriptions(value *b
         panic(err)
     }
 }
-// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
 func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
     err := m.GetBackingStore().Set("allowedToUseSSPR", value)
     if err != nil {
@@ -377,7 +377,7 @@ func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
         panic(err)
     }
 }
-// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
+// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.
 func (m *AuthorizationPolicy) SetAllowUserConsentForRiskyApps(value *bool)() {
     err := m.GetBackingStore().Set("allowUserConsentForRiskyApps", value)
     if err != nil {

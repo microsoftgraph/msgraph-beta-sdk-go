@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesDeploymentAudiencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesDeploymentAudiencesRequestBuilderGetQueryParameters the set of updatableAsset resources to which a deployment can apply.
+// WindowsUpdatesDeploymentAudiencesRequestBuilderGetQueryParameters get a list of deploymentAudience objects and their properties.
 type WindowsUpdatesDeploymentAudiencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewWindowsUpdatesDeploymentAudiencesRequestBuilder(rawUrl string, requestAd
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Count()(*WindowsUpdatesDeploymentAudiencesCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the set of updatableAsset resources to which a deployment can apply.
+// Get get a list of deploymentAudience objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-list-deploymentaudiences?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Get(ctx context.Contex
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceCollectionResponseable), nil
 }
-// Post create new navigation property to deploymentAudiences for admin
+// Post create a new deploymentAudience object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/adminwindowsupdates-post-deploymentaudiences?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable), nil
 }
-// ToGetRequestInformation the set of updatableAsset resources to which a deployment can apply.
+// ToGetRequestInformation get a list of deploymentAudience objects and their properties.
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to deploymentAudiences for admin
+// ToPostRequestInformation create a new deploymentAudience object.
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

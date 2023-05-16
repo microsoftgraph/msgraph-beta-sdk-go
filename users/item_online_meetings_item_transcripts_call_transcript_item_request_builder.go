@@ -18,7 +18,7 @@ type ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderGetQueryParameters the transcripts of an online meeting. Read-only.
+// ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderGetQueryParameters retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 type ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the transcripts of an online meeting. Read-only.
+// Get retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the transcripts of an online meeting. Read-only.
+// ToGetRequestInformation retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 func (m *ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

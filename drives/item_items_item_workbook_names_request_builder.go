@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookNamesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters retrieve a list of nameditem objects.
 type ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,10 @@ func NewItemItemsItemWorkbookNamesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Count()(*ItemItemsItemWorkbookNamesCountRequestBuilder) {
     return NewItemItemsItemWorkbookNamesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// Get retrieve a list of nameditem objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-list-names?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ItemItemsItemWorkbookNamesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable), nil
 }
-// ToGetRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// ToGetRequestInformation retrieve a list of nameditem objects.
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

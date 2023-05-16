@@ -18,7 +18,7 @@ type ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderGetQueryParameters get fileThreats from security
+// ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderGetQueryParameters read the properties and relationships of a fileThreatSubmission object.
 type ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) Dele
     }
     return nil
 }
-// Get get fileThreats from security
+// Get read the properties and relationships of a fileThreatSubmission object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-filethreatsubmission-get?view=graph-rest-1.0
 func (m *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FileThreatSubmissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get fileThreats from security
+// ToGetRequestInformation read the properties and relationships of a fileThreatSubmission object.
 func (m *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

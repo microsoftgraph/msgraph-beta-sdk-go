@@ -31,7 +31,10 @@ func NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action createUploadSession
+// Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries. Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
 func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) Post(ctx context.Context, body PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionPostRequestBodyable, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable), nil
 }
-// ToPostRequestInformation invoke action createUploadSession
+// ToPostRequestInformation create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries. Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
 func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, body PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionPostRequestBodyable, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

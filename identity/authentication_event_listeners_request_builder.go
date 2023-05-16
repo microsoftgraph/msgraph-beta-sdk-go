@@ -11,7 +11,7 @@ import (
 type AuthenticationEventListenersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationEventListenersRequestBuilderGetQueryParameters get authenticationEventListeners from identity
+// AuthenticationEventListenersRequestBuilderGetQueryParameters get a list of the authenticationEventListener objects and their properties. Only the onTokenIssuanceStartListener type is supported.
 type AuthenticationEventListenersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAuthenticationEventListenersRequestBuilder(rawUrl string, requestAdapter
 func (m *AuthenticationEventListenersRequestBuilder) Count()(*AuthenticationEventListenersCountRequestBuilder) {
     return NewAuthenticationEventListenersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get authenticationEventListeners from identity
+// Get get a list of the authenticationEventListener objects and their properties. Only the onTokenIssuanceStartListener type is supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0
 func (m *AuthenticationEventListenersRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventListenersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *AuthenticationEventListenersRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerCollectionResponseable), nil
 }
-// Post create new navigation property to authenticationEventListeners for identity
+// Post create a new authenticationEventListener object. Only the onTokenIssuanceStartListener type is supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-1.0
 func (m *AuthenticationEventListenersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *AuthenticationEventListenersRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable), nil
 }
-// ToGetRequestInformation get authenticationEventListeners from identity
+// ToGetRequestInformation get a list of the authenticationEventListener objects and their properties. Only the onTokenIssuanceStartListener type is supported.
 func (m *AuthenticationEventListenersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *AuthenticationEventListenersRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to authenticationEventListeners for identity
+// ToPostRequestInformation create a new authenticationEventListener object. Only the onTokenIssuanceStartListener type is supported.
 func (m *AuthenticationEventListenersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, requestConfiguration *AuthenticationEventListenersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

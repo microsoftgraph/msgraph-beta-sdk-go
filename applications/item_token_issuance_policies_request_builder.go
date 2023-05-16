@@ -11,7 +11,7 @@ import (
 type ItemTokenIssuancePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters get tokenIssuancePolicies from applications
+// ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters list the tokenIssuancePolicy objects that are assigned to an application.
 type ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Count()(*ItemTokenIssuancePoliciesCountRequestBuilder) {
     return NewItemTokenIssuancePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get tokenIssuancePolicies from applications
+// Get list the tokenIssuancePolicy objects that are assigned to an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,7 +93,7 @@ func (m *ItemTokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, reque
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Ref()(*ItemTokenIssuancePoliciesRefRequestBuilder) {
     return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get tokenIssuancePolicies from applications
+// ToGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *ItemTokenIssuancePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

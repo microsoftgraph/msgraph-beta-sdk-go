@@ -8,7 +8,7 @@ import (
 type TeamTemplate struct {
     Entity
 }
-// NewTeamTemplate instantiates a new teamTemplate and sets the default values.
+// NewTeamTemplate instantiates a new TeamTemplate and sets the default values.
 func NewTeamTemplate()(*TeamTemplate) {
     m := &TeamTemplate{
         Entity: *NewEntity(),
@@ -19,7 +19,7 @@ func NewTeamTemplate()(*TeamTemplate) {
 func CreateTeamTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamTemplate(), nil
 }
-// GetDefinitions gets the definitions property value. The definitions property
+// GetDefinitions gets the definitions property value. A generic representation of a team template definition for a team with a specific structure and configuration.
 func (m *TeamTemplate) GetDefinitions()([]TeamTemplateDefinitionable) {
     val, err := m.GetBackingStore().Get("definitions")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *TeamTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetDefinitions sets the definitions property value. The definitions property
+// SetDefinitions sets the definitions property value. A generic representation of a team template definition for a team with a specific structure and configuration.
 func (m *TeamTemplate) SetDefinitions(value []TeamTemplateDefinitionable)() {
     err := m.GetBackingStore().Set("definitions", value)
     if err != nil {

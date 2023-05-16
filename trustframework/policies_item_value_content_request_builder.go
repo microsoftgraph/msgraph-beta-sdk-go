@@ -38,6 +38,9 @@ func NewPoliciesItemValueContentRequestBuilder(rawUrl string, requestAdapter i2a
     return NewPoliciesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property policies from trustFramework
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies?view=graph-rest-1.0
 func (m *PoliciesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *PoliciesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

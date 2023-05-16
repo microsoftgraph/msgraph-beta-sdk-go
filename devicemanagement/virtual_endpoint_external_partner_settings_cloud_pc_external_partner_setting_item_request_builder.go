@@ -18,7 +18,7 @@ type VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters the external partner settings on a Cloud PC.
+// VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcExternalPartnerSetting object.
 type VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItem
     }
     return nil
 }
-// Get the external partner settings on a Cloud PC.
+// Get read the properties and relationships of a cloudPcExternalPartnerSetting object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-1.0
 func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable), nil
 }
-// Patch update the navigation property externalPartnerSettings in deviceManagement
+// Patch update the properties of a cloudPcExternalPartnerSetting object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-1.0
 func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, requestConfiguration *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItem
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the external partner settings on a Cloud PC.
+// ToGetRequestInformation read the properties and relationships of a cloudPcExternalPartnerSetting object.
 func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItem
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property externalPartnerSettings in deviceManagement
+// ToPatchRequestInformation update the properties of a cloudPcExternalPartnerSetting object.
 func (m *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, requestConfiguration *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetQueryParameters the collection tenant level detailed information across managed tenants.
+// ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetQueryParameters read the properties and relationships of a tenantDetailedInformation object.
 type ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRe
     }
     return nil
 }
-// Get the collection tenant level detailed information across managed tenants.
+// Get read the properties and relationships of a tenantDetailedInformation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenantdetailedinformation-get?view=graph-rest-1.0
 func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection tenant level detailed information across managed tenants.
+// ToGetRequestInformation read the properties and relationships of a tenantDetailedInformation object.
 func (m *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

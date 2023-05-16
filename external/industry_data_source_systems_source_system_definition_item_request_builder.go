@@ -18,7 +18,7 @@ type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetQueryParameters set of source definitions that represents real-world external systems.
+// IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetQueryParameters read the properties and relationships of a sourceSystemDefinition object.
 type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property sourceSystems for external
+// Delete delete a sourceSystemDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Dele
     }
     return nil
 }
-// Get set of source definitions that represents real-world external systems.
+// Get read the properties and relationships of a sourceSystemDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Get(
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
-// Patch update the navigation property sourceSystems in external
+// Patch update the properties of a sourceSystemDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Patc
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
-// ToDeleteRequestInformation delete navigation property sourceSystems for external
+// ToDeleteRequestInformation delete a sourceSystemDefinition object.
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation set of source definitions that represents real-world external systems.
+// ToGetRequestInformation read the properties and relationships of a sourceSystemDefinition object.
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property sourceSystems in external
+// ToPatchRequestInformation update the properties of a sourceSystemDefinition object.
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

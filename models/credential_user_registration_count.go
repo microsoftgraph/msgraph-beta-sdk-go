@@ -48,7 +48,7 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
+// GetTotalUserCount gets the totalUserCount property value. Provides the count of users with accountEnabled set to true in the tenant.
 func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalUserCount")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetTotalUserCount sets the totalUserCount property value. Provides the total user count in the tenant.
+// SetTotalUserCount sets the totalUserCount property value. Provides the count of users with accountEnabled set to true in the tenant.
 func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
     err := m.GetBackingStore().Set("totalUserCount", value)
     if err != nil {

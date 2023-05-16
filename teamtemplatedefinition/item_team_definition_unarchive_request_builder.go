@@ -30,7 +30,10 @@ func NewItemTeamDefinitionUnarchiveRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unarchive
+// Post restore an archived team. This restores users' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
 func (m *ItemTeamDefinitionUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamDefinitionUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemTeamDefinitionUnarchiveRequestBuilder) Post(ctx context.Context, re
     }
     return nil
 }
-// ToPostRequestInformation invoke action unarchive
+// ToPostRequestInformation restore an archived team. This restores users' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
 func (m *ItemTeamDefinitionUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

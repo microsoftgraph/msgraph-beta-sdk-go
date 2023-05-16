@@ -11,7 +11,7 @@ import (
 type ItemTeamDefinitionScheduleShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionScheduleShiftsRequestBuilderGetQueryParameters the shifts in the schedule.
+// ItemTeamDefinitionScheduleShiftsRequestBuilderGetQueryParameters get the list of shift instances in a schedule.
 type ItemTeamDefinitionScheduleShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,10 @@ func NewItemTeamDefinitionScheduleShiftsRequestBuilder(rawUrl string, requestAda
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Count()(*ItemTeamDefinitionScheduleShiftsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the shifts in the schedule.
+// Get get the list of shift instances in a schedule.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,10 @@ func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable), nil
 }
-// Post create new navigation property to shifts for teamTemplateDefinition
+// Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable), nil
 }
-// ToGetRequestInformation the shifts in the schedule.
+// ToGetRequestInformation get the list of shift instances in a schedule.
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +132,7 @@ func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to shifts for teamTemplateDefinition
+// ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,10 @@ func NewPolicyLabelsEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyLabelsEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action evaluateRemoval
+// Post indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
 func (m *PolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, body PolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateRemovalResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(PolicyLabelsEvaluateRemovalResponseable), nil
 }
-// ToPostRequestInformation invoke action evaluateRemoval
+// ToPostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 func (m *PolicyLabelsEvaluateRemovalRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

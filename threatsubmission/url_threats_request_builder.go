@@ -11,7 +11,7 @@ import (
 type UrlThreatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UrlThreatsRequestBuilderGetQueryParameters get urlThreats from threatSubmission
+// UrlThreatsRequestBuilderGetQueryParameters get a list of the urlThreatSubmission objects and their properties.
 type UrlThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewUrlThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *UrlThreatsRequestBuilder) Count()(*UrlThreatsCountRequestBuilder) {
     return NewUrlThreatsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get urlThreats from threatSubmission
+// Get get a list of the urlThreatSubmission objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-list?view=graph-rest-1.0
 func (m *UrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *UrlThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *UrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable), nil
 }
-// Post create new navigation property to urlThreats for threatSubmission
+// Post create a new urlThreatSubmission object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-post-urlthreats?view=graph-rest-1.0
 func (m *UrlThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *UrlThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *UrlThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba8
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable), nil
 }
-// ToGetRequestInformation get urlThreats from threatSubmission
+// ToGetRequestInformation get a list of the urlThreatSubmission objects and their properties.
 func (m *UrlThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UrlThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *UrlThreatsRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to urlThreats for threatSubmission
+// ToPostRequestInformation create a new urlThreatSubmission object.
 func (m *UrlThreatsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *UrlThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

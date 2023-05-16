@@ -11,7 +11,7 @@ import (
 type IndustryDataReferenceDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataReferenceDefinitionsRequestBuilderGetQueryParameters set of user modifiable system picker types.
+// IndustryDataReferenceDefinitionsRequestBuilderGetQueryParameters get a list of the referenceDefinition objects and their properties.
 type IndustryDataReferenceDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewIndustryDataReferenceDefinitionsRequestBuilder(rawUrl string, requestAda
 func (m *IndustryDataReferenceDefinitionsRequestBuilder) Count()(*IndustryDataReferenceDefinitionsCountRequestBuilder) {
     return NewIndustryDataReferenceDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get set of user modifiable system picker types.
+// Get get a list of the referenceDefinition objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
 func (m *IndustryDataReferenceDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataReferenceDefinitionsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ReferenceDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *IndustryDataReferenceDefinitionsRequestBuilder) Post(ctx context.Contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ReferenceDefinitionable), nil
 }
-// ToGetRequestInformation set of user modifiable system picker types.
+// ToGetRequestInformation get a list of the referenceDefinition objects and their properties.
 func (m *IndustryDataReferenceDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataReferenceDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

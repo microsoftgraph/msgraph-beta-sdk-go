@@ -11,7 +11,7 @@ import (
 type ItemConversationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemConversationsRequestBuilderGetQueryParameters the group's conversations.
+// ItemConversationsRequestBuilderGetQueryParameters retrieve the list of conversations in this group.
 type ItemConversationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,10 @@ func NewItemConversationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemConversationsRequestBuilder) Count()(*ItemConversationsCountRequestBuilder) {
     return NewItemConversationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the group's conversations.
+// Get retrieve the list of conversations in this group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
 func (m *ItemConversationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,10 @@ func (m *ItemConversationsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationCollectionResponseable), nil
 }
-// Post create new navigation property to conversations for groups
+// Post create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
 func (m *ItemConversationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable, requestConfiguration *ItemConversationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *ItemConversationsRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable), nil
 }
-// ToGetRequestInformation the group's conversations.
+// ToGetRequestInformation retrieve the list of conversations in this group.
 func (m *ItemConversationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +132,7 @@ func (m *ItemConversationsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to conversations for groups
+// ToPostRequestInformation create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
 func (m *ItemConversationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable, requestConfiguration *ItemConversationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetQueryParameters data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
+// EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetQueryParameters get the list of userSource objects associated with a legal hold.
 type EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder(rawUrl string
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
+// Get get the list of userSource objects associated with a legal hold.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-list-usersources?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Get(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable), nil
 }
-// Post create new navigation property to userSources for compliance
+// Post adds a userSource to a legalHold object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-post-usersources?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Post(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable), nil
 }
-// ToGetRequestInformation data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
+// ToGetRequestInformation get the list of userSource objects associated with a legal hold.
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to userSources for compliance
+// ToPostRequestInformation adds a userSource to a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

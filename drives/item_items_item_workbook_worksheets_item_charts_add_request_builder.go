@@ -31,7 +31,10 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action add
+// Post creates a new chart.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chartcollection-add?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilder) Post(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartable), nil
 }
-// ToPostRequestInformation invoke action add
+// ToPostRequestInformation creates a new chart.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

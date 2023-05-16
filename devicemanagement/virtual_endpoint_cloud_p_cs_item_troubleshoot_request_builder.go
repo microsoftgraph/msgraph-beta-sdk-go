@@ -30,7 +30,10 @@ func NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemTroubleshootRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action troubleshoot
+// Post troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemTroubleshootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) Post(ctx context
     }
     return nil
 }
-// ToPostRequestInformation invoke action troubleshoot
+// ToPostRequestInformation troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
 func (m *VirtualEndpointCloudPCsItemTroubleshootRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemTroubleshootRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

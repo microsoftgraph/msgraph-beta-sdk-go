@@ -18,7 +18,7 @@ type ItemProfilePatentsItemPatentItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfilePatentsItemPatentItemRequestBuilderGetQueryParameters represents patents that a user has added to their profile.
+// ItemProfilePatentsItemPatentItemRequestBuilderGetQueryParameters read the properties and relationships of an itemPatent object.
 type ItemProfilePatentsItemPatentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfilePatentsItemPatentItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property patents for users
+// Delete deletes an itemPatent object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get represents patents that a user has added to their profile.
+// Get read the properties and relationships of an itemPatent object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
-// Patch update the navigation property patents in users
+// Patch update the properties of an itemPatent object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
-// ToDeleteRequestInformation delete navigation property patents for users
+// ToDeleteRequestInformation deletes an itemPatent object.
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents patents that a user has added to their profile.
+// ToGetRequestInformation read the properties and relationships of an itemPatent object.
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property patents in users
+// ToPatchRequestInformation update the properties of an itemPatent object.
 func (m *ItemProfilePatentsItemPatentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsItemPatentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

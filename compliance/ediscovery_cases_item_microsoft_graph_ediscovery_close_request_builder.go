@@ -30,7 +30,10 @@ func NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action close
+// Post close an eDiscovery case. For details, see Close a case.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-close?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder) Post(ctx context.Context, requestConfiguration *EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder) Post(ct
     }
     return nil
 }
-// ToPostRequestInformation invoke action close
+// ToPostRequestInformation close an eDiscovery case. For details, see Close a case.
 func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

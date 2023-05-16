@@ -32,6 +32,9 @@ func NewEvaluateDynamicMembershipRequestBuilder(rawUrl string, requestAdapter i2
     return NewEvaluateDynamicMembershipRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action evaluateDynamicMembership
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0
 func (m *EvaluateDynamicMembershipRequestBuilder) Post(ctx context.Context, body EvaluateDynamicMembershipPostRequestBodyable, requestConfiguration *EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluateDynamicMembershipResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

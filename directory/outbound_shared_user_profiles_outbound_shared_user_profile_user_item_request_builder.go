@@ -18,7 +18,7 @@ type OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters get outboundSharedUserProfiles from directory
+// OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters get the details of an outboundSharedUserProfile.
 type OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     }
     return nil
 }
-// Get get outboundSharedUserProfiles from directory
+// Get get the details of an outboundSharedUserProfile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outboundshareduserprofile-get?view=graph-rest-1.0
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutboundSharedUserProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get outboundSharedUserProfiles from directory
+// ToGetRequestInformation get the details of an outboundSharedUserProfile.
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

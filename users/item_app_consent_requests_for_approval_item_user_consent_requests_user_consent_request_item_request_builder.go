@@ -18,7 +18,7 @@ type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestI
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters a list of pending user consent requests. Supports $filter (eq).
+// ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters read the properties and relationships of a userConsentRequest object.
 type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     }
     return nil
 }
-// Get a list of pending user consent requests. Supports $filter (eq).
+// Get read the properties and relationships of a userConsentRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a list of pending user consent requests. Supports $filter (eq).
+// ToGetRequestInformation read the properties and relationships of a userConsentRequest object.
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

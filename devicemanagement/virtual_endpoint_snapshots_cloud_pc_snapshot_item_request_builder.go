@@ -18,7 +18,7 @@ type VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetQueryParameters cloud PC snapshots.
+// VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcSnapshot object.
 type VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get cloud PC snapshots.
+// Get read the properties and relationships of a cloudPcSnapshot object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-1.0
 func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation cloud PC snapshots.
+// ToGetRequestInformation read the properties and relationships of a cloudPcSnapshot object.
 func (m *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsCloudPcSnapshotItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemPublishedResourcesPublishedResourceItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPublishedResourcesPublishedResourceItemRequestBuilderGetQueryParameters list of existing publishedResource objects. Read-only. Nullable.
+// ItemPublishedResourcesPublishedResourceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of publishedResource object.
 type ItemPublishedResourcesPublishedResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get list of existing publishedResource objects. Read-only. Nullable.
+// Get retrieve the properties and relationships of publishedResource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable), nil
 }
-// Patch update the navigation property publishedResources in onPremisesPublishingProfiles
+// Patch update the properties of publishedresource  publishedResource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation list of existing publishedResource objects. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of publishedResource object.
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property publishedResources in onPremisesPublishingProfiles
+// ToPatchRequestInformation update the properties of publishedresource  publishedResource object.
 func (m *ItemPublishedResourcesPublishedResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublishedResourceable, requestConfiguration *ItemPublishedResourcesPublishedResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

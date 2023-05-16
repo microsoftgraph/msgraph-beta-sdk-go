@@ -18,7 +18,7 @@ type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters get customAuthenticationExtensions from identity
+// CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters read the properties and relationships of an authenticationEventListener object. The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
 type CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property customAuthenticationExtensions for identity
+// Delete delete a customAuthenticationExtension object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return nil
 }
-// Get get customAuthenticationExtensions from identity
+// Get read the properties and relationships of an authenticationEventListener object. The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable), nil
 }
-// ToDeleteRequestInformation delete navigation property customAuthenticationExtensions for identity
+// ToDeleteRequestInformation delete a customAuthenticationExtension object.
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get customAuthenticationExtensions from identity
+// ToGetRequestInformation read the properties and relationships of an authenticationEventListener object. The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
 func (m *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

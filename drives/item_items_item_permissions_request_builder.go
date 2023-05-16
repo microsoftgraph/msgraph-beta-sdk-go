@@ -11,7 +11,7 @@ import (
 type ItemItemsItemPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemPermissionsRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
+// ItemItemsItemPermissionsRequestBuilderGetQueryParameters list the effective sharing permissions on a driveItem.
 type ItemItemsItemPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemItemsItemPermissionsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemItemsItemPermissionsRequestBuilder) Count()(*ItemItemsItemPermissionsCountRequestBuilder) {
     return NewItemItemsItemPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the set of permissions for the item. Read-only. Nullable.
+// Get list the effective sharing permissions on a driveItem.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
 func (m *ItemItemsItemPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemItemsItemPermissionsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToGetRequestInformation the set of permissions for the item. Read-only. Nullable.
+// ToGetRequestInformation list the effective sharing permissions on a driveItem.
 func (m *ItemItemsItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

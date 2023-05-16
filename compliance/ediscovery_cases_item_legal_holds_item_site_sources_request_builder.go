@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the legal hold.
+// EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetQueryParameters get the list of siteSource objecs associated with a legal hold.
 type EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder(rawUrl string
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get data source entity for SharePoint sites associated with the legal hold.
+// Get get the list of siteSource objecs associated with a legal hold.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceCollectionResponseable), nil
 }
-// Post create new navigation property to siteSources for compliance
+// Post adds a siteSource to a legalHold object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Post(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable), nil
 }
-// ToGetRequestInformation data source entity for SharePoint sites associated with the legal hold.
+// ToGetRequestInformation get the list of siteSource objecs associated with a legal hold.
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to siteSources for compliance
+// ToPostRequestInformation adds a siteSource to a legalHold object.
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

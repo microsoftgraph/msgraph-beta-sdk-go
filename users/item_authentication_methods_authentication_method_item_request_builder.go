@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters represents all authentication methods registered to a user.
+// ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an authenticationMethod object.
 type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,7 +55,10 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Disabl
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) {
     return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents all authentication methods registered to a user.
+// Get retrieve the properties and relationships of an authenticationMethod object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +100,7 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetPasswordRequestBuilder) {
     return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation represents all authentication methods registered to a user.
+// ToGetRequestInformation retrieve the properties and relationships of an authenticationMethod object.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

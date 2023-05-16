@@ -11,7 +11,7 @@ import (
 type AlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AlertsRequestBuilderGetQueryParameters notifications for suspicious or potential security issues in a customer’s tenant.
+// AlertsRequestBuilderGetQueryParameters retrieve a list of alert objects.
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AlertsRequestBuilder) Count()(*AlertsCountRequestBuilder) {
     return NewAlertsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get notifications for suspicious or potential security issues in a customer’s tenant.
+// Get retrieve a list of alert objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
 func (m *AlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AlertCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *AlertsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Alertable), nil
 }
-// ToGetRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
+// ToGetRequestInformation retrieve a list of alert objects.
 func (m *AlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

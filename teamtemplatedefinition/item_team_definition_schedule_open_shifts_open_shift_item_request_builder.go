@@ -18,7 +18,7 @@ type ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters the set of open shifts in a scheduling group in the schedule.
+// ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an openshift object.
 type ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property openShifts for teamTemplateDefinition
+// Delete delete an openShift object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete
     }
     return nil
 }
-// Get the set of open shifts in a scheduling group in the schedule.
+// Get retrieve the properties and relationships of an openshift object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable), nil
 }
-// Patch update the navigation property openShifts in teamTemplateDefinition
+// Patch update the properties of an openShift object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-update?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) Patch(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable), nil
 }
-// ToDeleteRequestInformation delete navigation property openShifts for teamTemplateDefinition
+// ToDeleteRequestInformation delete an openShift object.
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the set of open shifts in a scheduling group in the schedule.
+// ToGetRequestInformation retrieve the properties and relationships of an openshift object.
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property openShifts in teamTemplateDefinition
+// ToPatchRequestInformation update the properties of an openShift object.
 func (m *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftable, requestConfiguration *ItemTeamDefinitionScheduleOpenShiftsOpenShiftItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

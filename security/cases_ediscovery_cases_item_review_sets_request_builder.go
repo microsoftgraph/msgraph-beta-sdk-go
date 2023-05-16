@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemReviewSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters returns a list of eDiscoveryReviewSet objects in the case.
+// CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
 type CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewCasesEdiscoveryCasesItemReviewSetsRequestBuilder(rawUrl string, requestA
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Count()(*CasesEdiscoveryCasesItemReviewSetsCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemReviewSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of eDiscoveryReviewSet objects in the case.
+// Get get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetCollectionResponseable), nil
 }
-// Post create new navigation property to reviewSets for security
+// Post create a new ediscoveryReviewSet object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Cont
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable), nil
 }
-// ToGetRequestInformation returns a list of eDiscoveryReviewSet objects in the case.
+// ToGetRequestInformation get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to reviewSets for security
+// ToPostRequestInformation create a new ediscoveryReviewSet object.
 func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

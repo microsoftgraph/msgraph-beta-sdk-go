@@ -31,7 +31,10 @@ func NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagReque
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unassignTag
+// Post un-assigns the tenant tag from the specified managed tenants.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-unassigntag?view=graph-rest-1.0
 func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilder) Post(ctx context.Context, body ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagUnassignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequ
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
 }
-// ToPostRequestInformation invoke action unassignTag
+// ToPostRequestInformation un-assigns the tenant tag from the specified managed tenants.
 func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagUnassignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsUnassignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,10 @@ func NewVirtualEndpointCloudPCsItemStartRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemStartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action start
+// Post start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemStartRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *VirtualEndpointCloudPCsItemStartRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation invoke action start
+// ToPostRequestInformation start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
 func (m *VirtualEndpointCloudPCsItemStartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemStartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

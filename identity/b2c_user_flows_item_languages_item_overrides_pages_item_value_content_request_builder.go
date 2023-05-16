@@ -38,6 +38,9 @@ func NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilde
     return NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property overridesPages from identity
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

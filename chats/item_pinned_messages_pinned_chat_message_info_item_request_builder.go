@@ -54,7 +54,10 @@ func NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property pinnedMessages for chats
+// Delete unpin a message from a chat.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-delete-pinnedmessages?view=graph-rest-1.0
 func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable), nil
 }
-// ToDeleteRequestInformation delete navigation property pinnedMessages for chats
+// ToDeleteRequestInformation unpin a message from a chat.
 func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

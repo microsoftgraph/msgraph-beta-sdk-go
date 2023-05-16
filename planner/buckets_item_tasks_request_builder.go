@@ -11,7 +11,7 @@ import (
 type BucketsItemTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BucketsItemTasksRequestBuilderGetQueryParameters read-only. Nullable. The collection of tasks in the bucket.
+// BucketsItemTasksRequestBuilderGetQueryParameters retrieve a list of plannerTask objects associated to a plannerBucket object.
 type BucketsItemTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *BucketsItemTasksRequestBuilder) Count()(*BucketsItemTasksCountRequestBu
 func (m *BucketsItemTasksRequestBuilder) Delta()(*BucketsItemTasksDeltaRequestBuilder) {
     return NewBucketsItemTasksDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only. Nullable. The collection of tasks in the bucket.
+// Get retrieve a list of plannerTask objects associated to a plannerBucket object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
 func (m *BucketsItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsItemTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *BucketsItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
 }
-// ToGetRequestInformation read-only. Nullable. The collection of tasks in the bucket.
+// ToGetRequestInformation retrieve a list of plannerTask objects associated to a plannerBucket object.
 func (m *BucketsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileEmailsItemEmailItemRequestBuilderGetQueryParameters represents detailed information about email addresses associated with the user.
+// ItemProfileEmailsItemEmailItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemEmail object in a user's profile.
 type ItemProfileEmailsItemEmailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileEmailsItemEmailItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileEmailsItemEmailItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property emails for users
+// Delete delete an itemEmail object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itememail-delete?view=graph-rest-1.0
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get represents detailed information about email addresses associated with the user.
+// Get retrieve the properties and relationships of an itemEmail object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-1.0
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable), nil
 }
-// Patch update the navigation property emails in users
+// Patch update the properties of an itemEmail object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/itememail-update?view=graph-rest-1.0
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable), nil
 }
-// ToDeleteRequestInformation delete navigation property emails for users
+// ToDeleteRequestInformation delete an itemEmail object from a user's profile.
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents detailed information about email addresses associated with the user.
+// ToGetRequestInformation retrieve the properties and relationships of an itemEmail object in a user's profile.
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property emails in users
+// ToPatchRequestInformation update the properties of an itemEmail object in a user's profile.
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

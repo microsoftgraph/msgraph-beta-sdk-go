@@ -34,7 +34,7 @@ func (m *AuthenticationConditionApplication) GetAdditionalData()(map[string]any)
     }
     return val.(map[string]any)
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. The identifier for an application corresponding to a condition which will trigger an authenticationEventListener.
 func (m *AuthenticationConditionApplication) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -114,7 +114,7 @@ func (m *AuthenticationConditionApplication) SetAdditionalData(value map[string]
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. The identifier for an application corresponding to a condition which will trigger an authenticationEventListener.
 func (m *AuthenticationConditionApplication) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {

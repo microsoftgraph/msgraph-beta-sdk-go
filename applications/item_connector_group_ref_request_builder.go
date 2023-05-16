@@ -80,7 +80,10 @@ func (m *ItemConnectorGroupRefRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(*string), nil
 }
-// Put update the ref of navigation property connectorGroup in applications
+// Put assign a connectorGroup to an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-1.0
 func (m *ItemConnectorGroupRefRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemConnectorGroupRefRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update the ref of navigation property connectorGroup in applications
+// ToPutRequestInformation assign a connectorGroup to an application.
 func (m *ItemConnectorGroupRefRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemConnectorGroupRefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

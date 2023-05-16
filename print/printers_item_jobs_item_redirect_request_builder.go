@@ -31,7 +31,10 @@ func NewPrintersItemJobsItemRedirectRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemJobsItemRedirectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action redirect
+// Post redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
 func (m *PrintersItemJobsItemRedirectRequestBuilder) Post(ctx context.Context, body PrintersItemJobsItemRedirectPostRequestBodyable, requestConfiguration *PrintersItemJobsItemRedirectRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *PrintersItemJobsItemRedirectRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable), nil
 }
-// ToPostRequestInformation invoke action redirect
+// ToPostRequestInformation redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 func (m *PrintersItemJobsItemRedirectRequestBuilder) ToPostRequestInformation(ctx context.Context, body PrintersItemJobsItemRedirectPostRequestBodyable, requestConfiguration *PrintersItemJobsItemRedirectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

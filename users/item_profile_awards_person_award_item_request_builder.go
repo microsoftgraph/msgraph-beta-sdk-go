@@ -18,7 +18,7 @@ type ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters represents the details of awards or honors associated with a person.
+// ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters read the properties and relationships of a personAward object from a user's profile.
 type ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileAwardsPersonAwardItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property awards for users
+// Delete deletes a personAward object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get represents the details of awards or honors associated with a person.
+// Get read the properties and relationships of a personAward object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
-// Patch update the navigation property awards in users
+// Patch update the properties of a personAward object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
-// ToDeleteRequestInformation delete navigation property awards for users
+// ToDeleteRequestInformation deletes a personAward object from a user's profile.
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the details of awards or honors associated with a person.
+// ToGetRequestInformation read the properties and relationships of a personAward object from a user's profile.
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property awards in users
+// ToPatchRequestInformation update the properties of a personAward object from a user's profile.
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

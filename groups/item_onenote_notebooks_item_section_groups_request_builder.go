@@ -11,7 +11,7 @@ import (
 type ItemOnenoteNotebooksItemSectionGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteNotebooksItemSectionGroupsRequestBuilderGetQueryParameters the section groups in the notebook. Read-only. Nullable.
+// ItemOnenoteNotebooksItemSectionGroupsRequestBuilderGetQueryParameters retrieve a list of section groups from the specified notebook.
 type ItemOnenoteNotebooksItemSectionGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemOnenoteNotebooksItemSectionGroupsRequestBuilder(rawUrl string, reque
 func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) Count()(*ItemOnenoteNotebooksItemSectionGroupsCountRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the section groups in the notebook. Read-only. Nullable.
+// Get retrieve a list of section groups from the specified notebook.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
 func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupCollectionResponseable), nil
 }
-// Post create new navigation property to sectionGroups for groups
+// Post create a new section group in the specified notebook.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
 func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) Post(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable), nil
 }
-// ToGetRequestInformation the section groups in the notebook. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of section groups from the specified notebook.
 func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to sectionGroups for groups
+// ToPostRequestInformation create a new section group in the specified notebook.
 func (m *ItemOnenoteNotebooksItemSectionGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

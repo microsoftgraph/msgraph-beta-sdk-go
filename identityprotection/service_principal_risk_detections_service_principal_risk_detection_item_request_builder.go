@@ -18,7 +18,7 @@ type ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderGetQueryParameters represents information about detected at-risk service principals in an Azure AD tenant.
+// ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderGetQueryParameters read the properties and relationships of a servicePrincipalRiskDetection object.
 type ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestB
     }
     return nil
 }
-// Get represents information about detected at-risk service principals in an Azure AD tenant.
+// Get read the properties and relationships of a servicePrincipalRiskDetection object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipalriskdetection-get?view=graph-rest-1.0
 func (m *ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents information about detected at-risk service principals in an Azure AD tenant.
+// ToGetRequestInformation read the properties and relationships of a servicePrincipalRiskDetection object.
 func (m *ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

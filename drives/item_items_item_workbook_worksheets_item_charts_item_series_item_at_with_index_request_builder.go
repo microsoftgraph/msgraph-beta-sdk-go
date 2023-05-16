@@ -36,6 +36,9 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexReques
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function itemAt
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chartseriescollection-itemat?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartSeriesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

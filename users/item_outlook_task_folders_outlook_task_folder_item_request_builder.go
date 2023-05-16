@@ -18,7 +18,7 @@ type ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetQueryParameters get taskFolders from users
+// ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetQueryParameters get the properties and relationships of the specified Outlook task folder.
 type ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,10 @@ func NewItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property taskFolders for users
+// Delete delete the specified Outlook task folder.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,7 +71,10 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get get taskFolders from users
+// Get get the properties and relationships of the specified Outlook task folder.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +93,10 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// Patch update the navigation property taskFolders in users
+// Patch update the writable properties of an Outlook task folder. You cannot change the **name** property value of the default task folder, 'Tasks'.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx co
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Tasks()(*ItemOutlookTaskFoldersItemTasksRequestBuilder) {
     return NewItemOutlookTaskFoldersItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property taskFolders for users
+// ToDeleteRequestInformation delete the specified Outlook task folder.
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -122,7 +131,7 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get taskFolders from users
+// ToGetRequestInformation get the properties and relationships of the specified Outlook task folder.
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +147,7 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property taskFolders in users
+// ToPatchRequestInformation update the writable properties of an Outlook task folder. You cannot change the **name** property value of the default task folder, 'Tasks'.
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

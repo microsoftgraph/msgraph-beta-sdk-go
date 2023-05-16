@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
+// EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a siteSource object.
 type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property siteSources for compliance
+// Delete delete a siteSource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-sitesource-delete?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
     }
     return nil
 }
-// Get data source entity for SharePoint sites associated with the custodian.
+// Get read the properties and relationships of a siteSource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-sitesource-get?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) Site()(*EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property siteSources for compliance
+// ToDeleteRequestInformation delete a siteSource object.
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +130,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation data source entity for SharePoint sites associated with the custodian.
+// ToGetRequestInformation read the properties and relationships of a siteSource object.
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

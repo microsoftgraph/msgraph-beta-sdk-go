@@ -18,7 +18,7 @@ type SecurityActionsSecurityActionItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters get securityActions from security
+// SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a securityAction object.
 type SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get get securityActions from security
+// Get retrieve the properties and relationships of a securityAction object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/securityaction-get?view=graph-rest-1.0
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get securityActions from security
+// ToGetRequestInformation retrieve the properties and relationships of a securityAction object.
 func (m *SecurityActionsSecurityActionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

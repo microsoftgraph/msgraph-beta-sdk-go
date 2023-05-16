@@ -18,7 +18,7 @@ type ItemPagesSitePageItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPagesSitePageItemRequestBuilderGetQueryParameters the collection of pages in the SitePages list in this site.
+// ItemPagesSitePageItemRequestBuilderGetQueryParameters returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
 type ItemPagesSitePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,10 @@ func (m *ItemPagesSitePageItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get the collection of pages in the SitePages list in this site.
+// Get returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-get?view=graph-rest-1.0
 func (m *ItemPagesSitePageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesSitePageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,7 +108,10 @@ func (m *ItemPagesSitePageItemRequestBuilder) GetWebPartsByPosition()(*ItemPages
 func (m *ItemPagesSitePageItemRequestBuilder) LastModifiedByUser()(*ItemPagesItemLastModifiedByUserRequestBuilder) {
     return NewItemPagesItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property pages in sites
+// Patch update the properties of a sitePage object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-update?view=graph-rest-1.0
 func (m *ItemPagesSitePageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -140,7 +146,7 @@ func (m *ItemPagesSitePageItemRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of pages in the SitePages list in this site.
+// ToGetRequestInformation returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
 func (m *ItemPagesSitePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesSitePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -156,7 +162,7 @@ func (m *ItemPagesSitePageItemRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property pages in sites
+// ToPatchRequestInformation update the properties of a sitePage object.
 func (m *ItemPagesSitePageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *ItemPagesSitePageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

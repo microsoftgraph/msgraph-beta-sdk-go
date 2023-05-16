@@ -36,7 +36,7 @@ func (m *HttpRequestEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetTargetUrl gets the targetUrl property value. The targetUrl property
+// GetTargetUrl gets the targetUrl property value. The HTTP endpoint that a custom extension calls.
 func (m *HttpRequestEndpoint) GetTargetUrl()(*string) {
     val, err := m.GetBackingStore().Get("targetUrl")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *HttpRequestEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetTargetUrl sets the targetUrl property value. The targetUrl property
+// SetTargetUrl sets the targetUrl property value. The HTTP endpoint that a custom extension calls.
 func (m *HttpRequestEndpoint) SetTargetUrl(value *string)() {
     err := m.GetBackingStore().Set("targetUrl", value)
     if err != nil {

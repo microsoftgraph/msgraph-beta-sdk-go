@@ -148,6 +148,10 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Stages()(*AccessRevie
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Stop()(*AccessReviewsDecisionsItemInstanceStopRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StopApplyDecisions provides operations to call the stopApplyDecisions method.
+func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) StopApplyDecisions()(*AccessReviewsDecisionsItemInstanceStopApplyDecisionsRequestBuilder) {
+    return NewAccessReviewsDecisionsItemInstanceStopApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property instance for identityGovernance
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

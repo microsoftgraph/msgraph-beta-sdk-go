@@ -32,7 +32,7 @@ func (m *EducationOneRosterApiDataProvider) GetConnectionSettings()(EducationSyn
     }
     return nil
 }
-// GetConnectionUrl gets the connectionUrl property value. The connectionUrl property
+// GetConnectionUrl gets the connectionUrl property value. The connection URL to the OneRoster instance.
 func (m *EducationOneRosterApiDataProvider) GetConnectionUrl()(*string) {
     val, err := m.GetBackingStore().Get("connectionUrl")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *EducationOneRosterApiDataProvider) GetConnectionUrl()(*string) {
     }
     return nil
 }
-// GetCustomizations gets the customizations property value. The customizations property
+// GetCustomizations gets the customizations property value. Optional customization to be applied to the synchronization profile.
 func (m *EducationOneRosterApiDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
     val, err := m.GetBackingStore().Get("customizations")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetProviderName gets the providerName property value. The providerName property
+// GetProviderName gets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
 func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
     val, err := m.GetBackingStore().Get("providerName")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
     }
     return nil
 }
-// GetSchoolsIds gets the schoolsIds property value. The schoolsIds property
+// GetSchoolsIds gets the schoolsIds property value. The list of [School/Org][orgs] sourcedId to sync.
 func (m *EducationOneRosterApiDataProvider) GetSchoolsIds()([]string) {
     val, err := m.GetBackingStore().Get("schoolsIds")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *EducationOneRosterApiDataProvider) GetSchoolsIds()([]string) {
     }
     return nil
 }
-// GetTermIds gets the termIds property value. The termIds property
+// GetTermIds gets the termIds property value. The list of [academic sessions][terms] to sync.
 func (m *EducationOneRosterApiDataProvider) GetTermIds()([]string) {
     val, err := m.GetBackingStore().Get("termIds")
     if err != nil {
@@ -211,35 +211,35 @@ func (m *EducationOneRosterApiDataProvider) SetConnectionSettings(value Educatio
         panic(err)
     }
 }
-// SetConnectionUrl sets the connectionUrl property value. The connectionUrl property
+// SetConnectionUrl sets the connectionUrl property value. The connection URL to the OneRoster instance.
 func (m *EducationOneRosterApiDataProvider) SetConnectionUrl(value *string)() {
     err := m.GetBackingStore().Set("connectionUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomizations sets the customizations property value. The customizations property
+// SetCustomizations sets the customizations property value. Optional customization to be applied to the synchronization profile.
 func (m *EducationOneRosterApiDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
     err := m.GetBackingStore().Set("customizations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProviderName sets the providerName property value. The providerName property
+// SetProviderName sets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
 func (m *EducationOneRosterApiDataProvider) SetProviderName(value *string)() {
     err := m.GetBackingStore().Set("providerName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchoolsIds sets the schoolsIds property value. The schoolsIds property
+// SetSchoolsIds sets the schoolsIds property value. The list of [School/Org][orgs] sourcedId to sync.
 func (m *EducationOneRosterApiDataProvider) SetSchoolsIds(value []string)() {
     err := m.GetBackingStore().Set("schoolsIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTermIds sets the termIds property value. The termIds property
+// SetTermIds sets the termIds property value. The list of [academic sessions][terms] to sync.
 func (m *EducationOneRosterApiDataProvider) SetTermIds(value []string)() {
     err := m.GetBackingStore().Set("termIds", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceArticlesItemIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetQueryParameters indicators related to this article.
+// ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetQueryParameters get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
 type ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewThreatIntelligenceArticlesItemIndicatorsRequestBuilder(rawUrl string, re
 func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) Count()(*ThreatIntelligenceArticlesItemIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceArticlesItemIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get indicators related to this article.
+// Get get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0
 func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ArticleIndicatorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) Get(ctx context
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ArticleIndicatorCollectionResponseable), nil
 }
-// ToGetRequestInformation indicators related to this article.
+// ToGetRequestInformation get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
 func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemReviewSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters returns a list of reviewSet objects in the case. Read-only. Nullable.
+// EdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters retrieve the properties and relationships of a reviewSet object.
 type EdiscoveryCasesItemReviewSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEdiscoveryCasesItemReviewSetsRequestBuilder(rawUrl string, requestAdapte
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Count()(*EdiscoveryCasesItemReviewSetsCountRequestBuilder) {
     return NewEdiscoveryCasesItemReviewSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of reviewSet objects in the case. Read-only. Nullable.
+// Get retrieve the properties and relationships of a reviewSet object.
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,10 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable), nil
 }
-// Post create new navigation property to reviewSets for compliance
+// Post create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable), nil
 }
-// ToGetRequestInformation returns a list of reviewSet objects in the case. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a reviewSet object.
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +131,7 @@ func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to reviewSets for compliance
+// ToPostRequestInformation create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
 func (m *EdiscoveryCasesItemReviewSetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *EdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

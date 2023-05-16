@@ -18,7 +18,7 @@ type AlertRulesAlertRuleItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlertRulesAlertRuleItemRequestBuilderGetQueryParameters the collection of alert rules.
+// AlertRulesAlertRuleItemRequestBuilderGetQueryParameters read the properties and relationships of an alertRule object.
 type AlertRulesAlertRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *AlertRulesAlertRuleItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get the collection of alert rules.
+// Get read the properties and relationships of an alertRule object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
 func (m *AlertRulesAlertRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *AlertRulesAlertRuleItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable), nil
 }
-// Patch update the navigation property alertRules in monitoring
+// Patch update the properties of an alertRule object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
 func (m *AlertRulesAlertRuleItemRequestBuilder) Patch(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, requestConfiguration *AlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *AlertRulesAlertRuleItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of alert rules.
+// ToGetRequestInformation read the properties and relationships of an alertRule object.
 func (m *AlertRulesAlertRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *AlertRulesAlertRuleItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property alertRules in monitoring
+// ToPatchRequestInformation update the properties of an alertRule object.
 func (m *AlertRulesAlertRuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, requestConfiguration *AlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

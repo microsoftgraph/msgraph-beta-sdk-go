@@ -18,7 +18,7 @@ type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters deployments created using the deployment service.
+// WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters read the properties and relationships of a deployment object.
 type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property deployments for admin
+// Delete delete a deployment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get deployments created using the deployment service.
+// Get read the properties and relationships of a deployment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable), nil
 }
-// Patch update the navigation property deployments in admin
+// Patch update the properties of a deployment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Patch(ctx contex
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable), nil
 }
-// ToDeleteRequestInformation delete navigation property deployments for admin
+// ToDeleteRequestInformation delete a deployment object.
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation deployments created using the deployment service.
+// ToGetRequestInformation read the properties and relationships of a deployment object.
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property deployments in admin
+// ToPatchRequestInformation update the properties of a deployment object.
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

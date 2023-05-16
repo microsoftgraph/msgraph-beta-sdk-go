@@ -30,7 +30,10 @@ func NewItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequest
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action evaluateApplication
+// Post compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
 func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) Post(ctx context.Context, body ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationReques
     }
     return res.(ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationResponseable), nil
 }
-// ToPostRequestInformation invoke action evaluateApplication
+// ToPostRequestInformation compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
 func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

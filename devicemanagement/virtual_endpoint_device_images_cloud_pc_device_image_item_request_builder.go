@@ -18,7 +18,7 @@ type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters the image resource on Cloud PC.
+// VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPcDeviceImage object.
 type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property deviceImages for deviceManagement
+// Delete delete a cloudPcDeviceImage object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Delete
     }
     return nil
 }
-// Get the image resource on Cloud PC.
+// Get read the properties and relationships of a specific cloudPcDeviceImage object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Patch(
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Reupload()(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property deviceImages for deviceManagement
+// ToDeleteRequestInformation delete a cloudPcDeviceImage object.
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +130,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the image resource on Cloud PC.
+// ToGetRequestInformation read the properties and relationships of a specific cloudPcDeviceImage object.
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

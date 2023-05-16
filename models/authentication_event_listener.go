@@ -37,7 +37,7 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewAuthenticationEventListener(), nil
 }
-// GetAuthenticationEventsFlowId gets the authenticationEventsFlowId property value. The authenticationEventsFlowId property
+// GetAuthenticationEventsFlowId gets the authenticationEventsFlowId property value. The identifier of the authenticationEventsFlow object.
 func (m *AuthenticationEventListener) GetAuthenticationEventsFlowId()(*string) {
     val, err := m.GetBackingStore().Get("authenticationEventsFlowId")
     if err != nil {
@@ -48,7 +48,7 @@ func (m *AuthenticationEventListener) GetAuthenticationEventsFlowId()(*string) {
     }
     return nil
 }
-// GetConditions gets the conditions property value. The conditions property
+// GetConditions gets the conditions property value. The conditions on which this authenticationEventListener should trigger.
 func (m *AuthenticationEventListener) GetConditions()(AuthenticationConditionsable) {
     val, err := m.GetBackingStore().Get("conditions")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
 func (m *AuthenticationEventListener) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -131,21 +131,21 @@ func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAuthenticationEventsFlowId sets the authenticationEventsFlowId property value. The authenticationEventsFlowId property
+// SetAuthenticationEventsFlowId sets the authenticationEventsFlowId property value. The identifier of the authenticationEventsFlow object.
 func (m *AuthenticationEventListener) SetAuthenticationEventsFlowId(value *string)() {
     err := m.GetBackingStore().Set("authenticationEventsFlowId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConditions sets the conditions property value. The conditions property
+// SetConditions sets the conditions property value. The conditions on which this authenticationEventListener should trigger.
 func (m *AuthenticationEventListener) SetConditions(value AuthenticationConditionsable)() {
     err := m.GetBackingStore().Set("conditions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
 func (m *AuthenticationEventListener) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

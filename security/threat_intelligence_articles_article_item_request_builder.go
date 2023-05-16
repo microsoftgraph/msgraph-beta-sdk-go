@@ -18,7 +18,7 @@ type ThreatIntelligenceArticlesArticleItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceArticlesArticleItemRequestBuilderGetQueryParameters a list of article objects.
+// ThreatIntelligenceArticlesArticleItemRequestBuilderGetQueryParameters read the properties and relationships of an article object.
 type ThreatIntelligenceArticlesArticleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get a list of article objects.
+// Get read the properties and relationships of an article object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-article-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesArticleItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Articleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a list of article objects.
+// ToGetRequestInformation read the properties and relationships of an article object.
 func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesArticleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

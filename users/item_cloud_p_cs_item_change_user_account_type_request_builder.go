@@ -30,7 +30,10 @@ func NewItemCloudPCsItemChangeUserAccountTypeRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemChangeUserAccountTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action changeUserAccountType
+// Post change the account type of the user on a specific Cloud PC.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
 func (m *ItemCloudPCsItemChangeUserAccountTypeRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemChangeUserAccountTypePostRequestBodyable, requestConfiguration *ItemCloudPCsItemChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCloudPCsItemChangeUserAccountTypeRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation invoke action changeUserAccountType
+// ToPostRequestInformation change the account type of the user on a specific Cloud PC.
 func (m *ItemCloudPCsItemChangeUserAccountTypeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCloudPCsItemChangeUserAccountTypePostRequestBodyable, requestConfiguration *ItemCloudPCsItemChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

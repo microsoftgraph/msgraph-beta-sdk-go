@@ -30,7 +30,10 @@ func NewItemManagedDevicesItemResizeCloudPcRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemResizeCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action resizeCloudPc
+// Post upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemResizeCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemResizeCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation invoke action resizeCloudPc
+// ToPostRequestInformation upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemResizeCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemResizeCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

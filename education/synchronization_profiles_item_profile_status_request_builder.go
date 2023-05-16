@@ -18,7 +18,7 @@ type SynchronizationProfilesItemProfileStatusRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters the synchronization status.
+// SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
 type SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get the synchronization status.
+// Get get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0
 func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemProfileStatusRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) ToDeleteRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the synchronization status.
+// ToGetRequestInformation get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
 func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemProfileStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

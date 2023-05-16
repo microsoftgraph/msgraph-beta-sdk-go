@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
 type BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuil
     }
     return nil
 }
-// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// Get retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,6 +93,9 @@ func (m *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerProgressTaskBoardTaskFormatable), nil
 }
 // Patch update the navigation property progressTaskBoardFormat in solutions
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuil
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// ToGetRequestInformation retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
 func (m *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

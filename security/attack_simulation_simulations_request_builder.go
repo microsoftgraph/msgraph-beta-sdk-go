@@ -11,7 +11,7 @@ import (
 type AttackSimulationSimulationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationSimulationsRequestBuilderGetQueryParameters represents an attack simulation training campaign in a tenant.
+// AttackSimulationSimulationsRequestBuilderGetQueryParameters get a list of attack simulation campaigns for a tenant.
 type AttackSimulationSimulationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAttackSimulationSimulationsRequestBuilder(rawUrl string, requestAdapter 
 func (m *AttackSimulationSimulationsRequestBuilder) Count()(*AttackSimulationSimulationsCountRequestBuilder) {
     return NewAttackSimulationSimulationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents an attack simulation training campaign in a tenant.
+// Get get a list of attack simulation campaigns for a tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SimulationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *AttackSimulationSimulationsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SimulationCollectionResponseable), nil
 }
-// Post create new navigation property to simulations for security
+// Post create an attack simulation campaign for a tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/attacksimulationroot-post-simulation?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, requestConfiguration *AttackSimulationSimulationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *AttackSimulationSimulationsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable), nil
 }
-// ToGetRequestInformation represents an attack simulation training campaign in a tenant.
+// ToGetRequestInformation get a list of attack simulation campaigns for a tenant.
 func (m *AttackSimulationSimulationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *AttackSimulationSimulationsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to simulations for security
+// ToPostRequestInformation create an attack simulation campaign for a tenant.
 func (m *AttackSimulationSimulationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable, requestConfiguration *AttackSimulationSimulationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -54,7 +54,10 @@ func NewLearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemR
     urlParams["request-raw-url"] = rawUrl
     return NewLearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property learningCourseActivities for employeeExperience
+// Delete delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +111,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningCourseActivityable), nil
 }
-// ToDeleteRequestInformation delete navigation property learningCourseActivities for employeeExperience
+// ToDeleteRequestInformation delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
 func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

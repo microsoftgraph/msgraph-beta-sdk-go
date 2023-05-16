@@ -11,7 +11,7 @@ import (
 type OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderGetQueryParameters list of attendance records of an attendance report. Read-only.
+// OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderGetQueryParameters get a list of attendanceRecord objects and their properties.
 type OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder) Count()(*OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilder) {
     return NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of attendance records of an attendance report. Read-only.
+// Get get a list of attendanceRecord objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable), nil
 }
-// ToGetRequestInformation list of attendance records of an attendance report. Read-only.
+// ToGetRequestInformation get a list of attendanceRecord objects and their properties.
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

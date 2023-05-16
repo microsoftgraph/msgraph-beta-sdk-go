@@ -45,7 +45,10 @@ func NewItemManagerRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagerRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property manager for users
+// Delete remove a user's manager.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -61,7 +64,10 @@ func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderGetRequestConfiguration)(*string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +86,10 @@ func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(*string), nil
 }
-// Put update the ref of navigation property manager in users
+// Put use this API to assign a user's manager.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemManagerRefRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -96,7 +105,7 @@ func (m *ItemManagerRefRequestBuilder) Put(ctx context.Context, body ie233ee762e
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property manager for users
+// ToDeleteRequestInformation remove a user's manager.
 func (m *ItemManagerRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -108,7 +117,7 @@ func (m *ItemManagerRefRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *ItemManagerRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -121,7 +130,7 @@ func (m *ItemManagerRefRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update the ref of navigation property manager in users
+// ToPutRequestInformation use this API to assign a user's manager.
 func (m *ItemManagerRefRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemManagerRefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

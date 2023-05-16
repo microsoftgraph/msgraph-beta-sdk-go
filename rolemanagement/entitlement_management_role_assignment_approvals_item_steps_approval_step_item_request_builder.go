@@ -18,7 +18,7 @@ type EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters get steps from roleManagement
+// EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object.
 type EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRe
     }
     return nil
 }
-// Get get steps from roleManagement
+// Get retrieve the properties of an approvalStep object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0
 func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// Patch update the navigation property steps in roleManagement
+// Patch apply approve or deny decision on an approvalStep object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0
 func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get steps from roleManagement
+// ToGetRequestInformation retrieve the properties of an approvalStep object.
 func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property steps in roleManagement
+// ToPatchRequestInformation apply approve or deny decision on an approvalStep object.
 func (m *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

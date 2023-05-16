@@ -30,7 +30,10 @@ func NewAlertsUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAlertsUpdateAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action updateAlerts
+// Post update multiple alerts in one request instead of multiple requests.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
 func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(AlertsUpdateAlertsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body Alerts
     }
     return res.(AlertsUpdateAlertsResponseable), nil
 }
-// ToPostRequestInformation invoke action updateAlerts
+// ToPostRequestInformation update multiple alerts in one request instead of multiple requests.
 func (m *AlertsUpdateAlertsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

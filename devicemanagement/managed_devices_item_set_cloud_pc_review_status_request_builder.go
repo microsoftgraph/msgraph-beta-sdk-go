@@ -30,7 +30,10 @@ func NewManagedDevicesItemSetCloudPcReviewStatusRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemSetCloudPcReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action setCloudPcReviewStatus
+// Post set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
 func (m *ManagedDevicesItemSetCloudPcReviewStatusRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemSetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *ManagedDevicesItemSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ManagedDevicesItemSetCloudPcReviewStatusRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation invoke action setCloudPcReviewStatus
+// ToPostRequestInformation set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
 func (m *ManagedDevicesItemSetCloudPcReviewStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemSetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *ManagedDevicesItemSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

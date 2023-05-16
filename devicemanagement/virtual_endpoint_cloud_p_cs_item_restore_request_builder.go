@@ -30,7 +30,10 @@ func NewVirtualEndpointCloudPCsItemRestoreRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action restore
+// Post restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsItemRestoreRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsItemRestorePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemRestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *VirtualEndpointCloudPCsItemRestoreRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation invoke action restore
+// ToPostRequestInformation restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
 func (m *VirtualEndpointCloudPCsItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsItemRestorePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

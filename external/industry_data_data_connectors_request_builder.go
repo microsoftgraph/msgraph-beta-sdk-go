@@ -11,7 +11,7 @@ import (
 type IndustryDataDataConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataDataConnectorsRequestBuilderGetQueryParameters set of connectors for importing data from source systems.
+// IndustryDataDataConnectorsRequestBuilderGetQueryParameters get the industryDataConnector resources from the **dataConnector** navigation property.
 type IndustryDataDataConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewIndustryDataDataConnectorsRequestBuilder(rawUrl string, requestAdapter i
 func (m *IndustryDataDataConnectorsRequestBuilder) Count()(*IndustryDataDataConnectorsCountRequestBuilder) {
     return NewIndustryDataDataConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get set of connectors for importing data from source systems.
+// Get get the industryDataConnector resources from the **dataConnector** navigation property.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable), nil
 }
-// Post create new navigation property to dataConnectors for external
+// Post create a new industryDataConnector object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
-// ToGetRequestInformation set of connectors for importing data from source systems.
+// ToGetRequestInformation get the industryDataConnector resources from the **dataConnector** navigation property.
 func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to dataConnectors for external
+// ToPostRequestInformation create a new industryDataConnector object.
 func (m *IndustryDataDataConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

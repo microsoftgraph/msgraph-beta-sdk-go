@@ -18,7 +18,7 @@ type ItemEndpointsEndpointItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemEndpointsEndpointItemRequestBuilderGetQueryParameters endpoints for the group. Read-only. Nullable.
+// ItemEndpointsEndpointItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a specific endpoint object.
 type ItemEndpointsEndpointItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemEndpointsEndpointItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get endpoints for the group. Read-only. Nullable.
+// Get retrieve the properties and relationships of a specific endpoint object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/endpoint-get?view=graph-rest-1.0
 func (m *ItemEndpointsEndpointItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEndpointsEndpointItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Endpointable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ItemEndpointsEndpointItemRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation endpoints for the group. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a specific endpoint object.
 func (m *ItemEndpointsEndpointItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEndpointsEndpointItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

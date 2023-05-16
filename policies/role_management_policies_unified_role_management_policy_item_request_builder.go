@@ -18,7 +18,7 @@ type RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters represents the role management policies.
+// RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
 type RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) De
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRules()(*RoleManagementPoliciesItemEffectiveRulesRequestBuilder) {
     return NewRoleManagementPoliciesItemEffectiveRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the role management policies.
+// Get retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the role management policies.
+// ToGetRequestInformation retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

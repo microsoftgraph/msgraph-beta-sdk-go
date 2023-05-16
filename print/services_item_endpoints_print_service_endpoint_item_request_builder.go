@@ -18,7 +18,7 @@ type ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetQueryParameters endpoints that can be used to access the service. Read-only. Nullable.
+// ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a print service endpoint.
 type ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get endpoints that can be used to access the service. Read-only. Nullable.
+// Get retrieve the properties and relationships of a print service endpoint.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
 func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintServiceEndpointable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation endpoints that can be used to access the service. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a print service endpoint.
 func (m *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicesItemEndpointsPrintServiceEndpointItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

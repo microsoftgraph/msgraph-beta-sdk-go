@@ -18,7 +18,7 @@ type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters represents the email addresses registered to a user for authentication.
+// ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single email Authentication Method object.
 type ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property emailMethods for users
+// Delete deletes a user's email Authentication Method object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/emailauthenticationmethod-delete?view=graph-rest-1.0
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return nil
 }
-// Get represents the email addresses registered to a user for authentication.
+// Get retrieve a user's single email Authentication Method object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/emailauthenticationmethod-get?view=graph-rest-1.0
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
-// Patch update the navigation property emailMethods in users
+// Patch update a user's email address associated with an email Authentication Method object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation delete navigation property emailMethods for users
+// ToDeleteRequestInformation deletes a user's email Authentication Method object.
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the email addresses registered to a user for authentication.
+// ToGetRequestInformation retrieve a user's single email Authentication Method object.
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property emailMethods in users
+// ToPatchRequestInformation update a user's email address associated with an email Authentication Method object.
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

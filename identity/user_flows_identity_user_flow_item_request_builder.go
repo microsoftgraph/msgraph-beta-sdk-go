@@ -18,7 +18,7 @@ type UserFlowsIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserFlowsIdentityUserFlowItemRequestBuilderGetQueryParameters get userFlows from identity
+// UserFlowsIdentityUserFlowItemRequestBuilderGetQueryParameters retrieve the properties and associations for an userFlow object.
 type UserFlowsIdentityUserFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewUserFlowsIdentityUserFlowItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowsIdentityUserFlowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property userFlows for identity
+// Delete delete an existing userFlow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflow-delete?view=graph-rest-1.0
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get userFlows from identity
+// Get retrieve the properties and associations for an userFlow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflow-get?view=graph-rest-1.0
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowable), nil
 }
-// ToDeleteRequestInformation delete navigation property userFlows for identity
+// ToDeleteRequestInformation delete an existing userFlow object.
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *UserFlowsIdentityUserFlowItemRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get userFlows from identity
+// ToGetRequestInformation retrieve the properties and associations for an userFlow object.
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

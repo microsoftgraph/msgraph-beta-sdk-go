@@ -18,7 +18,7 @@ type ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetQueryParameters represents detailed information about websites associated with a user in various services.
+// ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personWebsite object from a user's profile.
 type ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemProfileWebsitesPersonWebsiteItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileWebsitesPersonWebsiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property websites for users
+// Delete deletes a personWebsite object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get represents detailed information about websites associated with a user in various services.
+// Get retrieve the properties and relationships of a personWebsite object from a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable), nil
 }
-// Patch update the navigation property websites in users
+// Patch update the properties of personWebsite object in a user's profile.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable), nil
 }
-// ToDeleteRequestInformation delete navigation property websites for users
+// ToDeleteRequestInformation deletes a personWebsite object from a user's profile.
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents detailed information about websites associated with a user in various services.
+// ToGetRequestInformation retrieve the properties and relationships of a personWebsite object from a user's profile.
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property websites in users
+// ToPatchRequestInformation update the properties of personWebsite object in a user's profile.
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters get mobileDeviceManagementPolicies from policies
+// MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a mobilityManagementPolicy object.
 type MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewMobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewMobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property mobileDeviceManagementPolicies for policies
+// Delete delete a mobilityManagementPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/mobiledevicemanagementpolicies-delete?view=graph-rest-1.0
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
     }
     return nil
 }
-// Get get mobileDeviceManagementPolicies from policies
+// Get read the properties and relationships of a mobilityManagementPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/mobiledevicemanagementpolicies-get?view=graph-rest-1.0
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*MobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilder) {
     return NewMobileDeviceManagementPoliciesItemIncludedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property mobileDeviceManagementPolicies in policies
+// Patch update the properties of a mobilityManagementPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/mobiledevicemanagementpolicies-update?view=graph-rest-1.0
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property mobileDeviceManagementPolicies for policies
+// ToDeleteRequestInformation delete a mobilityManagementPolicy object.
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get mobileDeviceManagementPolicies from policies
+// ToGetRequestInformation read the properties and relationships of a mobilityManagementPolicy object.
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property mobileDeviceManagementPolicies in policies
+// ToPatchRequestInformation update the properties of a mobilityManagementPolicy object.
 func (m *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

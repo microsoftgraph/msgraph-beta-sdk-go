@@ -18,7 +18,7 @@ type VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetQueryParameters cloud PC audit event.
+// VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcAuditEvent object.
 type VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get cloud PC audit event.
+// Get read the properties and relationships of a cloudPcAuditEvent object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-1.0
 func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcAuditEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation cloud PC audit event.
+// ToGetRequestInformation read the properties and relationships of a cloudPcAuditEvent object.
 func (m *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsCloudPcAuditEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

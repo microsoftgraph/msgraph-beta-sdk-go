@@ -18,7 +18,7 @@ type ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetQueryParameters domain settings configured by customer when federated with Azure AD. Supports $expand.
+// ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetQueryParameters read the properties and relationships of an internalDomainFederation object.
 type ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemFederationConfigurationInternalDomainFederationItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property federationConfiguration for domains
+// Delete deletes an internalDomainFederation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return nil
 }
-// Get domain settings configured by customer when federated with Azure AD. Supports $expand.
+// Get read the properties and relationships of an internalDomainFederation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable), nil
 }
-// Patch update the navigation property federationConfiguration in domains
+// Patch update the properties of an internalDomainFederation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable), nil
 }
-// ToDeleteRequestInformation delete navigation property federationConfiguration for domains
+// ToDeleteRequestInformation deletes an internalDomainFederation object.
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation domain settings configured by customer when federated with Azure AD. Supports $expand.
+// ToGetRequestInformation read the properties and relationships of an internalDomainFederation object.
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property federationConfiguration in domains
+// ToPatchRequestInformation update the properties of an internalDomainFederation object.
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

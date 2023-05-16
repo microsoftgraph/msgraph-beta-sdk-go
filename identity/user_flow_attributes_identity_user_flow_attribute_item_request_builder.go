@@ -18,7 +18,7 @@ type UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters represents entry point for identity userflow attributes.
+// UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a identityUserFlowAttribute object.
 type UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property userFlowAttributes for identity
+// Delete delete an identityUserFlowAttribute. Only custom user flow attributes can be deleted.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get represents entry point for identity userflow attributes.
+// Get retrieve the properties and relationships of a identityUserFlowAttribute object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable), nil
 }
-// Patch update the navigation property userFlowAttributes in identity
+// Patch update the properties of a identityUserFlowAttribute object. Only custom user flow attributes can be updated.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Patch(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable), nil
 }
-// ToDeleteRequestInformation delete navigation property userFlowAttributes for identity
+// ToDeleteRequestInformation delete an identityUserFlowAttribute. Only custom user flow attributes can be deleted.
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents entry point for identity userflow attributes.
+// ToGetRequestInformation retrieve the properties and relationships of a identityUserFlowAttribute object.
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property userFlowAttributes in identity
+// ToPatchRequestInformation update the properties of a identityUserFlowAttribute object. Only custom user flow attributes can be updated.
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

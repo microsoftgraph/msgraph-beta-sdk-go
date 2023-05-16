@@ -77,7 +77,7 @@ func (m *AuthenticationConditionsApplications) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetIncludeAllApplications gets the includeAllApplications property value. The includeAllApplications property
+// GetIncludeAllApplications gets the includeAllApplications property value. Whether the custom authentication extension should trigger for all applications with appIds specified in the includeApplications relationship. This property must be set to false for listener of type onTokenIssuanceStartListener.
 func (m *AuthenticationConditionsApplications) GetIncludeAllApplications()(*bool) {
     val, err := m.GetBackingStore().Get("includeAllApplications")
     if err != nil {
@@ -153,7 +153,7 @@ func (m *AuthenticationConditionsApplications) SetAdditionalData(value map[strin
 func (m *AuthenticationConditionsApplications) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIncludeAllApplications sets the includeAllApplications property value. The includeAllApplications property
+// SetIncludeAllApplications sets the includeAllApplications property value. Whether the custom authentication extension should trigger for all applications with appIds specified in the includeApplications relationship. This property must be set to false for listener of type onTokenIssuanceStartListener.
 func (m *AuthenticationConditionsApplications) SetIncludeAllApplications(value *bool)() {
     err := m.GetBackingStore().Set("includeAllApplications", value)
     if err != nil {

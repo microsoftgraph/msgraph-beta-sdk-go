@@ -11,7 +11,7 @@ import (
 type CallsItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemOperationsRequestBuilderGetQueryParameters get operations from communications
+// CallsItemOperationsRequestBuilderGetQueryParameters get the status of an operation that adds the large gallery view to a call.
 type CallsItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCallsItemOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *CallsItemOperationsRequestBuilder) Count()(*CallsItemOperationsCountRequestBuilder) {
     return NewCallsItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get operations from communications
+// Get get the status of an operation that adds the large gallery view to a call.
 func (m *CallsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *CallsItemOperationsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsOperationable), nil
 }
-// ToGetRequestInformation get operations from communications
+// ToGetRequestInformation get the status of an operation that adds the large gallery view to a call.
 func (m *CallsItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

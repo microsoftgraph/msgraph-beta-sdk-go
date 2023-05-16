@@ -18,7 +18,7 @@ type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters the collection of baseline management intents across managed tenants.
+// ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters read the properties and relationships of a managementIntent object.
 type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the collection of baseline management intents across managed tenants.
+// Get read the properties and relationships of a managementIntent object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-managementintent-get?view=graph-rest-1.0
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementIntentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of baseline management intents across managed tenants.
+// ToGetRequestInformation read the properties and relationships of a managementIntent object.
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

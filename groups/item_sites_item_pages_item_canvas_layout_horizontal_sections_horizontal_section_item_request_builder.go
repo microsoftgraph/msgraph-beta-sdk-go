@@ -18,7 +18,7 @@ type ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderGetQueryParameters collection of horizontal sections on the SharePoint page.
+// ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderGetQueryParameters read the properties and relationships of a horizontalSection object.
 type ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionIt
     }
     return nil
 }
-// Get collection of horizontal sections on the SharePoint page.
+// Get read the properties and relationships of a horizontalSection object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/horizontalsection-get?view=graph-rest-1.0
 func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionIt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation collection of horizontal sections on the SharePoint page.
+// ToGetRequestInformation read the properties and relationships of a horizontalSection object.
 func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

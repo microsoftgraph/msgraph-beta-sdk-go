@@ -18,7 +18,7 @@ type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters retrieve the metadata for a specific version of a DriveItem.
 type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// Get retrieve the metadata for a specific version of a DriveItem.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/driveitemversion-get?view=graph-rest-1.0
 func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +131,7 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// ToGetRequestInformation retrieve the metadata for a specific version of a DriveItem.
 func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
