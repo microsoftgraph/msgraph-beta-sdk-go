@@ -67,14 +67,14 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateObjectDefinitionMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntryable, len(val))
+            res := make([]ObjectDefinitionMetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(MetadataEntryable)
+                res[i] = v.(ObjectDefinitionMetadataEntryable)
             }
             m.SetMetadata(res)
         }
@@ -117,13 +117,13 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetMetadata gets the metadata property value. The metadata property
-func (m *ObjectDefinition) GetMetadata()([]MetadataEntryable) {
+func (m *ObjectDefinition) GetMetadata()([]ObjectDefinitionMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MetadataEntryable)
+        return val.([]ObjectDefinitionMetadataEntryable)
     }
     return nil
 }
@@ -227,7 +227,7 @@ func (m *ObjectDefinition) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
     m.backingStore = value
 }
 // SetMetadata sets the metadata property value. The metadata property
-func (m *ObjectDefinition) SetMetadata(value []MetadataEntryable)() {
+func (m *ObjectDefinition) SetMetadata(value []ObjectDefinitionMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
@@ -261,13 +261,13 @@ type ObjectDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttributes()([]AttributeDefinitionable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetMetadata()([]MetadataEntryable)
+    GetMetadata()([]ObjectDefinitionMetadataEntryable)
     GetName()(*string)
     GetOdataType()(*string)
     GetSupportedApis()([]string)
     SetAttributes(value []AttributeDefinitionable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetMetadata(value []MetadataEntryable)()
+    SetMetadata(value []ObjectDefinitionMetadataEntryable)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetSupportedApis(value []string)()

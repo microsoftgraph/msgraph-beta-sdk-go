@@ -9,7 +9,7 @@ import (
 type TenantCustomizedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantCustomizedInformation instantiates a new tenantCustomizedInformation and sets the default values.
+// NewTenantCustomizedInformation instantiates a new TenantCustomizedInformation and sets the default values.
 func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
     m := &TenantCustomizedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

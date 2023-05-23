@@ -42,6 +42,10 @@ func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequ
 func (m *DirectoryRequestBuilder) AttributeSets()(*AttributeSetsRequestBuilder) {
     return NewAttributeSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CertificateAuthorities provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.
+func (m *DirectoryRequestBuilder) CertificateAuthorities()(*CertificateAuthoritiesRequestBuilder) {
+    return NewCertificateAuthoritiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{

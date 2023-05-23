@@ -98,14 +98,14 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateObjectMappingMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntryable, len(val))
+            res := make([]ObjectMappingMetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(MetadataEntryable)
+                res[i] = v.(ObjectMappingMetadataEntryable)
             }
             m.SetMetadata(res)
         }
@@ -175,13 +175,13 @@ func (m *ObjectMapping) GetFlowTypes()(*ObjectFlowTypes) {
     return nil
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *ObjectMapping) GetMetadata()([]MetadataEntryable) {
+func (m *ObjectMapping) GetMetadata()([]ObjectMappingMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MetadataEntryable)
+        return val.([]ObjectMappingMetadataEntryable)
     }
     return nil
 }
@@ -346,7 +346,7 @@ func (m *ObjectMapping) SetFlowTypes(value *ObjectFlowTypes)() {
     }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *ObjectMapping) SetMetadata(value []MetadataEntryable)() {
+func (m *ObjectMapping) SetMetadata(value []ObjectMappingMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
@@ -396,7 +396,7 @@ type ObjectMappingable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEnabled()(*bool)
     GetFlowTypes()(*ObjectFlowTypes)
-    GetMetadata()([]MetadataEntryable)
+    GetMetadata()([]ObjectMappingMetadataEntryable)
     GetName()(*string)
     GetOdataType()(*string)
     GetScope()(Filterable)
@@ -406,7 +406,7 @@ type ObjectMappingable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEnabled(value *bool)()
     SetFlowTypes(value *ObjectFlowTypes)()
-    SetMetadata(value []MetadataEntryable)()
+    SetMetadata(value []ObjectMappingMetadataEntryable)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetScope(value Filterable)()

@@ -122,3 +122,7 @@ func (m *SolutionsRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
+// VirtualEvents provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.
+func (m *SolutionsRequestBuilder) VirtualEvents()(*VirtualEventsRequestBuilder) {
+    return NewVirtualEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

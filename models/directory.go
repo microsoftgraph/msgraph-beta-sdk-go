@@ -41,6 +41,17 @@ func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     }
     return nil
 }
+// GetCertificateAuthorities gets the certificateAuthorities property value. The certificateAuthorities property
+func (m *Directory) GetCertificateAuthorities()(CertificateAuthorityPathable) {
+    val, err := m.GetBackingStore().Get("certificateAuthorities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CertificateAuthorityPathable)
+    }
+    return nil
+}
 // GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributeDefinitions")
@@ -113,6 +124,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
                 res[i] = v.(AttributeSetable)
             }
             m.SetAttributeSets(res)
+        }
+        return nil
+    }
+    res["certificateAuthorities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCertificateAuthorityPathFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertificateAuthorities(val.(CertificateAuthorityPathable))
         }
         return nil
     }
@@ -350,6 +371,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("certificateAuthorities", m.GetCertificateAuthorities())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCustomSecurityAttributeDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeDefinitions()))
         for i, v := range m.GetCustomSecurityAttributeDefinitions() {
@@ -466,6 +493,13 @@ func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
         panic(err)
     }
 }
+// SetCertificateAuthorities sets the certificateAuthorities property value. The certificateAuthorities property
+func (m *Directory) SetCertificateAuthorities(value CertificateAuthorityPathable)() {
+    err := m.GetBackingStore().Set("certificateAuthorities", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)() {
     err := m.GetBackingStore().Set("customSecurityAttributeDefinitions", value)
@@ -542,6 +576,7 @@ type Directoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdministrativeUnits()([]AdministrativeUnitable)
     GetAttributeSets()([]AttributeSetable)
+    GetCertificateAuthorities()(CertificateAuthorityPathable)
     GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
     GetDeletedItems()([]DirectoryObjectable)
     GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
@@ -554,6 +589,7 @@ type Directoryable interface {
     GetSharedEmailDomains()([]SharedEmailDomainable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
+    SetCertificateAuthorities(value CertificateAuthorityPathable)()
     SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
     SetDeletedItems(value []DirectoryObjectable)()
     SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()

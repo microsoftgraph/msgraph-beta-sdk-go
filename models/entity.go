@@ -474,6 +474,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCanvasLayout(), nil
                     case "#microsoft.graph.cartToClassAssociation":
                         return NewCartToClassAssociation(), nil
+                    case "#microsoft.graph.certificateAuthorityAsEntity":
+                        return NewCertificateAuthorityAsEntity(), nil
+                    case "#microsoft.graph.certificateAuthorityPath":
+                        return NewCertificateAuthorityPath(), nil
+                    case "#microsoft.graph.certificateBasedApplicationConfiguration":
+                        return NewCertificateBasedApplicationConfiguration(), nil
                     case "#microsoft.graph.certificateBasedAuthConfiguration":
                         return NewCertificateBasedAuthConfiguration(), nil
                     case "#microsoft.graph.certificateConnectorDetails":
@@ -2320,6 +2326,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTooManyGlobalAdminsAssignedToTenantAlertIncident(), nil
                     case "#microsoft.graph.trending":
                         return NewTrending(), nil
+                    case "#microsoft.graph.trustedCertificateAuthorityAsEntityBase":
+                        return NewTrustedCertificateAuthorityAsEntityBase(), nil
                     case "#microsoft.graph.trustFrameworkKeySet":
                         return NewTrustFrameworkKeySet(), nil
                     case "#microsoft.graph.trustFrameworkPolicy":
@@ -2526,6 +2534,22 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualAppointment(), nil
                     case "#microsoft.graph.virtualEndpoint":
                         return NewVirtualEndpoint(), nil
+                    case "#microsoft.graph.virtualEvent":
+                        return NewVirtualEvent(), nil
+                    case "#microsoft.graph.virtualEventPresenter":
+                        return NewVirtualEventPresenter(), nil
+                    case "#microsoft.graph.virtualEventRegistrant":
+                        return NewVirtualEventRegistrant(), nil
+                    case "#microsoft.graph.virtualEventRegistration":
+                        return NewVirtualEventRegistration(), nil
+                    case "#microsoft.graph.virtualEventRegistrationQuestion":
+                        return NewVirtualEventRegistrationQuestion(), nil
+                    case "#microsoft.graph.virtualEventSession":
+                        return NewVirtualEventSession(), nil
+                    case "#microsoft.graph.virtualEventsRoot":
+                        return NewVirtualEventsRoot(), nil
+                    case "#microsoft.graph.virtualEventWebinar":
+                        return NewVirtualEventWebinar(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
                         return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodTarget":

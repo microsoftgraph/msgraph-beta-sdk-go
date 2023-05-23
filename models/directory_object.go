@@ -40,6 +40,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewAppManagementPolicy(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.certificateBasedApplicationConfiguration":
+                        return NewCertificateBasedApplicationConfiguration(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
                         return NewClaimsMappingPolicy(), nil
                     case "#microsoft.graph.contract":
@@ -92,6 +94,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewTokenIssuancePolicy(), nil
                     case "#microsoft.graph.tokenLifetimePolicy":
                         return NewTokenLifetimePolicy(), nil
+                    case "#microsoft.graph.trustedCertificateAuthorityAsEntityBase":
+                        return NewTrustedCertificateAuthorityAsEntityBase(), nil
                     case "#microsoft.graph.user":
                         return NewUser(), nil
                 }

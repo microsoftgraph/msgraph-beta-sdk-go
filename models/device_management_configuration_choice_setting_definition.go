@@ -37,7 +37,7 @@ func CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminator
     }
     return NewDeviceManagementConfigurationChoiceSettingDefinition(), nil
 }
-// GetDefaultOptionId gets the defaultOptionId property value. Default option for choice setting
+// GetDefaultOptionId gets the defaultOptionId property value. Default option for the choice setting.
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetDefaultOptionId()(*string) {
     val, err := m.GetBackingStore().Get("defaultOptionId")
     if err != nil {
@@ -77,7 +77,7 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeseriali
     }
     return res
 }
-// GetOptions gets the options property value. Options for the setting that can be selected
+// GetOptions gets the options property value. Options for the setting that can be selected.
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetOptions()([]DeviceManagementConfigurationOptionDefinitionable) {
     val, err := m.GetBackingStore().Get("options")
     if err != nil {
@@ -112,14 +112,14 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) Serialize(writer 
     }
     return nil
 }
-// SetDefaultOptionId sets the defaultOptionId property value. Default option for choice setting
+// SetDefaultOptionId sets the defaultOptionId property value. Default option for the choice setting.
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetDefaultOptionId(value *string)() {
     err := m.GetBackingStore().Set("defaultOptionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOptions sets the options property value. Options for the setting that can be selected
+// SetOptions sets the options property value. Options for the setting that can be selected.
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetOptions(value []DeviceManagementConfigurationOptionDefinitionable)() {
     err := m.GetBackingStore().Set("options", value)
     if err != nil {

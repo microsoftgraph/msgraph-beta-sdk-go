@@ -235,7 +235,7 @@ func (m *PlannerPlan) GetOwner()(*string) {
     }
     return nil
 }
-// GetSharedWithContainers gets the sharedWithContainers property value. The sharedWithContainers property
+// GetSharedWithContainers gets the sharedWithContainers property value. List of containers the plan is shared with.
 func (m *PlannerPlan) GetSharedWithContainers()([]PlannerSharedWithContainerable) {
     val, err := m.GetBackingStore().Get("sharedWithContainers")
     if err != nil {
@@ -410,7 +410,7 @@ func (m *PlannerPlan) SetOwner(value *string)() {
         panic(err)
     }
 }
-// SetSharedWithContainers sets the sharedWithContainers property value. The sharedWithContainers property
+// SetSharedWithContainers sets the sharedWithContainers property value. List of containers the plan is shared with.
 func (m *PlannerPlan) SetSharedWithContainers(value []PlannerSharedWithContainerable)() {
     err := m.GetBackingStore().Set("sharedWithContainers", value)
     if err != nil {

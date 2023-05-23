@@ -54,6 +54,17 @@ func (m *DefaultManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     }
     return nil
 }
+// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+func (m *DefaultManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
+    val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
+}
 // GetAppActionIfAndroidDeviceManufacturerNotAllowed gets the appActionIfAndroidDeviceManufacturerNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *DefaultManagedAppProtection) GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfAndroidDeviceManufacturerNotAllowed")
@@ -418,6 +429,16 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetAllowedIosDeviceModels(val)
+        }
+        return nil
+    }
+    res["appActionIfAccountIsClockedOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfAccountIsClockedOut(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -1204,6 +1225,13 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetAppActionIfAccountIsClockedOut() != nil {
+        cast := (*m.GetAppActionIfAccountIsClockedOut()).String()
+        err = writer.WriteStringValue("appActionIfAccountIsClockedOut", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAppActionIfAndroidDeviceManufacturerNotAllowed() != nil {
         cast := (*m.GetAppActionIfAndroidDeviceManufacturerNotAllowed()).String()
         err = writer.WriteStringValue("appActionIfAndroidDeviceManufacturerNotAllowed", &cast)
@@ -1558,6 +1586,13 @@ func (m *DefaultManagedAppProtection) SetAllowedAndroidDeviceModels(value []stri
 // SetAllowedIosDeviceModels sets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
 func (m *DefaultManagedAppProtection) SetAllowedIosDeviceModels(value *string)() {
     err := m.GetBackingStore().Set("allowedIosDeviceModels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+func (m *DefaultManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
+    err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
     if err != nil {
         panic(err)
     }
@@ -1926,6 +1961,7 @@ type DefaultManagedAppProtectionable interface {
     GetAllowedAndroidDeviceManufacturers()(*string)
     GetAllowedAndroidDeviceModels()([]string)
     GetAllowedIosDeviceModels()(*string)
+    GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction)
@@ -1980,6 +2016,7 @@ type DefaultManagedAppProtectionable interface {
     SetAllowedAndroidDeviceManufacturers(value *string)()
     SetAllowedAndroidDeviceModels(value []string)()
     SetAllowedIosDeviceModels(value *string)()
+    SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidDeviceManufacturerNotAllowed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)()

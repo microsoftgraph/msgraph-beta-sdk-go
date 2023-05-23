@@ -9,7 +9,7 @@ import (
 type ConnectionQuota struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConnectionQuota instantiates a new connectionQuota and sets the default values.
+// NewConnectionQuota instantiates a new ConnectionQuota and sets the default values.
 func NewConnectionQuota()(*ConnectionQuota) {
     m := &ConnectionQuota{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

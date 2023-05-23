@@ -10,7 +10,7 @@ import (
 type LegalHold struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewLegalHold instantiates a new legalHold and sets the default values.
+// NewLegalHold instantiates a new LegalHold and sets the default values.
 func NewLegalHold()(*LegalHold) {
     m := &LegalHold{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

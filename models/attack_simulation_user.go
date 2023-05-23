@@ -126,7 +126,7 @@ func (m *AttackSimulationUser) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOutOfOfficeDays gets the outOfOfficeDays property value. The outOfOfficeDays property
+// GetOutOfOfficeDays gets the outOfOfficeDays property value. Number of days the user is OOF during a simulation journey/course of a campaign.
 func (m *AttackSimulationUser) GetOutOfOfficeDays()(*int32) {
     val, err := m.GetBackingStore().Get("outOfOfficeDays")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *AttackSimulationUser) GetOutOfOfficeDays()(*int32) {
     }
     return nil
 }
-// GetUserId gets the userId property value. id property value of the user resource that represents the user in the Azure Active Directory tenant.
+// GetUserId gets the userId property value. The id property value of the user resource that represents the user in the Azure Active Directory tenant.
 func (m *AttackSimulationUser) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -220,14 +220,14 @@ func (m *AttackSimulationUser) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOutOfOfficeDays sets the outOfOfficeDays property value. The outOfOfficeDays property
+// SetOutOfOfficeDays sets the outOfOfficeDays property value. Number of days the user is OOF during a simulation journey/course of a campaign.
 func (m *AttackSimulationUser) SetOutOfOfficeDays(value *int32)() {
     err := m.GetBackingStore().Set("outOfOfficeDays", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. id property value of the user resource that represents the user in the Azure Active Directory tenant.
+// SetUserId sets the userId property value. The id property value of the user resource that represents the user in the Azure Active Directory tenant.
 func (m *AttackSimulationUser) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

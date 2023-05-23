@@ -358,4 +358,3 @@ type AdminWindowsable interface {
     GetUpdates()(AdminWindowsUpdatesable)
     SetUpdates(value AdminWindowsUpdatesable)()
 }
-

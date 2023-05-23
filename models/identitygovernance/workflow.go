@@ -3,7 +3,6 @@ package identitygovernance
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // Workflow 
@@ -35,13 +34,13 @@ func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetExecutionScope gets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object.
-func (m *Workflow) GetExecutionScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
+func (m *Workflow) GetExecutionScope()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("executionScope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+        return val.([]UserProcessingResultable)
     }
     return nil
 }
@@ -59,14 +58,14 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["executionScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateUserProcessingResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, len(val))
+            res := make([]UserProcessingResultable, len(val))
             for i, v := range val {
-                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+                res[i] = v.(UserProcessingResultable)
             }
             m.SetExecutionScope(res)
         }
@@ -327,7 +326,7 @@ func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetExecutionScope sets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object.
-func (m *Workflow) SetExecutionScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
+func (m *Workflow) SetExecutionScope(value []UserProcessingResultable)() {
     err := m.GetBackingStore().Set("executionScope", value)
     if err != nil {
         panic(err)
@@ -387,7 +386,7 @@ type Workflowable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WorkflowBaseable
     GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetExecutionScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+    GetExecutionScope()([]UserProcessingResultable)
     GetId()(*string)
     GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRuns()([]Runable)
@@ -396,7 +395,7 @@ type Workflowable interface {
     GetVersion()(*int32)
     GetVersions()([]WorkflowVersionable)
     SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetExecutionScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)()
+    SetExecutionScope(value []UserProcessingResultable)()
     SetId(value *string)()
     SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRuns(value []Runable)()

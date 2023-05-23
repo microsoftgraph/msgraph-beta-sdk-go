@@ -39,9 +39,34 @@ func (m *KeyCredentialConfiguration) GetAdditionalData()(map[string]any) {
 func (m *KeyCredentialConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCertificateBasedApplicationConfigurationIds gets the certificateBasedApplicationConfigurationIds property value. The certificateBasedApplicationConfigurationIds property
+func (m *KeyCredentialConfiguration) GetCertificateBasedApplicationConfigurationIds()([]string) {
+    val, err := m.GetBackingStore().Get("certificateBasedApplicationConfigurationIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["certificateBasedApplicationConfigurationIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCertificateBasedApplicationConfigurationIds(res)
+        }
+        return nil
+    }
     res["maxLifetime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -130,6 +155,12 @@ func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestr
 }
 // Serialize serializes information the current object
 func (m *KeyCredentialConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetCertificateBasedApplicationConfigurationIds() != nil {
+        err := writer.WriteCollectionOfStringValues("certificateBasedApplicationConfigurationIds", m.GetCertificateBasedApplicationConfigurationIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteISODurationValue("maxLifetime", m.GetMaxLifetime())
         if err != nil {
@@ -174,6 +205,13 @@ func (m *KeyCredentialConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *KeyCredentialConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCertificateBasedApplicationConfigurationIds sets the certificateBasedApplicationConfigurationIds property value. The certificateBasedApplicationConfigurationIds property
+func (m *KeyCredentialConfiguration) SetCertificateBasedApplicationConfigurationIds(value []string)() {
+    err := m.GetBackingStore().Set("certificateBasedApplicationConfigurationIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaxLifetime sets the maxLifetime property value. The maxLifetime property
 func (m *KeyCredentialConfiguration) SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maxLifetime", value)
@@ -208,11 +246,13 @@ type KeyCredentialConfigurationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCertificateBasedApplicationConfigurationIds()([]string)
     GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetOdataType()(*string)
     GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRestrictionType()(*AppKeyCredentialRestrictionType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCertificateBasedApplicationConfigurationIds(value []string)()
     SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetOdataType(value *string)()
     SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

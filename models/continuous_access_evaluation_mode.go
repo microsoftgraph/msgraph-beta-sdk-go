@@ -9,10 +9,11 @@ const (
     STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE ContinuousAccessEvaluationMode = iota
     DISABLED_CONTINUOUSACCESSEVALUATIONMODE
     UNKNOWNFUTUREVALUE_CONTINUOUSACCESSEVALUATIONMODE
+    STRICTLOCATION_CONTINUOUSACCESSEVALUATIONMODE
 )
 
 func (i ContinuousAccessEvaluationMode) String() string {
-    return []string{"strictEnforcement", "disabled", "unknownFutureValue"}[i]
+    return []string{"strictEnforcement", "disabled", "unknownFutureValue", "strictLocation"}[i]
 }
 func ParseContinuousAccessEvaluationMode(v string) (any, error) {
     result := STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE
@@ -23,6 +24,8 @@ func ParseContinuousAccessEvaluationMode(v string) (any, error) {
             result = DISABLED_CONTINUOUSACCESSEVALUATIONMODE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONTINUOUSACCESSEVALUATIONMODE
+        case "strictLocation":
+            result = STRICTLOCATION_CONTINUOUSACCESSEVALUATIONMODE
         default:
             return 0, errors.New("Unknown ContinuousAccessEvaluationMode value: " + v)
     }

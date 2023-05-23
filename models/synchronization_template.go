@@ -129,14 +129,14 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntryable, len(val))
+            res := make([]SynchronizationMetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(MetadataEntryable)
+                res[i] = v.(SynchronizationMetadataEntryable)
             }
             m.SetMetadata(res)
         }
@@ -155,13 +155,13 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *SynchronizationTemplate) GetMetadata()([]MetadataEntryable) {
+func (m *SynchronizationTemplate) GetMetadata()([]SynchronizationMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MetadataEntryable)
+        return val.([]SynchronizationMetadataEntryable)
     }
     return nil
 }
@@ -266,7 +266,7 @@ func (m *SynchronizationTemplate) SetFactoryTag(value *string)() {
     }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *SynchronizationTemplate) SetMetadata(value []MetadataEntryable)() {
+func (m *SynchronizationTemplate) SetMetadata(value []SynchronizationMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
@@ -288,13 +288,13 @@ type SynchronizationTemplateable interface {
     GetDescription()(*string)
     GetDiscoverable()(*bool)
     GetFactoryTag()(*string)
-    GetMetadata()([]MetadataEntryable)
+    GetMetadata()([]SynchronizationMetadataEntryable)
     GetSchema()(SynchronizationSchemaable)
     SetApplicationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDefault(value *bool)()
     SetDescription(value *string)()
     SetDiscoverable(value *bool)()
     SetFactoryTag(value *string)()
-    SetMetadata(value []MetadataEntryable)()
+    SetMetadata(value []SynchronizationMetadataEntryable)()
     SetSchema(value SynchronizationSchemaable)()
 }

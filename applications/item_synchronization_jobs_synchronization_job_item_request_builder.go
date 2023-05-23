@@ -134,10 +134,6 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Schema()(*
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Start()(*ItemSynchronizationJobsItemStartRequestBuilder) {
     return NewItemSynchronizationJobsItemStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Stop provides operations to call the stop method.
-func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Stop()(*ItemSynchronizationJobsItemStopRequestBuilder) {
-    return NewItemSynchronizationJobsItemStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsSynchronizationJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

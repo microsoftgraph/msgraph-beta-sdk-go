@@ -9,10 +9,11 @@ const (
     JOINER_LIFECYCLETASKCATEGORY LifecycleTaskCategory = iota
     LEAVER_LIFECYCLETASKCATEGORY
     UNKNOWNFUTUREVALUE_LIFECYCLETASKCATEGORY
+    MOVER_LIFECYCLETASKCATEGORY
 )
 
 func (i LifecycleTaskCategory) String() string {
-    return []string{"joiner", "leaver", "unknownFutureValue"}[i]
+    return []string{"joiner", "leaver", "unknownFutureValue", "mover"}[i]
 }
 func ParseLifecycleTaskCategory(v string) (any, error) {
     result := JOINER_LIFECYCLETASKCATEGORY
@@ -23,6 +24,8 @@ func ParseLifecycleTaskCategory(v string) (any, error) {
             result = LEAVER_LIFECYCLETASKCATEGORY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LIFECYCLETASKCATEGORY
+        case "mover":
+            result = MOVER_LIFECYCLETASKCATEGORY
         default:
             return 0, errors.New("Unknown LifecycleTaskCategory value: " + v)
     }

@@ -9,10 +9,11 @@ const (
     EMPLOYEEHIREDATE_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE WorkflowTriggerTimeBasedAttribute = iota
     EMPLOYEELEAVEDATETIME_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
     UNKNOWNFUTUREVALUE_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
+    CREATEDDATETIME_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
 )
 
 func (i WorkflowTriggerTimeBasedAttribute) String() string {
-    return []string{"employeeHireDate", "employeeLeaveDateTime", "unknownFutureValue"}[i]
+    return []string{"employeeHireDate", "employeeLeaveDateTime", "unknownFutureValue", "createdDateTime"}[i]
 }
 func ParseWorkflowTriggerTimeBasedAttribute(v string) (any, error) {
     result := EMPLOYEEHIREDATE_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
@@ -23,6 +24,8 @@ func ParseWorkflowTriggerTimeBasedAttribute(v string) (any, error) {
             result = EMPLOYEELEAVEDATETIME_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
+        case "createdDateTime":
+            result = CREATEDDATETIME_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
         default:
             return 0, errors.New("Unknown WorkflowTriggerTimeBasedAttribute value: " + v)
     }
