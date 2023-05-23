@@ -10,7 +10,7 @@ import (
 type TenantTag struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantTag instantiates a new tenantTag and sets the default values.
+// NewTenantTag instantiates a new TenantTag and sets the default values.
 func NewTenantTag()(*TenantTag) {
     m := &TenantTag{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

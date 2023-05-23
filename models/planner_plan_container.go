@@ -123,7 +123,7 @@ func (m *PlannerPlanContainer) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.
+// GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project and driveItem. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem. Optional.
 func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -205,7 +205,7 @@ func (m *PlannerPlanContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.
+// SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project and driveItem. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem. Optional.
 func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

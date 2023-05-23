@@ -8,7 +8,7 @@ import (
 type NoncustodialDataSource struct {
     DataSourceContainer
 }
-// NewNoncustodialDataSource instantiates a new noncustodialDataSource and sets the default values.
+// NewNoncustodialDataSource instantiates a new NoncustodialDataSource and sets the default values.
 func NewNoncustodialDataSource()(*NoncustodialDataSource) {
     m := &NoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),

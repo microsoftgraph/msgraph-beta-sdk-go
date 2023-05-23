@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicySet a class containing the properties used for PolicySet.
+// PolicySet 
 type PolicySet struct {
     Entity
 }
-// NewPolicySet instantiates a new policySet and sets the default values.
+// NewPolicySet instantiates a new PolicySet and sets the default values.
 func NewPolicySet()(*PolicySet) {
     m := &PolicySet{
         Entity: *NewEntity(),

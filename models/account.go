@@ -9,7 +9,7 @@ import (
 type Account struct {
     Entity
 }
-// NewAccount instantiates a new account and sets the default values.
+// NewAccount instantiates a new Account and sets the default values.
 func NewAccount()(*Account) {
     m := &Account{
         Entity: *NewEntity(),

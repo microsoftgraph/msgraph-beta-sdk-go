@@ -1,0 +1,155 @@
+package solutions
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
+type VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetQueryParameters list of attendance records of an attendance report. Read-only.
+type VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+}
+// VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetQueryParameters
+}
+// VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderPatchRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// NewVirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderInternal instantiates a new AttendanceRecordItemRequestBuilder and sets the default values.
+func NewVirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) {
+    m := &VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/attendanceReports/{meetingAttendanceReport%2Did}/attendanceRecords/{attendanceRecord%2Did}{?%24select,%24expand}", pathParameters),
+    }
+    return m
+}
+// NewVirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder instantiates a new AttendanceRecordItemRequestBuilder and sets the default values.
+func NewVirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewVirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete delete navigation property attendanceRecords for solutions
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get list of attendance records of an attendance report. Read-only.
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendanceRecordFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable), nil
+}
+// Patch update the navigation property attendanceRecords in solutions
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, error) {
+    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendanceRecordFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable), nil
+}
+// ToDeleteRequestInformation delete navigation property attendanceRecords for solutions
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToGetRequestInformation list of attendance records of an attendance report. Read-only.
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPatchRequestInformation update the navigation property attendanceRecords in solutions
+func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers.Add("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}

@@ -30,6 +30,17 @@ func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     }
     return nil
 }
+// GetCompletionRequirements gets the completionRequirements property value. The completionRequirements property
+func (m *PlannerTaskDetails) GetCompletionRequirements()(PlannerTaskCompletionRequirementDetailsable) {
+    val, err := m.GetBackingStore().Get("completionRequirements")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PlannerTaskCompletionRequirementDetailsable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. Description of the task.
 func (m *PlannerTaskDetails) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -51,6 +62,16 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetChecklist(val.(PlannerChecklistItemsable))
+        }
+        return nil
+    }
+    res["completionRequirements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerTaskCompletionRequirementDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompletionRequirements(val.(PlannerTaskCompletionRequirementDetailsable))
         }
         return nil
     }
@@ -142,6 +163,12 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteObjectValue("completionRequirements", m.GetCompletionRequirements())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -171,6 +198,13 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetChecklist sets the checklist property value. The collection of checklist items on the task.
 func (m *PlannerTaskDetails) SetChecklist(value PlannerChecklistItemsable)() {
     err := m.GetBackingStore().Set("checklist", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCompletionRequirements sets the completionRequirements property value. The completionRequirements property
+func (m *PlannerTaskDetails) SetCompletionRequirements(value PlannerTaskCompletionRequirementDetailsable)() {
+    err := m.GetBackingStore().Set("completionRequirements", value)
     if err != nil {
         panic(err)
     }
@@ -208,11 +242,13 @@ type PlannerTaskDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable
     GetChecklist()(PlannerChecklistItemsable)
+    GetCompletionRequirements()(PlannerTaskCompletionRequirementDetailsable)
     GetDescription()(*string)
     GetNotes()(ItemBodyable)
     GetPreviewType()(*PlannerPreviewType)
     GetReferences()(PlannerExternalReferencesable)
     SetChecklist(value PlannerChecklistItemsable)()
+    SetCompletionRequirements(value PlannerTaskCompletionRequirementDetailsable)()
     SetDescription(value *string)()
     SetNotes(value ItemBodyable)()
     SetPreviewType(value *PlannerPreviewType)()

@@ -11,7 +11,7 @@ import (
 type SitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SitesRequestBuilderGetQueryParameters list all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
+// SitesRequestBuilderGetQueryParameters list all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
 type SitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func (m *SitesRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *SitesRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
+// Get list all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/site-list?view=graph-rest-1.0
@@ -105,7 +105,7 @@ func (m *SitesRequestBuilder) GetAllSites()(*GetAllSitesRequestBuilder) {
 func (m *SitesRequestBuilder) Remove()(*RemoveRequestBuilder) {
     return NewRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
+// ToGetRequestInformation list all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
 func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

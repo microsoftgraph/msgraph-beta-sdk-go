@@ -467,6 +467,16 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["specifiedCompletionRequirements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePlannerTaskCompletionRequirements)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSpecifiedCompletionRequirements(val.(*PlannerTaskCompletionRequirements))
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -585,6 +595,17 @@ func (m *PlannerTask) GetReferenceCount()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. The specifiedCompletionRequirements property
+func (m *PlannerTask) GetSpecifiedCompletionRequirements()(*PlannerTaskCompletionRequirements) {
+    val, err := m.GetBackingStore().Get("specifiedCompletionRequirements")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PlannerTaskCompletionRequirements)
     }
     return nil
 }
@@ -763,6 +784,13 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err = writer.WriteInt32Value("referenceCount", m.GetReferenceCount())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSpecifiedCompletionRequirements() != nil {
+        cast := (*m.GetSpecifiedCompletionRequirements()).String()
+        err = writer.WriteStringValue("specifiedCompletionRequirements", &cast)
         if err != nil {
             return err
         }
@@ -956,6 +984,13 @@ func (m *PlannerTask) SetReferenceCount(value *int32)() {
         panic(err)
     }
 }
+// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. The specifiedCompletionRequirements property
+func (m *PlannerTask) SetSpecifiedCompletionRequirements(value *PlannerTaskCompletionRequirements)() {
+    err := m.GetBackingStore().Set("specifiedCompletionRequirements", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartDateTime sets the startDateTime property value. Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
@@ -999,6 +1034,7 @@ type PlannerTaskable interface {
     GetProgressTaskBoardFormat()(PlannerProgressTaskBoardTaskFormatable)
     GetRecurrence()(PlannerTaskRecurrenceable)
     GetReferenceCount()(*int32)
+    GetSpecifiedCompletionRequirements()(*PlannerTaskCompletionRequirements)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTitle()(*string)
     SetActiveChecklistItemCount(value *int32)()
@@ -1026,6 +1062,7 @@ type PlannerTaskable interface {
     SetProgressTaskBoardFormat(value PlannerProgressTaskBoardTaskFormatable)()
     SetRecurrence(value PlannerTaskRecurrenceable)()
     SetReferenceCount(value *int32)()
+    SetSpecifiedCompletionRequirements(value *PlannerTaskCompletionRequirements)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTitle(value *string)()
 }

@@ -9,7 +9,7 @@ import (
 type FileSecurityProfile struct {
     Entity
 }
-// NewFileSecurityProfile instantiates a new fileSecurityProfile and sets the default values.
+// NewFileSecurityProfile instantiates a new FileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
     m := &FileSecurityProfile{
         Entity: *NewEntity(),

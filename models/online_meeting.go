@@ -9,7 +9,7 @@ import (
 type OnlineMeeting struct {
     Entity
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -18,6 +18,24 @@ func NewOnlineMeeting()(*OnlineMeeting) {
 }
 // CreateOnlineMeetingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.virtualEventSession":
+                        return NewVirtualEventSession(), nil
+                }
+            }
+        }
+    }
     return NewOnlineMeeting(), nil
 }
 // GetAllowAttendeeToEnableCamera gets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.

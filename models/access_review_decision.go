@@ -9,7 +9,7 @@ import (
 type AccessReviewDecision struct {
     Entity
 }
-// NewAccessReviewDecision instantiates a new accessReviewDecision and sets the default values.
+// NewAccessReviewDecision instantiates a new AccessReviewDecision and sets the default values.
 func NewAccessReviewDecision()(*AccessReviewDecision) {
     m := &AccessReviewDecision{
         Entity: *NewEntity(),

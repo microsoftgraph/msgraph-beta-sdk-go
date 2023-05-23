@@ -7,17 +7,20 @@ type AppKeyCredentialRestrictionType int
 
 const (
     ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE AppKeyCredentialRestrictionType = iota
+    TRUSTEDCERTIFICATEAUTHORITY_APPKEYCREDENTIALRESTRICTIONTYPE
     UNKNOWNFUTUREVALUE_APPKEYCREDENTIALRESTRICTIONTYPE
 )
 
 func (i AppKeyCredentialRestrictionType) String() string {
-    return []string{"asymmetricKeyLifetime", "unknownFutureValue"}[i]
+    return []string{"asymmetricKeyLifetime", "trustedCertificateAuthority", "unknownFutureValue"}[i]
 }
 func ParseAppKeyCredentialRestrictionType(v string) (any, error) {
     result := ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
     switch v {
         case "asymmetricKeyLifetime":
             result = ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
+        case "trustedCertificateAuthority":
+            result = TRUSTEDCERTIFICATEAUTHORITY_APPKEYCREDENTIALRESTRICTIONTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPKEYCREDENTIALRESTRICTIONTYPE
         default:

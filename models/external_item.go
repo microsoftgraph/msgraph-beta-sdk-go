@@ -8,7 +8,7 @@ import (
 type ExternalItem struct {
     Entity
 }
-// NewExternalItem instantiates a new externalItem and sets the default values.
+// NewExternalItem instantiates a new ExternalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *NewEntity(),

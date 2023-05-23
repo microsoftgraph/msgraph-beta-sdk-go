@@ -9,7 +9,7 @@ import (
 type TeamworkDevice struct {
     Entity
 }
-// NewTeamworkDevice instantiates a new teamworkDevice and sets the default values.
+// NewTeamworkDevice instantiates a new TeamworkDevice and sets the default values.
 func NewTeamworkDevice()(*TeamworkDevice) {
     m := &TeamworkDevice{
         Entity: *NewEntity(),

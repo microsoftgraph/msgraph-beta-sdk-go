@@ -8,7 +8,7 @@ import (
 type PlannerDelta struct {
     Entity
 }
-// NewPlannerDelta instantiates a new plannerDelta and sets the default values.
+// NewPlannerDelta instantiates a new PlannerDelta and sets the default values.
 func NewPlannerDelta()(*PlannerDelta) {
     m := &PlannerDelta{
         Entity: *NewEntity(),

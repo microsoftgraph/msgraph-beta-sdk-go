@@ -54,6 +54,17 @@ func (m *PlannerTaskPropertyRule) GetCheckLists()(PlannerFieldRulesable) {
     }
     return nil
 }
+// GetCompletionRequirements gets the completionRequirements property value. The completionRequirements property
+func (m *PlannerTaskPropertyRule) GetCompletionRequirements()([]string) {
+    val, err := m.GetBackingStore().Get("completionRequirements")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetDelete gets the delete property value. Rules and restrictions for deleting the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) GetDelete()([]string) {
     val, err := m.GetBackingStore().Get("delete")
@@ -106,6 +117,20 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetCheckLists(val.(PlannerFieldRulesable))
+        }
+        return nil
+    }
+    res["completionRequirements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCompletionRequirements(res)
         }
         return nil
     }
@@ -384,6 +409,12 @@ func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetCompletionRequirements() != nil {
+        err = writer.WriteCollectionOfStringValues("completionRequirements", m.GetCompletionRequirements())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDelete() != nil {
         err = writer.WriteCollectionOfStringValues("delete", m.GetDelete())
         if err != nil {
@@ -473,6 +504,13 @@ func (m *PlannerTaskPropertyRule) SetCheckLists(value PlannerFieldRulesable)() {
         panic(err)
     }
 }
+// SetCompletionRequirements sets the completionRequirements property value. The completionRequirements property
+func (m *PlannerTaskPropertyRule) SetCompletionRequirements(value []string)() {
+    err := m.GetBackingStore().Set("completionRequirements", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDelete sets the delete property value. Rules and restrictions for deleting the task. Accepted values are allow and block.
 func (m *PlannerTaskPropertyRule) SetDelete(value []string)() {
     err := m.GetBackingStore().Set("delete", value)
@@ -557,6 +595,7 @@ type PlannerTaskPropertyRuleable interface {
     GetAppliedCategories()(PlannerFieldRulesable)
     GetAssignments()(PlannerFieldRulesable)
     GetCheckLists()(PlannerFieldRulesable)
+    GetCompletionRequirements()([]string)
     GetDelete()([]string)
     GetDueDate()([]string)
     GetMove()([]string)
@@ -571,6 +610,7 @@ type PlannerTaskPropertyRuleable interface {
     SetAppliedCategories(value PlannerFieldRulesable)()
     SetAssignments(value PlannerFieldRulesable)()
     SetCheckLists(value PlannerFieldRulesable)()
+    SetCompletionRequirements(value []string)()
     SetDelete(value []string)()
     SetDueDate(value []string)()
     SetMove(value []string)()

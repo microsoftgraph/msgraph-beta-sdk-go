@@ -9,7 +9,7 @@ import (
 type ProviderTenantSetting struct {
     Entity
 }
-// NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
+// NewProviderTenantSetting instantiates a new ProviderTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
     m := &ProviderTenantSetting{
         Entity: *NewEntity(),

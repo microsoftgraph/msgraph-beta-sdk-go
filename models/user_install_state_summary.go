@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserInstallStateSummary contains properties for the installation state summary for a user.
+// UserInstallStateSummary 
 type UserInstallStateSummary struct {
     Entity
 }
-// NewUserInstallStateSummary instantiates a new userInstallStateSummary and sets the default values.
+// NewUserInstallStateSummary instantiates a new UserInstallStateSummary and sets the default values.
 func NewUserInstallStateSummary()(*UserInstallStateSummary) {
     m := &UserInstallStateSummary{
         Entity: *NewEntity(),

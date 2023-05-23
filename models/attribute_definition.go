@@ -140,14 +140,14 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateAttributeDefinitionMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MetadataEntryable, len(val))
+            res := make([]AttributeDefinitionMetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(MetadataEntryable)
+                res[i] = v.(AttributeDefinitionMetadataEntryable)
             }
             m.SetMetadata(res)
         }
@@ -241,13 +241,13 @@ func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
     return nil
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *AttributeDefinition) GetMetadata()([]MetadataEntryable) {
+func (m *AttributeDefinition) GetMetadata()([]AttributeDefinitionMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MetadataEntryable)
+        return val.([]AttributeDefinitionMetadataEntryable)
     }
     return nil
 }
@@ -477,7 +477,7 @@ func (m *AttributeDefinition) SetFlowNullValues(value *bool)() {
     }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-func (m *AttributeDefinition) SetMetadata(value []MetadataEntryable)() {
+func (m *AttributeDefinition) SetMetadata(value []AttributeDefinitionMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
@@ -543,7 +543,7 @@ type AttributeDefinitionable interface {
     GetCaseExact()(*bool)
     GetDefaultValue()(*string)
     GetFlowNullValues()(*bool)
-    GetMetadata()([]MetadataEntryable)
+    GetMetadata()([]AttributeDefinitionMetadataEntryable)
     GetMultivalued()(*bool)
     GetMutability()(*Mutability)
     GetName()(*string)
@@ -557,7 +557,7 @@ type AttributeDefinitionable interface {
     SetCaseExact(value *bool)()
     SetDefaultValue(value *string)()
     SetFlowNullValues(value *bool)()
-    SetMetadata(value []MetadataEntryable)()
+    SetMetadata(value []AttributeDefinitionMetadataEntryable)()
     SetMultivalued(value *bool)()
     SetMutability(value *Mutability)()
     SetName(value *string)()
