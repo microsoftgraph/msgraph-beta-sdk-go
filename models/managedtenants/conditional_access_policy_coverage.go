@@ -10,7 +10,7 @@ import (
 type ConditionalAccessPolicyCoverage struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConditionalAccessPolicyCoverage instantiates a new ConditionalAccessPolicyCoverage and sets the default values.
+// NewConditionalAccessPolicyCoverage instantiates a new conditionalAccessPolicyCoverage and sets the default values.
 func NewConditionalAccessPolicyCoverage()(*ConditionalAccessPolicyCoverage) {
     m := &ConditionalAccessPolicyCoverage{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

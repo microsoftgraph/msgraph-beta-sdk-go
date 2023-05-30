@@ -9,7 +9,7 @@ import (
 type SecurityAction struct {
     Entity
 }
-// NewSecurityAction instantiates a new SecurityAction and sets the default values.
+// NewSecurityAction instantiates a new securityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
     m := &SecurityAction{
         Entity: *NewEntity(),

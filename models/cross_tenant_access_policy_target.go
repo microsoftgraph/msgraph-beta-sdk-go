@@ -84,7 +84,7 @@ func (m *CrossTenantAccessPolicyTarget) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTarget gets the target property value. The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.
+// GetTarget gets the target property value. Can be one of the following values:  The unique identifier of the user, group, or application  AllUsers  AllApplications - Refers to any Microsoft cloud application.  Office365 - Includes the applications mentioned as part of the Office365 suite.
 func (m *CrossTenantAccessPolicyTarget) GetTarget()(*string) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -153,7 +153,7 @@ func (m *CrossTenantAccessPolicyTarget) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTarget sets the target property value. The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.
+// SetTarget sets the target property value. Can be one of the following values:  The unique identifier of the user, group, or application  AllUsers  AllApplications - Refers to any Microsoft cloud application.  Office365 - Includes the applications mentioned as part of the Office365 suite.
 func (m *CrossTenantAccessPolicyTarget) SetTarget(value *string)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

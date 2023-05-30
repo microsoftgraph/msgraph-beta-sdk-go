@@ -56,6 +56,17 @@ func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEv
     }
     return nil
 }
+// GetAuthenticationEventsFlows gets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+func (m *IdentityContainer) GetAuthenticationEventsFlows()([]AuthenticationEventsFlowable) {
+    val, err := m.GetBackingStore().Get("authenticationEventsFlows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationEventsFlowable)
+    }
+    return nil
+}
 // GetB2cUserFlows gets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
     val, err := m.GetBackingStore().Get("b2cUserFlows")
@@ -143,6 +154,20 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
                 res[i] = v.(AuthenticationEventListenerable)
             }
             m.SetAuthenticationEventListeners(res)
+        }
+        return nil
+    }
+    res["authenticationEventsFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationEventsFlowFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationEventsFlowable, len(val))
+            for i, v := range val {
+                res[i] = v.(AuthenticationEventsFlowable)
+            }
+            m.SetAuthenticationEventsFlows(res)
         }
         return nil
     }
@@ -328,6 +353,16 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetAuthenticationEventsFlows() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationEventsFlows()))
+        for i, v := range m.GetAuthenticationEventsFlows() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("authenticationEventsFlows", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetB2cUserFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2cUserFlows()))
         for i, v := range m.GetB2cUserFlows() {
@@ -435,6 +470,13 @@ func (m *IdentityContainer) SetAuthenticationEventListeners(value []Authenticati
         panic(err)
     }
 }
+// SetAuthenticationEventsFlows sets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+func (m *IdentityContainer) SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)() {
+    err := m.GetBackingStore().Set("authenticationEventsFlows", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetB2cUserFlows sets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) SetB2cUserFlows(value []B2cIdentityUserFlowable)() {
     err := m.GetBackingStore().Set("b2cUserFlows", value)
@@ -509,6 +551,7 @@ type IdentityContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApiConnectors()([]IdentityApiConnectorable)
     GetAuthenticationEventListeners()([]AuthenticationEventListenerable)
+    GetAuthenticationEventsFlows()([]AuthenticationEventsFlowable)
     GetB2cUserFlows()([]B2cIdentityUserFlowable)
     GetB2xUserFlows()([]B2xIdentityUserFlowable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
@@ -521,6 +564,7 @@ type IdentityContainerable interface {
     GetUserFlows()([]IdentityUserFlowable)
     SetApiConnectors(value []IdentityApiConnectorable)()
     SetAuthenticationEventListeners(value []AuthenticationEventListenerable)()
+    SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)()
     SetB2cUserFlows(value []B2cIdentityUserFlowable)()
     SetB2xUserFlows(value []B2xIdentityUserFlowable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()

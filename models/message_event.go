@@ -9,7 +9,7 @@ import (
 type MessageEvent struct {
     Entity
 }
-// NewMessageEvent instantiates a new MessageEvent and sets the default values.
+// NewMessageEvent instantiates a new messageEvent and sets the default values.
 func NewMessageEvent()(*MessageEvent) {
     m := &MessageEvent{
         Entity: *NewEntity(),

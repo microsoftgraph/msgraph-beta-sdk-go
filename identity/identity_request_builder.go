@@ -42,6 +42,10 @@ func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
 func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*AuthenticationEventListenersRequestBuilder) {
     return NewAuthenticationEventListenersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AuthenticationEventsFlows provides operations to manage the authenticationEventsFlows property of the microsoft.graph.identityContainer entity.
+func (m *IdentityRequestBuilder) AuthenticationEventsFlows()(*AuthenticationEventsFlowsRequestBuilder) {
+    return NewAuthenticationEventsFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // B2cUserFlows provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2cUserFlows()(*B2cUserFlowsRequestBuilder) {
     return NewB2cUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -53,6 +53,10 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) A
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) AttendeeReport()(*VirtualEventsEventsItemSessionsItemAttendeeReportRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemAttendeeReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// BroadcastRecording provides operations to manage the media for the solutionsRoot entity.
+func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) BroadcastRecording()(*VirtualEventsEventsItemSessionsItemBroadcastRecordingRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemBroadcastRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderInternal instantiates a new VirtualEventSessionItemRequestBuilder and sets the default values.
 func NewVirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) {
     m := &VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder{
@@ -127,6 +131,10 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) P
 // Recording provides operations to manage the media for the solutionsRoot entity.
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Recording()(*VirtualEventsEventsItemSessionsItemRecordingRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Recordings provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
+func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Recordings()(*VirtualEventsEventsItemSessionsItemRecordingsRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Registration provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Registration()(*VirtualEventsEventsItemSessionsItemRegistrationRequestBuilder) {

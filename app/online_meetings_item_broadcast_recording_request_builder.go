@@ -1,4 +1,4 @@
-package branding
+package app
 
 import (
     "context"
@@ -6,39 +6,39 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// BackgroundImageRequestBuilder provides operations to manage the media for the organizationalBranding entity.
-type BackgroundImageRequestBuilder struct {
+// OnlineMeetingsItemBroadcastRecordingRequestBuilder provides operations to manage the media for the commsApplication entity.
+type OnlineMeetingsItemBroadcastRecordingRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackgroundImageRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type BackgroundImageRequestBuilderGetRequestConfiguration struct {
+// OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackgroundImageRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type BackgroundImageRequestBuilderPutRequestConfiguration struct {
+// OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewBackgroundImageRequestBuilderInternal instantiates a new BackgroundImageRequestBuilder and sets the default values.
-func NewBackgroundImageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackgroundImageRequestBuilder) {
-    m := &BackgroundImageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding/backgroundImage", pathParameters),
+// NewOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+func NewOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemBroadcastRecordingRequestBuilder) {
+    m := &OnlineMeetingsItemBroadcastRecordingRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/broadcastRecording", pathParameters),
     }
     return m
 }
-// NewBackgroundImageRequestBuilder instantiates a new BackgroundImageRequestBuilder and sets the default values.
-func NewBackgroundImageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackgroundImageRequestBuilder) {
+// NewOnlineMeetingsItemBroadcastRecordingRequestBuilder instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+func NewOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewBackgroundImageRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-func (m *BackgroundImageRequestBuilder) Get(ctx context.Context, requestConfiguration *BackgroundImageRequestBuilderGetRequestConfiguration)([]byte, error) {
+// Get get broadcastRecording for the navigation property onlineMeetings from app
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -56,8 +56,8 @@ func (m *BackgroundImageRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.([]byte), nil
 }
-// Put image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-func (m *BackgroundImageRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *BackgroundImageRequestBuilderPutRequestConfiguration)([]byte, error) {
+// Put update broadcastRecording for the navigation property onlineMeetings in app
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -75,8 +75,8 @@ func (m *BackgroundImageRequestBuilder) Put(ctx context.Context, body []byte, re
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-func (m *BackgroundImageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackgroundImageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation get broadcastRecording for the navigation property onlineMeetings from app
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -87,8 +87,8 @@ func (m *BackgroundImageRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-func (m *BackgroundImageRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *BackgroundImageRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPutRequestInformation update broadcastRecording for the navigation property onlineMeetings in app
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

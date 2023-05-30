@@ -372,6 +372,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationContextClassReference(), nil
                     case "#microsoft.graph.authenticationEventListener":
                         return NewAuthenticationEventListener(), nil
+                    case "#microsoft.graph.authenticationEventsFlow":
+                        return NewAuthenticationEventsFlow(), nil
                     case "#microsoft.graph.authenticationEventsPolicy":
                         return NewAuthenticationEventsPolicy(), nil
                     case "#microsoft.graph.authenticationFlowsPolicy":
@@ -466,6 +468,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCall(), nil
                     case "#microsoft.graph.callActivityStatistics":
                         return NewCallActivityStatistics(), nil
+                    case "#microsoft.graph.callRecording":
+                        return NewCallRecording(), nil
                     case "#microsoft.graph.callTranscript":
                         return NewCallTranscript(), nil
                     case "#microsoft.graph.cancelMediaProcessingOperation":
@@ -1102,6 +1106,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExternalMeetingRegistrant(), nil
                     case "#microsoft.graph.externalMeetingRegistration":
                         return NewExternalMeetingRegistration(), nil
+                    case "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow":
+                        return NewExternalUsersSelfServiceSignUpEventsFlow(), nil
                     case "#microsoft.graph.featureRolloutPolicy":
                         return NewFeatureRolloutPolicy(), nil
                     case "#microsoft.graph.federatedIdentityCredential":
@@ -1686,6 +1692,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOfficeGraphInsights(), nil
                     case "#microsoft.graph.officeSuiteApp":
                         return NewOfficeSuiteApp(), nil
+                    case "#microsoft.graph.onAttributeCollectionListener":
+                        return NewOnAttributeCollectionListener(), nil
+                    case "#microsoft.graph.onAuthenticationMethodLoadStartListener":
+                        return NewOnAuthenticationMethodLoadStartListener(), nil
                     case "#microsoft.graph.onenote":
                         return NewOnenote(), nil
                     case "#microsoft.graph.onenoteEntityBaseModel":
@@ -1702,6 +1712,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnenoteResource(), nil
                     case "#microsoft.graph.onenoteSection":
                         return NewOnenoteSection(), nil
+                    case "#microsoft.graph.onInteractiveAuthFlowStartListener":
+                        return NewOnInteractiveAuthFlowStartListener(), nil
                     case "#microsoft.graph.onlineMeeting":
                         return NewOnlineMeeting(), nil
                     case "#microsoft.graph.onPremisesAgent":
@@ -1718,6 +1730,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnTokenIssuanceStartCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartListener":
                         return NewOnTokenIssuanceStartListener(), nil
+                    case "#microsoft.graph.onUserCreateStartListener":
+                        return NewOnUserCreateStartListener(), nil
                     case "#microsoft.graph.openIdConnectIdentityProvider":
                         return NewOpenIdConnectIdentityProvider(), nil
                     case "#microsoft.graph.openIdConnectProvider":

@@ -1,4 +1,4 @@
-package branding
+package users
 
 import (
     "context"
@@ -6,39 +6,42 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// BannerLogoRequestBuilder provides operations to manage the media for the organizationalBranding entity.
-type BannerLogoRequestBuilder struct {
+// ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder provides operations to manage the media for the user entity.
+type ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BannerLogoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type BannerLogoRequestBuilderGetRequestConfiguration struct {
+// ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BannerLogoRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type BannerLogoRequestBuilderPutRequestConfiguration struct {
+// ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewBannerLogoRequestBuilderInternal instantiates a new BannerLogoRequestBuilder and sets the default values.
-func NewBannerLogoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BannerLogoRequestBuilder) {
-    m := &BannerLogoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding/bannerLogo", pathParameters),
+// NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+func NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
+    m := &ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/broadcastRecording", pathParameters),
     }
     return m
 }
-// NewBannerLogoRequestBuilder instantiates a new BannerLogoRequestBuilder and sets the default values.
-func NewBannerLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BannerLogoRequestBuilder) {
+// NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+func NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewBannerLogoRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *BannerLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
+// Get get broadcastRecording for the navigation property onlineMeetings from users
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -56,8 +59,8 @@ func (m *BannerLogoRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.([]byte), nil
 }
-// Put a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *BannerLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
+// Put update broadcastRecording for the navigation property onlineMeetings in users
+func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -75,8 +78,8 @@ func (m *BannerLogoRequestBuilder) Put(ctx context.Context, body []byte, request
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BannerLogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation get broadcastRecording for the navigation property onlineMeetings from users
+func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -87,8 +90,8 @@ func (m *BannerLogoRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *BannerLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPutRequestInformation update broadcastRecording for the navigation property onlineMeetings in users
+func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

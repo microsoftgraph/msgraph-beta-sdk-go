@@ -1,4 +1,4 @@
-package branding
+package communications
 
 import (
     "context"
@@ -6,42 +6,42 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// LocalizationsItemFaviconRequestBuilder provides operations to manage the media for the organizationalBranding entity.
-type LocalizationsItemFaviconRequestBuilder struct {
+// OnlineMeetingsItemBroadcastRecordingRequestBuilder provides operations to manage the media for the cloudCommunications entity.
+type OnlineMeetingsItemBroadcastRecordingRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LocalizationsItemFaviconRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type LocalizationsItemFaviconRequestBuilderGetRequestConfiguration struct {
+// OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LocalizationsItemFaviconRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type LocalizationsItemFaviconRequestBuilderPutRequestConfiguration struct {
+// OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLocalizationsItemFaviconRequestBuilderInternal instantiates a new FaviconRequestBuilder and sets the default values.
-func NewLocalizationsItemFaviconRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LocalizationsItemFaviconRequestBuilder) {
-    m := &LocalizationsItemFaviconRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding/localizations/{organizationalBrandingLocalization%2Did}/favicon", pathParameters),
+// NewOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+func NewOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemBroadcastRecordingRequestBuilder) {
+    m := &OnlineMeetingsItemBroadcastRecordingRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/broadcastRecording", pathParameters),
     }
     return m
 }
-// NewLocalizationsItemFaviconRequestBuilder instantiates a new FaviconRequestBuilder and sets the default values.
-func NewLocalizationsItemFaviconRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LocalizationsItemFaviconRequestBuilder) {
+// NewOnlineMeetingsItemBroadcastRecordingRequestBuilder instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+func NewOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLocalizationsItemFaviconRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// Get get broadcastRecording for the navigation property onlineMeetings from communications
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
-func (m *LocalizationsItemFaviconRequestBuilder) Get(ctx context.Context, requestConfiguration *LocalizationsItemFaviconRequestBuilderGetRequestConfiguration)([]byte, error) {
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -59,8 +59,8 @@ func (m *LocalizationsItemFaviconRequestBuilder) Get(ctx context.Context, reques
     }
     return res.([]byte), nil
 }
-// Put a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *LocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *LocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
+// Put update broadcastRecording for the navigation property onlineMeetings in communications
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -78,8 +78,8 @@ func (m *LocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body [
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *LocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LocalizationsItemFaviconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation get broadcastRecording for the navigation property onlineMeetings from communications
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -90,8 +90,8 @@ func (m *LocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *LocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *LocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPutRequestInformation update broadcastRecording for the navigation property onlineMeetings in communications
+func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

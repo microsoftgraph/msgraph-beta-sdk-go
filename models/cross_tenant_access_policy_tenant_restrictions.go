@@ -21,7 +21,7 @@ func NewCrossTenantAccessPolicyTenantRestrictions()(*CrossTenantAccessPolicyTena
 func CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicyTenantRestrictions(), nil
 }
-// GetDevices gets the devices property value. The devices property
+// GetDevices gets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
 func (m *CrossTenantAccessPolicyTenantRestrictions) GetDevices()(DevicesFilterable) {
     val, err := m.GetBackingStore().Get("devices")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *CrossTenantAccessPolicyTenantRestrictions) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetDevices sets the devices property value. The devices property
+// SetDevices sets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
 func (m *CrossTenantAccessPolicyTenantRestrictions) SetDevices(value DevicesFilterable)() {
     err := m.GetBackingStore().Set("devices", value)
     if err != nil {
