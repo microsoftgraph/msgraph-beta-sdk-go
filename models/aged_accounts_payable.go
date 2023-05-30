@@ -8,7 +8,7 @@ import (
 type AgedAccountsPayable struct {
     Entity
 }
-// NewAgedAccountsPayable instantiates a new AgedAccountsPayable and sets the default values.
+// NewAgedAccountsPayable instantiates a new agedAccountsPayable and sets the default values.
 func NewAgedAccountsPayable()(*AgedAccountsPayable) {
     m := &AgedAccountsPayable{
         Entity: *NewEntity(),

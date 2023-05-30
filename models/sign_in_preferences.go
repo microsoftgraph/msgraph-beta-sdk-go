@@ -61,6 +61,16 @@ func (m *SignInPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["userPreferredMethodForSecondaryAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserDefaultAuthenticationMethodType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserPreferredMethodForSecondaryAuthentication(val.(*UserDefaultAuthenticationMethodType))
+        }
+        return nil
+    }
     return res
 }
 // GetIsSystemPreferredAuthenticationMethodEnabled gets the isSystemPreferredAuthenticationMethodEnabled property value. Indicates whether the credential preferences of the system are enabled.
@@ -85,6 +95,17 @@ func (m *SignInPreferences) GetOdataType()(*string) {
     }
     return nil
 }
+// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The userPreferredMethodForSecondaryAuthentication property
+func (m *SignInPreferences) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethodType) {
+    val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserDefaultAuthenticationMethodType)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *SignInPreferences) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -95,6 +116,13 @@ func (m *SignInPreferences) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserPreferredMethodForSecondaryAuthentication() != nil {
+        cast := (*m.GetUserPreferredMethodForSecondaryAuthentication()).String()
+        err := writer.WriteStringValue("userPreferredMethodForSecondaryAuthentication", &cast)
         if err != nil {
             return err
         }
@@ -132,6 +160,13 @@ func (m *SignInPreferences) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The userPreferredMethodForSecondaryAuthentication property
+func (m *SignInPreferences) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethodType)() {
+    err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SignInPreferencesable 
 type SignInPreferencesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -140,7 +175,9 @@ type SignInPreferencesable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsSystemPreferredAuthenticationMethodEnabled()(*bool)
     GetOdataType()(*string)
+    GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethodType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)()
     SetOdataType(value *string)()
+    SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethodType)()
 }

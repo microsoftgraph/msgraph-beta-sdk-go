@@ -8,7 +8,7 @@ import (
 type TrustedCertificateAuthorityAsEntityBase struct {
     DirectoryObject
 }
-// NewTrustedCertificateAuthorityAsEntityBase instantiates a new TrustedCertificateAuthorityAsEntityBase and sets the default values.
+// NewTrustedCertificateAuthorityAsEntityBase instantiates a new trustedCertificateAuthorityAsEntityBase and sets the default values.
 func NewTrustedCertificateAuthorityAsEntityBase()(*TrustedCertificateAuthorityAsEntityBase) {
     m := &TrustedCertificateAuthorityAsEntityBase{
         DirectoryObject: *NewDirectoryObject(),

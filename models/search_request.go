@@ -409,7 +409,7 @@ func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptions
     }
     return nil
 }
-// GetSize gets the size property value. The size of the page to be retrieved. Optional.
+// GetSize gets the size property value. The size of the page to be retrieved. The maximum value is 500. Optional.
 func (m *SearchRequest) GetSize()(*int32) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -692,7 +692,7 @@ func (m *SearchRequest) SetSharePointOneDriveOptions(value SharePointOneDriveOpt
         panic(err)
     }
 }
-// SetSize sets the size property value. The size of the page to be retrieved. Optional.
+// SetSize sets the size property value. The size of the page to be retrieved. The maximum value is 500. Optional.
 func (m *SearchRequest) SetSize(value *int32)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {

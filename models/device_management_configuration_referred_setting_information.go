@@ -74,7 +74,7 @@ func (m *DeviceManagementConfigurationReferredSettingInformation) GetOdataType()
     }
     return nil
 }
-// GetSettingDefinitionId gets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting.
+// GetSettingDefinitionId gets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
 func (m *DeviceManagementConfigurationReferredSettingInformation) GetSettingDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("settingDefinitionId")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *DeviceManagementConfigurationReferredSettingInformation) SetOdataType(v
         panic(err)
     }
 }
-// SetSettingDefinitionId sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting.
+// SetSettingDefinitionId sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
 func (m *DeviceManagementConfigurationReferredSettingInformation) SetSettingDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("settingDefinitionId", value)
     if err != nil {

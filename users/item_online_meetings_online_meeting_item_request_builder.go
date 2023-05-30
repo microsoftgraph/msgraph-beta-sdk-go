@@ -53,6 +53,10 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReports()(
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*ItemOnlineMeetingsItemAttendeeReportRequestBuilder) {
     return NewItemOnlineMeetingsItemAttendeeReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// BroadcastRecording provides operations to manage the media for the user entity.
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) BroadcastRecording()(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
+    return NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) {
     m := &ItemOnlineMeetingsOnlineMeetingItemRequestBuilder{
@@ -137,6 +141,10 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Patch(ctx context.Co
 // Recording provides operations to manage the media for the user entity.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Recording()(*ItemOnlineMeetingsItemRecordingRequestBuilder) {
     return NewItemOnlineMeetingsItemRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Recordings provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Recordings()(*ItemOnlineMeetingsItemRecordingsRequestBuilder) {
+    return NewItemOnlineMeetingsItemRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Registration provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Registration()(*ItemOnlineMeetingsItemRegistrationRequestBuilder) {

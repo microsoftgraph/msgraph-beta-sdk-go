@@ -9,7 +9,7 @@ import (
 type GovernanceResource struct {
     Entity
 }
-// NewGovernanceResource instantiates a new GovernanceResource and sets the default values.
+// NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
     m := &GovernanceResource{
         Entity: *NewEntity(),

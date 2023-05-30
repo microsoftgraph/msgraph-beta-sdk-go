@@ -8,7 +8,7 @@ import (
 type TeamworkPeripheral struct {
     Entity
 }
-// NewTeamworkPeripheral instantiates a new TeamworkPeripheral and sets the default values.
+// NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     m := &TeamworkPeripheral{
         Entity: *NewEntity(),

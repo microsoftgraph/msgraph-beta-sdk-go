@@ -8,7 +8,7 @@ import (
 type CloudPcSupportedRegion struct {
     Entity
 }
-// NewCloudPcSupportedRegion instantiates a new CloudPcSupportedRegion and sets the default values.
+// NewCloudPcSupportedRegion instantiates a new cloudPcSupportedRegion and sets the default values.
 func NewCloudPcSupportedRegion()(*CloudPcSupportedRegion) {
     m := &CloudPcSupportedRegion{
         Entity: *NewEntity(),

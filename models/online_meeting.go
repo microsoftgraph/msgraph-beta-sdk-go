@@ -9,7 +9,7 @@ import (
 type OnlineMeeting struct {
     Entity
 }
-// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -178,6 +178,17 @@ func (m *OnlineMeeting) GetAudioConferencing()(AudioConferencingable) {
     }
     if val != nil {
         return val.(AudioConferencingable)
+    }
+    return nil
+}
+// GetBroadcastRecording gets the broadcastRecording property value. The broadcastRecording property
+func (m *OnlineMeeting) GetBroadcastRecording()([]byte) {
+    val, err := m.GetBackingStore().Get("broadcastRecording")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
     }
     return nil
 }
@@ -388,6 +399,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["broadcastRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBroadcastRecording(val)
+        }
+        return nil
+    }
     res["broadcastSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBroadcastMeetingSettingsFromDiscriminatorValue)
         if err != nil {
@@ -559,6 +580,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetRecording(val)
+        }
+        return nil
+    }
+    res["recordings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCallRecordingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CallRecordingable, len(val))
+            for i, v := range val {
+                res[i] = v.(CallRecordingable)
+            }
+            m.SetRecordings(res)
         }
         return nil
     }
@@ -769,6 +804,17 @@ func (m *OnlineMeeting) GetRecording()([]byte) {
     }
     return nil
 }
+// GetRecordings gets the recordings property value. The recordings property
+func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
+    val, err := m.GetBackingStore().Get("recordings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CallRecordingable)
+    }
+    return nil
+}
 // GetRegistration gets the registration property value. The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     val, err := m.GetBackingStore().Get("registration")
@@ -948,6 +994,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteByteArrayValue("broadcastRecording", m.GetBroadcastRecording())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("broadcastSettings", m.GetBroadcastSettings())
         if err != nil {
             return err
@@ -1045,6 +1097,16 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteByteArrayValue("recording", m.GetRecording())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRecordings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecordings()))
+        for i, v := range m.GetRecordings() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("recordings", cast)
         if err != nil {
             return err
         }
@@ -1195,6 +1257,13 @@ func (m *OnlineMeeting) SetAudioConferencing(value AudioConferencingable)() {
         panic(err)
     }
 }
+// SetBroadcastRecording sets the broadcastRecording property value. The broadcastRecording property
+func (m *OnlineMeeting) SetBroadcastRecording(value []byte)() {
+    err := m.GetBackingStore().Set("broadcastRecording", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBroadcastSettings sets the broadcastSettings property value. Settings related to a live event.
 func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)() {
     err := m.GetBackingStore().Set("broadcastSettings", value)
@@ -1314,6 +1383,13 @@ func (m *OnlineMeeting) SetRecording(value []byte)() {
         panic(err)
     }
 }
+// SetRecordings sets the recordings property value. The recordings property
+func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
+    err := m.GetBackingStore().Set("recordings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegistration sets the registration property value. The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *OnlineMeeting) SetRegistration(value MeetingRegistrationable)() {
     err := m.GetBackingStore().Set("registration", value)
@@ -1387,6 +1463,7 @@ type OnlineMeetingable interface {
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAttendeeReport()([]byte)
     GetAudioConferencing()(AudioConferencingable)
+    GetBroadcastRecording()([]byte)
     GetBroadcastSettings()(BroadcastMeetingSettingsable)
     GetCapabilities()([]MeetingCapabilities)
     GetChatInfo()(ChatInfoable)
@@ -1404,6 +1481,7 @@ type OnlineMeetingable interface {
     GetParticipants()(MeetingParticipantsable)
     GetRecordAutomatically()(*bool)
     GetRecording()([]byte)
+    GetRecordings()([]CallRecordingable)
     GetRegistration()(MeetingRegistrationable)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1425,6 +1503,7 @@ type OnlineMeetingable interface {
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAttendeeReport(value []byte)()
     SetAudioConferencing(value AudioConferencingable)()
+    SetBroadcastRecording(value []byte)()
     SetBroadcastSettings(value BroadcastMeetingSettingsable)()
     SetCapabilities(value []MeetingCapabilities)()
     SetChatInfo(value ChatInfoable)()
@@ -1442,6 +1521,7 @@ type OnlineMeetingable interface {
     SetParticipants(value MeetingParticipantsable)()
     SetRecordAutomatically(value *bool)()
     SetRecording(value []byte)()
+    SetRecordings(value []CallRecordingable)()
     SetRegistration(value MeetingRegistrationable)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

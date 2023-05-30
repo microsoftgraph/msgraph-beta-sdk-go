@@ -8,7 +8,7 @@ import (
 type PrivilegedAccess struct {
     Entity
 }
-// NewPrivilegedAccess instantiates a new PrivilegedAccess and sets the default values.
+// NewPrivilegedAccess instantiates a new privilegedAccess and sets the default values.
 func NewPrivilegedAccess()(*PrivilegedAccess) {
     m := &PrivilegedAccess{
         Entity: *NewEntity(),

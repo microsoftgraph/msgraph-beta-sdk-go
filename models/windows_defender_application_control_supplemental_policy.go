@@ -9,7 +9,7 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
     m := &WindowsDefenderApplicationControlSupplementalPolicy{
         Entity: *NewEntity(),
