@@ -19,7 +19,7 @@ func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) 
 func CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomSecurityAttributeDefinition(), nil
 }
-// GetAllowedValues gets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+// GetAllowedValues gets the allowedValues property value. Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *CustomSecurityAttributeDefinition) GetAllowedValues()([]AllowedValueable) {
     val, err := m.GetBackingStore().Get("allowedValues")
     if err != nil {
@@ -162,7 +162,7 @@ func (m *CustomSecurityAttributeDefinition) GetIsCollection()(*bool) {
     }
     return nil
 }
-// GetIsSearchable gets the isSearchable property value. Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
+// GetIsSearchable gets the isSearchable property value. Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) GetIsSearchable()(*bool) {
     val, err := m.GetBackingStore().Get("isSearchable")
     if err != nil {
@@ -184,7 +184,7 @@ func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
+// GetStatus gets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -195,7 +195,7 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
+// GetType gets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -283,7 +283,7 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetAllowedValues sets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+// SetAllowedValues sets the allowedValues property value. Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *CustomSecurityAttributeDefinition) SetAllowedValues(value []AllowedValueable)() {
     err := m.GetBackingStore().Set("allowedValues", value)
     if err != nil {
@@ -311,7 +311,7 @@ func (m *CustomSecurityAttributeDefinition) SetIsCollection(value *bool)() {
         panic(err)
     }
 }
-// SetIsSearchable sets the isSearchable property value. Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
+// SetIsSearchable sets the isSearchable property value. Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) SetIsSearchable(value *bool)() {
     err := m.GetBackingStore().Set("isSearchable", value)
     if err != nil {
@@ -325,14 +325,14 @@ func (m *CustomSecurityAttributeDefinition) SetName(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
+// SetStatus sets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetType sets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
+// SetType sets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) SetType(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

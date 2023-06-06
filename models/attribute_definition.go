@@ -240,7 +240,7 @@ func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
     }
     return nil
 }
-// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+// GetMetadata gets the metadata property value. Metadata for the given object.
 func (m *AttributeDefinition) GetMetadata()([]AttributeDefinitionMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -476,7 +476,7 @@ func (m *AttributeDefinition) SetFlowNullValues(value *bool)() {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+// SetMetadata sets the metadata property value. Metadata for the given object.
 func (m *AttributeDefinition) SetMetadata(value []AttributeDefinitionMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {

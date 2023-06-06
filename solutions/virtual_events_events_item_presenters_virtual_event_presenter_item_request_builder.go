@@ -18,7 +18,7 @@ type VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters get presenters from solutions
+// VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters presenters' information of the virtual event.
 type VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     }
     return nil
 }
-// Get get presenters from solutions
+// Get presenters' information of the virtual event.
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get presenters from solutions
+// ToGetRequestInformation presenters' information of the virtual event.
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

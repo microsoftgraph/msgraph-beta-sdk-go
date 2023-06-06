@@ -86,7 +86,7 @@ func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(*string), nil
 }
-// Put use this API to assign a user's manager.
+// Put assign a user's manager.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ItemManagerRefRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation use this API to assign a user's manager.
+// ToPutRequestInformation assign a user's manager.
 func (m *ItemManagerRefRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemManagerRefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,7 +31,10 @@ func NewRecommendationsItemImpactedResourcesItemDismissRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemImpactedResourcesItemDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action dismiss
+// Post dismiss an impactedResources object and update its status to `dismissed`.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
 func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) Post(ctx context.Context, body RecommendationsItemImpactedResourcesItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemDismissRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) Post(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
-// ToPostRequestInformation invoke action dismiss
+// ToPostRequestInformation dismiss an impactedResources object and update its status to `dismissed`.
 func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) ToPostRequestInformation(ctx context.Context, body RecommendationsItemImpactedResourcesItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

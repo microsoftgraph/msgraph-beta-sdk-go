@@ -55,6 +55,20 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["ports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPorts(res)
+        }
+        return nil
+    }
     return res
 }
 // GetPort gets the port property value. The port property
@@ -65,6 +79,17 @@ func (m *IpApplicationSegment) GetPort()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetPorts gets the ports property value. The ports property
+func (m *IpApplicationSegment) GetPorts()([]string) {
+    val, err := m.GetBackingStore().Get("ports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -86,6 +111,12 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetPorts() != nil {
+        err = writer.WriteCollectionOfStringValues("ports", m.GetPorts())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDestinationHost sets the destinationHost property value. The destinationHost property
@@ -102,12 +133,21 @@ func (m *IpApplicationSegment) SetPort(value *int32)() {
         panic(err)
     }
 }
+// SetPorts sets the ports property value. The ports property
+func (m *IpApplicationSegment) SetPorts(value []string)() {
+    err := m.GetBackingStore().Set("ports", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IpApplicationSegmentable 
 type IpApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDestinationHost()(*string)
     GetPort()(*int32)
+    GetPorts()([]string)
     SetDestinationHost(value *string)()
     SetPort(value *int32)()
+    SetPorts(value []string)()
 }

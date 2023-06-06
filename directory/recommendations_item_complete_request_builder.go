@@ -31,7 +31,10 @@ func NewRecommendationsItemCompleteRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemCompleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action complete
+// Post complete a recommendation object and update its **status** to `completedByUser`.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/recommendation-complete?view=graph-rest-1.0
 func (m *RecommendationsItemCompleteRequestBuilder) Post(ctx context.Context, requestConfiguration *RecommendationsItemCompleteRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *RecommendationsItemCompleteRequestBuilder) Post(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
-// ToPostRequestInformation invoke action complete
+// ToPostRequestInformation complete a recommendation object and update its **status** to `completedByUser`.
 func (m *RecommendationsItemCompleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *RecommendationsItemCompleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

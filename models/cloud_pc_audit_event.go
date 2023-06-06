@@ -9,7 +9,7 @@ import (
 type CloudPcAuditEvent struct {
     Entity
 }
-// NewCloudPcAuditEvent instantiates a new cloudPcAuditEvent and sets the default values.
+// NewCloudPcAuditEvent instantiates a new CloudPcAuditEvent and sets the default values.
 func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
     m := &CloudPcAuditEvent{
         Entity: *NewEntity(),

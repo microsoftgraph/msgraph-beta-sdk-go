@@ -8,7 +8,7 @@ import (
 type AuthenticationEventsFlow struct {
     Entity
 }
-// NewAuthenticationEventsFlow instantiates a new authenticationEventsFlow and sets the default values.
+// NewAuthenticationEventsFlow instantiates a new AuthenticationEventsFlow and sets the default values.
 func NewAuthenticationEventsFlow()(*AuthenticationEventsFlow) {
     m := &AuthenticationEventsFlow{
         Entity: *NewEntity(),

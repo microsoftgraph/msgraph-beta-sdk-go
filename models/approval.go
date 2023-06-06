@@ -38,7 +38,7 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetSteps gets the steps property value. The steps property
+// GetSteps gets the steps property value. Used to represent the decision associated with a single step in the approval process configured in approvalStage.
 func (m *Approval) GetSteps()([]ApprovalStepable) {
     val, err := m.GetBackingStore().Get("steps")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetSteps sets the steps property value. The steps property
+// SetSteps sets the steps property value. Used to represent the decision associated with a single step in the approval process configured in approvalStage.
 func (m *Approval) SetSteps(value []ApprovalStepable)() {
     err := m.GetBackingStore().Set("steps", value)
     if err != nil {

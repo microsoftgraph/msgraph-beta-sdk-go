@@ -156,6 +156,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["isAccessibleViaZTNAClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAccessibleViaZTNAClient(val)
+        }
+        return nil
+    }
     res["isBackendCertificateValidationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -330,6 +340,17 @@ func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetIsAccessibleViaZTNAClient gets the isAccessibleViaZTNAClient property value. The isAccessibleViaZTNAClient property
+func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
+    val, err := m.GetBackingStore().Get("isAccessibleViaZTNAClient")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -549,6 +570,12 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteBoolValue("isAccessibleViaZTNAClient", m.GetIsAccessibleViaZTNAClient())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isBackendCertificateValidationEnabled", m.GetIsBackendCertificateValidationEnabled())
         if err != nil {
             return err
@@ -709,6 +736,13 @@ func (m *OnPremisesPublishing) SetInternalUrl(value *string)() {
         panic(err)
     }
 }
+// SetIsAccessibleViaZTNAClient sets the isAccessibleViaZTNAClient property value. The isAccessibleViaZTNAClient property
+func (m *OnPremisesPublishing) SetIsAccessibleViaZTNAClient(value *bool)() {
+    err := m.GetBackingStore().Set("isAccessibleViaZTNAClient", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsBackendCertificateValidationEnabled sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
 func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isBackendCertificateValidationEnabled", value)
@@ -833,6 +867,7 @@ type OnPremisesPublishingable interface {
     GetExternalAuthenticationType()(*ExternalAuthenticationType)
     GetExternalUrl()(*string)
     GetInternalUrl()(*string)
+    GetIsAccessibleViaZTNAClient()(*bool)
     GetIsBackendCertificateValidationEnabled()(*bool)
     GetIsHttpOnlyCookieEnabled()(*bool)
     GetIsOnPremPublishingEnabled()(*bool)
@@ -856,6 +891,7 @@ type OnPremisesPublishingable interface {
     SetExternalAuthenticationType(value *ExternalAuthenticationType)()
     SetExternalUrl(value *string)()
     SetInternalUrl(value *string)()
+    SetIsAccessibleViaZTNAClient(value *bool)()
     SetIsBackendCertificateValidationEnabled(value *bool)()
     SetIsHttpOnlyCookieEnabled(value *bool)()
     SetIsOnPremPublishingEnabled(value *bool)()

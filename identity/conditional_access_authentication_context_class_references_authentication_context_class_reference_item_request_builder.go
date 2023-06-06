@@ -54,7 +54,10 @@ func NewConditionalAccessAuthenticationContextClassReferencesAuthenticationConte
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property authenticationContextClassReferences for identity
+// Delete delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -114,7 +117,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable), nil
 }
-// ToDeleteRequestInformation delete navigation property authenticationContextClassReferences for identity
+// ToDeleteRequestInformation delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
