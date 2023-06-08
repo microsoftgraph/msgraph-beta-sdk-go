@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.69.0]- 2023-06-08
+
+### Added
+
+- Returns deleted change notification, lifecycle event and resource data package in core.
+
 ## [0.68.0]- 2023-06-08
 
 ### Changed
