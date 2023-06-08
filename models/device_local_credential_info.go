@@ -9,7 +9,7 @@ import (
 type DeviceLocalCredentialInfo struct {
     Entity
 }
-// NewDeviceLocalCredentialInfo instantiates a new deviceLocalCredentialInfo and sets the default values.
+// NewDeviceLocalCredentialInfo instantiates a new DeviceLocalCredentialInfo and sets the default values.
 func NewDeviceLocalCredentialInfo()(*DeviceLocalCredentialInfo) {
     m := &DeviceLocalCredentialInfo{
         Entity: *NewEntity(),

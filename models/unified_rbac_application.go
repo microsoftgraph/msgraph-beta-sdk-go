@@ -19,7 +19,7 @@ func NewUnifiedRbacApplication()(*UnifiedRbacApplication) {
 func CreateUnifiedRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRbacApplication(), nil
 }
-// GetCustomAppScopes gets the customAppScopes property value. The customAppScopes property
+// GetCustomAppScopes gets the customAppScopes property value. Workload-specific scope object that represents the resources for which the principal has been granted access.
 func (m *UnifiedRbacApplication) GetCustomAppScopes()([]CustomAppScopeable) {
     val, err := m.GetBackingStore().Get("customAppScopes")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetCustomAppScopes sets the customAppScopes property value. The customAppScopes property
+// SetCustomAppScopes sets the customAppScopes property value. Workload-specific scope object that represents the resources for which the principal has been granted access.
 func (m *UnifiedRbacApplication) SetCustomAppScopes(value []CustomAppScopeable)() {
     err := m.GetBackingStore().Set("customAppScopes", value)
     if err != nil {

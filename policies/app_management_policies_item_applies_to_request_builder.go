@@ -70,7 +70,7 @@ func (m *AppManagementPoliciesItemAppliesToRequestBuilder) Count()(*AppManagemen
 // Get list application and service principal objects assigned an appManagementPolicy policy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/appManagementPolicy-list-appliesTo?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/appmanagementpolicy-list-appliesto?view=graph-rest-1.0
 func (m *AppManagementPoliciesItemAppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

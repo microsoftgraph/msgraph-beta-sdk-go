@@ -86,6 +86,16 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["preferredDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreferredDisplayName(val)
+        }
+        return nil
+    }
     res["recordingInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRecordingInfoFromDiscriminatorValue)
         if err != nil {
@@ -194,6 +204,17 @@ func (m *Participant) GetMetadata()(*string) {
     }
     return nil
 }
+// GetPreferredDisplayName gets the preferredDisplayName property value. The preferredDisplayName property
+func (m *Participant) GetPreferredDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("preferredDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetRecordingInfo gets the recordingInfo property value. Information on whether the participant has recording capability.
 func (m *Participant) GetRecordingInfo()(RecordingInfoable) {
     val, err := m.GetBackingStore().Get("recordingInfo")
@@ -285,6 +306,12 @@ func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("preferredDisplayName", m.GetPreferredDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("recordingInfo", m.GetRecordingInfo())
         if err != nil {
             return err
@@ -352,6 +379,13 @@ func (m *Participant) SetMetadata(value *string)() {
         panic(err)
     }
 }
+// SetPreferredDisplayName sets the preferredDisplayName property value. The preferredDisplayName property
+func (m *Participant) SetPreferredDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("preferredDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecordingInfo sets the recordingInfo property value. Information on whether the participant has recording capability.
 func (m *Participant) SetRecordingInfo(value RecordingInfoable)() {
     err := m.GetBackingStore().Set("recordingInfo", value)
@@ -390,6 +424,7 @@ type Participantable interface {
     GetIsMuted()(*bool)
     GetMediaStreams()([]MediaStreamable)
     GetMetadata()(*string)
+    GetPreferredDisplayName()(*string)
     GetRecordingInfo()(RecordingInfoable)
     GetRemovedState()(RemovedStateable)
     GetRestrictedExperience()(OnlineMeetingRestrictedable)
@@ -400,6 +435,7 @@ type Participantable interface {
     SetIsMuted(value *bool)()
     SetMediaStreams(value []MediaStreamable)()
     SetMetadata(value *string)()
+    SetPreferredDisplayName(value *string)()
     SetRecordingInfo(value RecordingInfoable)()
     SetRemovedState(value RemovedStateable)()
     SetRestrictedExperience(value OnlineMeetingRestrictedable)()

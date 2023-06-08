@@ -18,7 +18,7 @@ type ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters get customAppScopes from roleManagement
+// ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 type ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property customAppScopes for roleManagement
+// Delete delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get customAppScopes from roleManagement
+// Get get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
-// Patch update the navigation property customAppScopes in roleManagement
+// Patch update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
-// ToDeleteRequestInformation delete navigation property customAppScopes for roleManagement
+// ToDeleteRequestInformation delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get customAppScopes from roleManagement
+// ToGetRequestInformation get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property customAppScopes in roleManagement
+// ToPatchRequestInformation update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

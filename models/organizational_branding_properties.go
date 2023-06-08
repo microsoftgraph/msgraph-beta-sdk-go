@@ -105,6 +105,17 @@ func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
     }
     return nil
 }
+// GetContentCustomization gets the contentCustomization property value. The contentCustomization property
+func (m *OrganizationalBrandingProperties) GetContentCustomization()(ContentCustomizationable) {
+    val, err := m.GetBackingStore().Get("contentCustomization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContentCustomizationable)
+    }
+    return nil
+}
 // GetCustomAccountResetCredentialsUrl gets the customAccountResetCredentialsUrl property value. A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
 func (m *OrganizationalBrandingProperties) GetCustomAccountResetCredentialsUrl()(*string) {
     val, err := m.GetBackingStore().Get("customAccountResetCredentialsUrl")
@@ -312,6 +323,16 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
                 res[i] = *(v.(*string))
             }
             m.SetCdnList(res)
+        }
+        return nil
+    }
+    res["contentCustomization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContentCustomizationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentCustomization(val.(ContentCustomizationable))
         }
         return nil
     }
@@ -721,6 +742,12 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteObjectValue("contentCustomization", m.GetContentCustomization())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("customAccountResetCredentialsUrl", m.GetCustomAccountResetCredentialsUrl())
         if err != nil {
             return err
@@ -908,6 +935,13 @@ func (m *OrganizationalBrandingProperties) SetCdnList(value []string)() {
         panic(err)
     }
 }
+// SetContentCustomization sets the contentCustomization property value. The contentCustomization property
+func (m *OrganizationalBrandingProperties) SetContentCustomization(value ContentCustomizationable)() {
+    err := m.GetBackingStore().Set("contentCustomization", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCustomAccountResetCredentialsUrl sets the customAccountResetCredentialsUrl property value. A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
 func (m *OrganizationalBrandingProperties) SetCustomAccountResetCredentialsUrl(value *string)() {
     err := m.GetBackingStore().Set("customAccountResetCredentialsUrl", value)
@@ -1086,6 +1120,7 @@ type OrganizationalBrandingPropertiesable interface {
     GetBannerLogo()([]byte)
     GetBannerLogoRelativeUrl()(*string)
     GetCdnList()([]string)
+    GetContentCustomization()(ContentCustomizationable)
     GetCustomAccountResetCredentialsUrl()(*string)
     GetCustomCannotAccessYourAccountText()(*string)
     GetCustomCannotAccessYourAccountUrl()(*string)
@@ -1116,6 +1151,7 @@ type OrganizationalBrandingPropertiesable interface {
     SetBannerLogo(value []byte)()
     SetBannerLogoRelativeUrl(value *string)()
     SetCdnList(value []string)()
+    SetContentCustomization(value ContentCustomizationable)()
     SetCustomAccountResetCredentialsUrl(value *string)()
     SetCustomCannotAccessYourAccountText(value *string)()
     SetCustomCannotAccessYourAccountUrl(value *string)()

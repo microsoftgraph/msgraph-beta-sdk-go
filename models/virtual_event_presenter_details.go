@@ -38,7 +38,7 @@ func (m *VirtualEventPresenterDetails) GetAdditionalData()(map[string]any) {
 func (m *VirtualEventPresenterDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBio gets the bio property value. The bio property
+// GetBio gets the bio property value. Bio of the presenter.
 func (m *VirtualEventPresenterDetails) GetBio()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("bio")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *VirtualEventPresenterDetails) GetBio()(ItemBodyable) {
     }
     return nil
 }
-// GetCompany gets the company property value. The company property
+// GetCompany gets the company property value. The presenter's company name.
 func (m *VirtualEventPresenterDetails) GetCompany()(*string) {
     val, err := m.GetBackingStore().Get("company")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *VirtualEventPresenterDetails) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetJobTitle gets the jobTitle property value. The jobTitle property
+// GetJobTitle gets the jobTitle property value. The presenter's job title.
 func (m *VirtualEventPresenterDetails) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *VirtualEventPresenterDetails) GetJobTitle()(*string) {
     }
     return nil
 }
-// GetLinkedInProfileWebUrl gets the linkedInProfileWebUrl property value. The linkedInProfileWebUrl property
+// GetLinkedInProfileWebUrl gets the linkedInProfileWebUrl property value. The presenter's LinkedIn profile URL.
 func (m *VirtualEventPresenterDetails) GetLinkedInProfileWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("linkedInProfileWebUrl")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *VirtualEventPresenterDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPersonalSiteWebUrl gets the personalSiteWebUrl property value. The personalSiteWebUrl property
+// GetPersonalSiteWebUrl gets the personalSiteWebUrl property value. The presenter's personal website URL.
 func (m *VirtualEventPresenterDetails) GetPersonalSiteWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("personalSiteWebUrl")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *VirtualEventPresenterDetails) GetPersonalSiteWebUrl()(*string) {
     }
     return nil
 }
-// GetTwitterProfileWebUrl gets the twitterProfileWebUrl property value. The twitterProfileWebUrl property
+// GetTwitterProfileWebUrl gets the twitterProfileWebUrl property value. The presenter's Twitter profile URL.
 func (m *VirtualEventPresenterDetails) GetTwitterProfileWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("twitterProfileWebUrl")
     if err != nil {
@@ -253,28 +253,28 @@ func (m *VirtualEventPresenterDetails) SetAdditionalData(value map[string]any)()
 func (m *VirtualEventPresenterDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBio sets the bio property value. The bio property
+// SetBio sets the bio property value. Bio of the presenter.
 func (m *VirtualEventPresenterDetails) SetBio(value ItemBodyable)() {
     err := m.GetBackingStore().Set("bio", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompany sets the company property value. The company property
+// SetCompany sets the company property value. The presenter's company name.
 func (m *VirtualEventPresenterDetails) SetCompany(value *string)() {
     err := m.GetBackingStore().Set("company", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJobTitle sets the jobTitle property value. The jobTitle property
+// SetJobTitle sets the jobTitle property value. The presenter's job title.
 func (m *VirtualEventPresenterDetails) SetJobTitle(value *string)() {
     err := m.GetBackingStore().Set("jobTitle", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLinkedInProfileWebUrl sets the linkedInProfileWebUrl property value. The linkedInProfileWebUrl property
+// SetLinkedInProfileWebUrl sets the linkedInProfileWebUrl property value. The presenter's LinkedIn profile URL.
 func (m *VirtualEventPresenterDetails) SetLinkedInProfileWebUrl(value *string)() {
     err := m.GetBackingStore().Set("linkedInProfileWebUrl", value)
     if err != nil {
@@ -288,14 +288,14 @@ func (m *VirtualEventPresenterDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPersonalSiteWebUrl sets the personalSiteWebUrl property value. The personalSiteWebUrl property
+// SetPersonalSiteWebUrl sets the personalSiteWebUrl property value. The presenter's personal website URL.
 func (m *VirtualEventPresenterDetails) SetPersonalSiteWebUrl(value *string)() {
     err := m.GetBackingStore().Set("personalSiteWebUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTwitterProfileWebUrl sets the twitterProfileWebUrl property value. The twitterProfileWebUrl property
+// SetTwitterProfileWebUrl sets the twitterProfileWebUrl property value. The presenter's Twitter profile URL.
 func (m *VirtualEventPresenterDetails) SetTwitterProfileWebUrl(value *string)() {
     err := m.GetBackingStore().Set("twitterProfileWebUrl", value)
     if err != nil {

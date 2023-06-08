@@ -19,7 +19,7 @@ func NewVirtualEventRegistration()(*VirtualEventRegistration) {
 func CreateVirtualEventRegistrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventRegistration(), nil
 }
-// GetCapacity gets the capacity property value. The capacity property
+// GetCapacity gets the capacity property value. Total capacity of the virtual event.
 func (m *VirtualEventRegistration) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetQuestions gets the questions property value. The questions property
+// GetQuestions gets the questions property value. Registration questions.
 func (m *VirtualEventRegistration) GetQuestions()([]VirtualEventRegistrationQuestionable) {
     val, err := m.GetBackingStore().Get("questions")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *VirtualEventRegistration) GetQuestions()([]VirtualEventRegistrationQues
     }
     return nil
 }
-// GetRegistrants gets the registrants property value. The registrants property
+// GetRegistrants gets the registrants property value. Information of attendees who have registered for the virtual event.
 func (m *VirtualEventRegistration) GetRegistrants()([]VirtualEventRegistrantable) {
     val, err := m.GetBackingStore().Get("registrants")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *VirtualEventRegistration) GetRegistrants()([]VirtualEventRegistrantable
     }
     return nil
 }
-// GetRegistrationWebUrl gets the registrationWebUrl property value. The registrationWebUrl property
+// GetRegistrationWebUrl gets the registrationWebUrl property value. Registration URL of the virtual event.
 func (m *VirtualEventRegistration) GetRegistrationWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("registrationWebUrl")
     if err != nil {
@@ -156,28 +156,28 @@ func (m *VirtualEventRegistration) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetCapacity sets the capacity property value. The capacity property
+// SetCapacity sets the capacity property value. Total capacity of the virtual event.
 func (m *VirtualEventRegistration) SetCapacity(value *int32)() {
     err := m.GetBackingStore().Set("capacity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQuestions sets the questions property value. The questions property
+// SetQuestions sets the questions property value. Registration questions.
 func (m *VirtualEventRegistration) SetQuestions(value []VirtualEventRegistrationQuestionable)() {
     err := m.GetBackingStore().Set("questions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrants sets the registrants property value. The registrants property
+// SetRegistrants sets the registrants property value. Information of attendees who have registered for the virtual event.
 func (m *VirtualEventRegistration) SetRegistrants(value []VirtualEventRegistrantable)() {
     err := m.GetBackingStore().Set("registrants", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrationWebUrl sets the registrationWebUrl property value. The registrationWebUrl property
+// SetRegistrationWebUrl sets the registrationWebUrl property value. Registration URL of the virtual event.
 func (m *VirtualEventRegistration) SetRegistrationWebUrl(value *string)() {
     err := m.GetBackingStore().Set("registrationWebUrl", value)
     if err != nil {

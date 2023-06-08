@@ -310,7 +310,7 @@ func (m *Person) GetGivenName()(*string) {
     }
     return nil
 }
-// GetIsFavorite gets the isFavorite property value. true if the user has flagged this person as a favorite.
+// GetIsFavorite gets the isFavorite property value. True if the user has flagged this person as a favorite.
 func (m *Person) GetIsFavorite()(*bool) {
     val, err := m.GetBackingStore().Get("isFavorite")
     if err != nil {
@@ -654,7 +654,7 @@ func (m *Person) SetGivenName(value *string)() {
         panic(err)
     }
 }
-// SetIsFavorite sets the isFavorite property value. true if the user has flagged this person as a favorite.
+// SetIsFavorite sets the isFavorite property value. True if the user has flagged this person as a favorite.
 func (m *Person) SetIsFavorite(value *bool)() {
     err := m.GetBackingStore().Set("isFavorite", value)
     if err != nil {
