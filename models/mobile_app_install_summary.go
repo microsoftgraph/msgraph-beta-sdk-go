@@ -8,7 +8,7 @@ import (
 type MobileAppInstallSummary struct {
     Entity
 }
-// NewMobileAppInstallSummary instantiates a new mobileAppInstallSummary and sets the default values.
+// NewMobileAppInstallSummary instantiates a new MobileAppInstallSummary and sets the default values.
 func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
     m := &MobileAppInstallSummary{
         Entity: *NewEntity(),

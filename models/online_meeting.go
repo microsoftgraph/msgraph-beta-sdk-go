@@ -93,7 +93,7 @@ func (m *OnlineMeeting) GetAllowParticipantsToChangeName()(*bool) {
     }
     return nil
 }
-// GetAllowRecording gets the allowRecording property value. The allowRecording property
+// GetAllowRecording gets the allowRecording property value. Indicates whether recording is enabled for the meeting.
 func (m *OnlineMeeting) GetAllowRecording()(*bool) {
     val, err := m.GetBackingStore().Get("allowRecording")
     if err != nil {
@@ -115,7 +115,7 @@ func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
     }
     return nil
 }
-// GetAllowTranscription gets the allowTranscription property value. The allowTranscription property
+// GetAllowTranscription gets the allowTranscription property value. Indicates whether transcription is enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTranscription()(*bool) {
     val, err := m.GetBackingStore().Get("allowTranscription")
     if err != nil {
@@ -1201,7 +1201,7 @@ func (m *OnlineMeeting) SetAllowParticipantsToChangeName(value *bool)() {
         panic(err)
     }
 }
-// SetAllowRecording sets the allowRecording property value. The allowRecording property
+// SetAllowRecording sets the allowRecording property value. Indicates whether recording is enabled for the meeting.
 func (m *OnlineMeeting) SetAllowRecording(value *bool)() {
     err := m.GetBackingStore().Set("allowRecording", value)
     if err != nil {
@@ -1215,7 +1215,7 @@ func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
         panic(err)
     }
 }
-// SetAllowTranscription sets the allowTranscription property value. The allowTranscription property
+// SetAllowTranscription sets the allowTranscription property value. Indicates whether transcription is enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTranscription(value *bool)() {
     err := m.GetBackingStore().Set("allowTranscription", value)
     if err != nil {

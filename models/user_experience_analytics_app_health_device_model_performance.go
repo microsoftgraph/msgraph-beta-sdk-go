@@ -115,16 +115,6 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["modelAppHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetModelAppHealthStatus(val)
-        }
-        return nil
-    }
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
@@ -157,17 +147,6 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHeal
     }
     if val != nil {
         return val.(*float64)
-    }
-    return nil
-}
-// GetModelAppHealthStatus gets the modelAppHealthStatus property value. The overall app health status of the device model.
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthStatus()(*string) {
-    val, err := m.GetBackingStore().Get("modelAppHealthStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -210,12 +189,6 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
     }
     {
         err = writer.WriteFloat64Value("modelAppHealthScore", m.GetModelAppHealthScore())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("modelAppHealthStatus", m.GetModelAppHealthStatus())
         if err != nil {
             return err
         }
@@ -264,13 +237,6 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHeal
         panic(err)
     }
 }
-// SetModelAppHealthStatus sets the modelAppHealthStatus property value. The overall app health status of the device model.
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthStatus(value *string)() {
-    err := m.GetBackingStore().Set("modelAppHealthStatus", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // UserExperienceAnalyticsAppHealthDeviceModelPerformanceable 
 type UserExperienceAnalyticsAppHealthDeviceModelPerformanceable interface {
     Entityable
@@ -281,12 +247,10 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformanceable interface {
     GetHealthStatus()(*UserExperienceAnalyticsHealthState)
     GetMeanTimeToFailureInMinutes()(*int32)
     GetModelAppHealthScore()(*float64)
-    GetModelAppHealthStatus()(*string)
     SetActiveDeviceCount(value *int32)()
     SetDeviceManufacturer(value *string)()
     SetDeviceModel(value *string)()
     SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
     SetMeanTimeToFailureInMinutes(value *int32)()
     SetModelAppHealthScore(value *float64)()
-    SetModelAppHealthStatus(value *string)()
 }

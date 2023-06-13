@@ -45,6 +45,10 @@ type VirtualEndpointRequestBuilderPatchRequestConfiguration struct {
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*VirtualEndpointAuditEventsRequestBuilder) {
     return NewVirtualEndpointAuditEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// BulkActions provides operations to manage the bulkActions property of the microsoft.graph.virtualEndpoint entity.
+func (m *VirtualEndpointRequestBuilder) BulkActions()(*VirtualEndpointBulkActionsRequestBuilder) {
+    return NewVirtualEndpointBulkActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 func (m *VirtualEndpointRequestBuilder) CloudPCs()(*VirtualEndpointCloudPCsRequestBuilder) {
     return NewVirtualEndpointCloudPCsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

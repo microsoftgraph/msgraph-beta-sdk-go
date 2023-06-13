@@ -53,6 +53,17 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceLatestOccurrenc
     }
     return nil
 }
+// GetCorrelationGroupId gets the correlationGroupId property value. The unique identifier of the correlation group.
+func (m *UserExperienceAnalyticsAnomalyDevice) GetCorrelationGroupId()(*string) {
+    val, err := m.GetBackingStore().Get("correlationGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDeviceId gets the deviceId property value. The unique identifier of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -97,6 +108,17 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceName()(*string) {
     }
     return nil
 }
+// GetDeviceStatus gets the deviceStatus property value. Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.
+func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceStatus()(*UserExperienceAnalyticsDeviceStatus) {
+    val, err := m.GetBackingStore().Get("deviceStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserExperienceAnalyticsDeviceStatus)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -127,6 +149,16 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[strin
         }
         if val != nil {
             m.SetAnomalyOnDeviceLatestOccurrenceDateTime(val)
+        }
+        return nil
+    }
+    res["correlationGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCorrelationGroupId(val)
         }
         return nil
     }
@@ -167,6 +199,16 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[strin
         }
         if val != nil {
             m.SetDeviceName(val)
+        }
+        return nil
+    }
+    res["deviceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserExperienceAnalyticsDeviceStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceStatus(val.(*UserExperienceAnalyticsDeviceStatus))
         }
         return nil
     }
@@ -239,6 +281,12 @@ func (m *UserExperienceAnalyticsAnomalyDevice) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("correlationGroupId", m.GetCorrelationGroupId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("deviceId", m.GetDeviceId())
         if err != nil {
             return err
@@ -258,6 +306,13 @@ func (m *UserExperienceAnalyticsAnomalyDevice) Serialize(writer i878a80d2330e89d
     }
     {
         err = writer.WriteStringValue("deviceName", m.GetDeviceName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceStatus() != nil {
+        cast := (*m.GetDeviceStatus()).String()
+        err = writer.WriteStringValue("deviceStatus", &cast)
         if err != nil {
             return err
         }
@@ -297,6 +352,13 @@ func (m *UserExperienceAnalyticsAnomalyDevice) SetAnomalyOnDeviceLatestOccurrenc
         panic(err)
     }
 }
+// SetCorrelationGroupId sets the correlationGroupId property value. The unique identifier of the correlation group.
+func (m *UserExperienceAnalyticsAnomalyDevice) SetCorrelationGroupId(value *string)() {
+    err := m.GetBackingStore().Set("correlationGroupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceId sets the deviceId property value. The unique identifier of the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
@@ -325,6 +387,13 @@ func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceName(value *string)() {
         panic(err)
     }
 }
+// SetDeviceStatus sets the deviceStatus property value. Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.
+func (m *UserExperienceAnalyticsAnomalyDevice) SetDeviceStatus(value *UserExperienceAnalyticsDeviceStatus)() {
+    err := m.GetBackingStore().Set("deviceStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsName sets the osName property value. The name of the OS installed on the device.
 func (m *UserExperienceAnalyticsAnomalyDevice) SetOsName(value *string)() {
     err := m.GetBackingStore().Set("osName", value)
@@ -346,19 +415,23 @@ type UserExperienceAnalyticsAnomalyDeviceable interface {
     GetAnomalyId()(*string)
     GetAnomalyOnDeviceFirstOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetAnomalyOnDeviceLatestOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCorrelationGroupId()(*string)
     GetDeviceId()(*string)
     GetDeviceManufacturer()(*string)
     GetDeviceModel()(*string)
     GetDeviceName()(*string)
+    GetDeviceStatus()(*UserExperienceAnalyticsDeviceStatus)
     GetOsName()(*string)
     GetOsVersion()(*string)
     SetAnomalyId(value *string)()
     SetAnomalyOnDeviceFirstOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAnomalyOnDeviceLatestOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCorrelationGroupId(value *string)()
     SetDeviceId(value *string)()
     SetDeviceManufacturer(value *string)()
     SetDeviceModel(value *string)()
     SetDeviceName(value *string)()
+    SetDeviceStatus(value *UserExperienceAnalyticsDeviceStatus)()
     SetOsName(value *string)()
     SetOsVersion(value *string)()
 }

@@ -1885,6 +1885,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["privilegeManagementElevations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrivilegeManagementElevationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrivilegeManagementElevationable, len(val))
+            for i, v := range val {
+                res[i] = v.(PrivilegeManagementElevationable)
+            }
+            m.SetPrivilegeManagementElevations(res)
+        }
+        return nil
+    }
     res["remoteActionAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteActionAuditFromDiscriminatorValue)
         if err != nil {
@@ -2214,6 +2228,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 res[i] = v.(UserExperienceAnalyticsAnomalyable)
             }
             m.SetUserExperienceAnalyticsAnomaly(res)
+        }
+        return nil
+    }
+    res["userExperienceAnalyticsAnomalyCorrelationGroupOverview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsAnomalyCorrelationGroupOverviewFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable, len(val))
+            for i, v := range val {
+                res[i] = v.(UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable)
+            }
+            m.SetUserExperienceAnalyticsAnomalyCorrelationGroupOverview(res)
         }
         return nil
     }
@@ -3341,6 +3369,17 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
     }
     return nil
 }
+// GetPrivilegeManagementElevations gets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
+func (m *DeviceManagement) GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable) {
+    val, err := m.GetBackingStore().Get("privilegeManagementElevations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivilegeManagementElevationable)
+    }
+    return nil
+}
 // GetRemoteActionAudits gets the remoteActionAudits property value. The list of device remote action audits with the tenant.
 func (m *DeviceManagement) GetRemoteActionAudits()([]RemoteActionAuditable) {
     val, err := m.GetBackingStore().Get("remoteActionAudits")
@@ -3624,6 +3663,17 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAnomaly()([]UserExperienceA
     }
     if val != nil {
         return val.([]UserExperienceAnalyticsAnomalyable)
+    }
+    return nil
+}
+// GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview gets the userExperienceAnalyticsAnomalyCorrelationGroupOverview property value. The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview()([]UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable) {
+    val, err := m.GetBackingStore().Get("userExperienceAnalyticsAnomalyCorrelationGroupOverview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable)
     }
     return nil
 }
@@ -5101,6 +5151,16 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetPrivilegeManagementElevations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrivilegeManagementElevations()))
+        for i, v := range m.GetPrivilegeManagementElevations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("privilegeManagementElevations", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRemoteActionAudits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteActionAudits()))
         for i, v := range m.GetRemoteActionAudits() {
@@ -5321,6 +5381,16 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsAnomaly", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview()))
+        for i, v := range m.GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsAnomalyCorrelationGroupOverview", cast)
         if err != nil {
             return err
         }
@@ -6516,6 +6586,13 @@ func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationM
         panic(err)
     }
 }
+// SetPrivilegeManagementElevations sets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
+func (m *DeviceManagement) SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)() {
+    err := m.GetBackingStore().Set("privilegeManagementElevations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemoteActionAudits sets the remoteActionAudits property value. The list of device remote action audits with the tenant.
 func (m *DeviceManagement) SetRemoteActionAudits(value []RemoteActionAuditable)() {
     err := m.GetBackingStore().Set("remoteActionAudits", value)
@@ -6694,6 +6771,13 @@ func (m *DeviceManagement) SetUnlicensedAdminstratorsEnabled(value *bool)() {
 // SetUserExperienceAnalyticsAnomaly sets the userExperienceAnalyticsAnomaly property value. The user experience analytics anomaly entity contains anomaly details.
 func (m *DeviceManagement) SetUserExperienceAnalyticsAnomaly(value []UserExperienceAnalyticsAnomalyable)() {
     err := m.GetBackingStore().Set("userExperienceAnalyticsAnomaly", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserExperienceAnalyticsAnomalyCorrelationGroupOverview sets the userExperienceAnalyticsAnomalyCorrelationGroupOverview property value. The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+func (m *DeviceManagement) SetUserExperienceAnalyticsAnomalyCorrelationGroupOverview(value []UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable)() {
+    err := m.GetBackingStore().Set("userExperienceAnalyticsAnomalyCorrelationGroupOverview", value)
     if err != nil {
         panic(err)
     }
@@ -7213,6 +7297,7 @@ type DeviceManagementable interface {
     GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnectorable)
     GetNdesConnectors()([]NdesConnectorable)
     GetNotificationMessageTemplates()([]NotificationMessageTemplateable)
+    GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable)
     GetRemoteActionAudits()([]RemoteActionAuditable)
     GetRemoteAssistancePartners()([]RemoteAssistancePartnerable)
     GetRemoteAssistanceSettings()(RemoteAssistanceSettingsable)
@@ -7239,6 +7324,7 @@ type DeviceManagementable interface {
     GetTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable)
     GetUnlicensedAdminstratorsEnabled()(*bool)
     GetUserExperienceAnalyticsAnomaly()([]UserExperienceAnalyticsAnomalyable)
+    GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview()([]UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable)
     GetUserExperienceAnalyticsAnomalyDevice()([]UserExperienceAnalyticsAnomalyDeviceable)
     GetUserExperienceAnalyticsAnomalySeverityOverview()(UserExperienceAnalyticsAnomalySeverityOverviewable)
     GetUserExperienceAnalyticsAppHealthApplicationPerformance()([]UserExperienceAnalyticsAppHealthApplicationPerformanceable)
@@ -7390,6 +7476,7 @@ type DeviceManagementable interface {
     SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnectorable)()
     SetNdesConnectors(value []NdesConnectorable)()
     SetNotificationMessageTemplates(value []NotificationMessageTemplateable)()
+    SetPrivilegeManagementElevations(value []PrivilegeManagementElevationable)()
     SetRemoteActionAudits(value []RemoteActionAuditable)()
     SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)()
     SetRemoteAssistanceSettings(value RemoteAssistanceSettingsable)()
@@ -7416,6 +7503,7 @@ type DeviceManagementable interface {
     SetTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)()
     SetUnlicensedAdminstratorsEnabled(value *bool)()
     SetUserExperienceAnalyticsAnomaly(value []UserExperienceAnalyticsAnomalyable)()
+    SetUserExperienceAnalyticsAnomalyCorrelationGroupOverview(value []UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable)()
     SetUserExperienceAnalyticsAnomalyDevice(value []UserExperienceAnalyticsAnomalyDeviceable)()
     SetUserExperienceAnalyticsAnomalySeverityOverview(value UserExperienceAnalyticsAnomalySeverityOverviewable)()
     SetUserExperienceAnalyticsAppHealthApplicationPerformance(value []UserExperienceAnalyticsAppHealthApplicationPerformanceable)()

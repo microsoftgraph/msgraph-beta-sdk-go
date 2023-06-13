@@ -82,10 +82,6 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) DeviceStatuses()(*MobileAppsItemDeviceStatusesRequestBuilder) {
-    return NewMobileAppsItemDeviceStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the mobile apps.
 func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -105,10 +101,6 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable), nil
 }
-// GetRelatedAppStatesWithUserPrincipalNameWithDeviceId provides operations to call the getRelatedAppStates method.
-func (m *MobileAppsMobileAppItemRequestBuilder) GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(deviceId *string, userPrincipalName *string)(*MobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
-    return NewMobileAppsItemGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId, userPrincipalName)
-}
 // GraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
 func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedMobileLobApp()(*MobileAppsItemGraphManagedMobileLobAppRequestBuilder) {
     return NewMobileAppsItemGraphManagedMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -116,10 +108,6 @@ func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedMobileLobApp()(*Mobi
 // GraphMobileLobApp casts the previous resource to mobileLobApp.
 func (m *MobileAppsMobileAppItemRequestBuilder) GraphMobileLobApp()(*MobileAppsItemGraphMobileLobAppRequestBuilder) {
     return NewMobileAppsItemGraphMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// InstallSummary provides operations to manage the installSummary property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) InstallSummary()(*MobileAppsItemInstallSummaryRequestBuilder) {
-    return NewMobileAppsItemInstallSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable, error) {
@@ -192,8 +180,4 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx co
 // UpdateRelationships provides operations to call the updateRelationships method.
 func (m *MobileAppsMobileAppItemRequestBuilder) UpdateRelationships()(*MobileAppsItemUpdateRelationshipsRequestBuilder) {
     return NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UserStatuses provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) UserStatuses()(*MobileAppsItemUserStatusesRequestBuilder) {
-    return NewMobileAppsItemUserStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

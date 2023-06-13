@@ -2,32 +2,34 @@ package models
 import (
     "errors"
 )
-// Operating System restart category
+// Operating System restart category.
 type UserExperienceAnalyticsOperatingSystemRestartCategory int
 
 const (
-    // Unknown
+    // Default. Set to unknown if device operating system restart category has not yet been calculated.
     UNKNOWN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY UserExperienceAnalyticsOperatingSystemRestartCategory = iota
-    // Restart with update
+    // Indicates that the device operating system restart is along with an update.
     RESTARTWITHUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Restart without update
+    // Indicates that the device operating system restart is without update.
     RESTARTWITHOUTUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Blue screen restart
+    // Indicates that the device operating system restart is due to a specific stop error.
     BLUESCREEN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Shutdown with update
+    // Indicates that the device operating system restart is due to shutdown with update.
     SHUTDOWNWITHUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Shutdown without update
+    // Indicates that the device operating system restart is due to shutdown without update.
     SHUTDOWNWITHOUTUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Long power button press
+    // Indicates that the device operating system restart is due to update long power-button press.
     LONGPOWERBUTTONPRESS_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Boot error
+    // Indicates that the device operating system restart is due to boot error.
     BOOTERROR_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    // Update
+    // Indicates that the device operating system restarted after an update.
     UPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
 )
 
 func (i UserExperienceAnalyticsOperatingSystemRestartCategory) String() string {
-    return []string{"unknown", "restartWithUpdate", "restartWithoutUpdate", "blueScreen", "shutdownWithUpdate", "shutdownWithoutUpdate", "longPowerButtonPress", "bootError", "update"}[i]
+    return []string{"unknown", "restartWithUpdate", "restartWithoutUpdate", "blueScreen", "shutdownWithUpdate", "shutdownWithoutUpdate", "longPowerButtonPress", "bootError", "update", "unknownFutureValue"}[i]
 }
 func ParseUserExperienceAnalyticsOperatingSystemRestartCategory(v string) (any, error) {
     result := UNKNOWN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
@@ -50,6 +52,8 @@ func ParseUserExperienceAnalyticsOperatingSystemRestartCategory(v string) (any, 
             result = BOOTERROR_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
         case "update":
             result = UPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
         default:
             return 0, errors.New("Unknown UserExperienceAnalyticsOperatingSystemRestartCategory value: " + v)
     }

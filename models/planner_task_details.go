@@ -30,7 +30,7 @@ func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     }
     return nil
 }
-// GetCompletionRequirements gets the completionRequirements property value. The completionRequirements property
+// GetCompletionRequirements gets the completionRequirements property value. Contains detailed information about requirements on the task.
 func (m *PlannerTaskDetails) GetCompletionRequirements()(PlannerTaskCompletionRequirementDetailsable) {
     val, err := m.GetBackingStore().Get("completionRequirements")
     if err != nil {
@@ -202,7 +202,7 @@ func (m *PlannerTaskDetails) SetChecklist(value PlannerChecklistItemsable)() {
         panic(err)
     }
 }
-// SetCompletionRequirements sets the completionRequirements property value. The completionRequirements property
+// SetCompletionRequirements sets the completionRequirements property value. Contains detailed information about requirements on the task.
 func (m *PlannerTaskDetails) SetCompletionRequirements(value PlannerTaskCompletionRequirementDetailsable)() {
     err := m.GetBackingStore().Set("completionRequirements", value)
     if err != nil {

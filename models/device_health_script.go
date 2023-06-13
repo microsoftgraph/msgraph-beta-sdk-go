@@ -75,6 +75,17 @@ func (m *DeviceHealthScript) GetDetectionScriptParameters()([]DeviceHealthScript
     }
     return nil
 }
+// GetDeviceHealthScriptType gets the deviceHealthScriptType property value. Indicates the type of device script.
+func (m *DeviceHealthScript) GetDeviceHealthScriptType()(*DeviceHealthScriptType) {
+    val, err := m.GetBackingStore().Get("deviceHealthScriptType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceHealthScriptType)
+    }
+    return nil
+}
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for the device health script across all devices
 func (m *DeviceHealthScript) GetDeviceRunStates()([]DeviceHealthScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
@@ -166,6 +177,16 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
                 res[i] = v.(DeviceHealthScriptParameterable)
             }
             m.SetDetectionScriptParameters(res)
+        }
+        return nil
+    }
+    res["deviceHealthScriptType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceHealthScriptType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceHealthScriptType(val.(*DeviceHealthScriptType))
         }
         return nil
     }
@@ -482,6 +503,13 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetDeviceHealthScriptType() != nil {
+        cast := (*m.GetDeviceHealthScriptType()).String()
+        err = writer.WriteStringValue("deviceHealthScriptType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDeviceRunStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
@@ -606,6 +634,13 @@ func (m *DeviceHealthScript) SetDetectionScriptParameters(value []DeviceHealthSc
         panic(err)
     }
 }
+// SetDeviceHealthScriptType sets the deviceHealthScriptType property value. Indicates the type of device script.
+func (m *DeviceHealthScript) SetDeviceHealthScriptType(value *DeviceHealthScriptType)() {
+    err := m.GetBackingStore().Set("deviceHealthScriptType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for the device health script across all devices
 func (m *DeviceHealthScript) SetDeviceRunStates(value []DeviceHealthScriptDeviceStateable)() {
     err := m.GetBackingStore().Set("deviceRunStates", value)
@@ -713,6 +748,7 @@ type DeviceHealthScriptable interface {
     GetDescription()(*string)
     GetDetectionScriptContent()([]byte)
     GetDetectionScriptParameters()([]DeviceHealthScriptParameterable)
+    GetDeviceHealthScriptType()(*DeviceHealthScriptType)
     GetDeviceRunStates()([]DeviceHealthScriptDeviceStateable)
     GetDisplayName()(*string)
     GetEnforceSignatureCheck()(*bool)
@@ -732,6 +768,7 @@ type DeviceHealthScriptable interface {
     SetDescription(value *string)()
     SetDetectionScriptContent(value []byte)()
     SetDetectionScriptParameters(value []DeviceHealthScriptParameterable)()
+    SetDeviceHealthScriptType(value *DeviceHealthScriptType)()
     SetDeviceRunStates(value []DeviceHealthScriptDeviceStateable)()
     SetDisplayName(value *string)()
     SetEnforceSignatureCheck(value *bool)()

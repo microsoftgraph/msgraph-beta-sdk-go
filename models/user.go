@@ -9,7 +9,7 @@ import (
 type User struct {
     DirectoryObject
 }
-// NewUser instantiates a new User and sets the default values.
+// NewUser instantiates a new user and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
@@ -2447,7 +2447,7 @@ func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
     }
     return nil
 }
-// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+// GetIsManagementRestricted gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
 func (m *User) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -2667,7 +2667,7 @@ func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEve
     }
     return nil
 }
-// GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
 func (m *User) GetMobilePhone()(*string) {
     val, err := m.GetBackingStore().Get("mobilePhone")
     if err != nil {
@@ -4897,7 +4897,7 @@ func (m *User) SetIsLicenseReconciliationNeeded(value *bool)() {
         panic(err)
     }
 }
-// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+// SetIsManagementRestricted sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
 func (m *User) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
     if err != nil {
@@ -5037,7 +5037,7 @@ func (m *User) SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootin
         panic(err)
     }
 }
-// SetMobilePhone sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetMobilePhone sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
 func (m *User) SetMobilePhone(value *string)() {
     err := m.GetBackingStore().Set("mobilePhone", value)
     if err != nil {

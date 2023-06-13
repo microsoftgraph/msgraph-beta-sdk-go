@@ -38,7 +38,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetAdditionalData()(map[string
 func (m *PlannerTaskCompletionRequirementDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChecklistRequirement gets the checklistRequirement property value. The checklistRequirement property
+// GetChecklistRequirement gets the checklistRequirement property value. Information about the requirements for completing the checklist.
 func (m *PlannerTaskCompletionRequirementDetails) GetChecklistRequirement()(PlannerChecklistRequirementable) {
     val, err := m.GetBackingStore().Get("checklistRequirement")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *PlannerTaskCompletionRequirementDetails) SetAdditionalData(value map[st
 func (m *PlannerTaskCompletionRequirementDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChecklistRequirement sets the checklistRequirement property value. The checklistRequirement property
+// SetChecklistRequirement sets the checklistRequirement property value. Information about the requirements for completing the checklist.
 func (m *PlannerTaskCompletionRequirementDetails) SetChecklistRequirement(value PlannerChecklistRequirementable)() {
     err := m.GetBackingStore().Set("checklistRequirement", value)
     if err != nil {

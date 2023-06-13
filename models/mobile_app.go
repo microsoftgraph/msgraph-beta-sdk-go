@@ -60,6 +60,8 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMacOSMicrosoftEdgeApp(), nil
                     case "#microsoft.graph.macOSOfficeSuiteApp":
                         return NewMacOSOfficeSuiteApp(), nil
+                    case "#microsoft.graph.macOSPkgApp":
+                        return NewMacOSPkgApp(), nil
                     case "#microsoft.graph.macOsVppApp":
                         return NewMacOsVppApp(), nil
                     case "#microsoft.graph.managedAndroidLobApp":
@@ -178,17 +180,6 @@ func (m *MobileApp) GetDeveloper()(*string) {
     }
     return nil
 }
-// GetDeviceStatuses gets the deviceStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) GetDeviceStatuses()([]MobileAppInstallStatusable) {
-    val, err := m.GetBackingStore().Get("deviceStatuses")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MobileAppInstallStatusable)
-    }
-    return nil
-}
 // GetDisplayName gets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileApp) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -271,20 +262,6 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["deviceStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobileAppInstallStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MobileAppInstallStatusable, len(val))
-            for i, v := range val {
-                res[i] = v.(MobileAppInstallStatusable)
-            }
-            m.SetDeviceStatuses(res)
-        }
-        return nil
-    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -302,16 +279,6 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetInformationUrl(val)
-        }
-        return nil
-    }
-    res["installSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateMobileAppInstallSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInstallSummary(val.(MobileAppInstallSummaryable))
         }
         return nil
     }
@@ -463,20 +430,6 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserAppInstallStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserAppInstallStatusable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserAppInstallStatusable)
-            }
-            m.SetUserStatuses(res)
-        }
-        return nil
-    }
     return res
 }
 // GetInformationUrl gets the informationUrl property value. The more information Url.
@@ -487,17 +440,6 @@ func (m *MobileApp) GetInformationUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
-    }
-    return nil
-}
-// GetInstallSummary gets the installSummary property value. Mobile App Install Summary.
-func (m *MobileApp) GetInstallSummary()(MobileAppInstallSummaryable) {
-    val, err := m.GetBackingStore().Get("installSummary")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(MobileAppInstallSummaryable)
     }
     return nil
 }
@@ -655,17 +597,6 @@ func (m *MobileApp) GetUploadState()(*int32) {
     }
     return nil
 }
-// GetUserStatuses gets the userStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) GetUserStatuses()([]UserAppInstallStatusable) {
-    val, err := m.GetBackingStore().Get("userStatuses")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]UserAppInstallStatusable)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -716,16 +647,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    if m.GetDeviceStatuses() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStatuses()))
-        for i, v := range m.GetDeviceStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -734,12 +655,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteStringValue("informationUrl", m.GetInformationUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("installSummary", m.GetInstallSummary())
         if err != nil {
             return err
         }
@@ -833,16 +748,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    if m.GetUserStatuses() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStatuses()))
-        for i, v := range m.GetUserStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
@@ -887,13 +792,6 @@ func (m *MobileApp) SetDeveloper(value *string)() {
         panic(err)
     }
 }
-// SetDeviceStatuses sets the deviceStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) SetDeviceStatuses(value []MobileAppInstallStatusable)() {
-    err := m.GetBackingStore().Set("deviceStatuses", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetDisplayName sets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileApp) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
@@ -904,13 +802,6 @@ func (m *MobileApp) SetDisplayName(value *string)() {
 // SetInformationUrl sets the informationUrl property value. The more information Url.
 func (m *MobileApp) SetInformationUrl(value *string)() {
     err := m.GetBackingStore().Set("informationUrl", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetInstallSummary sets the installSummary property value. Mobile App Install Summary.
-func (m *MobileApp) SetInstallSummary(value MobileAppInstallSummaryable)() {
-    err := m.GetBackingStore().Set("installSummary", value)
     if err != nil {
         panic(err)
     }
@@ -1013,13 +904,6 @@ func (m *MobileApp) SetUploadState(value *int32)() {
         panic(err)
     }
 }
-// SetUserStatuses sets the userStatuses property value. The list of installation states for this mobile app.
-func (m *MobileApp) SetUserStatuses(value []UserAppInstallStatusable)() {
-    err := m.GetBackingStore().Set("userStatuses", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // MobileAppable 
 type MobileAppable interface {
     Entityable
@@ -1030,10 +914,8 @@ type MobileAppable interface {
     GetDependentAppCount()(*int32)
     GetDescription()(*string)
     GetDeveloper()(*string)
-    GetDeviceStatuses()([]MobileAppInstallStatusable)
     GetDisplayName()(*string)
     GetInformationUrl()(*string)
-    GetInstallSummary()(MobileAppInstallSummaryable)
     GetIsAssigned()(*bool)
     GetIsFeatured()(*bool)
     GetLargeIcon()(MimeContentable)
@@ -1048,17 +930,14 @@ type MobileAppable interface {
     GetSupersededAppCount()(*int32)
     GetSupersedingAppCount()(*int32)
     GetUploadState()(*int32)
-    GetUserStatuses()([]UserAppInstallStatusable)
     SetAssignments(value []MobileAppAssignmentable)()
     SetCategories(value []MobileAppCategoryable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDependentAppCount(value *int32)()
     SetDescription(value *string)()
     SetDeveloper(value *string)()
-    SetDeviceStatuses(value []MobileAppInstallStatusable)()
     SetDisplayName(value *string)()
     SetInformationUrl(value *string)()
-    SetInstallSummary(value MobileAppInstallSummaryable)()
     SetIsAssigned(value *bool)()
     SetIsFeatured(value *bool)()
     SetLargeIcon(value MimeContentable)()
@@ -1073,5 +952,4 @@ type MobileAppable interface {
     SetSupersededAppCount(value *int32)()
     SetSupersedingAppCount(value *int32)()
     SetUploadState(value *int32)()
-    SetUserStatuses(value []UserAppInstallStatusable)()
 }

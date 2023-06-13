@@ -2,22 +2,24 @@ package models
 import (
     "errors"
 )
-// Work From Anywhere windows device upgrade eligibility status
+// Work From Anywhere windows device upgrade eligibility status.
 type OperatingSystemUpgradeEligibility int
 
 const (
-    // The device is upgraded to latest version of windows
+    // The device is upgraded to latest version of windows.
     UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY OperatingSystemUpgradeEligibility = iota
-    // Not enough data available to compute the eligibility of device for windows upgrade
+    // Not enough data available to compute the eligibility of device for windows upgrade.
     UNKNOWN_OPERATINGSYSTEMUPGRADEELIGIBILITY
-    // The device is not capable for windows upgrade
+    // The device is not capable for windows upgrade.
     NOTCAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
-    // The device is capable for windows upgrade
+    // The device is capable for windows upgrade.
     CAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_OPERATINGSYSTEMUPGRADEELIGIBILITY
 )
 
 func (i OperatingSystemUpgradeEligibility) String() string {
-    return []string{"upgraded", "unknown", "notCapable", "capable"}[i]
+    return []string{"upgraded", "unknown", "notCapable", "capable", "unknownFutureValue"}[i]
 }
 func ParseOperatingSystemUpgradeEligibility(v string) (any, error) {
     result := UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY
@@ -30,6 +32,8 @@ func ParseOperatingSystemUpgradeEligibility(v string) (any, error) {
             result = NOTCAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
         case "capable":
             result = CAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_OPERATINGSYSTEMUPGRADEELIGIBILITY
         default:
             return 0, errors.New("Unknown OperatingSystemUpgradeEligibility value: " + v)
     }

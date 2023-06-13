@@ -83,16 +83,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         }
         return nil
     }
-    res["osVersionAppHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOsVersionAppHealthStatus(val)
-        }
-        return nil
-    }
     return res
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
@@ -139,17 +129,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersionAppHe
     }
     return nil
 }
-// GetOsVersionAppHealthStatus gets the osVersionAppHealthStatus property value. The overall app health status of the OS version.
-func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersionAppHealthStatus()(*string) {
-    val, err := m.GetBackingStore().Get("osVersionAppHealthStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -182,12 +161,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer 
     }
     {
         err = writer.WriteFloat64Value("osVersionAppHealthScore", m.GetOsVersionAppHealthScore())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("osVersionAppHealthStatus", m.GetOsVersionAppHealthStatus())
         if err != nil {
             return err
         }
@@ -229,13 +202,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHe
         panic(err)
     }
 }
-// SetOsVersionAppHealthStatus sets the osVersionAppHealthStatus property value. The overall app health status of the OS version.
-func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHealthStatus(value *string)() {
-    err := m.GetBackingStore().Set("osVersionAppHealthStatus", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // UserExperienceAnalyticsAppHealthOSVersionPerformanceable 
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceable interface {
     Entityable
@@ -245,11 +211,9 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformanceable interface {
     GetOsBuildNumber()(*string)
     GetOsVersion()(*string)
     GetOsVersionAppHealthScore()(*float64)
-    GetOsVersionAppHealthStatus()(*string)
     SetActiveDeviceCount(value *int32)()
     SetMeanTimeToFailureInMinutes(value *int32)()
     SetOsBuildNumber(value *string)()
     SetOsVersion(value *string)()
     SetOsVersionAppHealthScore(value *float64)()
-    SetOsVersionAppHealthStatus(value *string)()
 }

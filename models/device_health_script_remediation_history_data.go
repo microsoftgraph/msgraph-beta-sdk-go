@@ -49,6 +49,17 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetDate()(*i878a80d2330e89d26
     }
     return nil
 }
+// GetDetectFailedDeviceCount gets the detectFailedDeviceCount property value. The number of devices for which the detection script found an issue.
+func (m *DeviceHealthScriptRemediationHistoryData) GetDetectFailedDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("detectFailedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -59,6 +70,16 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[s
         }
         if val != nil {
             m.SetDate(val)
+        }
+        return nil
+    }
+    res["detectFailedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDetectFailedDeviceCount(val)
         }
         return nil
     }
@@ -136,6 +157,12 @@ func (m *DeviceHealthScriptRemediationHistoryData) Serialize(writer i878a80d2330
         }
     }
     {
+        err := writer.WriteInt32Value("detectFailedDeviceCount", m.GetDetectFailedDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("noIssueDeviceCount", m.GetNoIssueDeviceCount())
         if err != nil {
             return err
@@ -179,6 +206,13 @@ func (m *DeviceHealthScriptRemediationHistoryData) SetDate(value *i878a80d2330e8
         panic(err)
     }
 }
+// SetDetectFailedDeviceCount sets the detectFailedDeviceCount property value. The number of devices for which the detection script found an issue.
+func (m *DeviceHealthScriptRemediationHistoryData) SetDetectFailedDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("detectFailedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNoIssueDeviceCount sets the noIssueDeviceCount property value. The number of devices that were found to have no issue by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetNoIssueDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("noIssueDeviceCount", value)
@@ -207,11 +241,13 @@ type DeviceHealthScriptRemediationHistoryDataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetDetectFailedDeviceCount()(*int32)
     GetNoIssueDeviceCount()(*int32)
     GetOdataType()(*string)
     GetRemediatedDeviceCount()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetDetectFailedDeviceCount(value *int32)()
     SetNoIssueDeviceCount(value *int32)()
     SetOdataType(value *string)()
     SetRemediatedDeviceCount(value *int32)()

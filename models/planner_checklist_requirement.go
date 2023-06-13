@@ -78,7 +78,7 @@ func (m *PlannerChecklistRequirement) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequiredChecklistItemIds gets the requiredChecklistItemIds property value. The requiredChecklistItemIds property
+// GetRequiredChecklistItemIds gets the requiredChecklistItemIds property value. A collection of required plannerChecklistItems identifiers to complete the plannerTask.
 func (m *PlannerChecklistRequirement) GetRequiredChecklistItemIds()([]string) {
     val, err := m.GetBackingStore().Get("requiredChecklistItemIds")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *PlannerChecklistRequirement) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequiredChecklistItemIds sets the requiredChecklistItemIds property value. The requiredChecklistItemIds property
+// SetRequiredChecklistItemIds sets the requiredChecklistItemIds property value. A collection of required plannerChecklistItems identifiers to complete the plannerTask.
 func (m *PlannerChecklistRequirement) SetRequiredChecklistItemIds(value []string)() {
     err := m.GetBackingStore().Set("requiredChecklistItemIds", value)
     if err != nil {

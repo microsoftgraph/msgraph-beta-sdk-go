@@ -18,7 +18,7 @@ type RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+// RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters represents the role management policy assignments.
 type RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentIte
     }
     return nil
 }
-// Get get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0
+// Get represents the role management policy assignments.
 func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +124,7 @@ func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentIte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+// ToGetRequestInformation represents the role management policy assignments.
 func (m *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

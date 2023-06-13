@@ -1,23 +1,39 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AgedAccountsReceivable 
 type AgedAccountsReceivable struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAgedAccountsReceivable instantiates a new AgedAccountsReceivable and sets the default values.
+// NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     m := &AgedAccountsReceivable{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAgedAccountsReceivableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAgedAccountsReceivableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgedAccountsReceivable(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AgedAccountsReceivable) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -29,6 +45,10 @@ func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f4
         return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     }
     return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AgedAccountsReceivable) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBalanceDue gets the balanceDue property value. The balanceDue property
 func (m *AgedAccountsReceivable) GetBalanceDue()(*float64) {
@@ -63,6 +83,17 @@ func (m *AgedAccountsReceivable) GetCurrentAmount()(*float64) {
     }
     return nil
 }
+// GetCustomerId gets the customerId property value. The customerId property
+func (m *AgedAccountsReceivable) GetCustomerId()(*string) {
+    val, err := m.GetBackingStore().Get("customerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
 func (m *AgedAccountsReceivable) GetCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("customerNumber")
@@ -76,7 +107,7 @@ func (m *AgedAccountsReceivable) GetCustomerNumber()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["agedAsOfDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -117,6 +148,16 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["customerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomerId(val)
+        }
+        return nil
+    }
     res["customerNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -127,6 +168,16 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
+        }
+        return nil
+    }
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -134,6 +185,16 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -179,9 +240,31 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
+// GetId gets the id property value. The id property
+func (m *AgedAccountsReceivable) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetName gets the name property value. The name property
 func (m *AgedAccountsReceivable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AgedAccountsReceivable) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -236,71 +319,98 @@ func (m *AgedAccountsReceivable) GetPeriodLengthFilter()(*string) {
 }
 // Serialize serializes information the current object
 func (m *AgedAccountsReceivable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     {
-        err = writer.WriteDateOnlyValue("agedAsOfDate", m.GetAgedAsOfDate())
+        err := writer.WriteDateOnlyValue("agedAsOfDate", m.GetAgedAsOfDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("balanceDue", m.GetBalanceDue())
+        err := writer.WriteFloat64Value("balanceDue", m.GetBalanceDue())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("currencyCode", m.GetCurrencyCode())
+        err := writer.WriteStringValue("currencyCode", m.GetCurrencyCode())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("currentAmount", m.GetCurrentAmount())
+        err := writer.WriteFloat64Value("currentAmount", m.GetCurrentAmount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("customerNumber", m.GetCustomerNumber())
+        err := writer.WriteStringValue("customerId", m.GetCustomerId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("name", m.GetName())
+        err := writer.WriteStringValue("customerNumber", m.GetCustomerNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("period1Amount", m.GetPeriod1Amount())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("period2Amount", m.GetPeriod2Amount())
+        err := writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("period3Amount", m.GetPeriod3Amount())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodLengthFilter", m.GetPeriodLengthFilter())
+        err := writer.WriteFloat64Value("period1Amount", m.GetPeriod1Amount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteFloat64Value("period2Amount", m.GetPeriod2Amount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteFloat64Value("period3Amount", m.GetPeriod3Amount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("periodLengthFilter", m.GetPeriodLengthFilter())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AgedAccountsReceivable) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
@@ -308,6 +418,10 @@ func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *i878a80d2330e89d26896388
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AgedAccountsReceivable) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBalanceDue sets the balanceDue property value. The balanceDue property
 func (m *AgedAccountsReceivable) SetBalanceDue(value *float64)() {
@@ -330,6 +444,13 @@ func (m *AgedAccountsReceivable) SetCurrentAmount(value *float64)() {
         panic(err)
     }
 }
+// SetCustomerId sets the customerId property value. The customerId property
+func (m *AgedAccountsReceivable) SetCustomerId(value *string)() {
+    err := m.GetBackingStore().Set("customerId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCustomerNumber sets the customerNumber property value. The customerNumber property
 func (m *AgedAccountsReceivable) SetCustomerNumber(value *string)() {
     err := m.GetBackingStore().Set("customerNumber", value)
@@ -337,9 +458,23 @@ func (m *AgedAccountsReceivable) SetCustomerNumber(value *string)() {
         panic(err)
     }
 }
+// SetId sets the id property value. The id property
+func (m *AgedAccountsReceivable) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. The name property
 func (m *AgedAccountsReceivable) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AgedAccountsReceivable) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -374,24 +509,33 @@ func (m *AgedAccountsReceivable) SetPeriodLengthFilter(value *string)() {
 }
 // AgedAccountsReceivableable 
 type AgedAccountsReceivableable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBalanceDue()(*float64)
     GetCurrencyCode()(*string)
     GetCurrentAmount()(*float64)
+    GetCustomerId()(*string)
     GetCustomerNumber()(*string)
+    GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetName()(*string)
+    GetOdataType()(*string)
     GetPeriod1Amount()(*float64)
     GetPeriod2Amount()(*float64)
     GetPeriod3Amount()(*float64)
     GetPeriodLengthFilter()(*string)
     SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBalanceDue(value *float64)()
     SetCurrencyCode(value *string)()
     SetCurrentAmount(value *float64)()
+    SetCustomerId(value *string)()
     SetCustomerNumber(value *string)()
+    SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetPeriod1Amount(value *float64)()
     SetPeriod2Amount(value *float64)()
     SetPeriod3Amount(value *float64)()

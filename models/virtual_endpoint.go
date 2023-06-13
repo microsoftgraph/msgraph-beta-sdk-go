@@ -30,6 +30,17 @@ func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEventable) {
     }
     return nil
 }
+// GetBulkActions gets the bulkActions property value. The bulkActions property
+func (m *VirtualEndpoint) GetBulkActions()([]CloudPcBulkActionable) {
+    val, err := m.GetBackingStore().Get("bulkActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcBulkActionable)
+    }
+    return nil
+}
 // GetCloudPCs gets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
     val, err := m.GetBackingStore().Get("cloudPCs")
@@ -88,6 +99,20 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 res[i] = v.(CloudPcAuditEventable)
             }
             m.SetAuditEvents(res)
+        }
+        return nil
+    }
+    res["bulkActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcBulkActionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcBulkActionable, len(val))
+            for i, v := range val {
+                res[i] = v.(CloudPcBulkActionable)
+            }
+            m.SetBulkActions(res)
         }
         return nil
     }
@@ -403,6 +428,16 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetBulkActions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBulkActions()))
+        for i, v := range m.GetBulkActions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("bulkActions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCloudPCs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
         for i, v := range m.GetCloudPCs() {
@@ -540,6 +575,13 @@ func (m *VirtualEndpoint) SetAuditEvents(value []CloudPcAuditEventable)() {
         panic(err)
     }
 }
+// SetBulkActions sets the bulkActions property value. The bulkActions property
+func (m *VirtualEndpoint) SetBulkActions(value []CloudPcBulkActionable)() {
+    err := m.GetBackingStore().Set("bulkActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
@@ -643,6 +685,7 @@ type VirtualEndpointable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuditEvents()([]CloudPcAuditEventable)
+    GetBulkActions()([]CloudPcBulkActionable)
     GetCloudPCs()([]CloudPCable)
     GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable)
     GetDeviceImages()([]CloudPcDeviceImageable)
@@ -658,6 +701,7 @@ type VirtualEndpointable interface {
     GetSupportedRegions()([]CloudPcSupportedRegionable)
     GetUserSettings()([]CloudPcUserSettingable)
     SetAuditEvents(value []CloudPcAuditEventable)()
+    SetBulkActions(value []CloudPcBulkActionable)()
     SetCloudPCs(value []CloudPCable)()
     SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)()
     SetDeviceImages(value []CloudPcDeviceImageable)()

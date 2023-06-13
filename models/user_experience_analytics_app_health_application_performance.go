@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthApplicationPerformance the user experience analytics application performance entity contains app performance details.
+// UserExperienceAnalyticsAppHealthApplicationPerformance the user experience analytics application performance entity contains application performance details.
 type UserExperienceAnalyticsAppHealthApplicationPerformance struct {
     Entity
 }
@@ -71,17 +71,6 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppHealthSco
     }
     if val != nil {
         return val.(*float64)
-    }
-    return nil
-}
-// GetAppHealthStatus gets the appHealthStatus property value. The overall health status of the app.
-func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAppHealthStatus()(*string) {
-    val, err := m.GetBackingStore().Get("appHealthStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -168,16 +157,6 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetFieldDeseria
         }
         if val != nil {
             m.SetAppHealthScore(val)
-        }
-        return nil
-    }
-    res["appHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppHealthStatus(val)
         }
         return nil
     }
@@ -271,12 +250,6 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) Serialize(write
         }
     }
     {
-        err = writer.WriteStringValue("appHealthStatus", m.GetAppHealthStatus())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("appName", m.GetAppName())
         if err != nil {
             return err
@@ -337,13 +310,6 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppHealthSco
         panic(err)
     }
 }
-// SetAppHealthStatus sets the appHealthStatus property value. The overall health status of the app.
-func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppHealthStatus(value *string)() {
-    err := m.GetBackingStore().Set("appHealthStatus", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAppName(value *string)() {
     err := m.GetBackingStore().Set("appName", value)
@@ -381,7 +347,6 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceable interface {
     GetAppDisplayName()(*string)
     GetAppHangCount()(*int32)
     GetAppHealthScore()(*float64)
-    GetAppHealthStatus()(*string)
     GetAppName()(*string)
     GetAppPublisher()(*string)
     GetAppUsageDuration()(*int32)
@@ -391,7 +356,6 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceable interface {
     SetAppDisplayName(value *string)()
     SetAppHangCount(value *int32)()
     SetAppHealthScore(value *float64)()
-    SetAppHealthStatus(value *string)()
     SetAppName(value *string)()
     SetAppPublisher(value *string)()
     SetAppUsageDuration(value *int32)()

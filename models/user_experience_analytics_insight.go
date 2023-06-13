@@ -119,7 +119,7 @@ func (m *UserExperienceAnalyticsInsight) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
 func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *UserExperienceAnalyticsInsight) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
 func (m *UserExperienceAnalyticsInsight) SetSeverity(value *UserExperienceAnalyticsInsightSeverity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {

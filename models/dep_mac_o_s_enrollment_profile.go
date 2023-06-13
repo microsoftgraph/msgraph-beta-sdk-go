@@ -272,6 +272,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["requestRequiresNetworkTether"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequestRequiresNetworkTether(val)
+        }
+        return nil
+    }
     res["setPrimarySetupAccountAsRegularUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -384,6 +394,17 @@ func (m *DepMacOSEnrollmentProfile) GetPrimaryAccountUserName()(*string) {
 // GetRegistrationDisabled gets the registrationDisabled property value. Indicates if registration is disabled
 func (m *DepMacOSEnrollmentProfile) GetRegistrationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("registrationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetRequestRequiresNetworkTether gets the requestRequiresNetworkTether property value. Indicates if the device is network-tethered to run the command
+func (m *DepMacOSEnrollmentProfile) GetRequestRequiresNetworkTether()(*bool) {
+    val, err := m.GetBackingStore().Get("requestRequiresNetworkTether")
     if err != nil {
         panic(err)
     }
@@ -528,6 +549,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteBoolValue("requestRequiresNetworkTether", m.GetRequestRequiresNetworkTether())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("setPrimarySetupAccountAsRegularUser", m.GetSetPrimarySetupAccountAsRegularUser())
         if err != nil {
             return err
@@ -659,6 +686,13 @@ func (m *DepMacOSEnrollmentProfile) SetRegistrationDisabled(value *bool)() {
         panic(err)
     }
 }
+// SetRequestRequiresNetworkTether sets the requestRequiresNetworkTether property value. Indicates if the device is network-tethered to run the command
+func (m *DepMacOSEnrollmentProfile) SetRequestRequiresNetworkTether(value *bool)() {
+    err := m.GetBackingStore().Set("requestRequiresNetworkTether", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSetPrimarySetupAccountAsRegularUser sets the setPrimarySetupAccountAsRegularUser property value. Indicates whether Setup Assistant will set the account as a regular user
 func (m *DepMacOSEnrollmentProfile) SetSetPrimarySetupAccountAsRegularUser(value *bool)() {
     err := m.GetBackingStore().Set("setPrimarySetupAccountAsRegularUser", value)
@@ -700,6 +734,7 @@ type DepMacOSEnrollmentProfileable interface {
     GetPrimaryAccountFullName()(*string)
     GetPrimaryAccountUserName()(*string)
     GetRegistrationDisabled()(*bool)
+    GetRequestRequiresNetworkTether()(*bool)
     GetSetPrimarySetupAccountAsRegularUser()(*bool)
     GetSkipPrimarySetupAccountCreation()(*bool)
     GetZoomDisabled()(*bool)
@@ -719,6 +754,7 @@ type DepMacOSEnrollmentProfileable interface {
     SetPrimaryAccountFullName(value *string)()
     SetPrimaryAccountUserName(value *string)()
     SetRegistrationDisabled(value *bool)()
+    SetRequestRequiresNetworkTether(value *bool)()
     SetSetPrimarySetupAccountAsRegularUser(value *bool)()
     SetSkipPrimarySetupAccountCreation(value *bool)()
     SetZoomDisabled(value *bool)()

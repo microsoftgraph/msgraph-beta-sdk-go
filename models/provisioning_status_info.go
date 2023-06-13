@@ -38,7 +38,7 @@ func (m *ProvisioningStatusInfo) GetAdditionalData()(map[string]any) {
 func (m *ProvisioningStatusInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorInformation gets the errorInformation property value. The errorInformation property
+// GetErrorInformation gets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
 func (m *ProvisioningStatusInfo) GetErrorInformation()(ProvisioningErrorInfoable) {
     val, err := m.GetBackingStore().Get("errorInformation")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ProvisioningStatusInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
+// GetStatus gets the status property value. Possible values are: success, failure, skipped, warning, unknownFutureValue.
 func (m *ProvisioningStatusInfo) GetStatus()(*ProvisioningResult) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *ProvisioningStatusInfo) SetAdditionalData(value map[string]any)() {
 func (m *ProvisioningStatusInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorInformation sets the errorInformation property value. The errorInformation property
+// SetErrorInformation sets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
 func (m *ProvisioningStatusInfo) SetErrorInformation(value ProvisioningErrorInfoable)() {
     err := m.GetBackingStore().Set("errorInformation", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *ProvisioningStatusInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
+// SetStatus sets the status property value. Possible values are: success, failure, skipped, warning, unknownFutureValue.
 func (m *ProvisioningStatusInfo) SetStatus(value *ProvisioningResult)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

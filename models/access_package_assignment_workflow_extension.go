@@ -9,7 +9,7 @@ import (
 type AccessPackageAssignmentWorkflowExtension struct {
     CustomCalloutExtension
 }
-// NewAccessPackageAssignmentWorkflowExtension instantiates a new accessPackageAssignmentWorkflowExtension and sets the default values.
+// NewAccessPackageAssignmentWorkflowExtension instantiates a new AccessPackageAssignmentWorkflowExtension and sets the default values.
 func NewAccessPackageAssignmentWorkflowExtension()(*AccessPackageAssignmentWorkflowExtension) {
     m := &AccessPackageAssignmentWorkflowExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),
