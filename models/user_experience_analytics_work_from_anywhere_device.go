@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereDevice the user experience analytics Device for work from anywhere report
+// UserExperienceAnalyticsWorkFromAnywhereDevice the user experience analytics device for work from anywhere report.
 type UserExperienceAnalyticsWorkFromAnywhereDevice struct {
     Entity
 }
@@ -705,7 +705,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTpmCheckFailed()(*boo
     }
     return nil
 }
-// GetUpgradeEligibility gets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status
+// GetUpgradeEligibility gets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetUpgradeEligibility()(*OperatingSystemUpgradeEligibility) {
     val, err := m.GetBackingStore().Get("upgradeEligibility")
     if err != nil {
@@ -1169,7 +1169,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetTpmCheckFailed(value 
         panic(err)
     }
 }
-// SetUpgradeEligibility sets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status
+// SetUpgradeEligibility sets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetUpgradeEligibility(value *OperatingSystemUpgradeEligibility)() {
     err := m.GetBackingStore().Set("upgradeEligibility", value)
     if err != nil {

@@ -4,22 +4,37 @@ import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CustomerPayment 
 type CustomerPayment struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCustomerPayment instantiates a new customerPayment and sets the default values.
 func NewCustomerPayment()(*CustomerPayment) {
     m := &CustomerPayment{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomerPaymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCustomerPaymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomerPayment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomerPayment) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAmount gets the amount property value. The amount property
 func (m *CustomerPayment) GetAmount()(*float64) {
@@ -53,6 +68,10 @@ func (m *CustomerPayment) GetAppliesToInvoiceNumber()(*string) {
         return val.(*string)
     }
     return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CustomerPayment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetComment gets the comment property value. The comment property
 func (m *CustomerPayment) GetComment()(*string) {
@@ -144,7 +163,7 @@ func (m *CustomerPayment) GetExternalDocumentNumber()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -255,6 +274,16 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
+        }
+        return nil
+    }
     res["journalDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -285,6 +314,16 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["postingDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -296,6 +335,17 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetId gets the id property value. The id property
+func (m *CustomerPayment) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetJournalDisplayName gets the journalDisplayName property value. The journalDisplayName property
 func (m *CustomerPayment) GetJournalDisplayName()(*string) {
@@ -330,6 +380,17 @@ func (m *CustomerPayment) GetLineNumber()(*int32) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomerPayment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPostingDate gets the postingDate property value. The postingDate property
 func (m *CustomerPayment) GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("postingDate")
@@ -343,101 +404,122 @@ func (m *CustomerPayment) GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b
 }
 // Serialize serializes information the current object
 func (m *CustomerPayment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     {
-        err = writer.WriteFloat64Value("amount", m.GetAmount())
+        err := writer.WriteFloat64Value("amount", m.GetAmount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("appliesToInvoiceId", m.GetAppliesToInvoiceId())
+        err := writer.WriteUUIDValue("appliesToInvoiceId", m.GetAppliesToInvoiceId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("appliesToInvoiceNumber", m.GetAppliesToInvoiceNumber())
+        err := writer.WriteStringValue("appliesToInvoiceNumber", m.GetAppliesToInvoiceNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("comment", m.GetComment())
+        err := writer.WriteStringValue("comment", m.GetComment())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("contactId", m.GetContactId())
+        err := writer.WriteStringValue("contactId", m.GetContactId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("customer", m.GetCustomer())
+        err := writer.WriteObjectValue("customer", m.GetCustomer())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("customerId", m.GetCustomerId())
+        err := writer.WriteUUIDValue("customerId", m.GetCustomerId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("customerNumber", m.GetCustomerNumber())
+        err := writer.WriteStringValue("customerNumber", m.GetCustomerNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("description", m.GetDescription())
+        err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("documentNumber", m.GetDocumentNumber())
+        err := writer.WriteStringValue("documentNumber", m.GetDocumentNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("externalDocumentNumber", m.GetExternalDocumentNumber())
+        err := writer.WriteStringValue("externalDocumentNumber", m.GetExternalDocumentNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("journalDisplayName", m.GetJournalDisplayName())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        err := writer.WriteStringValue("journalDisplayName", m.GetJournalDisplayName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteInt32Value("lineNumber", m.GetLineNumber())
+        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("postingDate", m.GetPostingDate())
+        err := writer.WriteInt32Value("lineNumber", m.GetLineNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteDateOnlyValue("postingDate", m.GetPostingDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomerPayment) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAmount sets the amount property value. The amount property
 func (m *CustomerPayment) SetAmount(value *float64)() {
@@ -459,6 +541,10 @@ func (m *CustomerPayment) SetAppliesToInvoiceNumber(value *string)() {
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CustomerPayment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetComment sets the comment property value. The comment property
 func (m *CustomerPayment) SetComment(value *string)() {
@@ -516,6 +602,13 @@ func (m *CustomerPayment) SetExternalDocumentNumber(value *string)() {
         panic(err)
     }
 }
+// SetId sets the id property value. The id property
+func (m *CustomerPayment) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetJournalDisplayName sets the journalDisplayName property value. The journalDisplayName property
 func (m *CustomerPayment) SetJournalDisplayName(value *string)() {
     err := m.GetBackingStore().Set("journalDisplayName", value)
@@ -537,6 +630,13 @@ func (m *CustomerPayment) SetLineNumber(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomerPayment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPostingDate sets the postingDate property value. The postingDate property
 func (m *CustomerPayment) SetPostingDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("postingDate", value)
@@ -546,11 +646,13 @@ func (m *CustomerPayment) SetPostingDate(value *i878a80d2330e89d26896388a3f487ee
 }
 // CustomerPaymentable 
 type CustomerPaymentable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAmount()(*float64)
     GetAppliesToInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetAppliesToInvoiceNumber()(*string)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetComment()(*string)
     GetContactId()(*string)
     GetCustomer()(Customerable)
@@ -559,13 +661,16 @@ type CustomerPaymentable interface {
     GetDescription()(*string)
     GetDocumentNumber()(*string)
     GetExternalDocumentNumber()(*string)
+    GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetJournalDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLineNumber()(*int32)
+    GetOdataType()(*string)
     GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     SetAmount(value *float64)()
     SetAppliesToInvoiceId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetAppliesToInvoiceNumber(value *string)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetComment(value *string)()
     SetContactId(value *string)()
     SetCustomer(value Customerable)()
@@ -574,8 +679,10 @@ type CustomerPaymentable interface {
     SetDescription(value *string)()
     SetDocumentNumber(value *string)()
     SetExternalDocumentNumber(value *string)()
+    SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetJournalDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLineNumber(value *int32)()
+    SetOdataType(value *string)()
     SetPostingDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
 }

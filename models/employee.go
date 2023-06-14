@@ -2,23 +2,39 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // Employee 
 type Employee struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewEmployee instantiates a new employee and sets the default values.
 func NewEmployee()(*Employee) {
     m := &Employee{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmployeeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEmployeeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmployee(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Employee) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAddress gets the address property value. The address property
 func (m *Employee) GetAddress()(PostalAddressTypeable) {
@@ -30,6 +46,10 @@ func (m *Employee) GetAddress()(PostalAddressTypeable) {
         return val.(PostalAddressTypeable)
     }
     return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *Employee) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBirthDate gets the birthDate property value. The birthDate property
 func (m *Employee) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -77,7 +97,7 @@ func (m *Employee) GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
@@ -138,6 +158,16 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
+        }
+        return nil
+    }
     res["jobTitle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -185,6 +215,16 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetNumber(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -275,6 +315,17 @@ func (m *Employee) GetGivenName()(*string) {
     }
     return nil
 }
+// GetId gets the id property value. The id property
+func (m *Employee) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetJobTitle gets the jobTitle property value. The jobTitle property
 func (m *Employee) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
@@ -322,6 +373,17 @@ func (m *Employee) GetMobilePhone()(*string) {
 // GetNumber gets the number property value. The number property
 func (m *Employee) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Employee) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -409,84 +471,92 @@ func (m *Employee) GetTerminationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // Serialize serializes information the current object
 func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     {
-        err = writer.WriteObjectValue("address", m.GetAddress())
+        err := writer.WriteObjectValue("address", m.GetAddress())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("birthDate", m.GetBirthDate())
+        err := writer.WriteDateOnlyValue("birthDate", m.GetBirthDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("email", m.GetEmail())
+        err := writer.WriteStringValue("email", m.GetEmail())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("employmentDate", m.GetEmploymentDate())
+        err := writer.WriteDateOnlyValue("employmentDate", m.GetEmploymentDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("givenName", m.GetGivenName())
+        err := writer.WriteStringValue("givenName", m.GetGivenName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("jobTitle", m.GetJobTitle())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        err := writer.WriteStringValue("jobTitle", m.GetJobTitle())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("middleName", m.GetMiddleName())
+        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("mobilePhone", m.GetMobilePhone())
+        err := writer.WriteStringValue("middleName", m.GetMiddleName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("number", m.GetNumber())
+        err := writer.WriteStringValue("mobilePhone", m.GetMobilePhone())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("personalEmail", m.GetPersonalEmail())
+        err := writer.WriteStringValue("number", m.GetNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("personalEmail", m.GetPersonalEmail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
         if err != nil {
             return err
         }
@@ -496,36 +566,49 @@ func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         for i, v := range m.GetPicture() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("picture", cast)
+        err := writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("statisticsGroupCode", m.GetStatisticsGroupCode())
+        err := writer.WriteStringValue("statisticsGroupCode", m.GetStatisticsGroupCode())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("status", m.GetStatus())
+        err := writer.WriteStringValue("status", m.GetStatus())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("surname", m.GetSurname())
+        err := writer.WriteStringValue("surname", m.GetSurname())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("terminationDate", m.GetTerminationDate())
+        err := writer.WriteDateOnlyValue("terminationDate", m.GetTerminationDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Employee) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddress sets the address property value. The address property
 func (m *Employee) SetAddress(value PostalAddressTypeable)() {
@@ -533,6 +616,10 @@ func (m *Employee) SetAddress(value PostalAddressTypeable)() {
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *Employee) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBirthDate sets the birthDate property value. The birthDate property
 func (m *Employee) SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
@@ -569,6 +656,13 @@ func (m *Employee) SetGivenName(value *string)() {
         panic(err)
     }
 }
+// SetId sets the id property value. The id property
+func (m *Employee) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetJobTitle sets the jobTitle property value. The jobTitle property
 func (m *Employee) SetJobTitle(value *string)() {
     err := m.GetBackingStore().Set("jobTitle", value)
@@ -600,6 +694,13 @@ func (m *Employee) SetMobilePhone(value *string)() {
 // SetNumber sets the number property value. The number property
 func (m *Employee) SetNumber(value *string)() {
     err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Employee) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -655,19 +756,23 @@ func (m *Employee) SetTerminationDate(value *i878a80d2330e89d26896388a3f487eef27
 }
 // Employeeable 
 type Employeeable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(PostalAddressTypeable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetGivenName()(*string)
+    GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetJobTitle()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMiddleName()(*string)
     GetMobilePhone()(*string)
     GetNumber()(*string)
+    GetOdataType()(*string)
     GetPersonalEmail()(*string)
     GetPhoneNumber()(*string)
     GetPicture()([]Pictureable)
@@ -676,16 +781,19 @@ type Employeeable interface {
     GetSurname()(*string)
     GetTerminationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     SetAddress(value PostalAddressTypeable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetEmploymentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetGivenName(value *string)()
+    SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetJobTitle(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMiddleName(value *string)()
     SetMobilePhone(value *string)()
     SetNumber(value *string)()
+    SetOdataType(value *string)()
     SetPersonalEmail(value *string)()
     SetPhoneNumber(value *string)()
     SetPicture(value []Pictureable)()

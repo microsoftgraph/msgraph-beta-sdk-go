@@ -4,22 +4,37 @@ import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // Customer 
 type Customer struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCustomer instantiates a new customer and sets the default values.
 func NewCustomer()(*Customer) {
     m := &Customer{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomer(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Customer) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAddress gets the address property value. The address property
 func (m *Customer) GetAddress()(PostalAddressTypeable) {
@@ -31,6 +46,10 @@ func (m *Customer) GetAddress()(PostalAddressTypeable) {
         return val.(PostalAddressTypeable)
     }
     return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *Customer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Customer) GetBlocked()(*string) {
@@ -100,7 +119,7 @@ func (m *Customer) GetEmail()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
@@ -171,6 +190,16 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -188,6 +217,16 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetNumber(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -337,6 +376,17 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
+// GetId gets the id property value. The id property
+func (m *Customer) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Customer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -351,6 +401,17 @@ func (m *Customer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
 // GetNumber gets the number property value. The number property
 func (m *Customer) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Customer) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -515,90 +576,98 @@ func (m *Customer) GetWebsite()(*string) {
 }
 // Serialize serializes information the current object
 func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     {
-        err = writer.WriteObjectValue("address", m.GetAddress())
+        err := writer.WriteObjectValue("address", m.GetAddress())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("blocked", m.GetBlocked())
+        err := writer.WriteStringValue("blocked", m.GetBlocked())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("currency", m.GetCurrency())
+        err := writer.WriteObjectValue("currency", m.GetCurrency())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("currencyCode", m.GetCurrencyCode())
+        err := writer.WriteStringValue("currencyCode", m.GetCurrencyCode())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
+        err := writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("email", m.GetEmail())
+        err := writer.WriteStringValue("email", m.GetEmail())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("number", m.GetNumber())
+        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("paymentMethod", m.GetPaymentMethod())
+        err := writer.WriteStringValue("number", m.GetNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("paymentMethodId", m.GetPaymentMethodId())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("paymentTerm", m.GetPaymentTerm())
+        err := writer.WriteObjectValue("paymentMethod", m.GetPaymentMethod())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("paymentTermsId", m.GetPaymentTermsId())
+        err := writer.WriteUUIDValue("paymentMethodId", m.GetPaymentMethodId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
+        err := writer.WriteObjectValue("paymentTerm", m.GetPaymentTerm())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteUUIDValue("paymentTermsId", m.GetPaymentTermsId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
         if err != nil {
             return err
         }
@@ -608,60 +677,73 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         for i, v := range m.GetPicture() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("picture", cast)
+        err := writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("shipmentMethod", m.GetShipmentMethod())
+        err := writer.WriteObjectValue("shipmentMethod", m.GetShipmentMethod())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("shipmentMethodId", m.GetShipmentMethodId())
+        err := writer.WriteUUIDValue("shipmentMethodId", m.GetShipmentMethodId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("taxAreaDisplayName", m.GetTaxAreaDisplayName())
+        err := writer.WriteStringValue("taxAreaDisplayName", m.GetTaxAreaDisplayName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("taxAreaId", m.GetTaxAreaId())
+        err := writer.WriteUUIDValue("taxAreaId", m.GetTaxAreaId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteBoolValue("taxLiable", m.GetTaxLiable())
+        err := writer.WriteBoolValue("taxLiable", m.GetTaxLiable())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("taxRegistrationNumber", m.GetTaxRegistrationNumber())
+        err := writer.WriteStringValue("taxRegistrationNumber", m.GetTaxRegistrationNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("website", m.GetWebsite())
+        err := writer.WriteStringValue("website", m.GetWebsite())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Customer) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddress sets the address property value. The address property
 func (m *Customer) SetAddress(value PostalAddressTypeable)() {
@@ -669,6 +751,10 @@ func (m *Customer) SetAddress(value PostalAddressTypeable)() {
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *Customer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Customer) SetBlocked(value *string)() {
@@ -712,6 +798,13 @@ func (m *Customer) SetEmail(value *string)() {
         panic(err)
     }
 }
+// SetId sets the id property value. The id property
+func (m *Customer) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Customer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -722,6 +815,13 @@ func (m *Customer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
 // SetNumber sets the number property value. The number property
 func (m *Customer) SetNumber(value *string)() {
     err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Customer) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -826,17 +926,21 @@ func (m *Customer) SetWebsite(value *string)() {
 }
 // Customerable 
 type Customerable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(PostalAddressTypeable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBlocked()(*string)
     GetCurrency()(Currencyable)
     GetCurrencyCode()(*string)
     GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetDisplayName()(*string)
     GetEmail()(*string)
+    GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNumber()(*string)
+    GetOdataType()(*string)
     GetPaymentMethod()(PaymentMethodable)
     GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetPaymentTerm()(PaymentTermable)
@@ -852,14 +956,17 @@ type Customerable interface {
     GetType()(*string)
     GetWebsite()(*string)
     SetAddress(value PostalAddressTypeable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBlocked(value *string)()
     SetCurrency(value Currencyable)()
     SetCurrencyCode(value *string)()
     SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
+    SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNumber(value *string)()
+    SetOdataType(value *string)()
     SetPaymentMethod(value PaymentMethodable)()
     SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetPaymentTerm(value PaymentTermable)()

@@ -44,7 +44,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         return nil
     }
     res["medianImpactInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         return nil
     }
     res["totalImpactInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -116,13 +116,13 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
     return res
 }
 // GetMedianImpactInMs gets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int32) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int64) {
     val, err := m.GetBackingStore().Get("medianImpactInMs")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*int32)
+        return val.(*int64)
     }
     return nil
 }
@@ -171,13 +171,13 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetPublisher()(
     return nil
 }
 // GetTotalImpactInMs gets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs()(*int32) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs()(*int64) {
     val, err := m.GetBackingStore().Get("totalImpactInMs")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*int32)
+        return val.(*int64)
     }
     return nil
 }
@@ -205,7 +205,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
         }
     }
     {
-        err = writer.WriteInt32Value("medianImpactInMs", m.GetMedianImpactInMs())
+        err = writer.WriteInt64Value("medianImpactInMs", m.GetMedianImpactInMs())
         if err != nil {
             return err
         }
@@ -235,7 +235,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
         }
     }
     {
-        err = writer.WriteInt32Value("totalImpactInMs", m.GetTotalImpactInMs())
+        err = writer.WriteInt64Value("totalImpactInMs", m.GetTotalImpactInMs())
         if err != nil {
             return err
         }
@@ -256,7 +256,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(
     }
 }
 // SetMedianImpactInMs sets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs(value *int32)() {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs(value *int64)() {
     err := m.GetBackingStore().Set("medianImpactInMs", value)
     if err != nil {
         panic(err)
@@ -291,7 +291,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetPublisher(va
     }
 }
 // SetTotalImpactInMs sets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs(value *int32)() {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs(value *int64)() {
     err := m.GetBackingStore().Set("totalImpactInMs", value)
     if err != nil {
         panic(err)
@@ -309,19 +309,19 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceCount()(*int64)
-    GetMedianImpactInMs()(*int32)
+    GetMedianImpactInMs()(*int64)
     GetMedianImpactInMs2()(*int64)
     GetProcessName()(*string)
     GetProductName()(*string)
     GetPublisher()(*string)
-    GetTotalImpactInMs()(*int32)
+    GetTotalImpactInMs()(*int64)
     GetTotalImpactInMs2()(*int64)
     SetDeviceCount(value *int64)()
-    SetMedianImpactInMs(value *int32)()
+    SetMedianImpactInMs(value *int64)()
     SetMedianImpactInMs2(value *int64)()
     SetProcessName(value *string)()
     SetProductName(value *string)()
     SetPublisher(value *string)()
-    SetTotalImpactInMs(value *int32)()
+    SetTotalImpactInMs(value *int64)()
     SetTotalImpactInMs2(value *int64)()
 }

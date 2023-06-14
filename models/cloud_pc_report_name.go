@@ -12,10 +12,11 @@ const (
     SHAREDUSELICENSEUSAGEREPORT_CLOUDPCREPORTNAME
     SHAREDUSELICENSEUSAGEREALTIMEREPORT_CLOUDPCREPORTNAME
     UNKNOWNFUTUREVALUE_CLOUDPCREPORTNAME
+    NOLICENSEAVAILABLECONNECTIVITYFAILUREREPORT_CLOUDPCREPORTNAME
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -32,6 +33,8 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = SHAREDUSELICENSEUSAGEREALTIMEREPORT_CLOUDPCREPORTNAME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCREPORTNAME
+        case "noLicenseAvailableConnectivityFailureReport":
+            result = NOLICENSEAVAILABLECONNECTIVITYFAILUREREPORT_CLOUDPCREPORTNAME
         default:
             return 0, errors.New("Unknown CloudPcReportName value: " + v)
     }

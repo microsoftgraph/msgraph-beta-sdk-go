@@ -2,18 +2,24 @@ package models
 import (
     "errors"
 )
-// 
+// Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
 type UserExperienceAnalyticsInsightSeverity int
 
 const (
+    // Indicates that the insight severity is none.
     NONE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY UserExperienceAnalyticsInsightSeverity = iota
+    // Indicates that the insight severity is informational.
     INFORMATIONAL_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
+    // Indicates that the insight severity is warning.
     WARNING_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
+    // Indicates that the insight severity is error.
     ERROR_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
 )
 
 func (i UserExperienceAnalyticsInsightSeverity) String() string {
-    return []string{"none", "informational", "warning", "error"}[i]
+    return []string{"none", "informational", "warning", "error", "unknownFutureValue"}[i]
 }
 func ParseUserExperienceAnalyticsInsightSeverity(v string) (any, error) {
     result := NONE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
@@ -26,6 +32,8 @@ func ParseUserExperienceAnalyticsInsightSeverity(v string) (any, error) {
             result = WARNING_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
         case "error":
             result = ERROR_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
         default:
             return 0, errors.New("Unknown UserExperienceAnalyticsInsightSeverity value: " + v)
     }

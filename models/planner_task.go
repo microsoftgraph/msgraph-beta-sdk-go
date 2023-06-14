@@ -598,7 +598,7 @@ func (m *PlannerTask) GetReferenceCount()(*int32) {
     }
     return nil
 }
-// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. The specifiedCompletionRequirements property
+// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 func (m *PlannerTask) GetSpecifiedCompletionRequirements()(*PlannerTaskCompletionRequirements) {
     val, err := m.GetBackingStore().Get("specifiedCompletionRequirements")
     if err != nil {
@@ -984,7 +984,7 @@ func (m *PlannerTask) SetReferenceCount(value *int32)() {
         panic(err)
     }
 }
-// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. The specifiedCompletionRequirements property
+// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 func (m *PlannerTask) SetSpecifiedCompletionRequirements(value *PlannerTaskCompletionRequirements)() {
     err := m.GetBackingStore().Set("specifiedCompletionRequirements", value)
     if err != nil {

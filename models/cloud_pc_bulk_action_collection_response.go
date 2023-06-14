@@ -4,33 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserAppInstallStatusCollectionResponse 
-type UserAppInstallStatusCollectionResponse struct {
+// CloudPcBulkActionCollectionResponse 
+type CloudPcBulkActionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserAppInstallStatusCollectionResponse instantiates a new UserAppInstallStatusCollectionResponse and sets the default values.
-func NewUserAppInstallStatusCollectionResponse()(*UserAppInstallStatusCollectionResponse) {
-    m := &UserAppInstallStatusCollectionResponse{
+// NewCloudPcBulkActionCollectionResponse instantiates a new CloudPcBulkActionCollectionResponse and sets the default values.
+func NewCloudPcBulkActionCollectionResponse()(*CloudPcBulkActionCollectionResponse) {
+    m := &CloudPcBulkActionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
     }
     return m
 }
-// CreateUserAppInstallStatusCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateUserAppInstallStatusCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewUserAppInstallStatusCollectionResponse(), nil
+// CreateCloudPcBulkActionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCloudPcBulkActionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewCloudPcBulkActionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserAppInstallStatusCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcBulkActionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserAppInstallStatusFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcBulkActionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UserAppInstallStatusable, len(val))
+            res := make([]CloudPcBulkActionable, len(val))
             for i, v := range val {
-                res[i] = v.(UserAppInstallStatusable)
+                res[i] = v.(CloudPcBulkActionable)
             }
             m.SetValue(res)
         }
@@ -39,18 +39,18 @@ func (m *UserAppInstallStatusCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
-func (m *UserAppInstallStatusCollectionResponse) GetValue()([]UserAppInstallStatusable) {
+func (m *CloudPcBulkActionCollectionResponse) GetValue()([]CloudPcBulkActionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]UserAppInstallStatusable)
+        return val.([]CloudPcBulkActionable)
     }
     return nil
 }
 // Serialize serializes information the current object
-func (m *UserAppInstallStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *CloudPcBulkActionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
     if err != nil {
         return err
@@ -68,16 +68,16 @@ func (m *UserAppInstallStatusCollectionResponse) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *UserAppInstallStatusCollectionResponse) SetValue(value []UserAppInstallStatusable)() {
+func (m *CloudPcBulkActionCollectionResponse) SetValue(value []CloudPcBulkActionable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-// UserAppInstallStatusCollectionResponseable 
-type UserAppInstallStatusCollectionResponseable interface {
+// CloudPcBulkActionCollectionResponseable 
+type CloudPcBulkActionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]UserAppInstallStatusable)
-    SetValue(value []UserAppInstallStatusable)()
+    GetValue()([]CloudPcBulkActionable)
+    SetValue(value []CloudPcBulkActionable)()
 }

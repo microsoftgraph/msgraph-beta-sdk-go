@@ -9,7 +9,7 @@ import (
 type Device struct {
     DirectoryObject
 }
-// NewDevice instantiates a new device and sets the default values.
+// NewDevice instantiates a new Device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),
@@ -710,7 +710,7 @@ func (m *Device) GetIsManaged()(*bool) {
     }
     return nil
 }
-// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+// GetIsManagementRestricted gets the isManagementRestricted property value. true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
 func (m *Device) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -1405,7 +1405,7 @@ func (m *Device) SetIsManaged(value *bool)() {
         panic(err)
     }
 }
-// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+// SetIsManagementRestricted sets the isManagementRestricted property value. true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
 func (m *Device) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
     if err != nil {

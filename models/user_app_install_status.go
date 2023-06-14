@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserAppInstallStatus contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).
+// UserAppInstallStatus 
 type UserAppInstallStatus struct {
     Entity
 }
-// NewUserAppInstallStatus instantiates a new userAppInstallStatus and sets the default values.
+// NewUserAppInstallStatus instantiates a new UserAppInstallStatus and sets the default values.
 func NewUserAppInstallStatus()(*UserAppInstallStatus) {
     m := &UserAppInstallStatus{
         Entity: *NewEntity(),

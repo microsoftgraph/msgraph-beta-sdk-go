@@ -32,6 +32,17 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedBiomet
     }
     return nil
 }
+// GetEnhancedSignInSecurity gets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedSignInSecurity()(*int32) {
+    val, err := m.GetBackingStore().Get("enhancedSignInSecurity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
@@ -42,6 +53,16 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetFieldDeseriali
         }
         if val != nil {
             m.SetEnhancedBiometricsState(val.(*Enablement))
+        }
+        return nil
+    }
+    res["enhancedSignInSecurity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnhancedSignInSecurity(val)
         }
         return nil
     }
@@ -313,6 +334,12 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) Serialize(writer 
         }
     }
     {
+        err = writer.WriteInt32Value("enhancedSignInSecurity", m.GetEnhancedSignInSecurity())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("pinExpirationInDays", m.GetPinExpirationInDays())
         if err != nil {
             return err
@@ -394,6 +421,13 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) Serialize(writer 
 // SetEnhancedBiometricsState sets the enhancedBiometricsState property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedBiometricsState(value *Enablement)() {
     err := m.GetBackingStore().Set("enhancedBiometricsState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetEnhancedSignInSecurity sets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedSignInSecurity(value *int32)() {
+    err := m.GetBackingStore().Set("enhancedSignInSecurity", value)
     if err != nil {
         panic(err)
     }
@@ -487,6 +521,7 @@ type DeviceEnrollmentWindowsHelloForBusinessConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnhancedBiometricsState()(*Enablement)
+    GetEnhancedSignInSecurity()(*int32)
     GetPinExpirationInDays()(*int32)
     GetPinLowercaseCharactersUsage()(*WindowsHelloForBusinessPinUsage)
     GetPinMaximumLength()(*int32)
@@ -500,6 +535,7 @@ type DeviceEnrollmentWindowsHelloForBusinessConfigurationable interface {
     GetState()(*Enablement)
     GetUnlockWithBiometricsEnabled()(*bool)
     SetEnhancedBiometricsState(value *Enablement)()
+    SetEnhancedSignInSecurity(value *int32)()
     SetPinExpirationInDays(value *int32)()
     SetPinLowercaseCharactersUsage(value *WindowsHelloForBusinessPinUsage)()
     SetPinMaximumLength(value *int32)()

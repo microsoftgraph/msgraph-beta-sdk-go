@@ -93,14 +93,6 @@ func (m *MobileAppsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppCollectionResponseable), nil
 }
-// GetMobileAppCountWithStatus provides operations to call the getMobileAppCount method.
-func (m *MobileAppsRequestBuilder) GetMobileAppCountWithStatus(status *string)(*MobileAppsGetMobileAppCountWithStatusRequestBuilder) {
-    return NewMobileAppsGetMobileAppCountWithStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, status)
-}
-// GetTopMobileAppsWithStatusWithCount provides operations to call the getTopMobileApps method.
-func (m *MobileAppsRequestBuilder) GetTopMobileAppsWithStatusWithCount(count *int64, status *string)(*MobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilder) {
-    return NewMobileAppsGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, count, status)
-}
 // GraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
 func (m *MobileAppsRequestBuilder) GraphManagedMobileLobApp()(*MobileAppsGraphManagedMobileLobAppRequestBuilder) {
     return NewMobileAppsGraphManagedMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -54,7 +54,7 @@ func (m *PlannerTaskPropertyRule) GetCheckLists()(PlannerFieldRulesable) {
     }
     return nil
 }
-// GetCompletionRequirements gets the completionRequirements property value. The completionRequirements property
+// GetCompletionRequirements gets the completionRequirements property value. Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
 func (m *PlannerTaskPropertyRule) GetCompletionRequirements()([]string) {
     val, err := m.GetBackingStore().Get("completionRequirements")
     if err != nil {
@@ -319,7 +319,7 @@ func (m *PlannerTaskPropertyRule) GetOrder()([]string) {
     }
     return nil
 }
-// GetPercentComplete gets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+// GetPercentComplete gets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
 func (m *PlannerTaskPropertyRule) GetPercentComplete()([]string) {
     val, err := m.GetBackingStore().Get("percentComplete")
     if err != nil {
@@ -504,7 +504,7 @@ func (m *PlannerTaskPropertyRule) SetCheckLists(value PlannerFieldRulesable)() {
         panic(err)
     }
 }
-// SetCompletionRequirements sets the completionRequirements property value. The completionRequirements property
+// SetCompletionRequirements sets the completionRequirements property value. Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
 func (m *PlannerTaskPropertyRule) SetCompletionRequirements(value []string)() {
     err := m.GetBackingStore().Set("completionRequirements", value)
     if err != nil {
@@ -546,7 +546,7 @@ func (m *PlannerTaskPropertyRule) SetOrder(value []string)() {
         panic(err)
     }
 }
-// SetPercentComplete sets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+// SetPercentComplete sets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
 func (m *PlannerTaskPropertyRule) SetPercentComplete(value []string)() {
     err := m.GetBackingStore().Set("percentComplete", value)
     if err != nil {

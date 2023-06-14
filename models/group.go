@@ -9,7 +9,7 @@ import (
 type Group struct {
     DirectoryObject
 }
-// NewGroup instantiates a new group and sets the default values.
+// NewGroup instantiates a new Group and sets the default values.
 func NewGroup()(*Group) {
     m := &Group{
         DirectoryObject: *NewDirectoryObject(),
@@ -1278,7 +1278,7 @@ func (m *Group) GetIsFavorite()(*bool) {
     }
     return nil
 }
-// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+// GetIsManagementRestricted gets the isManagementRestricted property value. Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
 func (m *Group) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -2606,7 +2606,7 @@ func (m *Group) SetIsFavorite(value *bool)() {
         panic(err)
     }
 }
-// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+// SetIsManagementRestricted sets the isManagementRestricted property value. Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
 func (m *Group) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
     if err != nil {

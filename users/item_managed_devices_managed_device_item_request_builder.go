@@ -169,10 +169,6 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetFileVaultKey()(*I
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetNonCompliantSettings()(*ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) {
     return NewItemManagedDevicesItemGetNonCompliantSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetOemWarranty provides operations to call the getOemWarranty method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetOemWarranty()(*ItemManagedDevicesItemGetOemWarrantyRequestBuilder) {
-    return NewItemManagedDevicesItemGetOemWarrantyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // InitiateMobileDeviceManagementKeyRecovery provides operations to call the initiateMobileDeviceManagementKeyRecovery method.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) InitiateMobileDeviceManagementKeyRecovery()(*ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) {
     return NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

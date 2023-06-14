@@ -295,7 +295,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeIn
     }
     return nil
 }
-// GetRestartCategory gets the restartCategory property value. Operating System restart category
+// GetRestartCategory gets the restartCategory property value. Operating System restart category.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory) {
     val, err := m.GetBackingStore().Get("restartCategory")
     if err != nil {
@@ -536,7 +536,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) SetResponsiveDesktopTimeIn
         panic(err)
     }
 }
-// SetRestartCategory sets the restartCategory property value. Operating System restart category
+// SetRestartCategory sets the restartCategory property value. Operating System restart category.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetRestartCategory(value *UserExperienceAnalyticsOperatingSystemRestartCategory)() {
     err := m.GetBackingStore().Set("restartCategory", value)
     if err != nil {

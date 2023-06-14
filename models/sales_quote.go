@@ -4,17 +4,20 @@ import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SalesQuote 
 type SalesQuote struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSalesQuote instantiates a new salesQuote and sets the default values.
 func NewSalesQuote()(*SalesQuote) {
     m := &SalesQuote{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSalesQuoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,6 +34,22 @@ func (m *SalesQuote) GetAcceptedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
         return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     }
     return nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SalesQuote) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SalesQuote) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBillingPostalAddress gets the billingPostalAddress property value. The billingPostalAddress property
 func (m *SalesQuote) GetBillingPostalAddress()(PostalAddressTypeable) {
@@ -210,7 +229,7 @@ func (m *SalesQuote) GetExternalDocumentNumber()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["acceptedDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -381,6 +400,16 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -398,6 +427,16 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetNumber(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -577,6 +616,17 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
+// GetId gets the id property value. The id property
+func (m *SalesQuote) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("id")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *SalesQuote) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -591,6 +641,17 @@ func (m *SalesQuote) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
 // GetNumber gets the number property value. The number property
 func (m *SalesQuote) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SalesQuote) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -788,144 +849,152 @@ func (m *SalesQuote) GetValidUntilDate()(*i878a80d2330e89d26896388a3f487eef27b0a
 }
 // Serialize serializes information the current object
 func (m *SalesQuote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     {
-        err = writer.WriteDateOnlyValue("acceptedDate", m.GetAcceptedDate())
+        err := writer.WriteDateOnlyValue("acceptedDate", m.GetAcceptedDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("billingPostalAddress", m.GetBillingPostalAddress())
+        err := writer.WriteObjectValue("billingPostalAddress", m.GetBillingPostalAddress())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("billToCustomerId", m.GetBillToCustomerId())
+        err := writer.WriteUUIDValue("billToCustomerId", m.GetBillToCustomerId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("billToCustomerNumber", m.GetBillToCustomerNumber())
+        err := writer.WriteStringValue("billToCustomerNumber", m.GetBillToCustomerNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("billToName", m.GetBillToName())
+        err := writer.WriteStringValue("billToName", m.GetBillToName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("currency", m.GetCurrency())
+        err := writer.WriteObjectValue("currency", m.GetCurrency())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("currencyCode", m.GetCurrencyCode())
+        err := writer.WriteStringValue("currencyCode", m.GetCurrencyCode())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
+        err := writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("customer", m.GetCustomer())
+        err := writer.WriteObjectValue("customer", m.GetCustomer())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("customerId", m.GetCustomerId())
+        err := writer.WriteUUIDValue("customerId", m.GetCustomerId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("customerName", m.GetCustomerName())
+        err := writer.WriteStringValue("customerName", m.GetCustomerName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("customerNumber", m.GetCustomerNumber())
+        err := writer.WriteStringValue("customerNumber", m.GetCustomerNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("discountAmount", m.GetDiscountAmount())
+        err := writer.WriteFloat64Value("discountAmount", m.GetDiscountAmount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("documentDate", m.GetDocumentDate())
+        err := writer.WriteDateOnlyValue("documentDate", m.GetDocumentDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("dueDate", m.GetDueDate())
+        err := writer.WriteDateOnlyValue("dueDate", m.GetDueDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("email", m.GetEmail())
+        err := writer.WriteStringValue("email", m.GetEmail())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("externalDocumentNumber", m.GetExternalDocumentNumber())
+        err := writer.WriteStringValue("externalDocumentNumber", m.GetExternalDocumentNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("number", m.GetNumber())
+        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("paymentTerm", m.GetPaymentTerm())
+        err := writer.WriteStringValue("number", m.GetNumber())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("paymentTermsId", m.GetPaymentTermsId())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
+        err := writer.WriteObjectValue("paymentTerm", m.GetPaymentTerm())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("salesperson", m.GetSalesperson())
+        err := writer.WriteUUIDValue("paymentTermsId", m.GetPaymentTermsId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("salesperson", m.GetSalesperson())
         if err != nil {
             return err
         }
@@ -935,79 +1004,85 @@ func (m *SalesQuote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         for i, v := range m.GetSalesQuoteLines() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("salesQuoteLines", cast)
+        err := writer.WriteCollectionOfObjectValues("salesQuoteLines", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("sellingPostalAddress", m.GetSellingPostalAddress())
+        err := writer.WriteObjectValue("sellingPostalAddress", m.GetSellingPostalAddress())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("sentDate", m.GetSentDate())
+        err := writer.WriteTimeValue("sentDate", m.GetSentDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("shipmentMethod", m.GetShipmentMethod())
+        err := writer.WriteObjectValue("shipmentMethod", m.GetShipmentMethod())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteUUIDValue("shipmentMethodId", m.GetShipmentMethodId())
+        err := writer.WriteUUIDValue("shipmentMethodId", m.GetShipmentMethodId())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("shippingPostalAddress", m.GetShippingPostalAddress())
+        err := writer.WriteObjectValue("shippingPostalAddress", m.GetShippingPostalAddress())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("shipToContact", m.GetShipToContact())
+        err := writer.WriteStringValue("shipToContact", m.GetShipToContact())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("shipToName", m.GetShipToName())
+        err := writer.WriteStringValue("shipToName", m.GetShipToName())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("status", m.GetStatus())
+        err := writer.WriteStringValue("status", m.GetStatus())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("totalAmountExcludingTax", m.GetTotalAmountExcludingTax())
+        err := writer.WriteFloat64Value("totalAmountExcludingTax", m.GetTotalAmountExcludingTax())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("totalAmountIncludingTax", m.GetTotalAmountIncludingTax())
+        err := writer.WriteFloat64Value("totalAmountIncludingTax", m.GetTotalAmountIncludingTax())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("totalTaxAmount", m.GetTotalTaxAmount())
+        err := writer.WriteFloat64Value("totalTaxAmount", m.GetTotalTaxAmount())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteDateOnlyValue("validUntilDate", m.GetValidUntilDate())
+        err := writer.WriteDateOnlyValue("validUntilDate", m.GetValidUntilDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
@@ -1020,6 +1095,17 @@ func (m *SalesQuote) SetAcceptedDate(value *i878a80d2330e89d26896388a3f487eef27b
     if err != nil {
         panic(err)
     }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SalesQuote) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SalesQuote) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBillingPostalAddress sets the billingPostalAddress property value. The billingPostalAddress property
 func (m *SalesQuote) SetBillingPostalAddress(value PostalAddressTypeable)() {
@@ -1133,6 +1219,13 @@ func (m *SalesQuote) SetExternalDocumentNumber(value *string)() {
         panic(err)
     }
 }
+// SetId sets the id property value. The id property
+func (m *SalesQuote) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("id", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *SalesQuote) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -1143,6 +1236,13 @@ func (m *SalesQuote) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 // SetNumber sets the number property value. The number property
 func (m *SalesQuote) SetNumber(value *string)() {
     err := m.GetBackingStore().Set("number", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SalesQuote) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -1268,9 +1368,11 @@ func (m *SalesQuote) SetValidUntilDate(value *i878a80d2330e89d26896388a3f487eef2
 }
 // SalesQuoteable 
 type SalesQuoteable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcceptedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBillingPostalAddress()(PostalAddressTypeable)
     GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetBillToCustomerNumber()(*string)
@@ -1287,8 +1389,10 @@ type SalesQuoteable interface {
     GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetEmail()(*string)
     GetExternalDocumentNumber()(*string)
+    GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNumber()(*string)
+    GetOdataType()(*string)
     GetPaymentTerm()(PaymentTermable)
     GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetPhoneNumber()(*string)
@@ -1307,6 +1411,7 @@ type SalesQuoteable interface {
     GetTotalTaxAmount()(*float64)
     GetValidUntilDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     SetAcceptedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBillingPostalAddress(value PostalAddressTypeable)()
     SetBillToCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetBillToCustomerNumber(value *string)()
@@ -1323,8 +1428,10 @@ type SalesQuoteable interface {
     SetDueDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetEmail(value *string)()
     SetExternalDocumentNumber(value *string)()
+    SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNumber(value *string)()
+    SetOdataType(value *string)()
     SetPaymentTerm(value PaymentTermable)()
     SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetPhoneNumber(value *string)()

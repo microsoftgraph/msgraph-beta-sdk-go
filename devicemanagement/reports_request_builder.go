@@ -349,6 +349,14 @@ func (m *ReportsRequestBuilder) GetUnhealthyFirewallSummaryReport()(*ReportsGetU
 func (m *ReportsRequestBuilder) GetUserInstallStatusReport()(*ReportsGetUserInstallStatusReportRequestBuilder) {
     return NewReportsGetUserInstallStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport provides operations to call the getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport method.
+func (m *ReportsRequestBuilder) GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport()(*ReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
+    return NewReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetWindowsDriverUpdateAlertSummaryReport provides operations to call the getWindowsDriverUpdateAlertSummaryReport method.
+func (m *ReportsRequestBuilder) GetWindowsDriverUpdateAlertSummaryReport()(*ReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder) {
+    return NewReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.
 func (m *ReportsRequestBuilder) GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport()(*ReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
     return NewReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

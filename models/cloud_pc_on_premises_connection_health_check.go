@@ -50,6 +50,17 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string)
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCorrelationId gets the correlationId property value. The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetCorrelationId()(*string) {
+    val, err := m.GetBackingStore().Get("correlationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The display name for this health check item.
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -93,6 +104,16 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         if val != nil {
             m.SetAdditionalDetails(val)
+        }
+        return nil
+    }
+    res["correlationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCorrelationId(val)
         }
         return nil
     }
@@ -221,6 +242,12 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) Serialize(writer i878a80d2330e8
         }
     }
     {
+        err := writer.WriteStringValue("correlationId", m.GetCorrelationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -290,6 +317,13 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetails(value *str
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCorrelationId sets the correlationId property value. The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
+func (m *CloudPcOnPremisesConnectionHealthCheck) SetCorrelationId(value *string)() {
+    err := m.GetBackingStore().Set("correlationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDisplayName sets the displayName property value. The display name for this health check item.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
@@ -346,6 +380,7 @@ type CloudPcOnPremisesConnectionHealthCheckable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalDetails()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCorrelationId()(*string)
     GetDisplayName()(*string)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType)
@@ -355,6 +390,7 @@ type CloudPcOnPremisesConnectionHealthCheckable interface {
     GetStatus()(*CloudPcOnPremisesConnectionStatus)
     SetAdditionalDetails(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCorrelationId(value *string)()
     SetDisplayName(value *string)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetErrorType(value *CloudPcOnPremisesConnectionHealthCheckErrorType)()

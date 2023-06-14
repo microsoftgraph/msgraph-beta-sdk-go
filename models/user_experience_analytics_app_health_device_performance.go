@@ -64,17 +64,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthSc
     }
     return nil
 }
-// GetDeviceAppHealthStatus gets the deviceAppHealthStatus property value. The overall app health status of the device.
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthStatus()(*string) {
-    val, err := m.GetBackingStore().Get("deviceAppHealthStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
@@ -159,16 +148,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
         }
         if val != nil {
             m.SetDeviceAppHealthScore(val)
-        }
-        return nil
-    }
-    res["deviceAppHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceAppHealthStatus(val)
         }
         return nil
     }
@@ -308,12 +287,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) Serialize(writer i87
         }
     }
     {
-        err = writer.WriteStringValue("deviceAppHealthStatus", m.GetDeviceAppHealthStatus())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("deviceDisplayName", m.GetDeviceDisplayName())
         if err != nil {
             return err
@@ -386,13 +359,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthSc
         panic(err)
     }
 }
-// SetDeviceAppHealthStatus sets the deviceAppHealthStatus property value. The overall app health status of the device.
-func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthStatus(value *string)() {
-    err := m.GetBackingStore().Set("deviceAppHealthStatus", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("deviceDisplayName", value)
@@ -450,7 +416,6 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceable interface {
     GetAppHangCount()(*int32)
     GetCrashedAppCount()(*int32)
     GetDeviceAppHealthScore()(*float64)
-    GetDeviceAppHealthStatus()(*string)
     GetDeviceDisplayName()(*string)
     GetDeviceId()(*string)
     GetDeviceManufacturer()(*string)
@@ -462,7 +427,6 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceable interface {
     SetAppHangCount(value *int32)()
     SetCrashedAppCount(value *int32)()
     SetDeviceAppHealthScore(value *float64)()
-    SetDeviceAppHealthStatus(value *string)()
     SetDeviceDisplayName(value *string)()
     SetDeviceId(value *string)()
     SetDeviceManufacturer(value *string)()

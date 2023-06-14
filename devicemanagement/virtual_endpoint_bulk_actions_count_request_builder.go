@@ -1,4 +1,4 @@
-package deviceappmanagement
+package devicemanagement
 
 import (
     "context"
@@ -6,41 +6,41 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// MobileAppsItemUserStatusesCountRequestBuilder provides operations to count the resources in the collection.
-type MobileAppsItemUserStatusesCountRequestBuilder struct {
+// VirtualEndpointBulkActionsCountRequestBuilder provides operations to count the resources in the collection.
+type VirtualEndpointBulkActionsCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemUserStatusesCountRequestBuilderGetQueryParameters get the number of the resource
-type MobileAppsItemUserStatusesCountRequestBuilderGetQueryParameters struct {
+// VirtualEndpointBulkActionsCountRequestBuilderGetQueryParameters get the number of the resource
+type VirtualEndpointBulkActionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
 }
-// MobileAppsItemUserStatusesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MobileAppsItemUserStatusesCountRequestBuilderGetRequestConfiguration struct {
+// VirtualEndpointBulkActionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type VirtualEndpointBulkActionsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *MobileAppsItemUserStatusesCountRequestBuilderGetQueryParameters
+    QueryParameters *VirtualEndpointBulkActionsCountRequestBuilderGetQueryParameters
 }
-// NewMobileAppsItemUserStatusesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
-func NewMobileAppsItemUserStatusesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemUserStatusesCountRequestBuilder) {
-    m := &MobileAppsItemUserStatusesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/userStatuses/$count{?%24search,%24filter}", pathParameters),
+// NewVirtualEndpointBulkActionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+func NewVirtualEndpointBulkActionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointBulkActionsCountRequestBuilder) {
+    m := &VirtualEndpointBulkActionsCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/$count{?%24search,%24filter}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemUserStatusesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
-func NewMobileAppsItemUserStatusesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemUserStatusesCountRequestBuilder) {
+// NewVirtualEndpointBulkActionsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+func NewVirtualEndpointBulkActionsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointBulkActionsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsItemUserStatusesCountRequestBuilderInternal(urlParams, requestAdapter)
+    return NewVirtualEndpointBulkActionsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-func (m *MobileAppsItemUserStatusesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemUserStatusesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+func (m *VirtualEndpointBulkActionsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -59,7 +59,7 @@ func (m *MobileAppsItemUserStatusesCountRequestBuilder) Get(ctx context.Context,
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-func (m *MobileAppsItemUserStatusesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemUserStatusesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *VirtualEndpointBulkActionsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

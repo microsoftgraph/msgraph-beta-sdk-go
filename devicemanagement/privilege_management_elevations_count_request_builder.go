@@ -1,4 +1,4 @@
-package deviceappmanagement
+package devicemanagement
 
 import (
     "context"
@@ -6,41 +6,41 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// MobileAppsItemDeviceStatusesCountRequestBuilder provides operations to count the resources in the collection.
-type MobileAppsItemDeviceStatusesCountRequestBuilder struct {
+// PrivilegeManagementElevationsCountRequestBuilder provides operations to count the resources in the collection.
+type PrivilegeManagementElevationsCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemDeviceStatusesCountRequestBuilderGetQueryParameters get the number of the resource
-type MobileAppsItemDeviceStatusesCountRequestBuilderGetQueryParameters struct {
+// PrivilegeManagementElevationsCountRequestBuilderGetQueryParameters get the number of the resource
+type PrivilegeManagementElevationsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
 }
-// MobileAppsItemDeviceStatusesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MobileAppsItemDeviceStatusesCountRequestBuilderGetRequestConfiguration struct {
+// PrivilegeManagementElevationsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type PrivilegeManagementElevationsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *MobileAppsItemDeviceStatusesCountRequestBuilderGetQueryParameters
+    QueryParameters *PrivilegeManagementElevationsCountRequestBuilderGetQueryParameters
 }
-// NewMobileAppsItemDeviceStatusesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
-func NewMobileAppsItemDeviceStatusesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemDeviceStatusesCountRequestBuilder) {
-    m := &MobileAppsItemDeviceStatusesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/deviceStatuses/$count{?%24search,%24filter}", pathParameters),
+// NewPrivilegeManagementElevationsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+func NewPrivilegeManagementElevationsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegeManagementElevationsCountRequestBuilder) {
+    m := &PrivilegeManagementElevationsCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/privilegeManagementElevations/$count{?%24search,%24filter}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemDeviceStatusesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
-func NewMobileAppsItemDeviceStatusesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemDeviceStatusesCountRequestBuilder) {
+// NewPrivilegeManagementElevationsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+func NewPrivilegeManagementElevationsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegeManagementElevationsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsItemDeviceStatusesCountRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPrivilegeManagementElevationsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-func (m *MobileAppsItemDeviceStatusesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemDeviceStatusesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+func (m *PrivilegeManagementElevationsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegeManagementElevationsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -59,7 +59,7 @@ func (m *MobileAppsItemDeviceStatusesCountRequestBuilder) Get(ctx context.Contex
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-func (m *MobileAppsItemDeviceStatusesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemDeviceStatusesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PrivilegeManagementElevationsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegeManagementElevationsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
