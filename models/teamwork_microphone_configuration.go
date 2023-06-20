@@ -80,7 +80,9 @@ func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]TeamworkPeripheralable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamworkPeripheralable)
+                if v != nil {
+                    res[i] = v.(TeamworkPeripheralable)
+                }
             }
             m.SetMicrophones(res)
         }
@@ -148,7 +150,9 @@ func (m *TeamworkMicrophoneConfiguration) Serialize(writer i878a80d2330e89d26896
     if m.GetMicrophones() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMicrophones()))
         for i, v := range m.GetMicrophones() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("microphones", cast)
         if err != nil {

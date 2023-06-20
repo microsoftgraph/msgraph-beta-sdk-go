@@ -126,7 +126,9 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]ProxiedDomainable, len(val))
             for i, v := range val {
-                res[i] = v.(ProxiedDomainable)
+                if v != nil {
+                    res[i] = v.(ProxiedDomainable)
+                }
             }
             m.SetEnterpriseCloudResources(res)
         }
@@ -140,7 +142,9 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnterpriseInternalProxyServers(res)
         }
@@ -154,7 +158,9 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IpRangeable)
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
             }
             m.SetEnterpriseIPRanges(res)
         }
@@ -178,7 +184,9 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnterpriseNetworkDomainNames(res)
         }
@@ -192,7 +200,9 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnterpriseProxyServers(res)
         }
@@ -216,7 +226,9 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetNeutralDomainResources(res)
         }
@@ -261,7 +273,9 @@ func (m *WindowsNetworkIsolationPolicy) Serialize(writer i878a80d2330e89d2689638
     if m.GetEnterpriseCloudResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseCloudResources()))
         for i, v := range m.GetEnterpriseCloudResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("enterpriseCloudResources", cast)
         if err != nil {
@@ -277,7 +291,9 @@ func (m *WindowsNetworkIsolationPolicy) Serialize(writer i878a80d2330e89d2689638
     if m.GetEnterpriseIPRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseIPRanges()))
         for i, v := range m.GetEnterpriseIPRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("enterpriseIPRanges", cast)
         if err != nil {

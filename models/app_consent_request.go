@@ -93,7 +93,9 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]AppConsentRequestScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(AppConsentRequestScopeable)
+                if v != nil {
+                    res[i] = v.(AppConsentRequestScopeable)
+                }
             }
             m.SetPendingScopes(res)
         }
@@ -107,7 +109,9 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]UserConsentRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(UserConsentRequestable)
+                if v != nil {
+                    res[i] = v.(UserConsentRequestable)
+                }
             }
             m.SetUserConsentRequests(res)
         }
@@ -164,7 +168,9 @@ func (m *AppConsentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetPendingScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPendingScopes()))
         for i, v := range m.GetPendingScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("pendingScopes", cast)
         if err != nil {
@@ -174,7 +180,9 @@ func (m *AppConsentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetUserConsentRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserConsentRequests()))
         for i, v := range m.GetUserConsentRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userConsentRequests", cast)
         if err != nil {

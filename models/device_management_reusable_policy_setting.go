@@ -104,7 +104,9 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]DeviceManagementConfigurationPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationPolicyable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationPolicyable)
+                }
             }
             m.SetReferencingConfigurationPolicies(res)
         }
@@ -239,7 +241,9 @@ func (m *DeviceManagementReusablePolicySetting) Serialize(writer i878a80d2330e89
     if m.GetReferencingConfigurationPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReferencingConfigurationPolicies()))
         for i, v := range m.GetReferencingConfigurationPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("referencingConfigurationPolicies", cast)
         if err != nil {

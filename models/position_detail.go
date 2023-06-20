@@ -10,7 +10,7 @@ type PositionDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPositionDetail instantiates a new positionDetail and sets the default values.
+// NewPositionDetail instantiates a new PositionDetail and sets the default values.
 func NewPositionDetail()(*PositionDetail) {
     m := &PositionDetail{
     }

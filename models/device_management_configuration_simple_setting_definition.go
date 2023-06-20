@@ -91,7 +91,9 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
         if val != nil {
             res := make([]DeviceManagementConfigurationSettingDependedOnByable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSettingDependedOnByable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSettingDependedOnByable)
+                }
             }
             m.SetDependedOnBy(res)
         }
@@ -105,7 +107,9 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
         if val != nil {
             res := make([]DeviceManagementConfigurationDependentOnable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationDependentOnable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationDependentOnable)
+                }
             }
             m.SetDependentOn(res)
         }
@@ -149,7 +153,9 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
     if m.GetDependedOnBy() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependedOnBy()))
         for i, v := range m.GetDependedOnBy() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dependedOnBy", cast)
         if err != nil {
@@ -159,7 +165,9 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
     if m.GetDependentOn() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependentOn()))
         for i, v := range m.GetDependentOn() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dependentOn", cast)
         if err != nil {

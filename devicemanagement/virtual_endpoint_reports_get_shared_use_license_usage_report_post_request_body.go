@@ -60,7 +60,9 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Ge
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetGroupBy(res)
         }
@@ -74,7 +76,9 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Ge
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetOrderBy(res)
         }
@@ -108,7 +112,9 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Ge
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSelect(res)
         }

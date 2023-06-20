@@ -60,7 +60,9 @@ func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) GetF
         if val != nil {
             res := make([]DeviceManagementConfigurationOptionDefinitionTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationOptionDefinitionTemplateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationOptionDefinitionTemplateable)
+                }
             }
             m.SetAllowedOptions(res)
         }
@@ -94,7 +96,9 @@ func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) Seri
     if m.GetAllowedOptions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllowedOptions()))
         for i, v := range m.GetAllowedOptions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("allowedOptions", cast)
         if err != nil {

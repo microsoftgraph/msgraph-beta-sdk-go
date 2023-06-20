@@ -152,7 +152,9 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetFieldDeserializ
         if val != nil {
             res := make([]AuthenticationAttributeCollectionOptionConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationAttributeCollectionOptionConfigurationable)
+                if v != nil {
+                    res[i] = v.(AuthenticationAttributeCollectionOptionConfigurationable)
+                }
             }
             m.SetOptions(res)
         }
@@ -326,7 +328,9 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) Serialize(writer i
     if m.GetOptions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOptions()))
         for i, v := range m.GetOptions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("options", cast)
         if err != nil {

@@ -32,7 +32,9 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) GetFieldD
         if val != nil {
             res := make([]DeviceManagementConfigurationSimpleSettingValueable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSimpleSettingValueable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSimpleSettingValueable)
+                }
             }
             m.SetSimpleSettingCollectionValue(res)
         }
@@ -60,7 +62,9 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) Serialize
     if m.GetSimpleSettingCollectionValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimpleSettingCollectionValue()))
         for i, v := range m.GetSimpleSettingCollectionValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("simpleSettingCollectionValue", cast)
         if err != nil {

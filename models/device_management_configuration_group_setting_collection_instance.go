@@ -32,7 +32,9 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetFieldDe
         if val != nil {
             res := make([]DeviceManagementConfigurationGroupSettingValueable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationGroupSettingValueable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationGroupSettingValueable)
+                }
             }
             m.SetGroupSettingCollectionValue(res)
         }
@@ -60,7 +62,9 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) Serialize(
     if m.GetGroupSettingCollectionValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupSettingCollectionValue()))
         for i, v := range m.GetGroupSettingCollectionValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupSettingCollectionValue", cast)
         if err != nil {

@@ -73,7 +73,9 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]MobileAppInstallStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppInstallStatusable)
+                if v != nil {
+                    res[i] = v.(MobileAppInstallStatusable)
+                }
             }
             m.SetDeviceStatuses(res)
         }
@@ -190,7 +192,9 @@ func (m *UserAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetDeviceStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {

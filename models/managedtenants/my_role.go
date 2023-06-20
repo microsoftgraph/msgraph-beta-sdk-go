@@ -10,7 +10,7 @@ type MyRole struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMyRole instantiates a new myRole and sets the default values.
+// NewMyRole instantiates a new MyRole and sets the default values.
 func NewMyRole()(*MyRole) {
     m := &MyRole{
     }
@@ -60,7 +60,9 @@ func (m *MyRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]RoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(RoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(RoleAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -115,7 +117,9 @@ func (m *MyRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {

@@ -126,7 +126,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]EnrollmentProfileable, len(val))
             for i, v := range val {
-                res[i] = v.(EnrollmentProfileable)
+                if v != nil {
+                    res[i] = v.(EnrollmentProfileable)
+                }
             }
             m.SetEnrollmentProfiles(res)
         }
@@ -140,7 +142,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]ImportedAppleDeviceIdentityable, len(val))
             for i, v := range val {
-                res[i] = v.(ImportedAppleDeviceIdentityable)
+                if v != nil {
+                    res[i] = v.(ImportedAppleDeviceIdentityable)
+                }
             }
             m.SetImportedAppleDeviceIdentities(res)
         }
@@ -194,7 +198,9 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -406,7 +412,9 @@ func (m *DepOnboardingSetting) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetEnrollmentProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnrollmentProfiles()))
         for i, v := range m.GetEnrollmentProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("enrollmentProfiles", cast)
         if err != nil {
@@ -416,7 +424,9 @@ func (m *DepOnboardingSetting) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetImportedAppleDeviceIdentities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImportedAppleDeviceIdentities()))
         for i, v := range m.GetImportedAppleDeviceIdentities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("importedAppleDeviceIdentities", cast)
         if err != nil {

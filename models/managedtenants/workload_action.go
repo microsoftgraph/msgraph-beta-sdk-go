@@ -133,7 +133,9 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetLicenses(res)
         }
@@ -167,7 +169,9 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]Settingable, len(val))
             for i, v := range val {
-                res[i] = v.(Settingable)
+                if v != nil {
+                    res[i] = v.(Settingable)
+                }
             }
             m.SetSettings(res)
         }
@@ -267,7 +271,9 @@ func (m *WorkloadAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("settings", cast)
         if err != nil {

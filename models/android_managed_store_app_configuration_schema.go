@@ -51,7 +51,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         if val != nil {
             res := make([]AndroidManagedStoreAppConfigurationSchemaItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidManagedStoreAppConfigurationSchemaItemable)
+                if v != nil {
+                    res[i] = v.(AndroidManagedStoreAppConfigurationSchemaItemable)
+                }
             }
             m.SetNestedSchemaItems(res)
         }
@@ -65,7 +67,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         if val != nil {
             res := make([]AndroidManagedStoreAppConfigurationSchemaItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidManagedStoreAppConfigurationSchemaItemable)
+                if v != nil {
+                    res[i] = v.(AndroidManagedStoreAppConfigurationSchemaItemable)
+                }
             }
             m.SetSchemaItems(res)
         }
@@ -110,7 +114,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i878a80d233
     if m.GetNestedSchemaItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNestedSchemaItems()))
         for i, v := range m.GetNestedSchemaItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("nestedSchemaItems", cast)
         if err != nil {
@@ -120,7 +126,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i878a80d233
     if m.GetSchemaItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchemaItems()))
         for i, v := range m.GetSchemaItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("schemaItems", cast)
         if err != nil {

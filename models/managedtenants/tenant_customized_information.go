@@ -53,7 +53,9 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]TenantContactInformationable, len(val))
             for i, v := range val {
-                res[i] = v.(TenantContactInformationable)
+                if v != nil {
+                    res[i] = v.(TenantContactInformationable)
+                }
             }
             m.SetContacts(res)
         }
@@ -122,7 +124,9 @@ func (m *TenantCustomizedInformation) Serialize(writer i878a80d2330e89d26896388a
     if m.GetContacts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContacts()))
         for i, v := range m.GetContacts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("contacts", cast)
         if err != nil {

@@ -64,7 +64,9 @@ func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetFieldDeserializ
         if val != nil {
             res := make([]IdentityUserFlowAttributeable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityUserFlowAttributeable)
+                if v != nil {
+                    res[i] = v.(IdentityUserFlowAttributeable)
+                }
             }
             m.SetAttributes(res)
         }
@@ -87,7 +89,9 @@ func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) Serialize(writer i
     if m.GetAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributes()))
         for i, v := range m.GetAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attributes", cast)
         if err != nil {

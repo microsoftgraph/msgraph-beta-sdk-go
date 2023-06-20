@@ -196,7 +196,9 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetInfoUrls(res)
         }
@@ -210,7 +212,9 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetKeywords(res)
         }
@@ -254,7 +258,9 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         if val != nil {
             res := make([]DeviceManagementConfigurationReferredSettingInformationable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationReferredSettingInformationable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationReferredSettingInformationable)
+                }
             }
             m.SetReferredSettingInformationList(res)
         }
@@ -526,7 +532,9 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i878a8
     if m.GetReferredSettingInformationList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReferredSettingInformationList()))
         for i, v := range m.GetReferredSettingInformationList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("referredSettingInformationList", cast)
         if err != nil {

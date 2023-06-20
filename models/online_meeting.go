@@ -359,7 +359,9 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]OnlineMeetingRole, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnlineMeetingRole))
+                if v != nil {
+                    res[i] = *(v.(*OnlineMeetingRole))
+                }
             }
             m.SetAnonymizeIdentityForRoles(res)
         }
@@ -373,7 +375,9 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]MeetingAttendanceReportable, len(val))
             for i, v := range val {
-                res[i] = v.(MeetingAttendanceReportable)
+                if v != nil {
+                    res[i] = v.(MeetingAttendanceReportable)
+                }
             }
             m.SetAttendanceReports(res)
         }
@@ -427,7 +431,9 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]MeetingCapabilities, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MeetingCapabilities))
+                if v != nil {
+                    res[i] = *(v.(*MeetingCapabilities))
+                }
             }
             m.SetCapabilities(res)
         }
@@ -591,7 +597,9 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]CallRecordingable, len(val))
             for i, v := range val {
-                res[i] = v.(CallRecordingable)
+                if v != nil {
+                    res[i] = v.(CallRecordingable)
+                }
             }
             m.SetRecordings(res)
         }
@@ -645,7 +653,9 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]CallTranscriptable, len(val))
             for i, v := range val {
-                res[i] = v.(CallTranscriptable)
+                if v != nil {
+                    res[i] = v.(CallTranscriptable)
+                }
             }
             m.SetTranscripts(res)
         }
@@ -974,7 +984,9 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetAttendanceReports() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendanceReports()))
         for i, v := range m.GetAttendanceReports() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attendanceReports", cast)
         if err != nil {
@@ -1104,7 +1116,9 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetRecordings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecordings()))
         for i, v := range m.GetRecordings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("recordings", cast)
         if err != nil {
@@ -1139,7 +1153,9 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetTranscripts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTranscripts()))
         for i, v := range m.GetTranscripts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("transcripts", cast)
         if err != nil {

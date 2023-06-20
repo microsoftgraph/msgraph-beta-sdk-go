@@ -54,7 +54,9 @@ func (m *RedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]KeyTypedValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyTypedValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyTypedValuePairable)
+                }
             }
             m.SetConfigurations(res)
         }
@@ -88,7 +90,9 @@ func (m *RedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetUrlPrefixes(res)
         }
@@ -127,7 +131,9 @@ func (m *RedirectSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689638
     if m.GetConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConfigurations()))
         for i, v := range m.GetConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("configurations", cast)
         if err != nil {

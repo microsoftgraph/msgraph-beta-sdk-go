@@ -10,7 +10,7 @@ type Parameter struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewParameter instantiates a new parameter and sets the default values.
+// NewParameter instantiates a new Parameter and sets the default values.
 func NewParameter()(*Parameter) {
     m := &Parameter{
     }
@@ -69,7 +69,9 @@ func (m *Parameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetValues(res)
         }

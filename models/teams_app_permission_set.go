@@ -59,7 +59,9 @@ func (m *TeamsAppPermissionSet) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]TeamsAppResourceSpecificPermissionable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamsAppResourceSpecificPermissionable)
+                if v != nil {
+                    res[i] = v.(TeamsAppResourceSpecificPermissionable)
+                }
             }
             m.SetResourceSpecificPermissions(res)
         }
@@ -100,7 +102,9 @@ func (m *TeamsAppPermissionSet) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetResourceSpecificPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceSpecificPermissions()))
         for i, v := range m.GetResourceSpecificPermissions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("resourceSpecificPermissions", cast)
         if err != nil {

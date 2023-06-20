@@ -63,7 +63,9 @@ func (m *InboundActivityResults) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]IndustryDataRunRoleCountMetricable, len(val))
             for i, v := range val {
-                res[i] = v.(IndustryDataRunRoleCountMetricable)
+                if v != nil {
+                    res[i] = v.(IndustryDataRunRoleCountMetricable)
+                }
             }
             m.SetMatchedPeopleByRole(res)
         }
@@ -107,7 +109,9 @@ func (m *InboundActivityResults) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]IndustryDataRunRoleCountMetricable, len(val))
             for i, v := range val {
-                res[i] = v.(IndustryDataRunRoleCountMetricable)
+                if v != nil {
+                    res[i] = v.(IndustryDataRunRoleCountMetricable)
+                }
             }
             m.SetUnmatchedPeopleByRole(res)
         }

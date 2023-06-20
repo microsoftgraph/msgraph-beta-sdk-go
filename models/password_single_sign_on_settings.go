@@ -49,7 +49,9 @@ func (m *PasswordSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]PasswordSingleSignOnFieldable, len(val))
             for i, v := range val {
-                res[i] = v.(PasswordSingleSignOnFieldable)
+                if v != nil {
+                    res[i] = v.(PasswordSingleSignOnFieldable)
+                }
             }
             m.SetFields(res)
         }
@@ -94,7 +96,9 @@ func (m *PasswordSingleSignOnSettings) Serialize(writer i878a80d2330e89d26896388
     if m.GetFields() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFields()))
         for i, v := range m.GetFields() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("fields", cast)
         if err != nil {

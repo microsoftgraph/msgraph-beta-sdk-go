@@ -105,7 +105,7 @@ func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
     }
     return nil
 }
-// GetContentCustomization gets the contentCustomization property value. The contentCustomization property
+// GetContentCustomization gets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
 func (m *OrganizationalBrandingProperties) GetContentCustomization()(ContentCustomizationable) {
     val, err := m.GetBackingStore().Get("contentCustomization")
     if err != nil {
@@ -320,7 +320,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetCdnList(res)
         }
@@ -935,7 +937,7 @@ func (m *OrganizationalBrandingProperties) SetCdnList(value []string)() {
         panic(err)
     }
 }
-// SetContentCustomization sets the contentCustomization property value. The contentCustomization property
+// SetContentCustomization sets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
 func (m *OrganizationalBrandingProperties) SetContentCustomization(value ContentCustomizationable)() {
     err := m.GetBackingStore().Set("contentCustomization", value)
     if err != nil {

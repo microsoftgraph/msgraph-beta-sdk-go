@@ -10,7 +10,7 @@ type ContentInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewContentInfo instantiates a new contentInfo and sets the default values.
+// NewContentInfo instantiates a new ContentInfo and sets the default values.
 func NewContentInfo()(*ContentInfo) {
     m := &ContentInfo{
     }
@@ -69,7 +69,9 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetMetadata(res)
         }
@@ -170,7 +172,9 @@ func (m *ContentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetMetadata() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {

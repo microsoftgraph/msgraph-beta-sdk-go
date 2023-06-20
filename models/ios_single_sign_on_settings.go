@@ -82,7 +82,9 @@ func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAllowedAppsList(res)
         }
@@ -96,7 +98,9 @@ func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAllowedUrls(res)
         }
@@ -182,7 +186,9 @@ func (m *IosSingleSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetAllowedAppsList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllowedAppsList()))
         for i, v := range m.GetAllowedAppsList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("allowedAppsList", cast)
         if err != nil {

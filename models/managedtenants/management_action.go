@@ -114,7 +114,9 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]WorkloadActionable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkloadActionable)
+                if v != nil {
+                    res[i] = v.(WorkloadActionable)
+                }
             }
             m.SetWorkloadActions(res)
         }
@@ -195,7 +197,9 @@ func (m *ManagementAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetWorkloadActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("workloadActions", cast)
         if err != nil {

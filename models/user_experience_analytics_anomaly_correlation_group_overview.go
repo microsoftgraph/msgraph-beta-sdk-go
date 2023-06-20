@@ -179,7 +179,9 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) GetFieldDeseria
         if val != nil {
             res := make([]UserExperienceAnalyticsAnomalyCorrelationGroupFeatureable, len(val))
             for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsAnomalyCorrelationGroupFeatureable)
+                if v != nil {
+                    res[i] = v.(UserExperienceAnalyticsAnomalyCorrelationGroupFeatureable)
+                }
             }
             m.SetCorrelationGroupFeatures(res)
         }
@@ -277,7 +279,9 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) Serialize(write
     if m.GetCorrelationGroupFeatures() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCorrelationGroupFeatures()))
         for i, v := range m.GetCorrelationGroupFeatures() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("correlationGroupFeatures", cast)
         if err != nil {

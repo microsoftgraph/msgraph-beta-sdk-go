@@ -32,7 +32,9 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTi
         if val != nil {
             res := make([]iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.DirectRoutingLogRowable, len(val))
             for i, v := range val {
-                res[i] = v.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.DirectRoutingLogRowable)
+                if v != nil {
+                    res[i] = v.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.DirectRoutingLogRowable)
+                }
             }
             m.SetValue(res)
         }
@@ -60,7 +62,9 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTi
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

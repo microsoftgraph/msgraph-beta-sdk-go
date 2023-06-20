@@ -8,7 +8,7 @@ import (
 type EducationSynchronizationProfile struct {
     Entity
 }
-// NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
+// NewEducationSynchronizationProfile instantiates a new EducationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {
     m := &EducationSynchronizationProfile{
         Entity: *NewEntity(),
@@ -94,7 +94,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]EducationSynchronizationErrorable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationSynchronizationErrorable)
+                if v != nil {
+                    res[i] = v.(EducationSynchronizationErrorable)
+                }
             }
             m.SetErrors(res)
         }
@@ -138,7 +140,9 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]EducationSynchronizationLicenseAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationSynchronizationLicenseAssignmentable)
+                if v != nil {
+                    res[i] = v.(EducationSynchronizationLicenseAssignmentable)
+                }
             }
             m.SetLicensesToAssign(res)
         }
@@ -242,7 +246,9 @@ func (m *EducationSynchronizationProfile) Serialize(writer i878a80d2330e89d26896
     if m.GetErrors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetErrors()))
         for i, v := range m.GetErrors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("errors", cast)
         if err != nil {
@@ -270,7 +276,9 @@ func (m *EducationSynchronizationProfile) Serialize(writer i878a80d2330e89d26896
     if m.GetLicensesToAssign() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLicensesToAssign()))
         for i, v := range m.GetLicensesToAssign() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("licensesToAssign", cast)
         if err != nil {

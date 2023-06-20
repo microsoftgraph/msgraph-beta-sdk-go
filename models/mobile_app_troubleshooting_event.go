@@ -73,7 +73,9 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AppLogCollectionRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(AppLogCollectionRequestable)
+                if v != nil {
+                    res[i] = v.(AppLogCollectionRequestable)
+                }
             }
             m.SetAppLogCollectionRequests(res)
         }
@@ -97,7 +99,9 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]MobileAppTroubleshootingHistoryItemable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppTroubleshootingHistoryItemable)
+                if v != nil {
+                    res[i] = v.(MobileAppTroubleshootingHistoryItemable)
+                }
             }
             m.SetHistory(res)
         }
@@ -173,7 +177,9 @@ func (m *MobileAppTroubleshootingEvent) Serialize(writer i878a80d2330e89d2689638
     if m.GetAppLogCollectionRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppLogCollectionRequests()))
         for i, v := range m.GetAppLogCollectionRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appLogCollectionRequests", cast)
         if err != nil {
@@ -189,7 +195,9 @@ func (m *MobileAppTroubleshootingEvent) Serialize(writer i878a80d2330e89d2689638
     if m.GetHistory() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistory()))
         for i, v := range m.GetHistory() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("history", cast)
         if err != nil {

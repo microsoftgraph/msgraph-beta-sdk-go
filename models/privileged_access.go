@@ -51,7 +51,9 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]GovernanceResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceResourceable)
+                if v != nil {
+                    res[i] = v.(GovernanceResourceable)
+                }
             }
             m.SetResources(res)
         }
@@ -65,7 +67,9 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]GovernanceRoleAssignmentRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRoleAssignmentRequestable)
+                if v != nil {
+                    res[i] = v.(GovernanceRoleAssignmentRequestable)
+                }
             }
             m.SetRoleAssignmentRequests(res)
         }
@@ -79,7 +83,9 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]GovernanceRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(GovernanceRoleAssignmentable)
+                }
             }
             m.SetRoleAssignments(res)
         }
@@ -93,7 +99,9 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]GovernanceRoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRoleDefinitionable)
+                if v != nil {
+                    res[i] = v.(GovernanceRoleDefinitionable)
+                }
             }
             m.SetRoleDefinitions(res)
         }
@@ -107,7 +115,9 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]GovernanceRoleSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRoleSettingable)
+                if v != nil {
+                    res[i] = v.(GovernanceRoleSettingable)
+                }
             }
             m.SetRoleSettings(res)
         }
@@ -185,7 +195,9 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -195,7 +207,9 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRoleAssignmentRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignmentRequests()))
         for i, v := range m.GetRoleAssignmentRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignmentRequests", cast)
         if err != nil {
@@ -205,7 +219,9 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -215,7 +231,9 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRoleDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -225,7 +243,9 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRoleSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleSettings()))
         for i, v := range m.GetRoleSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleSettings", cast)
         if err != nil {

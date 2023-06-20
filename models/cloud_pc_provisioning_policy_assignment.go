@@ -41,7 +41,9 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
         if val != nil {
             res := make([]Userable, len(val))
             for i, v := range val {
-                res[i] = v.(Userable)
+                if v != nil {
+                    res[i] = v.(Userable)
+                }
             }
             m.SetAssignedUsers(res)
         }
@@ -79,7 +81,9 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
     if m.GetAssignedUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedUsers()))
         for i, v := range m.GetAssignedUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignedUsers", cast)
         if err != nil {

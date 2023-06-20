@@ -11,7 +11,7 @@ type DeviceKey struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceKey instantiates a new deviceKey and sets the default values.
+// NewDeviceKey instantiates a new DeviceKey and sets the default values.
 func NewDeviceKey()(*DeviceKey) {
     m := &DeviceKey{
     }

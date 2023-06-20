@@ -182,7 +182,9 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetUserPermissions(res)
         }
@@ -206,7 +208,9 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]RoleScopeTagInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(RoleScopeTagInfoable)
+                if v != nil {
+                    res[i] = v.(RoleScopeTagInfoable)
+                }
             }
             m.SetUserRoleScopeTags(res)
         }
@@ -401,7 +405,9 @@ func (m *AuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetUserRoleScopeTags() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRoleScopeTags()))
         for i, v := range m.GetUserRoleScopeTags() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("userRoleScopeTags", cast)
         if err != nil {

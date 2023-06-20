@@ -31,7 +31,9 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]ManagementActionDeploymentStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagementActionDeploymentStatusable)
+                if v != nil {
+                    res[i] = v.(ManagementActionDeploymentStatusable)
+                }
             }
             m.SetStatuses(res)
         }
@@ -101,7 +103,9 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e8
     if m.GetStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStatuses()))
         for i, v := range m.GetStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("statuses", cast)
         if err != nil {

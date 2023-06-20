@@ -60,7 +60,9 @@ func (m *AuthenticationConfigurationValidation) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]GenericErrorable, len(val))
             for i, v := range val {
-                res[i] = v.(GenericErrorable)
+                if v != nil {
+                    res[i] = v.(GenericErrorable)
+                }
             }
             m.SetErrors(res)
         }
@@ -84,7 +86,9 @@ func (m *AuthenticationConfigurationValidation) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]GenericErrorable, len(val))
             for i, v := range val {
-                res[i] = v.(GenericErrorable)
+                if v != nil {
+                    res[i] = v.(GenericErrorable)
+                }
             }
             m.SetWarnings(res)
         }
@@ -119,7 +123,9 @@ func (m *AuthenticationConfigurationValidation) Serialize(writer i878a80d2330e89
     if m.GetErrors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetErrors()))
         for i, v := range m.GetErrors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("errors", cast)
         if err != nil {
@@ -135,7 +141,9 @@ func (m *AuthenticationConfigurationValidation) Serialize(writer i878a80d2330e89
     if m.GetWarnings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWarnings()))
         for i, v := range m.GetWarnings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("warnings", cast)
         if err != nil {

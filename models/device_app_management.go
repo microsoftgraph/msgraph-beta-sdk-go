@@ -75,7 +75,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]AndroidManagedAppProtectionable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidManagedAppProtectionable)
+                if v != nil {
+                    res[i] = v.(AndroidManagedAppProtectionable)
+                }
             }
             m.SetAndroidManagedAppProtections(res)
         }
@@ -89,7 +91,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]DefaultManagedAppProtectionable, len(val))
             for i, v := range val {
-                res[i] = v.(DefaultManagedAppProtectionable)
+                if v != nil {
+                    res[i] = v.(DefaultManagedAppProtectionable)
+                }
             }
             m.SetDefaultManagedAppProtections(res)
         }
@@ -103,7 +107,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]DeviceAppManagementTaskable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceAppManagementTaskable)
+                if v != nil {
+                    res[i] = v.(DeviceAppManagementTaskable)
+                }
             }
             m.SetDeviceAppManagementTasks(res)
         }
@@ -117,7 +123,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]EnterpriseCodeSigningCertificateable, len(val))
             for i, v := range val {
-                res[i] = v.(EnterpriseCodeSigningCertificateable)
+                if v != nil {
+                    res[i] = v.(EnterpriseCodeSigningCertificateable)
+                }
             }
             m.SetEnterpriseCodeSigningCertificates(res)
         }
@@ -131,7 +139,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IosLobAppProvisioningConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(IosLobAppProvisioningConfigurationable)
+                if v != nil {
+                    res[i] = v.(IosLobAppProvisioningConfigurationable)
+                }
             }
             m.SetIosLobAppProvisioningConfigurations(res)
         }
@@ -145,7 +155,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IosManagedAppProtectionable, len(val))
             for i, v := range val {
-                res[i] = v.(IosManagedAppProtectionable)
+                if v != nil {
+                    res[i] = v.(IosManagedAppProtectionable)
+                }
             }
             m.SetIosManagedAppProtections(res)
         }
@@ -169,7 +181,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ManagedAppPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppPolicyable)
+                if v != nil {
+                    res[i] = v.(ManagedAppPolicyable)
+                }
             }
             m.SetManagedAppPolicies(res)
         }
@@ -183,7 +197,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ManagedAppRegistrationable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppRegistrationable)
+                if v != nil {
+                    res[i] = v.(ManagedAppRegistrationable)
+                }
             }
             m.SetManagedAppRegistrations(res)
         }
@@ -197,7 +213,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ManagedAppStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppStatusable)
+                if v != nil {
+                    res[i] = v.(ManagedAppStatusable)
+                }
             }
             m.SetManagedAppStatuses(res)
         }
@@ -211,7 +229,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ManagedEBookCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedEBookCategoryable)
+                if v != nil {
+                    res[i] = v.(ManagedEBookCategoryable)
+                }
             }
             m.SetManagedEBookCategories(res)
         }
@@ -225,7 +245,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ManagedEBookable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedEBookable)
+                if v != nil {
+                    res[i] = v.(ManagedEBookable)
+                }
             }
             m.SetManagedEBooks(res)
         }
@@ -239,7 +261,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]MdmWindowsInformationProtectionPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(MdmWindowsInformationProtectionPolicyable)
+                if v != nil {
+                    res[i] = v.(MdmWindowsInformationProtectionPolicyable)
+                }
             }
             m.SetMdmWindowsInformationProtectionPolicies(res)
         }
@@ -293,7 +317,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]MobileAppCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppCategoryable)
+                if v != nil {
+                    res[i] = v.(MobileAppCategoryable)
+                }
             }
             m.SetMobileAppCategories(res)
         }
@@ -307,7 +333,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ManagedDeviceMobileAppConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceMobileAppConfigurationable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceMobileAppConfigurationable)
+                }
             }
             m.SetMobileAppConfigurations(res)
         }
@@ -321,7 +349,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]MobileAppable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppable)
+                if v != nil {
+                    res[i] = v.(MobileAppable)
+                }
             }
             m.SetMobileApps(res)
         }
@@ -335,7 +365,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PolicySetable, len(val))
             for i, v := range val {
-                res[i] = v.(PolicySetable)
+                if v != nil {
+                    res[i] = v.(PolicySetable)
+                }
             }
             m.SetPolicySets(res)
         }
@@ -359,7 +391,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]TargetedManagedAppConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(TargetedManagedAppConfigurationable)
+                if v != nil {
+                    res[i] = v.(TargetedManagedAppConfigurationable)
+                }
             }
             m.SetTargetedManagedAppConfigurations(res)
         }
@@ -373,7 +407,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]VppTokenable, len(val))
             for i, v := range val {
-                res[i] = v.(VppTokenable)
+                if v != nil {
+                    res[i] = v.(VppTokenable)
+                }
             }
             m.SetVppTokens(res)
         }
@@ -387,7 +423,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WindowsDefenderApplicationControlSupplementalPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyable)
+                if v != nil {
+                    res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyable)
+                }
             }
             m.SetWdacSupplementalPolicies(res)
         }
@@ -401,7 +439,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WindowsInformationProtectionDeviceRegistrationable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionDeviceRegistrationable)
+                if v != nil {
+                    res[i] = v.(WindowsInformationProtectionDeviceRegistrationable)
+                }
             }
             m.SetWindowsInformationProtectionDeviceRegistrations(res)
         }
@@ -415,7 +455,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WindowsInformationProtectionPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionPolicyable)
+                if v != nil {
+                    res[i] = v.(WindowsInformationProtectionPolicyable)
+                }
             }
             m.SetWindowsInformationProtectionPolicies(res)
         }
@@ -429,7 +471,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WindowsInformationProtectionWipeActionable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsInformationProtectionWipeActionable)
+                if v != nil {
+                    res[i] = v.(WindowsInformationProtectionWipeActionable)
+                }
             }
             m.SetWindowsInformationProtectionWipeActions(res)
         }
@@ -443,7 +487,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WindowsManagedAppProtectionable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsManagedAppProtectionable)
+                if v != nil {
+                    res[i] = v.(WindowsManagedAppProtectionable)
+                }
             }
             m.SetWindowsManagedAppProtections(res)
         }
@@ -756,7 +802,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetAndroidManagedAppProtections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAndroidManagedAppProtections()))
         for i, v := range m.GetAndroidManagedAppProtections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("androidManagedAppProtections", cast)
         if err != nil {
@@ -766,7 +814,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetDefaultManagedAppProtections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefaultManagedAppProtections()))
         for i, v := range m.GetDefaultManagedAppProtections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("defaultManagedAppProtections", cast)
         if err != nil {
@@ -776,7 +826,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetDeviceAppManagementTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceAppManagementTasks()))
         for i, v := range m.GetDeviceAppManagementTasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceAppManagementTasks", cast)
         if err != nil {
@@ -786,7 +838,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetEnterpriseCodeSigningCertificates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnterpriseCodeSigningCertificates()))
         for i, v := range m.GetEnterpriseCodeSigningCertificates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("enterpriseCodeSigningCertificates", cast)
         if err != nil {
@@ -796,7 +850,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetIosLobAppProvisioningConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIosLobAppProvisioningConfigurations()))
         for i, v := range m.GetIosLobAppProvisioningConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("iosLobAppProvisioningConfigurations", cast)
         if err != nil {
@@ -806,7 +862,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetIosManagedAppProtections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIosManagedAppProtections()))
         for i, v := range m.GetIosManagedAppProtections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("iosManagedAppProtections", cast)
         if err != nil {
@@ -822,7 +880,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetManagedAppPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedAppPolicies()))
         for i, v := range m.GetManagedAppPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedAppPolicies", cast)
         if err != nil {
@@ -832,7 +892,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetManagedAppRegistrations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedAppRegistrations()))
         for i, v := range m.GetManagedAppRegistrations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedAppRegistrations", cast)
         if err != nil {
@@ -842,7 +904,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetManagedAppStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedAppStatuses()))
         for i, v := range m.GetManagedAppStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedAppStatuses", cast)
         if err != nil {
@@ -852,7 +916,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetManagedEBookCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedEBookCategories()))
         for i, v := range m.GetManagedEBookCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedEBookCategories", cast)
         if err != nil {
@@ -862,7 +928,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetManagedEBooks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedEBooks()))
         for i, v := range m.GetManagedEBooks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedEBooks", cast)
         if err != nil {
@@ -872,7 +940,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMdmWindowsInformationProtectionPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMdmWindowsInformationProtectionPolicies()))
         for i, v := range m.GetMdmWindowsInformationProtectionPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("mdmWindowsInformationProtectionPolicies", cast)
         if err != nil {
@@ -907,7 +977,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMobileAppCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppCategories()))
         for i, v := range m.GetMobileAppCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("mobileAppCategories", cast)
         if err != nil {
@@ -917,7 +989,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMobileAppConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppConfigurations()))
         for i, v := range m.GetMobileAppConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("mobileAppConfigurations", cast)
         if err != nil {
@@ -927,7 +1001,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMobileApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileApps()))
         for i, v := range m.GetMobileApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("mobileApps", cast)
         if err != nil {
@@ -937,7 +1013,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetPolicySets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicySets()))
         for i, v := range m.GetPolicySets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("policySets", cast)
         if err != nil {
@@ -953,7 +1031,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetTargetedManagedAppConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetedManagedAppConfigurations()))
         for i, v := range m.GetTargetedManagedAppConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("targetedManagedAppConfigurations", cast)
         if err != nil {
@@ -963,7 +1043,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetVppTokens() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVppTokens()))
         for i, v := range m.GetVppTokens() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("vppTokens", cast)
         if err != nil {
@@ -973,7 +1055,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetWdacSupplementalPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWdacSupplementalPolicies()))
         for i, v := range m.GetWdacSupplementalPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("wdacSupplementalPolicies", cast)
         if err != nil {
@@ -983,7 +1067,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetWindowsInformationProtectionDeviceRegistrations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsInformationProtectionDeviceRegistrations()))
         for i, v := range m.GetWindowsInformationProtectionDeviceRegistrations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionDeviceRegistrations", cast)
         if err != nil {
@@ -993,7 +1079,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetWindowsInformationProtectionPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsInformationProtectionPolicies()))
         for i, v := range m.GetWindowsInformationProtectionPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionPolicies", cast)
         if err != nil {
@@ -1003,7 +1091,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetWindowsInformationProtectionWipeActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsInformationProtectionWipeActions()))
         for i, v := range m.GetWindowsInformationProtectionWipeActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionWipeActions", cast)
         if err != nil {
@@ -1013,7 +1103,9 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetWindowsManagedAppProtections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsManagedAppProtections()))
         for i, v := range m.GetWindowsManagedAppProtections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("windowsManagedAppProtections", cast)
         if err != nil {

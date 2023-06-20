@@ -61,7 +61,9 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]SecurityBaselineSettingStateable, len(val))
             for i, v := range val {
-                res[i] = v.(SecurityBaselineSettingStateable)
+                if v != nil {
+                    res[i] = v.(SecurityBaselineSettingStateable)
+                }
             }
             m.SetSettingStates(res)
         }
@@ -154,7 +156,9 @@ func (m *SecurityBaselineState) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetSettingStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingStates()))
         for i, v := range m.GetSettingStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settingStates", cast)
         if err != nil {

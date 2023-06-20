@@ -97,7 +97,9 @@ func (m *UpdatePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ComplianceChangeRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(ComplianceChangeRuleable)
+                if v != nil {
+                    res[i] = v.(ComplianceChangeRuleable)
+                }
             }
             m.SetComplianceChangeRules(res)
         }
@@ -111,7 +113,9 @@ func (m *UpdatePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ComplianceChangeable, len(val))
             for i, v := range val {
-                res[i] = v.(ComplianceChangeable)
+                if v != nil {
+                    res[i] = v.(ComplianceChangeable)
+                }
             }
             m.SetComplianceChanges(res)
         }
@@ -154,7 +158,9 @@ func (m *UpdatePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetComplianceChangeRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComplianceChangeRules()))
         for i, v := range m.GetComplianceChangeRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("complianceChangeRules", cast)
         if err != nil {
@@ -164,7 +170,9 @@ func (m *UpdatePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetComplianceChanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComplianceChanges()))
         for i, v := range m.GetComplianceChanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("complianceChanges", cast)
         if err != nil {

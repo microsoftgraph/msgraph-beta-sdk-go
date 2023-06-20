@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppRegistration the ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+// ManagedAppRegistration 
 type ManagedAppRegistration struct {
     Entity
 }
-// NewManagedAppRegistration instantiates a new managedAppRegistration and sets the default values.
+// NewManagedAppRegistration instantiates a new ManagedAppRegistration and sets the default values.
 func NewManagedAppRegistration()(*ManagedAppRegistration) {
     m := &ManagedAppRegistration{
         Entity: *NewEntity(),
@@ -181,7 +181,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]ManagedAppPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppPolicyable)
+                if v != nil {
+                    res[i] = v.(ManagedAppPolicyable)
+                }
             }
             m.SetAppliedPolicies(res)
         }
@@ -265,7 +267,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]ManagedAppFlaggedReason, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedAppFlaggedReason))
+                if v != nil {
+                    res[i] = *(v.(*ManagedAppFlaggedReason))
+                }
             }
             m.SetFlaggedReasons(res)
         }
@@ -279,7 +283,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]ManagedAppPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppPolicyable)
+                if v != nil {
+                    res[i] = v.(ManagedAppPolicyable)
+                }
             }
             m.SetIntendedPolicies(res)
         }
@@ -323,7 +329,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]ManagedAppOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppOperationable)
+                if v != nil {
+                    res[i] = v.(ManagedAppOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -481,7 +489,9 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetAppliedPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppliedPolicies()))
         for i, v := range m.GetAppliedPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appliedPolicies", cast)
         if err != nil {
@@ -539,7 +549,9 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetIntendedPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIntendedPolicies()))
         for i, v := range m.GetIntendedPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("intendedPolicies", cast)
         if err != nil {
@@ -567,7 +579,9 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {

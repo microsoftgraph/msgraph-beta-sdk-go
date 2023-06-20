@@ -288,6 +288,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAppConsentApprovalRoute(), nil
                     case "#microsoft.graph.appConsentRequest":
                         return NewAppConsentRequest(), nil
+                    case "#microsoft.graph.appCredentialSignInActivity":
+                        return NewAppCredentialSignInActivity(), nil
                     case "#microsoft.graph.appleDeviceFeaturesConfigurationBase":
                         return NewAppleDeviceFeaturesConfigurationBase(), nil
                     case "#microsoft.graph.appleEnrollmentProfileAssignment":
@@ -560,6 +562,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCommand(), nil
                     case "#microsoft.graph.commsOperation":
                         return NewCommsOperation(), nil
+                    case "#microsoft.graph.companySubscription":
+                        return NewCompanySubscription(), nil
                     case "#microsoft.graph.complianceManagementPartner":
                         return NewComplianceManagementPartner(), nil
                     case "#microsoft.graph.conditionalAccessPolicy":
@@ -2082,6 +2086,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServicePrincipalCreationPolicy(), nil
                     case "#microsoft.graph.servicePrincipalRiskDetection":
                         return NewServicePrincipalRiskDetection(), nil
+                    case "#microsoft.graph.servicePrincipalSignInActivity":
+                        return NewServicePrincipalSignInActivity(), nil
                     case "#microsoft.graph.serviceUpdateMessage":
                         return NewServiceUpdateMessage(), nil
                     case "#microsoft.graph.settingStateDeviceSummary":

@@ -60,7 +60,9 @@ func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetFailedDeviceIds(res)
         }
@@ -74,7 +76,9 @@ func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetNotFoundDeviceIds(res)
         }
@@ -88,7 +92,9 @@ func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetNotSupportedDeviceIds(res)
         }
@@ -112,7 +118,9 @@ func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSuccessfulDeviceIds(res)
         }

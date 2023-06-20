@@ -74,7 +74,9 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]SettingTemplateValueable, len(val))
             for i, v := range val {
-                res[i] = v.(SettingTemplateValueable)
+                if v != nil {
+                    res[i] = v.(SettingTemplateValueable)
+                }
             }
             m.SetValues(res)
         }
@@ -114,7 +116,9 @@ func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValues()))
         for i, v := range m.GetValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("values", cast)
         if err != nil {

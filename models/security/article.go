@@ -84,7 +84,9 @@ func (m *Article) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]ArticleIndicatorable, len(val))
             for i, v := range val {
-                res[i] = v.(ArticleIndicatorable)
+                if v != nil {
+                    res[i] = v.(ArticleIndicatorable)
+                }
             }
             m.SetIndicators(res)
         }
@@ -128,7 +130,9 @@ func (m *Article) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -250,7 +254,9 @@ func (m *Article) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetIndicators() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIndicators()))
         for i, v := range m.GetIndicators() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("indicators", cast)
         if err != nil {

@@ -8,7 +8,7 @@ import (
 type TeamTemplate struct {
     Entity
 }
-// NewTeamTemplate instantiates a new teamTemplate and sets the default values.
+// NewTeamTemplate instantiates a new TeamTemplate and sets the default values.
 func NewTeamTemplate()(*TeamTemplate) {
     m := &TeamTemplate{
         Entity: *NewEntity(),
@@ -41,7 +41,9 @@ func (m *TeamTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]TeamTemplateDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamTemplateDefinitionable)
+                if v != nil {
+                    res[i] = v.(TeamTemplateDefinitionable)
+                }
             }
             m.SetDefinitions(res)
         }
@@ -58,7 +60,9 @@ func (m *TeamTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("definitions", cast)
         if err != nil {

@@ -49,7 +49,9 @@ func (m *DeviceManagementUserRightsSetting) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]DeviceManagementUserRightsLocalUserOrGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementUserRightsLocalUserOrGroupable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementUserRightsLocalUserOrGroupable)
+                }
             }
             m.SetLocalUsersOrGroups(res)
         }
@@ -115,7 +117,9 @@ func (m *DeviceManagementUserRightsSetting) Serialize(writer i878a80d2330e89d268
     if m.GetLocalUsersOrGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalUsersOrGroups()))
         for i, v := range m.GetLocalUsersOrGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("localUsersOrGroups", cast)
         if err != nil {

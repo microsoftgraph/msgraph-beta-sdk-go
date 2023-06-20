@@ -97,7 +97,9 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]IosLobAppProvisioningConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(IosLobAppProvisioningConfigurationAssignmentable)
+                if v != nil {
+                    res[i] = v.(IosLobAppProvisioningConfigurationAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -131,7 +133,9 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]ManagedDeviceMobileAppConfigurationDeviceStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceMobileAppConfigurationDeviceStatusable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceMobileAppConfigurationDeviceStatusable)
+                }
             }
             m.SetDeviceStatuses(res)
         }
@@ -165,7 +169,9 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]MobileAppProvisioningConfigGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppProvisioningConfigGroupAssignmentable)
+                if v != nil {
+                    res[i] = v.(MobileAppProvisioningConfigGroupAssignmentable)
+                }
             }
             m.SetGroupAssignments(res)
         }
@@ -209,7 +215,9 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -223,7 +231,9 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]ManagedDeviceMobileAppConfigurationUserStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceMobileAppConfigurationUserStatusable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceMobileAppConfigurationUserStatusable)
+                }
             }
             m.SetUserStatuses(res)
         }
@@ -327,7 +337,9 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -349,7 +361,9 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetDeviceStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {
@@ -371,7 +385,9 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetGroupAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
         if err != nil {
@@ -405,7 +421,9 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetUserStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userStatuses", cast)
         if err != nil {

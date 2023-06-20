@@ -1512,7 +1512,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAppManagementPackageFamilyNamesToLaunchAfterLogOn(res)
         }
@@ -1576,7 +1578,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetBluetoothAllowedServices(res)
         }
@@ -1850,7 +1854,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderFileExtensionsToExclude(res)
         }
@@ -1864,7 +1870,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderFilesAndFoldersToExclude(res)
         }
@@ -1908,7 +1916,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderProcessesToExclude(res)
         }
@@ -2162,7 +2172,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDisplayAppListWithGdiDPIScalingTurnedOff(res)
         }
@@ -2176,7 +2188,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDisplayAppListWithGdiDPIScalingTurnedOn(res)
         }
@@ -2530,7 +2544,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEdgeHomepageUrls(res)
         }
@@ -2594,7 +2610,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEdgeRequiredExtensionPackageFamilyNames(res)
         }
@@ -3288,7 +3306,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetPrinterNames(res)
         }
@@ -3302,7 +3322,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]WindowsPrivacyDataAccessControlItemable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsPrivacyDataAccessControlItemable)
+                if v != nil {
+                    res[i] = v.(WindowsPrivacyDataAccessControlItemable)
+                }
             }
             m.SetPrivacyAccessControls(res)
         }
@@ -7137,7 +7159,9 @@ func (m *Windows10GeneralConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetPrivacyAccessControls() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrivacyAccessControls()))
         for i, v := range m.GetPrivacyAccessControls() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("privacyAccessControls", cast)
         if err != nil {

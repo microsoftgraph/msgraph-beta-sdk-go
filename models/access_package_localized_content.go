@@ -70,7 +70,9 @@ func (m *AccessPackageLocalizedContent) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AccessPackageLocalizedTextable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageLocalizedTextable)
+                if v != nil {
+                    res[i] = v.(AccessPackageLocalizedTextable)
+                }
             }
             m.SetLocalizedTexts(res)
         }
@@ -121,7 +123,9 @@ func (m *AccessPackageLocalizedContent) Serialize(writer i878a80d2330e89d2689638
     if m.GetLocalizedTexts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalizedTexts()))
         for i, v := range m.GetLocalizedTexts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("localizedTexts", cast)
         if err != nil {

@@ -105,7 +105,9 @@ func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetIntendedSettings(res)
         }
@@ -129,7 +131,9 @@ func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]VulnerableManagedDeviceable, len(val))
             for i, v := range val {
-                res[i] = v.(VulnerableManagedDeviceable)
+                if v != nil {
+                    res[i] = v.(VulnerableManagedDeviceable)
+                }
             }
             m.SetManagedDevices(res)
         }
@@ -217,7 +221,9 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetIntendedSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIntendedSettings()))
         for i, v := range m.GetIntendedSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("intendedSettings", cast)
         if err != nil {
@@ -233,7 +239,9 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetManagedDevices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDevices()))
         for i, v := range m.GetManagedDevices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedDevices", cast)
         if err != nil {

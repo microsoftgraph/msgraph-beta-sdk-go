@@ -10,7 +10,7 @@ type ContentClassification struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewContentClassification instantiates a new contentClassification and sets the default values.
+// NewContentClassification instantiates a new ContentClassification and sets the default values.
 func NewContentClassification()(*ContentClassification) {
     m := &ContentClassification{
     }
@@ -70,7 +70,9 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]MatchLocationable, len(val))
             for i, v := range val {
-                res[i] = v.(MatchLocationable)
+                if v != nil {
+                    res[i] = v.(MatchLocationable)
+                }
             }
             m.SetMatches(res)
         }
@@ -163,7 +165,9 @@ func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetMatches() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {

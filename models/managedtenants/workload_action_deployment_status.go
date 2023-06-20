@@ -125,7 +125,9 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludeGroups(res)
         }
@@ -149,7 +151,9 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIncludeGroups(res)
         }

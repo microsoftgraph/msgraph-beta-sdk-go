@@ -129,7 +129,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageResourceRoleable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageResourceRoleable)
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceRoleable)
+                }
             }
             m.SetAccessPackageResourceRoles(res)
         }
@@ -143,7 +145,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageResourceScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageResourceScopeable)
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceScopeable)
+                }
             }
             m.SetAccessPackageResourceScopes(res)
         }
@@ -177,7 +181,9 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageResourceAttributeable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageResourceAttributeable)
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceAttributeable)
+                }
             }
             m.SetAttributes(res)
         }
@@ -325,7 +331,9 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAccessPackageResourceRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceRoles()))
         for i, v := range m.GetAccessPackageResourceRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceRoles", cast)
         if err != nil {
@@ -335,7 +343,9 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAccessPackageResourceScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceScopes()))
         for i, v := range m.GetAccessPackageResourceScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceScopes", cast)
         if err != nil {
@@ -357,7 +367,9 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributes()))
         for i, v := range m.GetAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attributes", cast)
         if err != nil {

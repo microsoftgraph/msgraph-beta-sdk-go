@@ -60,7 +60,9 @@ func (m *IndustryDataRunStatistics) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]IndustryDataActivityStatisticsable, len(val))
             for i, v := range val {
-                res[i] = v.(IndustryDataActivityStatisticsable)
+                if v != nil {
+                    res[i] = v.(IndustryDataActivityStatisticsable)
+                }
             }
             m.SetActivityStatistics(res)
         }

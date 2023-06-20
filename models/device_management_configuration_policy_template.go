@@ -165,7 +165,9 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         if val != nil {
             res := make([]DeviceManagementConfigurationSettingTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSettingTemplateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSettingTemplateable)
+                }
             }
             m.SetSettingTemplates(res)
         }
@@ -333,7 +335,9 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i878a80d2
     if m.GetSettingTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingTemplates()))
         for i, v := range m.GetSettingTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settingTemplates", cast)
         if err != nil {

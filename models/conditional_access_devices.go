@@ -92,7 +92,9 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludeDevices(res)
         }
@@ -106,7 +108,9 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludeDeviceStates(res)
         }
@@ -120,7 +124,9 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIncludeDevices(res)
         }
@@ -134,7 +140,9 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIncludeDeviceStates(res)
         }

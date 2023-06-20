@@ -30,7 +30,9 @@ func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]SensitiveContentLocationable, len(val))
             for i, v := range val {
-                res[i] = v.(SensitiveContentLocationable)
+                if v != nil {
+                    res[i] = v.(SensitiveContentLocationable)
+                }
             }
             m.SetMatches(res)
         }
@@ -58,7 +60,9 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26
     if m.GetMatches() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {

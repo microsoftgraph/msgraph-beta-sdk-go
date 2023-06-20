@@ -53,7 +53,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ArticleIndicatorable, len(val))
             for i, v := range val {
-                res[i] = v.(ArticleIndicatorable)
+                if v != nil {
+                    res[i] = v.(ArticleIndicatorable)
+                }
             }
             m.SetArticleIndicators(res)
         }
@@ -67,7 +69,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Articleable, len(val))
             for i, v := range val {
-                res[i] = v.(Articleable)
+                if v != nil {
+                    res[i] = v.(Articleable)
+                }
             }
             m.SetArticles(res)
         }
@@ -81,7 +85,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]HostComponentable, len(val))
             for i, v := range val {
-                res[i] = v.(HostComponentable)
+                if v != nil {
+                    res[i] = v.(HostComponentable)
+                }
             }
             m.SetHostComponents(res)
         }
@@ -95,7 +101,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]HostCookieable, len(val))
             for i, v := range val {
-                res[i] = v.(HostCookieable)
+                if v != nil {
+                    res[i] = v.(HostCookieable)
+                }
             }
             m.SetHostCookies(res)
         }
@@ -109,7 +117,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Hostable, len(val))
             for i, v := range val {
-                res[i] = v.(Hostable)
+                if v != nil {
+                    res[i] = v.(Hostable)
+                }
             }
             m.SetHosts(res)
         }
@@ -123,7 +133,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]HostTrackerable, len(val))
             for i, v := range val {
-                res[i] = v.(HostTrackerable)
+                if v != nil {
+                    res[i] = v.(HostTrackerable)
+                }
             }
             m.SetHostTrackers(res)
         }
@@ -137,7 +149,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]IntelligenceProfileIndicatorable, len(val))
             for i, v := range val {
-                res[i] = v.(IntelligenceProfileIndicatorable)
+                if v != nil {
+                    res[i] = v.(IntelligenceProfileIndicatorable)
+                }
             }
             m.SetIntelligenceProfileIndicators(res)
         }
@@ -151,7 +165,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]IntelligenceProfileable, len(val))
             for i, v := range val {
-                res[i] = v.(IntelligenceProfileable)
+                if v != nil {
+                    res[i] = v.(IntelligenceProfileable)
+                }
             }
             m.SetIntelProfiles(res)
         }
@@ -165,7 +181,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]PassiveDnsRecordable, len(val))
             for i, v := range val {
-                res[i] = v.(PassiveDnsRecordable)
+                if v != nil {
+                    res[i] = v.(PassiveDnsRecordable)
+                }
             }
             m.SetPassiveDnsRecords(res)
         }
@@ -179,7 +197,9 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Vulnerabilityable, len(val))
             for i, v := range val {
-                res[i] = v.(Vulnerabilityable)
+                if v != nil {
+                    res[i] = v.(Vulnerabilityable)
+                }
             }
             m.SetVulnerabilities(res)
         }
@@ -284,7 +304,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetArticleIndicators() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetArticleIndicators()))
         for i, v := range m.GetArticleIndicators() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("articleIndicators", cast)
         if err != nil {
@@ -294,7 +316,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetArticles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetArticles()))
         for i, v := range m.GetArticles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("articles", cast)
         if err != nil {
@@ -304,7 +328,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetHostComponents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostComponents()))
         for i, v := range m.GetHostComponents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("hostComponents", cast)
         if err != nil {
@@ -314,7 +340,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetHostCookies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostCookies()))
         for i, v := range m.GetHostCookies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("hostCookies", cast)
         if err != nil {
@@ -324,7 +352,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetHosts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHosts()))
         for i, v := range m.GetHosts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("hosts", cast)
         if err != nil {
@@ -334,7 +364,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetHostTrackers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostTrackers()))
         for i, v := range m.GetHostTrackers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("hostTrackers", cast)
         if err != nil {
@@ -344,7 +376,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetIntelligenceProfileIndicators() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIntelligenceProfileIndicators()))
         for i, v := range m.GetIntelligenceProfileIndicators() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("intelligenceProfileIndicators", cast)
         if err != nil {
@@ -354,7 +388,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetIntelProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIntelProfiles()))
         for i, v := range m.GetIntelProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("intelProfiles", cast)
         if err != nil {
@@ -364,7 +400,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetPassiveDnsRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPassiveDnsRecords()))
         for i, v := range m.GetPassiveDnsRecords() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("passiveDnsRecords", cast)
         if err != nil {
@@ -374,7 +412,9 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetVulnerabilities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVulnerabilities()))
         for i, v := range m.GetVulnerabilities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("vulnerabilities", cast)
         if err != nil {

@@ -130,7 +130,9 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DeviceHealthScriptAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceHealthScriptAssignmentable)
+                if v != nil {
+                    res[i] = v.(DeviceHealthScriptAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -174,7 +176,9 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DeviceHealthScriptParameterable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceHealthScriptParameterable)
+                if v != nil {
+                    res[i] = v.(DeviceHealthScriptParameterable)
+                }
             }
             m.SetDetectionScriptParameters(res)
         }
@@ -198,7 +202,9 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DeviceHealthScriptDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceHealthScriptDeviceStateable)
+                if v != nil {
+                    res[i] = v.(DeviceHealthScriptDeviceStateable)
+                }
             }
             m.SetDeviceRunStates(res)
         }
@@ -282,7 +288,9 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DeviceHealthScriptParameterable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceHealthScriptParameterable)
+                if v != nil {
+                    res[i] = v.(DeviceHealthScriptParameterable)
+                }
             }
             m.SetRemediationScriptParameters(res)
         }
@@ -296,7 +304,9 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -474,7 +484,9 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -496,7 +508,9 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetDetectionScriptParameters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetectionScriptParameters()))
         for i, v := range m.GetDetectionScriptParameters() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("detectionScriptParameters", cast)
         if err != nil {
@@ -513,7 +527,9 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetDeviceRunStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {
@@ -559,7 +575,9 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetRemediationScriptParameters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemediationScriptParameters()))
         for i, v := range m.GetRemediationScriptParameters() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("remediationScriptParameters", cast)
         if err != nil {

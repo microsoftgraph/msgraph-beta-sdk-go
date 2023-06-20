@@ -97,7 +97,9 @@ func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]IosVppAppAssignedLicenseable, len(val))
             for i, v := range val {
-                res[i] = v.(IosVppAppAssignedLicenseable)
+                if v != nil {
+                    res[i] = v.(IosVppAppAssignedLicenseable)
+                }
             }
             m.SetAssignedLicenses(res)
         }
@@ -141,7 +143,9 @@ func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]IosVppAppRevokeLicensesActionResultable, len(val))
             for i, v := range val {
-                res[i] = v.(IosVppAppRevokeLicensesActionResultable)
+                if v != nil {
+                    res[i] = v.(IosVppAppRevokeLicensesActionResultable)
+                }
             }
             m.SetRevokeLicenseActionResults(res)
         }
@@ -329,7 +333,9 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAssignedLicenses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedLicenses()))
         for i, v := range m.GetAssignedLicenses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignedLicenses", cast)
         if err != nil {
@@ -357,7 +363,9 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetRevokeLicenseActionResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRevokeLicenseActionResults()))
         for i, v := range m.GetRevokeLicenseActionResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("revokeLicenseActionResults", cast)
         if err != nil {

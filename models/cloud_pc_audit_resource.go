@@ -10,7 +10,7 @@ type CloudPcAuditResource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcAuditResource instantiates a new cloudPcAuditResource and sets the default values.
+// NewCloudPcAuditResource instantiates a new CloudPcAuditResource and sets the default values.
 func NewCloudPcAuditResource()(*CloudPcAuditResource) {
     m := &CloudPcAuditResource{
     }
@@ -70,7 +70,9 @@ func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]CloudPcAuditPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcAuditPropertyable)
+                if v != nil {
+                    res[i] = v.(CloudPcAuditPropertyable)
+                }
             }
             m.SetModifiedProperties(res)
         }
@@ -163,7 +165,9 @@ func (m *CloudPcAuditResource) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetModifiedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {

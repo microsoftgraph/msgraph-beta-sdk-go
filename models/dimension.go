@@ -12,7 +12,7 @@ type Dimension struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDimension instantiates a new dimension and sets the default values.
+// NewDimension instantiates a new Dimension and sets the default values.
 func NewDimension()(*Dimension) {
     m := &Dimension{
     }
@@ -94,7 +94,9 @@ func (m *Dimension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]DimensionValueable, len(val))
             for i, v := range val {
-                res[i] = v.(DimensionValueable)
+                if v != nil {
+                    res[i] = v.(DimensionValueable)
+                }
             }
             m.SetDimensionValues(res)
         }
@@ -186,7 +188,9 @@ func (m *Dimension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetDimensionValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDimensionValues()))
         for i, v := range m.GetDimensionValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("dimensionValues", cast)
         if err != nil {

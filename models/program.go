@@ -63,7 +63,9 @@ func (m *Program) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]ProgramControlable, len(val))
             for i, v := range val {
-                res[i] = v.(ProgramControlable)
+                if v != nil {
+                    res[i] = v.(ProgramControlable)
+                }
             }
             m.SetControls(res)
         }
@@ -100,7 +102,9 @@ func (m *Program) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetControls() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetControls()))
         for i, v := range m.GetControls() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("controls", cast)
         if err != nil {

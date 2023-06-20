@@ -31,8 +31,8 @@ func NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilder(rawUrl string
     return NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action apply
-func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -47,11 +47,15 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx co
     return nil
 }
 // ToPostRequestInformation invoke action apply
-func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

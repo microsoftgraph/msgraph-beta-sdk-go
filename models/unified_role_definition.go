@@ -93,7 +93,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]UnifiedRoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleDefinitionable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleDefinitionable)
+                }
             }
             m.SetInheritsPermissionsFrom(res)
         }
@@ -119,6 +121,16 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["isPrivileged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsPrivileged(val)
+        }
+        return nil
+    }
     res["resourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -127,7 +139,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetResourceScopes(res)
         }
@@ -141,7 +155,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]UnifiedRolePermissionable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRolePermissionable)
+                if v != nil {
+                    res[i] = v.(UnifiedRolePermissionable)
+                }
             }
             m.SetRolePermissions(res)
         }
@@ -194,6 +210,17 @@ func (m *UnifiedRoleDefinition) GetIsBuiltIn()(*bool) {
 // GetIsEnabled gets the isEnabled property value. Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsPrivileged gets the isPrivileged property value. The isPrivileged property
+func (m *UnifiedRoleDefinition) GetIsPrivileged()(*bool) {
+    val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
         panic(err)
     }
@@ -274,7 +301,9 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetInheritsPermissionsFrom() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInheritsPermissionsFrom()))
         for i, v := range m.GetInheritsPermissionsFrom() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("inheritsPermissionsFrom", cast)
         if err != nil {
@@ -293,6 +322,12 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isPrivileged", m.GetIsPrivileged())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResourceScopes() != nil {
         err = writer.WriteCollectionOfStringValues("resourceScopes", m.GetResourceScopes())
         if err != nil {
@@ -302,7 +337,9 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetRolePermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRolePermissions()))
         for i, v := range m.GetRolePermissions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("rolePermissions", cast)
         if err != nil {
@@ -365,6 +402,13 @@ func (m *UnifiedRoleDefinition) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsPrivileged sets the isPrivileged property value. The isPrivileged property
+func (m *UnifiedRoleDefinition) SetIsPrivileged(value *bool)() {
+    err := m.GetBackingStore().Set("isPrivileged", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceScopes sets the resourceScopes property value. List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
 func (m *UnifiedRoleDefinition) SetResourceScopes(value []string)() {
     err := m.GetBackingStore().Set("resourceScopes", value)
@@ -403,6 +447,7 @@ type UnifiedRoleDefinitionable interface {
     GetInheritsPermissionsFrom()([]UnifiedRoleDefinitionable)
     GetIsBuiltIn()(*bool)
     GetIsEnabled()(*bool)
+    GetIsPrivileged()(*bool)
     GetResourceScopes()([]string)
     GetRolePermissions()([]UnifiedRolePermissionable)
     GetTemplateId()(*string)
@@ -413,6 +458,7 @@ type UnifiedRoleDefinitionable interface {
     SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)()
     SetIsBuiltIn(value *bool)()
     SetIsEnabled(value *bool)()
+    SetIsPrivileged(value *bool)()
     SetResourceScopes(value []string)()
     SetRolePermissions(value []UnifiedRolePermissionable)()
     SetTemplateId(value *string)()

@@ -163,7 +163,9 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]CustomCalloutExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomCalloutExtensionable)
+                if v != nil {
+                    res[i] = v.(CustomCalloutExtensionable)
+                }
             }
             m.SetAccessPackageCustomWorkflowExtensions(res)
         }
@@ -177,7 +179,9 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AccessPackageResourceRoleable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageResourceRoleable)
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceRoleable)
+                }
             }
             m.SetAccessPackageResourceRoles(res)
         }
@@ -191,7 +195,9 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AccessPackageResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageResourceable)
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceable)
+                }
             }
             m.SetAccessPackageResources(res)
         }
@@ -205,7 +211,9 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AccessPackageResourceScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageResourceScopeable)
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceScopeable)
+                }
             }
             m.SetAccessPackageResourceScopes(res)
         }
@@ -219,7 +227,9 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageable)
+                if v != nil {
+                    res[i] = v.(AccessPackageable)
+                }
             }
             m.SetAccessPackages(res)
         }
@@ -273,7 +283,9 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]CustomAccessPackageWorkflowExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomAccessPackageWorkflowExtensionable)
+                if v != nil {
+                    res[i] = v.(CustomAccessPackageWorkflowExtensionable)
+                }
             }
             m.SetCustomAccessPackageWorkflowExtensions(res)
         }
@@ -373,7 +385,9 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAccessPackageCustomWorkflowExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageCustomWorkflowExtensions()))
         for i, v := range m.GetAccessPackageCustomWorkflowExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageCustomWorkflowExtensions", cast)
         if err != nil {
@@ -383,7 +397,9 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAccessPackageResourceRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceRoles()))
         for i, v := range m.GetAccessPackageResourceRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceRoles", cast)
         if err != nil {
@@ -393,7 +409,9 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAccessPackageResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResources()))
         for i, v := range m.GetAccessPackageResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResources", cast)
         if err != nil {
@@ -403,7 +421,9 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAccessPackageResourceScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceScopes()))
         for i, v := range m.GetAccessPackageResourceScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceScopes", cast)
         if err != nil {
@@ -413,7 +433,9 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAccessPackages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackages()))
         for i, v := range m.GetAccessPackages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackages", cast)
         if err != nil {
@@ -447,7 +469,9 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetCustomAccessPackageWorkflowExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomAccessPackageWorkflowExtensions()))
         for i, v := range m.GetCustomAccessPackageWorkflowExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customAccessPackageWorkflowExtensions", cast)
         if err != nil {

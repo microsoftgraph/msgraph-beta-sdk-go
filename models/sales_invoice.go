@@ -12,7 +12,7 @@ type SalesInvoice struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesInvoice instantiates a new salesInvoice and sets the default values.
+// NewSalesInvoice instantiates a new SalesInvoice and sets the default values.
 func NewSalesInvoice()(*SalesInvoice) {
     m := &SalesInvoice{
     }
@@ -518,7 +518,9 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]SalesInvoiceLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesInvoiceLineable)
+                if v != nil {
+                    res[i] = v.(SalesInvoiceLineable)
+                }
             }
             m.SetSalesInvoiceLines(res)
         }
@@ -1062,7 +1064,9 @@ func (m *SalesInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetSalesInvoiceLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesInvoiceLines()))
         for i, v := range m.GetSalesInvoiceLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesInvoiceLines", cast)
         if err != nil {

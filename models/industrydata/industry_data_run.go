@@ -76,7 +76,9 @@ func (m *IndustryDataRun) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]IndustryDataRunActivityable, len(val))
             for i, v := range val {
-                res[i] = v.(IndustryDataRunActivityable)
+                if v != nil {
+                    res[i] = v.(IndustryDataRunActivityable)
+                }
             }
             m.SetActivities(res)
         }
@@ -165,7 +167,9 @@ func (m *IndustryDataRun) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {

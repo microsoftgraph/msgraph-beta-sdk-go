@@ -96,7 +96,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcAuditEventable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcAuditEventable)
+                if v != nil {
+                    res[i] = v.(CloudPcAuditEventable)
+                }
             }
             m.SetAuditEvents(res)
         }
@@ -110,7 +112,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcBulkActionable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcBulkActionable)
+                if v != nil {
+                    res[i] = v.(CloudPcBulkActionable)
+                }
             }
             m.SetBulkActions(res)
         }
@@ -124,7 +128,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPCable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPCable)
+                if v != nil {
+                    res[i] = v.(CloudPCable)
+                }
             }
             m.SetCloudPCs(res)
         }
@@ -148,7 +154,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcDeviceImageable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcDeviceImageable)
+                if v != nil {
+                    res[i] = v.(CloudPcDeviceImageable)
+                }
             }
             m.SetDeviceImages(res)
         }
@@ -162,7 +170,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcExternalPartnerSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcExternalPartnerSettingable)
+                if v != nil {
+                    res[i] = v.(CloudPcExternalPartnerSettingable)
+                }
             }
             m.SetExternalPartnerSettings(res)
         }
@@ -176,7 +186,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcGalleryImageable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcGalleryImageable)
+                if v != nil {
+                    res[i] = v.(CloudPcGalleryImageable)
+                }
             }
             m.SetGalleryImages(res)
         }
@@ -190,7 +202,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcOnPremisesConnectionable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcOnPremisesConnectionable)
+                if v != nil {
+                    res[i] = v.(CloudPcOnPremisesConnectionable)
+                }
             }
             m.SetOnPremisesConnections(res)
         }
@@ -214,7 +228,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcProvisioningPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcProvisioningPolicyable)
+                if v != nil {
+                    res[i] = v.(CloudPcProvisioningPolicyable)
+                }
             }
             m.SetProvisioningPolicies(res)
         }
@@ -238,7 +254,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcServicePlanable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcServicePlanable)
+                if v != nil {
+                    res[i] = v.(CloudPcServicePlanable)
+                }
             }
             m.SetServicePlans(res)
         }
@@ -252,7 +270,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcSharedUseServicePlanable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcSharedUseServicePlanable)
+                if v != nil {
+                    res[i] = v.(CloudPcSharedUseServicePlanable)
+                }
             }
             m.SetSharedUseServicePlans(res)
         }
@@ -266,7 +286,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcSnapshotable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcSnapshotable)
+                if v != nil {
+                    res[i] = v.(CloudPcSnapshotable)
+                }
             }
             m.SetSnapshots(res)
         }
@@ -280,7 +302,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcSupportedRegionable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcSupportedRegionable)
+                if v != nil {
+                    res[i] = v.(CloudPcSupportedRegionable)
+                }
             }
             m.SetSupportedRegions(res)
         }
@@ -294,7 +318,9 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]CloudPcUserSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcUserSettingable)
+                if v != nil {
+                    res[i] = v.(CloudPcUserSettingable)
+                }
             }
             m.SetUserSettings(res)
         }
@@ -421,7 +447,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetAuditEvents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuditEvents()))
         for i, v := range m.GetAuditEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("auditEvents", cast)
         if err != nil {
@@ -431,7 +459,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetBulkActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBulkActions()))
         for i, v := range m.GetBulkActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("bulkActions", cast)
         if err != nil {
@@ -441,7 +471,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetCloudPCs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
         for i, v := range m.GetCloudPCs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("cloudPCs", cast)
         if err != nil {
@@ -457,7 +489,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetDeviceImages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceImages()))
         for i, v := range m.GetDeviceImages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceImages", cast)
         if err != nil {
@@ -467,7 +501,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetExternalPartnerSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalPartnerSettings()))
         for i, v := range m.GetExternalPartnerSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("externalPartnerSettings", cast)
         if err != nil {
@@ -477,7 +513,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetGalleryImages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGalleryImages()))
         for i, v := range m.GetGalleryImages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("galleryImages", cast)
         if err != nil {
@@ -487,7 +525,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetOnPremisesConnections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesConnections()))
         for i, v := range m.GetOnPremisesConnections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("onPremisesConnections", cast)
         if err != nil {
@@ -503,7 +543,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetProvisioningPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioningPolicies()))
         for i, v := range m.GetProvisioningPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("provisioningPolicies", cast)
         if err != nil {
@@ -519,7 +561,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetServicePlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePlans()))
         for i, v := range m.GetServicePlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("servicePlans", cast)
         if err != nil {
@@ -529,7 +573,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetSharedUseServicePlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedUseServicePlans()))
         for i, v := range m.GetSharedUseServicePlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sharedUseServicePlans", cast)
         if err != nil {
@@ -539,7 +585,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetSnapshots() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSnapshots()))
         for i, v := range m.GetSnapshots() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("snapshots", cast)
         if err != nil {
@@ -549,7 +597,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetSupportedRegions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSupportedRegions()))
         for i, v := range m.GetSupportedRegions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("supportedRegions", cast)
         if err != nil {
@@ -559,7 +609,9 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetUserSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserSettings()))
         for i, v := range m.GetUserSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userSettings", cast)
         if err != nil {

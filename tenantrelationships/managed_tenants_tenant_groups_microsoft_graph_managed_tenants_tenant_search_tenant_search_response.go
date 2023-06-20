@@ -32,7 +32,9 @@ func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenan
         if val != nil {
             res := make([]i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)
+                if v != nil {
+                    res[i] = v.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)
+                }
             }
             m.SetValue(res)
         }
@@ -60,7 +62,9 @@ func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenan
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

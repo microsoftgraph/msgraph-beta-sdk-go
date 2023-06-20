@@ -9,7 +9,7 @@ import (
 type CloudPC struct {
     Entity
 }
-// NewCloudPC instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new CloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
@@ -205,7 +205,9 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]CloudPcPartnerAgentInstallResultable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcPartnerAgentInstallResultable)
+                if v != nil {
+                    res[i] = v.(CloudPcPartnerAgentInstallResultable)
+                }
             }
             m.SetPartnerAgentInstallResults(res)
         }
@@ -643,7 +645,9 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPartnerAgentInstallResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPartnerAgentInstallResults()))
         for i, v := range m.GetPartnerAgentInstallResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("partnerAgentInstallResults", cast)
         if err != nil {

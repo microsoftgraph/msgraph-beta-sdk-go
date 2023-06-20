@@ -62,7 +62,9 @@ func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ManagementTemplateDetailedInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagementTemplateDetailedInfoable)
+                if v != nil {
+                    res[i] = v.(ManagementTemplateDetailedInfoable)
+                }
             }
             m.SetManagementTemplates(res)
         }
@@ -113,7 +115,9 @@ func (m *ManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetManagementTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplates()))
         for i, v := range m.GetManagementTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managementTemplates", cast)
         if err != nil {

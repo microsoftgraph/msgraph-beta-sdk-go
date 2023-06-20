@@ -62,7 +62,9 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]CommunicationsUserIdentityable, len(val))
             for i, v := range val {
-                res[i] = v.(CommunicationsUserIdentityable)
+                if v != nil {
+                    res[i] = v.(CommunicationsUserIdentityable)
+                }
             }
             m.SetCoOrganizers(res)
         }
@@ -107,7 +109,9 @@ func (m *VirtualEventWebinar) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetCoOrganizers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCoOrganizers()))
         for i, v := range m.GetCoOrganizers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("coOrganizers", cast)
         if err != nil {

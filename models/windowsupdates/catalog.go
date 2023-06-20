@@ -42,7 +42,9 @@ func (m *Catalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]CatalogEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(CatalogEntryable)
+                if v != nil {
+                    res[i] = v.(CatalogEntryable)
+                }
             }
             m.SetEntries(res)
         }
@@ -59,7 +61,9 @@ func (m *Catalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetEntries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEntries()))
         for i, v := range m.GetEntries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("entries", cast)
         if err != nil {

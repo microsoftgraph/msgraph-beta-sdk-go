@@ -59,7 +59,9 @@ func (m *NotificationChannel) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]NotificationReceiverable, len(val))
             for i, v := range val {
-                res[i] = v.(NotificationReceiverable)
+                if v != nil {
+                    res[i] = v.(NotificationReceiverable)
+                }
             }
             m.SetNotificationReceivers(res)
         }
@@ -83,7 +85,9 @@ func (m *NotificationChannel) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetReceivers(res)
         }
@@ -147,7 +151,9 @@ func (m *NotificationChannel) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetNotificationReceivers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNotificationReceivers()))
         for i, v := range m.GetNotificationReceivers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("notificationReceivers", cast)
         if err != nil {

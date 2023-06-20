@@ -72,7 +72,9 @@ func (m *InformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateCla
         if val != nil {
             res := make([]i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ClassificationResultable, len(val))
             for i, v := range val {
-                res[i] = v.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ClassificationResultable)
+                if v != nil {
+                    res[i] = v.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ClassificationResultable)
+                }
             }
             m.SetClassificationResults(res)
         }
@@ -95,7 +97,9 @@ func (m *InformationProtectionSensitivityLabelsMicrosoftGraphSecurityEvaluateCla
     if m.GetClassificationResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClassificationResults()))
         for i, v := range m.GetClassificationResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("classificationResults", cast)
         if err != nil {

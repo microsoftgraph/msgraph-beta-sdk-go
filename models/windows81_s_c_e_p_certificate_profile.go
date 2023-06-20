@@ -83,7 +83,9 @@ func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]ManagedDeviceCertificateStateable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceCertificateStateable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceCertificateStateable)
+                }
             }
             m.SetManagedDeviceCertificateStates(res)
         }
@@ -107,7 +109,9 @@ func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetScepServerUrls(res)
         }
@@ -260,7 +264,9 @@ func (m *Windows81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d26896
     if m.GetManagedDeviceCertificateStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceCertificateStates()))
         for i, v := range m.GetManagedDeviceCertificateStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedDeviceCertificateStates", cast)
         if err != nil {

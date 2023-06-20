@@ -95,7 +95,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetClientApplicationIds(res)
         }
@@ -109,7 +111,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetClientApplicationPublisherIds(res)
         }
@@ -133,7 +137,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetClientApplicationTenantIds(res)
         }
@@ -157,7 +163,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetPermissions(res)
         }

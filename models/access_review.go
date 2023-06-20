@@ -9,7 +9,7 @@ import (
 type AccessReview struct {
     Entity
 }
-// NewAccessReview instantiates a new AccessReview and sets the default values.
+// NewAccessReview instantiates a new accessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {
     m := &AccessReview{
         Entity: *NewEntity(),
@@ -117,7 +117,9 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]AccessReviewDecisionable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewDecisionable)
+                if v != nil {
+                    res[i] = v.(AccessReviewDecisionable)
+                }
             }
             m.SetDecisions(res)
         }
@@ -161,7 +163,9 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]AccessReviewable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewable)
+                if v != nil {
+                    res[i] = v.(AccessReviewable)
+                }
             }
             m.SetInstances(res)
         }
@@ -175,7 +179,9 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]AccessReviewDecisionable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewDecisionable)
+                if v != nil {
+                    res[i] = v.(AccessReviewDecisionable)
+                }
             }
             m.SetMyDecisions(res)
         }
@@ -199,7 +205,9 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]AccessReviewReviewerable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewReviewerable)
+                if v != nil {
+                    res[i] = v.(AccessReviewReviewerable)
+                }
             }
             m.SetReviewers(res)
         }
@@ -356,7 +364,9 @@ func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetDecisions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDecisions()))
         for i, v := range m.GetDecisions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("decisions", cast)
         if err != nil {
@@ -384,7 +394,9 @@ func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -394,7 +406,9 @@ func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetMyDecisions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMyDecisions()))
         for i, v := range m.GetMyDecisions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("myDecisions", cast)
         if err != nil {
@@ -410,7 +424,9 @@ func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {

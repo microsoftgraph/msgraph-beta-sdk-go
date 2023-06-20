@@ -108,7 +108,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]DeviceManagementScriptAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementScriptAssignmentable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementScriptAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -152,7 +154,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]DeviceManagementScriptDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementScriptDeviceStateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementScriptDeviceStateable)
+                }
             }
             m.SetDeviceRunStates(res)
         }
@@ -196,7 +200,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]DeviceManagementScriptGroupAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementScriptGroupAssignmentable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementScriptGroupAssignmentable)
+                }
             }
             m.SetGroupAssignments(res)
         }
@@ -230,7 +236,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -274,7 +282,9 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]DeviceManagementScriptUserStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementScriptUserStateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementScriptUserStateable)
+                }
             }
             m.SetUserRunStates(res)
         }
@@ -390,7 +400,9 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -412,7 +424,9 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetDeviceRunStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {
@@ -440,7 +454,9 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetGroupAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
         if err != nil {
@@ -481,7 +497,9 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetUserRunStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRunStates()))
         for i, v := range m.GetUserRunStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userRunStates", cast)
         if err != nil {

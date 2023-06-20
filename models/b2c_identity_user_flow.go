@@ -72,7 +72,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IdentityProviderable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityProviderable)
+                if v != nil {
+                    res[i] = v.(IdentityProviderable)
+                }
             }
             m.SetIdentityProviders(res)
         }
@@ -96,7 +98,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]UserFlowLanguageConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(UserFlowLanguageConfigurationable)
+                if v != nil {
+                    res[i] = v.(UserFlowLanguageConfigurationable)
+                }
             }
             m.SetLanguages(res)
         }
@@ -110,7 +114,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IdentityUserFlowAttributeAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityUserFlowAttributeAssignmentable)
+                if v != nil {
+                    res[i] = v.(IdentityUserFlowAttributeAssignmentable)
+                }
             }
             m.SetUserAttributeAssignments(res)
         }
@@ -124,7 +130,9 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IdentityProviderBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityProviderBaseable)
+                if v != nil {
+                    res[i] = v.(IdentityProviderBaseable)
+                }
             }
             m.SetUserFlowIdentityProviders(res)
         }
@@ -208,7 +216,9 @@ func (m *B2cIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetIdentityProviders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentityProviders()))
         for i, v := range m.GetIdentityProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("identityProviders", cast)
         if err != nil {
@@ -224,7 +234,9 @@ func (m *B2cIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetLanguages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLanguages()))
         for i, v := range m.GetLanguages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("languages", cast)
         if err != nil {
@@ -234,7 +246,9 @@ func (m *B2cIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetUserAttributeAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAttributeAssignments()))
         for i, v := range m.GetUserAttributeAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userAttributeAssignments", cast)
         if err != nil {
@@ -244,7 +258,9 @@ func (m *B2cIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetUserFlowIdentityProviders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowIdentityProviders()))
         for i, v := range m.GetUserFlowIdentityProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userFlowIdentityProviders", cast)
         if err != nil {

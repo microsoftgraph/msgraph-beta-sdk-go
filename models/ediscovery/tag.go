@@ -97,7 +97,9 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         if val != nil {
             res := make([]Tagable, len(val))
             for i, v := range val {
-                res[i] = v.(Tagable)
+                if v != nil {
+                    res[i] = v.(Tagable)
+                }
             }
             m.SetChildTags(res)
         }
@@ -193,7 +195,9 @@ func (m *Tag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetChildTags() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildTags()))
         for i, v := range m.GetChildTags() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("childTags", cast)
         if err != nil {

@@ -85,7 +85,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetCategories(res)
         }
@@ -99,7 +101,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetGroupIds(res)
         }
@@ -133,7 +137,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetLanguageTags(res)
         }
@@ -147,7 +153,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType))
+                if v != nil {
+                    res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType))
+                }
             }
             m.SetPlatforms(res)
         }
@@ -161,7 +169,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetPowerAppIds(res)
         }
@@ -185,7 +195,9 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]AnswerVariantable, len(val))
             for i, v := range val {
-                res[i] = v.(AnswerVariantable)
+                if v != nil {
+                    res[i] = v.(AnswerVariantable)
+                }
             }
             m.SetTargetedVariations(res)
         }
@@ -351,7 +363,9 @@ func (m *Bookmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetTargetedVariations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetedVariations()))
         for i, v := range m.GetTargetedVariations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("targetedVariations", cast)
         if err != nil {

@@ -12,7 +12,7 @@ type Employee struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEmployee instantiates a new employee and sets the default values.
+// NewEmployee instantiates a new Employee and sets the default values.
 func NewEmployee()(*Employee) {
     m := &Employee{
     }
@@ -256,7 +256,9 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Pictureable, len(val))
             for i, v := range val {
-                res[i] = v.(Pictureable)
+                if v != nil {
+                    res[i] = v.(Pictureable)
+                }
             }
             m.SetPicture(res)
         }
@@ -564,7 +566,9 @@ func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetPicture() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {

@@ -10,7 +10,7 @@ type ExpressionEvaluationDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewExpressionEvaluationDetails instantiates a new expressionEvaluationDetails and sets the default values.
+// NewExpressionEvaluationDetails instantiates a new ExpressionEvaluationDetails and sets the default values.
 func NewExpressionEvaluationDetails()(*ExpressionEvaluationDetails) {
     m := &ExpressionEvaluationDetails{
     }
@@ -92,7 +92,9 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ExpressionEvaluationDetailsable, len(val))
             for i, v := range val {
-                res[i] = v.(ExpressionEvaluationDetailsable)
+                if v != nil {
+                    res[i] = v.(ExpressionEvaluationDetailsable)
+                }
             }
             m.SetExpressionEvaluationDetails(res)
         }
@@ -163,7 +165,9 @@ func (m *ExpressionEvaluationDetails) Serialize(writer i878a80d2330e89d26896388a
     if m.GetExpressionEvaluationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExpressionEvaluationDetails()))
         for i, v := range m.GetExpressionEvaluationDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("expressionEvaluationDetails", cast)
         if err != nil {

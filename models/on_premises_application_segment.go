@@ -92,7 +92,9 @@ func (m *OnPremisesApplicationSegment) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]CorsConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(CorsConfigurationable)
+                if v != nil {
+                    res[i] = v.(CorsConfigurationable)
+                }
             }
             m.SetCorsConfigurations(res)
         }
@@ -163,7 +165,9 @@ func (m *OnPremisesApplicationSegment) Serialize(writer i878a80d2330e89d26896388
     if m.GetCorsConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCorsConfigurations()))
         for i, v := range m.GetCorsConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("corsConfigurations", cast)
         if err != nil {

@@ -114,7 +114,9 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }

@@ -10,7 +10,7 @@ type ConditionalAccessConditionSet struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
+// NewConditionalAccessConditionSet instantiates a new ConditionalAccessConditionSet and sets the default values.
 func NewConditionalAccessConditionSet()(*ConditionalAccessConditionSet) {
     m := &ConditionalAccessConditionSet{
     }
@@ -124,7 +124,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]ConditionalAccessClientApp, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessClientApp))
+                if v != nil {
+                    res[i] = *(v.(*ConditionalAccessClientApp))
+                }
             }
             m.SetClientAppTypes(res)
         }
@@ -188,7 +190,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]RiskLevel, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RiskLevel))
+                if v != nil {
+                    res[i] = *(v.(*RiskLevel))
+                }
             }
             m.SetServicePrincipalRiskLevels(res)
         }
@@ -202,7 +206,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]RiskLevel, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RiskLevel))
+                if v != nil {
+                    res[i] = *(v.(*RiskLevel))
+                }
             }
             m.SetSignInRiskLevels(res)
         }
@@ -216,7 +222,9 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]RiskLevel, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RiskLevel))
+                if v != nil {
+                    res[i] = *(v.(*RiskLevel))
+                }
             }
             m.SetUserRiskLevels(res)
         }

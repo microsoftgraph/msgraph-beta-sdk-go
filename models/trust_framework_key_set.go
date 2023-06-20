@@ -8,7 +8,7 @@ import (
 type TrustFrameworkKeySet struct {
     Entity
 }
-// NewTrustFrameworkKeySet instantiates a new TrustFrameworkKeySet and sets the default values.
+// NewTrustFrameworkKeySet instantiates a new trustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
     m := &TrustFrameworkKeySet{
         Entity: *NewEntity(),
@@ -30,7 +30,9 @@ func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]TrustFrameworkKeyable, len(val))
             for i, v := range val {
-                res[i] = v.(TrustFrameworkKeyable)
+                if v != nil {
+                    res[i] = v.(TrustFrameworkKeyable)
+                }
             }
             m.SetKeys(res)
         }
@@ -58,7 +60,9 @@ func (m *TrustFrameworkKeySet) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetKeys() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKeys()))
         for i, v := range m.GetKeys() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("keys", cast)
         if err != nil {

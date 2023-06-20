@@ -8,7 +8,7 @@ import (
 type ExtensionProperty struct {
     DirectoryObject
 }
-// NewExtensionProperty instantiates a new extensionProperty and sets the default values.
+// NewExtensionProperty instantiates a new ExtensionProperty and sets the default values.
 func NewExtensionProperty()(*ExtensionProperty) {
     m := &ExtensionProperty{
         DirectoryObject: *NewDirectoryObject(),
@@ -104,7 +104,9 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTargetObjects(res)
         }

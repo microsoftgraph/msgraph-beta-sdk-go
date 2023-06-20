@@ -32,7 +32,9 @@ func (m *EducationIdentityMatchingConfiguration) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]EducationIdentityMatchingOptionsable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationIdentityMatchingOptionsable)
+                if v != nil {
+                    res[i] = v.(EducationIdentityMatchingOptionsable)
+                }
             }
             m.SetMatchingOptions(res)
         }
@@ -60,7 +62,9 @@ func (m *EducationIdentityMatchingConfiguration) Serialize(writer i878a80d2330e8
     if m.GetMatchingOptions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMatchingOptions()))
         for i, v := range m.GetMatchingOptions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("matchingOptions", cast)
         if err != nil {

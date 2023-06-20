@@ -74,7 +74,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]OnPremisesAgentGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(OnPremisesAgentGroupable)
+                if v != nil {
+                    res[i] = v.(OnPremisesAgentGroupable)
+                }
             }
             m.SetAgentGroups(res)
         }
@@ -88,7 +90,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]OnPremisesAgentable, len(val))
             for i, v := range val {
-                res[i] = v.(OnPremisesAgentable)
+                if v != nil {
+                    res[i] = v.(OnPremisesAgentable)
+                }
             }
             m.SetAgents(res)
         }
@@ -102,7 +106,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ConnectorGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(ConnectorGroupable)
+                if v != nil {
+                    res[i] = v.(ConnectorGroupable)
+                }
             }
             m.SetConnectorGroups(res)
         }
@@ -116,7 +122,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]Connectorable, len(val))
             for i, v := range val {
-                res[i] = v.(Connectorable)
+                if v != nil {
+                    res[i] = v.(Connectorable)
+                }
             }
             m.SetConnectors(res)
         }
@@ -160,7 +168,9 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]PublishedResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(PublishedResourceable)
+                if v != nil {
+                    res[i] = v.(PublishedResourceable)
+                }
             }
             m.SetPublishedResources(res)
         }
@@ -221,7 +231,9 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetAgentGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgentGroups()))
         for i, v := range m.GetAgentGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("agentGroups", cast)
         if err != nil {
@@ -231,7 +243,9 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetAgents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgents()))
         for i, v := range m.GetAgents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("agents", cast)
         if err != nil {
@@ -241,7 +255,9 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetConnectorGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectorGroups()))
         for i, v := range m.GetConnectorGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("connectorGroups", cast)
         if err != nil {
@@ -251,7 +267,9 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetConnectors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectors()))
         for i, v := range m.GetConnectors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("connectors", cast)
         if err != nil {
@@ -279,7 +297,9 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetPublishedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedResources()))
         for i, v := range m.GetPublishedResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("publishedResources", cast)
         if err != nil {

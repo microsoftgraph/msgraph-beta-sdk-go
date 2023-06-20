@@ -53,7 +53,9 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
         if val != nil {
             res := make([]DeviceManagementConfigurationGroupSettingValueTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationGroupSettingValueTemplateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationGroupSettingValueTemplateable)
+                }
             }
             m.SetGroupSettingCollectionValueTemplate(res)
         }
@@ -87,7 +89,9 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Se
     if m.GetGroupSettingCollectionValueTemplate() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupSettingCollectionValueTemplate()))
         for i, v := range m.GetGroupSettingCollectionValueTemplate() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupSettingCollectionValueTemplate", cast)
         if err != nil {

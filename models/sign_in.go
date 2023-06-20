@@ -304,7 +304,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]AppliedConditionalAccessPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AppliedConditionalAccessPolicyable)
+                if v != nil {
+                    res[i] = v.(AppliedConditionalAccessPolicyable)
+                }
             }
             m.SetAppliedConditionalAccessPolicies(res)
         }
@@ -318,7 +320,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]AppliedAuthenticationEventListenerable, len(val))
             for i, v := range val {
-                res[i] = v.(AppliedAuthenticationEventListenerable)
+                if v != nil {
+                    res[i] = v.(AppliedAuthenticationEventListenerable)
+                }
             }
             m.SetAppliedEventListeners(res)
         }
@@ -342,7 +346,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]AuthenticationAppPolicyDetailsable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationAppPolicyDetailsable)
+                if v != nil {
+                    res[i] = v.(AuthenticationAppPolicyDetailsable)
+                }
             }
             m.SetAuthenticationAppPolicyEvaluationDetails(res)
         }
@@ -356,7 +362,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]AuthenticationContextable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationContextable)
+                if v != nil {
+                    res[i] = v.(AuthenticationContextable)
+                }
             }
             m.SetAuthenticationContextClassReferences(res)
         }
@@ -370,7 +378,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]AuthenticationDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationDetailable)
+                if v != nil {
+                    res[i] = v.(AuthenticationDetailable)
+                }
             }
             m.SetAuthenticationDetails(res)
         }
@@ -384,7 +394,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAuthenticationMethodsUsed(res)
         }
@@ -398,7 +410,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValueable)
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
             }
             m.SetAuthenticationProcessingDetails(res)
         }
@@ -432,7 +446,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]AuthenticationRequirementPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationRequirementPolicyable)
+                if v != nil {
+                    res[i] = v.(AuthenticationRequirementPolicyable)
+                }
             }
             m.SetAuthenticationRequirementPolicies(res)
         }
@@ -656,7 +672,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]NetworkLocationDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(NetworkLocationDetailable)
+                if v != nil {
+                    res[i] = v.(NetworkLocationDetailable)
+                }
             }
             m.SetNetworkLocationDetails(res)
         }
@@ -750,7 +768,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRiskEventTypesV2(res)
         }
@@ -834,7 +854,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]SessionLifetimePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(SessionLifetimePolicyable)
+                if v != nil {
+                    res[i] = v.(SessionLifetimePolicyable)
+                }
             }
             m.SetSessionLifetimePolicies(res)
         }
@@ -848,7 +870,9 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSignInEventTypes(res)
         }
@@ -1438,7 +1462,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAppliedConditionalAccessPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppliedConditionalAccessPolicies()))
         for i, v := range m.GetAppliedConditionalAccessPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appliedConditionalAccessPolicies", cast)
         if err != nil {
@@ -1448,7 +1474,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAppliedEventListeners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppliedEventListeners()))
         for i, v := range m.GetAppliedEventListeners() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appliedEventListeners", cast)
         if err != nil {
@@ -1464,7 +1492,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAuthenticationAppPolicyEvaluationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationAppPolicyEvaluationDetails()))
         for i, v := range m.GetAuthenticationAppPolicyEvaluationDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationAppPolicyEvaluationDetails", cast)
         if err != nil {
@@ -1474,7 +1504,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAuthenticationContextClassReferences() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationContextClassReferences()))
         for i, v := range m.GetAuthenticationContextClassReferences() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationContextClassReferences", cast)
         if err != nil {
@@ -1484,7 +1516,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAuthenticationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationDetails()))
         for i, v := range m.GetAuthenticationDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationDetails", cast)
         if err != nil {
@@ -1500,7 +1534,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAuthenticationProcessingDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationProcessingDetails()))
         for i, v := range m.GetAuthenticationProcessingDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationProcessingDetails", cast)
         if err != nil {
@@ -1523,7 +1559,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAuthenticationRequirementPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationRequirementPolicies()))
         for i, v := range m.GetAuthenticationRequirementPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationRequirementPolicies", cast)
         if err != nil {
@@ -1663,7 +1701,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetNetworkLocationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNetworkLocationDetails()))
         for i, v := range m.GetNetworkLocationDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("networkLocationDetails", cast)
         if err != nil {
@@ -1773,7 +1813,9 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetSessionLifetimePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessionLifetimePolicies()))
         for i, v := range m.GetSessionLifetimePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sessionLifetimePolicies", cast)
         if err != nil {

@@ -12,7 +12,7 @@ type CustomerPayment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomerPayment instantiates a new customerPayment and sets the default values.
+// NewCustomerPayment instantiates a new CustomerPayment and sets the default values.
 func NewCustomerPayment()(*CustomerPayment) {
     m := &CustomerPayment{
     }

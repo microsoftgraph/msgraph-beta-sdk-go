@@ -104,7 +104,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]GroupPolicySettingMappingable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicySettingMappingable)
+                if v != nil {
+                    res[i] = v.(GroupPolicySettingMappingable)
+                }
             }
             m.SetGroupPolicySettingMappings(res)
         }
@@ -148,7 +150,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -202,7 +206,9 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]UnsupportedGroupPolicyExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(UnsupportedGroupPolicyExtensionable)
+                if v != nil {
+                    res[i] = v.(UnsupportedGroupPolicyExtensionable)
+                }
             }
             m.SetUnsupportedGroupPolicyExtensions(res)
         }
@@ -392,7 +398,9 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetGroupPolicySettingMappings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupPolicySettingMappings()))
         for i, v := range m.GetGroupPolicySettingMappings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupPolicySettingMappings", cast)
         if err != nil {
@@ -451,7 +459,9 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetUnsupportedGroupPolicyExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUnsupportedGroupPolicyExtensions()))
         for i, v := range m.GetUnsupportedGroupPolicyExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("unsupportedGroupPolicyExtensions", cast)
         if err != nil {

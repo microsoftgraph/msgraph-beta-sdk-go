@@ -116,7 +116,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]LabelPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(LabelPolicyable)
+                if v != nil {
+                    res[i] = v.(LabelPolicyable)
+                }
             }
             m.SetAssignedPolicies(res)
         }
@@ -180,7 +182,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]LabelActionBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(LabelActionBaseable)
+                if v != nil {
+                    res[i] = v.(LabelActionBaseable)
+                }
             }
             m.SetLabelActions(res)
         }
@@ -214,7 +218,9 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]SensitivityLabelable, len(val))
             for i, v := range val {
-                res[i] = v.(SensitivityLabelable)
+                if v != nil {
+                    res[i] = v.(SensitivityLabelable)
+                }
             }
             m.SetSublabels(res)
         }
@@ -332,7 +338,9 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAssignedPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedPolicies()))
         for i, v := range m.GetAssignedPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignedPolicies", cast)
         if err != nil {
@@ -372,7 +380,9 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetLabelActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLabelActions()))
         for i, v := range m.GetLabelActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("labelActions", cast)
         if err != nil {
@@ -394,7 +404,9 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetSublabels() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSublabels()))
         for i, v := range m.GetSublabels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sublabels", cast)
         if err != nil {

@@ -69,7 +69,9 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]UserRegistrationMethodCountable, len(val))
             for i, v := range val {
-                res[i] = v.(UserRegistrationMethodCountable)
+                if v != nil {
+                    res[i] = v.(UserRegistrationMethodCountable)
+                }
             }
             m.SetUserRegistrationMethodCounts(res)
         }
@@ -169,7 +171,9 @@ func (m *UserRegistrationMethodSummary) Serialize(writer i878a80d2330e89d2689638
     if m.GetUserRegistrationMethodCounts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRegistrationMethodCounts()))
         for i, v := range m.GetUserRegistrationMethodCounts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("userRegistrationMethodCounts", cast)
         if err != nil {

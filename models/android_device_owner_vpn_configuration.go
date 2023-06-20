@@ -128,7 +128,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValueable)
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
             }
             m.SetCustomData(res)
         }
@@ -142,7 +144,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetCustomKeyValueData(res)
         }
@@ -196,7 +200,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetTargetedMobileApps(res)
         }
@@ -210,7 +216,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTargetedPackageIds(res)
         }
@@ -301,7 +309,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetCustomData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomData()))
         for i, v := range m.GetCustomData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customData", cast)
         if err != nil {
@@ -311,7 +321,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetCustomKeyValueData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomKeyValueData()))
         for i, v := range m.GetCustomKeyValueData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customKeyValueData", cast)
         if err != nil {
@@ -345,7 +357,9 @@ func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26
     if m.GetTargetedMobileApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetedMobileApps()))
         for i, v := range m.GetTargetedMobileApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("targetedMobileApps", cast)
         if err != nil {

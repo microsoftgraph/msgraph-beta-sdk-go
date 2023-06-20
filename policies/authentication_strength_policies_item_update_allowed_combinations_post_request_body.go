@@ -61,7 +61,9 @@ func (m *AuthenticationStrengthPoliciesItemUpdateAllowedCombinationsPostRequestB
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes))
+                if v != nil {
+                    res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes))
+                }
             }
             m.SetAllowedCombinations(res)
         }

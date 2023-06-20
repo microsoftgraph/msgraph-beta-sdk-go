@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDevice devices that are managed or pre-enrolled through Intune
+// ManagedDevice 
 type ManagedDevice struct {
     Entity
 }
@@ -519,7 +519,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]AssignmentFilterEvaluationStatusDetailsable, len(val))
             for i, v := range val {
-                res[i] = v.(AssignmentFilterEvaluationStatusDetailsable)
+                if v != nil {
+                    res[i] = v.(AssignmentFilterEvaluationStatusDetailsable)
+                }
             }
             m.SetAssignmentFilterEvaluationStatusDetails(res)
         }
@@ -593,7 +595,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]ChromeOSDevicePropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(ChromeOSDevicePropertyable)
+                if v != nil {
+                    res[i] = v.(ChromeOSDevicePropertyable)
+                }
             }
             m.SetChromeOSDeviceInfo(res)
         }
@@ -607,7 +611,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]CloudPcRemoteActionResultable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcRemoteActionResultable)
+                if v != nil {
+                    res[i] = v.(CloudPcRemoteActionResultable)
+                }
             }
             m.SetCloudPcRemoteActionResults(res)
         }
@@ -671,7 +677,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]DetectedAppable, len(val))
             for i, v := range val {
-                res[i] = v.(DetectedAppable)
+                if v != nil {
+                    res[i] = v.(DetectedAppable)
+                }
             }
             m.SetDetectedApps(res)
         }
@@ -685,7 +693,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]DeviceActionResultable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceActionResultable)
+                if v != nil {
+                    res[i] = v.(DeviceActionResultable)
+                }
             }
             m.SetDeviceActionResults(res)
         }
@@ -719,7 +729,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]DeviceCompliancePolicyStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceCompliancePolicyStateable)
+                if v != nil {
+                    res[i] = v.(DeviceCompliancePolicyStateable)
+                }
             }
             m.SetDeviceCompliancePolicyStates(res)
         }
@@ -733,7 +745,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]DeviceConfigurationStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceConfigurationStateable)
+                if v != nil {
+                    res[i] = v.(DeviceConfigurationStateable)
+                }
             }
             m.SetDeviceConfigurationStates(res)
         }
@@ -777,7 +791,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]DeviceHealthScriptPolicyStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceHealthScriptPolicyStateable)
+                if v != nil {
+                    res[i] = v.(DeviceHealthScriptPolicyStateable)
+                }
             }
             m.SetDeviceHealthScriptStates(res)
         }
@@ -1011,7 +1027,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]DeviceLogCollectionResponseable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceLogCollectionResponseable)
+                if v != nil {
+                    res[i] = v.(DeviceLogCollectionResponseable)
+                }
             }
             m.SetLogCollectionRequests(res)
         }
@@ -1035,7 +1053,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]ManagedDeviceMobileAppConfigurationStateable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceMobileAppConfigurationStateable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceMobileAppConfigurationStateable)
+                }
             }
             m.SetManagedDeviceMobileAppConfigurationStates(res)
         }
@@ -1269,7 +1289,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -1283,7 +1305,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]SecurityBaselineStateable, len(val))
             for i, v := range val {
-                res[i] = v.(SecurityBaselineStateable)
+                if v != nil {
+                    res[i] = v.(SecurityBaselineStateable)
+                }
             }
             m.SetSecurityBaselineStates(res)
         }
@@ -1397,7 +1421,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]Userable, len(val))
             for i, v := range val {
-                res[i] = v.(Userable)
+                if v != nil {
+                    res[i] = v.(Userable)
+                }
             }
             m.SetUsers(res)
         }
@@ -1411,7 +1437,9 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]LoggedOnUserable, len(val))
             for i, v := range val {
-                res[i] = v.(LoggedOnUserable)
+                if v != nil {
+                    res[i] = v.(LoggedOnUserable)
+                }
             }
             m.SetUsersLoggedOn(res)
         }
@@ -2040,7 +2068,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetAssignmentFilterEvaluationStatusDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentFilterEvaluationStatusDetails()))
         for i, v := range m.GetAssignmentFilterEvaluationStatusDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentFilterEvaluationStatusDetails", cast)
         if err != nil {
@@ -2057,7 +2087,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetChromeOSDeviceInfo() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChromeOSDeviceInfo()))
         for i, v := range m.GetChromeOSDeviceInfo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("chromeOSDeviceInfo", cast)
         if err != nil {
@@ -2067,7 +2099,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetCloudPcRemoteActionResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcRemoteActionResults()))
         for i, v := range m.GetCloudPcRemoteActionResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("cloudPcRemoteActionResults", cast)
         if err != nil {
@@ -2096,7 +2130,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetDetectedApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetectedApps()))
         for i, v := range m.GetDetectedApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("detectedApps", cast)
         if err != nil {
@@ -2112,7 +2148,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetDeviceCompliancePolicyStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceCompliancePolicyStates()))
         for i, v := range m.GetDeviceCompliancePolicyStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicyStates", cast)
         if err != nil {
@@ -2122,7 +2160,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetDeviceConfigurationStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceConfigurationStates()))
         for i, v := range m.GetDeviceConfigurationStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceConfigurationStates", cast)
         if err != nil {
@@ -2145,7 +2185,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetDeviceHealthScriptStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceHealthScriptStates()))
         for i, v := range m.GetDeviceHealthScriptStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceHealthScriptStates", cast)
         if err != nil {
@@ -2190,7 +2232,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetLogCollectionRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLogCollectionRequests()))
         for i, v := range m.GetLogCollectionRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("logCollectionRequests", cast)
         if err != nil {
@@ -2207,7 +2251,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetManagedDeviceMobileAppConfigurationStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceMobileAppConfigurationStates()))
         for i, v := range m.GetManagedDeviceMobileAppConfigurationStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedDeviceMobileAppConfigurationStates", cast)
         if err != nil {
@@ -2284,7 +2330,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetSecurityBaselineStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecurityBaselineStates()))
         for i, v := range m.GetSecurityBaselineStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("securityBaselineStates", cast)
         if err != nil {
@@ -2300,7 +2348,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUsers()))
         for i, v := range m.GetUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("users", cast)
         if err != nil {

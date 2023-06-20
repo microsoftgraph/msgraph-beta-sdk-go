@@ -107,7 +107,9 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]ExtendedKeyUsageable, len(val))
             for i, v := range val {
-                res[i] = v.(ExtendedKeyUsageable)
+                if v != nil {
+                    res[i] = v.(ExtendedKeyUsageable)
+                }
             }
             m.SetExtendedKeyUsages(res)
         }
@@ -121,7 +123,9 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]HashAlgorithms, len(val))
             for i, v := range val {
-                res[i] = *(v.(*HashAlgorithms))
+                if v != nil {
+                    res[i] = *(v.(*HashAlgorithms))
+                }
             }
             m.SetHashAlgorithm(res)
         }
@@ -185,7 +189,9 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetScepServerUrls(res)
         }
@@ -199,7 +205,9 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]Windows10XCustomSubjectAlternativeNameable, len(val))
             for i, v := range val {
-                res[i] = v.(Windows10XCustomSubjectAlternativeNameable)
+                if v != nil {
+                    res[i] = v.(Windows10XCustomSubjectAlternativeNameable)
+                }
             }
             m.SetSubjectAlternativeNameFormats(res)
         }
@@ -345,7 +353,9 @@ func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d2689
     if m.GetExtendedKeyUsages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtendedKeyUsages()))
         for i, v := range m.GetExtendedKeyUsages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extendedKeyUsages", cast)
         if err != nil {
@@ -400,7 +410,9 @@ func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d2689
     if m.GetSubjectAlternativeNameFormats() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectAlternativeNameFormats()))
         for i, v := range m.GetSubjectAlternativeNameFormats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("subjectAlternativeNameFormats", cast)
         if err != nil {

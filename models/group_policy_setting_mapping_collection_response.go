@@ -30,7 +30,9 @@ func (m *GroupPolicySettingMappingCollectionResponse) GetFieldDeserializers()(ma
         if val != nil {
             res := make([]GroupPolicySettingMappingable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicySettingMappingable)
+                if v != nil {
+                    res[i] = v.(GroupPolicySettingMappingable)
+                }
             }
             m.SetValue(res)
         }
@@ -58,7 +60,9 @@ func (m *GroupPolicySettingMappingCollectionResponse) Serialize(writer i878a80d2
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

@@ -126,7 +126,9 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ActionStepable, len(val))
             for i, v := range val {
-                res[i] = v.(ActionStepable)
+                if v != nil {
+                    res[i] = v.(ActionStepable)
+                }
             }
             m.SetActionSteps(res)
         }
@@ -190,7 +192,9 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]RecommendationFeatureAreas, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RecommendationFeatureAreas))
+                if v != nil {
+                    res[i] = *(v.(*RecommendationFeatureAreas))
+                }
             }
             m.SetFeatureAreas(res)
         }
@@ -204,7 +208,9 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ImpactedResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(ImpactedResourceable)
+                if v != nil {
+                    res[i] = v.(ImpactedResourceable)
+                }
             }
             m.SetImpactedResources(res)
         }
@@ -484,7 +490,9 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetActionSteps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActionSteps()))
         for i, v := range m.GetActionSteps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("actionSteps", cast)
         if err != nil {
@@ -531,7 +539,9 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetImpactedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImpactedResources()))
         for i, v := range m.GetImpactedResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("impactedResources", cast)
         if err != nil {

@@ -80,7 +80,9 @@ func (m *AuthenticationAttributeCollectionPage) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]AuthenticationAttributeCollectionPageViewConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationAttributeCollectionPageViewConfigurationable)
+                if v != nil {
+                    res[i] = v.(AuthenticationAttributeCollectionPageViewConfigurationable)
+                }
             }
             m.SetViews(res)
         }
@@ -127,7 +129,9 @@ func (m *AuthenticationAttributeCollectionPage) Serialize(writer i878a80d2330e89
     if m.GetViews() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetViews()))
         for i, v := range m.GetViews() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("views", cast)
         if err != nil {

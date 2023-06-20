@@ -186,7 +186,9 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAssociatedDomains(res)
         }
@@ -230,7 +232,9 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValueable)
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
             }
             m.SetCustomData(res)
         }
@@ -244,7 +248,9 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetCustomKeyValueData(res)
         }
@@ -308,7 +314,9 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludedDomains(res)
         }
@@ -342,7 +350,9 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]VpnOnDemandRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(VpnOnDemandRuleable)
+                if v != nil {
+                    res[i] = v.(VpnOnDemandRuleable)
+                }
             }
             m.SetOnDemandRules(res)
         }
@@ -406,7 +416,9 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSafariDomains(res)
         }
@@ -569,7 +581,9 @@ func (m *AppleVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetCustomData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomData()))
         for i, v := range m.GetCustomData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customData", cast)
         if err != nil {
@@ -579,7 +593,9 @@ func (m *AppleVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetCustomKeyValueData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomKeyValueData()))
         for i, v := range m.GetCustomKeyValueData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customKeyValueData", cast)
         if err != nil {
@@ -637,7 +653,9 @@ func (m *AppleVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetOnDemandRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnDemandRules()))
         for i, v := range m.GetOnDemandRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("onDemandRules", cast)
         if err != nil {

@@ -113,7 +113,9 @@ func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]SubmissionDetectedFileable, len(val))
             for i, v := range val {
-                res[i] = v.(SubmissionDetectedFileable)
+                if v != nil {
+                    res[i] = v.(SubmissionDetectedFileable)
+                }
             }
             m.SetDetectedFiles(res)
         }
@@ -127,7 +129,9 @@ func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDetectedUrls(res)
         }
@@ -196,7 +200,9 @@ func (m *SubmissionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetDetectedFiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetectedFiles()))
         for i, v := range m.GetDetectedFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("detectedFiles", cast)
         if err != nil {

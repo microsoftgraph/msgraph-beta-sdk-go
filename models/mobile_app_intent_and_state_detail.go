@@ -142,7 +142,9 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]MobileAppSupportedDeviceTypeable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppSupportedDeviceTypeable)
+                if v != nil {
+                    res[i] = v.(MobileAppSupportedDeviceTypeable)
+                }
             }
             m.SetSupportedDeviceTypes(res)
         }
@@ -237,7 +239,9 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i878a80d2330e89d2689638
     if m.GetSupportedDeviceTypes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSupportedDeviceTypes()))
         for i, v := range m.GetSupportedDeviceTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("supportedDeviceTypes", cast)
         if err != nil {

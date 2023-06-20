@@ -1528,7 +1528,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetApplicationGuardCertificateThumbprints(res)
         }
@@ -1662,7 +1664,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderAdditionalGuardedFolders(res)
         }
@@ -1806,7 +1810,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderAttackSurfaceReductionExcludedPaths(res)
         }
@@ -2080,7 +2086,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderFileExtensionsToExclude(res)
         }
@@ -2094,7 +2102,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderFilesAndFoldersToExclude(res)
         }
@@ -2108,7 +2118,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderGuardedFoldersAllowedAppPaths(res)
         }
@@ -2272,7 +2284,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderProcessesToExclude(res)
         }
@@ -2846,7 +2860,9 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]WindowsFirewallRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsFirewallRuleable)
+                if v != nil {
+                    res[i] = v.(WindowsFirewallRuleable)
+                }
             }
             m.SetFirewallRules(res)
         }
@@ -5700,7 +5716,9 @@ func (m *Windows10EndpointProtectionConfiguration) Serialize(writer i878a80d2330
     if m.GetFirewallRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFirewallRules()))
         for i, v := range m.GetFirewallRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("firewallRules", cast)
         if err != nil {

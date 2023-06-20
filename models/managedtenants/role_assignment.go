@@ -80,7 +80,9 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]RoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(RoleDefinitionable)
+                if v != nil {
+                    res[i] = v.(RoleDefinitionable)
+                }
             }
             m.SetRoles(res)
         }
@@ -128,7 +130,9 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoles()))
         for i, v := range m.GetRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("roles", cast)
         if err != nil {

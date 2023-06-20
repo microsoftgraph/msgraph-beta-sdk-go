@@ -85,7 +85,9 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]LocaleInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(LocaleInfoable)
+                if v != nil {
+                    res[i] = v.(LocaleInfoable)
+                }
             }
             m.SetAuthoringLanguages(res)
         }
@@ -184,7 +186,9 @@ func (m *RegionalAndLanguageSettings) Serialize(writer i878a80d2330e89d26896388a
     if m.GetAuthoringLanguages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthoringLanguages()))
         for i, v := range m.GetAuthoringLanguages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authoringLanguages", cast)
         if err != nil {

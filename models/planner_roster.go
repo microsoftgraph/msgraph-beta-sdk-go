@@ -30,7 +30,9 @@ func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]PlannerRosterMemberable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerRosterMemberable)
+                if v != nil {
+                    res[i] = v.(PlannerRosterMemberable)
+                }
             }
             m.SetMembers(res)
         }
@@ -44,7 +46,9 @@ func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]PlannerPlanable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerPlanable)
+                if v != nil {
+                    res[i] = v.(PlannerPlanable)
+                }
             }
             m.SetPlans(res)
         }
@@ -83,7 +87,9 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -93,7 +99,9 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("plans", cast)
         if err != nil {

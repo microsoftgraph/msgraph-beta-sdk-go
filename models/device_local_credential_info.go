@@ -9,7 +9,7 @@ import (
 type DeviceLocalCredentialInfo struct {
     Entity
 }
-// NewDeviceLocalCredentialInfo instantiates a new deviceLocalCredentialInfo and sets the default values.
+// NewDeviceLocalCredentialInfo instantiates a new DeviceLocalCredentialInfo and sets the default values.
 func NewDeviceLocalCredentialInfo()(*DeviceLocalCredentialInfo) {
     m := &DeviceLocalCredentialInfo{
         Entity: *NewEntity(),
@@ -53,7 +53,9 @@ func (m *DeviceLocalCredentialInfo) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]DeviceLocalCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceLocalCredentialable)
+                if v != nil {
+                    res[i] = v.(DeviceLocalCredentialable)
+                }
             }
             m.SetCredentials(res)
         }
@@ -122,7 +124,9 @@ func (m *DeviceLocalCredentialInfo) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCredentials()))
         for i, v := range m.GetCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("credentials", cast)
         if err != nil {

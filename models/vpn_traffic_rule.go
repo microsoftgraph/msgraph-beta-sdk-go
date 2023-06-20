@@ -112,7 +112,9 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]IPv4Rangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IPv4Rangeable)
+                if v != nil {
+                    res[i] = v.(IPv4Rangeable)
+                }
             }
             m.SetLocalAddressRanges(res)
         }
@@ -126,7 +128,9 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]NumberRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(NumberRangeable)
+                if v != nil {
+                    res[i] = v.(NumberRangeable)
+                }
             }
             m.SetLocalPortRanges(res)
         }
@@ -170,7 +174,9 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]IPv4Rangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IPv4Rangeable)
+                if v != nil {
+                    res[i] = v.(IPv4Rangeable)
+                }
             }
             m.SetRemoteAddressRanges(res)
         }
@@ -184,7 +190,9 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]NumberRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(NumberRangeable)
+                if v != nil {
+                    res[i] = v.(NumberRangeable)
+                }
             }
             m.SetRemotePortRanges(res)
         }
@@ -335,7 +343,9 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetLocalAddressRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalAddressRanges()))
         for i, v := range m.GetLocalAddressRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("localAddressRanges", cast)
         if err != nil {
@@ -345,7 +355,9 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetLocalPortRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalPortRanges()))
         for i, v := range m.GetLocalPortRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("localPortRanges", cast)
         if err != nil {
@@ -373,7 +385,9 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRemoteAddressRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteAddressRanges()))
         for i, v := range m.GetRemoteAddressRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("remoteAddressRanges", cast)
         if err != nil {
@@ -383,7 +397,9 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRemotePortRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemotePortRanges()))
         for i, v := range m.GetRemotePortRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("remotePortRanges", cast)
         if err != nil {

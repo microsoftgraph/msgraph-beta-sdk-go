@@ -31,7 +31,9 @@ func (m *LabelsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]RetentionLabelable, len(val))
             for i, v := range val {
-                res[i] = v.(RetentionLabelable)
+                if v != nil {
+                    res[i] = v.(RetentionLabelable)
+                }
             }
             m.SetRetentionLabels(res)
         }
@@ -59,7 +61,9 @@ func (m *LabelsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetRetentionLabels() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRetentionLabels()))
         for i, v := range m.GetRetentionLabels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("retentionLabels", cast)
         if err != nil {

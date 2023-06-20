@@ -119,7 +119,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if val != nil {
             res := make([]WindowsDefenderApplicationControlSupplementalPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)
+                if v != nil {
+                    res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -183,7 +185,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if val != nil {
             res := make([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)
+                if v != nil {
+                    res[i] = v.(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)
+                }
             }
             m.SetDeviceStatuses(res)
         }
@@ -217,7 +221,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -277,7 +283,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -317,7 +325,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
     if m.GetDeviceStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceStatuses", cast)
         if err != nil {

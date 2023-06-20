@@ -49,7 +49,9 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]LearningCourseActivityable, len(val))
             for i, v := range val {
-                res[i] = v.(LearningCourseActivityable)
+                if v != nil {
+                    res[i] = v.(LearningCourseActivityable)
+                }
             }
             m.SetLearningCourseActivities(res)
         }
@@ -63,7 +65,9 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]LearningProviderable, len(val))
             for i, v := range val {
-                res[i] = v.(LearningProviderable)
+                if v != nil {
+                    res[i] = v.(LearningProviderable)
+                }
             }
             m.SetLearningProviders(res)
         }
@@ -119,7 +123,9 @@ func (m *EmployeeExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetLearningCourseActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningCourseActivities()))
         for i, v := range m.GetLearningCourseActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("learningCourseActivities", cast)
         if err != nil {
@@ -129,7 +135,9 @@ func (m *EmployeeExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetLearningProviders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningProviders()))
         for i, v := range m.GetLearningProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("learningProviders", cast)
         if err != nil {

@@ -52,7 +52,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]SecurityBaselineContributingPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(SecurityBaselineContributingPolicyable)
+                if v != nil {
+                    res[i] = v.(SecurityBaselineContributingPolicyable)
+                }
             }
             m.SetContributingPolicies(res)
         }
@@ -116,7 +118,9 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]SettingSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(SettingSourceable)
+                if v != nil {
+                    res[i] = v.(SettingSourceable)
+                }
             }
             m.SetSourcePolicies(res)
         }
@@ -209,7 +213,9 @@ func (m *SecurityBaselineSettingState) Serialize(writer i878a80d2330e89d26896388
     if m.GetContributingPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContributingPolicies()))
         for i, v := range m.GetContributingPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("contributingPolicies", cast)
         if err != nil {
@@ -249,7 +255,9 @@ func (m *SecurityBaselineSettingState) Serialize(writer i878a80d2330e89d26896388
     if m.GetSourcePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSourcePolicies()))
         for i, v := range m.GetSourcePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sourcePolicies", cast)
         if err != nil {

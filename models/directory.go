@@ -107,7 +107,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]AdministrativeUnitable, len(val))
             for i, v := range val {
-                res[i] = v.(AdministrativeUnitable)
+                if v != nil {
+                    res[i] = v.(AdministrativeUnitable)
+                }
             }
             m.SetAdministrativeUnits(res)
         }
@@ -121,7 +123,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]AttributeSetable, len(val))
             for i, v := range val {
-                res[i] = v.(AttributeSetable)
+                if v != nil {
+                    res[i] = v.(AttributeSetable)
+                }
             }
             m.SetAttributeSets(res)
         }
@@ -145,7 +149,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]CustomSecurityAttributeDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomSecurityAttributeDefinitionable)
+                if v != nil {
+                    res[i] = v.(CustomSecurityAttributeDefinitionable)
+                }
             }
             m.SetCustomSecurityAttributeDefinitions(res)
         }
@@ -159,7 +165,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetDeletedItems(res)
         }
@@ -173,7 +181,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]FeatureRolloutPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(FeatureRolloutPolicyable)
+                if v != nil {
+                    res[i] = v.(FeatureRolloutPolicyable)
+                }
             }
             m.SetFeatureRolloutPolicies(res)
         }
@@ -187,7 +197,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]IdentityProviderBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityProviderBaseable)
+                if v != nil {
+                    res[i] = v.(IdentityProviderBaseable)
+                }
             }
             m.SetFederationConfigurations(res)
         }
@@ -201,7 +213,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]ImpactedResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(ImpactedResourceable)
+                if v != nil {
+                    res[i] = v.(ImpactedResourceable)
+                }
             }
             m.SetImpactedResources(res)
         }
@@ -215,7 +229,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]InboundSharedUserProfileable, len(val))
             for i, v := range val {
-                res[i] = v.(InboundSharedUserProfileable)
+                if v != nil {
+                    res[i] = v.(InboundSharedUserProfileable)
+                }
             }
             m.SetInboundSharedUserProfiles(res)
         }
@@ -229,7 +245,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]OnPremisesDirectorySynchronizationable, len(val))
             for i, v := range val {
-                res[i] = v.(OnPremisesDirectorySynchronizationable)
+                if v != nil {
+                    res[i] = v.(OnPremisesDirectorySynchronizationable)
+                }
             }
             m.SetOnPremisesSynchronization(res)
         }
@@ -243,7 +261,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]OutboundSharedUserProfileable, len(val))
             for i, v := range val {
-                res[i] = v.(OutboundSharedUserProfileable)
+                if v != nil {
+                    res[i] = v.(OutboundSharedUserProfileable)
+                }
             }
             m.SetOutboundSharedUserProfiles(res)
         }
@@ -257,7 +277,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]Recommendationable, len(val))
             for i, v := range val {
-                res[i] = v.(Recommendationable)
+                if v != nil {
+                    res[i] = v.(Recommendationable)
+                }
             }
             m.SetRecommendations(res)
         }
@@ -271,9 +293,27 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]SharedEmailDomainable, len(val))
             for i, v := range val {
-                res[i] = v.(SharedEmailDomainable)
+                if v != nil {
+                    res[i] = v.(SharedEmailDomainable)
+                }
             }
             m.SetSharedEmailDomains(res)
+        }
+        return nil
+    }
+    res["subscriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCompanySubscriptionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CompanySubscriptionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CompanySubscriptionable)
+                }
+            }
+            m.SetSubscriptions(res)
         }
         return nil
     }
@@ -345,6 +385,17 @@ func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
     }
     return nil
 }
+// GetSubscriptions gets the subscriptions property value. The subscriptions property
+func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
+    val, err := m.GetBackingStore().Get("subscriptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CompanySubscriptionable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -354,7 +405,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAdministrativeUnits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdministrativeUnits()))
         for i, v := range m.GetAdministrativeUnits() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("administrativeUnits", cast)
         if err != nil {
@@ -364,7 +417,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAttributeSets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributeSets()))
         for i, v := range m.GetAttributeSets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attributeSets", cast)
         if err != nil {
@@ -380,7 +435,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetCustomSecurityAttributeDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeDefinitions()))
         for i, v := range m.GetCustomSecurityAttributeDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customSecurityAttributeDefinitions", cast)
         if err != nil {
@@ -390,7 +447,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetDeletedItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedItems()))
         for i, v := range m.GetDeletedItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deletedItems", cast)
         if err != nil {
@@ -400,7 +459,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
         if err != nil {
@@ -410,7 +471,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetFederationConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederationConfigurations()))
         for i, v := range m.GetFederationConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("federationConfigurations", cast)
         if err != nil {
@@ -420,7 +483,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetImpactedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImpactedResources()))
         for i, v := range m.GetImpactedResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("impactedResources", cast)
         if err != nil {
@@ -430,7 +495,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetInboundSharedUserProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInboundSharedUserProfiles()))
         for i, v := range m.GetInboundSharedUserProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("inboundSharedUserProfiles", cast)
         if err != nil {
@@ -440,7 +507,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetOnPremisesSynchronization() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesSynchronization()))
         for i, v := range m.GetOnPremisesSynchronization() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("onPremisesSynchronization", cast)
         if err != nil {
@@ -450,7 +519,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetOutboundSharedUserProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOutboundSharedUserProfiles()))
         for i, v := range m.GetOutboundSharedUserProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("outboundSharedUserProfiles", cast)
         if err != nil {
@@ -460,7 +531,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetRecommendations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendations()))
         for i, v := range m.GetRecommendations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("recommendations", cast)
         if err != nil {
@@ -470,9 +543,23 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetSharedEmailDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedEmailDomains()))
         for i, v := range m.GetSharedEmailDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sharedEmailDomains", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSubscriptions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubscriptions()))
+        for i, v := range m.GetSubscriptions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subscriptions", cast)
         if err != nil {
             return err
         }
@@ -570,6 +657,13 @@ func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
         panic(err)
     }
 }
+// SetSubscriptions sets the subscriptions property value. The subscriptions property
+func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
+    err := m.GetBackingStore().Set("subscriptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Directoryable 
 type Directoryable interface {
     Entityable
@@ -587,6 +681,7 @@ type Directoryable interface {
     GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable)
     GetRecommendations()([]Recommendationable)
     GetSharedEmailDomains()([]SharedEmailDomainable)
+    GetSubscriptions()([]CompanySubscriptionable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
     SetCertificateAuthorities(value CertificateAuthorityPathable)()
@@ -600,4 +695,5 @@ type Directoryable interface {
     SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)()
     SetRecommendations(value []Recommendationable)()
     SetSharedEmailDomains(value []SharedEmailDomainable)()
+    SetSubscriptions(value []CompanySubscriptionable)()
 }

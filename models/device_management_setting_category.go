@@ -81,7 +81,9 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]DeviceManagementSettingDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementSettingDefinitionable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementSettingDefinitionable)
+                }
             }
             m.SetSettingDefinitions(res)
         }
@@ -132,7 +134,9 @@ func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896
     if m.GetSettingDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingDefinitions()))
         for i, v := range m.GetSettingDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settingDefinitions", cast)
         if err != nil {

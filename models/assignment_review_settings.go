@@ -142,7 +142,9 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]UserSetable, len(val))
             for i, v := range val {
-                res[i] = v.(UserSetable)
+                if v != nil {
+                    res[i] = v.(UserSetable)
+                }
             }
             m.SetReviewers(res)
         }
@@ -306,7 +308,9 @@ func (m *AssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
