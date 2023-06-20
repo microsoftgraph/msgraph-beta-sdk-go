@@ -65,7 +65,9 @@ func (m *SecurityBaselineTemplate) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]SecurityBaselineCategoryStateSummaryable, len(val))
             for i, v := range val {
-                res[i] = v.(SecurityBaselineCategoryStateSummaryable)
+                if v != nil {
+                    res[i] = v.(SecurityBaselineCategoryStateSummaryable)
+                }
             }
             m.SetCategoryDeviceStateSummaries(res)
         }
@@ -79,7 +81,9 @@ func (m *SecurityBaselineTemplate) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]SecurityBaselineDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = v.(SecurityBaselineDeviceStateable)
+                if v != nil {
+                    res[i] = v.(SecurityBaselineDeviceStateable)
+                }
             }
             m.SetDeviceStates(res)
         }
@@ -106,7 +110,9 @@ func (m *SecurityBaselineTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetCategoryDeviceStateSummaries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCategoryDeviceStateSummaries()))
         for i, v := range m.GetCategoryDeviceStateSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("categoryDeviceStateSummaries", cast)
         if err != nil {
@@ -116,7 +122,9 @@ func (m *SecurityBaselineTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetDeviceStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStates()))
         for i, v := range m.GetDeviceStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceStates", cast)
         if err != nil {

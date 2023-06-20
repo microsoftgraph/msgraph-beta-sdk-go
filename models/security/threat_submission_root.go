@@ -53,7 +53,9 @@ func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]EmailThreatSubmissionable, len(val))
             for i, v := range val {
-                res[i] = v.(EmailThreatSubmissionable)
+                if v != nil {
+                    res[i] = v.(EmailThreatSubmissionable)
+                }
             }
             m.SetEmailThreats(res)
         }
@@ -67,7 +69,9 @@ func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]EmailThreatSubmissionPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(EmailThreatSubmissionPolicyable)
+                if v != nil {
+                    res[i] = v.(EmailThreatSubmissionPolicyable)
+                }
             }
             m.SetEmailThreatSubmissionPolicies(res)
         }
@@ -81,7 +85,9 @@ func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]FileThreatSubmissionable, len(val))
             for i, v := range val {
-                res[i] = v.(FileThreatSubmissionable)
+                if v != nil {
+                    res[i] = v.(FileThreatSubmissionable)
+                }
             }
             m.SetFileThreats(res)
         }
@@ -95,7 +101,9 @@ func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]UrlThreatSubmissionable, len(val))
             for i, v := range val {
-                res[i] = v.(UrlThreatSubmissionable)
+                if v != nil {
+                    res[i] = v.(UrlThreatSubmissionable)
+                }
             }
             m.SetUrlThreats(res)
         }
@@ -134,7 +142,9 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetEmailThreats() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailThreats()))
         for i, v := range m.GetEmailThreats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("emailThreats", cast)
         if err != nil {
@@ -144,7 +154,9 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetEmailThreatSubmissionPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailThreatSubmissionPolicies()))
         for i, v := range m.GetEmailThreatSubmissionPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("emailThreatSubmissionPolicies", cast)
         if err != nil {
@@ -154,7 +166,9 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetFileThreats() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFileThreats()))
         for i, v := range m.GetFileThreats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("fileThreats", cast)
         if err != nil {
@@ -164,7 +178,9 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetUrlThreats() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUrlThreats()))
         for i, v := range m.GetUrlThreats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("urlThreats", cast)
         if err != nil {

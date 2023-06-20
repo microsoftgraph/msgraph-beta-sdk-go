@@ -43,7 +43,9 @@ func (m *WindowsPhone81AppXBundle) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]WindowsPackageInformationable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsPackageInformationable)
+                if v != nil {
+                    res[i] = v.(WindowsPackageInformationable)
+                }
             }
             m.SetAppXPackageInformationList(res)
         }
@@ -60,7 +62,9 @@ func (m *WindowsPhone81AppXBundle) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetAppXPackageInformationList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppXPackageInformationList()))
         for i, v := range m.GetAppXPackageInformationList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appXPackageInformationList", cast)
         if err != nil {

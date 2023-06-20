@@ -69,7 +69,9 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
         if val != nil {
             res := make([]Windows10EditionType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Windows10EditionType))
+                if v != nil {
+                    res[i] = *(v.(*Windows10EditionType))
+                }
             }
             m.SetOsEditionTypes(res)
         }

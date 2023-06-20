@@ -135,7 +135,9 @@ func (m *ItemManagedDevicesExecuteActionPostRequestBody) GetFieldDeserializers()
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDeviceIds(res)
         }

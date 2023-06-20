@@ -143,7 +143,9 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]LogonType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*LogonType))
+                if v != nil {
+                    res[i] = *(v.(*LogonType))
+                }
             }
             m.SetLogonTypes(res)
         }

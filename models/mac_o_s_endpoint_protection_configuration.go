@@ -150,7 +150,9 @@ func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAdvancedThreatProtectionExcludedExtensions(res)
         }
@@ -164,7 +166,9 @@ func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAdvancedThreatProtectionExcludedFiles(res)
         }
@@ -178,7 +182,9 @@ func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAdvancedThreatProtectionExcludedFolders(res)
         }
@@ -192,7 +198,9 @@ func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAdvancedThreatProtectionExcludedProcesses(res)
         }
@@ -316,7 +324,9 @@ func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]MacOSFirewallApplicationable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSFirewallApplicationable)
+                if v != nil {
+                    res[i] = v.(MacOSFirewallApplicationable)
+                }
             }
             m.SetFirewallApplications(res)
         }
@@ -672,7 +682,9 @@ func (m *MacOSEndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d
     if m.GetFirewallApplications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFirewallApplications()))
         for i, v := range m.GetFirewallApplications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("firewallApplications", cast)
         if err != nil {

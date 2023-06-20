@@ -192,7 +192,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]DefaultUserRoleOverrideable, len(val))
             for i, v := range val {
-                res[i] = v.(DefaultUserRoleOverrideable)
+                if v != nil {
+                    res[i] = v.(DefaultUserRoleOverrideable)
+                }
             }
             m.SetDefaultUserRoleOverrides(res)
         }
@@ -216,7 +218,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnabledPreviewFeatures(res)
         }
@@ -240,7 +244,9 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(res)
         }
@@ -316,7 +322,9 @@ func (m *AuthorizationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetDefaultUserRoleOverrides() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefaultUserRoleOverrides()))
         for i, v := range m.GetDefaultUserRoleOverrides() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("defaultUserRoleOverrides", cast)
         if err != nil {

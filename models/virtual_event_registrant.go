@@ -103,7 +103,9 @@ func (m *VirtualEventRegistrant) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]VirtualEventRegistrationQuestionAnswerable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventRegistrationQuestionAnswerable)
+                if v != nil {
+                    res[i] = v.(VirtualEventRegistrationQuestionAnswerable)
+                }
             }
             m.SetRegistrationQuestionAnswers(res)
         }
@@ -236,7 +238,9 @@ func (m *VirtualEventRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetRegistrationQuestionAnswers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrationQuestionAnswers()))
         for i, v := range m.GetRegistrationQuestionAnswers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("registrationQuestionAnswers", cast)
         if err != nil {

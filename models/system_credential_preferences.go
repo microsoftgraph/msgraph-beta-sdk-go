@@ -60,7 +60,9 @@ func (m *SystemCredentialPreferences) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ExcludeTargetable, len(val))
             for i, v := range val {
-                res[i] = v.(ExcludeTargetable)
+                if v != nil {
+                    res[i] = v.(ExcludeTargetable)
+                }
             }
             m.SetExcludeTargets(res)
         }
@@ -74,7 +76,9 @@ func (m *SystemCredentialPreferences) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]IncludeTargetable, len(val))
             for i, v := range val {
-                res[i] = v.(IncludeTargetable)
+                if v != nil {
+                    res[i] = v.(IncludeTargetable)
+                }
             }
             m.SetIncludeTargets(res)
         }
@@ -140,7 +144,9 @@ func (m *SystemCredentialPreferences) Serialize(writer i878a80d2330e89d26896388a
     if m.GetExcludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludeTargets()))
         for i, v := range m.GetExcludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("excludeTargets", cast)
         if err != nil {
@@ -150,7 +156,9 @@ func (m *SystemCredentialPreferences) Serialize(writer i878a80d2330e89d26896388a
     if m.GetIncludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
         for i, v := range m.GetIncludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {

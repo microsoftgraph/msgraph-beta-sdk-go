@@ -113,7 +113,9 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]ManagedDeviceReportedAppable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceReportedAppable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceReportedAppable)
+                }
             }
             m.SetRestrictedApps(res)
         }
@@ -257,7 +259,9 @@ func (m *RestrictedAppsViolation) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetRestrictedApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRestrictedApps()))
         for i, v := range m.GetRestrictedApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("restrictedApps", cast)
         if err != nil {

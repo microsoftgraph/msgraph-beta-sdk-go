@@ -84,7 +84,7 @@ func (m *AuthenticationBehaviors) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. The removeUnverifiedEmailClaim property
+// GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
 func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     val, err := m.GetBackingStore().Get("removeUnverifiedEmailClaim")
     if err != nil {
@@ -152,7 +152,7 @@ func (m *AuthenticationBehaviors) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemoveUnverifiedEmailClaim sets the removeUnverifiedEmailClaim property value. The removeUnverifiedEmailClaim property
+// SetRemoveUnverifiedEmailClaim sets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
 func (m *AuthenticationBehaviors) SetRemoveUnverifiedEmailClaim(value *bool)() {
     err := m.GetBackingStore().Set("removeUnverifiedEmailClaim", value)
     if err != nil {

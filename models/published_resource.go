@@ -52,7 +52,9 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]OnPremisesAgentGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(OnPremisesAgentGroupable)
+                if v != nil {
+                    res[i] = v.(OnPremisesAgentGroupable)
+                }
             }
             m.SetAgentGroups(res)
         }
@@ -121,7 +123,9 @@ func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetAgentGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgentGroups()))
         for i, v := range m.GetAgentGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("agentGroups", cast)
         if err != nil {

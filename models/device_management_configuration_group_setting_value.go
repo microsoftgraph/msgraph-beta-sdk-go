@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationGroupSettingValue 
+// DeviceManagementConfigurationGroupSettingValue value of the GroupSetting
 type DeviceManagementConfigurationGroupSettingValue struct {
     DeviceManagementConfigurationSettingValue
 }
-// NewDeviceManagementConfigurationGroupSettingValue instantiates a new DeviceManagementConfigurationGroupSettingValue and sets the default values.
+// NewDeviceManagementConfigurationGroupSettingValue instantiates a new deviceManagementConfigurationGroupSettingValue and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingValue()(*DeviceManagementConfigurationGroupSettingValue) {
     m := &DeviceManagementConfigurationGroupSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
@@ -43,7 +43,9 @@ func (m *DeviceManagementConfigurationGroupSettingValue) GetFieldDeserializers()
         if val != nil {
             res := make([]DeviceManagementConfigurationSettingInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSettingInstanceable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSettingInstanceable)
+                }
             }
             m.SetChildren(res)
         }
@@ -60,7 +62,9 @@ func (m *DeviceManagementConfigurationGroupSettingValue) Serialize(writer i878a8
     if m.GetChildren() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {

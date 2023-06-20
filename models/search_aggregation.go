@@ -10,7 +10,7 @@ type SearchAggregation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSearchAggregation instantiates a new searchAggregation and sets the default values.
+// NewSearchAggregation instantiates a new SearchAggregation and sets the default values.
 func NewSearchAggregation()(*SearchAggregation) {
     m := &SearchAggregation{
     }
@@ -71,7 +71,9 @@ func (m *SearchAggregation) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]SearchBucketable, len(val))
             for i, v := range val {
-                res[i] = v.(SearchBucketable)
+                if v != nil {
+                    res[i] = v.(SearchBucketable)
+                }
             }
             m.SetBuckets(res)
         }
@@ -115,7 +117,9 @@ func (m *SearchAggregation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetBuckets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("buckets", cast)
         if err != nil {

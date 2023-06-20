@@ -52,7 +52,9 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]OnPremisesAgentable, len(val))
             for i, v := range val {
-                res[i] = v.(OnPremisesAgentable)
+                if v != nil {
+                    res[i] = v.(OnPremisesAgentable)
+                }
             }
             m.SetAgents(res)
         }
@@ -86,7 +88,9 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]PublishedResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(PublishedResourceable)
+                if v != nil {
+                    res[i] = v.(PublishedResourceable)
+                }
             }
             m.SetPublishedResources(res)
         }
@@ -146,7 +150,9 @@ func (m *OnPremisesAgentGroup) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAgents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgents()))
         for i, v := range m.GetAgents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("agents", cast)
         if err != nil {
@@ -168,7 +174,9 @@ func (m *OnPremisesAgentGroup) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetPublishedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedResources()))
         for i, v := range m.GetPublishedResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("publishedResources", cast)
         if err != nil {

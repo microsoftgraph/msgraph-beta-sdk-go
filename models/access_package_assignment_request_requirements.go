@@ -60,7 +60,9 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         if val != nil {
             res := make([]AccessPackageAnswerable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAnswerable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAnswerable)
+                }
             }
             m.SetExistingAnswers(res)
         }
@@ -154,7 +156,9 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         if val != nil {
             res := make([]AccessPackageQuestionable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageQuestionable)
+                if v != nil {
+                    res[i] = v.(AccessPackageQuestionable)
+                }
             }
             m.SetQuestions(res)
         }
@@ -308,7 +312,9 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
     if m.GetExistingAnswers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExistingAnswers()))
         for i, v := range m.GetExistingAnswers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("existingAnswers", cast)
         if err != nil {
@@ -366,7 +372,9 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
     if m.GetQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
         for i, v := range m.GetQuestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("questions", cast)
         if err != nil {

@@ -80,7 +80,9 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]DeploymentStateReasonable, len(val))
             for i, v := range val {
-                res[i] = v.(DeploymentStateReasonable)
+                if v != nil {
+                    res[i] = v.(DeploymentStateReasonable)
+                }
             }
             m.SetReasons(res)
         }
@@ -149,7 +151,9 @@ func (m *DeploymentState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetReasons() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReasons()))
         for i, v := range m.GetReasons() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("reasons", cast)
         if err != nil {

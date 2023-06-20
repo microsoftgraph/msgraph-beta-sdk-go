@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppIntentAndState mobileApp Intent and Install State for a given device.
+// MobileAppIntentAndState 
 type MobileAppIntentAndState struct {
     Entity
 }
-// NewMobileAppIntentAndState instantiates a new mobileAppIntentAndState and sets the default values.
+// NewMobileAppIntentAndState instantiates a new MobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     m := &MobileAppIntentAndState{
         Entity: *NewEntity(),
@@ -40,7 +40,9 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]MobileAppIntentAndStateDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppIntentAndStateDetailable)
+                if v != nil {
+                    res[i] = v.(MobileAppIntentAndStateDetailable)
+                }
             }
             m.SetMobileAppList(res)
         }
@@ -106,7 +108,9 @@ func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetMobileAppList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppList()))
         for i, v := range m.GetMobileAppList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("mobileAppList", cast)
         if err != nil {

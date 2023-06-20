@@ -134,7 +134,9 @@ func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSelect(res)
         }
@@ -164,7 +166,7 @@ func (m *CloudPcExportJob) GetFormat()(*string) {
     }
     return nil
 }
-// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
+// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport noLicenseAvailableConnectivityFailureReport, or unknownFutureValue.
 func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -290,7 +292,7 @@ func (m *CloudPcExportJob) SetFormat(value *string)() {
         panic(err)
     }
 }
-// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.
+// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport noLicenseAvailableConnectivityFailureReport, or unknownFutureValue.
 func (m *CloudPcExportJob) SetReportName(value *CloudPcReportName)() {
     err := m.GetBackingStore().Set("reportName", value)
     if err != nil {

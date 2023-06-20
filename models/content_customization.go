@@ -34,7 +34,7 @@ func (m *ContentCustomization) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAttributeCollection gets the attributeCollection property value. The attributeCollection property
+// GetAttributeCollection gets the attributeCollection property value. Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.
 func (m *ContentCustomization) GetAttributeCollection()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("attributeCollection")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *ContentCustomization) GetAttributeCollection()([]KeyValueable) {
     }
     return nil
 }
-// GetAttributeCollectionRelativeUrl gets the attributeCollectionRelativeUrl property value. The attributeCollectionRelativeUrl property
+// GetAttributeCollectionRelativeUrl gets the attributeCollectionRelativeUrl property value. A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.
 func (m *ContentCustomization) GetAttributeCollectionRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("attributeCollectionRelativeUrl")
     if err != nil {
@@ -71,7 +71,9 @@ func (m *ContentCustomization) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValueable)
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
             }
             m.SetAttributeCollection(res)
         }
@@ -115,7 +117,9 @@ func (m *ContentCustomization) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAttributeCollection() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributeCollection()))
         for i, v := range m.GetAttributeCollection() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("attributeCollection", cast)
         if err != nil {
@@ -149,14 +153,14 @@ func (m *ContentCustomization) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAttributeCollection sets the attributeCollection property value. The attributeCollection property
+// SetAttributeCollection sets the attributeCollection property value. Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.
 func (m *ContentCustomization) SetAttributeCollection(value []KeyValueable)() {
     err := m.GetBackingStore().Set("attributeCollection", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttributeCollectionRelativeUrl sets the attributeCollectionRelativeUrl property value. The attributeCollectionRelativeUrl property
+// SetAttributeCollectionRelativeUrl sets the attributeCollectionRelativeUrl property value. A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.
 func (m *ContentCustomization) SetAttributeCollectionRelativeUrl(value *string)() {
     err := m.GetBackingStore().Set("attributeCollectionRelativeUrl", value)
     if err != nil {

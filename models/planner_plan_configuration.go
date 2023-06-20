@@ -75,7 +75,9 @@ func (m *PlannerPlanConfiguration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]PlannerPlanConfigurationBucketDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerPlanConfigurationBucketDefinitionable)
+                if v != nil {
+                    res[i] = v.(PlannerPlanConfigurationBucketDefinitionable)
+                }
             }
             m.SetBuckets(res)
         }
@@ -139,7 +141,9 @@ func (m *PlannerPlanConfiguration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]PlannerPlanConfigurationLocalizationable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerPlanConfigurationLocalizationable)
+                if v != nil {
+                    res[i] = v.(PlannerPlanConfigurationLocalizationable)
+                }
             }
             m.SetLocalizations(res)
         }
@@ -189,7 +193,9 @@ func (m *PlannerPlanConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetBuckets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("buckets", cast)
         if err != nil {
@@ -229,7 +235,9 @@ func (m *PlannerPlanConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetLocalizations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalizations()))
         for i, v := range m.GetLocalizations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("localizations", cast)
         if err != nil {

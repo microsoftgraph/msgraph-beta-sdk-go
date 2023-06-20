@@ -108,7 +108,9 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetActivityGroupNames(res)
         }
@@ -162,7 +164,9 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]ReputationCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(ReputationCategoryable)
+                if v != nil {
+                    res[i] = v.(ReputationCategoryable)
+                }
             }
             m.SetDomainCategories(res)
         }
@@ -236,7 +240,9 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -370,7 +376,9 @@ func (m *DomainSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetDomainCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDomainCategories()))
         for i, v := range m.GetDomainCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("domainCategories", cast)
         if err != nil {

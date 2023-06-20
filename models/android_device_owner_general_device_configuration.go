@@ -313,7 +313,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAzureAdSharedDeviceDataClearApps(res)
         }
@@ -467,7 +469,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetFactoryResetDeviceAdministratorEmails(res)
         }
@@ -561,7 +565,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AndroidDeviceOwnerKioskModeAppPositionItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidDeviceOwnerKioskModeAppPositionItemable)
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerKioskModeAppPositionItemable)
+                }
             }
             m.SetKioskModeAppPositions(res)
         }
@@ -575,7 +581,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetKioskModeApps(res)
         }
@@ -689,7 +697,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AndroidDeviceOwnerKioskModeManagedFolderable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidDeviceOwnerKioskModeManagedFolderable)
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerKioskModeManagedFolderable)
+                }
             }
             m.SetKioskModeManagedFolders(res)
         }
@@ -933,7 +943,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetKioskModeWifiAllowedSsids(res)
         }
@@ -1107,7 +1119,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AndroidKeyguardFeature, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AndroidKeyguardFeature))
+                if v != nil {
+                    res[i] = *(v.(*AndroidKeyguardFeature))
+                }
             }
             m.SetPasswordBlockKeyguardFeatures(res)
         }
@@ -1271,7 +1285,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetPersonalProfilePersonalApplications(res)
         }
@@ -1375,7 +1391,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AndroidDeviceOwnerBatteryPluggedMode, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AndroidDeviceOwnerBatteryPluggedMode))
+                if v != nil {
+                    res[i] = *(v.(*AndroidDeviceOwnerBatteryPluggedMode))
+                }
             }
             m.SetStayOnModes(res)
         }
@@ -1419,7 +1437,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         if val != nil {
             res := make([]AndroidDeviceOwnerSystemUpdateFreezePeriodable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidDeviceOwnerSystemUpdateFreezePeriodable)
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerSystemUpdateFreezePeriodable)
+                }
             }
             m.SetSystemUpdateFreezePeriods(res)
         }
@@ -2963,7 +2983,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     if m.GetAzureAdSharedDeviceDataClearApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAzureAdSharedDeviceDataClearApps()))
         for i, v := range m.GetAzureAdSharedDeviceDataClearApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("azureAdSharedDeviceDataClearApps", cast)
         if err != nil {
@@ -3115,7 +3137,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     if m.GetKioskModeAppPositions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeAppPositions()))
         for i, v := range m.GetKioskModeAppPositions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("kioskModeAppPositions", cast)
         if err != nil {
@@ -3125,7 +3149,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     if m.GetKioskModeApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeApps()))
         for i, v := range m.GetKioskModeApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("kioskModeApps", cast)
         if err != nil {
@@ -3197,7 +3223,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     if m.GetKioskModeManagedFolders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeManagedFolders()))
         for i, v := range m.GetKioskModeManagedFolders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("kioskModeManagedFolders", cast)
         if err != nil {
@@ -3551,7 +3579,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     if m.GetPersonalProfilePersonalApplications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPersonalProfilePersonalApplications()))
         for i, v := range m.GetPersonalProfilePersonalApplications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("personalProfilePersonalApplications", cast)
         if err != nil {
@@ -3641,7 +3671,9 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     if m.GetSystemUpdateFreezePeriods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemUpdateFreezePeriods()))
         for i, v := range m.GetSystemUpdateFreezePeriods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("systemUpdateFreezePeriods", cast)
         if err != nil {

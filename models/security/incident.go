@@ -131,7 +131,9 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Alertable, len(val))
             for i, v := range val {
-                res[i] = v.(Alertable)
+                if v != nil {
+                    res[i] = v.(Alertable)
+                }
             }
             m.SetAlerts(res)
         }
@@ -165,7 +167,9 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]AlertCommentable, len(val))
             for i, v := range val {
-                res[i] = v.(AlertCommentable)
+                if v != nil {
+                    res[i] = v.(AlertCommentable)
+                }
             }
             m.SetComments(res)
         }
@@ -189,7 +193,9 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetCustomTags(res)
         }
@@ -263,7 +269,9 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]RecommendedHuntingQueryable, len(val))
             for i, v := range val {
-                res[i] = v.(RecommendedHuntingQueryable)
+                if v != nil {
+                    res[i] = v.(RecommendedHuntingQueryable)
+                }
             }
             m.SetRecommendedHuntingQueries(res)
         }
@@ -307,7 +315,9 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSystemTags(res)
         }
@@ -433,7 +443,9 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetAlerts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alerts", cast)
         if err != nil {
@@ -456,7 +468,9 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetComments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComments()))
         for i, v := range m.GetComments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("comments", cast)
         if err != nil {
@@ -515,7 +529,9 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetRecommendedHuntingQueries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendedHuntingQueries()))
         for i, v := range m.GetRecommendedHuntingQueries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("recommendedHuntingQueries", cast)
         if err != nil {

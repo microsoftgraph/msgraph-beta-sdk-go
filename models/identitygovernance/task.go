@@ -97,7 +97,9 @@ func (m *Task) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)
+                }
             }
             m.SetArguments(res)
         }
@@ -181,7 +183,9 @@ func (m *Task) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]TaskProcessingResultable, len(val))
             for i, v := range val {
-                res[i] = v.(TaskProcessingResultable)
+                if v != nil {
+                    res[i] = v.(TaskProcessingResultable)
+                }
             }
             m.SetTaskProcessingResults(res)
         }
@@ -231,7 +235,9 @@ func (m *Task) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetArguments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetArguments()))
         for i, v := range m.GetArguments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("arguments", cast)
         if err != nil {
@@ -284,7 +290,9 @@ func (m *Task) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetTaskProcessingResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskProcessingResults()))
         for i, v := range m.GetTaskProcessingResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("taskProcessingResults", cast)
         if err != nil {

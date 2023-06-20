@@ -120,7 +120,9 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]ItemActivityOLDable, len(val))
             for i, v := range val {
-                res[i] = v.(ItemActivityOLDable)
+                if v != nil {
+                    res[i] = v.(ItemActivityOLDable)
+                }
             }
             m.SetActivities(res)
         }
@@ -164,7 +166,9 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]DriveItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DriveItemable)
+                if v != nil {
+                    res[i] = v.(DriveItemable)
+                }
             }
             m.SetChildren(res)
         }
@@ -308,7 +312,9 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]Permissionable, len(val))
             for i, v := range val {
-                res[i] = v.(Permissionable)
+                if v != nil {
+                    res[i] = v.(Permissionable)
+                }
             }
             m.SetPermissions(res)
         }
@@ -432,7 +438,9 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]Subscriptionable, len(val))
             for i, v := range val {
-                res[i] = v.(Subscriptionable)
+                if v != nil {
+                    res[i] = v.(Subscriptionable)
+                }
             }
             m.SetSubscriptions(res)
         }
@@ -446,7 +454,9 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]ThumbnailSetable, len(val))
             for i, v := range val {
-                res[i] = v.(ThumbnailSetable)
+                if v != nil {
+                    res[i] = v.(ThumbnailSetable)
+                }
             }
             m.SetThumbnails(res)
         }
@@ -460,7 +470,9 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]DriveItemVersionable, len(val))
             for i, v := range val {
-                res[i] = v.(DriveItemVersionable)
+                if v != nil {
+                    res[i] = v.(DriveItemVersionable)
+                }
             }
             m.SetVersions(res)
         }
@@ -815,7 +827,9 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {
@@ -843,7 +857,9 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetChildren() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
@@ -931,7 +947,9 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("permissions", cast)
         if err != nil {
@@ -1007,7 +1025,9 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetSubscriptions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubscriptions()))
         for i, v := range m.GetSubscriptions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("subscriptions", cast)
         if err != nil {
@@ -1017,7 +1037,9 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetThumbnails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThumbnails()))
         for i, v := range m.GetThumbnails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("thumbnails", cast)
         if err != nil {
@@ -1027,7 +1049,9 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetVersions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {

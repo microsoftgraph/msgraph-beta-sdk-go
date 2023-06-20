@@ -133,7 +133,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]LogonUserable, len(val))
             for i, v := range val {
-                res[i] = v.(LogonUserable)
+                if v != nil {
+                    res[i] = v.(LogonUserable)
+                }
             }
             m.SetLogonUsers(res)
         }
@@ -157,7 +159,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]NetworkInterfaceable, len(val))
             for i, v := range val {
-                res[i] = v.(NetworkInterfaceable)
+                if v != nil {
+                    res[i] = v.(NetworkInterfaceable)
+                }
             }
             m.SetNetworkInterfaces(res)
         }
@@ -201,7 +205,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRelatedHostIds(res)
         }
@@ -225,7 +231,9 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -476,7 +484,9 @@ func (m *HostSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetLogonUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLogonUsers()))
         for i, v := range m.GetLogonUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("logonUsers", cast)
         if err != nil {
@@ -492,7 +502,9 @@ func (m *HostSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetNetworkInterfaces() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNetworkInterfaces()))
         for i, v := range m.GetNetworkInterfaces() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("networkInterfaces", cast)
         if err != nil {

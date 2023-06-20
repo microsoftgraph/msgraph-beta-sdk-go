@@ -61,7 +61,9 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]ConnectorGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(ConnectorGroupable)
+                if v != nil {
+                    res[i] = v.(ConnectorGroupable)
+                }
             }
             m.SetMemberOf(res)
         }
@@ -154,7 +156,9 @@ func (m *Connector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetMemberOf() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("memberOf", cast)
         if err != nil {

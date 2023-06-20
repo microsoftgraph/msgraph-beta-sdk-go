@@ -121,7 +121,9 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]TeamworkPeripheralable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamworkPeripheralable)
+                if v != nil {
+                    res[i] = v.(TeamworkPeripheralable)
+                }
             }
             m.SetSpeakers(res)
         }
@@ -208,7 +210,9 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388
     if m.GetSpeakers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpeakers()))
         for i, v := range m.GetSpeakers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("speakers", cast)
         if err != nil {

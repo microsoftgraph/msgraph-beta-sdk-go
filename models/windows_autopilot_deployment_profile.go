@@ -161,7 +161,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]WindowsAutopilotDeviceIdentityable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsAutopilotDeviceIdentityable)
+                if v != nil {
+                    res[i] = v.(WindowsAutopilotDeviceIdentityable)
+                }
             }
             m.SetAssignedDevices(res)
         }
@@ -175,7 +177,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]WindowsAutopilotDeploymentProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsAutopilotDeploymentProfileAssignmentable)
+                if v != nil {
+                    res[i] = v.(WindowsAutopilotDeploymentProfileAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -309,7 +313,9 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -381,7 +387,9 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d268
     if m.GetAssignedDevices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedDevices()))
         for i, v := range m.GetAssignedDevices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignedDevices", cast)
         if err != nil {
@@ -391,7 +399,9 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d268
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {

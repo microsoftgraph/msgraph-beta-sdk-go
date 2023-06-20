@@ -60,7 +60,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]PrintConnectorable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintConnectorable)
+                if v != nil {
+                    res[i] = v.(PrintConnectorable)
+                }
             }
             m.SetConnectors(res)
         }
@@ -84,7 +86,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]PrintOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintOperationable)
+                if v != nil {
+                    res[i] = v.(PrintOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -98,7 +102,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]Printerable, len(val))
             for i, v := range val {
-                res[i] = v.(Printerable)
+                if v != nil {
+                    res[i] = v.(Printerable)
+                }
             }
             m.SetPrinters(res)
         }
@@ -112,7 +118,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]PrinterShareable, len(val))
             for i, v := range val {
-                res[i] = v.(PrinterShareable)
+                if v != nil {
+                    res[i] = v.(PrinterShareable)
+                }
             }
             m.SetPrinterShares(res)
         }
@@ -126,7 +134,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]PrintServiceable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintServiceable)
+                if v != nil {
+                    res[i] = v.(PrintServiceable)
+                }
             }
             m.SetServices(res)
         }
@@ -150,7 +160,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]PrinterShareable, len(val))
             for i, v := range val {
-                res[i] = v.(PrinterShareable)
+                if v != nil {
+                    res[i] = v.(PrinterShareable)
+                }
             }
             m.SetShares(res)
         }
@@ -164,7 +176,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]PrintTaskDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintTaskDefinitionable)
+                if v != nil {
+                    res[i] = v.(PrintTaskDefinitionable)
+                }
             }
             m.SetTaskDefinitions(res)
         }
@@ -265,7 +279,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetConnectors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectors()))
         for i, v := range m.GetConnectors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("connectors", cast)
         if err != nil {
@@ -281,7 +297,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -291,7 +309,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetPrinters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrinters()))
         for i, v := range m.GetPrinters() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("printers", cast)
         if err != nil {
@@ -301,7 +321,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetPrinterShares() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrinterShares()))
         for i, v := range m.GetPrinterShares() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("printerShares", cast)
         if err != nil {
@@ -311,7 +333,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetServices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("services", cast)
         if err != nil {
@@ -327,7 +351,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetShares() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetShares()))
         for i, v := range m.GetShares() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("shares", cast)
         if err != nil {
@@ -337,7 +363,9 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetTaskDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskDefinitions()))
         for i, v := range m.GetTaskDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("taskDefinitions", cast)
         if err != nil {

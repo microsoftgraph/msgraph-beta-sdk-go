@@ -49,7 +49,9 @@ func (m *MentionAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]IdentitySetable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentitySetable)
+                if v != nil {
+                    res[i] = v.(IdentitySetable)
+                }
             }
             m.SetMentionees(res)
         }
@@ -94,7 +96,9 @@ func (m *MentionAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetMentionees() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMentionees()))
         for i, v := range m.GetMentionees() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("mentionees", cast)
         if err != nil {

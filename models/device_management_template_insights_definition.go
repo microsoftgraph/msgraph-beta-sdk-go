@@ -30,7 +30,9 @@ func (m *DeviceManagementTemplateInsightsDefinition) GetFieldDeserializers()(map
         if val != nil {
             res := make([]DeviceManagementSettingInsightsDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementSettingInsightsDefinitionable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementSettingInsightsDefinitionable)
+                }
             }
             m.SetSettingInsights(res)
         }
@@ -58,7 +60,9 @@ func (m *DeviceManagementTemplateInsightsDefinition) Serialize(writer i878a80d23
     if m.GetSettingInsights() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingInsights()))
         for i, v := range m.GetSettingInsights() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settingInsights", cast)
         if err != nil {

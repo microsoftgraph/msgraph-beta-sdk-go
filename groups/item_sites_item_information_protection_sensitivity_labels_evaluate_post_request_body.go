@@ -82,7 +82,9 @@ func (m *ItemSitesItemInformationProtectionSensitivityLabelsEvaluatePostRequestB
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DiscoveredSensitiveTypeable, len(val))
             for i, v := range val {
-                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DiscoveredSensitiveTypeable)
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DiscoveredSensitiveTypeable)
+                }
             }
             m.SetDiscoveredSensitiveTypes(res)
         }
@@ -101,7 +103,9 @@ func (m *ItemSitesItemInformationProtectionSensitivityLabelsEvaluatePostRequestB
     if m.GetDiscoveredSensitiveTypes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDiscoveredSensitiveTypes()))
         for i, v := range m.GetDiscoveredSensitiveTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("discoveredSensitiveTypes", cast)
         if err != nil {

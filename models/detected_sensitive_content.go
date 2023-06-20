@@ -70,7 +70,9 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]ClassificationAttributeable, len(val))
             for i, v := range val {
-                res[i] = v.(ClassificationAttributeable)
+                if v != nil {
+                    res[i] = v.(ClassificationAttributeable)
+                }
             }
             m.SetClassificationAttributes(res)
         }
@@ -94,7 +96,9 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]SensitiveContentLocationable, len(val))
             for i, v := range val {
-                res[i] = v.(SensitiveContentLocationable)
+                if v != nil {
+                    res[i] = v.(SensitiveContentLocationable)
+                }
             }
             m.SetMatches(res)
         }
@@ -164,7 +168,9 @@ func (m *DetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetClassificationAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClassificationAttributes()))
         for i, v := range m.GetClassificationAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("classificationAttributes", cast)
         if err != nil {
@@ -181,7 +187,9 @@ func (m *DetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetMatches() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {

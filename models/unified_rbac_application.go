@@ -41,7 +41,9 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]CustomAppScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomAppScopeable)
+                if v != nil {
+                    res[i] = v.(CustomAppScopeable)
+                }
             }
             m.SetCustomAppScopes(res)
         }
@@ -55,7 +57,9 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]UnifiedRbacResourceNamespaceable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRbacResourceNamespaceable)
+                if v != nil {
+                    res[i] = v.(UnifiedRbacResourceNamespaceable)
+                }
             }
             m.SetResourceNamespaces(res)
         }
@@ -69,7 +73,9 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]UnifiedRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleAssignmentable)
+                }
             }
             m.SetRoleAssignments(res)
         }
@@ -83,7 +89,9 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]UnifiedRoleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleDefinitionable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleDefinitionable)
+                }
             }
             m.SetRoleDefinitions(res)
         }
@@ -97,7 +105,9 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]UnifiedRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleAssignmentable)
+                }
             }
             m.SetTransitiveRoleAssignments(res)
         }
@@ -158,7 +168,9 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetCustomAppScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomAppScopes()))
         for i, v := range m.GetCustomAppScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customAppScopes", cast)
         if err != nil {
@@ -168,7 +180,9 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetResourceNamespaces() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceNamespaces()))
         for i, v := range m.GetResourceNamespaces() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("resourceNamespaces", cast)
         if err != nil {
@@ -178,7 +192,9 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -188,7 +204,9 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetRoleDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleDefinitions", cast)
         if err != nil {
@@ -198,7 +216,9 @@ func (m *UnifiedRbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetTransitiveRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTransitiveRoleAssignments()))
         for i, v := range m.GetTransitiveRoleAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("transitiveRoleAssignments", cast)
         if err != nil {

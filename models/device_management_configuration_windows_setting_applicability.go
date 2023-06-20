@@ -93,7 +93,9 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeser
         if val != nil {
             res := make([]DeviceManagementConfigurationWindowsSkus, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceManagementConfigurationWindowsSkus))
+                if v != nil {
+                    res[i] = *(v.(*DeviceManagementConfigurationWindowsSkus))
+                }
             }
             m.SetWindowsSkus(res)
         }

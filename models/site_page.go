@@ -8,7 +8,7 @@ import (
 type SitePage struct {
     BaseItem
 }
-// NewSitePage instantiates a new sitePage and sets the default values.
+// NewSitePage instantiates a new SitePage and sets the default values.
 func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),
@@ -164,7 +164,9 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WebPartable, len(val))
             for i, v := range val {
-                res[i] = v.(WebPartable)
+                if v != nil {
+                    res[i] = v.(WebPartable)
+                }
             }
             m.SetWebParts(res)
         }
@@ -359,7 +361,9 @@ func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetWebParts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebParts()))
         for i, v := range m.GetWebParts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("webParts", cast)
         if err != nil {

@@ -53,7 +53,9 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) G
         if val != nil {
             res := make([]DeviceManagementConfigurationSimpleSettingValueTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSimpleSettingValueTemplateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSimpleSettingValueTemplateable)
+                }
             }
             m.SetSimpleSettingCollectionValueTemplate(res)
         }
@@ -87,7 +89,9 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) S
     if m.GetSimpleSettingCollectionValueTemplate() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimpleSettingCollectionValueTemplate()))
         for i, v := range m.GetSimpleSettingCollectionValueTemplate() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("simpleSettingCollectionValueTemplate", cast)
         if err != nil {

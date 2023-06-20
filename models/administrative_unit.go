@@ -85,7 +85,9 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = v.(Extensionable)
+                if v != nil {
+                    res[i] = v.(Extensionable)
+                }
             }
             m.SetExtensions(res)
         }
@@ -109,7 +111,9 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetMembers(res)
         }
@@ -123,7 +127,9 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ScopedRoleMembershipable, len(val))
             for i, v := range val {
-                res[i] = v.(ScopedRoleMembershipable)
+                if v != nil {
+                    res[i] = v.(ScopedRoleMembershipable)
+                }
             }
             m.SetScopedRoleMembers(res)
         }
@@ -206,7 +212,9 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -222,7 +230,9 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {
@@ -232,7 +242,9 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetScopedRoleMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScopedRoleMembers()))
         for i, v := range m.GetScopedRoleMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("scopedRoleMembers", cast)
         if err != nil {

@@ -60,7 +60,9 @@ func (m *GovernancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]GovernanceCriteriaable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceCriteriaable)
+                if v != nil {
+                    res[i] = v.(GovernanceCriteriaable)
+                }
             }
             m.SetDecisionMakerCriteria(res)
         }
@@ -115,7 +117,9 @@ func (m *GovernancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetDecisionMakerCriteria() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDecisionMakerCriteria()))
         for i, v := range m.GetDecisionMakerCriteria() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("decisionMakerCriteria", cast)
         if err != nil {

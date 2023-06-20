@@ -75,7 +75,9 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]GroupPolicyCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyCategoryable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyCategoryable)
+                }
             }
             m.SetChildren(res)
         }
@@ -99,7 +101,9 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]GroupPolicyDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyDefinitionable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyDefinitionable)
+                }
             }
             m.SetDefinitions(res)
         }
@@ -210,7 +214,9 @@ func (m *GroupPolicyCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetChildren() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
@@ -226,7 +232,9 @@ func (m *GroupPolicyCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("definitions", cast)
         if err != nil {

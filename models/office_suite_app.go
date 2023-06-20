@@ -84,7 +84,9 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetLocalesToInstall(res)
         }
@@ -128,7 +130,9 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]OfficeProductId, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OfficeProductId))
+                if v != nil {
+                    res[i] = *(v.(*OfficeProductId))
+                }
             }
             m.SetProductIds(res)
         }

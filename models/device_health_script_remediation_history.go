@@ -50,7 +50,9 @@ func (m *DeviceHealthScriptRemediationHistory) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]DeviceHealthScriptRemediationHistoryDataable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceHealthScriptRemediationHistoryDataable)
+                if v != nil {
+                    res[i] = v.(DeviceHealthScriptRemediationHistoryDataable)
+                }
             }
             m.SetHistoryData(res)
         }
@@ -116,7 +118,9 @@ func (m *DeviceHealthScriptRemediationHistory) Serialize(writer i878a80d2330e89d
     if m.GetHistoryData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistoryData()))
         for i, v := range m.GetHistoryData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("historyData", cast)
         if err != nil {

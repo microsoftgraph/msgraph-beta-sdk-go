@@ -50,7 +50,9 @@ func (m *CompliancePoliciesItemSetScheduledActionsPostRequestBody) GetFieldDeser
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceScheduledActionForRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceScheduledActionForRuleable)
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceScheduledActionForRuleable)
+                }
             }
             m.SetScheduledActions(res)
         }
@@ -74,7 +76,9 @@ func (m *CompliancePoliciesItemSetScheduledActionsPostRequestBody) Serialize(wri
     if m.GetScheduledActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScheduledActions()))
         for i, v := range m.GetScheduledActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("scheduledActions", cast)
         if err != nil {

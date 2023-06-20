@@ -372,7 +372,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]MacOSAssociatedDomainsItemable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSAssociatedDomainsItemable)
+                if v != nil {
+                    res[i] = v.(MacOSAssociatedDomainsItemable)
+                }
             }
             m.SetAppAssociatedDomains(res)
         }
@@ -386,7 +388,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetAssociatedDomains(res)
         }
@@ -460,7 +464,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]MacOSLaunchItemable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSLaunchItemable)
+                if v != nil {
+                    res[i] = v.(MacOSLaunchItemable)
+                }
             }
             m.SetAutoLaunchItems(res)
         }
@@ -494,7 +500,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IpRangeable)
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
             }
             m.SetContentCachingClientListenRanges(res)
         }
@@ -588,7 +596,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetContentCachingParents(res)
         }
@@ -612,7 +622,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IpRangeable)
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
             }
             m.SetContentCachingPeerFilterRanges(res)
         }
@@ -626,7 +638,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IpRangeable)
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
             }
             m.SetContentCachingPeerListenRanges(res)
         }
@@ -660,7 +674,9 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IpRangeable)
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
             }
             m.SetContentCachingPublicRanges(res)
         }
@@ -955,7 +971,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetAppAssociatedDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppAssociatedDomains()))
         for i, v := range m.GetAppAssociatedDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appAssociatedDomains", cast)
         if err != nil {
@@ -965,7 +983,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetAssociatedDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedDomains()))
         for i, v := range m.GetAssociatedDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("associatedDomains", cast)
         if err != nil {
@@ -1011,7 +1031,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetAutoLaunchItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAutoLaunchItems()))
         for i, v := range m.GetAutoLaunchItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("autoLaunchItems", cast)
         if err != nil {
@@ -1033,7 +1055,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetContentCachingClientListenRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingClientListenRanges()))
         for i, v := range m.GetContentCachingClientListenRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("contentCachingClientListenRanges", cast)
         if err != nil {
@@ -1105,7 +1129,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetContentCachingPeerFilterRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingPeerFilterRanges()))
         for i, v := range m.GetContentCachingPeerFilterRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("contentCachingPeerFilterRanges", cast)
         if err != nil {
@@ -1115,7 +1141,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetContentCachingPeerListenRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingPeerListenRanges()))
         for i, v := range m.GetContentCachingPeerListenRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("contentCachingPeerListenRanges", cast)
         if err != nil {
@@ -1138,7 +1166,9 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     if m.GetContentCachingPublicRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingPublicRanges()))
         for i, v := range m.GetContentCachingPublicRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("contentCachingPublicRanges", cast)
         if err != nil {

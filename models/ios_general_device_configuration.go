@@ -875,7 +875,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAppsSingleAppModeList(res)
         }
@@ -939,7 +941,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAppsVisibilityList(res)
         }
@@ -1153,7 +1157,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetCompliantAppsList(res)
         }
@@ -1297,7 +1303,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEmailInDomainSuffixes(res)
         }
@@ -2111,7 +2119,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]IosNetworkUsageRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(IosNetworkUsageRuleable)
+                if v != nil {
+                    res[i] = v.(IosNetworkUsageRuleable)
+                }
             }
             m.SetNetworkUsageRules(res)
         }
@@ -2415,7 +2425,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSafariManagedDomains(res)
         }
@@ -2429,7 +2441,9 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSafariPasswordAutoFillDomains(res)
         }
@@ -4080,7 +4094,9 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetAppsSingleAppModeList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsSingleAppModeList()))
         for i, v := range m.GetAppsSingleAppModeList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appsSingleAppModeList", cast)
         if err != nil {
@@ -4120,7 +4136,9 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetAppsVisibilityList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsVisibilityList()))
         for i, v := range m.GetAppsVisibilityList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appsVisibilityList", cast)
         if err != nil {
@@ -4252,7 +4270,9 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetCompliantAppsList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCompliantAppsList()))
         for i, v := range m.GetCompliantAppsList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("compliantAppsList", cast)
         if err != nil {
@@ -4828,7 +4848,9 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetNetworkUsageRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNetworkUsageRules()))
         for i, v := range m.GetNetworkUsageRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("networkUsageRules", cast)
         if err != nil {

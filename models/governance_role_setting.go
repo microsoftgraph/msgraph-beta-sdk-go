@@ -53,7 +53,9 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRuleSettingable)
+                if v != nil {
+                    res[i] = v.(GovernanceRuleSettingable)
+                }
             }
             m.SetAdminEligibleSettings(res)
         }
@@ -67,7 +69,9 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRuleSettingable)
+                if v != nil {
+                    res[i] = v.(GovernanceRuleSettingable)
+                }
             }
             m.SetAdminMemberSettings(res)
         }
@@ -151,7 +155,9 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRuleSettingable)
+                if v != nil {
+                    res[i] = v.(GovernanceRuleSettingable)
+                }
             }
             m.SetUserEligibleSettings(res)
         }
@@ -165,7 +171,9 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]GovernanceRuleSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceRuleSettingable)
+                if v != nil {
+                    res[i] = v.(GovernanceRuleSettingable)
+                }
             }
             m.SetUserMemberSettings(res)
         }
@@ -281,7 +289,9 @@ func (m *GovernanceRoleSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAdminEligibleSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdminEligibleSettings()))
         for i, v := range m.GetAdminEligibleSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("adminEligibleSettings", cast)
         if err != nil {
@@ -291,7 +301,9 @@ func (m *GovernanceRoleSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAdminMemberSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdminMemberSettings()))
         for i, v := range m.GetAdminMemberSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("adminMemberSettings", cast)
         if err != nil {
@@ -343,7 +355,9 @@ func (m *GovernanceRoleSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetUserEligibleSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserEligibleSettings()))
         for i, v := range m.GetUserEligibleSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userEligibleSettings", cast)
         if err != nil {
@@ -353,7 +367,9 @@ func (m *GovernanceRoleSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetUserMemberSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserMemberSettings()))
         for i, v := range m.GetUserMemberSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userMemberSettings", cast)
         if err != nil {

@@ -8,7 +8,7 @@ import (
 type EmployeeExperienceUser struct {
     Entity
 }
-// NewEmployeeExperienceUser instantiates a new employeeExperienceUser and sets the default values.
+// NewEmployeeExperienceUser instantiates a new EmployeeExperienceUser and sets the default values.
 func NewEmployeeExperienceUser()(*EmployeeExperienceUser) {
     m := &EmployeeExperienceUser{
         Entity: *NewEntity(),
@@ -30,7 +30,9 @@ func (m *EmployeeExperienceUser) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]LearningCourseActivityable, len(val))
             for i, v := range val {
-                res[i] = v.(LearningCourseActivityable)
+                if v != nil {
+                    res[i] = v.(LearningCourseActivityable)
+                }
             }
             m.SetLearningCourseActivities(res)
         }
@@ -58,7 +60,9 @@ func (m *EmployeeExperienceUser) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetLearningCourseActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningCourseActivities()))
         for i, v := range m.GetLearningCourseActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("learningCourseActivities", cast)
         if err != nil {

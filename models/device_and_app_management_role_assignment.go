@@ -30,7 +30,9 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMembers(res)
         }
@@ -44,7 +46,9 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]RoleScopeTagable, len(val))
             for i, v := range val {
-                res[i] = v.(RoleScopeTagable)
+                if v != nil {
+                    res[i] = v.(RoleScopeTagable)
+                }
             }
             m.SetRoleScopeTags(res)
         }
@@ -89,7 +93,9 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
     if m.GetRoleScopeTags() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleScopeTags()))
         for i, v := range m.GetRoleScopeTags() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleScopeTags", cast)
         if err != nil {

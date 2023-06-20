@@ -71,7 +71,9 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]MeetingParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(MeetingParticipantInfoable)
+                if v != nil {
+                    res[i] = v.(MeetingParticipantInfoable)
+                }
             }
             m.SetAttendees(res)
         }
@@ -85,7 +87,9 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]MeetingParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(MeetingParticipantInfoable)
+                if v != nil {
+                    res[i] = v.(MeetingParticipantInfoable)
+                }
             }
             m.SetContributors(res)
         }
@@ -119,7 +123,9 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]MeetingParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(MeetingParticipantInfoable)
+                if v != nil {
+                    res[i] = v.(MeetingParticipantInfoable)
+                }
             }
             m.SetProducers(res)
         }
@@ -165,7 +171,9 @@ func (m *MeetingParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetAttendees() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendees()))
         for i, v := range m.GetAttendees() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("attendees", cast)
         if err != nil {
@@ -175,7 +183,9 @@ func (m *MeetingParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetContributors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContributors()))
         for i, v := range m.GetContributors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("contributors", cast)
         if err != nil {
@@ -197,7 +207,9 @@ func (m *MeetingParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetProducers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProducers()))
         for i, v := range m.GetProducers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("producers", cast)
         if err != nil {

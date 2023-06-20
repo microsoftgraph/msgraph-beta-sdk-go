@@ -30,7 +30,9 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]UserExperienceAnalyticsInsightable, len(val))
             for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsInsightable)
+                if v != nil {
+                    res[i] = v.(UserExperienceAnalyticsInsightable)
+                }
             }
             m.SetInsights(res)
         }
@@ -44,7 +46,9 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]UserExperienceAnalyticsMetricable, len(val))
             for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsMetricable)
+                if v != nil {
+                    res[i] = v.(UserExperienceAnalyticsMetricable)
+                }
             }
             m.SetMetricValues(res)
         }
@@ -83,7 +87,9 @@ func (m *UserExperienceAnalyticsCategory) Serialize(writer i878a80d2330e89d26896
     if m.GetInsights() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInsights()))
         for i, v := range m.GetInsights() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("insights", cast)
         if err != nil {
@@ -93,7 +99,9 @@ func (m *UserExperienceAnalyticsCategory) Serialize(writer i878a80d2330e89d26896
     if m.GetMetricValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMetricValues()))
         for i, v := range m.GetMetricValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("metricValues", cast)
         if err != nil {

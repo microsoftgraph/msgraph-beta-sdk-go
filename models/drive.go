@@ -8,7 +8,7 @@ import (
 type Drive struct {
     BaseItem
 }
-// NewDrive instantiates a new drive and sets the default values.
+// NewDrive instantiates a new Drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),
@@ -65,7 +65,9 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]ItemActivityOLDable, len(val))
             for i, v := range val {
-                res[i] = v.(ItemActivityOLDable)
+                if v != nil {
+                    res[i] = v.(ItemActivityOLDable)
+                }
             }
             m.SetActivities(res)
         }
@@ -79,7 +81,9 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]DriveItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DriveItemable)
+                if v != nil {
+                    res[i] = v.(DriveItemable)
+                }
             }
             m.SetBundles(res)
         }
@@ -103,7 +107,9 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]DriveItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DriveItemable)
+                if v != nil {
+                    res[i] = v.(DriveItemable)
+                }
             }
             m.SetFollowing(res)
         }
@@ -117,7 +123,9 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]DriveItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DriveItemable)
+                if v != nil {
+                    res[i] = v.(DriveItemable)
+                }
             }
             m.SetItems(res)
         }
@@ -181,7 +189,9 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]DriveItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DriveItemable)
+                if v != nil {
+                    res[i] = v.(DriveItemable)
+                }
             }
             m.SetSpecial(res)
         }
@@ -307,7 +317,9 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {
@@ -317,7 +329,9 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetBundles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBundles()))
         for i, v := range m.GetBundles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("bundles", cast)
         if err != nil {
@@ -333,7 +347,9 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetFollowing() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFollowing()))
         for i, v := range m.GetFollowing() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("following", cast)
         if err != nil {
@@ -343,7 +359,9 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -383,7 +401,9 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetSpecial() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpecial()))
         for i, v := range m.GetSpecial() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("special", cast)
         if err != nil {

@@ -53,7 +53,9 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ApplicableContentable, len(val))
             for i, v := range val {
-                res[i] = v.(ApplicableContentable)
+                if v != nil {
+                    res[i] = v.(ApplicableContentable)
+                }
             }
             m.SetApplicableContent(res)
         }
@@ -67,7 +69,9 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(UpdatableAssetable)
+                if v != nil {
+                    res[i] = v.(UpdatableAssetable)
+                }
             }
             m.SetExclusions(res)
         }
@@ -81,7 +85,9 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(UpdatableAssetable)
+                if v != nil {
+                    res[i] = v.(UpdatableAssetable)
+                }
             }
             m.SetMembers(res)
         }
@@ -109,7 +115,9 @@ func (m *DeploymentAudience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetApplicableContent() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApplicableContent()))
         for i, v := range m.GetApplicableContent() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("applicableContent", cast)
         if err != nil {
@@ -119,7 +127,9 @@ func (m *DeploymentAudience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetExclusions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExclusions()))
         for i, v := range m.GetExclusions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("exclusions", cast)
         if err != nil {
@@ -129,7 +139,9 @@ func (m *DeploymentAudience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {

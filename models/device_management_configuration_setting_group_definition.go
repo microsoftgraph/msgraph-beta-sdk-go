@@ -37,7 +37,7 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
     }
     return NewDeviceManagementConfigurationSettingGroupDefinition(), nil
 }
-// GetChildIds gets the childIds property value. Dependent child settings to this group of settings
+// GetChildIds gets the childIds property value. Dependent child settings to this group of settings.
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]string) {
     val, err := m.GetBackingStore().Get("childIds")
     if err != nil {
@@ -81,7 +81,9 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializ
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetChildIds(res)
         }
@@ -95,7 +97,9 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializ
         if val != nil {
             res := make([]DeviceManagementConfigurationSettingDependedOnByable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSettingDependedOnByable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSettingDependedOnByable)
+                }
             }
             m.SetDependedOnBy(res)
         }
@@ -109,7 +113,9 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializ
         if val != nil {
             res := make([]DeviceManagementConfigurationDependentOnable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationDependentOnable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationDependentOnable)
+                }
             }
             m.SetDependentOn(res)
         }
@@ -132,7 +138,9 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
     if m.GetDependedOnBy() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependedOnBy()))
         for i, v := range m.GetDependedOnBy() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dependedOnBy", cast)
         if err != nil {
@@ -142,7 +150,9 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
     if m.GetDependentOn() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependentOn()))
         for i, v := range m.GetDependentOn() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dependentOn", cast)
         if err != nil {
@@ -151,7 +161,7 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
     }
     return nil
 }
-// SetChildIds sets the childIds property value. Dependent child settings to this group of settings
+// SetChildIds sets the childIds property value. Dependent child settings to this group of settings.
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetChildIds(value []string)() {
     err := m.GetBackingStore().Set("childIds", value)
     if err != nil {

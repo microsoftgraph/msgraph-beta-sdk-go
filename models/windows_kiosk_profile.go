@@ -100,7 +100,9 @@ func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WindowsKioskUserable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsKioskUserable)
+                if v != nil {
+                    res[i] = v.(WindowsKioskUserable)
+                }
             }
             m.SetUserAccountsConfiguration(res)
         }
@@ -181,7 +183,9 @@ func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetUserAccountsConfiguration() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAccountsConfiguration()))
         for i, v := range m.GetUserAccountsConfiguration() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("userAccountsConfiguration", cast)
         if err != nil {

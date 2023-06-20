@@ -137,6 +137,10 @@ func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuild
 func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedEmailDomainsRequestBuilder) {
     return NewSharedEmailDomainsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+func (m *DirectoryRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) {
+    return NewSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get directory
 func (m *DirectoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

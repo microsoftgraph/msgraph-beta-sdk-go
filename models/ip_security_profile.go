@@ -97,7 +97,9 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetActivityGroupNames(res)
         }
@@ -171,7 +173,9 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]IpCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(IpCategoryable)
+                if v != nil {
+                    res[i] = v.(IpCategoryable)
+                }
             }
             m.SetIpCategories(res)
         }
@@ -185,7 +189,9 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]IpReferenceDataable, len(val))
             for i, v := range val {
-                res[i] = v.(IpReferenceDataable)
+                if v != nil {
+                    res[i] = v.(IpReferenceDataable)
+                }
             }
             m.SetIpReferenceData(res)
         }
@@ -219,7 +225,9 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -365,7 +373,9 @@ func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetIpCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIpCategories()))
         for i, v := range m.GetIpCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("ipCategories", cast)
         if err != nil {
@@ -375,7 +385,9 @@ func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetIpReferenceData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIpReferenceData()))
         for i, v := range m.GetIpReferenceData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("ipReferenceData", cast)
         if err != nil {

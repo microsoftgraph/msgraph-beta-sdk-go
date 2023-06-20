@@ -41,7 +41,9 @@ func (m *CertificateAuthorityPath) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]CertificateBasedApplicationConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(CertificateBasedApplicationConfigurationable)
+                if v != nil {
+                    res[i] = v.(CertificateBasedApplicationConfigurationable)
+                }
             }
             m.SetCertificateBasedApplicationConfigurations(res)
         }
@@ -58,7 +60,9 @@ func (m *CertificateAuthorityPath) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetCertificateBasedApplicationConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCertificateBasedApplicationConfigurations()))
         for i, v := range m.GetCertificateBasedApplicationConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("certificateBasedApplicationConfigurations", cast)
         if err != nil {

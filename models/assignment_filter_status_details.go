@@ -71,7 +71,9 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetDeviceProperties(res)
         }
@@ -85,7 +87,9 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AssignmentFilterEvaluationSummaryable, len(val))
             for i, v := range val {
-                res[i] = v.(AssignmentFilterEvaluationSummaryable)
+                if v != nil {
+                    res[i] = v.(AssignmentFilterEvaluationSummaryable)
+                }
             }
             m.SetEvalutionSummaries(res)
         }
@@ -182,7 +186,9 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i878a80d2330e89d2689638
     if m.GetDeviceProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceProperties()))
         for i, v := range m.GetDeviceProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("deviceProperties", cast)
         if err != nil {
@@ -192,7 +198,9 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i878a80d2330e89d2689638
     if m.GetEvalutionSummaries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvalutionSummaries()))
         for i, v := range m.GetEvalutionSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("evalutionSummaries", cast)
         if err != nil {

@@ -52,7 +52,9 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAppUserModelIds(res)
         }
@@ -66,7 +68,9 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDesktopAppPaths(res)
         }
@@ -110,7 +114,9 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetUserAccounts(res)
         }

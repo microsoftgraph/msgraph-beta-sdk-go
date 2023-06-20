@@ -502,7 +502,9 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]SharedAppleDeviceUserable, len(val))
             for i, v := range val {
-                res[i] = v.(SharedAppleDeviceUserable)
+                if v != nil {
+                    res[i] = v.(SharedAppleDeviceUserable)
+                }
             }
             m.SetSharedDeviceCachedUsers(res)
         }
@@ -596,7 +598,9 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetWiredIPv4Addresses(res)
         }
@@ -1107,7 +1111,9 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetSharedDeviceCachedUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedDeviceCachedUsers()))
         for i, v := range m.GetSharedDeviceCachedUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("sharedDeviceCachedUsers", cast)
         if err != nil {

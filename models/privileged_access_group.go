@@ -107,7 +107,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]Approvalable, len(val))
             for i, v := range val {
-                res[i] = v.(Approvalable)
+                if v != nil {
+                    res[i] = v.(Approvalable)
+                }
             }
             m.SetAssignmentApprovals(res)
         }
@@ -121,7 +123,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PrivilegedAccessGroupAssignmentScheduleInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(PrivilegedAccessGroupAssignmentScheduleInstanceable)
+                if v != nil {
+                    res[i] = v.(PrivilegedAccessGroupAssignmentScheduleInstanceable)
+                }
             }
             m.SetAssignmentScheduleInstances(res)
         }
@@ -135,7 +139,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PrivilegedAccessGroupAssignmentScheduleRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(PrivilegedAccessGroupAssignmentScheduleRequestable)
+                if v != nil {
+                    res[i] = v.(PrivilegedAccessGroupAssignmentScheduleRequestable)
+                }
             }
             m.SetAssignmentScheduleRequests(res)
         }
@@ -149,7 +155,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PrivilegedAccessGroupAssignmentScheduleable, len(val))
             for i, v := range val {
-                res[i] = v.(PrivilegedAccessGroupAssignmentScheduleable)
+                if v != nil {
+                    res[i] = v.(PrivilegedAccessGroupAssignmentScheduleable)
+                }
             }
             m.SetAssignmentSchedules(res)
         }
@@ -163,7 +171,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PrivilegedAccessGroupEligibilityScheduleInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(PrivilegedAccessGroupEligibilityScheduleInstanceable)
+                if v != nil {
+                    res[i] = v.(PrivilegedAccessGroupEligibilityScheduleInstanceable)
+                }
             }
             m.SetEligibilityScheduleInstances(res)
         }
@@ -177,7 +187,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PrivilegedAccessGroupEligibilityScheduleRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(PrivilegedAccessGroupEligibilityScheduleRequestable)
+                if v != nil {
+                    res[i] = v.(PrivilegedAccessGroupEligibilityScheduleRequestable)
+                }
             }
             m.SetEligibilityScheduleRequests(res)
         }
@@ -191,7 +203,9 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PrivilegedAccessGroupEligibilityScheduleable, len(val))
             for i, v := range val {
-                res[i] = v.(PrivilegedAccessGroupEligibilityScheduleable)
+                if v != nil {
+                    res[i] = v.(PrivilegedAccessGroupEligibilityScheduleable)
+                }
             }
             m.SetEligibilitySchedules(res)
         }
@@ -208,7 +222,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignmentApprovals() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentApprovals()))
         for i, v := range m.GetAssignmentApprovals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentApprovals", cast)
         if err != nil {
@@ -218,7 +234,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignmentScheduleInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentScheduleInstances()))
         for i, v := range m.GetAssignmentScheduleInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentScheduleInstances", cast)
         if err != nil {
@@ -228,7 +246,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignmentScheduleRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentScheduleRequests()))
         for i, v := range m.GetAssignmentScheduleRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentScheduleRequests", cast)
         if err != nil {
@@ -238,7 +258,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignmentSchedules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentSchedules()))
         for i, v := range m.GetAssignmentSchedules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentSchedules", cast)
         if err != nil {
@@ -248,7 +270,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetEligibilityScheduleInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEligibilityScheduleInstances()))
         for i, v := range m.GetEligibilityScheduleInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("eligibilityScheduleInstances", cast)
         if err != nil {
@@ -258,7 +282,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetEligibilityScheduleRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEligibilityScheduleRequests()))
         for i, v := range m.GetEligibilityScheduleRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("eligibilityScheduleRequests", cast)
         if err != nil {
@@ -268,7 +294,9 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetEligibilitySchedules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEligibilitySchedules()))
         for i, v := range m.GetEligibilitySchedules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("eligibilitySchedules", cast)
         if err != nil {

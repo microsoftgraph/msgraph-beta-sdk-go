@@ -11,7 +11,7 @@ type DeviceHealthScriptPolicyState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceHealthScriptPolicyState instantiates a new deviceHealthScriptPolicyState and sets the default values.
+// NewDeviceHealthScriptPolicyState instantiates a new DeviceHealthScriptPolicyState and sets the default values.
 func NewDeviceHealthScriptPolicyState()(*DeviceHealthScriptPolicyState) {
     m := &DeviceHealthScriptPolicyState{
     }
@@ -105,7 +105,9 @@ func (m *DeviceHealthScriptPolicyState) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAssignmentFilterIds(res)
         }

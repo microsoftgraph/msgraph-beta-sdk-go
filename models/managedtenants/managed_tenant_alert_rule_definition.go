@@ -87,7 +87,9 @@ func (m *ManagedTenantAlertRuleDefinition) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]ManagedTenantAlertRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedTenantAlertRuleable)
+                if v != nil {
+                    res[i] = v.(ManagedTenantAlertRuleable)
+                }
             }
             m.SetAlertRules(res)
         }
@@ -186,7 +188,9 @@ func (m *ManagedTenantAlertRuleDefinition) Serialize(writer i878a80d2330e89d2689
     if m.GetAlertRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertRules()))
         for i, v := range m.GetAlertRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertRules", cast)
         if err != nil {

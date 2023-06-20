@@ -60,7 +60,9 @@ func (m *CommsApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]Callable, len(val))
             for i, v := range val {
-                res[i] = v.(Callable)
+                if v != nil {
+                    res[i] = v.(Callable)
+                }
             }
             m.SetCalls(res)
         }
@@ -84,7 +86,9 @@ func (m *CommsApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]OnlineMeetingable, len(val))
             for i, v := range val {
-                res[i] = v.(OnlineMeetingable)
+                if v != nil {
+                    res[i] = v.(OnlineMeetingable)
+                }
             }
             m.SetOnlineMeetings(res)
         }
@@ -119,7 +123,9 @@ func (m *CommsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetCalls() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCalls()))
         for i, v := range m.GetCalls() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("calls", cast)
         if err != nil {
@@ -135,7 +141,9 @@ func (m *CommsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetOnlineMeetings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnlineMeetings()))
         for i, v := range m.GetOnlineMeetings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("onlineMeetings", cast)
         if err != nil {

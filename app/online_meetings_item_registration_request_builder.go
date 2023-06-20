@@ -58,10 +58,10 @@ func NewOnlineMeetingsItemRegistrationRequestBuilder(rawUrl string, requestAdapt
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) CustomQuestions()(*OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
     return NewOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// Delete disable and delete the externalMeetingRegistration of an onlineMeeting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) Patch(ctx context.Context
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) Registrants()(*OnlineMeetingsItemRegistrationRegistrantsRequestBuilder) {
     return NewOnlineMeetingsItemRegistrationRegistrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// ToDeleteRequestInformation disable and delete the externalMeetingRegistration of an onlineMeeting.
 func (m *OnlineMeetingsItemRegistrationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

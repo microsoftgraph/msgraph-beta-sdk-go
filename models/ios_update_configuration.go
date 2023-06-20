@@ -107,7 +107,9 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]CustomUpdateTimeWindowable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomUpdateTimeWindowable)
+                if v != nil {
+                    res[i] = v.(CustomUpdateTimeWindowable)
+                }
             }
             m.SetCustomUpdateTimeWindows(res)
         }
@@ -151,7 +153,9 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]DayOfWeek, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DayOfWeek))
+                if v != nil {
+                    res[i] = *(v.(*DayOfWeek))
+                }
             }
             m.SetScheduledInstallDays(res)
         }
@@ -244,7 +248,9 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetCustomUpdateTimeWindows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomUpdateTimeWindows()))
         for i, v := range m.GetCustomUpdateTimeWindows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customUpdateTimeWindows", cast)
         if err != nil {

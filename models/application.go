@@ -10,7 +10,7 @@ import (
 type Application struct {
     DirectoryObject
 }
-// NewApplication instantiates a new Application and sets the default values.
+// NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
@@ -67,7 +67,7 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
     }
     return nil
 }
-// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The authenticationBehaviors property
+// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of authentication behaviors set for the application. Authentication behaviors are unset by default and must be explicitly enabled (or disabled). Returned only on $select.
 func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) {
     val, err := m.GetBackingStore().Get("authenticationBehaviors")
     if err != nil {
@@ -219,7 +219,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]AppManagementPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AppManagementPolicyable)
+                if v != nil {
+                    res[i] = v.(AppManagementPolicyable)
+                }
             }
             m.SetAppManagementPolicies(res)
         }
@@ -233,7 +235,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]AppRoleable, len(val))
             for i, v := range val {
-                res[i] = v.(AppRoleable)
+                if v != nil {
+                    res[i] = v.(AppRoleable)
+                }
             }
             m.SetAppRoles(res)
         }
@@ -337,7 +341,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ExtensionPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(ExtensionPropertyable)
+                if v != nil {
+                    res[i] = v.(ExtensionPropertyable)
+                }
             }
             m.SetExtensionProperties(res)
         }
@@ -351,7 +357,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]FederatedIdentityCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(FederatedIdentityCredentialable)
+                if v != nil {
+                    res[i] = v.(FederatedIdentityCredentialable)
+                }
             }
             m.SetFederatedIdentityCredentials(res)
         }
@@ -375,7 +383,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]HomeRealmDiscoveryPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(HomeRealmDiscoveryPolicyable)
+                if v != nil {
+                    res[i] = v.(HomeRealmDiscoveryPolicyable)
+                }
             }
             m.SetHomeRealmDiscoveryPolicies(res)
         }
@@ -389,7 +399,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIdentifierUris(res)
         }
@@ -433,7 +445,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]KeyCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyCredentialable)
+                if v != nil {
+                    res[i] = v.(KeyCredentialable)
+                }
             }
             m.SetKeyCredentials(res)
         }
@@ -487,7 +501,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetOwners(res)
         }
@@ -511,7 +527,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]PasswordCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(PasswordCredentialable)
+                if v != nil {
+                    res[i] = v.(PasswordCredentialable)
+                }
             }
             m.SetPasswordCredentials(res)
         }
@@ -555,7 +573,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]RequiredResourceAccessable, len(val))
             for i, v := range val {
-                res[i] = v.(RequiredResourceAccessable)
+                if v != nil {
+                    res[i] = v.(RequiredResourceAccessable)
+                }
             }
             m.SetRequiredResourceAccess(res)
         }
@@ -629,7 +649,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -653,7 +675,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]TokenIssuancePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TokenIssuancePolicyable)
+                if v != nil {
+                    res[i] = v.(TokenIssuancePolicyable)
+                }
             }
             m.SetTokenIssuancePolicies(res)
         }
@@ -667,7 +691,9 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]TokenLifetimePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TokenLifetimePolicyable)
+                if v != nil {
+                    res[i] = v.(TokenLifetimePolicyable)
+                }
             }
             m.SetTokenLifetimePolicies(res)
         }
@@ -1088,7 +1114,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetAppManagementPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppManagementPolicies()))
         for i, v := range m.GetAppManagementPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
         if err != nil {
@@ -1098,7 +1126,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetAppRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppRoles()))
         for i, v := range m.GetAppRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appRoles", cast)
         if err != nil {
@@ -1162,7 +1192,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetExtensionProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensionProperties()))
         for i, v := range m.GetExtensionProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extensionProperties", cast)
         if err != nil {
@@ -1172,7 +1204,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetFederatedIdentityCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederatedIdentityCredentials()))
         for i, v := range m.GetFederatedIdentityCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("federatedIdentityCredentials", cast)
         if err != nil {
@@ -1188,7 +1222,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetHomeRealmDiscoveryPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
         for i, v := range m.GetHomeRealmDiscoveryPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
         if err != nil {
@@ -1222,7 +1258,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetKeyCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("keyCredentials", cast)
         if err != nil {
@@ -1256,7 +1294,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetOwners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwners()))
         for i, v := range m.GetOwners() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("owners", cast)
         if err != nil {
@@ -1272,7 +1312,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetPasswordCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPasswordCredentials()))
         for i, v := range m.GetPasswordCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("passwordCredentials", cast)
         if err != nil {
@@ -1300,7 +1342,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetRequiredResourceAccess() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequiredResourceAccess()))
         for i, v := range m.GetRequiredResourceAccess() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("requiredResourceAccess", cast)
         if err != nil {
@@ -1358,7 +1402,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetTokenIssuancePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenIssuancePolicies()))
         for i, v := range m.GetTokenIssuancePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
         if err != nil {
@@ -1368,7 +1414,9 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetTokenLifetimePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenLifetimePolicies()))
         for i, v := range m.GetTokenLifetimePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
         if err != nil {
@@ -1429,7 +1477,7 @@ func (m *Application) SetAppRoles(value []AppRoleable)() {
         panic(err)
     }
 }
-// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The authenticationBehaviors property
+// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of authentication behaviors set for the application. Authentication behaviors are unset by default and must be explicitly enabled (or disabled). Returned only on $select.
 func (m *Application) SetAuthenticationBehaviors(value AuthenticationBehaviorsable)() {
     err := m.GetBackingStore().Set("authenticationBehaviors", value)
     if err != nil {

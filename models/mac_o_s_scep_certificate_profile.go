@@ -96,7 +96,9 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]CustomSubjectAlternativeNameable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomSubjectAlternativeNameable)
+                if v != nil {
+                    res[i] = v.(CustomSubjectAlternativeNameable)
+                }
             }
             m.SetCustomSubjectAlternativeNames(res)
         }
@@ -110,7 +112,9 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ExtendedKeyUsageable, len(val))
             for i, v := range val {
-                res[i] = v.(ExtendedKeyUsageable)
+                if v != nil {
+                    res[i] = v.(ExtendedKeyUsageable)
+                }
             }
             m.SetExtendedKeyUsages(res)
         }
@@ -154,7 +158,9 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ManagedDeviceCertificateStateable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedDeviceCertificateStateable)
+                if v != nil {
+                    res[i] = v.(ManagedDeviceCertificateStateable)
+                }
             }
             m.SetManagedDeviceCertificateStates(res)
         }
@@ -178,7 +184,9 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetScepServerUrls(res)
         }
@@ -316,7 +324,9 @@ func (m *MacOSScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetCustomSubjectAlternativeNames() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSubjectAlternativeNames()))
         for i, v := range m.GetCustomSubjectAlternativeNames() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customSubjectAlternativeNames", cast)
         if err != nil {
@@ -326,7 +336,9 @@ func (m *MacOSScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetExtendedKeyUsages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtendedKeyUsages()))
         for i, v := range m.GetExtendedKeyUsages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extendedKeyUsages", cast)
         if err != nil {
@@ -357,7 +369,9 @@ func (m *MacOSScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
     if m.GetManagedDeviceCertificateStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceCertificateStates()))
         for i, v := range m.GetManagedDeviceCertificateStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managedDeviceCertificateStates", cast)
         if err != nil {

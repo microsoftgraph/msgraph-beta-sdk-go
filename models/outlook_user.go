@@ -8,7 +8,7 @@ import (
 type OutlookUser struct {
     Entity
 }
-// NewOutlookUser instantiates a new outlookUser and sets the default values.
+// NewOutlookUser instantiates a new OutlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
     m := &OutlookUser{
         Entity: *NewEntity(),
@@ -30,7 +30,9 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]OutlookCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(OutlookCategoryable)
+                if v != nil {
+                    res[i] = v.(OutlookCategoryable)
+                }
             }
             m.SetMasterCategories(res)
         }
@@ -44,7 +46,9 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]OutlookTaskFolderable, len(val))
             for i, v := range val {
-                res[i] = v.(OutlookTaskFolderable)
+                if v != nil {
+                    res[i] = v.(OutlookTaskFolderable)
+                }
             }
             m.SetTaskFolders(res)
         }
@@ -58,7 +62,9 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]OutlookTaskGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(OutlookTaskGroupable)
+                if v != nil {
+                    res[i] = v.(OutlookTaskGroupable)
+                }
             }
             m.SetTaskGroups(res)
         }
@@ -72,7 +78,9 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]OutlookTaskable, len(val))
             for i, v := range val {
-                res[i] = v.(OutlookTaskable)
+                if v != nil {
+                    res[i] = v.(OutlookTaskable)
+                }
             }
             m.SetTasks(res)
         }
@@ -133,7 +141,9 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetMasterCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMasterCategories()))
         for i, v := range m.GetMasterCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("masterCategories", cast)
         if err != nil {
@@ -143,7 +153,9 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetTaskFolders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskFolders()))
         for i, v := range m.GetTaskFolders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("taskFolders", cast)
         if err != nil {
@@ -153,7 +165,9 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetTaskGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskGroups()))
         for i, v := range m.GetTaskGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("taskGroups", cast)
         if err != nil {
@@ -163,7 +177,9 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {

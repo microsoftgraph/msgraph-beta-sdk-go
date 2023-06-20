@@ -11,7 +11,7 @@ type Company struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCompany instantiates a new company and sets the default values.
+// NewCompany instantiates a new Company and sets the default values.
 func NewCompany()(*Company) {
     m := &Company{
     }
@@ -204,7 +204,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Accountable, len(val))
             for i, v := range val {
-                res[i] = v.(Accountable)
+                if v != nil {
+                    res[i] = v.(Accountable)
+                }
             }
             m.SetAccounts(res)
         }
@@ -218,7 +220,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]AgedAccountsPayableable, len(val))
             for i, v := range val {
-                res[i] = v.(AgedAccountsPayableable)
+                if v != nil {
+                    res[i] = v.(AgedAccountsPayableable)
+                }
             }
             m.SetAgedAccountsPayable(res)
         }
@@ -232,7 +236,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]AgedAccountsReceivableable, len(val))
             for i, v := range val {
-                res[i] = v.(AgedAccountsReceivableable)
+                if v != nil {
+                    res[i] = v.(AgedAccountsReceivableable)
+                }
             }
             m.SetAgedAccountsReceivable(res)
         }
@@ -256,7 +262,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]CompanyInformationable, len(val))
             for i, v := range val {
-                res[i] = v.(CompanyInformationable)
+                if v != nil {
+                    res[i] = v.(CompanyInformationable)
+                }
             }
             m.SetCompanyInformation(res)
         }
@@ -270,7 +278,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]CountryRegionable, len(val))
             for i, v := range val {
-                res[i] = v.(CountryRegionable)
+                if v != nil {
+                    res[i] = v.(CountryRegionable)
+                }
             }
             m.SetCountriesRegions(res)
         }
@@ -284,7 +294,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Currencyable, len(val))
             for i, v := range val {
-                res[i] = v.(Currencyable)
+                if v != nil {
+                    res[i] = v.(Currencyable)
+                }
             }
             m.SetCurrencies(res)
         }
@@ -298,7 +310,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]CustomerPaymentJournalable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomerPaymentJournalable)
+                if v != nil {
+                    res[i] = v.(CustomerPaymentJournalable)
+                }
             }
             m.SetCustomerPaymentJournals(res)
         }
@@ -312,7 +326,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]CustomerPaymentable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomerPaymentable)
+                if v != nil {
+                    res[i] = v.(CustomerPaymentable)
+                }
             }
             m.SetCustomerPayments(res)
         }
@@ -326,7 +342,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Customerable, len(val))
             for i, v := range val {
-                res[i] = v.(Customerable)
+                if v != nil {
+                    res[i] = v.(Customerable)
+                }
             }
             m.SetCustomers(res)
         }
@@ -340,7 +358,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Dimensionable, len(val))
             for i, v := range val {
-                res[i] = v.(Dimensionable)
+                if v != nil {
+                    res[i] = v.(Dimensionable)
+                }
             }
             m.SetDimensions(res)
         }
@@ -354,7 +374,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]DimensionValueable, len(val))
             for i, v := range val {
-                res[i] = v.(DimensionValueable)
+                if v != nil {
+                    res[i] = v.(DimensionValueable)
+                }
             }
             m.SetDimensionValues(res)
         }
@@ -378,7 +400,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Employeeable, len(val))
             for i, v := range val {
-                res[i] = v.(Employeeable)
+                if v != nil {
+                    res[i] = v.(Employeeable)
+                }
             }
             m.SetEmployees(res)
         }
@@ -392,7 +416,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]GeneralLedgerEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(GeneralLedgerEntryable)
+                if v != nil {
+                    res[i] = v.(GeneralLedgerEntryable)
+                }
             }
             m.SetGeneralLedgerEntries(res)
         }
@@ -416,7 +442,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]ItemCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(ItemCategoryable)
+                if v != nil {
+                    res[i] = v.(ItemCategoryable)
+                }
             }
             m.SetItemCategories(res)
         }
@@ -430,7 +458,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Itemable, len(val))
             for i, v := range val {
-                res[i] = v.(Itemable)
+                if v != nil {
+                    res[i] = v.(Itemable)
+                }
             }
             m.SetItems(res)
         }
@@ -444,7 +474,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]JournalLineable, len(val))
             for i, v := range val {
-                res[i] = v.(JournalLineable)
+                if v != nil {
+                    res[i] = v.(JournalLineable)
+                }
             }
             m.SetJournalLines(res)
         }
@@ -458,7 +490,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Journalable, len(val))
             for i, v := range val {
-                res[i] = v.(Journalable)
+                if v != nil {
+                    res[i] = v.(Journalable)
+                }
             }
             m.SetJournals(res)
         }
@@ -492,7 +526,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PaymentMethodable, len(val))
             for i, v := range val {
-                res[i] = v.(PaymentMethodable)
+                if v != nil {
+                    res[i] = v.(PaymentMethodable)
+                }
             }
             m.SetPaymentMethods(res)
         }
@@ -506,7 +542,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PaymentTermable, len(val))
             for i, v := range val {
-                res[i] = v.(PaymentTermable)
+                if v != nil {
+                    res[i] = v.(PaymentTermable)
+                }
             }
             m.SetPaymentTerms(res)
         }
@@ -520,7 +558,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Pictureable, len(val))
             for i, v := range val {
-                res[i] = v.(Pictureable)
+                if v != nil {
+                    res[i] = v.(Pictureable)
+                }
             }
             m.SetPicture(res)
         }
@@ -534,7 +574,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PurchaseInvoiceLineable, len(val))
             for i, v := range val {
-                res[i] = v.(PurchaseInvoiceLineable)
+                if v != nil {
+                    res[i] = v.(PurchaseInvoiceLineable)
+                }
             }
             m.SetPurchaseInvoiceLines(res)
         }
@@ -548,7 +590,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PurchaseInvoiceable, len(val))
             for i, v := range val {
-                res[i] = v.(PurchaseInvoiceable)
+                if v != nil {
+                    res[i] = v.(PurchaseInvoiceable)
+                }
             }
             m.SetPurchaseInvoices(res)
         }
@@ -562,7 +606,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesCreditMemoLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesCreditMemoLineable)
+                if v != nil {
+                    res[i] = v.(SalesCreditMemoLineable)
+                }
             }
             m.SetSalesCreditMemoLines(res)
         }
@@ -576,7 +622,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesCreditMemoable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesCreditMemoable)
+                if v != nil {
+                    res[i] = v.(SalesCreditMemoable)
+                }
             }
             m.SetSalesCreditMemos(res)
         }
@@ -590,7 +638,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesInvoiceLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesInvoiceLineable)
+                if v != nil {
+                    res[i] = v.(SalesInvoiceLineable)
+                }
             }
             m.SetSalesInvoiceLines(res)
         }
@@ -604,7 +654,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesInvoiceable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesInvoiceable)
+                if v != nil {
+                    res[i] = v.(SalesInvoiceable)
+                }
             }
             m.SetSalesInvoices(res)
         }
@@ -618,7 +670,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesOrderLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesOrderLineable)
+                if v != nil {
+                    res[i] = v.(SalesOrderLineable)
+                }
             }
             m.SetSalesOrderLines(res)
         }
@@ -632,7 +686,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesOrderable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesOrderable)
+                if v != nil {
+                    res[i] = v.(SalesOrderable)
+                }
             }
             m.SetSalesOrders(res)
         }
@@ -646,7 +702,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesQuoteLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesQuoteLineable)
+                if v != nil {
+                    res[i] = v.(SalesQuoteLineable)
+                }
             }
             m.SetSalesQuoteLines(res)
         }
@@ -660,7 +718,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SalesQuoteable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesQuoteable)
+                if v != nil {
+                    res[i] = v.(SalesQuoteable)
+                }
             }
             m.SetSalesQuotes(res)
         }
@@ -674,7 +734,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]ShipmentMethodable, len(val))
             for i, v := range val {
-                res[i] = v.(ShipmentMethodable)
+                if v != nil {
+                    res[i] = v.(ShipmentMethodable)
+                }
             }
             m.SetShipmentMethods(res)
         }
@@ -698,7 +760,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]TaxAreaable, len(val))
             for i, v := range val {
-                res[i] = v.(TaxAreaable)
+                if v != nil {
+                    res[i] = v.(TaxAreaable)
+                }
             }
             m.SetTaxAreas(res)
         }
@@ -712,7 +776,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]TaxGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(TaxGroupable)
+                if v != nil {
+                    res[i] = v.(TaxGroupable)
+                }
             }
             m.SetTaxGroups(res)
         }
@@ -726,7 +792,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]UnitOfMeasureable, len(val))
             for i, v := range val {
-                res[i] = v.(UnitOfMeasureable)
+                if v != nil {
+                    res[i] = v.(UnitOfMeasureable)
+                }
             }
             m.SetUnitsOfMeasure(res)
         }
@@ -740,7 +808,9 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]VendorEscapedable, len(val))
             for i, v := range val {
-                res[i] = v.(VendorEscapedable)
+                if v != nil {
+                    res[i] = v.(VendorEscapedable)
+                }
             }
             m.SetVendors(res)
         }
@@ -1050,7 +1120,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetAccounts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccounts()))
         for i, v := range m.GetAccounts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("accounts", cast)
         if err != nil {
@@ -1060,7 +1132,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetAgedAccountsPayable() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgedAccountsPayable()))
         for i, v := range m.GetAgedAccountsPayable() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("agedAccountsPayable", cast)
         if err != nil {
@@ -1070,7 +1144,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetAgedAccountsReceivable() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgedAccountsReceivable()))
         for i, v := range m.GetAgedAccountsReceivable() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("agedAccountsReceivable", cast)
         if err != nil {
@@ -1086,7 +1162,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetCompanyInformation() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCompanyInformation()))
         for i, v := range m.GetCompanyInformation() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("companyInformation", cast)
         if err != nil {
@@ -1096,7 +1174,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetCountriesRegions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCountriesRegions()))
         for i, v := range m.GetCountriesRegions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("countriesRegions", cast)
         if err != nil {
@@ -1106,7 +1186,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetCurrencies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCurrencies()))
         for i, v := range m.GetCurrencies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("currencies", cast)
         if err != nil {
@@ -1116,7 +1198,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetCustomerPaymentJournals() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomerPaymentJournals()))
         for i, v := range m.GetCustomerPaymentJournals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("customerPaymentJournals", cast)
         if err != nil {
@@ -1126,7 +1210,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetCustomerPayments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomerPayments()))
         for i, v := range m.GetCustomerPayments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("customerPayments", cast)
         if err != nil {
@@ -1136,7 +1222,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetCustomers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("customers", cast)
         if err != nil {
@@ -1146,7 +1234,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetDimensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDimensions()))
         for i, v := range m.GetDimensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("dimensions", cast)
         if err != nil {
@@ -1156,7 +1246,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetDimensionValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDimensionValues()))
         for i, v := range m.GetDimensionValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("dimensionValues", cast)
         if err != nil {
@@ -1172,7 +1264,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetEmployees() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmployees()))
         for i, v := range m.GetEmployees() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("employees", cast)
         if err != nil {
@@ -1182,7 +1276,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetGeneralLedgerEntries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGeneralLedgerEntries()))
         for i, v := range m.GetGeneralLedgerEntries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("generalLedgerEntries", cast)
         if err != nil {
@@ -1198,7 +1294,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetItemCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemCategories()))
         for i, v := range m.GetItemCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("itemCategories", cast)
         if err != nil {
@@ -1208,7 +1306,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -1218,7 +1318,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetJournalLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJournalLines()))
         for i, v := range m.GetJournalLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("journalLines", cast)
         if err != nil {
@@ -1228,7 +1330,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetJournals() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJournals()))
         for i, v := range m.GetJournals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("journals", cast)
         if err != nil {
@@ -1250,7 +1354,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPaymentMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPaymentMethods()))
         for i, v := range m.GetPaymentMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("paymentMethods", cast)
         if err != nil {
@@ -1260,7 +1366,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPaymentTerms() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPaymentTerms()))
         for i, v := range m.GetPaymentTerms() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("paymentTerms", cast)
         if err != nil {
@@ -1270,7 +1378,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPicture() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("picture", cast)
         if err != nil {
@@ -1280,7 +1390,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPurchaseInvoiceLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPurchaseInvoiceLines()))
         for i, v := range m.GetPurchaseInvoiceLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("purchaseInvoiceLines", cast)
         if err != nil {
@@ -1290,7 +1402,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPurchaseInvoices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPurchaseInvoices()))
         for i, v := range m.GetPurchaseInvoices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("purchaseInvoices", cast)
         if err != nil {
@@ -1300,7 +1414,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesCreditMemoLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesCreditMemoLines()))
         for i, v := range m.GetSalesCreditMemoLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesCreditMemoLines", cast)
         if err != nil {
@@ -1310,7 +1426,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesCreditMemos() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesCreditMemos()))
         for i, v := range m.GetSalesCreditMemos() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesCreditMemos", cast)
         if err != nil {
@@ -1320,7 +1438,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesInvoiceLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesInvoiceLines()))
         for i, v := range m.GetSalesInvoiceLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesInvoiceLines", cast)
         if err != nil {
@@ -1330,7 +1450,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesInvoices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesInvoices()))
         for i, v := range m.GetSalesInvoices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesInvoices", cast)
         if err != nil {
@@ -1340,7 +1462,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesOrderLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesOrderLines()))
         for i, v := range m.GetSalesOrderLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesOrderLines", cast)
         if err != nil {
@@ -1350,7 +1474,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesOrders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesOrders()))
         for i, v := range m.GetSalesOrders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesOrders", cast)
         if err != nil {
@@ -1360,7 +1486,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesQuoteLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesQuoteLines()))
         for i, v := range m.GetSalesQuoteLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesQuoteLines", cast)
         if err != nil {
@@ -1370,7 +1498,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSalesQuotes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesQuotes()))
         for i, v := range m.GetSalesQuotes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesQuotes", cast)
         if err != nil {
@@ -1380,7 +1510,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetShipmentMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetShipmentMethods()))
         for i, v := range m.GetShipmentMethods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("shipmentMethods", cast)
         if err != nil {
@@ -1396,7 +1528,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetTaxAreas() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaxAreas()))
         for i, v := range m.GetTaxAreas() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("taxAreas", cast)
         if err != nil {
@@ -1406,7 +1540,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetTaxGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaxGroups()))
         for i, v := range m.GetTaxGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("taxGroups", cast)
         if err != nil {
@@ -1416,7 +1552,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetUnitsOfMeasure() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUnitsOfMeasure()))
         for i, v := range m.GetUnitsOfMeasure() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("unitsOfMeasure", cast)
         if err != nil {
@@ -1426,7 +1564,9 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetVendors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVendors()))
         for i, v := range m.GetVendors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("vendors", cast)
         if err != nil {

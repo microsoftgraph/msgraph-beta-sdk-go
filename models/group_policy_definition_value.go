@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyDefinitionValue 
+// GroupPolicyDefinitionValue the definition value entity stores the value for a single group policy definition.
 type GroupPolicyDefinitionValue struct {
     Entity
 }
@@ -125,7 +125,9 @@ func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]GroupPolicyPresentationValueable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyPresentationValueable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyPresentationValueable)
+                }
             }
             m.SetPresentationValues(res)
         }
@@ -195,7 +197,9 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetPresentationValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPresentationValues()))
         for i, v := range m.GetPresentationValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("presentationValues", cast)
         if err != nil {

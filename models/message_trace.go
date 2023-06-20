@@ -9,7 +9,7 @@ import (
 type MessageTrace struct {
     Entity
 }
-// NewMessageTrace instantiates a new messageTrace and sets the default values.
+// NewMessageTrace instantiates a new MessageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),
@@ -72,7 +72,9 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]MessageRecipientable, len(val))
             for i, v := range val {
-                res[i] = v.(MessageRecipientable)
+                if v != nil {
+                    res[i] = v.(MessageRecipientable)
+                }
             }
             m.SetRecipients(res)
         }
@@ -224,7 +226,9 @@ func (m *MessageTrace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetRecipients() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecipients()))
         for i, v := range m.GetRecipients() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("recipients", cast)
         if err != nil {

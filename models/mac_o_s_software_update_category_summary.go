@@ -134,7 +134,9 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]MacOSSoftwareUpdateStateSummaryable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSSoftwareUpdateStateSummaryable)
+                if v != nil {
+                    res[i] = v.(MacOSSoftwareUpdateStateSummaryable)
+                }
             }
             m.SetUpdateStateSummaries(res)
         }
@@ -270,7 +272,9 @@ func (m *MacOSSoftwareUpdateCategorySummary) Serialize(writer i878a80d2330e89d26
     if m.GetUpdateStateSummaries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUpdateStateSummaries()))
         for i, v := range m.GetUpdateStateSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("updateStateSummaries", cast)
         if err != nil {

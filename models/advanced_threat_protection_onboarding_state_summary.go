@@ -74,7 +74,9 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         if val != nil {
             res := make([]AdvancedThreatProtectionOnboardingDeviceSettingStateable, len(val))
             for i, v := range val {
-                res[i] = v.(AdvancedThreatProtectionOnboardingDeviceSettingStateable)
+                if v != nil {
+                    res[i] = v.(AdvancedThreatProtectionOnboardingDeviceSettingStateable)
+                }
             }
             m.SetAdvancedThreatProtectionOnboardingDeviceSettingStates(res)
         }
@@ -226,7 +228,9 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i878a8
     if m.GetAdvancedThreatProtectionOnboardingDeviceSettingStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdvancedThreatProtectionOnboardingDeviceSettingStates()))
         for i, v := range m.GetAdvancedThreatProtectionOnboardingDeviceSettingStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("advancedThreatProtectionOnboardingDeviceSettingStates", cast)
         if err != nil {

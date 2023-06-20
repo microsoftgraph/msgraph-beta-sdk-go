@@ -32,7 +32,9 @@ func (m *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyAsHierarchyRe
         if val != nil {
             res := make([]ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, len(val))
             for i, v := range val {
-                res[i] = v.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable)
+                if v != nil {
+                    res[i] = v.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable)
+                }
             }
             m.SetValue(res)
         }
@@ -60,7 +62,9 @@ func (m *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyAsHierarchyRe
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

@@ -32,7 +32,9 @@ func (m *AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPort
         if val != nil {
             res := make([]i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.PortalNotificationable, len(val))
             for i, v := range val {
-                res[i] = v.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.PortalNotificationable)
+                if v != nil {
+                    res[i] = v.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.PortalNotificationable)
+                }
             }
             m.SetValue(res)
         }
@@ -60,7 +62,9 @@ func (m *AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPort
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

@@ -83,7 +83,9 @@ func (m *CallsItemAnswerPostRequestBody) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality))
+                if v != nil {
+                    res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality))
+                }
             }
             m.SetAcceptedModalities(res)
         }

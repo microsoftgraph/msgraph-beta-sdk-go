@@ -75,7 +75,9 @@ func (m *DeviceManagementCompliancePolicy) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]DeviceManagementConfigurationPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationPolicyAssignmentable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationPolicyAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -159,7 +161,9 @@ func (m *DeviceManagementCompliancePolicy) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -173,7 +177,9 @@ func (m *DeviceManagementCompliancePolicy) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]DeviceManagementComplianceScheduledActionForRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementComplianceScheduledActionForRuleable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementComplianceScheduledActionForRuleable)
+                }
             }
             m.SetScheduledActionsForRule(res)
         }
@@ -197,7 +203,9 @@ func (m *DeviceManagementCompliancePolicy) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]DeviceManagementConfigurationSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSettingable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementConfigurationSettingable)
+                }
             }
             m.SetSettings(res)
         }
@@ -323,7 +331,9 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i878a80d2330e89d2689
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -364,7 +374,9 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i878a80d2330e89d2689
     if m.GetScheduledActionsForRule() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScheduledActionsForRule()))
         for i, v := range m.GetScheduledActionsForRule() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("scheduledActionsForRule", cast)
         if err != nil {
@@ -374,7 +386,9 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i878a80d2330e89d2689
     if m.GetSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settings", cast)
         if err != nil {

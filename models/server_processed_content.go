@@ -71,7 +71,9 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]MetaDataKeyStringPairable, len(val))
             for i, v := range val {
-                res[i] = v.(MetaDataKeyStringPairable)
+                if v != nil {
+                    res[i] = v.(MetaDataKeyStringPairable)
+                }
             }
             m.SetComponentDependencies(res)
         }
@@ -85,7 +87,9 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]MetaDataKeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(MetaDataKeyValuePairable)
+                if v != nil {
+                    res[i] = v.(MetaDataKeyValuePairable)
+                }
             }
             m.SetCustomMetadata(res)
         }
@@ -99,7 +103,9 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]MetaDataKeyStringPairable, len(val))
             for i, v := range val {
-                res[i] = v.(MetaDataKeyStringPairable)
+                if v != nil {
+                    res[i] = v.(MetaDataKeyStringPairable)
+                }
             }
             m.SetHtmlStrings(res)
         }
@@ -113,7 +119,9 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]MetaDataKeyStringPairable, len(val))
             for i, v := range val {
-                res[i] = v.(MetaDataKeyStringPairable)
+                if v != nil {
+                    res[i] = v.(MetaDataKeyStringPairable)
+                }
             }
             m.SetImageSources(res)
         }
@@ -127,7 +135,9 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]MetaDataKeyStringPairable, len(val))
             for i, v := range val {
-                res[i] = v.(MetaDataKeyStringPairable)
+                if v != nil {
+                    res[i] = v.(MetaDataKeyStringPairable)
+                }
             }
             m.SetLinks(res)
         }
@@ -151,7 +161,9 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]MetaDataKeyStringPairable, len(val))
             for i, v := range val {
-                res[i] = v.(MetaDataKeyStringPairable)
+                if v != nil {
+                    res[i] = v.(MetaDataKeyStringPairable)
+                }
             }
             m.SetSearchablePlainTexts(res)
         }
@@ -219,7 +231,9 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetComponentDependencies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComponentDependencies()))
         for i, v := range m.GetComponentDependencies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("componentDependencies", cast)
         if err != nil {
@@ -229,7 +243,9 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetCustomMetadata() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomMetadata()))
         for i, v := range m.GetCustomMetadata() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("customMetadata", cast)
         if err != nil {
@@ -239,7 +255,9 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetHtmlStrings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHtmlStrings()))
         for i, v := range m.GetHtmlStrings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("htmlStrings", cast)
         if err != nil {
@@ -249,7 +267,9 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetImageSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImageSources()))
         for i, v := range m.GetImageSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("imageSources", cast)
         if err != nil {
@@ -259,7 +279,9 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetLinks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLinks()))
         for i, v := range m.GetLinks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("links", cast)
         if err != nil {
@@ -275,7 +297,9 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetSearchablePlainTexts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSearchablePlainTexts()))
         for i, v := range m.GetSearchablePlainTexts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("searchablePlainTexts", cast)
         if err != nil {

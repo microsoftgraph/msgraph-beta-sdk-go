@@ -49,7 +49,9 @@ func (m *MonitoringSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]MonitoringRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(MonitoringRuleable)
+                if v != nil {
+                    res[i] = v.(MonitoringRuleable)
+                }
             }
             m.SetMonitoringRules(res)
         }
@@ -94,7 +96,9 @@ func (m *MonitoringSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetMonitoringRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMonitoringRules()))
         for i, v := range m.GetMonitoringRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("monitoringRules", cast)
         if err != nil {

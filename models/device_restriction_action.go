@@ -50,7 +50,9 @@ func (m *DeviceRestrictionAction) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]RestrictionTrigger, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RestrictionTrigger))
+                if v != nil {
+                    res[i] = *(v.(*RestrictionTrigger))
+                }
             }
             m.SetTriggers(res)
         }

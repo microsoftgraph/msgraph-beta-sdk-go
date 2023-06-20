@@ -211,7 +211,9 @@ func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]DispositionReviewStageable, len(val))
             for i, v := range val {
-                res[i] = v.(DispositionReviewStageable)
+                if v != nil {
+                    res[i] = v.(DispositionReviewStageable)
+                }
             }
             m.SetDispositionReviewStages(res)
         }
@@ -426,7 +428,9 @@ func (m *RetentionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetDispositionReviewStages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDispositionReviewStages()))
         for i, v := range m.GetDispositionReviewStages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dispositionReviewStages", cast)
         if err != nil {

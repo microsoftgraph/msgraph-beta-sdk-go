@@ -137,7 +137,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable, len(val))
             for i, v := range val {
-                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)
+                }
             }
             m.SetInformationLinks(res)
         }
@@ -171,7 +173,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ManagementTemplateCollectionable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagementTemplateCollectionable)
+                if v != nil {
+                    res[i] = v.(ManagementTemplateCollectionable)
+                }
             }
             m.SetManagementTemplateCollections(res)
         }
@@ -185,7 +189,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ManagementTemplateStepable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagementTemplateStepable)
+                if v != nil {
+                    res[i] = v.(ManagementTemplateStepable)
+                }
             }
             m.SetManagementTemplateSteps(res)
         }
@@ -199,7 +205,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]TemplateParameterable, len(val))
             for i, v := range val {
-                res[i] = v.(TemplateParameterable)
+                if v != nil {
+                    res[i] = v.(TemplateParameterable)
+                }
             }
             m.SetParameters(res)
         }
@@ -253,7 +261,9 @@ func (m *ManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]WorkloadActionable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkloadActionable)
+                if v != nil {
+                    res[i] = v.(WorkloadActionable)
+                }
             }
             m.SetWorkloadActions(res)
         }
@@ -422,7 +432,9 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetInformationLinks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInformationLinks()))
         for i, v := range m.GetInformationLinks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("informationLinks", cast)
         if err != nil {
@@ -444,7 +456,9 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetManagementTemplateCollections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateCollections()))
         for i, v := range m.GetManagementTemplateCollections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managementTemplateCollections", cast)
         if err != nil {
@@ -454,7 +468,9 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetManagementTemplateSteps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateSteps()))
         for i, v := range m.GetManagementTemplateSteps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("managementTemplateSteps", cast)
         if err != nil {
@@ -464,7 +480,9 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetParameters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("parameters", cast)
         if err != nil {
@@ -499,7 +517,9 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetWorkloadActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("workloadActions", cast)
         if err != nil {

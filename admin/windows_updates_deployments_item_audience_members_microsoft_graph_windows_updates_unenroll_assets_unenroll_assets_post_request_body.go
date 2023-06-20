@@ -61,7 +61,9 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdate
         if val != nil {
             res := make([]i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, len(val))
             for i, v := range val {
-                res[i] = v.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable)
+                if v != nil {
+                    res[i] = v.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable)
+                }
             }
             m.SetAssets(res)
         }
@@ -95,7 +97,9 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersMicrosoftGraphWindowsUpdate
     if m.GetAssets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssets()))
         for i, v := range m.GetAssets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("assets", cast)
         if err != nil {

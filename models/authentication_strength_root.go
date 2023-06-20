@@ -63,7 +63,9 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethodModes))
+                if v != nil {
+                    res[i] = *(v.(*AuthenticationMethodModes))
+                }
             }
             m.SetAuthenticationCombinations(res)
         }
@@ -77,7 +79,9 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]AuthenticationMethodModeDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationMethodModeDetailable)
+                if v != nil {
+                    res[i] = v.(AuthenticationMethodModeDetailable)
+                }
             }
             m.SetAuthenticationMethodModes(res)
         }
@@ -91,7 +95,9 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethodModes))
+                if v != nil {
+                    res[i] = *(v.(*AuthenticationMethodModes))
+                }
             }
             m.SetCombinations(res)
         }
@@ -105,7 +111,9 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]AuthenticationStrengthPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationStrengthPolicyable)
+                if v != nil {
+                    res[i] = v.(AuthenticationStrengthPolicyable)
+                }
             }
             m.SetPolicies(res)
         }
@@ -139,7 +147,9 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetAuthenticationMethodModes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationMethodModes()))
         for i, v := range m.GetAuthenticationMethodModes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationMethodModes", cast)
         if err != nil {
@@ -155,7 +165,9 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("policies", cast)
         if err != nil {

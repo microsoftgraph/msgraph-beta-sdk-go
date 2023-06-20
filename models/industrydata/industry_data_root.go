@@ -42,7 +42,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]IndustryDataConnectorable, len(val))
             for i, v := range val {
-                res[i] = v.(IndustryDataConnectorable)
+                if v != nil {
+                    res[i] = v.(IndustryDataConnectorable)
+                }
             }
             m.SetDataConnectors(res)
         }
@@ -56,7 +58,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]InboundFlowable, len(val))
             for i, v := range val {
-                res[i] = v.(InboundFlowable)
+                if v != nil {
+                    res[i] = v.(InboundFlowable)
+                }
             }
             m.SetInboundFlows(res)
         }
@@ -70,7 +74,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable)
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -84,7 +90,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ReferenceDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(ReferenceDefinitionable)
+                if v != nil {
+                    res[i] = v.(ReferenceDefinitionable)
+                }
             }
             m.SetReferenceDefinitions(res)
         }
@@ -98,7 +106,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]RoleGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(RoleGroupable)
+                if v != nil {
+                    res[i] = v.(RoleGroupable)
+                }
             }
             m.SetRoleGroups(res)
         }
@@ -112,7 +122,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]IndustryDataRunable, len(val))
             for i, v := range val {
-                res[i] = v.(IndustryDataRunable)
+                if v != nil {
+                    res[i] = v.(IndustryDataRunable)
+                }
             }
             m.SetRuns(res)
         }
@@ -126,7 +138,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]SourceSystemDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(SourceSystemDefinitionable)
+                if v != nil {
+                    res[i] = v.(SourceSystemDefinitionable)
+                }
             }
             m.SetSourceSystems(res)
         }
@@ -140,7 +154,9 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]YearTimePeriodDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(YearTimePeriodDefinitionable)
+                if v != nil {
+                    res[i] = v.(YearTimePeriodDefinitionable)
+                }
             }
             m.SetYears(res)
         }
@@ -234,7 +250,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetDataConnectors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDataConnectors()))
         for i, v := range m.GetDataConnectors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dataConnectors", cast)
         if err != nil {
@@ -244,7 +262,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetInboundFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInboundFlows()))
         for i, v := range m.GetInboundFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("inboundFlows", cast)
         if err != nil {
@@ -254,7 +274,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -264,7 +286,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetReferenceDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReferenceDefinitions()))
         for i, v := range m.GetReferenceDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("referenceDefinitions", cast)
         if err != nil {
@@ -274,7 +298,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRoleGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleGroups()))
         for i, v := range m.GetRoleGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleGroups", cast)
         if err != nil {
@@ -284,7 +310,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRuns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRuns()))
         for i, v := range m.GetRuns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("runs", cast)
         if err != nil {
@@ -294,7 +322,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetSourceSystems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSourceSystems()))
         for i, v := range m.GetSourceSystems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sourceSystems", cast)
         if err != nil {
@@ -304,7 +334,9 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetYears() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetYears()))
         for i, v := range m.GetYears() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("years", cast)
         if err != nil {

@@ -175,7 +175,9 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]Windows10AssociatedAppsable, len(val))
             for i, v := range val {
-                res[i] = v.(Windows10AssociatedAppsable)
+                if v != nil {
+                    res[i] = v.(Windows10AssociatedAppsable)
+                }
             }
             m.SetAssociatedApps(res)
         }
@@ -219,7 +221,9 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]VpnDnsRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(VpnDnsRuleable)
+                if v != nil {
+                    res[i] = v.(VpnDnsRuleable)
+                }
             }
             m.SetDnsRules(res)
         }
@@ -233,7 +237,9 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDnsSuffixes(res)
         }
@@ -377,7 +383,9 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]VpnRouteable, len(val))
             for i, v := range val {
-                res[i] = v.(VpnRouteable)
+                if v != nil {
+                    res[i] = v.(VpnRouteable)
+                }
             }
             m.SetRoutes(res)
         }
@@ -411,7 +419,9 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]VpnTrafficRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(VpnTrafficRuleable)
+                if v != nil {
+                    res[i] = v.(VpnTrafficRuleable)
+                }
             }
             m.SetTrafficRules(res)
         }
@@ -425,7 +435,9 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTrustedNetworkDomains(res)
         }
@@ -584,7 +596,9 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetAssociatedApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedApps()))
         for i, v := range m.GetAssociatedApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("associatedApps", cast)
         if err != nil {
@@ -614,7 +628,9 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetDnsRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDnsRules()))
         for i, v := range m.GetDnsRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("dnsRules", cast)
         if err != nil {
@@ -709,7 +725,9 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetRoutes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoutes()))
         for i, v := range m.GetRoutes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("routes", cast)
         if err != nil {
@@ -731,7 +749,9 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetTrafficRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrafficRules()))
         for i, v := range m.GetTrafficRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("trafficRules", cast)
         if err != nil {

@@ -132,7 +132,9 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]VirtualEventPresenterable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventPresenterable)
+                if v != nil {
+                    res[i] = v.(VirtualEventPresenterable)
+                }
             }
             m.SetPresenters(res)
         }
@@ -146,7 +148,9 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]VirtualEventSessionable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventSessionable)
+                if v != nil {
+                    res[i] = v.(VirtualEventSessionable)
+                }
             }
             m.SetSessions(res)
         }
@@ -251,7 +255,9 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetPresenters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPresenters()))
         for i, v := range m.GetPresenters() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("presenters", cast)
         if err != nil {
@@ -261,7 +267,9 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetSessions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessions()))
         for i, v := range m.GetSessions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sessions", cast)
         if err != nil {

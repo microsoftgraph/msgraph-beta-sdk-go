@@ -30,7 +30,9 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]EducationGradingCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationGradingCategoryable)
+                if v != nil {
+                    res[i] = v.(EducationGradingCategoryable)
+                }
             }
             m.SetGradingCategories(res)
         }
@@ -79,7 +81,9 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     if m.GetGradingCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGradingCategories()))
         for i, v := range m.GetGradingCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("gradingCategories", cast)
         if err != nil {

@@ -70,7 +70,9 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetFieldDeseria
         if val != nil {
             res := make([]AuthenticationAttributeCollectionInputConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationAttributeCollectionInputConfigurationable)
+                if v != nil {
+                    res[i] = v.(AuthenticationAttributeCollectionInputConfigurationable)
+                }
             }
             m.SetInputs(res)
         }
@@ -142,7 +144,9 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) Serialize(write
     if m.GetInputs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInputs()))
         for i, v := range m.GetInputs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("inputs", cast)
         if err != nil {

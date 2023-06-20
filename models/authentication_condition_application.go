@@ -10,7 +10,7 @@ type AuthenticationConditionApplication struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationConditionApplication instantiates a new authenticationConditionApplication and sets the default values.
+// NewAuthenticationConditionApplication instantiates a new AuthenticationConditionApplication and sets the default values.
 func NewAuthenticationConditionApplication()(*AuthenticationConditionApplication) {
     m := &AuthenticationConditionApplication{
     }

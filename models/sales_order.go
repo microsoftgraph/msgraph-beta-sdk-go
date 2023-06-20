@@ -12,7 +12,7 @@ type SalesOrder struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesOrder instantiates a new salesOrder and sets the default values.
+// NewSalesOrder instantiates a new SalesOrder and sets the default values.
 func NewSalesOrder()(*SalesOrder) {
     m := &SalesOrder{
     }
@@ -486,7 +486,9 @@ func (m *SalesOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]SalesOrderLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesOrderLineable)
+                if v != nil {
+                    res[i] = v.(SalesOrderLineable)
+                }
             }
             m.SetSalesOrderLines(res)
         }
@@ -993,7 +995,9 @@ func (m *SalesOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetSalesOrderLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesOrderLines()))
         for i, v := range m.GetSalesOrderLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesOrderLines", cast)
         if err != nil {

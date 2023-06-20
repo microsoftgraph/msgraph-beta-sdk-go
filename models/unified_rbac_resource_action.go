@@ -116,6 +116,16 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["isPrivileged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsPrivileged(val)
+        }
+        return nil
+    }
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -151,6 +161,17 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878
 // GetIsAuthenticationContextSettable gets the isAuthenticationContextSettable property value. The isAuthenticationContextSettable property
 func (m *UnifiedRbacResourceAction) GetIsAuthenticationContextSettable()(*bool) {
     val, err := m.GetBackingStore().Get("isAuthenticationContextSettable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsPrivileged gets the isPrivileged property value. The isPrivileged property
+func (m *UnifiedRbacResourceAction) GetIsPrivileged()(*bool) {
+    val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
         panic(err)
     }
@@ -229,6 +250,12 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteBoolValue("isPrivileged", m.GetIsPrivileged())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
@@ -283,6 +310,13 @@ func (m *UnifiedRbacResourceAction) SetIsAuthenticationContextSettable(value *bo
         panic(err)
     }
 }
+// SetIsPrivileged sets the isPrivileged property value. The isPrivileged property
+func (m *UnifiedRbacResourceAction) SetIsPrivileged(value *bool)() {
+    err := m.GetBackingStore().Set("isPrivileged", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -313,6 +347,7 @@ type UnifiedRbacResourceActionable interface {
     GetAuthenticationContextId()(*string)
     GetDescription()(*string)
     GetIsAuthenticationContextSettable()(*bool)
+    GetIsPrivileged()(*bool)
     GetName()(*string)
     GetResourceScope()(UnifiedRbacResourceScopeable)
     GetResourceScopeId()(*string)
@@ -321,6 +356,7 @@ type UnifiedRbacResourceActionable interface {
     SetAuthenticationContextId(value *string)()
     SetDescription(value *string)()
     SetIsAuthenticationContextSettable(value *bool)()
+    SetIsPrivileged(value *bool)()
     SetName(value *string)()
     SetResourceScope(value UnifiedRbacResourceScopeable)()
     SetResourceScopeId(value *string)()

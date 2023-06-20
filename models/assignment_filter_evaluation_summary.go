@@ -11,7 +11,7 @@ type AssignmentFilterEvaluationSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentFilterEvaluationSummary instantiates a new assignmentFilterEvaluationSummary and sets the default values.
+// NewAssignmentFilterEvaluationSummary instantiates a new AssignmentFilterEvaluationSummary and sets the default values.
 func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) {
     m := &AssignmentFilterEvaluationSummary{
     }
@@ -188,7 +188,9 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AssignmentFilterTypeAndEvaluationResultable, len(val))
             for i, v := range val {
-                res[i] = v.(AssignmentFilterTypeAndEvaluationResultable)
+                if v != nil {
+                    res[i] = v.(AssignmentFilterTypeAndEvaluationResultable)
+                }
             }
             m.SetAssignmentFilterTypeAndEvaluationResults(res)
         }
@@ -274,7 +276,9 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i878a80d2330e89d268
     if m.GetAssignmentFilterTypeAndEvaluationResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentFilterTypeAndEvaluationResults()))
         for i, v := range m.GetAssignmentFilterTypeAndEvaluationResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("assignmentFilterTypeAndEvaluationResults", cast)
         if err != nil {

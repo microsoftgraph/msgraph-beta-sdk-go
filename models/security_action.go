@@ -198,7 +198,9 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetParameters(res)
         }
@@ -212,7 +214,9 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]SecurityActionStateable, len(val))
             for i, v := range val {
-                res[i] = v.(SecurityActionStateable)
+                if v != nil {
+                    res[i] = v.(SecurityActionStateable)
+                }
             }
             m.SetStates(res)
         }
@@ -390,7 +394,9 @@ func (m *SecurityAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetParameters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("parameters", cast)
         if err != nil {
@@ -400,7 +406,9 @@ func (m *SecurityAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStates()))
         for i, v := range m.GetStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("states", cast)
         if err != nil {

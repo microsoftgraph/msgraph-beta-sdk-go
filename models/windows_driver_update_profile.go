@@ -129,7 +129,9 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]WindowsDriverUpdateProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsDriverUpdateProfileAssignmentable)
+                if v != nil {
+                    res[i] = v.(WindowsDriverUpdateProfileAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -193,7 +195,9 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]WindowsDriverUpdateInventoryable, len(val))
             for i, v := range val {
-                res[i] = v.(WindowsDriverUpdateInventoryable)
+                if v != nil {
+                    res[i] = v.(WindowsDriverUpdateInventoryable)
+                }
             }
             m.SetDriverInventories(res)
         }
@@ -237,7 +241,9 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -305,7 +311,9 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -345,7 +353,9 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetDriverInventories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriverInventories()))
         for i, v := range m.GetDriverInventories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("driverInventories", cast)
         if err != nil {

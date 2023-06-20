@@ -54,7 +54,9 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]InformationProtectionActionable, len(val))
             for i, v := range val {
-                res[i] = v.(InformationProtectionActionable)
+                if v != nil {
+                    res[i] = v.(InformationProtectionActionable)
+                }
             }
             m.SetActions(res)
         }
@@ -78,7 +80,9 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetResponsibleSensitiveTypeIds(res)
         }
@@ -127,7 +131,9 @@ func (m *RecommendLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActions()))
         for i, v := range m.GetActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("actions", cast)
         if err != nil {

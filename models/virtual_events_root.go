@@ -41,7 +41,9 @@ func (m *VirtualEventsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]VirtualEventable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventable)
+                if v != nil {
+                    res[i] = v.(VirtualEventable)
+                }
             }
             m.SetEvents(res)
         }
@@ -55,7 +57,9 @@ func (m *VirtualEventsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]VirtualEventWebinarable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventWebinarable)
+                if v != nil {
+                    res[i] = v.(VirtualEventWebinarable)
+                }
             }
             m.SetWebinars(res)
         }
@@ -83,7 +87,9 @@ func (m *VirtualEventsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetEvents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {
@@ -93,7 +99,9 @@ func (m *VirtualEventsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetWebinars() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebinars()))
         for i, v := range m.GetWebinars() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("webinars", cast)
         if err != nil {

@@ -43,7 +43,9 @@ func (m *ServiceProvisioningResourceError) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]ServiceProvisioningResourceErrorDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(ServiceProvisioningResourceErrorDetailable)
+                if v != nil {
+                    res[i] = v.(ServiceProvisioningResourceErrorDetailable)
+                }
             }
             m.SetErrors(res)
         }
@@ -60,7 +62,9 @@ func (m *ServiceProvisioningResourceError) Serialize(writer i878a80d2330e89d2689
     if m.GetErrors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetErrors()))
         for i, v := range m.GetErrors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("errors", cast)
         if err != nil {

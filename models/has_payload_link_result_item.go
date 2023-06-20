@@ -100,7 +100,9 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]DeviceAndAppManagementAssignmentSource, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DeviceAndAppManagementAssignmentSource))
+                if v != nil {
+                    res[i] = *(v.(*DeviceAndAppManagementAssignmentSource))
+                }
             }
             m.SetSources(res)
         }

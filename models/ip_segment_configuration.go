@@ -43,7 +43,9 @@ func (m *IpSegmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]IpApplicationSegmentable, len(val))
             for i, v := range val {
-                res[i] = v.(IpApplicationSegmentable)
+                if v != nil {
+                    res[i] = v.(IpApplicationSegmentable)
+                }
             }
             m.SetApplicationSegments(res)
         }
@@ -60,7 +62,9 @@ func (m *IpSegmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetApplicationSegments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApplicationSegments()))
         for i, v := range m.GetApplicationSegments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("applicationSegments", cast)
         if err != nil {

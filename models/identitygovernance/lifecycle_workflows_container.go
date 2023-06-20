@@ -53,7 +53,9 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]CustomTaskExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomTaskExtensionable)
+                if v != nil {
+                    res[i] = v.(CustomTaskExtensionable)
+                }
             }
             m.SetCustomTaskExtensions(res)
         }
@@ -87,7 +89,9 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]TaskDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(TaskDefinitionable)
+                if v != nil {
+                    res[i] = v.(TaskDefinitionable)
+                }
             }
             m.SetTaskDefinitions(res)
         }
@@ -101,7 +105,9 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]Workflowable, len(val))
             for i, v := range val {
-                res[i] = v.(Workflowable)
+                if v != nil {
+                    res[i] = v.(Workflowable)
+                }
             }
             m.SetWorkflows(res)
         }
@@ -115,7 +121,9 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]WorkflowTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkflowTemplateable)
+                if v != nil {
+                    res[i] = v.(WorkflowTemplateable)
+                }
             }
             m.SetWorkflowTemplates(res)
         }
@@ -176,7 +184,9 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
     if m.GetCustomTaskExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomTaskExtensions()))
         for i, v := range m.GetCustomTaskExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customTaskExtensions", cast)
         if err != nil {
@@ -198,7 +208,9 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
     if m.GetTaskDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskDefinitions()))
         for i, v := range m.GetTaskDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("taskDefinitions", cast)
         if err != nil {
@@ -208,7 +220,9 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
     if m.GetWorkflows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkflows()))
         for i, v := range m.GetWorkflows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("workflows", cast)
         if err != nil {
@@ -218,7 +232,9 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
     if m.GetWorkflowTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkflowTemplates()))
         for i, v := range m.GetWorkflowTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("workflowTemplates", cast)
         if err != nil {

@@ -8,7 +8,7 @@ import (
 type Person struct {
     Entity
 }
-// NewPerson instantiates a new person and sets the default values.
+// NewPerson instantiates a new Person and sets the default values.
 func NewPerson()(*Person) {
     m := &Person{
         Entity: *NewEntity(),
@@ -125,7 +125,9 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]RankedEmailAddressable, len(val))
             for i, v := range val {
-                res[i] = v.(RankedEmailAddressable)
+                if v != nil {
+                    res[i] = v.(RankedEmailAddressable)
+                }
             }
             m.SetEmailAddresses(res)
         }
@@ -199,7 +201,9 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = v.(Phoneable)
+                if v != nil {
+                    res[i] = v.(Phoneable)
+                }
             }
             m.SetPhones(res)
         }
@@ -213,7 +217,9 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]Locationable, len(val))
             for i, v := range val {
-                res[i] = v.(Locationable)
+                if v != nil {
+                    res[i] = v.(Locationable)
+                }
             }
             m.SetPostalAddresses(res)
         }
@@ -237,7 +243,9 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]PersonDataSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(PersonDataSourceable)
+                if v != nil {
+                    res[i] = v.(PersonDataSourceable)
+                }
             }
             m.SetSources(res)
         }
@@ -281,7 +289,9 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]Websiteable, len(val))
             for i, v := range val {
-                res[i] = v.(Websiteable)
+                if v != nil {
+                    res[i] = v.(Websiteable)
+                }
             }
             m.SetWebsites(res)
         }
@@ -497,7 +507,9 @@ func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetEmailAddresses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailAddresses()))
         for i, v := range m.GetEmailAddresses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("emailAddresses", cast)
         if err != nil {
@@ -543,7 +555,9 @@ func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetPhones() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {
@@ -553,7 +567,9 @@ func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetPostalAddresses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPostalAddresses()))
         for i, v := range m.GetPostalAddresses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("postalAddresses", cast)
         if err != nil {
@@ -569,7 +585,9 @@ func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSources()))
         for i, v := range m.GetSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sources", cast)
         if err != nil {
@@ -597,7 +615,9 @@ func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetWebsites() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebsites()))
         for i, v := range m.GetWebsites() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("websites", cast)
         if err != nil {

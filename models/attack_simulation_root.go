@@ -30,7 +30,9 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AttackSimulationOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(AttackSimulationOperationable)
+                if v != nil {
+                    res[i] = v.(AttackSimulationOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -44,7 +46,9 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]Payloadable, len(val))
             for i, v := range val {
-                res[i] = v.(Payloadable)
+                if v != nil {
+                    res[i] = v.(Payloadable)
+                }
             }
             m.SetPayloads(res)
         }
@@ -58,7 +62,9 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]SimulationAutomationable, len(val))
             for i, v := range val {
-                res[i] = v.(SimulationAutomationable)
+                if v != nil {
+                    res[i] = v.(SimulationAutomationable)
+                }
             }
             m.SetSimulationAutomations(res)
         }
@@ -72,7 +78,9 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]Simulationable, len(val))
             for i, v := range val {
-                res[i] = v.(Simulationable)
+                if v != nil {
+                    res[i] = v.(Simulationable)
+                }
             }
             m.SetSimulations(res)
         }
@@ -133,7 +141,9 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -143,7 +153,9 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetPayloads() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPayloads()))
         for i, v := range m.GetPayloads() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("payloads", cast)
         if err != nil {
@@ -153,7 +165,9 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetSimulationAutomations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimulationAutomations()))
         for i, v := range m.GetSimulationAutomations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("simulationAutomations", cast)
         if err != nil {
@@ -163,7 +177,9 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetSimulations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimulations()))
         for i, v := range m.GetSimulations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("simulations", cast)
         if err != nil {

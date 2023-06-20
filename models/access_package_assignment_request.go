@@ -139,7 +139,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessPackageAnswerable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAnswerable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAnswerable)
+                }
             }
             m.SetAnswers(res)
         }
@@ -173,7 +175,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]CustomExtensionCalloutInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomExtensionCalloutInstanceable)
+                if v != nil {
+                    res[i] = v.(CustomExtensionCalloutInstanceable)
+                }
             }
             m.SetCustomExtensionCalloutInstances(res)
         }
@@ -187,7 +191,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]CustomExtensionHandlerInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomExtensionHandlerInstanceable)
+                if v != nil {
+                    res[i] = v.(CustomExtensionHandlerInstanceable)
+                }
             }
             m.SetCustomExtensionHandlerInstances(res)
         }
@@ -281,7 +287,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]VerifiedCredentialDataable, len(val))
             for i, v := range val {
-                res[i] = v.(VerifiedCredentialDataable)
+                if v != nil {
+                    res[i] = v.(VerifiedCredentialDataable)
+                }
             }
             m.SetVerifiedCredentialsData(res)
         }
@@ -398,7 +406,9 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
     if m.GetAnswers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAnswers()))
         for i, v := range m.GetAnswers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("answers", cast)
         if err != nil {
@@ -420,7 +430,9 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
     if m.GetCustomExtensionCalloutInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomExtensionCalloutInstances()))
         for i, v := range m.GetCustomExtensionCalloutInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customExtensionCalloutInstances", cast)
         if err != nil {
@@ -430,7 +442,9 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
     if m.GetCustomExtensionHandlerInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomExtensionHandlerInstances()))
         for i, v := range m.GetCustomExtensionHandlerInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customExtensionHandlerInstances", cast)
         if err != nil {
@@ -488,7 +502,9 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
     if m.GetVerifiedCredentialsData() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVerifiedCredentialsData()))
         for i, v := range m.GetVerifiedCredentialsData() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("verifiedCredentialsData", cast)
         if err != nil {

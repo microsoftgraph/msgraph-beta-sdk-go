@@ -31,7 +31,9 @@ func (m *TenantCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]Tenantable, len(val))
             for i, v := range val {
-                res[i] = v.(Tenantable)
+                if v != nil {
+                    res[i] = v.(Tenantable)
+                }
             }
             m.SetValue(res)
         }
@@ -59,7 +61,9 @@ func (m *TenantCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

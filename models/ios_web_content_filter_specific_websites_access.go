@@ -32,7 +32,9 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) GetFieldDeserializers()(map[
         if val != nil {
             res := make([]IosBookmarkable, len(val))
             for i, v := range val {
-                res[i] = v.(IosBookmarkable)
+                if v != nil {
+                    res[i] = v.(IosBookmarkable)
+                }
             }
             m.SetSpecificWebsitesOnly(res)
         }
@@ -46,7 +48,9 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) GetFieldDeserializers()(map[
         if val != nil {
             res := make([]IosBookmarkable, len(val))
             for i, v := range val {
-                res[i] = v.(IosBookmarkable)
+                if v != nil {
+                    res[i] = v.(IosBookmarkable)
+                }
             }
             m.SetWebsiteList(res)
         }
@@ -85,7 +89,9 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) Serialize(writer i878a80d233
     if m.GetSpecificWebsitesOnly() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpecificWebsitesOnly()))
         for i, v := range m.GetSpecificWebsitesOnly() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("specificWebsitesOnly", cast)
         if err != nil {
@@ -95,7 +101,9 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) Serialize(writer i878a80d233
     if m.GetWebsiteList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebsiteList()))
         for i, v := range m.GetWebsiteList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("websiteList", cast)
         if err != nil {

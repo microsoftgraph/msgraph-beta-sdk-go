@@ -30,7 +30,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetFieldDeserializers()(
         if val != nil {
             res := make([]UserExperienceAnalyticsWorkFromAnywhereDeviceable, len(val))
             for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsWorkFromAnywhereDeviceable)
+                if v != nil {
+                    res[i] = v.(UserExperienceAnalyticsWorkFromAnywhereDeviceable)
+                }
             }
             m.SetMetricDevices(res)
         }
@@ -58,7 +60,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i878a80
     if m.GetMetricDevices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMetricDevices()))
         for i, v := range m.GetMetricDevices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("metricDevices", cast)
         if err != nil {

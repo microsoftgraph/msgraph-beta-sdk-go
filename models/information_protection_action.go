@@ -10,7 +10,7 @@ type InformationProtectionAction struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewInformationProtectionAction instantiates a new informationProtectionAction and sets the default values.
+// NewInformationProtectionAction instantiates a new InformationProtectionAction and sets the default values.
 func NewInformationProtectionAction()(*InformationProtectionAction) {
     m := &InformationProtectionAction{
     }

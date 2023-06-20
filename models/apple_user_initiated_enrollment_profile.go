@@ -97,7 +97,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if val != nil {
             res := make([]AppleEnrollmentProfileAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(AppleEnrollmentProfileAssignmentable)
+                if v != nil {
+                    res[i] = v.(AppleEnrollmentProfileAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -111,7 +113,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         if val != nil {
             res := make([]AppleOwnerTypeEnrollmentTypeable, len(val))
             for i, v := range val {
-                res[i] = v.(AppleOwnerTypeEnrollmentTypeable)
+                if v != nil {
+                    res[i] = v.(AppleOwnerTypeEnrollmentTypeable)
+                }
             }
             m.SetAvailableEnrollmentTypeOptions(res)
         }
@@ -231,7 +235,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i878a80d2330e89d2
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -241,7 +247,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i878a80d2330e89d2
     if m.GetAvailableEnrollmentTypeOptions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAvailableEnrollmentTypeOptions()))
         for i, v := range m.GetAvailableEnrollmentTypeOptions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("availableEnrollmentTypeOptions", cast)
         if err != nil {

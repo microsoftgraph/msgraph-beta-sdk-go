@@ -52,7 +52,9 @@ func (m *SourceSystemDefinition) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]UserMatchingSettingable, len(val))
             for i, v := range val {
-                res[i] = v.(UserMatchingSettingable)
+                if v != nil {
+                    res[i] = v.(UserMatchingSettingable)
+                }
             }
             m.SetUserMatchingSettings(res)
         }
@@ -107,7 +109,9 @@ func (m *SourceSystemDefinition) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetUserMatchingSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserMatchingSettings()))
         for i, v := range m.GetUserMatchingSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userMatchingSettings", cast)
         if err != nil {

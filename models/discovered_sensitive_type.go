@@ -11,7 +11,7 @@ type DiscoveredSensitiveType struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDiscoveredSensitiveType instantiates a new discoveredSensitiveType and sets the default values.
+// NewDiscoveredSensitiveType instantiates a new DiscoveredSensitiveType and sets the default values.
 func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     m := &DiscoveredSensitiveType{
     }
@@ -83,7 +83,9 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]ClassificationAttributeable, len(val))
             for i, v := range val {
-                res[i] = v.(ClassificationAttributeable)
+                if v != nil {
+                    res[i] = v.(ClassificationAttributeable)
+                }
             }
             m.SetClassificationAttributes(res)
         }
@@ -158,7 +160,9 @@ func (m *DiscoveredSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetClassificationAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClassificationAttributes()))
         for i, v := range m.GetClassificationAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("classificationAttributes", cast)
         if err != nil {

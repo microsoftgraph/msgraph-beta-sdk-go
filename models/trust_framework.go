@@ -49,7 +49,9 @@ func (m *TrustFramework) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]TrustFrameworkKeySetable, len(val))
             for i, v := range val {
-                res[i] = v.(TrustFrameworkKeySetable)
+                if v != nil {
+                    res[i] = v.(TrustFrameworkKeySetable)
+                }
             }
             m.SetKeySets(res)
         }
@@ -73,7 +75,9 @@ func (m *TrustFramework) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]TrustFrameworkPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TrustFrameworkPolicyable)
+                if v != nil {
+                    res[i] = v.(TrustFrameworkPolicyable)
+                }
             }
             m.SetPolicies(res)
         }
@@ -119,7 +123,9 @@ func (m *TrustFramework) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetKeySets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKeySets()))
         for i, v := range m.GetKeySets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("keySets", cast)
         if err != nil {
@@ -135,7 +141,9 @@ func (m *TrustFramework) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("policies", cast)
         if err != nil {

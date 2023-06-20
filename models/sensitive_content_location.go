@@ -81,7 +81,9 @@ func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]SensitiveContentEvidenceable, len(val))
             for i, v := range val {
-                res[i] = v.(SensitiveContentEvidenceable)
+                if v != nil {
+                    res[i] = v.(SensitiveContentEvidenceable)
+                }
             }
             m.SetEvidences(res)
         }
@@ -184,7 +186,9 @@ func (m *SensitiveContentLocation) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetEvidences() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvidences()))
         for i, v := range m.GetEvidences() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("evidences", cast)
         if err != nil {

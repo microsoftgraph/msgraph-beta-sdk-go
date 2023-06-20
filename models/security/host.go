@@ -75,7 +75,9 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]HostComponentable, len(val))
             for i, v := range val {
-                res[i] = v.(HostComponentable)
+                if v != nil {
+                    res[i] = v.(HostComponentable)
+                }
             }
             m.SetComponents(res)
         }
@@ -89,7 +91,9 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]HostCookieable, len(val))
             for i, v := range val {
-                res[i] = v.(HostCookieable)
+                if v != nil {
+                    res[i] = v.(HostCookieable)
+                }
             }
             m.SetCookies(res)
         }
@@ -123,7 +127,9 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]PassiveDnsRecordable, len(val))
             for i, v := range val {
-                res[i] = v.(PassiveDnsRecordable)
+                if v != nil {
+                    res[i] = v.(PassiveDnsRecordable)
+                }
             }
             m.SetPassiveDns(res)
         }
@@ -137,7 +143,9 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]PassiveDnsRecordable, len(val))
             for i, v := range val {
-                res[i] = v.(PassiveDnsRecordable)
+                if v != nil {
+                    res[i] = v.(PassiveDnsRecordable)
+                }
             }
             m.SetPassiveDnsReverse(res)
         }
@@ -161,7 +169,9 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]HostTrackerable, len(val))
             for i, v := range val {
-                res[i] = v.(HostTrackerable)
+                if v != nil {
+                    res[i] = v.(HostTrackerable)
+                }
             }
             m.SetTrackers(res)
         }
@@ -244,7 +254,9 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetComponents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComponents()))
         for i, v := range m.GetComponents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("components", cast)
         if err != nil {
@@ -254,7 +266,9 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetCookies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCookies()))
         for i, v := range m.GetCookies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("cookies", cast)
         if err != nil {
@@ -276,7 +290,9 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetPassiveDns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPassiveDns()))
         for i, v := range m.GetPassiveDns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("passiveDns", cast)
         if err != nil {
@@ -286,7 +302,9 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetPassiveDnsReverse() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPassiveDnsReverse()))
         for i, v := range m.GetPassiveDnsReverse() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("passiveDnsReverse", cast)
         if err != nil {
@@ -302,7 +320,9 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetTrackers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrackers()))
         for i, v := range m.GetTrackers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("trackers", cast)
         if err != nil {

@@ -137,7 +137,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]IdentityApiConnectorable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityApiConnectorable)
+                if v != nil {
+                    res[i] = v.(IdentityApiConnectorable)
+                }
             }
             m.SetApiConnectors(res)
         }
@@ -151,7 +153,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]AuthenticationEventListenerable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationEventListenerable)
+                if v != nil {
+                    res[i] = v.(AuthenticationEventListenerable)
+                }
             }
             m.SetAuthenticationEventListeners(res)
         }
@@ -165,7 +169,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]AuthenticationEventsFlowable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationEventsFlowable)
+                if v != nil {
+                    res[i] = v.(AuthenticationEventsFlowable)
+                }
             }
             m.SetAuthenticationEventsFlows(res)
         }
@@ -179,7 +185,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]B2cIdentityUserFlowable, len(val))
             for i, v := range val {
-                res[i] = v.(B2cIdentityUserFlowable)
+                if v != nil {
+                    res[i] = v.(B2cIdentityUserFlowable)
+                }
             }
             m.SetB2cUserFlows(res)
         }
@@ -193,7 +201,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]B2xIdentityUserFlowable, len(val))
             for i, v := range val {
-                res[i] = v.(B2xIdentityUserFlowable)
+                if v != nil {
+                    res[i] = v.(B2xIdentityUserFlowable)
+                }
             }
             m.SetB2xUserFlows(res)
         }
@@ -227,7 +237,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]CustomAuthenticationExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomAuthenticationExtensionable)
+                if v != nil {
+                    res[i] = v.(CustomAuthenticationExtensionable)
+                }
             }
             m.SetCustomAuthenticationExtensions(res)
         }
@@ -241,7 +253,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]IdentityProviderBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityProviderBaseable)
+                if v != nil {
+                    res[i] = v.(IdentityProviderBaseable)
+                }
             }
             m.SetIdentityProviders(res)
         }
@@ -265,7 +279,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]IdentityUserFlowAttributeable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityUserFlowAttributeable)
+                if v != nil {
+                    res[i] = v.(IdentityUserFlowAttributeable)
+                }
             }
             m.SetUserFlowAttributes(res)
         }
@@ -279,7 +295,9 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]IdentityUserFlowable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityUserFlowable)
+                if v != nil {
+                    res[i] = v.(IdentityUserFlowable)
+                }
             }
             m.SetUserFlows(res)
         }
@@ -336,7 +354,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetApiConnectors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApiConnectors()))
         for i, v := range m.GetApiConnectors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("apiConnectors", cast)
         if err != nil {
@@ -346,7 +366,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetAuthenticationEventListeners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationEventListeners()))
         for i, v := range m.GetAuthenticationEventListeners() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("authenticationEventListeners", cast)
         if err != nil {
@@ -356,7 +378,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetAuthenticationEventsFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationEventsFlows()))
         for i, v := range m.GetAuthenticationEventsFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("authenticationEventsFlows", cast)
         if err != nil {
@@ -366,7 +390,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetB2cUserFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2cUserFlows()))
         for i, v := range m.GetB2cUserFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("b2cUserFlows", cast)
         if err != nil {
@@ -376,7 +402,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetB2xUserFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2xUserFlows()))
         for i, v := range m.GetB2xUserFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("b2xUserFlows", cast)
         if err != nil {
@@ -398,7 +426,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetCustomAuthenticationExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomAuthenticationExtensions()))
         for i, v := range m.GetCustomAuthenticationExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("customAuthenticationExtensions", cast)
         if err != nil {
@@ -408,7 +438,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetIdentityProviders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentityProviders()))
         for i, v := range m.GetIdentityProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("identityProviders", cast)
         if err != nil {
@@ -424,7 +456,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetUserFlowAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowAttributes()))
         for i, v := range m.GetUserFlowAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("userFlowAttributes", cast)
         if err != nil {
@@ -434,7 +468,9 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetUserFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlows()))
         for i, v := range m.GetUserFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("userFlows", cast)
         if err != nil {

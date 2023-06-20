@@ -71,7 +71,9 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]CloudPcOnPremisesConnectionHealthCheckable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcOnPremisesConnectionHealthCheckable)
+                if v != nil {
+                    res[i] = v.(CloudPcOnPremisesConnectionHealthCheckable)
+                }
             }
             m.SetHealthChecks(res)
         }
@@ -143,7 +145,9 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) Serialize(writer i878a80d2330
     if m.GetHealthChecks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHealthChecks()))
         for i, v := range m.GetHealthChecks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("healthChecks", cast)
         if err != nil {

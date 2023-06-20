@@ -41,7 +41,9 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]RegistrationAuthMethod, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RegistrationAuthMethod))
+                if v != nil {
+                    res[i] = *(v.(*RegistrationAuthMethod))
+                }
             }
             m.SetAuthMethods(res)
         }

@@ -52,7 +52,9 @@ func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]DeviceManagementScriptDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementScriptDeviceStateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementScriptDeviceStateable)
+                }
             }
             m.SetDeviceRunStates(res)
         }
@@ -121,7 +123,9 @@ func (m *DeviceManagementScriptUserState) Serialize(writer i878a80d2330e89d26896
     if m.GetDeviceRunStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceRunStates()))
         for i, v := range m.GetDeviceRunStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {

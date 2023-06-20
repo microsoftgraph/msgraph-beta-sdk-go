@@ -86,7 +86,9 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]PolicySetAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(PolicySetAssignmentable)
+                if v != nil {
+                    res[i] = v.(PolicySetAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -140,7 +142,9 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetGuidedDeploymentTags(res)
         }
@@ -154,7 +158,9 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]PolicySetItemable, len(val))
             for i, v := range val {
-                res[i] = v.(PolicySetItemable)
+                if v != nil {
+                    res[i] = v.(PolicySetItemable)
+                }
             }
             m.SetItems(res)
         }
@@ -178,7 +184,9 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTags(res)
         }
@@ -260,7 +268,9 @@ func (m *PolicySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -301,7 +311,9 @@ func (m *PolicySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {

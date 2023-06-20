@@ -60,7 +60,9 @@ func (m *GovernanceNotificationPolicy) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnabledTemplateTypes(res)
         }
@@ -74,7 +76,9 @@ func (m *GovernanceNotificationPolicy) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]GovernanceNotificationTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceNotificationTemplateable)
+                if v != nil {
+                    res[i] = v.(GovernanceNotificationTemplateable)
+                }
             }
             m.SetNotificationTemplates(res)
         }
@@ -125,7 +129,9 @@ func (m *GovernanceNotificationPolicy) Serialize(writer i878a80d2330e89d26896388
     if m.GetNotificationTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNotificationTemplates()))
         for i, v := range m.GetNotificationTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("notificationTemplates", cast)
         if err != nil {

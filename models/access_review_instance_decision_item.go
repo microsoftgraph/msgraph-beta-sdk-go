@@ -136,7 +136,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]GovernanceInsightable, len(val))
             for i, v := range val {
-                res[i] = v.(GovernanceInsightable)
+                if v != nil {
+                    res[i] = v.(GovernanceInsightable)
+                }
             }
             m.SetInsights(res)
         }
@@ -425,7 +427,9 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
     if m.GetInsights() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInsights()))
         for i, v := range m.GetInsights() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("insights", cast)
         if err != nil {

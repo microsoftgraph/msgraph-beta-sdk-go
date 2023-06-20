@@ -107,7 +107,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]EmbeddedSIMActivationCodeable, len(val))
             for i, v := range val {
-                res[i] = v.(EmbeddedSIMActivationCodeable)
+                if v != nil {
+                    res[i] = v.(EmbeddedSIMActivationCodeable)
+                }
             }
             m.SetActivationCodes(res)
         }
@@ -121,7 +123,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]EmbeddedSIMActivationCodePoolAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(EmbeddedSIMActivationCodePoolAssignmentable)
+                if v != nil {
+                    res[i] = v.(EmbeddedSIMActivationCodePoolAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -145,7 +149,9 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]EmbeddedSIMDeviceStateable, len(val))
             for i, v := range val {
-                res[i] = v.(EmbeddedSIMDeviceStateable)
+                if v != nil {
+                    res[i] = v.(EmbeddedSIMDeviceStateable)
+                }
             }
             m.SetDeviceStates(res)
         }
@@ -199,7 +205,9 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i878a80d2330e89d2689638
     if m.GetActivationCodes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivationCodes()))
         for i, v := range m.GetActivationCodes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("activationCodes", cast)
         if err != nil {
@@ -209,7 +217,9 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i878a80d2330e89d2689638
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -225,7 +235,9 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i878a80d2330e89d2689638
     if m.GetDeviceStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStates()))
         for i, v := range m.GetDeviceStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceStates", cast)
         if err != nil {

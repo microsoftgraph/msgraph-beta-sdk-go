@@ -54,7 +54,9 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAliases(res)
         }
@@ -88,7 +90,9 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IntelligenceProfileIndicatorable, len(val))
             for i, v := range val {
-                res[i] = v.(IntelligenceProfileIndicatorable)
+                if v != nil {
+                    res[i] = v.(IntelligenceProfileIndicatorable)
+                }
             }
             m.SetIndicators(res)
         }
@@ -112,7 +116,9 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]IntelligenceProfileSponsorStateable, len(val))
             for i, v := range val {
-                res[i] = v.(IntelligenceProfileSponsorStateable)
+                if v != nil {
+                    res[i] = v.(IntelligenceProfileSponsorStateable)
+                }
             }
             m.SetSponsorStates(res)
         }
@@ -136,7 +142,9 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTargets(res)
         }
@@ -279,7 +287,9 @@ func (m *IntelligenceProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetIndicators() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIndicators()))
         for i, v := range m.GetIndicators() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("indicators", cast)
         if err != nil {
@@ -296,7 +306,9 @@ func (m *IntelligenceProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetSponsorStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsorStates()))
         for i, v := range m.GetSponsorStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sponsorStates", cast)
         if err != nil {

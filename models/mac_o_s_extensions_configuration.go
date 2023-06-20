@@ -32,7 +32,9 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetKernelExtensionAllowedTeamIdentifiers(res)
         }
@@ -56,7 +58,9 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]MacOSKernelExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSKernelExtensionable)
+                if v != nil {
+                    res[i] = v.(MacOSKernelExtensionable)
+                }
             }
             m.SetKernelExtensionsAllowed(res)
         }
@@ -70,7 +74,9 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]MacOSSystemExtensionable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSSystemExtensionable)
+                if v != nil {
+                    res[i] = v.(MacOSSystemExtensionable)
+                }
             }
             m.SetSystemExtensionsAllowed(res)
         }
@@ -84,7 +90,9 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSystemExtensionsAllowedTeamIdentifiers(res)
         }
@@ -98,7 +106,9 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]MacOSSystemExtensionTypeMappingable, len(val))
             for i, v := range val {
-                res[i] = v.(MacOSSystemExtensionTypeMappingable)
+                if v != nil {
+                    res[i] = v.(MacOSSystemExtensionTypeMappingable)
+                }
             }
             m.SetSystemExtensionsAllowedTypes(res)
         }
@@ -214,7 +224,9 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
     if m.GetKernelExtensionsAllowed() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKernelExtensionsAllowed()))
         for i, v := range m.GetKernelExtensionsAllowed() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("kernelExtensionsAllowed", cast)
         if err != nil {
@@ -224,7 +236,9 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
     if m.GetSystemExtensionsAllowed() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemExtensionsAllowed()))
         for i, v := range m.GetSystemExtensionsAllowed() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("systemExtensionsAllowed", cast)
         if err != nil {
@@ -240,7 +254,9 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
     if m.GetSystemExtensionsAllowedTypes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemExtensionsAllowedTypes()))
         for i, v := range m.GetSystemExtensionsAllowedTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("systemExtensionsAllowedTypes", cast)
         if err != nil {

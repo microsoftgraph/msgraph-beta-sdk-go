@@ -32,7 +32,9 @@ func (m *EducationIdentityCreationConfiguration) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]EducationIdentityDomainable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationIdentityDomainable)
+                if v != nil {
+                    res[i] = v.(EducationIdentityDomainable)
+                }
             }
             m.SetUserDomains(res)
         }
@@ -60,7 +62,9 @@ func (m *EducationIdentityCreationConfiguration) Serialize(writer i878a80d2330e8
     if m.GetUserDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserDomains()))
         for i, v := range m.GetUserDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userDomains", cast)
         if err != nil {

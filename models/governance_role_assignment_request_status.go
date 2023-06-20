@@ -69,7 +69,9 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValueable)
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
             }
             m.SetStatusDetails(res)
         }
@@ -148,7 +150,9 @@ func (m *GovernanceRoleAssignmentRequestStatus) Serialize(writer i878a80d2330e89
     if m.GetStatusDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStatusDetails()))
         for i, v := range m.GetStatusDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("statusDetails", cast)
         if err != nil {

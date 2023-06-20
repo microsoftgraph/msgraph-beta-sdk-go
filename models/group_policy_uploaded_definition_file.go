@@ -75,7 +75,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]GroupPolicyOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyOperationable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyOperationable)
+                }
             }
             m.SetGroupPolicyOperations(res)
         }
@@ -89,7 +91,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]GroupPolicyUploadedLanguageFileable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyUploadedLanguageFileable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyUploadedLanguageFileable)
+                }
             }
             m.SetGroupPolicyUploadedLanguageFiles(res)
         }
@@ -182,7 +186,9 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d268
     if m.GetGroupPolicyOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupPolicyOperations()))
         for i, v := range m.GetGroupPolicyOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupPolicyOperations", cast)
         if err != nil {
@@ -192,7 +198,9 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d268
     if m.GetGroupPolicyUploadedLanguageFiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
         for i, v := range m.GetGroupPolicyUploadedLanguageFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groupPolicyUploadedLanguageFiles", cast)
         if err != nil {

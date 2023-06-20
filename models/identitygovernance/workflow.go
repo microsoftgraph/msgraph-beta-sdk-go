@@ -65,7 +65,9 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]UserProcessingResultable, len(val))
             for i, v := range val {
-                res[i] = v.(UserProcessingResultable)
+                if v != nil {
+                    res[i] = v.(UserProcessingResultable)
+                }
             }
             m.SetExecutionScope(res)
         }
@@ -99,7 +101,9 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Runable, len(val))
             for i, v := range val {
-                res[i] = v.(Runable)
+                if v != nil {
+                    res[i] = v.(Runable)
+                }
             }
             m.SetRuns(res)
         }
@@ -113,7 +117,9 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]TaskReportable, len(val))
             for i, v := range val {
-                res[i] = v.(TaskReportable)
+                if v != nil {
+                    res[i] = v.(TaskReportable)
+                }
             }
             m.SetTaskReports(res)
         }
@@ -127,7 +133,9 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]UserProcessingResultable, len(val))
             for i, v := range val {
-                res[i] = v.(UserProcessingResultable)
+                if v != nil {
+                    res[i] = v.(UserProcessingResultable)
+                }
             }
             m.SetUserProcessingResults(res)
         }
@@ -151,7 +159,9 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WorkflowVersionable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkflowVersionable)
+                if v != nil {
+                    res[i] = v.(WorkflowVersionable)
+                }
             }
             m.SetVersions(res)
         }
@@ -251,7 +261,9 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetExecutionScope() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExecutionScope()))
         for i, v := range m.GetExecutionScope() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("executionScope", cast)
         if err != nil {
@@ -273,7 +285,9 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetRuns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRuns()))
         for i, v := range m.GetRuns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("runs", cast)
         if err != nil {
@@ -283,7 +297,9 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetTaskReports() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskReports()))
         for i, v := range m.GetTaskReports() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("taskReports", cast)
         if err != nil {
@@ -293,7 +309,9 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetUserProcessingResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserProcessingResults()))
         for i, v := range m.GetUserProcessingResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userProcessingResults", cast)
         if err != nil {
@@ -309,7 +327,9 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetVersions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {

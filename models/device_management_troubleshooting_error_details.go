@@ -132,7 +132,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         if val != nil {
             res := make([]DeviceManagementTroubleshootingErrorResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementTroubleshootingErrorResourceable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementTroubleshootingErrorResourceable)
+                }
             }
             m.SetResources(res)
         }
@@ -208,7 +210,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i878a80d2
     if m.GetResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {

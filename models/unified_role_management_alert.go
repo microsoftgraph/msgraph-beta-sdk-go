@@ -105,7 +105,9 @@ func (m *UnifiedRoleManagementAlert) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]UnifiedRoleManagementAlertIncidentable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleManagementAlertIncidentable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleManagementAlertIncidentable)
+                }
             }
             m.SetAlertIncidents(res)
         }
@@ -266,7 +268,9 @@ func (m *UnifiedRoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetAlertIncidents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertIncidents()))
         for i, v := range m.GetAlertIncidents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertIncidents", cast)
         if err != nil {

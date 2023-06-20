@@ -18,7 +18,7 @@ type TermsOfUseAgreementsAgreementItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TermsOfUseAgreementsAgreementItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an agreement object.
+// TermsOfUseAgreementsAgreementItemRequestBuilderGetQueryParameters retrieve all localized files related to an agreement.
 type TermsOfUseAgreementsAgreementItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,10 +85,10 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) File()(*TermsOfUseAgre
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Files()(*TermsOfUseAgreementsItemFilesRequestBuilder) {
     return NewTermsOfUseAgreementsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of an agreement object.
+// Get retrieve all localized files related to an agreement.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an agreement object.
+// ToGetRequestInformation retrieve all localized files related to an agreement.
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -114,6 +114,16 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["isSystemPreferredAuthenticationMethodEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsSystemPreferredAuthenticationMethodEnabled(val)
+        }
+        return nil
+    }
     res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -132,9 +142,27 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMethodsRegistered(res)
+        }
+        return nil
+    }
+    res["systemPreferredAuthenticationMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetSystemPreferredAuthenticationMethods(res)
         }
         return nil
     }
@@ -145,6 +173,16 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetUserDisplayName(val)
+        }
+        return nil
+    }
+    res["userPreferredMethodForSecondaryAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserDefaultAuthenticationMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserPreferredMethodForSecondaryAuthentication(val.(*UserDefaultAuthenticationMethod))
         }
         return nil
     }
@@ -247,6 +285,17 @@ func (m *UserRegistrationDetails) GetIsSsprRegistered()(*bool) {
     }
     return nil
 }
+// GetIsSystemPreferredAuthenticationMethodEnabled gets the isSystemPreferredAuthenticationMethodEnabled property value. The isSystemPreferredAuthenticationMethodEnabled property
+func (m *UserRegistrationDetails) GetIsSystemPreferredAuthenticationMethodEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isSystemPreferredAuthenticationMethodEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *UserRegistrationDetails) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -269,6 +318,17 @@ func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     }
     return nil
 }
+// GetSystemPreferredAuthenticationMethods gets the systemPreferredAuthenticationMethods property value. The systemPreferredAuthenticationMethods property
+func (m *UserRegistrationDetails) GetSystemPreferredAuthenticationMethods()([]string) {
+    val, err := m.GetBackingStore().Get("systemPreferredAuthenticationMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetUserDisplayName gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
 func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
@@ -277,6 +337,17 @@ func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The userPreferredMethodForSecondaryAuthentication property
+func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod) {
+    val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserDefaultAuthenticationMethod)
     }
     return nil
 }
@@ -358,6 +429,12 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteBoolValue("isSystemPreferredAuthenticationMethodEnabled", m.GetIsSystemPreferredAuthenticationMethodEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
         if err != nil {
             return err
@@ -369,8 +446,21 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetSystemPreferredAuthenticationMethods() != nil {
+        err = writer.WriteCollectionOfStringValues("systemPreferredAuthenticationMethods", m.GetSystemPreferredAuthenticationMethods())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("userDisplayName", m.GetUserDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserPreferredMethodForSecondaryAuthentication() != nil {
+        cast := (*m.GetUserPreferredMethodForSecondaryAuthentication()).String()
+        err = writer.WriteStringValue("userPreferredMethodForSecondaryAuthentication", &cast)
         if err != nil {
             return err
         }
@@ -446,6 +536,13 @@ func (m *UserRegistrationDetails) SetIsSsprRegistered(value *bool)() {
         panic(err)
     }
 }
+// SetIsSystemPreferredAuthenticationMethodEnabled sets the isSystemPreferredAuthenticationMethodEnabled property value. The isSystemPreferredAuthenticationMethodEnabled property
+func (m *UserRegistrationDetails) SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isSystemPreferredAuthenticationMethodEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *UserRegistrationDetails) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
@@ -460,9 +557,23 @@ func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
         panic(err)
     }
 }
+// SetSystemPreferredAuthenticationMethods sets the systemPreferredAuthenticationMethods property value. The systemPreferredAuthenticationMethods property
+func (m *UserRegistrationDetails) SetSystemPreferredAuthenticationMethods(value []string)() {
+    err := m.GetBackingStore().Set("systemPreferredAuthenticationMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserDisplayName sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
 func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("userDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The userPreferredMethodForSecondaryAuthentication property
+func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)() {
+    err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
     if err != nil {
         panic(err)
     }
@@ -493,9 +604,12 @@ type UserRegistrationDetailsable interface {
     GetIsSsprCapable()(*bool)
     GetIsSsprEnabled()(*bool)
     GetIsSsprRegistered()(*bool)
+    GetIsSystemPreferredAuthenticationMethodEnabled()(*bool)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMethodsRegistered()([]string)
+    GetSystemPreferredAuthenticationMethods()([]string)
     GetUserDisplayName()(*string)
+    GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod)
     GetUserPrincipalName()(*string)
     GetUserType()(*SignInUserType)
     SetDefaultMfaMethod(value *DefaultMfaMethodType)()
@@ -506,9 +620,12 @@ type UserRegistrationDetailsable interface {
     SetIsSsprCapable(value *bool)()
     SetIsSsprEnabled(value *bool)()
     SetIsSsprRegistered(value *bool)()
+    SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMethodsRegistered(value []string)()
+    SetSystemPreferredAuthenticationMethods(value []string)()
     SetUserDisplayName(value *string)()
+    SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)()
     SetUserPrincipalName(value *string)()
     SetUserType(value *SignInUserType)()
 }

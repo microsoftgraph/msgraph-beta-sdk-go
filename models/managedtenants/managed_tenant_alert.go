@@ -174,7 +174,9 @@ func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]AlertDataReferenceStringable, len(val))
             for i, v := range val {
-                res[i] = v.(AlertDataReferenceStringable)
+                if v != nil {
+                    res[i] = v.(AlertDataReferenceStringable)
+                }
             }
             m.SetAlertDataReferenceStrings(res)
         }
@@ -188,7 +190,9 @@ func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ManagedTenantAlertLogable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedTenantAlertLogable)
+                if v != nil {
+                    res[i] = v.(ManagedTenantAlertLogable)
+                }
             }
             m.SetAlertLogs(res)
         }
@@ -222,7 +226,9 @@ func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ManagedTenantApiNotificationable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedTenantApiNotificationable)
+                if v != nil {
+                    res[i] = v.(ManagedTenantApiNotificationable)
+                }
             }
             m.SetApiNotifications(res)
         }
@@ -286,7 +292,9 @@ func (m *ManagedTenantAlert) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ManagedTenantEmailNotificationable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedTenantEmailNotificationable)
+                if v != nil {
+                    res[i] = v.(ManagedTenantEmailNotificationable)
+                }
             }
             m.SetEmailNotifications(res)
         }
@@ -456,7 +464,9 @@ func (m *ManagedTenantAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetAlertDataReferenceStrings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertDataReferenceStrings()))
         for i, v := range m.GetAlertDataReferenceStrings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertDataReferenceStrings", cast)
         if err != nil {
@@ -466,7 +476,9 @@ func (m *ManagedTenantAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetAlertLogs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertLogs()))
         for i, v := range m.GetAlertLogs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertLogs", cast)
         if err != nil {
@@ -488,7 +500,9 @@ func (m *ManagedTenantAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetApiNotifications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApiNotifications()))
         for i, v := range m.GetApiNotifications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("apiNotifications", cast)
         if err != nil {
@@ -528,7 +542,9 @@ func (m *ManagedTenantAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetEmailNotifications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailNotifications()))
         for i, v := range m.GetEmailNotifications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("emailNotifications", cast)
         if err != nil {

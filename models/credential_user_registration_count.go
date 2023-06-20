@@ -40,7 +40,9 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]UserRegistrationCountable, len(val))
             for i, v := range val {
-                res[i] = v.(UserRegistrationCountable)
+                if v != nil {
+                    res[i] = v.(UserRegistrationCountable)
+                }
             }
             m.SetUserRegistrationCounts(res)
         }
@@ -85,7 +87,9 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
     if m.GetUserRegistrationCounts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRegistrationCounts()))
         for i, v := range m.GetUserRegistrationCounts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userRegistrationCounts", cast)
         if err != nil {

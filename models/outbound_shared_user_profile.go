@@ -10,7 +10,7 @@ type OutboundSharedUserProfile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOutboundSharedUserProfile instantiates a new outboundSharedUserProfile and sets the default values.
+// NewOutboundSharedUserProfile instantiates a new OutboundSharedUserProfile and sets the default values.
 func NewOutboundSharedUserProfile()(*OutboundSharedUserProfile) {
     m := &OutboundSharedUserProfile{
     }
@@ -59,7 +59,9 @@ func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]TenantReferenceable, len(val))
             for i, v := range val {
-                res[i] = v.(TenantReferenceable)
+                if v != nil {
+                    res[i] = v.(TenantReferenceable)
+                }
             }
             m.SetTenants(res)
         }
@@ -121,7 +123,9 @@ func (m *OutboundSharedUserProfile) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetTenants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenants()))
         for i, v := range m.GetTenants() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("tenants", cast)
         if err != nil {

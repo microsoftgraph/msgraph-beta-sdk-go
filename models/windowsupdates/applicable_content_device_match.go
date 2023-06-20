@@ -10,7 +10,7 @@ type ApplicableContentDeviceMatch struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewApplicableContentDeviceMatch instantiates a new applicableContentDeviceMatch and sets the default values.
+// NewApplicableContentDeviceMatch instantiates a new ApplicableContentDeviceMatch and sets the default values.
 func NewApplicableContentDeviceMatch()(*ApplicableContentDeviceMatch) {
     m := &ApplicableContentDeviceMatch{
     }
@@ -80,7 +80,9 @@ func (m *ApplicableContentDeviceMatch) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRecommendedBy(res)
         }

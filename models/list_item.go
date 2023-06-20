@@ -98,7 +98,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]ItemActivityOLDable, len(val))
             for i, v := range val {
-                res[i] = v.(ItemActivityOLDable)
+                if v != nil {
+                    res[i] = v.(ItemActivityOLDable)
+                }
             }
             m.SetActivities(res)
         }
@@ -142,7 +144,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]DocumentSetVersionable, len(val))
             for i, v := range val {
-                res[i] = v.(DocumentSetVersionable)
+                if v != nil {
+                    res[i] = v.(DocumentSetVersionable)
+                }
             }
             m.SetDocumentSetVersions(res)
         }
@@ -186,7 +190,9 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]ListItemVersionable, len(val))
             for i, v := range val {
-                res[i] = v.(ListItemVersionable)
+                if v != nil {
+                    res[i] = v.(ListItemVersionable)
+                }
             }
             m.SetVersions(res)
         }
@@ -236,7 +242,9 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {
@@ -264,7 +272,9 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetDocumentSetVersions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocumentSetVersions()))
         for i, v := range m.GetDocumentSetVersions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("documentSetVersions", cast)
         if err != nil {
@@ -292,7 +302,9 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetVersions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {

@@ -63,7 +63,9 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]UnifiedRoleManagementAlertConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleManagementAlertConfigurationable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleManagementAlertConfigurationable)
+                }
             }
             m.SetAlertConfigurations(res)
         }
@@ -77,7 +79,9 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]UnifiedRoleManagementAlertDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleManagementAlertDefinitionable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleManagementAlertDefinitionable)
+                }
             }
             m.SetAlertDefinitions(res)
         }
@@ -91,7 +95,9 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]UnifiedRoleManagementAlertable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleManagementAlertable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleManagementAlertable)
+                }
             }
             m.SetAlerts(res)
         }
@@ -105,7 +111,9 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]LongRunningOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(LongRunningOperationable)
+                if v != nil {
+                    res[i] = v.(LongRunningOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -133,7 +141,9 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetAlertConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertConfigurations()))
         for i, v := range m.GetAlertConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertConfigurations", cast)
         if err != nil {
@@ -143,7 +153,9 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetAlertDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertDefinitions()))
         for i, v := range m.GetAlertDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertDefinitions", cast)
         if err != nil {
@@ -153,7 +165,9 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetAlerts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alerts", cast)
         if err != nil {
@@ -163,7 +177,9 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {

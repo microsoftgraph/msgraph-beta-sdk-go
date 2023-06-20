@@ -89,7 +89,9 @@ func (m *PayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]PayloadCoachmarkable, len(val))
             for i, v := range val {
-                res[i] = v.(PayloadCoachmarkable)
+                if v != nil {
+                    res[i] = v.(PayloadCoachmarkable)
+                }
             }
             m.SetCoachmarks(res)
         }
@@ -154,7 +156,9 @@ func (m *PayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetCoachmarks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCoachmarks()))
         for i, v := range m.GetCoachmarks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("coachmarks", cast)
         if err != nil {

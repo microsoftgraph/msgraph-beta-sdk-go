@@ -51,7 +51,9 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]VirtualEventRegistrationQuestionable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventRegistrationQuestionable)
+                if v != nil {
+                    res[i] = v.(VirtualEventRegistrationQuestionable)
+                }
             }
             m.SetQuestions(res)
         }
@@ -65,7 +67,9 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]VirtualEventRegistrantable, len(val))
             for i, v := range val {
-                res[i] = v.(VirtualEventRegistrantable)
+                if v != nil {
+                    res[i] = v.(VirtualEventRegistrantable)
+                }
             }
             m.SetRegistrants(res)
         }
@@ -131,7 +135,9 @@ func (m *VirtualEventRegistration) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
         for i, v := range m.GetQuestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("questions", cast)
         if err != nil {
@@ -141,7 +147,9 @@ func (m *VirtualEventRegistration) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetRegistrants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrants()))
         for i, v := range m.GetRegistrants() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("registrants", cast)
         if err != nil {

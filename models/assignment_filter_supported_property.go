@@ -110,7 +110,9 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AssignmentFilterOperator, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignmentFilterOperator))
+                if v != nil {
+                    res[i] = *(v.(*AssignmentFilterOperator))
+                }
             }
             m.SetSupportedOperators(res)
         }
@@ -124,7 +126,9 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSupportedValues(res)
         }

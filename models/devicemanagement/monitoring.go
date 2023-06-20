@@ -53,7 +53,9 @@ func (m *Monitoring) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]AlertRecordable, len(val))
             for i, v := range val {
-                res[i] = v.(AlertRecordable)
+                if v != nil {
+                    res[i] = v.(AlertRecordable)
+                }
             }
             m.SetAlertRecords(res)
         }
@@ -67,7 +69,9 @@ func (m *Monitoring) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]AlertRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(AlertRuleable)
+                if v != nil {
+                    res[i] = v.(AlertRuleable)
+                }
             }
             m.SetAlertRules(res)
         }
@@ -84,7 +88,9 @@ func (m *Monitoring) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetAlertRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertRecords()))
         for i, v := range m.GetAlertRecords() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertRecords", cast)
         if err != nil {
@@ -94,7 +100,9 @@ func (m *Monitoring) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetAlertRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertRules()))
         for i, v := range m.GetAlertRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alertRules", cast)
         if err != nil {

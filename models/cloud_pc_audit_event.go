@@ -241,7 +241,9 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]CloudPcAuditResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(CloudPcAuditResourceable)
+                if v != nil {
+                    res[i] = v.(CloudPcAuditResourceable)
+                }
             }
             m.SetResources(res)
         }
@@ -332,7 +334,9 @@ func (m *CloudPcAuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {

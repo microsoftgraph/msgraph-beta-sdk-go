@@ -54,7 +54,9 @@ func (m *AzureADDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]UpdatableAssetEnrollmentable, len(val))
             for i, v := range val {
-                res[i] = v.(UpdatableAssetEnrollmentable)
+                if v != nil {
+                    res[i] = v.(UpdatableAssetEnrollmentable)
+                }
             }
             m.SetEnrollments(res)
         }
@@ -68,7 +70,9 @@ func (m *AzureADDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]UpdatableAssetErrorable, len(val))
             for i, v := range val {
-                res[i] = v.(UpdatableAssetErrorable)
+                if v != nil {
+                    res[i] = v.(UpdatableAssetErrorable)
+                }
             }
             m.SetErrors(res)
         }
@@ -85,7 +89,9 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetEnrollments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnrollments()))
         for i, v := range m.GetEnrollments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("enrollments", cast)
         if err != nil {
@@ -95,7 +101,9 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetErrors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetErrors()))
         for i, v := range m.GetErrors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("errors", cast)
         if err != nil {

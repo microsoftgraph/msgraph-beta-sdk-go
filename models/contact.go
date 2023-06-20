@@ -141,7 +141,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetChildren(res)
         }
@@ -185,7 +187,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]TypedEmailAddressable, len(val))
             for i, v := range val {
-                res[i] = v.(TypedEmailAddressable)
+                if v != nil {
+                    res[i] = v.(TypedEmailAddressable)
+                }
             }
             m.SetEmailAddresses(res)
         }
@@ -199,7 +203,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = v.(Extensionable)
+                if v != nil {
+                    res[i] = v.(Extensionable)
+                }
             }
             m.SetExtensions(res)
         }
@@ -263,7 +269,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetImAddresses(res)
         }
@@ -327,7 +335,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(MultiValueLegacyExtendedPropertyable)
+                if v != nil {
+                    res[i] = v.(MultiValueLegacyExtendedPropertyable)
+                }
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -381,7 +391,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = v.(Phoneable)
+                if v != nil {
+                    res[i] = v.(Phoneable)
+                }
             }
             m.SetPhones(res)
         }
@@ -405,7 +417,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PhysicalAddressable, len(val))
             for i, v := range val {
-                res[i] = v.(PhysicalAddressable)
+                if v != nil {
+                    res[i] = v.(PhysicalAddressable)
+                }
             }
             m.SetPostalAddresses(res)
         }
@@ -429,7 +443,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(SingleValueLegacyExtendedPropertyable)
+                if v != nil {
+                    res[i] = v.(SingleValueLegacyExtendedPropertyable)
+                }
             }
             m.SetSingleValueExtendedProperties(res)
         }
@@ -473,7 +489,9 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Websiteable, len(val))
             for i, v := range val {
-                res[i] = v.(Websiteable)
+                if v != nil {
+                    res[i] = v.(Websiteable)
+                }
             }
             m.SetWebsites(res)
         }
@@ -885,7 +903,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetEmailAddresses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailAddresses()))
         for i, v := range m.GetEmailAddresses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("emailAddresses", cast)
         if err != nil {
@@ -895,7 +915,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -971,7 +993,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -1005,7 +1029,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPhones() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {
@@ -1021,7 +1047,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPostalAddresses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPostalAddresses()))
         for i, v := range m.GetPostalAddresses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("postalAddresses", cast)
         if err != nil {
@@ -1037,7 +1065,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {
@@ -1065,7 +1095,9 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetWebsites() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWebsites()))
         for i, v := range m.GetWebsites() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("websites", cast)
         if err != nil {

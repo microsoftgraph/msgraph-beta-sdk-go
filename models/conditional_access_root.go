@@ -63,7 +63,9 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AuthenticationContextClassReferenceable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationContextClassReferenceable)
+                if v != nil {
+                    res[i] = v.(AuthenticationContextClassReferenceable)
+                }
             }
             m.SetAuthenticationContextClassReferences(res)
         }
@@ -97,7 +99,9 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]NamedLocationable, len(val))
             for i, v := range val {
-                res[i] = v.(NamedLocationable)
+                if v != nil {
+                    res[i] = v.(NamedLocationable)
+                }
             }
             m.SetNamedLocations(res)
         }
@@ -111,7 +115,9 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]ConditionalAccessPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyable)
+                if v != nil {
+                    res[i] = v.(ConditionalAccessPolicyable)
+                }
             }
             m.SetPolicies(res)
         }
@@ -125,7 +131,9 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]ConditionalAccessTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(ConditionalAccessTemplateable)
+                if v != nil {
+                    res[i] = v.(ConditionalAccessTemplateable)
+                }
             }
             m.SetTemplates(res)
         }
@@ -175,7 +183,9 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAuthenticationContextClassReferences() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationContextClassReferences()))
         for i, v := range m.GetAuthenticationContextClassReferences() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationContextClassReferences", cast)
         if err != nil {
@@ -197,7 +207,9 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetNamedLocations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNamedLocations()))
         for i, v := range m.GetNamedLocations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("namedLocations", cast)
         if err != nil {
@@ -207,7 +219,9 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("policies", cast)
         if err != nil {
@@ -217,7 +231,9 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemplates()))
         for i, v := range m.GetTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("templates", cast)
         if err != nil {

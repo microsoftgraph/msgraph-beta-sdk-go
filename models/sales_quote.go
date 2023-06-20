@@ -12,7 +12,7 @@ type SalesQuote struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesQuote instantiates a new salesQuote and sets the default values.
+// NewSalesQuote instantiates a new SalesQuote and sets the default values.
 func NewSalesQuote()(*SalesQuote) {
     m := &SalesQuote{
     }
@@ -488,7 +488,9 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]SalesQuoteLineable, len(val))
             for i, v := range val {
-                res[i] = v.(SalesQuoteLineable)
+                if v != nil {
+                    res[i] = v.(SalesQuoteLineable)
+                }
             }
             m.SetSalesQuoteLines(res)
         }
@@ -1002,7 +1004,9 @@ func (m *SalesQuote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetSalesQuoteLines() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSalesQuoteLines()))
         for i, v := range m.GetSalesQuoteLines() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("salesQuoteLines", cast)
         if err != nil {

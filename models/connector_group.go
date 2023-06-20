@@ -52,7 +52,9 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]Applicationable, len(val))
             for i, v := range val {
-                res[i] = v.(Applicationable)
+                if v != nil {
+                    res[i] = v.(Applicationable)
+                }
             }
             m.SetApplications(res)
         }
@@ -86,7 +88,9 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]Connectorable, len(val))
             for i, v := range val {
-                res[i] = v.(Connectorable)
+                if v != nil {
+                    res[i] = v.(Connectorable)
+                }
             }
             m.SetMembers(res)
         }
@@ -167,7 +171,9 @@ func (m *ConnectorGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetApplications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApplications()))
         for i, v := range m.GetApplications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("applications", cast)
         if err != nil {
@@ -190,7 +196,9 @@ func (m *ConnectorGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {

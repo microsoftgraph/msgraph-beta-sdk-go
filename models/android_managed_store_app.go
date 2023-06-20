@@ -103,7 +103,9 @@ func (m *AndroidManagedStoreApp) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]AndroidManagedStoreAppTrackable, len(val))
             for i, v := range val {
-                res[i] = v.(AndroidManagedStoreAppTrackable)
+                if v != nil {
+                    res[i] = v.(AndroidManagedStoreAppTrackable)
+                }
             }
             m.SetAppTracks(res)
         }
@@ -258,7 +260,9 @@ func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetAppTracks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppTracks()))
         for i, v := range m.GetAppTracks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appTracks", cast)
         if err != nil {

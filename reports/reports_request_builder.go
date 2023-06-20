@@ -36,6 +36,10 @@ type ReportsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AppCredentialSignInActivities provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+func (m *ReportsRequestBuilder) AppCredentialSignInActivities()(*AppCredentialSignInActivitiesRequestBuilder) {
+    return NewAppCredentialSignInActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ApplicationSignInDetailedSummary provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummaryRequestBuilder) {
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -638,6 +642,10 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 // Security provides operations to manage the security property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) Security()(*SecurityRequestBuilder) {
     return NewSecurityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ServicePrincipalSignInActivities provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.
+func (m *ReportsRequestBuilder) ServicePrincipalSignInActivities()(*ServicePrincipalSignInActivitiesRequestBuilder) {
+    return NewServicePrincipalSignInActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get reports
 func (m *ReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

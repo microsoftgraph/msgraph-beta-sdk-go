@@ -259,7 +259,9 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]TeamworkDeviceOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamworkDeviceOperationable)
+                if v != nil {
+                    res[i] = v.(TeamworkDeviceOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -440,7 +442,9 @@ func (m *TeamworkDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {

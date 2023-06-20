@@ -86,7 +86,9 @@ func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]GroupPolicyConfigurationAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyConfigurationAssignmentable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyConfigurationAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -110,7 +112,9 @@ func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]GroupPolicyDefinitionValueable, len(val))
             for i, v := range val {
-                res[i] = v.(GroupPolicyDefinitionValueable)
+                if v != nil {
+                    res[i] = v.(GroupPolicyDefinitionValueable)
+                }
             }
             m.SetDefinitionValues(res)
         }
@@ -164,7 +168,9 @@ func (m *GroupPolicyConfiguration) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoleScopeTagIds(res)
         }
@@ -214,7 +220,9 @@ func (m *GroupPolicyConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -230,7 +238,9 @@ func (m *GroupPolicyConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetDefinitionValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitionValues()))
         for i, v := range m.GetDefinitionValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("definitionValues", cast)
         if err != nil {

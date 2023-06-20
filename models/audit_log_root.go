@@ -71,7 +71,9 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]DirectoryAuditable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryAuditable)
+                if v != nil {
+                    res[i] = v.(DirectoryAuditable)
+                }
             }
             m.SetDirectoryAudits(res)
         }
@@ -85,7 +87,9 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ProvisioningObjectSummaryable, len(val))
             for i, v := range val {
-                res[i] = v.(ProvisioningObjectSummaryable)
+                if v != nil {
+                    res[i] = v.(ProvisioningObjectSummaryable)
+                }
             }
             m.SetDirectoryProvisioning(res)
         }
@@ -109,7 +113,9 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ProvisioningObjectSummaryable, len(val))
             for i, v := range val {
-                res[i] = v.(ProvisioningObjectSummaryable)
+                if v != nil {
+                    res[i] = v.(ProvisioningObjectSummaryable)
+                }
             }
             m.SetProvisioning(res)
         }
@@ -123,7 +129,9 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]SignInable, len(val))
             for i, v := range val {
-                res[i] = v.(SignInable)
+                if v != nil {
+                    res[i] = v.(SignInable)
+                }
             }
             m.SetSignIns(res)
         }
@@ -169,7 +177,9 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetDirectoryAudits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryAudits()))
         for i, v := range m.GetDirectoryAudits() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("directoryAudits", cast)
         if err != nil {
@@ -179,7 +189,9 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetDirectoryProvisioning() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryProvisioning()))
         for i, v := range m.GetDirectoryProvisioning() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("directoryProvisioning", cast)
         if err != nil {
@@ -195,7 +207,9 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetProvisioning() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioning()))
         for i, v := range m.GetProvisioning() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("provisioning", cast)
         if err != nil {
@@ -205,7 +219,9 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetSignIns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignIns()))
         for i, v := range m.GetSignIns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("signIns", cast)
         if err != nil {

@@ -59,7 +59,9 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]DeviceComplianceScriptRuleErrorable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceComplianceScriptRuleErrorable)
+                if v != nil {
+                    res[i] = v.(DeviceComplianceScriptRuleErrorable)
+                }
             }
             m.SetRuleErrors(res)
         }
@@ -73,7 +75,9 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]DeviceComplianceScriptRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceComplianceScriptRuleable)
+                if v != nil {
+                    res[i] = v.(DeviceComplianceScriptRuleable)
+                }
             }
             m.SetRules(res)
         }
@@ -87,7 +91,9 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]DeviceComplianceScriptErrorable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceComplianceScriptErrorable)
+                if v != nil {
+                    res[i] = v.(DeviceComplianceScriptErrorable)
+                }
             }
             m.SetScriptErrors(res)
         }
@@ -150,7 +156,9 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i878a80d2330e8
     if m.GetRuleErrors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRuleErrors()))
         for i, v := range m.GetRuleErrors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("ruleErrors", cast)
         if err != nil {
@@ -160,7 +168,9 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i878a80d2330e8
     if m.GetRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("rules", cast)
         if err != nil {
@@ -170,7 +180,9 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i878a80d2330e8
     if m.GetScriptErrors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScriptErrors()))
         for i, v := range m.GetScriptErrors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("scriptErrors", cast)
         if err != nil {

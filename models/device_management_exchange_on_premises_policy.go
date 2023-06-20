@@ -63,7 +63,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]DeviceManagementExchangeAccessRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementExchangeAccessRuleable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementExchangeAccessRuleable)
+                }
             }
             m.SetAccessRules(res)
         }
@@ -97,7 +99,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]DeviceManagementExchangeDeviceClassable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementExchangeDeviceClassable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementExchangeDeviceClassable)
+                }
             }
             m.SetKnownDeviceClasses(res)
         }
@@ -146,7 +150,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i878a80d2330
     if m.GetAccessRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessRules()))
         for i, v := range m.GetAccessRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessRules", cast)
         if err != nil {
@@ -169,7 +175,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i878a80d2330
     if m.GetKnownDeviceClasses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKnownDeviceClasses()))
         for i, v := range m.GetKnownDeviceClasses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("knownDeviceClasses", cast)
         if err != nil {

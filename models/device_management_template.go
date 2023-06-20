@@ -82,7 +82,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]DeviceManagementTemplateSettingCategoryable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementTemplateSettingCategoryable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementTemplateSettingCategoryable)
+                }
             }
             m.SetCategories(res)
         }
@@ -136,7 +138,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]DeviceManagementTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementTemplateable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementTemplateable)
+                }
             }
             m.SetMigratableTo(res)
         }
@@ -170,7 +174,9 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]DeviceManagementSettingInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceManagementSettingInstanceable)
+                if v != nil {
+                    res[i] = v.(DeviceManagementSettingInstanceable)
+                }
             }
             m.SetSettings(res)
         }
@@ -316,7 +322,9 @@ func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCategories()))
         for i, v := range m.GetCategories() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("categories", cast)
         if err != nil {
@@ -350,7 +358,9 @@ func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetMigratableTo() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMigratableTo()))
         for i, v := range m.GetMigratableTo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("migratableTo", cast)
         if err != nil {
@@ -373,7 +383,9 @@ func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settings", cast)
         if err != nil {

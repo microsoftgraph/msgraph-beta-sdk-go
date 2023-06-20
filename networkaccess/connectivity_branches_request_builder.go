@@ -1,0 +1,147 @@
+package networkaccess
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/networkaccess"
+)
+
+// ConnectivityBranchesRequestBuilder provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
+type ConnectivityBranchesRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// ConnectivityBranchesRequestBuilderGetQueryParameters get branches from networkAccess
+type ConnectivityBranchesRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
+// ConnectivityBranchesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ConnectivityBranchesRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ConnectivityBranchesRequestBuilderGetQueryParameters
+}
+// ConnectivityBranchesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ConnectivityBranchesRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ByBranchSiteId provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
+func (m *ConnectivityBranchesRequestBuilder) ByBranchSiteId(branchSiteId string)(*ConnectivityBranchesBranchSiteItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if branchSiteId != "" {
+        urlTplParams["branchSite%2Did"] = branchSiteId
+    }
+    return NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewConnectivityBranchesRequestBuilderInternal instantiates a new BranchesRequestBuilder and sets the default values.
+func NewConnectivityBranchesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesRequestBuilder) {
+    m := &ConnectivityBranchesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+    }
+    return m
+}
+// NewConnectivityBranchesRequestBuilder instantiates a new BranchesRequestBuilder and sets the default values.
+func NewConnectivityBranchesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewConnectivityBranchesRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count provides operations to count the resources in the collection.
+func (m *ConnectivityBranchesRequestBuilder) Count()(*ConnectivityBranchesCountRequestBuilder) {
+    return NewConnectivityBranchesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get get branches from networkAccess
+func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateBranchSiteCollectionResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable), nil
+}
+// Post create new navigation property to branches for networkAccess
+func (m *ConnectivityBranchesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateBranchSiteFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
+}
+// ToGetRequestInformation get branches from networkAccess
+func (m *ConnectivityBranchesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPostRequestInformation create new navigation property to branches for networkAccess
+func (m *ConnectivityBranchesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
