@@ -628,6 +628,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomExtensionHandler(), nil
                     case "#microsoft.graph.customExtensionStageSetting":
                         return NewCustomExtensionStageSetting(), nil
+                    case "#microsoft.graph.customSecurityAttributeAudit":
+                        return NewCustomSecurityAttributeAudit(), nil
                     case "#microsoft.graph.customSecurityAttributeDefinition":
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataClassificationService":
@@ -658,6 +660,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDelegatedAdminServiceManagementDetail(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
+                    case "#microsoft.graph.deletedChat":
+                        return NewDeletedChat(), nil
                     case "#microsoft.graph.deletedItemContainer":
                         return NewDeletedItemContainer(), nil
                     case "#microsoft.graph.deletedTeam":
@@ -1096,6 +1100,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFeatureRolloutPolicy(), nil
                     case "#microsoft.graph.federatedIdentityCredential":
                         return NewFederatedIdentityCredential(), nil
+                    case "#microsoft.graph.federatedTokenValidationPolicy":
+                        return NewFederatedTokenValidationPolicy(), nil
                     case "#microsoft.graph.fido2AuthenticationMethod":
                         return NewFido2AuthenticationMethod(), nil
                     case "#microsoft.graph.fido2AuthenticationMethodConfiguration":

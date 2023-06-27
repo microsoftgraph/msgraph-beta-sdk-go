@@ -46,7 +46,7 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetFieldDeserial
     }
     return res
 }
-// GetGlobalAdminCountThreshold gets the globalAdminCountThreshold property value. The globalAdminCountThreshold property
+// GetGlobalAdminCountThreshold gets the globalAdminCountThreshold property value. The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetGlobalAdminCountThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("globalAdminCountThreshold")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetGlobalAdminCo
     }
     return nil
 }
-// GetPercentageOfGlobalAdminsOutOfRolesThreshold gets the percentageOfGlobalAdminsOutOfRolesThreshold property value. The percentageOfGlobalAdminsOutOfRolesThreshold property
+// GetPercentageOfGlobalAdminsOutOfRolesThreshold gets the percentageOfGlobalAdminsOutOfRolesThreshold property value. Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetPercentageOfGlobalAdminsOutOfRolesThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("percentageOfGlobalAdminsOutOfRolesThreshold")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) Serialize(writer
     }
     return nil
 }
-// SetGlobalAdminCountThreshold sets the globalAdminCountThreshold property value. The globalAdminCountThreshold property
+// SetGlobalAdminCountThreshold sets the globalAdminCountThreshold property value. The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) SetGlobalAdminCountThreshold(value *int32)() {
     err := m.GetBackingStore().Set("globalAdminCountThreshold", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPercentageOfGlobalAdminsOutOfRolesThreshold sets the percentageOfGlobalAdminsOutOfRolesThreshold property value. The percentageOfGlobalAdminsOutOfRolesThreshold property
+// SetPercentageOfGlobalAdminsOutOfRolesThreshold sets the percentageOfGlobalAdminsOutOfRolesThreshold property value. Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) SetPercentageOfGlobalAdminsOutOfRolesThreshold(value *int32)() {
     err := m.GetBackingStore().Set("percentageOfGlobalAdminsOutOfRolesThreshold", value)
     if err != nil {

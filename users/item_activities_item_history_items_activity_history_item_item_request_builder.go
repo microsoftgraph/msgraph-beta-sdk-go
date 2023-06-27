@@ -18,7 +18,7 @@ type ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderGetQueryParameters get historyItems from users
+// ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 type ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) De
     }
     return nil
 }
-// Get get historyItems from users
+// Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get historyItems from users
+// ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

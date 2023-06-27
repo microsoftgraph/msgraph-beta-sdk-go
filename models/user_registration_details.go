@@ -285,7 +285,7 @@ func (m *UserRegistrationDetails) GetIsSsprRegistered()(*bool) {
     }
     return nil
 }
-// GetIsSystemPreferredAuthenticationMethodEnabled gets the isSystemPreferredAuthenticationMethodEnabled property value. The isSystemPreferredAuthenticationMethodEnabled property
+// GetIsSystemPreferredAuthenticationMethodEnabled gets the isSystemPreferredAuthenticationMethodEnabled property value. Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsSystemPreferredAuthenticationMethodEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSystemPreferredAuthenticationMethodEnabled")
     if err != nil {
@@ -318,7 +318,7 @@ func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     }
     return nil
 }
-// GetSystemPreferredAuthenticationMethods gets the systemPreferredAuthenticationMethods property value. The systemPreferredAuthenticationMethods property
+// GetSystemPreferredAuthenticationMethods gets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) GetSystemPreferredAuthenticationMethods()([]string) {
     val, err := m.GetBackingStore().Get("systemPreferredAuthenticationMethods")
     if err != nil {
@@ -340,7 +340,7 @@ func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The userPreferredMethodForSecondaryAuthentication property
+// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
     if err != nil {
@@ -536,7 +536,7 @@ func (m *UserRegistrationDetails) SetIsSsprRegistered(value *bool)() {
         panic(err)
     }
 }
-// SetIsSystemPreferredAuthenticationMethodEnabled sets the isSystemPreferredAuthenticationMethodEnabled property value. The isSystemPreferredAuthenticationMethodEnabled property
+// SetIsSystemPreferredAuthenticationMethodEnabled sets the isSystemPreferredAuthenticationMethodEnabled property value. Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSystemPreferredAuthenticationMethodEnabled", value)
     if err != nil {
@@ -557,7 +557,7 @@ func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
         panic(err)
     }
 }
-// SetSystemPreferredAuthenticationMethods sets the systemPreferredAuthenticationMethods property value. The systemPreferredAuthenticationMethods property
+// SetSystemPreferredAuthenticationMethods sets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) SetSystemPreferredAuthenticationMethods(value []string)() {
     err := m.GetBackingStore().Set("systemPreferredAuthenticationMethods", value)
     if err != nil {
@@ -571,7 +571,7 @@ func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The userPreferredMethodForSecondaryAuthentication property
+// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)() {
     err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
     if err != nil {

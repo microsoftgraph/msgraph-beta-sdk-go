@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformance the user experience analytics device performance entity contains device performance details.
+// UserExperienceAnalyticsAppHealthDevicePerformance 
 type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthDevicePerformance instantiates a new userExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDevicePerformance instantiates a new UserExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnalyticsAppHealthDevicePerformance) {
     m := &UserExperienceAnalyticsAppHealthDevicePerformance{
         Entity: *NewEntity(),
@@ -20,7 +20,7 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnaly
 func CreateUserExperienceAnalyticsAppHealthDevicePerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthDevicePerformance(), nil
 }
-// GetAppCrashCount gets the appCrashCount property value. The number of app crashes for the device. Valid values -2147483648 to 2147483647
+// GetAppCrashCount gets the appCrashCount property value. The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("appCrashCount")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppCrashCount()(*
     }
     return nil
 }
-// GetAppHangCount gets the appHangCount property value. The number of app hangs for the device. Valid values -2147483648 to 2147483647
+// GetAppHangCount gets the appHangCount property value. The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppHangCount()(*int32) {
     val, err := m.GetBackingStore().Get("appHangCount")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppHangCount()(*i
     }
     return nil
 }
-// GetCrashedAppCount gets the crashedAppCount property value. The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
+// GetCrashedAppCount gets the crashedAppCount property value. The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetCrashedAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("crashedAppCount")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetCrashedAppCount()
     }
     return nil
 }
-// GetDeviceAppHealthScore gets the deviceAppHealthScore property value. The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetDeviceAppHealthScore gets the deviceAppHealthScore property value. The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthScore()(*float64) {
     val, err := m.GetBackingStore().Get("deviceAppHealthScore")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthSc
     }
     return nil
 }
-// GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device.
+// GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceDisplayName
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. The id of the device.
+// GetDeviceId gets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceId()(*strin
     }
     return nil
 }
-// GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
+// GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("deviceManufacturer")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceManufacture
     }
     return nil
 }
-// GetDeviceModel gets the deviceModel property value. The model name of the device.
+// GetDeviceModel gets the deviceModel property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*U
     }
     return nil
 }
-// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailureInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
     if err != nil {
@@ -245,7 +245,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailure
     }
     return nil
 }
-// GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed.
+// GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("processedDateTime")
     if err != nil {
@@ -331,56 +331,56 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) Serialize(writer i87
     }
     return nil
 }
-// SetAppCrashCount sets the appCrashCount property value. The number of app crashes for the device. Valid values -2147483648 to 2147483647
+// SetAppCrashCount sets the appCrashCount property value. The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetAppCrashCount(value *int32)() {
     err := m.GetBackingStore().Set("appCrashCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppHangCount sets the appHangCount property value. The number of app hangs for the device. Valid values -2147483648 to 2147483647
+// SetAppHangCount sets the appHangCount property value. The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetAppHangCount(value *int32)() {
     err := m.GetBackingStore().Set("appHangCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCrashedAppCount sets the crashedAppCount property value. The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
+// SetCrashedAppCount sets the crashedAppCount property value. The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetCrashedAppCount(value *int32)() {
     err := m.GetBackingStore().Set("crashedAppCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceAppHealthScore sets the deviceAppHealthScore property value. The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetDeviceAppHealthScore sets the deviceAppHealthScore property value. The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthScore(value *float64)() {
     err := m.GetBackingStore().Set("deviceAppHealthScore", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device.
+// SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("deviceDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. The id of the device.
+// SetDeviceId sets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
+// SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceManufacturer(value *string)() {
     err := m.GetBackingStore().Set("deviceManufacturer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceModel sets the deviceModel property value. The model name of the device.
+// SetDeviceModel sets the deviceModel property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceModel(value *string)() {
     err := m.GetBackingStore().Set("deviceModel", value)
     if err != nil {
@@ -394,14 +394,14 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetHealthStatus(valu
         panic(err)
     }
 }
-// SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
+// SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("meanTimeToFailureInMinutes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessedDateTime sets the processedDateTime property value. The date and time when the statistics were last computed.
+// SetProcessedDateTime sets the processedDateTime property value. The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetProcessedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("processedDateTime", value)
     if err != nil {

@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthRuntimeDetails struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthRuntimeDetails instantiates a new userExperienceAnalyticsBatteryHealthRuntimeDetails and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthRuntimeDetails instantiates a new UserExperienceAnalyticsBatteryHealthRuntimeDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthRuntimeDetails()(*UserExperienceAnalyticsBatteryHealthRuntimeDetails) {
     m := &UserExperienceAnalyticsBatteryHealthRuntimeDetails{
         Entity: *NewEntity(),

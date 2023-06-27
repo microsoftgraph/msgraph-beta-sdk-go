@@ -9,7 +9,7 @@ import (
 type GroupPolicyCategory struct {
     Entity
 }
-// NewGroupPolicyCategory instantiates a new groupPolicyCategory and sets the default values.
+// NewGroupPolicyCategory instantiates a new GroupPolicyCategory and sets the default values.
 func NewGroupPolicyCategory()(*GroupPolicyCategory) {
     m := &GroupPolicyCategory{
         Entity: *NewEntity(),

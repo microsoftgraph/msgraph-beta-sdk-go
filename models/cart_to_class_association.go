@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CartToClassAssociation cartToClassAssociation for associating device carts with classrooms.
+// CartToClassAssociation 
 type CartToClassAssociation struct {
     Entity
 }
-// NewCartToClassAssociation instantiates a new cartToClassAssociation and sets the default values.
+// NewCartToClassAssociation instantiates a new CartToClassAssociation and sets the default values.
 func NewCartToClassAssociation()(*CartToClassAssociation) {
     m := &CartToClassAssociation{
         Entity: *NewEntity(),

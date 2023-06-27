@@ -47,6 +47,10 @@ func NewAuditLogsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewAuditLogsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CustomSecurityAttributeAudits provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
+func (m *AuditLogsRequestBuilder) CustomSecurityAttributeAudits()(*CustomSecurityAttributeAuditsRequestBuilder) {
+    return NewCustomSecurityAttributeAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DirectoryAudits provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
 func (m *AuditLogsRequestBuilder) DirectoryAudits()(*DirectoryAuditsRequestBuilder) {
     return NewDirectoryAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

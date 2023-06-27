@@ -311,7 +311,7 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOfferShiftRequests gets the offerShiftRequests property value. The offerShiftRequests property
+// GetOfferShiftRequests gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
     val, err := m.GetBackingStore().Get("offerShiftRequests")
     if err != nil {
@@ -720,7 +720,7 @@ func (m *Schedule) SetEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOfferShiftRequests sets the offerShiftRequests property value. The offerShiftRequests property
+// SetOfferShiftRequests sets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
     err := m.GetBackingStore().Set("offerShiftRequests", value)
     if err != nil {

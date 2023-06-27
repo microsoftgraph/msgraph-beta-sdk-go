@@ -5,25 +5,25 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// IntelligenceProfileSponsorState 
-type IntelligenceProfileSponsorState struct {
+// IntelligenceProfileCountryOrRegionOfOrigin 
+type IntelligenceProfileCountryOrRegionOfOrigin struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIntelligenceProfileSponsorState instantiates a new IntelligenceProfileSponsorState and sets the default values.
-func NewIntelligenceProfileSponsorState()(*IntelligenceProfileSponsorState) {
-    m := &IntelligenceProfileSponsorState{
+// NewIntelligenceProfileCountryOrRegionOfOrigin instantiates a new intelligenceProfileCountryOrRegionOfOrigin and sets the default values.
+func NewIntelligenceProfileCountryOrRegionOfOrigin()(*IntelligenceProfileCountryOrRegionOfOrigin) {
+    m := &IntelligenceProfileCountryOrRegionOfOrigin{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateIntelligenceProfileSponsorStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateIntelligenceProfileSponsorStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewIntelligenceProfileSponsorState(), nil
+// CreateIntelligenceProfileCountryOrRegionOfOriginFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIntelligenceProfileCountryOrRegionOfOriginFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewIntelligenceProfileCountryOrRegionOfOrigin(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IntelligenceProfileSponsorState) GetAdditionalData()(map[string]any) {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -35,11 +35,11 @@ func (m *IntelligenceProfileSponsorState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the backingStore property value. Stores model information.
-func (m *IntelligenceProfileSponsorState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCode gets the code property value. A codified representation for this sponsor state.
-func (m *IntelligenceProfileSponsorState) GetCode()(*string) {
+// GetCode gets the code property value. The code property
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
         panic(err)
@@ -50,7 +50,7 @@ func (m *IntelligenceProfileSponsorState) GetCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IntelligenceProfileSponsorState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
@@ -84,8 +84,8 @@ func (m *IntelligenceProfileSponsorState) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetLabel gets the label property value. A display label for this sponsor state.
-func (m *IntelligenceProfileSponsorState) GetLabel()(*string) {
+// GetLabel gets the label property value. The label property
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
         panic(err)
@@ -96,7 +96,7 @@ func (m *IntelligenceProfileSponsorState) GetLabel()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
-func (m *IntelligenceProfileSponsorState) GetOdataType()(*string) {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
@@ -107,7 +107,7 @@ func (m *IntelligenceProfileSponsorState) GetOdataType()(*string) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *IntelligenceProfileSponsorState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("code", m.GetCode())
         if err != nil {
@@ -135,39 +135,39 @@ func (m *IntelligenceProfileSponsorState) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IntelligenceProfileSponsorState) SetAdditionalData(value map[string]any)() {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the backingStore property value. Stores model information.
-func (m *IntelligenceProfileSponsorState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCode sets the code property value. A codified representation for this sponsor state.
-func (m *IntelligenceProfileSponsorState) SetCode(value *string)() {
+// SetCode sets the code property value. The code property
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetCode(value *string)() {
     err := m.GetBackingStore().Set("code", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLabel sets the label property value. A display label for this sponsor state.
-func (m *IntelligenceProfileSponsorState) SetLabel(value *string)() {
+// SetLabel sets the label property value. The label property
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetLabel(value *string)() {
     err := m.GetBackingStore().Set("label", value)
     if err != nil {
         panic(err)
     }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *IntelligenceProfileSponsorState) SetOdataType(value *string)() {
+func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
 }
-// IntelligenceProfileSponsorStateable 
-type IntelligenceProfileSponsorStateable interface {
+// IntelligenceProfileCountryOrRegionOfOriginable 
+type IntelligenceProfileCountryOrRegionOfOriginable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

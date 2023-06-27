@@ -38,7 +38,7 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetAdditionalData()
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceWithoutCloudIdentityCount gets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.
+// GetDeviceWithoutCloudIdentityCount gets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity. Read-only.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetDeviceWithoutCloudIdentityCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceWithoutCloudIdentityCount")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetAdditionalData(v
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceWithoutCloudIdentityCount sets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.
+// SetDeviceWithoutCloudIdentityCount sets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity. Read-only.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetDeviceWithoutCloudIdentityCount(value *int32)() {
     err := m.GetBackingStore().Set("deviceWithoutCloudIdentityCount", value)
     if err != nil {

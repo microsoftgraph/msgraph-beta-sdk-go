@@ -9,7 +9,7 @@ import (
 type SalesQuoteLine struct {
     Entity
 }
-// NewSalesQuoteLine instantiates a new salesQuoteLine and sets the default values.
+// NewSalesQuoteLine instantiates a new SalesQuoteLine and sets the default values.
 func NewSalesQuoteLine()(*SalesQuoteLine) {
     m := &SalesQuoteLine{
         Entity: *NewEntity(),

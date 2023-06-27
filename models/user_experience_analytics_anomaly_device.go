@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAnomalyDevice the user experience analytics anomaly entity contains device details.
+// UserExperienceAnalyticsAnomalyDevice 
 type UserExperienceAnalyticsAnomalyDevice struct {
     Entity
 }
-// NewUserExperienceAnalyticsAnomalyDevice instantiates a new userExperienceAnalyticsAnomalyDevice and sets the default values.
+// NewUserExperienceAnalyticsAnomalyDevice instantiates a new UserExperienceAnalyticsAnomalyDevice and sets the default values.
 func NewUserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDevice) {
     m := &UserExperienceAnalyticsAnomalyDevice{
         Entity: *NewEntity(),

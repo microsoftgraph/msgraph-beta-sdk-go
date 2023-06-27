@@ -18,7 +18,7 @@ type RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderGetQueryParameters get alerts from identityGovernance
+// RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderGetQueryParameters represents the alert entity.
 type RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
     }
     return nil
 }
-// Get get alerts from identityGovernance
+// Get represents the alert entity.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +136,7 @@ func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get alerts from identityGovernance
+// ToGetRequestInformation represents the alert entity.
 func (m *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsUnifiedRoleManagementAlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

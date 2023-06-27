@@ -38,7 +38,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetAdditionalData()(map
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDevicesNotAutopilotRegistered gets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.
+// GetDevicesNotAutopilotRegistered gets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd. Read-only.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesNotAutopilotRegistered()(*int32) {
     val, err := m.GetBackingStore().Get("devicesNotAutopilotRegistered")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesNotAutopilotR
     }
     return nil
 }
-// GetDevicesWithoutAutopilotProfileAssigned gets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned.
+// GetDevicesWithoutAutopilotProfileAssigned gets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned. Read-only.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesWithoutAutopilotProfileAssigned()(*int32) {
     val, err := m.GetBackingStore().Get("devicesWithoutAutopilotProfileAssigned")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetOdataType()(*string)
     }
     return nil
 }
-// GetTotalWindows10DevicesWithoutTenantAttached gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
+// GetTotalWindows10DevicesWithoutTenantAttached gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and co-managed. Read-only.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetTotalWindows10DevicesWithoutTenantAttached()(*int32) {
     val, err := m.GetBackingStore().Get("totalWindows10DevicesWithoutTenantAttached")
     if err != nil {
@@ -172,14 +172,14 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetAdditionalData(value
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDevicesNotAutopilotRegistered sets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.
+// SetDevicesNotAutopilotRegistered sets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd. Read-only.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesNotAutopilotRegistered(value *int32)() {
     err := m.GetBackingStore().Set("devicesNotAutopilotRegistered", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDevicesWithoutAutopilotProfileAssigned sets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned.
+// SetDevicesWithoutAutopilotProfileAssigned sets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned. Read-only.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesWithoutAutopilotProfileAssigned(value *int32)() {
     err := m.GetBackingStore().Set("devicesWithoutAutopilotProfileAssigned", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetOdataType(value *str
         panic(err)
     }
 }
-// SetTotalWindows10DevicesWithoutTenantAttached sets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
+// SetTotalWindows10DevicesWithoutTenantAttached sets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and co-managed. Read-only.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetTotalWindows10DevicesWithoutTenantAttached(value *int32)() {
     err := m.GetBackingStore().Set("totalWindows10DevicesWithoutTenantAttached", value)
     if err != nil {

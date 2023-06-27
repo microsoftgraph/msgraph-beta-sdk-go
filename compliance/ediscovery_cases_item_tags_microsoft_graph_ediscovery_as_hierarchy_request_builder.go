@@ -50,6 +50,7 @@ func NewEdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder
     return NewEdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function asHierarchy
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetRequestConfiguration)(EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyAsHierarchyResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,6 +70,7 @@ func (m *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilde
     return res.(EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyAsHierarchyResponseable), nil
 }
 // ToGetRequestInformation invoke function asHierarchy
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExchangeConnector entity which represents a connection to an Exchange environment.
+// DeviceManagementExchangeConnector 
 type DeviceManagementExchangeConnector struct {
     Entity
 }
-// NewDeviceManagementExchangeConnector instantiates a new deviceManagementExchangeConnector and sets the default values.
+// NewDeviceManagementExchangeConnector instantiates a new DeviceManagementExchangeConnector and sets the default values.
 func NewDeviceManagementExchangeConnector()(*DeviceManagementExchangeConnector) {
     m := &DeviceManagementExchangeConnector{
         Entity: *NewEntity(),

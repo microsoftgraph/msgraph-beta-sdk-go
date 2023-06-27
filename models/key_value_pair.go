@@ -10,7 +10,7 @@ type KeyValuePair struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewKeyValuePair instantiates a new KeyValuePair and sets the default values.
+// NewKeyValuePair instantiates a new keyValuePair and sets the default values.
 func NewKeyValuePair()(*KeyValuePair) {
     m := &KeyValuePair{
     }

@@ -18,7 +18,7 @@ type ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderGetQueryParameters get virtualAppointment from users
+// ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderGetQueryParameters read the properties and relationships of a virtualAppointment object.
 type ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,11 @@ func NewItemOnlineMeetingsItemVirtualAppointmentRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsItemVirtualAppointmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property virtualAppointment for users
+// Delete delete a virtualAppointment object.
+// Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +74,11 @@ func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get get virtualAppointment from users
+// Get read the properties and relationships of a virtualAppointment object.
+// Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +97,11 @@ func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) Get(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable), nil
 }
-// Patch update the navigation property virtualAppointment in users
+// Patch create a new virtualAppointment object.
+// Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, requestConfiguration *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +120,8 @@ func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) Patch(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property virtualAppointment for users
+// ToDeleteRequestInformation delete a virtualAppointment object.
+// Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +133,8 @@ func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) ToDeleteRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get virtualAppointment from users
+// ToGetRequestInformation read the properties and relationships of a virtualAppointment object.
+// Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +150,8 @@ func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property virtualAppointment in users
+// ToPatchRequestInformation create a new virtualAppointment object.
+// Deprecated: The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31
 func (m *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualAppointmentable, requestConfiguration *ItemOnlineMeetingsItemVirtualAppointmentRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

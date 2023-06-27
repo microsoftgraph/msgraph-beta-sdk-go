@@ -11,7 +11,7 @@ import (
 type UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilderGetQueryParameters the user experience analytics work from anywhere metrics.
+// UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilderGetQueryParameters the scores and insights for the work from anywhere metrics.
 type UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewUserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the user experience analytics work from anywhere metrics.
+// Get the scores and insights for the work from anywhere metrics.
 func (m *UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable), nil
 }
-// ToGetRequestInformation the user experience analytics work from anywhere metrics.
+// ToGetRequestInformation the scores and insights for the work from anywhere metrics.
 func (m *UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemWorkFromAnywhereMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

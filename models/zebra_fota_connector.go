@@ -9,7 +9,7 @@ import (
 type ZebraFotaConnector struct {
     Entity
 }
-// NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
+// NewZebraFotaConnector instantiates a new ZebraFotaConnector and sets the default values.
 func NewZebraFotaConnector()(*ZebraFotaConnector) {
     m := &ZebraFotaConnector{
         Entity: *NewEntity(),

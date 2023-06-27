@@ -36,7 +36,7 @@ func (m *InvalidLicenseAlertIncident) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetTenantLicenseStatus gets the tenantLicenseStatus property value. The tenantLicenseStatus property
+// GetTenantLicenseStatus gets the tenantLicenseStatus property value. Status of the tenant's Azure AD Premium P2 license.
 func (m *InvalidLicenseAlertIncident) GetTenantLicenseStatus()(*string) {
     val, err := m.GetBackingStore().Get("tenantLicenseStatus")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *InvalidLicenseAlertIncident) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetTenantLicenseStatus sets the tenantLicenseStatus property value. The tenantLicenseStatus property
+// SetTenantLicenseStatus sets the tenantLicenseStatus property value. Status of the tenant's Azure AD Premium P2 license.
 func (m *InvalidLicenseAlertIncident) SetTenantLicenseStatus(value *string)() {
     err := m.GetBackingStore().Set("tenantLicenseStatus", value)
     if err != nil {

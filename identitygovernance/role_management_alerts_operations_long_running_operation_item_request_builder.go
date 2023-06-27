@@ -18,7 +18,7 @@ type RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetQueryParameters get operations from identityGovernance
+// RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetQueryParameters represents operations on resources that take a long time to complete and can run in the background until completion.
 type RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) D
     }
     return nil
 }
-// Get get operations from identityGovernance
+// Get represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) T
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get operations from identityGovernance
+// ToGetRequestInformation represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

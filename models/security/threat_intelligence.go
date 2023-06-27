@@ -189,6 +189,22 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["subdomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubdomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Subdomainable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Subdomainable)
+                }
+            }
+            m.SetSubdomains(res)
+        }
+        return nil
+    }
     res["vulnerabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVulnerabilityFromDiscriminatorValue)
         if err != nil {
@@ -281,6 +297,17 @@ func (m *ThreatIntelligence) GetPassiveDnsRecords()([]PassiveDnsRecordable) {
     }
     if val != nil {
         return val.([]PassiveDnsRecordable)
+    }
+    return nil
+}
+// GetSubdomains gets the subdomains property value. Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.
+func (m *ThreatIntelligence) GetSubdomains()([]Subdomainable) {
+    val, err := m.GetBackingStore().Get("subdomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Subdomainable)
     }
     return nil
 }
@@ -409,6 +436,18 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetSubdomains() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubdomains()))
+        for i, v := range m.GetSubdomains() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subdomains", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetVulnerabilities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVulnerabilities()))
         for i, v := range m.GetVulnerabilities() {
@@ -486,6 +525,13 @@ func (m *ThreatIntelligence) SetPassiveDnsRecords(value []PassiveDnsRecordable)(
         panic(err)
     }
 }
+// SetSubdomains sets the subdomains property value. Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.
+func (m *ThreatIntelligence) SetSubdomains(value []Subdomainable)() {
+    err := m.GetBackingStore().Set("subdomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVulnerabilities sets the vulnerabilities property value. Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetVulnerabilities(value []Vulnerabilityable)() {
     err := m.GetBackingStore().Set("vulnerabilities", value)
@@ -506,6 +552,7 @@ type ThreatIntelligenceable interface {
     GetIntelligenceProfileIndicators()([]IntelligenceProfileIndicatorable)
     GetIntelProfiles()([]IntelligenceProfileable)
     GetPassiveDnsRecords()([]PassiveDnsRecordable)
+    GetSubdomains()([]Subdomainable)
     GetVulnerabilities()([]Vulnerabilityable)
     SetArticleIndicators(value []ArticleIndicatorable)()
     SetArticles(value []Articleable)()
@@ -516,5 +563,6 @@ type ThreatIntelligenceable interface {
     SetIntelligenceProfileIndicators(value []IntelligenceProfileIndicatorable)()
     SetIntelProfiles(value []IntelligenceProfileable)()
     SetPassiveDnsRecords(value []PassiveDnsRecordable)()
+    SetSubdomains(value []Subdomainable)()
     SetVulnerabilities(value []Vulnerabilityable)()
 }

@@ -21,7 +21,7 @@ func NewStaleSignInAlertConfiguration()(*StaleSignInAlertConfiguration) {
 func CreateStaleSignInAlertConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStaleSignInAlertConfiguration(), nil
 }
-// GetDuration gets the duration property value. The duration property
+// GetDuration gets the duration property value. The number of days to look back from current timestamp within which the account has not signed in.
 func (m *StaleSignInAlertConfiguration) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *StaleSignInAlertConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetDuration sets the duration property value. The duration property
+// SetDuration sets the duration property value. The number of days to look back from current timestamp within which the account has not signed in.
 func (m *StaleSignInAlertConfiguration) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("duration", value)
     if err != nil {

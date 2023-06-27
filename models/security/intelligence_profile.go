@@ -32,6 +32,17 @@ func (m *IntelligenceProfile) GetAliases()([]string) {
     }
     return nil
 }
+// GetCountriesOrRegionsOfOrigin gets the countriesOrRegionsOfOrigin property value. The countriesOrRegionsOfOrigin property
+func (m *IntelligenceProfile) GetCountriesOrRegionsOfOrigin()([]IntelligenceProfileCountryOrRegionOfOriginable) {
+    val, err := m.GetBackingStore().Get("countriesOrRegionsOfOrigin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IntelligenceProfileCountryOrRegionOfOriginable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description property
 func (m *IntelligenceProfile) GetDescription()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("description")
@@ -59,6 +70,22 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
                 }
             }
             m.SetAliases(res)
+        }
+        return nil
+    }
+    res["countriesOrRegionsOfOrigin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIntelligenceProfileCountryOrRegionOfOriginFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IntelligenceProfileCountryOrRegionOfOriginable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(IntelligenceProfileCountryOrRegionOfOriginable)
+                }
+            }
+            m.SetCountriesOrRegionsOfOrigin(res)
         }
         return nil
     }
@@ -105,22 +132,6 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetKind(val.(*IntelligenceProfileKind))
-        }
-        return nil
-    }
-    res["sponsorStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIntelligenceProfileSponsorStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IntelligenceProfileSponsorStateable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(IntelligenceProfileSponsorStateable)
-                }
-            }
-            m.SetSponsorStates(res)
         }
         return nil
     }
@@ -205,17 +216,6 @@ func (m *IntelligenceProfile) GetKind()(*IntelligenceProfileKind) {
     }
     return nil
 }
-// GetSponsorStates gets the sponsorStates property value. Known states (such as a country or government) who have sponsored threat actors associated with this intelligenceProfile. This is also known as the country/region of origin for the given actor or threat.
-func (m *IntelligenceProfile) GetSponsorStates()([]IntelligenceProfileSponsorStateable) {
-    val, err := m.GetBackingStore().Get("sponsorStates")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]IntelligenceProfileSponsorStateable)
-    }
-    return nil
-}
 // GetSummary gets the summary property value. The summary property
 func (m *IntelligenceProfile) GetSummary()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("summary")
@@ -272,6 +272,18 @@ func (m *IntelligenceProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetCountriesOrRegionsOfOrigin() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCountriesOrRegionsOfOrigin()))
+        for i, v := range m.GetCountriesOrRegionsOfOrigin() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("countriesOrRegionsOfOrigin", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("description", m.GetDescription())
         if err != nil {
@@ -299,18 +311,6 @@ func (m *IntelligenceProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetKind() != nil {
         cast := (*m.GetKind()).String()
         err = writer.WriteStringValue("kind", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSponsorStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsorStates()))
-        for i, v := range m.GetSponsorStates() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("sponsorStates", cast)
         if err != nil {
             return err
         }
@@ -348,6 +348,13 @@ func (m *IntelligenceProfile) SetAliases(value []string)() {
         panic(err)
     }
 }
+// SetCountriesOrRegionsOfOrigin sets the countriesOrRegionsOfOrigin property value. The countriesOrRegionsOfOrigin property
+func (m *IntelligenceProfile) SetCountriesOrRegionsOfOrigin(value []IntelligenceProfileCountryOrRegionOfOriginable)() {
+    err := m.GetBackingStore().Set("countriesOrRegionsOfOrigin", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The description property
 func (m *IntelligenceProfile) SetDescription(value FormattedContentable)() {
     err := m.GetBackingStore().Set("description", value)
@@ -372,13 +379,6 @@ func (m *IntelligenceProfile) SetIndicators(value []IntelligenceProfileIndicator
 // SetKind sets the kind property value. The kind property
 func (m *IntelligenceProfile) SetKind(value *IntelligenceProfileKind)() {
     err := m.GetBackingStore().Set("kind", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetSponsorStates sets the sponsorStates property value. Known states (such as a country or government) who have sponsored threat actors associated with this intelligenceProfile. This is also known as the country/region of origin for the given actor or threat.
-func (m *IntelligenceProfile) SetSponsorStates(value []IntelligenceProfileSponsorStateable)() {
-    err := m.GetBackingStore().Set("sponsorStates", value)
     if err != nil {
         panic(err)
     }
@@ -416,21 +416,21 @@ type IntelligenceProfileable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAliases()([]string)
+    GetCountriesOrRegionsOfOrigin()([]IntelligenceProfileCountryOrRegionOfOriginable)
     GetDescription()(FormattedContentable)
     GetFirstActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIndicators()([]IntelligenceProfileIndicatorable)
     GetKind()(*IntelligenceProfileKind)
-    GetSponsorStates()([]IntelligenceProfileSponsorStateable)
     GetSummary()(FormattedContentable)
     GetTargets()([]string)
     GetTitle()(*string)
     GetTradecraft()(FormattedContentable)
     SetAliases(value []string)()
+    SetCountriesOrRegionsOfOrigin(value []IntelligenceProfileCountryOrRegionOfOriginable)()
     SetDescription(value FormattedContentable)()
     SetFirstActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIndicators(value []IntelligenceProfileIndicatorable)()
     SetKind(value *IntelligenceProfileKind)()
-    SetSponsorStates(value []IntelligenceProfileSponsorStateable)()
     SetSummary(value FormattedContentable)()
     SetTargets(value []string)()
     SetTitle(value *string)()

@@ -161,6 +161,22 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["subdomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubdomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Subdomainable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Subdomainable)
+                }
+            }
+            m.SetSubdomains(res)
+        }
+        return nil
+    }
     res["trackers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHostTrackerFromDiscriminatorValue)
         if err != nil {
@@ -231,6 +247,17 @@ func (m *Host) GetReputation()(HostReputationable) {
     }
     if val != nil {
         return val.(HostReputationable)
+    }
+    return nil
+}
+// GetSubdomains gets the subdomains property value. The subdomains that are associated with this host.
+func (m *Host) GetSubdomains()([]Subdomainable) {
+    val, err := m.GetBackingStore().Get("subdomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Subdomainable)
     }
     return nil
 }
@@ -317,6 +344,18 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetSubdomains() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubdomains()))
+        for i, v := range m.GetSubdomains() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subdomains", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrackers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrackers()))
         for i, v := range m.GetTrackers() {
@@ -380,6 +419,13 @@ func (m *Host) SetReputation(value HostReputationable)() {
         panic(err)
     }
 }
+// SetSubdomains sets the subdomains property value. The subdomains that are associated with this host.
+func (m *Host) SetSubdomains(value []Subdomainable)() {
+    err := m.GetBackingStore().Set("subdomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrackers sets the trackers property value. The hostTrackers that are associated with this host.
 func (m *Host) SetTrackers(value []HostTrackerable)() {
     err := m.GetBackingStore().Set("trackers", value)
@@ -398,6 +444,7 @@ type Hostable interface {
     GetPassiveDns()([]PassiveDnsRecordable)
     GetPassiveDnsReverse()([]PassiveDnsRecordable)
     GetReputation()(HostReputationable)
+    GetSubdomains()([]Subdomainable)
     GetTrackers()([]HostTrackerable)
     SetComponents(value []HostComponentable)()
     SetCookies(value []HostCookieable)()
@@ -406,5 +453,6 @@ type Hostable interface {
     SetPassiveDns(value []PassiveDnsRecordable)()
     SetPassiveDnsReverse(value []PassiveDnsRecordable)()
     SetReputation(value HostReputationable)()
+    SetSubdomains(value []Subdomainable)()
     SetTrackers(value []HostTrackerable)()
 }

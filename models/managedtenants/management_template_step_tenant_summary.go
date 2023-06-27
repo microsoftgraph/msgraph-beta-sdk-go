@@ -10,7 +10,7 @@ import (
 type ManagementTemplateStepTenantSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementTemplateStepTenantSummary instantiates a new managementTemplateStepTenantSummary and sets the default values.
+// NewManagementTemplateStepTenantSummary instantiates a new ManagementTemplateStepTenantSummary and sets the default values.
 func NewManagementTemplateStepTenantSummary()(*ManagementTemplateStepTenantSummary) {
     m := &ManagementTemplateStepTenantSummary{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

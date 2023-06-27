@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsOverview struct {
     Entity
 }
-// NewUserExperienceAnalyticsOverview instantiates a new userExperienceAnalyticsOverview and sets the default values.
+// NewUserExperienceAnalyticsOverview instantiates a new UserExperienceAnalyticsOverview and sets the default values.
 func NewUserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverview) {
     m := &UserExperienceAnalyticsOverview{
         Entity: *NewEntity(),
@@ -40,7 +40,7 @@ func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetInsights gets the insights property value. The user experience analytics insights.
+// GetInsights gets the insights property value. The user experience analytics insights. Read-only.
 func (m *UserExperienceAnalyticsOverview) GetInsights()([]UserExperienceAnalyticsInsightable) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *UserExperienceAnalyticsOverview) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetInsights sets the insights property value. The user experience analytics insights.
+// SetInsights sets the insights property value. The user experience analytics insights. Read-only.
 func (m *UserExperienceAnalyticsOverview) SetInsights(value []UserExperienceAnalyticsInsightable)() {
     err := m.GetBackingStore().Set("insights", value)
     if err != nil {

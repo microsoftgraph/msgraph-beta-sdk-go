@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegeManagementElevation the endpoint privilege management elevation result entity representing a single elevation action on a client device.
+// PrivilegeManagementElevation 
 type PrivilegeManagementElevation struct {
     Entity
 }
-// NewPrivilegeManagementElevation instantiates a new privilegeManagementElevation and sets the default values.
+// NewPrivilegeManagementElevation instantiates a new PrivilegeManagementElevation and sets the default values.
 func NewPrivilegeManagementElevation()(*PrivilegeManagementElevation) {
     m := &PrivilegeManagementElevation{
         Entity: *NewEntity(),

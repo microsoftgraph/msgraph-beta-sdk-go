@@ -44,7 +44,7 @@ func (m *User) GetAccountEnabled()(*bool) {
     }
     return nil
 }
-// GetActivities gets the activities property value. The activities property
+// GetActivities gets the activities property value. The user's activities across devices. Read-only. Nullable.
 func (m *User) GetActivities()([]UserActivityable) {
     val, err := m.GetBackingStore().Get("activities")
     if err != nil {
@@ -154,7 +154,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
     }
     return nil
 }
-// GetAuthentication gets the authentication property value. The authentication property
+// GetAuthentication gets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) GetAuthentication()(Authenticationable) {
     val, err := m.GetBackingStore().Get("authentication")
     if err != nil {
@@ -2014,6 +2014,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["permissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceSpecificPermissionGrantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceSpecificPermissionGrantable)
+                }
+            }
+            m.SetPermissionGrants(res)
+        }
+        return nil
+    }
     res["photo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
         if err != nil {
@@ -2308,6 +2324,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
+            }
+            m.SetSponsors(res)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -2575,7 +2607,7 @@ func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
     }
     return nil
 }
-// GetIsManagementRestricted gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
+// GetIsManagementRestricted gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
 func (m *User) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -2861,7 +2893,7 @@ func (m *User) GetOnenote()(Onenoteable) {
     }
     return nil
 }
-// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
+// GetOnlineMeetings gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
 func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     val, err := m.GetBackingStore().Get("onlineMeetings")
     if err != nil {
@@ -3078,6 +3110,17 @@ func (m *User) GetPeople()([]Personable) {
     }
     if val != nil {
         return val.([]Personable)
+    }
+    return nil
+}
+// GetPermissionGrants gets the permissionGrants property value. The permissionGrants property
+func (m *User) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
+    val, err := m.GetBackingStore().Get("permissionGrants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceSpecificPermissionGrantable)
     }
     return nil
 }
@@ -3342,6 +3385,17 @@ func (m *User) GetSkills()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetSponsors gets the sponsors property value. The sponsors property
+func (m *User) GetSponsors()([]DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("sponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
     }
     return nil
 }
@@ -4413,6 +4467,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPermissionGrants() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrants()))
+        for i, v := range m.GetPermissionGrants() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissionGrants", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("photo", m.GetPhoto())
         if err != nil {
@@ -4587,6 +4653,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetSponsors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
+        for i, v := range m.GetSponsors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sponsors", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("state", m.GetState())
         if err != nil {
@@ -4699,7 +4777,7 @@ func (m *User) SetAccountEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetActivities sets the activities property value. The activities property
+// SetActivities sets the activities property value. The user's activities across devices. Read-only. Nullable.
 func (m *User) SetActivities(value []UserActivityable)() {
     err := m.GetBackingStore().Set("activities", value)
     if err != nil {
@@ -4769,7 +4847,7 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
         panic(err)
     }
 }
-// SetAuthentication sets the authentication property value. The authentication property
+// SetAuthentication sets the authentication property value. The authentication methods that are supported for the user.
 func (m *User) SetAuthentication(value Authenticationable)() {
     err := m.GetBackingStore().Set("authentication", value)
     if err != nil {
@@ -5133,7 +5211,7 @@ func (m *User) SetIsLicenseReconciliationNeeded(value *bool)() {
         panic(err)
     }
 }
-// SetIsManagementRestricted sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
+// SetIsManagementRestricted sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
 func (m *User) SetIsManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isManagementRestricted", value)
     if err != nil {
@@ -5315,7 +5393,7 @@ func (m *User) SetOnenote(value Onenoteable)() {
         panic(err)
     }
 }
-// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
+// SetOnlineMeetings sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
 func (m *User) SetOnlineMeetings(value []OnlineMeetingable)() {
     err := m.GetBackingStore().Set("onlineMeetings", value)
     if err != nil {
@@ -5451,6 +5529,13 @@ func (m *User) SetPendingAccessReviewInstances(value []AccessReviewInstanceable)
 // SetPeople sets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *User) SetPeople(value []Personable)() {
     err := m.GetBackingStore().Set("people", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPermissionGrants sets the permissionGrants property value. The permissionGrants property
+func (m *User) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
+    err := m.GetBackingStore().Set("permissionGrants", value)
     if err != nil {
         panic(err)
     }
@@ -5619,6 +5704,13 @@ func (m *User) SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f
 // SetSkills sets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
 func (m *User) SetSkills(value []string)() {
     err := m.GetBackingStore().Set("skills", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSponsors sets the sponsors property value. The sponsors property
+func (m *User) SetSponsors(value []DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("sponsors", value)
     if err != nil {
         panic(err)
     }
@@ -5821,6 +5913,7 @@ type Userable interface {
     GetPastProjects()([]string)
     GetPendingAccessReviewInstances()([]AccessReviewInstanceable)
     GetPeople()([]Personable)
+    GetPermissionGrants()([]ResourceSpecificPermissionGrantable)
     GetPhoto()(ProfilePhotoable)
     GetPhotos()([]ProfilePhotoable)
     GetPlanner()(PlannerUserable)
@@ -5845,6 +5938,7 @@ type Userable interface {
     GetSignInActivity()(SignInActivityable)
     GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSkills()([]string)
+    GetSponsors()([]DirectoryObjectable)
     GetState()(*string)
     GetStreetAddress()(*string)
     GetSurname()(*string)
@@ -5967,6 +6061,7 @@ type Userable interface {
     SetPastProjects(value []string)()
     SetPendingAccessReviewInstances(value []AccessReviewInstanceable)()
     SetPeople(value []Personable)()
+    SetPermissionGrants(value []ResourceSpecificPermissionGrantable)()
     SetPhoto(value ProfilePhotoable)()
     SetPhotos(value []ProfilePhotoable)()
     SetPlanner(value PlannerUserable)()
@@ -5991,6 +6086,7 @@ type Userable interface {
     SetSignInActivity(value SignInActivityable)()
     SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSkills(value []string)()
+    SetSponsors(value []DirectoryObjectable)()
     SetState(value *string)()
     SetStreetAddress(value *string)()
     SetSurname(value *string)()

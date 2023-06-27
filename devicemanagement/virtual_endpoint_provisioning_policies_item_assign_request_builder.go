@@ -31,6 +31,7 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder(rawUrl strin
     return NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post assign cloudPcProvisioningPolicy to user groups.
+// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
@@ -50,6 +51,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) Post(ctx c
     return nil
 }
 // ToPostRequestInformation assign cloudPcProvisioningPolicy to user groups.
+// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

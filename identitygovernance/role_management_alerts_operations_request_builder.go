@@ -11,7 +11,7 @@ import (
 type RoleManagementAlertsOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleManagementAlertsOperationsRequestBuilderGetQueryParameters get operations from identityGovernance
+// RoleManagementAlertsOperationsRequestBuilderGetQueryParameters represents operations on resources that take a long time to complete and can run in the background until completion.
 type RoleManagementAlertsOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewRoleManagementAlertsOperationsRequestBuilder(rawUrl string, requestAdapt
 func (m *RoleManagementAlertsOperationsRequestBuilder) Count()(*RoleManagementAlertsOperationsCountRequestBuilder) {
     return NewRoleManagementAlertsOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get operations from identityGovernance
+// Get represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlertsOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable), nil
 }
-// ToGetRequestInformation get operations from identityGovernance
+// ToGetRequestInformation represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlertsOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

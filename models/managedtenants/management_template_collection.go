@@ -10,7 +10,7 @@ import (
 type ManagementTemplateCollection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementTemplateCollection instantiates a new managementTemplateCollection and sets the default values.
+// NewManagementTemplateCollection instantiates a new ManagementTemplateCollection and sets the default values.
 func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
     m := &ManagementTemplateCollection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

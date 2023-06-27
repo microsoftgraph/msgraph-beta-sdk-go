@@ -47,6 +47,10 @@ func NewTeamworkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DeletedChats provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.
+func (m *TeamworkRequestBuilder) DeletedChats()(*DeletedChatsRequestBuilder) {
+    return NewDeletedChatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DeletedTeams provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
     return NewDeletedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

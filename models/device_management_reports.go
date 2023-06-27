@@ -8,7 +8,7 @@ import (
 type DeviceManagementReports struct {
     Entity
 }
-// NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
+// NewDeviceManagementReports instantiates a new DeviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {
     m := &DeviceManagementReports{
         Entity: *NewEntity(),

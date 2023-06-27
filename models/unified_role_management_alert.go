@@ -20,7 +20,7 @@ func NewUnifiedRoleManagementAlert()(*UnifiedRoleManagementAlert) {
 func CreateUnifiedRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlert(), nil
 }
-// GetAlertConfiguration gets the alertConfiguration property value. The alertConfiguration property
+// GetAlertConfiguration gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertConfiguration()(UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfiguration")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertConfiguration()(UnifiedRoleManageme
     }
     return nil
 }
-// GetAlertDefinition gets the alertDefinition property value. The alertDefinition property
+// GetAlertDefinition gets the alertDefinition property value. Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertDefinition()(UnifiedRoleManagementAlertDefinitionable) {
     val, err := m.GetBackingStore().Get("alertDefinition")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertDefinition()(UnifiedRoleManagementA
     }
     return nil
 }
-// GetAlertDefinitionId gets the alertDefinitionId property value. The alertDefinitionId property
+// GetAlertDefinitionId gets the alertDefinitionId property value. The identifier of an alert definition. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlert) GetAlertDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("alertDefinitionId")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertDefinitionId()(*string) {
     }
     return nil
 }
-// GetAlertIncidents gets the alertIncidents property value. The alertIncidents property
+// GetAlertIncidents gets the alertIncidents property value. Represents the incidents of this alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) GetAlertIncidents()([]UnifiedRoleManagementAlertIncidentable) {
     val, err := m.GetBackingStore().Get("alertIncidents")
     if err != nil {
@@ -175,7 +175,7 @@ func (m *UnifiedRoleManagementAlert) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIncidentCount gets the incidentCount property value. The incidentCount property
+// GetIncidentCount gets the incidentCount property value. The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.
 func (m *UnifiedRoleManagementAlert) GetIncidentCount()(*int32) {
     val, err := m.GetBackingStore().Get("incidentCount")
     if err != nil {
@@ -186,7 +186,7 @@ func (m *UnifiedRoleManagementAlert) GetIncidentCount()(*int32) {
     }
     return nil
 }
-// GetIsActive gets the isActive property value. The isActive property
+// GetIsActive gets the isActive property value. false by default. true if the alert is active.
 func (m *UnifiedRoleManagementAlert) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -197,7 +197,7 @@ func (m *UnifiedRoleManagementAlert) GetIsActive()(*bool) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time when the alert configuration was updated or new incidents generated.
 func (m *UnifiedRoleManagementAlert) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -208,7 +208,7 @@ func (m *UnifiedRoleManagementAlert) GetLastModifiedDateTime()(*i336074805fc8539
     }
     return nil
 }
-// GetLastScannedDateTime gets the lastScannedDateTime property value. The lastScannedDateTime property
+// GetLastScannedDateTime gets the lastScannedDateTime property value. The date time when the tenant was last scanned for incidents that trigger this alert.
 func (m *UnifiedRoleManagementAlert) GetLastScannedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastScannedDateTime")
     if err != nil {
@@ -219,7 +219,7 @@ func (m *UnifiedRoleManagementAlert) GetLastScannedDateTime()(*i336074805fc85398
     }
     return nil
 }
-// GetScopeId gets the scopeId property value. The scopeId property
+// GetScopeId gets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlert) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
     if err != nil {
@@ -230,7 +230,7 @@ func (m *UnifiedRoleManagementAlert) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The scopeType property
+// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
 func (m *UnifiedRoleManagementAlert) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -315,70 +315,70 @@ func (m *UnifiedRoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAlertConfiguration sets the alertConfiguration property value. The alertConfiguration property
+// SetAlertConfiguration sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertConfiguration(value UnifiedRoleManagementAlertConfigurationable)() {
     err := m.GetBackingStore().Set("alertConfiguration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertDefinition sets the alertDefinition property value. The alertDefinition property
+// SetAlertDefinition sets the alertDefinition property value. Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertDefinition(value UnifiedRoleManagementAlertDefinitionable)() {
     err := m.GetBackingStore().Set("alertDefinition", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertDefinitionId sets the alertDefinitionId property value. The alertDefinitionId property
+// SetAlertDefinitionId sets the alertDefinitionId property value. The identifier of an alert definition. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlert) SetAlertDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("alertDefinitionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertIncidents sets the alertIncidents property value. The alertIncidents property
+// SetAlertIncidents sets the alertIncidents property value. Represents the incidents of this alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
 func (m *UnifiedRoleManagementAlert) SetAlertIncidents(value []UnifiedRoleManagementAlertIncidentable)() {
     err := m.GetBackingStore().Set("alertIncidents", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncidentCount sets the incidentCount property value. The incidentCount property
+// SetIncidentCount sets the incidentCount property value. The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.
 func (m *UnifiedRoleManagementAlert) SetIncidentCount(value *int32)() {
     err := m.GetBackingStore().Set("incidentCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsActive sets the isActive property value. The isActive property
+// SetIsActive sets the isActive property value. false by default. true if the alert is active.
 func (m *UnifiedRoleManagementAlert) SetIsActive(value *bool)() {
     err := m.GetBackingStore().Set("isActive", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time when the alert configuration was updated or new incidents generated.
 func (m *UnifiedRoleManagementAlert) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastScannedDateTime sets the lastScannedDateTime property value. The lastScannedDateTime property
+// SetLastScannedDateTime sets the lastScannedDateTime property value. The date time when the tenant was last scanned for incidents that trigger this alert.
 func (m *UnifiedRoleManagementAlert) SetLastScannedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastScannedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeId sets the scopeId property value. The scopeId property
+// SetScopeId sets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlert) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The scopeType property
+// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
 func (m *UnifiedRoleManagementAlert) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {

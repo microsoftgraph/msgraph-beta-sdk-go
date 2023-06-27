@@ -409,6 +409,10 @@ func (m *UserItemRequestBuilder) PendingAccessReviewInstances()(*ItemPendingAcce
 func (m *UserItemRequestBuilder) People()(*ItemPeopleRequestBuilder) {
     return NewItemPeopleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
+    return NewItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Photo provides operations to manage the photo property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Photo()(*ItemPhotoRequestBuilder) {
     return NewItemPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -472,6 +476,10 @@ func (m *UserItemRequestBuilder) SendMail()(*ItemSendMailRequestBuilder) {
 // Settings provides operations to manage the settings property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
     return NewItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sponsors provides operations to manage the sponsors property of the microsoft.graph.user entity.
+func (m *UserItemRequestBuilder) Sponsors()(*ItemSponsorsRequestBuilder) {
+    return NewItemSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Teamwork provides operations to manage the teamwork property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Teamwork()(*ItemTeamworkRequestBuilder) {

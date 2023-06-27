@@ -31,6 +31,7 @@ func NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilder(rawUrl string
     return NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action apply
+// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -47,6 +48,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx co
     return nil
 }
 // ToPostRequestInformation invoke action apply
+// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30
 func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

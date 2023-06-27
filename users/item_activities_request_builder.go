@@ -11,7 +11,7 @@ import (
 type ItemActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemActivitiesRequestBuilderGetQueryParameters get activities from users
+// ItemActivitiesRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
 type ItemActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ItemActivitiesRequestBuilder) Count()(*ItemActivitiesCountRequestBuilder) {
     return NewItemActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get activities from users
+// Get the user's activities across devices. Read-only. Nullable.
 func (m *ItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *ItemActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762
 func (m *ItemActivitiesRequestBuilder) Recent()(*ItemActivitiesRecentRequestBuilder) {
     return NewItemActivitiesRecentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get activities from users
+// ToGetRequestInformation the user's activities across devices. Read-only. Nullable.
 func (m *ItemActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

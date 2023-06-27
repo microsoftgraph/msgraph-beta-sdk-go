@@ -9,7 +9,7 @@ import (
 type SalesOrderLine struct {
     Entity
 }
-// NewSalesOrderLine instantiates a new salesOrderLine and sets the default values.
+// NewSalesOrderLine instantiates a new SalesOrderLine and sets the default values.
 func NewSalesOrderLine()(*SalesOrderLine) {
     m := &SalesOrderLine{
         Entity: *NewEntity(),

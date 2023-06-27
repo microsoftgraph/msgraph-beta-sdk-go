@@ -38,7 +38,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetAdditionalData
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCoManagedDeviceCount gets the coManagedDeviceCount property value. Total number of  co-managed devices.
+// GetCoManagedDeviceCount gets the coManagedDeviceCount property value. Total number of  co-managed devices. Read-only.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetCoManagedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("coManagedDeviceCount")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeseriali
     }
     return res
 }
-// GetIntuneDeviceCount gets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
+// GetIntuneDeviceCount gets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd. Read-only.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetIntuneDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("intuneDeviceCount")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetOdataType()(*s
     }
     return nil
 }
-// GetTenantAttachDeviceCount gets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
+// GetTenantAttachDeviceCount gets the tenantAttachDeviceCount property value. Total count of tenant attach devices. Read-only.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetTenantAttachDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("tenantAttachDeviceCount")
     if err != nil {
@@ -172,14 +172,14 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetAdditionalData
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCoManagedDeviceCount sets the coManagedDeviceCount property value. Total number of  co-managed devices.
+// SetCoManagedDeviceCount sets the coManagedDeviceCount property value. Total number of  co-managed devices. Read-only.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetCoManagedDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("coManagedDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIntuneDeviceCount sets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
+// SetIntuneDeviceCount sets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd. Read-only.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetIntuneDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("intuneDeviceCount", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetOdataType(valu
         panic(err)
     }
 }
-// SetTenantAttachDeviceCount sets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
+// SetTenantAttachDeviceCount sets the tenantAttachDeviceCount property value. Total count of tenant attach devices. Read-only.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetTenantAttachDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("tenantAttachDeviceCount", value)
     if err != nil {

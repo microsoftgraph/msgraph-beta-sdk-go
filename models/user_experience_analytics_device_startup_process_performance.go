@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcessPerformance the user experience analytics device startup process performance.
+// UserExperienceAnalyticsDeviceStartupProcessPerformance 
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformance) {
     m := &UserExperienceAnalyticsDeviceStartupProcessPerformance{
         Entity: *NewEntity(),
@@ -19,7 +19,7 @@ func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperience
 func CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceStartupProcessPerformance(), nil
 }
-// GetDeviceCount gets the deviceCount property value. User experience analytics device startup process summarized count.
+// GetDeviceCount gets the deviceCount property value. The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -115,7 +115,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
     }
     return res
 }
-// GetMedianImpactInMs gets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
+// GetMedianImpactInMs gets the medianImpactInMs property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs()(*int64) {
     val, err := m.GetBackingStore().Get("medianImpactInMs")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpact
     }
     return nil
 }
-// GetMedianImpactInMs2 gets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
+// GetMedianImpactInMs2 gets the medianImpactInMs2 property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpactInMs2()(*int64) {
     val, err := m.GetBackingStore().Get("medianImpactInMs2")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetMedianImpact
     }
     return nil
 }
-// GetProcessName gets the processName property value. User experience analytics device startup process name.
+// GetProcessName gets the processName property value. The name of the startup process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProcessName()(*string) {
     val, err := m.GetBackingStore().Get("processName")
     if err != nil {
@@ -148,7 +148,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProcessName(
     }
     return nil
 }
-// GetProductName gets the productName property value. The user experience analytics device startup process product name.
+// GetProductName gets the productName property value. The product name of the startup process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetProductName(
     }
     return nil
 }
-// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
+// GetPublisher gets the publisher property value. The publisher of the startup process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetPublisher()(
     }
     return nil
 }
-// GetTotalImpactInMs gets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
+// GetTotalImpactInMs gets the totalImpactInMs property value. The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs()(*int64) {
     val, err := m.GetBackingStore().Get("totalImpactInMs")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactI
     }
     return nil
 }
-// GetTotalImpactInMs2 gets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
+// GetTotalImpactInMs2 gets the totalImpactInMs2 property value. The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetTotalImpactInMs2()(*int64) {
     val, err := m.GetBackingStore().Get("totalImpactInMs2")
     if err != nil {
@@ -248,56 +248,56 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
     }
     return nil
 }
-// SetDeviceCount sets the deviceCount property value. User experience analytics device startup process summarized count.
+// SetDeviceCount sets the deviceCount property value. The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(value *int64)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMedianImpactInMs sets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
+// SetMedianImpactInMs sets the medianImpactInMs property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs(value *int64)() {
     err := m.GetBackingStore().Set("medianImpactInMs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMedianImpactInMs2 sets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
+// SetMedianImpactInMs2 sets the medianImpactInMs2 property value. The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs2(value *int64)() {
     err := m.GetBackingStore().Set("medianImpactInMs2", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessName sets the processName property value. User experience analytics device startup process name.
+// SetProcessName sets the processName property value. The name of the startup process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetProcessName(value *string)() {
     err := m.GetBackingStore().Set("processName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProductName sets the productName property value. The user experience analytics device startup process product name.
+// SetProductName sets the productName property value. The product name of the startup process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
+// SetPublisher sets the publisher property value. The publisher of the startup process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalImpactInMs sets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
+// SetTotalImpactInMs sets the totalImpactInMs property value. The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs(value *int64)() {
     err := m.GetBackingStore().Set("totalImpactInMs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalImpactInMs2 sets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
+// SetTotalImpactInMs2 sets the totalImpactInMs2 property value. The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs2(value *int64)() {
     err := m.GetBackingStore().Set("totalImpactInMs2", value)
     if err != nil {

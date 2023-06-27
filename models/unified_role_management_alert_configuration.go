@@ -49,7 +49,7 @@ func CreateUnifiedRoleManagementAlertConfigurationFromDiscriminatorValue(parseNo
     }
     return NewUnifiedRoleManagementAlertConfiguration(), nil
 }
-// GetAlertDefinition gets the alertDefinition property value. The alertDefinition property
+// GetAlertDefinition gets the alertDefinition property value. The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
 func (m *UnifiedRoleManagementAlertConfiguration) GetAlertDefinition()(UnifiedRoleManagementAlertDefinitionable) {
     val, err := m.GetBackingStore().Get("alertDefinition")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetAlertDefinition()(UnifiedRo
     }
     return nil
 }
-// GetAlertDefinitionId gets the alertDefinitionId property value. The alertDefinitionId property
+// GetAlertDefinitionId gets the alertDefinitionId property value. The identifier of an alert definition. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertConfiguration) GetAlertDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("alertDefinitionId")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. true if the alert is enabled. Setting it to false disables PIM scanning the tenant to identify instances that trigger the alert.
 func (m *UnifiedRoleManagementAlertConfiguration) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetScopeId gets the scopeId property value. The scopeId property
+// GetScopeId gets the scopeId property value. The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertConfiguration) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
     if err != nil {
@@ -148,7 +148,7 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The scopeType property
+// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
 func (m *UnifiedRoleManagementAlertConfiguration) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -197,35 +197,35 @@ func (m *UnifiedRoleManagementAlertConfiguration) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetAlertDefinition sets the alertDefinition property value. The alertDefinition property
+// SetAlertDefinition sets the alertDefinition property value. The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
 func (m *UnifiedRoleManagementAlertConfiguration) SetAlertDefinition(value UnifiedRoleManagementAlertDefinitionable)() {
     err := m.GetBackingStore().Set("alertDefinition", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertDefinitionId sets the alertDefinitionId property value. The alertDefinitionId property
+// SetAlertDefinitionId sets the alertDefinitionId property value. The identifier of an alert definition. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertConfiguration) SetAlertDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("alertDefinitionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. true if the alert is enabled. Setting it to false disables PIM scanning the tenant to identify instances that trigger the alert.
 func (m *UnifiedRoleManagementAlertConfiguration) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeId sets the scopeId property value. The scopeId property
+// SetScopeId sets the scopeId property value. The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertConfiguration) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The scopeType property
+// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
 func (m *UnifiedRoleManagementAlertConfiguration) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {

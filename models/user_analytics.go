@@ -8,7 +8,7 @@ import (
 type UserAnalytics struct {
     Entity
 }
-// NewUserAnalytics instantiates a new UserAnalytics and sets the default values.
+// NewUserAnalytics instantiates a new userAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),

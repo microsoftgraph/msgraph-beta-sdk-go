@@ -40,6 +40,7 @@ type EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration s
     QueryParameters *EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters
 }
 // ByTagId1 provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ByTagId1(tagId1 string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,6 +69,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Count()(*Ediscovery
     return NewEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of child tag objects associated with a tag.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0
@@ -90,6 +92,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Get(ctx context.Con
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable), nil
 }
 // ToGetRequestInformation get a list of child tag objects associated with a tag.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

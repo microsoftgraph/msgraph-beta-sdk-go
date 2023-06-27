@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails the user experience analytics application performance entity contains application performance by application version details.
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails{
         Entity: *NewEntity(),
@@ -74,7 +74,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
     }
     return nil
 }
-// GetDeviceCountWithCrashes gets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
+// GetDeviceCountWithCrashes gets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetDeviceCountWithCrashes()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCountWithCrashes")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetF
     }
     return res
 }
-// GetIsLatestUsedVersion gets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
+// GetIsLatestUsedVersion gets the isLatestUsedVersion property value. When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsLatestUsedVersion()(*bool) {
     val, err := m.GetBackingStore().Get("isLatestUsedVersion")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetI
     }
     return nil
 }
-// GetIsMostUsedVersion gets the isMostUsedVersion property value. Is the version of application the most used version for that app.
+// GetIsMostUsedVersion gets the isMostUsedVersion property value. When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsMostUsedVersion()(*bool) {
     val, err := m.GetBackingStore().Get("isMostUsedVersion")
     if err != nil {
@@ -283,21 +283,21 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetA
         panic(err)
     }
 }
-// SetDeviceCountWithCrashes sets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
+// SetDeviceCountWithCrashes sets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetDeviceCountWithCrashes(value *int32)() {
     err := m.GetBackingStore().Set("deviceCountWithCrashes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLatestUsedVersion sets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
+// SetIsLatestUsedVersion sets the isLatestUsedVersion property value. When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetIsLatestUsedVersion(value *bool)() {
     err := m.GetBackingStore().Set("isLatestUsedVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMostUsedVersion sets the isMostUsedVersion property value. Is the version of application the most used version for that app.
+// SetIsMostUsedVersion sets the isMostUsedVersion property value. When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetIsMostUsedVersion(value *bool)() {
     err := m.GetBackingStore().Set("isMostUsedVersion", value)
     if err != nil {

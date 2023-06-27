@@ -38,7 +38,7 @@ func (m *UserExperienceAnalyticsSettings) GetAdditionalData()(map[string]any) {
 func (m *UserExperienceAnalyticsSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConfigurationManagerDataConnectorConfigured gets the configurationManagerDataConnectorConfigured property value. True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.
+// GetConfigurationManagerDataConnectorConfigured gets the configurationManagerDataConnectorConfigured property value. When TRUE, indicates Tenant attach is configured properly and System Center Configuration Manager (SCCM) tenant attached devices will show up in endpoint analytics reporting. When FALSE, indicates Tenant attach is not configured. FALSE by default.
 func (m *UserExperienceAnalyticsSettings) GetConfigurationManagerDataConnectorConfigured()(*bool) {
     val, err := m.GetBackingStore().Get("configurationManagerDataConnectorConfigured")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *UserExperienceAnalyticsSettings) SetAdditionalData(value map[string]any
 func (m *UserExperienceAnalyticsSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConfigurationManagerDataConnectorConfigured sets the configurationManagerDataConnectorConfigured property value. True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.
+// SetConfigurationManagerDataConnectorConfigured sets the configurationManagerDataConnectorConfigured property value. When TRUE, indicates Tenant attach is configured properly and System Center Configuration Manager (SCCM) tenant attached devices will show up in endpoint analytics reporting. When FALSE, indicates Tenant attach is not configured. FALSE by default.
 func (m *UserExperienceAnalyticsSettings) SetConfigurationManagerDataConnectorConfigured(value *bool)() {
     err := m.GetBackingStore().Set("configurationManagerDataConnectorConfigured", value)
     if err != nil {

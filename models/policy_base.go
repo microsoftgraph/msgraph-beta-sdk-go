@@ -8,7 +8,7 @@ import (
 type PolicyBase struct {
     DirectoryObject
 }
-// NewPolicyBase instantiates a new PolicyBase and sets the default values.
+// NewPolicyBase instantiates a new policyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),

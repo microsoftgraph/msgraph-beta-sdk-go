@@ -11,7 +11,7 @@ import (
 type RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetQueryParameters get alertDefinition from identityGovernance
+// RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetQueryParameters the definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
 type RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewRoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get alertDefinition from identityGovernance
+// Get the definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
 func (m *RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable), nil
 }
-// ToGetRequestInformation get alertDefinition from identityGovernance
+// ToGetRequestInformation the definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
 func (m *RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

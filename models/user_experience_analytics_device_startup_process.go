@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcess the user experience analytics device startup process details.
+// UserExperienceAnalyticsDeviceStartupProcess 
 type UserExperienceAnalyticsDeviceStartupProcess struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceStartupProcess instantiates a new userExperienceAnalyticsDeviceStartupProcess and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupProcess instantiates a new UserExperienceAnalyticsDeviceStartupProcess and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcess()(*UserExperienceAnalyticsDeviceStartupProcess) {
     m := &UserExperienceAnalyticsDeviceStartupProcess{
         Entity: *NewEntity(),
@@ -74,7 +74,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetManagedDeviceId gets the managedDeviceId property value. The user experience analytics device id.
+// GetManagedDeviceId gets the managedDeviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*stri
     }
     return nil
 }
-// GetProcessName gets the processName property value. User experience analytics device startup process name.
+// GetProcessName gets the processName property value. The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) {
     val, err := m.GetBackingStore().Get("processName")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProcessName()(*string) 
     }
     return nil
 }
-// GetProductName gets the productName property value. The user experience analytics device startup process product name.
+// GetProductName gets the productName property value. The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
     if err != nil {
@@ -107,7 +107,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetProductName()(*string) 
     }
     return nil
 }
-// GetPublisher gets the publisher property value. The User experience analytics device startup process publisher.
+// GetPublisher gets the publisher property value. The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetPublisher()(*string) {
     }
     return nil
 }
-// GetStartupImpactInMs gets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
+// GetStartupImpactInMs gets the startupImpactInMs property value. The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetStartupImpactInMs()(*int32) {
     val, err := m.GetBackingStore().Get("startupImpactInMs")
     if err != nil {
@@ -167,35 +167,35 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetManagedDeviceId sets the managedDeviceId property value. The user experience analytics device id.
+// SetManagedDeviceId sets the managedDeviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetManagedDeviceId(value *string)() {
     err := m.GetBackingStore().Set("managedDeviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessName sets the processName property value. User experience analytics device startup process name.
+// SetProcessName sets the processName property value. The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProcessName(value *string)() {
     err := m.GetBackingStore().Set("processName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProductName sets the productName property value. The user experience analytics device startup process product name.
+// SetProductName sets the productName property value. The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
+// SetPublisher sets the publisher property value. The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartupImpactInMs sets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
+// SetStartupImpactInMs sets the startupImpactInMs property value. The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetStartupImpactInMs(value *int32)() {
     err := m.GetBackingStore().Set("startupImpactInMs", value)
     if err != nil {

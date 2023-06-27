@@ -132,7 +132,7 @@ func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsI
     }
     return nil
 }
-// GetUserExperienceAnalyticsMetricId gets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics insight.
+// GetUserExperienceAnalyticsMetricId gets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics metric.
 func (m *UserExperienceAnalyticsInsight) GetUserExperienceAnalyticsMetricId()(*string) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsMetricId")
     if err != nil {
@@ -233,7 +233,7 @@ func (m *UserExperienceAnalyticsInsight) SetSeverity(value *UserExperienceAnalyt
         panic(err)
     }
 }
-// SetUserExperienceAnalyticsMetricId sets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics insight.
+// SetUserExperienceAnalyticsMetricId sets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics metric.
 func (m *UserExperienceAnalyticsInsight) SetUserExperienceAnalyticsMetricId(value *string)() {
     err := m.GetBackingStore().Set("userExperienceAnalyticsMetricId", value)
     if err != nil {

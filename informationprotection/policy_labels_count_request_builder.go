@@ -40,6 +40,7 @@ func NewPolicyLabelsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewPolicyLabelsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 func (m *PolicyLabelsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *PolicyLabelsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,6 +60,7 @@ func (m *PolicyLabelsCountRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 func (m *PolicyLabelsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PolicyLabelsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

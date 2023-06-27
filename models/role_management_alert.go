@@ -19,7 +19,7 @@ func NewRoleManagementAlert()(*RoleManagementAlert) {
 func CreateRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleManagementAlert(), nil
 }
-// GetAlertConfigurations gets the alertConfigurations property value. The alertConfigurations property
+// GetAlertConfigurations gets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
 func (m *RoleManagementAlert) GetAlertConfigurations()([]UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfigurations")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *RoleManagementAlert) GetAlertConfigurations()([]UnifiedRoleManagementAl
     }
     return nil
 }
-// GetAlertDefinitions gets the alertDefinitions property value. The alertDefinitions property
+// GetAlertDefinitions gets the alertDefinitions property value. Defines an alert, its impact, and measures to mitigate or prevent it.
 func (m *RoleManagementAlert) GetAlertDefinitions()([]UnifiedRoleManagementAlertDefinitionable) {
     val, err := m.GetBackingStore().Get("alertDefinitions")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *RoleManagementAlert) GetAlertDefinitions()([]UnifiedRoleManagementAlert
     }
     return nil
 }
-// GetAlerts gets the alerts property value. The alerts property
+// GetAlerts gets the alerts property value. Represents the alert entity.
 func (m *RoleManagementAlert) GetAlerts()([]UnifiedRoleManagementAlertable) {
     val, err := m.GetBackingStore().Get("alerts")
     if err != nil {
@@ -121,7 +121,7 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. Represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlert) GetOperations()([]LongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -188,28 +188,28 @@ func (m *RoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAlertConfigurations sets the alertConfigurations property value. The alertConfigurations property
+// SetAlertConfigurations sets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
 func (m *RoleManagementAlert) SetAlertConfigurations(value []UnifiedRoleManagementAlertConfigurationable)() {
     err := m.GetBackingStore().Set("alertConfigurations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertDefinitions sets the alertDefinitions property value. The alertDefinitions property
+// SetAlertDefinitions sets the alertDefinitions property value. Defines an alert, its impact, and measures to mitigate or prevent it.
 func (m *RoleManagementAlert) SetAlertDefinitions(value []UnifiedRoleManagementAlertDefinitionable)() {
     err := m.GetBackingStore().Set("alertDefinitions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlerts sets the alerts property value. The alerts property
+// SetAlerts sets the alerts property value. Represents the alert entity.
 func (m *RoleManagementAlert) SetAlerts(value []UnifiedRoleManagementAlertable)() {
     err := m.GetBackingStore().Set("alerts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. Represents operations on resources that take a long time to complete and can run in the background until completion.
 func (m *RoleManagementAlert) SetOperations(value []LongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {
