@@ -38,6 +38,17 @@ func (m *AuditLogRoot) GetAdditionalData()(map[string]any) {
 func (m *AuditLogRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCustomSecurityAttributeAudits gets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+func (m *AuditLogRoot) GetCustomSecurityAttributeAudits()([]CustomSecurityAttributeAuditable) {
+    val, err := m.GetBackingStore().Get("customSecurityAttributeAudits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSecurityAttributeAuditable)
+    }
+    return nil
+}
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
     val, err := m.GetBackingStore().Get("directoryAudits")
@@ -63,6 +74,22 @@ func (m *AuditLogRoot) GetDirectoryProvisioning()([]ProvisioningObjectSummaryabl
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["customSecurityAttributeAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomSecurityAttributeAuditFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomSecurityAttributeAuditable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CustomSecurityAttributeAuditable)
+                }
+            }
+            m.SetCustomSecurityAttributeAudits(res)
+        }
+        return nil
+    }
     res["directoryAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryAuditFromDiscriminatorValue)
         if err != nil {
@@ -174,6 +201,18 @@ func (m *AuditLogRoot) GetSignIns()([]SignInable) {
 }
 // Serialize serializes information the current object
 func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetCustomSecurityAttributeAudits() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeAudits()))
+        for i, v := range m.GetCustomSecurityAttributeAudits() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("customSecurityAttributeAudits", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDirectoryAudits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryAudits()))
         for i, v := range m.GetDirectoryAudits() {
@@ -247,6 +286,13 @@ func (m *AuditLogRoot) SetAdditionalData(value map[string]any)() {
 func (m *AuditLogRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCustomSecurityAttributeAudits sets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+func (m *AuditLogRoot) SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)() {
+    err := m.GetBackingStore().Set("customSecurityAttributeAudits", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
     err := m.GetBackingStore().Set("directoryAudits", value)
@@ -288,12 +334,14 @@ type AuditLogRootable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCustomSecurityAttributeAudits()([]CustomSecurityAttributeAuditable)
     GetDirectoryAudits()([]DirectoryAuditable)
     GetDirectoryProvisioning()([]ProvisioningObjectSummaryable)
     GetOdataType()(*string)
     GetProvisioning()([]ProvisioningObjectSummaryable)
     GetSignIns()([]SignInable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)()
     SetDirectoryAudits(value []DirectoryAuditable)()
     SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)()
     SetOdataType(value *string)()

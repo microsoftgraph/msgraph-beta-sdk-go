@@ -71,6 +71,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     return NewEntitlementManagementAccessPackageAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete in Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0
@@ -90,6 +91,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     return nil
 }
 // Get in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0
@@ -112,6 +114,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable), nil
 }
 // Put update the navigation property accessPackageAssignmentPolicies in identityGovernance
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, requestConfiguration *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -131,6 +134,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable), nil
 }
 // ToDeleteRequestInformation in Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -143,6 +147,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     return requestInfo, nil
 }
 // ToGetRequestInformation in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -159,6 +164,7 @@ func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssign
     return requestInfo, nil
 }
 // ToPutRequestInformation update the navigation property accessPackageAssignmentPolicies in identityGovernance
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, requestConfiguration *EntitlementManagementAccessPackageAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

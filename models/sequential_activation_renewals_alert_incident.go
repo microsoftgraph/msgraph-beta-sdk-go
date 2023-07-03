@@ -22,7 +22,7 @@ func NewSequentialActivationRenewalsAlertIncident()(*SequentialActivationRenewal
 func CreateSequentialActivationRenewalsAlertIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSequentialActivationRenewalsAlertIncident(), nil
 }
-// GetActivationCount gets the activationCount property value. The activationCount property
+// GetActivationCount gets the activationCount property value. The length of sequential activation of the same role.
 func (m *SequentialActivationRenewalsAlertIncident) GetActivationCount()(*int32) {
     val, err := m.GetBackingStore().Get("activationCount")
     if err != nil {
@@ -33,7 +33,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetActivationCount()(*int32)
     }
     return nil
 }
-// GetAssigneeDisplayName gets the assigneeDisplayName property value. The assigneeDisplayName property
+// GetAssigneeDisplayName gets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
 func (m *SequentialActivationRenewalsAlertIncident) GetAssigneeDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeDisplayName")
     if err != nil {
@@ -44,7 +44,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetAssigneeDisplayName()(*st
     }
     return nil
 }
-// GetAssigneeId gets the assigneeId property value. The assigneeId property
+// GetAssigneeId gets the assigneeId property value. The identifier of the subject that the incident applies to.
 func (m *SequentialActivationRenewalsAlertIncident) GetAssigneeId()(*string) {
     val, err := m.GetBackingStore().Get("assigneeId")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetAssigneeId()(*string) {
     }
     return nil
 }
-// GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. The assigneeUserPrincipalName property
+// GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
 func (m *SequentialActivationRenewalsAlertIncident) GetAssigneeUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeUserPrincipalName")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. The roleDefinitionId property
+// GetRoleDefinitionId gets the roleDefinitionId property value. The identifier for the directory role definition that's in scope of this incident.
 func (m *SequentialActivationRenewalsAlertIncident) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetRoleDefinitionId()(*strin
     }
     return nil
 }
-// GetRoleDisplayName gets the roleDisplayName property value. The roleDisplayName property
+// GetRoleDisplayName gets the roleDisplayName property value. The display name for the directory role.
 func (m *SequentialActivationRenewalsAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -183,7 +183,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetRoleDisplayName()(*string
     }
     return nil
 }
-// GetRoleTemplateId gets the roleTemplateId property value. The roleTemplateId property
+// GetRoleTemplateId gets the roleTemplateId property value. The globally unique identifier for the directory role.
 func (m *SequentialActivationRenewalsAlertIncident) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetRoleTemplateId()(*string)
     }
     return nil
 }
-// GetSequenceEndDateTime gets the sequenceEndDateTime property value. The sequenceEndDateTime property
+// GetSequenceEndDateTime gets the sequenceEndDateTime property value. End date time of the sequential activation event.
 func (m *SequentialActivationRenewalsAlertIncident) GetSequenceEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sequenceEndDateTime")
     if err != nil {
@@ -205,7 +205,7 @@ func (m *SequentialActivationRenewalsAlertIncident) GetSequenceEndDateTime()(*i3
     }
     return nil
 }
-// GetSequenceStartDateTime gets the sequenceStartDateTime property value. The sequenceStartDateTime property
+// GetSequenceStartDateTime gets the sequenceStartDateTime property value. Start date time of the sequential activation event.
 func (m *SequentialActivationRenewalsAlertIncident) GetSequenceStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sequenceStartDateTime")
     if err != nil {
@@ -278,63 +278,63 @@ func (m *SequentialActivationRenewalsAlertIncident) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetActivationCount sets the activationCount property value. The activationCount property
+// SetActivationCount sets the activationCount property value. The length of sequential activation of the same role.
 func (m *SequentialActivationRenewalsAlertIncident) SetActivationCount(value *int32)() {
     err := m.GetBackingStore().Set("activationCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeDisplayName sets the assigneeDisplayName property value. The assigneeDisplayName property
+// SetAssigneeDisplayName sets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
 func (m *SequentialActivationRenewalsAlertIncident) SetAssigneeDisplayName(value *string)() {
     err := m.GetBackingStore().Set("assigneeDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeId sets the assigneeId property value. The assigneeId property
+// SetAssigneeId sets the assigneeId property value. The identifier of the subject that the incident applies to.
 func (m *SequentialActivationRenewalsAlertIncident) SetAssigneeId(value *string)() {
     err := m.GetBackingStore().Set("assigneeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeUserPrincipalName sets the assigneeUserPrincipalName property value. The assigneeUserPrincipalName property
+// SetAssigneeUserPrincipalName sets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
 func (m *SequentialActivationRenewalsAlertIncident) SetAssigneeUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("assigneeUserPrincipalName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. The roleDefinitionId property
+// SetRoleDefinitionId sets the roleDefinitionId property value. The identifier for the directory role definition that's in scope of this incident.
 func (m *SequentialActivationRenewalsAlertIncident) SetRoleDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("roleDefinitionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleDisplayName sets the roleDisplayName property value. The roleDisplayName property
+// SetRoleDisplayName sets the roleDisplayName property value. The display name for the directory role.
 func (m *SequentialActivationRenewalsAlertIncident) SetRoleDisplayName(value *string)() {
     err := m.GetBackingStore().Set("roleDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleTemplateId sets the roleTemplateId property value. The roleTemplateId property
+// SetRoleTemplateId sets the roleTemplateId property value. The globally unique identifier for the directory role.
 func (m *SequentialActivationRenewalsAlertIncident) SetRoleTemplateId(value *string)() {
     err := m.GetBackingStore().Set("roleTemplateId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSequenceEndDateTime sets the sequenceEndDateTime property value. The sequenceEndDateTime property
+// SetSequenceEndDateTime sets the sequenceEndDateTime property value. End date time of the sequential activation event.
 func (m *SequentialActivationRenewalsAlertIncident) SetSequenceEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("sequenceEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSequenceStartDateTime sets the sequenceStartDateTime property value. The sequenceStartDateTime property
+// SetSequenceStartDateTime sets the sequenceStartDateTime property value. Start date time of the sequential activation event.
 func (m *SequentialActivationRenewalsAlertIncident) SetSequenceStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("sequenceStartDateTime", value)
     if err != nil {

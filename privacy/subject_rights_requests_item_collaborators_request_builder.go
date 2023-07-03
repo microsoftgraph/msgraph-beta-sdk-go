@@ -40,6 +40,7 @@ type SubjectRightsRequestsItemCollaboratorsRequestBuilderGetRequestConfiguration
     QueryParameters *SubjectRightsRequestsItemCollaboratorsRequestBuilderGetQueryParameters
 }
 // ByUserId provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,6 +69,7 @@ func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) Count()(*SubjectR
     return NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get collaborators from privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,6 +89,7 @@ func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation get collaborators from privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemCollaboratorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

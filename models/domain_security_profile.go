@@ -9,7 +9,7 @@ import (
 type DomainSecurityProfile struct {
     Entity
 }
-// NewDomainSecurityProfile instantiates a new domainSecurityProfile and sets the default values.
+// NewDomainSecurityProfile instantiates a new DomainSecurityProfile and sets the default values.
 func NewDomainSecurityProfile()(*DomainSecurityProfile) {
     m := &DomainSecurityProfile{
         Entity: *NewEntity(),

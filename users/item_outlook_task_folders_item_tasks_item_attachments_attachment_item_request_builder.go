@@ -48,6 +48,7 @@ func NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuild
     return NewItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property attachments for users
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -64,6 +65,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuil
     return nil
 }
 // Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,6 +85,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
 // ToDeleteRequestInformation delete navigation property attachments for users
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -95,6 +98,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuil
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

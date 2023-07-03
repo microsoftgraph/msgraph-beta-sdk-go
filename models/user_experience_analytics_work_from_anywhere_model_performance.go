@@ -19,7 +19,7 @@ func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienc
 func CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance(), nil
 }
-// GetCloudIdentityScore gets the cloudIdentityScore property value. The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetCloudIdentityScore gets the cloudIdentityScore property value. The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudIdentityScore()(*float64) {
     val, err := m.GetBackingStore().Get("cloudIdentityScore")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudIdenti
     }
     return nil
 }
-// GetCloudManagementScore gets the cloudManagementScore property value. The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetCloudManagementScore gets the cloudManagementScore property value. The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudManagementScore()(*float64) {
     val, err := m.GetBackingStore().Get("cloudManagementScore")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudManage
     }
     return nil
 }
-// GetCloudProvisioningScore gets the cloudProvisioningScore property value. The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetCloudProvisioningScore gets the cloudProvisioningScore property value. The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudProvisioningScore()(*float64) {
     val, err := m.GetBackingStore().Get("cloudProvisioningScore")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetHealthStatu
     }
     return nil
 }
-// GetManufacturer gets the manufacturer property value. The user experience work from anywhere's manufacturer name of the devices.
+// GetManufacturer gets the manufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetManufacture
     }
     return nil
 }
-// GetModel gets the model property value. The user experience work from anywhere's model name of the devices.
+// GetModel gets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -180,7 +180,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModel()(*st
     }
     return nil
 }
-// GetModelDeviceCount gets the modelDeviceCount property value. The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
+// GetModelDeviceCount gets the modelDeviceCount property value. The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModelDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("modelDeviceCount")
     if err != nil {
@@ -191,7 +191,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModelDevice
     }
     return nil
 }
-// GetWindowsScore gets the windowsScore property value. The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetWindowsScore gets the windowsScore property value. The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWindowsScore()(*float64) {
     val, err := m.GetBackingStore().Get("windowsScore")
     if err != nil {
@@ -202,7 +202,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWindowsScor
     }
     return nil
 }
-// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetWorkFromAnywhereScore()(*float64) {
     val, err := m.GetBackingStore().Get("workFromAnywhereScore")
     if err != nil {
@@ -276,21 +276,21 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) Serialize(writ
     }
     return nil
 }
-// SetCloudIdentityScore sets the cloudIdentityScore property value. The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetCloudIdentityScore sets the cloudIdentityScore property value. The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudIdentityScore(value *float64)() {
     err := m.GetBackingStore().Set("cloudIdentityScore", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCloudManagementScore sets the cloudManagementScore property value. The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetCloudManagementScore sets the cloudManagementScore property value. The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudManagementScore(value *float64)() {
     err := m.GetBackingStore().Set("cloudManagementScore", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCloudProvisioningScore sets the cloudProvisioningScore property value. The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetCloudProvisioningScore sets the cloudProvisioningScore property value. The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudProvisioningScore(value *float64)() {
     err := m.GetBackingStore().Set("cloudProvisioningScore", value)
     if err != nil {
@@ -304,35 +304,35 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetHealthStatu
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. The user experience work from anywhere's manufacturer name of the devices.
+// SetManufacturer sets the manufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModel sets the model property value. The user experience work from anywhere's model name of the devices.
+// SetModel sets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModelDeviceCount sets the modelDeviceCount property value. The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
+// SetModelDeviceCount sets the modelDeviceCount property value. The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetModelDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("modelDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWindowsScore sets the windowsScore property value. The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetWindowsScore sets the windowsScore property value. The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetWindowsScore(value *float64)() {
     err := m.GetBackingStore().Set("windowsScore", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetWorkFromAnywhereScore(value *float64)() {
     err := m.GetBackingStore().Set("workFromAnywhereScore", value)
     if err != nil {

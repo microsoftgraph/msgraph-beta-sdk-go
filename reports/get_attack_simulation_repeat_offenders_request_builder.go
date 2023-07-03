@@ -46,6 +46,7 @@ func NewGetAttackSimulationRepeatOffendersRequestBuilder(rawUrl string, requestA
     return NewGetAttackSimulationRepeatOffendersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAttackSimulationRepeatOffenders
+// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
 func (m *GetAttackSimulationRepeatOffendersRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(GetAttackSimulationRepeatOffendersResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -65,6 +66,7 @@ func (m *GetAttackSimulationRepeatOffendersRequestBuilder) Get(ctx context.Conte
     return res.(GetAttackSimulationRepeatOffendersResponseable), nil
 }
 // ToGetRequestInformation invoke function getAttackSimulationRepeatOffenders
+// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
 func (m *GetAttackSimulationRepeatOffendersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDevicePerformance the user experience analytics battery health device performance entity contains device level battery information.
+// UserExperienceAnalyticsBatteryHealthDevicePerformance 
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new userExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceAnalyticsBatteryHealthDevicePerformance) {
     m := &UserExperienceAnalyticsBatteryHealthDevicePerformance{
         Entity: *NewEntity(),

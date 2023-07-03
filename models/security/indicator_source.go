@@ -6,22 +6,22 @@ import (
 type IndicatorSource int
 
 const (
-    MICROSOFTDEFENDERTHREATINTELLIGENCE_INDICATORSOURCE IndicatorSource = iota
-    OPENSOURCEINTELLIGENCE_INDICATORSOURCE
+    MICROSOFT_INDICATORSOURCE IndicatorSource = iota
+    OSINT_INDICATORSOURCE
     PUBLIC_INDICATORSOURCE
     UNKNOWNFUTUREVALUE_INDICATORSOURCE
 )
 
 func (i IndicatorSource) String() string {
-    return []string{"microsoftDefenderThreatIntelligence", "openSourceIntelligence", "public", "unknownFutureValue"}[i]
+    return []string{"microsoft", "osint", "public", "unknownFutureValue"}[i]
 }
 func ParseIndicatorSource(v string) (any, error) {
-    result := MICROSOFTDEFENDERTHREATINTELLIGENCE_INDICATORSOURCE
+    result := MICROSOFT_INDICATORSOURCE
     switch v {
-        case "microsoftDefenderThreatIntelligence":
-            result = MICROSOFTDEFENDERTHREATINTELLIGENCE_INDICATORSOURCE
-        case "openSourceIntelligence":
-            result = OPENSOURCEINTELLIGENCE_INDICATORSOURCE
+        case "microsoft":
+            result = MICROSOFT_INDICATORSOURCE
+        case "osint":
+            result = OSINT_INDICATORSOURCE
         case "public":
             result = PUBLIC_INDICATORSOURCE
         case "unknownFutureValue":

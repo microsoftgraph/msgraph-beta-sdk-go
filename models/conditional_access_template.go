@@ -8,7 +8,7 @@ import (
 type ConditionalAccessTemplate struct {
     Entity
 }
-// NewConditionalAccessTemplate instantiates a new conditionalAccessTemplate and sets the default values.
+// NewConditionalAccessTemplate instantiates a new ConditionalAccessTemplate and sets the default values.
 func NewConditionalAccessTemplate()(*ConditionalAccessTemplate) {
     m := &ConditionalAccessTemplate{
         Entity: *NewEntity(),

@@ -22,7 +22,7 @@ func NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident()(*RolesAs
 func CreateRolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident(), nil
 }
-// GetAssigneeDisplayName gets the assigneeDisplayName property value. The assigneeDisplayName property
+// GetAssigneeDisplayName gets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssigneeDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeDisplayName")
     if err != nil {
@@ -33,7 +33,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssig
     }
     return nil
 }
-// GetAssigneeId gets the assigneeId property value. The assigneeId property
+// GetAssigneeId gets the assigneeId property value. The identifier of the subject that the incident applies to.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssigneeId()(*string) {
     val, err := m.GetBackingStore().Get("assigneeId")
     if err != nil {
@@ -44,7 +44,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssig
     }
     return nil
 }
-// GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. The assigneeUserPrincipalName property
+// GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssigneeUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeUserPrincipalName")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetField
     }
     return res
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. The roleDefinitionId property
+// GetRoleDefinitionId gets the roleDefinitionId property value. The identifier for the directory role definition that's in scope of this incident.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -152,7 +152,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleD
     }
     return nil
 }
-// GetRoleDisplayName gets the roleDisplayName property value. The roleDisplayName property
+// GetRoleDisplayName gets the roleDisplayName property value. The display name for the directory role.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -163,7 +163,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleD
     }
     return nil
 }
-// GetRoleTemplateId gets the roleTemplateId property value. The roleTemplateId property
+// GetRoleTemplateId gets the roleTemplateId property value. The globally unique identifier for the directory role.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -224,21 +224,21 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) Serializ
     }
     return nil
 }
-// SetAssigneeDisplayName sets the assigneeDisplayName property value. The assigneeDisplayName property
+// SetAssigneeDisplayName sets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetAssigneeDisplayName(value *string)() {
     err := m.GetBackingStore().Set("assigneeDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeId sets the assigneeId property value. The assigneeId property
+// SetAssigneeId sets the assigneeId property value. The identifier of the subject that the incident applies to.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetAssigneeId(value *string)() {
     err := m.GetBackingStore().Set("assigneeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeUserPrincipalName sets the assigneeUserPrincipalName property value. The assigneeUserPrincipalName property
+// SetAssigneeUserPrincipalName sets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetAssigneeUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("assigneeUserPrincipalName", value)
     if err != nil {
@@ -252,21 +252,21 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetAssig
         panic(err)
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. The roleDefinitionId property
+// SetRoleDefinitionId sets the roleDefinitionId property value. The identifier for the directory role definition that's in scope of this incident.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetRoleDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("roleDefinitionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleDisplayName sets the roleDisplayName property value. The roleDisplayName property
+// SetRoleDisplayName sets the roleDisplayName property value. The display name for the directory role.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetRoleDisplayName(value *string)() {
     err := m.GetBackingStore().Set("roleDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleTemplateId sets the roleTemplateId property value. The roleTemplateId property
+// SetRoleTemplateId sets the roleTemplateId property value. The globally unique identifier for the directory role.
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetRoleTemplateId(value *string)() {
     err := m.GetBackingStore().Set("roleTemplateId", value)
     if err != nil {

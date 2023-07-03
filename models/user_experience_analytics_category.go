@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsCategory struct {
     Entity
 }
-// NewUserExperienceAnalyticsCategory instantiates a new userExperienceAnalyticsCategory and sets the default values.
+// NewUserExperienceAnalyticsCategory instantiates a new UserExperienceAnalyticsCategory and sets the default values.
 func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     m := &UserExperienceAnalyticsCategory{
         Entity: *NewEntity(),
@@ -56,7 +56,7 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetInsights gets the insights property value. The insights for the user experience analytics category.
+// GetInsights gets the insights property value. The insights for the category. Read-only.
 func (m *UserExperienceAnalyticsCategory) GetInsights()([]UserExperienceAnalyticsInsightable) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *UserExperienceAnalyticsCategory) GetInsights()([]UserExperienceAnalytic
     }
     return nil
 }
-// GetMetricValues gets the metricValues property value. The metric values for the user experience analytics category.
+// GetMetricValues gets the metricValues property value. The metric values for the user experience analytics category. Read-only.
 func (m *UserExperienceAnalyticsCategory) GetMetricValues()([]UserExperienceAnalyticsMetricable) {
     val, err := m.GetBackingStore().Get("metricValues")
     if err != nil {
@@ -110,14 +110,14 @@ func (m *UserExperienceAnalyticsCategory) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetInsights sets the insights property value. The insights for the user experience analytics category.
+// SetInsights sets the insights property value. The insights for the category. Read-only.
 func (m *UserExperienceAnalyticsCategory) SetInsights(value []UserExperienceAnalyticsInsightable)() {
     err := m.GetBackingStore().Set("insights", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMetricValues sets the metricValues property value. The metric values for the user experience analytics category.
+// SetMetricValues sets the metricValues property value. The metric values for the user experience analytics category. Read-only.
 func (m *UserExperienceAnalyticsCategory) SetMetricValues(value []UserExperienceAnalyticsMetricable)() {
     err := m.GetBackingStore().Set("metricValues", value)
     if err != nil {

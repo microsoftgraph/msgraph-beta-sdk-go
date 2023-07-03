@@ -30,7 +30,10 @@ func NewRoleManagementAlertsAlertsRefreshRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementAlertsAlertsRefreshRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action refresh
+// Post refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Azure AD roles.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/unifiedrolemanagementalert-refresh?view=graph-rest-1.0
 func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) Post(ctx context.Context, body RoleManagementAlertsAlertsRefreshPostRequestBodyable, requestConfiguration *RoleManagementAlertsAlertsRefreshRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action refresh
+// ToPostRequestInformation refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Azure AD roles.
 func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, body RoleManagementAlertsAlertsRefreshPostRequestBodyable, requestConfiguration *RoleManagementAlertsAlertsRefreshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

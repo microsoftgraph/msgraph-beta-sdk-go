@@ -53,6 +53,7 @@ func NewConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthe
     return NewConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function findByMethodMode
+// Deprecated: The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31
 func (m *ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +73,7 @@ func (m *ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuth
     return res.(ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesResponseable), nil
 }
 // ToGetRequestInformation invoke function findByMethodMode
+// Deprecated: The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31
 func (m *ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

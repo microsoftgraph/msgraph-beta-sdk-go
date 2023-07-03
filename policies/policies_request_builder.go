@@ -115,6 +115,10 @@ func (m *PoliciesRequestBuilder) ExternalIdentitiesPolicy()(*ExternalIdentitiesP
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {
     return NewFeatureRolloutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FederatedTokenValidationPolicy provides operations to manage the federatedTokenValidationPolicy property of the microsoft.graph.policyRoot entity.
+func (m *PoliciesRequestBuilder) FederatedTokenValidationPolicy()(*FederatedTokenValidationPolicyRequestBuilder) {
+    return NewFederatedTokenValidationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get policies
 func (m *PoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *PoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

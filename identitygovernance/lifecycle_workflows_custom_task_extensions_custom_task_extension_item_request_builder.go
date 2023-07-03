@@ -58,7 +58,7 @@ func NewLifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuil
 func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) CreatedBy()(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a customTaskExtension object. Can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+// Delete delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-customtaskextension-delete?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBui
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionable), nil
 }
-// ToDeleteRequestInformation delete a customTaskExtension object. Can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+// ToDeleteRequestInformation delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
 func (m *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

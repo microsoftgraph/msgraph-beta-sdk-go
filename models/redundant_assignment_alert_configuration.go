@@ -21,7 +21,7 @@ func NewRedundantAssignmentAlertConfiguration()(*RedundantAssignmentAlertConfigu
 func CreateRedundantAssignmentAlertConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRedundantAssignmentAlertConfiguration(), nil
 }
-// GetDuration gets the duration property value. The duration property
+// GetDuration gets the duration property value. The number of days without activation to look back on from current timestamp.
 func (m *RedundantAssignmentAlertConfiguration) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *RedundantAssignmentAlertConfiguration) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetDuration sets the duration property value. The duration property
+// SetDuration sets the duration property value. The number of days without activation to look back on from current timestamp.
 func (m *RedundantAssignmentAlertConfiguration) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("duration", value)
     if err != nil {

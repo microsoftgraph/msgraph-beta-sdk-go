@@ -144,6 +144,10 @@ func (m *ThreatIntelligenceRequestBuilder) Patch(ctx context.Context, body i084f
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatIntelligenceable), nil
 }
+// Subdomains provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceRequestBuilder) Subdomains()(*ThreatIntelligenceSubdomainsRequestBuilder) {
+    return NewThreatIntelligenceSubdomainsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property threatIntelligence for security
 func (m *ThreatIntelligenceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

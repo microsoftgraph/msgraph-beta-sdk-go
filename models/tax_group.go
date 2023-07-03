@@ -9,7 +9,7 @@ import (
 type TaxGroup struct {
     Entity
 }
-// NewTaxGroup instantiates a new taxGroup and sets the default values.
+// NewTaxGroup instantiates a new TaxGroup and sets the default values.
 func NewTaxGroup()(*TaxGroup) {
     m := &TaxGroup{
         Entity: *NewEntity(),

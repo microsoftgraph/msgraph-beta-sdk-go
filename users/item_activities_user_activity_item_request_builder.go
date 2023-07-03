@@ -18,7 +18,7 @@ type ItemActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemActivitiesUserActivityItemRequestBuilderGetQueryParameters get activities from users
+// ItemActivitiesUserActivityItemRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
 type ItemActivitiesUserActivityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get get activities from users
+// Get the user's activities across devices. Read-only. Nullable.
 func (m *ItemActivitiesUserActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get activities from users
+// ToGetRequestInformation the user's activities across devices. Read-only. Nullable.
 func (m *ItemActivitiesUserActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

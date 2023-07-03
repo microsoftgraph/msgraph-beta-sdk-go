@@ -46,7 +46,7 @@ func (m *NoMfaOnRoleActivationAlertIncident) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetRoleDisplayName gets the roleDisplayName property value. The roleDisplayName property
+// GetRoleDisplayName gets the roleDisplayName property value. The name of the Azure AD directory role.
 func (m *NoMfaOnRoleActivationAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *NoMfaOnRoleActivationAlertIncident) GetRoleDisplayName()(*string) {
     }
     return nil
 }
-// GetRoleTemplateId gets the roleTemplateId property value. The roleTemplateId property
+// GetRoleTemplateId gets the roleTemplateId property value. The globally unique identifier for a directory role.
 func (m *NoMfaOnRoleActivationAlertIncident) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *NoMfaOnRoleActivationAlertIncident) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetRoleDisplayName sets the roleDisplayName property value. The roleDisplayName property
+// SetRoleDisplayName sets the roleDisplayName property value. The name of the Azure AD directory role.
 func (m *NoMfaOnRoleActivationAlertIncident) SetRoleDisplayName(value *string)() {
     err := m.GetBackingStore().Set("roleDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleTemplateId sets the roleTemplateId property value. The roleTemplateId property
+// SetRoleTemplateId sets the roleTemplateId property value. The globally unique identifier for a directory role.
 func (m *NoMfaOnRoleActivationAlertIncident) SetRoleTemplateId(value *string)() {
     err := m.GetBackingStore().Set("roleTemplateId", value)
     if err != nil {

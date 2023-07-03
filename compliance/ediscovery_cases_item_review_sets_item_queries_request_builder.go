@@ -47,6 +47,7 @@ type EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderPostRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByReviewSetQueryId provides operations to manage the queries property of the microsoft.graph.ediscovery.reviewSet entity.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ByReviewSetQueryId(reviewSetQueryId string)(*EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -75,6 +76,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Count()(*Edisco
     return NewEdiscoveryCasesItemReviewSetsItemQueriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of eDiscovery reviewSetQuery objects.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-list?view=graph-rest-1.0
@@ -97,6 +99,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Get(ctx context
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryCollectionResponseable), nil
 }
 // Post create a new reviewSetQuery object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-post?view=graph-rest-1.0
@@ -119,6 +122,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Post(ctx contex
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable), nil
 }
 // ToGetRequestInformation retrieve a list of eDiscovery reviewSetQuery objects.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -135,6 +139,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new reviewSetQuery object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

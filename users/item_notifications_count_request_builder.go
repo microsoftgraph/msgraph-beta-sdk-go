@@ -40,6 +40,7 @@ func NewItemNotificationsCountRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemNotificationsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
 func (m *ItemNotificationsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemNotificationsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ItemNotificationsCountRequestBuilder) Get(ctx context.Context, requestC
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
 func (m *ItemNotificationsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemNotificationsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

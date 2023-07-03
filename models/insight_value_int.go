@@ -36,7 +36,7 @@ func (m *InsightValueInt) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetValue gets the value property value. Not yet documented
+// GetValue gets the value property value. The int value of the user experience analytics insight.
 func (m *InsightValueInt) GetValue()(*int32) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *InsightValueInt) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetValue sets the value property value. Not yet documented
+// SetValue sets the value property value. The int value of the user experience analytics insight.
 func (m *InsightValueInt) SetValue(value *int32)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

@@ -50,6 +50,7 @@ func NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilder(rawUrl st
     return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function Search
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageCatalogsSearchResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,6 +70,7 @@ func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) Get(ctx
     return res.(EntitlementManagementAccessPackageCatalogsSearchResponseable), nil
 }
 // ToGetRequestInformation invoke function Search
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

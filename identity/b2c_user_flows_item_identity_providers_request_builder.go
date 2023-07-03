@@ -68,6 +68,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Count()(*B2cUserFlowsI
     return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the identity providers in a b2cIdentityUserFlow object.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0
@@ -94,6 +95,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Ref()(*B2cUserFlowsIte
     return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

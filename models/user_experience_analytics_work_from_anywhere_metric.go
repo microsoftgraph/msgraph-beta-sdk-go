@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereMetric the user experience analytics metric for work from anywhere report.
+// UserExperienceAnalyticsWorkFromAnywhereMetric 
 type UserExperienceAnalyticsWorkFromAnywhereMetric struct {
     Entity
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereMetric instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetric()(*UserExperienceAnalyticsWorkFromAnywhereMetric) {
     m := &UserExperienceAnalyticsWorkFromAnywhereMetric{
         Entity: *NewEntity(),
@@ -40,7 +40,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetFieldDeserializers()(
     }
     return res
 }
-// GetMetricDevices gets the metricDevices property value. The work from anywhere metric devices.
+// GetMetricDevices gets the metricDevices property value. The work from anywhere metric devices. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetMetricDevices()([]UserExperienceAnalyticsWorkFromAnywhereDeviceable) {
     val, err := m.GetBackingStore().Get("metricDevices")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i878a80
     }
     return nil
 }
-// SetMetricDevices sets the metricDevices property value. The work from anywhere metric devices.
+// SetMetricDevices sets the metricDevices property value. The work from anywhere metric devices. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDeviceable)() {
     err := m.GetBackingStore().Set("metricDevices", value)
     if err != nil {

@@ -21,7 +21,7 @@ func NewTooManyGlobalAdminsAssignedToTenantAlertIncident()(*TooManyGlobalAdminsA
 func CreateTooManyGlobalAdminsAssignedToTenantAlertIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTooManyGlobalAdminsAssignedToTenantAlertIncident(), nil
 }
-// GetAssigneeDisplayName gets the assigneeDisplayName property value. The assigneeDisplayName property
+// GetAssigneeDisplayName gets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) GetAssigneeDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeDisplayName")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) GetAssigneeDisplayNam
     }
     return nil
 }
-// GetAssigneeId gets the assigneeId property value. The assigneeId property
+// GetAssigneeId gets the assigneeId property value. The identifier of the subject that the incident applies to.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) GetAssigneeId()(*string) {
     val, err := m.GetBackingStore().Get("assigneeId")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) GetAssigneeId()(*stri
     }
     return nil
 }
-// GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. The assigneeUserPrincipalName property
+// GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) GetAssigneeUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeUserPrincipalName")
     if err != nil {
@@ -115,21 +115,21 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) Serialize(writer i878
     }
     return nil
 }
-// SetAssigneeDisplayName sets the assigneeDisplayName property value. The assigneeDisplayName property
+// SetAssigneeDisplayName sets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) SetAssigneeDisplayName(value *string)() {
     err := m.GetBackingStore().Set("assigneeDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeId sets the assigneeId property value. The assigneeId property
+// SetAssigneeId sets the assigneeId property value. The identifier of the subject that the incident applies to.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) SetAssigneeId(value *string)() {
     err := m.GetBackingStore().Set("assigneeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssigneeUserPrincipalName sets the assigneeUserPrincipalName property value. The assigneeUserPrincipalName property
+// SetAssigneeUserPrincipalName sets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
 func (m *TooManyGlobalAdminsAssignedToTenantAlertIncident) SetAssigneeUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("assigneeUserPrincipalName", value)
     if err != nil {

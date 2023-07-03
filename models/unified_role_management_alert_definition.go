@@ -19,7 +19,7 @@ func NewUnifiedRoleManagementAlertDefinition()(*UnifiedRoleManagementAlertDefini
 func CreateUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlertDefinition(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the alert.
 func (m *UnifiedRoleManagementAlertDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
 func (m *UnifiedRoleManagementAlertDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetHowToPrevent gets the howToPrevent property value. The howToPrevent property
+// GetHowToPrevent gets the howToPrevent property value. Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
 func (m *UnifiedRoleManagementAlertDefinition) GetHowToPrevent()(*string) {
     val, err := m.GetBackingStore().Get("howToPrevent")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetHowToPrevent()(*string) {
     }
     return nil
 }
-// GetIsConfigurable gets the isConfigurable property value. The isConfigurable property
+// GetIsConfigurable gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
 func (m *UnifiedRoleManagementAlertDefinition) GetIsConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isConfigurable")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetIsConfigurable()(*bool) {
     }
     return nil
 }
-// GetIsRemediatable gets the isRemediatable property value. The isRemediatable property
+// GetIsRemediatable gets the isRemediatable property value. true if the alert can be remediated, and false otherwise.
 func (m *UnifiedRoleManagementAlertDefinition) GetIsRemediatable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemediatable")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetIsRemediatable()(*bool) {
     }
     return nil
 }
-// GetMitigationSteps gets the mitigationSteps property value. The mitigationSteps property
+// GetMitigationSteps gets the mitigationSteps property value. The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.
 func (m *UnifiedRoleManagementAlertDefinition) GetMitigationSteps()(*string) {
     val, err := m.GetBackingStore().Get("mitigationSteps")
     if err != nil {
@@ -190,7 +190,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetMitigationSteps()(*string) {
     }
     return nil
 }
-// GetScopeId gets the scopeId property value. The scopeId property
+// GetScopeId gets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertDefinition) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The scopeType property
+// GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
 func (m *UnifiedRoleManagementAlertDefinition) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -212,7 +212,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetScopeType()(*string) {
     }
     return nil
 }
-// GetSecurityImpact gets the securityImpact property value. The securityImpact property
+// GetSecurityImpact gets the securityImpact property value. Security impact of the alert. For example, it could be information leaks or unauthorized access.
 func (m *UnifiedRoleManagementAlertDefinition) GetSecurityImpact()(*string) {
     val, err := m.GetBackingStore().Get("securityImpact")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetSecurityImpact()(*string) {
     }
     return nil
 }
-// GetSeverityLevel gets the severityLevel property value. The severityLevel property
+// GetSeverityLevel gets the severityLevel property value. Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
 func (m *UnifiedRoleManagementAlertDefinition) GetSeverityLevel()(*AlertSeverity) {
     val, err := m.GetBackingStore().Get("severityLevel")
     if err != nil {
@@ -303,70 +303,70 @@ func (m *UnifiedRoleManagementAlertDefinition) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the alert.
 func (m *UnifiedRoleManagementAlertDefinition) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
 func (m *UnifiedRoleManagementAlertDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHowToPrevent sets the howToPrevent property value. The howToPrevent property
+// SetHowToPrevent sets the howToPrevent property value. Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
 func (m *UnifiedRoleManagementAlertDefinition) SetHowToPrevent(value *string)() {
     err := m.GetBackingStore().Set("howToPrevent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsConfigurable sets the isConfigurable property value. The isConfigurable property
+// SetIsConfigurable sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
 func (m *UnifiedRoleManagementAlertDefinition) SetIsConfigurable(value *bool)() {
     err := m.GetBackingStore().Set("isConfigurable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRemediatable sets the isRemediatable property value. The isRemediatable property
+// SetIsRemediatable sets the isRemediatable property value. true if the alert can be remediated, and false otherwise.
 func (m *UnifiedRoleManagementAlertDefinition) SetIsRemediatable(value *bool)() {
     err := m.GetBackingStore().Set("isRemediatable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMitigationSteps sets the mitigationSteps property value. The mitigationSteps property
+// SetMitigationSteps sets the mitigationSteps property value. The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.
 func (m *UnifiedRoleManagementAlertDefinition) SetMitigationSteps(value *string)() {
     err := m.GetBackingStore().Set("mitigationSteps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeId sets the scopeId property value. The scopeId property
+// SetScopeId sets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertDefinition) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The scopeType property
+// SetScopeType sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
 func (m *UnifiedRoleManagementAlertDefinition) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecurityImpact sets the securityImpact property value. The securityImpact property
+// SetSecurityImpact sets the securityImpact property value. Security impact of the alert. For example, it could be information leaks or unauthorized access.
 func (m *UnifiedRoleManagementAlertDefinition) SetSecurityImpact(value *string)() {
     err := m.GetBackingStore().Set("securityImpact", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSeverityLevel sets the severityLevel property value. The severityLevel property
+// SetSeverityLevel sets the severityLevel property value. Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
 func (m *UnifiedRoleManagementAlertDefinition) SetSeverityLevel(value *AlertSeverity)() {
     err := m.GetBackingStore().Set("severityLevel", value)
     if err != nil {

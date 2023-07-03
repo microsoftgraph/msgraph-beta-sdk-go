@@ -10,7 +10,7 @@ type AndroidEnrollmentCompanyCode struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAndroidEnrollmentCompanyCode instantiates a new AndroidEnrollmentCompanyCode and sets the default values.
+// NewAndroidEnrollmentCompanyCode instantiates a new androidEnrollmentCompanyCode and sets the default values.
 func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
     m := &AndroidEnrollmentCompanyCode{
     }

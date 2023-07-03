@@ -55,6 +55,7 @@ func NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder
     return NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a reviewSetQuery object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-delete?view=graph-rest-1.0
@@ -74,6 +75,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
     return nil
 }
 // Get retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-get?view=graph-rest-1.0
@@ -100,6 +102,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
     return NewEdiscoveryCasesItemReviewSetsItemQueriesItemMicrosoftGraphEdiscoveryApplyTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of an eDiscovery reviewSetQuery.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-update?view=graph-rest-1.0
@@ -122,6 +125,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable), nil
 }
 // ToDeleteRequestInformation delete a reviewSetQuery object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,6 +138,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,6 +155,7 @@ func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilde
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an eDiscovery reviewSetQuery.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryable, requestConfiguration *EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

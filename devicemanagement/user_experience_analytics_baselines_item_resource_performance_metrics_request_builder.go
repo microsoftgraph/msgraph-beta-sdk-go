@@ -11,7 +11,7 @@ import (
 type UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics resource performance metrics.
+// UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetQueryParameters the scores and insights for the resource performance metrics.
 type UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the user experience analytics resource performance metrics.
+// Get the scores and insights for the resource performance metrics.
 func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable), nil
 }
-// ToGetRequestInformation the user experience analytics resource performance metrics.
+// ToGetRequestInformation the scores and insights for the resource performance metrics.
 func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

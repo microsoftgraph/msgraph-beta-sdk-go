@@ -8,7 +8,7 @@ import (
 type ExtensionProperty struct {
     DirectoryObject
 }
-// NewExtensionProperty instantiates a new ExtensionProperty and sets the default values.
+// NewExtensionProperty instantiates a new extensionProperty and sets the default values.
 func NewExtensionProperty()(*ExtensionProperty) {
     m := &ExtensionProperty{
         DirectoryObject: *NewDirectoryObject(),

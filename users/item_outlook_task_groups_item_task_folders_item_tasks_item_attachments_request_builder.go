@@ -45,6 +45,7 @@ type ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAttachmentId provides operations to manage the attachments property of the microsoft.graph.outlookTask entity.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuilder) ByAttachmentId(attachmentId string)(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -77,6 +78,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuil
     return NewItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of attachment objects attached to an Outlook task.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
@@ -99,6 +101,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
 }
 // Post use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
@@ -121,6 +124,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
 // ToGetRequestInformation get a list of attachment objects attached to an Outlook task.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,6 +141,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuil
     return requestInfo, nil
 }
 // ToPostRequestInformation use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -32,6 +32,7 @@ func NewFeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilder(raw
     return NewFeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+// Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
@@ -54,6 +55,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilder) P
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
 // ToPostRequestInformation retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+// Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30
 func (m *FeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body FeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsPostRequestBodyable, requestConfiguration *FeatureRolloutPoliciesItemAppliesToGetUserOwnedObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

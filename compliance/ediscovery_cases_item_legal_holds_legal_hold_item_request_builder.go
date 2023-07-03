@@ -55,6 +55,7 @@ func NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder(rawUrl string, 
     return NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a legalHold object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-delete?view=graph-rest-1.0
@@ -74,6 +75,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Delete(ctx co
     return nil
 }
 // Get read the properties and relationships of a legalHold object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-get?view=graph-rest-1.0
@@ -96,6 +98,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) Get(ctx conte
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable), nil
 }
 // Patch update the properties of a legalHold object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-legalhold-update?view=graph-rest-1.0
@@ -122,6 +125,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) SiteSources()
     return NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a legalHold object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,6 +138,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToDeleteReque
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a legalHold object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,6 +155,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a legalHold object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, requestConfiguration *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

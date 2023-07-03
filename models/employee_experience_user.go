@@ -8,7 +8,7 @@ import (
 type EmployeeExperienceUser struct {
     Entity
 }
-// NewEmployeeExperienceUser instantiates a new EmployeeExperienceUser and sets the default values.
+// NewEmployeeExperienceUser instantiates a new employeeExperienceUser and sets the default values.
 func NewEmployeeExperienceUser()(*EmployeeExperienceUser) {
     m := &EmployeeExperienceUser{
         Entity: *NewEntity(),

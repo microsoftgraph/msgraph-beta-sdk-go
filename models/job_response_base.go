@@ -9,7 +9,7 @@ import (
 type JobResponseBase struct {
     Entity
 }
-// NewJobResponseBase instantiates a new jobResponseBase and sets the default values.
+// NewJobResponseBase instantiates a new JobResponseBase and sets the default values.
 func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
         Entity: *NewEntity(),

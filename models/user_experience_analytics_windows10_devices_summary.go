@@ -74,7 +74,7 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetOdataType()(*string)
     }
     return nil
 }
-// GetUnsupportedOSversionDeviceCount gets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions.
+// GetUnsupportedOSversionDeviceCount gets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions. Read-only.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetUnsupportedOSversionDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unsupportedOSversionDeviceCount")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetOdataType(value *str
         panic(err)
     }
 }
-// SetUnsupportedOSversionDeviceCount sets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions.
+// SetUnsupportedOSversionDeviceCount sets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions. Read-only.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetUnsupportedOSversionDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("unsupportedOSversionDeviceCount", value)
     if err != nil {

@@ -40,6 +40,7 @@ type SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration str
     QueryParameters *SubjectRightsRequestsItemApproversRequestBuilderGetQueryParameters
 }
 // ByUserId provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,6 +69,7 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) Count()(*SubjectRight
     return NewSubjectRightsRequestsItemApproversCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get approvers from privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,6 +89,7 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation get approvers from privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

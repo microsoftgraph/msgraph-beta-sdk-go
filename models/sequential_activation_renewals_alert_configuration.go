@@ -46,7 +46,7 @@ func (m *SequentialActivationRenewalsAlertConfiguration) GetFieldDeserializers()
     }
     return res
 }
-// GetSequentialActivationCounterThreshold gets the sequentialActivationCounterThreshold property value. The sequentialActivationCounterThreshold property
+// GetSequentialActivationCounterThreshold gets the sequentialActivationCounterThreshold property value. The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.
 func (m *SequentialActivationRenewalsAlertConfiguration) GetSequentialActivationCounterThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("sequentialActivationCounterThreshold")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *SequentialActivationRenewalsAlertConfiguration) GetSequentialActivation
     }
     return nil
 }
-// GetTimeIntervalBetweenActivations gets the timeIntervalBetweenActivations property value. The timeIntervalBetweenActivations property
+// GetTimeIntervalBetweenActivations gets the timeIntervalBetweenActivations property value. Time interval between activations to trigger an alert.
 func (m *SequentialActivationRenewalsAlertConfiguration) GetTimeIntervalBetweenActivations()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("timeIntervalBetweenActivations")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *SequentialActivationRenewalsAlertConfiguration) Serialize(writer i878a8
     }
     return nil
 }
-// SetSequentialActivationCounterThreshold sets the sequentialActivationCounterThreshold property value. The sequentialActivationCounterThreshold property
+// SetSequentialActivationCounterThreshold sets the sequentialActivationCounterThreshold property value. The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.
 func (m *SequentialActivationRenewalsAlertConfiguration) SetSequentialActivationCounterThreshold(value *int32)() {
     err := m.GetBackingStore().Set("sequentialActivationCounterThreshold", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTimeIntervalBetweenActivations sets the timeIntervalBetweenActivations property value. The timeIntervalBetweenActivations property
+// SetTimeIntervalBetweenActivations sets the timeIntervalBetweenActivations property value. Time interval between activations to trigger an alert.
 func (m *SequentialActivationRenewalsAlertConfiguration) SetTimeIntervalBetweenActivations(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("timeIntervalBetweenActivations", value)
     if err != nil {

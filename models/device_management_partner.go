@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementPartner entity which represents a connection to device management partner.
+// DeviceManagementPartner 
 type DeviceManagementPartner struct {
     Entity
 }
-// NewDeviceManagementPartner instantiates a new deviceManagementPartner and sets the default values.
+// NewDeviceManagementPartner instantiates a new DeviceManagementPartner and sets the default values.
 func NewDeviceManagementPartner()(*DeviceManagementPartner) {
     m := &DeviceManagementPartner{
         Entity: *NewEntity(),

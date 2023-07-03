@@ -53,11 +53,32 @@ func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["isUserPersonalScopeResourceSpecificConsentEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsUserPersonalScopeResourceSpecificConsentEnabled(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsChatResourceSpecificConsentEnabled gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
 func (m *TeamsAppSettings) GetIsChatResourceSpecificConsentEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isChatResourceSpecificConsentEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsUserPersonalScopeResourceSpecificConsentEnabled gets the isUserPersonalScopeResourceSpecificConsentEnabled property value. The isUserPersonalScopeResourceSpecificConsentEnabled property
+func (m *TeamsAppSettings) GetIsUserPersonalScopeResourceSpecificConsentEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isUserPersonalScopeResourceSpecificConsentEnabled")
     if err != nil {
         panic(err)
     }
@@ -84,6 +105,12 @@ func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isUserPersonalScopeResourceSpecificConsentEnabled", m.GetIsUserPersonalScopeResourceSpecificConsentEnabled())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowUserRequestsForAppAccess sets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
@@ -100,12 +127,21 @@ func (m *TeamsAppSettings) SetIsChatResourceSpecificConsentEnabled(value *bool)(
         panic(err)
     }
 }
+// SetIsUserPersonalScopeResourceSpecificConsentEnabled sets the isUserPersonalScopeResourceSpecificConsentEnabled property value. The isUserPersonalScopeResourceSpecificConsentEnabled property
+func (m *TeamsAppSettings) SetIsUserPersonalScopeResourceSpecificConsentEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isUserPersonalScopeResourceSpecificConsentEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // TeamsAppSettingsable 
 type TeamsAppSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowUserRequestsForAppAccess()(*bool)
     GetIsChatResourceSpecificConsentEnabled()(*bool)
+    GetIsUserPersonalScopeResourceSpecificConsentEnabled()(*bool)
     SetAllowUserRequestsForAppAccess(value *bool)()
     SetIsChatResourceSpecificConsentEnabled(value *bool)()
+    SetIsUserPersonalScopeResourceSpecificConsentEnabled(value *bool)()
 }

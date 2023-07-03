@@ -41,6 +41,7 @@ func NewEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder(rawUr
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the SharePoint site associated with the siteSource.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,6 +61,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable), nil
 }
 // ToGetRequestInformation the SharePoint site associated with the siteSource.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

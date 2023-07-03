@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ResourceOperation describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
+// ResourceOperation 
 type ResourceOperation struct {
     Entity
 }
-// NewResourceOperation instantiates a new resourceOperation and sets the default values.
+// NewResourceOperation instantiates a new ResourceOperation and sets the default values.
 func NewResourceOperation()(*ResourceOperation) {
     m := &ResourceOperation{
         Entity: *NewEntity(),

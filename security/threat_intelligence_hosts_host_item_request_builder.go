@@ -131,6 +131,10 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Patch(ctx context.Contex
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Reputation()(*ThreatIntelligenceHostsItemReputationRequestBuilder) {
     return NewThreatIntelligenceHostsItemReputationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Subdomains provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Subdomains()(*ThreatIntelligenceHostsItemSubdomainsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemSubdomainsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property hosts for security
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsHostItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

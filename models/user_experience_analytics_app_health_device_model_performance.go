@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDeviceModelPerformance the user experience analytics device model performance entity contains device model performance details.
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance 
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new userExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformance) {
     m := &UserExperienceAnalyticsAppHealthDeviceModelPerformance{
         Entity: *NewEntity(),
@@ -19,7 +19,7 @@ func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperience
 func CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthDeviceModelPerformance(), nil
 }
-// GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
+// GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetActiveDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("activeDeviceCount")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetActiveDevice
     }
     return nil
 }
-// GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
+// GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("deviceManufacturer")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceManufa
     }
     return nil
 }
-// GetDeviceModel gets the deviceModel property value. The model name of the device.
+// GetDeviceModel gets the deviceModel property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -128,7 +128,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus
     }
     return nil
 }
-// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
+// GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetMeanTimeToFa
     }
     return nil
 }
-// GetModelAppHealthScore gets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetModelAppHealthScore gets the modelAppHealthScore property value. The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthScore()(*float64) {
     val, err := m.GetBackingStore().Get("modelAppHealthScore")
     if err != nil {
@@ -195,21 +195,21 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
     }
     return nil
 }
-// SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
+// SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetActiveDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("activeDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
+// SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceManufacturer(value *string)() {
     err := m.GetBackingStore().Set("deviceManufacturer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceModel sets the deviceModel property value. The model name of the device.
+// SetDeviceModel sets the deviceModel property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceModel(value *string)() {
     err := m.GetBackingStore().Set("deviceModel", value)
     if err != nil {
@@ -223,14 +223,14 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetHealthStatus
         panic(err)
     }
 }
-// SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
+// SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("meanTimeToFailureInMinutes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModelAppHealthScore sets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// SetModelAppHealthScore sets the modelAppHealthScore property value. The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthScore(value *float64)() {
     err := m.GetBackingStore().Set("modelAppHealthScore", value)
     if err != nil {

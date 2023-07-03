@@ -9,7 +9,7 @@ import (
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod) {
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

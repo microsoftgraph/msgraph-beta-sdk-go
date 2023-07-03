@@ -9,7 +9,7 @@ import (
 type IndustryDataRunActivity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewIndustryDataRunActivity instantiates a new industryDataRunActivity and sets the default values.
+// NewIndustryDataRunActivity instantiates a new IndustryDataRunActivity and sets the default values.
 func NewIndustryDataRunActivity()(*IndustryDataRunActivity) {
     m := &IndustryDataRunActivity{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

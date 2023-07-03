@@ -47,6 +47,7 @@ type SubjectRightsRequestsItemNotesRequestBuilderPostRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAuthoredNoteId provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) ByAuthoredNoteId(authoredNoteId string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -75,6 +76,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Count()(*SubjectRightsReq
     return NewSubjectRightsRequestsItemNotesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of authored notes associated with a subject rights request. 
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
@@ -97,6 +99,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthoredNoteCollectionResponseable), nil
 }
 // Post create a new authoredNote object.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
@@ -119,6 +122,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Post(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthoredNoteable), nil
 }
 // ToGetRequestInformation get the list of authored notes associated with a subject rights request. 
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemNotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -135,6 +139,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new authoredNote object.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthoredNoteable, requestConfiguration *SubjectRightsRequestsItemNotesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

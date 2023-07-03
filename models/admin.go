@@ -293,7 +293,7 @@ type Adminable interface {
 type AdminWindows struct {
     Entity
 }
-// NewAdminWindows instantiates a new adminWindows and sets the default values.
+// NewAdminWindows instantiates a new AdminWindows and sets the default values.
 func NewAdminWindows()(*AdminWindows) {
     m := &AdminWindows{
         Entity: *NewEntity(),

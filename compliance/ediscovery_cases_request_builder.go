@@ -47,6 +47,7 @@ type EdiscoveryCasesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCaseId provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesRequestBuilder) ByCaseId(caseId string)(*EdiscoveryCasesCaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -75,6 +76,7 @@ func (m *EdiscoveryCasesRequestBuilder) Count()(*EdiscoveryCasesCountRequestBuil
     return NewEdiscoveryCasesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of case objects.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-1.0
@@ -97,6 +99,7 @@ func (m *EdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestConfigur
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseCollectionResponseable), nil
 }
 // Post create a new case object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0
@@ -119,6 +122,7 @@ func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body ic154d683
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
 // ToGetRequestInformation retrieve a list of case objects.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -135,6 +139,7 @@ func (m *EdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new case object.
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 func (m *EdiscoveryCasesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

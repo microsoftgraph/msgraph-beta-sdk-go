@@ -41,6 +41,7 @@ func NewSubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder(rawUrl stri
     return NewSubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get collaborators from privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -64,6 +65,7 @@ func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) MailboxSe
     return NewSubjectRightsRequestsItemCollaboratorsItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get collaborators from privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

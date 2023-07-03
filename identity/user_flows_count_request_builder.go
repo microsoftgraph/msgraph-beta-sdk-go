@@ -40,6 +40,7 @@ func NewUserFlowsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUserFlowsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
 func (m *UserFlowsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,6 +60,7 @@ func (m *UserFlowsCountRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
 func (m *UserFlowsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

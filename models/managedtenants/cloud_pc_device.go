@@ -10,7 +10,7 @@ import (
 type CloudPcDevice struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCloudPcDevice instantiates a new cloudPcDevice and sets the default values.
+// NewCloudPcDevice instantiates a new CloudPcDevice and sets the default values.
 func NewCloudPcDevice()(*CloudPcDevice) {
     m := &CloudPcDevice{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

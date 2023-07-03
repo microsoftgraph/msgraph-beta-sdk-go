@@ -11,7 +11,7 @@ import (
 type UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetQueryParameters the user experience analytics app health metrics.
+// UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetQueryParameters the scores and insights for the application health metrics.
 type UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the user experience analytics app health metrics.
+// Get the scores and insights for the application health metrics.
 func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) Get
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable), nil
 }
-// ToGetRequestInformation the user experience analytics app health metrics.
+// ToGetRequestInformation the scores and insights for the application health metrics.
 func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -51,6 +51,7 @@ func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailablePro
     return NewAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByIdentityProviderId provides operations to manage the collection of identityProvider entities.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*IdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -79,6 +80,7 @@ func (m *IdentityProvidersRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of identityProviders objects.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0
@@ -101,6 +103,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable), nil
 }
 // Post create a new identityProvider object.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0
@@ -123,6 +126,7 @@ func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body ie233ee
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
 }
 // ToGetRequestInformation retrieve a list of identityProviders objects.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -139,6 +143,7 @@ func (m *IdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new identityProvider object.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *IdentityProvidersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

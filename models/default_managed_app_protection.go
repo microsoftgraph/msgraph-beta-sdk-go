@@ -54,7 +54,7 @@ func (m *DefaultManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     }
     return nil
 }
-// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
     if err != nil {
@@ -1608,7 +1608,7 @@ func (m *DefaultManagedAppProtection) SetAllowedIosDeviceModels(value *string)()
         panic(err)
     }
 }
-// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
     if err != nil {

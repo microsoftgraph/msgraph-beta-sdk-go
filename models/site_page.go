@@ -8,7 +8,7 @@ import (
 type SitePage struct {
     BaseItem
 }
-// NewSitePage instantiates a new SitePage and sets the default values.
+// NewSitePage instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),

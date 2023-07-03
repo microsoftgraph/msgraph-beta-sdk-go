@@ -53,6 +53,7 @@ func NewAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodMo
     return NewAuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function findByMethodMode
+// Deprecated: The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31
 func (m *AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +73,7 @@ func (m *AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodM
     return res.(AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesResponseable), nil
 }
 // ToGetRequestInformation invoke function findByMethodMode
+// Deprecated: The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31
 func (m *AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationStrengthPoliciesFindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

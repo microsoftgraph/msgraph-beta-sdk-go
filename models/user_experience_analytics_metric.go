@@ -44,7 +44,7 @@ func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetUnit gets the unit property value. The unit of the user experience analytics metric.
+// GetUnit gets the unit property value. The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
 func (m *UserExperienceAnalyticsMetric) GetUnit()(*string) {
     val, err := m.GetBackingStore().Get("unit")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *UserExperienceAnalyticsMetric) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetUnit sets the unit property value. The unit of the user experience analytics metric.
+// SetUnit sets the unit property value. The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
 func (m *UserExperienceAnalyticsMetric) SetUnit(value *string)() {
     err := m.GetBackingStore().Set("unit", value)
     if err != nil {

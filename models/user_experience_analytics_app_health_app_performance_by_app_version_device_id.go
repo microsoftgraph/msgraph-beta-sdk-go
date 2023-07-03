@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId the user experience analytics application performance entity contains application performance by application version device id.
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId{
         Entity: *NewEntity(),
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     }
     return nil
 }
-// GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device.
+// GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. The id of the device.
+// GetDeviceId gets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -182,7 +182,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     }
     return res
 }
-// GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed.
+// GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("processedDateTime")
     if err != nil {
@@ -284,21 +284,21 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Set
         panic(err)
     }
 }
-// SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device.
+// SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetDeviceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("deviceDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. The id of the device.
+// SetDeviceId sets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessedDateTime sets the processedDateTime property value. The date and time when the statistics were last computed.
+// SetProcessedDateTime sets the processedDateTime property value. The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) SetProcessedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("processedDateTime", value)
     if err != nil {

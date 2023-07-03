@@ -10,7 +10,7 @@ type MediaInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMediaInfo instantiates a new MediaInfo and sets the default values.
+// NewMediaInfo instantiates a new mediaInfo and sets the default values.
 func NewMediaInfo()(*MediaInfo) {
     m := &MediaInfo{
     }

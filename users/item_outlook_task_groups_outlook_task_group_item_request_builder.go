@@ -53,6 +53,7 @@ func NewItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder(rawUrl string, r
     return NewItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property taskGroups for users
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,6 +70,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Delete(ctx con
     return nil
 }
 // Get get the properties and relationships of the specified Outlook task group.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
@@ -91,6 +93,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Get(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable), nil
 }
 // Patch update the navigation property taskGroups in users
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -114,6 +117,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFolders()(
     return NewItemOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property taskGroups for users
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,6 +130,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToDeleteReques
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of the specified Outlook task group.
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,6 +147,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property taskGroups in users
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
