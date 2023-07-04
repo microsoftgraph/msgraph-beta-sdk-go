@@ -30,7 +30,10 @@ func NewVirtualEndpointCloudPCsBulkResizeRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action bulkResize
+// Post perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices cannot be resized, those devices will indicate 'resize failed'. The remaining devices will be `provisioned` for the resize process.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsBulkResizeRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsBulkResizeRequestBuilderPostRequestConfiguration)(VirtualEndpointCloudPCsBulkResizeResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointCloudPCsBulkResizeRequestBuilder) Post(ctx context.Conte
     }
     return res.(VirtualEndpointCloudPCsBulkResizeResponseable), nil
 }
-// ToPostRequestInformation invoke action bulkResize
+// ToPostRequestInformation perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices cannot be resized, those devices will indicate 'resize failed'. The remaining devices will be `provisioned` for the resize process.
 func (m *VirtualEndpointCloudPCsBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

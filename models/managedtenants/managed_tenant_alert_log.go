@@ -10,7 +10,7 @@ import (
 type ManagedTenantAlertLog struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenantAlertLog instantiates a new ManagedTenantAlertLog and sets the default values.
+// NewManagedTenantAlertLog instantiates a new managedTenantAlertLog and sets the default values.
 func NewManagedTenantAlertLog()(*ManagedTenantAlertLog) {
     m := &ManagedTenantAlertLog{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsDeviceScope struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceScope instantiates a new UserExperienceAnalyticsDeviceScope and sets the default values.
+// NewUserExperienceAnalyticsDeviceScope instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
 func NewUserExperienceAnalyticsDeviceScope()(*UserExperienceAnalyticsDeviceScope) {
     m := &UserExperienceAnalyticsDeviceScope{
         Entity: *NewEntity(),

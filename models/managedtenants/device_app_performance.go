@@ -10,7 +10,7 @@ import (
 type DeviceAppPerformance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeviceAppPerformance instantiates a new DeviceAppPerformance and sets the default values.
+// NewDeviceAppPerformance instantiates a new deviceAppPerformance and sets the default values.
 func NewDeviceAppPerformance()(*DeviceAppPerformance) {
     m := &DeviceAppPerformance{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

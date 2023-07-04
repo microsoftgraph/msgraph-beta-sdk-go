@@ -41,6 +41,18 @@ type LabelsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Authorities provides operations to manage the authorities property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsRequestBuilder) Authorities()(*LabelsAuthoritiesRequestBuilder) {
+    return NewLabelsAuthoritiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsRequestBuilder) Categories()(*LabelsCategoriesRequestBuilder) {
+    return NewLabelsCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Citations provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsRequestBuilder) Citations()(*LabelsCitationsRequestBuilder) {
+    return NewLabelsCitationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLabelsRequestBuilderInternal instantiates a new LabelsRequestBuilder and sets the default values.
 func NewLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRequestBuilder) {
     m := &LabelsRequestBuilder{
@@ -69,6 +81,14 @@ func (m *LabelsRequestBuilder) Delete(ctx context.Context, requestConfiguration 
         return err
     }
     return nil
+}
+// Departments provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsRequestBuilder) Departments()(*LabelsDepartmentsRequestBuilder) {
+    return NewLabelsDepartmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FilePlanReferences provides operations to manage the filePlanReferences property of the microsoft.graph.security.labelsRoot entity.
+func (m *LabelsRequestBuilder) FilePlanReferences()(*LabelsFilePlanReferencesRequestBuilder) {
+    return NewLabelsFilePlanReferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get labels from security
 func (m *LabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.LabelsRootable, error) {

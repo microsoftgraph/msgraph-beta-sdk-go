@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceTimelineEvent 
+// UserExperienceAnalyticsDeviceTimelineEvent the user experience analytics device event entity contains NRT device event details.
 type UserExperienceAnalyticsDeviceTimelineEvent struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceTimelineEvent instantiates a new UserExperienceAnalyticsDeviceTimelineEvent and sets the default values.
+// NewUserExperienceAnalyticsDeviceTimelineEvent instantiates a new userExperienceAnalyticsDeviceTimelineEvent and sets the default values.
 func NewUserExperienceAnalyticsDeviceTimelineEvent()(*UserExperienceAnalyticsDeviceTimelineEvent) {
     m := &UserExperienceAnalyticsDeviceTimelineEvent{
         Entity: *NewEntity(),

@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementCompliancePolicy 
+// DeviceManagementCompliancePolicy device Management Compliance Policy
 type DeviceManagementCompliancePolicy struct {
     Entity
 }
-// NewDeviceManagementCompliancePolicy instantiates a new DeviceManagementCompliancePolicy and sets the default values.
+// NewDeviceManagementCompliancePolicy instantiates a new deviceManagementCompliancePolicy and sets the default values.
 func NewDeviceManagementCompliancePolicy()(*DeviceManagementCompliancePolicy) {
     m := &DeviceManagementCompliancePolicy{
         Entity: *NewEntity(),

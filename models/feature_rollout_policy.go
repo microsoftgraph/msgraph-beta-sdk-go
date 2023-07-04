@@ -8,7 +8,7 @@ import (
 type FeatureRolloutPolicy struct {
     Entity
 }
-// NewFeatureRolloutPolicy instantiates a new featureRolloutPolicy and sets the default values.
+// NewFeatureRolloutPolicy instantiates a new FeatureRolloutPolicy and sets the default values.
 func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     m := &FeatureRolloutPolicy{
         Entity: *NewEntity(),

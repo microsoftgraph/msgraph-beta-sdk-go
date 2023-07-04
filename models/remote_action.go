@@ -68,10 +68,12 @@ const (
     INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
     // Add device action of RotateLocalAdminPassword
     ROTATELOCALADMINPASSWORD_REMOTEACTION
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -138,6 +140,8 @@ func ParseRemoteAction(v string) (any, error) {
             result = INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
         case "rotateLocalAdminPassword":
             result = ROTATELOCALADMINPASSWORD_REMOTEACTION
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

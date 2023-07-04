@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAnomaly 
+// UserExperienceAnalyticsAnomaly the user experience analytics anomaly entity contains anomaly details.
 type UserExperienceAnalyticsAnomaly struct {
     Entity
 }
-// NewUserExperienceAnalyticsAnomaly instantiates a new UserExperienceAnalyticsAnomaly and sets the default values.
+// NewUserExperienceAnalyticsAnomaly instantiates a new userExperienceAnalyticsAnomaly and sets the default values.
 func NewUserExperienceAnalyticsAnomaly()(*UserExperienceAnalyticsAnomaly) {
     m := &UserExperienceAnalyticsAnomaly{
         Entity: *NewEntity(),

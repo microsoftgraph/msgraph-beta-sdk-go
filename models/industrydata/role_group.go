@@ -9,7 +9,7 @@ import (
 type RoleGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewRoleGroup instantiates a new RoleGroup and sets the default values.
+// NewRoleGroup instantiates a new roleGroup and sets the default values.
 func NewRoleGroup()(*RoleGroup) {
     m := &RoleGroup{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -105,6 +105,50 @@ func (m *PstnCallLogRow) GetCharge()(*float64) {
     }
     return nil
 }
+// GetClientLocalIpV4Address gets the clientLocalIpV4Address property value. Local IPv4 of the client that is retrieved from the operating system of the client.
+func (m *PstnCallLogRow) GetClientLocalIpV4Address()(*string) {
+    val, err := m.GetBackingStore().Get("clientLocalIpV4Address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetClientLocalIpV6Address gets the clientLocalIpV6Address property value. Local IPv6 of the client that is retrieved from the operating system of the client.
+func (m *PstnCallLogRow) GetClientLocalIpV6Address()(*string) {
+    val, err := m.GetBackingStore().Get("clientLocalIpV6Address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetClientPublicIpV4Address gets the clientPublicIpV4Address property value. Public IPv4 of the client that can be used to determine the location of the client.
+func (m *PstnCallLogRow) GetClientPublicIpV4Address()(*string) {
+    val, err := m.GetBackingStore().Get("clientPublicIpV4Address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetClientPublicIpV6Address gets the clientPublicIpV6Address property value. Public IPv6 of the client that can be used to determine the location of the client.
+func (m *PstnCallLogRow) GetClientPublicIpV6Address()(*string) {
+    val, err := m.GetBackingStore().Get("clientPublicIpV6Address")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetConferenceId gets the conferenceId property value. ID of the audio conference.
 func (m *PstnCallLogRow) GetConferenceId()(*string) {
     val, err := m.GetBackingStore().Get("conferenceId")
@@ -242,6 +286,46 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetCharge(val)
+        }
+        return nil
+    }
+    res["clientLocalIpV4Address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientLocalIpV4Address(val)
+        }
+        return nil
+    }
+    res["clientLocalIpV6Address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientLocalIpV6Address(val)
+        }
+        return nil
+    }
+    res["clientPublicIpV4Address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientPublicIpV4Address(val)
+        }
+        return nil
+    }
+    res["clientPublicIpV6Address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientPublicIpV6Address(val)
         }
         return nil
     }
@@ -609,6 +693,30 @@ func (m *PstnCallLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err := writer.WriteStringValue("clientLocalIpV4Address", m.GetClientLocalIpV4Address())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("clientLocalIpV6Address", m.GetClientLocalIpV6Address())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("clientPublicIpV4Address", m.GetClientPublicIpV4Address())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("clientPublicIpV6Address", m.GetClientPublicIpV6Address())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("conferenceId", m.GetConferenceId())
         if err != nil {
             return err
@@ -783,6 +891,34 @@ func (m *PstnCallLogRow) SetCharge(value *float64)() {
         panic(err)
     }
 }
+// SetClientLocalIpV4Address sets the clientLocalIpV4Address property value. Local IPv4 of the client that is retrieved from the operating system of the client.
+func (m *PstnCallLogRow) SetClientLocalIpV4Address(value *string)() {
+    err := m.GetBackingStore().Set("clientLocalIpV4Address", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClientLocalIpV6Address sets the clientLocalIpV6Address property value. Local IPv6 of the client that is retrieved from the operating system of the client.
+func (m *PstnCallLogRow) SetClientLocalIpV6Address(value *string)() {
+    err := m.GetBackingStore().Set("clientLocalIpV6Address", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClientPublicIpV4Address sets the clientPublicIpV4Address property value. Public IPv4 of the client that can be used to determine the location of the client.
+func (m *PstnCallLogRow) SetClientPublicIpV4Address(value *string)() {
+    err := m.GetBackingStore().Set("clientPublicIpV4Address", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClientPublicIpV6Address sets the clientPublicIpV6Address property value. Public IPv6 of the client that can be used to determine the location of the client.
+func (m *PstnCallLogRow) SetClientPublicIpV6Address(value *string)() {
+    err := m.GetBackingStore().Set("clientPublicIpV6Address", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConferenceId sets the conferenceId property value. ID of the audio conference.
 func (m *PstnCallLogRow) SetConferenceId(value *string)() {
     err := m.GetBackingStore().Set("conferenceId", value)
@@ -928,6 +1064,10 @@ type PstnCallLogRowable interface {
     GetCallId()(*string)
     GetCallType()(*string)
     GetCharge()(*float64)
+    GetClientLocalIpV4Address()(*string)
+    GetClientLocalIpV6Address()(*string)
+    GetClientPublicIpV4Address()(*string)
+    GetClientPublicIpV6Address()(*string)
     GetConferenceId()(*string)
     GetConnectionCharge()(*float64)
     GetCurrency()(*string)
@@ -954,6 +1094,10 @@ type PstnCallLogRowable interface {
     SetCallId(value *string)()
     SetCallType(value *string)()
     SetCharge(value *float64)()
+    SetClientLocalIpV4Address(value *string)()
+    SetClientLocalIpV6Address(value *string)()
+    SetClientPublicIpV4Address(value *string)()
+    SetClientPublicIpV6Address(value *string)()
     SetConferenceId(value *string)()
     SetConnectionCharge(value *float64)()
     SetCurrency(value *string)()

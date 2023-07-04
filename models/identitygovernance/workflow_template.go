@@ -9,7 +9,7 @@ import (
 type WorkflowTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewWorkflowTemplate instantiates a new workflowTemplate and sets the default values.
+// NewWorkflowTemplate instantiates a new WorkflowTemplate and sets the default values.
 func NewWorkflowTemplate()(*WorkflowTemplate) {
     m := &WorkflowTemplate{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

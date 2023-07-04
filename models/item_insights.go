@@ -8,7 +8,7 @@ import (
 type ItemInsights struct {
     OfficeGraphInsights
 }
-// NewItemInsights instantiates a new itemInsights and sets the default values.
+// NewItemInsights instantiates a new ItemInsights and sets the default values.
 func NewItemInsights()(*ItemInsights) {
     m := &ItemInsights{
         OfficeGraphInsights: *NewOfficeGraphInsights(),

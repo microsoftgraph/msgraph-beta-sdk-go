@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupProcessPerformance 
+// UserExperienceAnalyticsDeviceStartupProcessPerformance the user experience analytics device startup process performance.
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformance) {
     m := &UserExperienceAnalyticsDeviceStartupProcessPerformance{
         Entity: *NewEntity(),

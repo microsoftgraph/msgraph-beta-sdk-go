@@ -10,7 +10,7 @@ import (
 type CredentialUserRegistrationsSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCredentialUserRegistrationsSummary instantiates a new CredentialUserRegistrationsSummary and sets the default values.
+// NewCredentialUserRegistrationsSummary instantiates a new credentialUserRegistrationsSummary and sets the default values.
 func NewCredentialUserRegistrationsSummary()(*CredentialUserRegistrationsSummary) {
     m := &CredentialUserRegistrationsSummary{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -121,6 +121,16 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         if val != nil {
             m.SetTenantId(val)
+        }
+        return nil
+    }
+    res["tenantLicenseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantLicenseType(val)
         }
         return nil
     }
@@ -246,6 +256,17 @@ func (m *CredentialUserRegistrationsSummary) GetTenantId()(*string) {
     }
     return nil
 }
+// GetTenantLicenseType gets the tenantLicenseType property value. The tenantLicenseType property
+func (m *CredentialUserRegistrationsSummary) GetTenantLicenseType()(*string) {
+    val, err := m.GetBackingStore().Get("tenantLicenseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTotalUserCount gets the totalUserCount property value. The total number of users in the given managed tenant. Optional. Read-only.
 func (m *CredentialUserRegistrationsSummary) GetTotalUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalUserCount")
@@ -319,6 +340,12 @@ func (m *CredentialUserRegistrationsSummary) Serialize(writer i878a80d2330e89d26
     }
     {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("tenantLicenseType", m.GetTenantLicenseType())
         if err != nil {
             return err
         }
@@ -401,6 +428,13 @@ func (m *CredentialUserRegistrationsSummary) SetTenantId(value *string)() {
         panic(err)
     }
 }
+// SetTenantLicenseType sets the tenantLicenseType property value. The tenantLicenseType property
+func (m *CredentialUserRegistrationsSummary) SetTenantLicenseType(value *string)() {
+    err := m.GetBackingStore().Set("tenantLicenseType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTotalUserCount sets the totalUserCount property value. The total number of users in the given managed tenant. Optional. Read-only.
 func (m *CredentialUserRegistrationsSummary) SetTotalUserCount(value *int32)() {
     err := m.GetBackingStore().Set("totalUserCount", value)
@@ -422,6 +456,7 @@ type CredentialUserRegistrationsSummaryable interface {
     GetSsprRegisteredUserCount()(*int32)
     GetTenantDisplayName()(*string)
     GetTenantId()(*string)
+    GetTenantLicenseType()(*string)
     GetTotalUserCount()(*int32)
     SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMfaAndSsprCapableUserCount(value *int32)()
@@ -433,5 +468,6 @@ type CredentialUserRegistrationsSummaryable interface {
     SetSsprRegisteredUserCount(value *int32)()
     SetTenantDisplayName(value *string)()
     SetTenantId(value *string)()
+    SetTenantLicenseType(value *string)()
     SetTotalUserCount(value *int32)()
 }

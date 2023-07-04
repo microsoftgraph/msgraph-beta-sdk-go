@@ -9,7 +9,7 @@ import (
 type SalesInvoiceLine struct {
     Entity
 }
-// NewSalesInvoiceLine instantiates a new SalesInvoiceLine and sets the default values.
+// NewSalesInvoiceLine instantiates a new salesInvoiceLine and sets the default values.
 func NewSalesInvoiceLine()(*SalesInvoiceLine) {
     m := &SalesInvoiceLine{
         Entity: *NewEntity(),

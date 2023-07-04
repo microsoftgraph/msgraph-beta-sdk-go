@@ -42,7 +42,7 @@ func (m *PrintJob) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
     return nil
 }
-// GetConfiguration gets the configuration property value. A group of settings that a printer should use to print a job.
+// GetConfiguration gets the configuration property value. The configuration property
 func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -288,7 +288,7 @@ func (m *PrintJob) GetRedirectedTo()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the print job. Read-only.
+// GetStatus gets the status property value. The status property
 func (m *PrintJob) GetStatus()(PrintJobStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -422,7 +422,7 @@ func (m *PrintJob) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         panic(err)
     }
 }
-// SetConfiguration sets the configuration property value. A group of settings that a printer should use to print a job.
+// SetConfiguration sets the configuration property value. The configuration property
 func (m *PrintJob) SetConfiguration(value PrintJobConfigurationable)() {
     err := m.GetBackingStore().Set("configuration", value)
     if err != nil {
@@ -485,7 +485,7 @@ func (m *PrintJob) SetRedirectedTo(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the print job. Read-only.
+// SetStatus sets the status property value. The status property
 func (m *PrintJob) SetStatus(value PrintJobStatusable)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

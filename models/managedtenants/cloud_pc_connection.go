@@ -10,7 +10,7 @@ import (
 type CloudPcConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCloudPcConnection instantiates a new CloudPcConnection and sets the default values.
+// NewCloudPcConnection instantiates a new cloudPcConnection and sets the default values.
 func NewCloudPcConnection()(*CloudPcConnection) {
     m := &CloudPcConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus{
         Entity: *NewEntity(),

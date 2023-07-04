@@ -8,7 +8,7 @@ import (
 type RemoteAssistanceSettings struct {
     Entity
 }
-// NewRemoteAssistanceSettings instantiates a new RemoteAssistanceSettings and sets the default values.
+// NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     m := &RemoteAssistanceSettings{
         Entity: *NewEntity(),

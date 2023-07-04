@@ -137,7 +137,7 @@ func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
     }
     return nil
 }
-// GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
+// GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
 func (m *OnlineMeeting) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) {
     val, err := m.GetBackingStore().Get("anonymizeIdentityForRoles")
     if err != nil {
@@ -1245,7 +1245,7 @@ func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
         panic(err)
     }
 }
-// SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
+// SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
 func (m *OnlineMeeting) SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)() {
     err := m.GetBackingStore().Set("anonymizeIdentityForRoles", value)
     if err != nil {

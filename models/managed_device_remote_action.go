@@ -6,15 +6,25 @@ import (
 type ManagedDeviceRemoteAction int
 
 const (
+    // Name of the retire action.
     RETIRE_MANAGEDDEVICEREMOTEACTION ManagedDeviceRemoteAction = iota
+    // Name of the delete action.
     DELETE_MANAGEDDEVICEREMOTEACTION
+    // Name of the full Scan action.
     FULLSCAN_MANAGEDDEVICEREMOTEACTION
+    // Name of the Quick Scan action.
     QUICKSCAN_MANAGEDDEVICEREMOTEACTION
+    // Signature Update action
     SIGNATUREUPDATE_MANAGEDDEVICEREMOTEACTION
+    // Name of the wipe action.
     WIPE_MANAGEDDEVICEREMOTEACTION
+    // Name of the Custom Text Notification action.
     CUSTOMTEXTNOTIFICATION_MANAGEDDEVICEREMOTEACTION
+    // Name of the reboot now action.
     REBOOTNOW_MANAGEDDEVICEREMOTEACTION
+    // Set Device Name action.
     SETDEVICENAME_MANAGEDDEVICEREMOTEACTION
+    // Sync Device action.
     SYNCDEVICE_MANAGEDDEVICEREMOTEACTION
     // Name of the deprovision action.
     DEPROVISION_MANAGEDDEVICEREMOTEACTION
@@ -32,10 +42,12 @@ const (
     INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_MANAGEDDEVICEREMOTEACTION
     // Name of action to initiate On Demand Proactive Remediation
     INITIATEONDEMANDPROACTIVEREMEDIATION_MANAGEDDEVICEREMOTEACTION
+    // Evolvable enum member
+    UNKNOWNFUTUREVALUE_MANAGEDDEVICEREMOTEACTION
 )
 
 func (i ManagedDeviceRemoteAction) String() string {
-    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation"}[i]
+    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "unknownFutureValue"}[i]
 }
 func ParseManagedDeviceRemoteAction(v string) (any, error) {
     result := RETIRE_MANAGEDDEVICEREMOTEACTION
@@ -76,6 +88,8 @@ func ParseManagedDeviceRemoteAction(v string) (any, error) {
             result = INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_MANAGEDDEVICEREMOTEACTION
         case "initiateOnDemandProactiveRemediation":
             result = INITIATEONDEMANDPROACTIVEREMEDIATION_MANAGEDDEVICEREMOTEACTION
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MANAGEDDEVICEREMOTEACTION
         default:
             return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)
     }

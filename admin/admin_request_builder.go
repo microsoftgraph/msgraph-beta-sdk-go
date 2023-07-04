@@ -34,6 +34,10 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AppsAndServices provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) AppsAndServices()(*AppsAndServicesRequestBuilder) {
+    return NewAppsAndServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAdminRequestBuilderInternal instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdminRequestBuilder) {
     m := &AdminRequestBuilder{
@@ -47,9 +51,17 @@ func NewAdminRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewAdminRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Dynamics provides operations to manage the dynamics property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) Dynamics()(*DynamicsRequestBuilder) {
+    return NewDynamicsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Edge provides operations to manage the edge property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) Edge()(*EdgeRequestBuilder) {
     return NewEdgeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Forms provides operations to manage the forms property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) Forms()(*FormsRequestBuilder) {
+    return NewFormsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get admin
 func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *AdminRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable, error) {
@@ -100,6 +112,10 @@ func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestB
 // Sharepoint provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
 func (m *AdminRequestBuilder) Sharepoint()(*SharepointRequestBuilder) {
     return NewSharepointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Todo provides operations to manage the todo property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) Todo()(*TodoRequestBuilder) {
+    return NewTodoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get admin
 func (m *AdminRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdminRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

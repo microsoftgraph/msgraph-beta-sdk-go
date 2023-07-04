@@ -9,7 +9,7 @@ import (
 type ManagedAllDeviceCertificateState struct {
     Entity
 }
-// NewManagedAllDeviceCertificateState instantiates a new ManagedAllDeviceCertificateState and sets the default values.
+// NewManagedAllDeviceCertificateState instantiates a new managedAllDeviceCertificateState and sets the default values.
 func NewManagedAllDeviceCertificateState()(*ManagedAllDeviceCertificateState) {
     m := &ManagedAllDeviceCertificateState{
         Entity: *NewEntity(),

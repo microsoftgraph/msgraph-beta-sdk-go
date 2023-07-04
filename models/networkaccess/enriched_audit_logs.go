@@ -9,7 +9,7 @@ import (
 type EnrichedAuditLogs struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewEnrichedAuditLogs instantiates a new enrichedAuditLogs and sets the default values.
+// NewEnrichedAuditLogs instantiates a new EnrichedAuditLogs and sets the default values.
 func NewEnrichedAuditLogs()(*EnrichedAuditLogs) {
     m := &EnrichedAuditLogs{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

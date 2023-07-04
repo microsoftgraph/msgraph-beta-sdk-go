@@ -11,7 +11,7 @@ import (
 type LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetQueryParameters get retentionEventType from security
+// LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetQueryParameters represents the type associated with a retention event.
 type LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get retentionEventType from security
+// Get represents the type associated with a retention event.
 func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) Get(ctx cont
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable), nil
 }
-// ToGetRequestInformation get retentionEventType from security
+// ToGetRequestInformation represents the type associated with a retention event.
 func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

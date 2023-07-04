@@ -11,10 +11,11 @@ const (
     SSPRCAPABLE_AUTHENTICATIONMETHODFEATURE
     PASSWORDLESSCAPABLE_AUTHENTICATIONMETHODFEATURE
     MFACAPABLE_AUTHENTICATIONMETHODFEATURE
+    UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODFEATURE
 )
 
 func (i AuthenticationMethodFeature) String() string {
-    return []string{"ssprRegistered", "ssprEnabled", "ssprCapable", "passwordlessCapable", "mfaCapable"}[i]
+    return []string{"ssprRegistered", "ssprEnabled", "ssprCapable", "passwordlessCapable", "mfaCapable", "unknownFutureValue"}[i]
 }
 func ParseAuthenticationMethodFeature(v string) (any, error) {
     result := SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE
@@ -29,6 +30,8 @@ func ParseAuthenticationMethodFeature(v string) (any, error) {
             result = PASSWORDLESSCAPABLE_AUTHENTICATIONMETHODFEATURE
         case "mfaCapable":
             result = MFACAPABLE_AUTHENTICATIONMETHODFEATURE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODFEATURE
         default:
             return 0, errors.New("Unknown AuthenticationMethodFeature value: " + v)
     }

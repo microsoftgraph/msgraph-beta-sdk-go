@@ -13,10 +13,11 @@ const (
     SAML20_PROTOCOLTYPE
     DEVICECODE_PROTOCOLTYPE
     UNKNOWNFUTUREVALUE_PROTOCOLTYPE
+    AUTHENTICATIONTRANSFER_PROTOCOLTYPE
 )
 
 func (i ProtocolType) String() string {
-    return []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue"}[i]
+    return []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer"}[i]
 }
 func ParseProtocolType(v string) (any, error) {
     result := NONE_PROTOCOLTYPE
@@ -35,6 +36,8 @@ func ParseProtocolType(v string) (any, error) {
             result = DEVICECODE_PROTOCOLTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROTOCOLTYPE
+        case "authenticationTransfer":
+            result = AUTHENTICATIONTRANSFER_PROTOCOLTYPE
         default:
             return 0, errors.New("Unknown ProtocolType value: " + v)
     }

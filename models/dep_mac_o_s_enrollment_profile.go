@@ -65,6 +65,17 @@ func (m *DepMacOSEnrollmentProfile) GetAdminAccountUserName()(*string) {
     }
     return nil
 }
+// GetAutoAdvanceSetupEnabled gets the autoAdvanceSetupEnabled property value. Indicates if Setup Assistant will automatically advance through its screen
+func (m *DepMacOSEnrollmentProfile) GetAutoAdvanceSetupEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("autoAdvanceSetupEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAutoUnlockWithWatchDisabled gets the autoUnlockWithWatchDisabled property value. Indicates if UnlockWithWatch screen is disabled
 func (m *DepMacOSEnrollmentProfile) GetAutoUnlockWithWatchDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("autoUnlockWithWatchDisabled")
@@ -149,6 +160,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetAdminAccountUserName(val)
+        }
+        return nil
+    }
+    res["autoAdvanceSetupEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoAdvanceSetupEnabled(val)
         }
         return nil
     }
@@ -477,6 +498,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteBoolValue("autoAdvanceSetupEnabled", m.GetAutoAdvanceSetupEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("autoUnlockWithWatchDisabled", m.GetAutoUnlockWithWatchDisabled())
         if err != nil {
             return err
@@ -602,6 +629,13 @@ func (m *DepMacOSEnrollmentProfile) SetAdminAccountUserName(value *string)() {
         panic(err)
     }
 }
+// SetAutoAdvanceSetupEnabled sets the autoAdvanceSetupEnabled property value. Indicates if Setup Assistant will automatically advance through its screen
+func (m *DepMacOSEnrollmentProfile) SetAutoAdvanceSetupEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("autoAdvanceSetupEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAutoUnlockWithWatchDisabled sets the autoUnlockWithWatchDisabled property value. Indicates if UnlockWithWatch screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetAutoUnlockWithWatchDisabled(value *bool)() {
     err := m.GetBackingStore().Set("autoUnlockWithWatchDisabled", value)
@@ -722,6 +756,7 @@ type DepMacOSEnrollmentProfileable interface {
     GetAdminAccountFullName()(*string)
     GetAdminAccountPassword()(*string)
     GetAdminAccountUserName()(*string)
+    GetAutoAdvanceSetupEnabled()(*bool)
     GetAutoUnlockWithWatchDisabled()(*bool)
     GetChooseYourLockScreenDisabled()(*bool)
     GetDontAutoPopulatePrimaryAccountInfo()(*bool)
@@ -742,6 +777,7 @@ type DepMacOSEnrollmentProfileable interface {
     SetAdminAccountFullName(value *string)()
     SetAdminAccountPassword(value *string)()
     SetAdminAccountUserName(value *string)()
+    SetAutoAdvanceSetupEnabled(value *bool)()
     SetAutoUnlockWithWatchDisabled(value *bool)()
     SetChooseYourLockScreenDisabled(value *bool)()
     SetDontAutoPopulatePrimaryAccountInfo(value *bool)()

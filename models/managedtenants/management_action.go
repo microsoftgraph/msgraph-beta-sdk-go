@@ -9,7 +9,7 @@ import (
 type ManagementAction struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementAction instantiates a new ManagementAction and sets the default values.
+// NewManagementAction instantiates a new managementAction and sets the default values.
 func NewManagementAction()(*ManagementAction) {
     m := &ManagementAction{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

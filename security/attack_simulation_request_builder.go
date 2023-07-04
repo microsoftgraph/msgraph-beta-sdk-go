@@ -70,6 +70,10 @@ func (m *AttackSimulationRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
+// EndUserNotifications provides operations to manage the endUserNotifications property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) EndUserNotifications()(*AttackSimulationEndUserNotificationsRequestBuilder) {
+    return NewAttackSimulationEndUserNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -88,6 +92,14 @@ func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable), nil
+}
+// LandingPages provides operations to manage the landingPages property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) LandingPages()(*AttackSimulationLandingPagesRequestBuilder) {
+    return NewAttackSimulationLandingPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LoginPages provides operations to manage the loginPages property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) LoginPages()(*AttackSimulationLoginPagesRequestBuilder) {
+    return NewAttackSimulationLoginPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) Operations()(*AttackSimulationOperationsRequestBuilder) {
@@ -168,4 +180,8 @@ func (m *AttackSimulationRequestBuilder) ToPatchRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Trainings provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) Trainings()(*AttackSimulationTrainingsRequestBuilder) {
+    return NewAttackSimulationTrainingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

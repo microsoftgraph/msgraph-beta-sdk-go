@@ -8,7 +8,7 @@ import (
 type OnPremisesDirectorySynchronization struct {
     Entity
 }
-// NewOnPremisesDirectorySynchronization instantiates a new onPremisesDirectorySynchronization and sets the default values.
+// NewOnPremisesDirectorySynchronization instantiates a new OnPremisesDirectorySynchronization and sets the default values.
 func NewOnPremisesDirectorySynchronization()(*OnPremisesDirectorySynchronization) {
     m := &OnPremisesDirectorySynchronization{
         Entity: *NewEntity(),
