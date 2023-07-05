@@ -98,6 +98,17 @@ func (m *RetentionLabel) GetDescriptionForUsers()(*string) {
     }
     return nil
 }
+// GetDescriptors gets the descriptors property value. Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+func (m *RetentionLabel) GetDescriptors()(FilePlanDescriptorable) {
+    val, err := m.GetBackingStore().Get("descriptors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FilePlanDescriptorable)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. Unique string that defines a label name.
 func (m *RetentionLabel) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -109,7 +120,7 @@ func (m *RetentionLabel) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDispositionReviewStages gets the dispositionReviewStages property value. Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+// GetDispositionReviewStages gets the dispositionReviewStages property value. When action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
 func (m *RetentionLabel) GetDispositionReviewStages()([]DispositionReviewStageable) {
     val, err := m.GetBackingStore().Get("dispositionReviewStages")
     if err != nil {
@@ -190,6 +201,16 @@ func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetDescriptionForUsers(val)
+        }
+        return nil
+    }
+    res["descriptors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateFilePlanDescriptorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescriptors(val.(FilePlanDescriptorable))
         }
         return nil
     }
@@ -346,7 +367,7 @@ func (m *RetentionLabel) GetRetentionDuration()(RetentionDurationable) {
     }
     return nil
 }
-// GetRetentionEventType gets the retentionEventType property value. The retentionEventType property
+// GetRetentionEventType gets the retentionEventType property value. Represents the type associated with a retention event.
 func (m *RetentionLabel) GetRetentionEventType()(RetentionEventTypeable) {
     val, err := m.GetBackingStore().Get("retentionEventType")
     if err != nil {
@@ -415,6 +436,12 @@ func (m *RetentionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err = writer.WriteStringValue("descriptionForUsers", m.GetDescriptionForUsers())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("descriptors", m.GetDescriptors())
         if err != nil {
             return err
         }
@@ -531,6 +558,13 @@ func (m *RetentionLabel) SetDescriptionForUsers(value *string)() {
         panic(err)
     }
 }
+// SetDescriptors sets the descriptors property value. Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+func (m *RetentionLabel) SetDescriptors(value FilePlanDescriptorable)() {
+    err := m.GetBackingStore().Set("descriptors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDisplayName sets the displayName property value. Unique string that defines a label name.
 func (m *RetentionLabel) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
@@ -538,7 +572,7 @@ func (m *RetentionLabel) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDispositionReviewStages sets the dispositionReviewStages property value. Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+// SetDispositionReviewStages sets the dispositionReviewStages property value. When action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
 func (m *RetentionLabel) SetDispositionReviewStages(value []DispositionReviewStageable)() {
     err := m.GetBackingStore().Set("dispositionReviewStages", value)
     if err != nil {
@@ -580,7 +614,7 @@ func (m *RetentionLabel) SetRetentionDuration(value RetentionDurationable)() {
         panic(err)
     }
 }
-// SetRetentionEventType sets the retentionEventType property value. The retentionEventType property
+// SetRetentionEventType sets the retentionEventType property value. Represents the type associated with a retention event.
 func (m *RetentionLabel) SetRetentionEventType(value RetentionEventTypeable)() {
     err := m.GetBackingStore().Set("retentionEventType", value)
     if err != nil {
@@ -605,6 +639,7 @@ type RetentionLabelable interface {
     GetDefaultRecordBehavior()(*DefaultRecordBehavior)
     GetDescriptionForAdmins()(*string)
     GetDescriptionForUsers()(*string)
+    GetDescriptors()(FilePlanDescriptorable)
     GetDisplayName()(*string)
     GetDispositionReviewStages()([]DispositionReviewStageable)
     GetIsInUse()(*bool)
@@ -621,6 +656,7 @@ type RetentionLabelable interface {
     SetDefaultRecordBehavior(value *DefaultRecordBehavior)()
     SetDescriptionForAdmins(value *string)()
     SetDescriptionForUsers(value *string)()
+    SetDescriptors(value FilePlanDescriptorable)()
     SetDisplayName(value *string)()
     SetDispositionReviewStages(value []DispositionReviewStageable)()
     SetIsInUse(value *bool)()

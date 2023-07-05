@@ -19,7 +19,7 @@ func NewAccessPackageSubject()(*AccessPackageSubject) {
 func CreateAccessPackageSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageSubject(), nil
 }
-// GetAltSecId gets the altSecId property value. The altSecId property
+// GetAltSecId gets the altSecId property value. Not Supported.
 func (m *AccessPackageSubject) GetAltSecId()(*string) {
     val, err := m.GetBackingStore().Get("altSecId")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
+// GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
 func (m *AccessPackageSubject) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
     if err != nil {
@@ -212,7 +212,7 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
     }
     return nil
 }
-// GetSubjectLifecycle gets the subjectLifecycle property value. The subjectLifecycle property
+// GetSubjectLifecycle gets the subjectLifecycle property value. The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.
 func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
     val, err := m.GetBackingStore().Get("subjectLifecycle")
     if err != nil {
@@ -303,7 +303,7 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAltSecId sets the altSecId property value. The altSecId property
+// SetAltSecId sets the altSecId property value. Not Supported.
 func (m *AccessPackageSubject) SetAltSecId(value *string)() {
     err := m.GetBackingStore().Set("altSecId", value)
     if err != nil {
@@ -338,7 +338,7 @@ func (m *AccessPackageSubject) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
+// SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
     err := m.GetBackingStore().Set("objectId", value)
     if err != nil {
@@ -359,7 +359,7 @@ func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetSubjectLifecycle sets the subjectLifecycle property value. The subjectLifecycle property
+// SetSubjectLifecycle sets the subjectLifecycle property value. The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.
 func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)() {
     err := m.GetBackingStore().Set("subjectLifecycle", value)
     if err != nil {

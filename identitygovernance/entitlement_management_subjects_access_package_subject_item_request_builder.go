@@ -18,7 +18,7 @@ type EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetQueryParameters get subjects from identityGovernance
+// EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetQueryParameters represents the subjects within entitlement management.
 type EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) De
     }
     return nil
 }
-// Get get subjects from identityGovernance
+// Get represents the subjects within entitlement management.
 func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSubjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get subjects from identityGovernance
+// ToGetRequestInformation represents the subjects within entitlement management.
 func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

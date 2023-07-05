@@ -142,6 +142,17 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLess
     }
     return nil
 }
+// GetAppActionIfSamsungKnoxAttestationRequired gets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+func (m *AndroidManagedAppProtection) GetAppActionIfSamsungKnoxAttestationRequired()(*ManagedAppRemediationAction) {
+    val, err := m.GetBackingStore().Get("appActionIfSamsungKnoxAttestationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
+}
 // GetApprovedKeyboards gets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
 func (m *AndroidManagedAppProtection) GetApprovedKeyboards()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("approvedKeyboards")
@@ -423,6 +434,16 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetAppActionIfDevicePasscodeComplexityLessThanMedium(val.(*ManagedAppRemediationAction))
+        }
+        return nil
+    }
+    res["appActionIfSamsungKnoxAttestationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfSamsungKnoxAttestationRequired(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -1013,6 +1034,13 @@ func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetAppActionIfSamsungKnoxAttestationRequired() != nil {
+        cast := (*m.GetAppActionIfSamsungKnoxAttestationRequired()).String()
+        err = writer.WriteStringValue("appActionIfSamsungKnoxAttestationRequired", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetApprovedKeyboards() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApprovedKeyboards()))
         for i, v := range m.GetApprovedKeyboards() {
@@ -1299,6 +1327,13 @@ func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLess
         panic(err)
     }
 }
+// SetAppActionIfSamsungKnoxAttestationRequired sets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+func (m *AndroidManagedAppProtection) SetAppActionIfSamsungKnoxAttestationRequired(value *ManagedAppRemediationAction)() {
+    err := m.GetBackingStore().Set("appActionIfSamsungKnoxAttestationRequired", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetApprovedKeyboards sets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
 func (m *AndroidManagedAppProtection) SetApprovedKeyboards(value []KeyValuePairable)() {
     err := m.GetBackingStore().Set("approvedKeyboards", value)
@@ -1531,6 +1566,7 @@ type AndroidManagedAppProtectionable interface {
     GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction)
     GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction)
     GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction)
+    GetAppActionIfSamsungKnoxAttestationRequired()(*ManagedAppRemediationAction)
     GetApprovedKeyboards()([]KeyValuePairable)
     GetApps()([]ManagedMobileAppable)
     GetBiometricAuthenticationBlocked()(*bool)
@@ -1573,6 +1609,7 @@ type AndroidManagedAppProtectionable interface {
     SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)()
     SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)()
     SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)()
+    SetAppActionIfSamsungKnoxAttestationRequired(value *ManagedAppRemediationAction)()
     SetApprovedKeyboards(value []KeyValuePairable)()
     SetApps(value []ManagedMobileAppable)()
     SetBiometricAuthenticationBlocked(value *bool)()

@@ -385,7 +385,7 @@ func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable)
     }
     return nil
 }
-// GetSubjects gets the subjects property value. The subjects property
+// GetSubjects gets the subjects property value. Represents the subjects within entitlement management.
 func (m *EntitlementManagement) GetSubjects()([]AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("subjects")
     if err != nil {
@@ -657,7 +657,7 @@ func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsa
         panic(err)
     }
 }
-// SetSubjects sets the subjects property value. The subjects property
+// SetSubjects sets the subjects property value. Represents the subjects within entitlement management.
 func (m *EntitlementManagement) SetSubjects(value []AccessPackageSubjectable)() {
     err := m.GetBackingStore().Set("subjects", value)
     if err != nil {

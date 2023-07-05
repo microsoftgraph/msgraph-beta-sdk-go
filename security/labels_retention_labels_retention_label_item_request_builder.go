@@ -18,7 +18,7 @@ type LabelsRetentionLabelsRetentionLabelItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters get retentionLabels from security
+// LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters represents how customers can manage their data, whether and for how long to retain or delete it.
 type LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,11 +73,15 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
+// Descriptors provides operations to manage the descriptors property of the microsoft.graph.security.retentionLabel entity.
+func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Descriptors()(*LabelsRetentionLabelsItemDescriptorsRequestBuilder) {
+    return NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DispositionReviewStages provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStages()(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
     return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get retentionLabels from security
+// Get represents how customers can manage their data, whether and for how long to retain or delete it.
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -134,7 +138,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get retentionLabels from security
+// ToGetRequestInformation represents how customers can manage their data, whether and for how long to retain or delete it.
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

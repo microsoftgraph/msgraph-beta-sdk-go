@@ -9,7 +9,7 @@ import (
 type IosUpdateDeviceStatus struct {
     Entity
 }
-// NewIosUpdateDeviceStatus instantiates a new IosUpdateDeviceStatus and sets the default values.
+// NewIosUpdateDeviceStatus instantiates a new iosUpdateDeviceStatus and sets the default values.
 func NewIosUpdateDeviceStatus()(*IosUpdateDeviceStatus) {
     m := &IosUpdateDeviceStatus{
         Entity: *NewEntity(),

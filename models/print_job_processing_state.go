@@ -14,10 +14,11 @@ const (
     COMPLETED_PRINTJOBPROCESSINGSTATE
     CANCELED_PRINTJOBPROCESSINGSTATE
     ABORTED_PRINTJOBPROCESSINGSTATE
+    UNKNOWNFUTUREVALUE_PRINTJOBPROCESSINGSTATE
 )
 
 func (i PrintJobProcessingState) String() string {
-    return []string{"unknown", "pending", "processing", "paused", "stopped", "completed", "canceled", "aborted"}[i]
+    return []string{"unknown", "pending", "processing", "paused", "stopped", "completed", "canceled", "aborted", "unknownFutureValue"}[i]
 }
 func ParsePrintJobProcessingState(v string) (any, error) {
     result := UNKNOWN_PRINTJOBPROCESSINGSTATE
@@ -38,6 +39,8 @@ func ParsePrintJobProcessingState(v string) (any, error) {
             result = CANCELED_PRINTJOBPROCESSINGSTATE
         case "aborted":
             result = ABORTED_PRINTJOBPROCESSINGSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_PRINTJOBPROCESSINGSTATE
         default:
             return 0, errors.New("Unknown PrintJobProcessingState value: " + v)
     }

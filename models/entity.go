@@ -96,12 +96,20 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewActivityStatistics(), nil
                     case "#microsoft.graph.addLargeGalleryViewOperation":
                         return NewAddLargeGalleryViewOperation(), nil
+                    case "#microsoft.graph.adminAppsAndServices":
+                        return NewAdminAppsAndServices(), nil
                     case "#microsoft.graph.adminConsentRequestPolicy":
                         return NewAdminConsentRequestPolicy(), nil
+                    case "#microsoft.graph.adminDynamics":
+                        return NewAdminDynamics(), nil
+                    case "#microsoft.graph.adminForms":
+                        return NewAdminForms(), nil
                     case "#microsoft.graph.administrativeUnit":
                         return NewAdministrativeUnit(), nil
                     case "#microsoft.graph.adminReportSettings":
                         return NewAdminReportSettings(), nil
+                    case "#microsoft.graph.adminTodo":
+                        return NewAdminTodo(), nil
                     case "#microsoft.graph.adminWindows":
                         return NewAdminWindows(), nil
                     case "#microsoft.graph.adminWindowsUpdates":
@@ -1036,6 +1044,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmployeeExperienceUser(), nil
                     case "#microsoft.graph.endpoint":
                         return NewEndpoint(), nil
+                    case "#microsoft.graph.endUserNotification":
+                        return NewEndUserNotification(), nil
+                    case "#microsoft.graph.endUserNotificationDetail":
+                        return NewEndUserNotificationDetail(), nil
                     case "#microsoft.graph.enrollmentConfigurationAssignment":
                         return NewEnrollmentConfigurationAssignment(), nil
                     case "#microsoft.graph.enrollmentProfile":
@@ -1376,6 +1388,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewItemRetentionLabel(), nil
                     case "#microsoft.graph.jobResponseBase":
                         return NewJobResponseBase(), nil
+                    case "#microsoft.graph.landingPage":
+                        return NewLandingPage(), nil
+                    case "#microsoft.graph.landingPageDetail":
+                        return NewLandingPageDetail(), nil
                     case "#microsoft.graph.languageProficiency":
                         return NewLanguageProficiency(), nil
                     case "#microsoft.graph.learningAssignment":
@@ -1400,6 +1416,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewListItemVersion(), nil
                     case "#microsoft.graph.localizedNotificationMessage":
                         return NewLocalizedNotificationMessage(), nil
+                    case "#microsoft.graph.loginPage":
+                        return NewLoginPage(), nil
                     case "#microsoft.graph.longRunningOperation":
                         return NewLongRunningOperation(), nil
                     case "#microsoft.graph.lookupResultRow":
@@ -2302,6 +2320,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTooManyGlobalAdminsAssignedToTenantAlertConfiguration(), nil
                     case "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertIncident":
                         return NewTooManyGlobalAdminsAssignedToTenantAlertIncident(), nil
+                    case "#microsoft.graph.training":
+                        return NewTraining(), nil
+                    case "#microsoft.graph.trainingLanguageDetail":
+                        return NewTrainingLanguageDetail(), nil
                     case "#microsoft.graph.trending":
                         return NewTrending(), nil
                     case "#microsoft.graph.trustedCertificateAuthorityAsEntityBase":

@@ -31,6 +31,7 @@ func NewSharesItemJobsItemCancelPrintJobRequestBuilder(rawUrl string, requestAda
     return NewSharesItemJobsItemCancelPrintJobRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action cancelPrintJob
+// Deprecated: The cancelPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the cancel API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 func (m *SharesItemJobsItemCancelPrintJobRequestBuilder) Post(ctx context.Context, requestConfiguration *SharesItemJobsItemCancelPrintJobRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -47,6 +48,7 @@ func (m *SharesItemJobsItemCancelPrintJobRequestBuilder) Post(ctx context.Contex
     return nil
 }
 // ToPostRequestInformation invoke action cancelPrintJob
+// Deprecated: The cancelPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the cancel API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 func (m *SharesItemJobsItemCancelPrintJobRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemCancelPrintJobRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

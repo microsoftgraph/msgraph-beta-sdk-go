@@ -8,7 +8,7 @@ import (
 type TenantAttachRBAC struct {
     Entity
 }
-// NewTenantAttachRBAC instantiates a new TenantAttachRBAC and sets the default values.
+// NewTenantAttachRBAC instantiates a new tenantAttachRBAC and sets the default values.
 func NewTenantAttachRBAC()(*TenantAttachRBAC) {
     m := &TenantAttachRBAC{
         Entity: *NewEntity(),

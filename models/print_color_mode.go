@@ -10,10 +10,11 @@ const (
     GRAYSCALE_PRINTCOLORMODE
     COLOR_PRINTCOLORMODE
     AUTO_PRINTCOLORMODE
+    UNKNOWNFUTUREVALUE_PRINTCOLORMODE
 )
 
 func (i PrintColorMode) String() string {
-    return []string{"blackAndWhite", "grayscale", "color", "auto"}[i]
+    return []string{"blackAndWhite", "grayscale", "color", "auto", "unknownFutureValue"}[i]
 }
 func ParsePrintColorMode(v string) (any, error) {
     result := BLACKANDWHITE_PRINTCOLORMODE
@@ -26,6 +27,8 @@ func ParsePrintColorMode(v string) (any, error) {
             result = COLOR_PRINTCOLORMODE
         case "auto":
             result = AUTO_PRINTCOLORMODE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_PRINTCOLORMODE
         default:
             return 0, errors.New("Unknown PrintColorMode value: " + v)
     }

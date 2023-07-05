@@ -14,10 +14,11 @@ const (
     CLOCKWISEFROMBOTTOMLEFT_PRINTMULTIPAGELAYOUT
     COUNTERCLOCKWISEFROMBOTTOMRIGHT_PRINTMULTIPAGELAYOUT
     CLOCKWISEFROMBOTTOMRIGHT_PRINTMULTIPAGELAYOUT
+    UNKNOWNFUTUREVALUE_PRINTMULTIPAGELAYOUT
 )
 
 func (i PrintMultipageLayout) String() string {
-    return []string{"clockwiseFromTopLeft", "counterclockwiseFromTopLeft", "counterclockwiseFromTopRight", "clockwiseFromTopRight", "counterclockwiseFromBottomLeft", "clockwiseFromBottomLeft", "counterclockwiseFromBottomRight", "clockwiseFromBottomRight"}[i]
+    return []string{"clockwiseFromTopLeft", "counterclockwiseFromTopLeft", "counterclockwiseFromTopRight", "clockwiseFromTopRight", "counterclockwiseFromBottomLeft", "clockwiseFromBottomLeft", "counterclockwiseFromBottomRight", "clockwiseFromBottomRight", "unknownFutureValue"}[i]
 }
 func ParsePrintMultipageLayout(v string) (any, error) {
     result := CLOCKWISEFROMTOPLEFT_PRINTMULTIPAGELAYOUT
@@ -38,6 +39,8 @@ func ParsePrintMultipageLayout(v string) (any, error) {
             result = COUNTERCLOCKWISEFROMBOTTOMRIGHT_PRINTMULTIPAGELAYOUT
         case "clockwiseFromBottomRight":
             result = CLOCKWISEFROMBOTTOMRIGHT_PRINTMULTIPAGELAYOUT
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_PRINTMULTIPAGELAYOUT
         default:
             return 0, errors.New("Unknown PrintMultipageLayout value: " + v)
     }

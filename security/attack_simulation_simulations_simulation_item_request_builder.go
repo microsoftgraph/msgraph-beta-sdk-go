@@ -95,6 +95,14 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Simulationable), nil
 }
+// LandingPage provides operations to manage the landingPage property of the microsoft.graph.simulation entity.
+func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LandingPage()(*AttackSimulationSimulationsItemLandingPageRequestBuilder) {
+    return NewAttackSimulationSimulationsItemLandingPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LoginPage provides operations to manage the loginPage property of the microsoft.graph.simulation entity.
+func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LoginPage()(*AttackSimulationSimulationsItemLoginPageRequestBuilder) {
+    return NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update an attack simulation campaign for a tenant.
 // [Find more info here]
 // 

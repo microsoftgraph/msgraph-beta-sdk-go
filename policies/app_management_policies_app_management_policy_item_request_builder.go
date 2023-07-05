@@ -61,7 +61,7 @@ func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl string
 // Delete delete an appManagementPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/appManagementPolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx con
 // Patch update an appManagementPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/appManagementPolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

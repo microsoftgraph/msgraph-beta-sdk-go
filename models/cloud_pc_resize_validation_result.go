@@ -38,7 +38,7 @@ func (m *CloudPcResizeValidationResult) GetAdditionalData()(map[string]any) {
 func (m *CloudPcResizeValidationResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCloudPcId gets the cloudPcId property value. The cloudPcId property
+// GetCloudPcId gets the cloudPcId property value. The cloudPC id that corresponds to its unique identifier.
 func (m *CloudPcResizeValidationResult) GetCloudPcId()(*string) {
     val, err := m.GetBackingStore().Get("cloudPcId")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *CloudPcResizeValidationResult) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValidationResult gets the validationResult property value. The validationResult property
+// GetValidationResult gets the validationResult property value. Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.
 func (m *CloudPcResizeValidationResult) GetValidationResult()(*CloudPcResizeValidationCode) {
     val, err := m.GetBackingStore().Get("validationResult")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *CloudPcResizeValidationResult) SetAdditionalData(value map[string]any)(
 func (m *CloudPcResizeValidationResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCloudPcId sets the cloudPcId property value. The cloudPcId property
+// SetCloudPcId sets the cloudPcId property value. The cloudPC id that corresponds to its unique identifier.
 func (m *CloudPcResizeValidationResult) SetCloudPcId(value *string)() {
     err := m.GetBackingStore().Set("cloudPcId", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *CloudPcResizeValidationResult) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValidationResult sets the validationResult property value. The validationResult property
+// SetValidationResult sets the validationResult property value. Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.
 func (m *CloudPcResizeValidationResult) SetValidationResult(value *CloudPcResizeValidationCode)() {
     err := m.GetBackingStore().Set("validationResult", value)
     if err != nil {

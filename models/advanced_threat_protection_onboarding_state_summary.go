@@ -8,7 +8,7 @@ import (
 type AdvancedThreatProtectionOnboardingStateSummary struct {
     Entity
 }
-// NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
+// NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new AdvancedThreatProtectionOnboardingStateSummary and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummary) {
     m := &AdvancedThreatProtectionOnboardingStateSummary{
         Entity: *NewEntity(),

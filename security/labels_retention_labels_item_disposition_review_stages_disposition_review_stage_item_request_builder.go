@@ -18,7 +18,7 @@ type LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetQueryParameters review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+// LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetQueryParameters when action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
 type LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     }
     return nil
 }
-// Get review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+// Get when action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+// ToGetRequestInformation when action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

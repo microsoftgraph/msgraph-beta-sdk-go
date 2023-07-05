@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelServerLogCollectionResponse 
+// MicrosoftTunnelServerLogCollectionResponse entity that stores the server log collection status.
 type MicrosoftTunnelServerLogCollectionResponse struct {
     Entity
 }
-// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new MicrosoftTunnelServerLogCollectionResponse and sets the default values.
+// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCollectionResponse) {
     m := &MicrosoftTunnelServerLogCollectionResponse{
         Entity: *NewEntity(),

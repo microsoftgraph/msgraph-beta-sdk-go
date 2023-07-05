@@ -30,7 +30,10 @@ func NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action validateBulkResize
+// Post validate that a set of cloudPC devices meet the requirements to be bulk resized.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
 func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(VirtualEndpointCloudPCsValidateBulkResizeResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) Post(ctx conte
     }
     return res.(VirtualEndpointCloudPCsValidateBulkResizeResponseable), nil
 }
-// ToPostRequestInformation invoke action validateBulkResize
+// ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized.
 func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

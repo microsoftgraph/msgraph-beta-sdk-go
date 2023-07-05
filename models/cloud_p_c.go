@@ -435,7 +435,7 @@ func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallRe
     }
     return nil
 }
-// GetPowerState gets the powerState property value. The powerState property
+// GetPowerState gets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
 func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
     val, err := m.GetBackingStore().Get("powerState")
     if err != nil {
@@ -825,7 +825,7 @@ func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInsta
         panic(err)
     }
 }
-// SetPowerState sets the powerState property value. The powerState property
+// SetPowerState sets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
 func (m *CloudPC) SetPowerState(value *CloudPcPowerState)() {
     err := m.GetBackingStore().Set("powerState", value)
     if err != nil {

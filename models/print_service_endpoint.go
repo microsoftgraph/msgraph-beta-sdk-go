@@ -43,6 +43,16 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetName(val)
+        }
+        return nil
+    }
     res["uri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,6 +64,17 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetName gets the name property value. The name property
+func (m *PrintServiceEndpoint) GetName()(*string) {
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUri gets the uri property value. The URI that can be used to access the service.
 func (m *PrintServiceEndpoint) GetUri()(*string) {
@@ -79,6 +100,12 @@ func (m *PrintServiceEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("uri", m.GetUri())
         if err != nil {
             return err
@@ -89,6 +116,13 @@ func (m *PrintServiceEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487ee
 // SetDisplayName sets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetName sets the name property value. The name property
+func (m *PrintServiceEndpoint) SetName(value *string)() {
+    err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
@@ -105,7 +139,9 @@ type PrintServiceEndpointable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetName()(*string)
     GetUri()(*string)
     SetDisplayName(value *string)()
+    SetName(value *string)()
     SetUri(value *string)()
 }

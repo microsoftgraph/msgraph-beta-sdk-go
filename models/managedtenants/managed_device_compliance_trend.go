@@ -9,7 +9,7 @@ import (
 type ManagedDeviceComplianceTrend struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedDeviceComplianceTrend instantiates a new ManagedDeviceComplianceTrend and sets the default values.
+// NewManagedDeviceComplianceTrend instantiates a new managedDeviceComplianceTrend and sets the default values.
 func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
     m := &ManagedDeviceComplianceTrend{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsCategory struct {
     Entity
 }
-// NewUserExperienceAnalyticsCategory instantiates a new UserExperienceAnalyticsCategory and sets the default values.
+// NewUserExperienceAnalyticsCategory instantiates a new userExperienceAnalyticsCategory and sets the default values.
 func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     m := &UserExperienceAnalyticsCategory{
         Entity: *NewEntity(),

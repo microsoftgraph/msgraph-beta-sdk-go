@@ -1,6 +1,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -118,6 +119,17 @@ func (m *DepEnrollmentBaseProfile) GetEnabledSkipKeys()([]string) {
     }
     return nil
 }
+// GetEnrollmentTimeAzureAdGroupIds gets the enrollmentTimeAzureAdGroupIds property value. EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
+func (m *DepEnrollmentBaseProfile) GetEnrollmentTimeAzureAdGroupIds()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("enrollmentTimeAzureAdGroupIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EnrollmentProfile.GetFieldDeserializers()
@@ -194,6 +206,22 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a
                 }
             }
             m.SetEnabledSkipKeys(res)
+        }
+        return nil
+    }
+    res["enrollmentTimeAzureAdGroupIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("uuid")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
+            }
+            m.SetEnrollmentTimeAzureAdGroupIds(res)
         }
         return nil
     }
@@ -520,6 +548,12 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    if m.GetEnrollmentTimeAzureAdGroupIds() != nil {
+        err = writer.WriteCollectionOfUUIDValues("enrollmentTimeAzureAdGroupIds", m.GetEnrollmentTimeAzureAdGroupIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isDefault", m.GetIsDefault())
         if err != nil {
@@ -649,6 +683,13 @@ func (m *DepEnrollmentBaseProfile) SetEnabledSkipKeys(value []string)() {
         panic(err)
     }
 }
+// SetEnrollmentTimeAzureAdGroupIds sets the enrollmentTimeAzureAdGroupIds property value. EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
+func (m *DepEnrollmentBaseProfile) SetEnrollmentTimeAzureAdGroupIds(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("enrollmentTimeAzureAdGroupIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsDefault sets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentBaseProfile) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
@@ -751,6 +792,7 @@ type DepEnrollmentBaseProfileable interface {
     GetDiagnosticsDisabled()(*bool)
     GetDisplayToneSetupDisabled()(*bool)
     GetEnabledSkipKeys()([]string)
+    GetEnrollmentTimeAzureAdGroupIds()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetIsDefault()(*bool)
     GetIsMandatory()(*bool)
     GetLocationDisabled()(*bool)
@@ -771,6 +813,7 @@ type DepEnrollmentBaseProfileable interface {
     SetDiagnosticsDisabled(value *bool)()
     SetDisplayToneSetupDisabled(value *bool)()
     SetEnabledSkipKeys(value []string)()
+    SetEnrollmentTimeAzureAdGroupIds(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetIsDefault(value *bool)()
     SetIsMandatory(value *bool)()
     SetLocationDisabled(value *bool)()

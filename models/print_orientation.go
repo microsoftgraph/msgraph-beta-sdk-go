@@ -10,10 +10,11 @@ const (
     LANDSCAPE_PRINTORIENTATION
     REVERSELANDSCAPE_PRINTORIENTATION
     REVERSEPORTRAIT_PRINTORIENTATION
+    UNKNOWNFUTUREVALUE_PRINTORIENTATION
 )
 
 func (i PrintOrientation) String() string {
-    return []string{"portrait", "landscape", "reverseLandscape", "reversePortrait"}[i]
+    return []string{"portrait", "landscape", "reverseLandscape", "reversePortrait", "unknownFutureValue"}[i]
 }
 func ParsePrintOrientation(v string) (any, error) {
     result := PORTRAIT_PRINTORIENTATION
@@ -26,6 +27,8 @@ func ParsePrintOrientation(v string) (any, error) {
             result = REVERSELANDSCAPE_PRINTORIENTATION
         case "reversePortrait":
             result = REVERSEPORTRAIT_PRINTORIENTATION
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_PRINTORIENTATION
         default:
             return 0, errors.New("Unknown PrintOrientation value: " + v)
     }
