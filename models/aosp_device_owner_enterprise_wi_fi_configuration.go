@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AospDeviceOwnerEnterpriseWiFiConfiguration 
+// AospDeviceOwnerEnterpriseWiFiConfiguration by providing the configurations in this profile you can instruct the AOSP Device Owner device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
 type AospDeviceOwnerEnterpriseWiFiConfiguration struct {
     AospDeviceOwnerWiFiConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewAospDeviceOwnerEnterpriseWiFiConfiguration instantiates a new AospDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
+// NewAospDeviceOwnerEnterpriseWiFiConfiguration instantiates a new aospDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
 func NewAospDeviceOwnerEnterpriseWiFiConfiguration()(*AospDeviceOwnerEnterpriseWiFiConfiguration) {
     m := &AospDeviceOwnerEnterpriseWiFiConfiguration{
         AospDeviceOwnerWiFiConfiguration: *NewAospDeviceOwnerWiFiConfiguration(),

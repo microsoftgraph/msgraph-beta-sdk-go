@@ -164,6 +164,16 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["principal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -281,6 +291,17 @@ func (m *AccessReviewInstanceDecisionItem) GetInstance()(AccessReviewInstanceabl
 // GetJustification gets the justification property value. Justification left by the reviewer when they made the decision.
 func (m *AccessReviewInstanceDecisionItem) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewInstanceDecisionItem) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -449,6 +470,12 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("principal", m.GetPrincipal())
         if err != nil {
             return err
@@ -560,6 +587,13 @@ func (m *AccessReviewInstanceDecisionItem) SetJustification(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewInstanceDecisionItem) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrincipal sets the principal property value. Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetPrincipal(value Identityable)() {
     err := m.GetBackingStore().Set("principal", value)
@@ -635,6 +669,7 @@ type AccessReviewInstanceDecisionItemable interface {
     GetInsights()([]GovernanceInsightable)
     GetInstance()(AccessReviewInstanceable)
     GetJustification()(*string)
+    GetOdataType()(*string)
     GetPrincipal()(Identityable)
     GetPrincipalLink()(*string)
     GetPrincipalResourceMembership()(DecisionItemPrincipalResourceMembershipable)
@@ -652,6 +687,7 @@ type AccessReviewInstanceDecisionItemable interface {
     SetInsights(value []GovernanceInsightable)()
     SetInstance(value AccessReviewInstanceable)()
     SetJustification(value *string)()
+    SetOdataType(value *string)()
     SetPrincipal(value Identityable)()
     SetPrincipalLink(value *string)()
     SetPrincipalResourceMembership(value DecisionItemPrincipalResourceMembershipable)()

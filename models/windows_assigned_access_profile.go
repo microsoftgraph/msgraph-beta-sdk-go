@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAssignedAccessProfile 
+// WindowsAssignedAccessProfile assigned Access profile for Windows.
 type WindowsAssignedAccessProfile struct {
     Entity
 }
-// NewWindowsAssignedAccessProfile instantiates a new WindowsAssignedAccessProfile and sets the default values.
+// NewWindowsAssignedAccessProfile instantiates a new windowsAssignedAccessProfile and sets the default values.
 func NewWindowsAssignedAccessProfile()(*WindowsAssignedAccessProfile) {
     m := &WindowsAssignedAccessProfile{
         Entity: *NewEntity(),
@@ -76,6 +76,16 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["profileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -123,6 +133,17 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsAssignedAccessProfile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProfileName gets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsAssignedAccessProfile) GetProfileName()(*string) {
@@ -187,6 +208,12 @@ func (m *WindowsAssignedAccessProfile) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("profileName", m.GetProfileName())
         if err != nil {
             return err
@@ -226,6 +253,13 @@ func (m *WindowsAssignedAccessProfile) SetDesktopAppPaths(value []string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsAssignedAccessProfile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProfileName sets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsAssignedAccessProfile) SetProfileName(value *string)() {
     err := m.GetBackingStore().Set("profileName", value)
@@ -260,12 +294,14 @@ type WindowsAssignedAccessProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppUserModelIds()([]string)
     GetDesktopAppPaths()([]string)
+    GetOdataType()(*string)
     GetProfileName()(*string)
     GetShowTaskBar()(*bool)
     GetStartMenuLayoutXml()([]byte)
     GetUserAccounts()([]string)
     SetAppUserModelIds(value []string)()
     SetDesktopAppPaths(value []string)()
+    SetOdataType(value *string)()
     SetProfileName(value *string)()
     SetShowTaskBar(value *bool)()
     SetStartMenuLayoutXml(value []byte)()

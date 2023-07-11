@@ -144,6 +144,16 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -204,6 +214,17 @@ func (m *MacOSSoftwareUpdateAccountSummary) GetLastUpdatedDateTime()(*i336074805
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSSoftwareUpdateAccountSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -311,6 +332,12 @@ func (m *MacOSSoftwareUpdateAccountSummary) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osVersion", m.GetOsVersion())
         if err != nil {
             return err
@@ -384,6 +411,13 @@ func (m *MacOSSoftwareUpdateAccountSummary) SetLastUpdatedDateTime(value *i33607
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSSoftwareUpdateAccountSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsVersion sets the osVersion property value. The OS version.
 func (m *MacOSSoftwareUpdateAccountSummary) SetOsVersion(value *string)() {
     err := m.GetBackingStore().Set("osVersion", value)
@@ -429,6 +463,7 @@ type MacOSSoftwareUpdateAccountSummaryable interface {
     GetDisplayName()(*string)
     GetFailedUpdateCount()(*int32)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetOsVersion()(*string)
     GetSuccessfulUpdateCount()(*int32)
     GetTotalUpdateCount()(*int32)
@@ -440,6 +475,7 @@ type MacOSSoftwareUpdateAccountSummaryable interface {
     SetDisplayName(value *string)()
     SetFailedUpdateCount(value *int32)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetOsVersion(value *string)()
     SetSuccessfulUpdateCount(value *int32)()
     SetTotalUpdateCount(value *int32)()

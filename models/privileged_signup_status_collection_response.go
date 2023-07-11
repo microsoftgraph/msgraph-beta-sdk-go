@@ -8,7 +8,7 @@ import (
 type PrivilegedSignupStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrivilegedSignupStatusCollectionResponse instantiates a new PrivilegedSignupStatusCollectionResponse and sets the default values.
+// NewPrivilegedSignupStatusCollectionResponse instantiates a new privilegedSignupStatusCollectionResponse and sets the default values.
 func NewPrivilegedSignupStatusCollectionResponse()(*PrivilegedSignupStatusCollectionResponse) {
     m := &PrivilegedSignupStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

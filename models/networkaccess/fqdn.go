@@ -7,8 +7,10 @@ import (
 // Fqdn 
 type Fqdn struct {
     RuleDestination
+    // The OdataType property
+    OdataType *string
 }
-// NewFqdn instantiates a new Fqdn and sets the default values.
+// NewFqdn instantiates a new fqdn and sets the default values.
 func NewFqdn()(*Fqdn) {
     m := &Fqdn{
         RuleDestination: *NewRuleDestination(),
@@ -36,7 +38,7 @@ func (m *Fqdn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Defines the FQDN used in a destination for a rule.
 func (m *Fqdn) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -61,7 +63,7 @@ func (m *Fqdn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Defines the FQDN used in a destination for a rule.
 func (m *Fqdn) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

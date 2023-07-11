@@ -63,6 +63,16 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["peopleInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInsightsSettingsFromDiscriminatorValue)
         if err != nil {
@@ -123,6 +133,17 @@ func (m *OrganizationSettings) GetMicrosoftApplicationDataAccess()(MicrosoftAppl
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OrganizationSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPeopleInsights gets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
     val, err := m.GetBackingStore().Get("peopleInsights")
@@ -145,7 +166,7 @@ func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertya
     }
     return nil
 }
-// GetPronouns gets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+// GetPronouns gets the pronouns property value. The pronouns property
 func (m *OrganizationSettings) GetPronouns()(PronounsSettingsable) {
     val, err := m.GetBackingStore().Get("pronouns")
     if err != nil {
@@ -176,6 +197,12 @@ func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteObjectValue("microsoftApplicationDataAccess", m.GetMicrosoftApplicationDataAccess())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -227,6 +254,13 @@ func (m *OrganizationSettings) SetMicrosoftApplicationDataAccess(value Microsoft
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OrganizationSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPeopleInsights sets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) SetPeopleInsights(value InsightsSettingsable)() {
     err := m.GetBackingStore().Set("peopleInsights", value)
@@ -241,7 +275,7 @@ func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardPrope
         panic(err)
     }
 }
-// SetPronouns sets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+// SetPronouns sets the pronouns property value. The pronouns property
 func (m *OrganizationSettings) SetPronouns(value PronounsSettingsable)() {
     err := m.GetBackingStore().Set("pronouns", value)
     if err != nil {
@@ -255,12 +289,14 @@ type OrganizationSettingsable interface {
     GetContactInsights()(InsightsSettingsable)
     GetItemInsights()(InsightsSettingsable)
     GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable)
+    GetOdataType()(*string)
     GetPeopleInsights()(InsightsSettingsable)
     GetProfileCardProperties()([]ProfileCardPropertyable)
     GetPronouns()(PronounsSettingsable)
     SetContactInsights(value InsightsSettingsable)()
     SetItemInsights(value InsightsSettingsable)()
     SetMicrosoftApplicationDataAccess(value MicrosoftApplicationDataAccessSettingsable)()
+    SetOdataType(value *string)()
     SetPeopleInsights(value InsightsSettingsable)()
     SetProfileCardProperties(value []ProfileCardPropertyable)()
     SetPronouns(value PronounsSettingsable)()

@@ -193,6 +193,16 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["principalIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -246,6 +256,17 @@ func (m *UnifiedRoleAssignmentMultiple) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleAssignmentMultiple) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrincipalIds gets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
 func (m *UnifiedRoleAssignmentMultiple) GetPrincipalIds()([]string) {
@@ -351,6 +372,12 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPrincipalIds() != nil {
         err = writer.WriteCollectionOfStringValues("principalIds", m.GetPrincipalIds())
         if err != nil {
@@ -432,6 +459,13 @@ func (m *UnifiedRoleAssignmentMultiple) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleAssignmentMultiple) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrincipalIds sets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
 func (m *UnifiedRoleAssignmentMultiple) SetPrincipalIds(value []string)() {
     err := m.GetBackingStore().Set("principalIds", value)
@@ -471,6 +505,7 @@ type UnifiedRoleAssignmentMultipleable interface {
     GetDirectoryScopeIds()([]string)
     GetDirectoryScopes()([]DirectoryObjectable)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetPrincipalIds()([]string)
     GetPrincipals()([]DirectoryObjectable)
     GetRoleDefinition()(UnifiedRoleDefinitionable)
@@ -482,6 +517,7 @@ type UnifiedRoleAssignmentMultipleable interface {
     SetDirectoryScopeIds(value []string)()
     SetDirectoryScopes(value []DirectoryObjectable)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetPrincipalIds(value []string)()
     SetPrincipals(value []DirectoryObjectable)()
     SetRoleDefinition(value UnifiedRoleDefinitionable)()

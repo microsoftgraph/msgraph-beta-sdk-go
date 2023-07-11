@@ -7,8 +7,10 @@ import (
 // OperationalInsightsConnection 
 type OperationalInsightsConnection struct {
     ResourceConnection
+    // The OdataType property
+    OdataType *string
 }
-// NewOperationalInsightsConnection instantiates a new OperationalInsightsConnection and sets the default values.
+// NewOperationalInsightsConnection instantiates a new operationalInsightsConnection and sets the default values.
 func NewOperationalInsightsConnection()(*OperationalInsightsConnection) {
     m := &OperationalInsightsConnection{
         ResourceConnection: *NewResourceConnection(),

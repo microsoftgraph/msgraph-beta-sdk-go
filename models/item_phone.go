@@ -7,8 +7,10 @@ import (
 // ItemPhone 
 type ItemPhone struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewItemPhone instantiates a new ItemPhone and sets the default values.
+// NewItemPhone instantiates a new itemPhone and sets the default values.
 func NewItemPhone()(*ItemPhone) {
     m := &ItemPhone{
         ItemFacet: *NewItemFacet(),

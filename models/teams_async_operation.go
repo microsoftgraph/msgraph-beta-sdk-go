@@ -96,6 +96,16 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamsAsyncOperationType)
         if err != nil {
@@ -146,6 +156,17 @@ func (m *TeamsAsyncOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamsAsyncOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -223,6 +244,12 @@ func (m *TeamsAsyncOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperationType() != nil {
         cast := (*m.GetOperationType()).String()
         err = writer.WriteStringValue("operationType", &cast)
@@ -279,6 +306,13 @@ func (m *TeamsAsyncOperation) SetLastActionDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamsAsyncOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperationType sets the operationType property value. The operationType property
 func (m *TeamsAsyncOperation) SetOperationType(value *TeamsAsyncOperationType)() {
     err := m.GetBackingStore().Set("operationType", value)
@@ -315,6 +349,7 @@ type TeamsAsyncOperationable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetError()(OperationErrorable)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetOperationType()(*TeamsAsyncOperationType)
     GetStatus()(*TeamsAsyncOperationStatus)
     GetTargetResourceId()(*string)
@@ -323,6 +358,7 @@ type TeamsAsyncOperationable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetError(value OperationErrorable)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetOperationType(value *TeamsAsyncOperationType)()
     SetStatus(value *TeamsAsyncOperationStatus)()
     SetTargetResourceId(value *string)()

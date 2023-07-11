@@ -44,6 +44,16 @@ func (m *RoleGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRoleReferenceValueFromDiscriminatorValue)
         if err != nil {
@@ -61,6 +71,17 @@ func (m *RoleGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RoleGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoles gets the roles property value. The set of roles included in the role group.
 func (m *RoleGroup) GetRoles()([]RoleReferenceValueable) {
@@ -81,6 +102,12 @@ func (m *RoleGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +133,13 @@ func (m *RoleGroup) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RoleGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoles sets the roles property value. The set of roles included in the role group.
 func (m *RoleGroup) SetRoles(value []RoleReferenceValueable)() {
     err := m.GetBackingStore().Set("roles", value)
@@ -118,7 +152,9 @@ type RoleGroupable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetRoles()([]RoleReferenceValueable)
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetRoles(value []RoleReferenceValueable)()
 }

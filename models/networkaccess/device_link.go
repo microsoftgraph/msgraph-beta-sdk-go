@@ -21,7 +21,7 @@ func NewDeviceLink()(*DeviceLink) {
 func CreateDeviceLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLink(), nil
 }
-// GetBandwidthCapacityInMbps gets the bandwidthCapacityInMbps property value. The bandwidthCapacityInMbps property
+// GetBandwidthCapacityInMbps gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
 func (m *DeviceLink) GetBandwidthCapacityInMbps()(*BandwidthCapacityInMbps) {
     val, err := m.GetBackingStore().Get("bandwidthCapacityInMbps")
     if err != nil {
@@ -117,6 +117,16 @@ func (m *DeviceLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["redundancyConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRedundancyConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -139,7 +149,7 @@ func (m *DeviceLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. The ipAddress property
+// GetIpAddress gets the ipAddress property value. Specifies the client IPv4 of the link
 func (m *DeviceLink) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -150,7 +160,7 @@ func (m *DeviceLink) GetIpAddress()(*string) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. last modified time.
 func (m *DeviceLink) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -161,9 +171,20 @@ func (m *DeviceLink) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name.
 func (m *DeviceLink) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceLink) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -239,6 +260,12 @@ func (m *DeviceLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("redundancyConfiguration", m.GetRedundancyConfiguration())
         if err != nil {
             return err
@@ -252,7 +279,7 @@ func (m *DeviceLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetBandwidthCapacityInMbps sets the bandwidthCapacityInMbps property value. The bandwidthCapacityInMbps property
+// SetBandwidthCapacityInMbps sets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
 func (m *DeviceLink) SetBandwidthCapacityInMbps(value *BandwidthCapacityInMbps)() {
     err := m.GetBackingStore().Set("bandwidthCapacityInMbps", value)
     if err != nil {
@@ -273,23 +300,30 @@ func (m *DeviceLink) SetDeviceVendor(value *DeviceVendor)() {
         panic(err)
     }
 }
-// SetIpAddress sets the ipAddress property value. The ipAddress property
+// SetIpAddress sets the ipAddress property value. Specifies the client IPv4 of the link
 func (m *DeviceLink) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. last modified time.
 func (m *DeviceLink) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name.
 func (m *DeviceLink) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceLink) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -318,6 +352,7 @@ type DeviceLinkable interface {
     GetIpAddress()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetRedundancyConfiguration()(RedundancyConfigurationable)
     GetTunnelConfiguration()(TunnelConfigurationable)
     SetBandwidthCapacityInMbps(value *BandwidthCapacityInMbps)()
@@ -326,6 +361,7 @@ type DeviceLinkable interface {
     SetIpAddress(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetRedundancyConfiguration(value RedundancyConfigurationable)()
     SetTunnelConfiguration(value TunnelConfigurationable)()
 }

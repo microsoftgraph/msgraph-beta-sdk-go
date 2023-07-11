@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagementApp 
+// WindowsManagementApp windows management app entity.
 type WindowsManagementApp struct {
     Entity
 }
@@ -79,6 +79,16 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHealthStates gets the healthStates property value. The list of health states for installed Windows management app.
@@ -106,6 +116,17 @@ func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
 // GetManagedInstallerConfiguredDateTime gets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
 func (m *WindowsManagementApp) GetManagedInstallerConfiguredDateTime()(*string) {
     val, err := m.GetBackingStore().Get("managedInstallerConfiguredDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsManagementApp) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -151,6 +172,12 @@ func (m *WindowsManagementApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAvailableVersion sets the availableVersion property value. Windows management app available version.
@@ -181,6 +208,13 @@ func (m *WindowsManagementApp) SetManagedInstallerConfiguredDateTime(value *stri
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsManagementApp) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WindowsManagementAppable 
 type WindowsManagementAppable interface {
     Entityable
@@ -189,8 +223,10 @@ type WindowsManagementAppable interface {
     GetHealthStates()([]WindowsManagementAppHealthStateable)
     GetManagedInstaller()(*ManagedInstallerStatus)
     GetManagedInstallerConfiguredDateTime()(*string)
+    GetOdataType()(*string)
     SetAvailableVersion(value *string)()
     SetHealthStates(value []WindowsManagementAppHealthStateable)()
     SetManagedInstaller(value *ManagedInstallerStatus)()
     SetManagedInstallerConfiguredDateTime(value *string)()
+    SetOdataType(value *string)()
 }

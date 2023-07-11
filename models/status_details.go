@@ -7,8 +7,10 @@ import (
 // StatusDetails 
 type StatusDetails struct {
     StatusBase
+    // The OdataType property
+    OdataType *string
 }
-// NewStatusDetails instantiates a new StatusDetails and sets the default values.
+// NewStatusDetails instantiates a new statusDetails and sets the default values.
 func NewStatusDetails()(*StatusDetails) {
     m := &StatusDetails{
         StatusBase: *NewStatusBase(),

@@ -8,7 +8,7 @@ import (
 type ConditionalAccessRoot struct {
     Entity
 }
-// NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
+// NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),
@@ -107,6 +107,16 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
         if err != nil {
@@ -149,6 +159,17 @@ func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
     }
     if val != nil {
         return val.([]NamedLocationable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -216,6 +237,12 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
@@ -270,6 +297,13 @@ func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConditionalAccessRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
     err := m.GetBackingStore().Set("policies", value)
@@ -292,12 +326,14 @@ type ConditionalAccessRootable interface {
     GetAuthenticationStrength()(AuthenticationStrengthRootable)
     GetAuthenticationStrengths()(AuthenticationStrengthRootable)
     GetNamedLocations()([]NamedLocationable)
+    GetOdataType()(*string)
     GetPolicies()([]ConditionalAccessPolicyable)
     GetTemplates()([]ConditionalAccessTemplateable)
     SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)()
     SetAuthenticationStrength(value AuthenticationStrengthRootable)()
     SetAuthenticationStrengths(value AuthenticationStrengthRootable)()
     SetNamedLocations(value []NamedLocationable)()
+    SetOdataType(value *string)()
     SetPolicies(value []ConditionalAccessPolicyable)()
     SetTemplates(value []ConditionalAccessTemplateable)()
 }

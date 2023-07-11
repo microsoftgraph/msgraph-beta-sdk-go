@@ -9,7 +9,7 @@ import (
 type TenantCustomizedInformationCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewTenantCustomizedInformationCollectionResponse instantiates a new TenantCustomizedInformationCollectionResponse and sets the default values.
+// NewTenantCustomizedInformationCollectionResponse instantiates a new tenantCustomizedInformationCollectionResponse and sets the default values.
 func NewTenantCustomizedInformationCollectionResponse()(*TenantCustomizedInformationCollectionResponse) {
     m := &TenantCustomizedInformationCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

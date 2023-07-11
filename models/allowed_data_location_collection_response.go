@@ -8,7 +8,7 @@ import (
 type AllowedDataLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAllowedDataLocationCollectionResponse instantiates a new AllowedDataLocationCollectionResponse and sets the default values.
+// NewAllowedDataLocationCollectionResponse instantiates a new allowedDataLocationCollectionResponse and sets the default values.
 func NewAllowedDataLocationCollectionResponse()(*AllowedDataLocationCollectionResponse) {
     m := &AllowedDataLocationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

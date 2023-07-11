@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentWindowsHelloForBusinessConfiguration 
+// DeviceEnrollmentWindowsHelloForBusinessConfiguration windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentWindowsHelloForBusinessConfiguration instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
+// NewDeviceEnrollmentWindowsHelloForBusinessConfiguration instantiates a new deviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
 func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollmentWindowsHelloForBusinessConfiguration) {
     m := &DeviceEnrollmentWindowsHelloForBusinessConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -63,6 +63,16 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetFieldDeseriali
         }
         if val != nil {
             m.SetEnhancedSignInSecurity(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -187,6 +197,17 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetFieldDeseriali
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPinExpirationInDays gets the pinExpirationInDays property value. Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinExpirationInDays()(*int32) {
@@ -340,6 +361,12 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) Serialize(writer 
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("pinExpirationInDays", m.GetPinExpirationInDays())
         if err != nil {
             return err
@@ -428,6 +455,13 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedBiomet
 // SetEnhancedSignInSecurity sets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedSignInSecurity(value *int32)() {
     err := m.GetBackingStore().Set("enhancedSignInSecurity", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -522,6 +556,7 @@ type DeviceEnrollmentWindowsHelloForBusinessConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnhancedBiometricsState()(*Enablement)
     GetEnhancedSignInSecurity()(*int32)
+    GetOdataType()(*string)
     GetPinExpirationInDays()(*int32)
     GetPinLowercaseCharactersUsage()(*WindowsHelloForBusinessPinUsage)
     GetPinMaximumLength()(*int32)
@@ -536,6 +571,7 @@ type DeviceEnrollmentWindowsHelloForBusinessConfigurationable interface {
     GetUnlockWithBiometricsEnabled()(*bool)
     SetEnhancedBiometricsState(value *Enablement)()
     SetEnhancedSignInSecurity(value *int32)()
+    SetOdataType(value *string)()
     SetPinExpirationInDays(value *int32)()
     SetPinLowercaseCharactersUsage(value *WindowsHelloForBusinessPinUsage)()
     SetPinMaximumLength(value *int32)()

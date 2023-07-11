@@ -53,6 +53,16 @@ func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsEnabledForAllMicrosoftApplications gets the isEnabledForAllMicrosoftApplications property value. When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in an Azure AD security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.
@@ -63,6 +73,17 @@ func (m *MicrosoftApplicationDataAccessSettings) GetIsEnabledForAllMicrosoftAppl
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MicrosoftApplicationDataAccessSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -84,6 +105,12 @@ func (m *MicrosoftApplicationDataAccessSettings) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.
@@ -100,12 +127,21 @@ func (m *MicrosoftApplicationDataAccessSettings) SetIsEnabledForAllMicrosoftAppl
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MicrosoftApplicationDataAccessSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MicrosoftApplicationDataAccessSettingsable 
 type MicrosoftApplicationDataAccessSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisabledForGroup()(*string)
     GetIsEnabledForAllMicrosoftApplications()(*bool)
+    GetOdataType()(*string)
     SetDisabledForGroup(value *string)()
     SetIsEnabledForAllMicrosoftApplications(value *bool)()
+    SetOdataType(value *string)()
 }

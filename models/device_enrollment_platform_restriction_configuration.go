@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentPlatformRestrictionConfiguration 
+// DeviceEnrollmentPlatformRestrictionConfiguration device Enrollment Configuration that restricts the types of devices a user can enroll for a single platform
 type DeviceEnrollmentPlatformRestrictionConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
+// NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new deviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlatformRestrictionConfiguration) {
     m := &DeviceEnrollmentPlatformRestrictionConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -24,6 +24,16 @@ func CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValu
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platformRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
         if err != nil {
@@ -45,6 +55,17 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPlatformRestriction gets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformRestriction()(DeviceEnrollmentPlatformRestrictionable) {
@@ -75,6 +96,12 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("platformRestriction", m.GetPlatformRestriction())
         if err != nil {
             return err
@@ -88,6 +115,13 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatformRestriction sets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
@@ -107,8 +141,10 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformType(value
 type DeviceEnrollmentPlatformRestrictionConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetPlatformRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetPlatformType()(*EnrollmentRestrictionPlatformType)
+    SetOdataType(value *string)()
     SetPlatformRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetPlatformType(value *EnrollmentRestrictionPlatformType)()
 }

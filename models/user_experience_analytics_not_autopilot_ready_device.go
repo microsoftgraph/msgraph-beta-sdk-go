@@ -157,6 +157,16 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -194,6 +204,17 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManufacturer()(*stri
 // GetModel gets the model property value. The intune device's model.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -268,6 +289,12 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) Serialize(writer i878a8
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("serialNumber", m.GetSerialNumber())
         if err != nil {
             return err
@@ -331,6 +358,13 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetModel(value *string)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSerialNumber sets the serialNumber property value. The intune device's serial number.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetSerialNumber(value *string)() {
     err := m.GetBackingStore().Set("serialNumber", value)
@@ -350,6 +384,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceable interface {
     GetManagedBy()(*string)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetSerialNumber()(*string)
     SetAutoPilotProfileAssigned(value *bool)()
     SetAutoPilotRegistered(value *bool)()
@@ -359,5 +394,6 @@ type UserExperienceAnalyticsNotAutopilotReadyDeviceable interface {
     SetManagedBy(value *string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetSerialNumber(value *string)()
 }

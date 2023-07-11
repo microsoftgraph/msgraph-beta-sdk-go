@@ -38,7 +38,7 @@ func CreatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
     }
     return NewPolicy(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description.
 func (m *Policy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +72,16 @@ func (m *Policy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePolicyRuleFromDiscriminatorValue)
         if err != nil {
@@ -100,7 +110,7 @@ func (m *Policy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Policy name.
 func (m *Policy) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -111,7 +121,18 @@ func (m *Policy) GetName()(*string) {
     }
     return nil
 }
-// GetPolicyRules gets the policyRules property value. The policyRules property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Policy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPolicyRules gets the policyRules property value. Represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *Policy) GetPolicyRules()([]PolicyRuleable) {
     val, err := m.GetBackingStore().Get("policyRules")
     if err != nil {
@@ -122,7 +143,7 @@ func (m *Policy) GetPolicyRules()([]PolicyRuleable) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. Version.
 func (m *Policy) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -151,6 +172,12 @@ func (m *Policy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicyRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicyRules()))
         for i, v := range m.GetPolicyRules() {
@@ -171,28 +198,35 @@ func (m *Policy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description.
 func (m *Policy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Policy name.
 func (m *Policy) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyRules sets the policyRules property value. The policyRules property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Policy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPolicyRules sets the policyRules property value. Represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *Policy) SetPolicyRules(value []PolicyRuleable)() {
     err := m.GetBackingStore().Set("policyRules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. Version.
 func (m *Policy) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {
@@ -205,10 +239,12 @@ type Policyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetPolicyRules()([]PolicyRuleable)
     GetVersion()(*string)
     SetDescription(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetPolicyRules(value []PolicyRuleable)()
     SetVersion(value *string)()
 }

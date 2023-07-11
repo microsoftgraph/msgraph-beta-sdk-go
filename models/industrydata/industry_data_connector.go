@@ -64,6 +64,16 @@ func (m *IndustryDataConnector) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sourceSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSourceSystemDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -75,6 +85,17 @@ func (m *IndustryDataConnector) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IndustryDataConnector) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSourceSystem gets the sourceSystem property value. The sourceSystem property
 func (m *IndustryDataConnector) GetSourceSystem()(SourceSystemDefinitionable) {
@@ -100,6 +121,12 @@ func (m *IndustryDataConnector) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("sourceSystem", m.GetSourceSystem())
         if err != nil {
             return err
@@ -110,6 +137,13 @@ func (m *IndustryDataConnector) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetDisplayName sets the displayName property value. The name of the data connector. Maximum supported length is 100 characters.
 func (m *IndustryDataConnector) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IndustryDataConnector) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -126,7 +160,9 @@ type IndustryDataConnectorable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetSourceSystem()(SourceSystemDefinitionable)
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetSourceSystem(value SourceSystemDefinitionable)()
 }

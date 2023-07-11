@@ -8,7 +8,7 @@ import (
 type UserGovernanceCriteria struct {
     GovernanceCriteria
 }
-// NewUserGovernanceCriteria instantiates a new UserGovernanceCriteria and sets the default values.
+// NewUserGovernanceCriteria instantiates a new userGovernanceCriteria and sets the default values.
 func NewUserGovernanceCriteria()(*UserGovernanceCriteria) {
     m := &UserGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
@@ -24,6 +24,16 @@ func CreateUserGovernanceCriteriaFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GovernanceCriteria.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *UserGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserGovernanceCriteria) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The userId property
 func (m *UserGovernanceCriteria) GetUserId()(*string) {
@@ -54,12 +75,25 @@ func (m *UserGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserGovernanceCriteria) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The userId property
 func (m *UserGovernanceCriteria) SetUserId(value *string)() {
@@ -72,6 +106,8 @@ func (m *UserGovernanceCriteria) SetUserId(value *string)() {
 type UserGovernanceCriteriaable interface {
     GovernanceCriteriaable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetUserId()(*string)
+    SetOdataType(value *string)()
     SetUserId(value *string)()
 }

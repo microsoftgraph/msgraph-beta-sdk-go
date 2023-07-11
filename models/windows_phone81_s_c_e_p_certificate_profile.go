@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81SCEPCertificateProfile 
+// WindowsPhone81SCEPCertificateProfile windows Phone 8.1+ SCEP certificate profile
 type WindowsPhone81SCEPCertificateProfile struct {
     WindowsPhone81CertificateProfileBase
 }
-// NewWindowsPhone81SCEPCertificateProfile instantiates a new WindowsPhone81SCEPCertificateProfile and sets the default values.
+// NewWindowsPhone81SCEPCertificateProfile instantiates a new windowsPhone81SCEPCertificateProfile and sets the default values.
 func NewWindowsPhone81SCEPCertificateProfile()(*WindowsPhone81SCEPCertificateProfile) {
     m := &WindowsPhone81SCEPCertificateProfile{
         WindowsPhone81CertificateProfileBase: *NewWindowsPhone81CertificateProfileBase(),
@@ -67,6 +67,16 @@ func (m *WindowsPhone81SCEPCertificateProfile) GetFieldDeserializers()(map[strin
                 }
             }
             m.SetManagedDeviceCertificateStates(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -162,6 +172,17 @@ func (m *WindowsPhone81SCEPCertificateProfile) GetManagedDeviceCertificateStates
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsPhone81SCEPCertificateProfile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *WindowsPhone81SCEPCertificateProfile) GetRootCertificate()(WindowsPhone81TrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificate")
@@ -246,6 +267,12 @@ func (m *WindowsPhone81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("rootCertificate", m.GetRootCertificate())
         if err != nil {
             return err
@@ -299,6 +326,13 @@ func (m *WindowsPhone81SCEPCertificateProfile) SetManagedDeviceCertificateStates
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsPhone81SCEPCertificateProfile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *WindowsPhone81SCEPCertificateProfile) SetRootCertificate(value WindowsPhone81TrustedRootCertificateable)() {
     err := m.GetBackingStore().Set("rootCertificate", value)
@@ -335,6 +369,7 @@ type WindowsPhone81SCEPCertificateProfileable interface {
     GetKeySize()(*KeySize)
     GetKeyUsage()(*KeyUsages)
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    GetOdataType()(*string)
     GetRootCertificate()(WindowsPhone81TrustedRootCertificateable)
     GetScepServerUrls()([]string)
     GetSubjectAlternativeNameFormatString()(*string)
@@ -343,6 +378,7 @@ type WindowsPhone81SCEPCertificateProfileable interface {
     SetKeySize(value *KeySize)()
     SetKeyUsage(value *KeyUsages)()
     SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
+    SetOdataType(value *string)()
     SetRootCertificate(value WindowsPhone81TrustedRootCertificateable)()
     SetScepServerUrls(value []string)()
     SetSubjectAlternativeNameFormatString(value *string)()

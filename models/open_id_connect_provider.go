@@ -8,7 +8,7 @@ import (
 type OpenIdConnectProvider struct {
     IdentityProvider
 }
-// NewOpenIdConnectProvider instantiates a new OpenIdConnectProvider and sets the default values.
+// NewOpenIdConnectProvider instantiates a new openIdConnectProvider and sets the default values.
 func NewOpenIdConnectProvider()(*OpenIdConnectProvider) {
     m := &OpenIdConnectProvider{
         IdentityProvider: *NewIdentityProvider(),
@@ -74,6 +74,16 @@ func (m *OpenIdConnectProvider) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["responseMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOpenIdConnectResponseMode)
         if err != nil {
@@ -109,6 +119,17 @@ func (m *OpenIdConnectProvider) GetFieldDeserializers()(map[string]func(i878a80d
 // GetMetadataUrl gets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.
 func (m *OpenIdConnectProvider) GetMetadataUrl()(*string) {
     val, err := m.GetBackingStore().Get("metadataUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OpenIdConnectProvider) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -174,6 +195,12 @@ func (m *OpenIdConnectProvider) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResponseMode() != nil {
         cast := (*m.GetResponseMode()).String()
         err = writer.WriteStringValue("responseMode", &cast)
@@ -217,6 +244,13 @@ func (m *OpenIdConnectProvider) SetMetadataUrl(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OpenIdConnectProvider) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResponseMode sets the responseMode property value. The responseMode property
 func (m *OpenIdConnectProvider) SetResponseMode(value *OpenIdConnectResponseMode)() {
     err := m.GetBackingStore().Set("responseMode", value)
@@ -245,12 +279,14 @@ type OpenIdConnectProviderable interface {
     GetClaimsMapping()(ClaimsMappingable)
     GetDomainHint()(*string)
     GetMetadataUrl()(*string)
+    GetOdataType()(*string)
     GetResponseMode()(*OpenIdConnectResponseMode)
     GetResponseType()(*OpenIdConnectResponseTypes)
     GetScope()(*string)
     SetClaimsMapping(value ClaimsMappingable)()
     SetDomainHint(value *string)()
     SetMetadataUrl(value *string)()
+    SetOdataType(value *string)()
     SetResponseMode(value *OpenIdConnectResponseMode)()
     SetResponseType(value *OpenIdConnectResponseTypes)()
     SetScope(value *string)()

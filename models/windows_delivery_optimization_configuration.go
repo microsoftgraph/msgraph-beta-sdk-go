@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDeliveryOptimizationConfiguration 
+// WindowsDeliveryOptimizationConfiguration windows Delivery Optimization configuration
 type WindowsDeliveryOptimizationConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsDeliveryOptimizationConfiguration instantiates a new WindowsDeliveryOptimizationConfiguration and sets the default values.
+// NewWindowsDeliveryOptimizationConfiguration instantiates a new windowsDeliveryOptimizationConfiguration and sets the default values.
 func NewWindowsDeliveryOptimizationConfiguration()(*WindowsDeliveryOptimizationConfiguration) {
     m := &WindowsDeliveryOptimizationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

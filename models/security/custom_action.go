@@ -7,8 +7,10 @@ import (
 // CustomAction 
 type CustomAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewCustomAction instantiates a new CustomAction and sets the default values.
+// NewCustomAction instantiates a new customAction and sets the default values.
 func NewCustomAction()(*CustomAction) {
     m := &CustomAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

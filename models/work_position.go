@@ -7,8 +7,10 @@ import (
 // WorkPosition 
 type WorkPosition struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewWorkPosition instantiates a new WorkPosition and sets the default values.
+// NewWorkPosition instantiates a new workPosition and sets the default values.
 func NewWorkPosition()(*WorkPosition) {
     m := &WorkPosition{
         ItemFacet: *NewItemFacet(),

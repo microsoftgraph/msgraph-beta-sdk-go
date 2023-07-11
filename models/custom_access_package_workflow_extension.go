@@ -9,7 +9,7 @@ import (
 type CustomAccessPackageWorkflowExtension struct {
     CustomCalloutExtension
 }
-// NewCustomAccessPackageWorkflowExtension instantiates a new CustomAccessPackageWorkflowExtension and sets the default values.
+// NewCustomAccessPackageWorkflowExtension instantiates a new customAccessPackageWorkflowExtension and sets the default values.
 func NewCustomAccessPackageWorkflowExtension()(*CustomAccessPackageWorkflowExtension) {
     m := &CustomAccessPackageWorkflowExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),
@@ -56,6 +56,16 @@ func (m *CustomAccessPackageWorkflowExtension) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -66,6 +76,17 @@ func (m *CustomAccessPackageWorkflowExtension) GetLastModifiedDateTime()(*i33607
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomAccessPackageWorkflowExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -87,6 +108,12 @@ func (m *CustomAccessPackageWorkflowExtension) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -103,12 +130,21 @@ func (m *CustomAccessPackageWorkflowExtension) SetLastModifiedDateTime(value *i3
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomAccessPackageWorkflowExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CustomAccessPackageWorkflowExtensionable 
 type CustomAccessPackageWorkflowExtensionable interface {
     CustomCalloutExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
 }

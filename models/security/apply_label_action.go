@@ -7,8 +7,10 @@ import (
 // ApplyLabelAction 
 type ApplyLabelAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewApplyLabelAction instantiates a new ApplyLabelAction and sets the default values.
+// NewApplyLabelAction instantiates a new applyLabelAction and sets the default values.
 func NewApplyLabelAction()(*ApplyLabelAction) {
     m := &ApplyLabelAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

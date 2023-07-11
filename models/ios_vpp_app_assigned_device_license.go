@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVppAppAssignedDeviceLicense 
+// IosVppAppAssignedDeviceLicense iOS Volume Purchase Program device license assignment. This class does not support Create, Delete, or Update.
 type IosVppAppAssignedDeviceLicense struct {
     IosVppAppAssignedLicense
 }
-// NewIosVppAppAssignedDeviceLicense instantiates a new IosVppAppAssignedDeviceLicense and sets the default values.
+// NewIosVppAppAssignedDeviceLicense instantiates a new iosVppAppAssignedDeviceLicense and sets the default values.
 func NewIosVppAppAssignedDeviceLicense()(*IosVppAppAssignedDeviceLicense) {
     m := &IosVppAppAssignedDeviceLicense{
         IosVppAppAssignedLicense: *NewIosVppAppAssignedLicense(),
@@ -53,11 +53,32 @@ func (m *IosVppAppAssignedDeviceLicense) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The managed device ID.
 func (m *IosVppAppAssignedDeviceLicense) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosVppAppAssignedDeviceLicense) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -84,6 +105,12 @@ func (m *IosVppAppAssignedDeviceLicense) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDeviceName sets the deviceName property value. The device name.
@@ -100,12 +127,21 @@ func (m *IosVppAppAssignedDeviceLicense) SetManagedDeviceId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosVppAppAssignedDeviceLicense) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IosVppAppAssignedDeviceLicenseable 
 type IosVppAppAssignedDeviceLicenseable interface {
     IosVppAppAssignedLicenseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceName()(*string)
     GetManagedDeviceId()(*string)
+    GetOdataType()(*string)
     SetDeviceName(value *string)()
     SetManagedDeviceId(value *string)()
+    SetOdataType(value *string)()
 }

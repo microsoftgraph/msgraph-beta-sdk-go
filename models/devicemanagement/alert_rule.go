@@ -133,6 +133,16 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRuleSeverityType)
         if err != nil {
@@ -174,6 +184,17 @@ func (m *AlertRule) GetNotificationChannels()([]NotificationChannelable) {
     }
     if val != nil {
         return val.([]NotificationChannelable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AlertRule) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -248,6 +269,12 @@ func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSeverity() != nil {
         cast := (*m.GetSeverity()).String()
         err = writer.WriteStringValue("severity", &cast)
@@ -305,6 +332,13 @@ func (m *AlertRule) SetNotificationChannels(value []NotificationChannelable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AlertRule) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSeverity sets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *AlertRule) SetSeverity(value *RuleSeverityType)() {
     err := m.GetBackingStore().Set("severity", value)
@@ -329,6 +363,7 @@ type AlertRuleable interface {
     GetEnabled()(*bool)
     GetIsSystemRule()(*bool)
     GetNotificationChannels()([]NotificationChannelable)
+    GetOdataType()(*string)
     GetSeverity()(*RuleSeverityType)
     GetThreshold()(RuleThresholdable)
     SetAlertRuleTemplate(value *AlertRuleTemplate)()
@@ -337,6 +372,7 @@ type AlertRuleable interface {
     SetEnabled(value *bool)()
     SetIsSystemRule(value *bool)()
     SetNotificationChannels(value []NotificationChannelable)()
+    SetOdataType(value *string)()
     SetSeverity(value *RuleSeverityType)()
     SetThreshold(value RuleThresholdable)()
 }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSCustomConfiguration 
+// MacOSCustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
 type MacOSCustomConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSCustomConfiguration instantiates a new MacOSCustomConfiguration and sets the default values.
+// NewMacOSCustomConfiguration instantiates a new macOSCustomConfiguration and sets the default values.
 func NewMacOSCustomConfiguration()(*MacOSCustomConfiguration) {
     m := &MacOSCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -45,6 +45,16 @@ func (m *MacOSCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -76,6 +86,17 @@ func (m *MacOSCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSCustomConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *MacOSCustomConfiguration) GetPayload()([]byte) {
@@ -124,6 +145,12 @@ func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("payload", m.GetPayload())
         if err != nil {
             return err
@@ -146,6 +173,13 @@ func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 // SetDeploymentChannel sets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 func (m *MacOSCustomConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSCustomConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -176,10 +210,12 @@ type MacOSCustomConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeploymentChannel()(*AppleDeploymentChannel)
+    GetOdataType()(*string)
     GetPayload()([]byte)
     GetPayloadFileName()(*string)
     GetPayloadName()(*string)
     SetDeploymentChannel(value *AppleDeploymentChannel)()
+    SetOdataType(value *string)()
     SetPayload(value []byte)()
     SetPayloadFileName(value *string)()
     SetPayloadName(value *string)()

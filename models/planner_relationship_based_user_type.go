@@ -8,7 +8,7 @@ import (
 type PlannerRelationshipBasedUserType struct {
     PlannerTaskConfigurationRoleBase
 }
-// NewPlannerRelationshipBasedUserType instantiates a new PlannerRelationshipBasedUserType and sets the default values.
+// NewPlannerRelationshipBasedUserType instantiates a new plannerRelationshipBasedUserType and sets the default values.
 func NewPlannerRelationshipBasedUserType()(*PlannerRelationshipBasedUserType) {
     m := &PlannerRelationshipBasedUserType{
         PlannerTaskConfigurationRoleBase: *NewPlannerTaskConfigurationRoleBase(),
@@ -24,6 +24,16 @@ func CreatePlannerRelationshipBasedUserTypeFromDiscriminatorValue(parseNode i878
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerRelationshipBasedUserType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerTaskConfigurationRoleBase.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePlannerRelationshipUserRoles)
         if err != nil {
@@ -35,6 +45,17 @@ func (m *PlannerRelationshipBasedUserType) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerRelationshipBasedUserType) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. The role property
 func (m *PlannerRelationshipBasedUserType) GetRole()(*PlannerRelationshipUserRoles) {
@@ -53,6 +74,12 @@ func (m *PlannerRelationshipBasedUserType) Serialize(writer i878a80d2330e89d2689
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRole() != nil {
         cast := (*m.GetRole()).String()
         err = writer.WriteStringValue("role", &cast)
@@ -61,6 +88,13 @@ func (m *PlannerRelationshipBasedUserType) Serialize(writer i878a80d2330e89d2689
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerRelationshipBasedUserType) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. The role property
 func (m *PlannerRelationshipBasedUserType) SetRole(value *PlannerRelationshipUserRoles)() {
@@ -73,6 +107,8 @@ func (m *PlannerRelationshipBasedUserType) SetRole(value *PlannerRelationshipUse
 type PlannerRelationshipBasedUserTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerTaskConfigurationRoleBaseable
+    GetOdataType()(*string)
     GetRole()(*PlannerRelationshipUserRoles)
+    SetOdataType(value *string)()
     SetRole(value *PlannerRelationshipUserRoles)()
 }

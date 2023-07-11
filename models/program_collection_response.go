@@ -8,7 +8,7 @@ import (
 type ProgramCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProgramCollectionResponse instantiates a new ProgramCollectionResponse and sets the default values.
+// NewProgramCollectionResponse instantiates a new programCollectionResponse and sets the default values.
 func NewProgramCollectionResponse()(*ProgramCollectionResponse) {
     m := &ProgramCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

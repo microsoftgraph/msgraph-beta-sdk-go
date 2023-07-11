@@ -8,7 +8,7 @@ import (
 type ProtectOnlineMeetingAction struct {
     LabelActionBase
 }
-// NewProtectOnlineMeetingAction instantiates a new ProtectOnlineMeetingAction and sets the default values.
+// NewProtectOnlineMeetingAction instantiates a new protectOnlineMeetingAction and sets the default values.
 func NewProtectOnlineMeetingAction()(*ProtectOnlineMeetingAction) {
     m := &ProtectOnlineMeetingAction{
         LabelActionBase: *NewLabelActionBase(),
@@ -96,6 +96,16 @@ func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsCopyToClipboardEnabled gets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property
@@ -128,6 +138,17 @@ func (m *ProtectOnlineMeetingAction) GetLobbyBypassSettings()(LobbyBypassSetting
     }
     if val != nil {
         return val.(LobbyBypassSettingsable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProtectOnlineMeetingAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -169,6 +190,12 @@ func (m *ProtectOnlineMeetingAction) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowedForwarders sets the allowedForwarders property value. The allowedForwarders property
@@ -206,6 +233,13 @@ func (m *ProtectOnlineMeetingAction) SetLobbyBypassSettings(value LobbyBypassSet
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProtectOnlineMeetingAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ProtectOnlineMeetingActionable 
 type ProtectOnlineMeetingActionable interface {
     LabelActionBaseable
@@ -215,9 +249,11 @@ type ProtectOnlineMeetingActionable interface {
     GetIsCopyToClipboardEnabled()(*bool)
     GetIsLobbyEnabled()(*bool)
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
+    GetOdataType()(*string)
     SetAllowedForwarders(value *OnlineMeetingForwarders)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
     SetIsCopyToClipboardEnabled(value *bool)()
     SetIsLobbyEnabled(value *bool)()
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
+    SetOdataType(value *string)()
 }

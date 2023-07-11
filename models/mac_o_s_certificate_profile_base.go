@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSCertificateProfileBase 
+// MacOSCertificateProfileBase mac OS certificate profile.
 type MacOSCertificateProfileBase struct {
     DeviceConfiguration
 }
@@ -88,6 +88,16 @@ func (m *MacOSCertificateProfileBase) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -119,6 +129,17 @@ func (m *MacOSCertificateProfileBase) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSCertificateProfileBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *MacOSCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
@@ -173,6 +194,12 @@ func (m *MacOSCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("renewalThresholdPercentage", m.GetRenewalThresholdPercentage())
         if err != nil {
             return err
@@ -208,6 +235,13 @@ func (m *MacOSCertificateProfileBase) SetCertificateValidityPeriodValue(value *i
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSCertificateProfileBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *MacOSCertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
     err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
@@ -235,11 +269,13 @@ type MacOSCertificateProfileBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale)
     GetCertificateValidityPeriodValue()(*int32)
+    GetOdataType()(*string)
     GetRenewalThresholdPercentage()(*int32)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*AppleSubjectNameFormat)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
+    SetOdataType(value *string)()
     SetRenewalThresholdPercentage(value *int32)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *AppleSubjectNameFormat)()

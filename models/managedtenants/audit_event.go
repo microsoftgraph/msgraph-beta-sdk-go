@@ -158,6 +158,16 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requestBody"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -247,6 +257,17 @@ func (m *AuditEvent) GetInitiatedByUserId()(*string) {
 // GetIpAddress gets the ipAddress property value. The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
 func (m *AuditEvent) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuditEvent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -360,6 +381,12 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("requestBody", m.GetRequestBody())
         if err != nil {
             return err
@@ -448,6 +475,13 @@ func (m *AuditEvent) SetIpAddress(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuditEvent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestBody sets the requestBody property value. The raw HTTP request body. Some sensitive information may be removed.
 func (m *AuditEvent) SetRequestBody(value *string)() {
     err := m.GetBackingStore().Set("requestBody", value)
@@ -489,6 +523,7 @@ type AuditEventable interface {
     GetInitiatedByUpn()(*string)
     GetInitiatedByUserId()(*string)
     GetIpAddress()(*string)
+    GetOdataType()(*string)
     GetRequestBody()(*string)
     GetRequestUrl()(*string)
     GetTenantIds()(*string)
@@ -502,6 +537,7 @@ type AuditEventable interface {
     SetInitiatedByUpn(value *string)()
     SetInitiatedByUserId(value *string)()
     SetIpAddress(value *string)()
+    SetOdataType(value *string)()
     SetRequestBody(value *string)()
     SetRequestUrl(value *string)()
     SetTenantIds(value *string)()

@@ -7,8 +7,10 @@ import (
 // ReportRoot 
 type ReportRoot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewReportRoot instantiates a new ReportRoot and sets the default values.
+// NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
         Entity: *NewEntity(),
@@ -74,7 +76,7 @@ func (m *ReportRoot) GetDailyPrintUsage()([]PrintUsageable) {
     }
     return nil
 }
-// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. Retrieve a list of daily print usage summaries, grouped by printer.
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageByPrinter")
     if err != nil {
@@ -85,7 +87,7 @@ func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     }
     return nil
 }
-// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. Retrieve a list of daily print usage summaries, grouped by user.
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageByUser")
     if err != nil {
@@ -349,6 +351,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["sla"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServiceLevelAgreementRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSla(val.(ServiceLevelAgreementRootable))
+        }
+        return nil
+    }
     res["userCredentialUsageDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserCredentialUsageDetailsFromDiscriminatorValue)
         if err != nil {
@@ -367,7 +379,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageByPrinter")
     if err != nil {
@@ -378,7 +390,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) 
     }
     return nil
 }
-// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. Retrieve a list of monthly print usage summaries, grouped by user.
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageByUser")
     if err != nil {
@@ -430,6 +442,17 @@ func (m *ReportRoot) GetServicePrincipalSignInActivities()([]ServicePrincipalSig
     }
     if val != nil {
         return val.([]ServicePrincipalSignInActivityable)
+    }
+    return nil
+}
+// GetSla gets the sla property value. A placeholder to allow for the desired URL path for SLA.
+func (m *ReportRoot) GetSla()(ServiceLevelAgreementRootable) {
+    val, err := m.GetBackingStore().Get("sla")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServiceLevelAgreementRootable)
     }
     return nil
 }
@@ -618,6 +641,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("sla", m.GetSla())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserCredentialUsageDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserCredentialUsageDetails()))
         for i, v := range m.GetUserCredentialUsageDetails() {
@@ -667,14 +696,14 @@ func (m *ReportRoot) SetDailyPrintUsage(value []PrintUsageable)() {
         panic(err)
     }
 }
-// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. Retrieve a list of daily print usage summaries, grouped by printer.
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     err := m.GetBackingStore().Set("dailyPrintUsageByPrinter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. Retrieve a list of daily print usage summaries, grouped by user.
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
     err := m.GetBackingStore().Set("dailyPrintUsageByUser", value)
     if err != nil {
@@ -695,14 +724,14 @@ func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUsera
         panic(err)
     }
 }
-// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     err := m.GetBackingStore().Set("monthlyPrintUsageByPrinter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. Retrieve a list of monthly print usage summaries, grouped by user.
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
     err := m.GetBackingStore().Set("monthlyPrintUsageByUser", value)
     if err != nil {
@@ -737,6 +766,13 @@ func (m *ReportRoot) SetServicePrincipalSignInActivities(value []ServicePrincipa
         panic(err)
     }
 }
+// SetSla sets the sla property value. A placeholder to allow for the desired URL path for SLA.
+func (m *ReportRoot) SetSla(value ServiceLevelAgreementRootable)() {
+    err := m.GetBackingStore().Set("sla", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)() {
     err := m.GetBackingStore().Set("userCredentialUsageDetails", value)
@@ -763,6 +799,7 @@ type ReportRootable interface {
     GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable)
     GetSecurity()(SecurityReportsRootable)
     GetServicePrincipalSignInActivities()([]ServicePrincipalSignInActivityable)
+    GetSla()(ServiceLevelAgreementRootable)
     GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable)
     SetAppCredentialSignInActivities(value []AppCredentialSignInActivityable)()
     SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
@@ -779,5 +816,6 @@ type ReportRootable interface {
     SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
     SetSecurity(value SecurityReportsRootable)()
     SetServicePrincipalSignInActivities(value []ServicePrincipalSignInActivityable)()
+    SetSla(value ServiceLevelAgreementRootable)()
     SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)()
 }

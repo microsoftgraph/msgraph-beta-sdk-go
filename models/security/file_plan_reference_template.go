@@ -7,8 +7,10 @@ import (
 // FilePlanReferenceTemplate 
 type FilePlanReferenceTemplate struct {
     FilePlanDescriptorTemplate
+    // The OdataType property
+    OdataType *string
 }
-// NewFilePlanReferenceTemplate instantiates a new FilePlanReferenceTemplate and sets the default values.
+// NewFilePlanReferenceTemplate instantiates a new filePlanReferenceTemplate and sets the default values.
 func NewFilePlanReferenceTemplate()(*FilePlanReferenceTemplate) {
     m := &FilePlanReferenceTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

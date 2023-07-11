@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingAppointment 
+// BookingAppointment represents a booked appointment of a service by a customer in a business.
 type BookingAppointment struct {
     Entity
 }
-// NewBookingAppointment instantiates a new BookingAppointment and sets the default values.
+// NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {
     m := &BookingAppointment{
         Entity: *NewEntity(),
@@ -370,6 +370,16 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onlineMeetingUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -630,6 +640,17 @@ func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingAppointment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -926,6 +947,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("onlineMeetingUrl", m.GetOnlineMeetingUrl())
         if err != nil {
             return err
@@ -1171,6 +1198,13 @@ func (m *BookingAppointment) SetMaximumAttendeesCount(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingAppointment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnlineMeetingUrl sets the onlineMeetingUrl property value. The onlineMeetingUrl property
 func (m *BookingAppointment) SetOnlineMeetingUrl(value *string)() {
     err := m.GetBackingStore().Set("onlineMeetingUrl", value)
@@ -1301,6 +1335,7 @@ type BookingAppointmentable interface {
     GetIsLocationOnline()(*bool)
     GetJoinWebUrl()(*string)
     GetMaximumAttendeesCount()(*int32)
+    GetOdataType()(*string)
     GetOnlineMeetingUrl()(*string)
     GetOptOutOfCustomerEmail()(*bool)
     GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -1337,6 +1372,7 @@ type BookingAppointmentable interface {
     SetIsLocationOnline(value *bool)()
     SetJoinWebUrl(value *string)()
     SetMaximumAttendeesCount(value *int32)()
+    SetOdataType(value *string)()
     SetOnlineMeetingUrl(value *string)()
     SetOptOutOfCustomerEmail(value *bool)()
     SetPostBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()

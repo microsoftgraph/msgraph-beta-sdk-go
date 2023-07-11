@@ -106,6 +106,16 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectorGroupRegion)
         if err != nil {
@@ -143,6 +153,17 @@ func (m *ConnectorGroup) GetMembers()([]Connectorable) {
 // GetName gets the name property value. The name associated with the connectorGroup.
 func (m *ConnectorGroup) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConnectorGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -211,6 +232,12 @@ func (m *ConnectorGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRegion() != nil {
         cast := (*m.GetRegion()).String()
         err = writer.WriteStringValue("region", &cast)
@@ -255,6 +282,13 @@ func (m *ConnectorGroup) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConnectorGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegion sets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
 func (m *ConnectorGroup) SetRegion(value *ConnectorGroupRegion)() {
     err := m.GetBackingStore().Set("region", value)
@@ -271,11 +305,13 @@ type ConnectorGroupable interface {
     GetIsDefault()(*bool)
     GetMembers()([]Connectorable)
     GetName()(*string)
+    GetOdataType()(*string)
     GetRegion()(*ConnectorGroupRegion)
     SetApplications(value []Applicationable)()
     SetConnectorGroupType(value *ConnectorGroupType)()
     SetIsDefault(value *bool)()
     SetMembers(value []Connectorable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetRegion(value *ConnectorGroupRegion)()
 }

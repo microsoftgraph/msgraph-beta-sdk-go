@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidOmaCpConfiguration 
+// AndroidOmaCpConfiguration by providing a configuration in this profile you can configure Android devices that support OMA-CP.
 type AndroidOmaCpConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewAndroidOmaCpConfiguration instantiates a new AndroidOmaCpConfiguration and sets the default values.
+// NewAndroidOmaCpConfiguration instantiates a new androidOmaCpConfiguration and sets the default values.
 func NewAndroidOmaCpConfiguration()(*AndroidOmaCpConfiguration) {
     m := &AndroidOmaCpConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

@@ -8,8 +8,10 @@ import (
 // MeetingRegistrant 
 type MeetingRegistrant struct {
     MeetingRegistrantBase
+    // The OdataType property
+    OdataType *string
 }
-// NewMeetingRegistrant instantiates a new MeetingRegistrant and sets the default values.
+// NewMeetingRegistrant instantiates a new meetingRegistrant and sets the default values.
 func NewMeetingRegistrant()(*MeetingRegistrant) {
     m := &MeetingRegistrant{
         MeetingRegistrantBase: *NewMeetingRegistrantBase(),

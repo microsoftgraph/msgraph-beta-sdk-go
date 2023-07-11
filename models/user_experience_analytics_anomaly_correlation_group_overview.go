@@ -217,6 +217,16 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) GetFieldDeseria
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["totalDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -228,6 +238,17 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) GetFieldDeseria
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTotalDeviceCount gets the totalDeviceCount property value. Indicates the total number of devices in the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) GetTotalDeviceCount()(*int32) {
@@ -308,6 +329,12 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) Serialize(write
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("totalDeviceCount", m.GetTotalDeviceCount())
         if err != nil {
             return err
@@ -378,6 +405,13 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) SetCorrelationG
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTotalDeviceCount sets the totalDeviceCount property value. Indicates the total number of devices in the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverview) SetTotalDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("totalDeviceCount", value)
@@ -398,6 +432,7 @@ type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable interface {
     GetCorrelationGroupId()(*string)
     GetCorrelationGroupPrevalence()(*UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence)
     GetCorrelationGroupPrevalencePercentage()(*float64)
+    GetOdataType()(*string)
     GetTotalDeviceCount()(*int32)
     SetAnomalyCorrelationGroupCount(value *int32)()
     SetAnomalyId(value *string)()
@@ -408,5 +443,6 @@ type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable interface {
     SetCorrelationGroupId(value *string)()
     SetCorrelationGroupPrevalence(value *UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence)()
     SetCorrelationGroupPrevalencePercentage(value *float64)()
+    SetOdataType(value *string)()
     SetTotalDeviceCount(value *int32)()
 }

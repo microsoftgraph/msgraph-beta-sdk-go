@@ -7,8 +7,10 @@ import (
 // PersonCertification 
 type PersonCertification struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewPersonCertification instantiates a new PersonCertification and sets the default values.
+// NewPersonCertification instantiates a new personCertification and sets the default values.
 func NewPersonCertification()(*PersonCertification) {
     m := &PersonCertification{
         ItemFacet: *NewItemFacet(),

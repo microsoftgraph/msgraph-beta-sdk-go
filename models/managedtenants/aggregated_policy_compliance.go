@@ -148,6 +148,16 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -221,6 +231,17 @@ func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AggregatedPolicyCompliance) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -312,6 +333,12 @@ func (m *AggregatedPolicyCompliance) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("policyModifiedDateTime", m.GetPolicyModifiedDateTime())
         if err != nil {
             return err
@@ -387,6 +414,13 @@ func (m *AggregatedPolicyCompliance) SetNumberOfNonCompliantDevices(value *int64
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AggregatedPolicyCompliance) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyModifiedDateTime sets the policyModifiedDateTime property value. The date and time the device policy was last modified. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetPolicyModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("policyModifiedDateTime", value)
@@ -420,6 +454,7 @@ type AggregatedPolicyComplianceable interface {
     GetNumberOfCompliantDevices()(*int64)
     GetNumberOfErrorDevices()(*int64)
     GetNumberOfNonCompliantDevices()(*int64)
+    GetOdataType()(*string)
     GetPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTenantDisplayName()(*string)
     GetTenantId()(*string)
@@ -431,6 +466,7 @@ type AggregatedPolicyComplianceable interface {
     SetNumberOfCompliantDevices(value *int64)()
     SetNumberOfErrorDevices(value *int64)()
     SetNumberOfNonCompliantDevices(value *int64)()
+    SetOdataType(value *string)()
     SetPolicyModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTenantDisplayName(value *string)()
     SetTenantId(value *string)()

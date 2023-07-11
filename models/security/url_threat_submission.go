@@ -7,8 +7,10 @@ import (
 // UrlThreatSubmission 
 type UrlThreatSubmission struct {
     ThreatSubmission
+    // The OdataType property
+    OdataType *string
 }
-// NewUrlThreatSubmission instantiates a new UrlThreatSubmission and sets the default values.
+// NewUrlThreatSubmission instantiates a new urlThreatSubmission and sets the default values.
 func NewUrlThreatSubmission()(*UrlThreatSubmission) {
     m := &UrlThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),

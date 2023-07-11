@@ -7,8 +7,10 @@ import (
 // WebSegmentConfiguration 
 type WebSegmentConfiguration struct {
     SegmentConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewWebSegmentConfiguration instantiates a new WebSegmentConfiguration and sets the default values.
+// NewWebSegmentConfiguration instantiates a new webSegmentConfiguration and sets the default values.
 func NewWebSegmentConfiguration()(*WebSegmentConfiguration) {
     m := &WebSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),

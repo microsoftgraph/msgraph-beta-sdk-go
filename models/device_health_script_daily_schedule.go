@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceHealthScriptDailySchedule 
+// DeviceHealthScriptDailySchedule device health script daily schedule.
 type DeviceHealthScriptDailySchedule struct {
     DeviceHealthScriptTimeSchedule
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceHealthScriptDailySchedule instantiates a new DeviceHealthScriptDailySchedule and sets the default values.
+// NewDeviceHealthScriptDailySchedule instantiates a new deviceHealthScriptDailySchedule and sets the default values.
 func NewDeviceHealthScriptDailySchedule()(*DeviceHealthScriptDailySchedule) {
     m := &DeviceHealthScriptDailySchedule{
         DeviceHealthScriptTimeSchedule: *NewDeviceHealthScriptTimeSchedule(),

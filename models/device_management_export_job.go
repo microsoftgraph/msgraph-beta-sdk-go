@@ -74,6 +74,16 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reportName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -172,6 +182,17 @@ func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExpor
     }
     if val != nil {
         return val.(*DeviceManagementExportJobLocalizationType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementExportJob) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -274,6 +295,12 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("reportName", m.GetReportName())
         if err != nil {
             return err
@@ -340,6 +367,13 @@ func (m *DeviceManagementExportJob) SetLocalizationType(value *DeviceManagementE
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementExportJob) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReportName sets the reportName property value. Name of the report
 func (m *DeviceManagementExportJob) SetReportName(value *string)() {
     err := m.GetBackingStore().Set("reportName", value)
@@ -390,6 +424,7 @@ type DeviceManagementExportJobable interface {
     GetFilter()(*string)
     GetFormat()(*DeviceManagementReportFileFormat)
     GetLocalizationType()(*DeviceManagementExportJobLocalizationType)
+    GetOdataType()(*string)
     GetReportName()(*string)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSelect()([]string)
@@ -400,6 +435,7 @@ type DeviceManagementExportJobable interface {
     SetFilter(value *string)()
     SetFormat(value *DeviceManagementReportFileFormat)()
     SetLocalizationType(value *DeviceManagementExportJobLocalizationType)()
+    SetOdataType(value *string)()
     SetReportName(value *string)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSelect(value []string)()

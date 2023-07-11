@@ -10,7 +10,7 @@ type TunnelConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTunnelConfiguration instantiates a new TunnelConfiguration and sets the default values.
+// NewTunnelConfiguration instantiates a new tunnelConfiguration and sets the default values.
 func NewTunnelConfiguration()(*TunnelConfiguration) {
     m := &TunnelConfiguration{
     }
@@ -94,7 +94,7 @@ func (m *TunnelConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPreSharedKey gets the preSharedKey property value. The preSharedKey property
+// GetPreSharedKey gets the preSharedKey property value. A key to establish secure connection between the link and VPN tunnel on the edge.
 func (m *TunnelConfiguration) GetPreSharedKey()(*string) {
     val, err := m.GetBackingStore().Get("preSharedKey")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *TunnelConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPreSharedKey sets the preSharedKey property value. The preSharedKey property
+// SetPreSharedKey sets the preSharedKey property value. A key to establish secure connection between the link and VPN tunnel on the edge.
 func (m *TunnelConfiguration) SetPreSharedKey(value *string)() {
     err := m.GetBackingStore().Set("preSharedKey", value)
     if err != nil {

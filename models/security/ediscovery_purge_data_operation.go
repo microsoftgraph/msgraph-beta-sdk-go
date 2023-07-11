@@ -7,8 +7,10 @@ import (
 // EdiscoveryPurgeDataOperation 
 type EdiscoveryPurgeDataOperation struct {
     CaseOperation
+    // The OdataType property
+    OdataType *string
 }
-// NewEdiscoveryPurgeDataOperation instantiates a new EdiscoveryPurgeDataOperation and sets the default values.
+// NewEdiscoveryPurgeDataOperation instantiates a new ediscoveryPurgeDataOperation and sets the default values.
 func NewEdiscoveryPurgeDataOperation()(*EdiscoveryPurgeDataOperation) {
     m := &EdiscoveryPurgeDataOperation{
         CaseOperation: *NewCaseOperation(),

@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceNowConnection 
+// ServiceNowConnection serviceNow properties including the ServiceNow instanceUrl, connection credentials and other metadata.
 type ServiceNowConnection struct {
     Entity
 }
-// NewServiceNowConnection instantiates a new ServiceNowConnection and sets the default values.
+// NewServiceNowConnection instantiates a new serviceNowConnection and sets the default values.
 func NewServiceNowConnection()(*ServiceNowConnection) {
     m := &ServiceNowConnection{
         Entity: *NewEntity(),
@@ -105,6 +105,16 @@ func (m *ServiceNowConnection) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["serviceNowConnectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceNowConnectionStatus)
         if err != nil {
@@ -161,6 +171,17 @@ func (m *ServiceNowConnection) GetLastQueriedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceNowConnection) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetServiceNowConnectionStatus gets the serviceNowConnectionStatus property value. Status of ServiceNow Connection
 func (m *ServiceNowConnection) GetServiceNowConnectionStatus()(*ServiceNowConnectionStatus) {
     val, err := m.GetBackingStore().Get("serviceNowConnectionStatus")
@@ -210,6 +231,12 @@ func (m *ServiceNowConnection) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteTimeValue("lastQueriedDateTime", m.GetLastQueriedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -265,6 +292,13 @@ func (m *ServiceNowConnection) SetLastQueriedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceNowConnection) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceNowConnectionStatus sets the serviceNowConnectionStatus property value. Status of ServiceNow Connection
 func (m *ServiceNowConnection) SetServiceNowConnectionStatus(value *ServiceNowConnectionStatus)() {
     err := m.GetBackingStore().Set("serviceNowConnectionStatus", value)
@@ -282,6 +316,7 @@ type ServiceNowConnectionable interface {
     GetInstanceUrl()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastQueriedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetServiceNowConnectionStatus()(*ServiceNowConnectionStatus)
     SetAuthenticationMethod(value ServiceNowAuthenticationMethodable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -289,5 +324,6 @@ type ServiceNowConnectionable interface {
     SetInstanceUrl(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastQueriedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetServiceNowConnectionStatus(value *ServiceNowConnectionStatus)()
 }

@@ -211,7 +211,28 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegedAccessGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -303,6 +324,12 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignmentApprovals sets the assignmentApprovals property value. The assignmentApprovals property
@@ -354,6 +381,13 @@ func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccess
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegedAccessGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // PrivilegedAccessGroupable 
 type PrivilegedAccessGroupable interface {
     Entityable
@@ -365,6 +399,7 @@ type PrivilegedAccessGroupable interface {
     GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
     GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable)
     GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable)
+    GetOdataType()(*string)
     SetAssignmentApprovals(value []Approvalable)()
     SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)()
     SetAssignmentScheduleRequests(value []PrivilegedAccessGroupAssignmentScheduleRequestable)()
@@ -372,4 +407,5 @@ type PrivilegedAccessGroupable interface {
     SetEligibilityScheduleInstances(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)()
     SetEligibilityScheduleRequests(value []PrivilegedAccessGroupEligibilityScheduleRequestable)()
     SetEligibilitySchedules(value []PrivilegedAccessGroupEligibilityScheduleable)()
+    SetOdataType(value *string)()
 }

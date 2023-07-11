@@ -10,7 +10,7 @@ type FormsSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFormsSettings instantiates a new FormsSettings and sets the default values.
+// NewFormsSettings instantiates a new formsSettings and sets the default values.
 func NewFormsSettings()(*FormsSettings) {
     m := &FormsSettings{
     }
@@ -123,7 +123,7 @@ func (m *FormsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsBingImageSearchEnabled gets the isBingImageSearchEnabled property value. The isBingImageSearchEnabled property
+// GetIsBingImageSearchEnabled gets the isBingImageSearchEnabled property value. Controls whether users can add images from Bing to forms.
 func (m *FormsSettings) GetIsBingImageSearchEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBingImageSearchEnabled")
     if err != nil {
@@ -134,7 +134,7 @@ func (m *FormsSettings) GetIsBingImageSearchEnabled()(*bool) {
     }
     return nil
 }
-// GetIsExternalSendFormEnabled gets the isExternalSendFormEnabled property value. The isExternalSendFormEnabled property
+// GetIsExternalSendFormEnabled gets the isExternalSendFormEnabled property value. Controls whether users can send a link to a form to an external user.
 func (m *FormsSettings) GetIsExternalSendFormEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalSendFormEnabled")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *FormsSettings) GetIsExternalSendFormEnabled()(*bool) {
     }
     return nil
 }
-// GetIsExternalShareCollaborationEnabled gets the isExternalShareCollaborationEnabled property value. The isExternalShareCollaborationEnabled property
+// GetIsExternalShareCollaborationEnabled gets the isExternalShareCollaborationEnabled property value. Controls whether users can collaborate on a form layout and structure with an external user.
 func (m *FormsSettings) GetIsExternalShareCollaborationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareCollaborationEnabled")
     if err != nil {
@@ -156,7 +156,7 @@ func (m *FormsSettings) GetIsExternalShareCollaborationEnabled()(*bool) {
     }
     return nil
 }
-// GetIsExternalShareResultEnabled gets the isExternalShareResultEnabled property value. The isExternalShareResultEnabled property
+// GetIsExternalShareResultEnabled gets the isExternalShareResultEnabled property value. Controls whether users can share form results with external users.
 func (m *FormsSettings) GetIsExternalShareResultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareResultEnabled")
     if err != nil {
@@ -167,7 +167,7 @@ func (m *FormsSettings) GetIsExternalShareResultEnabled()(*bool) {
     }
     return nil
 }
-// GetIsExternalShareTemplateEnabled gets the isExternalShareTemplateEnabled property value. The isExternalShareTemplateEnabled property
+// GetIsExternalShareTemplateEnabled gets the isExternalShareTemplateEnabled property value. Controls whether users can share form templates with external users.
 func (m *FormsSettings) GetIsExternalShareTemplateEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareTemplateEnabled")
     if err != nil {
@@ -178,7 +178,7 @@ func (m *FormsSettings) GetIsExternalShareTemplateEnabled()(*bool) {
     }
     return nil
 }
-// GetIsInOrgFormsPhishingScanEnabled gets the isInOrgFormsPhishingScanEnabled property value. The isInOrgFormsPhishingScanEnabled property
+// GetIsInOrgFormsPhishingScanEnabled gets the isInOrgFormsPhishingScanEnabled property value. Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.
 func (m *FormsSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isInOrgFormsPhishingScanEnabled")
     if err != nil {
@@ -189,7 +189,7 @@ func (m *FormsSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     }
     return nil
 }
-// GetIsRecordIdentityByDefaultEnabled gets the isRecordIdentityByDefaultEnabled property value. The isRecordIdentityByDefaultEnabled property
+// GetIsRecordIdentityByDefaultEnabled gets the isRecordIdentityByDefaultEnabled property value. Controls whether the names of users who fill out forms are recorded.
 func (m *FormsSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRecordIdentityByDefaultEnabled")
     if err != nil {
@@ -280,49 +280,49 @@ func (m *FormsSettings) SetAdditionalData(value map[string]any)() {
 func (m *FormsSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsBingImageSearchEnabled sets the isBingImageSearchEnabled property value. The isBingImageSearchEnabled property
+// SetIsBingImageSearchEnabled sets the isBingImageSearchEnabled property value. Controls whether users can add images from Bing to forms.
 func (m *FormsSettings) SetIsBingImageSearchEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isBingImageSearchEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExternalSendFormEnabled sets the isExternalSendFormEnabled property value. The isExternalSendFormEnabled property
+// SetIsExternalSendFormEnabled sets the isExternalSendFormEnabled property value. Controls whether users can send a link to a form to an external user.
 func (m *FormsSettings) SetIsExternalSendFormEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isExternalSendFormEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExternalShareCollaborationEnabled sets the isExternalShareCollaborationEnabled property value. The isExternalShareCollaborationEnabled property
+// SetIsExternalShareCollaborationEnabled sets the isExternalShareCollaborationEnabled property value. Controls whether users can collaborate on a form layout and structure with an external user.
 func (m *FormsSettings) SetIsExternalShareCollaborationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isExternalShareCollaborationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExternalShareResultEnabled sets the isExternalShareResultEnabled property value. The isExternalShareResultEnabled property
+// SetIsExternalShareResultEnabled sets the isExternalShareResultEnabled property value. Controls whether users can share form results with external users.
 func (m *FormsSettings) SetIsExternalShareResultEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isExternalShareResultEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExternalShareTemplateEnabled sets the isExternalShareTemplateEnabled property value. The isExternalShareTemplateEnabled property
+// SetIsExternalShareTemplateEnabled sets the isExternalShareTemplateEnabled property value. Controls whether users can share form templates with external users.
 func (m *FormsSettings) SetIsExternalShareTemplateEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isExternalShareTemplateEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsInOrgFormsPhishingScanEnabled sets the isInOrgFormsPhishingScanEnabled property value. The isInOrgFormsPhishingScanEnabled property
+// SetIsInOrgFormsPhishingScanEnabled sets the isInOrgFormsPhishingScanEnabled property value. Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.
 func (m *FormsSettings) SetIsInOrgFormsPhishingScanEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isInOrgFormsPhishingScanEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRecordIdentityByDefaultEnabled sets the isRecordIdentityByDefaultEnabled property value. The isRecordIdentityByDefaultEnabled property
+// SetIsRecordIdentityByDefaultEnabled sets the isRecordIdentityByDefaultEnabled property value. Controls whether the names of users who fill out forms are recorded.
 func (m *FormsSettings) SetIsRecordIdentityByDefaultEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRecordIdentityByDefaultEnabled", value)
     if err != nil {

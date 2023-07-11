@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceSetupConfiguration 
+// DeviceSetupConfiguration this is the base class for Setup Configuration. Setup configurations are platform specific and individual per-platform setup configurations inherit from here.
 type DeviceSetupConfiguration struct {
     Entity
 }
-// NewDeviceSetupConfiguration instantiates a new DeviceSetupConfiguration and sets the default values.
+// NewDeviceSetupConfiguration instantiates a new deviceSetupConfiguration and sets the default values.
 func NewDeviceSetupConfiguration()(*DeviceSetupConfiguration) {
     m := &DeviceSetupConfiguration{
         Entity: *NewEntity(),
@@ -96,6 +96,16 @@ func (m *DeviceSetupConfiguration) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -116,6 +126,17 @@ func (m *DeviceSetupConfiguration) GetLastModifiedDateTime()(*i336074805fc853987
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceSetupConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -161,6 +182,12 @@ func (m *DeviceSetupConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
@@ -196,6 +223,13 @@ func (m *DeviceSetupConfiguration) SetLastModifiedDateTime(value *i336074805fc85
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceSetupConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *DeviceSetupConfiguration) SetVersion(value *int32)() {
     err := m.GetBackingStore().Set("version", value)
@@ -211,10 +245,12 @@ type DeviceSetupConfigurationable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetVersion()(*int32)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetVersion(value *int32)()
 }

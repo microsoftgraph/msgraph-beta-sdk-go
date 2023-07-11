@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSEndpointProtectionConfiguration 
+// MacOSEndpointProtectionConfiguration macOS endpoint protection configuration profile.
 type MacOSEndpointProtectionConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewMacOSEndpointProtectionConfiguration instantiates a new MacOSEndpointProtectionConfiguration and sets the default values.
+// NewMacOSEndpointProtectionConfiguration instantiates a new macOSEndpointProtectionConfiguration and sets the default values.
 func NewMacOSEndpointProtectionConfiguration()(*MacOSEndpointProtectionConfiguration) {
     m := &MacOSEndpointProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

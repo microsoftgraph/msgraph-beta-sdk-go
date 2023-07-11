@@ -8,6 +8,8 @@ import (
 // DeviceHealthScript intune will provide customer the ability to run their Powershell Health scripts (remediation + detection) on the enrolled windows 10 Azure Active Directory joined devices.
 type DeviceHealthScript struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceHealthScript instantiates a new deviceHealthScript and sets the default values.
 func NewDeviceHealthScript()(*DeviceHealthScript) {

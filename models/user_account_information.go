@@ -7,8 +7,10 @@ import (
 // UserAccountInformation 
 type UserAccountInformation struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewUserAccountInformation instantiates a new UserAccountInformation and sets the default values.
+// NewUserAccountInformation instantiates a new userAccountInformation and sets the default values.
 func NewUserAccountInformation()(*UserAccountInformation) {
     m := &UserAccountInformation{
         ItemFacet: *NewItemFacet(),

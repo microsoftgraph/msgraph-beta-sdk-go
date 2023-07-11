@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10CompliancePolicy 
+// Windows10CompliancePolicy this class contains compliance settings for Windows 10.
 type Windows10CompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewWindows10CompliancePolicy instantiates a new Windows10CompliancePolicy and sets the default values.
+// NewWindows10CompliancePolicy instantiates a new windows10CompliancePolicy and sets the default values.
 func NewWindows10CompliancePolicy()(*Windows10CompliancePolicy) {
     m := &Windows10CompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
@@ -296,6 +296,16 @@ func (m *Windows10CompliancePolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -498,6 +508,17 @@ func (m *Windows10CompliancePolicy) GetMobileOsMaximumVersion()(*string) {
 // GetMobileOsMinimumVersion gets the mobileOsMinimumVersion property value. Minimum Windows Phone version.
 func (m *Windows10CompliancePolicy) GetMobileOsMinimumVersion()(*string) {
     val, err := m.GetBackingStore().Get("mobileOsMinimumVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Windows10CompliancePolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -796,6 +817,12 @@ func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osMaximumVersion", m.GetOsMaximumVersion())
         if err != nil {
             return err
@@ -1010,6 +1037,13 @@ func (m *Windows10CompliancePolicy) SetMobileOsMinimumVersion(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Windows10CompliancePolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Windows 10 version.
 func (m *Windows10CompliancePolicy) SetOsMaximumVersion(value *string)() {
     err := m.GetBackingStore().Set("osMaximumVersion", value)
@@ -1154,6 +1188,7 @@ type Windows10CompliancePolicyable interface {
     GetEarlyLaunchAntiMalwareDriverEnabled()(*bool)
     GetMobileOsMaximumVersion()(*string)
     GetMobileOsMinimumVersion()(*string)
+    GetOdataType()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumVersion()(*string)
     GetPasswordBlockSimple()(*bool)
@@ -1186,6 +1221,7 @@ type Windows10CompliancePolicyable interface {
     SetEarlyLaunchAntiMalwareDriverEnabled(value *bool)()
     SetMobileOsMaximumVersion(value *string)()
     SetMobileOsMinimumVersion(value *string)()
+    SetOdataType(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumVersion(value *string)()
     SetPasswordBlockSimple(value *bool)()

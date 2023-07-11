@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosStoreAppAssignmentSettings 
+// IosStoreAppAssignmentSettings abstract class to contain properties used to assign a mobile app to a group.
 type IosStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewIosStoreAppAssignmentSettings instantiates a new IosStoreAppAssignmentSettings and sets the default values.
+// NewIosStoreAppAssignmentSettings instantiates a new iosStoreAppAssignmentSettings and sets the default values.
 func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {
     m := &IosStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),

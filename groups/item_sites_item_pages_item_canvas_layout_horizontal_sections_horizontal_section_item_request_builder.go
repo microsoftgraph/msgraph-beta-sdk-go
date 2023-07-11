@@ -96,7 +96,10 @@ func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionIt
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable), nil
 }
-// Patch update the navigation property horizontalSections in groups
+// Patch update the properties of a horizontalSection object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/horizontalsection-update?view=graph-rest-1.0
 func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -143,7 +146,7 @@ func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionIt
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property horizontalSections in groups
+// ToPatchRequestInformation update the properties of a horizontalSection object.
 func (m *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HorizontalSectionable, requestConfiguration *ItemSitesItemPagesItemCanvasLayoutHorizontalSectionsHorizontalSectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

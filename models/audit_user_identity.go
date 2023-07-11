@@ -8,7 +8,7 @@ import (
 type AuditUserIdentity struct {
     UserIdentity
 }
-// NewAuditUserIdentity instantiates a new AuditUserIdentity and sets the default values.
+// NewAuditUserIdentity instantiates a new auditUserIdentity and sets the default values.
 func NewAuditUserIdentity()(*AuditUserIdentity) {
     m := &AuditUserIdentity{
         UserIdentity: *NewUserIdentity(),

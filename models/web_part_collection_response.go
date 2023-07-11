@@ -8,7 +8,7 @@ import (
 type WebPartCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWebPartCollectionResponse instantiates a new WebPartCollectionResponse and sets the default values.
+// NewWebPartCollectionResponse instantiates a new webPartCollectionResponse and sets the default values.
 func NewWebPartCollectionResponse()(*WebPartCollectionResponse) {
     m := &WebPartCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

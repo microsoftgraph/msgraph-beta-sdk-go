@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10EasEmailProfileConfiguration 
+// Windows10EasEmailProfileConfiguration by providing configurations in this profile you can instruct the native email client (Outlook) on Windows 10 devices to communicate with an Exchange server and get email, contacts, calendar, and tasks. Furthermore, you can also specify how much email to sync and how often the device should sync.
 type Windows10EasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
 }
-// NewWindows10EasEmailProfileConfiguration instantiates a new Windows10EasEmailProfileConfiguration and sets the default values.
+// NewWindows10EasEmailProfileConfiguration instantiates a new windows10EasEmailProfileConfiguration and sets the default values.
 func NewWindows10EasEmailProfileConfiguration()(*Windows10EasEmailProfileConfiguration) {
     m := &Windows10EasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),

@@ -8,8 +8,10 @@ import (
 // ExternalActivityResult 
 type ExternalActivityResult struct {
     ExternalActivity
+    // The OdataType property
+    OdataType *string
 }
-// NewExternalActivityResult instantiates a new ExternalActivityResult and sets the default values.
+// NewExternalActivityResult instantiates a new externalActivityResult and sets the default values.
 func NewExternalActivityResult()(*ExternalActivityResult) {
     m := &ExternalActivityResult{
         ExternalActivity: *NewExternalActivity(),

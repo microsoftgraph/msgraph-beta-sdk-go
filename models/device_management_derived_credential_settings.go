@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementDerivedCredentialSettings 
+// DeviceManagementDerivedCredentialSettings entity that describes tenant level settings for derived credentials
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
 }
@@ -73,6 +73,16 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -115,6 +125,17 @@ func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*Devic
     }
     if val != nil {
         return val.(*DeviceManagementDerivedCredentialNotificationType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementDerivedCredentialSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -162,6 +183,12 @@ func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i878a80d233
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("renewalThresholdPercentage", m.GetRenewalThresholdPercentage())
         if err != nil {
             return err
@@ -197,6 +224,13 @@ func (m *DeviceManagementDerivedCredentialSettings) SetNotificationType(value *D
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementDerivedCredentialSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. The nominal percentage of time before certificate renewal is initiated by the client.
 func (m *DeviceManagementDerivedCredentialSettings) SetRenewalThresholdPercentage(value *int32)() {
     err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
@@ -212,10 +246,12 @@ type DeviceManagementDerivedCredentialSettingsable interface {
     GetHelpUrl()(*string)
     GetIssuer()(*DeviceManagementDerivedCredentialIssuer)
     GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType)
+    GetOdataType()(*string)
     GetRenewalThresholdPercentage()(*int32)
     SetDisplayName(value *string)()
     SetHelpUrl(value *string)()
     SetIssuer(value *DeviceManagementDerivedCredentialIssuer)()
     SetNotificationType(value *DeviceManagementDerivedCredentialNotificationType)()
+    SetOdataType(value *string)()
     SetRenewalThresholdPercentage(value *int32)()
 }

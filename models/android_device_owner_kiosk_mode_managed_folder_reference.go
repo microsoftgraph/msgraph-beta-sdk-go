@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerKioskModeManagedFolderReference 
+// AndroidDeviceOwnerKioskModeManagedFolderReference represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder
 type AndroidDeviceOwnerKioskModeManagedFolderReference struct {
     AndroidDeviceOwnerKioskModeHomeScreenItem
+    // The OdataType property
+    OdataType *string
 }
-// NewAndroidDeviceOwnerKioskModeManagedFolderReference instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
+// NewAndroidDeviceOwnerKioskModeManagedFolderReference instantiates a new androidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
 func NewAndroidDeviceOwnerKioskModeManagedFolderReference()(*AndroidDeviceOwnerKioskModeManagedFolderReference) {
     m := &AndroidDeviceOwnerKioskModeManagedFolderReference{
         AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),

@@ -8,8 +8,10 @@ import (
 // RuleBasedSubjectSet 
 type RuleBasedSubjectSet struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewRuleBasedSubjectSet instantiates a new RuleBasedSubjectSet and sets the default values.
+// NewRuleBasedSubjectSet instantiates a new ruleBasedSubjectSet and sets the default values.
 func NewRuleBasedSubjectSet()(*RuleBasedSubjectSet) {
     m := &RuleBasedSubjectSet{
         SubjectSet: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewSubjectSet(),

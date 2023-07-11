@@ -9,7 +9,7 @@ import (
 type ManagedTenant struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenant instantiates a new ManagedTenant and sets the default values.
+// NewManagedTenant instantiates a new managedTenant and sets the default values.
 func NewManagedTenant()(*ManagedTenant) {
     m := &ManagedTenant{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -624,6 +624,16 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantGroupFromDiscriminatorValue)
         if err != nil {
@@ -944,6 +954,17 @@ func (m *ManagedTenant) GetMyRoles()([]MyRoleable) {
     }
     if val != nil {
         return val.([]MyRoleable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedTenant) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1390,6 +1411,12 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTenantGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantGroups()))
         for i, v := range m.GetTenantGroups() {
@@ -1686,6 +1713,13 @@ func (m *ManagedTenant) SetMyRoles(value []MyRoleable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedTenant) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantGroups sets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *ManagedTenant) SetTenantGroups(value []TenantGroupable)() {
     err := m.GetBackingStore().Set("tenantGroups", value)
@@ -1769,6 +1803,7 @@ type ManagedTenantable interface {
     GetManagementTemplateStepTenantSummaries()([]ManagementTemplateStepTenantSummaryable)
     GetManagementTemplateStepVersions()([]ManagementTemplateStepVersionable)
     GetMyRoles()([]MyRoleable)
+    GetOdataType()(*string)
     GetTenantGroups()([]TenantGroupable)
     GetTenants()([]Tenantable)
     GetTenantsCustomizedInformation()([]TenantCustomizedInformationable)
@@ -1806,6 +1841,7 @@ type ManagedTenantable interface {
     SetManagementTemplateStepTenantSummaries(value []ManagementTemplateStepTenantSummaryable)()
     SetManagementTemplateStepVersions(value []ManagementTemplateStepVersionable)()
     SetMyRoles(value []MyRoleable)()
+    SetOdataType(value *string)()
     SetTenantGroups(value []TenantGroupable)()
     SetTenants(value []Tenantable)()
     SetTenantsCustomizedInformation(value []TenantCustomizedInformationable)()

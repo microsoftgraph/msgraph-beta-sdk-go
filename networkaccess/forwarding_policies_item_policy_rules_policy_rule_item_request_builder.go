@@ -18,7 +18,7 @@ type ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderGetQueryParameters get policyRules from networkAccess
+// ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderGetQueryParameters represents the definition of the policy ruleset that makes up the core definition of a policy.
 type ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get policyRules from networkAccess
+// Get represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyRuleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get policyRules from networkAccess
+// ToGetRequestInformation represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

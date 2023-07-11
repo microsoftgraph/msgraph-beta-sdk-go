@@ -8,7 +8,7 @@ import (
 type OnInteractiveAuthFlowStartListener struct {
     AuthenticationEventListener
 }
-// NewOnInteractiveAuthFlowStartListener instantiates a new OnInteractiveAuthFlowStartListener and sets the default values.
+// NewOnInteractiveAuthFlowStartListener instantiates a new onInteractiveAuthFlowStartListener and sets the default values.
 func NewOnInteractiveAuthFlowStartListener()(*OnInteractiveAuthFlowStartListener) {
     m := &OnInteractiveAuthFlowStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),
@@ -34,6 +34,16 @@ func (m *OnInteractiveAuthFlowStartListener) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
@@ -44,6 +54,17 @@ func (m *OnInteractiveAuthFlowStartListener) GetHandler()(OnInteractiveAuthFlowS
     }
     if val != nil {
         return val.(OnInteractiveAuthFlowStartHandlerable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OnInteractiveAuthFlowStartListener) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -59,6 +80,12 @@ func (m *OnInteractiveAuthFlowStartListener) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
@@ -68,10 +95,19 @@ func (m *OnInteractiveAuthFlowStartListener) SetHandler(value OnInteractiveAuthF
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OnInteractiveAuthFlowStartListener) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // OnInteractiveAuthFlowStartListenerable 
 type OnInteractiveAuthFlowStartListenerable interface {
     AuthenticationEventListenerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHandler()(OnInteractiveAuthFlowStartHandlerable)
+    GetOdataType()(*string)
     SetHandler(value OnInteractiveAuthFlowStartHandlerable)()
+    SetOdataType(value *string)()
 }

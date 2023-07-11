@@ -32,6 +32,16 @@ func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["worksheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookWorksheetFromDiscriminatorValue)
         if err != nil {
@@ -47,6 +57,17 @@ func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(i878a80d233
 // GetName gets the name property value. Name of the PivotTable.
 func (m *WorkbookPivotTable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookPivotTable) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -79,6 +100,12 @@ func (m *WorkbookPivotTable) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("worksheet", m.GetWorksheet())
         if err != nil {
             return err
@@ -89,6 +116,13 @@ func (m *WorkbookPivotTable) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetName sets the name property value. Name of the PivotTable.
 func (m *WorkbookPivotTable) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookPivotTable) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -105,7 +139,9 @@ type WorkbookPivotTableable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetName()(*string)
+    GetOdataType()(*string)
     GetWorksheet()(WorkbookWorksheetable)
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetWorksheet(value WorkbookWorksheetable)()
 }

@@ -9,7 +9,7 @@ import (
 type TenantCustomizedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantCustomizedInformation instantiates a new TenantCustomizedInformation and sets the default values.
+// NewTenantCustomizedInformation instantiates a new tenantCustomizedInformation and sets the default values.
 func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
     m := &TenantCustomizedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -71,6 +71,16 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -92,6 +102,17 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantCustomizedInformation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) GetTenantId()(*string) {
@@ -140,6 +161,12 @@ func (m *TenantCustomizedInformation) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
@@ -167,6 +194,13 @@ func (m *TenantCustomizedInformation) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantCustomizedInformation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -187,10 +221,12 @@ type TenantCustomizedInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContacts()([]TenantContactInformationable)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetTenantId()(*string)
     GetWebsite()(*string)
     SetContacts(value []TenantContactInformationable)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetTenantId(value *string)()
     SetWebsite(value *string)()
 }

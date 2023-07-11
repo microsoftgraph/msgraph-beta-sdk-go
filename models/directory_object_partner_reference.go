@@ -9,7 +9,7 @@ import (
 type DirectoryObjectPartnerReference struct {
     DirectoryObject
 }
-// NewDirectoryObjectPartnerReference instantiates a new DirectoryObjectPartnerReference and sets the default values.
+// NewDirectoryObjectPartnerReference instantiates a new directoryObjectPartnerReference and sets the default values.
 func NewDirectoryObjectPartnerReference()(*DirectoryObjectPartnerReference) {
     m := &DirectoryObjectPartnerReference{
         DirectoryObject: *NewDirectoryObject(),
@@ -98,11 +98,32 @@ func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetObjectType gets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) GetObjectType()(*string) {
     val, err := m.GetBackingStore().Get("objectType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectoryObjectPartnerReference) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -141,6 +162,12 @@ func (m *DirectoryObjectPartnerReference) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. Description of the object returned. Read-only.
@@ -171,6 +198,13 @@ func (m *DirectoryObjectPartnerReference) SetObjectType(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectoryObjectPartnerReference) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DirectoryObjectPartnerReferenceable 
 type DirectoryObjectPartnerReferenceable interface {
     DirectoryObjectable
@@ -179,8 +213,10 @@ type DirectoryObjectPartnerReferenceable interface {
     GetDisplayName()(*string)
     GetExternalPartnerTenantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetObjectType()(*string)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetExternalPartnerTenantId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetObjectType(value *string)()
+    SetOdataType(value *string)()
 }

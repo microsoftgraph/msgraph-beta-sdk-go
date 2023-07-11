@@ -8,7 +8,7 @@ import (
 type EdiscoveryHoldPolicy struct {
     PolicyBase
 }
-// NewEdiscoveryHoldPolicy instantiates a new EdiscoveryHoldPolicy and sets the default values.
+// NewEdiscoveryHoldPolicy instantiates a new ediscoveryHoldPolicy and sets the default values.
 func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
     m := &EdiscoveryHoldPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -82,6 +82,16 @@ func (m *EdiscoveryHoldPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["siteSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue)
         if err != nil {
@@ -127,6 +137,17 @@ func (m *EdiscoveryHoldPolicy) GetIsEnabled()(*bool) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EdiscoveryHoldPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSiteSources gets the siteSources property value. Data sources that represent SharePoint sites.
 func (m *EdiscoveryHoldPolicy) GetSiteSources()([]SiteSourceable) {
     val, err := m.GetBackingStore().Get("siteSources")
@@ -169,6 +190,12 @@ func (m *EdiscoveryHoldPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -220,6 +247,13 @@ func (m *EdiscoveryHoldPolicy) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EdiscoveryHoldPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSiteSources sets the siteSources property value. Data sources that represent SharePoint sites.
 func (m *EdiscoveryHoldPolicy) SetSiteSources(value []SiteSourceable)() {
     err := m.GetBackingStore().Set("siteSources", value)
@@ -241,11 +275,13 @@ type EdiscoveryHoldPolicyable interface {
     GetContentQuery()(*string)
     GetErrors()([]string)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetSiteSources()([]SiteSourceable)
     GetUserSources()([]UserSourceable)
     SetContentQuery(value *string)()
     SetErrors(value []string)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetSiteSources(value []SiteSourceable)()
     SetUserSources(value []UserSourceable)()
 }

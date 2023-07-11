@@ -7,6 +7,8 @@ import (
 // Synchronization 
 type Synchronization struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSynchronization instantiates a new synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {

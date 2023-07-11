@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppFileSystemRequirement 
+// Win32LobAppFileSystemRequirement base class to detect a Win32 App
 type Win32LobAppFileSystemRequirement struct {
     Win32LobAppRequirement
+    // The OdataType property
+    OdataType *string
 }
-// NewWin32LobAppFileSystemRequirement instantiates a new Win32LobAppFileSystemRequirement and sets the default values.
+// NewWin32LobAppFileSystemRequirement instantiates a new win32LobAppFileSystemRequirement and sets the default values.
 func NewWin32LobAppFileSystemRequirement()(*Win32LobAppFileSystemRequirement) {
     m := &Win32LobAppFileSystemRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),

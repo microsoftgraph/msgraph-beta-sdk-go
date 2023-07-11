@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KeyBooleanValuePair 
+// KeyBooleanValuePair a key-value pair with a string key and a typed value.
 type KeyBooleanValuePair struct {
     KeyTypedValuePair
+    // The OdataType property
+    OdataType *string
 }
-// NewKeyBooleanValuePair instantiates a new KeyBooleanValuePair and sets the default values.
+// NewKeyBooleanValuePair instantiates a new keyBooleanValuePair and sets the default values.
 func NewKeyBooleanValuePair()(*KeyBooleanValuePair) {
     m := &KeyBooleanValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),

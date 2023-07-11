@@ -18,7 +18,7 @@ type AppsAndServicesRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppsAndServicesRequestBuilderGetQueryParameters get appsAndServices from admin
+// AppsAndServicesRequestBuilderGetQueryParameters read the properties and relationships of a adminAppsAndServices object.
 type AppsAndServicesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *AppsAndServicesRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Get get appsAndServices from admin
+// Get read the properties and relationships of a adminAppsAndServices object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/adminappsandservices-get?view=graph-rest-1.0
 func (m *AppsAndServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppsAndServicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *AppsAndServicesRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable), nil
 }
-// Patch update the navigation property appsAndServices in admin
+// Patch update the properties of a adminAppsAndServices object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/adminappsandservices-update?view=graph-rest-1.0
 func (m *AppsAndServicesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, requestConfiguration *AppsAndServicesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *AppsAndServicesRequestBuilder) ToDeleteRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get appsAndServices from admin
+// ToGetRequestInformation read the properties and relationships of a adminAppsAndServices object.
 func (m *AppsAndServicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppsAndServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *AppsAndServicesRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property appsAndServices in admin
+// ToPatchRequestInformation update the properties of a adminAppsAndServices object.
 func (m *AppsAndServicesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminAppsAndServicesable, requestConfiguration *AppsAndServicesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

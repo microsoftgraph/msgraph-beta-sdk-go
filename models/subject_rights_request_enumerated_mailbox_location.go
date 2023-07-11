@@ -8,7 +8,7 @@ import (
 type SubjectRightsRequestEnumeratedMailboxLocation struct {
     SubjectRightsRequestMailboxLocation
 }
-// NewSubjectRightsRequestEnumeratedMailboxLocation instantiates a new SubjectRightsRequestEnumeratedMailboxLocation and sets the default values.
+// NewSubjectRightsRequestEnumeratedMailboxLocation instantiates a new subjectRightsRequestEnumeratedMailboxLocation and sets the default values.
 func NewSubjectRightsRequestEnumeratedMailboxLocation()(*SubjectRightsRequestEnumeratedMailboxLocation) {
     m := &SubjectRightsRequestEnumeratedMailboxLocation{
         SubjectRightsRequestMailboxLocation: *NewSubjectRightsRequestMailboxLocation(),
@@ -24,6 +24,16 @@ func CreateSubjectRightsRequestEnumeratedMailboxLocationFromDiscriminatorValue(p
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectRightsRequestMailboxLocation.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["upns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -42,6 +52,17 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetUpns gets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUpns()([]string) {
     val, err := m.GetBackingStore().Get("upns")
@@ -59,6 +80,12 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUpns() != nil {
         err = writer.WriteCollectionOfStringValues("upns", m.GetUpns())
         if err != nil {
@@ -66,6 +93,13 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUpns sets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUpns(value []string)() {
@@ -78,6 +112,8 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUpns(value []string)(
 type SubjectRightsRequestEnumeratedMailboxLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectRightsRequestMailboxLocationable
+    GetOdataType()(*string)
     GetUpns()([]string)
+    SetOdataType(value *string)()
     SetUpns(value []string)()
 }

@@ -328,6 +328,16 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["questions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageQuestionFromDiscriminatorValue)
         if err != nil {
@@ -395,6 +405,17 @@ func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc85398
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -550,6 +571,12 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
         for i, v := range m.GetQuestions() {
@@ -687,6 +714,13 @@ func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc8
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQuestions sets the questions property value. Questions that are posed to the  requestor.
 func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestionable)() {
     err := m.GetBackingStore().Set("questions", value)
@@ -734,6 +768,7 @@ type AccessPackageAssignmentPolicyable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetModifiedBy()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetQuestions()([]AccessPackageQuestionable)
     GetRequestApprovalSettings()(ApprovalSettingsable)
     GetRequestorSettings()(RequestorSettingsable)
@@ -753,6 +788,7 @@ type AccessPackageAssignmentPolicyable interface {
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetModifiedBy(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetQuestions(value []AccessPackageQuestionable)()
     SetRequestApprovalSettings(value ApprovalSettingsable)()
     SetRequestorSettings(value RequestorSettingsable)()

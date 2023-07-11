@@ -93,6 +93,16 @@ func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["urlThreats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUrlThreatSubmissionFromDiscriminatorValue)
         if err != nil {
@@ -119,6 +129,17 @@ func (m *ThreatSubmissionRoot) GetFileThreats()([]FileThreatSubmissionable) {
     }
     if val != nil {
         return val.([]FileThreatSubmissionable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ThreatSubmissionRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -175,6 +196,12 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUrlThreats() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUrlThreats()))
         for i, v := range m.GetUrlThreats() {
@@ -210,6 +237,13 @@ func (m *ThreatSubmissionRoot) SetFileThreats(value []FileThreatSubmissionable)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ThreatSubmissionRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUrlThreats sets the urlThreats property value. The urlThreats property
 func (m *ThreatSubmissionRoot) SetUrlThreats(value []UrlThreatSubmissionable)() {
     err := m.GetBackingStore().Set("urlThreats", value)
@@ -224,9 +258,11 @@ type ThreatSubmissionRootable interface {
     GetEmailThreats()([]EmailThreatSubmissionable)
     GetEmailThreatSubmissionPolicies()([]EmailThreatSubmissionPolicyable)
     GetFileThreats()([]FileThreatSubmissionable)
+    GetOdataType()(*string)
     GetUrlThreats()([]UrlThreatSubmissionable)
     SetEmailThreats(value []EmailThreatSubmissionable)()
     SetEmailThreatSubmissionPolicies(value []EmailThreatSubmissionPolicyable)()
     SetFileThreats(value []FileThreatSubmissionable)()
+    SetOdataType(value *string)()
     SetUrlThreats(value []UrlThreatSubmissionable)()
 }

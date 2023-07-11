@@ -7,8 +7,10 @@ import (
 // ItemEmail 
 type ItemEmail struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewItemEmail instantiates a new ItemEmail and sets the default values.
+// NewItemEmail instantiates a new itemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
         ItemFacet: *NewItemFacet(),

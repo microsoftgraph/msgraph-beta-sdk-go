@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileEasEmailProfileBase 
+// AndroidWorkProfileEasEmailProfileBase base for Android Work Profile EAS Email profiles
 type AndroidWorkProfileEasEmailProfileBase struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileEasEmailProfileBase instantiates a new AndroidWorkProfileEasEmailProfileBase and sets the default values.
+// NewAndroidWorkProfileEasEmailProfileBase instantiates a new androidWorkProfileEasEmailProfileBase and sets the default values.
 func NewAndroidWorkProfileEasEmailProfileBase()(*AndroidWorkProfileEasEmailProfileBase) {
     m := &AndroidWorkProfileEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -127,6 +127,16 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requireSsl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -168,6 +178,17 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetIdentityCertificate()(Android
     }
     if val != nil {
         return val.(AndroidWorkProfileCertificateProfileBaseable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileEasEmailProfileBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -233,6 +254,12 @@ func (m *AndroidWorkProfileEasEmailProfileBase) Serialize(writer i878a80d2330e89
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("requireSsl", m.GetRequireSsl())
         if err != nil {
             return err
@@ -282,6 +309,13 @@ func (m *AndroidWorkProfileEasEmailProfileBase) SetIdentityCertificate(value And
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileEasEmailProfileBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequireSsl sets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetRequireSsl(value *bool)() {
     err := m.GetBackingStore().Set("requireSsl", value)
@@ -305,6 +339,7 @@ type AndroidWorkProfileEasEmailProfileBaseable interface {
     GetEmailAddressSource()(*UserEmailSource)
     GetHostName()(*string)
     GetIdentityCertificate()(AndroidWorkProfileCertificateProfileBaseable)
+    GetOdataType()(*string)
     GetRequireSsl()(*bool)
     GetUsernameSource()(*AndroidUsernameSource)
     SetAuthenticationMethod(value *EasAuthenticationMethod)()
@@ -312,6 +347,7 @@ type AndroidWorkProfileEasEmailProfileBaseable interface {
     SetEmailAddressSource(value *UserEmailSource)()
     SetHostName(value *string)()
     SetIdentityCertificate(value AndroidWorkProfileCertificateProfileBaseable)()
+    SetOdataType(value *string)()
     SetRequireSsl(value *bool)()
     SetUsernameSource(value *AndroidUsernameSource)()
 }

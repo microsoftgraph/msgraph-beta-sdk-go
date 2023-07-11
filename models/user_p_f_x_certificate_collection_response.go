@@ -8,7 +8,7 @@ import (
 type UserPFXCertificateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserPFXCertificateCollectionResponse instantiates a new UserPFXCertificateCollectionResponse and sets the default values.
+// NewUserPFXCertificateCollectionResponse instantiates a new userPFXCertificateCollectionResponse and sets the default values.
 func NewUserPFXCertificateCollectionResponse()(*UserPFXCertificateCollectionResponse) {
     m := &UserPFXCertificateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // SitePage 
 type SitePage struct {
     BaseItem
+    // The OdataType property
+    OdataType *string
 }
 // NewSitePage instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosiPadOSWebClip 
+// IosiPadOSWebClip contains properties and inherited properties for iOS web apps.
 type IosiPadOSWebClip struct {
     MobileApp
 }
-// NewIosiPadOSWebClip instantiates a new IosiPadOSWebClip and sets the default values.
+// NewIosiPadOSWebClip instantiates a new iosiPadOSWebClip and sets the default values.
 func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {
     m := &IosiPadOSWebClip{
         MobileApp: *NewMobileApp(),
@@ -119,7 +119,7 @@ func (m *IosiPadOSWebClip) GetIgnoreManifestScope()(*bool) {
     }
     return nil
 }
-// GetPreComposedIconEnabled gets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding "shine" to the icon. If FALSE, SpringBoard can add "shine".
+// GetPreComposedIconEnabled gets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
 func (m *IosiPadOSWebClip) GetPreComposedIconEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("preComposedIconEnabled")
     if err != nil {
@@ -217,7 +217,7 @@ func (m *IosiPadOSWebClip) SetIgnoreManifestScope(value *bool)() {
         panic(err)
     }
 }
-// SetPreComposedIconEnabled sets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding "shine" to the icon. If FALSE, SpringBoard can add "shine".
+// SetPreComposedIconEnabled sets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
 func (m *IosiPadOSWebClip) SetPreComposedIconEnabled(value *bool)() {
     err := m.GetBackingStore().Set("preComposedIconEnabled", value)
     if err != nil {

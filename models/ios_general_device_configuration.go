@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosGeneralDeviceConfiguration 
+// IosGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
 type IosGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewIosGeneralDeviceConfiguration instantiates a new IosGeneralDeviceConfiguration and sets the default values.
+// NewIosGeneralDeviceConfiguration instantiates a new iosGeneralDeviceConfiguration and sets the default values.
 func NewIosGeneralDeviceConfiguration()(*IosGeneralDeviceConfiguration) {
     m := &IosGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -2147,6 +2147,16 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onDeviceOnlyDictationForced"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -3475,6 +3485,17 @@ func (m *IosGeneralDeviceConfiguration) GetNotificationsBlockSettingsModificatio
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosGeneralDeviceConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -4870,6 +4891,12 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onDeviceOnlyDictationForced", m.GetOnDeviceOnlyDictationForced())
         if err != nil {
             return err
@@ -6135,6 +6162,13 @@ func (m *IosGeneralDeviceConfiguration) SetNotificationsBlockSettingsModificatio
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosGeneralDeviceConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnDeviceOnlyDictationForced sets the onDeviceOnlyDictationForced property value. Disables connections to Siri servers so that users can’t use Siri to dictate text. Available for devices running iOS and iPadOS versions 14.5 and later.
 func (m *IosGeneralDeviceConfiguration) SetOnDeviceOnlyDictationForced(value *bool)() {
     err := m.GetBackingStore().Set("onDeviceOnlyDictationForced", value)
@@ -6608,6 +6642,7 @@ type IosGeneralDeviceConfigurationable interface {
     GetNetworkUsageRules()([]IosNetworkUsageRuleable)
     GetNfcBlocked()(*bool)
     GetNotificationsBlockSettingsModification()(*bool)
+    GetOdataType()(*string)
     GetOnDeviceOnlyDictationForced()(*bool)
     GetOnDeviceOnlyTranslationForced()(*bool)
     GetPasscodeBlockFingerprintModification()(*bool)
@@ -6795,6 +6830,7 @@ type IosGeneralDeviceConfigurationable interface {
     SetNetworkUsageRules(value []IosNetworkUsageRuleable)()
     SetNfcBlocked(value *bool)()
     SetNotificationsBlockSettingsModification(value *bool)()
+    SetOdataType(value *string)()
     SetOnDeviceOnlyDictationForced(value *bool)()
     SetOnDeviceOnlyTranslationForced(value *bool)()
     SetPasscodeBlockFingerprintModification(value *bool)()

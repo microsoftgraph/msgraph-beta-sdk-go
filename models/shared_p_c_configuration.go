@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedPCConfiguration 
+// SharedPCConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the sharedPCConfiguration resource.
 type SharedPCConfiguration struct {
     DeviceConfiguration
 }
-// NewSharedPCConfiguration instantiates a new SharedPCConfiguration and sets the default values.
+// NewSharedPCConfiguration instantiates a new sharedPCConfiguration and sets the default values.
 func NewSharedPCConfiguration()(*SharedPCConfiguration) {
     m := &SharedPCConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -263,6 +263,16 @@ func (m *SharedPCConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["setAccountManager"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEnablement)
         if err != nil {
@@ -357,6 +367,17 @@ func (m *SharedPCConfiguration) GetMaintenanceStartTime()(*i878a80d2330e89d26896
     }
     if val != nil {
         return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharedPCConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -497,6 +518,12 @@ func (m *SharedPCConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSetAccountManager() != nil {
         cast := (*m.GetSetAccountManager()).String()
         err = writer.WriteStringValue("setAccountManager", &cast)
@@ -625,6 +652,13 @@ func (m *SharedPCConfiguration) SetMaintenanceStartTime(value *i878a80d2330e89d2
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharedPCConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSetAccountManager sets the setAccountManager property value. Possible values of a property
 func (m *SharedPCConfiguration) SetSetAccountManager(value *Enablement)() {
     err := m.GetBackingStore().Set("setAccountManager", value)
@@ -671,6 +705,7 @@ type SharedPCConfigurationable interface {
     GetKioskAppUserModelId()(*string)
     GetLocalStorage()(*Enablement)
     GetMaintenanceStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetOdataType()(*string)
     GetSetAccountManager()(*Enablement)
     GetSetEduPolicies()(*Enablement)
     GetSetPowerPolicies()(*Enablement)
@@ -689,6 +724,7 @@ type SharedPCConfigurationable interface {
     SetKioskAppUserModelId(value *string)()
     SetLocalStorage(value *Enablement)()
     SetMaintenanceStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetOdataType(value *string)()
     SetSetAccountManager(value *Enablement)()
     SetSetEduPolicies(value *Enablement)()
     SetSetPowerPolicies(value *Enablement)()

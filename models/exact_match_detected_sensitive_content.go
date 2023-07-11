@@ -7,8 +7,10 @@ import (
 // ExactMatchDetectedSensitiveContent 
 type ExactMatchDetectedSensitiveContent struct {
     DetectedSensitiveContentBase
+    // The OdataType property
+    OdataType *string
 }
-// NewExactMatchDetectedSensitiveContent instantiates a new ExactMatchDetectedSensitiveContent and sets the default values.
+// NewExactMatchDetectedSensitiveContent instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
 func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent) {
     m := &ExactMatchDetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),

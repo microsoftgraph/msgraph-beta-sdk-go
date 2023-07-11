@@ -7,8 +7,10 @@ import (
 // VerifiableCredentialVerified 
 type VerifiableCredentialVerified struct {
     VerifiableCredentialRequirementStatus
+    // The OdataType property
+    OdataType *string
 }
-// NewVerifiableCredentialVerified instantiates a new VerifiableCredentialVerified and sets the default values.
+// NewVerifiableCredentialVerified instantiates a new verifiableCredentialVerified and sets the default values.
 func NewVerifiableCredentialVerified()(*VerifiableCredentialVerified) {
     m := &VerifiableCredentialVerified{
         VerifiableCredentialRequirementStatus: *NewVerifiableCredentialRequirementStatus(),

@@ -143,6 +143,16 @@ func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationPlatforms)
         if err != nil {
@@ -252,6 +262,17 @@ func (m *DeviceManagementConfigurationPolicy) GetLastModifiedDateTime()(*i336074
 // GetName gets the name property value. Policy name
 func (m *DeviceManagementConfigurationPolicy) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -385,6 +406,12 @@ func (m *DeviceManagementConfigurationPolicy) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatforms() != nil {
         cast := (*m.GetPlatforms()).String()
         err = writer.WriteStringValue("platforms", &cast)
@@ -486,6 +513,13 @@ func (m *DeviceManagementConfigurationPolicy) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     err := m.GetBackingStore().Set("platforms", value)
@@ -546,6 +580,7 @@ type DeviceManagementConfigurationPolicyable interface {
     GetIsAssigned()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetPlatforms()(*DeviceManagementConfigurationPlatforms)
     GetPriorityMetaData()(DeviceManagementPriorityMetaDataable)
     GetRoleScopeTagIds()([]string)
@@ -560,6 +595,7 @@ type DeviceManagementConfigurationPolicyable interface {
     SetIsAssigned(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
     SetPriorityMetaData(value DeviceManagementPriorityMetaDataable)()
     SetRoleScopeTagIds(value []string)()

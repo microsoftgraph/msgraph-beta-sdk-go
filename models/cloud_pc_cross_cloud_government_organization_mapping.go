@@ -8,7 +8,7 @@ import (
 type CloudPcCrossCloudGovernmentOrganizationMapping struct {
     Entity
 }
-// NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new CloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
+// NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new cloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
 func NewCloudPcCrossCloudGovernmentOrganizationMapping()(*CloudPcCrossCloudGovernmentOrganizationMapping) {
     m := &CloudPcCrossCloudGovernmentOrganizationMapping{
         Entity: *NewEntity(),
@@ -22,6 +22,16 @@ func CreateCloudPcCrossCloudGovernmentOrganizationMappingFromDiscriminatorValue(
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcCrossCloudGovernmentOrganizationMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["organizationIdsInUSGovCloud"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -40,6 +50,17 @@ func (m *CloudPcCrossCloudGovernmentOrganizationMapping) GetFieldDeserializers()
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcCrossCloudGovernmentOrganizationMapping) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetOrganizationIdsInUSGovCloud gets the organizationIdsInUSGovCloud property value. The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
 func (m *CloudPcCrossCloudGovernmentOrganizationMapping) GetOrganizationIdsInUSGovCloud()([]string) {
     val, err := m.GetBackingStore().Get("organizationIdsInUSGovCloud")
@@ -57,6 +78,12 @@ func (m *CloudPcCrossCloudGovernmentOrganizationMapping) Serialize(writer i878a8
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOrganizationIdsInUSGovCloud() != nil {
         err = writer.WriteCollectionOfStringValues("organizationIdsInUSGovCloud", m.GetOrganizationIdsInUSGovCloud())
         if err != nil {
@@ -64,6 +91,13 @@ func (m *CloudPcCrossCloudGovernmentOrganizationMapping) Serialize(writer i878a8
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcCrossCloudGovernmentOrganizationMapping) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrganizationIdsInUSGovCloud sets the organizationIdsInUSGovCloud property value. The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
 func (m *CloudPcCrossCloudGovernmentOrganizationMapping) SetOrganizationIdsInUSGovCloud(value []string)() {
@@ -76,6 +110,8 @@ func (m *CloudPcCrossCloudGovernmentOrganizationMapping) SetOrganizationIdsInUSG
 type CloudPcCrossCloudGovernmentOrganizationMappingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetOrganizationIdsInUSGovCloud()([]string)
+    SetOdataType(value *string)()
     SetOrganizationIdsInUSGovCloud(value []string)()
 }

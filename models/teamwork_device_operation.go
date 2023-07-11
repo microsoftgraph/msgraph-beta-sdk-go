@@ -127,6 +127,16 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamworkDeviceOperationType)
         if err != nil {
@@ -178,6 +188,17 @@ func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkDeviceOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -256,6 +277,12 @@ func (m *TeamworkDeviceOperation) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperationType() != nil {
         cast := (*m.GetOperationType()).String()
         err = writer.WriteStringValue("operationType", &cast)
@@ -319,6 +346,13 @@ func (m *TeamworkDeviceOperation) SetLastActionDateTime(value *i336074805fc85398
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkDeviceOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperationType sets the operationType property value. The operationType property
 func (m *TeamworkDeviceOperation) SetOperationType(value *TeamworkDeviceOperationType)() {
     err := m.GetBackingStore().Set("operationType", value)
@@ -350,6 +384,7 @@ type TeamworkDeviceOperationable interface {
     GetError()(OperationErrorable)
     GetLastActionBy()(IdentitySetable)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetOperationType()(*TeamworkDeviceOperationType)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStatus()(*string)
@@ -359,6 +394,7 @@ type TeamworkDeviceOperationable interface {
     SetError(value OperationErrorable)()
     SetLastActionBy(value IdentitySetable)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetOperationType(value *TeamworkDeviceOperationType)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStatus(value *string)()

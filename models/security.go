@@ -8,7 +8,7 @@ import (
 type Security struct {
     Entity
 }
-// NewSecurity instantiates a new Security and sets the default values.
+// NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),
@@ -172,6 +172,16 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["providerStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSecurityProviderStatusFromDiscriminatorValue)
         if err != nil {
@@ -332,6 +342,17 @@ func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfileable) {
     }
     if val != nil {
         return val.([]IpSecurityProfileable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Security) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -507,6 +528,12 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProviderStatus() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProviderStatus()))
         for i, v := range m.GetProviderStatus() {
@@ -654,6 +681,13 @@ func (m *Security) SetIpSecurityProfiles(value []IpSecurityProfileable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Security) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProviderStatus sets the providerStatus property value. The providerStatus property
 func (m *Security) SetProviderStatus(value []SecurityProviderStatusable)() {
     err := m.GetBackingStore().Set("providerStatus", value)
@@ -721,6 +755,7 @@ type Securityable interface {
     GetFileSecurityProfiles()([]FileSecurityProfileable)
     GetHostSecurityProfiles()([]HostSecurityProfileable)
     GetIpSecurityProfiles()([]IpSecurityProfileable)
+    GetOdataType()(*string)
     GetProviderStatus()([]SecurityProviderStatusable)
     GetProviderTenantSettings()([]ProviderTenantSettingable)
     GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
@@ -736,6 +771,7 @@ type Securityable interface {
     SetFileSecurityProfiles(value []FileSecurityProfileable)()
     SetHostSecurityProfiles(value []HostSecurityProfileable)()
     SetIpSecurityProfiles(value []IpSecurityProfileable)()
+    SetOdataType(value *string)()
     SetProviderStatus(value []SecurityProviderStatusable)()
     SetProviderTenantSettings(value []ProviderTenantSettingable)()
     SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()

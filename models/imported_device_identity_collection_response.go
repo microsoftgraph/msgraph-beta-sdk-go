@@ -8,7 +8,7 @@ import (
 type ImportedDeviceIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewImportedDeviceIdentityCollectionResponse instantiates a new ImportedDeviceIdentityCollectionResponse and sets the default values.
+// NewImportedDeviceIdentityCollectionResponse instantiates a new importedDeviceIdentityCollectionResponse and sets the default values.
 func NewImportedDeviceIdentityCollectionResponse()(*ImportedDeviceIdentityCollectionResponse) {
     m := &ImportedDeviceIdentityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

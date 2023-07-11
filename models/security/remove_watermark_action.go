@@ -7,8 +7,10 @@ import (
 // RemoveWatermarkAction 
 type RemoveWatermarkAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewRemoveWatermarkAction instantiates a new RemoveWatermarkAction and sets the default values.
+// NewRemoveWatermarkAction instantiates a new removeWatermarkAction and sets the default values.
 func NewRemoveWatermarkAction()(*RemoveWatermarkAction) {
     m := &RemoveWatermarkAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

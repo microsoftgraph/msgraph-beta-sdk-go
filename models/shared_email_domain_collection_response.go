@@ -8,7 +8,7 @@ import (
 type SharedEmailDomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSharedEmailDomainCollectionResponse instantiates a new SharedEmailDomainCollectionResponse and sets the default values.
+// NewSharedEmailDomainCollectionResponse instantiates a new sharedEmailDomainCollectionResponse and sets the default values.
 func NewSharedEmailDomainCollectionResponse()(*SharedEmailDomainCollectionResponse) {
     m := &SharedEmailDomainCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

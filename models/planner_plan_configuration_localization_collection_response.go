@@ -8,7 +8,7 @@ import (
 type PlannerPlanConfigurationLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPlannerPlanConfigurationLocalizationCollectionResponse instantiates a new PlannerPlanConfigurationLocalizationCollectionResponse and sets the default values.
+// NewPlannerPlanConfigurationLocalizationCollectionResponse instantiates a new plannerPlanConfigurationLocalizationCollectionResponse and sets the default values.
 func NewPlannerPlanConfigurationLocalizationCollectionResponse()(*PlannerPlanConfigurationLocalizationCollectionResponse) {
     m := &PlannerPlanConfigurationLocalizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

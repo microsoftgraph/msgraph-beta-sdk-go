@@ -11,7 +11,7 @@ import (
 type ForwardingProfilesItemPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ForwardingProfilesItemPoliciesRequestBuilderGetQueryParameters get policies from networkAccess
+// ForwardingProfilesItemPoliciesRequestBuilderGetQueryParameters traffic forwarding policies associated with this profile.
 type ForwardingProfilesItemPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewForwardingProfilesItemPoliciesRequestBuilder(rawUrl string, requestAdapt
 func (m *ForwardingProfilesItemPoliciesRequestBuilder) Count()(*ForwardingProfilesItemPoliciesCountRequestBuilder) {
     return NewForwardingProfilesItemPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get policies from networkAccess
+// Get traffic forwarding policies associated with this profile.
 func (m *ForwardingProfilesItemPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ForwardingProfilesItemPoliciesRequestBuilder) Post(ctx context.Context,
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable), nil
 }
-// ToGetRequestInformation get policies from networkAccess
+// ToGetRequestInformation traffic forwarding policies associated with this profile.
 func (m *ForwardingProfilesItemPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

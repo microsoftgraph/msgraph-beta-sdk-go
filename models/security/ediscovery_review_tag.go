@@ -7,8 +7,10 @@ import (
 // EdiscoveryReviewTag 
 type EdiscoveryReviewTag struct {
     Tag
+    // The OdataType property
+    OdataType *string
 }
-// NewEdiscoveryReviewTag instantiates a new EdiscoveryReviewTag and sets the default values.
+// NewEdiscoveryReviewTag instantiates a new ediscoveryReviewTag and sets the default values.
 func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
     m := &EdiscoveryReviewTag{
         Tag: *NewTag(),

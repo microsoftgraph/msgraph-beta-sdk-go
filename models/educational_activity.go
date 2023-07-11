@@ -7,8 +7,10 @@ import (
 // EducationalActivity 
 type EducationalActivity struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationalActivity instantiates a new EducationalActivity and sets the default values.
+// NewEducationalActivity instantiates a new educationalActivity and sets the default values.
 func NewEducationalActivity()(*EducationalActivity) {
     m := &EducationalActivity{
         ItemFacet: *NewItemFacet(),

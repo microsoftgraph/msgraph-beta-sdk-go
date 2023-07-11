@@ -137,6 +137,16 @@ func (m *ServicePrincipalSignInActivity) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastSignInActivity gets the lastSignInActivity property value. The most recent sign-in activity of the application across delegated or app-only flows where the application is used either as a client or resource.
@@ -147,6 +157,17 @@ func (m *ServicePrincipalSignInActivity) GetLastSignInActivity()(SignInActivitya
     }
     if val != nil {
         return val.(SignInActivityable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServicePrincipalSignInActivity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -188,6 +209,12 @@ func (m *ServicePrincipalSignInActivity) Serialize(writer i878a80d2330e89d268963
     }
     {
         err = writer.WriteObjectValue("lastSignInActivity", m.GetLastSignInActivity())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -236,6 +263,13 @@ func (m *ServicePrincipalSignInActivity) SetLastSignInActivity(value SignInActiv
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServicePrincipalSignInActivity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ServicePrincipalSignInActivityable 
 type ServicePrincipalSignInActivityable interface {
     Entityable
@@ -246,10 +280,12 @@ type ServicePrincipalSignInActivityable interface {
     GetDelegatedClientSignInActivity()(SignInActivityable)
     GetDelegatedResourceSignInActivity()(SignInActivityable)
     GetLastSignInActivity()(SignInActivityable)
+    GetOdataType()(*string)
     SetAppId(value *string)()
     SetApplicationAuthenticationClientSignInActivity(value SignInActivityable)()
     SetApplicationAuthenticationResourceSignInActivity(value SignInActivityable)()
     SetDelegatedClientSignInActivity(value SignInActivityable)()
     SetDelegatedResourceSignInActivity(value SignInActivityable)()
     SetLastSignInActivity(value SignInActivityable)()
+    SetOdataType(value *string)()
 }

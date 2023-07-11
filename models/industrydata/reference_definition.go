@@ -86,6 +86,16 @@ func (m *ReferenceDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["referenceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -137,6 +147,17 @@ func (m *ReferenceDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ReferenceDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -192,6 +213,12 @@ func (m *ReferenceDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("referenceType", m.GetReferenceType())
         if err != nil {
             return err
@@ -233,6 +260,13 @@ func (m *ReferenceDefinition) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ReferenceDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReferenceType sets the referenceType property value. The categorical type for a collection of enumerated values.
 func (m *ReferenceDefinition) SetReferenceType(value *string)() {
     err := m.GetBackingStore().Set("referenceType", value)
@@ -262,6 +296,7 @@ type ReferenceDefinitionable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsDisabled()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetReferenceType()(*string)
     GetSortIndex()(*int32)
     GetSource()(*string)
@@ -269,6 +304,7 @@ type ReferenceDefinitionable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsDisabled(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetReferenceType(value *string)()
     SetSortIndex(value *int32)()
     SetSource(value *string)()

@@ -9,7 +9,7 @@ import (
 type InboundFlow struct {
     IndustryDataActivity
 }
-// NewInboundFlow instantiates a new InboundFlow and sets the default values.
+// NewInboundFlow instantiates a new inboundFlow and sets the default values.
 func NewInboundFlow()(*InboundFlow) {
     m := &InboundFlow{
         IndustryDataActivity: *NewIndustryDataActivity(),
@@ -127,6 +127,16 @@ func (m *InboundFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["year"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateYearTimePeriodDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -138,6 +148,17 @@ func (m *InboundFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InboundFlow) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetYear gets the year property value. The year property
 func (m *InboundFlow) GetYear()(YearTimePeriodDefinitionable) {
@@ -182,6 +203,12 @@ func (m *InboundFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("year", m.GetYear())
         if err != nil {
             return err
@@ -217,6 +244,13 @@ func (m *InboundFlow) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InboundFlow) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetYear sets the year property value. The year property
 func (m *InboundFlow) SetYear(value YearTimePeriodDefinitionable)() {
     err := m.GetBackingStore().Set("year", value)
@@ -232,10 +266,12 @@ type InboundFlowable interface {
     GetDataDomain()(*InboundDomain)
     GetEffectiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetYear()(YearTimePeriodDefinitionable)
     SetDataConnector(value IndustryDataConnectorable)()
     SetDataDomain(value *InboundDomain)()
     SetEffectiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetYear(value YearTimePeriodDefinitionable)()
 }

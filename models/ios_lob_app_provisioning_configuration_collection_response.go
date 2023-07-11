@@ -8,7 +8,7 @@ import (
 type IosLobAppProvisioningConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIosLobAppProvisioningConfigurationCollectionResponse instantiates a new IosLobAppProvisioningConfigurationCollectionResponse and sets the default values.
+// NewIosLobAppProvisioningConfigurationCollectionResponse instantiates a new iosLobAppProvisioningConfigurationCollectionResponse and sets the default values.
 func NewIosLobAppProvisioningConfigurationCollectionResponse()(*IosLobAppProvisioningConfigurationCollectionResponse) {
     m := &IosLobAppProvisioningConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

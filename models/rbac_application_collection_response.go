@@ -8,7 +8,7 @@ import (
 type RbacApplicationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRbacApplicationCollectionResponse instantiates a new RbacApplicationCollectionResponse and sets the default values.
+// NewRbacApplicationCollectionResponse instantiates a new rbacApplicationCollectionResponse and sets the default values.
 func NewRbacApplicationCollectionResponse()(*RbacApplicationCollectionResponse) {
     m := &RbacApplicationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

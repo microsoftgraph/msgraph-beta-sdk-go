@@ -164,6 +164,16 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -380,6 +390,17 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusUpgrading()(*int32) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcOverview) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
@@ -537,6 +558,12 @@ func (m *CloudPcOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantDisplayName", m.GetTenantDisplayName())
         if err != nil {
             return err
@@ -672,6 +699,13 @@ func (m *CloudPcOverview) SetNumberOfCloudPcStatusUpgrading(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcOverview) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) SetTenantDisplayName(value *string)() {
     err := m.GetBackingStore().Set("tenantDisplayName", value)
@@ -732,6 +766,7 @@ type CloudPcOverviewable interface {
     GetNumberOfCloudPcStatusProvisioning()(*int32)
     GetNumberOfCloudPcStatusUnknown()(*int32)
     GetNumberOfCloudPcStatusUpgrading()(*int32)
+    GetOdataType()(*string)
     GetTenantDisplayName()(*string)
     GetTenantId()(*string)
     GetTotalBusinessLicenses()(*int32)
@@ -752,6 +787,7 @@ type CloudPcOverviewable interface {
     SetNumberOfCloudPcStatusProvisioning(value *int32)()
     SetNumberOfCloudPcStatusUnknown(value *int32)()
     SetNumberOfCloudPcStatusUpgrading(value *int32)()
+    SetOdataType(value *string)()
     SetTenantDisplayName(value *string)()
     SetTenantId(value *string)()
     SetTotalBusinessLicenses(value *int32)()

@@ -9,7 +9,7 @@ import (
 type CloudPcDeviceImage struct {
     Entity
 }
-// NewCloudPcDeviceImage instantiates a new CloudPcDeviceImage and sets the default values.
+// NewCloudPcDeviceImage instantiates a new cloudPcDeviceImage and sets the default values.
 func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
     m := &CloudPcDeviceImage{
         Entity: *NewEntity(),
@@ -72,6 +72,16 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -155,6 +165,17 @@ func (m *CloudPcDeviceImage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcDeviceImage) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -260,6 +281,12 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("operatingSystem", m.GetOperatingSystem())
         if err != nil {
             return err
@@ -327,6 +354,13 @@ func (m *CloudPcDeviceImage) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcDeviceImage) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperatingSystem sets the operatingSystem property value. The operating system of the image. For example, Windows 10 Enterprise.
 func (m *CloudPcDeviceImage) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
@@ -383,6 +417,7 @@ type CloudPcDeviceImageable interface {
     GetDisplayName()(*string)
     GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetOperatingSystem()(*string)
     GetOsBuildNumber()(*string)
     GetOsStatus()(*CloudPcDeviceImageOsStatus)
@@ -393,6 +428,7 @@ type CloudPcDeviceImageable interface {
     SetDisplayName(value *string)()
     SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetOperatingSystem(value *string)()
     SetOsBuildNumber(value *string)()
     SetOsStatus(value *CloudPcDeviceImageOsStatus)()

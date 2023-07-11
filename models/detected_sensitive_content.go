@@ -7,8 +7,10 @@ import (
 // DetectedSensitiveContent 
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
+    // The OdataType property
+    OdataType *string
 }
-// NewDetectedSensitiveContent instantiates a new DetectedSensitiveContent and sets the default values.
+// NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),

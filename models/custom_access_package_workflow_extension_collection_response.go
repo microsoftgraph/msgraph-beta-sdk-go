@@ -8,7 +8,7 @@ import (
 type CustomAccessPackageWorkflowExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomAccessPackageWorkflowExtensionCollectionResponse instantiates a new CustomAccessPackageWorkflowExtensionCollectionResponse and sets the default values.
+// NewCustomAccessPackageWorkflowExtensionCollectionResponse instantiates a new customAccessPackageWorkflowExtensionCollectionResponse and sets the default values.
 func NewCustomAccessPackageWorkflowExtensionCollectionResponse()(*CustomAccessPackageWorkflowExtensionCollectionResponse) {
     m := &CustomAccessPackageWorkflowExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

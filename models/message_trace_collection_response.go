@@ -8,7 +8,7 @@ import (
 type MessageTraceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMessageTraceCollectionResponse instantiates a new MessageTraceCollectionResponse and sets the default values.
+// NewMessageTraceCollectionResponse instantiates a new messageTraceCollectionResponse and sets the default values.
 func NewMessageTraceCollectionResponse()(*MessageTraceCollectionResponse) {
     m := &MessageTraceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

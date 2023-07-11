@@ -8,6 +8,8 @@ import (
 // UserExperienceAnalyticsDeviceTimelineEvent the user experience analytics device event entity contains NRT device event details.
 type UserExperienceAnalyticsDeviceTimelineEvent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsDeviceTimelineEvent instantiates a new userExperienceAnalyticsDeviceTimelineEvent and sets the default values.
 func NewUserExperienceAnalyticsDeviceTimelineEvent()(*UserExperienceAnalyticsDeviceTimelineEvent) {

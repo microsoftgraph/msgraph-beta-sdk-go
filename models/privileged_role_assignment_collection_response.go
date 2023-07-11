@@ -8,7 +8,7 @@ import (
 type PrivilegedRoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrivilegedRoleAssignmentCollectionResponse instantiates a new PrivilegedRoleAssignmentCollectionResponse and sets the default values.
+// NewPrivilegedRoleAssignmentCollectionResponse instantiates a new privilegedRoleAssignmentCollectionResponse and sets the default values.
 func NewPrivilegedRoleAssignmentCollectionResponse()(*PrivilegedRoleAssignmentCollectionResponse) {
     m := &PrivilegedRoleAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

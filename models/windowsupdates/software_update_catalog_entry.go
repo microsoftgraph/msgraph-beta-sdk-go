@@ -7,8 +7,10 @@ import (
 // SoftwareUpdateCatalogEntry 
 type SoftwareUpdateCatalogEntry struct {
     CatalogEntry
+    // The OdataType property
+    OdataType *string
 }
-// NewSoftwareUpdateCatalogEntry instantiates a new SoftwareUpdateCatalogEntry and sets the default values.
+// NewSoftwareUpdateCatalogEntry instantiates a new softwareUpdateCatalogEntry and sets the default values.
 func NewSoftwareUpdateCatalogEntry()(*SoftwareUpdateCatalogEntry) {
     m := &SoftwareUpdateCatalogEntry{
         CatalogEntry: *NewCatalogEntry(),

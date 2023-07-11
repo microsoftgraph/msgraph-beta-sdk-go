@@ -8,7 +8,7 @@ import (
 type MachineLearningDetectedSensitiveContent struct {
     DetectedSensitiveContent
 }
-// NewMachineLearningDetectedSensitiveContent instantiates a new MachineLearningDetectedSensitiveContent and sets the default values.
+// NewMachineLearningDetectedSensitiveContent instantiates a new machineLearningDetectedSensitiveContent and sets the default values.
 func NewMachineLearningDetectedSensitiveContent()(*MachineLearningDetectedSensitiveContent) {
     m := &MachineLearningDetectedSensitiveContent{
         DetectedSensitiveContent: *NewDetectedSensitiveContent(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComanagementAuthorityConfiguration 
+// DeviceComanagementAuthorityConfiguration windows 10 Co-Management Authority Page Configuration
 type DeviceComanagementAuthorityConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceComanagementAuthorityConfiguration instantiates a new DeviceComanagementAuthorityConfiguration and sets the default values.
+// NewDeviceComanagementAuthorityConfiguration instantiates a new deviceComanagementAuthorityConfiguration and sets the default values.
 func NewDeviceComanagementAuthorityConfiguration()(*DeviceComanagementAuthorityConfiguration) {
     m := &DeviceComanagementAuthorityConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -65,6 +65,16 @@ func (m *DeviceComanagementAuthorityConfiguration) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInstallConfigurationManagerAgent gets the installConfigurationManagerAgent property value. CoManagement Authority configuration InstallConfigurationManagerAgent
@@ -86,6 +96,17 @@ func (m *DeviceComanagementAuthorityConfiguration) GetManagedDeviceAuthority()(*
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceComanagementAuthorityConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -113,6 +134,12 @@ func (m *DeviceComanagementAuthorityConfiguration) Serialize(writer i878a80d2330
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetConfigurationManagerAgentCommandLineArgument sets the configurationManagerAgentCommandLineArgument property value. CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument
@@ -136,6 +163,13 @@ func (m *DeviceComanagementAuthorityConfiguration) SetManagedDeviceAuthority(val
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceComanagementAuthorityConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceComanagementAuthorityConfigurationable 
 type DeviceComanagementAuthorityConfigurationable interface {
     DeviceEnrollmentConfigurationable
@@ -143,7 +177,9 @@ type DeviceComanagementAuthorityConfigurationable interface {
     GetConfigurationManagerAgentCommandLineArgument()(*string)
     GetInstallConfigurationManagerAgent()(*bool)
     GetManagedDeviceAuthority()(*int32)
+    GetOdataType()(*string)
     SetConfigurationManagerAgentCommandLineArgument(value *string)()
     SetInstallConfigurationManagerAgent(value *bool)()
     SetManagedDeviceAuthority(value *int32)()
+    SetOdataType(value *string)()
 }

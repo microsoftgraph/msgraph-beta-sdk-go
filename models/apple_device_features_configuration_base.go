@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppleDeviceFeaturesConfigurationBase 
+// AppleDeviceFeaturesConfigurationBase apple device features configuration profile.
 type AppleDeviceFeaturesConfigurationBase struct {
     DeviceConfiguration
 }
-// NewAppleDeviceFeaturesConfigurationBase instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
+// NewAppleDeviceFeaturesConfigurationBase instantiates a new appleDeviceFeaturesConfigurationBase and sets the default values.
 func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfigurationBase) {
     m := &AppleDeviceFeaturesConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -71,7 +71,28 @@ func (m *AppleDeviceFeaturesConfigurationBase) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AppleDeviceFeaturesConfigurationBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -91,6 +112,12 @@ func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAirPrintDestinations sets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
@@ -100,10 +127,19 @@ func (m *AppleDeviceFeaturesConfigurationBase) SetAirPrintDestinations(value []A
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AppleDeviceFeaturesConfigurationBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AppleDeviceFeaturesConfigurationBaseable 
 type AppleDeviceFeaturesConfigurationBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAirPrintDestinations()([]AirPrintDestinationable)
+    GetOdataType()(*string)
     SetAirPrintDestinations(value []AirPrintDestinationable)()
+    SetOdataType(value *string)()
 }

@@ -8,7 +8,7 @@ import (
 type ItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewItemCollectionResponse instantiates a new ItemCollectionResponse and sets the default values.
+// NewItemCollectionResponse instantiates a new itemCollectionResponse and sets the default values.
 func NewItemCollectionResponse()(*ItemCollectionResponse) {
     m := &ItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

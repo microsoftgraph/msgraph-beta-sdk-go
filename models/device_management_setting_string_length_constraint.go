@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingStringLengthConstraint 
+// DeviceManagementSettingStringLengthConstraint base entity for a constraint
 type DeviceManagementSettingStringLengthConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingStringLengthConstraint instantiates a new DeviceManagementSettingStringLengthConstraint and sets the default values.
+// NewDeviceManagementSettingStringLengthConstraint instantiates a new deviceManagementSettingStringLengthConstraint and sets the default values.
 func NewDeviceManagementSettingStringLengthConstraint()(*DeviceManagementSettingStringLengthConstraint) {
     m := &DeviceManagementSettingStringLengthConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

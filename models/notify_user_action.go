@@ -9,7 +9,7 @@ import (
 type NotifyUserAction struct {
     DlpActionInfo
 }
-// NewNotifyUserAction instantiates a new NotifyUserAction and sets the default values.
+// NewNotifyUserAction instantiates a new notifyUserAction and sets the default values.
 func NewNotifyUserAction()(*NotifyUserAction) {
     m := &NotifyUserAction{
         DlpActionInfo: *NewDlpActionInfo(),
@@ -65,6 +65,16 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -92,6 +102,17 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *NotifyUserAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
 func (m *NotifyUserAction) GetPolicyTip()(*string) {
@@ -134,6 +155,12 @@ func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("policyTip", m.GetPolicyTip())
         if err != nil {
             return err
@@ -161,6 +188,13 @@ func (m *NotifyUserAction) SetEmailText(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *NotifyUserAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyTip sets the policyTip property value. The policyTip property
 func (m *NotifyUserAction) SetPolicyTip(value *string)() {
     err := m.GetBackingStore().Set("policyTip", value)
@@ -181,10 +215,12 @@ type NotifyUserActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEmailText()(*string)
+    GetOdataType()(*string)
     GetPolicyTip()(*string)
     GetRecipients()([]string)
     SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmailText(value *string)()
+    SetOdataType(value *string)()
     SetPolicyTip(value *string)()
     SetRecipients(value []string)()
 }

@@ -7,8 +7,10 @@ import (
 // ServiceEndpoint 
 type ServiceEndpoint struct {
     Endpoint
+    // The OdataType property
+    OdataType *string
 }
-// NewServiceEndpoint instantiates a new ServiceEndpoint and sets the default values.
+// NewServiceEndpoint instantiates a new serviceEndpoint and sets the default values.
 func NewServiceEndpoint()(*ServiceEndpoint) {
     m := &ServiceEndpoint{
         Endpoint: *NewEndpoint(),

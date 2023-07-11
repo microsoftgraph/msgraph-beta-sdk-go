@@ -155,6 +155,16 @@ func (m *ManagedTenantAlertRuleDefinition) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
@@ -176,6 +186,17 @@ func (m *ManagedTenantAlertRuleDefinition) GetLastActionDateTime()(*i336074805fc
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedTenantAlertRuleDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -233,6 +254,12 @@ func (m *ManagedTenantAlertRuleDefinition) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAlertRules sets the alertRules property value. The alertRules property
@@ -284,6 +311,13 @@ func (m *ManagedTenantAlertRuleDefinition) SetLastActionDateTime(value *i3360748
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedTenantAlertRuleDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ManagedTenantAlertRuleDefinitionable 
 type ManagedTenantAlertRuleDefinitionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
@@ -295,6 +329,7 @@ type ManagedTenantAlertRuleDefinitionable interface {
     GetDisplayName()(*string)
     GetLastActionByUserId()(*string)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     SetAlertRules(value []ManagedTenantAlertRuleable)()
     SetCreatedByUserId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -302,4 +337,5 @@ type ManagedTenantAlertRuleDefinitionable interface {
     SetDisplayName(value *string)()
     SetLastActionByUserId(value *string)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
 }

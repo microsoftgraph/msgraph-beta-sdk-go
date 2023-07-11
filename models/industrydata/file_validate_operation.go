@@ -8,7 +8,7 @@ import (
 type FileValidateOperation struct {
     ValidateOperation
 }
-// NewFileValidateOperation instantiates a new FileValidateOperation and sets the default values.
+// NewFileValidateOperation instantiates a new fileValidateOperation and sets the default values.
 func NewFileValidateOperation()(*FileValidateOperation) {
     m := &FileValidateOperation{
         ValidateOperation: *NewValidateOperation(),
@@ -24,6 +24,16 @@ func CreateFileValidateOperationFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileValidateOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ValidateOperation.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["validatedFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -42,6 +52,17 @@ func (m *FileValidateOperation) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FileValidateOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetValidatedFiles gets the validatedFiles property value. Set of files validated by the validate operation.
 func (m *FileValidateOperation) GetValidatedFiles()([]string) {
     val, err := m.GetBackingStore().Get("validatedFiles")
@@ -59,7 +80,20 @@ func (m *FileValidateOperation) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FileValidateOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValidatedFiles sets the validatedFiles property value. Set of files validated by the validate operation.
 func (m *FileValidateOperation) SetValidatedFiles(value []string)() {
@@ -72,6 +106,8 @@ func (m *FileValidateOperation) SetValidatedFiles(value []string)() {
 type FileValidateOperationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ValidateOperationable
+    GetOdataType()(*string)
     GetValidatedFiles()([]string)
+    SetOdataType(value *string)()
     SetValidatedFiles(value []string)()
 }

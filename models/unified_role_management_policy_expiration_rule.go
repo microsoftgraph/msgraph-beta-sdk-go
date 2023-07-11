@@ -7,8 +7,10 @@ import (
 // UnifiedRoleManagementPolicyExpirationRule 
 type UnifiedRoleManagementPolicyExpirationRule struct {
     UnifiedRoleManagementPolicyRule
+    // The OdataType property
+    OdataType *string
 }
-// NewUnifiedRoleManagementPolicyExpirationRule instantiates a new UnifiedRoleManagementPolicyExpirationRule and sets the default values.
+// NewUnifiedRoleManagementPolicyExpirationRule instantiates a new unifiedRoleManagementPolicyExpirationRule and sets the default values.
 func NewUnifiedRoleManagementPolicyExpirationRule()(*UnifiedRoleManagementPolicyExpirationRule) {
     m := &UnifiedRoleManagementPolicyExpirationRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingXmlConstraint 
+// DeviceManagementSettingXmlConstraint base entity for a constraint
 type DeviceManagementSettingXmlConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingXmlConstraint instantiates a new DeviceManagementSettingXmlConstraint and sets the default values.
+// NewDeviceManagementSettingXmlConstraint instantiates a new deviceManagementSettingXmlConstraint and sets the default values.
 func NewDeviceManagementSettingXmlConstraint()(*DeviceManagementSettingXmlConstraint) {
     m := &DeviceManagementSettingXmlConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

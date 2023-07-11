@@ -59,6 +59,16 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["schemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +95,17 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetNestedSchemaItems()([]And
     }
     if val != nil {
         return val.([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidManagedStoreAppConfigurationSchema) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -123,6 +144,12 @@ func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i878a80d233
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSchemaItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchemaItems()))
         for i, v := range m.GetSchemaItems() {
@@ -151,6 +178,13 @@ func (m *AndroidManagedStoreAppConfigurationSchema) SetNestedSchemaItems(value [
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidManagedStoreAppConfigurationSchema) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) SetSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)() {
     err := m.GetBackingStore().Set("schemaItems", value)
@@ -164,8 +198,10 @@ type AndroidManagedStoreAppConfigurationSchemaable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExampleJson()([]byte)
     GetNestedSchemaItems()([]AndroidManagedStoreAppConfigurationSchemaItemable)
+    GetOdataType()(*string)
     GetSchemaItems()([]AndroidManagedStoreAppConfigurationSchemaItemable)
     SetExampleJson(value []byte)()
     SetNestedSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)()
+    SetOdataType(value *string)()
     SetSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItemable)()
 }

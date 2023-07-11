@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81ImportedPFXCertificateProfile 
+// WindowsPhone81ImportedPFXCertificateProfile windows 8.1 Phone and Mobile PFX Import certificate profile
 type WindowsPhone81ImportedPFXCertificateProfile struct {
     WindowsCertificateProfileBase
 }
-// NewWindowsPhone81ImportedPFXCertificateProfile instantiates a new WindowsPhone81ImportedPFXCertificateProfile and sets the default values.
+// NewWindowsPhone81ImportedPFXCertificateProfile instantiates a new windowsPhone81ImportedPFXCertificateProfile and sets the default values.
 func NewWindowsPhone81ImportedPFXCertificateProfile()(*WindowsPhone81ImportedPFXCertificateProfile) {
     m := &WindowsPhone81ImportedPFXCertificateProfile{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),

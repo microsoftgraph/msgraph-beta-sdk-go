@@ -101,6 +101,16 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsRequired gets the isRequired property value. Indicates whether the question is required. Default value is false.
@@ -111,6 +121,17 @@ func (m *MeetingRegistrationQuestion) GetIsRequired()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MeetingRegistrationQuestion) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -145,6 +166,12 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
@@ -175,6 +202,13 @@ func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MeetingRegistrationQuestion) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MeetingRegistrationQuestionable 
 type MeetingRegistrationQuestionable interface {
     Entityable
@@ -183,8 +217,10 @@ type MeetingRegistrationQuestionable interface {
     GetAnswerOptions()([]string)
     GetDisplayName()(*string)
     GetIsRequired()(*bool)
+    GetOdataType()(*string)
     SetAnswerInputType(value *AnswerInputType)()
     SetAnswerOptions(value []string)()
     SetDisplayName(value *string)()
     SetIsRequired(value *bool)()
+    SetOdataType(value *string)()
 }

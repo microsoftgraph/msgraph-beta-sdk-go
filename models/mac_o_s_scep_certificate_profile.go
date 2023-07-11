@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSScepCertificateProfile 
+// MacOSScepCertificateProfile mac OS SCEP certificate profile.
 type MacOSScepCertificateProfile struct {
     MacOSCertificateProfileBase
+    // The OdataType property
+    OdataType *string
 }
-// NewMacOSScepCertificateProfile instantiates a new MacOSScepCertificateProfile and sets the default values.
+// NewMacOSScepCertificateProfile instantiates a new macOSScepCertificateProfile and sets the default values.
 func NewMacOSScepCertificateProfile()(*MacOSScepCertificateProfile) {
     m := &MacOSScepCertificateProfile{
         MacOSCertificateProfileBase: *NewMacOSCertificateProfileBase(),

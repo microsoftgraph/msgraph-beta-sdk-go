@@ -9,7 +9,7 @@ import (
 type CompanySubscription struct {
     Entity
 }
-// NewCompanySubscription instantiates a new CompanySubscription and sets the default values.
+// NewCompanySubscription instantiates a new companySubscription and sets the default values.
 func NewCompanySubscription()(*CompanySubscription) {
     m := &CompanySubscription{
         Entity: *NewEntity(),
@@ -71,6 +71,16 @@ func (m *CompanySubscription) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetOcpSubscriptionId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -165,6 +175,17 @@ func (m *CompanySubscription) GetOcpSubscriptionId()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CompanySubscription) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetServiceStatus gets the serviceStatus property value. The serviceStatus property
 func (m *CompanySubscription) GetServiceStatus()([]ServicePlanInfoable) {
     val, err := m.GetBackingStore().Get("serviceStatus")
@@ -250,6 +271,12 @@ func (m *CompanySubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServiceStatus() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceStatus()))
         for i, v := range m.GetServiceStatus() {
@@ -316,6 +343,13 @@ func (m *CompanySubscription) SetOcpSubscriptionId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CompanySubscription) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceStatus sets the serviceStatus property value. The serviceStatus property
 func (m *CompanySubscription) SetServiceStatus(value []ServicePlanInfoable)() {
     err := m.GetBackingStore().Set("serviceStatus", value)
@@ -359,6 +393,7 @@ type CompanySubscriptionable interface {
     GetIsTrial()(*bool)
     GetNextLifecycleDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOcpSubscriptionId()(*string)
+    GetOdataType()(*string)
     GetServiceStatus()([]ServicePlanInfoable)
     GetSkuId()(*string)
     GetSkuPartNumber()(*string)
@@ -368,6 +403,7 @@ type CompanySubscriptionable interface {
     SetIsTrial(value *bool)()
     SetNextLifecycleDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOcpSubscriptionId(value *string)()
+    SetOdataType(value *string)()
     SetServiceStatus(value []ServicePlanInfoable)()
     SetSkuId(value *string)()
     SetSkuPartNumber(value *string)()

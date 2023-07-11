@@ -18,7 +18,7 @@ type SettingsCrossTenantAccessRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SettingsCrossTenantAccessRequestBuilderGetQueryParameters get crossTenantAccess from networkAccess
+// SettingsCrossTenantAccessRequestBuilderGetQueryParameters retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
 type SettingsCrossTenantAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *SettingsCrossTenantAccessRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get crossTenantAccess from networkAccess
+// Get retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-crosstenantaccesssettings-get?view=graph-rest-1.0
 func (m *SettingsCrossTenantAccessRequestBuilder) Get(ctx context.Context, requestConfiguration *SettingsCrossTenantAccessRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantAccessSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *SettingsCrossTenantAccessRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantAccessSettingsable), nil
 }
-// Patch update the navigation property crossTenantAccess in networkAccess
+// Patch update the cross-tenant access settings to include network packet tagging for enforcing Tenant Restrictions Policies (TRv2 Policies) that prevent data exfiltration to external tenants.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-crosstenantaccesssettings-update?view=graph-rest-1.0
 func (m *SettingsCrossTenantAccessRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantAccessSettingsable, requestConfiguration *SettingsCrossTenantAccessRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantAccessSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *SettingsCrossTenantAccessRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get crossTenantAccess from networkAccess
+// ToGetRequestInformation retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
 func (m *SettingsCrossTenantAccessRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SettingsCrossTenantAccessRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *SettingsCrossTenantAccessRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property crossTenantAccess in networkAccess
+// ToPatchRequestInformation update the cross-tenant access settings to include network packet tagging for enforcing Tenant Restrictions Policies (TRv2 Policies) that prevent data exfiltration to external tenants.
 func (m *SettingsCrossTenantAccessRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantAccessSettingsable, requestConfiguration *SettingsCrossTenantAccessRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -7,8 +7,10 @@ import (
 // AccessReviewNotificationRecipientQueryScope 
 type AccessReviewNotificationRecipientQueryScope struct {
     AccessReviewNotificationRecipientScope
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessReviewNotificationRecipientQueryScope instantiates a new AccessReviewNotificationRecipientQueryScope and sets the default values.
+// NewAccessReviewNotificationRecipientQueryScope instantiates a new accessReviewNotificationRecipientQueryScope and sets the default values.
 func NewAccessReviewNotificationRecipientQueryScope()(*AccessReviewNotificationRecipientQueryScope) {
     m := &AccessReviewNotificationRecipientQueryScope{
         AccessReviewNotificationRecipientScope: *NewAccessReviewNotificationRecipientScope(),
@@ -56,7 +58,7 @@ func (m *AccessReviewNotificationRecipientQueryScope) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetQuery gets the query property value. This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
+// GetQuery gets the query property value. Represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQuery()(*string) {
     val, err := m.GetBackingStore().Get("query")
     if err != nil {
@@ -67,7 +69,7 @@ func (m *AccessReviewNotificationRecipientQueryScope) GetQuery()(*string) {
     }
     return nil
 }
-// GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
+// GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.
 func (m *AccessReviewNotificationRecipientQueryScope) GetQueryRoot()(*string) {
     val, err := m.GetBackingStore().Get("queryRoot")
     if err != nil {
@@ -115,14 +117,14 @@ func (m *AccessReviewNotificationRecipientQueryScope) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetQuery sets the query property value. This represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
+// SetQuery sets the query property value. Represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQuery(value *string)() {
     err := m.GetBackingStore().Set("query", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query that is, ./manager) is specified.
+// SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.
 func (m *AccessReviewNotificationRecipientQueryScope) SetQueryRoot(value *string)() {
     err := m.GetBackingStore().Set("queryRoot", value)
     if err != nil {

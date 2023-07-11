@@ -8,7 +8,7 @@ import (
 type DeltaParticipants struct {
     Entity
 }
-// NewDeltaParticipants instantiates a new DeltaParticipants and sets the default values.
+// NewDeltaParticipants instantiates a new deltaParticipants and sets the default values.
 func NewDeltaParticipants()(*DeltaParticipants) {
     m := &DeltaParticipants{
         Entity: *NewEntity(),
@@ -22,6 +22,16 @@ func CreateDeltaParticipantsFromDiscriminatorValue(parseNode i878a80d2330e89d268
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeltaParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
         if err != nil {
@@ -49,6 +59,17 @@ func (m *DeltaParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeltaParticipants) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParticipants gets the participants property value. The participants property
 func (m *DeltaParticipants) GetParticipants()([]Participantable) {
@@ -78,6 +99,12 @@ func (m *DeltaParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetParticipants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
@@ -98,6 +125,13 @@ func (m *DeltaParticipants) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeltaParticipants) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParticipants sets the participants property value. The participants property
 func (m *DeltaParticipants) SetParticipants(value []Participantable)() {
     err := m.GetBackingStore().Set("participants", value)
@@ -116,8 +150,10 @@ func (m *DeltaParticipants) SetSequenceNumber(value *int64)() {
 type DeltaParticipantsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetParticipants()([]Participantable)
     GetSequenceNumber()(*int64)
+    SetOdataType(value *string)()
     SetParticipants(value []Participantable)()
     SetSequenceNumber(value *int64)()
 }

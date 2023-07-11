@@ -8,7 +8,7 @@ import (
 type CustomExtensionHandlerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomExtensionHandlerCollectionResponse instantiates a new CustomExtensionHandlerCollectionResponse and sets the default values.
+// NewCustomExtensionHandlerCollectionResponse instantiates a new customExtensionHandlerCollectionResponse and sets the default values.
 func NewCustomExtensionHandlerCollectionResponse()(*CustomExtensionHandlerCollectionResponse) {
     m := &CustomExtensionHandlerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

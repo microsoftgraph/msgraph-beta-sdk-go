@@ -8,7 +8,7 @@ import (
 type EstimateStatisticsOperation struct {
     CaseOperation
 }
-// NewEstimateStatisticsOperation instantiates a new EstimateStatisticsOperation and sets the default values.
+// NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     m := &EstimateStatisticsOperation{
         CaseOperation: *NewCaseOperation(),
@@ -49,6 +49,16 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetMailboxCount(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -127,6 +137,17 @@ func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EstimateStatisticsOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
     val, err := m.GetBackingStore().Get("siteCount")
@@ -196,6 +217,12 @@ func (m *EstimateStatisticsOperation) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("siteCount", m.GetSiteCount())
         if err != nil {
             return err
@@ -242,6 +269,13 @@ func (m *EstimateStatisticsOperation) SetMailboxCount(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EstimateStatisticsOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSiteCount sets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetSiteCount(value *int32)() {
     err := m.GetBackingStore().Set("siteCount", value)
@@ -277,6 +311,7 @@ type EstimateStatisticsOperationable interface {
     GetIndexedItemCount()(*int64)
     GetIndexedItemsSize()(*int64)
     GetMailboxCount()(*int32)
+    GetOdataType()(*string)
     GetSiteCount()(*int32)
     GetSourceCollection()(SourceCollectionable)
     GetUnindexedItemCount()(*int64)
@@ -284,6 +319,7 @@ type EstimateStatisticsOperationable interface {
     SetIndexedItemCount(value *int64)()
     SetIndexedItemsSize(value *int64)()
     SetMailboxCount(value *int32)()
+    SetOdataType(value *string)()
     SetSiteCount(value *int32)()
     SetSourceCollection(value SourceCollectionable)()
     SetUnindexedItemCount(value *int64)()

@@ -9,7 +9,7 @@ import (
 type SecurityAction struct {
     Entity
 }
-// NewSecurityAction instantiates a new SecurityAction and sets the default values.
+// NewSecurityAction instantiates a new securityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
     m := &SecurityAction{
         Entity: *NewEntity(),
@@ -190,6 +190,16 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
@@ -268,6 +278,17 @@ func (m *SecurityAction) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad9
 // GetName gets the name property value. Action name.
 func (m *SecurityAction) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecurityAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -391,6 +412,12 @@ func (m *SecurityAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetParameters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
@@ -499,6 +526,13 @@ func (m *SecurityAction) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecurityAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParameters sets the parameters property value. Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
 func (m *SecurityAction) SetParameters(value []KeyValuePairable)() {
     err := m.GetBackingStore().Set("parameters", value)
@@ -547,6 +581,7 @@ type SecurityActionable interface {
     GetErrorInfo()(ResultInfoable)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetParameters()([]KeyValuePairable)
     GetStates()([]SecurityActionStateable)
     GetStatus()(*OperationStatus)
@@ -561,6 +596,7 @@ type SecurityActionable interface {
     SetErrorInfo(value ResultInfoable)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetParameters(value []KeyValuePairable)()
     SetStates(value []SecurityActionStateable)()
     SetStatus(value *OperationStatus)()

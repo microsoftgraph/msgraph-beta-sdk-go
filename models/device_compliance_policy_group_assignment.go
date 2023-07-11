@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicyGroupAssignment 
+// DeviceCompliancePolicyGroupAssignment device compliance policy group assignment.
 type DeviceCompliancePolicyGroupAssignment struct {
     Entity
 }
-// NewDeviceCompliancePolicyGroupAssignment instantiates a new DeviceCompliancePolicyGroupAssignment and sets the default values.
+// NewDeviceCompliancePolicyGroupAssignment instantiates a new deviceCompliancePolicyGroupAssignment and sets the default values.
 func NewDeviceCompliancePolicyGroupAssignment()(*DeviceCompliancePolicyGroupAssignment) {
     m := &DeviceCompliancePolicyGroupAssignment{
         Entity: *NewEntity(),
@@ -64,6 +64,16 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -75,6 +85,17 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceCompliancePolicyGroupAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
 func (m *DeviceCompliancePolicyGroupAssignment) GetTargetGroupId()(*string) {
@@ -106,6 +127,12 @@ func (m *DeviceCompliancePolicyGroupAssignment) Serialize(writer i878a80d2330e89
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("targetGroupId", m.GetTargetGroupId())
         if err != nil {
             return err
@@ -127,6 +154,13 @@ func (m *DeviceCompliancePolicyGroupAssignment) SetExcludeGroup(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceCompliancePolicyGroupAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTargetGroupId sets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
 func (m *DeviceCompliancePolicyGroupAssignment) SetTargetGroupId(value *string)() {
     err := m.GetBackingStore().Set("targetGroupId", value)
@@ -140,8 +174,10 @@ type DeviceCompliancePolicyGroupAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceCompliancePolicy()(DeviceCompliancePolicyable)
     GetExcludeGroup()(*bool)
+    GetOdataType()(*string)
     GetTargetGroupId()(*string)
     SetDeviceCompliancePolicy(value DeviceCompliancePolicyable)()
     SetExcludeGroup(value *bool)()
+    SetOdataType(value *string)()
     SetTargetGroupId(value *string)()
 }

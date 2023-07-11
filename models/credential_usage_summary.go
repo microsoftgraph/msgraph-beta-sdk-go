@@ -8,7 +8,7 @@ import (
 type CredentialUsageSummary struct {
     Entity
 }
-// NewCredentialUsageSummary instantiates a new CredentialUsageSummary and sets the default values.
+// NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),
@@ -85,6 +85,16 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["successfulActivityCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -96,6 +106,17 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CredentialUsageSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.
 func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
@@ -135,6 +156,12 @@ func (m *CredentialUsageSummary) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("successfulActivityCount", m.GetSuccessfulActivityCount())
         if err != nil {
             return err
@@ -163,6 +190,13 @@ func (m *CredentialUsageSummary) SetFeature(value *FeatureType)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CredentialUsageSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSuccessfulActivityCount sets the successfulActivityCount property value. Provides the count of successful registrations or resets.
 func (m *CredentialUsageSummary) SetSuccessfulActivityCount(value *int64)() {
     err := m.GetBackingStore().Set("successfulActivityCount", value)
@@ -177,9 +211,11 @@ type CredentialUsageSummaryable interface {
     GetAuthMethod()(*UsageAuthMethod)
     GetFailureActivityCount()(*int64)
     GetFeature()(*FeatureType)
+    GetOdataType()(*string)
     GetSuccessfulActivityCount()(*int64)
     SetAuthMethod(value *UsageAuthMethod)()
     SetFailureActivityCount(value *int64)()
     SetFeature(value *FeatureType)()
+    SetOdataType(value *string)()
     SetSuccessfulActivityCount(value *int64)()
 }

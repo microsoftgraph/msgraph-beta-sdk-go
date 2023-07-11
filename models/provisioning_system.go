@@ -7,8 +7,10 @@ import (
 // ProvisioningSystem 
 type ProvisioningSystem struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewProvisioningSystem instantiates a new ProvisioningSystem and sets the default values.
+// NewProvisioningSystem instantiates a new provisioningSystem and sets the default values.
 func NewProvisioningSystem()(*ProvisioningSystem) {
     m := &ProvisioningSystem{
         Identity: *NewIdentity(),

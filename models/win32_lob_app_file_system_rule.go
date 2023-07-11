@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppFileSystemRule 
+// Win32LobAppFileSystemRule a base complex type to store the detection or requirement rule data for a Win32 LOB app.
 type Win32LobAppFileSystemRule struct {
     Win32LobAppRule
+    // The OdataType property
+    OdataType *string
 }
-// NewWin32LobAppFileSystemRule instantiates a new Win32LobAppFileSystemRule and sets the default values.
+// NewWin32LobAppFileSystemRule instantiates a new win32LobAppFileSystemRule and sets the default values.
 func NewWin32LobAppFileSystemRule()(*Win32LobAppFileSystemRule) {
     m := &Win32LobAppFileSystemRule{
         Win32LobAppRule: *NewWin32LobAppRule(),

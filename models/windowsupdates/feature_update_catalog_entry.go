@@ -8,7 +8,7 @@ import (
 type FeatureUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
 }
-// NewFeatureUpdateCatalogEntry instantiates a new FeatureUpdateCatalogEntry and sets the default values.
+// NewFeatureUpdateCatalogEntry instantiates a new featureUpdateCatalogEntry and sets the default values.
 func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
     m := &FeatureUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),

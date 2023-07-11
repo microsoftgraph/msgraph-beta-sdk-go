@@ -8,7 +8,7 @@ import (
 type ApprovalWorkflowProvider struct {
     Entity
 }
-// NewApprovalWorkflowProvider instantiates a new ApprovalWorkflowProvider and sets the default values.
+// NewApprovalWorkflowProvider instantiates a new approvalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),
@@ -97,6 +97,16 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGovernancePolicyTemplateFromDiscriminatorValue)
         if err != nil {
@@ -114,6 +124,17 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ApprovalWorkflowProvider) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyTemplates gets the policyTemplates property value. The policyTemplates property
 func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTemplateable) {
@@ -162,6 +183,12 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicyTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicyTemplates()))
         for i, v := range m.GetPolicyTemplates() {
@@ -197,6 +224,13 @@ func (m *ApprovalWorkflowProvider) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ApprovalWorkflowProvider) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyTemplates sets the policyTemplates property value. The policyTemplates property
 func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTemplateable)() {
     err := m.GetBackingStore().Set("policyTemplates", value)
@@ -211,9 +245,11 @@ type ApprovalWorkflowProviderable interface {
     GetBusinessFlows()([]BusinessFlowable)
     GetBusinessFlowsWithRequestsAwaitingMyDecision()([]BusinessFlowable)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetPolicyTemplates()([]GovernancePolicyTemplateable)
     SetBusinessFlows(value []BusinessFlowable)()
     SetBusinessFlowsWithRequestsAwaitingMyDecision(value []BusinessFlowable)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetPolicyTemplates(value []GovernancePolicyTemplateable)()
 }

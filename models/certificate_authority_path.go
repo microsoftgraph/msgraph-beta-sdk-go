@@ -7,6 +7,8 @@ import (
 // CertificateAuthorityPath 
 type CertificateAuthorityPath struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCertificateAuthorityPath instantiates a new certificateAuthorityPath and sets the default values.
 func NewCertificateAuthorityPath()(*CertificateAuthorityPath) {

@@ -8,7 +8,7 @@ import (
 type EducationAssignmentSettings struct {
     Entity
 }
-// NewEducationAssignmentSettings instantiates a new EducationAssignmentSettings and sets the default values.
+// NewEducationAssignmentSettings instantiates a new educationAssignmentSettings and sets the default values.
 func NewEducationAssignmentSettings()(*EducationAssignmentSettings) {
     m := &EducationAssignmentSettings{
         Entity: *NewEntity(),
@@ -38,6 +38,16 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["submissionAnimationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -58,6 +68,17 @@ func (m *EducationAssignmentSettings) GetGradingCategories()([]EducationGradingC
     }
     if val != nil {
         return val.([]EducationGradingCategoryable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationAssignmentSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -91,6 +112,12 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("submissionAnimationDisabled", m.GetSubmissionAnimationDisabled())
         if err != nil {
             return err
@@ -101,6 +128,13 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 // SetGradingCategories sets the gradingCategories property value. The gradingCategories property
 func (m *EducationAssignmentSettings) SetGradingCategories(value []EducationGradingCategoryable)() {
     err := m.GetBackingStore().Set("gradingCategories", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationAssignmentSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -117,7 +151,9 @@ type EducationAssignmentSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetGradingCategories()([]EducationGradingCategoryable)
+    GetOdataType()(*string)
     GetSubmissionAnimationDisabled()(*bool)
     SetGradingCategories(value []EducationGradingCategoryable)()
+    SetOdataType(value *string)()
     SetSubmissionAnimationDisabled(value *bool)()
 }

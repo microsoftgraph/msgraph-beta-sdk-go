@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KeyRealValuePair 
+// KeyRealValuePair a key-value pair with a string key and a typed value.
 type KeyRealValuePair struct {
     KeyTypedValuePair
 }
-// NewKeyRealValuePair instantiates a new KeyRealValuePair and sets the default values.
+// NewKeyRealValuePair instantiates a new keyRealValuePair and sets the default values.
 func NewKeyRealValuePair()(*KeyRealValuePair) {
     m := &KeyRealValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
@@ -24,6 +24,16 @@ func CreateKeyRealValuePairFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // GetFieldDeserializers the deserialization information for the current model
 func (m *KeyRealValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.KeyTypedValuePair.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *KeyRealValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *KeyRealValuePair) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValue gets the value property value. The real (floating-point) value of the key-value pair.
 func (m *KeyRealValuePair) GetValue()(*float64) {
@@ -54,12 +75,25 @@ func (m *KeyRealValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("value", m.GetValue())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *KeyRealValuePair) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. The real (floating-point) value of the key-value pair.
 func (m *KeyRealValuePair) SetValue(value *float64)() {
@@ -72,6 +106,8 @@ func (m *KeyRealValuePair) SetValue(value *float64)() {
 type KeyRealValuePairable interface {
     KeyTypedValuePairable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetValue()(*float64)
+    SetOdataType(value *string)()
     SetValue(value *float64)()
 }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkNineWorkEasConfiguration 
+// AndroidForWorkNineWorkEasConfiguration by providing configurations in this profile you can instruct the Nine Work email client on Android For Work devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
 type AndroidForWorkNineWorkEasConfiguration struct {
     AndroidForWorkEasEmailProfileBase
 }
-// NewAndroidForWorkNineWorkEasConfiguration instantiates a new AndroidForWorkNineWorkEasConfiguration and sets the default values.
+// NewAndroidForWorkNineWorkEasConfiguration instantiates a new androidForWorkNineWorkEasConfiguration and sets the default values.
 func NewAndroidForWorkNineWorkEasConfiguration()(*AndroidForWorkNineWorkEasConfiguration) {
     m := &AndroidForWorkNineWorkEasConfiguration{
         AndroidForWorkEasEmailProfileBase: *NewAndroidForWorkEasEmailProfileBase(),

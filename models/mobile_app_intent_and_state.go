@@ -48,6 +48,16 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -79,6 +89,17 @@ func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDe
     }
     if val != nil {
         return val.([]MobileAppIntentAndStateDetailable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppIntentAndState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -118,6 +139,12 @@ func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
@@ -139,6 +166,13 @@ func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndSta
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppIntentAndState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
@@ -152,8 +186,10 @@ type MobileAppIntentAndStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetManagedDeviceIdentifier()(*string)
     GetMobileAppList()([]MobileAppIntentAndStateDetailable)
+    GetOdataType()(*string)
     GetUserId()(*string)
     SetManagedDeviceIdentifier(value *string)()
     SetMobileAppList(value []MobileAppIntentAndStateDetailable)()
+    SetOdataType(value *string)()
     SetUserId(value *string)()
 }

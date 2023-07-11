@@ -9,7 +9,7 @@ import (
 type SalesQuoteLine struct {
     Entity
 }
-// NewSalesQuoteLine instantiates a new SalesQuoteLine and sets the default values.
+// NewSalesQuoteLine instantiates a new salesQuoteLine and sets the default values.
 func NewSalesQuoteLine()(*SalesQuoteLine) {
     m := &SalesQuoteLine{
         Entity: *NewEntity(),
@@ -272,6 +272,16 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["quantity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -407,6 +417,17 @@ func (m *SalesQuoteLine) GetNetTaxAmount()(*float64) {
     }
     if val != nil {
         return val.(*float64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SalesQuoteLine) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -584,6 +605,12 @@ func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("quantity", m.GetQuantity())
         if err != nil {
             return err
@@ -732,6 +759,13 @@ func (m *SalesQuoteLine) SetNetTaxAmount(value *float64)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SalesQuoteLine) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQuantity sets the quantity property value. The quantity property
 func (m *SalesQuoteLine) SetQuantity(value *float64)() {
     err := m.GetBackingStore().Set("quantity", value)
@@ -800,6 +834,7 @@ type SalesQuoteLineable interface {
     GetNetAmount()(*float64)
     GetNetAmountIncludingTax()(*float64)
     GetNetTaxAmount()(*float64)
+    GetOdataType()(*string)
     GetQuantity()(*float64)
     GetSequence()(*int32)
     GetTaxCode()(*string)
@@ -822,6 +857,7 @@ type SalesQuoteLineable interface {
     SetNetAmount(value *float64)()
     SetNetAmountIncludingTax(value *float64)()
     SetNetTaxAmount(value *float64)()
+    SetOdataType(value *string)()
     SetQuantity(value *float64)()
     SetSequence(value *int32)()
     SetTaxCode(value *string)()

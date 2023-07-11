@@ -74,6 +74,16 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["unhealthyThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -94,6 +104,17 @@ func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MicrosoftTunnelHealthThreshold) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -133,6 +154,12 @@ func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("unhealthyThreshold", m.GetUnhealthyThreshold())
         if err != nil {
             return err
@@ -161,6 +188,13 @@ func (m *MicrosoftTunnelHealthThreshold) SetHealthyThreshold(value *int64)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MicrosoftTunnelHealthThreshold) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUnhealthyThreshold sets the unhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) SetUnhealthyThreshold(value *int64)() {
     err := m.GetBackingStore().Set("unhealthyThreshold", value)
@@ -175,9 +209,11 @@ type MicrosoftTunnelHealthThresholdable interface {
     GetDefaultHealthyThreshold()(*int64)
     GetDefaultUnhealthyThreshold()(*int64)
     GetHealthyThreshold()(*int64)
+    GetOdataType()(*string)
     GetUnhealthyThreshold()(*int64)
     SetDefaultHealthyThreshold(value *int64)()
     SetDefaultUnhealthyThreshold(value *int64)()
     SetHealthyThreshold(value *int64)()
+    SetOdataType(value *string)()
     SetUnhealthyThreshold(value *int64)()
 }

@@ -18,7 +18,7 @@ type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters get dailyPrintUsageByPrinter from reports
+// DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by printer.
 type DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get dailyPrintUsageByPrinter from reports
+// Get retrieve a list of daily print usage summaries, grouped by printer.
 func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get dailyPrintUsageByPrinter from reports
+// ToGetRequestInformation retrieve a list of daily print usage summaries, grouped by printer.
 func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

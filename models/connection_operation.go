@@ -7,6 +7,8 @@ import (
 // ConnectionOperation 
 type ConnectionOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConnectionOperation instantiates a new connectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {

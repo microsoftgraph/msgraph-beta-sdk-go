@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationStringSettingValueDefinition 
+// DeviceManagementConfigurationStringSettingValueDefinition string constraints
 type DeviceManagementConfigurationStringSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
 }
-// NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
+// NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new deviceManagementConfigurationStringSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManagementConfigurationStringSettingValueDefinition) {
     m := &DeviceManagementConfigurationStringSettingValueDefinition{
         DeviceManagementConfigurationSettingValueDefinition: *NewDeviceManagementConfigurationSettingValueDefinition(),
@@ -90,6 +90,16 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFieldDese
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileTypes gets the fileTypes property value. Supported file types for this setting.
@@ -136,7 +146,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret(
     }
     return nil
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string
+// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
     val, err := m.GetBackingStore().Get("maximumLength")
     if err != nil {
@@ -147,7 +157,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLe
     }
     return nil
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string
+// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
     val, err := m.GetBackingStore().Get("minimumLength")
     if err != nil {
@@ -155,6 +165,17 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLe
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -201,6 +222,12 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) Serialize(wr
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetFileTypes sets the fileTypes property value. Supported file types for this setting.
@@ -231,16 +258,23 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(
         panic(err)
     }
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string
+// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
     err := m.GetBackingStore().Set("maximumLength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string
+// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
     err := m.GetBackingStore().Set("minimumLength", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -255,10 +289,12 @@ type DeviceManagementConfigurationStringSettingValueDefinitionable interface {
     GetIsSecret()(*bool)
     GetMaximumLength()(*int64)
     GetMinimumLength()(*int64)
+    GetOdataType()(*string)
     SetFileTypes(value []string)()
     SetFormat(value *DeviceManagementConfigurationStringFormat)()
     SetInputValidationSchema(value *string)()
     SetIsSecret(value *bool)()
     SetMaximumLength(value *int64)()
     SetMinimumLength(value *int64)()
+    SetOdataType(value *string)()
 }

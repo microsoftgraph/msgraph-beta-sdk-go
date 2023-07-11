@@ -7,8 +7,10 @@ import (
 // CloudPcManagementGroupAssignmentTarget 
 type CloudPcManagementGroupAssignmentTarget struct {
     CloudPcManagementAssignmentTarget
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcManagementGroupAssignmentTarget instantiates a new CloudPcManagementGroupAssignmentTarget and sets the default values.
+// NewCloudPcManagementGroupAssignmentTarget instantiates a new cloudPcManagementGroupAssignmentTarget and sets the default values.
 func NewCloudPcManagementGroupAssignmentTarget()(*CloudPcManagementGroupAssignmentTarget) {
     m := &CloudPcManagementGroupAssignmentTarget{
         CloudPcManagementAssignmentTarget: *NewCloudPcManagementAssignmentTarget(),

@@ -8,7 +8,7 @@ import (
 type PrivateAccessForwardingRule struct {
     ForwardingRule
 }
-// NewPrivateAccessForwardingRule instantiates a new PrivateAccessForwardingRule and sets the default values.
+// NewPrivateAccessForwardingRule instantiates a new privateAccessForwardingRule and sets the default values.
 func NewPrivateAccessForwardingRule()(*PrivateAccessForwardingRule) {
     m := &PrivateAccessForwardingRule{
         ForwardingRule: *NewForwardingRule(),

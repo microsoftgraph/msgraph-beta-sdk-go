@@ -43,6 +43,16 @@ func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -70,6 +80,17 @@ func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectorySetting) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTemplateId gets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *DirectorySetting) GetTemplateId()(*string) {
@@ -106,6 +127,12 @@ func (m *DirectorySetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("templateId", m.GetTemplateId())
         if err != nil {
             return err
@@ -132,6 +159,13 @@ func (m *DirectorySetting) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectorySetting) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTemplateId sets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *DirectorySetting) SetTemplateId(value *string)() {
     err := m.GetBackingStore().Set("templateId", value)
@@ -151,9 +185,11 @@ type DirectorySettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetTemplateId()(*string)
     GetValues()([]SettingValueable)
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetTemplateId(value *string)()
     SetValues(value []SettingValueable)()
 }

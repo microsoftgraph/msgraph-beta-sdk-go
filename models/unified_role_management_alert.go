@@ -153,6 +153,16 @@ func (m *UnifiedRoleManagementAlert) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -216,6 +226,17 @@ func (m *UnifiedRoleManagementAlert) GetLastScannedDateTime()(*i336074805fc85398
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementAlert) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -302,6 +323,12 @@ func (m *UnifiedRoleManagementAlert) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("scopeId", m.GetScopeId())
         if err != nil {
             return err
@@ -371,6 +398,13 @@ func (m *UnifiedRoleManagementAlert) SetLastScannedDateTime(value *i336074805fc8
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementAlert) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScopeId sets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlert) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
@@ -397,6 +431,7 @@ type UnifiedRoleManagementAlertable interface {
     GetIsActive()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastScannedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetScopeId()(*string)
     GetScopeType()(*string)
     SetAlertConfiguration(value UnifiedRoleManagementAlertConfigurationable)()
@@ -407,6 +442,7 @@ type UnifiedRoleManagementAlertable interface {
     SetIsActive(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastScannedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetScopeId(value *string)()
     SetScopeType(value *string)()
 }

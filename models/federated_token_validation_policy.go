@@ -7,8 +7,10 @@ import (
 // FederatedTokenValidationPolicy 
 type FederatedTokenValidationPolicy struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewFederatedTokenValidationPolicy instantiates a new FederatedTokenValidationPolicy and sets the default values.
+// NewFederatedTokenValidationPolicy instantiates a new federatedTokenValidationPolicy and sets the default values.
 func NewFederatedTokenValidationPolicy()(*FederatedTokenValidationPolicy) {
     m := &FederatedTokenValidationPolicy{
         DirectoryObject: *NewDirectoryObject(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81CertificateProfileBase 
+// WindowsPhone81CertificateProfileBase base Windows Phone 8.1+ certificate profile.
 type WindowsPhone81CertificateProfileBase struct {
     DeviceConfiguration
 }
@@ -121,6 +121,16 @@ func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -161,6 +171,17 @@ func (m *WindowsPhone81CertificateProfileBase) GetKeyStorageProvider()(*KeyStora
     }
     if val != nil {
         return val.(*KeyStorageProviderOption)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsPhone81CertificateProfileBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -236,6 +257,12 @@ func (m *WindowsPhone81CertificateProfileBase) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("renewalThresholdPercentage", m.GetRenewalThresholdPercentage())
         if err != nil {
             return err
@@ -285,6 +312,13 @@ func (m *WindowsPhone81CertificateProfileBase) SetKeyStorageProvider(value *KeyS
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsPhone81CertificateProfileBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *WindowsPhone81CertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
     err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
@@ -314,6 +348,7 @@ type WindowsPhone81CertificateProfileBaseable interface {
     GetCertificateValidityPeriodValue()(*int32)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
     GetKeyStorageProvider()(*KeyStorageProviderOption)
+    GetOdataType()(*string)
     GetRenewalThresholdPercentage()(*int32)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
@@ -321,6 +356,7 @@ type WindowsPhone81CertificateProfileBaseable interface {
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
     SetKeyStorageProvider(value *KeyStorageProviderOption)()
+    SetOdataType(value *string)()
     SetRenewalThresholdPercentage(value *int32)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()

@@ -8,6 +8,8 @@ import (
 // EducationSynchronizationError 
 type EducationSynchronizationError struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationSynchronizationError instantiates a new educationSynchronizationError and sets the default values.
 func NewEducationSynchronizationError()(*EducationSynchronizationError) {

@@ -9,7 +9,7 @@ import (
 type ValidateOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperation
 }
-// NewValidateOperation instantiates a new ValidateOperation and sets the default values.
+// NewValidateOperation instantiates a new validateOperation and sets the default values.
 func NewValidateOperation()(*ValidateOperation) {
     m := &ValidateOperation{
         LongRunningOperation: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewLongRunningOperation(),
@@ -68,6 +68,16 @@ func (m *ValidateOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["warnings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePublicErrorFromDiscriminatorValue)
         if err != nil {
@@ -86,6 +96,17 @@ func (m *ValidateOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ValidateOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetWarnings gets the warnings property value. Set of warnings discovered through validation.
 func (m *ValidateOperation) GetWarnings()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable) {
     val, err := m.GetBackingStore().Get("warnings")
@@ -103,11 +124,24 @@ func (m *ValidateOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetErrors sets the errors property value. Set of errors discovered through validation.
 func (m *ValidateOperation) SetErrors(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)() {
     err := m.GetBackingStore().Set("errors", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ValidateOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -124,7 +158,9 @@ type ValidateOperationable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetErrors()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)
+    GetOdataType()(*string)
     GetWarnings()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)
     SetErrors(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)()
+    SetOdataType(value *string)()
     SetWarnings(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)()
 }

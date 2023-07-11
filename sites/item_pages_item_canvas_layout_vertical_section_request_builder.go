@@ -92,7 +92,10 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Get(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable), nil
 }
-// Patch update the navigation property verticalSection in sites
+// Patch create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sitepage-post-verticalsection?view=graph-rest-1.0
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, requestConfiguration *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -139,7 +142,7 @@ func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property verticalSection in sites
+// ToPatchRequestInformation create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.
 func (m *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerticalSectionable, requestConfiguration *ItemPagesItemCanvasLayoutVerticalSectionRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

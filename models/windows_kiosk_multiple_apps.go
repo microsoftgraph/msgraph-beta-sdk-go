@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskMultipleApps 
+// WindowsKioskMultipleApps the app base class used to identify the application info for the kiosk configuration
 type WindowsKioskMultipleApps struct {
     WindowsKioskAppConfiguration
 }
-// NewWindowsKioskMultipleApps instantiates a new WindowsKioskMultipleApps and sets the default values.
+// NewWindowsKioskMultipleApps instantiates a new windowsKioskMultipleApps and sets the default values.
 func NewWindowsKioskMultipleApps()(*WindowsKioskMultipleApps) {
     m := &WindowsKioskMultipleApps{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
@@ -93,6 +93,16 @@ func (m *WindowsKioskMultipleApps) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["showTaskBar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -114,6 +124,17 @@ func (m *WindowsKioskMultipleApps) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsKioskMultipleApps) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetShowTaskBar gets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
 func (m *WindowsKioskMultipleApps) GetShowTaskBar()(*bool) {
@@ -168,6 +189,12 @@ func (m *WindowsKioskMultipleApps) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("showTaskBar", m.GetShowTaskBar())
         if err != nil {
             return err
@@ -202,6 +229,13 @@ func (m *WindowsKioskMultipleApps) SetDisallowDesktopApps(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsKioskMultipleApps) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetShowTaskBar sets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
 func (m *WindowsKioskMultipleApps) SetShowTaskBar(value *bool)() {
     err := m.GetBackingStore().Set("showTaskBar", value)
@@ -223,11 +257,13 @@ type WindowsKioskMultipleAppsable interface {
     GetAllowAccessToDownloadsFolder()(*bool)
     GetApps()([]WindowsKioskAppBaseable)
     GetDisallowDesktopApps()(*bool)
+    GetOdataType()(*string)
     GetShowTaskBar()(*bool)
     GetStartMenuLayoutXml()([]byte)
     SetAllowAccessToDownloadsFolder(value *bool)()
     SetApps(value []WindowsKioskAppBaseable)()
     SetDisallowDesktopApps(value *bool)()
+    SetOdataType(value *string)()
     SetShowTaskBar(value *bool)()
     SetStartMenuLayoutXml(value []byte)()
 }

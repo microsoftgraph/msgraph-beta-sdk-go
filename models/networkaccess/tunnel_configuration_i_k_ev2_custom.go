@@ -7,8 +7,10 @@ import (
 // TunnelConfigurationIKEv2Custom 
 type TunnelConfigurationIKEv2Custom struct {
     TunnelConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewTunnelConfigurationIKEv2Custom instantiates a new TunnelConfigurationIKEv2Custom and sets the default values.
+// NewTunnelConfigurationIKEv2Custom instantiates a new tunnelConfigurationIKEv2Custom and sets the default values.
 func NewTunnelConfigurationIKEv2Custom()(*TunnelConfigurationIKEv2Custom) {
     m := &TunnelConfigurationIKEv2Custom{
         TunnelConfiguration: *NewTunnelConfiguration(),
@@ -162,7 +164,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetPfsGroup()(*PfsGroup) {
     }
     return nil
 }
-// GetSaLifeTimeSeconds gets the saLifeTimeSeconds property value. The saLifeTimeSeconds property
+// GetSaLifeTimeSeconds gets the saLifeTimeSeconds property value. a standard specifiying Security Association lifetime with recommended values from an RFC standard.
 func (m *TunnelConfigurationIKEv2Custom) GetSaLifeTimeSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("saLifeTimeSeconds")
     if err != nil {
@@ -271,7 +273,7 @@ func (m *TunnelConfigurationIKEv2Custom) SetPfsGroup(value *PfsGroup)() {
         panic(err)
     }
 }
-// SetSaLifeTimeSeconds sets the saLifeTimeSeconds property value. The saLifeTimeSeconds property
+// SetSaLifeTimeSeconds sets the saLifeTimeSeconds property value. a standard specifiying Security Association lifetime with recommended values from an RFC standard.
 func (m *TunnelConfigurationIKEv2Custom) SetSaLifeTimeSeconds(value *int64)() {
     err := m.GetBackingStore().Set("saLifeTimeSeconds", value)
     if err != nil {

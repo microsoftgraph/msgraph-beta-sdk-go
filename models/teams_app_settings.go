@@ -7,8 +7,10 @@ import (
 // TeamsAppSettings 
 type TeamsAppSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewTeamsAppSettings instantiates a new TeamsAppSettings and sets the default values.
+// NewTeamsAppSettings instantiates a new teamsAppSettings and sets the default values.
 func NewTeamsAppSettings()(*TeamsAppSettings) {
     m := &TeamsAppSettings{
         Entity: *NewEntity(),

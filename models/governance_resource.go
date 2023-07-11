@@ -65,6 +65,16 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
@@ -180,6 +190,17 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GovernanceResource) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParent gets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
 func (m *GovernanceResource) GetParent()(GovernanceResourceable) {
@@ -299,6 +320,12 @@ func (m *GovernanceResource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("parent", m.GetParent())
         if err != nil {
             return err
@@ -392,6 +419,13 @@ func (m *GovernanceResource) SetExternalId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GovernanceResource) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParent sets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
 func (m *GovernanceResource) SetParent(value GovernanceResourceable)() {
     err := m.GetBackingStore().Set("parent", value)
@@ -461,6 +495,7 @@ type GovernanceResourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetExternalId()(*string)
+    GetOdataType()(*string)
     GetParent()(GovernanceResourceable)
     GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRegisteredRoot()(*string)
@@ -472,6 +507,7 @@ type GovernanceResourceable interface {
     GetType()(*string)
     SetDisplayName(value *string)()
     SetExternalId(value *string)()
+    SetOdataType(value *string)()
     SetParent(value GovernanceResourceable)()
     SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRegisteredRoot(value *string)()

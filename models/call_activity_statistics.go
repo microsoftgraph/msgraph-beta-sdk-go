@@ -7,8 +7,10 @@ import (
 // CallActivityStatistics 
 type CallActivityStatistics struct {
     ActivityStatistics
+    // The OdataType property
+    OdataType *string
 }
-// NewCallActivityStatistics instantiates a new CallActivityStatistics and sets the default values.
+// NewCallActivityStatistics instantiates a new callActivityStatistics and sets the default values.
 func NewCallActivityStatistics()(*CallActivityStatistics) {
     m := &CallActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),

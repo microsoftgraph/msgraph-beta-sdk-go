@@ -7,8 +7,10 @@ import (
 // IpAddress 
 type IpAddress struct {
     RuleDestination
+    // The OdataType property
+    OdataType *string
 }
-// NewIpAddress instantiates a new IpAddress and sets the default values.
+// NewIpAddress instantiates a new ipAddress and sets the default values.
 func NewIpAddress()(*IpAddress) {
     m := &IpAddress{
         RuleDestination: *NewRuleDestination(),
@@ -36,7 +38,7 @@ func (m *IpAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Defines the IP address used in a destination for a rule.
 func (m *IpAddress) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -61,7 +63,7 @@ func (m *IpAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Defines the IP address used in a destination for a rule.
 func (m *IpAddress) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

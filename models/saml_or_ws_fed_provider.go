@@ -7,8 +7,10 @@ import (
 // SamlOrWsFedProvider 
 type SamlOrWsFedProvider struct {
     IdentityProviderBase
+    // The OdataType property
+    OdataType *string
 }
-// NewSamlOrWsFedProvider instantiates a new SamlOrWsFedProvider and sets the default values.
+// NewSamlOrWsFedProvider instantiates a new samlOrWsFedProvider and sets the default values.
 func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
     m := &SamlOrWsFedProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),

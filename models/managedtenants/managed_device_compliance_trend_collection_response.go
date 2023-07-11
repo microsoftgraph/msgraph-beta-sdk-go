@@ -9,7 +9,7 @@ import (
 type ManagedDeviceComplianceTrendCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagedDeviceComplianceTrendCollectionResponse instantiates a new ManagedDeviceComplianceTrendCollectionResponse and sets the default values.
+// NewManagedDeviceComplianceTrendCollectionResponse instantiates a new managedDeviceComplianceTrendCollectionResponse and sets the default values.
 func NewManagedDeviceComplianceTrendCollectionResponse()(*ManagedDeviceComplianceTrendCollectionResponse) {
     m := &ManagedDeviceComplianceTrendCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

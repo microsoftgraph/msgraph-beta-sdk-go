@@ -106,6 +106,16 @@ func (m *IndustryDataRunActivity) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIndustryDataActivityStatus)
         if err != nil {
@@ -117,6 +127,17 @@ func (m *IndustryDataRunActivity) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IndustryDataRunActivity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *IndustryDataRunActivity) GetStatus()(*IndustryDataActivityStatus) {
@@ -137,6 +158,12 @@ func (m *IndustryDataRunActivity) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err = writer.WriteObjectValue("activity", m.GetActivity())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -171,6 +198,13 @@ func (m *IndustryDataRunActivity) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IndustryDataRunActivity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *IndustryDataRunActivity) SetStatus(value *IndustryDataActivityStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -185,9 +219,11 @@ type IndustryDataRunActivityable interface {
     GetActivity()(IndustryDataActivityable)
     GetBlockingError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetStatus()(*IndustryDataActivityStatus)
     SetActivity(value IndustryDataActivityable)()
     SetBlockingError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetStatus(value *IndustryDataActivityStatus)()
 }

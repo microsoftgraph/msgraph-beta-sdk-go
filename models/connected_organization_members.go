@@ -7,8 +7,10 @@ import (
 // ConnectedOrganizationMembers 
 type ConnectedOrganizationMembers struct {
     UserSet
+    // The OdataType property
+    OdataType *string
 }
-// NewConnectedOrganizationMembers instantiates a new ConnectedOrganizationMembers and sets the default values.
+// NewConnectedOrganizationMembers instantiates a new connectedOrganizationMembers and sets the default values.
 func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {
     m := &ConnectedOrganizationMembers{
         UserSet: *NewUserSet(),

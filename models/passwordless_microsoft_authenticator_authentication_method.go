@@ -8,8 +8,10 @@ import (
 // PasswordlessMicrosoftAuthenticatorAuthenticationMethod 
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
+    // The OdataType property
+    OdataType *string
 }
-// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod) {
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

@@ -8,7 +8,7 @@ import (
 type InboundSharedUserProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInboundSharedUserProfileCollectionResponse instantiates a new InboundSharedUserProfileCollectionResponse and sets the default values.
+// NewInboundSharedUserProfileCollectionResponse instantiates a new inboundSharedUserProfileCollectionResponse and sets the default values.
 func NewInboundSharedUserProfileCollectionResponse()(*InboundSharedUserProfileCollectionResponse) {
     m := &InboundSharedUserProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

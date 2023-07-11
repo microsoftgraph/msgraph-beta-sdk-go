@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingIntegerConstraint 
+// DeviceManagementSettingIntegerConstraint base entity for a constraint
 type DeviceManagementSettingIntegerConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingIntegerConstraint instantiates a new DeviceManagementSettingIntegerConstraint and sets the default values.
+// NewDeviceManagementSettingIntegerConstraint instantiates a new deviceManagementSettingIntegerConstraint and sets the default values.
 func NewDeviceManagementSettingIntegerConstraint()(*DeviceManagementSettingIntegerConstraint) {
     m := &DeviceManagementSettingIntegerConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -44,6 +44,16 @@ func (m *DeviceManagementSettingIntegerConstraint) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaximumValue gets the maximumValue property value. The maximum permitted value
@@ -68,6 +78,17 @@ func (m *DeviceManagementSettingIntegerConstraint) GetMinimumValue()(*int32) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingIntegerConstraint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingIntegerConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.DeviceManagementConstraint.Serialize(writer)
@@ -82,6 +103,12 @@ func (m *DeviceManagementSettingIntegerConstraint) Serialize(writer i878a80d2330
     }
     {
         err = writer.WriteInt32Value("minimumValue", m.GetMinimumValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -102,12 +129,21 @@ func (m *DeviceManagementSettingIntegerConstraint) SetMinimumValue(value *int32)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingIntegerConstraint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceManagementSettingIntegerConstraintable 
 type DeviceManagementSettingIntegerConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMaximumValue()(*int32)
     GetMinimumValue()(*int32)
+    GetOdataType()(*string)
     SetMaximumValue(value *int32)()
     SetMinimumValue(value *int32)()
+    SetOdataType(value *string)()
 }

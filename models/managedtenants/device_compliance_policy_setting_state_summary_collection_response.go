@@ -9,7 +9,7 @@ import (
 type DeviceCompliancePolicySettingStateSummaryCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewDeviceCompliancePolicySettingStateSummaryCollectionResponse instantiates a new DeviceCompliancePolicySettingStateSummaryCollectionResponse and sets the default values.
+// NewDeviceCompliancePolicySettingStateSummaryCollectionResponse instantiates a new deviceCompliancePolicySettingStateSummaryCollectionResponse and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummaryCollectionResponse()(*DeviceCompliancePolicySettingStateSummaryCollectionResponse) {
     m := &DeviceCompliancePolicySettingStateSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // ContentApproval 
 type ContentApproval struct {
     ComplianceChange
+    // The OdataType property
+    OdataType *string
 }
-// NewContentApproval instantiates a new ContentApproval and sets the default values.
+// NewContentApproval instantiates a new contentApproval and sets the default values.
 func NewContentApproval()(*ContentApproval) {
     m := &ContentApproval{
         ComplianceChange: *NewComplianceChange(),

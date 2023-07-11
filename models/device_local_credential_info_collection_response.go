@@ -8,7 +8,7 @@ import (
 type DeviceLocalCredentialInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceLocalCredentialInfoCollectionResponse instantiates a new DeviceLocalCredentialInfoCollectionResponse and sets the default values.
+// NewDeviceLocalCredentialInfoCollectionResponse instantiates a new deviceLocalCredentialInfoCollectionResponse and sets the default values.
 func NewDeviceLocalCredentialInfoCollectionResponse()(*DeviceLocalCredentialInfoCollectionResponse) {
     m := &DeviceLocalCredentialInfoCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

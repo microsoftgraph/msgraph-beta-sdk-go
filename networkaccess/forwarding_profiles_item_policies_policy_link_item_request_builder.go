@@ -18,7 +18,7 @@ type ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters get policies from networkAccess
+// ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters traffic forwarding policies associated with this profile.
 type ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get get policies from networkAccess
+// Get traffic forwarding policies associated with this profile.
 func (m *ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get policies from networkAccess
+// ToGetRequestInformation traffic forwarding policies associated with this profile.
 func (m *ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

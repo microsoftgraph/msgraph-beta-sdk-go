@@ -8,7 +8,7 @@ import (
 type CloudPcOnPremisesConnection struct {
     Entity
 }
-// NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
+// NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
     m := &CloudPcOnPremisesConnection{
         Entity: *NewEntity(),
@@ -167,6 +167,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["organizationalUnit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -290,6 +300,17 @@ func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) 
     }
     if val != nil {
         return val.(*CloudPcManagementService)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcOnPremisesConnection) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -444,6 +465,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("organizationalUnit", m.GetOrganizationalUnit())
         if err != nil {
             return err
@@ -557,6 +584,13 @@ func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementServi
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcOnPremisesConnection) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) SetOrganizationalUnit(value *string)() {
     err := m.GetBackingStore().Set("organizationalUnit", value)
@@ -626,6 +660,7 @@ type CloudPcOnPremisesConnectionable interface {
     GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable)
     GetInUse()(*bool)
     GetManagedBy()(*CloudPcManagementService)
+    GetOdataType()(*string)
     GetOrganizationalUnit()(*string)
     GetResourceGroupId()(*string)
     GetSubnetId()(*string)
@@ -643,6 +678,7 @@ type CloudPcOnPremisesConnectionable interface {
     SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)()
     SetInUse(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
+    SetOdataType(value *string)()
     SetOrganizationalUnit(value *string)()
     SetResourceGroupId(value *string)()
     SetSubnetId(value *string)()

@@ -7,6 +7,8 @@ import (
 // AgreementFileLocalization 
 type AgreementFileLocalization struct {
     AgreementFileProperties
+    // The OdataType property
+    OdataType *string
 }
 // NewAgreementFileLocalization instantiates a new agreementFileLocalization and sets the default values.
 func NewAgreementFileLocalization()(*AgreementFileLocalization) {

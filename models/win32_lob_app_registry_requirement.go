@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppRegistryRequirement 
+// Win32LobAppRegistryRequirement base class to detect a Win32 App
 type Win32LobAppRegistryRequirement struct {
     Win32LobAppRequirement
 }
-// NewWin32LobAppRegistryRequirement instantiates a new Win32LobAppRegistryRequirement and sets the default values.
+// NewWin32LobAppRegistryRequirement instantiates a new win32LobAppRegistryRequirement and sets the default values.
 func NewWin32LobAppRegistryRequirement()(*Win32LobAppRegistryRequirement) {
     m := &Win32LobAppRegistryRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
@@ -76,6 +76,16 @@ func (m *Win32LobAppRegistryRequirement) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["valueName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -91,6 +101,17 @@ func (m *Win32LobAppRegistryRequirement) GetFieldDeserializers()(map[string]func
 // GetKeyPath gets the keyPath property value. The registry key path to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppRegistryRequirement) GetKeyPath()(*string) {
     val, err := m.GetBackingStore().Get("keyPath")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppRegistryRequirement) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -136,6 +157,12 @@ func (m *Win32LobAppRegistryRequirement) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("valueName", m.GetValueName())
         if err != nil {
             return err
@@ -164,6 +191,13 @@ func (m *Win32LobAppRegistryRequirement) SetKeyPath(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppRegistryRequirement) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetValueName sets the valueName property value. The registry value name
 func (m *Win32LobAppRegistryRequirement) SetValueName(value *string)() {
     err := m.GetBackingStore().Set("valueName", value)
@@ -178,9 +212,11 @@ type Win32LobAppRegistryRequirementable interface {
     GetCheck32BitOn64System()(*bool)
     GetDetectionType()(*Win32LobAppRegistryDetectionType)
     GetKeyPath()(*string)
+    GetOdataType()(*string)
     GetValueName()(*string)
     SetCheck32BitOn64System(value *bool)()
     SetDetectionType(value *Win32LobAppRegistryDetectionType)()
     SetKeyPath(value *string)()
+    SetOdataType(value *string)()
     SetValueName(value *string)()
 }

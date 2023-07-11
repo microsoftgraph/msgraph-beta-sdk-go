@@ -7,6 +7,8 @@ import (
 // SecurityBaselineState security baseline state for a device.
 type SecurityBaselineState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSecurityBaselineState instantiates a new securityBaselineState and sets the default values.
 func NewSecurityBaselineState()(*SecurityBaselineState) {

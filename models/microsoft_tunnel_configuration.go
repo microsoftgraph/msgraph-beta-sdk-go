@@ -8,6 +8,8 @@ import (
 // MicrosoftTunnelConfiguration entity that represents a collection of Microsoft Tunnel settings
 type MicrosoftTunnelConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMicrosoftTunnelConfiguration instantiates a new microsoftTunnelConfiguration and sets the default values.
 func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {

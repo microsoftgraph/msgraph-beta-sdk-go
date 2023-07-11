@@ -112,6 +112,16 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -143,6 +153,17 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentResourceRole) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOriginId gets the originId property value. A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
 func (m *AccessPackageAssignmentResourceRole) GetOriginId()(*string) {
@@ -214,6 +235,12 @@ func (m *AccessPackageAssignmentResourceRole) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("originId", m.GetOriginId())
         if err != nil {
             return err
@@ -261,6 +288,13 @@ func (m *AccessPackageAssignmentResourceRole) SetAccessPackageSubject(value Acce
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentResourceRole) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOriginId sets the originId property value. A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
 func (m *AccessPackageAssignmentResourceRole) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
@@ -290,6 +324,7 @@ type AccessPackageAssignmentResourceRoleable interface {
     GetAccessPackageResourceRole()(AccessPackageResourceRoleable)
     GetAccessPackageResourceScope()(AccessPackageResourceScopeable)
     GetAccessPackageSubject()(AccessPackageSubjectable)
+    GetOdataType()(*string)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetStatus()(*string)
@@ -297,6 +332,7 @@ type AccessPackageAssignmentResourceRoleable interface {
     SetAccessPackageResourceRole(value AccessPackageResourceRoleable)()
     SetAccessPackageResourceScope(value AccessPackageResourceScopeable)()
     SetAccessPackageSubject(value AccessPackageSubjectable)()
+    SetOdataType(value *string)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetStatus(value *string)()

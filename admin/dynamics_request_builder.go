@@ -18,7 +18,7 @@ type DynamicsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DynamicsRequestBuilderGetQueryParameters get dynamics from admin
+// DynamicsRequestBuilderGetQueryParameters read the properties and relationships of a adminDynamics object.
 type DynamicsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *DynamicsRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get get dynamics from admin
+// Get read the properties and relationships of a adminDynamics object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/admindynamics-get?view=graph-rest-1.0
 func (m *DynamicsRequestBuilder) Get(ctx context.Context, requestConfiguration *DynamicsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *DynamicsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable), nil
 }
-// Patch update the navigation property dynamics in admin
+// Patch update the properties of a adminDynamics object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/admindynamics-update?view=graph-rest-1.0
 func (m *DynamicsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, requestConfiguration *DynamicsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *DynamicsRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get dynamics from admin
+// ToGetRequestInformation read the properties and relationships of a adminDynamics object.
 func (m *DynamicsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DynamicsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *DynamicsRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property dynamics in admin
+// ToPatchRequestInformation update the properties of a adminDynamics object.
 func (m *DynamicsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminDynamicsable, requestConfiguration *DynamicsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

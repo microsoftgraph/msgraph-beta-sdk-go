@@ -9,7 +9,7 @@ import (
 type Organization struct {
     DirectoryObject
 }
-// NewOrganization instantiates a new Organization and sets the default values.
+// NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),
@@ -358,6 +358,16 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onPremisesLastPasswordSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -580,6 +590,17 @@ func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
     }
     if val != nil {
         return val.(*MdmAuthority)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Organization) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -881,6 +902,12 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("onPremisesLastPasswordSyncDateTime", m.GetOnPremisesLastPasswordSyncDateTime())
         if err != nil {
             return err
@@ -1103,6 +1130,13 @@ func (m *Organization) SetMobileDeviceManagementAuthority(value *MdmAuthority)()
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Organization) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesLastPasswordSyncDateTime sets the onPremisesLastPasswordSyncDateTime property value. The last time a password sync request was received for the tenant.
 func (m *Organization) SetOnPremisesLastPasswordSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("onPremisesLastPasswordSyncDateTime", value)
@@ -1235,6 +1269,7 @@ type Organizationable interface {
     GetIsMultipleDataLocationsForServicesEnabled()(*bool)
     GetMarketingNotificationEmails()([]string)
     GetMobileDeviceManagementAuthority()(*MdmAuthority)
+    GetOdataType()(*string)
     GetOnPremisesLastPasswordSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesSyncEnabled()(*bool)
@@ -1267,6 +1302,7 @@ type Organizationable interface {
     SetIsMultipleDataLocationsForServicesEnabled(value *bool)()
     SetMarketingNotificationEmails(value []string)()
     SetMobileDeviceManagementAuthority(value *MdmAuthority)()
+    SetOdataType(value *string)()
     SetOnPremisesLastPasswordSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesSyncEnabled(value *bool)()

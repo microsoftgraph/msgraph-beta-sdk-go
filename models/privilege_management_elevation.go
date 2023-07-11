@@ -209,6 +209,16 @@ func (m *PrivilegeManagementElevation) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["productName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -309,6 +319,17 @@ func (m *PrivilegeManagementElevation) GetInternalName()(*string) {
 // GetJustification gets the justification property value. The justification to elevate the application. This is an input by the user when the privilegeManagementElevationType is of type userConfirmedElevation or support approved elevation. This will be null in all other scenarios. The length is capped at 256 char, enforced on the client side. Example: `To install debug tool.`.
 func (m *PrivilegeManagementElevation) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegeManagementElevation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -441,6 +462,12 @@ func (m *PrivilegeManagementElevation) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("productName", m.GetProductName())
         if err != nil {
             return err
@@ -551,6 +578,13 @@ func (m *PrivilegeManagementElevation) SetJustification(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegeManagementElevation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProductName sets the productName property value. The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`
 func (m *PrivilegeManagementElevation) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
@@ -595,6 +629,7 @@ type PrivilegeManagementElevationable interface {
     GetHash()(*string)
     GetInternalName()(*string)
     GetJustification()(*string)
+    GetOdataType()(*string)
     GetProductName()(*string)
     GetResult()(*int32)
     GetUpn()(*string)
@@ -611,6 +646,7 @@ type PrivilegeManagementElevationable interface {
     SetHash(value *string)()
     SetInternalName(value *string)()
     SetJustification(value *string)()
+    SetOdataType(value *string)()
     SetProductName(value *string)()
     SetResult(value *int32)()
     SetUpn(value *string)()

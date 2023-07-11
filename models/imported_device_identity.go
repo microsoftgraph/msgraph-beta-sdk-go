@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedDeviceIdentity 
+// ImportedDeviceIdentity the importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
 type ImportedDeviceIdentity struct {
     Entity
 }
-// NewImportedDeviceIdentity instantiates a new ImportedDeviceIdentity and sets the default values.
+// NewImportedDeviceIdentity instantiates a new importedDeviceIdentity and sets the default values.
 func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     m := &ImportedDeviceIdentity{
         Entity: *NewEntity(),
@@ -144,6 +144,16 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePlatform)
         if err != nil {
@@ -197,6 +207,17 @@ func (m *ImportedDeviceIdentity) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ImportedDeviceIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -261,6 +282,12 @@ func (m *ImportedDeviceIdentity) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatform() != nil {
         cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
@@ -319,6 +346,13 @@ func (m *ImportedDeviceIdentity) SetLastModifiedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ImportedDeviceIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlatform sets the platform property value. The platform property
 func (m *ImportedDeviceIdentity) SetPlatform(value *Platform)() {
     err := m.GetBackingStore().Set("platform", value)
@@ -337,6 +371,7 @@ type ImportedDeviceIdentityable interface {
     GetImportedDeviceIdentityType()(*ImportedDeviceIdentityType)
     GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPlatform()(*Platform)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -345,5 +380,6 @@ type ImportedDeviceIdentityable interface {
     SetImportedDeviceIdentityType(value *ImportedDeviceIdentityType)()
     SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPlatform(value *Platform)()
 }

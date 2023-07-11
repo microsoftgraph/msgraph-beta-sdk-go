@@ -8,7 +8,7 @@ import (
 type Fido2AuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewFido2AuthenticationMethodConfiguration instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
+// NewFido2AuthenticationMethodConfiguration instantiates a new fido2AuthenticationMethodConfiguration and sets the default values.
 func NewFido2AuthenticationMethodConfiguration()(*Fido2AuthenticationMethodConfiguration) {
     m := &Fido2AuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -70,6 +70,16 @@ func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -116,6 +126,17 @@ func (m *Fido2AuthenticationMethodConfiguration) GetKeyRestrictions()(Fido2KeyRe
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Fido2AuthenticationMethodConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.AuthenticationMethodConfiguration.Serialize(writer)
@@ -152,6 +173,12 @@ func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -182,6 +209,13 @@ func (m *Fido2AuthenticationMethodConfiguration) SetKeyRestrictions(value Fido2K
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Fido2AuthenticationMethodConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Fido2AuthenticationMethodConfigurationable 
 type Fido2AuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
@@ -190,8 +224,10 @@ type Fido2AuthenticationMethodConfigurationable interface {
     GetIsAttestationEnforced()(*bool)
     GetIsSelfServiceRegistrationAllowed()(*bool)
     GetKeyRestrictions()(Fido2KeyRestrictionsable)
+    GetOdataType()(*string)
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
     SetIsAttestationEnforced(value *bool)()
     SetIsSelfServiceRegistrationAllowed(value *bool)()
     SetKeyRestrictions(value Fido2KeyRestrictionsable)()
+    SetOdataType(value *string)()
 }

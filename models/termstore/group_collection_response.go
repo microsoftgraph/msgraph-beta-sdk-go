@@ -9,7 +9,7 @@ import (
 type GroupCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewGroupCollectionResponse instantiates a new GroupCollectionResponse and sets the default values.
+// NewGroupCollectionResponse instantiates a new groupCollectionResponse and sets the default values.
 func NewGroupCollectionResponse()(*GroupCollectionResponse) {
     m := &GroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

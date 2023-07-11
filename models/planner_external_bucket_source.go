@@ -7,8 +7,10 @@ import (
 // PlannerExternalBucketSource 
 type PlannerExternalBucketSource struct {
     PlannerBucketCreation
+    // The OdataType property
+    OdataType *string
 }
-// NewPlannerExternalBucketSource instantiates a new PlannerExternalBucketSource and sets the default values.
+// NewPlannerExternalBucketSource instantiates a new plannerExternalBucketSource and sets the default values.
 func NewPlannerExternalBucketSource()(*PlannerExternalBucketSource) {
     m := &PlannerExternalBucketSource{
         PlannerBucketCreation: *NewPlannerBucketCreation(),

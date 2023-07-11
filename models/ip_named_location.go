@@ -7,8 +7,10 @@ import (
 // IpNamedLocation 
 type IpNamedLocation struct {
     NamedLocation
+    // The OdataType property
+    OdataType *string
 }
-// NewIpNamedLocation instantiates a new IpNamedLocation and sets the default values.
+// NewIpNamedLocation instantiates a new ipNamedLocation and sets the default values.
 func NewIpNamedLocation()(*IpNamedLocation) {
     m := &IpNamedLocation{
         NamedLocation: *NewNamedLocation(),

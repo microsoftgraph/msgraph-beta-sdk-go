@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionNetworkLearningSummary 
+// WindowsInformationProtectionNetworkLearningSummary windows Information Protection Network learning Summary entity.
 type WindowsInformationProtectionNetworkLearningSummary struct {
     Entity
 }
-// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new WindowsInformationProtectionNetworkLearningSummary and sets the default values.
+// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformationProtectionNetworkLearningSummary) {
     m := &WindowsInformationProtectionNetworkLearningSummary{
         Entity: *NewEntity(),
@@ -43,6 +43,16 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserialize
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,6 +64,17 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserialize
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionNetworkLearningSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUrl gets the url property value. Website url
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
@@ -79,6 +100,12 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i8
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
             return err
@@ -89,6 +116,13 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i8
 // SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("deviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsInformationProtectionNetworkLearningSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -105,7 +139,9 @@ type WindowsInformationProtectionNetworkLearningSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceCount()(*int32)
+    GetOdataType()(*string)
     GetUrl()(*string)
     SetDeviceCount(value *int32)()
+    SetOdataType(value *string)()
     SetUrl(value *string)()
 }

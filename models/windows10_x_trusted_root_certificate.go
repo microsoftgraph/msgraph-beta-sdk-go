@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10XTrustedRootCertificate 
+// Windows10XTrustedRootCertificate windows X Trusted Root Certificate configuration profile
 type Windows10XTrustedRootCertificate struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XTrustedRootCertificate instantiates a new Windows10XTrustedRootCertificate and sets the default values.
+// NewWindows10XTrustedRootCertificate instantiates a new windows10XTrustedRootCertificate and sets the default values.
 func NewWindows10XTrustedRootCertificate()(*Windows10XTrustedRootCertificate) {
     m := &Windows10XTrustedRootCertificate{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
@@ -66,6 +66,16 @@ func (m *Windows10XTrustedRootCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["trustedRootCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -77,6 +87,17 @@ func (m *Windows10XTrustedRootCertificate) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Windows10XTrustedRootCertificate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *Windows10XTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
@@ -109,6 +130,12 @@ func (m *Windows10XTrustedRootCertificate) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("trustedRootCertificate", m.GetTrustedRootCertificate())
         if err != nil {
             return err
@@ -130,6 +157,13 @@ func (m *Windows10XTrustedRootCertificate) SetDestinationStore(value *Certificat
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Windows10XTrustedRootCertificate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrustedRootCertificate sets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *Windows10XTrustedRootCertificate) SetTrustedRootCertificate(value []byte)() {
     err := m.GetBackingStore().Set("trustedRootCertificate", value)
@@ -143,8 +177,10 @@ type Windows10XTrustedRootCertificateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCertFileName()(*string)
     GetDestinationStore()(*CertificateDestinationStore)
+    GetOdataType()(*string)
     GetTrustedRootCertificate()([]byte)
     SetCertFileName(value *string)()
     SetDestinationStore(value *CertificateDestinationStore)()
+    SetOdataType(value *string)()
     SetTrustedRootCertificate(value []byte)()
 }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingAppConstraint 
+// DeviceManagementSettingAppConstraint base entity for a constraint
 type DeviceManagementSettingAppConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingAppConstraint instantiates a new DeviceManagementSettingAppConstraint and sets the default values.
+// NewDeviceManagementSettingAppConstraint instantiates a new deviceManagementSettingAppConstraint and sets the default values.
 func NewDeviceManagementSettingAppConstraint()(*DeviceManagementSettingAppConstraint) {
     m := &DeviceManagementSettingAppConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -24,6 +24,16 @@ func CreateDeviceManagementSettingAppConstraintFromDiscriminatorValue(parseNode 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingAppConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["supportedTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -42,6 +52,17 @@ func (m *DeviceManagementSettingAppConstraint) GetFieldDeserializers()(map[strin
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingAppConstraint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSupportedTypes gets the supportedTypes property value. Acceptable app types to allow for this setting
 func (m *DeviceManagementSettingAppConstraint) GetSupportedTypes()([]string) {
     val, err := m.GetBackingStore().Get("supportedTypes")
@@ -59,6 +80,12 @@ func (m *DeviceManagementSettingAppConstraint) Serialize(writer i878a80d2330e89d
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSupportedTypes() != nil {
         err = writer.WriteCollectionOfStringValues("supportedTypes", m.GetSupportedTypes())
         if err != nil {
@@ -66,6 +93,13 @@ func (m *DeviceManagementSettingAppConstraint) Serialize(writer i878a80d2330e89d
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingAppConstraint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportedTypes sets the supportedTypes property value. Acceptable app types to allow for this setting
 func (m *DeviceManagementSettingAppConstraint) SetSupportedTypes(value []string)() {
@@ -78,6 +112,8 @@ func (m *DeviceManagementSettingAppConstraint) SetSupportedTypes(value []string)
 type DeviceManagementSettingAppConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSupportedTypes()([]string)
+    SetOdataType(value *string)()
     SetSupportedTypes(value []string)()
 }

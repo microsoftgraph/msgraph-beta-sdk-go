@@ -8,7 +8,7 @@ import (
 type CloudPcAuditEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcAuditEventCollectionResponse instantiates a new CloudPcAuditEventCollectionResponse and sets the default values.
+// NewCloudPcAuditEventCollectionResponse instantiates a new cloudPcAuditEventCollectionResponse and sets the default values.
 func NewCloudPcAuditEventCollectionResponse()(*CloudPcAuditEventCollectionResponse) {
     m := &CloudPcAuditEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

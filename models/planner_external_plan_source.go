@@ -7,8 +7,10 @@ import (
 // PlannerExternalPlanSource 
 type PlannerExternalPlanSource struct {
     PlannerPlanCreation
+    // The OdataType property
+    OdataType *string
 }
-// NewPlannerExternalPlanSource instantiates a new PlannerExternalPlanSource and sets the default values.
+// NewPlannerExternalPlanSource instantiates a new plannerExternalPlanSource and sets the default values.
 func NewPlannerExternalPlanSource()(*PlannerExternalPlanSource) {
     m := &PlannerExternalPlanSource{
         PlannerPlanCreation: *NewPlannerPlanCreation(),

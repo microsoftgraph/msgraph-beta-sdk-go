@@ -7,8 +7,10 @@ import (
 // IpSubnet 
 type IpSubnet struct {
     RuleDestination
+    // The OdataType property
+    OdataType *string
 }
-// NewIpSubnet instantiates a new IpSubnet and sets the default values.
+// NewIpSubnet instantiates a new ipSubnet and sets the default values.
 func NewIpSubnet()(*IpSubnet) {
     m := &IpSubnet{
         RuleDestination: *NewRuleDestination(),
@@ -36,7 +38,7 @@ func (m *IpSubnet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Defines the IP address of the subset used in a destination for a rule.
 func (m *IpSubnet) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -61,7 +63,7 @@ func (m *IpSubnet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Defines the IP address of the subset used in a destination for a rule.
 func (m *IpSubnet) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

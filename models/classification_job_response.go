@@ -7,8 +7,10 @@ import (
 // ClassificationJobResponse 
 type ClassificationJobResponse struct {
     JobResponseBase
+    // The OdataType property
+    OdataType *string
 }
-// NewClassificationJobResponse instantiates a new ClassificationJobResponse and sets the default values.
+// NewClassificationJobResponse instantiates a new classificationJobResponse and sets the default values.
 func NewClassificationJobResponse()(*ClassificationJobResponse) {
     m := &ClassificationJobResponse{
         JobResponseBase: *NewJobResponseBase(),

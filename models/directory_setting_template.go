@@ -8,7 +8,7 @@ import (
 type DirectorySettingTemplate struct {
     DirectoryObject
 }
-// NewDirectorySettingTemplate instantiates a new DirectorySettingTemplate and sets the default values.
+// NewDirectorySettingTemplate instantiates a new directorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
@@ -66,6 +66,16 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingTemplateValueFromDiscriminatorValue)
         if err != nil {
@@ -83,6 +93,17 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectorySettingTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
 func (m *DirectorySettingTemplate) GetValues()([]SettingTemplateValueable) {
@@ -109,6 +130,12 @@ func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -141,6 +168,13 @@ func (m *DirectorySettingTemplate) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectorySettingTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
 func (m *DirectorySettingTemplate) SetValues(value []SettingTemplateValueable)() {
     err := m.GetBackingStore().Set("values", value)
@@ -154,8 +188,10 @@ type DirectorySettingTemplateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetValues()([]SettingTemplateValueable)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetValues(value []SettingTemplateValueable)()
 }

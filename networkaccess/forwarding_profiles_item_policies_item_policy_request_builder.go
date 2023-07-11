@@ -11,7 +11,7 @@ import (
 type ForwardingProfilesItemPoliciesItemPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetQueryParameters get policy from networkAccess
+// ForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetQueryParameters policy.
 type ForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewForwardingProfilesItemPoliciesItemPolicyRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewForwardingProfilesItemPoliciesItemPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get policy from networkAccess
+// Get policy.
 func (m *ForwardingProfilesItemPoliciesItemPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Policyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ForwardingProfilesItemPoliciesItemPolicyRequestBuilder) Get(ctx context
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Policyable), nil
 }
-// ToGetRequestInformation get policy from networkAccess
+// ToGetRequestInformation policy.
 func (m *ForwardingProfilesItemPoliciesItemPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

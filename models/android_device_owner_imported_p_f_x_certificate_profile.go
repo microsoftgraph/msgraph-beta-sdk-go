@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerImportedPFXCertificateProfile 
+// AndroidDeviceOwnerImportedPFXCertificateProfile android Device Owner PFX Import certificate profile
 type AndroidDeviceOwnerImportedPFXCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
 }
-// NewAndroidDeviceOwnerImportedPFXCertificateProfile instantiates a new AndroidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
+// NewAndroidDeviceOwnerImportedPFXCertificateProfile instantiates a new androidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
 func NewAndroidDeviceOwnerImportedPFXCertificateProfile()(*AndroidDeviceOwnerImportedPFXCertificateProfile) {
     m := &AndroidDeviceOwnerImportedPFXCertificateProfile{
         AndroidDeviceOwnerCertificateProfileBase: *NewAndroidDeviceOwnerCertificateProfileBase(),

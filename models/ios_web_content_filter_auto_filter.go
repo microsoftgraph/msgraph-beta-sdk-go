@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosWebContentFilterAutoFilter 
+// IosWebContentFilterAutoFilter represents an iOS Web Content Filter setting base type. An empty and abstract base. Caller should use one of derived types for configurations.
 type IosWebContentFilterAutoFilter struct {
     IosWebContentFilterBase
+    // The OdataType property
+    OdataType *string
 }
-// NewIosWebContentFilterAutoFilter instantiates a new IosWebContentFilterAutoFilter and sets the default values.
+// NewIosWebContentFilterAutoFilter instantiates a new iosWebContentFilterAutoFilter and sets the default values.
 func NewIosWebContentFilterAutoFilter()(*IosWebContentFilterAutoFilter) {
     m := &IosWebContentFilterAutoFilter{
         IosWebContentFilterBase: *NewIosWebContentFilterBase(),

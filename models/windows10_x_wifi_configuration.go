@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10XWifiConfiguration 
+// Windows10XWifiConfiguration windows X WifiXml configuration profile
 type Windows10XWifiConfiguration struct {
     DeviceManagementResourceAccessProfileBase
+    // The OdataType property
+    OdataType *string
 }
-// NewWindows10XWifiConfiguration instantiates a new Windows10XWifiConfiguration and sets the default values.
+// NewWindows10XWifiConfiguration instantiates a new windows10XWifiConfiguration and sets the default values.
 func NewWindows10XWifiConfiguration()(*Windows10XWifiConfiguration) {
     m := &Windows10XWifiConfiguration{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),

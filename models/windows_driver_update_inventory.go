@@ -148,6 +148,16 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["releaseDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -184,6 +194,17 @@ func (m *WindowsDriverUpdateInventory) GetManufacturer()(*string) {
 // GetName gets the name property value. The name of the driver.
 func (m *WindowsDriverUpdateInventory) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsDriverUpdateInventory) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -265,6 +286,12 @@ func (m *WindowsDriverUpdateInventory) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("releaseDateTime", m.GetReleaseDateTime())
         if err != nil {
             return err
@@ -327,6 +354,13 @@ func (m *WindowsDriverUpdateInventory) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsDriverUpdateInventory) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReleaseDateTime sets the releaseDateTime property value. The release date time of the driver.
 func (m *WindowsDriverUpdateInventory) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("releaseDateTime", value)
@@ -352,6 +386,7 @@ type WindowsDriverUpdateInventoryable interface {
     GetDriverClass()(*string)
     GetManufacturer()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetVersion()(*string)
     SetApplicableDeviceCount(value *int32)()
@@ -361,6 +396,7 @@ type WindowsDriverUpdateInventoryable interface {
     SetDriverClass(value *string)()
     SetManufacturer(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetVersion(value *string)()
 }

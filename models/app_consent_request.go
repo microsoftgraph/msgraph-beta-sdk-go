@@ -85,6 +85,16 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["pendingScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppConsentRequestScopeFromDiscriminatorValue)
         if err != nil {
@@ -118,6 +128,17 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AppConsentRequest) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
 func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScopeable) {
@@ -161,6 +182,12 @@ func (m *AppConsentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err = writer.WriteStringValue("consentType", m.GetConsentType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -212,6 +239,13 @@ func (m *AppConsentRequest) SetConsentType(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AppConsentRequest) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
 func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScopeable)() {
     err := m.GetBackingStore().Set("pendingScopes", value)
@@ -233,11 +267,13 @@ type AppConsentRequestable interface {
     GetAppDisplayName()(*string)
     GetAppId()(*string)
     GetConsentType()(*string)
+    GetOdataType()(*string)
     GetPendingScopes()([]AppConsentRequestScopeable)
     GetUserConsentRequests()([]UserConsentRequestable)
     SetAppDisplayName(value *string)()
     SetAppId(value *string)()
     SetConsentType(value *string)()
+    SetOdataType(value *string)()
     SetPendingScopes(value []AppConsentRequestScopeable)()
     SetUserConsentRequests(value []UserConsentRequestable)()
 }

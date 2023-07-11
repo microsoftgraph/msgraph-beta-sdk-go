@@ -11,7 +11,7 @@ import (
 type ConnectivityBranchesItemForwardingProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityBranchesItemForwardingProfilesRequestBuilderGetQueryParameters get forwardingProfiles from networkAccess
+// ConnectivityBranchesItemForwardingProfilesRequestBuilderGetQueryParameters retrieve a list of traffic forwarding profiles associated with a branch.
 type ConnectivityBranchesItemForwardingProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewConnectivityBranchesItemForwardingProfilesRequestBuilder(rawUrl string, 
 func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) Count()(*ConnectivityBranchesItemForwardingProfilesCountRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get forwardingProfiles from networkAccess
+// Get retrieve a list of traffic forwarding profiles associated with a branch.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-list-forwardingprofiles?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) Post(ctx cont
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable), nil
 }
-// ToGetRequestInformation get forwardingProfiles from networkAccess
+// ToGetRequestInformation retrieve a list of traffic forwarding profiles associated with a branch.
 func (m *ConnectivityBranchesItemForwardingProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

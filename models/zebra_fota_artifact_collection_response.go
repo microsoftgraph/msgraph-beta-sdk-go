@@ -8,7 +8,7 @@ import (
 type ZebraFotaArtifactCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewZebraFotaArtifactCollectionResponse instantiates a new ZebraFotaArtifactCollectionResponse and sets the default values.
+// NewZebraFotaArtifactCollectionResponse instantiates a new zebraFotaArtifactCollectionResponse and sets the default values.
 func NewZebraFotaArtifactCollectionResponse()(*ZebraFotaArtifactCollectionResponse) {
     m := &ZebraFotaArtifactCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

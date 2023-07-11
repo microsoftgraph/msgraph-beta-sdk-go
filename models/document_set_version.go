@@ -8,8 +8,10 @@ import (
 // DocumentSetVersion 
 type DocumentSetVersion struct {
     ListItemVersion
+    // The OdataType property
+    OdataType *string
 }
-// NewDocumentSetVersion instantiates a new DocumentSetVersion and sets the default values.
+// NewDocumentSetVersion instantiates a new documentSetVersion and sets the default values.
 func NewDocumentSetVersion()(*DocumentSetVersion) {
     m := &DocumentSetVersion{
         ListItemVersion: *NewListItemVersion(),

@@ -9,7 +9,7 @@ import (
 type InboundFlowCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewInboundFlowCollectionResponse instantiates a new InboundFlowCollectionResponse and sets the default values.
+// NewInboundFlowCollectionResponse instantiates a new inboundFlowCollectionResponse and sets the default values.
 func NewInboundFlowCollectionResponse()(*InboundFlowCollectionResponse) {
     m := &InboundFlowCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

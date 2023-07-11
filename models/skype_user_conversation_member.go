@@ -7,8 +7,10 @@ import (
 // SkypeUserConversationMember 
 type SkypeUserConversationMember struct {
     ConversationMember
+    // The OdataType property
+    OdataType *string
 }
-// NewSkypeUserConversationMember instantiates a new SkypeUserConversationMember and sets the default values.
+// NewSkypeUserConversationMember instantiates a new skypeUserConversationMember and sets the default values.
 func NewSkypeUserConversationMember()(*SkypeUserConversationMember) {
     m := &SkypeUserConversationMember{
         ConversationMember: *NewConversationMember(),

@@ -8,7 +8,7 @@ import (
 type PlannerRoster struct {
     Entity
 }
-// NewPlannerRoster instantiates a new PlannerRoster and sets the default values.
+// NewPlannerRoster instantiates a new plannerRoster and sets the default values.
 func NewPlannerRoster()(*PlannerRoster) {
     m := &PlannerRoster{
         Entity: *NewEntity(),
@@ -35,6 +35,16 @@ func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 }
             }
             m.SetMembers(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -67,6 +77,17 @@ func (m *PlannerRoster) GetMembers()([]PlannerRosterMemberable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerRoster) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPlans gets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) GetPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("plans")
@@ -96,6 +117,12 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
@@ -117,6 +144,13 @@ func (m *PlannerRoster) SetMembers(value []PlannerRosterMemberable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerRoster) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlans sets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) SetPlans(value []PlannerPlanable)() {
     err := m.GetBackingStore().Set("plans", value)
@@ -129,7 +163,9 @@ type PlannerRosterable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMembers()([]PlannerRosterMemberable)
+    GetOdataType()(*string)
     GetPlans()([]PlannerPlanable)
     SetMembers(value []PlannerRosterMemberable)()
+    SetOdataType(value *string)()
     SetPlans(value []PlannerPlanable)()
 }

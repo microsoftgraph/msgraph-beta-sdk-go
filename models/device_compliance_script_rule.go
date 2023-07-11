@@ -10,7 +10,7 @@ type DeviceComplianceScriptRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceComplianceScriptRule instantiates a new DeviceComplianceScriptRule and sets the default values.
+// NewDeviceComplianceScriptRule instantiates a new deviceComplianceScriptRule and sets the default values.
 func NewDeviceComplianceScriptRule()(*DeviceComplianceScriptRule) {
     m := &DeviceComplianceScriptRule{
     }

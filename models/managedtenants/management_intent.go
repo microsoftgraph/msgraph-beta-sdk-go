@@ -70,6 +70,16 @@ func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsGlobal gets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
@@ -91,6 +101,17 @@ func (m *ManagementIntent) GetManagementTemplates()([]ManagementTemplateDetailed
     }
     if val != nil {
         return val.([]ManagementTemplateDetailedInfoable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementIntent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -124,6 +145,12 @@ func (m *ManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The display name for the management intent. Optional. Read-only.
@@ -147,6 +174,13 @@ func (m *ManagementIntent) SetManagementTemplates(value []ManagementTemplateDeta
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementIntent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ManagementIntentable 
 type ManagementIntentable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
@@ -154,7 +188,9 @@ type ManagementIntentable interface {
     GetDisplayName()(*string)
     GetIsGlobal()(*bool)
     GetManagementTemplates()([]ManagementTemplateDetailedInfoable)
+    GetOdataType()(*string)
     SetDisplayName(value *string)()
     SetIsGlobal(value *bool)()
     SetManagementTemplates(value []ManagementTemplateDetailedInfoable)()
+    SetOdataType(value *string)()
 }

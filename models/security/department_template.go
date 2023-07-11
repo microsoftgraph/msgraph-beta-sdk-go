@@ -7,8 +7,10 @@ import (
 // DepartmentTemplate 
 type DepartmentTemplate struct {
     FilePlanDescriptorTemplate
+    // The OdataType property
+    OdataType *string
 }
-// NewDepartmentTemplate instantiates a new DepartmentTemplate and sets the default values.
+// NewDepartmentTemplate instantiates a new departmentTemplate and sets the default values.
 func NewDepartmentTemplate()(*DepartmentTemplate) {
     m := &DepartmentTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

@@ -9,7 +9,7 @@ import (
 type PrivilegedOperationEvent struct {
     Entity
 }
-// NewPrivilegedOperationEvent instantiates a new PrivilegedOperationEvent and sets the default values.
+// NewPrivilegedOperationEvent instantiates a new privilegedOperationEvent and sets the default values.
 func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),
@@ -83,6 +83,16 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a
         }
         if val != nil {
             m.SetExpirationDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -197,6 +207,17 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegedOperationEvent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReferenceKey gets the referenceKey property value. The referenceKey property
 func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
@@ -344,6 +365,12 @@ func (m *PrivilegedOperationEvent) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("referenceKey", m.GetReferenceKey())
         if err != nil {
             return err
@@ -432,6 +459,13 @@ func (m *PrivilegedOperationEvent) SetExpirationDateTime(value *i336074805fc8539
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegedOperationEvent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReferenceKey sets the referenceKey property value. The referenceKey property
 func (m *PrivilegedOperationEvent) SetReferenceKey(value *string)() {
     err := m.GetBackingStore().Set("referenceKey", value)
@@ -516,6 +550,7 @@ type PrivilegedOperationEventable interface {
     GetAdditionalInformation()(*string)
     GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetReferenceKey()(*string)
     GetReferenceSystem()(*string)
     GetRequestorId()(*string)
@@ -530,6 +565,7 @@ type PrivilegedOperationEventable interface {
     SetAdditionalInformation(value *string)()
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetReferenceKey(value *string)()
     SetReferenceSystem(value *string)()
     SetRequestorId(value *string)()

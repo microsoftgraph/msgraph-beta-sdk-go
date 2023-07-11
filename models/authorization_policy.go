@@ -9,7 +9,7 @@ import (
 type AuthorizationPolicy struct {
     PolicyBase
 }
-// NewAuthorizationPolicy instantiates a new AuthorizationPolicy and sets the default values.
+// NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {
     m := &AuthorizationPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -236,6 +236,16 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["permissionGrantPolicyIdsAssignedToDefaultUserRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -262,6 +272,17 @@ func (m *AuthorizationPolicy) GetGuestUserRoleId()(*i561e97a8befe7661a44c8f54600
     }
     if val != nil {
         return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthorizationPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -349,6 +370,12 @@ func (m *AuthorizationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissionGrantPolicyIdsAssignedToDefaultUserRole() != nil {
         err = writer.WriteCollectionOfStringValues("permissionGrantPolicyIdsAssignedToDefaultUserRole", m.GetPermissionGrantPolicyIdsAssignedToDefaultUserRole())
         if err != nil {
@@ -427,6 +454,13 @@ func (m *AuthorizationPolicy) SetGuestUserRoleId(value *i561e97a8befe7661a44c8f5
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthorizationPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionGrantPolicyIdsAssignedToDefaultUserRole sets the permissionGrantPolicyIdsAssignedToDefaultUserRole property value. Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 func (m *AuthorizationPolicy) SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(value []string)() {
     err := m.GetBackingStore().Set("permissionGrantPolicyIdsAssignedToDefaultUserRole", value)
@@ -448,6 +482,7 @@ type AuthorizationPolicyable interface {
     GetDefaultUserRolePermissions()(DefaultUserRolePermissionsable)
     GetEnabledPreviewFeatures()([]string)
     GetGuestUserRoleId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetOdataType()(*string)
     GetPermissionGrantPolicyIdsAssignedToDefaultUserRole()([]string)
     SetAllowedToSignUpEmailBasedSubscriptions(value *bool)()
     SetAllowedToUseSSPR(value *bool)()
@@ -459,5 +494,6 @@ type AuthorizationPolicyable interface {
     SetDefaultUserRolePermissions(value DefaultUserRolePermissionsable)()
     SetEnabledPreviewFeatures(value []string)()
     SetGuestUserRoleId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetOdataType(value *string)()
     SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(value []string)()
 }

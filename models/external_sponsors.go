@@ -7,8 +7,10 @@ import (
 // ExternalSponsors 
 type ExternalSponsors struct {
     UserSet
+    // The OdataType property
+    OdataType *string
 }
-// NewExternalSponsors instantiates a new ExternalSponsors and sets the default values.
+// NewExternalSponsors instantiates a new externalSponsors and sets the default values.
 func NewExternalSponsors()(*ExternalSponsors) {
     m := &ExternalSponsors{
         UserSet: *NewUserSet(),

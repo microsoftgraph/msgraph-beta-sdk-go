@@ -8,7 +8,7 @@ import (
 type Office365ServicesUserCounts struct {
     Entity
 }
-// NewOffice365ServicesUserCounts instantiates a new Office365ServicesUserCounts and sets the default values.
+// NewOffice365ServicesUserCounts instantiates a new office365ServicesUserCounts and sets the default values.
 func NewOffice365ServicesUserCounts()(*Office365ServicesUserCounts) {
     m := &Office365ServicesUserCounts{
         Entity: *NewEntity(),
@@ -61,6 +61,16 @@ func (m *Office365ServicesUserCounts) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetExchangeInactive(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -205,6 +215,17 @@ func (m *Office365ServicesUserCounts) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Office365ServicesUserCounts) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOffice365Active gets the office365Active property value. The number of active users on Microsoft 365.
 func (m *Office365ServicesUserCounts) GetOffice365Active()(*int64) {
@@ -379,6 +400,12 @@ func (m *Office365ServicesUserCounts) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("office365Active", m.GetOffice365Active())
         if err != nil {
             return err
@@ -474,6 +501,13 @@ func (m *Office365ServicesUserCounts) SetExchangeActive(value *int64)() {
 // SetExchangeInactive sets the exchangeInactive property value. The number of inactive users on Exchange.
 func (m *Office365ServicesUserCounts) SetExchangeInactive(value *int64)() {
     err := m.GetBackingStore().Set("exchangeInactive", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Office365ServicesUserCounts) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -582,6 +616,7 @@ type Office365ServicesUserCountsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExchangeActive()(*int64)
     GetExchangeInactive()(*int64)
+    GetOdataType()(*string)
     GetOffice365Active()(*int64)
     GetOffice365Inactive()(*int64)
     GetOneDriveActive()(*int64)
@@ -598,6 +633,7 @@ type Office365ServicesUserCountsable interface {
     GetYammerInactive()(*int64)
     SetExchangeActive(value *int64)()
     SetExchangeInactive(value *int64)()
+    SetOdataType(value *string)()
     SetOffice365Active(value *int64)()
     SetOffice365Inactive(value *int64)()
     SetOneDriveActive(value *int64)()

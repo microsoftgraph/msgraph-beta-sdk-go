@@ -150,6 +150,16 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["systemPreferredAuthenticationMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -208,7 +218,7 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetIsAdmin gets the isAdmin property value. Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
+// GetIsAdmin gets the isAdmin property value. Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
 func (m *UserRegistrationDetails) GetIsAdmin()(*bool) {
     val, err := m.GetBackingStore().Get("isAdmin")
     if err != nil {
@@ -219,7 +229,7 @@ func (m *UserRegistrationDetails) GetIsAdmin()(*bool) {
     }
     return nil
 }
-// GetIsMfaCapable gets the isMfaCapable property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+// GetIsMfaCapable gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsMfaCapable()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaCapable")
     if err != nil {
@@ -230,7 +240,7 @@ func (m *UserRegistrationDetails) GetIsMfaCapable()(*bool) {
     }
     return nil
 }
-// GetIsMfaRegistered gets the isMfaRegistered property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
+// GetIsMfaRegistered gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsMfaRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaRegistered")
     if err != nil {
@@ -241,7 +251,7 @@ func (m *UserRegistrationDetails) GetIsMfaRegistered()(*bool) {
     }
     return nil
 }
-// GetIsPasswordlessCapable gets the isPasswordlessCapable property value. Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
+// GetIsPasswordlessCapable gets the isPasswordlessCapable property value. Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsPasswordlessCapable()(*bool) {
     val, err := m.GetBackingStore().Get("isPasswordlessCapable")
     if err != nil {
@@ -252,7 +262,7 @@ func (m *UserRegistrationDetails) GetIsPasswordlessCapable()(*bool) {
     }
     return nil
 }
-// GetIsSsprCapable gets the isSsprCapable property value. Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
+// GetIsSsprCapable gets the isSsprCapable property value. Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsSsprCapable()(*bool) {
     val, err := m.GetBackingStore().Get("isSsprCapable")
     if err != nil {
@@ -263,7 +273,7 @@ func (m *UserRegistrationDetails) GetIsSsprCapable()(*bool) {
     }
     return nil
 }
-// GetIsSsprEnabled gets the isSsprEnabled property value. Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
+// GetIsSsprEnabled gets the isSsprEnabled property value. Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsSsprEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSsprEnabled")
     if err != nil {
@@ -274,7 +284,7 @@ func (m *UserRegistrationDetails) GetIsSsprEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSsprRegistered gets the isSsprRegistered property value. Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
+// GetIsSsprRegistered gets the isSsprRegistered property value. Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsSsprRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isSsprRegistered")
     if err != nil {
@@ -315,6 +325,17 @@ func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserRegistrationDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -446,6 +467,12 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSystemPreferredAuthenticationMethods() != nil {
         err = writer.WriteCollectionOfStringValues("systemPreferredAuthenticationMethods", m.GetSystemPreferredAuthenticationMethods())
         if err != nil {
@@ -487,49 +514,49 @@ func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *DefaultMfaMethodTyp
         panic(err)
     }
 }
-// SetIsAdmin sets the isAdmin property value. Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
+// SetIsAdmin sets the isAdmin property value. Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
 func (m *UserRegistrationDetails) SetIsAdmin(value *bool)() {
     err := m.GetBackingStore().Set("isAdmin", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMfaCapable sets the isMfaCapable property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+// SetIsMfaCapable sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsMfaCapable(value *bool)() {
     err := m.GetBackingStore().Set("isMfaCapable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMfaRegistered sets the isMfaRegistered property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
+// SetIsMfaRegistered sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsMfaRegistered(value *bool)() {
     err := m.GetBackingStore().Set("isMfaRegistered", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsPasswordlessCapable sets the isPasswordlessCapable property value. Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
+// SetIsPasswordlessCapable sets the isPasswordlessCapable property value. Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsPasswordlessCapable(value *bool)() {
     err := m.GetBackingStore().Set("isPasswordlessCapable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSsprCapable sets the isSsprCapable property value. Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
+// SetIsSsprCapable sets the isSsprCapable property value. Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsSsprCapable(value *bool)() {
     err := m.GetBackingStore().Set("isSsprCapable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSsprEnabled sets the isSsprEnabled property value. Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
+// SetIsSsprEnabled sets the isSsprEnabled property value. Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsSsprEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSsprEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSsprRegistered sets the isSsprRegistered property value. Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
+// SetIsSsprRegistered sets the isSsprRegistered property value. Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsSsprRegistered(value *bool)() {
     err := m.GetBackingStore().Set("isSsprRegistered", value)
     if err != nil {
@@ -553,6 +580,13 @@ func (m *UserRegistrationDetails) SetLastUpdatedDateTime(value *i336074805fc8539
 // SetMethodsRegistered sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
     err := m.GetBackingStore().Set("methodsRegistered", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserRegistrationDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -607,6 +641,7 @@ type UserRegistrationDetailsable interface {
     GetIsSystemPreferredAuthenticationMethodEnabled()(*bool)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMethodsRegistered()([]string)
+    GetOdataType()(*string)
     GetSystemPreferredAuthenticationMethods()([]string)
     GetUserDisplayName()(*string)
     GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod)
@@ -623,6 +658,7 @@ type UserRegistrationDetailsable interface {
     SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMethodsRegistered(value []string)()
+    SetOdataType(value *string)()
     SetSystemPreferredAuthenticationMethods(value []string)()
     SetUserDisplayName(value *string)()
     SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)()

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSSoftwareUpdateConfiguration 
+// MacOSSoftwareUpdateConfiguration macOS Software Update Configuration
 type MacOSSoftwareUpdateConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewMacOSSoftwareUpdateConfiguration instantiates a new MacOSSoftwareUpdateConfiguration and sets the default values.
+// NewMacOSSoftwareUpdateConfiguration instantiates a new macOSSoftwareUpdateConfiguration and sets the default values.
 func NewMacOSSoftwareUpdateConfiguration()(*MacOSSoftwareUpdateConfiguration) {
     m := &MacOSSoftwareUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

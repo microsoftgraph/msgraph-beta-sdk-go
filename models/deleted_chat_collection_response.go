@@ -8,7 +8,7 @@ import (
 type DeletedChatCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeletedChatCollectionResponse instantiates a new DeletedChatCollectionResponse and sets the default values.
+// NewDeletedChatCollectionResponse instantiates a new deletedChatCollectionResponse and sets the default values.
 func NewDeletedChatCollectionResponse()(*DeletedChatCollectionResponse) {
     m := &DeletedChatCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

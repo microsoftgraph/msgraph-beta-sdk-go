@@ -7,8 +7,10 @@ import (
 // RoleReferenceValue 
 type RoleReferenceValue struct {
     ReferenceValue
+    // The OdataType property
+    OdataType *string
 }
-// NewRoleReferenceValue instantiates a new RoleReferenceValue and sets the default values.
+// NewRoleReferenceValue instantiates a new roleReferenceValue and sets the default values.
 func NewRoleReferenceValue()(*RoleReferenceValue) {
     m := &RoleReferenceValue{
         ReferenceValue: *NewReferenceValue(),

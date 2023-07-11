@@ -8,7 +8,7 @@ import (
 type UserSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserSecurityProfileCollectionResponse instantiates a new UserSecurityProfileCollectionResponse and sets the default values.
+// NewUserSecurityProfileCollectionResponse instantiates a new userSecurityProfileCollectionResponse and sets the default values.
 func NewUserSecurityProfileCollectionResponse()(*UserSecurityProfileCollectionResponse) {
     m := &UserSecurityProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

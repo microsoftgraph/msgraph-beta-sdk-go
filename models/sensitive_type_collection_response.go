@@ -8,7 +8,7 @@ import (
 type SensitiveTypeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSensitiveTypeCollectionResponse instantiates a new SensitiveTypeCollectionResponse and sets the default values.
+// NewSensitiveTypeCollectionResponse instantiates a new sensitiveTypeCollectionResponse and sets the default values.
 func NewSensitiveTypeCollectionResponse()(*SensitiveTypeCollectionResponse) {
     m := &SensitiveTypeCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

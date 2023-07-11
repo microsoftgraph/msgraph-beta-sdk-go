@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAndAppManagementRoleAssignment 
+// DeviceAndAppManagementRoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
 }
-// NewDeviceAndAppManagementRoleAssignment instantiates a new DeviceAndAppManagementRoleAssignment and sets the default values.
+// NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {
     m := &DeviceAndAppManagementRoleAssignment{
         RoleAssignment: *NewRoleAssignment(),
@@ -35,6 +35,16 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
                 }
             }
             m.SetMembers(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -67,6 +77,17 @@ func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceAndAppManagementRoleAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetRoleScopeTags gets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
 func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTags()([]RoleScopeTagable) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
@@ -86,6 +107,12 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
     }
     if m.GetMembers() != nil {
         err = writer.WriteCollectionOfStringValues("members", m.GetMembers())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,6 +138,13 @@ func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceAndAppManagementRoleAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleScopeTags sets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
 func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTagable)() {
     err := m.GetBackingStore().Set("roleScopeTags", value)
@@ -123,7 +157,9 @@ type DeviceAndAppManagementRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RoleAssignmentable
     GetMembers()([]string)
+    GetOdataType()(*string)
     GetRoleScopeTags()([]RoleScopeTagable)
     SetMembers(value []string)()
+    SetOdataType(value *string)()
     SetRoleScopeTags(value []RoleScopeTagable)()
 }

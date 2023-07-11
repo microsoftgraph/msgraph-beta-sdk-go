@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DepEnrollmentProfile 
+// DepEnrollmentProfile the depEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
 type DepEnrollmentProfile struct {
     EnrollmentProfile
 }
-// NewDepEnrollmentProfile instantiates a new DepEnrollmentProfile and sets the default values.
+// NewDepEnrollmentProfile instantiates a new depEnrollmentProfile and sets the default values.
 func NewDepEnrollmentProfile()(*DepEnrollmentProfile) {
     m := &DepEnrollmentProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),

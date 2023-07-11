@@ -45,6 +45,16 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["providerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -86,6 +96,17 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Endpoint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProviderId gets the providerId property value. Application id of the publishing underlying service. Not nullable. Read-only.
 func (m *Endpoint) GetProviderId()(*string) {
@@ -144,6 +165,12 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("providerId", m.GetProviderId())
         if err != nil {
             return err
@@ -172,6 +199,13 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 // SetCapability sets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
 func (m *Endpoint) SetCapability(value *string)() {
     err := m.GetBackingStore().Set("capability", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Endpoint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -209,11 +243,13 @@ type Endpointable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCapability()(*string)
+    GetOdataType()(*string)
     GetProviderId()(*string)
     GetProviderName()(*string)
     GetProviderResourceId()(*string)
     GetUri()(*string)
     SetCapability(value *string)()
+    SetOdataType(value *string)()
     SetProviderId(value *string)()
     SetProviderName(value *string)()
     SetProviderResourceId(value *string)()

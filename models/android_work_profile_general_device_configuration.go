@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileGeneralDeviceConfiguration 
+// AndroidWorkProfileGeneralDeviceConfiguration android Work Profile general device configuration.
 type AndroidWorkProfileGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileGeneralDeviceConfiguration instantiates a new AndroidWorkProfileGeneralDeviceConfiguration and sets the default values.
+// NewAndroidWorkProfileGeneralDeviceConfiguration instantiates a new androidWorkProfileGeneralDeviceConfiguration and sets the default values.
 func NewAndroidWorkProfileGeneralDeviceConfiguration()(*AndroidWorkProfileGeneralDeviceConfiguration) {
     m := &AndroidWorkProfileGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -48,6 +48,16 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(m
                 }
             }
             m.SetAllowedGoogleAccountDomains(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -512,6 +522,17 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasswordBlockFaceUnlock gets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetPasswordBlockFaceUnlock()(*bool) {
@@ -1032,6 +1053,12 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("passwordBlockFaceUnlock", m.GetPasswordBlockFaceUnlock())
         if err != nil {
             return err
@@ -1319,6 +1346,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
 // SetAllowedGoogleAccountDomains sets the allowedGoogleAccountDomains property value. Determine domains allow-list for accounts that can be added to work profile.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetAllowedGoogleAccountDomains(value []string)() {
     err := m.GetBackingStore().Set("allowedGoogleAccountDomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -1650,6 +1684,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowedGoogleAccountDomains()([]string)
+    GetOdataType()(*string)
     GetPasswordBlockFaceUnlock()(*bool)
     GetPasswordBlockFingerprintUnlock()(*bool)
     GetPasswordBlockIrisUnlock()(*bool)
@@ -1697,6 +1732,7 @@ type AndroidWorkProfileGeneralDeviceConfigurationable interface {
     GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity)
     GetWorkProfileRequirePassword()(*bool)
     SetAllowedGoogleAccountDomains(value []string)()
+    SetOdataType(value *string)()
     SetPasswordBlockFaceUnlock(value *bool)()
     SetPasswordBlockFingerprintUnlock(value *bool)()
     SetPasswordBlockIrisUnlock(value *bool)()

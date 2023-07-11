@@ -8,7 +8,7 @@ import (
 type PrintUsageByUser struct {
     PrintUsage
 }
-// NewPrintUsageByUser instantiates a new PrintUsageByUser and sets the default values.
+// NewPrintUsageByUser instantiates a new printUsageByUser and sets the default values.
 func NewPrintUsageByUser()(*PrintUsageByUser) {
     m := &PrintUsageByUser{
         PrintUsage: *NewPrintUsage(),
@@ -22,6 +22,16 @@ func CreatePrintUsageByUserFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintUsageByUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrintUsage.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -33,6 +43,17 @@ func (m *PrintUsageByUser) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrintUsageByUser) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user represented by these statistics.
 func (m *PrintUsageByUser) GetUserPrincipalName()(*string) {
@@ -52,12 +73,25 @@ func (m *PrintUsageByUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrintUsageByUser) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user represented by these statistics.
 func (m *PrintUsageByUser) SetUserPrincipalName(value *string)() {
@@ -70,6 +104,8 @@ func (m *PrintUsageByUser) SetUserPrincipalName(value *string)() {
 type PrintUsageByUserable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrintUsageable
+    GetOdataType()(*string)
     GetUserPrincipalName()(*string)
+    SetOdataType(value *string)()
     SetUserPrincipalName(value *string)()
 }

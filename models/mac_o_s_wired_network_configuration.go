@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSWiredNetworkConfiguration 
+// MacOSWiredNetworkConfiguration macOS wired network configuration profile.
 type MacOSWiredNetworkConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSWiredNetworkConfiguration instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
+// NewMacOSWiredNetworkConfiguration instantiates a new macOSWiredNetworkConfiguration and sets the default values.
 func NewMacOSWiredNetworkConfiguration()(*MacOSWiredNetworkConfiguration) {
     m := &MacOSWiredNetworkConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -148,6 +148,16 @@ func (m *MacOSWiredNetworkConfiguration) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rootCertificateForServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMacOSTrustedRootCertificateFromDiscriminatorValue)
         if err != nil {
@@ -217,6 +227,17 @@ func (m *MacOSWiredNetworkConfiguration) GetNonEapAuthenticationMethodForEapTtls
     }
     if val != nil {
         return val.(*NonEapAuthenticationMethodForEapTtlsType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSWiredNetworkConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -302,6 +323,12 @@ func (m *MacOSWiredNetworkConfiguration) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("rootCertificateForServerValidation", m.GetRootCertificateForServerValidation())
         if err != nil {
             return err
@@ -371,6 +398,13 @@ func (m *MacOSWiredNetworkConfiguration) SetNonEapAuthenticationMethodForEapTtls
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSWiredNetworkConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRootCertificateForServerValidation sets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
 func (m *MacOSWiredNetworkConfiguration) SetRootCertificateForServerValidation(value MacOSTrustedRootCertificateable)() {
     err := m.GetBackingStore().Set("rootCertificateForServerValidation", value)
@@ -397,6 +431,7 @@ type MacOSWiredNetworkConfigurationable interface {
     GetNetworkInterface()(*WiredNetworkInterface)
     GetNetworkName()(*string)
     GetNonEapAuthenticationMethodForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType)
+    GetOdataType()(*string)
     GetRootCertificateForServerValidation()(MacOSTrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
@@ -407,6 +442,7 @@ type MacOSWiredNetworkConfigurationable interface {
     SetNetworkInterface(value *WiredNetworkInterface)()
     SetNetworkName(value *string)()
     SetNonEapAuthenticationMethodForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)()
+    SetOdataType(value *string)()
     SetRootCertificateForServerValidation(value MacOSTrustedRootCertificateable)()
     SetTrustedServerCertificateNames(value []string)()
 }

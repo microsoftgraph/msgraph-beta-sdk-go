@@ -8,7 +8,7 @@ import (
 type RelyingPartyDetailedSummary struct {
     Entity
 }
-// NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
+// NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),
@@ -66,6 +66,16 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i8
                 }
             }
             m.SetMigrationValidationDetails(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -176,6 +186,17 @@ func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValue
     }
     if val != nil {
         return val.([]KeyValuePairable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RelyingPartyDetailedSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -299,6 +320,12 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("relyingPartyId", m.GetRelyingPartyId())
         if err != nil {
             return err
@@ -369,6 +396,13 @@ func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyV
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RelyingPartyDetailedSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRelyingPartyId sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyId(value *string)() {
     err := m.GetBackingStore().Set("relyingPartyId", value)
@@ -432,6 +466,7 @@ type RelyingPartyDetailedSummaryable interface {
     GetFailedSignInCount()(*int64)
     GetMigrationStatus()(*MigrationStatus)
     GetMigrationValidationDetails()([]KeyValuePairable)
+    GetOdataType()(*string)
     GetRelyingPartyId()(*string)
     GetRelyingPartyName()(*string)
     GetReplyUrls()([]string)
@@ -443,6 +478,7 @@ type RelyingPartyDetailedSummaryable interface {
     SetFailedSignInCount(value *int64)()
     SetMigrationStatus(value *MigrationStatus)()
     SetMigrationValidationDetails(value []KeyValuePairable)()
+    SetOdataType(value *string)()
     SetRelyingPartyId(value *string)()
     SetRelyingPartyName(value *string)()
     SetReplyUrls(value []string)()

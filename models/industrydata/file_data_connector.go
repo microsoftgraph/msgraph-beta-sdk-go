@@ -7,8 +7,10 @@ import (
 // FileDataConnector 
 type FileDataConnector struct {
     IndustryDataConnector
+    // The OdataType property
+    OdataType *string
 }
-// NewFileDataConnector instantiates a new FileDataConnector and sets the default values.
+// NewFileDataConnector instantiates a new fileDataConnector and sets the default values.
 func NewFileDataConnector()(*FileDataConnector) {
     m := &FileDataConnector{
         IndustryDataConnector: *NewIndustryDataConnector(),

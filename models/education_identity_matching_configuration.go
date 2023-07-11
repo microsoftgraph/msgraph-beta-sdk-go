@@ -8,7 +8,7 @@ import (
 type EducationIdentityMatchingConfiguration struct {
     EducationIdentitySynchronizationConfiguration
 }
-// NewEducationIdentityMatchingConfiguration instantiates a new EducationIdentityMatchingConfiguration and sets the default values.
+// NewEducationIdentityMatchingConfiguration instantiates a new educationIdentityMatchingConfiguration and sets the default values.
 func NewEducationIdentityMatchingConfiguration()(*EducationIdentityMatchingConfiguration) {
     m := &EducationIdentityMatchingConfiguration{
         EducationIdentitySynchronizationConfiguration: *NewEducationIdentitySynchronizationConfiguration(),
@@ -40,6 +40,16 @@ func (m *EducationIdentityMatchingConfiguration) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMatchingOptions gets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
@@ -50,6 +60,17 @@ func (m *EducationIdentityMatchingConfiguration) GetMatchingOptions()([]Educatio
     }
     if val != nil {
         return val.([]EducationIdentityMatchingOptionsable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationIdentityMatchingConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -71,6 +92,12 @@ func (m *EducationIdentityMatchingConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetMatchingOptions sets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
@@ -80,10 +107,19 @@ func (m *EducationIdentityMatchingConfiguration) SetMatchingOptions(value []Educ
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationIdentityMatchingConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EducationIdentityMatchingConfigurationable 
 type EducationIdentityMatchingConfigurationable interface {
     EducationIdentitySynchronizationConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMatchingOptions()([]EducationIdentityMatchingOptionsable)
+    GetOdataType()(*string)
     SetMatchingOptions(value []EducationIdentityMatchingOptionsable)()
+    SetOdataType(value *string)()
 }

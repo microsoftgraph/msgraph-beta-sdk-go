@@ -8,7 +8,7 @@ import (
 type DeviceShellScriptCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceShellScriptCollectionResponse instantiates a new DeviceShellScriptCollectionResponse and sets the default values.
+// NewDeviceShellScriptCollectionResponse instantiates a new deviceShellScriptCollectionResponse and sets the default values.
 func NewDeviceShellScriptCollectionResponse()(*DeviceShellScriptCollectionResponse) {
     m := &DeviceShellScriptCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

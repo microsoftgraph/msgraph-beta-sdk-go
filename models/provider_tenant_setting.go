@@ -9,7 +9,7 @@ import (
 type ProviderTenantSetting struct {
     Entity
 }
-// NewProviderTenantSetting instantiates a new ProviderTenantSetting and sets the default values.
+// NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
     m := &ProviderTenantSetting{
         Entity: *NewEntity(),
@@ -75,6 +75,16 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["provider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -105,6 +115,17 @@ func (m *ProviderTenantSetting) GetLastModifiedDateTime()(*i336074805fc853987abe
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProviderTenantSetting) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -155,6 +176,12 @@ func (m *ProviderTenantSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("provider", m.GetProvider())
         if err != nil {
             return err
@@ -189,6 +216,13 @@ func (m *ProviderTenantSetting) SetLastModifiedDateTime(value *i336074805fc85398
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProviderTenantSetting) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvider sets the provider property value. The provider property
 func (m *ProviderTenantSetting) SetProvider(value *string)() {
     err := m.GetBackingStore().Set("provider", value)
@@ -210,11 +244,13 @@ type ProviderTenantSettingable interface {
     GetAzureTenantId()(*string)
     GetEnabled()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetProvider()(*string)
     GetVendor()(*string)
     SetAzureTenantId(value *string)()
     SetEnabled(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetProvider(value *string)()
     SetVendor(value *string)()
 }

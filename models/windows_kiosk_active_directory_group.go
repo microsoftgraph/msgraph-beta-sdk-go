@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskActiveDirectoryGroup 
+// WindowsKioskActiveDirectoryGroup the user base class used to identify the account info for the kiosk configuration
 type WindowsKioskActiveDirectoryGroup struct {
     WindowsKioskUser
 }
-// NewWindowsKioskActiveDirectoryGroup instantiates a new WindowsKioskActiveDirectoryGroup and sets the default values.
+// NewWindowsKioskActiveDirectoryGroup instantiates a new windowsKioskActiveDirectoryGroup and sets the default values.
 func NewWindowsKioskActiveDirectoryGroup()(*WindowsKioskActiveDirectoryGroup) {
     m := &WindowsKioskActiveDirectoryGroup{
         WindowsKioskUser: *NewWindowsKioskUser(),
@@ -34,11 +34,32 @@ func (m *WindowsKioskActiveDirectoryGroup) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGroupName gets the groupName property value. The name of the AD group that will be locked to this kiosk configuration
 func (m *WindowsKioskActiveDirectoryGroup) GetGroupName()(*string) {
     val, err := m.GetBackingStore().Get("groupName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsKioskActiveDirectoryGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -59,6 +80,12 @@ func (m *WindowsKioskActiveDirectoryGroup) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetGroupName sets the groupName property value. The name of the AD group that will be locked to this kiosk configuration
@@ -68,10 +95,19 @@ func (m *WindowsKioskActiveDirectoryGroup) SetGroupName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsKioskActiveDirectoryGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WindowsKioskActiveDirectoryGroupable 
 type WindowsKioskActiveDirectoryGroupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskUserable
     GetGroupName()(*string)
+    GetOdataType()(*string)
     SetGroupName(value *string)()
+    SetOdataType(value *string)()
 }

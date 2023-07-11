@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationValueDecimal 
+// GroupPolicyPresentationValueDecimal the entity represents an unsigned integer value of a decimal text box presentation on a policy definition.
 type GroupPolicyPresentationValueDecimal struct {
     GroupPolicyPresentationValue
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupPolicyPresentationValueDecimal instantiates a new GroupPolicyPresentationValueDecimal and sets the default values.
+// NewGroupPolicyPresentationValueDecimal instantiates a new groupPolicyPresentationValueDecimal and sets the default values.
 func NewGroupPolicyPresentationValueDecimal()(*GroupPolicyPresentationValueDecimal) {
     m := &GroupPolicyPresentationValueDecimal{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),

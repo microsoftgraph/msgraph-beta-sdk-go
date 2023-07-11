@@ -8,7 +8,7 @@ import (
 type Office365ActiveUserCounts struct {
     Entity
 }
-// NewOffice365ActiveUserCounts instantiates a new Office365ActiveUserCounts and sets the default values.
+// NewOffice365ActiveUserCounts instantiates a new office365ActiveUserCounts and sets the default values.
 func NewOffice365ActiveUserCounts()(*Office365ActiveUserCounts) {
     m := &Office365ActiveUserCounts{
         Entity: *NewEntity(),
@@ -40,6 +40,16 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetExchange(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -134,6 +144,17 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Office365ActiveUserCounts) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOffice365 gets the office365 property value. The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.
 func (m *Office365ActiveUserCounts) GetOffice365()(*int64) {
@@ -247,6 +268,12 @@ func (m *Office365ActiveUserCounts) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("office365", m.GetOffice365())
         if err != nil {
             return err
@@ -305,6 +332,13 @@ func (m *Office365ActiveUserCounts) Serialize(writer i878a80d2330e89d26896388a3f
 // SetExchange sets the exchange property value. The number of active users in Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ActiveUserCounts) SetExchange(value *int64)() {
     err := m.GetBackingStore().Set("exchange", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Office365ActiveUserCounts) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -377,6 +411,7 @@ type Office365ActiveUserCountsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExchange()(*int64)
+    GetOdataType()(*string)
     GetOffice365()(*int64)
     GetOneDrive()(*int64)
     GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -387,6 +422,7 @@ type Office365ActiveUserCountsable interface {
     GetTeams()(*int64)
     GetYammer()(*int64)
     SetExchange(value *int64)()
+    SetOdataType(value *string)()
     SetOffice365(value *int64)()
     SetOneDrive(value *int64)()
     SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

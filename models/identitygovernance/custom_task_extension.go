@@ -9,8 +9,10 @@ import (
 // CustomTaskExtension 
 type CustomTaskExtension struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomCalloutExtension
+    // The OdataType property
+    OdataType *string
 }
-// NewCustomTaskExtension instantiates a new CustomTaskExtension and sets the default values.
+// NewCustomTaskExtension instantiates a new customTaskExtension and sets the default values.
 func NewCustomTaskExtension()(*CustomTaskExtension) {
     m := &CustomTaskExtension{
         CustomCalloutExtension: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewCustomCalloutExtension(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosRedirectSingleSignOnExtension 
+// IosRedirectSingleSignOnExtension represents a Redirect-type Single Sign-On extension profile for iOS devices.
 type IosRedirectSingleSignOnExtension struct {
     IosSingleSignOnExtension
 }
-// NewIosRedirectSingleSignOnExtension instantiates a new IosRedirectSingleSignOnExtension and sets the default values.
+// NewIosRedirectSingleSignOnExtension instantiates a new iosRedirectSingleSignOnExtension and sets the default values.
 func NewIosRedirectSingleSignOnExtension()(*IosRedirectSingleSignOnExtension) {
     m := &IosRedirectSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),
@@ -72,6 +72,16 @@ func (m *IosRedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["teamIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -99,6 +109,17 @@ func (m *IosRedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosRedirectSingleSignOnExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *IosRedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
@@ -147,6 +168,12 @@ func (m *IosRedirectSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("teamIdentifier", m.GetTeamIdentifier())
         if err != nil {
             return err
@@ -174,6 +201,13 @@ func (m *IosRedirectSingleSignOnExtension) SetExtensionIdentifier(value *string)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosRedirectSingleSignOnExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *IosRedirectSingleSignOnExtension) SetTeamIdentifier(value *string)() {
     err := m.GetBackingStore().Set("teamIdentifier", value)
@@ -194,10 +228,12 @@ type IosRedirectSingleSignOnExtensionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConfigurations()([]KeyTypedValuePairable)
     GetExtensionIdentifier()(*string)
+    GetOdataType()(*string)
     GetTeamIdentifier()(*string)
     GetUrlPrefixes()([]string)
     SetConfigurations(value []KeyTypedValuePairable)()
     SetExtensionIdentifier(value *string)()
+    SetOdataType(value *string)()
     SetTeamIdentifier(value *string)()
     SetUrlPrefixes(value []string)()
 }

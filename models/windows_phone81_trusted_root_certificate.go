@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81TrustedRootCertificate 
+// WindowsPhone81TrustedRootCertificate windows Phone 8.1+ Trusted Root Certificate configuration profile
 type WindowsPhone81TrustedRootCertificate struct {
     DeviceConfiguration
 }
@@ -45,6 +45,16 @@ func (m *WindowsPhone81TrustedRootCertificate) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["trustedRootCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -56,6 +66,17 @@ func (m *WindowsPhone81TrustedRootCertificate) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsPhone81TrustedRootCertificate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *WindowsPhone81TrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
@@ -81,6 +102,12 @@ func (m *WindowsPhone81TrustedRootCertificate) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("trustedRootCertificate", m.GetTrustedRootCertificate())
         if err != nil {
             return err
@@ -91,6 +118,13 @@ func (m *WindowsPhone81TrustedRootCertificate) Serialize(writer i878a80d2330e89d
 // SetCertFileName sets the certFileName property value. File name to display in UI.
 func (m *WindowsPhone81TrustedRootCertificate) SetCertFileName(value *string)() {
     err := m.GetBackingStore().Set("certFileName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsPhone81TrustedRootCertificate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +141,9 @@ type WindowsPhone81TrustedRootCertificateable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCertFileName()(*string)
+    GetOdataType()(*string)
     GetTrustedRootCertificate()([]byte)
     SetCertFileName(value *string)()
+    SetOdataType(value *string)()
     SetTrustedRootCertificate(value []byte)()
 }

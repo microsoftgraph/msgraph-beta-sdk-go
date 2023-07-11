@@ -9,7 +9,7 @@ import (
 type MeetingRegistration struct {
     MeetingRegistrationBase
 }
-// NewMeetingRegistration instantiates a new MeetingRegistration and sets the default values.
+// NewMeetingRegistration instantiates a new meetingRegistration and sets the default values.
 func NewMeetingRegistration()(*MeetingRegistration) {
     m := &MeetingRegistration{
         MeetingRegistrationBase: *NewMeetingRegistrationBase(),
@@ -94,6 +94,16 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["registrationPageViewCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -151,6 +161,17 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MeetingRegistration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistrationPageViewCount gets the registrationPageViewCount property value. The number of times the registration page has been visited. Read-only.
 func (m *MeetingRegistration) GetRegistrationPageViewCount()(*int32) {
@@ -238,6 +259,12 @@ func (m *MeetingRegistration) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("registrationPageViewCount", m.GetRegistrationPageViewCount())
         if err != nil {
             return err
@@ -296,6 +323,13 @@ func (m *MeetingRegistration) SetEndDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MeetingRegistration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegistrationPageViewCount sets the registrationPageViewCount property value. The number of times the registration page has been visited. Read-only.
 func (m *MeetingRegistration) SetRegistrationPageViewCount(value *int32)() {
     err := m.GetBackingStore().Set("registrationPageViewCount", value)
@@ -338,6 +372,7 @@ type MeetingRegistrationable interface {
     GetCustomQuestions()([]MeetingRegistrationQuestionable)
     GetDescription()(*string)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRegistrationPageViewCount()(*int32)
     GetRegistrationPageWebUrl()(*string)
     GetSpeakers()([]MeetingSpeakerable)
@@ -346,6 +381,7 @@ type MeetingRegistrationable interface {
     SetCustomQuestions(value []MeetingRegistrationQuestionable)()
     SetDescription(value *string)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRegistrationPageViewCount(value *int32)()
     SetRegistrationPageWebUrl(value *string)()
     SetSpeakers(value []MeetingSpeakerable)()

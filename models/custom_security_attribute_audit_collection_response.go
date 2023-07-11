@@ -8,7 +8,7 @@ import (
 type CustomSecurityAttributeAuditCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomSecurityAttributeAuditCollectionResponse instantiates a new CustomSecurityAttributeAuditCollectionResponse and sets the default values.
+// NewCustomSecurityAttributeAuditCollectionResponse instantiates a new customSecurityAttributeAuditCollectionResponse and sets the default values.
 func NewCustomSecurityAttributeAuditCollectionResponse()(*CustomSecurityAttributeAuditCollectionResponse) {
     m := &CustomSecurityAttributeAuditCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftStoreForBusinessContainedApp 
+// MicrosoftStoreForBusinessContainedApp a class that represents a contained app of a MicrosoftStoreForBusinessApp.
 type MicrosoftStoreForBusinessContainedApp struct {
     MobileContainedApp
+    // The OdataType property
+    OdataType *string
 }
-// NewMicrosoftStoreForBusinessContainedApp instantiates a new MicrosoftStoreForBusinessContainedApp and sets the default values.
+// NewMicrosoftStoreForBusinessContainedApp instantiates a new microsoftStoreForBusinessContainedApp and sets the default values.
 func NewMicrosoftStoreForBusinessContainedApp()(*MicrosoftStoreForBusinessContainedApp) {
     m := &MicrosoftStoreForBusinessContainedApp{
         MobileContainedApp: *NewMobileContainedApp(),

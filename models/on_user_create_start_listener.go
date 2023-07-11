@@ -7,8 +7,10 @@ import (
 // OnUserCreateStartListener 
 type OnUserCreateStartListener struct {
     AuthenticationEventListener
+    // The OdataType property
+    OdataType *string
 }
-// NewOnUserCreateStartListener instantiates a new OnUserCreateStartListener and sets the default values.
+// NewOnUserCreateStartListener instantiates a new onUserCreateStartListener and sets the default values.
 func NewOnUserCreateStartListener()(*OnUserCreateStartListener) {
     m := &OnUserCreateStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),

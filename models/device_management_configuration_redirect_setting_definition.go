@@ -7,8 +7,10 @@ import (
 // DeviceManagementConfigurationRedirectSettingDefinition 
 type DeviceManagementConfigurationRedirectSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationRedirectSettingDefinition instantiates a new DeviceManagementConfigurationRedirectSettingDefinition and sets the default values.
+// NewDeviceManagementConfigurationRedirectSettingDefinition instantiates a new deviceManagementConfigurationRedirectSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationRedirectSettingDefinition()(*DeviceManagementConfigurationRedirectSettingDefinition) {
     m := &DeviceManagementConfigurationRedirectSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),

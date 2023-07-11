@@ -95,6 +95,16 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["times"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActivityTimeSetFromDiscriminatorValue)
         if err != nil {
@@ -115,6 +125,17 @@ func (m *ItemActivityOLD) GetListItem()(ListItemable) {
     }
     if val != nil {
         return val.(ListItemable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ItemActivityOLD) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -160,6 +181,12 @@ func (m *ItemActivityOLD) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("times", m.GetTimes())
         if err != nil {
             return err
@@ -195,6 +222,13 @@ func (m *ItemActivityOLD) SetListItem(value ListItemable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ItemActivityOLD) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTimes sets the times property value. The times property
 func (m *ItemActivityOLD) SetTimes(value ItemActivityTimeSetable)() {
     err := m.GetBackingStore().Set("times", value)
@@ -210,10 +244,12 @@ type ItemActivityOLDable interface {
     GetActor()(IdentitySetable)
     GetDriveItem()(DriveItemable)
     GetListItem()(ListItemable)
+    GetOdataType()(*string)
     GetTimes()(ItemActivityTimeSetable)
     SetAction(value ItemActionSetable)()
     SetActor(value IdentitySetable)()
     SetDriveItem(value DriveItemable)()
     SetListItem(value ListItemable)()
+    SetOdataType(value *string)()
     SetTimes(value ItemActivityTimeSetable)()
 }

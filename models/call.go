@@ -8,7 +8,7 @@ import (
 type Call struct {
     Entity
 }
-// NewCall instantiates a new Call and sets the default values.
+// NewCall instantiates a new call and sets the default values.
 func NewCall()(*Call) {
     m := &Call{
         Entity: *NewEntity(),
@@ -316,6 +316,16 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCommsOperationFromDiscriminatorValue)
         if err != nil {
@@ -546,6 +556,17 @@ func (m *Call) GetMeetingInfo()(MeetingInfoable) {
 // GetMyParticipantId gets the myParticipantId property value. The myParticipantId property
 func (m *Call) GetMyParticipantId()(*string) {
     val, err := m.GetBackingStore().Get("myParticipantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Call) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -829,6 +850,12 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -1046,6 +1073,13 @@ func (m *Call) SetMyParticipantId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Call) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperations sets the operations property value. The operations property
 func (m *Call) SetOperations(value []CommsOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -1164,6 +1198,7 @@ type Callable interface {
     GetMeetingCapability()(MeetingCapabilityable)
     GetMeetingInfo()(MeetingInfoable)
     GetMyParticipantId()(*string)
+    GetOdataType()(*string)
     GetOperations()([]CommsOperationable)
     GetParticipants()([]Participantable)
     GetRequestedModalities()([]Modality)
@@ -1194,6 +1229,7 @@ type Callable interface {
     SetMeetingCapability(value MeetingCapabilityable)()
     SetMeetingInfo(value MeetingInfoable)()
     SetMyParticipantId(value *string)()
+    SetOdataType(value *string)()
     SetOperations(value []CommsOperationable)()
     SetParticipants(value []Participantable)()
     SetRequestedModalities(value []Modality)()

@@ -9,7 +9,7 @@ import (
 type EdiscoveryReviewSetQueryCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewEdiscoveryReviewSetQueryCollectionResponse instantiates a new EdiscoveryReviewSetQueryCollectionResponse and sets the default values.
+// NewEdiscoveryReviewSetQueryCollectionResponse instantiates a new ediscoveryReviewSetQueryCollectionResponse and sets the default values.
 func NewEdiscoveryReviewSetQueryCollectionResponse()(*EdiscoveryReviewSetQueryCollectionResponse) {
     m := &EdiscoveryReviewSetQueryCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

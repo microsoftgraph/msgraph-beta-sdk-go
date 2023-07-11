@@ -8,7 +8,7 @@ import (
 type CloudPcDeviceImageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcDeviceImageCollectionResponse instantiates a new CloudPcDeviceImageCollectionResponse and sets the default values.
+// NewCloudPcDeviceImageCollectionResponse instantiates a new cloudPcDeviceImageCollectionResponse and sets the default values.
 func NewCloudPcDeviceImageCollectionResponse()(*CloudPcDeviceImageCollectionResponse) {
     m := &CloudPcDeviceImageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // B2cIdentityUserFlow 
 type B2cIdentityUserFlow struct {
     IdentityUserFlow
+    // The OdataType property
+    OdataType *string
 }
-// NewB2cIdentityUserFlow instantiates a new B2cIdentityUserFlow and sets the default values.
+// NewB2cIdentityUserFlow instantiates a new b2cIdentityUserFlow and sets the default values.
 func NewB2cIdentityUserFlow()(*B2cIdentityUserFlow) {
     m := &B2cIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),

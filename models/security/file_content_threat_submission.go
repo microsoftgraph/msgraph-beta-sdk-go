@@ -8,7 +8,7 @@ import (
 type FileContentThreatSubmission struct {
     FileThreatSubmission
 }
-// NewFileContentThreatSubmission instantiates a new FileContentThreatSubmission and sets the default values.
+// NewFileContentThreatSubmission instantiates a new fileContentThreatSubmission and sets the default values.
 func NewFileContentThreatSubmission()(*FileContentThreatSubmission) {
     m := &FileContentThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),

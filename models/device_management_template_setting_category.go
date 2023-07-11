@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementTemplateSettingCategory 
+// DeviceManagementTemplateSettingCategory entity representing a template setting category
 type DeviceManagementTemplateSettingCategory struct {
     DeviceManagementSettingCategory
 }
-// NewDeviceManagementTemplateSettingCategory instantiates a new DeviceManagementTemplateSettingCategory and sets the default values.
+// NewDeviceManagementTemplateSettingCategory instantiates a new deviceManagementTemplateSettingCategory and sets the default values.
 func NewDeviceManagementTemplateSettingCategory()(*DeviceManagementTemplateSettingCategory) {
     m := &DeviceManagementTemplateSettingCategory{
         DeviceManagementSettingCategory: *NewDeviceManagementSettingCategory(),

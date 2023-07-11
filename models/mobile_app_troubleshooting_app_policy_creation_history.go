@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppTroubleshootingAppPolicyCreationHistory 
+// MobileAppTroubleshootingAppPolicyCreationHistory history Item contained in the Mobile App Troubleshooting Event.
 type MobileAppTroubleshootingAppPolicyCreationHistory struct {
     MobileAppTroubleshootingHistoryItem
+    // The OdataType property
+    OdataType *string
 }
-// NewMobileAppTroubleshootingAppPolicyCreationHistory instantiates a new MobileAppTroubleshootingAppPolicyCreationHistory and sets the default values.
+// NewMobileAppTroubleshootingAppPolicyCreationHistory instantiates a new mobileAppTroubleshootingAppPolicyCreationHistory and sets the default values.
 func NewMobileAppTroubleshootingAppPolicyCreationHistory()(*MobileAppTroubleshootingAppPolicyCreationHistory) {
     m := &MobileAppTroubleshootingAppPolicyCreationHistory{
         MobileAppTroubleshootingHistoryItem: *NewMobileAppTroubleshootingHistoryItem(),

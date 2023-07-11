@@ -116,6 +116,16 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
@@ -223,6 +233,17 @@ func (m *GovernanceRoleAssignment) GetLinkedEligibleRoleAssignmentId()(*string) 
 // GetMemberType gets the memberType property value. The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
 func (m *GovernanceRoleAssignment) GetMemberType()(*string) {
     val, err := m.GetBackingStore().Get("memberType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GovernanceRoleAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -362,6 +383,12 @@ func (m *GovernanceRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("resource", m.GetResource())
         if err != nil {
             return err
@@ -453,6 +480,13 @@ func (m *GovernanceRoleAssignment) SetMemberType(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GovernanceRoleAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResource sets the resource property value. Read-only. The resource associated with the role assignment.
 func (m *GovernanceRoleAssignment) SetResource(value GovernanceResourceable)() {
     err := m.GetBackingStore().Set("resource", value)
@@ -519,6 +553,7 @@ type GovernanceRoleAssignmentable interface {
     GetLinkedEligibleRoleAssignment()(GovernanceRoleAssignmentable)
     GetLinkedEligibleRoleAssignmentId()(*string)
     GetMemberType()(*string)
+    GetOdataType()(*string)
     GetResource()(GovernanceResourceable)
     GetResourceId()(*string)
     GetRoleDefinition()(GovernanceRoleDefinitionable)
@@ -533,6 +568,7 @@ type GovernanceRoleAssignmentable interface {
     SetLinkedEligibleRoleAssignment(value GovernanceRoleAssignmentable)()
     SetLinkedEligibleRoleAssignmentId(value *string)()
     SetMemberType(value *string)()
+    SetOdataType(value *string)()
     SetResource(value GovernanceResourceable)()
     SetResourceId(value *string)()
     SetRoleDefinition(value GovernanceRoleDefinitionable)()

@@ -9,8 +9,10 @@ import (
 // Application 
 type Application struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewApplication instantiates a new Application and sets the default values.
+// NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),

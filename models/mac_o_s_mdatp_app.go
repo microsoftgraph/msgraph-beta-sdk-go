@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSMdatpApp 
+// MacOSMdatpApp contains properties and inherited properties for the macOS Microsoft Defender Advanced Threat Protection (MDATP) App. This is deprecated for MacOSMicrosoftDefenderApp in 2305 (May 2023).
 type MacOSMdatpApp struct {
     MobileApp
 }
-// NewMacOSMdatpApp instantiates a new MacOSMdatpApp and sets the default values.
+// NewMacOSMdatpApp instantiates a new macOSMdatpApp and sets the default values.
 func NewMacOSMdatpApp()(*MacOSMdatpApp) {
     m := &MacOSMdatpApp{
         MobileApp: *NewMobileApp(),

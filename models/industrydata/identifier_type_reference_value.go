@@ -7,8 +7,10 @@ import (
 // IdentifierTypeReferenceValue 
 type IdentifierTypeReferenceValue struct {
     ReferenceValue
+    // The OdataType property
+    OdataType *string
 }
-// NewIdentifierTypeReferenceValue instantiates a new IdentifierTypeReferenceValue and sets the default values.
+// NewIdentifierTypeReferenceValue instantiates a new identifierTypeReferenceValue and sets the default values.
 func NewIdentifierTypeReferenceValue()(*IdentifierTypeReferenceValue) {
     m := &IdentifierTypeReferenceValue{
         ReferenceValue: *NewReferenceValue(),

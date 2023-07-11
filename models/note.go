@@ -7,8 +7,10 @@ import (
 // Note 
 type Note struct {
     OutlookItem
+    // The OdataType property
+    OdataType *string
 }
-// NewNote instantiates a new Note and sets the default values.
+// NewNote instantiates a new note and sets the default values.
 func NewNote()(*Note) {
     m := &Note{
         OutlookItem: *NewOutlookItem(),

@@ -9,7 +9,7 @@ import (
 type IndustryDataConnectorCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewIndustryDataConnectorCollectionResponse instantiates a new IndustryDataConnectorCollectionResponse and sets the default values.
+// NewIndustryDataConnectorCollectionResponse instantiates a new industryDataConnectorCollectionResponse and sets the default values.
 func NewIndustryDataConnectorCollectionResponse()(*IndustryDataConnectorCollectionResponse) {
     m := &IndustryDataConnectorCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

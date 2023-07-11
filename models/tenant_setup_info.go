@@ -8,7 +8,7 @@ import (
 type TenantSetupInfo struct {
     Entity
 }
-// NewTenantSetupInfo instantiates a new TenantSetupInfo and sets the default values.
+// NewTenantSetupInfo instantiates a new tenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
     m := &TenantSetupInfo{
         Entity: *NewEntity(),
@@ -50,6 +50,16 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetFirstTimeSetup(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -109,6 +119,17 @@ func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantSetupInfo) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -174,6 +195,12 @@ func (m *TenantSetupInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRelevantRolesSettings() != nil {
         err = writer.WriteCollectionOfStringValues("relevantRolesSettings", m.GetRelevantRolesSettings())
         if err != nil {
@@ -215,6 +242,13 @@ func (m *TenantSetupInfo) SetFirstTimeSetup(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantSetupInfo) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRelevantRolesSettings sets the relevantRolesSettings property value. The relevantRolesSettings property
 func (m *TenantSetupInfo) SetRelevantRolesSettings(value []string)() {
     err := m.GetBackingStore().Set("relevantRolesSettings", value)
@@ -249,12 +283,14 @@ type TenantSetupInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefaultRolesSettings()(PrivilegedRoleSettingsable)
     GetFirstTimeSetup()(*bool)
+    GetOdataType()(*string)
     GetRelevantRolesSettings()([]string)
     GetSetupStatus()(*SetupStatus)
     GetSkipSetup()(*bool)
     GetUserRolesActions()(*string)
     SetDefaultRolesSettings(value PrivilegedRoleSettingsable)()
     SetFirstTimeSetup(value *bool)()
+    SetOdataType(value *string)()
     SetRelevantRolesSettings(value []string)()
     SetSetupStatus(value *SetupStatus)()
     SetSkipSetup(value *bool)()

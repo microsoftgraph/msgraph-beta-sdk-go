@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81StoreApp 
+// WindowsPhone81StoreApp contains properties and inherited properties for Windows Phone 8.1 Store apps. Inherits from graph.mobileApp. Will be deprecated in February 2023.
 type WindowsPhone81StoreApp struct {
     MobileApp
 }
-// NewWindowsPhone81StoreApp instantiates a new WindowsPhone81StoreApp and sets the default values.
+// NewWindowsPhone81StoreApp instantiates a new windowsPhone81StoreApp and sets the default values.
 func NewWindowsPhone81StoreApp()(*WindowsPhone81StoreApp) {
     m := &WindowsPhone81StoreApp{
         MobileApp: *NewMobileApp(),

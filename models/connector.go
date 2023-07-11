@@ -69,6 +69,16 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectorStatus)
         if err != nil {
@@ -110,6 +120,17 @@ func (m *Connector) GetMemberOf()([]ConnectorGroupable) {
     }
     if val != nil {
         return val.([]ConnectorGroupable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Connector) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -165,6 +186,12 @@ func (m *Connector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -201,6 +228,13 @@ func (m *Connector) SetMemberOf(value []ConnectorGroupable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Connector) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *Connector) SetStatus(value *ConnectorStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -222,11 +256,13 @@ type Connectorable interface {
     GetExternalIp()(*string)
     GetMachineName()(*string)
     GetMemberOf()([]ConnectorGroupable)
+    GetOdataType()(*string)
     GetStatus()(*ConnectorStatus)
     GetVersion()(*string)
     SetExternalIp(value *string)()
     SetMachineName(value *string)()
     SetMemberOf(value []ConnectorGroupable)()
+    SetOdataType(value *string)()
     SetStatus(value *ConnectorStatus)()
     SetVersion(value *string)()
 }

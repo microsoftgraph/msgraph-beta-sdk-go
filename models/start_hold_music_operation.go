@@ -7,8 +7,10 @@ import (
 // StartHoldMusicOperation 
 type StartHoldMusicOperation struct {
     CommsOperation
+    // The OdataType property
+    OdataType *string
 }
-// NewStartHoldMusicOperation instantiates a new StartHoldMusicOperation and sets the default values.
+// NewStartHoldMusicOperation instantiates a new startHoldMusicOperation and sets the default values.
 func NewStartHoldMusicOperation()(*StartHoldMusicOperation) {
     m := &StartHoldMusicOperation{
         CommsOperation: *NewCommsOperation(),

@@ -9,7 +9,7 @@ import (
 type CloudPcConnectionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewCloudPcConnectionCollectionResponse instantiates a new CloudPcConnectionCollectionResponse and sets the default values.
+// NewCloudPcConnectionCollectionResponse instantiates a new cloudPcConnectionCollectionResponse and sets the default values.
 func NewCloudPcConnectionCollectionResponse()(*CloudPcConnectionCollectionResponse) {
     m := &CloudPcConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

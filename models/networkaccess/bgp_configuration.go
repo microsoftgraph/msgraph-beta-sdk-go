@@ -10,7 +10,7 @@ type BgpConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBgpConfiguration instantiates a new BgpConfiguration and sets the default values.
+// NewBgpConfiguration instantiates a new bgpConfiguration and sets the default values.
 func NewBgpConfiguration()(*BgpConfiguration) {
     m := &BgpConfiguration{
     }
@@ -34,7 +34,7 @@ func (m *BgpConfiguration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAsn gets the asn property value. The asn property
+// GetAsn gets the asn property value. Specifies the ASN of the BGP.
 func (m *BgpConfiguration) GetAsn()(*int32) {
     val, err := m.GetBackingStore().Get("asn")
     if err != nil {
@@ -115,7 +115,7 @@ func (m *BgpConfiguration) GetIpAddress()(*string) {
     }
     return nil
 }
-// GetLocalIpAddress gets the localIpAddress property value. The localIpAddress property
+// GetLocalIpAddress gets the localIpAddress property value. Specifies the BGP IP address of peer (Microsoft, in this case).
 func (m *BgpConfiguration) GetLocalIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("localIpAddress")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *BgpConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPeerIpAddress gets the peerIpAddress property value. The peerIpAddress property
+// GetPeerIpAddress gets the peerIpAddress property value. Specifies the BGP IP address of customer's on-premise VPN router configuration.
 func (m *BgpConfiguration) GetPeerIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("peerIpAddress")
     if err != nil {
@@ -195,7 +195,7 @@ func (m *BgpConfiguration) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAsn sets the asn property value. The asn property
+// SetAsn sets the asn property value. Specifies the ASN of the BGP.
 func (m *BgpConfiguration) SetAsn(value *int32)() {
     err := m.GetBackingStore().Set("asn", value)
     if err != nil {
@@ -213,7 +213,7 @@ func (m *BgpConfiguration) SetIpAddress(value *string)() {
         panic(err)
     }
 }
-// SetLocalIpAddress sets the localIpAddress property value. The localIpAddress property
+// SetLocalIpAddress sets the localIpAddress property value. Specifies the BGP IP address of peer (Microsoft, in this case).
 func (m *BgpConfiguration) SetLocalIpAddress(value *string)() {
     err := m.GetBackingStore().Set("localIpAddress", value)
     if err != nil {
@@ -227,7 +227,7 @@ func (m *BgpConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPeerIpAddress sets the peerIpAddress property value. The peerIpAddress property
+// SetPeerIpAddress sets the peerIpAddress property value. Specifies the BGP IP address of customer's on-premise VPN router configuration.
 func (m *BgpConfiguration) SetPeerIpAddress(value *string)() {
     err := m.GetBackingStore().Set("peerIpAddress", value)
     if err != nil {

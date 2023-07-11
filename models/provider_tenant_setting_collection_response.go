@@ -8,7 +8,7 @@ import (
 type ProviderTenantSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProviderTenantSettingCollectionResponse instantiates a new ProviderTenantSettingCollectionResponse and sets the default values.
+// NewProviderTenantSettingCollectionResponse instantiates a new providerTenantSettingCollectionResponse and sets the default values.
 func NewProviderTenantSettingCollectionResponse()(*ProviderTenantSettingCollectionResponse) {
     m := &ProviderTenantSettingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

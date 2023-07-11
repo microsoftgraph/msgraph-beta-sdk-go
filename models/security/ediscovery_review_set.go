@@ -7,8 +7,10 @@ import (
 // EdiscoveryReviewSet 
 type EdiscoveryReviewSet struct {
     DataSet
+    // The OdataType property
+    OdataType *string
 }
-// NewEdiscoveryReviewSet instantiates a new EdiscoveryReviewSet and sets the default values.
+// NewEdiscoveryReviewSet instantiates a new ediscoveryReviewSet and sets the default values.
 func NewEdiscoveryReviewSet()(*EdiscoveryReviewSet) {
     m := &EdiscoveryReviewSet{
         DataSet: *NewDataSet(),

@@ -8,7 +8,7 @@ import (
 type StandardWebPart struct {
     WebPart
 }
-// NewStandardWebPart instantiates a new StandardWebPart and sets the default values.
+// NewStandardWebPart instantiates a new standardWebPart and sets the default values.
 func NewStandardWebPart()(*StandardWebPart) {
     m := &StandardWebPart{
         WebPart: *NewWebPart(),
@@ -45,6 +45,16 @@ func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["webPartType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -57,7 +67,18 @@ func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetWebPartType gets the webPartType property value. A Guid which indicates the type of the webParts
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *StandardWebPart) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetWebPartType gets the webPartType property value. A Guid that indicates the webPart type.
 func (m *StandardWebPart) GetWebPartType()(*string) {
     val, err := m.GetBackingStore().Get("webPartType")
     if err != nil {
@@ -81,6 +102,12 @@ func (m *StandardWebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webPartType", m.GetWebPartType())
         if err != nil {
             return err
@@ -95,7 +122,14 @@ func (m *StandardWebPart) SetData(value WebPartDataable)() {
         panic(err)
     }
 }
-// SetWebPartType sets the webPartType property value. A Guid which indicates the type of the webParts
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *StandardWebPart) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWebPartType sets the webPartType property value. A Guid that indicates the webPart type.
 func (m *StandardWebPart) SetWebPartType(value *string)() {
     err := m.GetBackingStore().Set("webPartType", value)
     if err != nil {
@@ -107,7 +141,9 @@ type StandardWebPartable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WebPartable
     GetData()(WebPartDataable)
+    GetOdataType()(*string)
     GetWebPartType()(*string)
     SetData(value WebPartDataable)()
+    SetOdataType(value *string)()
     SetWebPartType(value *string)()
 }

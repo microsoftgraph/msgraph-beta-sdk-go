@@ -8,7 +8,7 @@ import (
 type AuthenticationStrengthRoot struct {
     Entity
 }
-// NewAuthenticationStrengthRoot instantiates a new AuthenticationStrengthRoot and sets the default values.
+// NewAuthenticationStrengthRoot instantiates a new authenticationStrengthRoot and sets the default values.
 func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
     m := &AuthenticationStrengthRoot{
         Entity: *NewEntity(),
@@ -103,6 +103,16 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuthenticationStrengthPolicyFromDiscriminatorValue)
         if err != nil {
@@ -120,6 +130,17 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationStrengthRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicies gets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) GetPolicies()([]AuthenticationStrengthPolicyable) {
@@ -162,6 +183,12 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
@@ -197,6 +224,13 @@ func (m *AuthenticationStrengthRoot) SetCombinations(value []AuthenticationMetho
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationStrengthRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicies sets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) SetPolicies(value []AuthenticationStrengthPolicyable)() {
     err := m.GetBackingStore().Set("policies", value)
@@ -211,9 +245,11 @@ type AuthenticationStrengthRootable interface {
     GetAuthenticationCombinations()([]AuthenticationMethodModes)
     GetAuthenticationMethodModes()([]AuthenticationMethodModeDetailable)
     GetCombinations()([]AuthenticationMethodModes)
+    GetOdataType()(*string)
     GetPolicies()([]AuthenticationStrengthPolicyable)
     SetAuthenticationCombinations(value []AuthenticationMethodModes)()
     SetAuthenticationMethodModes(value []AuthenticationMethodModeDetailable)()
     SetCombinations(value []AuthenticationMethodModes)()
+    SetOdataType(value *string)()
     SetPolicies(value []AuthenticationStrengthPolicyable)()
 }

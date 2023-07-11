@@ -8,7 +8,7 @@ import (
 type DefaultUserRoleOverrideCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDefaultUserRoleOverrideCollectionResponse instantiates a new DefaultUserRoleOverrideCollectionResponse and sets the default values.
+// NewDefaultUserRoleOverrideCollectionResponse instantiates a new defaultUserRoleOverrideCollectionResponse and sets the default values.
 func NewDefaultUserRoleOverrideCollectionResponse()(*DefaultUserRoleOverrideCollectionResponse) {
     m := &DefaultUserRoleOverrideCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -6,11 +6,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyMigrationReport 
+// GroupPolicyMigrationReport the Group Policy migration report.
 type GroupPolicyMigrationReport struct {
     Entity
 }
-// NewGroupPolicyMigrationReport instantiates a new GroupPolicyMigrationReport and sets the default values.
+// NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     m := &GroupPolicyMigrationReport{
         Entity: *NewEntity(),
@@ -129,6 +129,16 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i87
         }
         if val != nil {
             m.SetMigrationReadiness(val.(*GroupPolicyMigrationReadiness))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -282,6 +292,17 @@ func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrati
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GroupPolicyMigrationReport) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
 func (m *GroupPolicyMigrationReport) GetOuDistinguishedName()(*string) {
     val, err := m.GetBackingStore().Get("ouDistinguishedName")
@@ -421,6 +442,12 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("ouDistinguishedName", m.GetOuDistinguishedName())
         if err != nil {
             return err
@@ -526,6 +553,13 @@ func (m *GroupPolicyMigrationReport) SetMigrationReadiness(value *GroupPolicyMig
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GroupPolicyMigrationReport) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOuDistinguishedName sets the ouDistinguishedName property value. The distinguished name of the OU.
 func (m *GroupPolicyMigrationReport) SetOuDistinguishedName(value *string)() {
     err := m.GetBackingStore().Set("ouDistinguishedName", value)
@@ -587,6 +621,7 @@ type GroupPolicyMigrationReportable interface {
     GetGroupPolicySettingMappings()([]GroupPolicySettingMappingable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMigrationReadiness()(*GroupPolicyMigrationReadiness)
+    GetOdataType()(*string)
     GetOuDistinguishedName()(*string)
     GetRoleScopeTagIds()([]string)
     GetSupportedSettingsCount()(*int32)
@@ -602,6 +637,7 @@ type GroupPolicyMigrationReportable interface {
     SetGroupPolicySettingMappings(value []GroupPolicySettingMappingable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMigrationReadiness(value *GroupPolicyMigrationReadiness)()
+    SetOdataType(value *string)()
     SetOuDistinguishedName(value *string)()
     SetRoleScopeTagIds(value []string)()
     SetSupportedSettingsCount(value *int32)()

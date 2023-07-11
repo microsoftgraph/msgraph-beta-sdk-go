@@ -7,8 +7,10 @@ import (
 // ShiftPreferences 
 type ShiftPreferences struct {
     ChangeTrackedEntity
+    // The OdataType property
+    OdataType *string
 }
-// NewShiftPreferences instantiates a new ShiftPreferences and sets the default values.
+// NewShiftPreferences instantiates a new shiftPreferences and sets the default values.
 func NewShiftPreferences()(*ShiftPreferences) {
     m := &ShiftPreferences{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

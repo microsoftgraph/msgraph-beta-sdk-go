@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSCredentialSingleSignOnExtension 
+// MacOSCredentialSingleSignOnExtension represents a Credential-type Single Sign-On extension profile for macOS devices.
 type MacOSCredentialSingleSignOnExtension struct {
     MacOSSingleSignOnExtension
 }
-// NewMacOSCredentialSingleSignOnExtension instantiates a new MacOSCredentialSingleSignOnExtension and sets the default values.
+// NewMacOSCredentialSingleSignOnExtension instantiates a new macOSCredentialSingleSignOnExtension and sets the default values.
 func NewMacOSCredentialSingleSignOnExtension()(*MacOSCredentialSingleSignOnExtension) {
     m := &MacOSCredentialSingleSignOnExtension{
         MacOSSingleSignOnExtension: *NewMacOSSingleSignOnExtension(),

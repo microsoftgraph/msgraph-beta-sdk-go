@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementCollectionSettingDefinition 
+// DeviceManagementCollectionSettingDefinition entity representing the defintion for a collection setting
 type DeviceManagementCollectionSettingDefinition struct {
     DeviceManagementSettingDefinition
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementCollectionSettingDefinition instantiates a new DeviceManagementCollectionSettingDefinition and sets the default values.
+// NewDeviceManagementCollectionSettingDefinition instantiates a new deviceManagementCollectionSettingDefinition and sets the default values.
 func NewDeviceManagementCollectionSettingDefinition()(*DeviceManagementCollectionSettingDefinition) {
     m := &DeviceManagementCollectionSettingDefinition{
         DeviceManagementSettingDefinition: *NewDeviceManagementSettingDefinition(),

@@ -18,7 +18,7 @@ type LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetQueryParameters get traffic from networkAccess
+// LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetQueryParameters represents a collection of log entries in the network access traffic log.
 type LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get traffic from networkAccess
+// Get represents a collection of log entries in the network access traffic log.
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get traffic from networkAccess
+// ToGetRequestInformation represents a collection of log entries in the network access traffic log.
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

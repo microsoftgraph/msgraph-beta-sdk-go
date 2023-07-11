@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaDeployment 
+// ZebraFotaDeployment the Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
 type ZebraFotaDeployment struct {
     Entity
 }
-// NewZebraFotaDeployment instantiates a new ZebraFotaDeployment and sets the default values.
+// NewZebraFotaDeployment instantiates a new zebraFotaDeployment and sets the default values.
 func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
     m := &ZebraFotaDeployment{
         Entity: *NewEntity(),
@@ -133,6 +133,16 @@ func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -150,6 +160,17 @@ func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ZebraFotaDeployment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
 func (m *ZebraFotaDeployment) GetRoleScopeTagIds()([]string) {
@@ -204,6 +225,12 @@ func (m *ZebraFotaDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
@@ -247,6 +274,13 @@ func (m *ZebraFotaDeployment) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ZebraFotaDeployment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
 func (m *ZebraFotaDeployment) SetRoleScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTagIds", value)
@@ -263,11 +297,13 @@ type ZebraFotaDeploymentable interface {
     GetDeploymentStatus()(ZebraFotaDeploymentStatusable)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetRoleScopeTagIds()([]string)
     SetDeploymentAssignments(value []AndroidFotaDeploymentAssignmentable)()
     SetDeploymentSettings(value ZebraFotaDeploymentSettingsable)()
     SetDeploymentStatus(value ZebraFotaDeploymentStatusable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetRoleScopeTagIds(value []string)()
 }

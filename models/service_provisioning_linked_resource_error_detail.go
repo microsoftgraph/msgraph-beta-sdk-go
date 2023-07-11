@@ -7,8 +7,10 @@ import (
 // ServiceProvisioningLinkedResourceErrorDetail 
 type ServiceProvisioningLinkedResourceErrorDetail struct {
     ServiceProvisioningResourceErrorDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewServiceProvisioningLinkedResourceErrorDetail instantiates a new ServiceProvisioningLinkedResourceErrorDetail and sets the default values.
+// NewServiceProvisioningLinkedResourceErrorDetail instantiates a new serviceProvisioningLinkedResourceErrorDetail and sets the default values.
 func NewServiceProvisioningLinkedResourceErrorDetail()(*ServiceProvisioningLinkedResourceErrorDetail) {
     m := &ServiceProvisioningLinkedResourceErrorDetail{
         ServiceProvisioningResourceErrorDetail: *NewServiceProvisioningResourceErrorDetail(),

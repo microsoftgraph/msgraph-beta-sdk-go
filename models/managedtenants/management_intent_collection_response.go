@@ -9,7 +9,7 @@ import (
 type ManagementIntentCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagementIntentCollectionResponse instantiates a new ManagementIntentCollectionResponse and sets the default values.
+// NewManagementIntentCollectionResponse instantiates a new managementIntentCollectionResponse and sets the default values.
 func NewManagementIntentCollectionResponse()(*ManagementIntentCollectionResponse) {
     m := &ManagementIntentCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

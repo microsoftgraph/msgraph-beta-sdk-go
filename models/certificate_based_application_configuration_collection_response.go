@@ -8,7 +8,7 @@ import (
 type CertificateBasedApplicationConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCertificateBasedApplicationConfigurationCollectionResponse instantiates a new CertificateBasedApplicationConfigurationCollectionResponse and sets the default values.
+// NewCertificateBasedApplicationConfigurationCollectionResponse instantiates a new certificateBasedApplicationConfigurationCollectionResponse and sets the default values.
 func NewCertificateBasedApplicationConfigurationCollectionResponse()(*CertificateBasedApplicationConfigurationCollectionResponse) {
     m := &CertificateBasedApplicationConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

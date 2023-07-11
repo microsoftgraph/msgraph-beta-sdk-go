@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppPolicySetItem 
+// MobileAppPolicySetItem a class containing the properties used for mobile app PolicySetItem.
 type MobileAppPolicySetItem struct {
     PolicySetItem
+    // The OdataType property
+    OdataType *string
 }
-// NewMobileAppPolicySetItem instantiates a new MobileAppPolicySetItem and sets the default values.
+// NewMobileAppPolicySetItem instantiates a new mobileAppPolicySetItem and sets the default values.
 func NewMobileAppPolicySetItem()(*MobileAppPolicySetItem) {
     m := &MobileAppPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),

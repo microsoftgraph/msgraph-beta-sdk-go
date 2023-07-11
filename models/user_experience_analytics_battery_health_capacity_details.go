@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthCapacityDetails 
+// UserExperienceAnalyticsBatteryHealthCapacityDetails the user experience analytics battery health capacity entity contains count of devices broken down into 3 categories - devices with capacity > 80%, devices with capacity 50-80% and devices with capacity < 50 %.This API provides the count of devices in these 3 categories..
 type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     Entity
 }
@@ -117,6 +117,16 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this capacity details instance.
@@ -127,6 +137,17 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetLastRefreshedDa
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -162,6 +183,12 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) Serialize(writer i
     }
     {
         err = writer.WriteTimeValue("lastRefreshedDateTime", m.GetLastRefreshedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -203,6 +230,13 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetLastRefreshedDa
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserExperienceAnalyticsBatteryHealthCapacityDetailsable 
 type UserExperienceAnalyticsBatteryHealthCapacityDetailsable interface {
     Entityable
@@ -212,9 +246,11 @@ type UserExperienceAnalyticsBatteryHealthCapacityDetailsable interface {
     GetBatteryCapacityGood()(*int32)
     GetBatteryCapacityPoor()(*int32)
     GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     SetActiveDevices(value *int32)()
     SetBatteryCapacityFair(value *int32)()
     SetBatteryCapacityGood(value *int32)()
     SetBatteryCapacityPoor(value *int32)()
     SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
 }

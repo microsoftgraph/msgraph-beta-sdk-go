@@ -8,7 +8,7 @@ import (
 type WindowsQualityUpdateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsQualityUpdateProfileCollectionResponse instantiates a new WindowsQualityUpdateProfileCollectionResponse and sets the default values.
+// NewWindowsQualityUpdateProfileCollectionResponse instantiates a new windowsQualityUpdateProfileCollectionResponse and sets the default values.
 func NewWindowsQualityUpdateProfileCollectionResponse()(*WindowsQualityUpdateProfileCollectionResponse) {
     m := &WindowsQualityUpdateProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

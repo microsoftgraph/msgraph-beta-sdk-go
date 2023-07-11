@@ -7,8 +7,10 @@ import (
 // TaskFileAttachment 
 type TaskFileAttachment struct {
     AttachmentBase
+    // The OdataType property
+    OdataType *string
 }
-// NewTaskFileAttachment instantiates a new TaskFileAttachment and sets the default values.
+// NewTaskFileAttachment instantiates a new taskFileAttachment and sets the default values.
 func NewTaskFileAttachment()(*TaskFileAttachment) {
     m := &TaskFileAttachment{
         AttachmentBase: *NewAttachmentBase(),

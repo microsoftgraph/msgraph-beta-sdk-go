@@ -147,6 +147,16 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue)
         if err != nil {
@@ -178,6 +188,17 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*boo
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -241,6 +262,12 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("tenantRestrictions", m.GetTenantRestrictions())
         if err != nil {
             return err
@@ -297,6 +324,13 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value 
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantRestrictions sets the tenantRestrictions property value. Defines the default tenant restrictions configuration for your organization users accessing an external organization on your network or devices.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
     err := m.GetBackingStore().Set("tenantRestrictions", value)
@@ -315,6 +349,7 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsServiceDefault()(*bool)
+    GetOdataType()(*string)
     GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
     SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
@@ -323,5 +358,6 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetIsServiceDefault(value *bool)()
+    SetOdataType(value *string)()
     SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()
 }

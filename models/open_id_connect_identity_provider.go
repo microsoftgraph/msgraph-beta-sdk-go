@@ -8,7 +8,7 @@ import (
 type OpenIdConnectIdentityProvider struct {
     IdentityProviderBase
 }
-// NewOpenIdConnectIdentityProvider instantiates a new OpenIdConnectIdentityProvider and sets the default values.
+// NewOpenIdConnectIdentityProvider instantiates a new openIdConnectIdentityProvider and sets the default values.
 func NewOpenIdConnectIdentityProvider()(*OpenIdConnectIdentityProvider) {
     m := &OpenIdConnectIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
@@ -118,6 +118,16 @@ func (m *OpenIdConnectIdentityProvider) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["responseMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOpenIdConnectResponseMode)
         if err != nil {
@@ -153,6 +163,17 @@ func (m *OpenIdConnectIdentityProvider) GetFieldDeserializers()(map[string]func(
 // GetMetadataUrl gets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration. Provide the metadata URL for the OpenID Connect identity provider you add. Read-only. Required.
 func (m *OpenIdConnectIdentityProvider) GetMetadataUrl()(*string) {
     val, err := m.GetBackingStore().Get("metadataUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OpenIdConnectIdentityProvider) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -230,6 +251,12 @@ func (m *OpenIdConnectIdentityProvider) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResponseMode() != nil {
         cast := (*m.GetResponseMode()).String()
         err = writer.WriteStringValue("responseMode", &cast)
@@ -287,6 +314,13 @@ func (m *OpenIdConnectIdentityProvider) SetMetadataUrl(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OpenIdConnectIdentityProvider) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResponseMode sets the responseMode property value. The responseMode property
 func (m *OpenIdConnectIdentityProvider) SetResponseMode(value *OpenIdConnectResponseMode)() {
     err := m.GetBackingStore().Set("responseMode", value)
@@ -317,6 +351,7 @@ type OpenIdConnectIdentityProviderable interface {
     GetClientSecret()(*string)
     GetDomainHint()(*string)
     GetMetadataUrl()(*string)
+    GetOdataType()(*string)
     GetResponseMode()(*OpenIdConnectResponseMode)
     GetResponseType()(*OpenIdConnectResponseTypes)
     GetScope()(*string)
@@ -325,6 +360,7 @@ type OpenIdConnectIdentityProviderable interface {
     SetClientSecret(value *string)()
     SetDomainHint(value *string)()
     SetMetadataUrl(value *string)()
+    SetOdataType(value *string)()
     SetResponseMode(value *OpenIdConnectResponseMode)()
     SetResponseType(value *OpenIdConnectResponseTypes)()
     SetScope(value *string)()

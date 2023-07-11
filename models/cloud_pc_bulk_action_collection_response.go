@@ -8,7 +8,7 @@ import (
 type CloudPcBulkActionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcBulkActionCollectionResponse instantiates a new CloudPcBulkActionCollectionResponse and sets the default values.
+// NewCloudPcBulkActionCollectionResponse instantiates a new cloudPcBulkActionCollectionResponse and sets the default values.
 func NewCloudPcBulkActionCollectionResponse()(*CloudPcBulkActionCollectionResponse) {
     m := &CloudPcBulkActionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

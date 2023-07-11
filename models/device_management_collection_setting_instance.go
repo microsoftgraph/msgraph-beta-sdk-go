@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementCollectionSettingInstance 
+// DeviceManagementCollectionSettingInstance a setting instance representing a collection of values
 type DeviceManagementCollectionSettingInstance struct {
     DeviceManagementSettingInstance
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementCollectionSettingInstance instantiates a new DeviceManagementCollectionSettingInstance and sets the default values.
+// NewDeviceManagementCollectionSettingInstance instantiates a new deviceManagementCollectionSettingInstance and sets the default values.
 func NewDeviceManagementCollectionSettingInstance()(*DeviceManagementCollectionSettingInstance) {
     m := &DeviceManagementCollectionSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),

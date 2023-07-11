@@ -7,8 +7,10 @@ import (
 // DeviceRestrictionAction 
 type DeviceRestrictionAction struct {
     DlpActionInfo
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceRestrictionAction instantiates a new DeviceRestrictionAction and sets the default values.
+// NewDeviceRestrictionAction instantiates a new deviceRestrictionAction and sets the default values.
 func NewDeviceRestrictionAction()(*DeviceRestrictionAction) {
     m := &DeviceRestrictionAction{
         DlpActionInfo: *NewDlpActionInfo(),

@@ -7,8 +7,10 @@ import (
 // BusinessFlowSettings 
 type BusinessFlowSettings struct {
     AccessReviewSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewBusinessFlowSettings instantiates a new BusinessFlowSettings and sets the default values.
+// NewBusinessFlowSettings instantiates a new businessFlowSettings and sets the default values.
 func NewBusinessFlowSettings()(*BusinessFlowSettings) {
     m := &BusinessFlowSettings{
         AccessReviewSettings: *NewAccessReviewSettings(),

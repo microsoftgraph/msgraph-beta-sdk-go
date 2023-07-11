@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary 
+// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) {

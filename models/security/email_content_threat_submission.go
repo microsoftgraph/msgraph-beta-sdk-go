@@ -8,7 +8,7 @@ import (
 type EmailContentThreatSubmission struct {
     EmailThreatSubmission
 }
-// NewEmailContentThreatSubmission instantiates a new EmailContentThreatSubmission and sets the default values.
+// NewEmailContentThreatSubmission instantiates a new emailContentThreatSubmission and sets the default values.
 func NewEmailContentThreatSubmission()(*EmailContentThreatSubmission) {
     m := &EmailContentThreatSubmission{
         EmailThreatSubmission: *NewEmailThreatSubmission(),

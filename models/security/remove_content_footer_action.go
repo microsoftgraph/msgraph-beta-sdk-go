@@ -7,8 +7,10 @@ import (
 // RemoveContentFooterAction 
 type RemoveContentFooterAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewRemoveContentFooterAction instantiates a new RemoveContentFooterAction and sets the default values.
+// NewRemoveContentFooterAction instantiates a new removeContentFooterAction and sets the default values.
 func NewRemoveContentFooterAction()(*RemoveContentFooterAction) {
     m := &RemoveContentFooterAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

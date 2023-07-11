@@ -21,7 +21,7 @@ func NewBranchSite()(*BranchSite) {
 func CreateBranchSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchSite(), nil
 }
-// GetBandwidthCapacity gets the bandwidthCapacity property value. The bandwidthCapacity property
+// GetBandwidthCapacity gets the bandwidthCapacity property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
 func (m *BranchSite) GetBandwidthCapacity()(*int64) {
     val, err := m.GetBackingStore().Get("bandwidthCapacity")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *BranchSite) GetBandwidthCapacity()(*int64) {
     }
     return nil
 }
-// GetConnectivityState gets the connectivityState property value. The connectivityState property
+// GetConnectivityState gets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
 func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
     val, err := m.GetBackingStore().Get("connectivityState")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
     }
     return nil
 }
-// GetCountry gets the country property value. The country property
+// GetCountry gets the country property value. The branch site is created in the specified country.
 func (m *BranchSite) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -54,7 +54,7 @@ func (m *BranchSite) GetCountry()(*string) {
     }
     return nil
 }
-// GetDeviceLinks gets the deviceLinks property value. The deviceLinks property
+// GetDeviceLinks gets the deviceLinks property value. Each unique CPE device associated with a branch is specified. Supports $expand.
 func (m *BranchSite) GetDeviceLinks()([]DeviceLinkable) {
     val, err := m.GetBackingStore().Get("deviceLinks")
     if err != nil {
@@ -150,6 +150,16 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRegion)
         if err != nil {
@@ -172,7 +182,7 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetForwardingProfiles gets the forwardingProfiles property value. The forwardingProfiles property
+// GetForwardingProfiles gets the forwardingProfiles property value. Each forwarding profile associated with a branch site is specified. Supports $expand.
 func (m *BranchSite) GetForwardingProfiles()([]ForwardingProfileable) {
     val, err := m.GetBackingStore().Get("forwardingProfiles")
     if err != nil {
@@ -183,7 +193,7 @@ func (m *BranchSite) GetForwardingProfiles()([]ForwardingProfileable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. last modified time.
 func (m *BranchSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -194,9 +204,20 @@ func (m *BranchSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name.
 func (m *BranchSite) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BranchSite) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -216,7 +237,7 @@ func (m *BranchSite) GetRegion()(*Region) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The branch version.
 func (m *BranchSite) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -288,6 +309,12 @@ func (m *BranchSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRegion() != nil {
         cast := (*m.GetRegion()).String()
         err = writer.WriteStringValue("region", &cast)
@@ -303,51 +330,58 @@ func (m *BranchSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetBandwidthCapacity sets the bandwidthCapacity property value. The bandwidthCapacity property
+// SetBandwidthCapacity sets the bandwidthCapacity property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
 func (m *BranchSite) SetBandwidthCapacity(value *int64)() {
     err := m.GetBackingStore().Set("bandwidthCapacity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectivityState sets the connectivityState property value. The connectivityState property
+// SetConnectivityState sets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
 func (m *BranchSite) SetConnectivityState(value *ConnectivityState)() {
     err := m.GetBackingStore().Set("connectivityState", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountry sets the country property value. The country property
+// SetCountry sets the country property value. The branch site is created in the specified country.
 func (m *BranchSite) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceLinks sets the deviceLinks property value. The deviceLinks property
+// SetDeviceLinks sets the deviceLinks property value. Each unique CPE device associated with a branch is specified. Supports $expand.
 func (m *BranchSite) SetDeviceLinks(value []DeviceLinkable)() {
     err := m.GetBackingStore().Set("deviceLinks", value)
     if err != nil {
         panic(err)
     }
 }
-// SetForwardingProfiles sets the forwardingProfiles property value. The forwardingProfiles property
+// SetForwardingProfiles sets the forwardingProfiles property value. Each forwarding profile associated with a branch site is specified. Supports $expand.
 func (m *BranchSite) SetForwardingProfiles(value []ForwardingProfileable)() {
     err := m.GetBackingStore().Set("forwardingProfiles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. last modified time.
 func (m *BranchSite) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name.
 func (m *BranchSite) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BranchSite) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -359,7 +393,7 @@ func (m *BranchSite) SetRegion(value *Region)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The branch version.
 func (m *BranchSite) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {
@@ -377,6 +411,7 @@ type BranchSiteable interface {
     GetForwardingProfiles()([]ForwardingProfileable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetRegion()(*Region)
     GetVersion()(*string)
     SetBandwidthCapacity(value *int64)()
@@ -386,6 +421,7 @@ type BranchSiteable interface {
     SetForwardingProfiles(value []ForwardingProfileable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetRegion(value *Region)()
     SetVersion(value *string)()
 }

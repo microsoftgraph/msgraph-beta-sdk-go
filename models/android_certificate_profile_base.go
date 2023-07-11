@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidCertificateProfileBase 
+// AndroidCertificateProfileBase android certificate profile base.
 type AndroidCertificateProfileBase struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewAndroidCertificateProfileBase instantiates a new AndroidCertificateProfileBase and sets the default values.
+// NewAndroidCertificateProfileBase instantiates a new androidCertificateProfileBase and sets the default values.
 func NewAndroidCertificateProfileBase()(*AndroidCertificateProfileBase) {
     m := &AndroidCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

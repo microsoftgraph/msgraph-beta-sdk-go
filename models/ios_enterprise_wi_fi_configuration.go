@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosEnterpriseWiFiConfiguration 
+// IosEnterpriseWiFiConfiguration by providing the configurations in this profile you can instruct the iOS device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
 type IosEnterpriseWiFiConfiguration struct {
     IosWiFiConfiguration
 }
-// NewIosEnterpriseWiFiConfiguration instantiates a new IosEnterpriseWiFiConfiguration and sets the default values.
+// NewIosEnterpriseWiFiConfiguration instantiates a new iosEnterpriseWiFiConfiguration and sets the default values.
 func NewIosEnterpriseWiFiConfiguration()(*IosEnterpriseWiFiConfiguration) {
     m := &IosEnterpriseWiFiConfiguration{
         IosWiFiConfiguration: *NewIosWiFiConfiguration(),

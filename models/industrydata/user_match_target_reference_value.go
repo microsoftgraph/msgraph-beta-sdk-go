@@ -7,8 +7,10 @@ import (
 // UserMatchTargetReferenceValue 
 type UserMatchTargetReferenceValue struct {
     ReferenceValue
+    // The OdataType property
+    OdataType *string
 }
-// NewUserMatchTargetReferenceValue instantiates a new UserMatchTargetReferenceValue and sets the default values.
+// NewUserMatchTargetReferenceValue instantiates a new userMatchTargetReferenceValue and sets the default values.
 func NewUserMatchTargetReferenceValue()(*UserMatchTargetReferenceValue) {
     m := &UserMatchTargetReferenceValue{
         ReferenceValue: *NewReferenceValue(),

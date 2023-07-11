@@ -335,6 +335,16 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["productKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -485,6 +495,17 @@ func (m *WindowsAutopilotDeviceIdentity) GetManufacturer()(*string) {
 // GetModel gets the model property value. Model name of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsAutopilotDeviceIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -710,6 +731,12 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("productKey", m.GetProductKey())
         if err != nil {
             return err
@@ -892,6 +919,13 @@ func (m *WindowsAutopilotDeviceIdentity) SetModel(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsAutopilotDeviceIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProductKey sets the productKey property value. Product Key of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
     err := m.GetBackingStore().Set("productKey", value)
@@ -977,6 +1011,7 @@ type WindowsAutopilotDeviceIdentityable interface {
     GetManagedDeviceId()(*string)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetProductKey()(*string)
     GetPurchaseOrderIdentifier()(*string)
     GetRemediationState()(*WindowsAutopilotDeviceRemediationState)
@@ -1004,6 +1039,7 @@ type WindowsAutopilotDeviceIdentityable interface {
     SetManagedDeviceId(value *string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetProductKey(value *string)()
     SetPurchaseOrderIdentifier(value *string)()
     SetRemediationState(value *WindowsAutopilotDeviceRemediationState)()

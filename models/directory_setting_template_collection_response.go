@@ -8,7 +8,7 @@ import (
 type DirectorySettingTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDirectorySettingTemplateCollectionResponse instantiates a new DirectorySettingTemplateCollectionResponse and sets the default values.
+// NewDirectorySettingTemplateCollectionResponse instantiates a new directorySettingTemplateCollectionResponse and sets the default values.
 func NewDirectorySettingTemplateCollectionResponse()(*DirectorySettingTemplateCollectionResponse) {
     m := &DirectorySettingTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

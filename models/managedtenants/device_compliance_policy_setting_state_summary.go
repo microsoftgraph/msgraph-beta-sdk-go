@@ -127,6 +127,16 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["pendingDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -230,6 +240,17 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount(
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceCompliancePolicySettingStateSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -348,6 +369,12 @@ func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d233
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("pendingDeviceCount", m.GetPendingDeviceCount())
         if err != nil {
             return err
@@ -434,6 +461,13 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceCompliancePolicySettingStateSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPendingDeviceCount sets the pendingDeviceCount property value. The number of devices in a pending state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPendingDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingDeviceCount", value)
@@ -487,6 +521,7 @@ type DeviceCompliancePolicySettingStateSummaryable interface {
     GetIntuneSettingId()(*string)
     GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNotApplicableDeviceCount()(*int32)
+    GetOdataType()(*string)
     GetPendingDeviceCount()(*int32)
     GetPolicyType()(*string)
     GetSettingName()(*string)
@@ -500,6 +535,7 @@ type DeviceCompliancePolicySettingStateSummaryable interface {
     SetIntuneSettingId(value *string)()
     SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNotApplicableDeviceCount(value *int32)()
+    SetOdataType(value *string)()
     SetPendingDeviceCount(value *int32)()
     SetPolicyType(value *string)()
     SetSettingName(value *string)()

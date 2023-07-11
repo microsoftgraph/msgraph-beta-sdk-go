@@ -8,7 +8,7 @@ import (
 type AccessPackageAssignmentRequestCallbackData struct {
     CustomExtensionData
 }
-// NewAccessPackageAssignmentRequestCallbackData instantiates a new AccessPackageAssignmentRequestCallbackData and sets the default values.
+// NewAccessPackageAssignmentRequestCallbackData instantiates a new accessPackageAssignmentRequestCallbackData and sets the default values.
 func NewAccessPackageAssignmentRequestCallbackData()(*AccessPackageAssignmentRequestCallbackData) {
     m := &AccessPackageAssignmentRequestCallbackData{
         CustomExtensionData: *NewCustomExtensionData(),
@@ -66,6 +66,16 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
         if err != nil {
@@ -87,6 +97,17 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequestCallbackData) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStage gets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *AccessPackageAssignmentRequestCallbackData) GetStage()(*AccessPackageCustomExtensionStage) {
@@ -128,6 +149,12 @@ func (m *AccessPackageAssignmentRequestCallbackData) Serialize(writer i878a80d23
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStage() != nil {
         cast := (*m.GetStage()).String()
         err = writer.WriteStringValue("stage", &cast)
@@ -157,6 +184,13 @@ func (m *AccessPackageAssignmentRequestCallbackData) SetCustomExtensionStageInst
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequestCallbackData) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStage sets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *AccessPackageAssignmentRequestCallbackData) SetStage(value *AccessPackageCustomExtensionStage)() {
     err := m.GetBackingStore().Set("stage", value)
@@ -177,10 +211,12 @@ type AccessPackageAssignmentRequestCallbackDataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomExtensionStageInstanceDetail()(*string)
     GetCustomExtensionStageInstanceId()(*string)
+    GetOdataType()(*string)
     GetStage()(*AccessPackageCustomExtensionStage)
     GetState()(*string)
     SetCustomExtensionStageInstanceDetail(value *string)()
     SetCustomExtensionStageInstanceId(value *string)()
+    SetOdataType(value *string)()
     SetStage(value *AccessPackageCustomExtensionStage)()
     SetState(value *string)()
 }

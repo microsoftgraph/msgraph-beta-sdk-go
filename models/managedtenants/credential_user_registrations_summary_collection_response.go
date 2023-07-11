@@ -9,7 +9,7 @@ import (
 type CredentialUserRegistrationsSummaryCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewCredentialUserRegistrationsSummaryCollectionResponse instantiates a new CredentialUserRegistrationsSummaryCollectionResponse and sets the default values.
+// NewCredentialUserRegistrationsSummaryCollectionResponse instantiates a new credentialUserRegistrationsSummaryCollectionResponse and sets the default values.
 func NewCredentialUserRegistrationsSummaryCollectionResponse()(*CredentialUserRegistrationsSummaryCollectionResponse) {
     m := &CredentialUserRegistrationsSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

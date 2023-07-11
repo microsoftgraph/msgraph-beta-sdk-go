@@ -104,6 +104,16 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -134,6 +144,17 @@ func (m *UnifiedRoleManagementAlertConfiguration) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementAlertConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -184,6 +205,12 @@ func (m *UnifiedRoleManagementAlertConfiguration) Serialize(writer i878a80d2330e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("scopeId", m.GetScopeId())
         if err != nil {
             return err
@@ -218,6 +245,13 @@ func (m *UnifiedRoleManagementAlertConfiguration) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementAlertConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScopeId sets the scopeId property value. The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertConfiguration) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
@@ -239,11 +273,13 @@ type UnifiedRoleManagementAlertConfigurationable interface {
     GetAlertDefinition()(UnifiedRoleManagementAlertDefinitionable)
     GetAlertDefinitionId()(*string)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetScopeId()(*string)
     GetScopeType()(*string)
     SetAlertDefinition(value UnifiedRoleManagementAlertDefinitionable)()
     SetAlertDefinitionId(value *string)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetScopeId(value *string)()
     SetScopeType(value *string)()
 }

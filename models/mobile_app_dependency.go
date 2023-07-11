@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppDependency 
+// MobileAppDependency describes a dependency type between two mobile apps.
 type MobileAppDependency struct {
     MobileAppRelationship
+    // The OdataType property
+    OdataType *string
 }
-// NewMobileAppDependency instantiates a new MobileAppDependency and sets the default values.
+// NewMobileAppDependency instantiates a new mobileAppDependency and sets the default values.
 func NewMobileAppDependency()(*MobileAppDependency) {
     m := &MobileAppDependency{
         MobileAppRelationship: *NewMobileAppRelationship(),

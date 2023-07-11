@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentPlatformRestrictionsConfiguration 
+// DeviceEnrollmentPlatformRestrictionsConfiguration device Enrollment Configuration that restricts the types of devices a user can enroll
 type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentPlatformRestrictionsConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+// NewDeviceEnrollmentPlatformRestrictionsConfiguration instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionsConfiguration()(*DeviceEnrollmentPlatformRestrictionsConfiguration) {
     m := &DeviceEnrollmentPlatformRestrictionsConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -96,6 +96,16 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializer
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["windowsHomeSkuRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
         if err != nil {
@@ -158,6 +168,17 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacRestriction()(
     }
     if val != nil {
         return val.(DeviceEnrollmentPlatformRestrictionable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -231,6 +252,12 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) Serialize(writer i87
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("windowsHomeSkuRestriction", m.GetWindowsHomeSkuRestriction())
         if err != nil {
             return err
@@ -285,6 +312,13 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetMacRestriction(va
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsHomeSkuRestriction sets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsHomeSkuRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("windowsHomeSkuRestriction", value)
@@ -315,6 +349,7 @@ type DeviceEnrollmentPlatformRestrictionsConfigurationable interface {
     GetIosRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetMacOSRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetMacRestriction()(DeviceEnrollmentPlatformRestrictionable)
+    GetOdataType()(*string)
     GetWindowsHomeSkuRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetWindowsMobileRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetWindowsRestriction()(DeviceEnrollmentPlatformRestrictionable)
@@ -323,6 +358,7 @@ type DeviceEnrollmentPlatformRestrictionsConfigurationable interface {
     SetIosRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetMacOSRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetMacRestriction(value DeviceEnrollmentPlatformRestrictionable)()
+    SetOdataType(value *string)()
     SetWindowsHomeSkuRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetWindowsMobileRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetWindowsRestriction(value DeviceEnrollmentPlatformRestrictionable)()

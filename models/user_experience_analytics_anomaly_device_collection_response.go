@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsAnomalyDeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsAnomalyDeviceCollectionResponse instantiates a new UserExperienceAnalyticsAnomalyDeviceCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsAnomalyDeviceCollectionResponse instantiates a new userExperienceAnalyticsAnomalyDeviceCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAnomalyDeviceCollectionResponse()(*UserExperienceAnalyticsAnomalyDeviceCollectionResponse) {
     m := &UserExperienceAnalyticsAnomalyDeviceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

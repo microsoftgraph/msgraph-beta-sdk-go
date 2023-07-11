@@ -182,6 +182,16 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersonDataSourcesFromDiscriminatorValue)
         if err != nil {
@@ -235,6 +245,17 @@ func (m *ItemFacet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ItemFacet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -299,6 +320,12 @@ func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("source", m.GetSource())
         if err != nil {
             return err
@@ -355,6 +382,13 @@ func (m *ItemFacet) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ItemFacet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSource sets the source property value. Where the values within an entity originated if synced from another service.
 func (m *ItemFacet) SetSource(value PersonDataSourcesable)() {
     err := m.GetBackingStore().Set("source", value)
@@ -373,6 +407,7 @@ type ItemFacetable interface {
     GetIsSearchable()(*bool)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetSource()(PersonDataSourcesable)
     SetAllowedAudiences(value *AllowedAudiences)()
     SetCreatedBy(value IdentitySetable)()
@@ -381,5 +416,6 @@ type ItemFacetable interface {
     SetIsSearchable(value *bool)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetSource(value PersonDataSourcesable)()
 }

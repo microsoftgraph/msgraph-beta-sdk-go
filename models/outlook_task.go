@@ -7,8 +7,10 @@ import (
 // OutlookTask 
 type OutlookTask struct {
     OutlookItem
+    // The OdataType property
+    OdataType *string
 }
-// NewOutlookTask instantiates a new OutlookTask and sets the default values.
+// NewOutlookTask instantiates a new outlookTask and sets the default values.
 func NewOutlookTask()(*OutlookTask) {
     m := &OutlookTask{
         OutlookItem: *NewOutlookItem(),

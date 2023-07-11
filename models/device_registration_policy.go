@@ -8,7 +8,7 @@ import (
 type DeviceRegistrationPolicy struct {
     Entity
 }
-// NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
+// NewDeviceRegistrationPolicy instantiates a new deviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),
@@ -126,6 +126,16 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userDeviceQuota"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -157,6 +167,17 @@ func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFacto
     }
     if val != nil {
         return val.(*MultiFactorAuthConfiguration)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceRegistrationPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -215,6 +236,12 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("userDeviceQuota", m.GetUserDeviceQuota())
         if err != nil {
             return err
@@ -264,6 +291,13 @@ func (m *DeviceRegistrationPolicy) SetMultiFactorAuthConfiguration(value *MultiF
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceRegistrationPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserDeviceQuota sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
 func (m *DeviceRegistrationPolicy) SetUserDeviceQuota(value *int32)() {
     err := m.GetBackingStore().Set("userDeviceQuota", value)
@@ -281,6 +315,7 @@ type DeviceRegistrationPolicyable interface {
     GetDisplayName()(*string)
     GetLocalAdminPassword()(LocalAdminPasswordSettingsable)
     GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration)
+    GetOdataType()(*string)
     GetUserDeviceQuota()(*int32)
     SetAzureADJoin(value AzureAdJoinPolicyable)()
     SetAzureADRegistration(value AzureADRegistrationPolicyable)()
@@ -288,5 +323,6 @@ type DeviceRegistrationPolicyable interface {
     SetDisplayName(value *string)()
     SetLocalAdminPassword(value LocalAdminPasswordSettingsable)()
     SetMultiFactorAuthConfiguration(value *MultiFactorAuthConfiguration)()
+    SetOdataType(value *string)()
     SetUserDeviceQuota(value *int32)()
 }

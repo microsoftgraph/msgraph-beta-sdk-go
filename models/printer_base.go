@@ -171,6 +171,16 @@ func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrinterStatusFromDiscriminatorValue)
         if err != nil {
@@ -241,6 +251,17 @@ func (m *PrinterBase) GetModel()(*string) {
 // GetName gets the name property value. The name property
 func (m *PrinterBase) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrinterBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -327,6 +348,12 @@ func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("status", m.GetStatus())
         if err != nil {
             return err
@@ -397,6 +424,13 @@ func (m *PrinterBase) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrinterBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *PrinterBase) SetStatus(value PrinterStatusable)() {
     err := m.GetBackingStore().Set("status", value)
@@ -417,6 +451,7 @@ type PrinterBaseable interface {
     GetManufacturer()(*string)
     GetModel()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetStatus()(PrinterStatusable)
     SetCapabilities(value PrinterCapabilitiesable)()
     SetDefaults(value PrinterDefaultsable)()
@@ -427,5 +462,6 @@ type PrinterBaseable interface {
     SetManufacturer(value *string)()
     SetModel(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetStatus(value PrinterStatusable)()
 }

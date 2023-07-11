@@ -9,8 +9,10 @@ import (
 // Run 
 type Run struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewRun instantiates a new Run and sets the default values.
+// NewRun instantiates a new run and sets the default values.
 func NewRun()(*Run) {
     m := &Run{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

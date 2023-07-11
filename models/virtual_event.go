@@ -124,6 +124,16 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["presenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVirtualEventPresenterFromDiscriminatorValue)
         if err != nil {
@@ -177,6 +187,17 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VirtualEvent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPresenters gets the presenters property value. Presenters' information of the virtual event.
 func (m *VirtualEvent) GetPresenters()([]VirtualEventPresenterable) {
@@ -252,6 +273,12 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPresenters() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPresenters()))
         for i, v := range m.GetPresenters() {
@@ -319,6 +346,13 @@ func (m *VirtualEvent) SetEndDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VirtualEvent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPresenters sets the presenters property value. Presenters' information of the virtual event.
 func (m *VirtualEvent) SetPresenters(value []VirtualEventPresenterable)() {
     err := m.GetBackingStore().Set("presenters", value)
@@ -355,6 +389,7 @@ type VirtualEventable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEndDateTime()(DateTimeTimeZoneable)
+    GetOdataType()(*string)
     GetPresenters()([]VirtualEventPresenterable)
     GetSessions()([]VirtualEventSessionable)
     GetStartDateTime()(DateTimeTimeZoneable)
@@ -363,6 +398,7 @@ type VirtualEventable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEndDateTime(value DateTimeTimeZoneable)()
+    SetOdataType(value *string)()
     SetPresenters(value []VirtualEventPresenterable)()
     SetSessions(value []VirtualEventSessionable)()
     SetStartDateTime(value DateTimeTimeZoneable)()

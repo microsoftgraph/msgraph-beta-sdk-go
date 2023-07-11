@@ -9,7 +9,7 @@ import (
 type HostTrackerCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewHostTrackerCollectionResponse instantiates a new HostTrackerCollectionResponse and sets the default values.
+// NewHostTrackerCollectionResponse instantiates a new hostTrackerCollectionResponse and sets the default values.
 func NewHostTrackerCollectionResponse()(*HostTrackerCollectionResponse) {
     m := &HostTrackerCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

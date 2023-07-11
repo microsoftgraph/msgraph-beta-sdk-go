@@ -8,7 +8,7 @@ import (
 type Office365GroupsActivityDetail struct {
     Entity
 }
-// NewOffice365GroupsActivityDetail instantiates a new Office365GroupsActivityDetail and sets the default values.
+// NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     m := &Office365GroupsActivityDetail{
         Entity: *NewEntity(),
@@ -163,6 +163,16 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetMemberCount(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -341,6 +351,17 @@ func (m *Office365GroupsActivityDetail) GetMemberCount()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Office365GroupsActivityDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -532,6 +553,12 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("ownerPrincipalName", m.GetOwnerPrincipalName())
         if err != nil {
             return err
@@ -669,6 +696,13 @@ func (m *Office365GroupsActivityDetail) SetMemberCount(value *int64)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Office365GroupsActivityDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOwnerPrincipalName sets the ownerPrincipalName property value. The group owner principal name.
 func (m *Office365GroupsActivityDetail) SetOwnerPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("ownerPrincipalName", value)
@@ -760,6 +794,7 @@ type Office365GroupsActivityDetailable interface {
     GetIsDeleted()(*bool)
     GetLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetMemberCount()(*int64)
+    GetOdataType()(*string)
     GetOwnerPrincipalName()(*string)
     GetReportPeriod()(*string)
     GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -781,6 +816,7 @@ type Office365GroupsActivityDetailable interface {
     SetIsDeleted(value *bool)()
     SetLastActivityDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetMemberCount(value *int64)()
+    SetOdataType(value *string)()
     SetOwnerPrincipalName(value *string)()
     SetReportPeriod(value *string)()
     SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

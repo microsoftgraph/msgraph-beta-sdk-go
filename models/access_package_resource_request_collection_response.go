@@ -8,7 +8,7 @@ import (
 type AccessPackageResourceRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccessPackageResourceRequestCollectionResponse instantiates a new AccessPackageResourceRequestCollectionResponse and sets the default values.
+// NewAccessPackageResourceRequestCollectionResponse instantiates a new accessPackageResourceRequestCollectionResponse and sets the default values.
 func NewAccessPackageResourceRequestCollectionResponse()(*AccessPackageResourceRequestCollectionResponse) {
     m := &AccessPackageResourceRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

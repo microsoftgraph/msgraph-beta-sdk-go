@@ -167,6 +167,16 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
@@ -205,6 +215,17 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPe
 // GetModel gets the model property value. The model name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -274,6 +295,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetBatteryAgeInDays sets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
@@ -339,6 +366,13 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetModel(value *
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserExperienceAnalyticsBatteryHealthDevicePerformanceable 
 type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     Entityable
@@ -352,6 +386,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     GetManufacturer()(*string)
     GetMaxCapacityPercentage()(*int32)
     GetModel()(*string)
+    GetOdataType()(*string)
     SetBatteryAgeInDays(value *int32)()
     SetDeviceBatteryHealthScore(value *int32)()
     SetDeviceId(value *string)()
@@ -361,4 +396,5 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     SetManufacturer(value *string)()
     SetMaxCapacityPercentage(value *int32)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
 }

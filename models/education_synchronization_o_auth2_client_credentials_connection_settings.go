@@ -7,8 +7,10 @@ import (
 // EducationSynchronizationOAuth2ClientCredentialsConnectionSettings 
 type EducationSynchronizationOAuth2ClientCredentialsConnectionSettings struct {
     EducationSynchronizationConnectionSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings instantiates a new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
+// NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings instantiates a new educationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
 func NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings()(*EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) {
     m := &EducationSynchronizationOAuth2ClientCredentialsConnectionSettings{
         EducationSynchronizationConnectionSettings: *NewEducationSynchronizationConnectionSettings(),

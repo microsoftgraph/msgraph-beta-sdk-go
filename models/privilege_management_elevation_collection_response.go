@@ -8,7 +8,7 @@ import (
 type PrivilegeManagementElevationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrivilegeManagementElevationCollectionResponse instantiates a new PrivilegeManagementElevationCollectionResponse and sets the default values.
+// NewPrivilegeManagementElevationCollectionResponse instantiates a new privilegeManagementElevationCollectionResponse and sets the default values.
 func NewPrivilegeManagementElevationCollectionResponse()(*PrivilegeManagementElevationCollectionResponse) {
     m := &PrivilegeManagementElevationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

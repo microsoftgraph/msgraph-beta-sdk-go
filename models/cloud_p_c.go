@@ -177,6 +177,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onPremisesConnectionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -394,6 +404,17 @@ func (m *CloudPC) GetManagedDeviceId()(*string) {
 // GetManagedDeviceName gets the managedDeviceName property value. The Intune device name of the Cloud PC.
 func (m *CloudPC) GetManagedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPC) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -630,6 +651,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("onPremisesConnectionName", m.GetOnPremisesConnectionName())
         if err != nil {
             return err
@@ -804,6 +831,13 @@ func (m *CloudPC) SetManagedDeviceName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPC) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesConnectionName sets the onPremisesConnectionName property value. The Azure network connection that is applied during the provisioning of Cloud PCs.
 func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesConnectionName", value)
@@ -917,6 +951,7 @@ type CloudPCable interface {
     GetLastRemoteActionResult()(CloudPcRemoteActionResultable)
     GetManagedDeviceId()(*string)
     GetManagedDeviceName()(*string)
+    GetOdataType()(*string)
     GetOnPremisesConnectionName()(*string)
     GetOsVersion()(*CloudPcOperatingSystem)
     GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable)
@@ -942,6 +977,7 @@ type CloudPCable interface {
     SetLastRemoteActionResult(value CloudPcRemoteActionResultable)()
     SetManagedDeviceId(value *string)()
     SetManagedDeviceName(value *string)()
+    SetOdataType(value *string)()
     SetOnPremisesConnectionName(value *string)()
     SetOsVersion(value *CloudPcOperatingSystem)()
     SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)()

@@ -8,7 +8,7 @@ import (
 type RecommendationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRecommendationCollectionResponse instantiates a new RecommendationCollectionResponse and sets the default values.
+// NewRecommendationCollectionResponse instantiates a new recommendationCollectionResponse and sets the default values.
 func NewRecommendationCollectionResponse()(*RecommendationCollectionResponse) {
     m := &RecommendationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

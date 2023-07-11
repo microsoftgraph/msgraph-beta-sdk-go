@@ -9,6 +9,8 @@ import (
 // GroupPolicyDefinition the entity describes all of the information about a single group policy.
 type GroupPolicyDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyDefinition instantiates a new groupPolicyDefinition and sets the default values.
 func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {

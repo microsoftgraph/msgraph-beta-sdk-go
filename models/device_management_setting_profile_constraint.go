@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingProfileConstraint 
+// DeviceManagementSettingProfileConstraint base entity for a constraint
 type DeviceManagementSettingProfileConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingProfileConstraint instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
+// NewDeviceManagementSettingProfileConstraint instantiates a new deviceManagementSettingProfileConstraint and sets the default values.
 func NewDeviceManagementSettingProfileConstraint()(*DeviceManagementSettingProfileConstraint) {
     m := &DeviceManagementSettingProfileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -24,6 +24,16 @@ func CreateDeviceManagementSettingProfileConstraintFromDiscriminatorValue(parseN
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingProfileConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -51,6 +61,17 @@ func (m *DeviceManagementSettingProfileConstraint) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingProfileConstraint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSource gets the source property value. The source of the entity
 func (m *DeviceManagementSettingProfileConstraint) GetSource()(*string) {
@@ -81,6 +102,12 @@ func (m *DeviceManagementSettingProfileConstraint) Serialize(writer i878a80d2330
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("source", m.GetSource())
         if err != nil {
             return err
@@ -93,6 +120,13 @@ func (m *DeviceManagementSettingProfileConstraint) Serialize(writer i878a80d2330
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingProfileConstraint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSource sets the source property value. The source of the entity
 func (m *DeviceManagementSettingProfileConstraint) SetSource(value *string)() {
@@ -112,8 +146,10 @@ func (m *DeviceManagementSettingProfileConstraint) SetTypes(value []string)() {
 type DeviceManagementSettingProfileConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSource()(*string)
     GetTypes()([]string)
+    SetOdataType(value *string)()
     SetSource(value *string)()
     SetTypes(value []string)()
 }

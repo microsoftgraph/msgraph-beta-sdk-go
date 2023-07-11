@@ -8,7 +8,7 @@ import (
 type TenantRelationshipAccessPolicyBase struct {
     PolicyBase
 }
-// NewTenantRelationshipAccessPolicyBase instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
+// NewTenantRelationshipAccessPolicyBase instantiates a new tenantRelationshipAccessPolicyBase and sets the default values.
 func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase) {
     m := &TenantRelationshipAccessPolicyBase{
         PolicyBase: *NewPolicyBase(),
@@ -69,7 +69,28 @@ func (m *TenantRelationshipAccessPolicyBase) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantRelationshipAccessPolicyBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TenantRelationshipAccessPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +104,12 @@ func (m *TenantRelationshipAccessPolicyBase) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDefinition sets the definition property value. The definition property
@@ -92,10 +119,19 @@ func (m *TenantRelationshipAccessPolicyBase) SetDefinition(value []string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantRelationshipAccessPolicyBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // TenantRelationshipAccessPolicyBaseable 
 type TenantRelationshipAccessPolicyBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable
     GetDefinition()([]string)
+    GetOdataType()(*string)
     SetDefinition(value []string)()
+    SetOdataType(value *string)()
 }

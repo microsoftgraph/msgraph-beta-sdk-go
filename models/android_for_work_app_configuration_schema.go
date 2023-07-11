@@ -43,6 +43,16 @@ func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["schemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue)
         if err != nil {
@@ -60,6 +70,17 @@ func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidForWorkAppConfigurationSchema) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItemable) {
@@ -80,6 +101,12 @@ func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i878a80d2330e89d
     }
     {
         err = writer.WriteByteArrayValue("exampleJson", m.GetExampleJson())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +132,13 @@ func (m *AndroidForWorkAppConfigurationSchema) SetExampleJson(value []byte)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidForWorkAppConfigurationSchema) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItemable)() {
     err := m.GetBackingStore().Set("schemaItems", value)
@@ -117,7 +151,9 @@ type AndroidForWorkAppConfigurationSchemaable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExampleJson()([]byte)
+    GetOdataType()(*string)
     GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItemable)
     SetExampleJson(value []byte)()
+    SetOdataType(value *string)()
     SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItemable)()
 }

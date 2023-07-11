@@ -7,8 +7,10 @@ import (
 // PlayPromptOperation 
 type PlayPromptOperation struct {
     CommsOperation
+    // The OdataType property
+    OdataType *string
 }
-// NewPlayPromptOperation instantiates a new PlayPromptOperation and sets the default values.
+// NewPlayPromptOperation instantiates a new playPromptOperation and sets the default values.
 func NewPlayPromptOperation()(*PlayPromptOperation) {
     m := &PlayPromptOperation{
         CommsOperation: *NewCommsOperation(),

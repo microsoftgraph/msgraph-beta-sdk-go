@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecurityConfigurationTask 
+// SecurityConfigurationTask a security configuration task.
 type SecurityConfigurationTask struct {
     DeviceAppManagementTask
 }
-// NewSecurityConfigurationTask instantiates a new SecurityConfigurationTask and sets the default values.
+// NewSecurityConfigurationTask instantiates a new securityConfigurationTask and sets the default values.
 func NewSecurityConfigurationTask()(*SecurityConfigurationTask) {
     m := &SecurityConfigurationTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),
@@ -139,6 +139,16 @@ func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInsights gets the insights property value. Information about the mitigation.
@@ -182,6 +192,17 @@ func (m *SecurityConfigurationTask) GetManagedDevices()([]VulnerableManagedDevic
     }
     if val != nil {
         return val.([]VulnerableManagedDeviceable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecurityConfigurationTask) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -248,6 +269,12 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApplicablePlatform sets the applicablePlatform property value. The endpoint security configuration applicable platform.
@@ -299,6 +326,13 @@ func (m *SecurityConfigurationTask) SetManagedDevices(value []VulnerableManagedD
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecurityConfigurationTask) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SecurityConfigurationTaskable 
 type SecurityConfigurationTaskable interface {
     DeviceAppManagementTaskable
@@ -310,6 +344,7 @@ type SecurityConfigurationTaskable interface {
     GetIntendedSettings()([]KeyValuePairable)
     GetManagedDeviceCount()(*int32)
     GetManagedDevices()([]VulnerableManagedDeviceable)
+    GetOdataType()(*string)
     SetApplicablePlatform(value *EndpointSecurityConfigurationApplicablePlatform)()
     SetEndpointSecurityPolicy(value *EndpointSecurityConfigurationType)()
     SetEndpointSecurityPolicyProfile(value *EndpointSecurityConfigurationProfileType)()
@@ -317,4 +352,5 @@ type SecurityConfigurationTaskable interface {
     SetIntendedSettings(value []KeyValuePairable)()
     SetManagedDeviceCount(value *int32)()
     SetManagedDevices(value []VulnerableManagedDeviceable)()
+    SetOdataType(value *string)()
 }

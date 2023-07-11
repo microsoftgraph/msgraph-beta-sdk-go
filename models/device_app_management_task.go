@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagementTask 
+// DeviceAppManagementTask a device app management task.
 type DeviceAppManagementTask struct {
     Entity
 }
-// NewDeviceAppManagementTask instantiates a new DeviceAppManagementTask and sets the default values.
+// NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),
@@ -213,6 +213,16 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAppManagementTaskPriority)
         if err != nil {
@@ -234,6 +244,17 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceAppManagementTask) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. Device app management task priority.
 func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
@@ -312,6 +333,12 @@ func (m *DeviceAppManagementTask) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPriority() != nil {
         cast := (*m.GetPriority()).String()
         err = writer.WriteStringValue("priority", &cast)
@@ -384,6 +411,13 @@ func (m *DeviceAppManagementTask) SetDueDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceAppManagementTask) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPriority sets the priority property value. Device app management task priority.
 func (m *DeviceAppManagementTask) SetPriority(value *DeviceAppManagementTaskPriority)() {
     err := m.GetBackingStore().Set("priority", value)
@@ -410,6 +444,7 @@ type DeviceAppManagementTaskable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPriority()(*DeviceAppManagementTaskPriority)
     GetStatus()(*DeviceAppManagementTaskStatus)
     SetAssignedTo(value *string)()
@@ -420,6 +455,7 @@ type DeviceAppManagementTaskable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPriority(value *DeviceAppManagementTaskPriority)()
     SetStatus(value *DeviceAppManagementTaskStatus)()
 }

@@ -7,8 +7,10 @@ import (
 // ProtectByTemplateAction 
 type ProtectByTemplateAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewProtectByTemplateAction instantiates a new ProtectByTemplateAction and sets the default values.
+// NewProtectByTemplateAction instantiates a new protectByTemplateAction and sets the default values.
 func NewProtectByTemplateAction()(*ProtectByTemplateAction) {
     m := &ProtectByTemplateAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

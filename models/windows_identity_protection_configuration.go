@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsIdentityProtectionConfiguration 
+// WindowsIdentityProtectionConfiguration this entity provides descriptions of the declared methods, properties and relationships exposed by Windows Hello for Business.
 type WindowsIdentityProtectionConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsIdentityProtectionConfiguration instantiates a new WindowsIdentityProtectionConfiguration and sets the default values.
+// NewWindowsIdentityProtectionConfiguration instantiates a new windowsIdentityProtectionConfiguration and sets the default values.
 func NewWindowsIdentityProtectionConfiguration()(*WindowsIdentityProtectionConfiguration) {
     m := &WindowsIdentityProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -42,6 +42,16 @@ func (m *WindowsIdentityProtectionConfiguration) GetFieldDeserializers()(map[str
         }
         if val != nil {
             m.SetEnhancedAntiSpoofingForFacialFeaturesEnabled(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -176,6 +186,17 @@ func (m *WindowsIdentityProtectionConfiguration) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsIdentityProtectionConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPinExpirationInDays gets the pinExpirationInDays property value. Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
 func (m *WindowsIdentityProtectionConfiguration) GetPinExpirationInDays()(*int32) {
@@ -333,6 +354,12 @@ func (m *WindowsIdentityProtectionConfiguration) Serialize(writer i878a80d2330e8
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("pinExpirationInDays", m.GetPinExpirationInDays())
         if err != nil {
             return err
@@ -418,6 +445,13 @@ func (m *WindowsIdentityProtectionConfiguration) Serialize(writer i878a80d2330e8
 // SetEnhancedAntiSpoofingForFacialFeaturesEnabled sets the enhancedAntiSpoofingForFacialFeaturesEnabled property value. Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
 func (m *WindowsIdentityProtectionConfiguration) SetEnhancedAntiSpoofingForFacialFeaturesEnabled(value *bool)() {
     err := m.GetBackingStore().Set("enhancedAntiSpoofingForFacialFeaturesEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsIdentityProtectionConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -518,6 +552,7 @@ type WindowsIdentityProtectionConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnhancedAntiSpoofingForFacialFeaturesEnabled()(*bool)
+    GetOdataType()(*string)
     GetPinExpirationInDays()(*int32)
     GetPinLowercaseCharactersUsage()(*ConfigurationUsage)
     GetPinMaximumLength()(*int32)
@@ -532,6 +567,7 @@ type WindowsIdentityProtectionConfigurationable interface {
     GetUseSecurityKeyForSignin()(*bool)
     GetWindowsHelloForBusinessBlocked()(*bool)
     SetEnhancedAntiSpoofingForFacialFeaturesEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetPinExpirationInDays(value *int32)()
     SetPinLowercaseCharactersUsage(value *ConfigurationUsage)()
     SetPinMaximumLength(value *int32)()

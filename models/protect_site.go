@@ -7,8 +7,10 @@ import (
 // ProtectSite 
 type ProtectSite struct {
     LabelActionBase
+    // The OdataType property
+    OdataType *string
 }
-// NewProtectSite instantiates a new ProtectSite and sets the default values.
+// NewProtectSite instantiates a new protectSite and sets the default values.
 func NewProtectSite()(*ProtectSite) {
     m := &ProtectSite{
         LabelActionBase: *NewLabelActionBase(),

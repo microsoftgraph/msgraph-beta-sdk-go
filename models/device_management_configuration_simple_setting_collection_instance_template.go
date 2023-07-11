@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate 
+// DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate setting Instance Template
 type DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate instantiates a new DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate instantiates a new deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) {
     m := &DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),

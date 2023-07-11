@@ -23,6 +23,16 @@ func CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNod
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["statuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementActionDeploymentStatusFromDiscriminatorValue)
         if err != nil {
@@ -60,6 +70,17 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementActionTenantDeploymentStatus) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatuses gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatusable) {
@@ -100,6 +121,12 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e8
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStatuses()))
         for i, v := range m.GetStatuses() {
@@ -126,6 +153,13 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e8
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementActionTenantDeploymentStatus) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatuses sets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatusable)() {
     err := m.GetBackingStore().Set("statuses", value)
@@ -151,9 +185,11 @@ func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string)() {
 type ManagementActionTenantDeploymentStatusable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetStatuses()([]ManagementActionDeploymentStatusable)
     GetTenantGroupId()(*string)
     GetTenantId()(*string)
+    SetOdataType(value *string)()
     SetStatuses(value []ManagementActionDeploymentStatusable)()
     SetTenantGroupId(value *string)()
     SetTenantId(value *string)()

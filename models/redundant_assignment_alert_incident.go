@@ -9,7 +9,7 @@ import (
 type RedundantAssignmentAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewRedundantAssignmentAlertIncident instantiates a new RedundantAssignmentAlertIncident and sets the default values.
+// NewRedundantAssignmentAlertIncident instantiates a new redundantAssignmentAlertIncident and sets the default values.
 func NewRedundantAssignmentAlertIncident()(*RedundantAssignmentAlertIncident) {
     m := &RedundantAssignmentAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),

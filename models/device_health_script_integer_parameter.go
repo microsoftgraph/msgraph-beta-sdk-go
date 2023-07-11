@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceHealthScriptIntegerParameter 
+// DeviceHealthScriptIntegerParameter base properties of the script parameter.
 type DeviceHealthScriptIntegerParameter struct {
     DeviceHealthScriptParameter
 }
-// NewDeviceHealthScriptIntegerParameter instantiates a new DeviceHealthScriptIntegerParameter and sets the default values.
+// NewDeviceHealthScriptIntegerParameter instantiates a new deviceHealthScriptIntegerParameter and sets the default values.
 func NewDeviceHealthScriptIntegerParameter()(*DeviceHealthScriptIntegerParameter) {
     m := &DeviceHealthScriptIntegerParameter{
         DeviceHealthScriptParameter: *NewDeviceHealthScriptParameter(),
@@ -45,7 +45,28 @@ func (m *DeviceHealthScriptIntegerParameter) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptIntegerParameter) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptIntegerParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *DeviceHealthScriptIntegerParameter) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDefaultValue sets the defaultValue property value. The default value of Integer param. Valid values -2147483648 to 2147483647
@@ -68,10 +95,19 @@ func (m *DeviceHealthScriptIntegerParameter) SetDefaultValue(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptIntegerParameter) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceHealthScriptIntegerParameterable 
 type DeviceHealthScriptIntegerParameterable interface {
     DeviceHealthScriptParameterable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefaultValue()(*int32)
+    GetOdataType()(*string)
     SetDefaultValue(value *int32)()
+    SetOdataType(value *string)()
 }

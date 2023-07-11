@@ -8,7 +8,7 @@ import (
 type CloudPcProvisioningPolicy struct {
     Entity
 }
-// NewCloudPcProvisioningPolicy instantiates a new CloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),
@@ -293,6 +293,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onPremisesConnectionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -399,6 +409,17 @@ func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(MicrosoftManage
     }
     if val != nil {
         return val.(MicrosoftManagedDesktopable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcProvisioningPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -552,6 +573,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("onPremisesConnectionId", m.GetOnPremisesConnectionId())
         if err != nil {
             return err
@@ -684,6 +711,13 @@ func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftMa
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcProvisioningPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
 func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
     err := m.GetBackingStore().Set("onPremisesConnectionId", value)
@@ -725,6 +759,7 @@ type CloudPcProvisioningPolicyable interface {
     GetLocalAdminEnabled()(*bool)
     GetManagedBy()(*CloudPcManagementService)
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
+    GetOdataType()(*string)
     GetOnPremisesConnectionId()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
@@ -744,6 +779,7 @@ type CloudPcProvisioningPolicyable interface {
     SetLocalAdminEnabled(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
+    SetOdataType(value *string)()
     SetOnPremisesConnectionId(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()

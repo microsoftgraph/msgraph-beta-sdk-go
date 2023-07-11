@@ -7,8 +7,10 @@ import (
 // EdiscoveryReviewSetQuery 
 type EdiscoveryReviewSetQuery struct {
     Search
+    // The OdataType property
+    OdataType *string
 }
-// NewEdiscoveryReviewSetQuery instantiates a new EdiscoveryReviewSetQuery and sets the default values.
+// NewEdiscoveryReviewSetQuery instantiates a new ediscoveryReviewSetQuery and sets the default values.
 func NewEdiscoveryReviewSetQuery()(*EdiscoveryReviewSetQuery) {
     m := &EdiscoveryReviewSetQuery{
         Search: *NewSearch(),

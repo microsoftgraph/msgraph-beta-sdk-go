@@ -7,8 +7,10 @@ import (
 // TimeOffReason 
 type TimeOffReason struct {
     ChangeTrackedEntity
+    // The OdataType property
+    OdataType *string
 }
-// NewTimeOffReason instantiates a new TimeOffReason and sets the default values.
+// NewTimeOffReason instantiates a new timeOffReason and sets the default values.
 func NewTimeOffReason()(*TimeOffReason) {
     m := &TimeOffReason{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

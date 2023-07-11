@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerGeneralDeviceConfiguration 
+// AndroidDeviceOwnerGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the androidDeviceOwnerGeneralDeviceConfiguration resource.
 type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewAndroidDeviceOwnerGeneralDeviceConfiguration instantiates a new AndroidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
+// NewAndroidDeviceOwnerGeneralDeviceConfiguration instantiates a new androidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
 func NewAndroidDeviceOwnerGeneralDeviceConfiguration()(*AndroidDeviceOwnerGeneralDeviceConfiguration) {
     m := &AndroidDeviceOwnerGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

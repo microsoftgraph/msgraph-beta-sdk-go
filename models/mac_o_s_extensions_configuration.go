@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSExtensionsConfiguration 
+// MacOSExtensionsConfiguration macOS extensions configuration profile.
 type MacOSExtensionsConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSExtensionsConfiguration instantiates a new MacOSExtensionsConfiguration and sets the default values.
+// NewMacOSExtensionsConfiguration instantiates a new macOSExtensionsConfiguration and sets the default values.
 func NewMacOSExtensionsConfiguration()(*MacOSExtensionsConfiguration) {
     m := &MacOSExtensionsConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -63,6 +63,16 @@ func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i
                 }
             }
             m.SetKernelExtensionsAllowed(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -159,6 +169,17 @@ func (m *MacOSExtensionsConfiguration) GetKernelExtensionsAllowed()([]MacOSKerne
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSExtensionsConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSystemExtensionsAllowed gets the systemExtensionsAllowed property value. Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) GetSystemExtensionsAllowed()([]MacOSSystemExtensionable) {
     val, err := m.GetBackingStore().Get("systemExtensionsAllowed")
@@ -233,6 +254,12 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSystemExtensionsAllowed() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemExtensionsAllowed()))
         for i, v := range m.GetSystemExtensionsAllowed() {
@@ -292,6 +319,13 @@ func (m *MacOSExtensionsConfiguration) SetKernelExtensionsAllowed(value []MacOSK
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSExtensionsConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSystemExtensionsAllowed sets the systemExtensionsAllowed property value. Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.
 func (m *MacOSExtensionsConfiguration) SetSystemExtensionsAllowed(value []MacOSSystemExtensionable)() {
     err := m.GetBackingStore().Set("systemExtensionsAllowed", value)
@@ -327,6 +361,7 @@ type MacOSExtensionsConfigurationable interface {
     GetKernelExtensionAllowedTeamIdentifiers()([]string)
     GetKernelExtensionOverridesAllowed()(*bool)
     GetKernelExtensionsAllowed()([]MacOSKernelExtensionable)
+    GetOdataType()(*string)
     GetSystemExtensionsAllowed()([]MacOSSystemExtensionable)
     GetSystemExtensionsAllowedTeamIdentifiers()([]string)
     GetSystemExtensionsAllowedTypes()([]MacOSSystemExtensionTypeMappingable)
@@ -334,6 +369,7 @@ type MacOSExtensionsConfigurationable interface {
     SetKernelExtensionAllowedTeamIdentifiers(value []string)()
     SetKernelExtensionOverridesAllowed(value *bool)()
     SetKernelExtensionsAllowed(value []MacOSKernelExtensionable)()
+    SetOdataType(value *string)()
     SetSystemExtensionsAllowed(value []MacOSSystemExtensionable)()
     SetSystemExtensionsAllowedTeamIdentifiers(value []string)()
     SetSystemExtensionsAllowedTypes(value []MacOSSystemExtensionTypeMappingable)()

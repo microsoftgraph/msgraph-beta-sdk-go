@@ -8,6 +8,8 @@ import (
 // TeamworkDevice 
 type TeamworkDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamworkDevice instantiates a new teamworkDevice and sets the default values.
 func NewTeamworkDevice()(*TeamworkDevice) {

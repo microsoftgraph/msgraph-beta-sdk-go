@@ -7,8 +7,10 @@ import (
 // ExactMatchLookupJob 
 type ExactMatchLookupJob struct {
     ExactMatchJobBase
+    // The OdataType property
+    OdataType *string
 }
-// NewExactMatchLookupJob instantiates a new ExactMatchLookupJob and sets the default values.
+// NewExactMatchLookupJob instantiates a new exactMatchLookupJob and sets the default values.
 func NewExactMatchLookupJob()(*ExactMatchLookupJob) {
     m := &ExactMatchLookupJob{
         ExactMatchJobBase: *NewExactMatchJobBase(),

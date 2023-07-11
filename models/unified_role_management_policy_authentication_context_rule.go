@@ -7,8 +7,10 @@ import (
 // UnifiedRoleManagementPolicyAuthenticationContextRule 
 type UnifiedRoleManagementPolicyAuthenticationContextRule struct {
     UnifiedRoleManagementPolicyRule
+    // The OdataType property
+    OdataType *string
 }
-// NewUnifiedRoleManagementPolicyAuthenticationContextRule instantiates a new UnifiedRoleManagementPolicyAuthenticationContextRule and sets the default values.
+// NewUnifiedRoleManagementPolicyAuthenticationContextRule instantiates a new unifiedRoleManagementPolicyAuthenticationContextRule and sets the default values.
 func NewUnifiedRoleManagementPolicyAuthenticationContextRule()(*UnifiedRoleManagementPolicyAuthenticationContextRule) {
     m := &UnifiedRoleManagementPolicyAuthenticationContextRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),

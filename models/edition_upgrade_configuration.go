@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EditionUpgradeConfiguration 
+// EditionUpgradeConfiguration windows 10 Edition Upgrade configuration.
 type EditionUpgradeConfiguration struct {
     DeviceConfiguration
 }
-// NewEditionUpgradeConfiguration instantiates a new EditionUpgradeConfiguration and sets the default values.
+// NewEditionUpgradeConfiguration instantiates a new editionUpgradeConfiguration and sets the default values.
 func NewEditionUpgradeConfiguration()(*EditionUpgradeConfiguration) {
     m := &EditionUpgradeConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -41,6 +41,16 @@ func (m *EditionUpgradeConfiguration) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetLicenseType(val.(*EditionUpgradeLicenseType))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -98,6 +108,17 @@ func (m *EditionUpgradeConfiguration) GetLicenseType()(*EditionUpgradeLicenseTyp
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EditionUpgradeConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetProductKey gets the productKey property value. Edition Upgrade Product Key.
 func (m *EditionUpgradeConfiguration) GetProductKey()(*string) {
     val, err := m.GetBackingStore().Get("productKey")
@@ -151,6 +172,12 @@ func (m *EditionUpgradeConfiguration) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("productKey", m.GetProductKey())
         if err != nil {
             return err
@@ -186,6 +213,13 @@ func (m *EditionUpgradeConfiguration) SetLicenseType(value *EditionUpgradeLicens
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EditionUpgradeConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProductKey sets the productKey property value. Edition Upgrade Product Key.
 func (m *EditionUpgradeConfiguration) SetProductKey(value *string)() {
     err := m.GetBackingStore().Set("productKey", value)
@@ -213,11 +247,13 @@ type EditionUpgradeConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLicense()(*string)
     GetLicenseType()(*EditionUpgradeLicenseType)
+    GetOdataType()(*string)
     GetProductKey()(*string)
     GetTargetEdition()(*Windows10EditionType)
     GetWindowsSMode()(*WindowsSModeConfiguration)
     SetLicense(value *string)()
     SetLicenseType(value *EditionUpgradeLicenseType)()
+    SetOdataType(value *string)()
     SetProductKey(value *string)()
     SetTargetEdition(value *Windows10EditionType)()
     SetWindowsSMode(value *WindowsSModeConfiguration)()

@@ -9,8 +9,10 @@ import (
 // Qna 
 type Qna struct {
     SearchAnswer
+    // The OdataType property
+    OdataType *string
 }
-// NewQna instantiates a new Qna and sets the default values.
+// NewQna instantiates a new qna and sets the default values.
 func NewQna()(*Qna) {
     m := &Qna{
         SearchAnswer: *NewSearchAnswer(),

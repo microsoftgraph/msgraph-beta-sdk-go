@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnrollmentRestrictionsConfigurationPolicySetItem 
+// EnrollmentRestrictionsConfigurationPolicySetItem a class containing the properties used for enrollment restriction PolicySetItem.
 type EnrollmentRestrictionsConfigurationPolicySetItem struct {
     PolicySetItem
+    // The OdataType property
+    OdataType *string
 }
-// NewEnrollmentRestrictionsConfigurationPolicySetItem instantiates a new EnrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
+// NewEnrollmentRestrictionsConfigurationPolicySetItem instantiates a new enrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
 func NewEnrollmentRestrictionsConfigurationPolicySetItem()(*EnrollmentRestrictionsConfigurationPolicySetItem) {
     m := &EnrollmentRestrictionsConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),

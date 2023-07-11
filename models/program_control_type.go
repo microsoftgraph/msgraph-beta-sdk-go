@@ -7,6 +7,8 @@ import (
 // ProgramControlType 
 type ProgramControlType struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewProgramControlType instantiates a new programControlType and sets the default values.
 func NewProgramControlType()(*ProgramControlType) {

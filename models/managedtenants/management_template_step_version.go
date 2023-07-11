@@ -165,6 +165,16 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["templateStep"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagementTemplateStepFromDiscriminatorValue)
         if err != nil {
@@ -222,6 +232,17 @@ func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853
 // GetName gets the name property value. The name property
 func (m *ManagementTemplateStepVersion) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementTemplateStepVersion) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -324,6 +345,12 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("templateStep", m.GetTemplateStep())
         if err != nil {
             return err
@@ -399,6 +426,13 @@ func (m *ManagementTemplateStepVersion) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementTemplateStepVersion) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTemplateStep sets the templateStep property value. The templateStep property
 func (m *ManagementTemplateStepVersion) SetTemplateStep(value ManagementTemplateStepable)() {
     err := m.GetBackingStore().Set("templateStep", value)
@@ -432,6 +466,7 @@ type ManagementTemplateStepVersionable interface {
     GetLastActionByUserId()(*string)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetTemplateStep()(ManagementTemplateStepable)
     GetVersion()(*int32)
     GetVersionInformation()(*string)
@@ -443,6 +478,7 @@ type ManagementTemplateStepVersionable interface {
     SetLastActionByUserId(value *string)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetTemplateStep(value ManagementTemplateStepable)()
     SetVersion(value *int32)()
     SetVersionInformation(value *string)()

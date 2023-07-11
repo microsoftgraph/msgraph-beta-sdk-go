@@ -8,7 +8,7 @@ import (
 type RetentionDurationInDays struct {
     RetentionDuration
 }
-// NewRetentionDurationInDays instantiates a new RetentionDurationInDays and sets the default values.
+// NewRetentionDurationInDays instantiates a new retentionDurationInDays and sets the default values.
 func NewRetentionDurationInDays()(*RetentionDurationInDays) {
     m := &RetentionDurationInDays{
         RetentionDuration: *NewRetentionDuration(),
@@ -45,7 +45,28 @@ func (m *RetentionDurationInDays) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RetentionDurationInDays) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RetentionDurationInDays) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *RetentionDurationInDays) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDays sets the days property value. Specifies the time period in days for which an item with the applied retention label will be retained for.
@@ -68,10 +95,19 @@ func (m *RetentionDurationInDays) SetDays(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RetentionDurationInDays) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // RetentionDurationInDaysable 
 type RetentionDurationInDaysable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RetentionDurationable
     GetDays()(*int32)
+    GetOdataType()(*string)
     SetDays(value *int32)()
+    SetOdataType(value *string)()
 }

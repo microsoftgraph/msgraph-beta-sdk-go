@@ -7,8 +7,10 @@ import (
 // ProtectAdhocAction 
 type ProtectAdhocAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewProtectAdhocAction instantiates a new ProtectAdhocAction and sets the default values.
+// NewProtectAdhocAction instantiates a new protectAdhocAction and sets the default values.
 func NewProtectAdhocAction()(*ProtectAdhocAction) {
     m := &ProtectAdhocAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

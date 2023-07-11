@@ -8,7 +8,7 @@ import (
 type CertificateConnectorDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCertificateConnectorDetailsCollectionResponse instantiates a new CertificateConnectorDetailsCollectionResponse and sets the default values.
+// NewCertificateConnectorDetailsCollectionResponse instantiates a new certificateConnectorDetailsCollectionResponse and sets the default values.
 func NewCertificateConnectorDetailsCollectionResponse()(*CertificateConnectorDetailsCollectionResponse) {
     m := &CertificateConnectorDetailsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows81SCEPCertificateProfile 
+// Windows81SCEPCertificateProfile windows 8.1+ SCEP certificate profile
 type Windows81SCEPCertificateProfile struct {
     Windows81CertificateProfileBase
 }
-// NewWindows81SCEPCertificateProfile instantiates a new Windows81SCEPCertificateProfile and sets the default values.
+// NewWindows81SCEPCertificateProfile instantiates a new windows81SCEPCertificateProfile and sets the default values.
 func NewWindows81SCEPCertificateProfile()(*Windows81SCEPCertificateProfile) {
     m := &Windows81SCEPCertificateProfile{
         Windows81CertificateProfileBase: *NewWindows81CertificateProfileBase(),

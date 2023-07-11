@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10PFXImportCertificateProfile 
+// Windows10PFXImportCertificateProfile deprecated
 type Windows10PFXImportCertificateProfile struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewWindows10PFXImportCertificateProfile instantiates a new Windows10PFXImportCertificateProfile and sets the default values.
+// NewWindows10PFXImportCertificateProfile instantiates a new windows10PFXImportCertificateProfile and sets the default values.
 func NewWindows10PFXImportCertificateProfile()(*Windows10PFXImportCertificateProfile) {
     m := &Windows10PFXImportCertificateProfile{
         DeviceConfiguration: *NewDeviceConfiguration(),

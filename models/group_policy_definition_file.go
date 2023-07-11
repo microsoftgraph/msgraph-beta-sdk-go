@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyDefinitionFile 
+// GroupPolicyDefinitionFile the entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
 type GroupPolicyDefinitionFile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyDefinitionFile instantiates a new groupPolicyDefinitionFile and sets the default values.
 func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {

@@ -8,7 +8,7 @@ import (
 type ChromeOSOnboardingSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChromeOSOnboardingSettingsCollectionResponse instantiates a new ChromeOSOnboardingSettingsCollectionResponse and sets the default values.
+// NewChromeOSOnboardingSettingsCollectionResponse instantiates a new chromeOSOnboardingSettingsCollectionResponse and sets the default values.
 func NewChromeOSOnboardingSettingsCollectionResponse()(*ChromeOSOnboardingSettingsCollectionResponse) {
     m := &ChromeOSOnboardingSettingsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // RemoveContentHeaderAction 
 type RemoveContentHeaderAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewRemoveContentHeaderAction instantiates a new RemoveContentHeaderAction and sets the default values.
+// NewRemoveContentHeaderAction instantiates a new removeContentHeaderAction and sets the default values.
 func NewRemoveContentHeaderAction()(*RemoveContentHeaderAction) {
     m := &RemoveContentHeaderAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

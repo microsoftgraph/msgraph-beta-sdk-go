@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileCertificateProfileBase 
+// AndroidWorkProfileCertificateProfileBase android Work Profile certificate profile base.
 type AndroidWorkProfileCertificateProfileBase struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileCertificateProfileBase instantiates a new AndroidWorkProfileCertificateProfileBase and sets the default values.
+// NewAndroidWorkProfileCertificateProfileBase instantiates a new androidWorkProfileCertificateProfileBase and sets the default values.
 func NewAndroidWorkProfileCertificateProfileBase()(*AndroidWorkProfileCertificateProfileBase) {
     m := &AndroidWorkProfileCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -113,6 +113,16 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -154,6 +164,17 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetFieldDeserializers()(map[s
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileCertificateProfileBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AndroidWorkProfileCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
@@ -231,6 +252,12 @@ func (m *AndroidWorkProfileCertificateProfileBase) Serialize(writer i878a80d2330
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("renewalThresholdPercentage", m.GetRenewalThresholdPercentage())
         if err != nil {
             return err
@@ -279,6 +306,13 @@ func (m *AndroidWorkProfileCertificateProfileBase) SetExtendedKeyUsages(value []
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileCertificateProfileBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AndroidWorkProfileCertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
     err := m.GetBackingStore().Set("renewalThresholdPercentage", value)
@@ -314,6 +348,7 @@ type AndroidWorkProfileCertificateProfileBaseable interface {
     GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale)
     GetCertificateValidityPeriodValue()(*int32)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    GetOdataType()(*string)
     GetRenewalThresholdPercentage()(*int32)
     GetRootCertificate()(AndroidWorkProfileTrustedRootCertificateable)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
@@ -321,6 +356,7 @@ type AndroidWorkProfileCertificateProfileBaseable interface {
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
+    SetOdataType(value *string)()
     SetRenewalThresholdPercentage(value *int32)()
     SetRootCertificate(value AndroidWorkProfileTrustedRootCertificateable)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()

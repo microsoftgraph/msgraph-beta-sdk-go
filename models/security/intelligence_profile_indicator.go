@@ -8,8 +8,10 @@ import (
 // IntelligenceProfileIndicator 
 type IntelligenceProfileIndicator struct {
     Indicator
+    // The OdataType property
+    OdataType *string
 }
-// NewIntelligenceProfileIndicator instantiates a new IntelligenceProfileIndicator and sets the default values.
+// NewIntelligenceProfileIndicator instantiates a new intelligenceProfileIndicator and sets the default values.
 func NewIntelligenceProfileIndicator()(*IntelligenceProfileIndicator) {
     m := &IntelligenceProfileIndicator{
         Indicator: *NewIndicator(),

@@ -8,7 +8,7 @@ import (
 type TimeOff struct {
     ChangeTrackedEntity
 }
-// NewTimeOff instantiates a new TimeOff and sets the default values.
+// NewTimeOff instantiates a new timeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {
     m := &TimeOff{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -55,6 +55,16 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sharedTimeOff"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeOffItemFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +95,17 @@ func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeOff) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -129,6 +150,12 @@ func (m *TimeOff) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("sharedTimeOff", m.GetSharedTimeOff())
         if err != nil {
             return err
@@ -156,6 +183,13 @@ func (m *TimeOff) SetIsStagedForDeletion(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeOff) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
 func (m *TimeOff) SetSharedTimeOff(value TimeOffItemable)() {
     err := m.GetBackingStore().Set("sharedTimeOff", value)
@@ -176,10 +210,12 @@ type TimeOffable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDraftTimeOff()(TimeOffItemable)
     GetIsStagedForDeletion()(*bool)
+    GetOdataType()(*string)
     GetSharedTimeOff()(TimeOffItemable)
     GetUserId()(*string)
     SetDraftTimeOff(value TimeOffItemable)()
     SetIsStagedForDeletion(value *bool)()
+    SetOdataType(value *string)()
     SetSharedTimeOff(value TimeOffItemable)()
     SetUserId(value *string)()
 }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSGeneralDeviceConfiguration 
+// MacOSGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
 type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSGeneralDeviceConfiguration instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
+// NewMacOSGeneralDeviceConfiguration instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
 func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     m := &MacOSGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -542,6 +542,16 @@ func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passwordBlockAirDropSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1004,6 +1014,17 @@ func (m *MacOSGeneralDeviceConfiguration) GetMultiplayerGamingBlocked()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSGeneralDeviceConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1516,6 +1537,12 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("passwordBlockAirDropSharing", m.GetPasswordBlockAirDropSharing())
         if err != nil {
             return err
@@ -1918,6 +1945,13 @@ func (m *MacOSGeneralDeviceConfiguration) SetMultiplayerGamingBlocked(value *boo
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSGeneralDeviceConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordBlockAirDropSharing sets the passwordBlockAirDropSharing property value. Indicates whether or not to block sharing passwords with the AirDrop passwords feature.
 func (m *MacOSGeneralDeviceConfiguration) SetPasswordBlockAirDropSharing(value *bool)() {
     err := m.GetBackingStore().Set("passwordBlockAirDropSharing", value)
@@ -2144,6 +2178,7 @@ type MacOSGeneralDeviceConfigurationable interface {
     GetKeyboardBlockDictation()(*bool)
     GetKeychainBlockCloudSync()(*bool)
     GetMultiplayerGamingBlocked()(*bool)
+    GetOdataType()(*string)
     GetPasswordBlockAirDropSharing()(*bool)
     GetPasswordBlockAutoFill()(*bool)
     GetPasswordBlockFingerprintUnlock()(*bool)
@@ -2204,6 +2239,7 @@ type MacOSGeneralDeviceConfigurationable interface {
     SetKeyboardBlockDictation(value *bool)()
     SetKeychainBlockCloudSync(value *bool)()
     SetMultiplayerGamingBlocked(value *bool)()
+    SetOdataType(value *string)()
     SetPasswordBlockAirDropSharing(value *bool)()
     SetPasswordBlockAutoFill(value *bool)()
     SetPasswordBlockFingerprintUnlock(value *bool)()

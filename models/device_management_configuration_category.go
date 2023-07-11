@@ -132,6 +132,16 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parentCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -198,6 +208,17 @@ func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
 // GetName gets the name property value. Name of the item
 func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationCategory) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -304,6 +325,12 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i878a80d2330e89
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("parentCategoryId", m.GetParentCategoryId())
         if err != nil {
             return err
@@ -380,6 +407,13 @@ func (m *DeviceManagementConfigurationCategory) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationCategory) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParentCategoryId sets the parentCategoryId property value. Direct parent id of the category. If the category is the root, the parent id is same as its id.
 func (m *DeviceManagementConfigurationCategory) SetParentCategoryId(value *string)() {
     err := m.GetBackingStore().Set("parentCategoryId", value)
@@ -425,6 +459,7 @@ type DeviceManagementConfigurationCategoryable interface {
     GetDisplayName()(*string)
     GetHelpText()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetParentCategoryId()(*string)
     GetPlatforms()(*DeviceManagementConfigurationPlatforms)
     GetRootCategoryId()(*string)
@@ -436,6 +471,7 @@ type DeviceManagementConfigurationCategoryable interface {
     SetDisplayName(value *string)()
     SetHelpText(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetParentCategoryId(value *string)()
     SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
     SetRootCategoryId(value *string)()

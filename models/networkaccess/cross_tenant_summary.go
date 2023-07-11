@@ -34,7 +34,7 @@ func (m *CrossTenantSummary) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthTransactionCount gets the authTransactionCount property value. The authTransactionCount property
+// GetAuthTransactionCount gets the authTransactionCount property value. Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) GetAuthTransactionCount()(*int32) {
     val, err := m.GetBackingStore().Get("authTransactionCount")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *CrossTenantSummary) GetAuthTransactionCount()(*int32) {
 func (m *CrossTenantSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceCount gets the deviceCount property value. The deviceCount property
+// GetDeviceCount gets the deviceCount property value. Count of unique devices that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *CrossTenantSummary) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetNewTenantCount gets the newTenantCount property value. The newTenantCount property
+// GetNewTenantCount gets the newTenantCount property value. Count of unique tenants that were accessed in the time frame between endDateTime to discoveryPivotDateTime, but haven't been accessed in the time frame between discoveryPivotDateTime to startDateTime.
 func (m *CrossTenantSummary) GetNewTenantCount()(*int32) {
     val, err := m.GetBackingStore().Get("newTenantCount")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *CrossTenantSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantCount gets the tenantCount property value. The tenantCount property
+// GetTenantCount gets the tenantCount property value. Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) GetTenantCount()(*int32) {
     val, err := m.GetBackingStore().Get("tenantCount")
     if err != nil {
@@ -158,7 +158,7 @@ func (m *CrossTenantSummary) GetTenantCount()(*int32) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) GetUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *CrossTenantSummary) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthTransactionCount sets the authTransactionCount property value. The authTransactionCount property
+// SetAuthTransactionCount sets the authTransactionCount property value. Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) SetAuthTransactionCount(value *int32)() {
     err := m.GetBackingStore().Set("authTransactionCount", value)
     if err != nil {
@@ -233,14 +233,14 @@ func (m *CrossTenantSummary) SetAuthTransactionCount(value *int32)() {
 func (m *CrossTenantSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceCount sets the deviceCount property value. The deviceCount property
+// SetDeviceCount sets the deviceCount property value. Count of unique devices that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) SetDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNewTenantCount sets the newTenantCount property value. The newTenantCount property
+// SetNewTenantCount sets the newTenantCount property value. Count of unique tenants that were accessed in the time frame between endDateTime to discoveryPivotDateTime, but haven't been accessed in the time frame between discoveryPivotDateTime to startDateTime.
 func (m *CrossTenantSummary) SetNewTenantCount(value *int32)() {
     err := m.GetBackingStore().Set("newTenantCount", value)
     if err != nil {
@@ -254,14 +254,14 @@ func (m *CrossTenantSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantCount sets the tenantCount property value. The tenantCount property
+// SetTenantCount sets the tenantCount property value. Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) SetTenantCount(value *int32)() {
     err := m.GetBackingStore().Set("tenantCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
 func (m *CrossTenantSummary) SetUserCount(value *int32)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

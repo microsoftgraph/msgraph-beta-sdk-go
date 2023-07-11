@@ -65,6 +65,16 @@ func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -166,6 +176,17 @@ func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegedRoleAssignmentRequest) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReason gets the reason property value. The reason property
 func (m *PrivilegedRoleAssignmentRequest) GetReason()(*string) {
@@ -296,6 +317,12 @@ func (m *PrivilegedRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("reason", m.GetReason())
         if err != nil {
             return err
@@ -367,6 +394,13 @@ func (m *PrivilegedRoleAssignmentRequest) SetAssignmentState(value *string)() {
 // SetDuration sets the duration property value. The duration property
 func (m *PrivilegedRoleAssignmentRequest) SetDuration(value *string)() {
     err := m.GetBackingStore().Set("duration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegedRoleAssignmentRequest) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -447,6 +481,7 @@ type PrivilegedRoleAssignmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssignmentState()(*string)
     GetDuration()(*string)
+    GetOdataType()(*string)
     GetReason()(*string)
     GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleId()(*string)
@@ -459,6 +494,7 @@ type PrivilegedRoleAssignmentRequestable interface {
     GetUserId()(*string)
     SetAssignmentState(value *string)()
     SetDuration(value *string)()
+    SetOdataType(value *string)()
     SetReason(value *string)()
     SetRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRoleId(value *string)()

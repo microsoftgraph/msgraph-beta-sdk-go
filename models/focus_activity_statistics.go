@@ -7,8 +7,10 @@ import (
 // FocusActivityStatistics 
 type FocusActivityStatistics struct {
     ActivityStatistics
+    // The OdataType property
+    OdataType *string
 }
-// NewFocusActivityStatistics instantiates a new FocusActivityStatistics and sets the default values.
+// NewFocusActivityStatistics instantiates a new focusActivityStatistics and sets the default values.
 func NewFocusActivityStatistics()(*FocusActivityStatistics) {
     m := &FocusActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),

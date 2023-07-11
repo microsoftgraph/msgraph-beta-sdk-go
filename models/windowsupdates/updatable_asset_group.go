@@ -7,8 +7,10 @@ import (
 // UpdatableAssetGroup 
 type UpdatableAssetGroup struct {
     UpdatableAsset
+    // The OdataType property
+    OdataType *string
 }
-// NewUpdatableAssetGroup instantiates a new UpdatableAssetGroup and sets the default values.
+// NewUpdatableAssetGroup instantiates a new updatableAssetGroup and sets the default values.
 func NewUpdatableAssetGroup()(*UpdatableAssetGroup) {
     m := &UpdatableAssetGroup{
         UpdatableAsset: *NewUpdatableAsset(),

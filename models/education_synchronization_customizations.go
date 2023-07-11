@@ -7,8 +7,10 @@ import (
 // EducationSynchronizationCustomizations 
 type EducationSynchronizationCustomizations struct {
     EducationSynchronizationCustomizationsBase
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationSynchronizationCustomizations instantiates a new EducationSynchronizationCustomizations and sets the default values.
+// NewEducationSynchronizationCustomizations instantiates a new educationSynchronizationCustomizations and sets the default values.
 func NewEducationSynchronizationCustomizations()(*EducationSynchronizationCustomizations) {
     m := &EducationSynchronizationCustomizations{
         EducationSynchronizationCustomizationsBase: *NewEducationSynchronizationCustomizationsBase(),

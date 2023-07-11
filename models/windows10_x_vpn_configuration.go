@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10XVpnConfiguration 
+// Windows10XVpnConfiguration windows X VPN configuration profile
 type Windows10XVpnConfiguration struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XVpnConfiguration instantiates a new Windows10XVpnConfiguration and sets the default values.
+// NewWindows10XVpnConfiguration instantiates a new windows10XVpnConfiguration and sets the default values.
 func NewWindows10XVpnConfiguration()(*Windows10XVpnConfiguration) {
     m := &Windows10XVpnConfiguration{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
@@ -88,7 +88,28 @@ func (m *Windows10XVpnConfiguration) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Windows10XVpnConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10XVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -110,6 +131,12 @@ func (m *Windows10XVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err = writer.WriteStringValue("customXmlFileName", m.GetCustomXmlFileName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +164,13 @@ func (m *Windows10XVpnConfiguration) SetCustomXmlFileName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Windows10XVpnConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Windows10XVpnConfigurationable 
 type Windows10XVpnConfigurationable interface {
     DeviceManagementResourceAccessProfileBaseable
@@ -144,7 +178,9 @@ type Windows10XVpnConfigurationable interface {
     GetAuthenticationCertificateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCustomXml()([]byte)
     GetCustomXmlFileName()(*string)
+    GetOdataType()(*string)
     SetAuthenticationCertificateId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetCustomXml(value []byte)()
     SetCustomXmlFileName(value *string)()
+    SetOdataType(value *string)()
 }

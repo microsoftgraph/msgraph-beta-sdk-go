@@ -7,8 +7,10 @@ import (
 // PlannerTaskPropertyRule 
 type PlannerTaskPropertyRule struct {
     PlannerPropertyRule
+    // The OdataType property
+    OdataType *string
 }
-// NewPlannerTaskPropertyRule instantiates a new PlannerTaskPropertyRule and sets the default values.
+// NewPlannerTaskPropertyRule instantiates a new plannerTaskPropertyRule and sets the default values.
 func NewPlannerTaskPropertyRule()(*PlannerTaskPropertyRule) {
     m := &PlannerTaskPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),

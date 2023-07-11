@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkMobileAppConfiguration 
+// AndroidForWorkMobileAppConfiguration contains properties, inherited properties and actions for AFW mobile app configurations.
 type AndroidForWorkMobileAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
 }
-// NewAndroidForWorkMobileAppConfiguration instantiates a new AndroidForWorkMobileAppConfiguration and sets the default values.
+// NewAndroidForWorkMobileAppConfiguration instantiates a new androidForWorkMobileAppConfiguration and sets the default values.
 func NewAndroidForWorkMobileAppConfiguration()(*AndroidForWorkMobileAppConfiguration) {
     m := &AndroidForWorkMobileAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
@@ -42,6 +42,16 @@ func (m *AndroidForWorkMobileAppConfiguration) GetFieldDeserializers()(map[strin
         }
         if val != nil {
             m.SetConnectedAppsEnabled(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -92,6 +102,17 @@ func (m *AndroidForWorkMobileAppConfiguration) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidForWorkMobileAppConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPackageId gets the packageId property value. Android For Work app configuration package id.
 func (m *AndroidForWorkMobileAppConfiguration) GetPackageId()(*string) {
@@ -150,6 +171,12 @@ func (m *AndroidForWorkMobileAppConfiguration) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("packageId", m.GetPackageId())
         if err != nil {
             return err
@@ -189,6 +216,13 @@ func (m *AndroidForWorkMobileAppConfiguration) SetConnectedAppsEnabled(value *bo
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidForWorkMobileAppConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPackageId sets the packageId property value. Android For Work app configuration package id.
 func (m *AndroidForWorkMobileAppConfiguration) SetPackageId(value *string)() {
     err := m.GetBackingStore().Set("packageId", value)
@@ -222,11 +256,13 @@ type AndroidForWorkMobileAppConfigurationable interface {
     ManagedDeviceMobileAppConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConnectedAppsEnabled()(*bool)
+    GetOdataType()(*string)
     GetPackageId()(*string)
     GetPayloadJson()(*string)
     GetPermissionActions()([]AndroidPermissionActionable)
     GetProfileApplicability()(*AndroidProfileApplicability)
     SetConnectedAppsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetPackageId(value *string)()
     SetPayloadJson(value *string)()
     SetPermissionActions(value []AndroidPermissionActionable)()

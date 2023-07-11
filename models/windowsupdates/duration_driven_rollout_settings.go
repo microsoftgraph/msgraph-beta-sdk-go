@@ -8,7 +8,7 @@ import (
 type DurationDrivenRolloutSettings struct {
     GradualRolloutSettings
 }
-// NewDurationDrivenRolloutSettings instantiates a new DurationDrivenRolloutSettings and sets the default values.
+// NewDurationDrivenRolloutSettings instantiates a new durationDrivenRolloutSettings and sets the default values.
 func NewDurationDrivenRolloutSettings()(*DurationDrivenRolloutSettings) {
     m := &DurationDrivenRolloutSettings{
         GradualRolloutSettings: *NewGradualRolloutSettings(),
@@ -45,7 +45,28 @@ func (m *DurationDrivenRolloutSettings) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DurationDrivenRolloutSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DurationDrivenRolloutSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *DurationDrivenRolloutSettings) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDurationUntilDeploymentEnd sets the durationUntilDeploymentEnd property value. The target duration of the rollout. Given durationBetweenOffers and durationUntilDeploymentEnd, the system will automatically calculate how many devices are in each offering.
@@ -68,10 +95,19 @@ func (m *DurationDrivenRolloutSettings) SetDurationUntilDeploymentEnd(value *i87
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DurationDrivenRolloutSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DurationDrivenRolloutSettingsable 
 type DurationDrivenRolloutSettingsable interface {
     GradualRolloutSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDurationUntilDeploymentEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetOdataType()(*string)
     SetDurationUntilDeploymentEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetOdataType(value *string)()
 }

@@ -9,7 +9,7 @@ import (
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
 }
-// NewExactMatchSessionBase instantiates a new ExactMatchSessionBase and sets the default values.
+// NewExactMatchSessionBase instantiates a new exactMatchSessionBase and sets the default values.
 func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     m := &ExactMatchSessionBase{
         ExactMatchJobBase: *NewExactMatchJobBase(),
@@ -61,6 +61,16 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetDataStoreId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -135,6 +145,17 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExactMatchSessionBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProcessingCompletionDateTime gets the processingCompletionDateTime property value. The processingCompletionDateTime property
 func (m *ExactMatchSessionBase) GetProcessingCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -226,6 +247,12 @@ func (m *ExactMatchSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("processingCompletionDateTime", m.GetProcessingCompletionDateTime())
         if err != nil {
             return err
@@ -272,6 +299,13 @@ func (m *ExactMatchSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetDataStoreId sets the dataStoreId property value. The dataStoreId property
 func (m *ExactMatchSessionBase) SetDataStoreId(value *string)() {
     err := m.GetBackingStore().Set("dataStoreId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExactMatchSessionBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -330,6 +364,7 @@ type ExactMatchSessionBaseable interface {
     ExactMatchJobBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDataStoreId()(*string)
+    GetOdataType()(*string)
     GetProcessingCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRemainingBlockCount()(*int32)
     GetRemainingJobCount()(*int32)
@@ -338,6 +373,7 @@ type ExactMatchSessionBaseable interface {
     GetTotalJobCount()(*int32)
     GetUploadCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetDataStoreId(value *string)()
+    SetOdataType(value *string)()
     SetProcessingCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRemainingBlockCount(value *int32)()
     SetRemainingJobCount(value *int32)()

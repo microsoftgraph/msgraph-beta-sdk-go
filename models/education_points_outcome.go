@@ -8,7 +8,7 @@ import (
 type EducationPointsOutcome struct {
     EducationOutcome
 }
-// NewEducationPointsOutcome instantiates a new EducationPointsOutcome and sets the default values.
+// NewEducationPointsOutcome instantiates a new educationPointsOutcome and sets the default values.
 func NewEducationPointsOutcome()(*EducationPointsOutcome) {
     m := &EducationPointsOutcome{
         EducationOutcome: *NewEducationOutcome(),
@@ -24,6 +24,16 @@ func CreateEducationPointsOutcomeFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationPointsOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["points"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationAssignmentPointsGradeFromDiscriminatorValue)
         if err != nil {
@@ -45,6 +55,17 @@ func (m *EducationPointsOutcome) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationPointsOutcome) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPoints gets the points property value. The numeric grade the teacher has given the student for this assignment.
 func (m *EducationPointsOutcome) GetPoints()(EducationAssignmentPointsGradeable) {
@@ -75,6 +96,12 @@ func (m *EducationPointsOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("points", m.GetPoints())
         if err != nil {
             return err
@@ -87,6 +114,13 @@ func (m *EducationPointsOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationPointsOutcome) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPoints sets the points property value. The numeric grade the teacher has given the student for this assignment.
 func (m *EducationPointsOutcome) SetPoints(value EducationAssignmentPointsGradeable)() {
@@ -106,8 +140,10 @@ func (m *EducationPointsOutcome) SetPublishedPoints(value EducationAssignmentPoi
 type EducationPointsOutcomeable interface {
     EducationOutcomeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetPoints()(EducationAssignmentPointsGradeable)
     GetPublishedPoints()(EducationAssignmentPointsGradeable)
+    SetOdataType(value *string)()
     SetPoints(value EducationAssignmentPointsGradeable)()
     SetPublishedPoints(value EducationAssignmentPointsGradeable)()
 }

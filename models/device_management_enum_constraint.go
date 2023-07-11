@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementEnumConstraint 
+// DeviceManagementEnumConstraint base entity for a constraint
 type DeviceManagementEnumConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementEnumConstraint instantiates a new DeviceManagementEnumConstraint and sets the default values.
+// NewDeviceManagementEnumConstraint instantiates a new deviceManagementEnumConstraint and sets the default values.
 func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {
     m := &DeviceManagementEnumConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -24,6 +24,16 @@ func CreateDeviceManagementEnumConstraintFromDiscriminatorValue(parseNode i878a8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementEnumConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementEnumValueFromDiscriminatorValue)
         if err != nil {
@@ -42,6 +52,17 @@ func (m *DeviceManagementEnumConstraint) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementEnumConstraint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetValues gets the values property value. List of valid values for this string
 func (m *DeviceManagementEnumConstraint) GetValues()([]DeviceManagementEnumValueable) {
     val, err := m.GetBackingStore().Get("values")
@@ -59,6 +80,12 @@ func (m *DeviceManagementEnumConstraint) Serialize(writer i878a80d2330e89d268963
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValues()))
         for i, v := range m.GetValues() {
@@ -73,6 +100,13 @@ func (m *DeviceManagementEnumConstraint) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementEnumConstraint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetValues sets the values property value. List of valid values for this string
 func (m *DeviceManagementEnumConstraint) SetValues(value []DeviceManagementEnumValueable)() {
     err := m.GetBackingStore().Set("values", value)
@@ -84,6 +118,8 @@ func (m *DeviceManagementEnumConstraint) SetValues(value []DeviceManagementEnumV
 type DeviceManagementEnumConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetValues()([]DeviceManagementEnumValueable)
+    SetOdataType(value *string)()
     SetValues(value []DeviceManagementEnumValueable)()
 }

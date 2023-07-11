@@ -259,6 +259,16 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["quickScanOverdue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -474,6 +484,17 @@ func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsProtectionState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetQuickScanOverdue gets the quickScanOverdue property value. A flag indicating weather a quick scan is overdue. Optional. Read-only.
 func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("quickScanOverdue")
@@ -666,6 +687,12 @@ func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("quickScanOverdue", m.GetQuickScanOverdue())
         if err != nil {
             return err
@@ -835,6 +862,13 @@ func (m *WindowsProtectionState) SetNetworkInspectionSystemEnabled(value *bool)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsProtectionState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQuickScanOverdue sets the quickScanOverdue property value. A flag indicating weather a quick scan is overdue. Optional. Read-only.
 func (m *WindowsProtectionState) SetQuickScanOverdue(value *bool)() {
     err := m.GetBackingStore().Set("quickScanOverdue", value)
@@ -906,6 +940,7 @@ type WindowsProtectionStateable interface {
     GetManagedDeviceId()(*string)
     GetManagedDeviceName()(*string)
     GetNetworkInspectionSystemEnabled()(*bool)
+    GetOdataType()(*string)
     GetQuickScanOverdue()(*bool)
     GetRealTimeProtectionEnabled()(*bool)
     GetRebootRequired()(*bool)
@@ -931,6 +966,7 @@ type WindowsProtectionStateable interface {
     SetManagedDeviceId(value *string)()
     SetManagedDeviceName(value *string)()
     SetNetworkInspectionSystemEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetQuickScanOverdue(value *bool)()
     SetRealTimeProtectionEnabled(value *bool)()
     SetRebootRequired(value *bool)()

@@ -8,7 +8,7 @@ import (
 type DlpEvaluationWindowsDevicesInput struct {
     DlpEvaluationInput
 }
-// NewDlpEvaluationWindowsDevicesInput instantiates a new DlpEvaluationWindowsDevicesInput and sets the default values.
+// NewDlpEvaluationWindowsDevicesInput instantiates a new dlpEvaluationWindowsDevicesInput and sets the default values.
 func NewDlpEvaluationWindowsDevicesInput()(*DlpEvaluationWindowsDevicesInput) {
     m := &DlpEvaluationWindowsDevicesInput{
         DlpEvaluationInput: *NewDlpEvaluationInput(),
@@ -45,6 +45,16 @@ func (m *DlpEvaluationWindowsDevicesInput) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sharedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -56,6 +66,17 @@ func (m *DlpEvaluationWindowsDevicesInput) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DlpEvaluationWindowsDevicesInput) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSharedBy gets the sharedBy property value. The sharedBy property
 func (m *DlpEvaluationWindowsDevicesInput) GetSharedBy()(*string) {
@@ -81,6 +102,12 @@ func (m *DlpEvaluationWindowsDevicesInput) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("sharedBy", m.GetSharedBy())
         if err != nil {
             return err
@@ -91,6 +118,13 @@ func (m *DlpEvaluationWindowsDevicesInput) Serialize(writer i878a80d2330e89d2689
 // SetContentProperties sets the contentProperties property value. The contentProperties property
 func (m *DlpEvaluationWindowsDevicesInput) SetContentProperties(value ContentPropertiesable)() {
     err := m.GetBackingStore().Set("contentProperties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DlpEvaluationWindowsDevicesInput) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +141,9 @@ type DlpEvaluationWindowsDevicesInputable interface {
     DlpEvaluationInputable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentProperties()(ContentPropertiesable)
+    GetOdataType()(*string)
     GetSharedBy()(*string)
     SetContentProperties(value ContentPropertiesable)()
+    SetOdataType(value *string)()
     SetSharedBy(value *string)()
 }

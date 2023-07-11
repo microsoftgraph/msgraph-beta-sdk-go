@@ -8,7 +8,7 @@ import (
 type DataClassificationService struct {
     Entity
 }
-// NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),
@@ -200,6 +200,16 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sensitiveTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitiveTypeFromDiscriminatorValue)
         if err != nil {
@@ -242,6 +252,17 @@ func (m *DataClassificationService) GetJobs()([]JobResponseBaseable) {
     }
     if val != nil {
         return val.([]JobResponseBaseable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DataClassificationService) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -357,6 +378,12 @@ func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSensitiveTypes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensitiveTypes()))
         for i, v := range m.GetSensitiveTypes() {
@@ -432,6 +459,13 @@ func (m *DataClassificationService) SetJobs(value []JobResponseBaseable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DataClassificationService) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSensitiveTypes sets the sensitiveTypes property value. The sensitiveTypes property
 func (m *DataClassificationService) SetSensitiveTypes(value []SensitiveTypeable)() {
     err := m.GetBackingStore().Set("sensitiveTypes", value)
@@ -457,6 +491,7 @@ type DataClassificationServiceable interface {
     GetExactMatchDataStores()([]ExactMatchDataStoreable)
     GetExactMatchUploadAgents()([]ExactMatchUploadAgentable)
     GetJobs()([]JobResponseBaseable)
+    GetOdataType()(*string)
     GetSensitiveTypes()([]SensitiveTypeable)
     GetSensitivityLabels()([]SensitivityLabelable)
     SetClassifyFileJobs(value []JobResponseBaseable)()
@@ -466,6 +501,7 @@ type DataClassificationServiceable interface {
     SetExactMatchDataStores(value []ExactMatchDataStoreable)()
     SetExactMatchUploadAgents(value []ExactMatchUploadAgentable)()
     SetJobs(value []JobResponseBaseable)()
+    SetOdataType(value *string)()
     SetSensitiveTypes(value []SensitiveTypeable)()
     SetSensitivityLabels(value []SensitivityLabelable)()
 }

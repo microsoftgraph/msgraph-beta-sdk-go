@@ -7,8 +7,10 @@ import (
 // EdiscoverySearch 
 type EdiscoverySearch struct {
     Search
+    // The OdataType property
+    OdataType *string
 }
-// NewEdiscoverySearch instantiates a new EdiscoverySearch and sets the default values.
+// NewEdiscoverySearch instantiates a new ediscoverySearch and sets the default values.
 func NewEdiscoverySearch()(*EdiscoverySearch) {
     m := &EdiscoverySearch{
         Search: *NewSearch(),

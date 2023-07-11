@@ -7,8 +7,10 @@ import (
 // SharePointIdentity 
 type SharePointIdentity struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewSharePointIdentity instantiates a new SharePointIdentity and sets the default values.
+// NewSharePointIdentity instantiates a new sharePointIdentity and sets the default values.
 func NewSharePointIdentity()(*SharePointIdentity) {
     m := &SharePointIdentity{
         Identity: *NewIdentity(),

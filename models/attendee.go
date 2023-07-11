@@ -7,8 +7,10 @@ import (
 // Attendee 
 type Attendee struct {
     AttendeeBase
+    // The OdataType property
+    OdataType *string
 }
-// NewAttendee instantiates a new Attendee and sets the default values.
+// NewAttendee instantiates a new attendee and sets the default values.
 func NewAttendee()(*Attendee) {
     m := &Attendee{
         AttendeeBase: *NewAttendeeBase(),

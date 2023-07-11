@@ -8,7 +8,7 @@ import (
 type DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementIntentDeviceSettingStateSummaryCollectionResponse instantiates a new DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse and sets the default values.
+// NewDeviceManagementIntentDeviceSettingStateSummaryCollectionResponse instantiates a new deviceManagementIntentDeviceSettingStateSummaryCollectionResponse and sets the default values.
 func NewDeviceManagementIntentDeviceSettingStateSummaryCollectionResponse()(*DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse) {
     m := &DeviceManagementIntentDeviceSettingStateSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

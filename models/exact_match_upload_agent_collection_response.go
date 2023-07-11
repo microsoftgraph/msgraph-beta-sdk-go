@@ -8,7 +8,7 @@ import (
 type ExactMatchUploadAgentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewExactMatchUploadAgentCollectionResponse instantiates a new ExactMatchUploadAgentCollectionResponse and sets the default values.
+// NewExactMatchUploadAgentCollectionResponse instantiates a new exactMatchUploadAgentCollectionResponse and sets the default values.
 func NewExactMatchUploadAgentCollectionResponse()(*ExactMatchUploadAgentCollectionResponse) {
     m := &ExactMatchUploadAgentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

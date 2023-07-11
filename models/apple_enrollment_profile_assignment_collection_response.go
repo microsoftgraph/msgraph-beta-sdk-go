@@ -8,7 +8,7 @@ import (
 type AppleEnrollmentProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAppleEnrollmentProfileAssignmentCollectionResponse instantiates a new AppleEnrollmentProfileAssignmentCollectionResponse and sets the default values.
+// NewAppleEnrollmentProfileAssignmentCollectionResponse instantiates a new appleEnrollmentProfileAssignmentCollectionResponse and sets the default values.
 func NewAppleEnrollmentProfileAssignmentCollectionResponse()(*AppleEnrollmentProfileAssignmentCollectionResponse) {
     m := &AppleEnrollmentProfileAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

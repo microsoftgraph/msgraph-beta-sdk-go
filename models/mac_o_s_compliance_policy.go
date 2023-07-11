@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSCompliancePolicy 
+// MacOSCompliancePolicy this class contains compliance settings for Mac OS.
 type MacOSCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewMacOSCompliancePolicy instantiates a new MacOSCompliancePolicy and sets the default values.
+// NewMacOSCompliancePolicy instantiates a new macOSCompliancePolicy and sets the default values.
 func NewMacOSCompliancePolicy()(*MacOSCompliancePolicy) {
     m := &MacOSCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
@@ -124,6 +124,16 @@ func (m *MacOSCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetGatekeeperAllowedAppSource(val.(*MacOSGatekeeperAppSources))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -310,6 +320,17 @@ func (m *MacOSCompliancePolicy) GetGatekeeperAllowedAppSource()(*MacOSGatekeeper
     }
     if val != nil {
         return val.(*MacOSGatekeeperAppSources)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSCompliancePolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -519,6 +540,12 @@ func (m *MacOSCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osMaximumBuildVersion", m.GetOsMaximumBuildVersion())
         if err != nil {
             return err
@@ -654,6 +681,13 @@ func (m *MacOSCompliancePolicy) SetGatekeeperAllowedAppSource(value *MacOSGateke
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSCompliancePolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsMaximumBuildVersion sets the osMaximumBuildVersion property value. Maximum MacOS build version.
 func (m *MacOSCompliancePolicy) SetOsMaximumBuildVersion(value *string)() {
     err := m.GetBackingStore().Set("osMaximumBuildVersion", value)
@@ -763,6 +797,7 @@ type MacOSCompliancePolicyable interface {
     GetFirewallEnabled()(*bool)
     GetFirewallEnableStealthMode()(*bool)
     GetGatekeeperAllowedAppSource()(*MacOSGatekeeperAppSources)
+    GetOdataType()(*string)
     GetOsMaximumBuildVersion()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumBuildVersion()(*string)
@@ -784,6 +819,7 @@ type MacOSCompliancePolicyable interface {
     SetFirewallEnabled(value *bool)()
     SetFirewallEnableStealthMode(value *bool)()
     SetGatekeeperAllowedAppSource(value *MacOSGatekeeperAppSources)()
+    SetOdataType(value *string)()
     SetOsMaximumBuildVersion(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumBuildVersion(value *string)()

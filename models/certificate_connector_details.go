@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CertificateConnectorDetails 
+// CertificateConnectorDetails entity used to retrieve information about Intune Certificate Connectors.
 type CertificateConnectorDetails struct {
     Entity
 }
-// NewCertificateConnectorDetails instantiates a new CertificateConnectorDetails and sets the default values.
+// NewCertificateConnectorDetails instantiates a new certificateConnectorDetails and sets the default values.
 func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {
     m := &CertificateConnectorDetails{
         Entity: *NewEntity(),
@@ -106,6 +106,16 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastCheckinDateTime gets the lastCheckinDateTime property value. Date/time when this connector last connected to the service.
@@ -122,6 +132,17 @@ func (m *CertificateConnectorDetails) GetLastCheckinDateTime()(*i336074805fc8539
 // GetMachineName gets the machineName property value. Name of the machine hosting this connector service.
 func (m *CertificateConnectorDetails) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CertificateConnectorDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -166,6 +187,12 @@ func (m *CertificateConnectorDetails) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetConnectorName sets the connectorName property value. Connector name (set during enrollment).
@@ -203,6 +230,13 @@ func (m *CertificateConnectorDetails) SetMachineName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CertificateConnectorDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CertificateConnectorDetailsable 
 type CertificateConnectorDetailsable interface {
     Entityable
@@ -212,9 +246,11 @@ type CertificateConnectorDetailsable interface {
     GetEnrollmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMachineName()(*string)
+    GetOdataType()(*string)
     SetConnectorName(value *string)()
     SetConnectorVersion(value *string)()
     SetEnrollmentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMachineName(value *string)()
+    SetOdataType(value *string)()
 }

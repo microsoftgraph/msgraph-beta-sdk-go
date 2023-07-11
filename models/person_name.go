@@ -7,8 +7,10 @@ import (
 // PersonName 
 type PersonName struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewPersonName instantiates a new PersonName and sets the default values.
+// NewPersonName instantiates a new personName and sets the default values.
 func NewPersonName()(*PersonName) {
     m := &PersonName{
         ItemFacet: *NewItemFacet(),

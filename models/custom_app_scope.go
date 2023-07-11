@@ -7,8 +7,10 @@ import (
 // CustomAppScope 
 type CustomAppScope struct {
     AppScope
+    // The OdataType property
+    OdataType *string
 }
-// NewCustomAppScope instantiates a new CustomAppScope and sets the default values.
+// NewCustomAppScope instantiates a new customAppScope and sets the default values.
 func NewCustomAppScope()(*CustomAppScope) {
     m := &CustomAppScope{
         AppScope: *NewAppScope(),

@@ -7,8 +7,10 @@ import (
 // DlpEvaluatePoliciesJobResponse 
 type DlpEvaluatePoliciesJobResponse struct {
     JobResponseBase
+    // The OdataType property
+    OdataType *string
 }
-// NewDlpEvaluatePoliciesJobResponse instantiates a new DlpEvaluatePoliciesJobResponse and sets the default values.
+// NewDlpEvaluatePoliciesJobResponse instantiates a new dlpEvaluatePoliciesJobResponse and sets the default values.
 func NewDlpEvaluatePoliciesJobResponse()(*DlpEvaluatePoliciesJobResponse) {
     m := &DlpEvaluatePoliciesJobResponse{
         JobResponseBase: *NewJobResponseBase(),

@@ -64,6 +64,16 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["outOfOfficeSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOutOfOfficeSettingsFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +95,17 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Presence) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The out of office settings for a user.
 func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
@@ -127,6 +148,12 @@ func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("outOfOfficeSettings", m.GetOutOfOfficeSettings())
         if err != nil {
             return err
@@ -154,6 +181,13 @@ func (m *Presence) SetAvailability(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Presence) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOutOfOfficeSettings sets the outOfOfficeSettings property value. The out of office settings for a user.
 func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
     err := m.GetBackingStore().Set("outOfOfficeSettings", value)
@@ -174,10 +208,12 @@ type Presenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActivity()(*string)
     GetAvailability()(*string)
+    GetOdataType()(*string)
     GetOutOfOfficeSettings()(OutOfOfficeSettingsable)
     GetStatusMessage()(PresenceStatusMessageable)
     SetActivity(value *string)()
     SetAvailability(value *string)()
+    SetOdataType(value *string)()
     SetOutOfOfficeSettings(value OutOfOfficeSettingsable)()
     SetStatusMessage(value PresenceStatusMessageable)()
 }

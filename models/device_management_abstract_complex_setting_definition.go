@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementAbstractComplexSettingDefinition 
+// DeviceManagementAbstractComplexSettingDefinition entity representing the defintion for an abstract complex setting
 type DeviceManagementAbstractComplexSettingDefinition struct {
     DeviceManagementSettingDefinition
 }
-// NewDeviceManagementAbstractComplexSettingDefinition instantiates a new DeviceManagementAbstractComplexSettingDefinition and sets the default values.
+// NewDeviceManagementAbstractComplexSettingDefinition instantiates a new deviceManagementAbstractComplexSettingDefinition and sets the default values.
 func NewDeviceManagementAbstractComplexSettingDefinition()(*DeviceManagementAbstractComplexSettingDefinition) {
     m := &DeviceManagementAbstractComplexSettingDefinition{
         DeviceManagementSettingDefinition: *NewDeviceManagementSettingDefinition(),
@@ -38,6 +38,16 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) GetFieldDeserializers
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetImplementations gets the implementations property value. List of definition IDs for all possible implementations of this abstract complex setting
@@ -48,6 +58,17 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) GetImplementations()(
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementAbstractComplexSettingDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -63,6 +84,12 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) Serialize(writer i878
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetImplementations sets the implementations property value. List of definition IDs for all possible implementations of this abstract complex setting
@@ -72,10 +99,19 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) SetImplementations(va
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementAbstractComplexSettingDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceManagementAbstractComplexSettingDefinitionable 
 type DeviceManagementAbstractComplexSettingDefinitionable interface {
     DeviceManagementSettingDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetImplementations()([]string)
+    GetOdataType()(*string)
     SetImplementations(value []string)()
+    SetOdataType(value *string)()
 }

@@ -7,6 +7,8 @@ import (
 // AgreementFileVersion 
 type AgreementFileVersion struct {
     AgreementFileProperties
+    // The OdataType property
+    OdataType *string
 }
 // NewAgreementFileVersion instantiates a new agreementFileVersion and sets the default values.
 func NewAgreementFileVersion()(*AgreementFileVersion) {

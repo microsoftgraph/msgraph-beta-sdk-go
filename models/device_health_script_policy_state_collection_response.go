@@ -8,7 +8,7 @@ import (
 type DeviceHealthScriptPolicyStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceHealthScriptPolicyStateCollectionResponse instantiates a new DeviceHealthScriptPolicyStateCollectionResponse and sets the default values.
+// NewDeviceHealthScriptPolicyStateCollectionResponse instantiates a new deviceHealthScriptPolicyStateCollectionResponse and sets the default values.
 func NewDeviceHealthScriptPolicyStateCollectionResponse()(*DeviceHealthScriptPolicyStateCollectionResponse) {
     m := &DeviceHealthScriptPolicyStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

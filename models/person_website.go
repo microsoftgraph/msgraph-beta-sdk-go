@@ -7,8 +7,10 @@ import (
 // PersonWebsite 
 type PersonWebsite struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewPersonWebsite instantiates a new PersonWebsite and sets the default values.
+// NewPersonWebsite instantiates a new personWebsite and sets the default values.
 func NewPersonWebsite()(*PersonWebsite) {
     m := &PersonWebsite{
         ItemFacet: *NewItemFacet(),

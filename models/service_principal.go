@@ -10,7 +10,7 @@ import (
 type ServicePrincipal struct {
     DirectoryObject
 }
-// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -721,6 +721,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ownedObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -1121,6 +1131,17 @@ func (m *ServicePrincipal) GetOauth2PermissionGrants()([]OAuth2PermissionGrantab
     }
     if val != nil {
         return val.([]OAuth2PermissionGrantable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServicePrincipal) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1666,6 +1687,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOwnedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwnedObjects()))
         for i, v := range m.GetOwnedObjects() {
@@ -2080,6 +2107,13 @@ func (m *ServicePrincipal) SetOauth2PermissionGrants(value []OAuth2PermissionGra
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServicePrincipal) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) SetOwnedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("ownedObjects", value)
@@ -2272,6 +2306,7 @@ type ServicePrincipalable interface {
     GetNotes()(*string)
     GetNotificationEmailAddresses()([]string)
     GetOauth2PermissionGrants()([]OAuth2PermissionGrantable)
+    GetOdataType()(*string)
     GetOwnedObjects()([]DirectoryObjectable)
     GetOwners()([]DirectoryObjectable)
     GetPasswordCredentials()([]PasswordCredentialable)
@@ -2328,6 +2363,7 @@ type ServicePrincipalable interface {
     SetNotes(value *string)()
     SetNotificationEmailAddresses(value []string)()
     SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)()
+    SetOdataType(value *string)()
     SetOwnedObjects(value []DirectoryObjectable)()
     SetOwners(value []DirectoryObjectable)()
     SetPasswordCredentials(value []PasswordCredentialable)()

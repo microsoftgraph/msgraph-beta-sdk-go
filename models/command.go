@@ -64,6 +64,16 @@ func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["packageFamilyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -135,6 +145,17 @@ func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Command) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPackageFamilyName gets the packageFamilyName property value. The packageFamilyName property
 func (m *Command) GetPackageFamilyName()(*string) {
@@ -232,6 +253,12 @@ func (m *Command) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("packageFamilyName", m.GetPackageFamilyName())
         if err != nil {
             return err
@@ -285,6 +312,13 @@ func (m *Command) SetAppServiceName(value *string)() {
 // SetError sets the error property value. The error property
 func (m *Command) SetError(value *string)() {
     err := m.GetBackingStore().Set("error", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Command) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -344,6 +378,7 @@ type Commandable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppServiceName()(*string)
     GetError()(*string)
+    GetOdataType()(*string)
     GetPackageFamilyName()(*string)
     GetPayload()(PayloadRequestable)
     GetPermissionTicket()(*string)
@@ -353,6 +388,7 @@ type Commandable interface {
     GetType()(*string)
     SetAppServiceName(value *string)()
     SetError(value *string)()
+    SetOdataType(value *string)()
     SetPackageFamilyName(value *string)()
     SetPayload(value PayloadRequestable)()
     SetPermissionTicket(value *string)()

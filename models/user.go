@@ -1746,6 +1746,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -2868,6 +2878,17 @@ func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
     }
     if val != nil {
         return val.([]OAuth2PermissionGrantable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *User) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -4300,6 +4321,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("officeLocation", m.GetOfficeLocation())
         if err != nil {
             return err
@@ -5379,6 +5406,13 @@ func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *User) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOfficeLocation sets the officeLocation property value. The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetOfficeLocation(value *string)() {
     err := m.GetBackingStore().Set("officeLocation", value)
@@ -5891,6 +5925,7 @@ type Userable interface {
     GetMySite()(*string)
     GetNotifications()([]Notificationable)
     GetOauth2PermissionGrants()([]OAuth2PermissionGrantable)
+    GetOdataType()(*string)
     GetOfficeLocation()(*string)
     GetOnenote()(Onenoteable)
     GetOnlineMeetings()([]OnlineMeetingable)
@@ -6039,6 +6074,7 @@ type Userable interface {
     SetMySite(value *string)()
     SetNotifications(value []Notificationable)()
     SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)()
+    SetOdataType(value *string)()
     SetOfficeLocation(value *string)()
     SetOnenote(value Onenoteable)()
     SetOnlineMeetings(value []OnlineMeetingable)()

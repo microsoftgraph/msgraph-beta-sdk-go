@@ -19,7 +19,7 @@ type ReportsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ReportsRequestBuilderGetQueryParameters get reports from networkAccess
+// ReportsRequestBuilderGetQueryParameters represents the status of the Global Secure Access services for the tenant.
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *ReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// Get get reports from networkAccess
+// Get represents the status of the Global Secure Access services for the tenant.
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Reportsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *ReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get reports from networkAccess
+// ToGetRequestInformation represents the status of the Global Secure Access services for the tenant.
 func (m *ReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

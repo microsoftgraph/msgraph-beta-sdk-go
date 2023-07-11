@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosKerberosSingleSignOnExtension 
+// IosKerberosSingleSignOnExtension represents a Kerberos-type Single Sign-On extension profile for iOS devices.
 type IosKerberosSingleSignOnExtension struct {
     IosSingleSignOnExtension
 }
-// NewIosKerberosSingleSignOnExtension instantiates a new IosKerberosSingleSignOnExtension and sets the default values.
+// NewIosKerberosSingleSignOnExtension instantiates a new iosKerberosSingleSignOnExtension and sets the default values.
 func NewIosKerberosSingleSignOnExtension()(*IosKerberosSingleSignOnExtension) {
     m := &IosKerberosSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),
@@ -209,6 +209,16 @@ func (m *IosKerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passwordBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -370,6 +380,17 @@ func (m *IosKerberosSingleSignOnExtension) GetManagedAppsInBundleIdACLIncluded()
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosKerberosSingleSignOnExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -588,6 +609,12 @@ func (m *IosKerberosSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("passwordBlockModification", m.GetPasswordBlockModification())
         if err != nil {
             return err
@@ -736,6 +763,13 @@ func (m *IosKerberosSingleSignOnExtension) SetManagedAppsInBundleIdACLIncluded(v
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosKerberosSingleSignOnExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordBlockModification sets the passwordBlockModification property value. Enables or disables password changes.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordBlockModification(value *bool)() {
     err := m.GetBackingStore().Set("passwordBlockModification", value)
@@ -847,6 +881,7 @@ type IosKerberosSingleSignOnExtensionable interface {
     GetDomains()([]string)
     GetIsDefaultRealm()(*bool)
     GetManagedAppsInBundleIdACLIncluded()(*bool)
+    GetOdataType()(*string)
     GetPasswordBlockModification()(*bool)
     GetPasswordChangeUrl()(*string)
     GetPasswordEnableLocalSync()(*bool)
@@ -870,6 +905,7 @@ type IosKerberosSingleSignOnExtensionable interface {
     SetDomains(value []string)()
     SetIsDefaultRealm(value *bool)()
     SetManagedAppsInBundleIdACLIncluded(value *bool)()
+    SetOdataType(value *string)()
     SetPasswordBlockModification(value *bool)()
     SetPasswordChangeUrl(value *string)()
     SetPasswordEnableLocalSync(value *bool)()

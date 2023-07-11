@@ -8,7 +8,7 @@ import (
 type Acronym struct {
     SearchAnswer
 }
-// NewAcronym instantiates a new Acronym and sets the default values.
+// NewAcronym instantiates a new acronym and sets the default values.
 func NewAcronym()(*Acronym) {
     m := &Acronym{
         SearchAnswer: *NewSearchAnswer(),
@@ -22,6 +22,16 @@ func CreateAcronymFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["standsFor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -43,6 +53,17 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Acronym) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStandsFor gets the standsFor property value. What the acronym stands for.
 func (m *Acronym) GetStandsFor()(*string) {
@@ -73,6 +94,12 @@ func (m *Acronym) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("standsFor", m.GetStandsFor())
         if err != nil {
             return err
@@ -86,6 +113,13 @@ func (m *Acronym) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Acronym) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStandsFor sets the standsFor property value. What the acronym stands for.
 func (m *Acronym) SetStandsFor(value *string)() {
@@ -105,8 +139,10 @@ func (m *Acronym) SetState(value *AnswerState)() {
 type Acronymable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SearchAnswerable
+    GetOdataType()(*string)
     GetStandsFor()(*string)
     GetState()(*AnswerState)
+    SetOdataType(value *string)()
     SetStandsFor(value *string)()
     SetState(value *AnswerState)()
 }

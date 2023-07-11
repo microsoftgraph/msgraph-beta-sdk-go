@@ -187,6 +187,16 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -270,6 +280,17 @@ func (m *IosLobAppProvisioningConfiguration) GetLastModifiedDateTime()(*i3360748
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosLobAppProvisioningConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -401,6 +422,12 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("payload", m.GetPayload())
         if err != nil {
             return err
@@ -494,6 +521,13 @@ func (m *IosLobAppProvisioningConfiguration) SetLastModifiedDateTime(value *i336
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosLobAppProvisioningConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosLobAppProvisioningConfiguration) SetPayload(value []byte)() {
     err := m.GetBackingStore().Set("payload", value)
@@ -541,6 +575,7 @@ type IosLobAppProvisioningConfigurationable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetGroupAssignments()([]MobileAppProvisioningConfigGroupAssignmentable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPayload()([]byte)
     GetPayloadFileName()(*string)
     GetRoleScopeTagIds()([]string)
@@ -554,6 +589,7 @@ type IosLobAppProvisioningConfigurationable interface {
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupAssignments(value []MobileAppProvisioningConfigGroupAssignmentable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPayload(value []byte)()
     SetPayloadFileName(value *string)()
     SetRoleScopeTagIds(value []string)()

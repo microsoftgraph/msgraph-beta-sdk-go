@@ -8,7 +8,7 @@ import (
 type EmbeddedSIMActivationCodePoolAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEmbeddedSIMActivationCodePoolAssignmentCollectionResponse instantiates a new EmbeddedSIMActivationCodePoolAssignmentCollectionResponse and sets the default values.
+// NewEmbeddedSIMActivationCodePoolAssignmentCollectionResponse instantiates a new embeddedSIMActivationCodePoolAssignmentCollectionResponse and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignmentCollectionResponse()(*EmbeddedSIMActivationCodePoolAssignmentCollectionResponse) {
     m := &EmbeddedSIMActivationCodePoolAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

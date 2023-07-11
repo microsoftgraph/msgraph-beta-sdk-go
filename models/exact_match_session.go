@@ -8,7 +8,7 @@ import (
 type ExactMatchSession struct {
     ExactMatchSessionBase
 }
-// NewExactMatchSession instantiates a new ExactMatchSession and sets the default values.
+// NewExactMatchSession instantiates a new exactMatchSession and sets the default values.
 func NewExactMatchSession()(*ExactMatchSession) {
     m := &ExactMatchSession{
         ExactMatchSessionBase: *NewExactMatchSessionBase(),
@@ -90,6 +90,16 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rowsPerBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -146,6 +156,17 @@ func (m *ExactMatchSession) GetFields()([]string) {
 // GetFileName gets the fileName property value. The fileName property
 func (m *ExactMatchSession) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExactMatchSession) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -229,6 +250,12 @@ func (m *ExactMatchSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("rowsPerBlock", m.GetRowsPerBlock())
         if err != nil {
             return err
@@ -282,6 +309,13 @@ func (m *ExactMatchSession) SetFileName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExactMatchSession) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRowsPerBlock sets the rowsPerBlock property value. The rowsPerBlock property
 func (m *ExactMatchSession) SetRowsPerBlock(value *int32)() {
     err := m.GetBackingStore().Set("rowsPerBlock", value)
@@ -318,6 +352,7 @@ type ExactMatchSessionable interface {
     GetDataUploadURI()(*string)
     GetFields()([]string)
     GetFileName()(*string)
+    GetOdataType()(*string)
     GetRowsPerBlock()(*int32)
     GetSalt()(*string)
     GetUploadAgent()(ExactMatchUploadAgentable)
@@ -326,6 +361,7 @@ type ExactMatchSessionable interface {
     SetDataUploadURI(value *string)()
     SetFields(value []string)()
     SetFileName(value *string)()
+    SetOdataType(value *string)()
     SetRowsPerBlock(value *int32)()
     SetSalt(value *string)()
     SetUploadAgent(value ExactMatchUploadAgentable)()

@@ -80,6 +80,16 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parentGroupKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetUUIDValue()
         if err != nil {
@@ -149,6 +159,17 @@ func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacy
 // GetName gets the name property value. The name of the task folder.
 func (m *OutlookTaskFolder) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OutlookTaskFolder) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -227,6 +248,12 @@ func (m *OutlookTaskFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteUUIDValue("parentGroupKey", m.GetParentGroupKey())
         if err != nil {
             return err
@@ -286,6 +313,13 @@ func (m *OutlookTaskFolder) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OutlookTaskFolder) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParentGroupKey sets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
 func (m *OutlookTaskFolder) SetParentGroupKey(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("parentGroupKey", value)
@@ -315,6 +349,7 @@ type OutlookTaskFolderable interface {
     GetIsDefaultFolder()(*bool)
     GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
     GetName()(*string)
+    GetOdataType()(*string)
     GetParentGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetTasks()([]OutlookTaskable)
@@ -322,6 +357,7 @@ type OutlookTaskFolderable interface {
     SetIsDefaultFolder(value *bool)()
     SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetParentGroupKey(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetTasks(value []OutlookTaskable)()

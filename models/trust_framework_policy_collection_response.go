@@ -8,7 +8,7 @@ import (
 type TrustFrameworkPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTrustFrameworkPolicyCollectionResponse instantiates a new TrustFrameworkPolicyCollectionResponse and sets the default values.
+// NewTrustFrameworkPolicyCollectionResponse instantiates a new trustFrameworkPolicyCollectionResponse and sets the default values.
 func NewTrustFrameworkPolicyCollectionResponse()(*TrustFrameworkPolicyCollectionResponse) {
     m := &TrustFrameworkPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

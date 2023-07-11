@@ -8,7 +8,7 @@ import (
 type DeviceManagementCachedReportConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementCachedReportConfigurationCollectionResponse instantiates a new DeviceManagementCachedReportConfigurationCollectionResponse and sets the default values.
+// NewDeviceManagementCachedReportConfigurationCollectionResponse instantiates a new deviceManagementCachedReportConfigurationCollectionResponse and sets the default values.
 func NewDeviceManagementCachedReportConfigurationCollectionResponse()(*DeviceManagementCachedReportConfigurationCollectionResponse) {
     m := &DeviceManagementCachedReportConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type PaymentTermCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPaymentTermCollectionResponse instantiates a new PaymentTermCollectionResponse and sets the default values.
+// NewPaymentTermCollectionResponse instantiates a new paymentTermCollectionResponse and sets the default values.
 func NewPaymentTermCollectionResponse()(*PaymentTermCollectionResponse) {
     m := &PaymentTermCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

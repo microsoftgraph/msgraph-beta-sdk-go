@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceComplianceLocalActionLockDeviceWithPasscode 
+// AndroidDeviceComplianceLocalActionLockDeviceWithPasscode local Action Lock Device with Passcode Configuration
 type AndroidDeviceComplianceLocalActionLockDeviceWithPasscode struct {
     AndroidDeviceComplianceLocalActionBase
+    // The OdataType property
+    OdataType *string
 }
-// NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode instantiates a new AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
+// NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode instantiates a new androidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
 func NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode()(*AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) {
     m := &AndroidDeviceComplianceLocalActionLockDeviceWithPasscode{
         AndroidDeviceComplianceLocalActionBase: *NewAndroidDeviceComplianceLocalActionBase(),

@@ -39,7 +39,7 @@ func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     }
     return NewProfile(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description.
 func (m *Profile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -83,6 +83,16 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePolicyLinkFromDiscriminatorValue)
         if err != nil {
@@ -121,7 +131,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time.
 func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -132,7 +142,7 @@ func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Profile name.
 func (m *Profile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -143,7 +153,18 @@ func (m *Profile) GetName()(*string) {
     }
     return nil
 }
-// GetPolicies gets the policies property value. The policies property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Profile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPolicies gets the policies property value. Traffic forwarding policies associated with this profile.
 func (m *Profile) GetPolicies()([]PolicyLinkable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -165,7 +186,7 @@ func (m *Profile) GetState()(*Status) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. Profile version.
 func (m *Profile) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -200,6 +221,12 @@ func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
@@ -227,28 +254,35 @@ func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description.
 func (m *Profile) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Profile last modified time.
 func (m *Profile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Profile name.
 func (m *Profile) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicies sets the policies property value. The policies property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Profile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPolicies sets the policies property value. Traffic forwarding policies associated with this profile.
 func (m *Profile) SetPolicies(value []PolicyLinkable)() {
     err := m.GetBackingStore().Set("policies", value)
     if err != nil {
@@ -262,7 +296,7 @@ func (m *Profile) SetState(value *Status)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. Profile version.
 func (m *Profile) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {
@@ -276,12 +310,14 @@ type Profileable interface {
     GetDescription()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetPolicies()([]PolicyLinkable)
     GetState()(*Status)
     GetVersion()(*string)
     SetDescription(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetPolicies(value []PolicyLinkable)()
     SetState(value *Status)()
     SetVersion(value *string)()

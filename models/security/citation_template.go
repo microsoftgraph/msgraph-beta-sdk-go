@@ -7,8 +7,10 @@ import (
 // CitationTemplate 
 type CitationTemplate struct {
     FilePlanDescriptorTemplate
+    // The OdataType property
+    OdataType *string
 }
-// NewCitationTemplate instantiates a new CitationTemplate and sets the default values.
+// NewCitationTemplate instantiates a new citationTemplate and sets the default values.
 func NewCitationTemplate()(*CitationTemplate) {
     m := &CitationTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

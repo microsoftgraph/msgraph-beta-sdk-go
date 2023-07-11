@@ -8,7 +8,7 @@ import (
 type SequentialActivationRenewalsAlertConfiguration struct {
     UnifiedRoleManagementAlertConfiguration
 }
-// NewSequentialActivationRenewalsAlertConfiguration instantiates a new SequentialActivationRenewalsAlertConfiguration and sets the default values.
+// NewSequentialActivationRenewalsAlertConfiguration instantiates a new sequentialActivationRenewalsAlertConfiguration and sets the default values.
 func NewSequentialActivationRenewalsAlertConfiguration()(*SequentialActivationRenewalsAlertConfiguration) {
     m := &SequentialActivationRenewalsAlertConfiguration{
         UnifiedRoleManagementAlertConfiguration: *NewUnifiedRoleManagementAlertConfiguration(),
@@ -24,6 +24,16 @@ func CreateSequentialActivationRenewalsAlertConfigurationFromDiscriminatorValue(
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SequentialActivationRenewalsAlertConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertConfiguration.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sequentialActivationCounterThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -45,6 +55,17 @@ func (m *SequentialActivationRenewalsAlertConfiguration) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SequentialActivationRenewalsAlertConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSequentialActivationCounterThreshold gets the sequentialActivationCounterThreshold property value. The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.
 func (m *SequentialActivationRenewalsAlertConfiguration) GetSequentialActivationCounterThreshold()(*int32) {
@@ -75,6 +96,12 @@ func (m *SequentialActivationRenewalsAlertConfiguration) Serialize(writer i878a8
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("sequentialActivationCounterThreshold", m.GetSequentialActivationCounterThreshold())
         if err != nil {
             return err
@@ -87,6 +114,13 @@ func (m *SequentialActivationRenewalsAlertConfiguration) Serialize(writer i878a8
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SequentialActivationRenewalsAlertConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSequentialActivationCounterThreshold sets the sequentialActivationCounterThreshold property value. The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.
 func (m *SequentialActivationRenewalsAlertConfiguration) SetSequentialActivationCounterThreshold(value *int32)() {
@@ -106,8 +140,10 @@ func (m *SequentialActivationRenewalsAlertConfiguration) SetTimeIntervalBetweenA
 type SequentialActivationRenewalsAlertConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertConfigurationable
+    GetOdataType()(*string)
     GetSequentialActivationCounterThreshold()(*int32)
     GetTimeIntervalBetweenActivations()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetOdataType(value *string)()
     SetSequentialActivationCounterThreshold(value *int32)()
     SetTimeIntervalBetweenActivations(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
 }

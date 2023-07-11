@@ -9,8 +9,10 @@ import (
 // TaskReport 
 type TaskReport struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewTaskReport instantiates a new TaskReport and sets the default values.
+// NewTaskReport instantiates a new taskReport and sets the default values.
 func NewTaskReport()(*TaskReport) {
     m := &TaskReport{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

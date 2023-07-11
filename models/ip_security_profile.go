@@ -8,8 +8,10 @@ import (
 // IpSecurityProfile 
 type IpSecurityProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewIpSecurityProfile instantiates a new IpSecurityProfile and sets the default values.
+// NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
     m := &IpSecurityProfile{
         Entity: *NewEntity(),

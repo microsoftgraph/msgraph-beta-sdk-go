@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileWiFiConfiguration 
+// AndroidWorkProfileWiFiConfiguration by providing the configurations in this profile you can instruct the Android Work Profile device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
 type AndroidWorkProfileWiFiConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileWiFiConfiguration instantiates a new AndroidWorkProfileWiFiConfiguration and sets the default values.
+// NewAndroidWorkProfileWiFiConfiguration instantiates a new androidWorkProfileWiFiConfiguration and sets the default values.
 func NewAndroidWorkProfileWiFiConfiguration()(*AndroidWorkProfileWiFiConfiguration) {
     m := &AndroidWorkProfileWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -94,6 +94,16 @@ func (m *AndroidWorkProfileWiFiConfiguration) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ssid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -119,6 +129,17 @@ func (m *AndroidWorkProfileWiFiConfiguration) GetFieldDeserializers()(map[string
 // GetNetworkName gets the networkName property value. Network Name
 func (m *AndroidWorkProfileWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileWiFiConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -174,6 +195,12 @@ func (m *AndroidWorkProfileWiFiConfiguration) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("ssid", m.GetSsid())
         if err != nil {
             return err
@@ -209,6 +236,13 @@ func (m *AndroidWorkProfileWiFiConfiguration) SetNetworkName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileWiFiConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidWorkProfileWiFiConfiguration) SetSsid(value *string)() {
     err := m.GetBackingStore().Set("ssid", value)
@@ -230,11 +264,13 @@ type AndroidWorkProfileWiFiConfigurationable interface {
     GetConnectAutomatically()(*bool)
     GetConnectWhenNetworkNameIsHidden()(*bool)
     GetNetworkName()(*string)
+    GetOdataType()(*string)
     GetSsid()(*string)
     GetWiFiSecurityType()(*AndroidWiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
     SetNetworkName(value *string)()
+    SetOdataType(value *string)()
     SetSsid(value *string)()
     SetWiFiSecurityType(value *AndroidWiFiSecurityType)()
 }

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeliveryOptimizationBandwidthAbsolute 
+// DeliveryOptimizationBandwidthAbsolute bandwidth restriction types
 type DeliveryOptimizationBandwidthAbsolute struct {
     DeliveryOptimizationBandwidth
+    // The OdataType property
+    OdataType *string
 }
-// NewDeliveryOptimizationBandwidthAbsolute instantiates a new DeliveryOptimizationBandwidthAbsolute and sets the default values.
+// NewDeliveryOptimizationBandwidthAbsolute instantiates a new deliveryOptimizationBandwidthAbsolute and sets the default values.
 func NewDeliveryOptimizationBandwidthAbsolute()(*DeliveryOptimizationBandwidthAbsolute) {
     m := &DeliveryOptimizationBandwidthAbsolute{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),

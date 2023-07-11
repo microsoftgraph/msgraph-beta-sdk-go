@@ -10,7 +10,7 @@ type Admin struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAdmin instantiates a new Admin and sets the default values.
+// NewAdmin instantiates a new admin and sets the default values.
 func NewAdmin()(*Admin) {
     m := &Admin{
     }
@@ -124,6 +124,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["people"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePeopleAdminSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPeople(val.(PeopleAdminSettingsable))
+        }
+        return nil
+    }
     res["reportSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAdminReportSettingsFromDiscriminatorValue)
         if err != nil {
@@ -195,6 +205,17 @@ func (m *Admin) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPeople gets the people property value. The people property
+func (m *Admin) GetPeople()(PeopleAdminSettingsable) {
+    val, err := m.GetBackingStore().Get("people")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PeopleAdminSettingsable)
     }
     return nil
 }
@@ -286,6 +307,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err := writer.WriteObjectValue("people", m.GetPeople())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("reportSettings", m.GetReportSettings())
         if err != nil {
             return err
@@ -369,6 +396,13 @@ func (m *Admin) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetPeople sets the people property value. The people property
+func (m *Admin) SetPeople(value PeopleAdminSettingsable)() {
+    err := m.GetBackingStore().Set("people", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReportSettings sets the reportSettings property value. A container for administrative resources to manage reports.
 func (m *Admin) SetReportSettings(value AdminReportSettingsable)() {
     err := m.GetBackingStore().Set("reportSettings", value)
@@ -415,6 +449,7 @@ type Adminable interface {
     GetEdge()(Edgeable)
     GetForms()(AdminFormsable)
     GetOdataType()(*string)
+    GetPeople()(PeopleAdminSettingsable)
     GetReportSettings()(AdminReportSettingsable)
     GetServiceAnnouncement()(ServiceAnnouncementable)
     GetSharepoint()(Sharepointable)
@@ -426,79 +461,10 @@ type Adminable interface {
     SetEdge(value Edgeable)()
     SetForms(value AdminFormsable)()
     SetOdataType(value *string)()
+    SetPeople(value PeopleAdminSettingsable)()
     SetReportSettings(value AdminReportSettingsable)()
     SetServiceAnnouncement(value ServiceAnnouncementable)()
     SetSharepoint(value Sharepointable)()
     SetTodo(value AdminTodoable)()
     SetWindows(value AdminWindowsable)()
-}
-
-// AdminWindows 
-type AdminWindows struct {
-    Entity
-}
-// NewAdminWindows instantiates a new AdminWindows and sets the default values.
-func NewAdminWindows()(*AdminWindows) {
-    m := &AdminWindows{
-        Entity: *NewEntity(),
-    }
-    return m
-}
-// CreateAdminWindowsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateAdminWindowsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAdminWindows(), nil
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *AdminWindows) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["updates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAdminWindowsUpdatesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdates(val.(AdminWindowsUpdatesable))
-        }
-        return nil
-    }
-    return res
-}
-// GetUpdates gets the updates property value. Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
-func (m *AdminWindows) GetUpdates()(AdminWindowsUpdatesable) {
-    val, err := m.GetBackingStore().Get("updates")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AdminWindowsUpdatesable)
-    }
-    return nil
-}
-// Serialize serializes information the current object
-func (m *AdminWindows) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("updates", m.GetUpdates())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetUpdates sets the updates property value. Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
-func (m *AdminWindows) SetUpdates(value AdminWindowsUpdatesable)() {
-    err := m.GetBackingStore().Set("updates", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// AdminWindowsable 
-type AdminWindowsable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetUpdates()(AdminWindowsUpdatesable)
-    SetUpdates(value AdminWindowsUpdatesable)()
 }

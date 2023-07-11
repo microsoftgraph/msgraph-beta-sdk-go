@@ -8,7 +8,7 @@ import (
 type GovernanceRoleAssignmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGovernanceRoleAssignmentRequestCollectionResponse instantiates a new GovernanceRoleAssignmentRequestCollectionResponse and sets the default values.
+// NewGovernanceRoleAssignmentRequestCollectionResponse instantiates a new governanceRoleAssignmentRequestCollectionResponse and sets the default values.
 func NewGovernanceRoleAssignmentRequestCollectionResponse()(*GovernanceRoleAssignmentRequestCollectionResponse) {
     m := &GovernanceRoleAssignmentRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

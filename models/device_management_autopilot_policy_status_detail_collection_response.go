@@ -8,7 +8,7 @@ import (
 type DeviceManagementAutopilotPolicyStatusDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementAutopilotPolicyStatusDetailCollectionResponse instantiates a new DeviceManagementAutopilotPolicyStatusDetailCollectionResponse and sets the default values.
+// NewDeviceManagementAutopilotPolicyStatusDetailCollectionResponse instantiates a new deviceManagementAutopilotPolicyStatusDetailCollectionResponse and sets the default values.
 func NewDeviceManagementAutopilotPolicyStatusDetailCollectionResponse()(*DeviceManagementAutopilotPolicyStatusDetailCollectionResponse) {
     m := &DeviceManagementAutopilotPolicyStatusDetailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

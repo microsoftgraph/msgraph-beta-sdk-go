@@ -85,6 +85,16 @@ func (m *DeviceManagementScriptDeviceState) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resultMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -126,6 +136,17 @@ func (m *DeviceManagementScriptDeviceState) GetManagedDevice()(ManagedDeviceable
     }
     if val != nil {
         return val.(ManagedDeviceable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementScriptDeviceState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -182,6 +203,12 @@ func (m *DeviceManagementScriptDeviceState) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("resultMessage", m.GetResultMessage())
         if err != nil {
             return err
@@ -224,6 +251,13 @@ func (m *DeviceManagementScriptDeviceState) SetManagedDevice(value ManagedDevice
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementScriptDeviceState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResultMessage sets the resultMessage property value. Details of execution output.
 func (m *DeviceManagementScriptDeviceState) SetResultMessage(value *string)() {
     err := m.GetBackingStore().Set("resultMessage", value)
@@ -246,12 +280,14 @@ type DeviceManagementScriptDeviceStateable interface {
     GetErrorDescription()(*string)
     GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagedDevice()(ManagedDeviceable)
+    GetOdataType()(*string)
     GetResultMessage()(*string)
     GetRunState()(*RunState)
     SetErrorCode(value *int32)()
     SetErrorDescription(value *string)()
     SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagedDevice(value ManagedDeviceable)()
+    SetOdataType(value *string)()
     SetResultMessage(value *string)()
     SetRunState(value *RunState)()
 }

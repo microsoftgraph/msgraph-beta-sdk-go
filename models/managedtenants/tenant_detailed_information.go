@@ -9,7 +9,7 @@ import (
 type TenantDetailedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantDetailedInformation instantiates a new TenantDetailedInformation and sets the default values.
+// NewTenantDetailedInformation instantiates a new tenantDetailedInformation and sets the default values.
 func NewTenantDetailedInformation()(*TenantDetailedInformation) {
     m := &TenantDetailedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -138,6 +138,16 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -183,6 +193,17 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(i878
 // GetIndustryName gets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) GetIndustryName()(*string) {
     val, err := m.GetBackingStore().Get("industryName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantDetailedInformation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -278,6 +299,12 @@ func (m *TenantDetailedInformation) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("region", m.GetRegion())
         if err != nil {
             return err
@@ -345,6 +372,13 @@ func (m *TenantDetailedInformation) SetIndustryName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantDetailedInformation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegion sets the region property value. The region where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetRegion(value *string)() {
     err := m.GetBackingStore().Set("region", value)
@@ -383,6 +417,7 @@ type TenantDetailedInformationable interface {
     GetDefaultDomainName()(*string)
     GetDisplayName()(*string)
     GetIndustryName()(*string)
+    GetOdataType()(*string)
     GetRegion()(*string)
     GetSegmentName()(*string)
     GetTenantId()(*string)
@@ -393,6 +428,7 @@ type TenantDetailedInformationable interface {
     SetDefaultDomainName(value *string)()
     SetDisplayName(value *string)()
     SetIndustryName(value *string)()
+    SetOdataType(value *string)()
     SetRegion(value *string)()
     SetSegmentName(value *string)()
     SetTenantId(value *string)()

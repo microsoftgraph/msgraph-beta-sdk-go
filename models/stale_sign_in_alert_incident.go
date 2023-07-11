@@ -9,7 +9,7 @@ import (
 type StaleSignInAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewStaleSignInAlertIncident instantiates a new StaleSignInAlertIncident and sets the default values.
+// NewStaleSignInAlertIncident instantiates a new staleSignInAlertIncident and sets the default values.
 func NewStaleSignInAlertIncident()(*StaleSignInAlertIncident) {
     m := &StaleSignInAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),

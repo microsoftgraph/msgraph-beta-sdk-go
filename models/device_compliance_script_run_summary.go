@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScriptRunSummary 
+// DeviceComplianceScriptRunSummary contains properties for the run summary of a device management script.
 type DeviceComplianceScriptRunSummary struct {
     Entity
 }
@@ -95,6 +95,16 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIssueDetectedDeviceCount gets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
@@ -130,6 +140,17 @@ func (m *DeviceComplianceScriptRunSummary) GetNoIssueDetectedDeviceCount()(*int3
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptRunSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptRunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -162,6 +183,12 @@ func (m *DeviceComplianceScriptRunSummary) Serialize(writer i878a80d2330e89d2689
     }
     {
         err = writer.WriteInt32Value("noIssueDetectedDeviceCount", m.GetNoIssueDetectedDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -203,6 +230,13 @@ func (m *DeviceComplianceScriptRunSummary) SetNoIssueDetectedDeviceCount(value *
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptRunSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceComplianceScriptRunSummaryable 
 type DeviceComplianceScriptRunSummaryable interface {
     Entityable
@@ -212,9 +246,11 @@ type DeviceComplianceScriptRunSummaryable interface {
     GetIssueDetectedDeviceCount()(*int32)
     GetLastScriptRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNoIssueDetectedDeviceCount()(*int32)
+    GetOdataType()(*string)
     SetDetectionScriptErrorDeviceCount(value *int32)()
     SetDetectionScriptPendingDeviceCount(value *int32)()
     SetIssueDetectedDeviceCount(value *int32)()
     SetLastScriptRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNoIssueDetectedDeviceCount(value *int32)()
+    SetOdataType(value *string)()
 }

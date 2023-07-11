@@ -9,7 +9,7 @@ import (
 type CustomSecurityAttributeAudit struct {
     Entity
 }
-// NewCustomSecurityAttributeAudit instantiates a new CustomSecurityAttributeAudit and sets the default values.
+// NewCustomSecurityAttributeAudit instantiates a new customSecurityAttributeAudit and sets the default values.
 func NewCustomSecurityAttributeAudit()(*CustomSecurityAttributeAudit) {
     m := &CustomSecurityAttributeAudit{
         Entity: *NewEntity(),
@@ -154,6 +154,16 @@ func (m *CustomSecurityAttributeAudit) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -226,6 +236,17 @@ func (m *CustomSecurityAttributeAudit) GetInitiatedBy()(AuditActivityInitiatorab
 // GetLoggedByService gets the loggedByService property value. The loggedByService property
 func (m *CustomSecurityAttributeAudit) GetLoggedByService()(*string) {
     val, err := m.GetBackingStore().Get("loggedByService")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomSecurityAttributeAudit) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -344,6 +365,12 @@ func (m *CustomSecurityAttributeAudit) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("operationType", m.GetOperationType())
         if err != nil {
             return err
@@ -431,6 +458,13 @@ func (m *CustomSecurityAttributeAudit) SetLoggedByService(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomSecurityAttributeAudit) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperationType sets the operationType property value. The operationType property
 func (m *CustomSecurityAttributeAudit) SetOperationType(value *string)() {
     err := m.GetBackingStore().Set("operationType", value)
@@ -477,6 +511,7 @@ type CustomSecurityAttributeAuditable interface {
     GetCorrelationId()(*string)
     GetInitiatedBy()(AuditActivityInitiatorable)
     GetLoggedByService()(*string)
+    GetOdataType()(*string)
     GetOperationType()(*string)
     GetResult()(*OperationResult)
     GetResultReason()(*string)
@@ -489,6 +524,7 @@ type CustomSecurityAttributeAuditable interface {
     SetCorrelationId(value *string)()
     SetInitiatedBy(value AuditActivityInitiatorable)()
     SetLoggedByService(value *string)()
+    SetOdataType(value *string)()
     SetOperationType(value *string)()
     SetResult(value *OperationResult)()
     SetResultReason(value *string)()

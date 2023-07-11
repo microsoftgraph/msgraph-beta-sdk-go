@@ -8,7 +8,7 @@ import (
 type DeviceManagementDomainJoinConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementDomainJoinConnectorCollectionResponse instantiates a new DeviceManagementDomainJoinConnectorCollectionResponse and sets the default values.
+// NewDeviceManagementDomainJoinConnectorCollectionResponse instantiates a new deviceManagementDomainJoinConnectorCollectionResponse and sets the default values.
 func NewDeviceManagementDomainJoinConnectorCollectionResponse()(*DeviceManagementDomainJoinConnectorCollectionResponse) {
     m := &DeviceManagementDomainJoinConnectorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

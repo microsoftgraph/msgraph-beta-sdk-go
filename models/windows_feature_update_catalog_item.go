@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsFeatureUpdateCatalogItem 
+// WindowsFeatureUpdateCatalogItem windows update catalog item entity
 type WindowsFeatureUpdateCatalogItem struct {
     WindowsUpdateCatalogItem
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsFeatureUpdateCatalogItem instantiates a new WindowsFeatureUpdateCatalogItem and sets the default values.
+// NewWindowsFeatureUpdateCatalogItem instantiates a new windowsFeatureUpdateCatalogItem and sets the default values.
 func NewWindowsFeatureUpdateCatalogItem()(*WindowsFeatureUpdateCatalogItem) {
     m := &WindowsFeatureUpdateCatalogItem{
         WindowsUpdateCatalogItem: *NewWindowsUpdateCatalogItem(),

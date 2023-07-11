@@ -7,8 +7,10 @@ import (
 // AzureCommunicationServicesUserIdentity 
 type AzureCommunicationServicesUserIdentity struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewAzureCommunicationServicesUserIdentity instantiates a new AzureCommunicationServicesUserIdentity and sets the default values.
+// NewAzureCommunicationServicesUserIdentity instantiates a new azureCommunicationServicesUserIdentity and sets the default values.
 func NewAzureCommunicationServicesUserIdentity()(*AzureCommunicationServicesUserIdentity) {
     m := &AzureCommunicationServicesUserIdentity{
         Identity: *NewIdentity(),

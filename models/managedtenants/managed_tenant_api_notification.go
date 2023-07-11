@@ -127,6 +127,16 @@ func (m *ManagedTenantApiNotification) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -185,6 +195,17 @@ func (m *ManagedTenantApiNotification) GetLastActionDateTime()(*i336074805fc8539
 // GetMessage gets the message property value. The message property
 func (m *ManagedTenantApiNotification) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedTenantApiNotification) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -264,6 +285,12 @@ func (m *ManagedTenantApiNotification) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("title", m.GetTitle())
         if err != nil {
             return err
@@ -326,6 +353,13 @@ func (m *ManagedTenantApiNotification) SetMessage(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedTenantApiNotification) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTitle sets the title property value. The title property
 func (m *ManagedTenantApiNotification) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
@@ -351,6 +385,7 @@ type ManagedTenantApiNotificationable interface {
     GetLastActionByUserId()(*string)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMessage()(*string)
+    GetOdataType()(*string)
     GetTitle()(*string)
     GetUserId()(*string)
     SetAlert(value ManagedTenantAlertable)()
@@ -360,6 +395,7 @@ type ManagedTenantApiNotificationable interface {
     SetLastActionByUserId(value *string)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMessage(value *string)()
+    SetOdataType(value *string)()
     SetTitle(value *string)()
     SetUserId(value *string)()
 }

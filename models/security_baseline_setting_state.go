@@ -70,6 +70,16 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settingCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -137,6 +147,17 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecurityBaselineSettingState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettingCategoryId gets the settingCategoryId property value. The setting category id which this setting belongs to
 func (m *SecurityBaselineSettingState) GetSettingCategoryId()(*string) {
@@ -229,6 +250,12 @@ func (m *SecurityBaselineSettingState) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("settingCategoryId", m.GetSettingCategoryId())
         if err != nil {
             return err
@@ -287,6 +314,13 @@ func (m *SecurityBaselineSettingState) SetErrorCode(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecurityBaselineSettingState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettingCategoryId sets the settingCategoryId property value. The setting category id which this setting belongs to
 func (m *SecurityBaselineSettingState) SetSettingCategoryId(value *string)() {
     err := m.GetBackingStore().Set("settingCategoryId", value)
@@ -335,6 +369,7 @@ type SecurityBaselineSettingStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContributingPolicies()([]SecurityBaselineContributingPolicyable)
     GetErrorCode()(*string)
+    GetOdataType()(*string)
     GetSettingCategoryId()(*string)
     GetSettingCategoryName()(*string)
     GetSettingId()(*string)
@@ -343,6 +378,7 @@ type SecurityBaselineSettingStateable interface {
     GetState()(*SecurityBaselineComplianceState)
     SetContributingPolicies(value []SecurityBaselineContributingPolicyable)()
     SetErrorCode(value *string)()
+    SetOdataType(value *string)()
     SetSettingCategoryId(value *string)()
     SetSettingCategoryName(value *string)()
     SetSettingId(value *string)()

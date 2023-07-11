@@ -251,6 +251,16 @@ func (m *ManagementTemplateCollectionTenantSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["regressedStepsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -373,6 +383,17 @@ func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollect
 // GetManagementTemplateCollectionId gets the managementTemplateCollectionId property value. The managementTemplateCollectionId property
 func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollectionId()(*string) {
     val, err := m.GetBackingStore().Get("managementTemplateCollectionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementTemplateCollectionTenantSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -522,6 +543,12 @@ func (m *ManagementTemplateCollectionTenantSummary) Serialize(writer i878a80d233
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("regressedStepsCount", m.GetRegressedStepsCount())
         if err != nil {
             return err
@@ -652,6 +679,13 @@ func (m *ManagementTemplateCollectionTenantSummary) SetManagementTemplateCollect
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementTemplateCollectionTenantSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegressedStepsCount sets the regressedStepsCount property value. The regressedStepsCount property
 func (m *ManagementTemplateCollectionTenantSummary) SetRegressedStepsCount(value *int32)() {
     err := m.GetBackingStore().Set("regressedStepsCount", value)
@@ -699,6 +733,7 @@ type ManagementTemplateCollectionTenantSummaryable interface {
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagementTemplateCollectionDisplayName()(*string)
     GetManagementTemplateCollectionId()(*string)
+    GetOdataType()(*string)
     GetRegressedStepsCount()(*int32)
     GetRegressedUsersCount()(*int32)
     GetTenantId()(*string)
@@ -718,6 +753,7 @@ type ManagementTemplateCollectionTenantSummaryable interface {
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagementTemplateCollectionDisplayName(value *string)()
     SetManagementTemplateCollectionId(value *string)()
+    SetOdataType(value *string)()
     SetRegressedStepsCount(value *int32)()
     SetRegressedUsersCount(value *int32)()
     SetTenantId(value *string)()

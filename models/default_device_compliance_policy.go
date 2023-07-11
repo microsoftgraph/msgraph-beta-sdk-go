@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DefaultDeviceCompliancePolicy 
+// DefaultDeviceCompliancePolicy default device compliance policy rules that are enforced account wide.
 type DefaultDeviceCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewDefaultDeviceCompliancePolicy instantiates a new DefaultDeviceCompliancePolicy and sets the default values.
+// NewDefaultDeviceCompliancePolicy instantiates a new defaultDeviceCompliancePolicy and sets the default values.
 func NewDefaultDeviceCompliancePolicy()(*DefaultDeviceCompliancePolicy) {
     m := &DefaultDeviceCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
@@ -24,7 +24,28 @@ func CreateDefaultDeviceCompliancePolicyFromDiscriminatorValue(parseNode i878a80
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DefaultDeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceCompliancePolicy.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DefaultDeviceCompliancePolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DefaultDeviceCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -32,10 +53,25 @@ func (m *DefaultDeviceCompliancePolicy) Serialize(writer i878a80d2330e89d2689638
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DefaultDeviceCompliancePolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // DefaultDeviceCompliancePolicyable 
 type DefaultDeviceCompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
+    SetOdataType(value *string)()
 }

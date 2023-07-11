@@ -8,7 +8,7 @@ import (
 type AgreementFile struct {
     AgreementFileProperties
 }
-// NewAgreementFile instantiates a new AgreementFile and sets the default values.
+// NewAgreementFile instantiates a new agreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),
@@ -38,6 +38,16 @@ func (m *AgreementFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLocalizations gets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
@@ -48,6 +58,17 @@ func (m *AgreementFile) GetLocalizations()([]AgreementFileLocalizationable) {
     }
     if val != nil {
         return val.([]AgreementFileLocalizationable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AgreementFile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -69,6 +90,12 @@ func (m *AgreementFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetLocalizations sets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
@@ -78,10 +105,19 @@ func (m *AgreementFile) SetLocalizations(value []AgreementFileLocalizationable)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AgreementFile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AgreementFileable 
 type AgreementFileable interface {
     AgreementFilePropertiesable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLocalizations()([]AgreementFileLocalizationable)
+    GetOdataType()(*string)
     SetLocalizations(value []AgreementFileLocalizationable)()
+    SetOdataType(value *string)()
 }

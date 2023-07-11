@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AospDeviceOwnerWiFiConfiguration 
+// AospDeviceOwnerWiFiConfiguration by providing the configurations in this profile you can instruct the AOSP device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
 type AospDeviceOwnerWiFiConfiguration struct {
     DeviceConfiguration
 }
-// NewAospDeviceOwnerWiFiConfiguration instantiates a new AospDeviceOwnerWiFiConfiguration and sets the default values.
+// NewAospDeviceOwnerWiFiConfiguration instantiates a new aospDeviceOwnerWiFiConfiguration and sets the default values.
 func NewAospDeviceOwnerWiFiConfiguration()(*AospDeviceOwnerWiFiConfiguration) {
     m := &AospDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -94,6 +94,16 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["preSharedKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -139,6 +149,17 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]fu
 // GetNetworkName gets the networkName property value. Network Name
 func (m *AospDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AospDeviceOwnerWiFiConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -216,6 +237,12 @@ func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("preSharedKey", m.GetPreSharedKey())
         if err != nil {
             return err
@@ -263,6 +290,13 @@ func (m *AospDeviceOwnerWiFiConfiguration) SetNetworkName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AospDeviceOwnerWiFiConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPreSharedKey sets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKey(value *string)() {
     err := m.GetBackingStore().Set("preSharedKey", value)
@@ -298,6 +332,7 @@ type AospDeviceOwnerWiFiConfigurationable interface {
     GetConnectAutomatically()(*bool)
     GetConnectWhenNetworkNameIsHidden()(*bool)
     GetNetworkName()(*string)
+    GetOdataType()(*string)
     GetPreSharedKey()(*string)
     GetPreSharedKeyIsSet()(*bool)
     GetSsid()(*string)
@@ -305,6 +340,7 @@ type AospDeviceOwnerWiFiConfigurationable interface {
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
     SetNetworkName(value *string)()
+    SetOdataType(value *string)()
     SetPreSharedKey(value *string)()
     SetPreSharedKeyIsSet(value *bool)()
     SetSsid(value *string)()

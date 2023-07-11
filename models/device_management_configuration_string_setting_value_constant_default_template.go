@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate 
+// DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate string Setting Value Default Template
 type DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate struct {
     DeviceManagementConfigurationStringSettingValueDefaultTemplate
 }
-// NewDeviceManagementConfigurationStringSettingValueConstantDefaultTemplate instantiates a new DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
+// NewDeviceManagementConfigurationStringSettingValueConstantDefaultTemplate instantiates a new deviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueConstantDefaultTemplate()(*DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) {
     m := &DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate{
         DeviceManagementConfigurationStringSettingValueDefaultTemplate: *NewDeviceManagementConfigurationStringSettingValueDefaultTemplate(),
@@ -45,7 +45,28 @@ func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate)
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate)
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetConstantValue sets the constantValue property value. Default Constant Value
@@ -68,10 +95,19 @@ func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeviceManagementConfigurationStringSettingValueConstantDefaultTemplateable 
 type DeviceManagementConfigurationStringSettingValueConstantDefaultTemplateable interface {
     DeviceManagementConfigurationStringSettingValueDefaultTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConstantValue()(*string)
+    GetOdataType()(*string)
     SetConstantValue(value *string)()
+    SetOdataType(value *string)()
 }

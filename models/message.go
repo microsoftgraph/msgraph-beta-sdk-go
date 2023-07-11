@@ -8,8 +8,10 @@ import (
 // Message 
 type Message struct {
     OutlookItem
+    // The OdataType property
+    OdataType *string
 }
-// NewMessage instantiates a new Message and sets the default values.
+// NewMessage instantiates a new message and sets the default values.
 func NewMessage()(*Message) {
     m := &Message{
         OutlookItem: *NewOutlookItem(),

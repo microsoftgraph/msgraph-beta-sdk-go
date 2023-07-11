@@ -7,8 +7,10 @@ import (
 // SoftwareOathAuthenticationMethodConfiguration 
 type SoftwareOathAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewSoftwareOathAuthenticationMethodConfiguration instantiates a new SoftwareOathAuthenticationMethodConfiguration and sets the default values.
+// NewSoftwareOathAuthenticationMethodConfiguration instantiates a new softwareOathAuthenticationMethodConfiguration and sets the default values.
 func NewSoftwareOathAuthenticationMethodConfiguration()(*SoftwareOathAuthenticationMethodConfiguration) {
     m := &SoftwareOathAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),

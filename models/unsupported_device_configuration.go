@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnsupportedDeviceConfiguration 
+// UnsupportedDeviceConfiguration unsupportedDeviceConfiguration is used when an entity cannot be mapped to another model-compliant subtype of deviceConfiguration.
 type UnsupportedDeviceConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewUnsupportedDeviceConfiguration instantiates a new UnsupportedDeviceConfiguration and sets the default values.
+// NewUnsupportedDeviceConfiguration instantiates a new unsupportedDeviceConfiguration and sets the default values.
 func NewUnsupportedDeviceConfiguration()(*UnsupportedDeviceConfiguration) {
     m := &UnsupportedDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

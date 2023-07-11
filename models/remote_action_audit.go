@@ -148,6 +148,16 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requestDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -184,6 +194,17 @@ func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
 // GetManagedDeviceId gets the managedDeviceId property value. Action target.
 func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RemoteActionAudit) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -265,6 +286,12 @@ func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("requestDateTime", m.GetRequestDateTime())
         if err != nil {
             return err
@@ -327,6 +354,13 @@ func (m *RemoteActionAudit) SetManagedDeviceId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RemoteActionAudit) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestDateTime sets the requestDateTime property value. Time when the action was issued, given in UTC.
 func (m *RemoteActionAudit) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestDateTime", value)
@@ -352,6 +386,7 @@ type RemoteActionAuditable interface {
     GetDeviceOwnerUserPrincipalName()(*string)
     GetInitiatedByUserPrincipalName()(*string)
     GetManagedDeviceId()(*string)
+    GetOdataType()(*string)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUserName()(*string)
     SetAction(value *RemoteAction)()
@@ -361,6 +396,7 @@ type RemoteActionAuditable interface {
     SetDeviceOwnerUserPrincipalName(value *string)()
     SetInitiatedByUserPrincipalName(value *string)()
     SetManagedDeviceId(value *string)()
+    SetOdataType(value *string)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUserName(value *string)()
 }

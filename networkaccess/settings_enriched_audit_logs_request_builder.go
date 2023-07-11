@@ -89,7 +89,10 @@ func (m *SettingsEnrichedAuditLogsRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.EnrichedAuditLogsable), nil
 }
-// Patch update the navigation property enrichedAuditLogs in networkAccess
+// Patch update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-1.0
 func (m *SettingsEnrichedAuditLogsRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.EnrichedAuditLogsable, requestConfiguration *SettingsEnrichedAuditLogsRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.EnrichedAuditLogsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *SettingsEnrichedAuditLogsRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property enrichedAuditLogs in networkAccess
+// ToPatchRequestInformation update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
 func (m *SettingsEnrichedAuditLogsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.EnrichedAuditLogsable, requestConfiguration *SettingsEnrichedAuditLogsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -8,7 +8,7 @@ import (
 type CatalogContent struct {
     DeployableContent
 }
-// NewCatalogContent instantiates a new CatalogContent and sets the default values.
+// NewCatalogContent instantiates a new catalogContent and sets the default values.
 func NewCatalogContent()(*CatalogContent) {
     m := &CatalogContent{
         DeployableContent: *NewDeployableContent(),
@@ -45,7 +45,28 @@ func (m *CatalogContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CatalogContent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CatalogContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *CatalogContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCatalogEntry sets the catalogEntry property value. The catalogEntry property
@@ -68,10 +95,19 @@ func (m *CatalogContent) SetCatalogEntry(value CatalogEntryable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CatalogContent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CatalogContentable 
 type CatalogContentable interface {
     DeployableContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCatalogEntry()(CatalogEntryable)
+    GetOdataType()(*string)
     SetCatalogEntry(value CatalogEntryable)()
+    SetOdataType(value *string)()
 }

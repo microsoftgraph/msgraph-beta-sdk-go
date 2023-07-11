@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagedAppProtection 
+// WindowsManagedAppProtection policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on a Windows device
 type WindowsManagedAppProtection struct {
     ManagedAppPolicy
 }
-// NewWindowsManagedAppProtection instantiates a new WindowsManagedAppProtection and sets the default values.
+// NewWindowsManagedAppProtection instantiates a new windowsManagedAppProtection and sets the default values.
 func NewWindowsManagedAppProtection()(*WindowsManagedAppProtection) {
     m := &WindowsManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
@@ -323,6 +323,16 @@ func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["periodOfflineBeforeAccessCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -506,6 +516,17 @@ func (m *WindowsManagedAppProtection) GetMobileThreatDefenseRemediationAction()(
     }
     if val != nil {
         return val.(*ManagedAppRemediationAction)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsManagedAppProtection) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -693,6 +714,12 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteISODurationValue("periodOfflineBeforeAccessCheck", m.GetPeriodOfflineBeforeAccessCheck())
         if err != nil {
             return err
@@ -859,6 +886,13 @@ func (m *WindowsManagedAppProtection) SetMobileThreatDefenseRemediationAction(va
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsManagedAppProtection) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPeriodOfflineBeforeAccessCheck sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet. For example, PT5M indicates that the interval is 5 minutes in duration. A timespan value of PT0S indicates that access will be blocked immediately when the device is not connected to the internet.
 func (m *WindowsManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("periodOfflineBeforeAccessCheck", value)
@@ -905,6 +939,7 @@ type WindowsManagedAppProtectionable interface {
     GetMinimumWipeOsVersion()(*string)
     GetMinimumWipeSdkVersion()(*string)
     GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction)
+    GetOdataType()(*string)
     GetPeriodOfflineBeforeAccessCheck()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetPeriodOfflineBeforeWipeIsEnforced()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetPrintBlocked()(*bool)
@@ -929,6 +964,7 @@ type WindowsManagedAppProtectionable interface {
     SetMinimumWipeOsVersion(value *string)()
     SetMinimumWipeSdkVersion(value *string)()
     SetMobileThreatDefenseRemediationAction(value *ManagedAppRemediationAction)()
+    SetOdataType(value *string)()
     SetPeriodOfflineBeforeAccessCheck(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetPeriodOfflineBeforeWipeIsEnforced(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetPrintBlocked(value *bool)()

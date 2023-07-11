@@ -170,6 +170,16 @@ func (m *DeviceHealthStatus) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -261,6 +271,17 @@ func (m *DeviceHealthStatus) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthStatus) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -396,6 +417,12 @@ func (m *DeviceHealthStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osVersion", m.GetOsVersion())
         if err != nil {
             return err
@@ -495,6 +522,13 @@ func (m *DeviceHealthStatus) SetLastUpdatedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthStatus) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsVersion sets the osVersion property value. The osVersion property
 func (m *DeviceHealthStatus) SetOsVersion(value *string)() {
     err := m.GetBackingStore().Set("osVersion", value)
@@ -556,6 +590,7 @@ type DeviceHealthStatusable interface {
     GetDeviceName()(*string)
     GetHealthStatus()(*string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetOsVersion()(*string)
     GetPrimaryDiskType()(*string)
     GetRestartCount()(*int32)
@@ -571,6 +606,7 @@ type DeviceHealthStatusable interface {
     SetDeviceName(value *string)()
     SetHealthStatus(value *string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetOsVersion(value *string)()
     SetPrimaryDiskType(value *string)()
     SetRestartCount(value *int32)()

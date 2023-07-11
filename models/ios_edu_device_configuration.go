@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosEduDeviceConfiguration 
+// IosEduDeviceConfiguration iOS Education device configuration
 type IosEduDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewIosEduDeviceConfiguration instantiates a new IosEduDeviceConfiguration and sets the default values.
+// NewIosEduDeviceConfiguration instantiates a new iosEduDeviceConfiguration and sets the default values.
 func NewIosEduDeviceConfiguration()(*IosEduDeviceConfiguration) {
     m := &IosEduDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -45,6 +45,16 @@ func (m *IosEduDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["studentCertificateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue)
         if err != nil {
@@ -66,6 +76,17 @@ func (m *IosEduDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosEduDeviceConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStudentCertificateSettings gets the studentCertificateSettings property value. The Trusted Root and PFX certificates for Student
 func (m *IosEduDeviceConfiguration) GetStudentCertificateSettings()(IosEduCertificateSettingsable) {
@@ -102,6 +123,12 @@ func (m *IosEduDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("studentCertificateSettings", m.GetStudentCertificateSettings())
         if err != nil {
             return err
@@ -118,6 +145,13 @@ func (m *IosEduDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 // SetDeviceCertificateSettings sets the deviceCertificateSettings property value. The Trusted Root and PFX certificates for Device
 func (m *IosEduDeviceConfiguration) SetDeviceCertificateSettings(value IosEduCertificateSettingsable)() {
     err := m.GetBackingStore().Set("deviceCertificateSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosEduDeviceConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -141,9 +175,11 @@ type IosEduDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceCertificateSettings()(IosEduCertificateSettingsable)
+    GetOdataType()(*string)
     GetStudentCertificateSettings()(IosEduCertificateSettingsable)
     GetTeacherCertificateSettings()(IosEduCertificateSettingsable)
     SetDeviceCertificateSettings(value IosEduCertificateSettingsable)()
+    SetOdataType(value *string)()
     SetStudentCertificateSettings(value IosEduCertificateSettingsable)()
     SetTeacherCertificateSettings(value IosEduCertificateSettingsable)()
 }

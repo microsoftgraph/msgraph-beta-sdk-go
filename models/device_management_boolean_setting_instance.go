@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementBooleanSettingInstance 
+// DeviceManagementBooleanSettingInstance a setting instance representing a boolean value
 type DeviceManagementBooleanSettingInstance struct {
     DeviceManagementSettingInstance
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementBooleanSettingInstance instantiates a new DeviceManagementBooleanSettingInstance and sets the default values.
+// NewDeviceManagementBooleanSettingInstance instantiates a new deviceManagementBooleanSettingInstance and sets the default values.
 func NewDeviceManagementBooleanSettingInstance()(*DeviceManagementBooleanSettingInstance) {
     m := &DeviceManagementBooleanSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),

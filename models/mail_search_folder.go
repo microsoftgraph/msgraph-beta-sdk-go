@@ -7,8 +7,10 @@ import (
 // MailSearchFolder 
 type MailSearchFolder struct {
     MailFolder
+    // The OdataType property
+    OdataType *string
 }
-// NewMailSearchFolder instantiates a new MailSearchFolder and sets the default values.
+// NewMailSearchFolder instantiates a new mailSearchFolder and sets the default values.
 func NewMailSearchFolder()(*MailSearchFolder) {
     m := &MailSearchFolder{
         MailFolder: *NewMailFolder(),

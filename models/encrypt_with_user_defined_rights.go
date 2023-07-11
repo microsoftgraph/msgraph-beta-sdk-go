@@ -8,7 +8,7 @@ import (
 type EncryptWithUserDefinedRights struct {
     EncryptContent
 }
-// NewEncryptWithUserDefinedRights instantiates a new EncryptWithUserDefinedRights and sets the default values.
+// NewEncryptWithUserDefinedRights instantiates a new encryptWithUserDefinedRights and sets the default values.
 func NewEncryptWithUserDefinedRights()(*EncryptWithUserDefinedRights) {
     m := &EncryptWithUserDefinedRights{
         EncryptContent: *NewEncryptContent(),

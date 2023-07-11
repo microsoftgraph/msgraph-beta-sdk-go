@@ -8,7 +8,7 @@ import (
 type EmailPayloadDetail struct {
     PayloadDetail
 }
-// NewEmailPayloadDetail instantiates a new EmailPayloadDetail and sets the default values.
+// NewEmailPayloadDetail instantiates a new emailPayloadDetail and sets the default values.
 func NewEmailPayloadDetail()(*EmailPayloadDetail) {
     m := &EmailPayloadDetail{
         PayloadDetail: *NewPayloadDetail(),
@@ -51,6 +51,16 @@ func (m *EmailPayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetIsExternalSender(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -99,6 +109,17 @@ func (m *EmailPayloadDetail) GetIsExternalSender()(*bool) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EmailPayloadDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSubject gets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -135,6 +156,12 @@ func (m *EmailPayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("subject", m.GetSubject())
         if err != nil {
             return err
@@ -163,6 +190,13 @@ func (m *EmailPayloadDetail) SetIsExternalSender(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EmailPayloadDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSubject sets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
@@ -177,9 +211,11 @@ type EmailPayloadDetailable interface {
     GetFromEmail()(*string)
     GetFromName()(*string)
     GetIsExternalSender()(*bool)
+    GetOdataType()(*string)
     GetSubject()(*string)
     SetFromEmail(value *string)()
     SetFromName(value *string)()
     SetIsExternalSender(value *bool)()
+    SetOdataType(value *string)()
     SetSubject(value *string)()
 }

@@ -8,7 +8,7 @@ import (
 type ItemPatentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewItemPatentCollectionResponse instantiates a new ItemPatentCollectionResponse and sets the default values.
+// NewItemPatentCollectionResponse instantiates a new itemPatentCollectionResponse and sets the default values.
 func NewItemPatentCollectionResponse()(*ItemPatentCollectionResponse) {
     m := &ItemPatentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

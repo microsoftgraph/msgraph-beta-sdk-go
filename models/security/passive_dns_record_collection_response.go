@@ -9,7 +9,7 @@ import (
 type PassiveDnsRecordCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewPassiveDnsRecordCollectionResponse instantiates a new PassiveDnsRecordCollectionResponse and sets the default values.
+// NewPassiveDnsRecordCollectionResponse instantiates a new passiveDnsRecordCollectionResponse and sets the default values.
 func NewPassiveDnsRecordCollectionResponse()(*PassiveDnsRecordCollectionResponse) {
     m := &PassiveDnsRecordCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

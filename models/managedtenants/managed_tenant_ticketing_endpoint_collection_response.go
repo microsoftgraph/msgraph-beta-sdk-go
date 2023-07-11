@@ -9,7 +9,7 @@ import (
 type ManagedTenantTicketingEndpointCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagedTenantTicketingEndpointCollectionResponse instantiates a new ManagedTenantTicketingEndpointCollectionResponse and sets the default values.
+// NewManagedTenantTicketingEndpointCollectionResponse instantiates a new managedTenantTicketingEndpointCollectionResponse and sets the default values.
 func NewManagedTenantTicketingEndpointCollectionResponse()(*ManagedTenantTicketingEndpointCollectionResponse) {
     m := &ManagedTenantTicketingEndpointCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

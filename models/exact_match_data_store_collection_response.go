@@ -8,7 +8,7 @@ import (
 type ExactMatchDataStoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewExactMatchDataStoreCollectionResponse instantiates a new ExactMatchDataStoreCollectionResponse and sets the default values.
+// NewExactMatchDataStoreCollectionResponse instantiates a new exactMatchDataStoreCollectionResponse and sets the default values.
 func NewExactMatchDataStoreCollectionResponse()(*ExactMatchDataStoreCollectionResponse) {
     m := &ExactMatchDataStoreCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

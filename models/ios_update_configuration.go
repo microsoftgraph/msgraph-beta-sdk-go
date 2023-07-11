@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosUpdateConfiguration 
+// IosUpdateConfiguration iOS Update Configuration, allows you to configure time window within week to install iOS updates
 type IosUpdateConfiguration struct {
     DeviceConfiguration
 }
-// NewIosUpdateConfiguration instantiates a new IosUpdateConfiguration and sets the default values.
+// NewIosUpdateConfiguration instantiates a new iosUpdateConfiguration and sets the default values.
 func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {
     m := &IosUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -145,6 +145,16 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scheduledInstallDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
         if err != nil {
@@ -191,6 +201,17 @@ func (m *IosUpdateConfiguration) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosUpdateConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -275,6 +296,12 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetScheduledInstallDays() != nil {
         err = writer.WriteCollectionOfStringValues("scheduledInstallDays", SerializeDayOfWeek(m.GetScheduledInstallDays()))
         if err != nil {
@@ -338,6 +365,13 @@ func (m *IosUpdateConfiguration) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosUpdateConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScheduledInstallDays sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []DayOfWeek)() {
     err := m.GetBackingStore().Set("scheduledInstallDays", value)
@@ -369,6 +403,7 @@ type IosUpdateConfigurationable interface {
     GetDesiredOsVersion()(*string)
     GetEnforcedSoftwareUpdateDelayInDays()(*int32)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetScheduledInstallDays()([]DayOfWeek)
     GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType)
     GetUtcTimeOffsetInMinutes()(*int32)
@@ -378,6 +413,7 @@ type IosUpdateConfigurationable interface {
     SetDesiredOsVersion(value *string)()
     SetEnforcedSoftwareUpdateDelayInDays(value *int32)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetScheduledInstallDays(value []DayOfWeek)()
     SetUpdateScheduleType(value *IosSoftwareUpdateScheduleType)()
     SetUtcTimeOffsetInMinutes(value *int32)()

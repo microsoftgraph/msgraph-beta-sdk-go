@@ -8,7 +8,7 @@ import (
 type EducationRubricOutcome struct {
     EducationOutcome
 }
-// NewEducationRubricOutcome instantiates a new EducationRubricOutcome and sets the default values.
+// NewEducationRubricOutcome instantiates a new educationRubricOutcome and sets the default values.
 func NewEducationRubricOutcome()(*EducationRubricOutcome) {
     m := &EducationRubricOutcome{
         EducationOutcome: *NewEducationOutcome(),
@@ -24,6 +24,16 @@ func CreateEducationRubricOutcomeFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationRubricOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["publishedRubricQualityFeedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRubricQualityFeedbackModelFromDiscriminatorValue)
         if err != nil {
@@ -90,6 +100,17 @@ func (m *EducationRubricOutcome) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationRubricOutcome) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPublishedRubricQualityFeedback gets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
 func (m *EducationRubricOutcome) GetPublishedRubricQualityFeedback()([]RubricQualityFeedbackModelable) {
     val, err := m.GetBackingStore().Get("publishedRubricQualityFeedback")
@@ -139,6 +160,12 @@ func (m *EducationRubricOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
     err := m.EducationOutcome.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
     }
     if m.GetPublishedRubricQualityFeedback() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedRubricQualityFeedback()))
@@ -190,6 +217,13 @@ func (m *EducationRubricOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationRubricOutcome) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublishedRubricQualityFeedback sets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
 func (m *EducationRubricOutcome) SetPublishedRubricQualityFeedback(value []RubricQualityFeedbackModelable)() {
     err := m.GetBackingStore().Set("publishedRubricQualityFeedback", value)
@@ -222,10 +256,12 @@ func (m *EducationRubricOutcome) SetRubricQualitySelectedLevels(value []RubricQu
 type EducationRubricOutcomeable interface {
     EducationOutcomeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetPublishedRubricQualityFeedback()([]RubricQualityFeedbackModelable)
     GetPublishedRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable)
     GetRubricQualityFeedback()([]RubricQualityFeedbackModelable)
     GetRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable)
+    SetOdataType(value *string)()
     SetPublishedRubricQualityFeedback(value []RubricQualityFeedbackModelable)()
     SetPublishedRubricQualitySelectedLevels(value []RubricQualitySelectedColumnModelable)()
     SetRubricQualityFeedback(value []RubricQualityFeedbackModelable)()

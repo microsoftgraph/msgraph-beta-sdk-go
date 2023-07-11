@@ -85,6 +85,16 @@ func (m *SymantecCodeSigningCertificate) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["password"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -151,6 +161,17 @@ func (m *SymantecCodeSigningCertificate) GetIssuer()(*string) {
 // GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
 func (m *SymantecCodeSigningCertificate) GetIssuerName()(*string) {
     val, err := m.GetBackingStore().Get("issuerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SymantecCodeSigningCertificate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -245,6 +266,12 @@ func (m *SymantecCodeSigningCertificate) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("password", m.GetPassword())
         if err != nil {
             return err
@@ -305,6 +332,13 @@ func (m *SymantecCodeSigningCertificate) SetIssuerName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SymantecCodeSigningCertificate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPassword sets the password property value. The Password required for .pfx file.
 func (m *SymantecCodeSigningCertificate) SetPassword(value *string)() {
     err := m.GetBackingStore().Set("password", value)
@@ -348,6 +382,7 @@ type SymantecCodeSigningCertificateable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIssuer()(*string)
     GetIssuerName()(*string)
+    GetOdataType()(*string)
     GetPassword()(*string)
     GetStatus()(*CertificateStatus)
     GetSubject()(*string)
@@ -357,6 +392,7 @@ type SymantecCodeSigningCertificateable interface {
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIssuer(value *string)()
     SetIssuerName(value *string)()
+    SetOdataType(value *string)()
     SetPassword(value *string)()
     SetStatus(value *CertificateStatus)()
     SetSubject(value *string)()

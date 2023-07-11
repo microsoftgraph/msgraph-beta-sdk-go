@@ -7,8 +7,10 @@ import (
 // DisableAndDeleteUserApplyAction 
 type DisableAndDeleteUserApplyAction struct {
     AccessReviewApplyAction
+    // The OdataType property
+    OdataType *string
 }
-// NewDisableAndDeleteUserApplyAction instantiates a new DisableAndDeleteUserApplyAction and sets the default values.
+// NewDisableAndDeleteUserApplyAction instantiates a new disableAndDeleteUserApplyAction and sets the default values.
 func NewDisableAndDeleteUserApplyAction()(*DisableAndDeleteUserApplyAction) {
     m := &DisableAndDeleteUserApplyAction{
         AccessReviewApplyAction: *NewAccessReviewApplyAction(),

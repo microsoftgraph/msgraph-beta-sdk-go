@@ -136,6 +136,16 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRbacResourceScopeFromDiscriminatorValue)
         if err != nil {
@@ -183,6 +193,17 @@ func (m *UnifiedRbacResourceAction) GetIsPrivileged()(*bool) {
 // GetName gets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRbacResourceAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -262,6 +283,12 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("resourceScope", m.GetResourceScope())
         if err != nil {
             return err
@@ -324,6 +351,13 @@ func (m *UnifiedRbacResourceAction) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRbacResourceAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceScope sets the resourceScope property value. The resourceScope property
 func (m *UnifiedRbacResourceAction) SetResourceScope(value UnifiedRbacResourceScopeable)() {
     err := m.GetBackingStore().Set("resourceScope", value)
@@ -349,6 +383,7 @@ type UnifiedRbacResourceActionable interface {
     GetIsAuthenticationContextSettable()(*bool)
     GetIsPrivileged()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetResourceScope()(UnifiedRbacResourceScopeable)
     GetResourceScopeId()(*string)
     SetActionVerb(value *string)()
@@ -358,6 +393,7 @@ type UnifiedRbacResourceActionable interface {
     SetIsAuthenticationContextSettable(value *bool)()
     SetIsPrivileged(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetResourceScope(value UnifiedRbacResourceScopeable)()
     SetResourceScopeId(value *string)()
 }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaArtifact 
+// ZebraFotaArtifact describes a single artifact for a specific device model.
 type ZebraFotaArtifact struct {
     Entity
 }
-// NewZebraFotaArtifact instantiates a new ZebraFotaArtifact and sets the default values.
+// NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
 func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
     m := &ZebraFotaArtifact{
         Entity: *NewEntity(),
@@ -85,6 +85,16 @@ func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +126,17 @@ func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ZebraFotaArtifact) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
 func (m *ZebraFotaArtifact) GetOsVersion()(*string) {
@@ -175,6 +196,12 @@ func (m *ZebraFotaArtifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osVersion", m.GetOsVersion())
         if err != nil {
             return err
@@ -215,6 +242,13 @@ func (m *ZebraFotaArtifact) SetDeviceModel(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ZebraFotaArtifact) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsVersion sets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
 func (m *ZebraFotaArtifact) SetOsVersion(value *string)() {
     err := m.GetBackingStore().Set("osVersion", value)
@@ -243,12 +277,14 @@ type ZebraFotaArtifactable interface {
     GetBoardSupportPackageVersion()(*string)
     GetDescription()(*string)
     GetDeviceModel()(*string)
+    GetOdataType()(*string)
     GetOsVersion()(*string)
     GetPatchVersion()(*string)
     GetReleaseNotesUrl()(*string)
     SetBoardSupportPackageVersion(value *string)()
     SetDescription(value *string)()
     SetDeviceModel(value *string)()
+    SetOdataType(value *string)()
     SetOsVersion(value *string)()
     SetPatchVersion(value *string)()
     SetReleaseNotesUrl(value *string)()

@@ -9,7 +9,7 @@ import (
 type CloudPcUserSetting struct {
     Entity
 }
-// NewCloudPcUserSetting instantiates a new CloudPcUserSetting and sets the default values.
+// NewCloudPcUserSetting instantiates a new cloudPcUserSetting and sets the default values.
 func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     m := &CloudPcUserSetting{
         Entity: *NewEntity(),
@@ -112,6 +112,16 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["restorePointSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcRestorePointSettingFromDiscriminatorValue)
         if err != nil {
@@ -153,6 +163,17 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcUserSetting) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -221,6 +242,12 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("restorePointSetting", m.GetRestorePointSetting())
         if err != nil {
             return err
@@ -269,6 +296,13 @@ func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcUserSetting) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRestorePointSetting sets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
 func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSettingable)() {
     err := m.GetBackingStore().Set("restorePointSetting", value)
@@ -292,6 +326,7 @@ type CloudPcUserSettingable interface {
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalAdminEnabled()(*bool)
+    GetOdataType()(*string)
     GetRestorePointSetting()(CloudPcRestorePointSettingable)
     GetSelfServiceEnabled()(*bool)
     SetAssignments(value []CloudPcUserSettingAssignmentable)()
@@ -299,6 +334,7 @@ type CloudPcUserSettingable interface {
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalAdminEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetRestorePointSetting(value CloudPcRestorePointSettingable)()
     SetSelfServiceEnabled(value *bool)()
 }

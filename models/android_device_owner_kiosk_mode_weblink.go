@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerKioskModeWeblink 
+// AndroidDeviceOwnerKioskModeWeblink a weblink on the Android Device Owner Managed Home Screen
 type AndroidDeviceOwnerKioskModeWeblink struct {
     AndroidDeviceOwnerKioskModeFolderItem
 }
-// NewAndroidDeviceOwnerKioskModeWeblink instantiates a new AndroidDeviceOwnerKioskModeWeblink and sets the default values.
+// NewAndroidDeviceOwnerKioskModeWeblink instantiates a new androidDeviceOwnerKioskModeWeblink and sets the default values.
 func NewAndroidDeviceOwnerKioskModeWeblink()(*AndroidDeviceOwnerKioskModeWeblink) {
     m := &AndroidDeviceOwnerKioskModeWeblink{
         AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),

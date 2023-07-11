@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10EnrollmentCompletionPageConfiguration 
+// Windows10EnrollmentCompletionPageConfiguration windows 10 Enrollment Status Page Configuration
 type Windows10EnrollmentCompletionPageConfiguration struct {
     DeviceEnrollmentConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewWindows10EnrollmentCompletionPageConfiguration instantiates a new Windows10EnrollmentCompletionPageConfiguration and sets the default values.
+// NewWindows10EnrollmentCompletionPageConfiguration instantiates a new windows10EnrollmentCompletionPageConfiguration and sets the default values.
 func NewWindows10EnrollmentCompletionPageConfiguration()(*Windows10EnrollmentCompletionPageConfiguration) {
     m := &Windows10EnrollmentCompletionPageConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),

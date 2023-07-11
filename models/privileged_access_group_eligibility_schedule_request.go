@@ -8,7 +8,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleRequest struct {
     PrivilegedAccessScheduleRequest
 }
-// NewPrivilegedAccessGroupEligibilityScheduleRequest instantiates a new PrivilegedAccessGroupEligibilityScheduleRequest and sets the default values.
+// NewPrivilegedAccessGroupEligibilityScheduleRequest instantiates a new privilegedAccessGroupEligibilityScheduleRequest and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleRequest()(*PrivilegedAccessGroupEligibilityScheduleRequest) {
     m := &PrivilegedAccessGroupEligibilityScheduleRequest{
         PrivilegedAccessScheduleRequest: *NewPrivilegedAccessScheduleRequest(),

@@ -8,7 +8,7 @@ import (
 type AllowedDataLocation struct {
     Entity
 }
-// NewAllowedDataLocation instantiates a new AllowedDataLocation and sets the default values.
+// NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
     m := &AllowedDataLocation{
         Entity: *NewEntity(),
@@ -84,6 +84,16 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
@@ -100,6 +110,17 @@ func (m *AllowedDataLocation) GetIsDefault()(*bool) {
 // GetLocation gets the location property value. The location property
 func (m *AllowedDataLocation) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AllowedDataLocation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -138,6 +159,12 @@ func (m *AllowedDataLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppId sets the appId property value. The appId property
@@ -168,6 +195,13 @@ func (m *AllowedDataLocation) SetLocation(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AllowedDataLocation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AllowedDataLocationable 
 type AllowedDataLocationable interface {
     Entityable
@@ -176,8 +210,10 @@ type AllowedDataLocationable interface {
     GetDomain()(*string)
     GetIsDefault()(*bool)
     GetLocation()(*string)
+    GetOdataType()(*string)
     SetAppId(value *string)()
     SetDomain(value *string)()
     SetIsDefault(value *bool)()
     SetLocation(value *string)()
+    SetOdataType(value *string)()
 }

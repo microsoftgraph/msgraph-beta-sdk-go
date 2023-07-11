@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdgeHomeButtonOpensNewTab 
+// EdgeHomeButtonOpensNewTab the home button configuration base class used to identify the available options
 type EdgeHomeButtonOpensNewTab struct {
     EdgeHomeButtonConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewEdgeHomeButtonOpensNewTab instantiates a new EdgeHomeButtonOpensNewTab and sets the default values.
+// NewEdgeHomeButtonOpensNewTab instantiates a new edgeHomeButtonOpensNewTab and sets the default values.
 func NewEdgeHomeButtonOpensNewTab()(*EdgeHomeButtonOpensNewTab) {
     m := &EdgeHomeButtonOpensNewTab{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),

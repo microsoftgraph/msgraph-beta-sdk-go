@@ -7,8 +7,10 @@ import (
 // ProjectParticipation 
 type ProjectParticipation struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewProjectParticipation instantiates a new ProjectParticipation and sets the default values.
+// NewProjectParticipation instantiates a new projectParticipation and sets the default values.
 func NewProjectParticipation()(*ProjectParticipation) {
     m := &ProjectParticipation{
         ItemFacet: *NewItemFacet(),

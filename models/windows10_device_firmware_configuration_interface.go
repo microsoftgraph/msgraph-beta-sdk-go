@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10DeviceFirmwareConfigurationInterface 
+// Windows10DeviceFirmwareConfigurationInterface graph properties for Device Firmware Configuration Interface 
 type Windows10DeviceFirmwareConfigurationInterface struct {
     DeviceConfiguration
 }
-// NewWindows10DeviceFirmwareConfigurationInterface instantiates a new Windows10DeviceFirmwareConfigurationInterface and sets the default values.
+// NewWindows10DeviceFirmwareConfigurationInterface instantiates a new windows10DeviceFirmwareConfigurationInterface and sets the default values.
 func NewWindows10DeviceFirmwareConfigurationInterface()(*Windows10DeviceFirmwareConfigurationInterface) {
     m := &Windows10DeviceFirmwareConfigurationInterface{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -179,6 +179,16 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetFieldDeserializers()(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["radios"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEnablement)
         if err != nil {
@@ -343,6 +353,17 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetNearFieldCommunicatio
     }
     if val != nil {
         return val.(*Enablement)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Windows10DeviceFirmwareConfigurationInterface) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -543,6 +564,12 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) Serialize(writer i878a80
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRadios() != nil {
         cast := (*m.GetRadios()).String()
         err = writer.WriteStringValue("radios", &cast)
@@ -692,6 +719,13 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) SetNearFieldCommunicatio
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Windows10DeviceFirmwareConfigurationInterface) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRadios sets the radios property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetRadios(value *Enablement)() {
     err := m.GetBackingStore().Set("radios", value)
@@ -783,6 +817,7 @@ type Windows10DeviceFirmwareConfigurationInterfaceable interface {
     GetMicrophone()(*Enablement)
     GetMicrophonesAndSpeakers()(*Enablement)
     GetNearFieldCommunication()(*Enablement)
+    GetOdataType()(*string)
     GetRadios()(*Enablement)
     GetRearCamera()(*Enablement)
     GetSdCard()(*Enablement)
@@ -804,6 +839,7 @@ type Windows10DeviceFirmwareConfigurationInterfaceable interface {
     SetMicrophone(value *Enablement)()
     SetMicrophonesAndSpeakers(value *Enablement)()
     SetNearFieldCommunication(value *Enablement)()
+    SetOdataType(value *string)()
     SetRadios(value *Enablement)()
     SetRearCamera(value *Enablement)()
     SetSdCard(value *Enablement)()

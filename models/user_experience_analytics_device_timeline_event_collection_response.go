@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsDeviceTimelineEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsDeviceTimelineEventCollectionResponse instantiates a new UserExperienceAnalyticsDeviceTimelineEventCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsDeviceTimelineEventCollectionResponse instantiates a new userExperienceAnalyticsDeviceTimelineEventCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsDeviceTimelineEventCollectionResponse()(*UserExperienceAnalyticsDeviceTimelineEventCollectionResponse) {
     m := &UserExperienceAnalyticsDeviceTimelineEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

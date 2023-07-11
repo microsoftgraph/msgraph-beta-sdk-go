@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkApp 
+// AndroidForWorkApp contains properties and inherited properties for Android for Work (AFW) Apps.
 type AndroidForWorkApp struct {
     MobileApp
 }
-// NewAndroidForWorkApp instantiates a new AndroidForWorkApp and sets the default values.
+// NewAndroidForWorkApp instantiates a new androidForWorkApp and sets the default values.
 func NewAndroidForWorkApp()(*AndroidForWorkApp) {
     m := &AndroidForWorkApp{
         MobileApp: *NewMobileApp(),

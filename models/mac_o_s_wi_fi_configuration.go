@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSWiFiConfiguration 
+// MacOSWiFiConfiguration by providing the configurations in this profile you can instruct the macOS device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
 type MacOSWiFiConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewMacOSWiFiConfiguration instantiates a new MacOSWiFiConfiguration and sets the default values.
+// NewMacOSWiFiConfiguration instantiates a new macOSWiFiConfiguration and sets the default values.
 func NewMacOSWiFiConfiguration()(*MacOSWiFiConfiguration) {
     m := &MacOSWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

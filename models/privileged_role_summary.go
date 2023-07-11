@@ -63,6 +63,16 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRoleSummaryStatus)
         if err != nil {
@@ -104,6 +114,17 @@ func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegedRoleSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -153,6 +174,12 @@ func (m *PrivilegedRoleSummary) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -189,6 +216,13 @@ func (m *PrivilegedRoleSummary) SetMfaEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegedRoleSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *PrivilegedRoleSummary) SetStatus(value *RoleSummaryStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -210,11 +244,13 @@ type PrivilegedRoleSummaryable interface {
     GetElevatedCount()(*int32)
     GetManagedCount()(*int32)
     GetMfaEnabled()(*bool)
+    GetOdataType()(*string)
     GetStatus()(*RoleSummaryStatus)
     GetUsersCount()(*int32)
     SetElevatedCount(value *int32)()
     SetManagedCount(value *int32)()
     SetMfaEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetStatus(value *RoleSummaryStatus)()
     SetUsersCount(value *int32)()
 }

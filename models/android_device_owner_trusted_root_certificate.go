@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerTrustedRootCertificate 
+// AndroidDeviceOwnerTrustedRootCertificate android Device Owner Trusted Root Certificate configuration profile
 type AndroidDeviceOwnerTrustedRootCertificate struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidDeviceOwnerTrustedRootCertificate instantiates a new androidDeviceOwnerTrustedRootCertificate and sets the default values.
 func NewAndroidDeviceOwnerTrustedRootCertificate()(*AndroidDeviceOwnerTrustedRootCertificate) {

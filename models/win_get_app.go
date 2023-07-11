@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WinGetApp 
+// WinGetApp a MobileApp that is based on a referenced application in a WinGet repository.
 type WinGetApp struct {
     MobileApp
 }
-// NewWinGetApp instantiates a new WinGetApp and sets the default values.
+// NewWinGetApp instantiates a new winGetApp and sets the default values.
 func NewWinGetApp()(*WinGetApp) {
     m := &WinGetApp{
         MobileApp: *NewMobileApp(),

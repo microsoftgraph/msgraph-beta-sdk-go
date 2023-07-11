@@ -7,8 +7,10 @@ import (
 // CloudPcGalleryImage 
 type CloudPcGalleryImage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcGalleryImage instantiates a new CloudPcGalleryImage and sets the default values.
+// NewCloudPcGalleryImage instantiates a new cloudPcGalleryImage and sets the default values.
 func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     m := &CloudPcGalleryImage{
         Entity: *NewEntity(),

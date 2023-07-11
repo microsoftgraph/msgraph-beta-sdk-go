@@ -8,7 +8,7 @@ import (
 type IpSegmentConfiguration struct {
     SegmentConfiguration
 }
-// NewIpSegmentConfiguration instantiates a new IpSegmentConfiguration and sets the default values.
+// NewIpSegmentConfiguration instantiates a new ipSegmentConfiguration and sets the default values.
 func NewIpSegmentConfiguration()(*IpSegmentConfiguration) {
     m := &IpSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),
@@ -51,7 +51,28 @@ func (m *IpSegmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IpSegmentConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IpSegmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,6 +92,12 @@ func (m *IpSegmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApplicationSegments sets the applicationSegments property value. The applicationSegments property
@@ -80,10 +107,19 @@ func (m *IpSegmentConfiguration) SetApplicationSegments(value []IpApplicationSeg
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IpSegmentConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IpSegmentConfigurationable 
 type IpSegmentConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SegmentConfigurationable
     GetApplicationSegments()([]IpApplicationSegmentable)
+    GetOdataType()(*string)
     SetApplicationSegments(value []IpApplicationSegmentable)()
+    SetOdataType(value *string)()
 }

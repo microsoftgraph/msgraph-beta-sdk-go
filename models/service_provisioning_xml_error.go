@@ -7,8 +7,10 @@ import (
 // ServiceProvisioningXmlError 
 type ServiceProvisioningXmlError struct {
     ServiceProvisioningError
+    // The OdataType property
+    OdataType *string
 }
-// NewServiceProvisioningXmlError instantiates a new ServiceProvisioningXmlError and sets the default values.
+// NewServiceProvisioningXmlError instantiates a new serviceProvisioningXmlError and sets the default values.
 func NewServiceProvisioningXmlError()(*ServiceProvisioningXmlError) {
     m := &ServiceProvisioningXmlError{
         ServiceProvisioningError: *NewServiceProvisioningError(),

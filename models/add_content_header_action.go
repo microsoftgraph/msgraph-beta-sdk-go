@@ -7,8 +7,10 @@ import (
 // AddContentHeaderAction 
 type AddContentHeaderAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewAddContentHeaderAction instantiates a new AddContentHeaderAction and sets the default values.
+// NewAddContentHeaderAction instantiates a new addContentHeaderAction and sets the default values.
 func NewAddContentHeaderAction()(*AddContentHeaderAction) {
     m := &AddContentHeaderAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

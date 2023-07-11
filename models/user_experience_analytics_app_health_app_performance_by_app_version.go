@@ -158,6 +158,16 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
@@ -168,6 +178,17 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetMeanTime
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -215,6 +236,12 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) Serialize(w
     }
     {
         err = writer.WriteInt32Value("meanTimeToFailureInMinutes", m.GetMeanTimeToFailureInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -270,6 +297,13 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetMeanTime
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable interface {
     Entityable
@@ -281,6 +315,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable interface {
     GetAppUsageDuration()(*int32)
     GetAppVersion()(*string)
     GetMeanTimeToFailureInMinutes()(*int32)
+    GetOdataType()(*string)
     SetAppCrashCount(value *int32)()
     SetAppDisplayName(value *string)()
     SetAppName(value *string)()
@@ -288,4 +323,5 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable interface {
     SetAppUsageDuration(value *int32)()
     SetAppVersion(value *string)()
     SetMeanTimeToFailureInMinutes(value *int32)()
+    SetOdataType(value *string)()
 }

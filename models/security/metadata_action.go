@@ -7,8 +7,10 @@ import (
 // MetadataAction 
 type MetadataAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewMetadataAction instantiates a new MetadataAction and sets the default values.
+// NewMetadataAction instantiates a new metadataAction and sets the default values.
 func NewMetadataAction()(*MetadataAction) {
     m := &MetadataAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

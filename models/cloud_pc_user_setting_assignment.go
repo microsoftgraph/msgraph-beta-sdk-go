@@ -8,6 +8,8 @@ import (
 // CloudPcUserSettingAssignment 
 type CloudPcUserSettingAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCloudPcUserSettingAssignment instantiates a new cloudPcUserSettingAssignment and sets the default values.
 func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {

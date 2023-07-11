@@ -9,7 +9,7 @@ import (
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantGroup instantiates a new TenantGroup and sets the default values.
+// NewTenantGroup instantiates a new tenantGroup and sets the default values.
 func NewTenantGroup()(*TenantGroup) {
     m := &TenantGroup{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -97,6 +97,16 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -134,6 +144,17 @@ func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfoable) {
     }
     if val != nil {
         return val.([]ManagementIntentInfoable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -190,6 +211,12 @@ func (m *TenantGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTenantIds() != nil {
         err = writer.WriteCollectionOfStringValues("tenantIds", m.GetTenantIds())
         if err != nil {
@@ -226,6 +253,13 @@ func (m *TenantGroup) SetManagementIntents(value []ManagementIntentInfoable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantIds sets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetTenantIds(value []string)() {
     err := m.GetBackingStore().Set("tenantIds", value)
@@ -241,10 +275,12 @@ type TenantGroupable interface {
     GetDisplayName()(*string)
     GetManagementActions()([]ManagementActionInfoable)
     GetManagementIntents()([]ManagementIntentInfoable)
+    GetOdataType()(*string)
     GetTenantIds()([]string)
     SetAllTenantsIncluded(value *bool)()
     SetDisplayName(value *string)()
     SetManagementActions(value []ManagementActionInfoable)()
     SetManagementIntents(value []ManagementIntentInfoable)()
+    SetOdataType(value *string)()
     SetTenantIds(value []string)()
 }

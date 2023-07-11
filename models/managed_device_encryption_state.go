@@ -158,6 +158,16 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -214,6 +224,17 @@ func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*FileVaultState) {
     }
     if val != nil {
         return val.(*FileVaultState)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceEncryptionState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -316,6 +337,12 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osVersion", m.GetOsVersion())
         if err != nil {
             return err
@@ -396,6 +423,13 @@ func (m *ManagedDeviceEncryptionState) SetFileVaultStates(value *FileVaultState)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceEncryptionState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsVersion sets the osVersion property value. Operating system version of the device
 func (m *ManagedDeviceEncryptionState) SetOsVersion(value *string)() {
     err := m.GetBackingStore().Set("osVersion", value)
@@ -435,6 +469,7 @@ type ManagedDeviceEncryptionStateable interface {
     GetEncryptionReadinessState()(*EncryptionReadinessState)
     GetEncryptionState()(*EncryptionState)
     GetFileVaultStates()(*FileVaultState)
+    GetOdataType()(*string)
     GetOsVersion()(*string)
     GetPolicyDetails()([]EncryptionReportPolicyDetailsable)
     GetTpmSpecificationVersion()(*string)
@@ -446,6 +481,7 @@ type ManagedDeviceEncryptionStateable interface {
     SetEncryptionReadinessState(value *EncryptionReadinessState)()
     SetEncryptionState(value *EncryptionState)()
     SetFileVaultStates(value *FileVaultState)()
+    SetOdataType(value *string)()
     SetOsVersion(value *string)()
     SetPolicyDetails(value []EncryptionReportPolicyDetailsable)()
     SetTpmSpecificationVersion(value *string)()

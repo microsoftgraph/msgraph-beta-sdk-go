@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppProtectionPolicySetItem 
+// ManagedAppProtectionPolicySetItem a class containing the properties used for managed app protection PolicySetItem.
 type ManagedAppProtectionPolicySetItem struct {
     PolicySetItem
 }
-// NewManagedAppProtectionPolicySetItem instantiates a new ManagedAppProtectionPolicySetItem and sets the default values.
+// NewManagedAppProtectionPolicySetItem instantiates a new managedAppProtectionPolicySetItem and sets the default values.
 func NewManagedAppProtectionPolicySetItem()(*ManagedAppProtectionPolicySetItem) {
     m := &ManagedAppProtectionPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -24,6 +24,16 @@ func CreateManagedAppProtectionPolicySetItemFromDiscriminatorValue(parseNode i87
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppProtectionPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["targetedAppManagementLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *ManagedAppProtectionPolicySetItem) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedAppProtectionPolicySetItem) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. TargetedAppManagementLevels of the ManagedAppPolicySetItem.
 func (m *ManagedAppProtectionPolicySetItem) GetTargetedAppManagementLevels()(*string) {
@@ -54,12 +75,25 @@ func (m *ManagedAppProtectionPolicySetItem) Serialize(writer i878a80d2330e89d268
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("targetedAppManagementLevels", m.GetTargetedAppManagementLevels())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedAppProtectionPolicySetItem) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. TargetedAppManagementLevels of the ManagedAppPolicySetItem.
 func (m *ManagedAppProtectionPolicySetItem) SetTargetedAppManagementLevels(value *string)() {
@@ -72,6 +106,8 @@ func (m *ManagedAppProtectionPolicySetItem) SetTargetedAppManagementLevels(value
 type ManagedAppProtectionPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable
+    GetOdataType()(*string)
     GetTargetedAppManagementLevels()(*string)
+    SetOdataType(value *string)()
     SetTargetedAppManagementLevels(value *string)()
 }

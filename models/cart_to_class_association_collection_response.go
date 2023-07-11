@@ -8,7 +8,7 @@ import (
 type CartToClassAssociationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCartToClassAssociationCollectionResponse instantiates a new CartToClassAssociationCollectionResponse and sets the default values.
+// NewCartToClassAssociationCollectionResponse instantiates a new cartToClassAssociationCollectionResponse and sets the default values.
 func NewCartToClassAssociationCollectionResponse()(*CartToClassAssociationCollectionResponse) {
     m := &CartToClassAssociationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

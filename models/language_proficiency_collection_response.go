@@ -8,7 +8,7 @@ import (
 type LanguageProficiencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLanguageProficiencyCollectionResponse instantiates a new LanguageProficiencyCollectionResponse and sets the default values.
+// NewLanguageProficiencyCollectionResponse instantiates a new languageProficiencyCollectionResponse and sets the default values.
 func NewLanguageProficiencyCollectionResponse()(*LanguageProficiencyCollectionResponse) {
     m := &LanguageProficiencyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

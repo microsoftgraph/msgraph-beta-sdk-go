@@ -8,7 +8,7 @@ import (
 type MessageRecipient struct {
     Entity
 }
-// NewMessageRecipient instantiates a new MessageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),
@@ -70,6 +70,16 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recipientEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -81,6 +91,17 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MessageRecipient) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecipientEmail gets the recipientEmail property value. The recipientEmail property
 func (m *MessageRecipient) GetRecipientEmail()(*string) {
@@ -119,6 +140,12 @@ func (m *MessageRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("recipientEmail", m.GetRecipientEmail())
         if err != nil {
             return err
@@ -140,6 +167,13 @@ func (m *MessageRecipient) SetEvents(value []MessageEventable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MessageRecipient) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecipientEmail sets the recipientEmail property value. The recipientEmail property
 func (m *MessageRecipient) SetRecipientEmail(value *string)() {
     err := m.GetBackingStore().Set("recipientEmail", value)
@@ -153,8 +187,10 @@ type MessageRecipientable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeliveryStatus()(*MessageStatus)
     GetEvents()([]MessageEventable)
+    GetOdataType()(*string)
     GetRecipientEmail()(*string)
     SetDeliveryStatus(value *MessageStatus)()
     SetEvents(value []MessageEventable)()
+    SetOdataType(value *string)()
     SetRecipientEmail(value *string)()
 }

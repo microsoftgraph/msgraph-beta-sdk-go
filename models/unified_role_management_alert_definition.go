@@ -104,6 +104,16 @@ func (m *UnifiedRoleManagementAlertDefinition) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -182,6 +192,17 @@ func (m *UnifiedRoleManagementAlertDefinition) GetIsRemediatable()(*bool) {
 // GetMitigationSteps gets the mitigationSteps property value. The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.
 func (m *UnifiedRoleManagementAlertDefinition) GetMitigationSteps()(*string) {
     val, err := m.GetBackingStore().Get("mitigationSteps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementAlertDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -277,6 +298,12 @@ func (m *UnifiedRoleManagementAlertDefinition) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("scopeId", m.GetScopeId())
         if err != nil {
             return err
@@ -345,6 +372,13 @@ func (m *UnifiedRoleManagementAlertDefinition) SetMitigationSteps(value *string)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementAlertDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScopeId sets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
 func (m *UnifiedRoleManagementAlertDefinition) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
@@ -383,6 +417,7 @@ type UnifiedRoleManagementAlertDefinitionable interface {
     GetIsConfigurable()(*bool)
     GetIsRemediatable()(*bool)
     GetMitigationSteps()(*string)
+    GetOdataType()(*string)
     GetScopeId()(*string)
     GetScopeType()(*string)
     GetSecurityImpact()(*string)
@@ -393,6 +428,7 @@ type UnifiedRoleManagementAlertDefinitionable interface {
     SetIsConfigurable(value *bool)()
     SetIsRemediatable(value *bool)()
     SetMitigationSteps(value *string)()
+    SetOdataType(value *string)()
     SetScopeId(value *string)()
     SetScopeType(value *string)()
     SetSecurityImpact(value *string)()

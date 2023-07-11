@@ -210,6 +210,16 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ramSpikeTimePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -256,6 +266,17 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetManufacturer()(*string) 
 // GetModel gets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsResourcePerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsResourcePerformance) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -364,6 +385,12 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("ramSpikeTimePercentage", m.GetRamSpikeTimePercentage())
         if err != nil {
             return err
@@ -453,6 +480,13 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetModel(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsResourcePerformance) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRamSpikeTimePercentage sets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
 func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentage(value *float64)() {
     err := m.GetBackingStore().Set("ramSpikeTimePercentage", value)
@@ -488,6 +522,7 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     GetDeviceResourcePerformanceScore()(*int32)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetRamSpikeTimePercentage()(*float64)
     GetRamSpikeTimePercentageThreshold()(*float64)
     GetRamSpikeTimeScore()(*int32)
@@ -501,6 +536,7 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     SetDeviceResourcePerformanceScore(value *int32)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetRamSpikeTimePercentage(value *float64)()
     SetRamSpikeTimePercentageThreshold(value *float64)()
     SetRamSpikeTimeScore(value *int32)()

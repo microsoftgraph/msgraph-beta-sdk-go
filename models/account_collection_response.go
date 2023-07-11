@@ -8,7 +8,7 @@ import (
 type AccountCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccountCollectionResponse instantiates a new AccountCollectionResponse and sets the default values.
+// NewAccountCollectionResponse instantiates a new accountCollectionResponse and sets the default values.
 func NewAccountCollectionResponse()(*AccountCollectionResponse) {
     m := &AccountCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

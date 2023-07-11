@@ -7,8 +7,10 @@ import (
 // JustifyAction 
 type JustifyAction struct {
     InformationProtectionAction
+    // The OdataType property
+    OdataType *string
 }
-// NewJustifyAction instantiates a new JustifyAction and sets the default values.
+// NewJustifyAction instantiates a new justifyAction and sets the default values.
 func NewJustifyAction()(*JustifyAction) {
     m := &JustifyAction{
         InformationProtectionAction: *NewInformationProtectionAction(),

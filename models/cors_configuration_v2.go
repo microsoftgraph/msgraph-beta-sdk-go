@@ -113,6 +113,16 @@ func (m *CorsConfiguration_v2) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -133,6 +143,17 @@ func (m *CorsConfiguration_v2) GetMaxAgeInSeconds()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CorsConfiguration_v2) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -178,6 +199,12 @@ func (m *CorsConfiguration_v2) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("resource", m.GetResource())
         if err != nil {
             return err
@@ -213,6 +240,13 @@ func (m *CorsConfiguration_v2) SetMaxAgeInSeconds(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CorsConfiguration_v2) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResource sets the resource property value. Resource within the application segment for which CORS permissions are granted. / grants permission for the whole app segment.
 func (m *CorsConfiguration_v2) SetResource(value *string)() {
     err := m.GetBackingStore().Set("resource", value)
@@ -228,10 +262,12 @@ type CorsConfiguration_v2able interface {
     GetAllowedMethods()([]string)
     GetAllowedOrigins()([]string)
     GetMaxAgeInSeconds()(*int32)
+    GetOdataType()(*string)
     GetResource()(*string)
     SetAllowedHeaders(value []string)()
     SetAllowedMethods(value []string)()
     SetAllowedOrigins(value []string)()
     SetMaxAgeInSeconds(value *int32)()
+    SetOdataType(value *string)()
     SetResource(value *string)()
 }

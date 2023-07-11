@@ -137,6 +137,16 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationPlatforms)
         if err != nil {
@@ -213,6 +223,17 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*Devic
     }
     if val != nil {
         return val.(*DeviceManagementTemplateLifecycleState)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationPolicyTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -325,6 +346,12 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i878a80d2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatforms() != nil {
         cast := (*m.GetPlatforms()).String()
         err = writer.WriteStringValue("platforms", &cast)
@@ -402,6 +429,13 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetLifecycleState(value *D
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationPolicyTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     err := m.GetBackingStore().Set("platforms", value)
@@ -454,6 +488,7 @@ type DeviceManagementConfigurationPolicyTemplateable interface {
     GetDisplayName()(*string)
     GetDisplayVersion()(*string)
     GetLifecycleState()(*DeviceManagementTemplateLifecycleState)
+    GetOdataType()(*string)
     GetPlatforms()(*DeviceManagementConfigurationPlatforms)
     GetSettingTemplateCount()(*int32)
     GetSettingTemplates()([]DeviceManagementConfigurationSettingTemplateable)
@@ -466,6 +501,7 @@ type DeviceManagementConfigurationPolicyTemplateable interface {
     SetDisplayName(value *string)()
     SetDisplayVersion(value *string)()
     SetLifecycleState(value *DeviceManagementTemplateLifecycleState)()
+    SetOdataType(value *string)()
     SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
     SetSettingTemplateCount(value *int32)()
     SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplateable)()

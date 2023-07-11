@@ -8,7 +8,7 @@ import (
 type Office365GroupsActivityCounts struct {
     Entity
 }
-// NewOffice365GroupsActivityCounts instantiates a new Office365GroupsActivityCounts and sets the default values.
+// NewOffice365GroupsActivityCounts instantiates a new office365GroupsActivityCounts and sets the default values.
 func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
     m := &Office365GroupsActivityCounts{
         Entity: *NewEntity(),
@@ -40,6 +40,16 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetExchangeEmailsReceived(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -124,6 +134,17 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Office365GroupsActivityCounts) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetReportDate gets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
 func (m *Office365GroupsActivityCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -226,6 +247,12 @@ func (m *Office365GroupsActivityCounts) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
@@ -278,6 +305,13 @@ func (m *Office365GroupsActivityCounts) Serialize(writer i878a80d2330e89d2689638
 // SetExchangeEmailsReceived sets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
 func (m *Office365GroupsActivityCounts) SetExchangeEmailsReceived(value *int64)() {
     err := m.GetBackingStore().Set("exchangeEmailsReceived", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Office365GroupsActivityCounts) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -343,6 +377,7 @@ type Office365GroupsActivityCountsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExchangeEmailsReceived()(*int64)
+    GetOdataType()(*string)
     GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetReportPeriod()(*string)
     GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -352,6 +387,7 @@ type Office365GroupsActivityCountsable interface {
     GetYammerMessagesPosted()(*int64)
     GetYammerMessagesRead()(*int64)
     SetExchangeEmailsReceived(value *int64)()
+    SetOdataType(value *string)()
     SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetReportPeriod(value *string)()
     SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

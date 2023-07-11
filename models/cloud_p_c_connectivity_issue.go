@@ -8,6 +8,8 @@ import (
 // CloudPCConnectivityIssue the user experience analyte connectivity issue entity.
 type CloudPCConnectivityIssue struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCloudPCConnectivityIssue instantiates a new cloudPCConnectivityIssue and sets the default values.
 func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {

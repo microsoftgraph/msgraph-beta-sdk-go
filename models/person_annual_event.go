@@ -7,8 +7,10 @@ import (
 // PersonAnnualEvent 
 type PersonAnnualEvent struct {
     ItemFacet
+    // The OdataType property
+    OdataType *string
 }
-// NewPersonAnnualEvent instantiates a new PersonAnnualEvent and sets the default values.
+// NewPersonAnnualEvent instantiates a new personAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),
