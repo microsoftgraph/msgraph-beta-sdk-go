@@ -7,6 +7,8 @@ import (
 // WorkbookChartAxisTitleFormat 
 type WorkbookChartAxisTitleFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartAxisTitleFormat instantiates a new workbookChartAxisTitleFormat and sets the default values.
 func NewWorkbookChartAxisTitleFormat()(*WorkbookChartAxisTitleFormat) {

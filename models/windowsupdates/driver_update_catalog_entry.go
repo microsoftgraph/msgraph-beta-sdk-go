@@ -9,7 +9,7 @@ import (
 type DriverUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
 }
-// NewDriverUpdateCatalogEntry instantiates a new DriverUpdateCatalogEntry and sets the default values.
+// NewDriverUpdateCatalogEntry instantiates a new driverUpdateCatalogEntry and sets the default values.
 func NewDriverUpdateCatalogEntry()(*DriverUpdateCatalogEntry) {
     m := &DriverUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),

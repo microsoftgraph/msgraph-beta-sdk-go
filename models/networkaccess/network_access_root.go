@@ -8,8 +8,10 @@ import (
 // NetworkAccessRoot 
 type NetworkAccessRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewNetworkAccessRoot instantiates a new NetworkAccessRoot and sets the default values.
+// NewNetworkAccessRoot instantiates a new networkAccessRoot and sets the default values.
 func NewNetworkAccessRoot()(*NetworkAccessRoot) {
     m := &NetworkAccessRoot{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -20,7 +22,7 @@ func NewNetworkAccessRoot()(*NetworkAccessRoot) {
 func CreateNetworkAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessRoot(), nil
 }
-// GetConnectivity gets the connectivity property value. The connectivity property
+// GetConnectivity gets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
     val, err := m.GetBackingStore().Get("connectivity")
     if err != nil {
@@ -118,7 +120,7 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetForwardingPolicies gets the forwardingPolicies property value. The forwardingPolicies property
+// GetForwardingPolicies gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
 func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     val, err := m.GetBackingStore().Get("forwardingPolicies")
     if err != nil {
@@ -129,7 +131,7 @@ func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     }
     return nil
 }
-// GetForwardingProfiles gets the forwardingProfiles property value. The forwardingProfiles property
+// GetForwardingProfiles gets the forwardingProfiles property value. A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
 func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
     val, err := m.GetBackingStore().Get("forwardingProfiles")
     if err != nil {
@@ -140,7 +142,7 @@ func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
     }
     return nil
 }
-// GetLogs gets the logs property value. The logs property
+// GetLogs gets the logs property value. Represnts network connections that are routed through Global Secure Access.
 func (m *NetworkAccessRoot) GetLogs()(Logsable) {
     val, err := m.GetBackingStore().Get("logs")
     if err != nil {
@@ -151,7 +153,7 @@ func (m *NetworkAccessRoot) GetLogs()(Logsable) {
     }
     return nil
 }
-// GetReports gets the reports property value. The reports property
+// GetReports gets the reports property value. Represents the status of the Global Secure Access services for the tenant.
 func (m *NetworkAccessRoot) GetReports()(Reportsable) {
     val, err := m.GetBackingStore().Get("reports")
     if err != nil {
@@ -162,7 +164,7 @@ func (m *NetworkAccessRoot) GetReports()(Reportsable) {
     }
     return nil
 }
-// GetSettings gets the settings property value. The settings property
+// GetSettings gets the settings property value. Global Secure Access settings.
 func (m *NetworkAccessRoot) GetSettings()(Settingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -173,7 +175,7 @@ func (m *NetworkAccessRoot) GetSettings()(Settingsable) {
     }
     return nil
 }
-// GetTenantStatus gets the tenantStatus property value. The tenantStatus property
+// GetTenantStatus gets the tenantStatus property value. Represents the status of the Global Secure Access services for the tenant.
 func (m *NetworkAccessRoot) GetTenantStatus()(TenantStatusable) {
     val, err := m.GetBackingStore().Get("tenantStatus")
     if err != nil {
@@ -246,49 +248,49 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetConnectivity sets the connectivity property value. The connectivity property
+// SetConnectivity sets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 func (m *NetworkAccessRoot) SetConnectivity(value Connectivityable)() {
     err := m.GetBackingStore().Set("connectivity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetForwardingPolicies sets the forwardingPolicies property value. The forwardingPolicies property
+// SetForwardingPolicies sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
 func (m *NetworkAccessRoot) SetForwardingPolicies(value []ForwardingPolicyable)() {
     err := m.GetBackingStore().Set("forwardingPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetForwardingProfiles sets the forwardingProfiles property value. The forwardingProfiles property
+// SetForwardingProfiles sets the forwardingProfiles property value. A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
 func (m *NetworkAccessRoot) SetForwardingProfiles(value []ForwardingProfileable)() {
     err := m.GetBackingStore().Set("forwardingProfiles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLogs sets the logs property value. The logs property
+// SetLogs sets the logs property value. Represnts network connections that are routed through Global Secure Access.
 func (m *NetworkAccessRoot) SetLogs(value Logsable)() {
     err := m.GetBackingStore().Set("logs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReports sets the reports property value. The reports property
+// SetReports sets the reports property value. Represents the status of the Global Secure Access services for the tenant.
 func (m *NetworkAccessRoot) SetReports(value Reportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSettings sets the settings property value. The settings property
+// SetSettings sets the settings property value. Global Secure Access settings.
 func (m *NetworkAccessRoot) SetSettings(value Settingsable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantStatus sets the tenantStatus property value. The tenantStatus property
+// SetTenantStatus sets the tenantStatus property value. Represents the status of the Global Secure Access services for the tenant.
 func (m *NetworkAccessRoot) SetTenantStatus(value TenantStatusable)() {
     err := m.GetBackingStore().Set("tenantStatus", value)
     if err != nil {

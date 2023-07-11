@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosHomeScreenApp 
+// IosHomeScreenApp represents an icon for an app on the Home Screen
 type IosHomeScreenApp struct {
     IosHomeScreenItem
 }
-// NewIosHomeScreenApp instantiates a new IosHomeScreenApp and sets the default values.
+// NewIosHomeScreenApp instantiates a new iosHomeScreenApp and sets the default values.
 func NewIosHomeScreenApp()(*IosHomeScreenApp) {
     m := &IosHomeScreenApp{
         IosHomeScreenItem: *NewIosHomeScreenItem(),
@@ -55,6 +55,16 @@ func (m *IosHomeScreenApp) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsWebClip gets the isWebClip property value. When true, the bundle ID will be handled as a URL for a web clip.
@@ -65,6 +75,17 @@ func (m *IosHomeScreenApp) GetIsWebClip()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosHomeScreenApp) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -86,6 +107,12 @@ func (m *IosHomeScreenApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetBundleID sets the bundleID property value. BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
@@ -102,12 +129,21 @@ func (m *IosHomeScreenApp) SetIsWebClip(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosHomeScreenApp) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IosHomeScreenAppable 
 type IosHomeScreenAppable interface {
     IosHomeScreenItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBundleID()(*string)
     GetIsWebClip()(*bool)
+    GetOdataType()(*string)
     SetBundleID(value *string)()
     SetIsWebClip(value *bool)()
+    SetOdataType(value *string)()
 }

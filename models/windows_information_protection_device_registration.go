@@ -8,6 +8,8 @@ import (
 // WindowsInformationProtectionDeviceRegistration represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
 type WindowsInformationProtectionDeviceRegistration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsInformationProtectionDeviceRegistration instantiates a new windowsInformationProtectionDeviceRegistration and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistration()(*WindowsInformationProtectionDeviceRegistration) {

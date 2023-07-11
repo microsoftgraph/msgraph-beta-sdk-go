@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosMobileAppIdentifier 
+// IosMobileAppIdentifier the identifier for an iOS app.
 type IosMobileAppIdentifier struct {
     MobileAppIdentifier
 }
-// NewIosMobileAppIdentifier instantiates a new IosMobileAppIdentifier and sets the default values.
+// NewIosMobileAppIdentifier instantiates a new iosMobileAppIdentifier and sets the default values.
 func NewIosMobileAppIdentifier()(*IosMobileAppIdentifier) {
     m := &IosMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
@@ -45,7 +45,28 @@ func (m *IosMobileAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosMobileAppIdentifier) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosMobileAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *IosMobileAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetBundleId sets the bundleId property value. The identifier for an app, as specified in the app store.
@@ -68,10 +95,19 @@ func (m *IosMobileAppIdentifier) SetBundleId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosMobileAppIdentifier) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IosMobileAppIdentifierable 
 type IosMobileAppIdentifierable interface {
     MobileAppIdentifierable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBundleId()(*string)
+    GetOdataType()(*string)
     SetBundleId(value *string)()
+    SetOdataType(value *string)()
 }

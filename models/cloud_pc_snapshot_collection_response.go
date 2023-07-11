@@ -8,7 +8,7 @@ import (
 type CloudPcSnapshotCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcSnapshotCollectionResponse instantiates a new CloudPcSnapshotCollectionResponse and sets the default values.
+// NewCloudPcSnapshotCollectionResponse instantiates a new cloudPcSnapshotCollectionResponse and sets the default values.
 func NewCloudPcSnapshotCollectionResponse()(*CloudPcSnapshotCollectionResponse) {
     m := &CloudPcSnapshotCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type ServicePrincipalSignInActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServicePrincipalSignInActivityCollectionResponse instantiates a new ServicePrincipalSignInActivityCollectionResponse and sets the default values.
+// NewServicePrincipalSignInActivityCollectionResponse instantiates a new servicePrincipalSignInActivityCollectionResponse and sets the default values.
 func NewServicePrincipalSignInActivityCollectionResponse()(*ServicePrincipalSignInActivityCollectionResponse) {
     m := &ServicePrincipalSignInActivityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

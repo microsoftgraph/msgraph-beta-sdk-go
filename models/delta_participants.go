@@ -7,8 +7,10 @@ import (
 // DeltaParticipants 
 type DeltaParticipants struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeltaParticipants instantiates a new DeltaParticipants and sets the default values.
+// NewDeltaParticipants instantiates a new deltaParticipants and sets the default values.
 func NewDeltaParticipants()(*DeltaParticipants) {
     m := &DeltaParticipants{
         Entity: *NewEntity(),

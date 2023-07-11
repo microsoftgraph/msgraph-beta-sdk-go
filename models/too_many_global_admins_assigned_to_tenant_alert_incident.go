@@ -8,7 +8,7 @@ import (
 type TooManyGlobalAdminsAssignedToTenantAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewTooManyGlobalAdminsAssignedToTenantAlertIncident instantiates a new TooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
+// NewTooManyGlobalAdminsAssignedToTenantAlertIncident instantiates a new tooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
 func NewTooManyGlobalAdminsAssignedToTenantAlertIncident()(*TooManyGlobalAdminsAssignedToTenantAlertIncident) {
     m := &TooManyGlobalAdminsAssignedToTenantAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),

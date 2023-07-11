@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VpnConfiguration 
+// VpnConfiguration base VPN Configuration profile.
 type VpnConfiguration struct {
     DeviceConfiguration
 }
-// NewVpnConfiguration instantiates a new VpnConfiguration and sets the default values.
+// NewVpnConfiguration instantiates a new vpnConfiguration and sets the default values.
 func NewVpnConfiguration()(*VpnConfiguration) {
     m := &VpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

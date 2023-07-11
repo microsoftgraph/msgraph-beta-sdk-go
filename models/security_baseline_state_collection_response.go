@@ -8,7 +8,7 @@ import (
 type SecurityBaselineStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSecurityBaselineStateCollectionResponse instantiates a new SecurityBaselineStateCollectionResponse and sets the default values.
+// NewSecurityBaselineStateCollectionResponse instantiates a new securityBaselineStateCollectionResponse and sets the default values.
 func NewSecurityBaselineStateCollectionResponse()(*SecurityBaselineStateCollectionResponse) {
     m := &SecurityBaselineStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

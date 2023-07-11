@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeSuiteApp 
+// OfficeSuiteApp contains properties and inherited properties for the Office365 Suite App.
 type OfficeSuiteApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
-// NewOfficeSuiteApp instantiates a new OfficeSuiteApp and sets the default values.
+// NewOfficeSuiteApp instantiates a new officeSuiteApp and sets the default values.
 func NewOfficeSuiteApp()(*OfficeSuiteApp) {
     m := &OfficeSuiteApp{
         MobileApp: *NewMobileApp(),

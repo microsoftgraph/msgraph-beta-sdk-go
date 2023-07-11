@@ -7,6 +7,8 @@ import (
 // CloudPcForensicStorageAccount 
 type CloudPcForensicStorageAccount struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCloudPcForensicStorageAccount instantiates a new cloudPcForensicStorageAccount and sets the default values.
 func NewCloudPcForensicStorageAccount()(*CloudPcForensicStorageAccount) {

@@ -8,6 +8,8 @@ import (
 // DeviceManagementIntent entity that represents an intent to apply settings to a device
 type DeviceManagementIntent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementIntent instantiates a new deviceManagementIntent and sets the default values.
 func NewDeviceManagementIntent()(*DeviceManagementIntent) {

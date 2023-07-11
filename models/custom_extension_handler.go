@@ -7,6 +7,8 @@ import (
 // CustomExtensionHandler 
 type CustomExtensionHandler struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCustomExtensionHandler instantiates a new customExtensionHandler and sets the default values.
 func NewCustomExtensionHandler()(*CustomExtensionHandler) {

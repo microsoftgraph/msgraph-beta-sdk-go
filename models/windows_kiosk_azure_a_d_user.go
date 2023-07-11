@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskAzureADUser 
+// WindowsKioskAzureADUser the class used to identify an AzureAD user account for the kiosk configuration
 type WindowsKioskAzureADUser struct {
     WindowsKioskUser
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskAzureADUser instantiates a new WindowsKioskAzureADUser and sets the default values.
+// NewWindowsKioskAzureADUser instantiates a new windowsKioskAzureADUser and sets the default values.
 func NewWindowsKioskAzureADUser()(*WindowsKioskAzureADUser) {
     m := &WindowsKioskAzureADUser{
         WindowsKioskUser: *NewWindowsKioskUser(),

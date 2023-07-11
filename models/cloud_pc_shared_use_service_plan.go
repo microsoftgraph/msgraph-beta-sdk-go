@@ -7,8 +7,10 @@ import (
 // CloudPcSharedUseServicePlan 
 type CloudPcSharedUseServicePlan struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcSharedUseServicePlan instantiates a new CloudPcSharedUseServicePlan and sets the default values.
+// NewCloudPcSharedUseServicePlan instantiates a new cloudPcSharedUseServicePlan and sets the default values.
 func NewCloudPcSharedUseServicePlan()(*CloudPcSharedUseServicePlan) {
     m := &CloudPcSharedUseServicePlan{
         Entity: *NewEntity(),

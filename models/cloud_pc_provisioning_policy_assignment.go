@@ -7,6 +7,8 @@ import (
 // CloudPcProvisioningPolicyAssignment 
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {

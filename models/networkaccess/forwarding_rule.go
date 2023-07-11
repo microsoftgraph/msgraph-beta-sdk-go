@@ -8,7 +8,7 @@ import (
 type ForwardingRule struct {
     PolicyRule
 }
-// NewForwardingRule instantiates a new ForwardingRule and sets the default values.
+// NewForwardingRule instantiates a new forwardingRule and sets the default values.
 func NewForwardingRule()(*ForwardingRule) {
     m := &ForwardingRule{
         PolicyRule: *NewPolicyRule(),
@@ -52,7 +52,7 @@ func (m *ForwardingRule) GetAction()(*ForwardingRuleAction) {
     }
     return nil
 }
-// GetDestinations gets the destinations property value. The destinations property
+// GetDestinations gets the destinations property value. Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
 func (m *ForwardingRule) GetDestinations()([]RuleDestinationable) {
     val, err := m.GetBackingStore().Get("destinations")
     if err != nil {
@@ -156,7 +156,7 @@ func (m *ForwardingRule) SetAction(value *ForwardingRuleAction)() {
         panic(err)
     }
 }
-// SetDestinations sets the destinations property value. The destinations property
+// SetDestinations sets the destinations property value. Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
 func (m *ForwardingRule) SetDestinations(value []RuleDestinationable)() {
     err := m.GetBackingStore().Set("destinations", value)
     if err != nil {

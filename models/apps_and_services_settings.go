@@ -10,7 +10,7 @@ type AppsAndServicesSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppsAndServicesSettings instantiates a new AppsAndServicesSettings and sets the default values.
+// NewAppsAndServicesSettings instantiates a new appsAndServicesSettings and sets the default values.
 func NewAppsAndServicesSettings()(*AppsAndServicesSettings) {
     m := &AppsAndServicesSettings{
     }
@@ -73,7 +73,7 @@ func (m *AppsAndServicesSettings) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetIsAppAndServicesTrialEnabled gets the isAppAndServicesTrialEnabled property value. The isAppAndServicesTrialEnabled property
+// GetIsAppAndServicesTrialEnabled gets the isAppAndServicesTrialEnabled property value. Controls whether users can start trial subscriptions for apps and services in your organization.
 func (m *AppsAndServicesSettings) GetIsAppAndServicesTrialEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAppAndServicesTrialEnabled")
     if err != nil {
@@ -84,7 +84,7 @@ func (m *AppsAndServicesSettings) GetIsAppAndServicesTrialEnabled()(*bool) {
     }
     return nil
 }
-// GetIsOfficeStoreEnabled gets the isOfficeStoreEnabled property value. The isOfficeStoreEnabled property
+// GetIsOfficeStoreEnabled gets the isOfficeStoreEnabled property value. Controls whether users can access the Microsoft Store.
 func (m *AppsAndServicesSettings) GetIsOfficeStoreEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isOfficeStoreEnabled")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *AppsAndServicesSettings) SetAdditionalData(value map[string]any)() {
 func (m *AppsAndServicesSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsAppAndServicesTrialEnabled sets the isAppAndServicesTrialEnabled property value. The isAppAndServicesTrialEnabled property
+// SetIsAppAndServicesTrialEnabled sets the isAppAndServicesTrialEnabled property value. Controls whether users can start trial subscriptions for apps and services in your organization.
 func (m *AppsAndServicesSettings) SetIsAppAndServicesTrialEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isAppAndServicesTrialEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsOfficeStoreEnabled sets the isOfficeStoreEnabled property value. The isOfficeStoreEnabled property
+// SetIsOfficeStoreEnabled sets the isOfficeStoreEnabled property value. Controls whether users can access the Microsoft Store.
 func (m *AppsAndServicesSettings) SetIsOfficeStoreEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isOfficeStoreEnabled", value)
     if err != nil {

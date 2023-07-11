@@ -65,6 +65,16 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requestDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -116,6 +126,17 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MicrosoftTunnelServerLogCollectionResponse) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequestDateTime gets the requestDateTime property value. The time when the log collection was requested
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -191,6 +212,12 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) Serialize(writer i878a80d23
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("requestDateTime", m.GetRequestDateTime())
         if err != nil {
             return err
@@ -237,6 +264,13 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) SetExpiryDateTime(value *i3
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MicrosoftTunnelServerLogCollectionResponse) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestDateTime sets the requestDateTime property value. The time when the log collection was requested
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestDateTime", value)
@@ -278,6 +312,7 @@ type MicrosoftTunnelServerLogCollectionResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetServerId()(*string)
     GetSizeInBytes()(*int64)
@@ -285,6 +320,7 @@ type MicrosoftTunnelServerLogCollectionResponseable interface {
     GetStatus()(*MicrosoftTunnelLogCollectionStatus)
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetServerId(value *string)()
     SetSizeInBytes(value *int64)()

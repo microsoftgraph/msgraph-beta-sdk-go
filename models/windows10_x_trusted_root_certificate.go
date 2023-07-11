@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10XTrustedRootCertificate 
+// Windows10XTrustedRootCertificate windows X Trusted Root Certificate configuration profile
 type Windows10XTrustedRootCertificate struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XTrustedRootCertificate instantiates a new Windows10XTrustedRootCertificate and sets the default values.
+// NewWindows10XTrustedRootCertificate instantiates a new windows10XTrustedRootCertificate and sets the default values.
 func NewWindows10XTrustedRootCertificate()(*Windows10XTrustedRootCertificate) {
     m := &Windows10XTrustedRootCertificate{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),

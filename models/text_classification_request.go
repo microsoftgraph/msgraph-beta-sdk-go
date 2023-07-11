@@ -7,8 +7,10 @@ import (
 // TextClassificationRequest 
 type TextClassificationRequest struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewTextClassificationRequest instantiates a new TextClassificationRequest and sets the default values.
+// NewTextClassificationRequest instantiates a new textClassificationRequest and sets the default values.
 func NewTextClassificationRequest()(*TextClassificationRequest) {
     m := &TextClassificationRequest{
         Entity: *NewEntity(),

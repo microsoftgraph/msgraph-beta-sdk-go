@@ -8,8 +8,10 @@ import (
 // TenantStatus 
 type TenantStatus struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewTenantStatus instantiates a new TenantStatus and sets the default values.
+// NewTenantStatus instantiates a new tenantStatus and sets the default values.
 func NewTenantStatus()(*TenantStatus) {
     m := &TenantStatus{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -45,7 +47,7 @@ func (m *TenantStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOnboardingErrorMessage gets the onboardingErrorMessage property value. The onboardingErrorMessage property
+// GetOnboardingErrorMessage gets the onboardingErrorMessage property value. Reflects a message to the user in case of an error.
 func (m *TenantStatus) GetOnboardingErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("onboardingErrorMessage")
     if err != nil {
@@ -88,7 +90,7 @@ func (m *TenantStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetOnboardingErrorMessage sets the onboardingErrorMessage property value. The onboardingErrorMessage property
+// SetOnboardingErrorMessage sets the onboardingErrorMessage property value. Reflects a message to the user in case of an error.
 func (m *TenantStatus) SetOnboardingErrorMessage(value *string)() {
     err := m.GetBackingStore().Set("onboardingErrorMessage", value)
     if err != nil {

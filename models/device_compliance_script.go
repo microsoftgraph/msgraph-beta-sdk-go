@@ -8,6 +8,8 @@ import (
 // DeviceComplianceScript intune will provide customer the ability to run their Powershell Compliance scripts (detection) on the enrolled windows 10 Azure Active Directory joined devices.
 type DeviceComplianceScript struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceComplianceScript instantiates a new deviceComplianceScript and sets the default values.
 func NewDeviceComplianceScript()(*DeviceComplianceScript) {

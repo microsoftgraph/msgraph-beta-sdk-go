@@ -8,8 +8,10 @@ import (
 // SalesOrderLine 
 type SalesOrderLine struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSalesOrderLine instantiates a new SalesOrderLine and sets the default values.
+// NewSalesOrderLine instantiates a new salesOrderLine and sets the default values.
 func NewSalesOrderLine()(*SalesOrderLine) {
     m := &SalesOrderLine{
         Entity: *NewEntity(),

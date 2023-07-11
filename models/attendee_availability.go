@@ -10,7 +10,7 @@ type AttendeeAvailability struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttendeeAvailability instantiates a new AttendeeAvailability and sets the default values.
+// NewAttendeeAvailability instantiates a new attendeeAvailability and sets the default values.
 func NewAttendeeAvailability()(*AttendeeAvailability) {
     m := &AttendeeAvailability{
     }

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSPkgApp 
+// MacOSPkgApp contains properties and inherited properties for the MacOSPkgApp.
 type MacOSPkgApp struct {
     MobileLobApp
 }
-// NewMacOSPkgApp instantiates a new MacOSPkgApp and sets the default values.
+// NewMacOSPkgApp instantiates a new macOSPkgApp and sets the default values.
 func NewMacOSPkgApp()(*MacOSPkgApp) {
     m := &MacOSPkgApp{
         MobileLobApp: *NewMobileLobApp(),

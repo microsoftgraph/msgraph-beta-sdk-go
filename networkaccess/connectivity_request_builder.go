@@ -18,7 +18,7 @@ type ConnectivityRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRequestBuilderGetQueryParameters get connectivity from networkAccess
+// ConnectivityRequestBuilderGetQueryParameters connectivity represents all the connectivity components in Global Secure Access.
 type ConnectivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ConnectivityRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get get connectivity from networkAccess
+// Get connectivity represents all the connectivity components in Global Secure Access.
 func (m *ConnectivityRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Connectivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ConnectivityRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get connectivity from networkAccess
+// ToGetRequestInformation connectivity represents all the connectivity components in Global Secure Access.
 func (m *ConnectivityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

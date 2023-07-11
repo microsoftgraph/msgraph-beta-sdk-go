@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeliveryOptimizationGroupIdSourceOptions 
+// DeliveryOptimizationGroupIdSourceOptions group id options type
 type DeliveryOptimizationGroupIdSourceOptions struct {
     DeliveryOptimizationGroupIdSource
 }
-// NewDeliveryOptimizationGroupIdSourceOptions instantiates a new DeliveryOptimizationGroupIdSourceOptions and sets the default values.
+// NewDeliveryOptimizationGroupIdSourceOptions instantiates a new deliveryOptimizationGroupIdSourceOptions and sets the default values.
 func NewDeliveryOptimizationGroupIdSourceOptions()(*DeliveryOptimizationGroupIdSourceOptions) {
     m := &DeliveryOptimizationGroupIdSourceOptions{
         DeliveryOptimizationGroupIdSource: *NewDeliveryOptimizationGroupIdSource(),
@@ -34,6 +34,16 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGroupIdSourceOption gets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
@@ -44,6 +54,17 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) GetGroupIdSourceOption()(*Del
     }
     if val != nil {
         return val.(*DeliveryOptimizationGroupIdOptionsType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeliveryOptimizationGroupIdSourceOptions) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -60,6 +81,12 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) Serialize(writer i878a80d2330
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetGroupIdSourceOption sets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
@@ -69,10 +96,19 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) SetGroupIdSourceOption(value 
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeliveryOptimizationGroupIdSourceOptions) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // DeliveryOptimizationGroupIdSourceOptionsable 
 type DeliveryOptimizationGroupIdSourceOptionsable interface {
     DeliveryOptimizationGroupIdSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetGroupIdSourceOption()(*DeliveryOptimizationGroupIdOptionsType)
+    GetOdataType()(*string)
     SetGroupIdSourceOption(value *DeliveryOptimizationGroupIdOptionsType)()
+    SetOdataType(value *string)()
 }

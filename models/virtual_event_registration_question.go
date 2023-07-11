@@ -7,6 +7,8 @@ import (
 // VirtualEventRegistrationQuestion 
 type VirtualEventRegistrationQuestion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVirtualEventRegistrationQuestion instantiates a new virtualEventRegistrationQuestion and sets the default values.
 func NewVirtualEventRegistrationQuestion()(*VirtualEventRegistrationQuestion) {

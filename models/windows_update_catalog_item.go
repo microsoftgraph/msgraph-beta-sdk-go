@@ -8,6 +8,8 @@ import (
 // WindowsUpdateCatalogItem windows update catalog item entity
 type WindowsUpdateCatalogItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsUpdateCatalogItem instantiates a new windowsUpdateCatalogItem and sets the default values.
 func NewWindowsUpdateCatalogItem()(*WindowsUpdateCatalogItem) {

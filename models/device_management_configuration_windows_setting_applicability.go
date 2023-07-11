@@ -7,8 +7,10 @@ import (
 // DeviceManagementConfigurationWindowsSettingApplicability 
 type DeviceManagementConfigurationWindowsSettingApplicability struct {
     DeviceManagementConfigurationSettingApplicability
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationWindowsSettingApplicability instantiates a new DeviceManagementConfigurationWindowsSettingApplicability and sets the default values.
+// NewDeviceManagementConfigurationWindowsSettingApplicability instantiates a new deviceManagementConfigurationWindowsSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationWindowsSettingApplicability()(*DeviceManagementConfigurationWindowsSettingApplicability) {
     m := &DeviceManagementConfigurationWindowsSettingApplicability{
         DeviceManagementConfigurationSettingApplicability: *NewDeviceManagementConfigurationSettingApplicability(),

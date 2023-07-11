@@ -8,7 +8,7 @@ import (
 type ProfileCardPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProfileCardPropertyCollectionResponse instantiates a new ProfileCardPropertyCollectionResponse and sets the default values.
+// NewProfileCardPropertyCollectionResponse instantiates a new profileCardPropertyCollectionResponse and sets the default values.
 func NewProfileCardPropertyCollectionResponse()(*ProfileCardPropertyCollectionResponse) {
     m := &ProfileCardPropertyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

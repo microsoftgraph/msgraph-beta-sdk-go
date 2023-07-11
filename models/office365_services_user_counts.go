@@ -7,8 +7,10 @@ import (
 // Office365ServicesUserCounts 
 type Office365ServicesUserCounts struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewOffice365ServicesUserCounts instantiates a new Office365ServicesUserCounts and sets the default values.
+// NewOffice365ServicesUserCounts instantiates a new office365ServicesUserCounts and sets the default values.
 func NewOffice365ServicesUserCounts()(*Office365ServicesUserCounts) {
     m := &Office365ServicesUserCounts{
         Entity: *NewEntity(),

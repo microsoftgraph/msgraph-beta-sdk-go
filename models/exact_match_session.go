@@ -8,7 +8,7 @@ import (
 type ExactMatchSession struct {
     ExactMatchSessionBase
 }
-// NewExactMatchSession instantiates a new ExactMatchSession and sets the default values.
+// NewExactMatchSession instantiates a new exactMatchSession and sets the default values.
 func NewExactMatchSession()(*ExactMatchSession) {
     m := &ExactMatchSession{
         ExactMatchSessionBase: *NewExactMatchSessionBase(),

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActivateDeviceEsimActionResult 
+// ActivateDeviceEsimActionResult activate device eSIM action result
 type ActivateDeviceEsimActionResult struct {
     DeviceActionResult
+    // The OdataType property
+    OdataType *string
 }
-// NewActivateDeviceEsimActionResult instantiates a new ActivateDeviceEsimActionResult and sets the default values.
+// NewActivateDeviceEsimActionResult instantiates a new activateDeviceEsimActionResult and sets the default values.
 func NewActivateDeviceEsimActionResult()(*ActivateDeviceEsimActionResult) {
     m := &ActivateDeviceEsimActionResult{
         DeviceActionResult: *NewDeviceActionResult(),

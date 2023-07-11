@@ -8,8 +8,10 @@ import (
 // UnifiedRoleManagementPolicy 
 type UnifiedRoleManagementPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewUnifiedRoleManagementPolicy instantiates a new UnifiedRoleManagementPolicy and sets the default values.
+// NewUnifiedRoleManagementPolicy instantiates a new unifiedRoleManagementPolicy and sets the default values.
 func NewUnifiedRoleManagementPolicy()(*UnifiedRoleManagementPolicy) {
     m := &UnifiedRoleManagementPolicy{
         Entity: *NewEntity(),

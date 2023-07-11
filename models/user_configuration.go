@@ -7,6 +7,8 @@ import (
 // UserConfiguration 
 type UserConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserConfiguration instantiates a new userConfiguration and sets the default values.
 func NewUserConfiguration()(*UserConfiguration) {

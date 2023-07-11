@@ -8,7 +8,7 @@ import (
 type DeviceAndAppManagementAssignmentFilterCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceAndAppManagementAssignmentFilterCollectionResponse instantiates a new DeviceAndAppManagementAssignmentFilterCollectionResponse and sets the default values.
+// NewDeviceAndAppManagementAssignmentFilterCollectionResponse instantiates a new deviceAndAppManagementAssignmentFilterCollectionResponse and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilterCollectionResponse()(*DeviceAndAppManagementAssignmentFilterCollectionResponse) {
     m := &DeviceAndAppManagementAssignmentFilterCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory the user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory instantiates a new userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) {

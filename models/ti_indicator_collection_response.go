@@ -8,7 +8,7 @@ import (
 type TiIndicatorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTiIndicatorCollectionResponse instantiates a new TiIndicatorCollectionResponse and sets the default values.
+// NewTiIndicatorCollectionResponse instantiates a new tiIndicatorCollectionResponse and sets the default values.
 func NewTiIndicatorCollectionResponse()(*TiIndicatorCollectionResponse) {
     m := &TiIndicatorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

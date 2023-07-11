@@ -8,7 +8,7 @@ import (
 type MicrosoftTunnelServerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMicrosoftTunnelServerCollectionResponse instantiates a new MicrosoftTunnelServerCollectionResponse and sets the default values.
+// NewMicrosoftTunnelServerCollectionResponse instantiates a new microsoftTunnelServerCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerCollectionResponse()(*MicrosoftTunnelServerCollectionResponse) {
     m := &MicrosoftTunnelServerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

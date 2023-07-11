@@ -8,7 +8,7 @@ import (
 type UnitOfMeasureCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnitOfMeasureCollectionResponse instantiates a new UnitOfMeasureCollectionResponse and sets the default values.
+// NewUnitOfMeasureCollectionResponse instantiates a new unitOfMeasureCollectionResponse and sets the default values.
 func NewUnitOfMeasureCollectionResponse()(*UnitOfMeasureCollectionResponse) {
     m := &UnitOfMeasureCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type ItemEmail struct {
     ItemFacet
 }
-// NewItemEmail instantiates a new ItemEmail and sets the default values.
+// NewItemEmail instantiates a new itemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
         ItemFacet: *NewItemFacet(),

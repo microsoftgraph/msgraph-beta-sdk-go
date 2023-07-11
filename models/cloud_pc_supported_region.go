@@ -7,8 +7,10 @@ import (
 // CloudPcSupportedRegion 
 type CloudPcSupportedRegion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcSupportedRegion instantiates a new CloudPcSupportedRegion and sets the default values.
+// NewCloudPcSupportedRegion instantiates a new cloudPcSupportedRegion and sets the default values.
 func NewCloudPcSupportedRegion()(*CloudPcSupportedRegion) {
     m := &CloudPcSupportedRegion{
         Entity: *NewEntity(),

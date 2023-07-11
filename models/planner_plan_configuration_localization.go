@@ -7,6 +7,8 @@ import (
 // PlannerPlanConfigurationLocalization 
 type PlannerPlanConfigurationLocalization struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPlannerPlanConfigurationLocalization instantiates a new plannerPlanConfigurationLocalization and sets the default values.
 func NewPlannerPlanConfigurationLocalization()(*PlannerPlanConfigurationLocalization) {

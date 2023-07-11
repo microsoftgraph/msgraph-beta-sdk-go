@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionDeviceRegistrationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsInformationProtectionDeviceRegistrationCollectionResponse instantiates a new WindowsInformationProtectionDeviceRegistrationCollectionResponse and sets the default values.
+// NewWindowsInformationProtectionDeviceRegistrationCollectionResponse instantiates a new windowsInformationProtectionDeviceRegistrationCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistrationCollectionResponse()(*WindowsInformationProtectionDeviceRegistrationCollectionResponse) {
     m := &WindowsInformationProtectionDeviceRegistrationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

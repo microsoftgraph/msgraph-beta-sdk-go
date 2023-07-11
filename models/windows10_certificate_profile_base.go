@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10CertificateProfileBase 
+// Windows10CertificateProfileBase base class for Windows 10 certificate profile.
 type Windows10CertificateProfileBase struct {
     WindowsCertificateProfileBase
 }
-// NewWindows10CertificateProfileBase instantiates a new Windows10CertificateProfileBase and sets the default values.
+// NewWindows10CertificateProfileBase instantiates a new windows10CertificateProfileBase and sets the default values.
 func NewWindows10CertificateProfileBase()(*Windows10CertificateProfileBase) {
     m := &Windows10CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),

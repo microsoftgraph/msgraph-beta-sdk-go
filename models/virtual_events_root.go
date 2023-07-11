@@ -7,8 +7,10 @@ import (
 // VirtualEventsRoot 
 type VirtualEventsRoot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewVirtualEventsRoot instantiates a new VirtualEventsRoot and sets the default values.
+// NewVirtualEventsRoot instantiates a new virtualEventsRoot and sets the default values.
 func NewVirtualEventsRoot()(*VirtualEventsRoot) {
     m := &VirtualEventsRoot{
         Entity: *NewEntity(),

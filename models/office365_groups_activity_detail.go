@@ -7,8 +7,10 @@ import (
 // Office365GroupsActivityDetail 
 type Office365GroupsActivityDetail struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewOffice365GroupsActivityDetail instantiates a new Office365GroupsActivityDetail and sets the default values.
+// NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     m := &Office365GroupsActivityDetail{
         Entity: *NewEntity(),

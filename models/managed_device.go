@@ -8,6 +8,8 @@ import (
 // ManagedDevice devices that are managed or pre-enrolled through Intune
 type ManagedDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedDevice instantiates a new managedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {

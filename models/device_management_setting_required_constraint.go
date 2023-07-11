@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingRequiredConstraint 
+// DeviceManagementSettingRequiredConstraint constraint that enforces a particular required setting that is not null/undefined/empty string/not configured
 type DeviceManagementSettingRequiredConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingRequiredConstraint instantiates a new DeviceManagementSettingRequiredConstraint and sets the default values.
+// NewDeviceManagementSettingRequiredConstraint instantiates a new deviceManagementSettingRequiredConstraint and sets the default values.
 func NewDeviceManagementSettingRequiredConstraint()(*DeviceManagementSettingRequiredConstraint) {
     m := &DeviceManagementSettingRequiredConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

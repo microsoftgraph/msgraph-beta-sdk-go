@@ -8,7 +8,7 @@ import (
 type AuthorityTemplate struct {
     FilePlanDescriptorTemplate
 }
-// NewAuthorityTemplate instantiates a new AuthorityTemplate and sets the default values.
+// NewAuthorityTemplate instantiates a new authorityTemplate and sets the default values.
 func NewAuthorityTemplate()(*AuthorityTemplate) {
     m := &AuthorityTemplate{
         FilePlanDescriptorTemplate: *NewFilePlanDescriptorTemplate(),

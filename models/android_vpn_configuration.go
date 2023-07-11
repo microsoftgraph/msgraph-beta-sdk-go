@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidVpnConfiguration 
+// AndroidVpnConfiguration by providing the configurations in this profile you can instruct the Android device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
 type AndroidVpnConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidVpnConfiguration instantiates a new AndroidVpnConfiguration and sets the default values.
+// NewAndroidVpnConfiguration instantiates a new androidVpnConfiguration and sets the default values.
 func NewAndroidVpnConfiguration()(*AndroidVpnConfiguration) {
     m := &AndroidVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

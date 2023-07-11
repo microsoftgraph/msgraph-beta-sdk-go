@@ -8,7 +8,7 @@ import (
 type ItemPublication struct {
     ItemFacet
 }
-// NewItemPublication instantiates a new ItemPublication and sets the default values.
+// NewItemPublication instantiates a new itemPublication and sets the default values.
 func NewItemPublication()(*ItemPublication) {
     m := &ItemPublication{
         ItemFacet: *NewItemFacet(),

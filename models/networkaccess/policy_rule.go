@@ -8,6 +8,8 @@ import (
 // PolicyRule 
 type PolicyRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPolicyRule instantiates a new policyRule and sets the default values.
 func NewPolicyRule()(*PolicyRule) {
@@ -57,7 +59,7 @@ func (m *PolicyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name.
 func (m *PolicyRule) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -82,7 +84,7 @@ func (m *PolicyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name.
 func (m *PolicyRule) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

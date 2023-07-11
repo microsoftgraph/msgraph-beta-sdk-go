@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosEasEmailProfileConfiguration 
+// IosEasEmailProfileConfiguration by providing configurations in this profile you can instruct the native email client on iOS devices to communicate with an Exchange server and get email, contacts, calendar, reminders, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
 type IosEasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
 }
-// NewIosEasEmailProfileConfiguration instantiates a new IosEasEmailProfileConfiguration and sets the default values.
+// NewIosEasEmailProfileConfiguration instantiates a new iosEasEmailProfileConfiguration and sets the default values.
 func NewIosEasEmailProfileConfiguration()(*IosEasEmailProfileConfiguration) {
     m := &IosEasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),

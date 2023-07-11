@@ -8,6 +8,8 @@ import (
 // PrivilegedApproval 
 type PrivilegedApproval struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {

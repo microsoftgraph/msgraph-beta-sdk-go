@@ -7,8 +7,10 @@ import (
 // BusinessScenarioPlanReference 
 type BusinessScenarioPlanReference struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewBusinessScenarioPlanReference instantiates a new BusinessScenarioPlanReference and sets the default values.
+// NewBusinessScenarioPlanReference instantiates a new businessScenarioPlanReference and sets the default values.
 func NewBusinessScenarioPlanReference()(*BusinessScenarioPlanReference) {
     m := &BusinessScenarioPlanReference{
         Entity: *NewEntity(),

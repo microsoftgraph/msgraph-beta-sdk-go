@@ -8,7 +8,7 @@ import (
 type HostSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewHostSecurityProfileCollectionResponse instantiates a new HostSecurityProfileCollectionResponse and sets the default values.
+// NewHostSecurityProfileCollectionResponse instantiates a new hostSecurityProfileCollectionResponse and sets the default values.
 func NewHostSecurityProfileCollectionResponse()(*HostSecurityProfileCollectionResponse) {
     m := &HostSecurityProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

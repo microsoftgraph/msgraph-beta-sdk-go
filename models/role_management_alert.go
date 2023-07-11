@@ -7,8 +7,10 @@ import (
 // RoleManagementAlert 
 type RoleManagementAlert struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewRoleManagementAlert instantiates a new RoleManagementAlert and sets the default values.
+// NewRoleManagementAlert instantiates a new roleManagementAlert and sets the default values.
 func NewRoleManagementAlert()(*RoleManagementAlert) {
     m := &RoleManagementAlert{
         Entity: *NewEntity(),

@@ -7,8 +7,10 @@ import (
 // DeviceRegistrationPolicy 
 type DeviceRegistrationPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
+// NewDeviceRegistrationPolicy instantiates a new deviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),

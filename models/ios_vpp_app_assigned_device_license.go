@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVppAppAssignedDeviceLicense 
+// IosVppAppAssignedDeviceLicense iOS Volume Purchase Program device license assignment. This class does not support Create, Delete, or Update.
 type IosVppAppAssignedDeviceLicense struct {
     IosVppAppAssignedLicense
 }
-// NewIosVppAppAssignedDeviceLicense instantiates a new IosVppAppAssignedDeviceLicense and sets the default values.
+// NewIosVppAppAssignedDeviceLicense instantiates a new iosVppAppAssignedDeviceLicense and sets the default values.
 func NewIosVppAppAssignedDeviceLicense()(*IosVppAppAssignedDeviceLicense) {
     m := &IosVppAppAssignedDeviceLicense{
         IosVppAppAssignedLicense: *NewIosVppAppAssignedLicense(),

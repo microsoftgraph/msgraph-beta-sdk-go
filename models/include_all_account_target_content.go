@@ -7,8 +7,10 @@ import (
 // IncludeAllAccountTargetContent 
 type IncludeAllAccountTargetContent struct {
     AccountTargetContent
+    // The OdataType property
+    OdataType *string
 }
-// NewIncludeAllAccountTargetContent instantiates a new IncludeAllAccountTargetContent and sets the default values.
+// NewIncludeAllAccountTargetContent instantiates a new includeAllAccountTargetContent and sets the default values.
 func NewIncludeAllAccountTargetContent()(*IncludeAllAccountTargetContent) {
     m := &IncludeAllAccountTargetContent{
         AccountTargetContent: *NewAccountTargetContent(),

@@ -8,6 +8,8 @@ import (
 // Policy 
 type Policy struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPolicy instantiates a new policy and sets the default values.
 func NewPolicy()(*Policy) {
@@ -38,7 +40,7 @@ func CreatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
     }
     return NewPolicy(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description.
 func (m *Policy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -100,7 +102,7 @@ func (m *Policy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Policy name.
 func (m *Policy) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -111,7 +113,7 @@ func (m *Policy) GetName()(*string) {
     }
     return nil
 }
-// GetPolicyRules gets the policyRules property value. The policyRules property
+// GetPolicyRules gets the policyRules property value. Represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *Policy) GetPolicyRules()([]PolicyRuleable) {
     val, err := m.GetBackingStore().Get("policyRules")
     if err != nil {
@@ -122,7 +124,7 @@ func (m *Policy) GetPolicyRules()([]PolicyRuleable) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. Version.
 func (m *Policy) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -171,28 +173,28 @@ func (m *Policy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description.
 func (m *Policy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Policy name.
 func (m *Policy) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyRules sets the policyRules property value. The policyRules property
+// SetPolicyRules sets the policyRules property value. Represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *Policy) SetPolicyRules(value []PolicyRuleable)() {
     err := m.GetBackingStore().Set("policyRules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. Version.
 func (m *Policy) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

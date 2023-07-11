@@ -8,6 +8,8 @@ import (
 // AccessPackageResourceEnvironment 
 type AccessPackageResourceEnvironment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackageResourceEnvironment instantiates a new accessPackageResourceEnvironment and sets the default values.
 func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {

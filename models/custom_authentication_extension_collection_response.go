@@ -8,7 +8,7 @@ import (
 type CustomAuthenticationExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomAuthenticationExtensionCollectionResponse instantiates a new CustomAuthenticationExtensionCollectionResponse and sets the default values.
+// NewCustomAuthenticationExtensionCollectionResponse instantiates a new customAuthenticationExtensionCollectionResponse and sets the default values.
 func NewCustomAuthenticationExtensionCollectionResponse()(*CustomAuthenticationExtensionCollectionResponse) {
     m := &CustomAuthenticationExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

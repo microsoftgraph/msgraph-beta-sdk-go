@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSettingTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementConfigurationSettingTemplateCollectionResponse instantiates a new DeviceManagementConfigurationSettingTemplateCollectionResponse and sets the default values.
+// NewDeviceManagementConfigurationSettingTemplateCollectionResponse instantiates a new deviceManagementConfigurationSettingTemplateCollectionResponse and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplateCollectionResponse()(*DeviceManagementConfigurationSettingTemplateCollectionResponse) {
     m := &DeviceManagementConfigurationSettingTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

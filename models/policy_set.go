@@ -8,6 +8,8 @@ import (
 // PolicySet a class containing the properties used for PolicySet.
 type PolicySet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPolicySet instantiates a new policySet and sets the default values.
 func NewPolicySet()(*PolicySet) {

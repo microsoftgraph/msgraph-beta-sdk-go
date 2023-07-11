@@ -7,6 +7,8 @@ import (
 // SynchronizationJob 
 type SynchronizationJob struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSynchronizationJob instantiates a new synchronizationJob and sets the default values.
 func NewSynchronizationJob()(*SynchronizationJob) {
@@ -19,9 +21,30 @@ func NewSynchronizationJob()(*SynchronizationJob) {
 func CreateSynchronizationJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationJob(), nil
 }
+// GetBulkUpload gets the bulkUpload property value. The bulk upload operation for the job.
+func (m *SynchronizationJob) GetBulkUpload()(BulkUploadable) {
+    val, err := m.GetBackingStore().Get("bulkUpload")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BulkUploadable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["bulkUpload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBulkUploadFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBulkUpload(val.(BulkUploadable))
+        }
+        return nil
+    }
     res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationScheduleFromDiscriminatorValue)
         if err != nil {
@@ -142,6 +165,12 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
+        err = writer.WriteObjectValue("bulkUpload", m.GetBulkUpload())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("schedule", m.GetSchedule())
         if err != nil {
             return err
@@ -178,6 +207,13 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     return nil
+}
+// SetBulkUpload sets the bulkUpload property value. The bulk upload operation for the job.
+func (m *SynchronizationJob) SetBulkUpload(value BulkUploadable)() {
+    err := m.GetBackingStore().Set("bulkUpload", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchedule sets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) SetSchedule(value SynchronizationScheduleable)() {
@@ -218,11 +254,13 @@ func (m *SynchronizationJob) SetTemplateId(value *string)() {
 type SynchronizationJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBulkUpload()(BulkUploadable)
     GetSchedule()(SynchronizationScheduleable)
     GetSchema()(SynchronizationSchemaable)
     GetStatus()(SynchronizationStatusable)
     GetSynchronizationJobSettings()([]KeyValuePairable)
     GetTemplateId()(*string)
+    SetBulkUpload(value BulkUploadable)()
     SetSchedule(value SynchronizationScheduleable)()
     SetSchema(value SynchronizationSchemaable)()
     SetStatus(value SynchronizationStatusable)()

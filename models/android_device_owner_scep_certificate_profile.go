@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerScepCertificateProfile 
+// AndroidDeviceOwnerScepCertificateProfile android Device Owner SCEP certificate profile
 type AndroidDeviceOwnerScepCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
 }
-// NewAndroidDeviceOwnerScepCertificateProfile instantiates a new AndroidDeviceOwnerScepCertificateProfile and sets the default values.
+// NewAndroidDeviceOwnerScepCertificateProfile instantiates a new androidDeviceOwnerScepCertificateProfile and sets the default values.
 func NewAndroidDeviceOwnerScepCertificateProfile()(*AndroidDeviceOwnerScepCertificateProfile) {
     m := &AndroidDeviceOwnerScepCertificateProfile{
         AndroidDeviceOwnerCertificateProfileBase: *NewAndroidDeviceOwnerCertificateProfileBase(),

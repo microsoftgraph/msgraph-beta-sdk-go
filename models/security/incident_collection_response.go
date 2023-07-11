@@ -9,7 +9,7 @@ import (
 type IncidentCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewIncidentCollectionResponse instantiates a new IncidentCollectionResponse and sets the default values.
+// NewIncidentCollectionResponse instantiates a new incidentCollectionResponse and sets the default values.
 func NewIncidentCollectionResponse()(*IncidentCollectionResponse) {
     m := &IncidentCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

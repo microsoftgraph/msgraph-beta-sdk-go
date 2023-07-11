@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosAzureAdSingleSignOnExtension 
+// IosAzureAdSingleSignOnExtension represents an Azure AD-type Single Sign-On extension profile for iOS devices.
 type IosAzureAdSingleSignOnExtension struct {
     IosSingleSignOnExtension
+    // The OdataType property
+    OdataType *string
 }
-// NewIosAzureAdSingleSignOnExtension instantiates a new IosAzureAdSingleSignOnExtension and sets the default values.
+// NewIosAzureAdSingleSignOnExtension instantiates a new iosAzureAdSingleSignOnExtension and sets the default values.
 func NewIosAzureAdSingleSignOnExtension()(*IosAzureAdSingleSignOnExtension) {
     m := &IosAzureAdSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),

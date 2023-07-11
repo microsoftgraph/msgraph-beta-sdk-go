@@ -8,7 +8,7 @@ import (
 type PublishedResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPublishedResourceCollectionResponse instantiates a new PublishedResourceCollectionResponse and sets the default values.
+// NewPublishedResourceCollectionResponse instantiates a new publishedResourceCollectionResponse and sets the default values.
 func NewPublishedResourceCollectionResponse()(*PublishedResourceCollectionResponse) {
     m := &PublishedResourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

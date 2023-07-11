@@ -8,7 +8,7 @@ import (
 type DeviceManagementAutopilotEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementAutopilotEventCollectionResponse instantiates a new DeviceManagementAutopilotEventCollectionResponse and sets the default values.
+// NewDeviceManagementAutopilotEventCollectionResponse instantiates a new deviceManagementAutopilotEventCollectionResponse and sets the default values.
 func NewDeviceManagementAutopilotEventCollectionResponse()(*DeviceManagementAutopilotEventCollectionResponse) {
     m := &DeviceManagementAutopilotEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

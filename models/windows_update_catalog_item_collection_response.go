@@ -8,7 +8,7 @@ import (
 type WindowsUpdateCatalogItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsUpdateCatalogItemCollectionResponse instantiates a new WindowsUpdateCatalogItemCollectionResponse and sets the default values.
+// NewWindowsUpdateCatalogItemCollectionResponse instantiates a new windowsUpdateCatalogItemCollectionResponse and sets the default values.
 func NewWindowsUpdateCatalogItemCollectionResponse()(*WindowsUpdateCatalogItemCollectionResponse) {
     m := &WindowsUpdateCatalogItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

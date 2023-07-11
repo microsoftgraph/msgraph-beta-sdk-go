@@ -8,6 +8,8 @@ import (
 // GroupPolicyOperation the entity represents an group policy operation.
 type GroupPolicyOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupPolicyOperation instantiates a new groupPolicyOperation and sets the default values.
 func NewGroupPolicyOperation()(*GroupPolicyOperation) {

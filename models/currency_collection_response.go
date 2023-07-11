@@ -8,7 +8,7 @@ import (
 type CurrencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCurrencyCollectionResponse instantiates a new CurrencyCollectionResponse and sets the default values.
+// NewCurrencyCollectionResponse instantiates a new currencyCollectionResponse and sets the default values.
 func NewCurrencyCollectionResponse()(*CurrencyCollectionResponse) {
     m := &CurrencyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

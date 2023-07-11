@@ -7,6 +7,8 @@ import (
 // ContactMergeSuggestions 
 type ContactMergeSuggestions struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewContactMergeSuggestions instantiates a new contactMergeSuggestions and sets the default values.
 func NewContactMergeSuggestions()(*ContactMergeSuggestions) {

@@ -8,7 +8,7 @@ import (
 type AppCredentialSignInActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAppCredentialSignInActivityCollectionResponse instantiates a new AppCredentialSignInActivityCollectionResponse and sets the default values.
+// NewAppCredentialSignInActivityCollectionResponse instantiates a new appCredentialSignInActivityCollectionResponse and sets the default values.
 func NewAppCredentialSignInActivityCollectionResponse()(*AppCredentialSignInActivityCollectionResponse) {
     m := &AppCredentialSignInActivityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

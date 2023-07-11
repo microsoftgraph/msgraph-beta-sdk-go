@@ -8,7 +8,7 @@ import (
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
 }
-// NewServicePrincipalCreationPolicy instantiates a new ServicePrincipalCreationPolicy and sets the default values.
+// NewServicePrincipalCreationPolicy instantiates a new servicePrincipalCreationPolicy and sets the default values.
 func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     m := &ServicePrincipalCreationPolicy{
         PolicyBase: *NewPolicyBase(),

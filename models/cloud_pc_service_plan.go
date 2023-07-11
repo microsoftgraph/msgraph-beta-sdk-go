@@ -8,7 +8,7 @@ import (
 type CloudPcServicePlan struct {
     Entity
 }
-// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
@@ -40,6 +40,16 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -114,6 +124,17 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcServicePlan) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
 func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
@@ -204,6 +225,12 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProvisioningType() != nil {
         cast := (*m.GetProvisioningType()).String()
         err = writer.WriteStringValue("provisioningType", &cast)
@@ -254,6 +281,13 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcServicePlan) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -312,6 +346,7 @@ type CloudPcServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetRamInGB()(*int32)
     GetStorageInGB()(*int32)
@@ -320,6 +355,7 @@ type CloudPcServicePlanable interface {
     GetUserProfileInGB()(*int32)
     GetVCpuCount()(*int32)
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetRamInGB(value *int32)()
     SetStorageInGB(value *int32)()

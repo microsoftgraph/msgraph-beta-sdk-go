@@ -9,7 +9,7 @@ import (
 type SourceSystemDefinitionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewSourceSystemDefinitionCollectionResponse instantiates a new SourceSystemDefinitionCollectionResponse and sets the default values.
+// NewSourceSystemDefinitionCollectionResponse instantiates a new sourceSystemDefinitionCollectionResponse and sets the default values.
 func NewSourceSystemDefinitionCollectionResponse()(*SourceSystemDefinitionCollectionResponse) {
     m := &SourceSystemDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // ReferenceAttachment 
 type ReferenceAttachment struct {
     Attachment
+    // The OdataType property
+    OdataType *string
 }
-// NewReferenceAttachment instantiates a new ReferenceAttachment and sets the default values.
+// NewReferenceAttachment instantiates a new referenceAttachment and sets the default values.
 func NewReferenceAttachment()(*ReferenceAttachment) {
     m := &ReferenceAttachment{
         Attachment: *NewAttachment(),

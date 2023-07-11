@@ -8,7 +8,7 @@ import (
 type ShipmentMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewShipmentMethodCollectionResponse instantiates a new ShipmentMethodCollectionResponse and sets the default values.
+// NewShipmentMethodCollectionResponse instantiates a new shipmentMethodCollectionResponse and sets the default values.
 func NewShipmentMethodCollectionResponse()(*ShipmentMethodCollectionResponse) {
     m := &ShipmentMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

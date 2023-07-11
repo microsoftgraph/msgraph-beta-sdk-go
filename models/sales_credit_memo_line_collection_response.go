@@ -8,7 +8,7 @@ import (
 type SalesCreditMemoLineCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSalesCreditMemoLineCollectionResponse instantiates a new SalesCreditMemoLineCollectionResponse and sets the default values.
+// NewSalesCreditMemoLineCollectionResponse instantiates a new salesCreditMemoLineCollectionResponse and sets the default values.
 func NewSalesCreditMemoLineCollectionResponse()(*SalesCreditMemoLineCollectionResponse) {
     m := &SalesCreditMemoLineCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // Presentation 
 type Presentation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPresentation instantiates a new Presentation and sets the default values.
+// NewPresentation instantiates a new presentation and sets the default values.
 func NewPresentation()(*Presentation) {
     m := &Presentation{
         Entity: *NewEntity(),

@@ -7,6 +7,8 @@ import (
 // Bitlocker 
 type Bitlocker struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBitlocker instantiates a new bitlocker and sets the default values.
 func NewBitlocker()(*Bitlocker) {

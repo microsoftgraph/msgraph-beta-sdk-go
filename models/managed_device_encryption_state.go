@@ -7,6 +7,8 @@ import (
 // ManagedDeviceEncryptionState encryption report per device
 type ManagedDeviceEncryptionState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedDeviceEncryptionState instantiates a new managedDeviceEncryptionState and sets the default values.
 func NewManagedDeviceEncryptionState()(*ManagedDeviceEncryptionState) {

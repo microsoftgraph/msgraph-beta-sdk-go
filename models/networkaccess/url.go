@@ -7,8 +7,10 @@ import (
 // Url 
 type Url struct {
     RuleDestination
+    // The OdataType property
+    OdataType *string
 }
-// NewUrl instantiates a new Url and sets the default values.
+// NewUrl instantiates a new url and sets the default values.
 func NewUrl()(*Url) {
     m := &Url{
         RuleDestination: *NewRuleDestination(),
@@ -36,7 +38,7 @@ func (m *Url) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. URL Address
 func (m *Url) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -61,7 +63,7 @@ func (m *Url) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. URL Address
 func (m *Url) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

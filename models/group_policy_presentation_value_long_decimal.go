@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationValueLongDecimal 
+// GroupPolicyPresentationValueLongDecimal the entity represents an unsigned long value of a long decimal text box presentation on a policy definition.
 type GroupPolicyPresentationValueLongDecimal struct {
     GroupPolicyPresentationValue
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupPolicyPresentationValueLongDecimal instantiates a new GroupPolicyPresentationValueLongDecimal and sets the default values.
+// NewGroupPolicyPresentationValueLongDecimal instantiates a new groupPolicyPresentationValueLongDecimal and sets the default values.
 func NewGroupPolicyPresentationValueLongDecimal()(*GroupPolicyPresentationValueLongDecimal) {
     m := &GroupPolicyPresentationValueLongDecimal{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),

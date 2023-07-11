@@ -8,7 +8,7 @@ import (
 type FederatedTokenValidationPolicy struct {
     DirectoryObject
 }
-// NewFederatedTokenValidationPolicy instantiates a new FederatedTokenValidationPolicy and sets the default values.
+// NewFederatedTokenValidationPolicy instantiates a new federatedTokenValidationPolicy and sets the default values.
 func NewFederatedTokenValidationPolicy()(*FederatedTokenValidationPolicy) {
     m := &FederatedTokenValidationPolicy{
         DirectoryObject: *NewDirectoryObject(),

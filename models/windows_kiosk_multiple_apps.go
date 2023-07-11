@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskMultipleApps 
+// WindowsKioskMultipleApps the class used to identify the MultiMode app configuration for the kiosk configuration
 type WindowsKioskMultipleApps struct {
     WindowsKioskAppConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskMultipleApps instantiates a new WindowsKioskMultipleApps and sets the default values.
+// NewWindowsKioskMultipleApps instantiates a new windowsKioskMultipleApps and sets the default values.
 func NewWindowsKioskMultipleApps()(*WindowsKioskMultipleApps) {
     m := &WindowsKioskMultipleApps{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),

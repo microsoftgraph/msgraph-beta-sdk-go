@@ -9,6 +9,8 @@ import (
 // AuditEvent a class containing the properties for Audit Event.
 type AuditEvent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAuditEvent instantiates a new auditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {

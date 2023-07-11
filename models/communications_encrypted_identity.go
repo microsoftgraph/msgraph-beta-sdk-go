@@ -7,8 +7,10 @@ import (
 // CommunicationsEncryptedIdentity 
 type CommunicationsEncryptedIdentity struct {
     Identity
+    // The OdataType property
+    OdataType *string
 }
-// NewCommunicationsEncryptedIdentity instantiates a new CommunicationsEncryptedIdentity and sets the default values.
+// NewCommunicationsEncryptedIdentity instantiates a new communicationsEncryptedIdentity and sets the default values.
 func NewCommunicationsEncryptedIdentity()(*CommunicationsEncryptedIdentity) {
     m := &CommunicationsEncryptedIdentity{
         Identity: *NewIdentity(),

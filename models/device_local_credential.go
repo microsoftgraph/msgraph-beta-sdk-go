@@ -8,6 +8,8 @@ import (
 // DeviceLocalCredential 
 type DeviceLocalCredential struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceLocalCredential instantiates a new deviceLocalCredential and sets the default values.
 func NewDeviceLocalCredential()(*DeviceLocalCredential) {

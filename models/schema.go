@@ -7,6 +7,8 @@ import (
 // Schema 
 type Schema struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSchema instantiates a new schema and sets the default values.
 func NewSchema()(*Schema) {

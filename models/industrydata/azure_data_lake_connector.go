@@ -8,7 +8,7 @@ import (
 type AzureDataLakeConnector struct {
     FileDataConnector
 }
-// NewAzureDataLakeConnector instantiates a new AzureDataLakeConnector and sets the default values.
+// NewAzureDataLakeConnector instantiates a new azureDataLakeConnector and sets the default values.
 func NewAzureDataLakeConnector()(*AzureDataLakeConnector) {
     m := &AzureDataLakeConnector{
         FileDataConnector: *NewFileDataConnector(),

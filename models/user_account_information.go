@@ -8,7 +8,7 @@ import (
 type UserAccountInformation struct {
     ItemFacet
 }
-// NewUserAccountInformation instantiates a new UserAccountInformation and sets the default values.
+// NewUserAccountInformation instantiates a new userAccountInformation and sets the default values.
 func NewUserAccountInformation()(*UserAccountInformation) {
     m := &UserAccountInformation{
         ItemFacet: *NewItemFacet(),

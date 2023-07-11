@@ -7,8 +7,10 @@ import (
 // IpRange 
 type IpRange struct {
     RuleDestination
+    // The OdataType property
+    OdataType *string
 }
-// NewIpRange instantiates a new IpRange and sets the default values.
+// NewIpRange instantiates a new ipRange and sets the default values.
 func NewIpRange()(*IpRange) {
     m := &IpRange{
         RuleDestination: *NewRuleDestination(),
@@ -21,7 +23,7 @@ func NewIpRange()(*IpRange) {
 func CreateIpRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpRange(), nil
 }
-// GetBeginAddress gets the beginAddress property value. The beginAddress property
+// GetBeginAddress gets the beginAddress property value. Specifies the starting IP address of the IP range.
 func (m *IpRange) GetBeginAddress()(*string) {
     val, err := m.GetBackingStore().Get("beginAddress")
     if err != nil {
@@ -32,7 +34,7 @@ func (m *IpRange) GetBeginAddress()(*string) {
     }
     return nil
 }
-// GetEndAddress gets the endAddress property value. The endAddress property
+// GetEndAddress gets the endAddress property value. Specifies the ending IP address of the IP range.
 func (m *IpRange) GetEndAddress()(*string) {
     val, err := m.GetBackingStore().Get("endAddress")
     if err != nil {
@@ -88,14 +90,14 @@ func (m *IpRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetBeginAddress sets the beginAddress property value. The beginAddress property
+// SetBeginAddress sets the beginAddress property value. Specifies the starting IP address of the IP range.
 func (m *IpRange) SetBeginAddress(value *string)() {
     err := m.GetBackingStore().Set("beginAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndAddress sets the endAddress property value. The endAddress property
+// SetEndAddress sets the endAddress property value. Specifies the ending IP address of the IP range.
 func (m *IpRange) SetEndAddress(value *string)() {
     err := m.GetBackingStore().Set("endAddress", value)
     if err != nil {

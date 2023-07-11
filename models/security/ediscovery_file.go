@@ -8,7 +8,7 @@ import (
 type EdiscoveryFile struct {
     File
 }
-// NewEdiscoveryFile instantiates a new EdiscoveryFile and sets the default values.
+// NewEdiscoveryFile instantiates a new ediscoveryFile and sets the default values.
 func NewEdiscoveryFile()(*EdiscoveryFile) {
     m := &EdiscoveryFile{
         File: *NewFile(),

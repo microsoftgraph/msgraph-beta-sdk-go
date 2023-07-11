@@ -7,6 +7,8 @@ import (
 // WindowsDriverUpdateProfileAssignment this entity contains the properties used to assign a windows driver update profile to a group.
 type WindowsDriverUpdateProfileAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsDriverUpdateProfileAssignment instantiates a new windowsDriverUpdateProfileAssignment and sets the default values.
 func NewWindowsDriverUpdateProfileAssignment()(*WindowsDriverUpdateProfileAssignment) {

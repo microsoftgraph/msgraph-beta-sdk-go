@@ -7,6 +7,8 @@ import (
 // MobileAppRelationship describes a relationship between two mobile apps.
 type MobileAppRelationship struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
 func NewMobileAppRelationship()(*MobileAppRelationship) {

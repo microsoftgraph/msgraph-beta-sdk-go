@@ -8,8 +8,10 @@ import (
 // WindowsUpdateState 
 type WindowsUpdateState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsUpdateState instantiates a new WindowsUpdateState and sets the default values.
+// NewWindowsUpdateState instantiates a new windowsUpdateState and sets the default values.
 func NewWindowsUpdateState()(*WindowsUpdateState) {
     m := &WindowsUpdateState{
         Entity: *NewEntity(),

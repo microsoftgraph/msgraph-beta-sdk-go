@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingAbstractImplementationConstraint 
+// DeviceManagementSettingAbstractImplementationConstraint constraint that enforces an AbstractComplex type has or is set to a particular value
 type DeviceManagementSettingAbstractImplementationConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingAbstractImplementationConstraint instantiates a new DeviceManagementSettingAbstractImplementationConstraint and sets the default values.
+// NewDeviceManagementSettingAbstractImplementationConstraint instantiates a new deviceManagementSettingAbstractImplementationConstraint and sets the default values.
 func NewDeviceManagementSettingAbstractImplementationConstraint()(*DeviceManagementSettingAbstractImplementationConstraint) {
     m := &DeviceManagementSettingAbstractImplementationConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

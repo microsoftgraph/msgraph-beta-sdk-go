@@ -8,7 +8,7 @@ import (
 type IpSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIpSecurityProfileCollectionResponse instantiates a new IpSecurityProfileCollectionResponse and sets the default values.
+// NewIpSecurityProfileCollectionResponse instantiates a new ipSecurityProfileCollectionResponse and sets the default values.
 func NewIpSecurityProfileCollectionResponse()(*IpSecurityProfileCollectionResponse) {
     m := &IpSecurityProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AospDeviceOwnerScepCertificateProfile 
+// AospDeviceOwnerScepCertificateProfile aOSP Device Owner SCEP certificate profile
 type AospDeviceOwnerScepCertificateProfile struct {
     AospDeviceOwnerCertificateProfileBase
 }
-// NewAospDeviceOwnerScepCertificateProfile instantiates a new AospDeviceOwnerScepCertificateProfile and sets the default values.
+// NewAospDeviceOwnerScepCertificateProfile instantiates a new aospDeviceOwnerScepCertificateProfile and sets the default values.
 func NewAospDeviceOwnerScepCertificateProfile()(*AospDeviceOwnerScepCertificateProfile) {
     m := &AospDeviceOwnerScepCertificateProfile{
         AospDeviceOwnerCertificateProfileBase: *NewAospDeviceOwnerCertificateProfileBase(),

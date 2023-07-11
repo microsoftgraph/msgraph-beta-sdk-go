@@ -8,7 +8,7 @@ import (
 type RecommendLabelAction struct {
     InformationProtectionAction
 }
-// NewRecommendLabelAction instantiates a new RecommendLabelAction and sets the default values.
+// NewRecommendLabelAction instantiates a new recommendLabelAction and sets the default values.
 func NewRecommendLabelAction()(*RecommendLabelAction) {
     m := &RecommendLabelAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -72,6 +72,16 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["responsibleSensitiveTypeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -99,6 +109,17 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RecommendLabelAction) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
 func (m *RecommendLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
@@ -147,6 +168,12 @@ func (m *RecommendLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResponsibleSensitiveTypeIds() != nil {
         err = writer.WriteCollectionOfStringValues("responsibleSensitiveTypeIds", m.GetResponsibleSensitiveTypeIds())
         if err != nil {
@@ -175,6 +202,13 @@ func (m *RecommendLabelAction) SetActionSource(value *ActionSource)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RecommendLabelAction) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
 func (m *RecommendLabelAction) SetResponsibleSensitiveTypeIds(value []string)() {
     err := m.GetBackingStore().Set("responsibleSensitiveTypeIds", value)
@@ -195,10 +229,12 @@ type RecommendLabelActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActions()([]InformationProtectionActionable)
     GetActionSource()(*ActionSource)
+    GetOdataType()(*string)
     GetResponsibleSensitiveTypeIds()([]string)
     GetSensitivityLabelId()(*string)
     SetActions(value []InformationProtectionActionable)()
     SetActionSource(value *ActionSource)()
+    SetOdataType(value *string)()
     SetResponsibleSensitiveTypeIds(value []string)()
     SetSensitivityLabelId(value *string)()
 }

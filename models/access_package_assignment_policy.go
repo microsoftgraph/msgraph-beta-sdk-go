@@ -8,6 +8,8 @@ import (
 // AccessPackageAssignmentPolicy 
 type AccessPackageAssignmentPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackageAssignmentPolicy instantiates a new accessPackageAssignmentPolicy and sets the default values.
 func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {

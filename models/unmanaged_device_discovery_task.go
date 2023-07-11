@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnmanagedDeviceDiscoveryTask 
+// UnmanagedDeviceDiscoveryTask this task derived type represents a list of unmanaged devices discovered in the network.
 type UnmanagedDeviceDiscoveryTask struct {
     DeviceAppManagementTask
 }
-// NewUnmanagedDeviceDiscoveryTask instantiates a new UnmanagedDeviceDiscoveryTask and sets the default values.
+// NewUnmanagedDeviceDiscoveryTask instantiates a new unmanagedDeviceDiscoveryTask and sets the default values.
 func NewUnmanagedDeviceDiscoveryTask()(*UnmanagedDeviceDiscoveryTask) {
     m := &UnmanagedDeviceDiscoveryTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),

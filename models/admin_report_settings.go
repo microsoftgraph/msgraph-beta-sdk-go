@@ -7,8 +7,10 @@ import (
 // AdminReportSettings 
 type AdminReportSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAdminReportSettings instantiates a new AdminReportSettings and sets the default values.
+// NewAdminReportSettings instantiates a new adminReportSettings and sets the default values.
 func NewAdminReportSettings()(*AdminReportSettings) {
     m := &AdminReportSettings{
         Entity: *NewEntity(),

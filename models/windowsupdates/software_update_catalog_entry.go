@@ -8,7 +8,7 @@ import (
 type SoftwareUpdateCatalogEntry struct {
     CatalogEntry
 }
-// NewSoftwareUpdateCatalogEntry instantiates a new SoftwareUpdateCatalogEntry and sets the default values.
+// NewSoftwareUpdateCatalogEntry instantiates a new softwareUpdateCatalogEntry and sets the default values.
 func NewSoftwareUpdateCatalogEntry()(*SoftwareUpdateCatalogEntry) {
     m := &SoftwareUpdateCatalogEntry{
         CatalogEntry: *NewCatalogEntry(),

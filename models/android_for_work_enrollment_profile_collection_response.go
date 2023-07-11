@@ -8,7 +8,7 @@ import (
 type AndroidForWorkEnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidForWorkEnrollmentProfileCollectionResponse instantiates a new AndroidForWorkEnrollmentProfileCollectionResponse and sets the default values.
+// NewAndroidForWorkEnrollmentProfileCollectionResponse instantiates a new androidForWorkEnrollmentProfileCollectionResponse and sets the default values.
 func NewAndroidForWorkEnrollmentProfileCollectionResponse()(*AndroidForWorkEnrollmentProfileCollectionResponse) {
     m := &AndroidForWorkEnrollmentProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

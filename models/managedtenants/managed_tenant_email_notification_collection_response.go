@@ -9,7 +9,7 @@ import (
 type ManagedTenantEmailNotificationCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagedTenantEmailNotificationCollectionResponse instantiates a new ManagedTenantEmailNotificationCollectionResponse and sets the default values.
+// NewManagedTenantEmailNotificationCollectionResponse instantiates a new managedTenantEmailNotificationCollectionResponse and sets the default values.
 func NewManagedTenantEmailNotificationCollectionResponse()(*ManagedTenantEmailNotificationCollectionResponse) {
     m := &ManagedTenantEmailNotificationCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

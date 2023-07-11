@@ -8,6 +8,8 @@ import (
 // OutlookTaskFolder 
 type OutlookTaskFolder struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOutlookTaskFolder instantiates a new outlookTaskFolder and sets the default values.
 func NewOutlookTaskFolder()(*OutlookTaskFolder) {

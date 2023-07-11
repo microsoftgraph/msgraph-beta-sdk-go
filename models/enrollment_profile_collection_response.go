@@ -8,7 +8,7 @@ import (
 type EnrollmentProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEnrollmentProfileCollectionResponse instantiates a new EnrollmentProfileCollectionResponse and sets the default values.
+// NewEnrollmentProfileCollectionResponse instantiates a new enrollmentProfileCollectionResponse and sets the default values.
 func NewEnrollmentProfileCollectionResponse()(*EnrollmentProfileCollectionResponse) {
     m := &EnrollmentProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

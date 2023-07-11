@@ -7,8 +7,10 @@ import (
 // DeviceManagementConfigurationSettingGroupDefinition 
 type DeviceManagementConfigurationSettingGroupDefinition struct {
     DeviceManagementConfigurationSettingDefinition
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationSettingGroupDefinition instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
+// NewDeviceManagementConfigurationSettingGroupDefinition instantiates a new deviceManagementConfigurationSettingGroupDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementConfigurationSettingGroupDefinition) {
     m := &DeviceManagementConfigurationSettingGroupDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),

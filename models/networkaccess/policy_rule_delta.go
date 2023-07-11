@@ -10,7 +10,7 @@ type PolicyRuleDelta struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPolicyRuleDelta instantiates a new PolicyRuleDelta and sets the default values.
+// NewPolicyRuleDelta instantiates a new policyRuleDelta and sets the default values.
 func NewPolicyRuleDelta()(*PolicyRuleDelta) {
     m := &PolicyRuleDelta{
     }
@@ -95,7 +95,7 @@ func (m *PolicyRuleDelta) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRuleId gets the ruleId property value. The ruleId property
+// GetRuleId gets the ruleId property value. The identifier of the policy rule to update.
 func (m *PolicyRuleDelta) GetRuleId()(*string) {
     val, err := m.GetBackingStore().Get("ruleId")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *PolicyRuleDelta) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRuleId sets the ruleId property value. The ruleId property
+// SetRuleId sets the ruleId property value. The identifier of the policy rule to update.
 func (m *PolicyRuleDelta) SetRuleId(value *string)() {
     err := m.GetBackingStore().Set("ruleId", value)
     if err != nil {

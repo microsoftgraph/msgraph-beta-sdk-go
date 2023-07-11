@@ -8,7 +8,7 @@ import (
 type TrainingLanguageDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTrainingLanguageDetailCollectionResponse instantiates a new TrainingLanguageDetailCollectionResponse and sets the default values.
+// NewTrainingLanguageDetailCollectionResponse instantiates a new trainingLanguageDetailCollectionResponse and sets the default values.
 func NewTrainingLanguageDetailCollectionResponse()(*TrainingLanguageDetailCollectionResponse) {
     m := &TrainingLanguageDetailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

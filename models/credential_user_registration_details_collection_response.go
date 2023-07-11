@@ -8,7 +8,7 @@ import (
 type CredentialUserRegistrationDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCredentialUserRegistrationDetailsCollectionResponse instantiates a new CredentialUserRegistrationDetailsCollectionResponse and sets the default values.
+// NewCredentialUserRegistrationDetailsCollectionResponse instantiates a new credentialUserRegistrationDetailsCollectionResponse and sets the default values.
 func NewCredentialUserRegistrationDetailsCollectionResponse()(*CredentialUserRegistrationDetailsCollectionResponse) {
     m := &CredentialUserRegistrationDetailsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

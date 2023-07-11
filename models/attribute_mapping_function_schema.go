@@ -7,6 +7,8 @@ import (
 // AttributeMappingFunctionSchema 
 type AttributeMappingFunctionSchema struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAttributeMappingFunctionSchema instantiates a new attributeMappingFunctionSchema and sets the default values.
 func NewAttributeMappingFunctionSchema()(*AttributeMappingFunctionSchema) {

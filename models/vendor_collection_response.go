@@ -8,7 +8,7 @@ import (
 type VendorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewVendorCollectionResponse instantiates a new VendorCollectionResponse and sets the default values.
+// NewVendorCollectionResponse instantiates a new vendorCollectionResponse and sets the default values.
 func NewVendorCollectionResponse()(*VendorCollectionResponse) {
     m := &VendorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

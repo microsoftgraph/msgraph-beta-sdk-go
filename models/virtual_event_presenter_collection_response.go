@@ -8,7 +8,7 @@ import (
 type VirtualEventPresenterCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewVirtualEventPresenterCollectionResponse instantiates a new VirtualEventPresenterCollectionResponse and sets the default values.
+// NewVirtualEventPresenterCollectionResponse instantiates a new virtualEventPresenterCollectionResponse and sets the default values.
 func NewVirtualEventPresenterCollectionResponse()(*VirtualEventPresenterCollectionResponse) {
     m := &VirtualEventPresenterCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

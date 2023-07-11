@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVpnConfiguration 
+// IosVpnConfiguration by providing the configurations in this profile you can instruct the iOS device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
 type IosVpnConfiguration struct {
     AppleVpnConfiguration
 }
-// NewIosVpnConfiguration instantiates a new IosVpnConfiguration and sets the default values.
+// NewIosVpnConfiguration instantiates a new iosVpnConfiguration and sets the default values.
 func NewIosVpnConfiguration()(*IosVpnConfiguration) {
     m := &IosVpnConfiguration{
         AppleVpnConfiguration: *NewAppleVpnConfiguration(),

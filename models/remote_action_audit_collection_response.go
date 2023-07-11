@@ -8,7 +8,7 @@ import (
 type RemoteActionAuditCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRemoteActionAuditCollectionResponse instantiates a new RemoteActionAuditCollectionResponse and sets the default values.
+// NewRemoteActionAuditCollectionResponse instantiates a new remoteActionAuditCollectionResponse and sets the default values.
 func NewRemoteActionAuditCollectionResponse()(*RemoteActionAuditCollectionResponse) {
     m := &RemoteActionAuditCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

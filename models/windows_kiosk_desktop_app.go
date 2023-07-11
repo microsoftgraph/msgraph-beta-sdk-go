@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskDesktopApp 
+// WindowsKioskDesktopApp the base class for a type of apps
 type WindowsKioskDesktopApp struct {
     WindowsKioskAppBase
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskDesktopApp instantiates a new WindowsKioskDesktopApp and sets the default values.
+// NewWindowsKioskDesktopApp instantiates a new windowsKioskDesktopApp and sets the default values.
 func NewWindowsKioskDesktopApp()(*WindowsKioskDesktopApp) {
     m := &WindowsKioskDesktopApp{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),

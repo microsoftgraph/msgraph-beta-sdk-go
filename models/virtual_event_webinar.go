@@ -8,7 +8,7 @@ import (
 type VirtualEventWebinar struct {
     VirtualEvent
 }
-// NewVirtualEventWebinar instantiates a new VirtualEventWebinar and sets the default values.
+// NewVirtualEventWebinar instantiates a new virtualEventWebinar and sets the default values.
 func NewVirtualEventWebinar()(*VirtualEventWebinar) {
     m := &VirtualEventWebinar{
         VirtualEvent: *NewVirtualEvent(),

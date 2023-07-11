@@ -7,8 +7,10 @@ import (
 // YearReferenceValue 
 type YearReferenceValue struct {
     ReferenceValue
+    // The OdataType property
+    OdataType *string
 }
-// NewYearReferenceValue instantiates a new YearReferenceValue and sets the default values.
+// NewYearReferenceValue instantiates a new yearReferenceValue and sets the default values.
 func NewYearReferenceValue()(*YearReferenceValue) {
     m := &YearReferenceValue{
         ReferenceValue: *NewReferenceValue(),

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationValueBoolean 
+// GroupPolicyPresentationValueBoolean the entity represents a Boolean value of a checkbox presentation on a policy definition.
 type GroupPolicyPresentationValueBoolean struct {
     GroupPolicyPresentationValue
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupPolicyPresentationValueBoolean instantiates a new GroupPolicyPresentationValueBoolean and sets the default values.
+// NewGroupPolicyPresentationValueBoolean instantiates a new groupPolicyPresentationValueBoolean and sets the default values.
 func NewGroupPolicyPresentationValueBoolean()(*GroupPolicyPresentationValueBoolean) {
     m := &GroupPolicyPresentationValueBoolean{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),

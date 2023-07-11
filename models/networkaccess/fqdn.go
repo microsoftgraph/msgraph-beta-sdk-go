@@ -8,7 +8,7 @@ import (
 type Fqdn struct {
     RuleDestination
 }
-// NewFqdn instantiates a new Fqdn and sets the default values.
+// NewFqdn instantiates a new fqdn and sets the default values.
 func NewFqdn()(*Fqdn) {
     m := &Fqdn{
         RuleDestination: *NewRuleDestination(),
@@ -24,6 +24,16 @@ func CreateFqdnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Fqdn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RuleDestination.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -36,7 +46,18 @@ func (m *Fqdn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Fqdn) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetValue gets the value property value. Defines the FQDN used in a destination for a rule.
 func (m *Fqdn) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -54,6 +75,12 @@ func (m *Fqdn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("value", m.GetValue())
         if err != nil {
             return err
@@ -61,7 +88,14 @@ func (m *Fqdn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Fqdn) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetValue sets the value property value. Defines the FQDN used in a destination for a rule.
 func (m *Fqdn) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
@@ -72,6 +106,8 @@ func (m *Fqdn) SetValue(value *string)() {
 type Fqdnable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RuleDestinationable
+    GetOdataType()(*string)
     GetValue()(*string)
+    SetOdataType(value *string)()
     SetValue(value *string)()
 }

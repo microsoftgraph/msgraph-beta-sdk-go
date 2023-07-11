@@ -9,7 +9,7 @@ import (
 type InboundFlow struct {
     IndustryDataActivity
 }
-// NewInboundFlow instantiates a new InboundFlow and sets the default values.
+// NewInboundFlow instantiates a new inboundFlow and sets the default values.
 func NewInboundFlow()(*InboundFlow) {
     m := &InboundFlow{
         IndustryDataActivity: *NewIndustryDataActivity(),

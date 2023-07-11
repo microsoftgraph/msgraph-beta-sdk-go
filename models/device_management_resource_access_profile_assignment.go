@@ -7,6 +7,8 @@ import (
 // DeviceManagementResourceAccessProfileAssignment entity that describes tenant level settings for derived credentials
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementResourceAccessProfileAssignment instantiates a new deviceManagementResourceAccessProfileAssignment and sets the default values.
 func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResourceAccessProfileAssignment) {

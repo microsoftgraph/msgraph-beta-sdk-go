@@ -8,7 +8,7 @@ import (
 type MobileAppProvisioningConfigGroupAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileAppProvisioningConfigGroupAssignmentCollectionResponse instantiates a new MobileAppProvisioningConfigGroupAssignmentCollectionResponse and sets the default values.
+// NewMobileAppProvisioningConfigGroupAssignmentCollectionResponse instantiates a new mobileAppProvisioningConfigGroupAssignmentCollectionResponse and sets the default values.
 func NewMobileAppProvisioningConfigGroupAssignmentCollectionResponse()(*MobileAppProvisioningConfigGroupAssignmentCollectionResponse) {
     m := &MobileAppProvisioningConfigGroupAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

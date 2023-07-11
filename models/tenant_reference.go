@@ -10,7 +10,7 @@ type TenantReference struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTenantReference instantiates a new TenantReference and sets the default values.
+// NewTenantReference instantiates a new tenantReference and sets the default values.
 func NewTenantReference()(*TenantReference) {
     m := &TenantReference{
     }

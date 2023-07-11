@@ -7,8 +7,10 @@ import (
 // AccessPackageAssignmentRequestCallbackData 
 type AccessPackageAssignmentRequestCallbackData struct {
     CustomExtensionData
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessPackageAssignmentRequestCallbackData instantiates a new AccessPackageAssignmentRequestCallbackData and sets the default values.
+// NewAccessPackageAssignmentRequestCallbackData instantiates a new accessPackageAssignmentRequestCallbackData and sets the default values.
 func NewAccessPackageAssignmentRequestCallbackData()(*AccessPackageAssignmentRequestCallbackData) {
     m := &AccessPackageAssignmentRequestCallbackData{
         CustomExtensionData: *NewCustomExtensionData(),

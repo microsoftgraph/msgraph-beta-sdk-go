@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsKioskActiveDirectoryGroup 
+// WindowsKioskActiveDirectoryGroup the class used to identify an Azure Directory group for the kiosk configuration
 type WindowsKioskActiveDirectoryGroup struct {
     WindowsKioskUser
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsKioskActiveDirectoryGroup instantiates a new WindowsKioskActiveDirectoryGroup and sets the default values.
+// NewWindowsKioskActiveDirectoryGroup instantiates a new windowsKioskActiveDirectoryGroup and sets the default values.
 func NewWindowsKioskActiveDirectoryGroup()(*WindowsKioskActiveDirectoryGroup) {
     m := &WindowsKioskActiveDirectoryGroup{
         WindowsKioskUser: *NewWindowsKioskUser(),

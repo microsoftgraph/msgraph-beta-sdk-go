@@ -7,8 +7,10 @@ import (
 // UserGovernanceCriteria 
 type UserGovernanceCriteria struct {
     GovernanceCriteria
+    // The OdataType property
+    OdataType *string
 }
-// NewUserGovernanceCriteria instantiates a new UserGovernanceCriteria and sets the default values.
+// NewUserGovernanceCriteria instantiates a new userGovernanceCriteria and sets the default values.
 func NewUserGovernanceCriteria()(*UserGovernanceCriteria) {
     m := &UserGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),

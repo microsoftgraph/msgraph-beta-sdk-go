@@ -8,7 +8,7 @@ import (
 type MeetingRegistrantBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMeetingRegistrantBaseCollectionResponse instantiates a new MeetingRegistrantBaseCollectionResponse and sets the default values.
+// NewMeetingRegistrantBaseCollectionResponse instantiates a new meetingRegistrantBaseCollectionResponse and sets the default values.
 func NewMeetingRegistrantBaseCollectionResponse()(*MeetingRegistrantBaseCollectionResponse) {
     m := &MeetingRegistrantBaseCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

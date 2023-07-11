@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileScepCertificateProfile 
+// AndroidWorkProfileScepCertificateProfile android Work Profile SCEP certificate profile
 type AndroidWorkProfileScepCertificateProfile struct {
     AndroidWorkProfileCertificateProfileBase
 }
-// NewAndroidWorkProfileScepCertificateProfile instantiates a new AndroidWorkProfileScepCertificateProfile and sets the default values.
+// NewAndroidWorkProfileScepCertificateProfile instantiates a new androidWorkProfileScepCertificateProfile and sets the default values.
 func NewAndroidWorkProfileScepCertificateProfile()(*AndroidWorkProfileScepCertificateProfile) {
     m := &AndroidWorkProfileScepCertificateProfile{
         AndroidWorkProfileCertificateProfileBase: *NewAndroidWorkProfileCertificateProfileBase(),

@@ -7,6 +7,8 @@ import (
 // HorizontalSectionColumn 
 type HorizontalSectionColumn struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewHorizontalSectionColumn instantiates a new horizontalSectionColumn and sets the default values.
 func NewHorizontalSectionColumn()(*HorizontalSectionColumn) {

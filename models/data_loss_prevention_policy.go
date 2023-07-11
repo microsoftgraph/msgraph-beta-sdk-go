@@ -7,6 +7,8 @@ import (
 // DataLossPreventionPolicy 
 type DataLossPreventionPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDataLossPreventionPolicy instantiates a new dataLossPreventionPolicy and sets the default values.
 func NewDataLossPreventionPolicy()(*DataLossPreventionPolicy) {

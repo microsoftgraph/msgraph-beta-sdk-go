@@ -9,7 +9,7 @@ import (
 type WindowsProtectionStateCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewWindowsProtectionStateCollectionResponse instantiates a new WindowsProtectionStateCollectionResponse and sets the default values.
+// NewWindowsProtectionStateCollectionResponse instantiates a new windowsProtectionStateCollectionResponse and sets the default values.
 func NewWindowsProtectionStateCollectionResponse()(*WindowsProtectionStateCollectionResponse) {
     m := &WindowsProtectionStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

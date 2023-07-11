@@ -8,7 +8,7 @@ import (
 type OutlookTaskGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOutlookTaskGroupCollectionResponse instantiates a new OutlookTaskGroupCollectionResponse and sets the default values.
+// NewOutlookTaskGroupCollectionResponse instantiates a new outlookTaskGroupCollectionResponse and sets the default values.
 func NewOutlookTaskGroupCollectionResponse()(*OutlookTaskGroupCollectionResponse) {
     m := &OutlookTaskGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

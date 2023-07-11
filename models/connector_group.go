@@ -7,6 +7,8 @@ import (
 // ConnectorGroup 
 type ConnectorGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConnectorGroup instantiates a new connectorGroup and sets the default values.
 func NewConnectorGroup()(*ConnectorGroup) {

@@ -7,6 +7,8 @@ import (
 // VerticalSection 
 type VerticalSection struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVerticalSection instantiates a new verticalSection and sets the default values.
 func NewVerticalSection()(*VerticalSection) {

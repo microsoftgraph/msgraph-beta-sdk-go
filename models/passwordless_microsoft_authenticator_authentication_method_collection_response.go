@@ -8,7 +8,7 @@ import (
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse and sets the default values.
+// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse) {
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,6 +8,8 @@ import (
 // PolicySetAssignment a class containing the properties used for PolicySet Assignment.
 type PolicySetAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPolicySetAssignment instantiates a new policySetAssignment and sets the default values.
 func NewPolicySetAssignment()(*PolicySetAssignment) {

@@ -7,6 +7,8 @@ import (
 // WindowsFeatureUpdateProfileAssignment this entity contains the properties used to assign a windows feature update profile to a group.
 type WindowsFeatureUpdateProfileAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsFeatureUpdateProfileAssignment instantiates a new windowsFeatureUpdateProfileAssignment and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignment()(*WindowsFeatureUpdateProfileAssignment) {

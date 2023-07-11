@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse instantiates a new UserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse instantiates a new userExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse()(*UserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse) {
     m := &UserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

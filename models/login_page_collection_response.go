@@ -8,7 +8,7 @@ import (
 type LoginPageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLoginPageCollectionResponse instantiates a new LoginPageCollectionResponse and sets the default values.
+// NewLoginPageCollectionResponse instantiates a new loginPageCollectionResponse and sets the default values.
 func NewLoginPageCollectionResponse()(*LoginPageCollectionResponse) {
     m := &LoginPageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

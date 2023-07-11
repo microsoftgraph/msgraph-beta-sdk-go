@@ -8,6 +8,8 @@ import (
 // LoginPage 
 type LoginPage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLoginPage instantiates a new loginPage and sets the default values.
 func NewLoginPage()(*LoginPage) {

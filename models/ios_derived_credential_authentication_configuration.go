@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosDerivedCredentialAuthenticationConfiguration 
+// IosDerivedCredentialAuthenticationConfiguration iOS Derived Credential profile.
 type IosDerivedCredentialAuthenticationConfiguration struct {
     DeviceConfiguration
 }
-// NewIosDerivedCredentialAuthenticationConfiguration instantiates a new IosDerivedCredentialAuthenticationConfiguration and sets the default values.
+// NewIosDerivedCredentialAuthenticationConfiguration instantiates a new iosDerivedCredentialAuthenticationConfiguration and sets the default values.
 func NewIosDerivedCredentialAuthenticationConfiguration()(*IosDerivedCredentialAuthenticationConfiguration) {
     m := &IosDerivedCredentialAuthenticationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

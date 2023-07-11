@@ -8,6 +8,8 @@ import (
 // ConfigManagerCollection a ConfigManager defined collection of devices or users.
 type ConfigManagerCollection struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConfigManagerCollection instantiates a new configManagerCollection and sets the default values.
 func NewConfigManagerCollection()(*ConfigManagerCollection) {

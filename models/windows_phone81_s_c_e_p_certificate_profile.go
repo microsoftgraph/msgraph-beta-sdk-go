@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81SCEPCertificateProfile 
+// WindowsPhone81SCEPCertificateProfile windows Phone 8.1+ SCEP certificate profile
 type WindowsPhone81SCEPCertificateProfile struct {
     WindowsPhone81CertificateProfileBase
 }
-// NewWindowsPhone81SCEPCertificateProfile instantiates a new WindowsPhone81SCEPCertificateProfile and sets the default values.
+// NewWindowsPhone81SCEPCertificateProfile instantiates a new windowsPhone81SCEPCertificateProfile and sets the default values.
 func NewWindowsPhone81SCEPCertificateProfile()(*WindowsPhone81SCEPCertificateProfile) {
     m := &WindowsPhone81SCEPCertificateProfile{
         WindowsPhone81CertificateProfileBase: *NewWindowsPhone81CertificateProfileBase(),

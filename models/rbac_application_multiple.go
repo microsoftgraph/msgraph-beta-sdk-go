@@ -7,8 +7,10 @@ import (
 // RbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewRbacApplicationMultiple instantiates a new RbacApplicationMultiple and sets the default values.
+// NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     m := &RbacApplicationMultiple{
         Entity: *NewEntity(),

@@ -11,7 +11,7 @@ import (
 type ConnectivityBranchesItemDeviceLinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityBranchesItemDeviceLinksRequestBuilderGetQueryParameters get deviceLinks from networkAccess
+// ConnectivityBranchesItemDeviceLinksRequestBuilderGetQueryParameters retrieve a list of device links associated with a specific branch.
 type ConnectivityBranchesItemDeviceLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewConnectivityBranchesItemDeviceLinksRequestBuilder(rawUrl string, request
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Count()(*ConnectivityBranchesItemDeviceLinksCountRequestBuilder) {
     return NewConnectivityBranchesItemDeviceLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get deviceLinks from networkAccess
+// Get retrieve a list of device links associated with a specific branch.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-list-devicelinks?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Get(ctx context.Cont
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkCollectionResponseable), nil
 }
-// Post create new navigation property to deviceLinks for networkAccess
+// Post create a branch site with associated device links.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-branchsite-post-devicelinks?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) Post(ctx context.Con
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToGetRequestInformation get deviceLinks from networkAccess
+// ToGetRequestInformation retrieve a list of device links associated with a specific branch.
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to deviceLinks for networkAccess
+// ToPostRequestInformation create a branch site with associated device links.
 func (m *ConnectivityBranchesItemDeviceLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

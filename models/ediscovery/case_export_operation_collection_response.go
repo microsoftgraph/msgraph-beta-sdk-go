@@ -9,7 +9,7 @@ import (
 type CaseExportOperationCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewCaseExportOperationCollectionResponse instantiates a new CaseExportOperationCollectionResponse and sets the default values.
+// NewCaseExportOperationCollectionResponse instantiates a new caseExportOperationCollectionResponse and sets the default values.
 func NewCaseExportOperationCollectionResponse()(*CaseExportOperationCollectionResponse) {
     m := &CaseExportOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // CredentialUserRegistrationCount 
 type CredentialUserRegistrationCount struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCredentialUserRegistrationCount instantiates a new CredentialUserRegistrationCount and sets the default values.
+// NewCredentialUserRegistrationCount instantiates a new credentialUserRegistrationCount and sets the default values.
 func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
     m := &CredentialUserRegistrationCount{
         Entity: *NewEntity(),

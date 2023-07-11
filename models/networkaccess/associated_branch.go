@@ -7,8 +7,10 @@ import (
 // AssociatedBranch 
 type AssociatedBranch struct {
     Association
+    // The OdataType property
+    OdataType *string
 }
-// NewAssociatedBranch instantiates a new AssociatedBranch and sets the default values.
+// NewAssociatedBranch instantiates a new associatedBranch and sets the default values.
 func NewAssociatedBranch()(*AssociatedBranch) {
     m := &AssociatedBranch{
         Association: *NewAssociation(),
@@ -21,7 +23,7 @@ func NewAssociatedBranch()(*AssociatedBranch) {
 func CreateAssociatedBranchFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssociatedBranch(), nil
 }
-// GetBranchId gets the branchId property value. The branchId property
+// GetBranchId gets the branchId property value. Identifier for the branch.
 func (m *AssociatedBranch) GetBranchId()(*string) {
     val, err := m.GetBackingStore().Get("branchId")
     if err != nil {
@@ -61,7 +63,7 @@ func (m *AssociatedBranch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetBranchId sets the branchId property value. The branchId property
+// SetBranchId sets the branchId property value. Identifier for the branch.
 func (m *AssociatedBranch) SetBranchId(value *string)() {
     err := m.GetBackingStore().Set("branchId", value)
     if err != nil {

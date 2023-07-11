@@ -8,7 +8,7 @@ import (
 type CloudPcExternalPartnerSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcExternalPartnerSettingCollectionResponse instantiates a new CloudPcExternalPartnerSettingCollectionResponse and sets the default values.
+// NewCloudPcExternalPartnerSettingCollectionResponse instantiates a new cloudPcExternalPartnerSettingCollectionResponse and sets the default values.
 func NewCloudPcExternalPartnerSettingCollectionResponse()(*CloudPcExternalPartnerSettingCollectionResponse) {
     m := &CloudPcExternalPartnerSettingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

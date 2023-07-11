@@ -8,7 +8,7 @@ import (
 type CallRecordingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCallRecordingCollectionResponse instantiates a new CallRecordingCollectionResponse and sets the default values.
+// NewCallRecordingCollectionResponse instantiates a new callRecordingCollectionResponse and sets the default values.
 func NewCallRecordingCollectionResponse()(*CallRecordingCollectionResponse) {
     m := &CallRecordingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

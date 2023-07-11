@@ -7,6 +7,8 @@ import (
 // AppleEnrollmentProfileAssignment an assignment of an Apple profile.
 type AppleEnrollmentProfileAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAppleEnrollmentProfileAssignment instantiates a new appleEnrollmentProfileAssignment and sets the default values.
 func NewAppleEnrollmentProfileAssignment()(*AppleEnrollmentProfileAssignment) {

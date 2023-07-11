@@ -7,8 +7,10 @@ import (
 // CloudPcCrossCloudGovernmentOrganizationMapping 
 type CloudPcCrossCloudGovernmentOrganizationMapping struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new CloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
+// NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new cloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
 func NewCloudPcCrossCloudGovernmentOrganizationMapping()(*CloudPcCrossCloudGovernmentOrganizationMapping) {
     m := &CloudPcCrossCloudGovernmentOrganizationMapping{
         Entity: *NewEntity(),

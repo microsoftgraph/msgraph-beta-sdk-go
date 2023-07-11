@@ -8,6 +8,8 @@ import (
 // SynchronizationTemplate 
 type SynchronizationTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {

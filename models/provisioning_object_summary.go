@@ -8,8 +8,10 @@ import (
 // ProvisioningObjectSummary 
 type ProvisioningObjectSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewProvisioningObjectSummary instantiates a new ProvisioningObjectSummary and sets the default values.
+// NewProvisioningObjectSummary instantiates a new provisioningObjectSummary and sets the default values.
 func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
     m := &ProvisioningObjectSummary{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type UrlThreatSubmission struct {
     ThreatSubmission
 }
-// NewUrlThreatSubmission instantiates a new UrlThreatSubmission and sets the default values.
+// NewUrlThreatSubmission instantiates a new urlThreatSubmission and sets the default values.
 func NewUrlThreatSubmission()(*UrlThreatSubmission) {
     m := &UrlThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),

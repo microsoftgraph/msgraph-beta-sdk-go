@@ -8,7 +8,7 @@ import (
 type DimensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDimensionCollectionResponse instantiates a new DimensionCollectionResponse and sets the default values.
+// NewDimensionCollectionResponse instantiates a new dimensionCollectionResponse and sets the default values.
 func NewDimensionCollectionResponse()(*DimensionCollectionResponse) {
     m := &DimensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

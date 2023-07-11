@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSExtensionsConfiguration 
+// MacOSExtensionsConfiguration macOS extensions configuration profile.
 type MacOSExtensionsConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSExtensionsConfiguration instantiates a new MacOSExtensionsConfiguration and sets the default values.
+// NewMacOSExtensionsConfiguration instantiates a new macOSExtensionsConfiguration and sets the default values.
 func NewMacOSExtensionsConfiguration()(*MacOSExtensionsConfiguration) {
     m := &MacOSExtensionsConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

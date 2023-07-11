@@ -8,7 +8,7 @@ import (
 type MobilityManagementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobilityManagementPolicyCollectionResponse instantiates a new MobilityManagementPolicyCollectionResponse and sets the default values.
+// NewMobilityManagementPolicyCollectionResponse instantiates a new mobilityManagementPolicyCollectionResponse and sets the default values.
 func NewMobilityManagementPolicyCollectionResponse()(*MobilityManagementPolicyCollectionResponse) {
     m := &MobilityManagementPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

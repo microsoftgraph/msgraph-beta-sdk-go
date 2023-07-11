@@ -8,6 +8,8 @@ import (
 // Training 
 type Training struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTraining instantiates a new training and sets the default values.
 func NewTraining()(*Training) {

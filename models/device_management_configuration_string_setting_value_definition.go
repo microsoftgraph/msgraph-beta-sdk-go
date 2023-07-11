@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationStringSettingValueDefinition 
+// DeviceManagementConfigurationStringSettingValueDefinition string constraints
 type DeviceManagementConfigurationStringSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
+// NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new deviceManagementConfigurationStringSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManagementConfigurationStringSettingValueDefinition) {
     m := &DeviceManagementConfigurationStringSettingValueDefinition{
         DeviceManagementConfigurationSettingValueDefinition: *NewDeviceManagementConfigurationSettingValueDefinition(),
@@ -136,7 +138,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret(
     }
     return nil
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string
+// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
     val, err := m.GetBackingStore().Get("maximumLength")
     if err != nil {
@@ -147,7 +149,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLe
     }
     return nil
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string
+// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
     val, err := m.GetBackingStore().Get("minimumLength")
     if err != nil {
@@ -231,14 +233,14 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(
         panic(err)
     }
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string
+// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
     err := m.GetBackingStore().Set("maximumLength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string
+// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
     err := m.GetBackingStore().Set("minimumLength", value)
     if err != nil {

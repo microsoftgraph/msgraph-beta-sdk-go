@@ -7,8 +7,10 @@ import (
 // DeletedChat 
 type DeletedChat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeletedChat instantiates a new DeletedChat and sets the default values.
+// NewDeletedChat instantiates a new deletedChat and sets the default values.
 func NewDeletedChat()(*DeletedChat) {
     m := &DeletedChat{
         Entity: *NewEntity(),

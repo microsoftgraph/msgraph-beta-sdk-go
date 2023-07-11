@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosRedirectSingleSignOnExtension 
+// IosRedirectSingleSignOnExtension represents a Redirect-type Single Sign-On extension profile for iOS devices.
 type IosRedirectSingleSignOnExtension struct {
     IosSingleSignOnExtension
+    // The OdataType property
+    OdataType *string
 }
-// NewIosRedirectSingleSignOnExtension instantiates a new IosRedirectSingleSignOnExtension and sets the default values.
+// NewIosRedirectSingleSignOnExtension instantiates a new iosRedirectSingleSignOnExtension and sets the default values.
 func NewIosRedirectSingleSignOnExtension()(*IosRedirectSingleSignOnExtension) {
     m := &IosRedirectSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),

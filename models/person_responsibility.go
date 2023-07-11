@@ -8,7 +8,7 @@ import (
 type PersonResponsibility struct {
     ItemFacet
 }
-// NewPersonResponsibility instantiates a new PersonResponsibility and sets the default values.
+// NewPersonResponsibility instantiates a new personResponsibility and sets the default values.
 func NewPersonResponsibility()(*PersonResponsibility) {
     m := &PersonResponsibility{
         ItemFacet: *NewItemFacet(),

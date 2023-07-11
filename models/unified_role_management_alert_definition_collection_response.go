@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementAlertDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleManagementAlertDefinitionCollectionResponse instantiates a new UnifiedRoleManagementAlertDefinitionCollectionResponse and sets the default values.
+// NewUnifiedRoleManagementAlertDefinitionCollectionResponse instantiates a new unifiedRoleManagementAlertDefinitionCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementAlertDefinitionCollectionResponse()(*UnifiedRoleManagementAlertDefinitionCollectionResponse) {
     m := &UnifiedRoleManagementAlertDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // AuthenticationEventsFlow 
 type AuthenticationEventsFlow struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAuthenticationEventsFlow instantiates a new authenticationEventsFlow and sets the default values.
 func NewAuthenticationEventsFlow()(*AuthenticationEventsFlow) {

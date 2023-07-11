@@ -7,8 +7,10 @@ import (
 // CredentialUsageSummary 
 type CredentialUsageSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCredentialUsageSummary instantiates a new CredentialUsageSummary and sets the default values.
+// NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),

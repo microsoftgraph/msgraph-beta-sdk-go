@@ -9,7 +9,7 @@ import (
 type SequentialActivationRenewalsAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewSequentialActivationRenewalsAlertIncident instantiates a new SequentialActivationRenewalsAlertIncident and sets the default values.
+// NewSequentialActivationRenewalsAlertIncident instantiates a new sequentialActivationRenewalsAlertIncident and sets the default values.
 func NewSequentialActivationRenewalsAlertIncident()(*SequentialActivationRenewalsAlertIncident) {
     m := &SequentialActivationRenewalsAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),

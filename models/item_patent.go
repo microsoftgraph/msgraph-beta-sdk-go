@@ -8,7 +8,7 @@ import (
 type ItemPatent struct {
     ItemFacet
 }
-// NewItemPatent instantiates a new ItemPatent and sets the default values.
+// NewItemPatent instantiates a new itemPatent and sets the default values.
 func NewItemPatent()(*ItemPatent) {
     m := &ItemPatent{
         ItemFacet: *NewItemFacet(),

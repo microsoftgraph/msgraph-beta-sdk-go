@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosStoreAppAssignmentSettings 
+// IosStoreAppAssignmentSettings contains properties used to assign an iOS Store mobile app to a group.
 type IosStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewIosStoreAppAssignmentSettings instantiates a new IosStoreAppAssignmentSettings and sets the default values.
+// NewIosStoreAppAssignmentSettings instantiates a new iosStoreAppAssignmentSettings and sets the default values.
 func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {
     m := &IosStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -31,6 +31,16 @@ func (m *IosStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetIsRemovable(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -74,6 +84,17 @@ func (m *IosStoreAppAssignmentSettings) GetIsRemovable()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosStoreAppAssignmentSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -123,6 +144,12 @@ func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("preventManagedAppBackup", m.GetPreventManagedAppBackup())
         if err != nil {
             return err
@@ -145,6 +172,13 @@ func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
 // SetIsRemovable sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosStoreAppAssignmentSettings) SetIsRemovable(value *bool)() {
     err := m.GetBackingStore().Set("isRemovable", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosStoreAppAssignmentSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -175,10 +209,12 @@ type IosStoreAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsRemovable()(*bool)
+    GetOdataType()(*string)
     GetPreventManagedAppBackup()(*bool)
     GetUninstallOnDeviceRemoval()(*bool)
     GetVpnConfigurationId()(*string)
     SetIsRemovable(value *bool)()
+    SetOdataType(value *string)()
     SetPreventManagedAppBackup(value *bool)()
     SetUninstallOnDeviceRemoval(value *bool)()
     SetVpnConfigurationId(value *string)()

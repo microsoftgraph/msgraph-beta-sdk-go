@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingAppConstraint 
+// DeviceManagementSettingAppConstraint constraint enforcing the setting contains only vaild app types.
 type DeviceManagementSettingAppConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementSettingAppConstraint instantiates a new DeviceManagementSettingAppConstraint and sets the default values.
+// NewDeviceManagementSettingAppConstraint instantiates a new deviceManagementSettingAppConstraint and sets the default values.
 func NewDeviceManagementSettingAppConstraint()(*DeviceManagementSettingAppConstraint) {
     m := &DeviceManagementSettingAppConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

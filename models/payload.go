@@ -8,6 +8,8 @@ import (
 // Payload 
 type Payload struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPayload instantiates a new payload and sets the default values.
 func NewPayload()(*Payload) {

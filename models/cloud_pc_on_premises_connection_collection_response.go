@@ -8,7 +8,7 @@ import (
 type CloudPcOnPremisesConnectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcOnPremisesConnectionCollectionResponse instantiates a new CloudPcOnPremisesConnectionCollectionResponse and sets the default values.
+// NewCloudPcOnPremisesConnectionCollectionResponse instantiates a new cloudPcOnPremisesConnectionCollectionResponse and sets the default values.
 func NewCloudPcOnPremisesConnectionCollectionResponse()(*CloudPcOnPremisesConnectionCollectionResponse) {
     m := &CloudPcOnPremisesConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

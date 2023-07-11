@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10NetworkBoundaryConfiguration 
+// Windows10NetworkBoundaryConfiguration windows10 Network Boundary Configuration
 type Windows10NetworkBoundaryConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10NetworkBoundaryConfiguration instantiates a new Windows10NetworkBoundaryConfiguration and sets the default values.
+// NewWindows10NetworkBoundaryConfiguration instantiates a new windows10NetworkBoundaryConfiguration and sets the default values.
 func NewWindows10NetworkBoundaryConfiguration()(*Windows10NetworkBoundaryConfiguration) {
     m := &Windows10NetworkBoundaryConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

@@ -8,8 +8,10 @@ import (
 // Logs 
 type Logs struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewLogs instantiates a new Logs and sets the default values.
+// NewLogs instantiates a new logs and sets the default values.
 func NewLogs()(*Logs) {
     m := &Logs{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -41,7 +43,7 @@ func (m *Logs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetTraffic gets the traffic property value. The traffic property
+// GetTraffic gets the traffic property value. Represents a collection of log entries in the network access traffic log.
 func (m *Logs) GetTraffic()([]NetworkAccessTrafficable) {
     val, err := m.GetBackingStore().Get("traffic")
     if err != nil {
@@ -72,7 +74,7 @@ func (m *Logs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetTraffic sets the traffic property value. The traffic property
+// SetTraffic sets the traffic property value. Represents a collection of log entries in the network access traffic log.
 func (m *Logs) SetTraffic(value []NetworkAccessTrafficable)() {
     err := m.GetBackingStore().Set("traffic", value)
     if err != nil {

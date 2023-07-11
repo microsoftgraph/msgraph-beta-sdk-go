@@ -8,6 +8,8 @@ import (
 // TeamsAppDefinition 
 type TeamsAppDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamsAppDefinition instantiates a new teamsAppDefinition and sets the default values.
 func NewTeamsAppDefinition()(*TeamsAppDefinition) {

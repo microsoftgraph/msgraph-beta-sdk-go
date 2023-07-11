@@ -9,7 +9,7 @@ import (
 type MyRoleCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewMyRoleCollectionResponse instantiates a new MyRoleCollectionResponse and sets the default values.
+// NewMyRoleCollectionResponse instantiates a new myRoleCollectionResponse and sets the default values.
 func NewMyRoleCollectionResponse()(*MyRoleCollectionResponse) {
     m := &MyRoleCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // DeviceManagementConfigurationSimpleSettingCollectionDefinition 
 type DeviceManagementConfigurationSimpleSettingCollectionDefinition struct {
     DeviceManagementConfigurationSimpleSettingDefinition
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationSimpleSettingCollectionDefinition instantiates a new DeviceManagementConfigurationSimpleSettingCollectionDefinition and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingCollectionDefinition instantiates a new deviceManagementConfigurationSimpleSettingCollectionDefinition and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingCollectionDefinition()(*DeviceManagementConfigurationSimpleSettingCollectionDefinition) {
     m := &DeviceManagementConfigurationSimpleSettingCollectionDefinition{
         DeviceManagementConfigurationSimpleSettingDefinition: *NewDeviceManagementConfigurationSimpleSettingDefinition(),

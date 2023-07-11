@@ -8,7 +8,7 @@ import (
 type IpApplicationSegment struct {
     ApplicationSegment
 }
-// NewIpApplicationSegment instantiates a new IpApplicationSegment and sets the default values.
+// NewIpApplicationSegment instantiates a new ipApplicationSegment and sets the default values.
 func NewIpApplicationSegment()(*IpApplicationSegment) {
     m := &IpApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),

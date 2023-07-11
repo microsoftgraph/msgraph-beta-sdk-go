@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComanagementAuthorityConfiguration 
+// DeviceComanagementAuthorityConfiguration windows 10 Co-Management Authority Page Configuration
 type DeviceComanagementAuthorityConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceComanagementAuthorityConfiguration instantiates a new DeviceComanagementAuthorityConfiguration and sets the default values.
+// NewDeviceComanagementAuthorityConfiguration instantiates a new deviceComanagementAuthorityConfiguration and sets the default values.
 func NewDeviceComanagementAuthorityConfiguration()(*DeviceComanagementAuthorityConfiguration) {
     m := &DeviceComanagementAuthorityConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),

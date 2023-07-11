@@ -7,6 +7,8 @@ import (
 // VirtualEndpoint 
 type VirtualEndpoint struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {

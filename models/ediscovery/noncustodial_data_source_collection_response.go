@@ -9,7 +9,7 @@ import (
 type NoncustodialDataSourceCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewNoncustodialDataSourceCollectionResponse instantiates a new NoncustodialDataSourceCollectionResponse and sets the default values.
+// NewNoncustodialDataSourceCollectionResponse instantiates a new noncustodialDataSourceCollectionResponse and sets the default values.
 func NewNoncustodialDataSourceCollectionResponse()(*NoncustodialDataSourceCollectionResponse) {
     m := &NoncustodialDataSourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

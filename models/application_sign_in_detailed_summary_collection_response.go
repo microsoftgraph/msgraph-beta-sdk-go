@@ -8,7 +8,7 @@ import (
 type ApplicationSignInDetailedSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApplicationSignInDetailedSummaryCollectionResponse instantiates a new ApplicationSignInDetailedSummaryCollectionResponse and sets the default values.
+// NewApplicationSignInDetailedSummaryCollectionResponse instantiates a new applicationSignInDetailedSummaryCollectionResponse and sets the default values.
 func NewApplicationSignInDetailedSummaryCollectionResponse()(*ApplicationSignInDetailedSummaryCollectionResponse) {
     m := &ApplicationSignInDetailedSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

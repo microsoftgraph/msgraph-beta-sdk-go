@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosLobAppProvisioningConfigurationPolicySetItem 
+// IosLobAppProvisioningConfigurationPolicySetItem a class containing the properties used for iOS lob app provisioning configuration PolicySetItem.
 type IosLobAppProvisioningConfigurationPolicySetItem struct {
     PolicySetItem
 }
-// NewIosLobAppProvisioningConfigurationPolicySetItem instantiates a new IosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
+// NewIosLobAppProvisioningConfigurationPolicySetItem instantiates a new iosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
 func NewIosLobAppProvisioningConfigurationPolicySetItem()(*IosLobAppProvisioningConfigurationPolicySetItem) {
     m := &IosLobAppProvisioningConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),

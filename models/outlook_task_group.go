@@ -8,6 +8,8 @@ import (
 // OutlookTaskGroup 
 type OutlookTaskGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOutlookTaskGroup instantiates a new outlookTaskGroup and sets the default values.
 func NewOutlookTaskGroup()(*OutlookTaskGroup) {

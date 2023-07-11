@@ -12,7 +12,7 @@ type SalesCreditMemo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesCreditMemo instantiates a new SalesCreditMemo and sets the default values.
+// NewSalesCreditMemo instantiates a new salesCreditMemo and sets the default values.
 func NewSalesCreditMemo()(*SalesCreditMemo) {
     m := &SalesCreditMemo{
     }

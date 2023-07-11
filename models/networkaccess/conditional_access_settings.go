@@ -8,8 +8,10 @@ import (
 // ConditionalAccessSettings 
 type ConditionalAccessSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewConditionalAccessSettings instantiates a new ConditionalAccessSettings and sets the default values.
+// NewConditionalAccessSettings instantiates a new conditionalAccessSettings and sets the default values.
 func NewConditionalAccessSettings()(*ConditionalAccessSettings) {
     m := &ConditionalAccessSettings{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

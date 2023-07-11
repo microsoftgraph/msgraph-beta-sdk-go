@@ -8,7 +8,7 @@ import (
 type TimeCardCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTimeCardCollectionResponse instantiates a new TimeCardCollectionResponse and sets the default values.
+// NewTimeCardCollectionResponse instantiates a new timeCardCollectionResponse and sets the default values.
 func NewTimeCardCollectionResponse()(*TimeCardCollectionResponse) {
     m := &TimeCardCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

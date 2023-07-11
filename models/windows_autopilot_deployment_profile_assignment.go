@@ -7,6 +7,8 @@ import (
 // WindowsAutopilotDeploymentProfileAssignment an assignment of a Windows Autopilot deployment profile to an AAD group.
 type WindowsAutopilotDeploymentProfileAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsAutopilotDeploymentProfileAssignment instantiates a new windowsAutopilotDeploymentProfileAssignment and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignment()(*WindowsAutopilotDeploymentProfileAssignment) {

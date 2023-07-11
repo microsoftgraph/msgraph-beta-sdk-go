@@ -8,7 +8,7 @@ import (
 type HorizontalSectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewHorizontalSectionCollectionResponse instantiates a new HorizontalSectionCollectionResponse and sets the default values.
+// NewHorizontalSectionCollectionResponse instantiates a new horizontalSectionCollectionResponse and sets the default values.
 func NewHorizontalSectionCollectionResponse()(*HorizontalSectionCollectionResponse) {
     m := &HorizontalSectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

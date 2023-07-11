@@ -8,8 +8,10 @@ import (
 // AppCredentialSignInActivity 
 type AppCredentialSignInActivity struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAppCredentialSignInActivity instantiates a new AppCredentialSignInActivity and sets the default values.
+// NewAppCredentialSignInActivity instantiates a new appCredentialSignInActivity and sets the default values.
 func NewAppCredentialSignInActivity()(*AppCredentialSignInActivity) {
     m := &AppCredentialSignInActivity{
         Entity: *NewEntity(),

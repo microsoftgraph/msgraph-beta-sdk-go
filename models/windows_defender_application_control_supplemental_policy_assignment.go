@@ -7,6 +7,8 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyAssignment a class containing the properties used for assignment of a WindowsDefenderApplicationControl supplemental policy to a group.
 type WindowsDefenderApplicationControlSupplementalPolicyAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyAssignment instantiates a new windowsDefenderApplicationControlSupplementalPolicyAssignment and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyAssignment()(*WindowsDefenderApplicationControlSupplementalPolicyAssignment) {

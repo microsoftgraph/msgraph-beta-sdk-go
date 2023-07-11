@@ -7,6 +7,8 @@ import (
 // VirtualEventPresenter 
 type VirtualEventPresenter struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVirtualEventPresenter instantiates a new virtualEventPresenter and sets the default values.
 func NewVirtualEventPresenter()(*VirtualEventPresenter) {

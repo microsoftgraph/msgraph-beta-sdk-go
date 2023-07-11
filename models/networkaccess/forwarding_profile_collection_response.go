@@ -9,7 +9,7 @@ import (
 type ForwardingProfileCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewForwardingProfileCollectionResponse instantiates a new ForwardingProfileCollectionResponse and sets the default values.
+// NewForwardingProfileCollectionResponse instantiates a new forwardingProfileCollectionResponse and sets the default values.
 func NewForwardingProfileCollectionResponse()(*ForwardingProfileCollectionResponse) {
     m := &ForwardingProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

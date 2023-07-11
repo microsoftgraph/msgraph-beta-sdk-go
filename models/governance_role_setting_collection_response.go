@@ -8,7 +8,7 @@ import (
 type GovernanceRoleSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGovernanceRoleSettingCollectionResponse instantiates a new GovernanceRoleSettingCollectionResponse and sets the default values.
+// NewGovernanceRoleSettingCollectionResponse instantiates a new governanceRoleSettingCollectionResponse and sets the default values.
 func NewGovernanceRoleSettingCollectionResponse()(*GovernanceRoleSettingCollectionResponse) {
     m := &GovernanceRoleSettingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

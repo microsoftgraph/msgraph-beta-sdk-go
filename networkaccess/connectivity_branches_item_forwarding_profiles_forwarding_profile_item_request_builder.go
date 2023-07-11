@@ -18,7 +18,7 @@ type ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters get forwardingProfiles from networkAccess
+// ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters each forwarding profile associated with a branch site is specified. Supports $expand.
 type ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     }
     return nil
 }
-// Get get forwardingProfiles from networkAccess
+// Get each forwarding profile associated with a branch site is specified. Supports $expand.
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get forwardingProfiles from networkAccess
+// ToGetRequestInformation each forwarding profile associated with a branch site is specified. Supports $expand.
 func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81AppX 
+// WindowsPhone81AppX contains properties and inherited properties for Windows Phone 8.1 AppX Line Of Business apps. Inherits from graph.mobileLobApp. Will be deprecated in February 2023.
 type WindowsPhone81AppX struct {
     MobileLobApp
 }
-// NewWindowsPhone81AppX instantiates a new WindowsPhone81AppX and sets the default values.
+// NewWindowsPhone81AppX instantiates a new windowsPhone81AppX and sets the default values.
 func NewWindowsPhone81AppX()(*WindowsPhone81AppX) {
     m := &WindowsPhone81AppX{
         MobileLobApp: *NewMobileLobApp(),

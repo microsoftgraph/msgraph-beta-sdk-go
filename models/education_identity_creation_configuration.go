@@ -7,8 +7,10 @@ import (
 // EducationIdentityCreationConfiguration 
 type EducationIdentityCreationConfiguration struct {
     EducationIdentitySynchronizationConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationIdentityCreationConfiguration instantiates a new EducationIdentityCreationConfiguration and sets the default values.
+// NewEducationIdentityCreationConfiguration instantiates a new educationIdentityCreationConfiguration and sets the default values.
 func NewEducationIdentityCreationConfiguration()(*EducationIdentityCreationConfiguration) {
     m := &EducationIdentityCreationConfiguration{
         EducationIdentitySynchronizationConfiguration: *NewEducationIdentitySynchronizationConfiguration(),

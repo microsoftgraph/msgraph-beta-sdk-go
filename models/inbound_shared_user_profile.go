@@ -10,7 +10,7 @@ type InboundSharedUserProfile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewInboundSharedUserProfile instantiates a new InboundSharedUserProfile and sets the default values.
+// NewInboundSharedUserProfile instantiates a new inboundSharedUserProfile and sets the default values.
 func NewInboundSharedUserProfile()(*InboundSharedUserProfile) {
     m := &InboundSharedUserProfile{
     }

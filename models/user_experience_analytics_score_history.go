@@ -8,6 +8,8 @@ import (
 // UserExperienceAnalyticsScoreHistory the user experience analytics device startup score history.
 type UserExperienceAnalyticsScoreHistory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsScoreHistory instantiates a new userExperienceAnalyticsScoreHistory and sets the default values.
 func NewUserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHistory) {

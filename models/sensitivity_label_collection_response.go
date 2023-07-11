@@ -8,7 +8,7 @@ import (
 type SensitivityLabelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSensitivityLabelCollectionResponse instantiates a new SensitivityLabelCollectionResponse and sets the default values.
+// NewSensitivityLabelCollectionResponse instantiates a new sensitivityLabelCollectionResponse and sets the default values.
 func NewSensitivityLabelCollectionResponse()(*SensitivityLabelCollectionResponse) {
     m := &SensitivityLabelCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

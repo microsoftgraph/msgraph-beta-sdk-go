@@ -8,6 +8,8 @@ import (
 // EmbeddedSIMDeviceState describes the embedded SIM activation code deployment state in relation to a device.
 type EmbeddedSIMDeviceState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEmbeddedSIMDeviceState instantiates a new embeddedSIMDeviceState and sets the default values.
 func NewEmbeddedSIMDeviceState()(*EmbeddedSIMDeviceState) {

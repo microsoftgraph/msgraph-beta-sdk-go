@@ -7,8 +7,10 @@ import (
 // AccessPackageUserDirectoryAttributeStore 
 type AccessPackageUserDirectoryAttributeStore struct {
     AccessPackageResourceAttributeDestination
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessPackageUserDirectoryAttributeStore instantiates a new AccessPackageUserDirectoryAttributeStore and sets the default values.
+// NewAccessPackageUserDirectoryAttributeStore instantiates a new accessPackageUserDirectoryAttributeStore and sets the default values.
 func NewAccessPackageUserDirectoryAttributeStore()(*AccessPackageUserDirectoryAttributeStore) {
     m := &AccessPackageUserDirectoryAttributeStore{
         AccessPackageResourceAttributeDestination: *NewAccessPackageResourceAttributeDestination(),

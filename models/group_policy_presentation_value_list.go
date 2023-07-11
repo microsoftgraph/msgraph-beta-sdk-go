@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationValueList 
+// GroupPolicyPresentationValueList the entity represents a collection of name/value pairs of a list box presentation on a policy definition.
 type GroupPolicyPresentationValueList struct {
     GroupPolicyPresentationValue
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupPolicyPresentationValueList instantiates a new GroupPolicyPresentationValueList and sets the default values.
+// NewGroupPolicyPresentationValueList instantiates a new groupPolicyPresentationValueList and sets the default values.
 func NewGroupPolicyPresentationValueList()(*GroupPolicyPresentationValueList) {
     m := &GroupPolicyPresentationValueList{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),

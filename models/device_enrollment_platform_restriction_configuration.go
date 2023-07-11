@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentPlatformRestrictionConfiguration 
+// DeviceEnrollmentPlatformRestrictionConfiguration device Enrollment Configuration that restricts the types of devices a user can enroll for a single platform
 type DeviceEnrollmentPlatformRestrictionConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
+// NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new deviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlatformRestrictionConfiguration) {
     m := &DeviceEnrollmentPlatformRestrictionConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),

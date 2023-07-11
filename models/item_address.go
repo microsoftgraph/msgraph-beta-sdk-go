@@ -8,7 +8,7 @@ import (
 type ItemAddress struct {
     ItemFacet
 }
-// NewItemAddress instantiates a new ItemAddress and sets the default values.
+// NewItemAddress instantiates a new itemAddress and sets the default values.
 func NewItemAddress()(*ItemAddress) {
     m := &ItemAddress{
         ItemFacet: *NewItemFacet(),

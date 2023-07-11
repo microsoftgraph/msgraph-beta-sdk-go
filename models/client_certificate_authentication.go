@@ -7,8 +7,10 @@ import (
 // ClientCertificateAuthentication 
 type ClientCertificateAuthentication struct {
     ApiAuthenticationConfigurationBase
+    // The OdataType property
+    OdataType *string
 }
-// NewClientCertificateAuthentication instantiates a new ClientCertificateAuthentication and sets the default values.
+// NewClientCertificateAuthentication instantiates a new clientCertificateAuthentication and sets the default values.
 func NewClientCertificateAuthentication()(*ClientCertificateAuthentication) {
     m := &ClientCertificateAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),

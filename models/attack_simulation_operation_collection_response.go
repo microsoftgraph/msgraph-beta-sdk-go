@@ -8,7 +8,7 @@ import (
 type AttackSimulationOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAttackSimulationOperationCollectionResponse instantiates a new AttackSimulationOperationCollectionResponse and sets the default values.
+// NewAttackSimulationOperationCollectionResponse instantiates a new attackSimulationOperationCollectionResponse and sets the default values.
 func NewAttackSimulationOperationCollectionResponse()(*AttackSimulationOperationCollectionResponse) {
     m := &AttackSimulationOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

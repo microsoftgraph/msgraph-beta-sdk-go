@@ -95,6 +95,16 @@ func (m *PrivilegedAccessSchedule) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scheduleInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
@@ -125,6 +135,17 @@ func (m *PrivilegedAccessSchedule) GetModifiedDateTime()(*i336074805fc853987abe6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrivilegedAccessSchedule) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -175,6 +196,12 @@ func (m *PrivilegedAccessSchedule) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("scheduleInfo", m.GetScheduleInfo())
         if err != nil {
             return err
@@ -209,6 +236,13 @@ func (m *PrivilegedAccessSchedule) SetModifiedDateTime(value *i336074805fc853987
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrivilegedAccessSchedule) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScheduleInfo sets the scheduleInfo property value. Represents the period of the access assignment or eligibility. The scheduleInfo can represent a single occurrence or multiple recurring instances. Required.
 func (m *PrivilegedAccessSchedule) SetScheduleInfo(value RequestScheduleable)() {
     err := m.GetBackingStore().Set("scheduleInfo", value)
@@ -230,11 +264,13 @@ type PrivilegedAccessScheduleable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedUsing()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetScheduleInfo()(RequestScheduleable)
     GetStatus()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedUsing(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetScheduleInfo(value RequestScheduleable)()
     SetStatus(value *string)()
 }

@@ -7,6 +7,8 @@ import (
 // MobileAppIntentAndState mobileApp Intent and Install State for a given device.
 type MobileAppIntentAndState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppIntentAndState instantiates a new mobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {

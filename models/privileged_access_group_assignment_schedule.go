@@ -7,8 +7,10 @@ import (
 // PrivilegedAccessGroupAssignmentSchedule 
 type PrivilegedAccessGroupAssignmentSchedule struct {
     PrivilegedAccessSchedule
+    // The OdataType property
+    OdataType *string
 }
-// NewPrivilegedAccessGroupAssignmentSchedule instantiates a new PrivilegedAccessGroupAssignmentSchedule and sets the default values.
+// NewPrivilegedAccessGroupAssignmentSchedule instantiates a new privilegedAccessGroupAssignmentSchedule and sets the default values.
 func NewPrivilegedAccessGroupAssignmentSchedule()(*PrivilegedAccessGroupAssignmentSchedule) {
     m := &PrivilegedAccessGroupAssignmentSchedule{
         PrivilegedAccessSchedule: *NewPrivilegedAccessSchedule(),

@@ -7,8 +7,10 @@ import (
 // EducationSynchronizationOAuth1ConnectionSettings 
 type EducationSynchronizationOAuth1ConnectionSettings struct {
     EducationSynchronizationConnectionSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationSynchronizationOAuth1ConnectionSettings instantiates a new EducationSynchronizationOAuth1ConnectionSettings and sets the default values.
+// NewEducationSynchronizationOAuth1ConnectionSettings instantiates a new educationSynchronizationOAuth1ConnectionSettings and sets the default values.
 func NewEducationSynchronizationOAuth1ConnectionSettings()(*EducationSynchronizationOAuth1ConnectionSettings) {
     m := &EducationSynchronizationOAuth1ConnectionSettings{
         EducationSynchronizationConnectionSettings: *NewEducationSynchronizationConnectionSettings(),

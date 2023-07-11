@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppFileSystemDetection 
+// Win32LobAppFileSystemDetection contains file or folder path to detect a Win32 App
 type Win32LobAppFileSystemDetection struct {
     Win32LobAppDetection
 }
-// NewWin32LobAppFileSystemDetection instantiates a new Win32LobAppFileSystemDetection and sets the default values.
+// NewWin32LobAppFileSystemDetection instantiates a new win32LobAppFileSystemDetection and sets the default values.
 func NewWin32LobAppFileSystemDetection()(*Win32LobAppFileSystemDetection) {
     m := &Win32LobAppFileSystemDetection{
         Win32LobAppDetection: *NewWin32LobAppDetection(),
@@ -97,6 +97,16 @@ func (m *Win32LobAppFileSystemDetection) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWin32LobAppDetectionOperator)
         if err != nil {
@@ -122,6 +132,17 @@ func (m *Win32LobAppFileSystemDetection) GetFieldDeserializers()(map[string]func
 // GetFileOrFolderName gets the fileOrFolderName property value. The file or folder name to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppFileSystemDetection) GetFileOrFolderName()(*string) {
     val, err := m.GetBackingStore().Get("fileOrFolderName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppFileSystemDetection) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -183,6 +204,12 @@ func (m *Win32LobAppFileSystemDetection) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperator() != nil {
         cast := (*m.GetOperator()).String()
         err = writer.WriteStringValue("operator", &cast)
@@ -226,6 +253,13 @@ func (m *Win32LobAppFileSystemDetection) SetFileOrFolderName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppFileSystemDetection) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperator sets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppFileSystemDetection) SetOperator(value *Win32LobAppDetectionOperator)() {
     err := m.GetBackingStore().Set("operator", value)
@@ -248,12 +282,14 @@ type Win32LobAppFileSystemDetectionable interface {
     GetDetectionType()(*Win32LobAppFileSystemDetectionType)
     GetDetectionValue()(*string)
     GetFileOrFolderName()(*string)
+    GetOdataType()(*string)
     GetOperator()(*Win32LobAppDetectionOperator)
     GetPath()(*string)
     SetCheck32BitOn64System(value *bool)()
     SetDetectionType(value *Win32LobAppFileSystemDetectionType)()
     SetDetectionValue(value *string)()
     SetFileOrFolderName(value *string)()
+    SetOdataType(value *string)()
     SetOperator(value *Win32LobAppDetectionOperator)()
     SetPath(value *string)()
 }

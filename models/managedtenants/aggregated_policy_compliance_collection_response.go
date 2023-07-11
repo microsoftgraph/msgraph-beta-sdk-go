@@ -9,7 +9,7 @@ import (
 type AggregatedPolicyComplianceCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewAggregatedPolicyComplianceCollectionResponse instantiates a new AggregatedPolicyComplianceCollectionResponse and sets the default values.
+// NewAggregatedPolicyComplianceCollectionResponse instantiates a new aggregatedPolicyComplianceCollectionResponse and sets the default values.
 func NewAggregatedPolicyComplianceCollectionResponse()(*AggregatedPolicyComplianceCollectionResponse) {
     m := &AggregatedPolicyComplianceCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

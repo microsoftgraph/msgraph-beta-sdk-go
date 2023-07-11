@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementEnumConstraint 
+// DeviceManagementEnumConstraint constraint that enforces the setting value is from a permitted set of strings
 type DeviceManagementEnumConstraint struct {
     DeviceManagementConstraint
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementEnumConstraint instantiates a new DeviceManagementEnumConstraint and sets the default values.
+// NewDeviceManagementEnumConstraint instantiates a new deviceManagementEnumConstraint and sets the default values.
 func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {
     m := &DeviceManagementEnumConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),

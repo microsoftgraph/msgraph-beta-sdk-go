@@ -404,6 +404,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthoredNote(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.azureADAuthentication":
+                        return NewAzureADAuthentication(), nil
                     case "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile":
                         return NewAzureADWindowsAutopilotDeploymentProfile(), nil
                     case "#microsoft.graph.azureCommunicationServicesUserConversationMember":
@@ -448,6 +450,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBrowserSiteList(), nil
                     case "#microsoft.graph.builtInIdentityProvider":
                         return NewBuiltInIdentityProvider(), nil
+                    case "#microsoft.graph.bulkUpload":
+                        return NewBulkUpload(), nil
                     case "#microsoft.graph.businessFlow":
                         return NewBusinessFlow(), nil
                     case "#microsoft.graph.businessFlowTemplate":
@@ -1782,6 +1786,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPayloadCompatibleAssignmentFilter(), nil
                     case "#microsoft.graph.payloadResponse":
                         return NewPayloadResponse(), nil
+                    case "#microsoft.graph.peopleAdminSettings":
+                        return NewPeopleAdminSettings(), nil
                     case "#microsoft.graph.permission":
                         return NewPermission(), nil
                     case "#microsoft.graph.permissionGrantConditionSet":
@@ -2100,6 +2106,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServiceHealth(), nil
                     case "#microsoft.graph.serviceHealthIssue":
                         return NewServiceHealthIssue(), nil
+                    case "#microsoft.graph.serviceLevelAgreementRoot":
+                        return NewServiceLevelAgreementRoot(), nil
                     case "#microsoft.graph.serviceNowConnection":
                         return NewServiceNowConnection(), nil
                     case "#microsoft.graph.servicePrincipal":

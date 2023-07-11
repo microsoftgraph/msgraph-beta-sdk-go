@@ -7,8 +7,10 @@ import (
 // NoTrainingSetting 
 type NoTrainingSetting struct {
     TrainingSetting
+    // The OdataType property
+    OdataType *string
 }
-// NewNoTrainingSetting instantiates a new NoTrainingSetting and sets the default values.
+// NewNoTrainingSetting instantiates a new noTrainingSetting and sets the default values.
 func NewNoTrainingSetting()(*NoTrainingSetting) {
     m := &NoTrainingSetting{
         TrainingSetting: *NewTrainingSetting(),

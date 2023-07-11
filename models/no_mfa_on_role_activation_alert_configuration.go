@@ -8,7 +8,7 @@ import (
 type NoMfaOnRoleActivationAlertConfiguration struct {
     UnifiedRoleManagementAlertConfiguration
 }
-// NewNoMfaOnRoleActivationAlertConfiguration instantiates a new NoMfaOnRoleActivationAlertConfiguration and sets the default values.
+// NewNoMfaOnRoleActivationAlertConfiguration instantiates a new noMfaOnRoleActivationAlertConfiguration and sets the default values.
 func NewNoMfaOnRoleActivationAlertConfiguration()(*NoMfaOnRoleActivationAlertConfiguration) {
     m := &NoMfaOnRoleActivationAlertConfiguration{
         UnifiedRoleManagementAlertConfiguration: *NewUnifiedRoleManagementAlertConfiguration(),

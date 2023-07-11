@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceSetupConfiguration 
+// DeviceSetupConfiguration this is the base class for Setup Configuration. Setup configurations are platform specific and individual per-platform setup configurations inherit from here.
 type DeviceSetupConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceSetupConfiguration instantiates a new DeviceSetupConfiguration and sets the default values.
+// NewDeviceSetupConfiguration instantiates a new deviceSetupConfiguration and sets the default values.
 func NewDeviceSetupConfiguration()(*DeviceSetupConfiguration) {
     m := &DeviceSetupConfiguration{
         Entity: *NewEntity(),

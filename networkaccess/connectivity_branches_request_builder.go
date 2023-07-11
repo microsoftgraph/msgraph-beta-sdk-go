@@ -11,7 +11,7 @@ import (
 type ConnectivityBranchesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityBranchesRequestBuilderGetQueryParameters get branches from networkAccess
+// ConnectivityBranchesRequestBuilderGetQueryParameters retrieve a list of branches within a tenant connected to the Global Secure Access services.
 type ConnectivityBranchesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewConnectivityBranchesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ConnectivityBranchesRequestBuilder) Count()(*ConnectivityBranchesCountRequestBuilder) {
     return NewConnectivityBranchesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get branches from networkAccess
+// Get retrieve a list of branches within a tenant connected to the Global Secure Access services.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-1.0
 func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable), nil
 }
-// Post create new navigation property to branches for networkAccess
+// Post create a new branch.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-1.0
 func (m *ConnectivityBranchesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ConnectivityBranchesRequestBuilder) Post(ctx context.Context, body i43e
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// ToGetRequestInformation get branches from networkAccess
+// ToGetRequestInformation retrieve a list of branches within a tenant connected to the Global Secure Access services.
 func (m *ConnectivityBranchesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ConnectivityBranchesRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to branches for networkAccess
+// ToPostRequestInformation create a new branch.
 func (m *ConnectivityBranchesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

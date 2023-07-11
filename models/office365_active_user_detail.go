@@ -7,8 +7,10 @@ import (
 // Office365ActiveUserDetail 
 type Office365ActiveUserDetail struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewOffice365ActiveUserDetail instantiates a new Office365ActiveUserDetail and sets the default values.
+// NewOffice365ActiveUserDetail instantiates a new office365ActiveUserDetail and sets the default values.
 func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
     m := &Office365ActiveUserDetail{
         Entity: *NewEntity(),

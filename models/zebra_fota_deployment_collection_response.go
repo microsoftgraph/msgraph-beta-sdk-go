@@ -8,7 +8,7 @@ import (
 type ZebraFotaDeploymentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewZebraFotaDeploymentCollectionResponse instantiates a new ZebraFotaDeploymentCollectionResponse and sets the default values.
+// NewZebraFotaDeploymentCollectionResponse instantiates a new zebraFotaDeploymentCollectionResponse and sets the default values.
 func NewZebraFotaDeploymentCollectionResponse()(*ZebraFotaDeploymentCollectionResponse) {
     m := &ZebraFotaDeploymentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

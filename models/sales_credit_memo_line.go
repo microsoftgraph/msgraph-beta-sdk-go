@@ -8,8 +8,10 @@ import (
 // SalesCreditMemoLine 
 type SalesCreditMemoLine struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSalesCreditMemoLine instantiates a new SalesCreditMemoLine and sets the default values.
+// NewSalesCreditMemoLine instantiates a new salesCreditMemoLine and sets the default values.
 func NewSalesCreditMemoLine()(*SalesCreditMemoLine) {
     m := &SalesCreditMemoLine{
         Entity: *NewEntity(),

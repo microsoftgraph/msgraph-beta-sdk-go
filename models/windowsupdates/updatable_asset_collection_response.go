@@ -9,7 +9,7 @@ import (
 type UpdatableAssetCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewUpdatableAssetCollectionResponse instantiates a new UpdatableAssetCollectionResponse and sets the default values.
+// NewUpdatableAssetCollectionResponse instantiates a new updatableAssetCollectionResponse and sets the default values.
 func NewUpdatableAssetCollectionResponse()(*UpdatableAssetCollectionResponse) {
     m := &UpdatableAssetCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

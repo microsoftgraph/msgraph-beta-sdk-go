@@ -8,6 +8,8 @@ import (
 // DeviceManagementCachedReportConfiguration entity representing the configuration of a cached report
 type DeviceManagementCachedReportConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementCachedReportConfiguration instantiates a new deviceManagementCachedReportConfiguration and sets the default values.
 func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedReportConfiguration) {

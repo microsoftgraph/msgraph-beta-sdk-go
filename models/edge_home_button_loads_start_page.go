@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdgeHomeButtonLoadsStartPage 
+// EdgeHomeButtonLoadsStartPage show the home button; clicking the home button loads the Start page - this is also the default value.
 type EdgeHomeButtonLoadsStartPage struct {
     EdgeHomeButtonConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewEdgeHomeButtonLoadsStartPage instantiates a new EdgeHomeButtonLoadsStartPage and sets the default values.
+// NewEdgeHomeButtonLoadsStartPage instantiates a new edgeHomeButtonLoadsStartPage and sets the default values.
 func NewEdgeHomeButtonLoadsStartPage()(*EdgeHomeButtonLoadsStartPage) {
     m := &EdgeHomeButtonLoadsStartPage{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),

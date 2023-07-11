@@ -8,7 +8,7 @@ import (
 type EvaluateLabelJobResponse struct {
     JobResponseBase
 }
-// NewEvaluateLabelJobResponse instantiates a new EvaluateLabelJobResponse and sets the default values.
+// NewEvaluateLabelJobResponse instantiates a new evaluateLabelJobResponse and sets the default values.
 func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
     m := &EvaluateLabelJobResponse{
         JobResponseBase: *NewJobResponseBase(),

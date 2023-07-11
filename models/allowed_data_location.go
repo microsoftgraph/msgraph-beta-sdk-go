@@ -7,8 +7,10 @@ import (
 // AllowedDataLocation 
 type AllowedDataLocation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAllowedDataLocation instantiates a new AllowedDataLocation and sets the default values.
+// NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
     m := &AllowedDataLocation{
         Entity: *NewEntity(),

@@ -9,7 +9,7 @@ import (
 type ManagementTemplateStepCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagementTemplateStepCollectionResponse instantiates a new ManagementTemplateStepCollectionResponse and sets the default values.
+// NewManagementTemplateStepCollectionResponse instantiates a new managementTemplateStepCollectionResponse and sets the default values.
 func NewManagementTemplateStepCollectionResponse()(*ManagementTemplateStepCollectionResponse) {
     m := &ManagementTemplateStepCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

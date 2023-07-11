@@ -8,7 +8,7 @@ import (
 type NotificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewNotificationCollectionResponse instantiates a new NotificationCollectionResponse and sets the default values.
+// NewNotificationCollectionResponse instantiates a new notificationCollectionResponse and sets the default values.
 func NewNotificationCollectionResponse()(*NotificationCollectionResponse) {
     m := &NotificationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

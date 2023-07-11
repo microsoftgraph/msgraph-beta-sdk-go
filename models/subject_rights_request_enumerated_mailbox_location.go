@@ -7,8 +7,10 @@ import (
 // SubjectRightsRequestEnumeratedMailboxLocation 
 type SubjectRightsRequestEnumeratedMailboxLocation struct {
     SubjectRightsRequestMailboxLocation
+    // The OdataType property
+    OdataType *string
 }
-// NewSubjectRightsRequestEnumeratedMailboxLocation instantiates a new SubjectRightsRequestEnumeratedMailboxLocation and sets the default values.
+// NewSubjectRightsRequestEnumeratedMailboxLocation instantiates a new subjectRightsRequestEnumeratedMailboxLocation and sets the default values.
 func NewSubjectRightsRequestEnumeratedMailboxLocation()(*SubjectRightsRequestEnumeratedMailboxLocation) {
     m := &SubjectRightsRequestEnumeratedMailboxLocation{
         SubjectRightsRequestMailboxLocation: *NewSubjectRightsRequestMailboxLocation(),

@@ -7,6 +7,8 @@ import (
 // DeviceConfigurationConflictSummary conflict summary for a set of device configuration policies.
 type DeviceConfigurationConflictSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceConfigurationConflictSummary instantiates a new deviceConfigurationConflictSummary and sets the default values.
 func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary) {

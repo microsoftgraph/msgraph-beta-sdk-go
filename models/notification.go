@@ -8,6 +8,8 @@ import (
 // Notification 
 type Notification struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewNotification instantiates a new notification and sets the default values.
 func NewNotification()(*Notification) {

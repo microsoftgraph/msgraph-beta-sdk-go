@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceNowOauthSecretAuthentication 
+// ServiceNowOauthSecretAuthentication app id for the ServiceNow client app.
 type ServiceNowOauthSecretAuthentication struct {
     ServiceNowAuthenticationMethod
 }
-// NewServiceNowOauthSecretAuthentication instantiates a new ServiceNowOauthSecretAuthentication and sets the default values.
+// NewServiceNowOauthSecretAuthentication instantiates a new serviceNowOauthSecretAuthentication and sets the default values.
 func NewServiceNowOauthSecretAuthentication()(*ServiceNowOauthSecretAuthentication) {
     m := &ServiceNowOauthSecretAuthentication{
         ServiceNowAuthenticationMethod: *NewServiceNowAuthenticationMethod(),
@@ -45,7 +45,28 @@ func (m *ServiceNowOauthSecretAuthentication) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceNowOauthSecretAuthentication) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServiceNowOauthSecretAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,6 +80,12 @@ func (m *ServiceNowOauthSecretAuthentication) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppId sets the appId property value. Tenant appId registered with Azure AD
@@ -68,10 +95,19 @@ func (m *ServiceNowOauthSecretAuthentication) SetAppId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceNowOauthSecretAuthentication) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ServiceNowOauthSecretAuthenticationable 
 type ServiceNowOauthSecretAuthenticationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ServiceNowAuthenticationMethodable
     GetAppId()(*string)
+    GetOdataType()(*string)
     SetAppId(value *string)()
+    SetOdataType(value *string)()
 }

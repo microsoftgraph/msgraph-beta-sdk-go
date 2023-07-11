@@ -9,7 +9,7 @@ import (
 type ExternalConnectionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewExternalConnectionCollectionResponse instantiates a new ExternalConnectionCollectionResponse and sets the default values.
+// NewExternalConnectionCollectionResponse instantiates a new externalConnectionCollectionResponse and sets the default values.
 func NewExternalConnectionCollectionResponse()(*ExternalConnectionCollectionResponse) {
     m := &ExternalConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

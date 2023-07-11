@@ -8,7 +8,7 @@ import (
 type EndUserNotificationDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEndUserNotificationDetailCollectionResponse instantiates a new EndUserNotificationDetailCollectionResponse and sets the default values.
+// NewEndUserNotificationDetailCollectionResponse instantiates a new endUserNotificationDetailCollectionResponse and sets the default values.
 func NewEndUserNotificationDetailCollectionResponse()(*EndUserNotificationDetailCollectionResponse) {
     m := &EndUserNotificationDetailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type CertificateBasedApplicationConfiguration struct {
     TrustedCertificateAuthorityAsEntityBase
 }
-// NewCertificateBasedApplicationConfiguration instantiates a new CertificateBasedApplicationConfiguration and sets the default values.
+// NewCertificateBasedApplicationConfiguration instantiates a new certificateBasedApplicationConfiguration and sets the default values.
 func NewCertificateBasedApplicationConfiguration()(*CertificateBasedApplicationConfiguration) {
     m := &CertificateBasedApplicationConfiguration{
         TrustedCertificateAuthorityAsEntityBase: *NewTrustedCertificateAuthorityAsEntityBase(),

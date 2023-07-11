@@ -7,6 +7,8 @@ import (
 // ExternalGroup 
 type ExternalGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewExternalGroup instantiates a new externalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {

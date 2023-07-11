@@ -7,8 +7,10 @@ import (
 // DirectoryRoleAccessReviewPolicy 
 type DirectoryRoleAccessReviewPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDirectoryRoleAccessReviewPolicy instantiates a new DirectoryRoleAccessReviewPolicy and sets the default values.
+// NewDirectoryRoleAccessReviewPolicy instantiates a new directoryRoleAccessReviewPolicy and sets the default values.
 func NewDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessReviewPolicy) {
     m := &DirectoryRoleAccessReviewPolicy{
         Entity: *NewEntity(),

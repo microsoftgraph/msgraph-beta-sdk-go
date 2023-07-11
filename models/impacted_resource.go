@@ -8,6 +8,8 @@ import (
 // ImpactedResource 
 type ImpactedResource struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewImpactedResource instantiates a new impactedResource and sets the default values.
 func NewImpactedResource()(*ImpactedResource) {

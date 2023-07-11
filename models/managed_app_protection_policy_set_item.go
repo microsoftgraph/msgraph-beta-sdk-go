@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppProtectionPolicySetItem 
+// ManagedAppProtectionPolicySetItem a class containing the properties used for managed app protection PolicySetItem.
 type ManagedAppProtectionPolicySetItem struct {
     PolicySetItem
 }
-// NewManagedAppProtectionPolicySetItem instantiates a new ManagedAppProtectionPolicySetItem and sets the default values.
+// NewManagedAppProtectionPolicySetItem instantiates a new managedAppProtectionPolicySetItem and sets the default values.
 func NewManagedAppProtectionPolicySetItem()(*ManagedAppProtectionPolicySetItem) {
     m := &ManagedAppProtectionPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),

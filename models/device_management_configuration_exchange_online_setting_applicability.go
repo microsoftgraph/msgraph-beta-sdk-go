@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationExchangeOnlineSettingApplicability 
+// DeviceManagementConfigurationExchangeOnlineSettingApplicability applicability for an Exchange Online Setting
 type DeviceManagementConfigurationExchangeOnlineSettingApplicability struct {
     DeviceManagementConfigurationSettingApplicability
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceManagementConfigurationExchangeOnlineSettingApplicability instantiates a new DeviceManagementConfigurationExchangeOnlineSettingApplicability and sets the default values.
+// NewDeviceManagementConfigurationExchangeOnlineSettingApplicability instantiates a new deviceManagementConfigurationExchangeOnlineSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationExchangeOnlineSettingApplicability()(*DeviceManagementConfigurationExchangeOnlineSettingApplicability) {
     m := &DeviceManagementConfigurationExchangeOnlineSettingApplicability{
         DeviceManagementConfigurationSettingApplicability: *NewDeviceManagementConfigurationSettingApplicability(),

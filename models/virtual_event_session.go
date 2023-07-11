@@ -8,7 +8,7 @@ import (
 type VirtualEventSession struct {
     OnlineMeeting
 }
-// NewVirtualEventSession instantiates a new VirtualEventSession and sets the default values.
+// NewVirtualEventSession instantiates a new virtualEventSession and sets the default values.
 func NewVirtualEventSession()(*VirtualEventSession) {
     m := &VirtualEventSession{
         OnlineMeeting: *NewOnlineMeeting(),

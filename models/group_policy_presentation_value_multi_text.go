@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentationValueMultiText 
+// GroupPolicyPresentationValueMultiText the entity represents a string value of a multi-line text box presentation on a policy definition.
 type GroupPolicyPresentationValueMultiText struct {
     GroupPolicyPresentationValue
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupPolicyPresentationValueMultiText instantiates a new GroupPolicyPresentationValueMultiText and sets the default values.
+// NewGroupPolicyPresentationValueMultiText instantiates a new groupPolicyPresentationValueMultiText and sets the default values.
 func NewGroupPolicyPresentationValueMultiText()(*GroupPolicyPresentationValueMultiText) {
     m := &GroupPolicyPresentationValueMultiText{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),

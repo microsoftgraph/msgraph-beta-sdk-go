@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosikEv2VpnConfiguration 
+// IosikEv2VpnConfiguration by providing the configurations in this profile you can instruct the iOS device to connect to desired IKEv2 VPN endpoint.
 type IosikEv2VpnConfiguration struct {
     IosVpnConfiguration
 }
-// NewIosikEv2VpnConfiguration instantiates a new IosikEv2VpnConfiguration and sets the default values.
+// NewIosikEv2VpnConfiguration instantiates a new iosikEv2VpnConfiguration and sets the default values.
 func NewIosikEv2VpnConfiguration()(*IosikEv2VpnConfiguration) {
     m := &IosikEv2VpnConfiguration{
         IosVpnConfiguration: *NewIosVpnConfiguration(),

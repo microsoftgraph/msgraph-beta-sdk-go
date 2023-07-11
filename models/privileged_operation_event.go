@@ -8,8 +8,10 @@ import (
 // PrivilegedOperationEvent 
 type PrivilegedOperationEvent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPrivilegedOperationEvent instantiates a new PrivilegedOperationEvent and sets the default values.
+// NewPrivilegedOperationEvent instantiates a new privilegedOperationEvent and sets the default values.
 func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),

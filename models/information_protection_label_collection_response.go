@@ -8,7 +8,7 @@ import (
 type InformationProtectionLabelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInformationProtectionLabelCollectionResponse instantiates a new InformationProtectionLabelCollectionResponse and sets the default values.
+// NewInformationProtectionLabelCollectionResponse instantiates a new informationProtectionLabelCollectionResponse and sets the default values.
 func NewInformationProtectionLabelCollectionResponse()(*InformationProtectionLabelCollectionResponse) {
     m := &InformationProtectionLabelCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

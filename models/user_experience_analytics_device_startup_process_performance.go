@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsDeviceStartupProcessPerformance the user experience analytics device startup process performance.
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformance) {

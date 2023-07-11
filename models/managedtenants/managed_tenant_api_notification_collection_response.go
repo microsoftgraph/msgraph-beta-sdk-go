@@ -9,7 +9,7 @@ import (
 type ManagedTenantApiNotificationCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagedTenantApiNotificationCollectionResponse instantiates a new ManagedTenantApiNotificationCollectionResponse and sets the default values.
+// NewManagedTenantApiNotificationCollectionResponse instantiates a new managedTenantApiNotificationCollectionResponse and sets the default values.
 func NewManagedTenantApiNotificationCollectionResponse()(*ManagedTenantApiNotificationCollectionResponse) {
     m := &ManagedTenantApiNotificationCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

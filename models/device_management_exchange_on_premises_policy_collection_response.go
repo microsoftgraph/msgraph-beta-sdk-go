@@ -8,7 +8,7 @@ import (
 type DeviceManagementExchangeOnPremisesPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse instantiates a new DeviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
+// NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse instantiates a new deviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse()(*DeviceManagementExchangeOnPremisesPolicyCollectionResponse) {
     m := &DeviceManagementExchangeOnPremisesPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

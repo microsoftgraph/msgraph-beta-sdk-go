@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSDmgApp 
+// MacOSDmgApp contains properties and inherited properties for the MacOS DMG App.
 type MacOSDmgApp struct {
     MobileLobApp
 }
-// NewMacOSDmgApp instantiates a new MacOSDmgApp and sets the default values.
+// NewMacOSDmgApp instantiates a new macOSDmgApp and sets the default values.
 func NewMacOSDmgApp()(*MacOSDmgApp) {
     m := &MacOSDmgApp{
         MobileLobApp: *NewMobileLobApp(),

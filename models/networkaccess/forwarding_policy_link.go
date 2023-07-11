@@ -8,7 +8,7 @@ import (
 type ForwardingPolicyLink struct {
     PolicyLink
 }
-// NewForwardingPolicyLink instantiates a new ForwardingPolicyLink and sets the default values.
+// NewForwardingPolicyLink instantiates a new forwardingPolicyLink and sets the default values.
 func NewForwardingPolicyLink()(*ForwardingPolicyLink) {
     m := &ForwardingPolicyLink{
         PolicyLink: *NewPolicyLink(),

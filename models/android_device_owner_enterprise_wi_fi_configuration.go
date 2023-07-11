@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerEnterpriseWiFiConfiguration 
+// AndroidDeviceOwnerEnterpriseWiFiConfiguration by providing the configurations in this profile you can instruct the Android Device Owner device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
 type AndroidDeviceOwnerEnterpriseWiFiConfiguration struct {
     AndroidDeviceOwnerWiFiConfiguration
 }
-// NewAndroidDeviceOwnerEnterpriseWiFiConfiguration instantiates a new AndroidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
+// NewAndroidDeviceOwnerEnterpriseWiFiConfiguration instantiates a new androidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
 func NewAndroidDeviceOwnerEnterpriseWiFiConfiguration()(*AndroidDeviceOwnerEnterpriseWiFiConfiguration) {
     m := &AndroidDeviceOwnerEnterpriseWiFiConfiguration{
         AndroidDeviceOwnerWiFiConfiguration: *NewAndroidDeviceOwnerWiFiConfiguration(),

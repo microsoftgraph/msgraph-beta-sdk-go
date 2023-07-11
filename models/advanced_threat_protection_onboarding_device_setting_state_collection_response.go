@@ -8,7 +8,7 @@ import (
 type AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse and sets the default values.
+// NewAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse instantiates a new advancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse and sets the default values.
 func NewAdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse()(*AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse) {
     m := &AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

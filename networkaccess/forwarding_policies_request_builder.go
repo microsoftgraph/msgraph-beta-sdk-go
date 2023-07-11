@@ -11,7 +11,7 @@ import (
 type ForwardingPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ForwardingPoliciesRequestBuilderGetQueryParameters get forwardingPolicies from networkAccess
+// ForwardingPoliciesRequestBuilderGetQueryParameters retrieve information about a specific forwarding policy.
 type ForwardingPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewForwardingPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ForwardingPoliciesRequestBuilder) Count()(*ForwardingPoliciesCountRequestBuilder) {
     return NewForwardingPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get forwardingPolicies from networkAccess
+// Get retrieve information about a specific forwarding policy.
 func (m *ForwardingPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ForwardingPoliciesRequestBuilder) Post(ctx context.Context, body i43e72
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable), nil
 }
-// ToGetRequestInformation get forwardingPolicies from networkAccess
+// ToGetRequestInformation retrieve information about a specific forwarding policy.
 func (m *ForwardingPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

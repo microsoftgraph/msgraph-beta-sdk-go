@@ -8,6 +8,8 @@ import (
 // ExactMatchJobBase 
 type ExactMatchJobBase struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewExactMatchJobBase instantiates a new exactMatchJobBase and sets the default values.
 func NewExactMatchJobBase()(*ExactMatchJobBase) {

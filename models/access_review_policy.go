@@ -7,6 +7,8 @@ import (
 // AccessReviewPolicy 
 type AccessReviewPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessReviewPolicy instantiates a new accessReviewPolicy and sets the default values.
 func NewAccessReviewPolicy()(*AccessReviewPolicy) {

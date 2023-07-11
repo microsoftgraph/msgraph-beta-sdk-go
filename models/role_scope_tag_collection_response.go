@@ -8,7 +8,7 @@ import (
 type RoleScopeTagCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRoleScopeTagCollectionResponse instantiates a new RoleScopeTagCollectionResponse and sets the default values.
+// NewRoleScopeTagCollectionResponse instantiates a new roleScopeTagCollectionResponse and sets the default values.
 func NewRoleScopeTagCollectionResponse()(*RoleScopeTagCollectionResponse) {
     m := &RoleScopeTagCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

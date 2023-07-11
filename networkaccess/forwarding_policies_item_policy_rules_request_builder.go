@@ -11,7 +11,7 @@ import (
 type ForwardingPoliciesItemPolicyRulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ForwardingPoliciesItemPolicyRulesRequestBuilderGetQueryParameters get policyRules from networkAccess
+// ForwardingPoliciesItemPolicyRulesRequestBuilderGetQueryParameters represents the definition of the policy ruleset that makes up the core definition of a policy.
 type ForwardingPoliciesItemPolicyRulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewForwardingPoliciesItemPolicyRulesRequestBuilder(rawUrl string, requestAd
 func (m *ForwardingPoliciesItemPolicyRulesRequestBuilder) Count()(*ForwardingPoliciesItemPolicyRulesCountRequestBuilder) {
     return NewForwardingPoliciesItemPolicyRulesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get policyRules from networkAccess
+// Get represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *ForwardingPoliciesItemPolicyRulesRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingPoliciesItemPolicyRulesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyRuleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ForwardingPoliciesItemPolicyRulesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyRuleable), nil
 }
-// ToGetRequestInformation get policyRules from networkAccess
+// ToGetRequestInformation represents the definition of the policy ruleset that makes up the core definition of a policy.
 func (m *ForwardingPoliciesItemPolicyRulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesItemPolicyRulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

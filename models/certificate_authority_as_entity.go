@@ -7,6 +7,8 @@ import (
 // CertificateAuthorityAsEntity 
 type CertificateAuthorityAsEntity struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCertificateAuthorityAsEntity instantiates a new certificateAuthorityAsEntity and sets the default values.
 func NewCertificateAuthorityAsEntity()(*CertificateAuthorityAsEntity) {

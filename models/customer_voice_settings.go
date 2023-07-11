@@ -10,7 +10,7 @@ type CustomerVoiceSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomerVoiceSettings instantiates a new CustomerVoiceSettings and sets the default values.
+// NewCustomerVoiceSettings instantiates a new customerVoiceSettings and sets the default values.
 func NewCustomerVoiceSettings()(*CustomerVoiceSettings) {
     m := &CustomerVoiceSettings{
     }
@@ -83,7 +83,7 @@ func (m *CustomerVoiceSettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIsInOrgFormsPhishingScanEnabled gets the isInOrgFormsPhishingScanEnabled property value. The isInOrgFormsPhishingScanEnabled property
+// GetIsInOrgFormsPhishingScanEnabled gets the isInOrgFormsPhishingScanEnabled property value. Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.
 func (m *CustomerVoiceSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isInOrgFormsPhishingScanEnabled")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *CustomerVoiceSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     }
     return nil
 }
-// GetIsRecordIdentityByDefaultEnabled gets the isRecordIdentityByDefaultEnabled property value. The isRecordIdentityByDefaultEnabled property
+// GetIsRecordIdentityByDefaultEnabled gets the isRecordIdentityByDefaultEnabled property value. Controls whether the names of users who fill out forms are recorded.
 func (m *CustomerVoiceSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRecordIdentityByDefaultEnabled")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *CustomerVoiceSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     }
     return nil
 }
-// GetIsRestrictedSurveyAccessEnabled gets the isRestrictedSurveyAccessEnabled property value. The isRestrictedSurveyAccessEnabled property
+// GetIsRestrictedSurveyAccessEnabled gets the isRestrictedSurveyAccessEnabled property value. Controls whether only users inside your organization can submit a response.
 func (m *CustomerVoiceSettings) GetIsRestrictedSurveyAccessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRestrictedSurveyAccessEnabled")
     if err != nil {
@@ -172,21 +172,21 @@ func (m *CustomerVoiceSettings) SetAdditionalData(value map[string]any)() {
 func (m *CustomerVoiceSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsInOrgFormsPhishingScanEnabled sets the isInOrgFormsPhishingScanEnabled property value. The isInOrgFormsPhishingScanEnabled property
+// SetIsInOrgFormsPhishingScanEnabled sets the isInOrgFormsPhishingScanEnabled property value. Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.
 func (m *CustomerVoiceSettings) SetIsInOrgFormsPhishingScanEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isInOrgFormsPhishingScanEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRecordIdentityByDefaultEnabled sets the isRecordIdentityByDefaultEnabled property value. The isRecordIdentityByDefaultEnabled property
+// SetIsRecordIdentityByDefaultEnabled sets the isRecordIdentityByDefaultEnabled property value. Controls whether the names of users who fill out forms are recorded.
 func (m *CustomerVoiceSettings) SetIsRecordIdentityByDefaultEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRecordIdentityByDefaultEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRestrictedSurveyAccessEnabled sets the isRestrictedSurveyAccessEnabled property value. The isRestrictedSurveyAccessEnabled property
+// SetIsRestrictedSurveyAccessEnabled sets the isRestrictedSurveyAccessEnabled property value. Controls whether only users inside your organization can submit a response.
 func (m *CustomerVoiceSettings) SetIsRestrictedSurveyAccessEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRestrictedSurveyAccessEnabled", value)
     if err != nil {

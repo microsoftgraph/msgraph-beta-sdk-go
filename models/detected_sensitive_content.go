@@ -8,7 +8,7 @@ import (
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
 }
-// NewDetectedSensitiveContent instantiates a new DetectedSensitiveContent and sets the default values.
+// NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
@@ -104,6 +104,16 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitiveTypeScope)
         if err != nil {
@@ -134,6 +144,17 @@ func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) 
     }
     if val != nil {
         return val.([]SensitiveContentLocationable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DetectedSensitiveContent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -196,6 +217,12 @@ func (m *DetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetScope() != nil {
         cast := (*m.GetScope()).String()
         err = writer.WriteStringValue("scope", &cast)
@@ -233,6 +260,13 @@ func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocationab
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DetectedSensitiveContent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScope sets the scope property value. The scope property
 func (m *DetectedSensitiveContent) SetScope(value *SensitiveTypeScope)() {
     err := m.GetBackingStore().Set("scope", value)
@@ -254,11 +288,13 @@ type DetectedSensitiveContentable interface {
     GetClassificationAttributes()([]ClassificationAttributeable)
     GetClassificationMethod()(*ClassificationMethod)
     GetMatches()([]SensitiveContentLocationable)
+    GetOdataType()(*string)
     GetScope()(*SensitiveTypeScope)
     GetSensitiveTypeSource()(*SensitiveTypeSource)
     SetClassificationAttributes(value []ClassificationAttributeable)()
     SetClassificationMethod(value *ClassificationMethod)()
     SetMatches(value []SensitiveContentLocationable)()
+    SetOdataType(value *string)()
     SetScope(value *SensitiveTypeScope)()
     SetSensitiveTypeSource(value *SensitiveTypeSource)()
 }

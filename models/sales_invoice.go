@@ -12,7 +12,7 @@ type SalesInvoice struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesInvoice instantiates a new SalesInvoice and sets the default values.
+// NewSalesInvoice instantiates a new salesInvoice and sets the default values.
 func NewSalesInvoice()(*SalesInvoice) {
     m := &SalesInvoice{
     }

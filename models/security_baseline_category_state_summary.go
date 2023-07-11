@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecurityBaselineCategoryStateSummary 
+// SecurityBaselineCategoryStateSummary the security baseline per category compliance state summary for the security baseline of the account.
 type SecurityBaselineCategoryStateSummary struct {
     SecurityBaselineStateSummary
 }
-// NewSecurityBaselineCategoryStateSummary instantiates a new SecurityBaselineCategoryStateSummary and sets the default values.
+// NewSecurityBaselineCategoryStateSummary instantiates a new securityBaselineCategoryStateSummary and sets the default values.
 func NewSecurityBaselineCategoryStateSummary()(*SecurityBaselineCategoryStateSummary) {
     m := &SecurityBaselineCategoryStateSummary{
         SecurityBaselineStateSummary: *NewSecurityBaselineStateSummary(),

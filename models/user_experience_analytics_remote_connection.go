@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsRemoteConnection the user experience analyte remote connection entity.
 type UserExperienceAnalyticsRemoteConnection struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsRemoteConnection instantiates a new userExperienceAnalyticsRemoteConnection and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemoteConnection) {

@@ -8,7 +8,7 @@ import (
 type CountryRegionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCountryRegionCollectionResponse instantiates a new CountryRegionCollectionResponse and sets the default values.
+// NewCountryRegionCollectionResponse instantiates a new countryRegionCollectionResponse and sets the default values.
 func NewCountryRegionCollectionResponse()(*CountryRegionCollectionResponse) {
     m := &CountryRegionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

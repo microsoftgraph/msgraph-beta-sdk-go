@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagementAppHealthSummary 
+// WindowsManagementAppHealthSummary contains properties for the health summary of the Windows management app.
 type WindowsManagementAppHealthSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsManagementAppHealthSummary instantiates a new WindowsManagementAppHealthSummary and sets the default values.
+// NewWindowsManagementAppHealthSummary instantiates a new windowsManagementAppHealthSummary and sets the default values.
 func NewWindowsManagementAppHealthSummary()(*WindowsManagementAppHealthSummary) {
     m := &WindowsManagementAppHealthSummary{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type DirectorySettingTemplate struct {
     DirectoryObject
 }
-// NewDirectorySettingTemplate instantiates a new DirectorySettingTemplate and sets the default values.
+// NewDirectorySettingTemplate instantiates a new directorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),

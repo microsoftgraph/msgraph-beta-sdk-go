@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagementTask 
+// DeviceAppManagementTask a device app management task.
 type DeviceAppManagementTask struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceAppManagementTask instantiates a new DeviceAppManagementTask and sets the default values.
+// NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),

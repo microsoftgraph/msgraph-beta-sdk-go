@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSecretSettingValue 
+// DeviceManagementConfigurationSecretSettingValue graph model for a secret setting value
 type DeviceManagementConfigurationSecretSettingValue struct {
     DeviceManagementConfigurationSimpleSettingValue
 }
-// NewDeviceManagementConfigurationSecretSettingValue instantiates a new DeviceManagementConfigurationSecretSettingValue and sets the default values.
+// NewDeviceManagementConfigurationSecretSettingValue instantiates a new deviceManagementConfigurationSecretSettingValue and sets the default values.
 func NewDeviceManagementConfigurationSecretSettingValue()(*DeviceManagementConfigurationSecretSettingValue) {
     m := &DeviceManagementConfigurationSecretSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),

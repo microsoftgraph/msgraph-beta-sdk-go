@@ -8,7 +8,7 @@ import (
 type CloudPcExportJobCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcExportJobCollectionResponse instantiates a new CloudPcExportJobCollectionResponse and sets the default values.
+// NewCloudPcExportJobCollectionResponse instantiates a new cloudPcExportJobCollectionResponse and sets the default values.
 func NewCloudPcExportJobCollectionResponse()(*CloudPcExportJobCollectionResponse) {
     m := &CloudPcExportJobCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

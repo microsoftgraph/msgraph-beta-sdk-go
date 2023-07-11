@@ -7,6 +7,8 @@ import (
 // IdentityApiConnector 
 type IdentityApiConnector struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewIdentityApiConnector instantiates a new identityApiConnector and sets the default values.
 func NewIdentityApiConnector()(*IdentityApiConnector) {

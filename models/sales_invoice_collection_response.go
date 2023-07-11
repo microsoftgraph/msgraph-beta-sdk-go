@@ -8,7 +8,7 @@ import (
 type SalesInvoiceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSalesInvoiceCollectionResponse instantiates a new SalesInvoiceCollectionResponse and sets the default values.
+// NewSalesInvoiceCollectionResponse instantiates a new salesInvoiceCollectionResponse and sets the default values.
 func NewSalesInvoiceCollectionResponse()(*SalesInvoiceCollectionResponse) {
     m := &SalesInvoiceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

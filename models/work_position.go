@@ -8,7 +8,7 @@ import (
 type WorkPosition struct {
     ItemFacet
 }
-// NewWorkPosition instantiates a new WorkPosition and sets the default values.
+// NewWorkPosition instantiates a new workPosition and sets the default values.
 func NewWorkPosition()(*WorkPosition) {
     m := &WorkPosition{
         ItemFacet: *NewItemFacet(),

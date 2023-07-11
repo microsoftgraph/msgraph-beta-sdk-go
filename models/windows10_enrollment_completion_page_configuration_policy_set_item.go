@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10EnrollmentCompletionPageConfigurationPolicySetItem 
+// Windows10EnrollmentCompletionPageConfigurationPolicySetItem a class containing the properties used for Windows10EnrollmentCompletionPageConfiguration PolicySetItem.
 type Windows10EnrollmentCompletionPageConfigurationPolicySetItem struct {
     PolicySetItem
 }
-// NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem instantiates a new Windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
+// NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem instantiates a new windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
 func NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem()(*Windows10EnrollmentCompletionPageConfigurationPolicySetItem) {
     m := &Windows10EnrollmentCompletionPageConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),

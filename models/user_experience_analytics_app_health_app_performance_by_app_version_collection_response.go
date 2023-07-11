@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

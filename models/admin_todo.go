@@ -7,8 +7,10 @@ import (
 // AdminTodo 
 type AdminTodo struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAdminTodo instantiates a new AdminTodo and sets the default values.
+// NewAdminTodo instantiates a new adminTodo and sets the default values.
 func NewAdminTodo()(*AdminTodo) {
     m := &AdminTodo{
         Entity: *NewEntity(),

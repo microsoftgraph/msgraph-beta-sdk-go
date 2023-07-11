@@ -9,7 +9,7 @@ import (
 type ManagementActionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewManagementActionCollectionResponse instantiates a new ManagementActionCollectionResponse and sets the default values.
+// NewManagementActionCollectionResponse instantiates a new managementActionCollectionResponse and sets the default values.
 func NewManagementActionCollectionResponse()(*ManagementActionCollectionResponse) {
     m := &ManagementActionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

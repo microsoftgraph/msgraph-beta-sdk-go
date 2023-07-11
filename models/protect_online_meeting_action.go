@@ -7,8 +7,10 @@ import (
 // ProtectOnlineMeetingAction 
 type ProtectOnlineMeetingAction struct {
     LabelActionBase
+    // The OdataType property
+    OdataType *string
 }
-// NewProtectOnlineMeetingAction instantiates a new ProtectOnlineMeetingAction and sets the default values.
+// NewProtectOnlineMeetingAction instantiates a new protectOnlineMeetingAction and sets the default values.
 func NewProtectOnlineMeetingAction()(*ProtectOnlineMeetingAction) {
     m := &ProtectOnlineMeetingAction{
         LabelActionBase: *NewLabelActionBase(),

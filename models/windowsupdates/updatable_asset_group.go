@@ -8,7 +8,7 @@ import (
 type UpdatableAssetGroup struct {
     UpdatableAsset
 }
-// NewUpdatableAssetGroup instantiates a new UpdatableAssetGroup and sets the default values.
+// NewUpdatableAssetGroup instantiates a new updatableAssetGroup and sets the default values.
 func NewUpdatableAssetGroup()(*UpdatableAssetGroup) {
     m := &UpdatableAssetGroup{
         UpdatableAsset: *NewUpdatableAsset(),

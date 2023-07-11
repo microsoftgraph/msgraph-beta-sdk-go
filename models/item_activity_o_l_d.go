@@ -7,6 +7,8 @@ import (
 // ItemActivityOLD 
 type ItemActivityOLD struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewItemActivityOLD instantiates a new itemActivityOLD and sets the default values.
 func NewItemActivityOLD()(*ItemActivityOLD) {

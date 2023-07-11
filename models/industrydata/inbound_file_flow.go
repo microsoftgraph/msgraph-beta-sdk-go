@@ -8,7 +8,7 @@ import (
 type InboundFileFlow struct {
     InboundFlow
 }
-// NewInboundFileFlow instantiates a new InboundFileFlow and sets the default values.
+// NewInboundFileFlow instantiates a new inboundFileFlow and sets the default values.
 func NewInboundFileFlow()(*InboundFileFlow) {
     m := &InboundFileFlow{
         InboundFlow: *NewInboundFlow(),

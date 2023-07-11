@@ -7,6 +7,8 @@ import (
 // BusinessScenarioPlanner 
 type BusinessScenarioPlanner struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBusinessScenarioPlanner instantiates a new businessScenarioPlanner and sets the default values.
 func NewBusinessScenarioPlanner()(*BusinessScenarioPlanner) {

@@ -7,8 +7,10 @@ import (
 // AzureADDeviceRegistrationError 
 type AzureADDeviceRegistrationError struct {
     UpdatableAssetError
+    // The OdataType property
+    OdataType *string
 }
-// NewAzureADDeviceRegistrationError instantiates a new AzureADDeviceRegistrationError and sets the default values.
+// NewAzureADDeviceRegistrationError instantiates a new azureADDeviceRegistrationError and sets the default values.
 func NewAzureADDeviceRegistrationError()(*AzureADDeviceRegistrationError) {
     m := &AzureADDeviceRegistrationError{
         UpdatableAssetError: *NewUpdatableAssetError(),

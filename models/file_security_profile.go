@@ -8,8 +8,10 @@ import (
 // FileSecurityProfile 
 type FileSecurityProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewFileSecurityProfile instantiates a new FileSecurityProfile and sets the default values.
+// NewFileSecurityProfile instantiates a new fileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
     m := &FileSecurityProfile{
         Entity: *NewEntity(),

@@ -7,6 +7,8 @@ import (
 // AssignmentFilterEvaluationStatusDetails a class containing information about the payloads on which filter has been applied.
 type AssignmentFilterEvaluationStatusDetails struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAssignmentFilterEvaluationStatusDetails instantiates a new assignmentFilterEvaluationStatusDetails and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationStatusDetails) {

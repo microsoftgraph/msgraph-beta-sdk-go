@@ -7,8 +7,10 @@ import (
 // AddWatermark 
 type AddWatermark struct {
     MarkContent
+    // The OdataType property
+    OdataType *string
 }
-// NewAddWatermark instantiates a new AddWatermark and sets the default values.
+// NewAddWatermark instantiates a new addWatermark and sets the default values.
 func NewAddWatermark()(*AddWatermark) {
     m := &AddWatermark{
         MarkContent: *NewMarkContent(),

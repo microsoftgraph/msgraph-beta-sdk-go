@@ -9,7 +9,7 @@ import (
 type DeviceLinkCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewDeviceLinkCollectionResponse instantiates a new DeviceLinkCollectionResponse and sets the default values.
+// NewDeviceLinkCollectionResponse instantiates a new deviceLinkCollectionResponse and sets the default values.
 func NewDeviceLinkCollectionResponse()(*DeviceLinkCollectionResponse) {
     m := &DeviceLinkCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

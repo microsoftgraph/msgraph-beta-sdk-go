@@ -7,6 +7,8 @@ import (
 // AuthenticationListener 
 type AuthenticationListener struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAuthenticationListener instantiates a new authenticationListener and sets the default values.
 func NewAuthenticationListener()(*AuthenticationListener) {

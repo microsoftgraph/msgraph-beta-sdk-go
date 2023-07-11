@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkCompliancePolicy 
+// AndroidForWorkCompliancePolicy this class contains compliance settings for Android for Work.
 type AndroidForWorkCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewAndroidForWorkCompliancePolicy instantiates a new AndroidForWorkCompliancePolicy and sets the default values.
+// NewAndroidForWorkCompliancePolicy instantiates a new androidForWorkCompliancePolicy and sets the default values.
 func NewAndroidForWorkCompliancePolicy()(*AndroidForWorkCompliancePolicy) {
     m := &AndroidForWorkCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),

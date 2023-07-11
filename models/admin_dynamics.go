@@ -7,8 +7,10 @@ import (
 // AdminDynamics 
 type AdminDynamics struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAdminDynamics instantiates a new AdminDynamics and sets the default values.
+// NewAdminDynamics instantiates a new adminDynamics and sets the default values.
 func NewAdminDynamics()(*AdminDynamics) {
     m := &AdminDynamics{
         Entity: *NewEntity(),

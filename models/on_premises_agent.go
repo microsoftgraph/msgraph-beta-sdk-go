@@ -7,8 +7,10 @@ import (
 // OnPremisesAgent 
 type OnPremisesAgent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewOnPremisesAgent instantiates a new OnPremisesAgent and sets the default values.
+// NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),

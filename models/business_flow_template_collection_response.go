@@ -8,7 +8,7 @@ import (
 type BusinessFlowTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBusinessFlowTemplateCollectionResponse instantiates a new BusinessFlowTemplateCollectionResponse and sets the default values.
+// NewBusinessFlowTemplateCollectionResponse instantiates a new businessFlowTemplateCollectionResponse and sets the default values.
 func NewBusinessFlowTemplateCollectionResponse()(*BusinessFlowTemplateCollectionResponse) {
     m := &BusinessFlowTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

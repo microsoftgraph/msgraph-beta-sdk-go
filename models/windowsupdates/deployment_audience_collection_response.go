@@ -9,7 +9,7 @@ import (
 type DeploymentAudienceCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewDeploymentAudienceCollectionResponse instantiates a new DeploymentAudienceCollectionResponse and sets the default values.
+// NewDeploymentAudienceCollectionResponse instantiates a new deploymentAudienceCollectionResponse and sets the default values.
 func NewDeploymentAudienceCollectionResponse()(*DeploymentAudienceCollectionResponse) {
     m := &DeploymentAudienceCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

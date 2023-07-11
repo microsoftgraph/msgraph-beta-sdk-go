@@ -8,6 +8,8 @@ import (
 // SharedEmailDomainInvitation 
 type SharedEmailDomainInvitation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSharedEmailDomainInvitation instantiates a new sharedEmailDomainInvitation and sets the default values.
 func NewSharedEmailDomainInvitation()(*SharedEmailDomainInvitation) {

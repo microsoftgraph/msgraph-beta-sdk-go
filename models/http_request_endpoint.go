@@ -7,8 +7,10 @@ import (
 // HttpRequestEndpoint 
 type HttpRequestEndpoint struct {
     CustomExtensionEndpointConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewHttpRequestEndpoint instantiates a new HttpRequestEndpoint and sets the default values.
+// NewHttpRequestEndpoint instantiates a new httpRequestEndpoint and sets the default values.
 func NewHttpRequestEndpoint()(*HttpRequestEndpoint) {
     m := &HttpRequestEndpoint{
         CustomExtensionEndpointConfiguration: *NewCustomExtensionEndpointConfiguration(),

@@ -8,8 +8,10 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicy 
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
     m := &WindowsDefenderApplicationControlSupplementalPolicy{
         Entity: *NewEntity(),
@@ -20,7 +22,7 @@ func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderAp
 func CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicy(), nil
 }
-// GetAssignments gets the assignments property value. The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+// GetAssignments gets the assignments property value. The associated group assignments for the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([]WindowsDefenderApplicationControlSupplementalPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -31,7 +33,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([
     }
     return nil
 }
-// GetContent gets the content property value. The WindowsDefenderApplicationControl supplemental policy content in byte array format.
+// GetContent gets the content property value. Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -42,7 +44,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContent()([]byt
     }
     return nil
 }
-// GetContentFileName gets the contentFileName property value. The WindowsDefenderApplicationControl supplemental policy content's file name.
+// GetContentFileName gets the contentFileName property value. Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContentFileName()(*string) {
     val, err := m.GetBackingStore().Get("contentFileName")
     if err != nil {
@@ -53,7 +55,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContentFileName
     }
     return nil
 }
-// GetCreationDateTime gets the creationDateTime property value. The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
+// GetCreationDateTime gets the creationDateTime property value. Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -75,7 +77,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeploySummary()
     }
     return nil
 }
-// GetDescription gets the description property value. The description of WindowsDefenderApplicationControl supplemental policy.
+// GetDescription gets the description property value. The description of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -97,7 +99,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeviceStatuses(
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of WindowsDefenderApplicationControl supplemental policy.
+// GetDisplayName gets the displayName property value. The display name of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -241,7 +243,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -252,7 +254,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDat
     }
     return nil
 }
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -263,7 +265,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetRoleScopeTagIds
     }
     return nil
 }
-// GetVersion gets the version property value. The WindowsDefenderApplicationControl supplemental policy's version.
+// GetVersion gets the version property value. Indicates the Windows Defender Application Control Supplemental Policy's version.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -360,28 +362,28 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
     }
     return nil
 }
-// SetAssignments sets the assignments property value. The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+// SetAssignments sets the assignments property value. The associated group assignments for the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetAssignments(value []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContent sets the content property value. The WindowsDefenderApplicationControl supplemental policy content in byte array format.
+// SetContent sets the content property value. Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentFileName sets the contentFileName property value. The WindowsDefenderApplicationControl supplemental policy content's file name.
+// SetContentFileName sets the contentFileName property value. Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetContentFileName(value *string)() {
     err := m.GetBackingStore().Set("contentFileName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreationDateTime sets the creationDateTime property value. The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
+// SetCreationDateTime sets the creationDateTime property value. Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("creationDateTime", value)
     if err != nil {
@@ -395,7 +397,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDeploySummary(v
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description of WindowsDefenderApplicationControl supplemental policy.
+// SetDescription sets the description property value. The description of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -409,28 +411,28 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDeviceStatuses(
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of WindowsDefenderApplicationControl supplemental policy.
+// SetDisplayName sets the displayName property value. The display name of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetRoleScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTagIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The WindowsDefenderApplicationControl supplemental policy's version.
+// SetVersion sets the version property value. Indicates the Windows Defender Application Control Supplemental Policy's version.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

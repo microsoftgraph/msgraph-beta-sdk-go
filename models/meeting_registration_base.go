@@ -63,6 +63,16 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["registrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingRegistrantBaseFromDiscriminatorValue)
         if err != nil {
@@ -80,6 +90,17 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MeetingRegistrationBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistrants gets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistrationBase) GetRegistrants()([]MeetingRegistrantBaseable) {
@@ -105,6 +126,12 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRegistrants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrants()))
         for i, v := range m.GetRegistrants() {
@@ -126,6 +153,13 @@ func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)()
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MeetingRegistrationBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegistrants sets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseable)() {
     err := m.GetBackingStore().Set("registrants", value)
@@ -138,7 +172,9 @@ type MeetingRegistrationBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowedRegistrant()(*MeetingAudience)
+    GetOdataType()(*string)
     GetRegistrants()([]MeetingRegistrantBaseable)
     SetAllowedRegistrant(value *MeetingAudience)()
+    SetOdataType(value *string)()
     SetRegistrants(value []MeetingRegistrantBaseable)()
 }

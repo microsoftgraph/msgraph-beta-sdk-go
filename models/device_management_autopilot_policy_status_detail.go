@@ -8,6 +8,8 @@ import (
 // DeviceManagementAutopilotPolicyStatusDetail policy status detail item contained by an autopilot event.
 type DeviceManagementAutopilotPolicyStatusDetail struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementAutopilotPolicyStatusDetail instantiates a new deviceManagementAutopilotPolicyStatusDetail and sets the default values.
 func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilotPolicyStatusDetail) {

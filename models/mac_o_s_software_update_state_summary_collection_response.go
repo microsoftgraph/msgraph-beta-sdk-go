@@ -8,7 +8,7 @@ import (
 type MacOSSoftwareUpdateStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMacOSSoftwareUpdateStateSummaryCollectionResponse instantiates a new MacOSSoftwareUpdateStateSummaryCollectionResponse and sets the default values.
+// NewMacOSSoftwareUpdateStateSummaryCollectionResponse instantiates a new macOSSoftwareUpdateStateSummaryCollectionResponse and sets the default values.
 func NewMacOSSoftwareUpdateStateSummaryCollectionResponse()(*MacOSSoftwareUpdateStateSummaryCollectionResponse) {
     m := &MacOSSoftwareUpdateStateSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

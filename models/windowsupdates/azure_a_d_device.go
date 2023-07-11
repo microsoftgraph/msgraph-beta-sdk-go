@@ -8,7 +8,7 @@ import (
 type AzureADDevice struct {
     UpdatableAsset
 }
-// NewAzureADDevice instantiates a new AzureADDevice and sets the default values.
+// NewAzureADDevice instantiates a new azureADDevice and sets the default values.
 func NewAzureADDevice()(*AzureADDevice) {
     m := &AzureADDevice{
         UpdatableAsset: *NewUpdatableAsset(),

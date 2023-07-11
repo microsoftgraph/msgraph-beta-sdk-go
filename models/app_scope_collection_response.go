@@ -8,7 +8,7 @@ import (
 type AppScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAppScopeCollectionResponse instantiates a new AppScopeCollectionResponse and sets the default values.
+// NewAppScopeCollectionResponse instantiates a new appScopeCollectionResponse and sets the default values.
 func NewAppScopeCollectionResponse()(*AppScopeCollectionResponse) {
     m := &AppScopeCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

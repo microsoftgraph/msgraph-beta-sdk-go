@@ -8,7 +8,7 @@ import (
 type JournalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewJournalCollectionResponse instantiates a new JournalCollectionResponse and sets the default values.
+// NewJournalCollectionResponse instantiates a new journalCollectionResponse and sets the default values.
 func NewJournalCollectionResponse()(*JournalCollectionResponse) {
     m := &JournalCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

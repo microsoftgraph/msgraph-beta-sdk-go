@@ -8,8 +8,10 @@ import (
 // CloudPcSnapshot 
 type CloudPcSnapshot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudPcSnapshot instantiates a new CloudPcSnapshot and sets the default values.
+// NewCloudPcSnapshot instantiates a new cloudPcSnapshot and sets the default values.
 func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     m := &CloudPcSnapshot{
         Entity: *NewEntity(),

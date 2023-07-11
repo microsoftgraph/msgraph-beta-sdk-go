@@ -8,7 +8,7 @@ import (
 type CustomExtensionStageSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomExtensionStageSettingCollectionResponse instantiates a new CustomExtensionStageSettingCollectionResponse and sets the default values.
+// NewCustomExtensionStageSettingCollectionResponse instantiates a new customExtensionStageSettingCollectionResponse and sets the default values.
 func NewCustomExtensionStageSettingCollectionResponse()(*CustomExtensionStageSettingCollectionResponse) {
     m := &CustomExtensionStageSettingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

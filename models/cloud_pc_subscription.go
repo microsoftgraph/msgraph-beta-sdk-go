@@ -7,6 +7,8 @@ import (
 // CloudPcSubscription 
 type CloudPcSubscription struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCloudPcSubscription instantiates a new cloudPcSubscription and sets the default values.
 func NewCloudPcSubscription()(*CloudPcSubscription) {

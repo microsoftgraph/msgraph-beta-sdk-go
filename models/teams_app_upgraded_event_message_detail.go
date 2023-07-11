@@ -7,8 +7,10 @@ import (
 // TeamsAppUpgradedEventMessageDetail 
 type TeamsAppUpgradedEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewTeamsAppUpgradedEventMessageDetail instantiates a new TeamsAppUpgradedEventMessageDetail and sets the default values.
+// NewTeamsAppUpgradedEventMessageDetail instantiates a new teamsAppUpgradedEventMessageDetail and sets the default values.
 func NewTeamsAppUpgradedEventMessageDetail()(*TeamsAppUpgradedEventMessageDetail) {
     m := &TeamsAppUpgradedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

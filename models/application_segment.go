@@ -7,6 +7,8 @@ import (
 // ApplicationSegment 
 type ApplicationSegment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewApplicationSegment instantiates a new applicationSegment and sets the default values.
 func NewApplicationSegment()(*ApplicationSegment) {

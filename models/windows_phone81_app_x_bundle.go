@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81AppXBundle 
+// WindowsPhone81AppXBundle contains properties and inherited properties for Windows Phone 8.1 AppX Bundle Line Of Business apps. Inherits from graph.windowsPhone81AppX (which is also to be deprecated at the same time). Will be deprecated in February 2023.
 type WindowsPhone81AppXBundle struct {
     WindowsPhone81AppX
 }
-// NewWindowsPhone81AppXBundle instantiates a new WindowsPhone81AppXBundle and sets the default values.
+// NewWindowsPhone81AppXBundle instantiates a new windowsPhone81AppXBundle and sets the default values.
 func NewWindowsPhone81AppXBundle()(*WindowsPhone81AppXBundle) {
     m := &WindowsPhone81AppXBundle{
         WindowsPhone81AppX: *NewWindowsPhone81AppX(),

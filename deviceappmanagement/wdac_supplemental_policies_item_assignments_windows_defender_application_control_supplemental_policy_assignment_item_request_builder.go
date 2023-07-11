@@ -18,7 +18,7 @@ type WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSup
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParameters the associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+// WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParameters the associated group assignments for the Windows Defender Application Control Supplemental Policy.
 type WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationContro
     }
     return nil
 }
-// Get the associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+// Get the associated group assignments for the Windows Defender Application Control Supplemental Policy.
 func (m *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationContro
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+// ToGetRequestInformation the associated group assignments for the Windows Defender Application Control Supplemental Policy.
 func (m *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

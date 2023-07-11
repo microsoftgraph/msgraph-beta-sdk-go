@@ -8,7 +8,7 @@ import (
 type InvalidLicenseAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewInvalidLicenseAlertIncident instantiates a new InvalidLicenseAlertIncident and sets the default values.
+// NewInvalidLicenseAlertIncident instantiates a new invalidLicenseAlertIncident and sets the default values.
 func NewInvalidLicenseAlertIncident()(*InvalidLicenseAlertIncident) {
     m := &InvalidLicenseAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),

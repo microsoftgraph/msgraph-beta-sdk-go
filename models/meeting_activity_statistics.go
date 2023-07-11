@@ -7,8 +7,10 @@ import (
 // MeetingActivityStatistics 
 type MeetingActivityStatistics struct {
     ActivityStatistics
+    // The OdataType property
+    OdataType *string
 }
-// NewMeetingActivityStatistics instantiates a new MeetingActivityStatistics and sets the default values.
+// NewMeetingActivityStatistics instantiates a new meetingActivityStatistics and sets the default values.
 func NewMeetingActivityStatistics()(*MeetingActivityStatistics) {
     m := &MeetingActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),

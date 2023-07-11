@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidPkcsCertificateProfile 
+// AndroidPkcsCertificateProfile android PKCS certificate profile
 type AndroidPkcsCertificateProfile struct {
     AndroidCertificateProfileBase
 }
-// NewAndroidPkcsCertificateProfile instantiates a new AndroidPkcsCertificateProfile and sets the default values.
+// NewAndroidPkcsCertificateProfile instantiates a new androidPkcsCertificateProfile and sets the default values.
 func NewAndroidPkcsCertificateProfile()(*AndroidPkcsCertificateProfile) {
     m := &AndroidPkcsCertificateProfile{
         AndroidCertificateProfileBase: *NewAndroidCertificateProfileBase(),

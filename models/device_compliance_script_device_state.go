@@ -8,6 +8,8 @@ import (
 // DeviceComplianceScriptDeviceState contains properties for device run state of the device compliance script.
 type DeviceComplianceScriptDeviceState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceComplianceScriptDeviceState instantiates a new deviceComplianceScriptDeviceState and sets the default values.
 func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) {

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AospDeviceOwnerCompliancePolicy 
+// AospDeviceOwnerCompliancePolicy this topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPCompliancePolicy resource.
 type AospDeviceOwnerCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewAospDeviceOwnerCompliancePolicy instantiates a new AospDeviceOwnerCompliancePolicy and sets the default values.
+// NewAospDeviceOwnerCompliancePolicy instantiates a new aospDeviceOwnerCompliancePolicy and sets the default values.
 func NewAospDeviceOwnerCompliancePolicy()(*AospDeviceOwnerCompliancePolicy) {
     m := &AospDeviceOwnerCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),

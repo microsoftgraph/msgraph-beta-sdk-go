@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows81VpnProxyServer 
+// Windows81VpnProxyServer vPN Proxy Server.
 type Windows81VpnProxyServer struct {
     VpnProxyServer
+    // The OdataType property
+    OdataType *string
 }
-// NewWindows81VpnProxyServer instantiates a new Windows81VpnProxyServer and sets the default values.
+// NewWindows81VpnProxyServer instantiates a new windows81VpnProxyServer and sets the default values.
 func NewWindows81VpnProxyServer()(*Windows81VpnProxyServer) {
     m := &Windows81VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),

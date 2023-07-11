@@ -8,7 +8,7 @@ import (
 type ApprovalWorkflowProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApprovalWorkflowProviderCollectionResponse instantiates a new ApprovalWorkflowProviderCollectionResponse and sets the default values.
+// NewApprovalWorkflowProviderCollectionResponse instantiates a new approvalWorkflowProviderCollectionResponse and sets the default values.
 func NewApprovalWorkflowProviderCollectionResponse()(*ApprovalWorkflowProviderCollectionResponse) {
     m := &ApprovalWorkflowProviderCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

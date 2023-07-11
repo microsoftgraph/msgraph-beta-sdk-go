@@ -7,6 +7,8 @@ import (
 // MicrosoftApplicationDataAccessSettings 
 type MicrosoftApplicationDataAccessSettings struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMicrosoftApplicationDataAccessSettings instantiates a new microsoftApplicationDataAccessSettings and sets the default values.
 func NewMicrosoftApplicationDataAccessSettings()(*MicrosoftApplicationDataAccessSettings) {

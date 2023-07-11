@@ -8,7 +8,7 @@ import (
 type OnInteractiveAuthFlowStartListener struct {
     AuthenticationEventListener
 }
-// NewOnInteractiveAuthFlowStartListener instantiates a new OnInteractiveAuthFlowStartListener and sets the default values.
+// NewOnInteractiveAuthFlowStartListener instantiates a new onInteractiveAuthFlowStartListener and sets the default values.
 func NewOnInteractiveAuthFlowStartListener()(*OnInteractiveAuthFlowStartListener) {
     m := &OnInteractiveAuthFlowStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),

@@ -7,6 +7,8 @@ import (
 // VirtualAppointment 
 type VirtualAppointment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewVirtualAppointment instantiates a new virtualAppointment and sets the default values.
 func NewVirtualAppointment()(*VirtualAppointment) {

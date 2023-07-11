@@ -8,7 +8,7 @@ import (
 type ExactMatchLookupJob struct {
     ExactMatchJobBase
 }
-// NewExactMatchLookupJob instantiates a new ExactMatchLookupJob and sets the default values.
+// NewExactMatchLookupJob instantiates a new exactMatchLookupJob and sets the default values.
 func NewExactMatchLookupJob()(*ExactMatchLookupJob) {
     m := &ExactMatchLookupJob{
         ExactMatchJobBase: *NewExactMatchJobBase(),

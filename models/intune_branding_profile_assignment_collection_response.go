@@ -8,7 +8,7 @@ import (
 type IntuneBrandingProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIntuneBrandingProfileAssignmentCollectionResponse instantiates a new IntuneBrandingProfileAssignmentCollectionResponse and sets the default values.
+// NewIntuneBrandingProfileAssignmentCollectionResponse instantiates a new intuneBrandingProfileAssignmentCollectionResponse and sets the default values.
 func NewIntuneBrandingProfileAssignmentCollectionResponse()(*IntuneBrandingProfileAssignmentCollectionResponse) {
     m := &IntuneBrandingProfileAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

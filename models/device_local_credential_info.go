@@ -8,8 +8,10 @@ import (
 // DeviceLocalCredentialInfo 
 type DeviceLocalCredentialInfo struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceLocalCredentialInfo instantiates a new DeviceLocalCredentialInfo and sets the default values.
+// NewDeviceLocalCredentialInfo instantiates a new deviceLocalCredentialInfo and sets the default values.
 func NewDeviceLocalCredentialInfo()(*DeviceLocalCredentialInfo) {
     m := &DeviceLocalCredentialInfo{
         Entity: *NewEntity(),

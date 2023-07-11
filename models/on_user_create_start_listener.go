@@ -8,7 +8,7 @@ import (
 type OnUserCreateStartListener struct {
     AuthenticationEventListener
 }
-// NewOnUserCreateStartListener instantiates a new OnUserCreateStartListener and sets the default values.
+// NewOnUserCreateStartListener instantiates a new onUserCreateStartListener and sets the default values.
 func NewOnUserCreateStartListener()(*OnUserCreateStartListener) {
     m := &OnUserCreateStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),

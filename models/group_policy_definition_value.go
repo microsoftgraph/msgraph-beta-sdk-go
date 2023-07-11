@@ -117,6 +117,16 @@ func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["presentationValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyPresentationValueFromDiscriminatorValue)
         if err != nil {
@@ -143,6 +153,17 @@ func (m *GroupPolicyDefinitionValue) GetLastModifiedDateTime()(*i336074805fc8539
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GroupPolicyDefinitionValue) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -190,6 +211,12 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -243,6 +270,13 @@ func (m *GroupPolicyDefinitionValue) SetLastModifiedDateTime(value *i336074805fc
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GroupPolicyDefinitionValue) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPresentationValues sets the presentationValues property value. The associated group policy presentation values with the definition value.
 func (m *GroupPolicyDefinitionValue) SetPresentationValues(value []GroupPolicyPresentationValueable)() {
     err := m.GetBackingStore().Set("presentationValues", value)
@@ -259,11 +293,13 @@ type GroupPolicyDefinitionValueable interface {
     GetDefinition()(GroupPolicyDefinitionable)
     GetEnabled()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPresentationValues()([]GroupPolicyPresentationValueable)
     SetConfigurationType(value *GroupPolicyConfigurationType)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDefinition(value GroupPolicyDefinitionable)()
     SetEnabled(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPresentationValues(value []GroupPolicyPresentationValueable)()
 }

@@ -8,6 +8,8 @@ import (
 // DeviceComplianceUserStatus 
 type DeviceComplianceUserStatus struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceComplianceUserStatus instantiates a new deviceComplianceUserStatus and sets the default values.
 func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {

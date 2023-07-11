@@ -9,7 +9,7 @@ import (
 type AppPerformanceCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewAppPerformanceCollectionResponse instantiates a new AppPerformanceCollectionResponse and sets the default values.
+// NewAppPerformanceCollectionResponse instantiates a new appPerformanceCollectionResponse and sets the default values.
 func NewAppPerformanceCollectionResponse()(*AppPerformanceCollectionResponse) {
     m := &AppPerformanceCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

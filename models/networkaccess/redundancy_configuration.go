@@ -95,7 +95,7 @@ func (m *RedundancyConfiguration) GetRedundancyTier()(*RedundancyTier) {
     }
     return nil
 }
-// GetZoneLocalIpAddress gets the zoneLocalIpAddress property value. The zoneLocalIpAddress property
+// GetZoneLocalIpAddress gets the zoneLocalIpAddress property value. Indicate the specific IP address used for establishing the Border Gateway Protocol (BGP) connection with Microsoft's network.
 func (m *RedundancyConfiguration) GetZoneLocalIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("zoneLocalIpAddress")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *RedundancyConfiguration) SetRedundancyTier(value *RedundancyTier)() {
         panic(err)
     }
 }
-// SetZoneLocalIpAddress sets the zoneLocalIpAddress property value. The zoneLocalIpAddress property
+// SetZoneLocalIpAddress sets the zoneLocalIpAddress property value. Indicate the specific IP address used for establishing the Border Gateway Protocol (BGP) connection with Microsoft's network.
 func (m *RedundancyConfiguration) SetZoneLocalIpAddress(value *string)() {
     err := m.GetBackingStore().Set("zoneLocalIpAddress", value)
     if err != nil {

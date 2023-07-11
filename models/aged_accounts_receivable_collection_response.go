@@ -8,7 +8,7 @@ import (
 type AgedAccountsReceivableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAgedAccountsReceivableCollectionResponse instantiates a new AgedAccountsReceivableCollectionResponse and sets the default values.
+// NewAgedAccountsReceivableCollectionResponse instantiates a new agedAccountsReceivableCollectionResponse and sets the default values.
 func NewAgedAccountsReceivableCollectionResponse()(*AgedAccountsReceivableCollectionResponse) {
     m := &AgedAccountsReceivableCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

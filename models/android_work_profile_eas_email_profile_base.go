@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileEasEmailProfileBase 
+// AndroidWorkProfileEasEmailProfileBase base for Android Work Profile EAS Email profiles
 type AndroidWorkProfileEasEmailProfileBase struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileEasEmailProfileBase instantiates a new AndroidWorkProfileEasEmailProfileBase and sets the default values.
+// NewAndroidWorkProfileEasEmailProfileBase instantiates a new androidWorkProfileEasEmailProfileBase and sets the default values.
 func NewAndroidWorkProfileEasEmailProfileBase()(*AndroidWorkProfileEasEmailProfileBase) {
     m := &AndroidWorkProfileEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

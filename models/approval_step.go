@@ -8,6 +8,8 @@ import (
 // ApprovalStep 
 type ApprovalStep struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewApprovalStep instantiates a new approvalStep and sets the default values.
 func NewApprovalStep()(*ApprovalStep) {

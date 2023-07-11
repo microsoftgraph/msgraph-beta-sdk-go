@@ -10,7 +10,7 @@ type CloudPcAuditActor struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcAuditActor instantiates a new CloudPcAuditActor and sets the default values.
+// NewCloudPcAuditActor instantiates a new cloudPcAuditActor and sets the default values.
 func NewCloudPcAuditActor()(*CloudPcAuditActor) {
     m := &CloudPcAuditActor{
     }

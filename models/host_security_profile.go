@@ -8,8 +8,10 @@ import (
 // HostSecurityProfile 
 type HostSecurityProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewHostSecurityProfile instantiates a new HostSecurityProfile and sets the default values.
+// NewHostSecurityProfile instantiates a new hostSecurityProfile and sets the default values.
 func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),

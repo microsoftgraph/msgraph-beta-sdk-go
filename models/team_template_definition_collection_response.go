@@ -8,7 +8,7 @@ import (
 type TeamTemplateDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamTemplateDefinitionCollectionResponse instantiates a new TeamTemplateDefinitionCollectionResponse and sets the default values.
+// NewTeamTemplateDefinitionCollectionResponse instantiates a new teamTemplateDefinitionCollectionResponse and sets the default values.
 func NewTeamTemplateDefinitionCollectionResponse()(*TeamTemplateDefinitionCollectionResponse) {
     m := &TeamTemplateDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

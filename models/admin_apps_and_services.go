@@ -7,8 +7,10 @@ import (
 // AdminAppsAndServices 
 type AdminAppsAndServices struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAdminAppsAndServices instantiates a new AdminAppsAndServices and sets the default values.
+// NewAdminAppsAndServices instantiates a new adminAppsAndServices and sets the default values.
 func NewAdminAppsAndServices()(*AdminAppsAndServices) {
     m := &AdminAppsAndServices{
         Entity: *NewEntity(),

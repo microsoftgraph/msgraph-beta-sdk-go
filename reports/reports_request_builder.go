@@ -647,6 +647,10 @@ func (m *ReportsRequestBuilder) Security()(*SecurityRequestBuilder) {
 func (m *ReportsRequestBuilder) ServicePrincipalSignInActivities()(*ServicePrincipalSignInActivitiesRequestBuilder) {
     return NewServicePrincipalSignInActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Sla provides operations to manage the sla property of the microsoft.graph.reportRoot entity.
+func (m *ReportsRequestBuilder) Sla()(*SlaRequestBuilder) {
+    return NewSlaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get reports
 func (m *ReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

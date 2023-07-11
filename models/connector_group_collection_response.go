@@ -8,7 +8,7 @@ import (
 type ConnectorGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConnectorGroupCollectionResponse instantiates a new ConnectorGroupCollectionResponse and sets the default values.
+// NewConnectorGroupCollectionResponse instantiates a new connectorGroupCollectionResponse and sets the default values.
 func NewConnectorGroupCollectionResponse()(*ConnectorGroupCollectionResponse) {
     m := &ConnectorGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

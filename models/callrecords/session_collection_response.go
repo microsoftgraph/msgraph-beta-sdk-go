@@ -9,7 +9,7 @@ import (
 type SessionCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewSessionCollectionResponse instantiates a new SessionCollectionResponse and sets the default values.
+// NewSessionCollectionResponse instantiates a new sessionCollectionResponse and sets the default values.
 func NewSessionCollectionResponse()(*SessionCollectionResponse) {
     m := &SessionCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),

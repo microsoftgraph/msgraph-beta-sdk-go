@@ -7,6 +7,8 @@ import (
 // SensitiveType 
 type SensitiveType struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSensitiveType instantiates a new sensitiveType and sets the default values.
 func NewSensitiveType()(*SensitiveType) {
